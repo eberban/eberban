@@ -1,5 +1,10 @@
 <!doctype html>
 <html>
+<head>
+<title>la camxes - la ilmentufa</title>
+<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,viewport-fit=cover" />
+<style>form, select { margin: 4px 0 }</style>
+</head>
 <body>
 <meta charset='utf-8' />
 
@@ -42,7 +47,7 @@
 document.getElementById("default").defaultSelected = true;
 
 /*
- *  Binding the function run_camxes() to keyup event on demo_textarea by using jQuery
+ *  Binding the function run_camxes() to keyup event on input_textarea by using jQuery
  */
 $('#input_textarea').bind( "keyup",
   function(e) {
@@ -58,11 +63,10 @@ function run_camxes() {
       $('#parse_result').text( e.toString() );
       return;
     }
-    var result_str = JSON.stringify(result, undefined, 2);
 	/* We get the output mode selected in the combobox */
 	var mode = document.getElementById("optlist").selectedIndex;
 	/* Postprocessing — if mode == 0, the below function won't modify camxes' output */
-	result_str = camxes_postprocessing(result_str, mode);  // @camxes_postproc.js
+	var result_str = camxes_postprocessing(result, mode);  // @camxes_postproc.js
 	/* Retrieve the result */
     $('#parse_result').text( result_str );
 }

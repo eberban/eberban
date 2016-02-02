@@ -14,6 +14,8 @@ function parse() {
         var parse = camxes.parse(textToParse);
         var end = new Date().getTime();
         $("#time-label").html("(parsing took " + (end - start) + " ms)");
+        parse = remove_morphology(parse);
+        parse = remove_spaces(parse);
         var simplified = simplifyTree(parse);
         numberSumti(simplified);
         
@@ -298,6 +300,8 @@ function boxClassForType(parse) {
     if (parse.type === "sumti x") {
         if (parse.sumtiPlace > 5) {
             return "box box-sumti6";
+        } else if (parse.sumtiPlace == "fai") {
+            return "box box-sumti-fai";
         } else {
             return "box box-sumti" + parse.sumtiPlace;
         }

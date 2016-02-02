@@ -1,5 +1,10 @@
 <!doctype html>
 <html>
+<head>
+<title>la camxes - la ilmentufa</title>
+<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,viewport-fit=cover" />
+<style>form, select { margin: 4px 0 }</style>
+</head>
 <body>
 <meta charset='utf-8' />
 
@@ -20,11 +25,37 @@
     <option>Prettified --fm + selmaho</option>
     <option>Prettified --fm + sm ext</option>
   </select>
-  <span style="padding-left: 32px; text-align: right; font-size: 12px;">
-    <a href="camxes.js.peg" target="_blank">[ Grammar file ]</a>
-  </span>
+  <select id="morpho-mode" onChange="run_camxes();">
+    <option>Remove morphology</option>
+    <option>Keep morphology</option>
+  </select>
+  <select id="spaces-display-mode" onChange="run_camxes();">
+    <option>Hide spaces</option>      
+    <option>Display spaces as '_'</option>
+  </select>
+  <span style="padding-left: 24px; text-align: right; font: 15px arial, sans-serif;">Parser: </span>
+  <select id="parser" onChange="load_parser();">
+    <option>Camxes: Standard</option>
+    <option>Camxes: Beta</option>
+    <option>Camxes: Beta CBM</option>
+    <option>Camxes: Beta CBM CKT</option>
+    <option>Camxes: Experimental</option>
+    <option>Zantufa</option>
+    <option>Camxes: Hagiwara</option>
+  </select>
+  <script>
+    var parser_list = [
+      {p: undefined, g: "camxes.peg"},
+      {p: undefined, g: "camxes-beta.peg"},
+      {p: undefined, g: "camxes-beta-cbm.peg"},
+      {p: undefined, g: "camxes-beta-cbm-ckt.peg"},
+      {p: undefined, g: "camxes-exp.js.peg"},
+      {p: undefined, g: "https://raw.githubusercontent.com/guskant/gerna_cipra/master/zantufa-1.9999.peg"},
+      {p: undefined, g: "camxes-mh.js.peg"}
+    ];
+  </script>
   <span style="padding-left: 24px; text-align: right; font-size: 12px;">
-    <a href="camxes-exp.html">[ Switch to experimental grammar ]</a>
+    <a href="camxes.pegjs" target="_blank" id="peg-link">[ Grammar file ]</a>
   </span>
 </form>
 
@@ -35,14 +66,36 @@
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="camxes.js"></script>
+<script>parser_list[0].p = camxes;</script>
+<script type="text/javascript" src="camxes-beta.js"></script>
+<script>parser_list[1].p = camxes;</script>
+<script type="text/javascript" src="camxes-beta-cbm.js"></script>
+<script>parser_list[2].p = camxes;</script>
+<script type="text/javascript" src="camxes-beta-cbm-ckt.js"></script>
+<script>parser_list[3].p = camxes;</script>
+<script type="text/javascript" src="camxes-exp.js"></script>
+<script>parser_list[4].p = camxes;</script>
+<script type="text/javascript" src="http://guskant.github.io/gerna_cipra/js/zantufa-1.9999.js"></script>
+<script>parser_list[5].p = camxes;</script>
+<script type="text/javascript" src="camxes-mh.js"></script>
+<script>parser_list[6].p = camxes;</script>
 <script type="text/javascript" src="camxes_preproc.js"></script>
 <script type="text/javascript" src="camxes_postproc.js"></script>
 
 <script>
 document.getElementById("default").defaultSelected = true;
 
+window.onload = load_parser;
+
+function load_parser() {
+    var i = document.getElementById("parser").selectedIndex;
+    document.getElementById("peg-link").href = parser_list[i].g;
+    camxes = parser_list[i].p;
+    run_camxes();
+}
+
 /*
- *  Binding the function run_camxes() to keyup event on demo_textarea by using jQuery
+ *  Binding the function run_camxes() to keyup event on input_textarea by using jQuery
  */
 $('#input_textarea').bind( "keyup",
   function(e) {
@@ -54,17 +107,26 @@ function run_camxes() {
 	  var input = $('#input_textarea').val();
 	  input = camxes_preprocessing(input);
       var result = camxes.parse(input);
-    } catch (e) {
-      $('#parse_result').text( e.toString() );
+    } catch (err) {
+      if (err.location !== undefined) {
+        var location_info = '\nLocation: [' + err.location.start.offset + ', ' + err.location.end.offset + ']';
+        location_info += '\n…' + input.substring(err.location.start.offset, err.location.start.offset + 12) + '…';
+      } else var location_info = "";
+      $('#parse_result').text(err.toString() + location_info);
       return;
     }
-    var result_str = JSON.stringify(result, undefined, 2);
 	/* We get the output mode selected in the combobox */
 	var mode = document.getElementById("optlist").selectedIndex;
-	/* Postprocessing — if mode == 0, the below function won't modify camxes' output */
-	result_str = camxes_postprocessing(result_str, mode);  // @camxes_postproc.js
+    /* Get the parse tree processing selected in the second combobox */
+    if (1 == document.getElementById("morpho-mode").selectedIndex)
+        mode |= 16;
+    var b_display_spaces = (1 == document.getElementById("spaces-display-mode").selectedIndex);
+    if (b_display_spaces) mode |= 8;
+	/* Postprocessing: if mode == 0, the below function won't modify camxes' output */
+	result = camxes_postprocessing(result, mode);
+             // @ camxes_postproc.js
 	/* Retrieve the result */
-    $('#parse_result').text( result_str );
+    $('#parse_result').text(result);
 }
 </script>
 

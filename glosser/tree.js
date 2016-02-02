@@ -270,9 +270,6 @@ function numberSumti(parse) {
     return parse;
 }
 
-// TODO This is not working correctly for [GIhA] bridi-tail connections.
-// We should reset the sumtiCounter to the value it had before entering the bridi-tail,
-// when we encounter a [GIhA].
 function numberSumtiInSentence(parse) {
     
     // first, for convenience, merge the bridi head and tail together in one array
@@ -282,6 +279,7 @@ function numberSumtiInSentence(parse) {
         var child = parse.children[i];
         
         if (child.type === "bridi tail") {
+            sentenceElements.push({type: "bridi tail start"});
             for (var j = 0; j < child.children.length; j++) {
                 var subchild = child.children[j];
                 sentenceElements.push(subchild);
@@ -293,11 +291,20 @@ function numberSumtiInSentence(parse) {
     
     // now walk through this array
     var sumtiCounter = 1;
+    var bridiTailStartSumtiCounter = 1;
     var nextIsModal = false;
     
     for (var i = 0; i < sentenceElements.length; i++) {
         var child = sentenceElements[i];
-        
+
+        if (child.type === "bridi tail start") {
+            bridiTailStartSumtiCounter = sumtiCounter;
+        }
+
+        if (child.type === "GIhA") {
+            sumtiCounter = bridiTailStartSumtiCounter;
+        }
+
         if (child.type === "FA") {
             sumtiCounter = placeTagToPlace(child);
         }
@@ -334,5 +341,9 @@ function placeTagToPlace(tag) {
         return 4;
     } else if (tag.word === "fu") {
         return 5;
+    } else if (tag.word === "fai") {
+        return "fai";
+        /* Ilmen: Yeah that's an ugly lazy handling of "fai", but a cleaner 
+         * handling will require more work. */
     }
 }
