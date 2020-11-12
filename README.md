@@ -1,21 +1,16 @@
-la ilmentufa
+relation language test
 =========
 
-_[la ilmentufa](http://lojban.org/papri/la_ilmentufa)_ is a collection of formal grammars and syntactical parsers for the Lojban language, as well as related tools and interfaces.
-
-It currently includes five main PEG formal grammars along with their corresponding Javascript parsers (those are automatically generated from the grammar files). The PEG grammar files have the extension `.peg` (e.g. `camxes.peg`), and the parsers have the same name as their corresponding grammar but with a `.js` extension.
-
-* `camxes.peg`: Standard PEG grammar for Lojban.
-* `camxes-beta.peg`: Same as camxes.peg, but with the addition of the most popular and backward-compatible experimental cmavo and grammar changes.
-* `camxes-beta-cbm.peg`: Same as camxes-beta.peg, but with the Cmevla-Brivla Merger experimental grammar change.
-* `camxes-beta-cbm-ckt.peg`: Same as above, but with [Ce-Ki-Tau](https://mw.lojban.org/papri/ce_ki_tau_jau) experimental grammar.
-* `camxes-exp.peg`: Experimental grammar sandbox.
+This is a test language inspired by the lojban language. It aims at merging brivla and rafsi
+(by having all relation words start with a pair of consonnants followed by vowels and ').
+Following a suggestion by uakci, it'll also try to remove sumti from the grammar and
+working only with relations themselves.
 
 Main interfaces to the parsers:
-* `camxes.html`: HTML interface with various parsing options and allowing selecting the desired parser.
-* `glosser/glosser.htm`: Another HTML interface with different features, most prominently nested boxes output and glosses.
-* `run_camxes.js`: Command line interface.
-* `ircbot/camxes-bot.js`: IRC bot interface.
+* `camxes.html`: HTML interface with various parsing options (only raw/parse tree works for now).
+* `glosser/glosser.htm`: Another HTML interface with different features, most prominently nested boxes output and glosses (only raw/parse tree works for now).
+* `run_camxes.js`: Command line interface (not changed yet).
+* `ircbot/camxes-bot.js`: IRC bot interface (not changed yet).
 
 
 ### Requirements ###
@@ -44,19 +39,9 @@ The second command (with `build-camxes`) creates or updates the corresponding pa
 
 Building the parser can take several dozen seconds.
 
+Note : `build.bat` does both on Windows.
 
-### Generating CBM and CKT grammars ###
-
-The current `camxes-beta-cbm.peg` and `camxes-beta-cbm-ckt.peg` are generated from `camxes-beta.peg` using a couple scripts.
-Here's how to do:
-
-```
-nodejs std-to-cbm camxes-beta.peg
-nodejs make-ckt camxes-beta-cbm.peg
-```
-
-
-### Running a parser from command line ###
+### Running a parser from command line (TODO) ###
 
 Here's how to parse the Lojban text "coi ro do" with the standard grammar parser from command line:
 
@@ -93,7 +78,7 @@ nodejs run_camxes -m CTN "coi ro do"
 This will show terminators, selmaho and main node labels.
  
 
-### Running the IRC bots ###
+### Running the IRC bots (TODO) ###
 
 Nothing easier; after having entered the ilmentufa directory, run the command `nodejs ircbot/camxes-bot` or `nodejs ircbot/cipra-bot` (the latter is for the experimental grammar).
 The list of the channels joined by the bot can be found and edited within the bot script.

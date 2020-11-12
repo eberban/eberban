@@ -8,7 +8,7 @@
 <body>
 <meta charset='utf-8' />
 
-<span style="font: 15px arial, sans-serif;">Type any Lojban text in the following textarea. The result will be parsed as you type:</span>
+<span style="font: 15px arial, sans-serif;">Type any [language name] text in the following textarea. The result will be parsed as you type:</span>
 <br /><br />
 
 <form id="form1" name="form1" method="post" action="" style="width:100%">
@@ -35,23 +35,11 @@
   </select>
   <span style="padding-left: 24px; text-align: right; font: 15px arial, sans-serif;">Parser: </span>
   <select id="parser" onChange="load_parser();">
-    <option>Camxes: Standard</option>
-    <option>Camxes: Beta</option>
-    <option>Camxes: Beta CBM</option>
-    <option>Camxes: Beta CBM CKT</option>
-    <option>Camxes: Experimental</option>
-    <option>Zantufa</option>
-    <option>Camxes: Hagiwara</option>
+    <option>relation lang test</option>
   </select>
   <script>
     var parser_list = [
-      {p: undefined, g: "camxes.peg"},
-      {p: undefined, g: "camxes-beta.peg"},
-      {p: undefined, g: "camxes-beta-cbm.peg"},
-      {p: undefined, g: "camxes-beta-cbm-ckt.peg"},
-      {p: undefined, g: "camxes-exp.js.peg"},
-      {p: undefined, g: "https://raw.githubusercontent.com/guskant/gerna_cipra/master/zantufa-1.9999.peg"},
-      {p: undefined, g: "camxes-mh.js.peg"}
+      {p: undefined, g: "camxes.peg"}
     ];
   </script>
   <span style="padding-left: 24px; text-align: right; font-size: 12px;">
@@ -67,18 +55,6 @@
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="camxes.js"></script>
 <script>parser_list[0].p = camxes;</script>
-<script type="text/javascript" src="camxes-beta.js"></script>
-<script>parser_list[1].p = camxes;</script>
-<script type="text/javascript" src="camxes-beta-cbm.js"></script>
-<script>parser_list[2].p = camxes;</script>
-<script type="text/javascript" src="camxes-beta-cbm-ckt.js"></script>
-<script>parser_list[3].p = camxes;</script>
-<script type="text/javascript" src="camxes-exp.js"></script>
-<script>parser_list[4].p = camxes;</script>
-<script type="text/javascript" src="http://guskant.github.io/gerna_cipra/js/zantufa-1.9999.js"></script>
-<script>parser_list[5].p = camxes;</script>
-<script type="text/javascript" src="camxes-mh.js"></script>
-<script>parser_list[6].p = camxes;</script>
 <script type="text/javascript" src="camxes_preproc.js"></script>
 <script type="text/javascript" src="camxes_postproc.js"></script>
 
