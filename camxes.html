@@ -1,111 +1,120 @@
 <!doctype html>
 <html>
+
 <head>
-<title>la camxes - la ilmentufa</title>
-<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,viewport-fit=cover" />
-<style>form, select { margin: 4px 0 }</style>
-</head>
-<body>
-<meta charset='utf-8' />
-
-<span style="font: 15px arial, sans-serif;">Type any [language name] text in the following textarea. The result will be parsed as you type:</span>
-<br /><br />
-
-<form id="form1" name="form1" method="post" action="" style="width:100%">
-  <textarea id="input_textarea" style="width:100%" rows="8" autofocus></textarea>
-  <br />
-  <span style="font: 15px arial, sans-serif;">Output mode: </span>
-  <select id="optlist" onChange="run_camxes()">
-    <option>Raw output</option>
-    <option>Condensed</option>
-    <option id="default">Prettified</option>
-    <option>Prettified + selmaho</option>
-    <option>Prettified + sm ext</option>
-    <option>Prettified --fm</option>
-    <option>Prettified --fm + selmaho</option>
-    <option>Prettified --fm + sm ext</option>
-  </select>
-  <select id="morpho-mode" onChange="run_camxes();">
-    <option>Remove morphology</option>
-    <option>Keep morphology</option>
-  </select>
-  <select id="spaces-display-mode" onChange="run_camxes();">
-    <option>Hide spaces</option>      
-    <option>Display spaces as '_'</option>
-  </select>
-  <span style="padding-left: 24px; text-align: right; font: 15px arial, sans-serif;">Parser: </span>
-  <select id="parser" onChange="load_parser();">
-    <option>relation lang test</option>
-  </select>
-  <script>
-    var parser_list = [
-      {p: undefined, g: "camxes.peg"}
-    ];
-  </script>
-  <span style="padding-left: 24px; text-align: right; font-size: 12px;">
-    <a href="camxes.pegjs" target="_blank" id="peg-link">[ Grammar file ]</a>
-  </span>
-</form>
-
-<div style="display:block; overflow: scroll; max-height:24em; border: solid 1px; padding: 10px; background-color: #DDDDFF;"
-     height="24em">
-  <pre style="white-space: pre-wrap;"><code id="parse_result" width="100%" height="100%"> </code></pre>
-</div>
-
-<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="camxes.js"></script>
-<script>parser_list[0].p = camxes;</script>
-<script type="text/javascript" src="camxes_preproc.js"></script>
-<script type="text/javascript" src="camxes_postproc.js"></script>
-
-<script>
-document.getElementById("default").defaultSelected = true;
-
-window.onload = load_parser;
-
-function load_parser() {
-    var i = document.getElementById("parser").selectedIndex;
-    document.getElementById("peg-link").href = parser_list[i].g;
-    camxes = parser_list[i].p;
-    run_camxes();
-}
-
-/*
- *  Binding the function run_camxes() to keyup event on input_textarea by using jQuery
- */
-$('#input_textarea').bind( "keyup",
-  function(e) {
-    run_camxes();
-  } );
-
-function run_camxes() {
-	try {
-	  var input = $('#input_textarea').val();
-	  input = camxes_preprocessing(input);
-      var result = camxes.parse(input);
-    } catch (err) {
-      if (err.location !== undefined) {
-        var location_info = '\nLocation: [' + err.location.start.offset + ', ' + err.location.end.offset + ']';
-        location_info += '\n…' + input.substring(err.location.start.offset, err.location.start.offset + 12) + '…';
-      } else var location_info = "";
-      $('#parse_result').text(err.toString() + location_info);
-      return;
+  <title>la camxes - la ilmentufa</title>
+  <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,viewport-fit=cover" />
+  <style>
+    form,
+    select {
+      margin: 4px 0
     }
-	/* We get the output mode selected in the combobox */
-	var mode = document.getElementById("optlist").selectedIndex;
-    /* Get the parse tree processing selected in the second combobox */
-    if (1 == document.getElementById("morpho-mode").selectedIndex)
+  </style>
+</head>
+
+<body>
+  <meta charset='utf-8' />
+
+  <span style="font: 15px arial, sans-serif;">Type any [language name] text in the following textarea. The result will
+    be parsed as you type:</span>
+  <br /><br />
+
+  <form id="form1" name="form1" method="post" action="" style="width:100%">
+    <textarea id="input_textarea" style="width:100%" rows="8" autofocus></textarea>
+    <br />
+    <span style="font: 15px arial, sans-serif;">Output mode: </span>
+    <select id="optlist" onChange="run_camxes()">
+      <option>Raw output</option>
+      <option>Condensed</option>
+      <option id="default">Prettified</option>
+      <option>Prettified + selmaho</option>
+      <option>Prettified + sm ext</option>
+      <option>Prettified --fm</option>
+      <option>Prettified --fm + selmaho</option>
+      <option>Prettified --fm + sm ext</option>
+    </select>
+    <select id="morpho-mode" onChange="run_camxes();">
+      <option>Remove morphology</option>
+      <option>Keep morphology</option>
+    </select>
+    <select id="spaces-display-mode" onChange="run_camxes();">
+      <option>Hide spaces</option>
+      <option>Display spaces as '_'</option>
+    </select>
+    <span style="padding-left: 24px; text-align: right; font: 15px arial, sans-serif;">Parser: </span>
+    <select id="parser" onChange="load_parser();">
+      <option>relation lang test</option>
+    </select>
+    <script>
+      var parser_list = [
+        { p: undefined, g: "camxes.peg" }
+      ];
+    </script>
+    <span style="padding-left: 24px; text-align: right; font-size: 12px;">
+      <a href="camxes.pegjs" target="_blank" id="peg-link">[ Grammar file ]</a>
+    </span>
+  </form>
+
+  <div
+    style="display:block; overflow: scroll; max-height:24em; border: solid 1px; padding: 10px; background-color: #DDDDFF;"
+    height="24em">
+    <pre style="white-space: pre-wrap;"><code id="parse_result" width="100%" height="100%"> </code></pre>
+  </div>
+
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="camxes.js"></script>
+  <script>parser_list[0].p = camxes;</script>
+  <script type="text/javascript" src="camxes_preproc.js"></script>
+  <script type="text/javascript" src="camxes_postproc.js"></script>
+
+  <script>
+    document.getElementById("default").defaultSelected = true;
+
+    window.onload = load_parser;
+
+    function load_parser() {
+      var i = document.getElementById("parser").selectedIndex;
+      document.getElementById("peg-link").href = parser_list[i].g;
+      camxes = parser_list[i].p;
+      run_camxes();
+    }
+
+    /*
+     *  Binding the function run_camxes() to keyup event on input_textarea by using jQuery
+     */
+    $('#input_textarea').bind("keyup",
+      function (e) {
+        run_camxes();
+      });
+
+    function run_camxes() {
+      try {
+        var input = $('#input_textarea').val();
+        input = camxes_preprocessing(input);
+        var result = camxes.parse(input);
+      } catch (err) {
+        if (err.location !== undefined) {
+          var location_info = '\nLocation: [' + err.location.start.offset + ', ' + err.location.end.offset + ']';
+          location_info += '\n…' + input.substring(err.location.start.offset, err.location.start.offset + 12) + '…';
+        } else var location_info = "";
+        $('#parse_result').text(err.toString() + location_info);
+        return;
+      }
+      /* We get the output mode selected in the combobox */
+      var mode = document.getElementById("optlist").selectedIndex;
+      /* Get the parse tree processing selected in the second combobox */
+      if (1 == document.getElementById("morpho-mode").selectedIndex)
         mode |= 16;
-    var b_display_spaces = (1 == document.getElementById("spaces-display-mode").selectedIndex);
-    if (b_display_spaces) mode |= 8;
-	/* Postprocessing: if mode == 0, the below function won't modify camxes' output */
-	result = camxes_postprocessing(result, mode);
-             // @ camxes_postproc.js
-	/* Retrieve the result */
-    $('#parse_result').text(result);
-}
-</script>
+      var b_display_spaces = (1 == document.getElementById("spaces-display-mode").selectedIndex);
+      if (b_display_spaces) mode |= 8;
+      /* Postprocessing: if mode == 0, the below function won't modify camxes' output */
+      result = camxes_postprocessing(result, mode);
+      // @ camxes_postproc.js
+      /* Retrieve the result */
+      $('#parse_result').text(result);
+    }
+  </script>
 
 </body>
-</html>
 
+</html>

@@ -143,8 +143,7 @@ function newer_postprocessor(
         "selbri": "SELBRI", "sumti": "SUMTI"
     };
     if (!with_trimming) name_substitution_map = {};
-    var special_selmaho = ["cmevla", "gismu", "lujvo", "fuhivla", "ga_clause",
-                           "gu_clause"];
+    var special_selmaho = ["particle_word", "relation_word"];
     /** Building a node_action_for() function from the selected options **/
     if (with_morphology)
          var is_flattening_target = function (tree) { return false; };
@@ -339,7 +338,7 @@ function among(v, s) {
 
 function is_selmaho(v) {
     if (!is_string(v)) return false;
-    return (0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUY]|(AI|EI|OI|AU))(h([AEIOUY]|(AI|EI|OI|AU)))*$/g));
+    return v.startsWith("p_");
 }
 
 // ========================================================================== //

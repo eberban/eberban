@@ -178,6 +178,12 @@ function peg_to_pegjs(peg) {
 		/{return _node\("([0-9a-zA-Z_-]+)", expr\);}( +\/\/ +!LR2)(?=[ \r\n])/gm,
 		'{return _node_lg2("$1", expr);}$2'
 	);
+	// Manual leaves
+	peg = peg.replace(/{return _node\("([0-9a-zA-Z_-]+)", expr\);}( +\/\/ <LEAF>)(?=[ \r\n])/gm,
+					  '{return ["$1", "$1"];}$2');
+	// Particle leaves
+	// peg = peg.replace(/{return _node\("(?=p_)([0-9a-zA-Z_-]+)", expr\);}(?=[ \r\n])/gm,
+	// 				  '{return ["$1", "$1"];}');
 	return peg;
 }
 
