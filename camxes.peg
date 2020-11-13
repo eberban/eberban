@@ -68,7 +68,9 @@ o <- [oO]
 u <- [uU] 
 y <- [yY] 
 
-consonant_pair <- consonant consonant
+consonant_pair <- (&initial consonant consonant !consonant)
+initial <- (affricate / sibilant? other? liquid?) !consonant
+
 consonant <- (voiced / unvoiced / syllabic) 
 affricate <- (t c / t s / d j / d z) 
 liquid <- (l / r) 

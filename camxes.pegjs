@@ -197,7 +197,9 @@ o = expr:([oO]) {return _node("o", expr);}
 u = expr:([uU]) {return _node("u", expr);}
 y = expr:([yY]) {return _node("y", expr);}
 
-consonant_pair = expr:(consonant consonant) {return _node("consonant_pair", expr);}
+consonant_pair = expr:((&initial consonant consonant !consonant)) {return _node("consonant_pair", expr);}
+initial = expr:((affricate / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
+
 consonant = expr:((voiced / unvoiced / syllabic)) {return _node("consonant", expr);}
 affricate = expr:((t c / t s / d j / d z)) {return _node("affricate", expr);}
 liquid = expr:((l / r)) {return _node("liquid", expr);}
