@@ -142,8 +142,8 @@ function newer_postprocessor(
         // "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
         // "selbri": "SELBRI", "sumti": "SUMTI"
 
-        "p_predicate_tail_open": "NE",
-        "p_predicate_tail_close": "NEI",
+        "p_predicate_tail_open": "VA",
+        "p_predicate_tail_close": "VAI",
         "p_pre_connective_close": "GAI"
     };
     if (!with_trimming) name_substitution_map = {};

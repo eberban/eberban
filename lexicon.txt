@@ -1,20 +1,98 @@
-a : 1-word lex relation / x1 is a lex relation meaning x2 with components x3, x4 ...
-e : 2-words lex relation
-i : 3-words lex relation
-o : 4-words lex relation
-u : n-words lex relation
+Particles
 
-ba : x1 is predication [predicate] expressed in sentence x2
-be : x1 is relation expressed by [predicate] (allow relation filling like BE)
-bi : x1 is the event of [predicate]
-bai : abstraction terminator
+    A
+        a : 1-word lex relation prefix
+        e : 2-words lex relation prefix
+        i : 3-words lex relation prefix
+        o : 4-words lex relation prefix
+        u : n-words lex relation prefix + sufix
 
-bir: x1 is the arm of x2 [birka]
-don: x1 is the listener(s) [do]
-jga: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
-jmi: x1 is self/the speaker(s) [mi]
-pen: x1 is a friend of x2
-pre: x1 is a person
-mla: x1 is a cat of specie/breed x2 (broaden to feline ?)
+    BA
+        ba : x1 is predication [predicate] expressed in sentence x2
+        be : x1 is relation expressed by [predicate] (allow relation filling like BE)
+        bi : x1 is the event of [predicate]
 
-ebirjga: x1 grabs/holds/hugs x2 at locus x3
+        bai : abstraction elidible terminator
+
+        va : predicate-tail elidible starter
+        ve : next predicate place tag
+        vi : predicate place tag question
+        vai : predicate-tail elidible terminator
+
+    FA
+        fa : predicate 1st place tag
+        fe : predicate 2nd place tag
+        fi : predicate 3rd place tag
+        fo : predicate 4th place tag
+        fu : predicate 5th place tag
+
+    SE :
+        se : swap x1 and x2
+        si : swap x1 and x3
+        so : swap x1 and x4
+        su : swap x1 and x5
+        sei : swap question
+
+    JA
+        ja : A predicate connective
+        je : E predicate connective
+        ji : predicate connective question
+        jo : O predicate connective
+        ju : U predicate connective
+
+    CA
+        ca : A relation connective
+        ce : E relation connective
+        ci : relation connective question
+        co : O relation connective
+        cu : U relation connective
+
+        ga : forethought connective starter
+        ge : forethought connective separator
+        gai : forethought connective elidible terminator
+
+        go : scope starter
+        goi : scope elidible terminator
+
+        ma : foreign relation prefix
+        me : grammatical quote starter
+        mei : grammatical quote terminator
+        mi : one word quote prefix
+        mo : ungrammatical quote starter
+        moi : ungrammatical quote terminator
+        mu : foreign quote
+
+    NA
+        na : negation prefix
+
+        nai : negation sufix
+
+    BY
+        Cy : consonant
+        V'y : vowel
+        iy'y : i semi-vowel
+        uy'y : u semi-voewel
+        y'y : h
+        > Add a BY for the dot pause ?
+
+Root relations
+
+    ban: x1 is a language/dialect used by x2 to express x3 (predicate)
+    bri'a: x1 is the arm of x2 [birka]
+    cme: x1 (quoted words) is a name of x2 given by x3 [cmene]
+    don: x1 is the listener(s) [do]
+    dra'u: x1 is milk from source x2 [ladru]
+    gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
+    jga'i: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
+    jmi: x1 is self/the speaker(s) [mi]
+    mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
+    pen: x1 is a friend of x2 [pendo]
+    pin: x1 drinks liquid x2 out of container x3 [pinxe]
+    pre: x1 is a person [prenu]
+
+Lexical relations
+
+    a.a : x1 is a lex relation meaning x2 with components x3 (set)
+    ave : x1 is a predicate with relation x2 with components x3 (set)
+    ebri'ajga'i: x1 grabs/holds/hugs x2 at locus x3
+    eveban: x1 is this language (predicate language) used by x2 to express x3 (predicate)

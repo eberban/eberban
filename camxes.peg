@@ -37,7 +37,7 @@ ungrammatical_quote <- p_ungrammatical_quote_open (!p_ungrammatical_quote_close 
 
 foreign_quote <- p_foreign_quote (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close
 
-abstraction <- p_abstraction_open predicate p_abstraction_close?
+abstraction <- p_abstraction_open predicate p_abstraction_close_elidible
 relation_place_swap <- p_place_swap relation_3
 
 scoped_compound <- p_scope_open relation_1 p_scope_close_elidible
@@ -50,11 +50,6 @@ pre_relation_connective <- p_pre_connective_open p_place_swap? p_relation_connec
 pre_connective_separator <- p_pre_connective_separator p_neg_post?
 
 # PARTICLES (tmp)
-# - Abstractions
-#   x1 is abstraction of [predicate] ...
-p_abstraction_open <- !p_abstraction_close space? (b (vowel / diphtong)) 
-p_abstraction_close <- space? (b a i) 
-
 # - Lexicalized relation
 #   A string of words (particle or relation) can be lexicalized to have a unique relation meaning.
 #
@@ -66,6 +61,12 @@ p_lex_relation_2 <- space? (e)
 p_lex_relation_3 <- space? (i)
 p_lex_relation_4 <- space? (o)
 p_lex_relation_n <- space? (u)
+
+# - Abstractions
+#   x1 is abstraction of [predicate] ...
+p_abstraction_open <- !p_abstraction_close space? (b (vowel / diphtong)) 
+p_abstraction_close_elidible <- p_abstraction_close?
+p_abstraction_close <- space? (b a i) 
 
 # - Foreign relation
 #   A string of words used without their meaning to express some foreign concept.
@@ -100,33 +101,34 @@ p_foreign_quote <- space? (m u)
 p_place_swap <- space? (s (e / i / o / u / e i)) # 2 / 3 / 4 / 5 / question
 
 # - Predicate numeral place tag
-p_predicate_place <- space? (f vowel / f a i / n i)  # 1..5 places / place question / next numeral place
+p_predicate_place <- space? (f vowel / v i / v e)  # 1..5 places / place question / next numeral place
 
 # - Predicate tail
 p_predicate_tail_open_elidible <- p_predicate_tail_open? 
-p_predicate_tail_open <- space? (n e)
-p_predicate_tail_close_elidible <- (space? (n e i))?
+p_predicate_tail_open <- space? (v a)
+p_predicate_tail_close_elidible <- (space? (v a i))?
 
 # - Forethought connectives
 p_pre_connective_open <- space? (g a)
-p_pre_connective_separator <- space? (g i)
+p_pre_connective_separator <- space? (g e)
 p_pre_connective_close_elidible <- p_pre_connective_close?
 p_pre_connective_close <- space? (g a i)
 
 # - Afterthought connectives
-p_predicate_connective <- space? (j e h vowel)  # a/e/o/u + i question
-p_relation_connective <- space? (j vowel)  # a/e/o/u + i question
+# todo : add mass/set predicate connectives
+p_predicate_connective <- space? (j vowel)  # a/e/o/u + i question
+p_relation_connective <- space? (c vowel)  # a/e/o/u + i question
 
 # - Negations
 p_neg_pre <- space? (n a) 
 p_neg_post <- space? (n a i) 
 
 # - Scoping
-p_scope_open <- space? (k a)
-p_scope_close_elidible <- (space? (k a i))?
+p_scope_open <- space? (g o)
+p_scope_close_elidible <- (space? (g o i))?
 
 # - Literals
-p_letter <- space? (consonant y / vowel_y h y / (i / u) y h y / y i h y )  # consonant / vowel / semi-vowel / h
+p_letter <- space? (consonant y / vowel_y h y / (i / u) y h y / vi_diphtong h y / y h y )  # consonant / vowel / semi-vowel / h
 
 # MORPHOLOGY
 # - Forein text quoting
