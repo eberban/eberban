@@ -143,7 +143,8 @@ function newer_postprocessor(
         // "selbri": "SELBRI", "sumti": "SUMTI"
 
         "p_predicate_tail_open": "NE",
-        "p_predicate_tail_close": "NEI"
+        "p_predicate_tail_close": "NEI",
+        "p_pre_connective_close": "GAI"
     };
     if (!with_trimming) name_substitution_map = {};
     var special_selmaho = ["particle_word", "relation_word", "foreign_relation_content"];
