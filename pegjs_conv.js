@@ -308,17 +308,17 @@ function split_peg_code_and_comments(peg, is_peg_to_pegjs) {
 function peg_add_js_parser_actions(peg) {
 	/* Foreign words handling parser actions */
 	peg = peg.replace(
-		/^(foreign[-_]open) *= *([^\r\n]+)/gm,
-		'$1 = expr:($2) { _assign_foreign_delim(expr);' + ' return _node("$1", expr); }'
+		/^(foreign_quote[-_]open) *= *([^\r\n]+)/gm,
+		'$1 = expr:($2) { _assign_foreign_quote_delim(expr);' + ' return _node("$1", expr); }'
 	);
 	peg = peg.replace(
-		/^(foreign[-_]word) *= *([^\r\n]+)/gm,
-		'$1 = expr:($2) !{ return _is_foreign_delim(expr); } ' + '{ return ["$1", join_expr(expr)]; }'
+		/^(foreign_quote[-_]word) *= *([^\r\n]+)/gm,
+		'$1 = expr:($2) !{ return _is_foreign_quote_delim(expr); } ' + '{ return ["$1", join_expr(expr)]; }'
 	);
 	peg = peg.split('((non_space+))').join('(non_space+)');
 	peg = peg.replace(
-		/^(foreign[-_]close) *= *([^\r\n]+)/gm,
-		'$1 = expr:($2) &{ return _is_foreign_delim(expr); } ' + '{ return _node("$1", expr); }'
+		/^(foreign_quote[-_]close) *= *([^\r\n]+)/gm,
+		'$1 = expr:($2) &{ return _is_foreign_quote_delim(expr); } ' + '{ return _node("$1", expr); }'
 	);
 	/* Parser action for elidible terminators */
 	peg = peg.replace(
@@ -342,7 +342,7 @@ function peg_add_js_parser_actions(peg) {
 
 function js_initializer() {
 	return `{
-  var _g_foreign_delim;
+  var _g_foreign_quote_delim;
   
   function _join(arg) {
     if (typeof(arg) == "string")
@@ -429,23 +429,23 @@ function js_initializer() {
 
   // === Foreign words functions === //
 
-  function _assign_foreign_delim(w) {
+  function _assign_foreign_quote_delim(w) {
     if (is_array(w)) w = join_expr(w);
-    else if (!is_string(w)) throw "ERROR: foreign word is of type " + typeof w;
+    else if (!is_string(w)) throw "ERROR: foreign_quote word is of type " + typeof w;
     w = w.toLowerCase().replace(/,/gm,"").replace(/h/g, "'");
-    _g_foreign_delim = w;
+    _g_foreign_quote_delim = w;
     return;
   }
 
-  function _is_foreign_delim(w) {
+  function _is_foreign_quote_delim(w) {
     if (is_array(w)) w = join_expr(w);
-    else if (!is_string(w)) throw "ERROR: foreign word is of type " + typeof w;
+    else if (!is_string(w)) throw "ERROR: foreign_quote word is of type " + typeof w;
     /* Keeping spaces in the parse tree seems to result in the absorbtion of
        spaces into the closing delimiter candidate, so we'll remove any space
        character from our input. */
     w = w.replace(/[.\\t\\n\\r?!\\u0020]/g, "");
     w = w.toLowerCase().replace(/,/gm,"").replace(/h/g, "'");
-    return w === _g_foreign_delim;
+    return w === _g_foreign_quote_delim;
   }
 
   function join_expr(n) {

@@ -143,7 +143,7 @@ function newer_postprocessor(
         "selbri": "SELBRI", "sumti": "SUMTI"
     };
     if (!with_trimming) name_substitution_map = {};
-    var special_selmaho = ["particle_word", "relation_word"];
+    var special_selmaho = ["particle_word", "relation_word", "foreign_relation_content"];
     /** Building a node_action_for() function from the selected options **/
     if (with_morphology)
          var is_flattening_target = function (tree) { return false; };
