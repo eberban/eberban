@@ -5,13 +5,16 @@ o : 4-words lex relation
 u : n-words lex relation
 
 ba : x1 is predication [predicate] expressed in sentence x2
-bo : x1 is relation expressed by [predicate]
+be : x1 is relation expressed by [predicate] (allow relation filling like BE)
+bi : x1 is the event of [predicate]
 bai : abstraction terminator
 
-jmi: x1 is self/the speaker(s) [mi]
-don: x1 is the listener(s) [do]
 bir: x1 is the arm of x2 [birka]
+don: x1 is the listener(s) [do]
 jga: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
+jmi: x1 is self/the speaker(s) [mi]
 pen: x1 is a friend of x2
+pre: x1 is a person
+mla: x1 is a cat of specie/breed x2 (broaden to feline ?)
 
 ebirjga: x1 grabs/holds/hugs x2 at locus x3

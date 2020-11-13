@@ -138,9 +138,12 @@ function newer_postprocessor(
     else var value_substitution_map = {};
     /* Building a map of node names to name replacements */
     var name_substitution_map = {
-        "cmene": "C", "cmevla": "C", "gismu": "G", "lujvo": "L",
-        "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
-        "selbri": "SELBRI", "sumti": "SUMTI"
+        // "cmene": "C", "cmevla": "C", "gismu": "G", "lujvo": "L",
+        // "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
+        // "selbri": "SELBRI", "sumti": "SUMTI"
+
+        "p_predicate_tail_open": "NE",
+        "p_predicate_tail_close": "NEI"
     };
     if (!with_trimming) name_substitution_map = {};
     var special_selmaho = ["particle_word", "relation_word", "foreign_relation_content"];
