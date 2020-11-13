@@ -9,7 +9,7 @@ predicate_term <- p_predicate_place relation
 relation <- relation_negation 
 relation_negation <- p_neg_pre* relation_compound
 relation_compound <- relation_core+ 
-relation_core <- lex_relation / foreign_relation / foreign_quote / grammatical_quote / one_word_quote / ungrammatical_quote / abstraction / relation_place_swap / space? relation_word 
+relation_core <- lex_relation / foreign_relation / foreign_quote / grammatical_quote / one_word_quote / ungrammatical_quote / abstraction / relation_place_swap / space? relation_word
 
 lex_relation <- lex_relation_1 / lex_relation_2 / lex_relation_3 / lex_relation_4  / lex_relation_n
 
@@ -21,7 +21,6 @@ lex_relation_n <- p_lex_relation_n (!p_lex_relation_n word)+ p_lex_relation_n
 lex_relation_word <- initial_dot word
 
 foreign_relation <- p_foreign_relation_n_open foreign_relation_content dot? (space_char / EOF)
-# foreign_relation_content <- space_char (dot &vowel_y / !dot) word (!space word)*
 foreign_relation_content <- space_char initial_dot foreign_word (!space word)*
 
 grammatical_quote <- p_grammatical_quote_open text p_grammatical_quote_close
@@ -38,10 +37,6 @@ relation_place_swap <- p_place_swap relation_core
 #   x1 is abstraction of [predicate] ...
 p_abstraction_open <- !p_abstraction_close space? (b vowel / diphtong) 
 p_abstraction_close <- space? (b a i) 
-
-# - Scoping
-p_scope_open <- space? (k a)
-p_scope_close <- space? (k a i)
 
 # - Lexicalized relation
 #   A string of words (particle or relation) can be lexicalized to have a unique relation meaning.
@@ -87,11 +82,11 @@ p_foreign_quote <- space? (m u)
 p_place_swap <- space? (s (e / i / o / u / e i)) # 2 / 3 / 4 / 5 / question
 
 # - Predicate numeral place tag
-p_predicate_place <- space? (f vowel / f a i / c e)  # 1..5 places / place question / next numeral place
+p_predicate_place <- space? (f vowel / f a i / n i)  # 1..5 places / place question / next numeral place
 
 # - Predicate tail
-p_predicate_tail_open_elidible <- (space? (c a))? 
-p_predicate_tail_close_elidible <- (space? (c a i))?
+p_predicate_tail_open_elidible <- (space? (n e))? 
+p_predicate_tail_close_elidible <- (space? (n e i))?
 
 # - Forethought connectives
 p_pre_connective_open <- space? g a
@@ -122,8 +117,11 @@ particle_word <- consonant? vowel_tail
 relation_word <- (consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)
 
 # - Legal vowels and vowel tails
-vowel_tail <- (diphtong / vowel_y) (h (diphtong / vowel_y ))* 
-diphtong <- (i / u) vowel_y / (a / e / o / y) i 
+vowel_tail <- (diphtong / vowel_y) (h (vi_diphtong / vowel_y ))* 
+
+diphtong <- iuv_diphtong / vi_diphtong
+iuv_diphtong <- (i / u) vowel_y
+vi_diphtong <- (a / e / o / y) i 
 vowel_y <- vowel / y 
 vowel <- a / e / i / o / u 
 h <- ['h] # <LEAF>

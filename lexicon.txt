@@ -1,0 +1,17 @@
+a : 1-word lex relation / x1 is a lex relation meaning x2 with components x3, x4 ...
+e : 2-words lex relation
+i : 3-words lex relation
+o : 4-words lex relation
+u : n-words lex relation
+
+ba : x1 is predication [predicate] expressed in sentence x2
+bo : x1 is relation expressed by [predicate]
+bai : abstraction terminator
+
+jmi: x1 is self/the speaker(s) [mi]
+don: x1 is the listener(s) [do]
+bir: x1 is the arm of x2 [birka]
+jga: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
+pen: x1 is a friend of x2
+
+ebirjga: x1 grabs/holds/hugs x2 at locus x3

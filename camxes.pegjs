@@ -168,10 +168,6 @@ relation_place_swap = expr:(p_place_swap relation_core) {return _node("relation_
 p_abstraction_open = expr:(!p_abstraction_close space? (b vowel / diphtong)) {return _node("p_abstraction_open", expr);}
 p_abstraction_close = expr:(space? (b a i)) {return _node("p_abstraction_close", expr);}
 
-// - Scoping
-p_scope_open = expr:(space? (k a)) {return _node("p_scope_open", expr);}
-p_scope_close = expr:(space? (k a i)) {return _node("p_scope_close", expr);}
-
 // - Lexicalized relation
 //   A string of words (particle or relation) can be lexicalized to have a unique relation meaning.
 //
@@ -216,11 +212,11 @@ p_foreign_quote = expr:(space? (m u)) {return _node("p_foreign_quote", expr);}
 p_place_swap = expr:(space? (s (e / i / o / u / e i))) {return _node("p_place_swap", expr);} // 2 / 3 / 4 / 5 / question
 
 // - Predicate numeral place tag
-p_predicate_place = expr:(space? (f vowel / f a i / c e)) {return _node("p_predicate_place", expr);} // 1..5 places / place question / next numeral place
+p_predicate_place = expr:(space? (f vowel / f a i / n i)) {return _node("p_predicate_place", expr);} // 1..5 places / place question / next numeral place
 
 // - Predicate tail
-p_predicate_tail_open_elidible = expr:((space? (c a))? ) {return (expr == "" || !expr) ? ["p_predicate_tail_open"] : _node_empty("p_predicate_tail_open_elidible", expr);}
-p_predicate_tail_close_elidible = expr:((space? (c a i))?) {return (expr == "" || !expr) ? ["p_predicate_tail_close"] : _node_empty("p_predicate_tail_close_elidible", expr);}
+p_predicate_tail_open_elidible = expr:((space? (n e))? ) {return (expr == "" || !expr) ? ["p_predicate_tail_open"] : _node_empty("p_predicate_tail_open_elidible", expr);}
+p_predicate_tail_close_elidible = expr:((space? (n e i))?) {return (expr == "" || !expr) ? ["p_predicate_tail_close"] : _node_empty("p_predicate_tail_close_elidible", expr);}
 
 // - Forethought connectives
 p_pre_connective_open = expr:(space? g a) {return _node("p_pre_connective_open", expr);}
@@ -251,8 +247,11 @@ particle_word = expr:(consonant? vowel_tail) {return _node("particle_word", expr
 relation_word = expr:((consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)) {return _node("relation_word", expr);}
 
 // - Legal vowels and vowel tails
-vowel_tail = expr:((diphtong / vowel_y) (h (diphtong / vowel_y ))*) {return _node("vowel_tail", expr);}
-diphtong = expr:((i / u) vowel_y / (a / e / o / y) i) {return _node("diphtong", expr);}
+vowel_tail = expr:((diphtong / vowel_y) (h (vi_diphtong / vowel_y ))*) {return _node("vowel_tail", expr);}
+
+diphtong = expr:(iuv_diphtong / vi_diphtong) {return _node("diphtong", expr);}
+iuv_diphtong = expr:((i / u) vowel_y) {return _node("iuv_diphtong", expr);}
+vi_diphtong = expr:((a / e / o / y) i) {return _node("vi_diphtong", expr);}
 vowel_y = expr:(vowel / y) {return _node("vowel_y", expr);}
 vowel = expr:(a / e / i / o / u) {return _node("vowel", expr);}
 h = expr:(['h]) {return ["h", "h"];} // <LEAF>
