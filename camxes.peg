@@ -3,64 +3,122 @@ text <- predicate EOF?
 
 predicate <- predicate_term* predicate_tail 
 predicate_tail <- predicate_tail_core 
-predicate_tail_core <- gw_predicate_tail_open? relation predicate_term* gw_predicate_tail_close? 
-predicate_term <- gw_predicate_place relation 
+predicate_tail_core <- p_predicate_tail_open_elidible relation predicate_term* p_predicate_tail_close_elidible 
+predicate_term <- p_predicate_place relation 
 
 relation <- relation_negation 
-relation_negation <- gw_neg_pre* relation_compound
+relation_negation <- p_neg_pre* relation_compound
 relation_compound <- relation_core+ 
-relation_core <- lexicon_relation / relation_word 
+relation_core <- lexicalized_relation / foreign_relation / free_quote / abstraction / relation_word 
 
-lexicon_relation <- gw_lexicon_open (space? word)+ space? gw_lexicon_close # lujvo equivalent
-free_relation <- gw_free_relation free_word  # non-native word / ze'ivla / cmevla
+lexicalized_relation <- lexicalized_relation_1 / lexicalized_relation_2 / lexicalized_relation_3 / lexicalized_relation_4 / lexicalized_relation_5  / lexicalized_relation_n
+lexicalized_relation_1 <- p_lexicalized_relation_1 word
+lexicalized_relation_2 <- p_lexicalized_relation_2 word word
+lexicalized_relation_3 <- p_lexicalized_relation_3 word word word
+lexicalized_relation_4 <- p_lexicalized_relation_4 word word word word
+lexicalized_relation_5 <- p_lexicalized_relation_5 word word word word word
+lexicalized_relation_n <- p_lexicalized_relation_n_open (!p_lexicalized_relation_n_close word)+ p_lexicalized_relation_n_close
 
-# GRAMMAR WORDS (tmp)
-gw_abstraction_open <- !gw_abstraction_close space? (b vowel / diphtong) 
-gw_abstraction_close <- space? (b a i) 
+foreign_relation <- foreign_relation_1 / foreign_relation_2 / foreign_relation_3 / foreign_relation_4 / foreign_relation_5  / foreign_relation_n
+foreign_relation_1 <- p_foreign_relation_1 word
+foreign_relation_2 <- p_foreign_relation_2 word word
+foreign_relation_3 <- p_foreign_relation_3 word word word
+foreign_relation_4 <- p_foreign_relation_4 word word word word
+foreign_relation_5 <- p_foreign_relation_5 word word word word word
+foreign_relation_n <- p_foreign_relation_n_open (!p_foreign_relation_n_close word)+ p_foreign_relation_n_close
 
-gw_scope_open <- space? (k a)
-gw_scope_close <- space? (k a i)
+free_quote <- p_free_quote (space?) foreign_open space (foreign_word space)* foreign_close
 
-gw_lexicon_open <- space? (a) 
-gw_lexicon_close <- space? (z a) 
+abstraction <- p_abstraction_open predicate p_abstraction_close?
 
-gw_free_relation <- space? (o) 
+# PARTICLES (tmp)
+# - Abstractions
+#   x1 is abstraction of [predicate] ...
+p_abstraction_open <- !p_abstraction_close space? (b vowel / diphtong) 
+p_abstraction_close <- space? (b a i) 
 
-gw_predicate_place <- space? (f vowel / f a i / c i)  # 1..5 places / place question / next numeral place
-gw_predicate_tail_open <- space? (c a) 
-gw_predicate_tail_close <- space? (c a i) 
+# - Scoping
+p_scope_open <- space? (k a)
+p_scope_close <- space? (k a i)
 
-gw_pre_connective_open <- space? g vowel # a/e/o/u + i question
-gw_pre_connective_separator <- space? g o i
-gw_pre_connective_close <- space? g a i
-gw_post_log_connective <- space? j vowel  # a/e/o/u + i question
+# - Lexicalized relation
+#   A string of words (particle or relation) can be lexicalized to have a unique relation meaning.
+#
+#   The particle depends on how many words form the lexicalized relation. 
+#   More than 5 words requires a closing particle.
+p_lexicalized_relation_1 <- space? (a)
+p_lexicalized_relation_2 <- space? (e)
+p_lexicalized_relation_3 <- space? (i)
+p_lexicalized_relation_4 <- space? (o)
+p_lexicalized_relation_5 <- space? (u)
+p_lexicalized_relation_n_open <- space? (l a)
+p_lexicalized_relation_n_close <- space? (l a i)
 
-gw_neg_pre <- space? (n a) 
-gw_neg_post <- space? (n a i) 
+# - Foreign relation
+#   A string of words (particle or relation) used without their meaning to express some foreign concept.
+#   x1 is [foreign concept].
+#
+#   The particle depends on how many words form the foreign relation. 
+#   More than 5 words requires a closing particle.
+p_foreign_relation_1 <- space? (m a) 
+p_foreign_relation_2 <- space? (m e)
+p_foreign_relation_3 <- space? (m i)
+p_foreign_relation_4 <- space? (m o)
+p_foreign_relation_5 <- space? (m u)
 
-gw_letter <- space? (consonant y / vowel_y h y / (i / u) y h y / y i h y )  # consonant / vowel / semi-vowel / h
+p_foreign_relation_n_open <- space? (l e)
+p_foreign_relation_n_close <- space? (l e i)
 
+# - Free quote
+#   Quote any string with provided quote word.
+#   x1 is text [quoted text]
+p_free_quote <- space? (l i)
+
+# - Grammatical quotation
+#   Quote a grammatical valid text
+#   x1 is text [quoted text]
+p_grammatical_quote_open <- space? (l o)
+p_grammatical_quote_close <- space? (l o i)
+
+# - Predicate numeral place tag
+p_predicate_place <- space? (f vowel / f a i / c e)  # 1..5 places / place question / next numeral place
+
+# - Predicate tail
+p_predicate_tail_open_elidible <- (space? (c a))? 
+p_predicate_tail_close_elidible <- (space? (c a i))?
+
+# - Forethought connectives
+p_pre_connective_open <- space? g a
+p_pre_connective_separator <- space? g i
+p_pre_connective_close <- space? g a i
+
+# - Afterthought connectives
+p_post_log_connective <- space? j vowel  # a/e/o/u + i question
+
+# - Negations
+p_neg_pre <- space? (n a) 
+p_neg_post <- space? (n a i) 
+
+# - Literals
+p_letter <- space? (consonant y / vowel_y h y / (i / u) y h y / y i h y )  # consonant / vowel / semi-vowel / h
 
 # MORPHOLOGY
-# extern_quote <- extern_quote_begin extern_quote_part* extern_quote_end 
-# extern_quote_begin <- PUSH(word) 
-# extern_quote_part <- space !PEEK free_word 
-# extern_quote_end <- space POP 
+# - Forein text quoting
+foreign_open <- word
+foreign_word <- (!space .)+ 
+foreign_close <- word
 
-zoi_open <- word
-zoi_word <- free_word
-zoi_close <- word
-
-free_word <- (!space .)+ 
-word <- grammar_word / relation_word 
-grammar_word <- space? consonant? vowel_tail 
+# - Legal words
+word <- particle_word / relation_word 
+particle_word <- space? consonant? vowel_tail 
 relation_word <- space? consonant_pair vowel_tail 
 
+# - Legal vowels and vowel tails
 vowel_tail <- (diphtong / vowel_y) (h (diphtong / vowel_y ))* 
 diphtong <- (i / u) vowel_y / (a / e / o / y) i 
 vowel_y <- vowel / y 
 vowel <- a / e / i / o / u 
-h <- ['h']
+h <- ['h]
 a <- [aA] 
 e <- [eE] 
 i <- [iI] 
@@ -68,6 +126,7 @@ o <- [oO]
 u <- [uU] 
 y <- [yY] 
 
+# - Legal consonant and consonant pairs
 consonant_pair <- (&initial consonant consonant !consonant)
 initial <- (affricate / sibilant? other? liquid?) !consonant
 
@@ -97,9 +156,12 @@ f <- [fF] !f !voiced
 p <- [pP] !p !voiced 
 t <- [tT] !t !voiced 
 
-space <- (space_char / hesitation space_char)+ 
-# space <- " " 
-hesitation <- y+ 
+# - Space / Pause
+space <- space_1+ (dot &vowel)? / dot &vowel
+space_1 <- space_char / hesitation space_char
+hesitation <- space_char+ dot? y+ dot? space_char+ 
 
+# - Special characters
+dot <- '.'
 space_char <- [.\t\n\r?!\u0020]
 EOF <- !.
