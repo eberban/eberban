@@ -141,10 +141,12 @@ function newer_postprocessor(
         // "cmene": "C", "cmevla": "C", "gismu": "G", "lujvo": "L",
         // "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
         // "selbri": "SELBRI", "sumti": "SUMTI"
-
-        "p_predicate_tail_open": "VA",
-        "p_predicate_tail_close": "VAI",
-        "p_pre_connective_close": "GAI"
+        "p_predicate_close": "VAI",
+        "p_predicate_open": "VA",
+        "p_predicate_tail_open": "VE",
+        "p_predicate_tail_close": "VEI",
+        "p_pre_connective_close": "GAI",
+        "p_abstraction_close": "BAI"
     };
     if (!with_trimming) name_substitution_map = {};
     var special_selmaho = ["particle", "lexeme", "borrowing_content"];

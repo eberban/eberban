@@ -129,41 +129,49 @@
   }
 }
 
-text = expr:(predicate space? EOF?) {return _node("text", expr);}
+text = expr:((paragraph+ / predicate*) space? EOF?) {return _node("text", expr);}
 
+// paragraphs
+paragraph = expr:(p_paragraph_open+ predicate*) {return _node("paragraph", expr);}
+
+// predicate afterthough connectives
+predicate = expr:(predicate_1 (p_predicate_open_elidible relation_connective predicate_1)*) {return _node("predicate", expr);}
 // pre-tail terms
-predicate = expr:(predicate_place* p_predicate_tail_open_elidible predicate_tail) {return _node("predicate", expr);}
+predicate_1 = expr:(predicate_pre / p_predicate_open_elidible predicate_place* p_predicate_tail_open_elidible predicate_tail p_predicate_close_elidible) {return _node("predicate_1", expr);}
+// forethough connected predicates
+predicate_pre = expr:((pre_relation_connective p_predicate_open predicate (pre_connective_separator predicate)+ p_pre_connective_close_elidible)) {return _node("predicate_pre", expr);}
+
 // predicate-tail afterthough connectives
-predicate_tail = expr:(predicate_tail_1 (predicate_connective p_predicate_tail_open_elidible predicate_tail_1 predicate_tail_terms )*) {return _node("predicate_tail", expr);}
+predicate_tail = expr:(predicate_tail_1 (predicate_tail_connective p_predicate_tail_open_elidible predicate_tail_1 predicate_tail_terms )*) {return _node("predicate_tail", expr);}
 // predicate-tail negation
 predicate_tail_1 = expr:(p_neg_pre* predicate_tail_2) {return _node("predicate_tail_1", expr);}
 // simple predicate-tail / forethough connected tails
 predicate_tail_2 = expr:(relation predicate_tail_terms / predicate_tail_pre) {return _node("predicate_tail_2", expr);}
 
 // forethough connected tails structure
-predicate_tail_pre = expr:((pre_predicate_connective p_predicate_tail_open_elidible predicate_tail (pre_connective_separator p_predicate_tail_open_elidible predicate_tail)+ p_pre_connective_close_elidible) predicate_tail_terms) {return _node("predicate_tail_pre", expr);}
+predicate_tail_pre = expr:((pre_predicate_tail_connective p_predicate_tail_open_elidible predicate_tail (pre_connective_separator p_predicate_tail_open_elidible predicate_tail)+ p_pre_connective_close_elidible) predicate_tail_terms) {return _node("predicate_tail_pre", expr);}
 
 // terms followed by predicate-tail elidible terminator
 predicate_tail_terms = expr:(predicate_place* p_predicate_tail_close_elidible) {return _node("predicate_tail_terms", expr);}
 // place + term
 predicate_place = expr:(p_predicate_place predicate_term) {return _node("predicate_place", expr);}
 // term afterthought connectives
-predicate_term = expr:(predicate_term_1 (predicate_connective !p_predicate_tail_open predicate_term_1)*) {return _node("predicate_term", expr);}
+predicate_term = expr:(predicate_term_1 (predicate_tail_connective !p_predicate_tail_open predicate_term_1)*) {return _node("predicate_term", expr);}
 // simple relation term / forethough connected terms
 predicate_term_1 = expr:(relation / predicate_term_pre) {return _node("predicate_term_1", expr);}
 
 // forethough connected term structure
-predicate_term_pre = expr:((pre_predicate_connective !p_predicate_tail_open predicate_term (pre_connective_separator !p_predicate_tail_open predicate_term)+ p_pre_connective_close_elidible)) {return _node("predicate_term_pre", expr);}
+predicate_term_pre = expr:((pre_predicate_tail_connective !p_predicate_tail_open predicate_term (pre_connective_separator !p_predicate_tail_open predicate_term)+ p_pre_connective_close_elidible)) {return _node("predicate_term_pre", expr);}
 
 // relation compounds
 relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
-relation_2 = expr:(relation_3 (relation_connective relation_3)*) {return _node("relation_2", expr);}
+relation_2 = expr:(relation_3 (relation_connective !p_predicate_open relation_3)*) {return _node("relation_2", expr);}
 // basic relations
 relation_3 = expr:(relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme) {return _node("relation_3", expr);}
 
 // forethough connected relations
-relation_pre = expr:((pre_relation_connective relation (pre_connective_separator relation)+ p_pre_connective_close_elidible)) {return _node("relation_pre", expr);}
+relation_pre = expr:((pre_relation_connective !p_predicate_open relation (pre_connective_separator relation)+ p_pre_connective_close_elidible)) {return _node("relation_pre", expr);}
 
 // lemma prefixes
 lemma = expr:(lemma_1 / lemma_2 / lemma_3 / lemma_4 / lemma_n) {return _node("lemma", expr);}
@@ -194,11 +202,11 @@ relation_place_swap = expr:(p_place_swap relation_3) {return _node("relation_pla
 scoped_relation = expr:(p_scope_open relation p_scope_close_elidible) {return _node("scoped_relation", expr);}
 
 // afterthough connectives
-predicate_connective = expr:(p_neg_pre? p_place_swap? p_predicate_connective p_neg_post?) {return _node("predicate_connective", expr);}
+predicate_tail_connective = expr:(p_neg_pre? p_place_swap? p_predicate_tail_connective p_neg_post?) {return _node("predicate_tail_connective", expr);}
 relation_connective = expr:(p_neg_pre? p_place_swap? p_relation_connective p_neg_post?) {return _node("relation_connective", expr);}
 
 // forethough connectives
-pre_predicate_connective = expr:(p_pre_connective_open p_place_swap? p_predicate_connective p_neg_post?) {return _node("pre_predicate_connective", expr);}
+pre_predicate_tail_connective = expr:(p_pre_connective_open p_place_swap? p_predicate_tail_connective p_neg_post?) {return _node("pre_predicate_tail_connective", expr);}
 pre_relation_connective = expr:(p_pre_connective_open p_place_swap? p_relation_connective p_neg_post?) {return _node("pre_relation_connective", expr);}
 pre_connective_separator = expr:(p_pre_connective_separator p_neg_post?) {return _node("pre_connective_separator", expr);}
 
@@ -256,6 +264,16 @@ p_place_swap = expr:(space? (s (vowel / e i))) {return _node("p_place_swap", exp
 // - Predicate numeral place tag
 p_predicate_place = expr:(space? (f vowel / v i / v o)) {return _node("p_predicate_place", expr);} // 1..5 places / next numeral place / place question
 
+// - Paragraph
+p_paragraph_open_elidible = expr:(p_paragraph_open?) {return (expr == "" || !expr) ? ["p_paragraph_open"] : _node_empty("p_paragraph_open_elidible", expr);}
+p_paragraph_open = expr:(space? (v a h a)) {return _node("p_paragraph_open", expr);}
+
+// - Predicate
+p_predicate_open_elidible = expr:(p_predicate_open?) {return (expr == "" || !expr) ? ["p_predicate_open"] : _node_empty("p_predicate_open_elidible", expr);}
+p_predicate_open = expr:(space? (v a)) {return _node("p_predicate_open", expr);}
+p_predicate_close_elidible = expr:(p_predicate_close?) {return (expr == "" || !expr) ? ["p_predicate_close"] : _node_empty("p_predicate_close_elidible", expr);}
+p_predicate_close = expr:(space? (v a i)) {return _node("p_predicate_close", expr);}
+
 // - Predicate tail
 p_predicate_tail_open_elidible = expr:(p_predicate_tail_open? ) {return (expr == "" || !expr) ? ["p_predicate_tail_open"] : _node_empty("p_predicate_tail_open_elidible", expr);}
 p_predicate_tail_open = expr:(space? (v e)) {return _node("p_predicate_tail_open", expr);}
@@ -267,9 +285,11 @@ p_pre_connective_separator = expr:(space? (g i)) {return _node("p_pre_connective
 p_pre_connective_close_elidible = expr:(p_pre_connective_close?) {return (expr == "" || !expr) ? ["p_pre_connective_close"] : _node_empty("p_pre_connective_close_elidible", expr);}
 p_pre_connective_close = expr:(space? (g a i)) {return _node("p_pre_connective_close", expr);}
 
-// - Afterthought connectives
+// - Afterthough predicate tail connectives
 // todo : add mass/set predicate connectives
-p_predicate_connective = expr:(space? (j vowel)) {return _node("p_predicate_connective", expr);} // a/e/o/u + i question
+p_predicate_tail_connective = expr:(space? (j vowel)) {return _node("p_predicate_tail_connective", expr);} // a/e/o/u + i question
+
+// - Afterthough relation (and predicate) connectives
 p_relation_connective = expr:(space? (c vowel)) {return _node("p_relation_connective", expr);} // a/e/o/u + i question
 
 // - Negations

@@ -1,40 +1,48 @@
 # GRAMMAR
 # main rule (used for tests, real text rule TODO)
-text <- predicate space? EOF?
+text <- (paragraph+ / predicate*) space? EOF?
 
+# paragraphs
+paragraph <- p_paragraph_open+ predicate*
+
+# predicate afterthough connectives
+predicate <- predicate_1 (p_predicate_open_elidible relation_connective predicate_1)*
 # pre-tail terms
-predicate <- predicate_place* p_predicate_tail_open_elidible predicate_tail 
+predicate_1 <- predicate_pre / p_predicate_open_elidible predicate_place* p_predicate_tail_open_elidible predicate_tail p_predicate_close_elidible
+# forethough connected predicates
+predicate_pre <- (pre_relation_connective p_predicate_open predicate (pre_connective_separator predicate)+ p_pre_connective_close_elidible)
+
 # predicate-tail afterthough connectives
-predicate_tail <- predicate_tail_1 (predicate_connective p_predicate_tail_open_elidible predicate_tail_1 predicate_tail_terms )*
+predicate_tail <- predicate_tail_1 (predicate_tail_connective p_predicate_tail_open_elidible predicate_tail_1 predicate_tail_terms )*
 # predicate-tail negation
 predicate_tail_1 <- p_neg_pre* predicate_tail_2
 # simple predicate-tail / forethough connected tails
 predicate_tail_2 <- relation predicate_tail_terms / predicate_tail_pre
 
 # forethough connected tails structure
-predicate_tail_pre <- (pre_predicate_connective p_predicate_tail_open_elidible predicate_tail (pre_connective_separator p_predicate_tail_open_elidible predicate_tail)+ p_pre_connective_close_elidible) predicate_tail_terms
+predicate_tail_pre <- (pre_predicate_tail_connective p_predicate_tail_open_elidible predicate_tail (pre_connective_separator p_predicate_tail_open_elidible predicate_tail)+ p_pre_connective_close_elidible) predicate_tail_terms
 
 # terms followed by predicate-tail elidible terminator
 predicate_tail_terms <- predicate_place* p_predicate_tail_close_elidible
 # place + term
 predicate_place <- p_predicate_place predicate_term
 # term afterthought connectives
-predicate_term <- predicate_term_1 (predicate_connective !p_predicate_tail_open predicate_term_1)*
+predicate_term <- predicate_term_1 (predicate_tail_connective !p_predicate_tail_open predicate_term_1)*
 # simple relation term / forethough connected terms
 predicate_term_1 <- relation / predicate_term_pre
 
 # forethough connected term structure
-predicate_term_pre <- (pre_predicate_connective !p_predicate_tail_open predicate_term (pre_connective_separator !p_predicate_tail_open predicate_term)+ p_pre_connective_close_elidible)
+predicate_term_pre <- (pre_predicate_tail_connective !p_predicate_tail_open predicate_term (pre_connective_separator !p_predicate_tail_open predicate_term)+ p_pre_connective_close_elidible)
 
 # relation compounds
 relation <- relation_2+ 
 # relation afterthough connectives
-relation_2 <- relation_3 (relation_connective relation_3)*
+relation_2 <- relation_3 (relation_connective !p_predicate_open relation_3)*
 # basic relations
 relation_3 <- relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme
 
 # forethough connected relations
-relation_pre <- (pre_relation_connective relation (pre_connective_separator relation)+ p_pre_connective_close_elidible)
+relation_pre <- (pre_relation_connective !p_predicate_open relation (pre_connective_separator relation)+ p_pre_connective_close_elidible)
 
 # lemma prefixes
 lemma <- lemma_1 / lemma_2 / lemma_3 / lemma_4  / lemma_n
@@ -65,11 +73,11 @@ relation_place_swap <- p_place_swap relation_3
 scoped_relation <- p_scope_open relation p_scope_close_elidible
 
 # afterthough connectives
-predicate_connective <- p_neg_pre? p_place_swap? p_predicate_connective p_neg_post?
+predicate_tail_connective <- p_neg_pre? p_place_swap? p_predicate_tail_connective p_neg_post?
 relation_connective <- p_neg_pre? p_place_swap? p_relation_connective p_neg_post?
 
 # forethough connectives
-pre_predicate_connective <- p_pre_connective_open p_place_swap? p_predicate_connective p_neg_post?
+pre_predicate_tail_connective <- p_pre_connective_open p_place_swap? p_predicate_tail_connective p_neg_post?
 pre_relation_connective <- p_pre_connective_open p_place_swap? p_relation_connective p_neg_post?
 pre_connective_separator <- p_pre_connective_separator p_neg_post?
 
@@ -127,6 +135,16 @@ p_place_swap <- space? (s (vowel / e i)) # name / 2 / 3 / 4 / 5 / question
 # - Predicate numeral place tag
 p_predicate_place <- space? (f vowel / v i / v o)  # 1..5 places / next numeral place / place question
 
+# - Paragraph
+p_paragraph_open_elidible <- p_paragraph_open?
+p_paragraph_open <- space? (v a h a)
+
+# - Predicate
+p_predicate_open_elidible <- p_predicate_open?
+p_predicate_open <- space? (v a)
+p_predicate_close_elidible <- p_predicate_close?
+p_predicate_close <- space? (v a i)
+
 # - Predicate tail
 p_predicate_tail_open_elidible <- p_predicate_tail_open? 
 p_predicate_tail_open <- space? (v e)
@@ -138,9 +156,11 @@ p_pre_connective_separator <- space? (g i)
 p_pre_connective_close_elidible <- p_pre_connective_close?
 p_pre_connective_close <- space? (g a i)
 
-# - Afterthought connectives
+# - Afterthough predicate tail connectives
 # todo : add mass/set predicate connectives
-p_predicate_connective <- space? (j vowel)  # a/e/o/u + i question
+p_predicate_tail_connective <- space? (j vowel)  # a/e/o/u + i question
+
+# - Afterthough relation (and predicate) connectives
 p_relation_connective <- space? (c vowel)  # a/e/o/u + i question
 
 # - Negations

@@ -1,11 +1,11 @@
 Particles
 
     A
-        a : 1-word lex relation prefix
-        e : 2-words lex relation prefix
-        i : 3-words lex relation prefix
-        o : 4-words lex relation prefix
-        u : n-words lex relation prefix + sufix
+        a : 1-word lemma prefix
+        e : 2-words lemma prefix
+        i : 3-words lemma prefix
+        o : 4-words lemma prefix
+        u : n-words lemma prefix + sufix
 
     BA
         ba : x1 is predication [predicate] expressed in sentence x2
@@ -41,18 +41,18 @@ Particles
         sei : swap question
 
     JA
-        ja : A predicate connective
-        je : E predicate connective
-        ji : predicate connective question
-        jo : O predicate connective
-        ju : U predicate connective
+        ja : A predicate-tail connective
+        je : E predicate-tail connective
+        ji : predicate-tail connective question
+        jo : O predicate-tail connective
+        ju : U predicate-tail connective
 
     CA
-        ca : A relation connective
-        ce : E relation connective
-        ci : relation connective question
-        co : O relation connective
-        cu : U relation connective
+        ca : A relation and predicate connective
+        ce : E relation and predicate connective
+        ci : relation and predicate connective question
+        co : O relation and predicate connective
+        cu : U relation and predicate connective
 
         ga : forethought connective starter
         gi : forethought connective separator
@@ -79,8 +79,8 @@ Particles
     ??? : adverbial / attach a relation on a predicate which satisfies the relation
     
     
-        pa : non-restrictive relative clause
-        pe : restrictive relative clause
+        pa : non-restrictive relative clause [noi]
+        pe : restrictive relative clause [poi]
         pai : relative clause elidible terminator
 
         pe'a : non restrictive adverbial [noi'a]
@@ -110,11 +110,15 @@ Root relations
     pen: x1 is a friend of x2 [pendo]
     pin: x1 drinks liquid x2 out of container x3 [pinxe]
     pre: x1 is a person [prenu]
+    sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
+    zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
 
 Lexical relations
 
-    a.a : x1 is a lex relation meaning x2 with components x3 (set)
-    ave : x1 is a predicate with relation x2 with components x3 (set)
+    a.a: x1 is a lemma meaning x2 with components x3 (set)
+    ava'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
+    ava: x1 is a predicate with relation x2 and components x3 (set)
+    ave: x1 is a predicate-tail with relation x2 and components x3 (set)
     ebri'ajga'i: x1 grabs/holds/hugs x2 at locus x3
-    eveban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
+    evaban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
