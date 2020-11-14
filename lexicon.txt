@@ -1,11 +1,11 @@
 Particles
 
-    "A" - Lemma prefix
-        a : 1-word lemma prefix
-        e : 2-words lemma prefix
-        i : 3-words lemma prefix
-        o : 4-words lemma prefix
-        u : n-words lemma prefix + sufix
+    "A" - Flat lexeme prefix
+        a : 1-word lexeme prefix
+        e : 2-words lexeme prefix
+        i : 3-words lexeme prefix
+        o : 4-words lexeme prefix
+        u : n-words lexeme prefix + sufix
 
     BA - Abstraction
         ba : x1 is predication [predicate] expressed in sentence x2
@@ -94,6 +94,12 @@ Particles
     GOI - Scope terminator
         goi : scope elidible terminator
 
+    GE - Grammatical lexeme scope starter (test)
+        go : Grammatical lexeme scope starter
+
+    GEI - Grammatical lexeme scope (test)
+        gei : Grammatical lexeme scope terminator
+
     "MA" - relation prefixes (not a real family)
         ma : foreign relation prefix
         me : grammatical quote starter
@@ -139,7 +145,7 @@ Root relations
 
 Lexical relations
 
-    a.a: x1 is a lemma meaning x2 with components x3 (set)
+    a.a: x1 is a lexeme meaning x2 with components x3 (set)
     ava'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
     ava: x1 is a predicate with relation x2 and components x3 (set)
     ave: x1 is a predicate-tail with relation x2 and components x3 (set)

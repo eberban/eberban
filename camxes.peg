@@ -39,22 +39,25 @@ relation <- relation_2+
 # relation afterthough connectives
 relation_2 <- relation_3 (relation_connective !DA_clause relation_3)*
 # basic relations
-relation_3 <- relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme free_post*
+relation_3 <- relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? morpheme free_post*
 
 # forethough connected relations
 relation_pre <- (pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)
 
-# lemma prefixes
-lemma <- (lemma_1 / lemma_2 / lemma_3 / lemma_4  / lemma_n) free_post*
-lemma_1 <- A_clause lemma_word
-lemma_2 <- E_clause lemma_word lemma_word
-lemma_3 <- I_clause lemma_word lemma_word lemma_word
-lemma_4 <- O_clause lemma_word lemma_word lemma_word lemma_word
-lemma_n <- U_clause (!U_clause word)+ U_clause
-lemma_word <- initial_dot word
+# flat lexeme prefixes
+flat_lexeme <- (flat_lexeme_1 / flat_lexeme_2 / flat_lexeme_3 / flat_lexeme_4  / flat_lexeme_n) free_post*
+flat_lexeme_1 <- A_clause flat_lexeme_word
+flat_lexeme_2 <- E_clause flat_lexeme_word flat_lexeme_word
+flat_lexeme_3 <- I_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word
+flat_lexeme_4 <- O_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word flat_lexeme_word
+flat_lexeme_n <- U_clause (!U_clause word)+ U_clause
+flat_lexeme_word <- initial_dot word
+
+# grammatical lexeme
+grammatical_lexeme <- GE_clause relation GEI_clause
 
 # borrowings
-borrowing <- MA_clause borrowing_content dot? (space_char / EOF) free_post*
+borrowing <- MA_clause borrowing_content dot? free_post*
 borrowing_content <- space_char initial_dot foreign_word (!space word)*
 
 # quotes
@@ -100,6 +103,8 @@ FA_clause           <- free_prefix* space? FA
 GA_clause           <- free_prefix* space? GA
 GAI_clause          <- free_prefix* space? GAI free_post*
 GAI_clause_elidible <- GAI_clause?
+GE_clause           <- free_prefix* space? GE
+GEI_clause          <- free_prefix* space? GEI free_post*
 GI_clause           <- free_prefix* space? GI
 GO_clause           <- free_prefix* space? GO
 GOI_clause          <- free_prefix* space? GOI free_post*
@@ -143,6 +148,8 @@ E     <- &particle (a)
 FA    <- &particle (f vowel / v vowel)
 GA    <- &particle (g a)
 GAI   <- &particle (g a i)
+GE    <- &particle (g e)
+GEI   <- &particle (g e i)
 GI    <- &particle (g i)
 GO    <- &particle (g o)
 GOI   <- &particle (g o i)
@@ -158,10 +165,10 @@ MU    <- &particle (m u)
 NA    <- &particle (n a)
 NAI   <- &particle (n a i)
 O     <- &particle (a)
-PE    <- &particle (p !a vowel)
-PEI   <- &particle (p e i)
 PA    <- &particle (p a)
 PAI   <- &particle (p a i)
+PE    <- &particle (p !a vowel)
+PEI   <- &particle (p e i)
 SA    <- &particle (s (vowel / e i))
 U     <- &particle (a)
 DA    <- &particle (d a)
@@ -169,7 +176,6 @@ DAHA  <- &particle (d a h a)
 DAI   <- &particle (d a i)
 DE    <- &particle (d e)
 DEI   <- &particle (d e i)
-
 
 # MORPHOLOGY
 # - Forein text quoting
@@ -179,9 +185,9 @@ foreign_quote_close <- word
 
 # - Legal words
 foreign_word <- (initial_consonant_pair / consonant)? vowel_tail (consonant_cluster vowel_tail)* (consonant consonant / coda)?
-word <-  lexeme / particle
+word <-  morpheme / particle
 particle <- consonant? vowel_tail &post_word
-lexeme <- ((initial_consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)) &post_word
+morpheme <- ((initial_consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)) &post_word
 post_word <- (space / &consonant / dot &vowel_y)
 
 # - Legal vowels and vowel tails

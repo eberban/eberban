@@ -147,12 +147,12 @@ function newer_postprocessor(
         // "p_predicate_tail_close": "VEI",
         // "p_pre_connective_close": "GAI",
         // "p_abstraction_close": "BAI",
-        "lexeme": "L",
+        "morpheme": "M",
         "borrowing_content": "B"
     };
 
     if (!with_trimming) name_substitution_map = {};
-    var special_selmaho = ["particle", "lexeme", "borrowing_content"];
+    var special_selmaho = ["particle", "morpheme", "borrowing_content"];
     /** Building a node_action_for() function from the selected options **/
     if (with_morphology)
          var is_flattening_target = function (tree) { return false; };

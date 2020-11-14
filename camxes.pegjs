@@ -168,22 +168,25 @@ relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
 relation_2 = expr:(relation_3 (relation_connective !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
-relation_3 = expr:(relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme free_post*) {return _node("relation_3", expr);}
+relation_3 = expr:(relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? morpheme free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
 relation_pre = expr:((pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
 
-// lemma prefixes
-lemma = expr:((lemma_1 / lemma_2 / lemma_3 / lemma_4 / lemma_n) free_post*) {return _node("lemma", expr);}
-lemma_1 = expr:(A_clause lemma_word) {return _node("lemma_1", expr);}
-lemma_2 = expr:(E_clause lemma_word lemma_word) {return _node("lemma_2", expr);}
-lemma_3 = expr:(I_clause lemma_word lemma_word lemma_word) {return _node("lemma_3", expr);}
-lemma_4 = expr:(O_clause lemma_word lemma_word lemma_word lemma_word) {return _node("lemma_4", expr);}
-lemma_n = expr:(U_clause (!U_clause word)+ U_clause) {return _node("lemma_n", expr);}
-lemma_word = expr:(initial_dot word) {return _node("lemma_word", expr);}
+// flat lexeme prefixes
+flat_lexeme = expr:((flat_lexeme_1 / flat_lexeme_2 / flat_lexeme_3 / flat_lexeme_4 / flat_lexeme_n) free_post*) {return _node("flat_lexeme", expr);}
+flat_lexeme_1 = expr:(A_clause flat_lexeme_word) {return _node("flat_lexeme_1", expr);}
+flat_lexeme_2 = expr:(E_clause flat_lexeme_word flat_lexeme_word) {return _node("flat_lexeme_2", expr);}
+flat_lexeme_3 = expr:(I_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word) {return _node("flat_lexeme_3", expr);}
+flat_lexeme_4 = expr:(O_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word flat_lexeme_word) {return _node("flat_lexeme_4", expr);}
+flat_lexeme_n = expr:(U_clause (!U_clause word)+ U_clause) {return _node("flat_lexeme_n", expr);}
+flat_lexeme_word = expr:(initial_dot word) {return _node("flat_lexeme_word", expr);}
+
+// grammatical lexeme
+grammatical_lexeme = expr:(GE_clause relation GEI_clause) {return _node("grammatical_lexeme", expr);}
 
 // borrowings
-borrowing = expr:(MA_clause borrowing_content dot? (space_char / EOF) free_post*) {return _node("borrowing", expr);}
+borrowing = expr:(MA_clause borrowing_content dot? free_post*) {return _node("borrowing", expr);}
 borrowing_content = expr:(space_char initial_dot foreign_word (!space word)*) {return _node("borrowing_content", expr);}
 
 // quotes
@@ -229,6 +232,8 @@ FA_clause = expr:(free_prefix* space? FA) {return _node("FA_clause", expr);}
 GA_clause = expr:(free_prefix* space? GA) {return _node("GA_clause", expr);}
 GAI_clause = expr:(free_prefix* space? GAI free_post*) {return _node("GAI_clause", expr);}
 GAI_clause_elidible = expr:(GAI_clause?) {return (expr == "" || !expr) ? ["GAI", "GAI"] : _node_empty("GAI_elidible", expr);}
+GE_clause = expr:(free_prefix* space? GE) {return _node("GE_clause", expr);}
+GEI_clause = expr:(free_prefix* space? GEI free_post*) {return _node("GEI_clause", expr);}
 GI_clause = expr:(free_prefix* space? GI) {return _node("GI_clause", expr);}
 GO_clause = expr:(free_prefix* space? GO) {return _node("GO_clause", expr);}
 GOI_clause = expr:(free_prefix* space? GOI free_post*) {return _node("GOI_clause", expr);}
@@ -272,6 +277,8 @@ E = expr:(&particle (a)) {return _node("E", expr);}
 FA = expr:(&particle (f vowel / v vowel)) {return _node("FA", expr);}
 GA = expr:(&particle (g a)) {return _node("GA", expr);}
 GAI = expr:(&particle (g a i)) {return _node("GAI", expr);}
+GE = expr:(&particle (g e)) {return _node("GE", expr);}
+GEI = expr:(&particle (g e i)) {return _node("GEI", expr);}
 GI = expr:(&particle (g i)) {return _node("GI", expr);}
 GO = expr:(&particle (g o)) {return _node("GO", expr);}
 GOI = expr:(&particle (g o i)) {return _node("GOI", expr);}
@@ -287,10 +294,10 @@ MU = expr:(&particle (m u)) {return _node("MU", expr);}
 NA = expr:(&particle (n a)) {return _node("NA", expr);}
 NAI = expr:(&particle (n a i)) {return _node("NAI", expr);}
 O = expr:(&particle (a)) {return _node("O", expr);}
-PE = expr:(&particle (p !a vowel)) {return _node("PE", expr);}
-PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 PA = expr:(&particle (p a)) {return _node("PA", expr);}
 PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
+PE = expr:(&particle (p !a vowel)) {return _node("PE", expr);}
+PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 SA = expr:(&particle (s (vowel / e i))) {return _node("SA", expr);}
 U = expr:(&particle (a)) {return _node("U", expr);}
 DA = expr:(&particle (d a)) {return _node("DA", expr);}
@@ -298,7 +305,6 @@ DAHA = expr:(&particle (d a h a)) {return _node("DAHA", expr);}
 DAI = expr:(&particle (d a i)) {return _node("DAI", expr);}
 DE = expr:(&particle (d e)) {return _node("DE", expr);}
 DEI = expr:(&particle (d e i)) {return _node("DEI", expr);}
-
 
 // MORPHOLOGY
 // - Forein text quoting
@@ -308,9 +314,9 @@ foreign_quote_close = expr:(word) &{ return _is_foreign_quote_delim(expr); } { r
 
 // - Legal words
 foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail (consonant_cluster vowel_tail)* (consonant consonant / coda)?) {return _node("foreign_word", expr);}
-word = expr:(lexeme / particle) {return _node("word", expr);}
+word = expr:(morpheme / particle) {return _node("word", expr);}
 particle = expr:(consonant? vowel_tail &post_word) {return _node("particle", expr);}
-lexeme = expr:(((initial_consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)) &post_word) {return _node("lexeme", expr);}
+morpheme = expr:(((initial_consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)) &post_word) {return _node("morpheme", expr);}
 post_word = expr:((space / &consonant / dot &vowel_y)) {return _node("post_word", expr);}
 
 // - Legal vowels and vowel tails
