@@ -39,13 +39,13 @@ relation <- relation_2+
 # relation afterthough connectives
 relation_2 <- relation_3 (relation_connective !DA_clause relation_3)*
 # basic relations
-relation_3 <- relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme
+relation_3 <- relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme free_post*
 
 # forethough connected relations
 relation_pre <- (pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)
 
 # lemma prefixes
-lemma <- lemma_1 / lemma_2 / lemma_3 / lemma_4  / lemma_n
+lemma <- (lemma_1 / lemma_2 / lemma_3 / lemma_4  / lemma_n) free_post*
 lemma_1 <- A_clause lemma_word
 lemma_2 <- E_clause lemma_word lemma_word
 lemma_3 <- I_clause lemma_word lemma_word lemma_word
@@ -54,14 +54,14 @@ lemma_n <- U_clause (!U_clause word)+ U_clause
 lemma_word <- initial_dot word
 
 # borrowings
-borrowing <- MA_clause borrowing_content dot? (space_char / EOF)
+borrowing <- MA_clause borrowing_content dot? (space_char / EOF) free_post*
 borrowing_content <- space_char initial_dot foreign_word (!space word)*
 
 # quotes
 grammatical_quote <- ME_clause text MEI_clause
 one_word_quote <- MI_clause space? word
 ungrammatical_quote <- MO_clause (!MOI_clause space? word) MOI_clause
-foreign_quote <- MU_clause (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close
+foreign_quote <- MU_clause (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close free_post*
 
 # abstractions
 abstraction <- BA_clause predicate BAI_clause_elidible

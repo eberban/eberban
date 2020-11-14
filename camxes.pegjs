@@ -168,13 +168,13 @@ relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
 relation_2 = expr:(relation_3 (relation_connective !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
-relation_3 = expr:(relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme) {return _node("relation_3", expr);}
+relation_3 = expr:(relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
 relation_pre = expr:((pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
 
 // lemma prefixes
-lemma = expr:(lemma_1 / lemma_2 / lemma_3 / lemma_4 / lemma_n) {return _node("lemma", expr);}
+lemma = expr:((lemma_1 / lemma_2 / lemma_3 / lemma_4 / lemma_n) free_post*) {return _node("lemma", expr);}
 lemma_1 = expr:(A_clause lemma_word) {return _node("lemma_1", expr);}
 lemma_2 = expr:(E_clause lemma_word lemma_word) {return _node("lemma_2", expr);}
 lemma_3 = expr:(I_clause lemma_word lemma_word lemma_word) {return _node("lemma_3", expr);}
@@ -183,14 +183,14 @@ lemma_n = expr:(U_clause (!U_clause word)+ U_clause) {return _node("lemma_n", ex
 lemma_word = expr:(initial_dot word) {return _node("lemma_word", expr);}
 
 // borrowings
-borrowing = expr:(MA_clause borrowing_content dot? (space_char / EOF)) {return _node("borrowing", expr);}
+borrowing = expr:(MA_clause borrowing_content dot? (space_char / EOF) free_post*) {return _node("borrowing", expr);}
 borrowing_content = expr:(space_char initial_dot foreign_word (!space word)*) {return _node("borrowing_content", expr);}
 
 // quotes
 grammatical_quote = expr:(ME_clause text MEI_clause) {return _node("grammatical_quote", expr);}
 one_word_quote = expr:(MI_clause space? word) {return _node("one_word_quote", expr);}
 ungrammatical_quote = expr:(MO_clause (!MOI_clause space? word) MOI_clause) {return _node("ungrammatical_quote", expr);}
-foreign_quote = expr:(MU_clause (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close) {return _node("foreign_quote", expr);}
+foreign_quote = expr:(MU_clause (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
 
 // abstractions
 abstraction = expr:(BA_clause predicate BAI_clause_elidible) {return _node("abstraction", expr);}
