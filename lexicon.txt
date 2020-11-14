@@ -61,13 +61,15 @@ Particles
     PEI - Free adverbial terminator  
         pei : free adverbial elidible terminator    
 
-    SE - Relation transformer (swap / name)
+    SA - Relation transformer (swap / name) [lojban SE + LAhE]
         sa : convert relation to name relation
         se : swap x1 and x2
         si : swap x1 and x3
         so : swap x1 and x4
         su : swap x1 and x5
         sei : swap question
+        soi : the referent of (indirect pointer)
+        ...
 
     JA - Predicate-tail connectives
         ja : A predicate-tail connective
@@ -75,6 +77,7 @@ Particles
         ji : predicate-tail connective question
         jo : O predicate-tail connective
         ju : U predicate-tail connective
+        ... more with future non-logical connectives
 
     CA - Relation and predicate connectives
         ca : A relation and predicate connective
@@ -104,20 +107,23 @@ Particles
     GEI - Grammatical lexeme scope (test)
         gei : Grammatical lexeme scope terminator
 
-    "MA" - relation prefixes (not a real family)
-        ma : foreign relation prefix
-        me : grammatical quote starter
-        mei : grammatical quote terminator
-        mi : one word quote prefix
-        mo : ungrammatical quote starter
-        moi : ungrammatical quote terminator
-        mu : foreign quote
+    "ZA" - relation prefixes (not a real family)
+        za : foreign relation prefix
+        ze : grammatical quote starter
+        zei : grammatical quote terminator
+        zi : one word quote prefix
+        zo : ungrammatical quote starter
+        zoi : ungrammatical quote terminator
+        zu : foreign quote
 
-    NA - Negation prefix
-        na : negation prefix
+    KA - Negation prefix
+        ka : negation prefix
 
-    NAI - Negation suffix
-        nai : negation suffix
+    KAI - Negation suffix
+        kai : negation suffix
+
+    AHA - Attitudinal
+        xu: true/false question
 
     BY
         Cy : consonant
@@ -127,51 +133,51 @@ Particles
         y'y : h
         > Add a BY for the dot pause ?
 
-Root relations
+Morpheme
 
-    bam: x1 is 5 of x2 in dimension/aspect x3 (default = unit)
     ban: x1 is a language/dialect used by x2 to express x3 (predicate)
     baz: x1 is the numer base of number x2
+    bin: x1 is 7 of x2 in dimension/aspect x3 (default = unit)
     bla: x1 is in the future/after x2 in time;
     bri'a: x1 is the arm of x2 [birka]
-    bun: x1 is E (14) of x2 in dimension/aspect x3 (default = unit)
+    car: x1 is 5 of x2 in dimension/aspect x3 (default = unit)
     cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
-    dar: x1 is F (15) of x2 in dimension/aspect x3 (default = unit)
-    den: x1 is 6 of x2 in dimension/aspect x3 (default = unit)
     don: x1 is the listener(s) [do]
+    dor: x1 is 8 of x2 in dimension/aspect x3 (default = unit)
     dra'u: x1 is milk from source x2 [ladru]
-    for: x1 is 3 of x2 in dimension/aspect x3 (default = unit)
-    ful: x1 is C (12) of x2 in dimension/aspect x3 (default = unit)
-    gir: x1 is 7 of x2 in dimension/aspect x3 (default = unit)
+    fol: x1 is 3 of x2 in dimension/aspect x3 (default = unit)
     gle: x1 is happy about x2 (abstraction) [gleki]
     gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
+    gul: x1 is 9 of x2 in dimension/aspect x3 (default = unit)
     jga'i: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
     jmi: x1 is self/the speaker(s) [mi]
-    ker: x1 is B (11) of x2 in dimension/aspect x3 (default = unit)
-    kin: x1 is 2 of x2 in dimension/aspect x3 (default = unit)
+    jul: x1 is C (12) of x2 in dimension/aspect x3 (default = unit)
+    kal: x1 is F (15) of x2 in dimension/aspect x3 (default = unit)
+    kir: x1 is 2 of x2 in dimension/aspect x3 (default = unit)
     kli: x1 is a thousand [1000] of x2 in dimension/aspect x3 (default = unit)
     mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
     pal: x1 is 0 of x2 in dimension/aspect x3 (default = unit)
     pe'on: x1 is a friend of x2 [pendo]
     pi'en: x1 drinks liquid x2 out of container x3 [pinxe]
     pli: x1 is a tool used by x2 for purpose x3 [modified pilno]
+    pon: x1 is D (13) of x2 in dimension/aspect x3 (default = unit)
     pre: x1 is a person [prenu]
     pru: x1 (abstraction) is in the past of/before x2 (event) (default = now) [purci]
-    pum: x1 is 9 of x2 in dimension/aspect x3 (default = unit)
-    sa'im: x1 is a computer for purpose x2 [skami]
+    ska'i: x1 is a computer for purpose x2 [skami]
     sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
     spi: ??? (radix point)
-    tan: x1 is A (10) of x2 in dimension/aspect x3 (default = unit)
-    tem: x1 is 1 of x2 in dimension/aspect x3 (default = unit)
+    sun: x1 is 4 of x2 in dimension/aspect x3 (default = unit)
+    ten: x1 is 1 of x2 in dimension/aspect x3 (default = unit)
+    tur: x1 is E (14) of x2 in dimension/aspect x3 (default = unit)
+    van: x1 is A (10) of x2 in dimension/aspect x3 (default = unit)
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
-    vol: x1 is 8 of x2 in dimension/aspect x3 (default = unit)
-    xom: x1 is D (13) of x2 in dimension/aspect x3 (default = unit)
-    xul: x1 is 4 of x2 in dimension/aspect x3 (default = unit)
+    xel: x1 is 6 of x2 in dimension/aspect x3 (default = unit)
     zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
+    zer: x1 is B (11) of x2 in dimension/aspect x3 (default = unit)
 
 Numbers
 
-    pal tem kin for xul bam den gir vol pum tan ker ful xom bun dar
+    pal ten kir fol sun car xel bin dor gul van zer jul pon tur kal
      0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
 
     (made from cycling through `(!coda) other` + `vowel` + `coda`)
@@ -183,8 +189,8 @@ Numbers
     Number lexemes are made of consecutive numbers morphemes.
     (<base> baz)? (kli* <number>)* (spi <number>+)?
     
+Lexemes
 
-Lexical relations
     asa: x1 (foreign / quoted words) is a name of x2 given by x3
     a.a: x1 is a lexeme meaning x2 with components x3 (set)
     ada'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
