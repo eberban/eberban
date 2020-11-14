@@ -14,11 +14,6 @@ Particles
 
         bai : abstraction elidible terminator
 
-        va : predicate-tail elidible starter
-        ve : next predicate place tag
-        vi : predicate place tag question
-        vai : predicate-tail elidible terminator
-
     FA
         fa : predicate 1st place tag
         fe : predicate 2nd place tag
@@ -26,7 +21,19 @@ Particles
         fo : predicate 4th place tag
         fu : predicate 5th place tag
 
+        va : predicate elidible starter
+        vai : predicate elibile terminator
+
+        va'a : paragraph starter
+
+        ve : predicate-tail elidible starter
+        vei : predicate-tail elidible terminator
+
+        vi : next predicate place tag
+        vo : predicate place tag question
+
     SE :
+        sa : convert relation to name relation
         se : swap x1 and x2
         si : swap x1 and x3
         so : swap x1 and x4
@@ -48,7 +55,7 @@ Particles
         cu : U relation connective
 
         ga : forethought connective starter
-        ge : forethought connective separator
+        gi : forethought connective separator
         gai : forethought connective elidible terminator
 
         go : scope starter
@@ -66,6 +73,20 @@ Particles
         na : negation prefix
 
         nai : negation sufix
+
+    ??? : relative clause / attach predicate to a relation which claims something about it
+    ??? : phrase marker / attach a relation on a relation with some kind of association
+    ??? : adverbial / attach a relation on a predicate which satisfies the relation
+    
+    
+        pa : non-restrictive relative clause
+        pe : restrictive relative clause
+        pai : relative clause elidible terminator
+
+        pe'a : non restrictive adverbial [noi'a]
+        pe'e : restictive adverbial [poi'a]
+        pe'i : subordinating adverbial [soi'a]
+        pe'ai : adverbial elidible terminator [fe'u]
 
     BY
         Cy : consonant
@@ -89,6 +110,7 @@ Root relations
     pen: x1 is a friend of x2 [pendo]
     pin: x1 drinks liquid x2 out of container x3 [pinxe]
     pre: x1 is a person [prenu]
+    vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
 
 Lexical relations
 
