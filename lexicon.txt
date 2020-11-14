@@ -15,23 +15,23 @@ Particles
     BAI - Abstraction terminator
         bai : abstraction elidible terminator
 
-    DA - Predicate starter
-        da : predicate elidible starter
+    DA - Paragraph marker
+        da: paragraph marker
 
-    DAI - Predicate terminator
-        dai : predicate elibile terminator
+    DE - Predicate starter
+        dE : predicate elidible starter
 
-    DAHA - Paragraph marker
-        da'a : paragraph marker
+    DEI - Predicate terminator
+        dei : predicate elibile terminator
 
-    DE - Predicate-tail starter
+    DO - Predicate-tail starter
         de : predicate-tail elidible starter
 
-    DEI - Predicate-tail terminator
+    DOI - Predicate-tail terminator
         dei : predicate-tail elidible terminator
 
-    DI - Place importer
-        di : import x1 place from following relation (no compound or connective)
+    DU - Place importer
+        du : import x1 place from following relation (no compound or connective)
 
 
     FA - Place marker    
