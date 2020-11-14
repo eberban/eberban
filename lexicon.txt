@@ -15,15 +15,13 @@ Particles
     BAI - Abstraction terminator
         bai : abstraction elidible terminator
 
-
-
     DA - Predicate starter
         da : predicate elidible starter
 
     DAI - Predicate terminator
         dai : predicate elibile terminator
 
-    DAhA - Paragraph marker
+    DAHA - Paragraph marker
         da'a : paragraph marker
 
     DE - Predicate-tail starter
@@ -40,18 +38,24 @@ Particles
         fu : predicate 5th place tag
         va : next predicate place tag
         ve : predicate place tag question
-        vi : predicate subordinating adverbial [soi'a] 
+        vi : predicate restrictive adverbial [poi'a]
         vo : predicate non-restrictive adverbial [noi'a]
-        vu : predicate restrictive adverbial [poi'a]
+        vu : predicate subordinating adverbial [soi'a] 
 
-    PA - Free adverbial starter
-        pa : free non-restrictive adverbial
-        pe : free restrictive adverbial
-        pi : discursive
-        po : parenthetical
+    PA - Free prefix (one to one match is not checked by grammar)
+        pa : free scope starter
+
+    PAI - Free scope terminator (one to one match is not checked by grammar)
+        pai : free scope terminator
+
+    PE - Free adverbial starter
+        pe : discursive        
+        pi : free restrictive adverbial
+        po : free non-restrictive adverbial  
+        pu : parenthetical     
     
-    PAI - Free adverbial terminator  
-        pai : free adverbial elidible terminator
+    PEI - Free adverbial terminator  
+        pei : free adverbial elidible terminator    
 
     SE - Relation transformer (swap / name)
         sa : convert relation to name relation

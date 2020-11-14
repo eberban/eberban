@@ -81,87 +81,94 @@ pre_predicate_tail_connective <- GA_clause SA_clause? JA_clause NAI_clause? free
 pre_relation_connective <- GA_clause SA_clause? CA_clause NAI_clause? free_post*
 pre_connective_separator <- GI_clause NAI_clause? free_post*
 
+# free prefix
+free_prefix <- PA_clause
+
 # free suffix
-free_post <- free_adverbial
-free_adverbial <- PA_clause relation PAI_clause_elidible
+free_post <- PAI_clause / free_adverbial
+free_adverbial <- PE_clause relation PEI_clause_elidible
 
 # PARTICLES CLAUSES
-A_clause            <- space? (a)
-BA_clause           <- space? BA 
-BAI_clause          <- space? BAI free_post*
+A_clause            <- free_prefix* space? (a)
+BA_clause           <- free_prefix* space? BA 
+BAI_clause          <- free_prefix* space? BAI free_post*
 BAI_clause_elidible <- BAI_clause?
-BY_clause           <- space? BY
-CA_clause           <- space? CA
-E_clause            <- space? (e)
-FA_clause           <- space? FA
-GA_clause           <- space? GA
-GAI_clause          <- space? GAI free_post*
+BY_clause           <- free_prefix* space? BY
+CA_clause           <- free_prefix* space? CA
+E_clause            <- free_prefix* space? (e)
+FA_clause           <- free_prefix* space? FA
+GA_clause           <- free_prefix* space? GA
+GAI_clause          <- free_prefix* space? GAI free_post*
 GAI_clause_elidible <- GAI_clause?
-GI_clause           <- space? GI
-GO_clause           <- space? GO
-GOI_clause          <- space? GOI free_post*
+GI_clause           <- free_prefix* space? GI
+GO_clause           <- free_prefix* space? GO
+GOI_clause          <- free_prefix* space? GOI free_post*
 GOI_clause_elidible <- GOI_clause?
-I_clause            <- space? (i)
-JA_clause           <- space? JA
-MA_clause           <- space? MA
-ME_clause           <- space? ME
-MEI_clause          <- space? MEI free_post*
-MI_clause           <- space? MI
-MO_clause           <- space? MO
-MOI_clause          <- space? MOI free_post*
-MU_clause           <- space? MU
-NA_clause           <- space? NA 
-NAI_clause          <- space? NAI
-O_clause            <- space? (o)
+I_clause            <- free_prefix* space? (i)
+JA_clause           <- free_prefix* space? JA
+MA_clause           <- free_prefix* space? MA
+ME_clause           <- free_prefix* space? ME
+MEI_clause          <- free_prefix* space? MEI free_post*
+MI_clause           <- free_prefix* space? MI
+MO_clause           <- free_prefix* space? MO
+MOI_clause          <- free_prefix* space? MOI free_post*
+MU_clause           <- free_prefix* space? MU
+NA_clause           <- free_prefix* space? NA 
+NAI_clause          <- free_prefix* space? NAI
+O_clause            <- free_prefix* space? (o)
+PE_clause           <- free_prefix* space? PE
+PEI_clause          <- free_prefix* space? PEI
+PEI_clause_elidible <- PEI_clause?
 PA_clause           <- space? PA
 PAI_clause          <- space? PAI
-PAI_clause_elidible <- PAI_clause?
-SA_clause           <- space? SA
-U_clause            <- space? (u)
-DA_clause           <- space? DA
+SA_clause           <- free_prefix* space? SA
+U_clause            <- free_prefix* space? (u)
+DA_clause           <- free_prefix* space? DA
 DA_clause_elidible  <- DA_clause?
-DAHA_clause         <- space? DAHA
-DAI_clause          <- space? DAI free_post*
+DAHA_clause         <- free_prefix* space? DAHA
+DAI_clause          <- free_prefix* space? DAI free_post*
 DAI_clause_elidible <- DAI_clause?
-DE_clause           <- space? DE
+DE_clause           <- free_prefix* space? DE
 DE_clause_elidible  <- DE_clause? 
-DEI_clause          <- space? DEI free_post*
+DEI_clause          <- free_prefix* space? DEI free_post*
 DEI_clause_elidible <- DEI_clause?
 
 # PARTICLE FAMILIES
-A    <- &particle (a)
-BA   <- &particle (!BAI b (vowel / diphtong))
-BAI  <- &particle (b a i)
-BY   <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphtong h y / y h y)
-CA   <- &particle (c vowel)
-E    <- &particle (a)
-FA   <- &particle (f vowel / v vowel)
-GA   <- &particle (g a)
-GAI  <- &particle (g a i)
-GI   <- &particle (g i)
-GO   <- &particle (g o)
-GOI  <- &particle (g o i)
-I    <- &particle (a)
-JA   <- &particle (j vowel)
-MA   <- &particle (m a)
-ME   <- &particle (m e)
-MEI  <- &particle (m e i)
-MI   <- &particle (m i)
-MO   <- &particle (m o)
-MOI  <- &particle (m o i)
-MU   <- &particle (m u)
-NA   <- &particle (n a)
-NAI  <- &particle (n a i)
-O    <- &particle (a)
-PA   <- &particle (p vowel)
-PAI  <- &particle (p a i)
-SA   <- &particle (s (vowel / e i))
-U    <- &particle (a)
-DA   <- &particle (d a)
-DAHA <- &particle (d a h a)
-DAI  <- &particle (d a i)
-DE   <- &particle (d e)
-DEI  <- &particle (d e i)
+A     <- &particle (a)
+BA    <- &particle (!BAI b (vowel / diphtong))
+BAI   <- &particle (b a i)
+BY    <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphtong h y / y h y)
+CA    <- &particle (c vowel)
+E     <- &particle (a)
+FA    <- &particle (f vowel / v vowel)
+GA    <- &particle (g a)
+GAI   <- &particle (g a i)
+GI    <- &particle (g i)
+GO    <- &particle (g o)
+GOI   <- &particle (g o i)
+I     <- &particle (a)
+JA    <- &particle (j vowel)
+MA    <- &particle (m a)
+ME    <- &particle (m e)
+MEI   <- &particle (m e i)
+MI    <- &particle (m i)
+MO    <- &particle (m o)
+MOI   <- &particle (m o i)
+MU    <- &particle (m u)
+NA    <- &particle (n a)
+NAI   <- &particle (n a i)
+O     <- &particle (a)
+PE    <- &particle (p !a vowel)
+PEI   <- &particle (p e i)
+PA    <- &particle (p a)
+PAI   <- &particle (p a i)
+SA    <- &particle (s (vowel / e i))
+U     <- &particle (a)
+DA    <- &particle (d a)
+DAHA  <- &particle (d a h a)
+DAI   <- &particle (d a i)
+DE    <- &particle (d e)
+DEI   <- &particle (d e i)
 
 
 # MORPHOLOGY
