@@ -26,9 +26,13 @@ Particles
 
     DE - Predicate-tail starter
         de : predicate-tail elidible starter
-    
+
     DEI - Predicate-tail terminator
         dei : predicate-tail elidible terminator
+
+    DI - Place importer
+        di : import x1 place from following relation (no compound or connective)
+
 
     FA - Place marker    
         fa : predicate 1st place tag
@@ -125,29 +129,66 @@ Particles
 
 Root relations
 
+    bam: x1 is 5 of x2 in dimension/aspect x3 (default = unit)
     ban: x1 is a language/dialect used by x2 to express x3 (predicate)
+    baz: x1 is the numer base of number x2
+    bla: x1 is in the future/after x2 in time;
     bri'a: x1 is the arm of x2 [birka]
-    cme: x1 (quoted words) is a name of x2 given by x3 [cmene]
+    bun: x1 is E (14) of x2 in dimension/aspect x3 (default = unit)
+    cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
+    dar: x1 is F (15) of x2 in dimension/aspect x3 (default = unit)
+    den: x1 is 6 of x2 in dimension/aspect x3 (default = unit)
     don: x1 is the listener(s) [do]
     dra'u: x1 is milk from source x2 [ladru]
-    gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
+    for: x1 is 3 of x2 in dimension/aspect x3 (default = unit)
+    ful: x1 is C (12) of x2 in dimension/aspect x3 (default = unit)
+    gir: x1 is 7 of x2 in dimension/aspect x3 (default = unit)
     gle: x1 is happy about x2 (abstraction) [gleki]
+    gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
     jga'i: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
     jmi: x1 is self/the speaker(s) [mi]
+    ker: x1 is B (11) of x2 in dimension/aspect x3 (default = unit)
+    kin: x1 is 2 of x2 in dimension/aspect x3 (default = unit)
+    kli: x1 is a thousand [1000] of x2 in dimension/aspect x3 (default = unit)
     mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
-    pen: x1 is a friend of x2 [pendo]
-    pin: x1 drinks liquid x2 out of container x3 [pinxe]
+    pal: x1 is 0 of x2 in dimension/aspect x3 (default = unit)
+    pe'on: x1 is a friend of x2 [pendo]
+    pi'en: x1 drinks liquid x2 out of container x3 [pinxe]
+    pli: x1 is a tool used by x2 for purpose x3 [modified pilno]
     pre: x1 is a person [prenu]
-    pru: x1 (abstraction) is in the past of x2 (event) (default = now) [purci]
+    pru: x1 (abstraction) is in the past of/before x2 (event) (default = now) [purci]
+    pum: x1 is 9 of x2 in dimension/aspect x3 (default = unit)
+    sa'im: x1 is a computer for purpose x2 [skami]
     sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
+    spi: ??? (radix point)
+    tan: x1 is A (10) of x2 in dimension/aspect x3 (default = unit)
+    tem: x1 is 1 of x2 in dimension/aspect x3 (default = unit)
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
+    vol: x1 is 8 of x2 in dimension/aspect x3 (default = unit)
+    xom: x1 is D (13) of x2 in dimension/aspect x3 (default = unit)
+    xul: x1 is 4 of x2 in dimension/aspect x3 (default = unit)
     zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
 
-Lexical relations
+Numbers
 
+    pal tem kin for xul bam den gir vol pum tan ker ful xom bun dar
+     0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
+
+    (made from cycling through `(!coda) other` + `vowel` + `coda`)
+
+    baz : base
+    spi : radix point
+    kli : 1 000 separator
+    
+    Number lexemes are made of consecutive numbers morphemes.
+    (<base> baz)? (kli* <number>)* (spi <number>+)?
+    
+
+Lexical relations
+    asa: x1 (foreign / quoted words) is a name of x2 given by x3
     a.a: x1 is a lexeme meaning x2 with components x3 (set)
-    ava'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
-    ava: x1 is a predicate with relation x2 and components x3 (set)
-    ave: x1 is a predicate-tail with relation x2 and components x3 (set)
-    ebri'ajga'i: x1 grabs/holds/hugs x2 at locus x3
-    evaban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
+    ada'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
+    ada: x1 is a predicate with relation x2 and components x3 (set)
+    ade: x1 is a predicate-tail with relation x2 and components x3 (set)
+    ebrijga: x1 grabs/holds/hugs x2 at locus x3
+    edaban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
