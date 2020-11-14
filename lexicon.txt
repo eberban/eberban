@@ -1,38 +1,59 @@
 Particles
 
-    A
+    "A" - Lemma prefix
         a : 1-word lemma prefix
         e : 2-words lemma prefix
         i : 3-words lemma prefix
         o : 4-words lemma prefix
         u : n-words lemma prefix + sufix
 
-    BA
+    BA - Abstraction
         ba : x1 is predication [predicate] expressed in sentence x2
         be : x1 is relation expressed by [predicate] (allow relation filling like BE)
         bi : x1 is the event of [predicate]
 
+    BAI - Abstraction terminator
         bai : abstraction elidible terminator
 
-    FA
+
+
+    DA - Predicate starter
+        da : predicate elidible starter
+
+    DAI - Predicate terminator
+        dai : predicate elibile terminator
+
+    DAhA - Paragraph marker
+        da'a : paragraph marker
+
+    DE - Predicate-tail starter
+        de : predicate-tail elidible starter
+    
+    DEI - Predicate-tail terminator
+        dei : predicate-tail elidible terminator
+
+    FA - Place marker    
         fa : predicate 1st place tag
         fe : predicate 2nd place tag
         fi : predicate 3rd place tag
         fo : predicate 4th place tag
         fu : predicate 5th place tag
+        va : next predicate place tag
+        ve : predicate place tag question
+        vi : predicate subordinating adverbial [soi'a] 
+        vo : predicate non-restrictive adverbial [noi'a]
+        vu : predicate restrictive adverbial [poi'a]
 
-        va : predicate elidible starter
-        vai : predicate elibile terminator
+    PA - Free adverbial starter
+        pa : free non-restrictive adverbial
+        pe : free restrictive adverbial
+        pi : discursive
+        po : parenthetical
+    
+    PAI - Free adverbial terminator  
+        pai : free adverbial elidible terminator
 
-        va'a : paragraph starter
-
-        ve : predicate-tail elidible starter
-        vei : predicate-tail elidible terminator
-
-        vi : next predicate place tag
-        vo : predicate place tag question
-
-    SE :
+    SE - Relation transformer (swap / name)
         sa : convert relation to name relation
         se : swap x1 and x2
         si : swap x1 and x3
@@ -40,27 +61,36 @@ Particles
         su : swap x1 and x5
         sei : swap question
 
-    JA
+    JA - Predicate-tail connectives
         ja : A predicate-tail connective
         je : E predicate-tail connective
         ji : predicate-tail connective question
         jo : O predicate-tail connective
         ju : U predicate-tail connective
 
-    CA
+    CA - Relation and predicate connectives
         ca : A relation and predicate connective
         ce : E relation and predicate connective
         ci : relation and predicate connective question
         co : O relation and predicate connective
         cu : U relation and predicate connective
 
+    GA - Forethought connective starter
         ga : forethought connective starter
+
+    GI - Forethought connective separator
         gi : forethought connective separator
+
+    GAI - Forethought connective terminator
         gai : forethought connective elidible terminator
 
+    GO - Scope starter
         go : scope starter
+
+    GOI - Scope terminator
         goi : scope elidible terminator
 
+    "MA" - relation prefixes (not a real family)
         ma : foreign relation prefix
         me : grammatical quote starter
         mei : grammatical quote terminator
@@ -69,24 +99,11 @@ Particles
         moi : ungrammatical quote terminator
         mu : foreign quote
 
-    NA
+    NA - Negation prefix
         na : negation prefix
 
-        nai : negation sufix
-
-    ??? : relative clause / attach predicate to a relation which claims something about it
-    ??? : phrase marker / attach a relation on a relation with some kind of association
-    ??? : adverbial / attach a relation on a predicate which satisfies the relation
-    
-    
-        pa : non-restrictive relative clause [noi]
-        pe : restrictive relative clause [poi]
-        pai : relative clause elidible terminator
-
-        pe'a : non restrictive adverbial [noi'a]
-        pe'e : restictive adverbial [poi'a]
-        pe'i : subordinating adverbial [soi'a]
-        pe'ai : adverbial elidible terminator [fe'u]
+    NAI - Negation suffix
+        nai : negation suffix
 
     BY
         Cy : consonant
@@ -104,12 +121,14 @@ Root relations
     don: x1 is the listener(s) [do]
     dra'u: x1 is milk from source x2 [ladru]
     gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
+    gle: x1 is happy about x2 (abstraction) [gleki]
     jga'i: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
     jmi: x1 is self/the speaker(s) [mi]
     mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
     pen: x1 is a friend of x2 [pendo]
     pin: x1 drinks liquid x2 out of container x3 [pinxe]
     pre: x1 is a person [prenu]
+    pru: x1 (abstraction) is in the past of x2 (event) (default = now) [purci]
     sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
     zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]

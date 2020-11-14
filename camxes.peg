@@ -3,176 +3,166 @@
 text <- (paragraph+ / predicate*) space? EOF?
 
 # paragraphs
-paragraph <- p_paragraph_open+ predicate*
+paragraph <- DAHA_clause+ predicate*
 
 # predicate afterthough connectives
-predicate <- predicate_1 (p_predicate_open_elidible relation_connective predicate_1)*
+predicate <- predicate_1 (DA_clause_elidible relation_connective predicate_1)*
 # pre-tail terms
-predicate_1 <- predicate_pre / p_predicate_open_elidible predicate_place* p_predicate_tail_open_elidible predicate_tail p_predicate_close_elidible
+predicate_1 <- predicate_pre / DA_clause_elidible predicate_place* DE_clause_elidible predicate_tail DAI_clause_elidible
 # forethough connected predicates
-predicate_pre <- (pre_relation_connective p_predicate_open predicate (pre_connective_separator predicate)+ p_pre_connective_close_elidible)
+predicate_pre <- (pre_relation_connective DA_clause predicate (pre_connective_separator predicate)+ GAI_clause_elidible)
 
 # predicate-tail afterthough connectives
-predicate_tail <- predicate_tail_1 (predicate_tail_connective p_predicate_tail_open_elidible predicate_tail_1 predicate_tail_terms )*
+predicate_tail <- predicate_tail_1 (predicate_tail_connective DE_clause_elidible predicate_tail_1 predicate_tail_terms )*
 # predicate-tail negation
-predicate_tail_1 <- p_neg_pre* predicate_tail_2
+predicate_tail_1 <- NA_clause* predicate_tail_2
 # simple predicate-tail / forethough connected tails
 predicate_tail_2 <- relation predicate_tail_terms / predicate_tail_pre
 
 # forethough connected tails structure
-predicate_tail_pre <- (pre_predicate_tail_connective p_predicate_tail_open_elidible predicate_tail (pre_connective_separator p_predicate_tail_open_elidible predicate_tail)+ p_pre_connective_close_elidible) predicate_tail_terms
+predicate_tail_pre <- (pre_predicate_tail_connective DE_clause_elidible predicate_tail (pre_connective_separator DE_clause_elidible predicate_tail)+ GAI_clause_elidible) predicate_tail_terms
 
 # terms followed by predicate-tail elidible terminator
-predicate_tail_terms <- predicate_place* p_predicate_tail_close_elidible
+predicate_tail_terms <- predicate_place* DEI_clause_elidible
 # place + term
-predicate_place <- p_predicate_place predicate_term
+predicate_place <- FA_clause predicate_term
 # term afterthought connectives
-predicate_term <- predicate_term_1 (predicate_tail_connective !p_predicate_tail_open predicate_term_1)*
+predicate_term <- predicate_term_1 (predicate_tail_connective !DE_clause predicate_term_1)*
 # simple relation term / forethough connected terms
 predicate_term_1 <- relation / predicate_term_pre
 
 # forethough connected term structure
-predicate_term_pre <- (pre_predicate_tail_connective !p_predicate_tail_open predicate_term (pre_connective_separator !p_predicate_tail_open predicate_term)+ p_pre_connective_close_elidible)
+predicate_term_pre <- (pre_predicate_tail_connective !DE_clause predicate_term (pre_connective_separator !DE_clause predicate_term)+ GAI_clause_elidible)
 
 # relation compounds
 relation <- relation_2+ 
 # relation afterthough connectives
-relation_2 <- relation_3 (relation_connective !p_predicate_open relation_3)*
+relation_2 <- relation_3 (relation_connective !DA_clause relation_3)*
 # basic relations
 relation_3 <- relation_pre / lemma / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / space? lexeme
 
 # forethough connected relations
-relation_pre <- (pre_relation_connective !p_predicate_open relation (pre_connective_separator relation)+ p_pre_connective_close_elidible)
+relation_pre <- (pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)
 
 # lemma prefixes
 lemma <- lemma_1 / lemma_2 / lemma_3 / lemma_4  / lemma_n
-lemma_1 <- p_lemma_1 lemma_word
-lemma_2 <- p_lemma_2 lemma_word lemma_word
-lemma_3 <- p_lemma_3 lemma_word lemma_word lemma_word
-lemma_4 <- p_lemma_4 lemma_word lemma_word lemma_word lemma_word
-lemma_n <- p_lemma_n (!p_lemma_n word)+ p_lemma_n
+lemma_1 <- A_clause lemma_word
+lemma_2 <- E_clause lemma_word lemma_word
+lemma_3 <- I_clause lemma_word lemma_word lemma_word
+lemma_4 <- O_clause lemma_word lemma_word lemma_word lemma_word
+lemma_n <- U_clause (!U_clause word)+ U_clause
 lemma_word <- initial_dot word
 
 # borrowings
-borrowing <- p_borrowing_n_open borrowing_content dot? (space_char / EOF)
+borrowing <- MA_clause borrowing_content dot? (space_char / EOF)
 borrowing_content <- space_char initial_dot foreign_word (!space word)*
 
 # quotes
-grammatical_quote <- p_grammatical_quote_open text p_grammatical_quote_close
-one_word_quote <- p_one_word_quote space? word
-ungrammatical_quote <- p_ungrammatical_quote_open (!p_ungrammatical_quote_close space? word) p_ungrammatical_quote_close
-foreign_quote <- p_foreign_quote (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close
+grammatical_quote <- ME_clause text MEI_clause
+one_word_quote <- MI_clause space? word
+ungrammatical_quote <- MO_clause (!MOI_clause space? word) MOI_clause
+foreign_quote <- MU_clause (space?) foreign_quote_open space (foreign_quote_word space)* foreign_quote_close
 
 # abstractions
-abstraction <- p_abstraction_open predicate p_abstraction_close_elidible
+abstraction <- BA_clause predicate BAI_clause_elidible
 
 # relation place swap
-relation_place_swap <- p_place_swap relation_3
+relation_place_swap <- SA_clause relation_3
 
 # scoped relation
-scoped_relation <- p_scope_open relation p_scope_close_elidible
+scoped_relation <- GO_clause relation GOI_clause_elidible
 
 # afterthough connectives
-predicate_tail_connective <- p_neg_pre? p_place_swap? p_predicate_tail_connective p_neg_post?
-relation_connective <- p_neg_pre? p_place_swap? p_relation_connective p_neg_post?
+predicate_tail_connective <- NA_clause? SA_clause? JA_clause NAI_clause? free_post*
+relation_connective <- NA_clause? SA_clause? CA_clause NAI_clause? free_post*
 
 # forethough connectives
-pre_predicate_tail_connective <- p_pre_connective_open p_place_swap? p_predicate_tail_connective p_neg_post?
-pre_relation_connective <- p_pre_connective_open p_place_swap? p_relation_connective p_neg_post?
-pre_connective_separator <- p_pre_connective_separator p_neg_post?
+pre_predicate_tail_connective <- GA_clause SA_clause? JA_clause NAI_clause? free_post*
+pre_relation_connective <- GA_clause SA_clause? CA_clause NAI_clause? free_post*
+pre_connective_separator <- GI_clause NAI_clause? free_post*
 
-# PARTICLES
-# - Lexicalized relation
-#   A string of words (particles and/or relations) can be lexicalized to have a unique relation meaning.
-#   Each word is stripped from its grammar while keeping its meaning.
-#
-#   The particle depends on how many words form the lexicalized relation. 
-#   More than 4 words requires a closing particle.
-p_lemma_1 <- space? (a)
-p_lemma_2 <- space? (e)
-p_lemma_3 <- space? (i)
-p_lemma_4 <- space? (o)
-p_lemma_n <- space? (u)
+# free suffix
+free_post <- free_adverbial
+free_adverbial <- PA_clause relation PAI_clause_elidible
 
-# - Abstractions
-#   x1 is abstraction of [predicate] ...
-p_abstraction_open <- !p_abstraction_close space? (b (vowel / diphtong)) 
-p_abstraction_close_elidible <- p_abstraction_close?
-p_abstraction_close <- space? (b a i) 
+# PARTICLES CLAUSES
+A_clause            <- space? (a)
+BA_clause           <- space? BA 
+BAI_clause          <- space? BAI free_post*
+BAI_clause_elidible <- BAI_clause?
+BY_clause           <- space? BY
+CA_clause           <- space? CA
+E_clause            <- space? (e)
+FA_clause           <- space? FA
+GA_clause           <- space? GA
+GAI_clause          <- space? GAI free_post*
+GAI_clause_elidible <- GAI_clause?
+GI_clause           <- space? GI
+GO_clause           <- space? GO
+GOI_clause          <- space? GOI free_post*
+GOI_clause_elidible <- GOI_clause?
+I_clause            <- space? (i)
+JA_clause           <- space? JA
+MA_clause           <- space? MA
+ME_clause           <- space? ME
+MEI_clause          <- space? MEI free_post*
+MI_clause           <- space? MI
+MO_clause           <- space? MO
+MOI_clause          <- space? MOI free_post*
+MU_clause           <- space? MU
+NA_clause           <- space? NA 
+NAI_clause          <- space? NAI
+O_clause            <- space? (o)
+PA_clause           <- space? PA
+PAI_clause          <- space? PAI
+PAI_clause_elidible <- PAI_clause?
+SA_clause           <- space? SA
+U_clause            <- space? (u)
+DA_clause           <- space? DA
+DA_clause_elidible  <- DA_clause?
+DAHA_clause         <- space? DAHA
+DAI_clause          <- space? DAI free_post*
+DAI_clause_elidible <- DAI_clause?
+DE_clause           <- space? DE
+DE_clause_elidible  <- DE_clause? 
+DEI_clause          <- space? DEI free_post*
+DEI_clause_elidible <- DEI_clause?
 
-# - Foreign relation
-#   A string of words used without their meaning to express some foreign concept.
-#   x1 is [foreign concept].
-#
-#   The foreign relation stops after the first pause (ignoring initial pause due
-#   to a first vowel word)
-p_borrowing_n_open <- space? (m a)
+# PARTICLE FAMILIES
+A    <- &particle (a)
+BA   <- &particle (!BAI b (vowel / diphtong))
+BAI  <- &particle (b a i)
+BY   <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphtong h y / y h y)
+CA   <- &particle (c vowel)
+E    <- &particle (a)
+FA   <- &particle (f vowel / v vowel)
+GA   <- &particle (g a)
+GAI  <- &particle (g a i)
+GI   <- &particle (g i)
+GO   <- &particle (g o)
+GOI  <- &particle (g o i)
+I    <- &particle (a)
+JA   <- &particle (j vowel)
+MA   <- &particle (m a)
+ME   <- &particle (m e)
+MEI  <- &particle (m e i)
+MI   <- &particle (m i)
+MO   <- &particle (m o)
+MOI  <- &particle (m o i)
+MU   <- &particle (m u)
+NA   <- &particle (n a)
+NAI  <- &particle (n a i)
+O    <- &particle (a)
+PA   <- &particle (p vowel)
+PAI  <- &particle (p a i)
+SA   <- &particle (s (vowel / e i))
+U    <- &particle (a)
+DA   <- &particle (d a)
+DAHA <- &particle (d a h a)
+DAI  <- &particle (d a i)
+DE   <- &particle (d e)
+DEI  <- &particle (d e i)
 
-# - Grammatical quotation
-#   Quote a grammatical valid text
-#   x1 is text [quoted text]
-p_grammatical_quote_open <- space? (m e)
-p_grammatical_quote_close <- space? (m e i)
-
-# - One word quote
-#   x1 is text [quoted word]
-p_one_word_quote <- space? (m i)
-
-# - Unrammatical quotation
-#   Quote an ungrammatical valid text
-#   x1 is text [quoted text]
-p_ungrammatical_quote_open <- space? (m o)
-p_ungrammatical_quote_close <- space? (m o i)
-
-# - Free quote
-#   Quote any string with provided quote word.
-#   x1 is text [quoted text]
-p_foreign_quote <- space? (m u)
-
-# - Relation place swaping
-p_place_swap <- space? (s (vowel / e i)) # name / 2 / 3 / 4 / 5 / question
-
-# - Predicate numeral place tag
-p_predicate_place <- space? (f vowel / v i / v o)  # 1..5 places / next numeral place / place question
-
-# - Paragraph
-p_paragraph_open_elidible <- p_paragraph_open?
-p_paragraph_open <- space? (v a h a)
-
-# - Predicate
-p_predicate_open_elidible <- p_predicate_open?
-p_predicate_open <- space? (v a)
-p_predicate_close_elidible <- p_predicate_close?
-p_predicate_close <- space? (v a i)
-
-# - Predicate tail
-p_predicate_tail_open_elidible <- p_predicate_tail_open? 
-p_predicate_tail_open <- space? (v e)
-p_predicate_tail_close_elidible <- (space? (v e i))?
-
-# - Forethought connectives
-p_pre_connective_open <- space? (g a)
-p_pre_connective_separator <- space? (g i)
-p_pre_connective_close_elidible <- p_pre_connective_close?
-p_pre_connective_close <- space? (g a i)
-
-# - Afterthough predicate tail connectives
-# todo : add mass/set predicate connectives
-p_predicate_tail_connective <- space? (j vowel)  # a/e/o/u + i question
-
-# - Afterthough relation (and predicate) connectives
-p_relation_connective <- space? (c vowel)  # a/e/o/u + i question
-
-# - Negations
-p_neg_pre <- space? (n a) 
-p_neg_post <- space? (n a i) 
-
-# - Scoping
-p_scope_open <- space? (g o)
-p_scope_close_elidible <- (space? (g o i))?
-
-# - Literals
-p_letter <- space? (consonant y / vowel_y h y / (i / u) y h y / vi_diphtong h y / y h y )  # consonant / vowel / semi-vowel / h
 
 # MORPHOLOGY
 # - Forein text quoting
@@ -181,10 +171,11 @@ foreign_quote_word <- (!space .)+
 foreign_quote_close <- word
 
 # - Legal words
-foreign_word <- (consonant / initial_consonant_pair)? vowel_tail (consonant_cluster vowel_tail)* (consonant consonant)?
+foreign_word <- (initial_consonant_pair / consonant)? vowel_tail (consonant_cluster vowel_tail)* (consonant consonant / coda)?
 word <-  lexeme / particle
-particle <- consonant? vowel_tail 
-lexeme <- (initial_consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)
+particle <- consonant? vowel_tail &post_word
+lexeme <- ((initial_consonant_pair vowel_tail coda?) / (!coda consonant vowel_tail coda)) &post_word
+post_word <- (space / &consonant / dot &vowel_y)
 
 # - Legal vowels and vowel tails
 vowel_tail <- (diphtong / vowel_y) (h (vi_diphtong / vowel_y ))* 

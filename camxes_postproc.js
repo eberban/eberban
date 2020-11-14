@@ -141,13 +141,16 @@ function newer_postprocessor(
         // "cmene": "C", "cmevla": "C", "gismu": "G", "lujvo": "L",
         // "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
         // "selbri": "SELBRI", "sumti": "SUMTI"
-        "p_predicate_close": "VAI",
-        "p_predicate_open": "VA",
-        "p_predicate_tail_open": "VE",
-        "p_predicate_tail_close": "VEI",
-        "p_pre_connective_close": "GAI",
-        "p_abstraction_close": "BAI"
+        // "DAI_clause": "DAI",
+        // "p_predicate_open": "VA",
+        // "p_predicate_tail_open": "VE",
+        // "p_predicate_tail_close": "VEI",
+        // "p_pre_connective_close": "GAI",
+        // "p_abstraction_close": "BAI",
+        "lexeme": "L",
+        "borrowing_content": "B"
     };
+
     if (!with_trimming) name_substitution_map = {};
     var special_selmaho = ["particle", "lexeme", "borrowing_content"];
     /** Building a node_action_for() function from the selected options **/
@@ -165,8 +168,8 @@ function newer_postprocessor(
     var whitelist = [];
     if (with_selmaho)
         whitelist = whitelist.concat(special_selmaho);
-    if (with_nodes_labels)
-        whitelist = whitelist.concat(["prenex", "sentence", "selbri", "sumti"]);
+    // if (with_nodes_labels)
+    //     whitelist = whitelist.concat(["prenex", "sentence", "selbri", "sumti"]);
     var is_node_trimming_target = function (tree) {
         if (!with_trimming) return false;
         if (with_terminators && is_selmaho(tree[0]) && tree.length == 1)
@@ -344,7 +347,8 @@ function among(v, s) {
 
 function is_selmaho(v) {
     if (!is_string(v)) return false;
-    return v.startsWith("p_");
+    // return v.startsWith("p_");
+    return (0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUY]|(AI|EI|OI|AU))(h([AEIOUY]|(AI|EI|OI|AU)))*$/g));
 }
 
 // ========================================================================== //
