@@ -173,7 +173,7 @@ var camxes = (function() {
         peg$c138 = function(expr) {return _node("foreign_word", expr);},
         peg$c139 = function(expr) {return _node("native_word", expr);},
         peg$c140 = function(expr) {return _node("particle", expr);},
-        peg$c141 = function(expr) {return _node("morpheme", expr);},
+        peg$c141 = function(expr) {return _node("root", expr);},
         peg$c142 = function(expr) {return _node("vowel_tail", expr);},
         peg$c143 = function(expr) {return _node("vowel_tail_1", expr);},
         peg$c144 = function(expr) {return _node("vowel_tail_y", expr);},
@@ -1649,7 +1649,7 @@ var camxes = (function() {
                               s2 = peg$c2;
                             }
                             if (s2 !== peg$FAILED) {
-                              s3 = peg$parsemorpheme();
+                              s3 = peg$parseroot();
                               if (s3 !== peg$FAILED) {
                                 s4 = [];
                                 s5 = peg$parsefree_post();
@@ -8337,7 +8337,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsemorpheme();
+      s1 = peg$parseroot();
       if (s1 === peg$FAILED) {
         s1 = peg$parseparticle();
       }
@@ -8423,7 +8423,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsemorpheme() {
+    function peg$parseroot() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 191 + 135,

@@ -81,7 +81,7 @@ function join_expr(n) {
 
 /* Checks whether the argument node is a target for pruning. */
 function is_target_node(n) {
-    return (among(n[0], ["particle", "morpheme", "foreign_word"])
+    return (among(n[0], ["particle", "root", "foreign_word"])
             || is_selmaho(n[0]));
 }
 

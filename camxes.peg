@@ -39,7 +39,7 @@ relation <- relation_2+
 # relation afterthough connectives
 relation_2 <- relation_3 (relation_connective !DA_clause relation_3)*
 # basic relations
-relation_3 <- relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / spaces? morpheme free_post*
+relation_3 <- relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / spaces? root free_post*
 
 # forethough connected relations
 relation_pre <- (pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)
@@ -194,10 +194,9 @@ foreign_quote_close <- native_word
 
 # - Legal words
 foreign_word <- (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant / coda)?
-native_word <-  morpheme / particle
+native_word <-  root / particle
 particle <- !coda consonant? vowel_tail &post_word
-morpheme <- ((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word
-
+root <- ((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word
 
 # - Legal vowels and vowel tails
 vowel_tail <- (diphthong / vowel) vowel_tail_1* 

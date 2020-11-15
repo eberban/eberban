@@ -168,7 +168,7 @@ relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
 relation_2 = expr:(relation_3 (relation_connective !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
-relation_3 = expr:(relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / spaces? morpheme free_post*) {return _node("relation_3", expr);}
+relation_3 = expr:(relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / spaces? root free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
 relation_pre = expr:((pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
@@ -323,10 +323,9 @@ foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr)
 
 // - Legal words
 foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant / coda)?) {return _node("foreign_word", expr);}
-native_word = expr:(morpheme / particle) {return _node("native_word", expr);}
+native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(!coda consonant? vowel_tail &post_word) {return _node("particle", expr);}
-morpheme = expr:(((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word) {return _node("morpheme", expr);}
-
+root = expr:(((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word) {return _node("root", expr);}
 
 // - Legal vowels and vowel tails
 vowel_tail = expr:((diphthong / vowel) vowel_tail_1*) {return _node("vowel_tail", expr);}

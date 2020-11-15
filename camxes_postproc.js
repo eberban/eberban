@@ -152,7 +152,7 @@ function newer_postprocessor(
     };
 
     if (!with_trimming) name_substitution_map = {};
-    var special_selmaho = ["particle", "morpheme", "foreign_word"];
+    var special_selmaho = ["particle", "root", "foreign_word"];
     /** Building a node_action_for() function from the selected options **/
     if (with_morphology)
          var is_flattening_target = function (tree) { return false; };
