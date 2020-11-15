@@ -11,14 +11,14 @@ function addDotsToWord(word, previous) {
     }
     
     // if word is a cmene: dot after
-    if (!isVowel(word.charAt(word.length - 1))) {
-        postDot = ".";
+    // if (!isVowel(word.charAt(word.length - 1))) {
+    //     postDot = ".";
         
-        // and except for preceding selma'o DOI or LA, also a dot before
-        if (!previous || (previous !== "doi" && previous !== "la")) { // TODO: check if there are more of these
-            preDot = ".";
-        }
-    }
+    //     // and except for preceding selma'o DOI or LA, also a dot before
+    //     if (!previous || (previous !== "doi" && previous !== "la")) { // TODO: check if there are more of these
+    //         preDot = ".";
+    //     }
+    // }
     
     return preDot + word + postDot;
 }

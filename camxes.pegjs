@@ -162,12 +162,16 @@ predicate_place = expr:(predicate_place_tag predicate_term) {return _node("predi
 // term afterthought connectives
 predicate_term = expr:(predicate_term_1 (predicate_tail_connective !DO_clause predicate_term_1)*) {return _node("predicate_term", expr);}
 // simple relation term / forethough connected terms
-predicate_term_1 = expr:(relation / predicate_term_pre) {return _node("predicate_term_1", expr);}
+predicate_term_1 = expr:(scoped_predicate_term / relation / predicate_term_pre) {return _node("predicate_term_1", expr);}
+// scoped predicate term
+scoped_predicate_term = expr:(GO_clause predicate_term GOI_clause_elidible) {return _node("scoped_predicate_term", expr);}
 
 // predicate place tags connectives
 predicate_place_tag = expr:(predicate_place_tag_1 (CA_clause predicate_place_tag_1)*) {return _node("predicate_place_tag", expr);}
 // basic predicate place tags
-predicate_place_tag_1 = expr:(DU_clause relation_3 / FA_clause) {return _node("predicate_place_tag_1", expr);}
+predicate_place_tag_1 = expr:(predicate_place_modal / FA_clause) {return _node("predicate_place_tag_1", expr);}
+// predicate place modal
+predicate_place_modal = expr:(DU_clause relation_3) {return _node("predicate_place_modal", expr);}
 
 // forethough connected term structure
 predicate_term_pre = expr:((pre_predicate_tail_connective !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)) {return _node("predicate_term_pre", expr);}
@@ -177,22 +181,19 @@ relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
 relation_2 = expr:(relation_3 (relation_connective !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
-relation_3 = expr:(relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("relation_3", expr);}
+relation_3 = expr:(relation_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
 relation_pre = expr:((pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
 
 // flat lexeme prefixes
-flat_lexeme = expr:((flat_lexeme_1 / flat_lexeme_2 / flat_lexeme_3 / flat_lexeme_4 / flat_lexeme_n) free_post*) {return _node("flat_lexeme", expr);}
-flat_lexeme_1 = expr:(A_clause flat_lexeme_word) {return _node("flat_lexeme_1", expr);}
-flat_lexeme_2 = expr:(E_clause flat_lexeme_word flat_lexeme_word) {return _node("flat_lexeme_2", expr);}
-flat_lexeme_3 = expr:(I_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word) {return _node("flat_lexeme_3", expr);}
-flat_lexeme_4 = expr:(O_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word flat_lexeme_word) {return _node("flat_lexeme_4", expr);}
-flat_lexeme_n = expr:(U_clause (!(dot? U) flat_lexeme_word)+ (dot? U)) {return _node("flat_lexeme_n", expr);}
-flat_lexeme_word = expr:(initial_dot native_word) {return _node("flat_lexeme_word", expr);}
-
-// grammatical lexeme
-grammatical_lexeme = expr:(GE_clause relation GEI_clause) {return _node("grammatical_lexeme", expr);}
+lexeme = expr:((lexeme_1 / lexeme_2 / lexeme_3 / lexeme_4 / lexeme_n)) {return _node("lexeme", expr);}
+lexeme_1 = expr:(A_clause lexeme_word) {return _node("lexeme_1", expr);}
+lexeme_2 = expr:(E_clause lexeme_word lexeme_word) {return _node("lexeme_2", expr);}
+lexeme_3 = expr:(I_clause lexeme_word lexeme_word lexeme_word) {return _node("lexeme_3", expr);}
+lexeme_4 = expr:(O_clause lexeme_word lexeme_word lexeme_word lexeme_word) {return _node("lexeme_4", expr);}
+lexeme_n = expr:(U_clause (!(dot? U) lexeme_word)+ (dot? U)) {return _node("lexeme_n", expr);}
+lexeme_word = expr:(initial_dot native_word) {return _node("lexeme_word", expr);}
 
 // borrowings
 // borrowing <- ZA_clause borrowing_content dot? free_post*
@@ -204,7 +205,8 @@ borrowing_content = expr:(spaces foreign_word (!spaces native_word)*) {return _n
 grammatical_quote = expr:(ZE_clause text ZEI_clause) {return _node("grammatical_quote", expr);}
 one_word_quote = expr:(ZI_clause spaces? native_word) {return _node("one_word_quote", expr);}
 ungrammatical_quote = expr:(ZO_clause (!ZOI_clause spaces? native_word) ZOI_clause) {return _node("ungrammatical_quote", expr);}
-foreign_quote = expr:(ZU_clause (spaces?) foreign_quote_open spaces (foreign_quote_word spaces)* foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
+foreign_quote = expr:(ZU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
+foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("foreign_quote_content", expr);}
 
 // abstractions
 abstraction = expr:(BA_clause predicate BAI_clause_elidible) {return _node("abstraction", expr);}

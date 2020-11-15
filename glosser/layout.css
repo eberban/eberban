@@ -119,17 +119,65 @@ li.implicit {
 .box {
     text-align: center;
     display: inline-block;
-    vertical-align: middle;
-    margin: 4px;
-    padding: 2px;
-    border: 2px black solid;
+    vertical-align: top;
     white-space: nowrap;
+
+    margin: 3px;
+    padding: 3px;
+    border: 1px black solid;
+
+    margin-top: 0px;
+    padding-top: 0px;
+    border-top: 0px;
 }
 
 .box.box-sentence {
-    background: #aaccee;
+    background: #ffffff;
+    border: 1px black solid;
+    margin: 2px;
 }
 
+.box.box-predicate {
+    background: #d3ffb6;
+}
+
+.box.box-predicate-tail {
+    background: #b6ffc8;
+}
+
+.box.box-place {
+    background: #b6f4ff;
+}
+
+.box.box-tag {
+    background: #c79dfd;
+}
+
+.box.box-modal {
+    background: #fd9dfd;
+}
+
+.box.box-relation {
+    background: #b6c3ff;
+}
+
+.box.box-abstraction {
+    background: #f2ffb6;
+}
+
+.box.box-lexeme {
+    background: #dce2ff;
+}
+
+.box.box-borrowing {
+    background: #ffb6b6;
+}
+
+.box.box-free-adverbial {
+    background: #d2b6ff;
+}
+
+/* 
 .box.box-sumti {
     background: #f099aa;
 }
@@ -160,23 +208,23 @@ li.implicit {
 
 .box.box-sumti6 {
     background: #c8eeaa;
-}
+} */
 
-.box.box-modal {
+/* .box.box-modal {
     background: #88cc99;
 }
 
-.box.box-selbri {
+.box.box-relation {
     background: #ccaadd;
 }
 
 .box.box-prenex {
     background: #88bbdd;
-}
+} */
 
 .box.box-terminal {
     margin: 0px;
-    padding: 0px;
+    padding: 2px;
     border: 0px;
 }
 

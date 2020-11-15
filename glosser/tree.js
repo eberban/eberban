@@ -82,10 +82,10 @@ simplifyFunctions["text"] = function(parse) {
     }
 }
 
-simplifyFunctions["free"] = function(parse) {
+simplifyFunctions["paragraph"] = function(parse) {
     
     return {
-        type: "free modifier",
+        type: "paragraph",
         children: simplifyArrayOfTrees(parse.slice(1))
     }
 }
@@ -94,6 +94,177 @@ simplifyFunctions["sentence"] = function(parse) {
     
     return {
         type: "sentence",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate"] = function(parse) {
+    
+    return {
+        type: "predicate",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate_tail"] = function(parse) {
+    
+    return {
+        type: "predicate tail",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate_place"] = function(parse) {
+    
+    return {
+        type: "place",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate_place_tag"] = function(parse) {
+    
+    return {
+        type: "tag",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate_place_modal"] = function(parse) {
+    
+    return {
+        type: "modal",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate_term"] = function(parse) {
+    
+    return {
+        type: "term",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["relation"] = function(parse) {
+    
+    return {
+        type: "relation",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["lexeme"] = function(parse) {
+    
+    return {
+        type: "lexeme",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["borrowing"] = function(parse) {
+    
+    return {
+        type: "borrowing",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["foreign_word"] = function(parse) {
+    
+    return {
+        type: "foreign",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["free_indicator"] = function(parse) {
+    
+    return {
+        type: "indicator",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["free_adverbial"] = function(parse) {
+    
+    return {
+        type: "free adverbial",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["grammatical_quote"] = function(parse) {
+    
+    return {
+        type: "quote",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["one_word_quote"] = function(parse) {
+    
+    return {
+        type: "word quote",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["ungrammatical_quote"] = function(parse) {
+    
+    return {
+        type: "ungrammatical quote",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["foreign_quote"] = function(parse) {
+    
+    return {
+        type: "foreign quote",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["abstraction"] = function(parse) {
+    
+    return {
+        type: "abstraction",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["scoped_relation"] = function(parse) {
+    
+    return {
+        type: "scope",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["number_string"] = function(parse) {
+    
+    return {
+        type: "number",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["letter_string"] = function(parse) {
+    
+    return {
+        type: "letters",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+
+// lojban grammar ...
+/*
+simplifyFunctions["free"] = function(parse) {
+    
+    return {
+        type: "free modifier",
         children: simplifyArrayOfTrees(parse.slice(1))
     }
 }
@@ -236,7 +407,7 @@ simplifyFunctions["relative_clause"] = function(parse) {
     }
 }
 
-
+*/
 
 // Additional functions to improve the resulting tree
 
@@ -256,7 +427,8 @@ function numberSumti(parse) {
     }
     
     // if it is a sentence, start searching through it
-    if (parse.type === "sentence") {
+    // if (parse.type === "sentence") {
+    if (parse.type === "predicate") {
         numberSumtiInSentence(parse);
     }
     
@@ -278,8 +450,8 @@ function numberSumtiInSentence(parse) {
     for (var i = 0; i < parse.children.length; i++) {
         var child = parse.children[i];
         
-        if (child.type === "bridi tail") {
-            sentenceElements.push({type: "bridi tail start"});
+        if (child.type === "predicate tail") {
+            sentenceElements.push({type: "predicate tail start"});
             for (var j = 0; j < child.children.length; j++) {
                 var subchild = child.children[j];
                 sentenceElements.push(subchild);
@@ -297,7 +469,7 @@ function numberSumtiInSentence(parse) {
     for (var i = 0; i < sentenceElements.length; i++) {
         var child = sentenceElements[i];
 
-        if (child.type === "bridi tail start") {
+        if (child.type === "predicate tail start") {
             bridiTailStartSumtiCounter = sumtiCounter;
         }
 

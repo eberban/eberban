@@ -7,4 +7,8 @@ var shortDescriptions = {};
 // shortDescriptions["a"] = "or";
 // shortDescriptions["u"] = "whether or not";
 
+
+shortDescriptions["pin"] = "drink";
+shortDescriptions["mlahu"] = "cat";
+
 module.exports.shortDescriptions = shortDescriptions;

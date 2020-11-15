@@ -109,12 +109,6 @@ Particles
     GOI - Scope terminator
         goi : scope elidible terminator
 
-    GE - Grammatical lexeme scope starter (test)
-        go : Grammatical lexeme scope starter
-
-    GEI - Grammatical lexeme scope (test)
-        gei : Grammatical lexeme scope terminator
-
     "ZA" - relation prefixes (not a real family)
         za : foreign relation prefix
         ze : grammatical quote starter
@@ -232,7 +226,7 @@ Root words
     jgai: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
     mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
     pe'on: x1 is a friend of x2 [pendo]
-    pi'en: x1 drinks liquid x2 out of container x3 [pinxe]
+    pin: x1 drinks liquid x2 out of container x3 [pinxe]
     pli: x1 is a tool used by x2 for purpose x3 [modified pilno]
     pre: x1 is a person [prenu]
     pru: x1 (abstraction) is in the past of/before x2 (event) (default = now) [purci]

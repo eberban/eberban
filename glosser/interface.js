@@ -293,36 +293,55 @@ function constructBoxesOutput(parse, depth) {
 
 function boxClassForType(parse) {
     
-    if (parse.type === "sentence") {
-        return "box box-sentence";
-    }
+    // if (parse.type === "sentence") {
+    //     return "box box-sentence";
+    // }
     
-    if (parse.type === "sumti x") {
-        if (parse.sumtiPlace > 5) {
-            return "box box-sumti6";
-        } else if (parse.sumtiPlace == "fai") {
-            return "box box-sumti-fai";
-        } else {
-            return "box box-sumti" + parse.sumtiPlace;
-        }
-    }
+    // if (parse.type === "sumti x") {
+    //     if (parse.sumtiPlace > 5) {
+    //         return "box box-sumti6";
+    //     } else if (parse.sumtiPlace == "fai") {
+    //         return "box box-sumti-fai";
+    //     } else {
+    //         return "box box-sumti" + parse.sumtiPlace;
+    //     }
+    // }
     
-    if (parse.type === "modal sumti") {
-        return "box box-modal";
-    }
+    // if (parse.type === "modal sumti") {
+    //     return "box box-modal";
+    // }
     
-    if (parse.type === "sumti") {
-        return "box box-sumti";
-    }
+    // if (parse.type === "sumti") {
+    //     return "box box-sumti";
+    // }
     
-    if (parse.type === "selbri") {
-        return "box box-selbri";
-    }
+    // if (parse.type === "selbri") {
+    //     return "box box-selbri";
+    // }
     
-    if (parse.type === "prenex") {
-        return "box box-prenex";
-    }
+    // if (parse.type === "prenex") {
+    //     return "box box-prenex";
+    // }
     
+    // return "box box-not-shown";
+
+    if (parse.type === "sentence") { return "box box-sentence"; }
+    if (parse.type === "predicate") { return "box box-predicate"; }
+    // if (parse.type === "predicate tail") { return "box box-predicate-tail"; }
+    if (parse.type === "place") { return "box box-place"; }
+    // if (parse.type === "tag") { return "box box-tag"; }
+    if (parse.type === "modal") { return "box box-modal"; }
+    // if (parse.type === "term") { return "box box-term"; }
+    if (parse.type === "relation") { return "box box-relation"; }
+    if (parse.type === "free adverbial") { return "box box-free-adverbial"; }
+    if (parse.type === "lexeme") { return "box box-lexeme"; }
+    if (parse.type === "number") { return "box box-number"; }
+    if (parse.type === "letters") { return "box box-letters"; }
+    if (parse.type === "scope") { return "box box-scope"; }
+    if (parse.type === "abstraction") { return "box box-abstraction"; } 
+    if (parse.type === "borrowing") { return "box box-borrowing"; }
+    // if (parse.type === "indicator") { return "box box-indicator"; }
+
     return "box box-not-shown";
 }
 

@@ -33,12 +33,16 @@ predicate_place <- predicate_place_tag predicate_term
 # term afterthought connectives
 predicate_term <- predicate_term_1 (predicate_tail_connective !DO_clause predicate_term_1)*
 # simple relation term / forethough connected terms
-predicate_term_1 <- relation / predicate_term_pre
+predicate_term_1 <- scoped_predicate_term / relation / predicate_term_pre
+# scoped predicate term
+scoped_predicate_term <- GO_clause predicate_term GOI_clause_elidible
 
 # predicate place tags connectives
 predicate_place_tag <- predicate_place_tag_1 (CA_clause predicate_place_tag_1)*
 # basic predicate place tags
-predicate_place_tag_1 <- DU_clause relation_3 / FA_clause
+predicate_place_tag_1 <- predicate_place_modal / FA_clause
+# predicate place modal
+predicate_place_modal <- DU_clause relation_3
 
 # forethough connected term structure
 predicate_term_pre <- (pre_predicate_tail_connective !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)
@@ -48,22 +52,19 @@ relation <- relation_2+
 # relation afterthough connectives
 relation_2 <- relation_3 (relation_connective !DA_clause relation_3)*
 # basic relations
-relation_3 <- relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*
+relation_3 <- relation_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*
 
 # forethough connected relations
 relation_pre <- (pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)
 
 # flat lexeme prefixes
-flat_lexeme <- (flat_lexeme_1 / flat_lexeme_2 / flat_lexeme_3 / flat_lexeme_4  / flat_lexeme_n) free_post*
-flat_lexeme_1 <- A_clause flat_lexeme_word
-flat_lexeme_2 <- E_clause flat_lexeme_word flat_lexeme_word
-flat_lexeme_3 <- I_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word
-flat_lexeme_4 <- O_clause flat_lexeme_word flat_lexeme_word flat_lexeme_word flat_lexeme_word
-flat_lexeme_n <- U_clause (!(dot? U) flat_lexeme_word)+ (dot? U)
-flat_lexeme_word <- initial_dot native_word
-
-# grammatical lexeme
-grammatical_lexeme <- GE_clause relation GEI_clause
+lexeme <- (lexeme_1 / lexeme_2 / lexeme_3 / lexeme_4  / lexeme_n) 
+lexeme_1 <- A_clause lexeme_word
+lexeme_2 <- E_clause lexeme_word lexeme_word
+lexeme_3 <- I_clause lexeme_word lexeme_word lexeme_word
+lexeme_4 <- O_clause lexeme_word lexeme_word lexeme_word lexeme_word
+lexeme_n <- U_clause (!(dot? U) lexeme_word)+ (dot? U)
+lexeme_word <- initial_dot native_word
 
 # borrowings
 # borrowing <- ZA_clause borrowing_content dot? free_post*
@@ -75,7 +76,8 @@ borrowing_content <- spaces foreign_word (!spaces native_word)*
 grammatical_quote <- ZE_clause text ZEI_clause
 one_word_quote <- ZI_clause spaces? native_word
 ungrammatical_quote <- ZO_clause (!ZOI_clause spaces? native_word) ZOI_clause
-foreign_quote <- ZU_clause (spaces?) foreign_quote_open spaces (foreign_quote_word spaces)* foreign_quote_close free_post*
+foreign_quote <- ZU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
+foreign_quote_content <- (foreign_quote_word spaces)*
 
 # abstractions
 abstraction <- BA_clause predicate BAI_clause_elidible

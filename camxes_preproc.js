@@ -15,25 +15,25 @@
 	// input = input.replace(/8/gm,"bi");
 	// input = input.replace(/9/gm,"so");
 	// --- //
-	input = input.replace(/[áàâä]/g, 'A');
-	input = input.replace(/[éèêë]/g, 'E');
-	input = input.replace(/[íìîïĭị]/g, 'I');
-	input = input.replace(/[óòôö]/g, 'O');
-	input = input.replace(/[úùûüŭụw]/g, 'U');
-	input = input.replace(/[ýỳŷÿ]/g, 'Y');
-	// --- //
-	input = input.replace(/sh/gim, 'c');
-	input = input.replace(/zh/gim, 'j');
-	input = input.replace(/ch/gim, 'tc');
-	input = input.replace(/kh/gim, 'x');
-	// --- //
-	input = input.replace(/ı/gim, 'i');
-	input = input.replace(/ʃ/gim, 'c');
-	input = input.replace(/ʒ/gim, 'j');
-	input = input.replace(/ɛ/gm, 'e');
-	input = input.replace(/[Ɛɛ́ɛ̀ɛ̂ɛ̈]/gm, 'E');
-	input = input.replace(/ə/gim, 'y');
-	input = input.replace(/ŋ/gim, 'ng');
+	// input = input.replace(/[áàâä]/g, 'A');
+	// input = input.replace(/[éèêë]/g, 'E');
+	// input = input.replace(/[íìîïĭị]/g, 'I');
+	// input = input.replace(/[óòôö]/g, 'O');
+	// input = input.replace(/[úùûüŭụw]/g, 'U');
+	// input = input.replace(/[ýỳŷÿ]/g, 'Y');
+	// // --- //
+	// input = input.replace(/sh/gim, 'c');
+	// input = input.replace(/zh/gim, 'j');
+	// input = input.replace(/ch/gim, 'tc');
+	// input = input.replace(/kh/gim, 'x');
+	// // --- //
+	// input = input.replace(/ı/gim, 'i');
+	// input = input.replace(/ʃ/gim, 'c');
+	// input = input.replace(/ʒ/gim, 'j');
+	// input = input.replace(/ɛ/gm, 'e');
+	// input = input.replace(/[Ɛɛ́ɛ̀ɛ̂ɛ̈]/gm, 'E');
+	// input = input.replace(/ə/gim, 'y');
+	// input = input.replace(/ŋ/gim, 'ng');
 	// --- //
 	// input = input.replace(/([cfkpstx])([bdgjvz])/gim, '$1y$2');
 	// input = input.replace(/([bdgjvz])([cfkpstx])/gim, '$1y$2');
