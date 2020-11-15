@@ -158,11 +158,16 @@ predicate_tail_pre = expr:((pre_predicate_tail_connective DO_clause_elidible pre
 // terms followed by predicate-tail elidible terminator
 predicate_tail_terms = expr:(predicate_place* DOI_clause_elidible) {return _node("predicate_tail_terms", expr);}
 // place + term
-predicate_place = expr:((DU_clause relation_3 / FA_clause) predicate_term) {return _node("predicate_place", expr);}
+predicate_place = expr:(predicate_place_tag predicate_term) {return _node("predicate_place", expr);}
 // term afterthought connectives
 predicate_term = expr:(predicate_term_1 (predicate_tail_connective !DO_clause predicate_term_1)*) {return _node("predicate_term", expr);}
 // simple relation term / forethough connected terms
 predicate_term_1 = expr:(relation / predicate_term_pre) {return _node("predicate_term_1", expr);}
+
+// predicate place tags connectives
+predicate_place_tag = expr:(predicate_place_tag_1 (CA_clause predicate_place_tag_1)*) {return _node("predicate_place_tag", expr);}
+// basic predicate place tags
+predicate_place_tag_1 = expr:(DU_clause relation_3 / FA_clause) {return _node("predicate_place_tag_1", expr);}
 
 // forethough connected term structure
 predicate_term_pre = expr:((pre_predicate_tail_connective !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)) {return _node("predicate_term_pre", expr);}

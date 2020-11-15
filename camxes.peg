@@ -29,11 +29,16 @@ predicate_tail_pre <- (pre_predicate_tail_connective DO_clause_elidible predicat
 # terms followed by predicate-tail elidible terminator
 predicate_tail_terms <- predicate_place* DOI_clause_elidible
 # place + term
-predicate_place <- (DU_clause relation_3 / FA_clause) predicate_term
+predicate_place <- predicate_place_tag predicate_term
 # term afterthought connectives
 predicate_term <- predicate_term_1 (predicate_tail_connective !DO_clause predicate_term_1)*
 # simple relation term / forethough connected terms
 predicate_term_1 <- relation / predicate_term_pre
+
+# predicate place tags connectives
+predicate_place_tag <- predicate_place_tag_1 (CA_clause predicate_place_tag_1)*
+# basic predicate place tags
+predicate_place_tag_1 <- DU_clause relation_3 / FA_clause
 
 # forethough connected term structure
 predicate_term_pre <- (pre_predicate_tail_connective !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)

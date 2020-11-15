@@ -207,6 +207,8 @@ Particles
         xuo : weak intensity modifier
         xuu : intensity modifier question
 
+        xa('a)+ : laugther
+
         xu: true/false question
 
     BY - Literals
@@ -224,6 +226,7 @@ Root words
     bria: x1 is the arm of x2 [birka]
     cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
     dra'u: x1 is milk from source x2 [ladru]
+    dje: x1 is x2 full days in duration (default = 1) by standard x3 [djedi]
     gle: x1 is happy about x2 (abstraction) [gleki]
     gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
     jgai: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
