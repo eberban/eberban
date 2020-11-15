@@ -1,12 +1,17 @@
 # TODO
-# - Add pro-predicates
+# - Add pro-relations
+# - Add y+ pause
 
 # GRAMMAR
 # main rule
-text <- free_attitudinal* (paragraph+ / predicate*) spaces? EOF?
+text <- free_attitudinal* (paragraph+ / sentence*) spaces? EOF?
 
 # paragraphs
-paragraph <- DA_clause+ predicate*
+paragraph <- DA_clause+ sentence*
+# a sentence is either a predicate or a fragment
+sentence <- predicate / fragments
+# fragments : allow to answer questions without making a complete predicate
+fragments <- DE_clause (predicate_place / FA_clause)*
 
 # predicate afterthough connectives
 predicate <- predicate_1 (DE_clause_elidible relation_connective predicate_1)*
@@ -113,7 +118,7 @@ DOI_clause          <- free_prefix* spaces? DOI free_post*
 DOI_clause_elidible <- DOI_clause?
 DU_clause           <- free_prefix* spaces? DU
 E_clause            <- free_prefix* spaces? E
-FA_clause           <- free_prefix* spaces? FA
+FA_clause           <- free_prefix* spaces? FA free_post*
 GA_clause           <- free_prefix* spaces? GA
 GAI_clause          <- free_prefix* spaces? GAI free_post*
 GAI_clause_elidible <- GAI_clause?
@@ -135,6 +140,7 @@ PEI_clause          <- free_prefix* spaces? PEI
 PEI_clause_elidible <- PEI_clause?
 SA_clause           <- free_prefix* spaces? SA
 U_clause            <- free_prefix* spaces? U
+# VA is in FA 
 ZA_clause           <- free_prefix* spaces? ZA
 ZE_clause           <- free_prefix* spaces? ZE
 ZEI_clause          <- free_prefix* spaces? ZEI free_post*
@@ -178,6 +184,7 @@ PEI   <- &particle (p e i)
 SA    <- &particle (s vowel_tail)
 U     <- &particle (u)
 Y     <- &particle (y+)
+# VA is in FA 
 ZA    <- &particle (z a)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)
@@ -229,8 +236,7 @@ y <- [yY] # <LEAF>
 consonant_cluster <- (!(coda coda coda) consonant consonant*)
 initial_consonant_pair <- (&initial consonant consonant !consonant)
 initial <- (affricate / sibilant? other? liquid?) !consonant
-
-# consonant <- (voiced / unvoiced / coda) 
+ 
 consonant <- (voiced / unvoiced / liquid / m / n) 
 affricate <- (t c / t s / d j / d z) 
 liquid <- (l / r) 

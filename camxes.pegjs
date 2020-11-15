@@ -1,5 +1,6 @@
 // TODO
-// - Add pro-predicates
+// - Add pro-relations
+// - Add y+ pause
 
 // GRAMMAR
 // main rule
@@ -132,10 +133,14 @@
   }
 }
 
-text = expr:(free_attitudinal* (paragraph+ / predicate*) spaces? EOF?) {return _node("text", expr);}
+text = expr:(free_attitudinal* (paragraph+ / sentence*) spaces? EOF?) {return _node("text", expr);}
 
 // paragraphs
-paragraph = expr:(DA_clause+ predicate*) {return _node("paragraph", expr);}
+paragraph = expr:(DA_clause+ sentence*) {return _node("paragraph", expr);}
+// a sentence is either a predicate or a fragment
+sentence = expr:(predicate / fragments) {return _node("sentence", expr);}
+// fragments : allow to answer questions without making a complete predicate
+fragments = expr:(DE_clause (predicate_place / FA_clause)*) {return _node("fragments", expr);}
 
 // predicate afterthough connectives
 predicate = expr:(predicate_1 (DE_clause_elidible relation_connective predicate_1)*) {return _node("predicate", expr);}
@@ -242,7 +247,7 @@ DOI_clause = expr:(free_prefix* spaces? DOI free_post*) {return _node("DOI_claus
 DOI_clause_elidible = expr:(DOI_clause?) {return (expr == "" || !expr) ? ["DOI"] : _node_empty("DOI_clause_elidible", expr);}
 DU_clause = expr:(free_prefix* spaces? DU) {return _node("DU_clause", expr);}
 E_clause = expr:(free_prefix* spaces? E) {return _node("E_clause", expr);}
-FA_clause = expr:(free_prefix* spaces? FA) {return _node("FA_clause", expr);}
+FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);}
 GA_clause = expr:(free_prefix* spaces? GA) {return _node("GA_clause", expr);}
 GAI_clause = expr:(free_prefix* spaces? GAI free_post*) {return _node("GAI_clause", expr);}
 GAI_clause_elidible = expr:(GAI_clause?) {return (expr == "" || !expr) ? ["GAI"] : _node_empty("GAI_clause_elidible", expr);}
@@ -264,6 +269,7 @@ PEI_clause = expr:(free_prefix* spaces? PEI) {return _node("PEI_clause", expr);}
 PEI_clause_elidible = expr:(PEI_clause?) {return (expr == "" || !expr) ? ["PEI"] : _node_empty("PEI_clause_elidible", expr);}
 SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);}
 U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);}
+// VA is in FA
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);}
 ZE_clause = expr:(free_prefix* spaces? ZE) {return _node("ZE_clause", expr);}
 ZEI_clause = expr:(free_prefix* spaces? ZEI free_post*) {return _node("ZEI_clause", expr);}
@@ -307,6 +313,7 @@ PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
 Y = expr:(&particle (y+)) {return _node("Y", expr);}
+// VA is in FA
 ZA = expr:(&particle (z a)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}
@@ -359,7 +366,6 @@ consonant_cluster = expr:((!(coda coda coda) consonant consonant*)) {return _nod
 initial_consonant_pair = expr:((&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
 initial = expr:((affricate / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
 
-// consonant <- (voiced / unvoiced / coda)
 consonant = expr:((voiced / unvoiced / liquid / m / n)) {return _node("consonant", expr);}
 affricate = expr:((t c / t s / d j / d z)) {return _node("affricate", expr);}
 liquid = expr:((l / r)) {return _node("liquid", expr);}
