@@ -1,6 +1,3 @@
-// TODO
-// - Add pro-relations
-
 // GRAMMAR
 // main rule
 {
@@ -175,7 +172,7 @@ relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
 relation_2 = expr:(relation_3 (relation_connective !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
-relation_3 = expr:(relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / spaces? root free_post*) {return _node("relation_3", expr);}
+relation_3 = expr:(relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / spaces? root free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
 relation_pre = expr:((pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
@@ -262,6 +259,7 @@ I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);}
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);}
 KA_clause = expr:(free_prefix* spaces? KA) {return _node("KA_clause", expr);}
 KAI_clause = expr:(free_prefix* spaces? KAI) {return _node("KAI_clause", expr);}
+MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);}
 O_clause = expr:(free_prefix* spaces? O) {return _node("O_clause", expr);}
 PA_clause = expr:(spaces? PA) {return _node("PA_clause", expr);}
 PAI_clause = expr:(spaces? PAI) {return _node("PAI_clause", expr);}
@@ -306,10 +304,11 @@ I = expr:(&particle (i)) {return _node("I", expr);}
 JA = expr:(&particle (j vowel_tail)) {return _node("JA", expr);}
 KA = expr:(&particle (k a)) {return _node("KA", expr);}
 KAI = expr:(&particle (k a i)) {return _node("KAI", expr);}
+MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
 O = expr:(&particle (o)) {return _node("O", expr);}
 PA = expr:(&particle (p a)) {return _node("PA", expr);}
 PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
-PE = expr:(&particle (p !a vowel)) {return _node("PE", expr);}
+PE = expr:(&particle (p !a (diphthong / vowel))) {return _node("PE", expr);}
 PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}

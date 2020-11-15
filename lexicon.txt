@@ -55,7 +55,10 @@ Particles
     PE - Free adverbial starter
         pe : discursive        
         pi : free restrictive adverbial
-        po : free non-restrictive adverbial  
+        po : free non-restrictive adverbial 
+        poi : relation affectation
+              one side should be be mia..miu/mua..muu
+              if both side are, left is now equal right
         pu : parenthetical     
     
     PEI - Free adverbial terminator  
@@ -122,6 +125,25 @@ Particles
     KAI - Negation suffix
         kai : negation suffix
 
+    MA - Pro-relations
+        ma : relation question
+        mi : x1 is the speaker(s)
+        mo : x1 is the listener(s)        
+        mo'i : x1 is the listeners(s) and others
+        mi'o : x1 is the speaker(s) and the listeners(s) 
+        mi'oi : x1 is the speaker(s) and the listeners(s) and others 
+        mi'i : x1 is the speaker(s) and others but not the listeners(s) 
+        mia : x1 is he/she/it/they #1
+        mie : x1 is he/she/it/they #2
+        mii : x1 is he/she/it/they #3
+        mio : x1 is he/she/it/they #4
+        miu : x1 is he/she/it/they #5
+        mua : x1 is he/she/it/they #6
+        mue : x1 is he/she/it/they #7
+        mui : x1 is he/she/it/they #8
+        muo : x1 is he/she/it/they #9
+        muu : x1 is he/she/it/they #10
+
     AHA - Attitudinal
         xu: true/false question
 
@@ -141,7 +163,6 @@ Root words
     bria: x1 is the arm of x2 [birka]
     car: x1 is 5 of x2 in dimension/aspect x3 (default = unit)
     cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
-    don: x1 is the listener(s) [do]
     dor: x1 is 8 of x2 in dimension/aspect x3 (default = unit)
     dra'u: x1 is milk from source x2 [ladru]
     fol: x1 is 3 of x2 in dimension/aspect x3 (default = unit)
@@ -149,7 +170,6 @@ Root words
     gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
     gul: x1 is 9 of x2 in dimension/aspect x3 (default = unit)
     jgai: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
-    jmi: x1 is self/the speaker(s) [mi]
     jul: x1 is C (12) of x2 in dimension/aspect x3 (default = unit)
     kal: x1 is F (15) of x2 in dimension/aspect x3 (default = unit)
     kir: x1 is 2 of x2 in dimension/aspect x3 (default = unit)
