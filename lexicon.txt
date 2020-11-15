@@ -144,10 +144,39 @@ Particles
         muo : x1 is he/she/it/they #9
         muu : x1 is he/she/it/they #10
 
-    AHA - Attitudinal
+    TA - Numerals
+        ta   : numeral for 0
+        te   : decimal point  
+        te'e : (base | number) separator
+        te'o : thousands separator
+        tia  : numeral for 1
+        tie  : numeral for 2
+        tii  : numeral for 3
+        tio  : numeral for 4
+        tiu  : numeral for 5
+        tua  : numeral for 6
+        tue  : numeral for 7
+        tui  : numeral for 8
+        tuo  : numeral for 9
+        tuu  : numeral for A (10)
+        tu'a : numeral for B (11)
+        tu'e : numeral for C (12)
+        tu'i : numeral for D (13)
+        tu'o : numeral for E (14)
+        tu'u : numeral for F (15)
+
+    TAI - Number / letter string terminator
+        tai : number / letter string elidible terminator
+
+        Number strings means
+            x1 is [number] of x3 in dimension/aspect x3 (default = unit)
+        Letter strings represents a relation or concept designated by the letters.
+            It can be a previous compound with these initials, or be contextual.
+
+    XA - Attitudinal
         xu: true/false question
 
-    BY
+    BY - Literals
         Cy : consonant
         V'y : vowel
         iy'y : i semi-vowel
@@ -158,56 +187,23 @@ Particles
 Root words
 
     ban: x1 is a language/dialect used by x2 to express x3 (predicate)
-    bin: x1 is 7 of x2 in dimension/aspect x3 (default = unit)
     bla: x1 is in the future/after x2 in time;
     bria: x1 is the arm of x2 [birka]
-    car: x1 is 5 of x2 in dimension/aspect x3 (default = unit)
     cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
-    dor: x1 is 8 of x2 in dimension/aspect x3 (default = unit)
     dra'u: x1 is milk from source x2 [ladru]
-    fol: x1 is 3 of x2 in dimension/aspect x3 (default = unit)
     gle: x1 is happy about x2 (abstraction) [gleki]
     gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
-    gul: x1 is 9 of x2 in dimension/aspect x3 (default = unit)
     jgai: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
-    jul: x1 is C (12) of x2 in dimension/aspect x3 (default = unit)
-    kal: x1 is F (15) of x2 in dimension/aspect x3 (default = unit)
-    kir: x1 is 2 of x2 in dimension/aspect x3 (default = unit)
-    kli: x1 is a thousand [1000] of x2 in dimension/aspect x3 (default = unit)
     mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
-    pal: x1 is 0 of x2 in dimension/aspect x3 (default = unit)
     pe'on: x1 is a friend of x2 [pendo]
     pi'en: x1 drinks liquid x2 out of container x3 [pinxe]
     pli: x1 is a tool used by x2 for purpose x3 [modified pilno]
-    pon: x1 is D (13) of x2 in dimension/aspect x3 (default = unit)
     pre: x1 is a person [prenu]
     pru: x1 (abstraction) is in the past of/before x2 (event) (default = now) [purci]
     skai: x1 is a computer for purpose x2 [skami]
     sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
-    spi: ??? (radix point)
-    sun: x1 is 4 of x2 in dimension/aspect x3 (default = unit)
-    ten: x1 is 1 of x2 in dimension/aspect x3 (default = unit)
-    tur: x1 is E (14) of x2 in dimension/aspect x3 (default = unit)
-    van: x1 is A (10) of x2 in dimension/aspect x3 (default = unit)
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
-    xel: x1 is 6 of x2 in dimension/aspect x3 (default = unit)
-    zbi: x1 is the numer base of number x2
     zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
-    zer: x1 is B (11) of x2 in dimension/aspect x3 (default = unit)
-
-Numbers
-
-    pal ten kir fol sun car xel bin dor gul van zer jul pon tur kal
-     0   1   2   3   4   5   6   7   8   9   A   B   C   D   E   F
-
-    (made from cycling through `(!coda) other` + `vowel` + `coda`)
-
-    zbi : base
-    spi : radix point
-    kli : 1 000 separator
-    
-    Number lexemes are made of consecutive numbers morphemes.
-    (<base> baz)? (kli* <number>)* (spi <number>+)?
     
 Lexemes
 
