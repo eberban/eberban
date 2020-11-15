@@ -294,7 +294,7 @@ BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
 A = expr:(&particle (a)) {return _node("A", expr);}
 BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h a / y h e)) {return _node("BY", expr);}
 XA = expr:(&particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)) {return _node("XA", expr);}
-BA = expr:(&particle !BAI (b vowel_tail)) {return _node("BA", expr);}
+BA = expr:(&particle !(BAI post_word) (b vowel_tail)) {return _node("BA", expr);}
 BAI = expr:(&particle (b a i)) {return _node("BAI", expr);}
 CA = expr:(&particle (c vowel)) {return _node("CA", expr);}
 DA = expr:(&particle (d a)) {return _node("DA", expr);}
@@ -323,7 +323,7 @@ PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
 PE = expr:(&particle !PA (p (diphthong / vowel))) {return _node("PE", expr);}
 PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
-TA = expr:(&particle !TAI (t vowel_tail)) {return _node("TA", expr);}
+TA = expr:(&particle !(TAI post_word) (t vowel_tail)) {return _node("TA", expr);}
 TAI = expr:(&particle (t a i)) {return _node("TAI", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
 // VA is in FA

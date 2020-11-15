@@ -6506,7 +6506,21 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = peg$currPos;
         peg$silentFails++;
-        s4 = peg$parseBAI();
+        s4 = peg$currPos;
+        s5 = peg$parseBAI();
+        if (s5 !== peg$FAILED) {
+          s6 = peg$parsepost_word();
+          if (s6 !== peg$FAILED) {
+            s5 = [s5, s6];
+            s4 = s5;
+          } else {
+            peg$currPos = s4;
+            s4 = peg$c0;
+          }
+        } else {
+          peg$currPos = s4;
+          s4 = peg$c0;
+        }
         peg$silentFails--;
         if (s4 === peg$FAILED) {
           s3 = peg$c16;
@@ -8343,7 +8357,21 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = peg$currPos;
         peg$silentFails++;
-        s4 = peg$parseTAI();
+        s4 = peg$currPos;
+        s5 = peg$parseTAI();
+        if (s5 !== peg$FAILED) {
+          s6 = peg$parsepost_word();
+          if (s6 !== peg$FAILED) {
+            s5 = [s5, s6];
+            s4 = s5;
+          } else {
+            peg$currPos = s4;
+            s4 = peg$c0;
+          }
+        } else {
+          peg$currPos = s4;
+          s4 = peg$c0;
+        }
         peg$silentFails--;
         if (s4 === peg$FAILED) {
           s3 = peg$c16;

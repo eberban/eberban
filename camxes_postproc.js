@@ -147,7 +147,7 @@ function newer_postprocessor(
         // "p_predicate_tail_close": "VEI",
         // "p_pre_connective_close": "GAI",
         // "p_abstraction_close": "BAI",
-        "morpheme": "M",
+        "root": "R",
         "borrowing_content": "B"
     };
 

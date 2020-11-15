@@ -150,28 +150,44 @@ Particles
         muu : x1 is he/she/it/they #10
 
     TA - Numerals
-        ta   : numeral for 0
+        ta   : 0
+
+        ta'a : few
+        ta'e : several
+        ta'i : many
+        ta'u : most
+        ta'u : each/all
+
+        tai'a : too few (subjective)
+        tai'a : enough (subjective)
+        tai'a : too many (subjective)
+
         te   : decimal point  
-        te'e : (base | number) separator
-        te'o : thousands separator
+        te'a : (base | number) separator
+        te'e : thousands separator
+        te'i : approximately, (precise | approximate) separator
 
-        tia  : numeral for 1
-        tie  : numeral for 2
-        tii  : numeral for 3
-        tio  : numeral for 4
-        tiu  : numeral for 5
+        to   : digit/number question
+        to'a : at least (some) / no less then
+        to'e : at most (all) / no more than
 
-        tua  : numeral for 6
-        tue  : numeral for 7
-        tui  : numeral for 8
-        tuo  : numeral for 9
-        tuu  : numeral for A (10)
+        tia  : 1
+        tie  : 2
+        tii  : 3
+        tio  : 4
+        tiu  : 5
 
-        tu'a : numeral for B (11)
-        tu'e : numeral for C (12)
-        tu'i : numeral for D (13)
-        tu'o : numeral for E (14)
-        tu'u : numeral for F (15)
+        tua  : 6
+        tue  : 7
+        tui  : 8
+        tuo  : 9
+        tuu  : A (10)
+
+        tu'a : B (11)
+        tu'e : C (12)
+        tu'i : D (13)
+        tu'o : E (14)
+        tu'u : F (15)
 
     TAI - Number / letter string terminator
         tai : number / letter string elidible terminator
