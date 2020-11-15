@@ -64,7 +64,7 @@ Particles
     PEI - Free adverbial terminator  
         pei : free adverbial elidible terminator    
 
-    SA - Relation transformer (swap / name) [lojban SE + LAhE]
+    SA - Relation transformer (swap / name) [lojban SE + LAhE + NAhE]
         sa : convert relation to name relation
         se : swap x1 and x2
         si : swap x1 and x3
@@ -72,6 +72,9 @@ Particles
         su : swap x1 and x5
         sei : swap question
         soi : the referent of (indirect pointer)
+        sa'a: contrary scalar negator : other than .. (scale or set is implied)
+        sa'e: polar opposite scalar negator : not a ..
+        sa'i: midpoint scalar negator : not really
         ...
 
     JA - Predicate-tail connectives
@@ -149,16 +152,19 @@ Particles
         te   : decimal point  
         te'e : (base | number) separator
         te'o : thousands separator
+
         tia  : numeral for 1
         tie  : numeral for 2
         tii  : numeral for 3
         tio  : numeral for 4
         tiu  : numeral for 5
+
         tua  : numeral for 6
         tue  : numeral for 7
         tui  : numeral for 8
         tuo  : numeral for 9
         tuu  : numeral for A (10)
+        
         tu'a : numeral for B (11)
         tu'e : numeral for C (12)
         tu'i : numeral for D (13)
@@ -169,11 +175,20 @@ Particles
         tai : number / letter string elidible terminator
 
         Number strings means
-            x1 is [number] of x3 in dimension/aspect x3 (default = unit)
+            x1 is [number] of x2 in dimension/aspect x3 (default = unit)
+        If number string must start with a letter, put ta (0) before it
+       
         Letter strings represents a relation or concept designated by the letters.
             It can be a previous compound with these initials, or be contextual.
+        If a letter string must start with a number, put y'y (y) before it (better idea ?)
 
-    XA - Attitudinal
+    XA - Indicator
+        xua : strong intensity modifier
+        xue : moderate intensity modifier
+        xui : neutral intensity modifier
+        xuo : weak intensity modifier
+        xuu : intensity modifier question
+
         xu: true/false question
 
     BY - Literals
@@ -181,12 +196,12 @@ Particles
         V'y : vowel
         iy'y : i semi-vowel
         uy'y : u semi-voewel
-        y'y : h
-        > Add a BY for the dot pause ?
+        y'a : pause/.
+        y'e : h/'
 
 Root words
 
-    ban: x1 is a language/dialect used by x2 to express x3 (predicate)
+    ban: x1 is a language/dialect used by x2 to express x3 (predicate) [bangu]
     bla: x1 is in the future/after x2 in time;
     bria: x1 is the arm of x2 [birka]
     cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
@@ -207,10 +222,11 @@ Root words
     
 Lexemes
 
-    asa: x1 (foreign / quoted words) is a name of x2 given by x3
     a.a: x1 is a lexeme meaning x2 with components x3 (set)
-    ada'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
     ada: x1 is a predicate with relation x2 and components x3 (set)
+    ada'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
     ade: x1 is a predicate-tail with relation x2 and components x3 (set)
+    asa: x1 (foreign / quoted words) is a name of x2 given by x3
     ebriajgai: x1 grabs/holds/hugs x2 at locus x3
     edaban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
+    etatai: x1 is a number of x2 in dimension/aspect x3 (default = unit)

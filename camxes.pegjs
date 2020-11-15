@@ -129,7 +129,7 @@
   }
 }
 
-text = expr:(free_attitudinal* (paragraph+ / sentence*) spaces? EOF?) {return _node("text", expr);}
+text = expr:(free_indicator* (paragraph+ / sentence*) spaces? EOF?) {return _node("text", expr);}
 
 // paragraphs
 paragraph = expr:(DA_clause+ sentence*) {return _node("paragraph", expr);}
@@ -231,9 +231,9 @@ pre_connective_separator = expr:(GI_clause KAI_clause? free_post*) {return _node
 free_prefix = expr:(PA_clause) {return _node("free_prefix", expr);}
 
 // free suffix
-free_post = expr:(PAI_clause / free_adverbial / free_attitudinal) {return _node("free_post", expr);}
+free_post = expr:(PAI_clause / free_adverbial / free_indicator) {return _node("free_post", expr);}
 free_adverbial = expr:(PE_clause relation PEI_clause_elidible) {return _node("free_adverbial", expr);}
-free_attitudinal = expr:(XA_clause KAI_clause?) {return _node("free_attitudinal", expr);}
+free_indicator = expr:(XA_clause KAI_clause?) {return _node("free_indicator", expr);}
 
 // PARTICLES CLAUSES
 A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);}
@@ -292,7 +292,7 @@ BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
 
 // PARTICLE FAMILIES
 A = expr:(&particle (a)) {return _node("A", expr);}
-BY = expr:(&particle (consonant y / vowel h y / (i / u) y h y / vi_diphthong h y / y h y)) {return _node("BY", expr);}
+BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h a / y h e)) {return _node("BY", expr);}
 XA = expr:(&particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)) {return _node("XA", expr);}
 BA = expr:(&particle !BAI (b vowel_tail)) {return _node("BA", expr);}
 BAI = expr:(&particle (b a i)) {return _node("BAI", expr);}

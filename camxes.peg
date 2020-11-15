@@ -1,6 +1,6 @@
 # GRAMMAR
 # main rule
-text <- free_attitudinal* (paragraph+ / sentence*) spaces? EOF?
+text <- free_indicator* (paragraph+ / sentence*) spaces? EOF?
 
 # paragraphs
 paragraph <- DA_clause+ sentence*
@@ -102,9 +102,9 @@ pre_connective_separator <- GI_clause KAI_clause? free_post*
 free_prefix <- PA_clause
 
 # free suffix
-free_post <- PAI_clause / free_adverbial / free_attitudinal
+free_post <- PAI_clause / free_adverbial / free_indicator
 free_adverbial <- PE_clause relation PEI_clause_elidible
-free_attitudinal <- XA_clause KAI_clause?
+free_indicator <- XA_clause KAI_clause?
 
 # PARTICLES CLAUSES
 A_clause            <- free_prefix* spaces? A
@@ -163,8 +163,8 @@ BY_clause           <- free_prefix* spaces? BY
 
 # PARTICLE FAMILIES
 A     <- &particle (a)
-BY    <- &particle (consonant y / vowel h y / (i / u) y h y / vi_diphthong h y / y h y)
-XA   <- &particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)
+BY    <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h a / y h e)
+XA    <- &particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)
 BA    <- &particle !BAI (b vowel_tail)
 BAI   <- &particle (b a i)
 CA    <- &particle (c vowel)
