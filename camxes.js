@@ -647,8 +647,14 @@ var camxes = (function() {
           }
         }
         if (s3 !== peg$FAILED) {
-          s2 = [s2, s3];
-          s1 = s2;
+          s4 = peg$parseDEI_clause_elidible();
+          if (s4 !== peg$FAILED) {
+            s2 = [s2, s3, s4];
+            s1 = s2;
+          } else {
+            peg$currPos = s1;
+            s1 = peg$c0;
+          }
         } else {
           peg$currPos = s1;
           s1 = peg$c0;

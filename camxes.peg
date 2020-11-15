@@ -7,7 +7,7 @@ paragraph <- DA_clause+ sentence*
 # a sentence is either a predicate or a fragment
 sentence <- predicate / fragments
 # fragments : allow to answer questions without making a complete predicate
-fragments <- DE_clause (predicate_place / FA_clause)*
+fragments <- DE_clause (predicate_place / FA_clause)* DEI_clause_elidible
 
 # predicate afterthough connectives
 predicate <- predicate_1 (DE_clause_elidible relation_connective predicate_1)*

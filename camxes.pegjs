@@ -136,7 +136,7 @@ paragraph = expr:(DA_clause+ sentence*) {return _node("paragraph", expr);}
 // a sentence is either a predicate or a fragment
 sentence = expr:(predicate / fragments) {return _node("sentence", expr);}
 // fragments : allow to answer questions without making a complete predicate
-fragments = expr:(DE_clause (predicate_place / FA_clause)*) {return _node("fragments", expr);}
+fragments = expr:(DE_clause (predicate_place / FA_clause)* DEI_clause_elidible) {return _node("fragments", expr);}
 
 // predicate afterthough connectives
 predicate = expr:(predicate_1 (DE_clause_elidible relation_connective predicate_1)*) {return _node("predicate", expr);}
