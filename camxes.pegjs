@@ -1,5 +1,8 @@
+// TODO
+// - Add pro-predicates
+
 // GRAMMAR
-// main rule (used for tests, real text rule TODO)
+// main rule
 {
   var _g_foreign_quote_delim;
 
@@ -269,7 +272,6 @@ ZO_clause = expr:(free_prefix* spaces? ZO) {return _node("ZO_clause", expr);}
 ZOI_clause = expr:(free_prefix* spaces? ZOI free_post*) {return _node("ZOI_clause", expr);}
 ZU_clause = expr:(free_prefix* spaces? ZU) {return _node("ZU_clause", expr);}
 
-
 // BY_clause           <- free_prefix* spaces? BY
 
 // PARTICLE FAMILIES
@@ -324,7 +326,7 @@ foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr)
 // - Legal words
 foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant / coda)?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
-particle = expr:(!coda consonant? vowel_tail &post_word) {return _node("particle", expr);}
+particle = expr:(!coda consonant? vowel_tail !coda &post_word) {return _node("particle", expr);}
 root = expr:(((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word) {return _node("root", expr);}
 
 // - Legal vowels and vowel tails

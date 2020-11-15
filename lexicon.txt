@@ -136,7 +136,6 @@ Particles
 Morpheme
 
     ban: x1 is a language/dialect used by x2 to express x3 (predicate)
-    baz: x1 is the numer base of number x2
     bin: x1 is 7 of x2 in dimension/aspect x3 (default = unit)
     bla: x1 is in the future/after x2 in time;
     bri'a: x1 is the arm of x2 [birka]
@@ -172,6 +171,7 @@ Morpheme
     van: x1 is A (10) of x2 in dimension/aspect x3 (default = unit)
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
     xel: x1 is 6 of x2 in dimension/aspect x3 (default = unit)
+    zbi: x1 is the numer base of number x2
     zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
     zer: x1 is B (11) of x2 in dimension/aspect x3 (default = unit)
 
@@ -182,7 +182,7 @@ Numbers
 
     (made from cycling through `(!coda) other` + `vowel` + `coda`)
 
-    baz : base
+    zbi : base
     spi : radix point
     kli : 1 000 separator
     

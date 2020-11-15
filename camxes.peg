@@ -1,5 +1,8 @@
+# TODO
+# - Add pro-predicates
+
 # GRAMMAR
-# main rule (used for tests, real text rule TODO)
+# main rule
 text <- free_attitudinal* (paragraph+ / predicate*) spaces? EOF?
 
 # paragraphs
@@ -140,7 +143,6 @@ ZO_clause           <- free_prefix* spaces? ZO
 ZOI_clause          <- free_prefix* spaces? ZOI free_post*
 ZU_clause           <- free_prefix* spaces? ZU
 
-
 # BY_clause           <- free_prefix* spaces? BY
 
 # PARTICLE FAMILIES
@@ -195,7 +197,7 @@ foreign_quote_close <- native_word
 # - Legal words
 foreign_word <- (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant / coda)?
 native_word <-  root / particle
-particle <- !coda consonant? vowel_tail &post_word
+particle <- !coda consonant? vowel_tail !coda &post_word
 root <- ((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word
 
 # - Legal vowels and vowel tails
