@@ -46,11 +46,13 @@ Particles
         vo : predicate non-restrictive adverbial [noi'a]
         vu : predicate subordinating adverbial [soi'a] 
 
-    PA - Free prefix (one to one match is not checked by grammar)
-        pa : free scope starter
+    PA - Free prefix
+        pa : free scope starter (one to one match is not checked by grammar)
+        pa'a : indicate following lexeme is nonce-creation and may be nonstandard
+        pa'e : metadata tag / hashtag
 
     PAI - Free scope terminator (one to one match is not checked by grammar)
-        pai : free scope terminator
+        pai : free scope terminator 
 
     PE - Free adverbial starter
         pe : discursive        
@@ -164,7 +166,7 @@ Particles
         tui  : numeral for 8
         tuo  : numeral for 9
         tuu  : numeral for A (10)
-        
+
         tu'a : numeral for B (11)
         tu'e : numeral for C (12)
         tu'i : numeral for D (13)
@@ -223,10 +225,11 @@ Root words
 Lexemes
 
     a.a: x1 is a lexeme meaning x2 with components x3 (set)
-    ada: x1 is a predicate with relation x2 and components x3 (set)
-    ada'a: x1 is a paragraph about subject x2 composed of predicates x3 (set)
-    ade: x1 is a predicate-tail with relation x2 and components x3 (set)
+    ada: x1 is a paragraph about subject x2 composed of predicates x3 (set)
+    ade: x1 is a predicate with relation x2 and components x3 (set)
+    ado: x1 is a predicate-tail with relation x2 and components x3 (set)
     asa: x1 (foreign / quoted words) is a name of x2 given by x3
+
     ebriajgai: x1 grabs/holds/hugs x2 at locus x3
-    edaban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
+    edeban: x1 is this language (predicate language) used by x2 to express x3 (predicate)
     etatai: x1 is a number of x2 in dimension/aspect x3 (default = unit)

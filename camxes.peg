@@ -43,7 +43,7 @@ relation <- relation_2+
 # relation afterthough connectives
 relation_2 <- relation_3 (relation_connective !DA_clause relation_3)*
 # basic relations
-relation_3 <- relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / spaces? (root / string) free_post*
+relation_3 <- relation_pre / flat_lexeme / grammatical_lexeme / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*
 
 # forethough connected relations
 relation_pre <- (pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)
@@ -140,7 +140,7 @@ KA_clause           <- free_prefix* spaces? KA
 KAI_clause          <- free_prefix* spaces? KAI
 MA_clause           <- free_prefix* spaces? MA free_post*
 O_clause            <- free_prefix* spaces? O
-PA_clause           <- spaces? PA
+PA_clause           <- spaces? PA free_post*
 PAI_clause          <- spaces? PAI
 PE_clause           <- free_prefix* spaces? PE
 PEI_clause          <- free_prefix* spaces? PEI
@@ -189,7 +189,7 @@ KA    <- &particle (k a)
 KAI   <- &particle (k a i)
 MA    <- &particle (m vowel_tail)
 O     <- &particle (o)
-PA    <- &particle (p a)
+PA    <- &particle (p a vowel_tail_1)
 PAI   <- &particle (p a i)
 PE    <- &particle !PA (p (diphthong / vowel))
 PEI   <- &particle (p e i)
