@@ -1,6 +1,5 @@
 # TODO
 # - Add pro-relations
-# - Add y+ pause
 
 # GRAMMAR
 # main rule
@@ -65,7 +64,9 @@ flat_lexeme_word <- initial_dot native_word
 grammatical_lexeme <- GE_clause relation GEI_clause
 
 # borrowings
-borrowing <- ZA_clause borrowing_content dot? free_post*
+# borrowing <- ZA_clause borrowing_content dot? free_post*
+
+borrowing <- ZA_clause borrowing_content (dot !dot !y)? free_post*
 borrowing_content <- spaces foreign_word (!spaces native_word)*
 
 # quotes
@@ -183,7 +184,6 @@ PE    <- &particle (p !a vowel)
 PEI   <- &particle (p e i)
 SA    <- &particle (s vowel_tail)
 U     <- &particle (u)
-Y     <- &particle (y+)
 # VA is in FA 
 ZA    <- &particle (z a)
 ZE    <- &particle (z e)
@@ -264,12 +264,13 @@ p <- [pP] !p !voiced # <LEAF>
 t <- [tT] !t !voiced # <LEAF>
 
 # - Spaces / Pause
-initial_dot <- (dot &vowel_y / !dot &consonant)
-spaces <- space+ (dot &vowel)? / dot &vowel / EOF
-space <- space_char / hesitation space_char
-hesitation <- space_char+ dot? y+ dot? space_char+ 
-space_char <- [\t\n\r?!\u0020]
+
 post_word <- (dot &vowel_y / &consonant / spaces)
+initial_dot <- (dot &vowel_y / !dot &consonant)
+spaces <- initial_spaces (dot &vowel)? / dot &vowel / EOF
+initial_spaces <- (hesitation / space_char)+
+hesitation <- (space_char+ dot? / dot) y+ !(dot dot) (dot? &space_char / &(dot y) / dot / EOF)
+space_char <- [\t\n\r?!\u0020]
 
 # - Special characters
 dot <- '.'

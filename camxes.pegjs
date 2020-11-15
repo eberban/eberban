@@ -1,6 +1,5 @@
 // TODO
 // - Add pro-relations
-// - Add y+ pause
 
 // GRAMMAR
 // main rule
@@ -194,7 +193,9 @@ flat_lexeme_word = expr:(initial_dot native_word) {return _node("flat_lexeme_wor
 grammatical_lexeme = expr:(GE_clause relation GEI_clause) {return _node("grammatical_lexeme", expr);}
 
 // borrowings
-borrowing = expr:(ZA_clause borrowing_content dot? free_post*) {return _node("borrowing", expr);}
+// borrowing <- ZA_clause borrowing_content dot? free_post*
+
+borrowing = expr:(ZA_clause borrowing_content (dot !dot !y)? free_post*) {return _node("borrowing", expr);}
 borrowing_content = expr:(spaces foreign_word (!spaces native_word)*) {return _node("borrowing_content", expr);}
 
 // quotes
@@ -312,7 +313,6 @@ PE = expr:(&particle (p !a vowel)) {return _node("PE", expr);}
 PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
-Y = expr:(&particle (y+)) {return _node("Y", expr);}
 // VA is in FA
 ZA = expr:(&particle (z a)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
@@ -393,12 +393,13 @@ p = expr:([pP] !p !voiced) {return ["p", "p"];} // <LEAF>
 t = expr:([tT] !t !voiced) {return ["t", "t"];} // <LEAF>
 
 // - Spaces / Pause
-initial_dot = expr:((dot &vowel_y / !dot &consonant)) {return _node("initial_dot", expr);}
-spaces = expr:(space+ (dot &vowel)? / dot &vowel / EOF) {return _node("spaces", expr);}
-space = expr:(space_char / hesitation space_char) {return _node("space", expr);}
-hesitation = expr:(space_char+ dot? y+ dot? space_char+) {return _node("hesitation", expr);}
-space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
+
 post_word = expr:((dot &vowel_y / &consonant / spaces)) {return _node("post_word", expr);}
+initial_dot = expr:((dot &vowel_y / !dot &consonant)) {return _node("initial_dot", expr);}
+spaces = expr:(initial_spaces (dot &vowel)? / dot &vowel / EOF) {return _node("spaces", expr);}
+initial_spaces = expr:((hesitation / space_char)+) {return ["initial_spaces", _join(expr)];}
+hesitation = expr:((space_char+ dot? / dot) y+ !(dot dot) (dot? &space_char / &(dot y) / dot / EOF)) {return _node("hesitation", expr);}
+space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
 
 // - Special characters
 dot = expr:('.') {return _node("dot", expr);}

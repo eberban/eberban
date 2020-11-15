@@ -117,6 +117,7 @@
 	input = transliterate(input);
 	// --- //
 	input = input.replace(/\(|\)|«|»|‹|›|—|:/gm, '');
+	input = ' ' + input;
 	return input;
 }
 
