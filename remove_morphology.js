@@ -81,7 +81,7 @@ function join_expr(n) {
 
 /* Checks whether the argument node is a target for pruning. */
 function is_target_node(n) {
-    return (among(n[0], ["cmevla", "gismu", "lujvo", "fuhivla", "initial_spaces"])
+    return (among(n[0], ["particle", "morpheme", "foreign_word"])
             || is_selmaho(n[0]));
 }
 
@@ -93,7 +93,7 @@ function among(v, s) {
 
 function is_selmaho(v) {
     if (!is_string(v)) return false;
-    return (0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUY]|(AI|EI|OI|AU))(h([AEIOUY]|(AI|EI|OI|AU)))*$/g));
+    return (0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUY]|(AI|EI|OI|AU))(H([AEIOUY]|(AI|EI|OI|AU)))*$/g));
 }
 
 function is_string(v) {

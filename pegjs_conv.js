@@ -321,13 +321,9 @@ function peg_add_js_parser_actions(peg) {
 		'$1 = expr:($2) &{ return _is_foreign_quote_delim(expr); } ' + '{ return _node("$1", expr); }'
 	);
 	/* Parser action for elidible terminators */
-	// peg = peg.replace(
-	// 	/([0-9a-zA-Z_-]+)_elidible *= *([^\r\n]+)/gm,
-	// 	'$1_elidible = expr:($2) {return (expr == "" || !expr)' + ' ? ["$1"] : _node_empty("$1_elidible", expr);}'
-	// );
 	peg = peg.replace(
 		/([0-9a-zA-Z_-]+)_clause_elidible *= *([^\r\n]+)/gm,
-		'$1_clause_elidible = expr:($2) {return (expr == "" || !expr)' + ' ? ["$1", "$1"] : _node_empty("$1_elidible", expr);}'
+		'$1_clause_elidible = expr:($2) {return (expr == "" || !expr)' + ' ? ["$1"] : _node_empty("$1_clause_elidible", expr);}'
 	);
 	/* Others */
 	peg = peg.replace(

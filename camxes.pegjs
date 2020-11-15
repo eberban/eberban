@@ -226,29 +226,29 @@ A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);}
 AHA_clause = expr:(free_prefix* spaces? AHA) {return _node("AHA_clause", expr);}
 BA_clause = expr:(free_prefix* spaces? BA) {return _node("BA_clause", expr);}
 BAI_clause = expr:(free_prefix* spaces? BAI free_post*) {return _node("BAI_clause", expr);}
-BAI_clause_elidible = expr:(BAI_clause?) {return (expr == "" || !expr) ? ["BAI", "BAI"] : _node_empty("BAI_elidible", expr);}
+BAI_clause_elidible = expr:(BAI_clause?) {return (expr == "" || !expr) ? ["BAI"] : _node_empty("BAI_clause_elidible", expr);}
 CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);}
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);}
 DE_clause = expr:(free_prefix* spaces? DE free_post*) {return _node("DE_clause", expr);}
-DE_clause_elidible = expr:(DE_clause?) {return (expr == "" || !expr) ? ["DE", "DE"] : _node_empty("DE_elidible", expr);}
+DE_clause_elidible = expr:(DE_clause?) {return (expr == "" || !expr) ? ["DE"] : _node_empty("DE_clause_elidible", expr);}
 DEI_clause = expr:(free_prefix* spaces? DEI free_post*) {return _node("DEI_clause", expr);}
-DEI_clause_elidible = expr:(DEI_clause?) {return (expr == "" || !expr) ? ["DEI", "DEI"] : _node_empty("DEI_elidible", expr);}
+DEI_clause_elidible = expr:(DEI_clause?) {return (expr == "" || !expr) ? ["DEI"] : _node_empty("DEI_clause_elidible", expr);}
 DO_clause = expr:(free_prefix* spaces? DO free_post*) {return _node("DO_clause", expr);}
-DO_clause_elidible = expr:(DO_clause? ) {return (expr == "" || !expr) ? ["DO", "DO"] : _node_empty("DO_elidible", expr);}
+DO_clause_elidible = expr:(DO_clause? ) {return (expr == "" || !expr) ? ["DO"] : _node_empty("DO_clause_elidible", expr);}
 DOI_clause = expr:(free_prefix* spaces? DOI free_post*) {return _node("DOI_clause", expr);}
-DOI_clause_elidible = expr:(DOI_clause?) {return (expr == "" || !expr) ? ["DOI", "DOI"] : _node_empty("DOI_elidible", expr);}
+DOI_clause_elidible = expr:(DOI_clause?) {return (expr == "" || !expr) ? ["DOI"] : _node_empty("DOI_clause_elidible", expr);}
 DU_clause = expr:(free_prefix* spaces? DU) {return _node("DU_clause", expr);}
 E_clause = expr:(free_prefix* spaces? E) {return _node("E_clause", expr);}
 FA_clause = expr:(free_prefix* spaces? FA) {return _node("FA_clause", expr);}
 GA_clause = expr:(free_prefix* spaces? GA) {return _node("GA_clause", expr);}
 GAI_clause = expr:(free_prefix* spaces? GAI free_post*) {return _node("GAI_clause", expr);}
-GAI_clause_elidible = expr:(GAI_clause?) {return (expr == "" || !expr) ? ["GAI", "GAI"] : _node_empty("GAI_elidible", expr);}
+GAI_clause_elidible = expr:(GAI_clause?) {return (expr == "" || !expr) ? ["GAI"] : _node_empty("GAI_clause_elidible", expr);}
 GE_clause = expr:(free_prefix* spaces? GE) {return _node("GE_clause", expr);}
 GEI_clause = expr:(free_prefix* spaces? GEI free_post*) {return _node("GEI_clause", expr);}
 GI_clause = expr:(free_prefix* spaces? GI) {return _node("GI_clause", expr);}
 GO_clause = expr:(free_prefix* spaces? GO) {return _node("GO_clause", expr);}
 GOI_clause = expr:(free_prefix* spaces? GOI free_post*) {return _node("GOI_clause", expr);}
-GOI_clause_elidible = expr:(GOI_clause?) {return (expr == "" || !expr) ? ["GOI", "GOI"] : _node_empty("GOI_elidible", expr);}
+GOI_clause_elidible = expr:(GOI_clause?) {return (expr == "" || !expr) ? ["GOI"] : _node_empty("GOI_clause_elidible", expr);}
 I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);}
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);}
 KA_clause = expr:(free_prefix* spaces? KA) {return _node("KA_clause", expr);}
@@ -258,7 +258,7 @@ PA_clause = expr:(spaces? PA) {return _node("PA_clause", expr);}
 PAI_clause = expr:(spaces? PAI) {return _node("PAI_clause", expr);}
 PE_clause = expr:(free_prefix* spaces? PE) {return _node("PE_clause", expr);}
 PEI_clause = expr:(free_prefix* spaces? PEI) {return _node("PEI_clause", expr);}
-PEI_clause_elidible = expr:(PEI_clause?) {return (expr == "" || !expr) ? ["PEI", "PEI"] : _node_empty("PEI_elidible", expr);}
+PEI_clause_elidible = expr:(PEI_clause?) {return (expr == "" || !expr) ? ["PEI"] : _node_empty("PEI_clause_elidible", expr);}
 SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);}
 U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);}
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);}
