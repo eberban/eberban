@@ -218,9 +218,6 @@ relation_place_swap = expr:(SA_clause relation_3) {return _node("relation_place_
 scoped_relation = expr:(GO_clause relation GOI_clause_elidible) {return _node("scoped_relation", expr);}
 
 // string (numbers / literals)
-// string <- (number_string / letter_string) TAI_clause_elidible
-// number_string <- TA_clause (TA_clause / BY_clause)+
-// letter_string <- BY_clause (TA_clause / BY_clause)+
 string = expr:((number_string / letter_string) TAI_clause_elidible) {return _node("string", expr);}
 number_string = expr:(TA_clause (TA_clause / BY_clause)*) {return _node("number_string", expr);}
 letter_string = expr:(BY_clause (TA_clause / BY_clause)*) {return _node("letter_string", expr);}

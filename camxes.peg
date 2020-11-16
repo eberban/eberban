@@ -89,9 +89,6 @@ relation_place_swap <- SA_clause relation_3
 scoped_relation <- GO_clause relation GOI_clause_elidible
 
 # string (numbers / literals)
-# string <- (number_string / letter_string) TAI_clause_elidible
-# number_string <- TA_clause (TA_clause / BY_clause)+
-# letter_string <- BY_clause (TA_clause / BY_clause)+
 string <- (number_string / letter_string) TAI_clause_elidible
 number_string <- TA_clause (TA_clause / BY_clause)*
 letter_string <- BY_clause (TA_clause / BY_clause)*
