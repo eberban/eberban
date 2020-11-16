@@ -186,10 +186,10 @@ simplifyFunctions["free_indicator"] = function(parse) {
     }
 }
 
-simplifyFunctions["free_adverbial"] = function(parse) {
+simplifyFunctions["free_link"] = function(parse) {
     
     return {
-        type: "free adverbial",
+        type: "link",
         children: simplifyArrayOfTrees(parse.slice(1))
     }
 }

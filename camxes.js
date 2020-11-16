@@ -87,7 +87,7 @@ var camxes = (function() {
         peg$c52 = function(expr) {return _node("pre_connective_separator", expr);},
         peg$c53 = function(expr) {return _node("free_prefix", expr);},
         peg$c54 = function(expr) {return _node("free_post", expr);},
-        peg$c55 = function(expr) {return _node("free_adverbial", expr);},
+        peg$c55 = function(expr) {return _node("free_link", expr);},
         peg$c56 = function(expr) {return _node("free_indicator", expr);},
         peg$c57 = function(expr) {return _node("A_clause", expr);},
         peg$c58 = function(expr) {return _node("XA_clause", expr);},
@@ -3626,7 +3626,7 @@ var camxes = (function() {
       s0 = peg$currPos;
       s1 = peg$parsePAI_clause();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsefree_adverbial();
+        s1 = peg$parsefree_link();
         if (s1 === peg$FAILED) {
           s1 = peg$parsefree_indicator();
         }
@@ -3642,7 +3642,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsefree_adverbial() {
+    function peg$parsefree_link() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 208 + 51,
@@ -8167,6 +8167,9 @@ var camxes = (function() {
           s5 = peg$parsea();
           if (s5 !== peg$FAILED) {
             s6 = peg$parsevowel_tail_1();
+            if (s6 === peg$FAILED) {
+              s6 = peg$c2;
+            }
             if (s6 !== peg$FAILED) {
               s4 = [s4, s5, s6];
               s3 = s4;

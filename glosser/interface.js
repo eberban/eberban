@@ -333,7 +333,7 @@ function boxClassForType(parse) {
     if (parse.type === "modal") { return "box box-modal"; }
     // if (parse.type === "term") { return "box box-term"; }
     if (parse.type === "relation") { return "box box-relation"; }
-    if (parse.type === "free adverbial") { return "box box-free-adverbial"; }
+    if (parse.type === "link") { return "box box-link"; }
     if (parse.type === "lexeme") { return "box box-lexeme"; }
     if (parse.type === "number") { return "box box-number"; }
     if (parse.type === "letters") { return "box box-letters"; }

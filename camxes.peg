@@ -109,8 +109,8 @@ pre_connective_separator <- GI_clause KAI_clause? free_post*
 free_prefix <- PA_clause
 
 # free suffix
-free_post <- PAI_clause / free_adverbial / free_indicator
-free_adverbial <- PE_clause relation PEI_clause_elidible
+free_post <- PAI_clause / free_link / free_indicator
+free_link <- PE_clause relation PEI_clause_elidible
 free_indicator <- XA_clause KAI_clause?
 
 # PARTICLES CLAUSES
@@ -196,7 +196,7 @@ KA    <- &particle (k a)
 KAI   <- &particle (k a i)
 MA    <- &particle (m vowel_tail)
 O     <- &particle (o)
-PA    <- &particle (p a vowel_tail_1)
+PA    <- &particle (p a vowel_tail_1?)
 PAI   <- &particle (p a i)
 PE    <- &particle !((PA / PAI / PEI) post_word) (p vowel_tail)
 PEI   <- &particle (p e i)

@@ -238,8 +238,8 @@ pre_connective_separator = expr:(GI_clause KAI_clause? free_post*) {return _node
 free_prefix = expr:(PA_clause) {return _node("free_prefix", expr);}
 
 // free suffix
-free_post = expr:(PAI_clause / free_adverbial / free_indicator) {return _node("free_post", expr);}
-free_adverbial = expr:(PE_clause relation PEI_clause_elidible) {return _node("free_adverbial", expr);}
+free_post = expr:(PAI_clause / free_link / free_indicator) {return _node("free_post", expr);}
+free_link = expr:(PE_clause relation PEI_clause_elidible) {return _node("free_link", expr);}
 free_indicator = expr:(XA_clause KAI_clause?) {return _node("free_indicator", expr);}
 
 // PARTICLES CLAUSES
@@ -325,7 +325,7 @@ KA = expr:(&particle (k a)) {return _node("KA", expr);}
 KAI = expr:(&particle (k a i)) {return _node("KAI", expr);}
 MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
 O = expr:(&particle (o)) {return _node("O", expr);}
-PA = expr:(&particle (p a vowel_tail_1)) {return _node("PA", expr);}
+PA = expr:(&particle (p a vowel_tail_1?)) {return _node("PA", expr);}
 PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
 PE = expr:(&particle !((PA / PAI / PEI) post_word) (p vowel_tail)) {return _node("PE", expr);}
 PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
