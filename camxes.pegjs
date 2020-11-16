@@ -139,52 +139,52 @@ sentence = expr:(predicate / fragments) {return _node("sentence", expr);}
 fragments = expr:(DE_clause (predicate_place / FA_clause)* DEI_clause_elidible) {return _node("fragments", expr);}
 
 // predicate afterthough connectives
-predicate = expr:(predicate_1 (relation_connective !DO_clause DE_clause_elidible predicate_1)*) {return _node("predicate", expr);}
+predicate = expr:(predicate_1 (jak !DO_clause DE_clause_elidible predicate_1)*) {return _node("predicate", expr);}
 // pre-tail terms
 predicate_1 = expr:(predicate_pre / DE_clause_elidible predicate_place* DO_clause_elidible predicate_tail DEI_clause_elidible) {return _node("predicate_1", expr);}
 // forethough connected predicates
-predicate_pre = expr:((pre_relation_connective DE_clause predicate (pre_connective_separator predicate)+ GAI_clause_elidible)) {return _node("predicate_pre", expr);}
+predicate_pre = expr:((pre_jak !DO_clause DE_clause_elidible predicate (pre_connective_separator predicate)+ GAI_clause_elidible)) {return _node("predicate_pre", expr);}
 
 // predicate-tail afterthough connectives
-predicate_tail = expr:(predicate_tail_1 (predicate_tail_connective DO_clause_elidible predicate_tail_1 predicate_tail_terms )*) {return _node("predicate_tail", expr);}
+predicate_tail = expr:(predicate_tail_1 (jak !DE_clause DO_clause_elidible predicate_tail_1 predicate_tail_terms )*) {return _node("predicate_tail", expr);}
 // predicate-tail negation
 predicate_tail_1 = expr:(KA_clause* predicate_tail_2) {return _node("predicate_tail_1", expr);}
 // simple predicate-tail / forethough connected tails
 predicate_tail_2 = expr:(relation predicate_tail_terms / predicate_tail_pre) {return _node("predicate_tail_2", expr);}
 
 // forethough connected tails structure
-predicate_tail_pre = expr:((pre_predicate_tail_connective DO_clause_elidible predicate_tail (pre_connective_separator DO_clause_elidible predicate_tail)+ GAI_clause_elidible) predicate_tail_terms) {return _node("predicate_tail_pre", expr);}
+predicate_tail_pre = expr:((pre_jak !DE_clause DO_clause_elidible predicate_tail (pre_connective_separator DO_clause_elidible predicate_tail)+ GAI_clause_elidible) predicate_tail_terms) {return _node("predicate_tail_pre", expr);}
 
 // terms followed by predicate-tail elidible terminator
 predicate_tail_terms = expr:(predicate_place* DOI_clause_elidible) {return _node("predicate_tail_terms", expr);}
 // place + term
 predicate_place = expr:(predicate_place_tag predicate_term) {return _node("predicate_place", expr);}
 // term afterthought connectives
-predicate_term = expr:(predicate_term_1 (predicate_tail_connective !DO_clause predicate_term_1)*) {return _node("predicate_term", expr);}
+predicate_term = expr:(predicate_term_1 ((jaik / jak) !DE_clause !DO_clause predicate_term_1)*) {return _node("predicate_term", expr);}
 // simple relation term / forethough connected terms
 predicate_term_1 = expr:(scoped_predicate_term / relation / predicate_term_pre) {return _node("predicate_term_1", expr);}
 // scoped predicate term
 scoped_predicate_term = expr:(GO_clause predicate_term GOI_clause_elidible) {return _node("scoped_predicate_term", expr);}
 
 // predicate place tags connectives
-predicate_place_tag = expr:(predicate_place_tag_1 (CA_clause predicate_place_tag_1)*) {return _node("predicate_place_tag", expr);}
+predicate_place_tag = expr:(predicate_place_tag_1 (JA_clause predicate_place_tag_1)*) {return _node("predicate_place_tag", expr);}
 // basic predicate place tags
 predicate_place_tag_1 = expr:(predicate_place_modal / FA_clause) {return _node("predicate_place_tag_1", expr);}
 // predicate place modal
 predicate_place_modal = expr:(DU_clause relation_3) {return _node("predicate_place_modal", expr);}
 
 // forethough connected term structure
-predicate_term_pre = expr:((pre_predicate_tail_connective !DA_clause !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)) {return _node("predicate_term_pre", expr);}
+predicate_term_pre = expr:((pre_jak !DA_clause !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)) {return _node("predicate_term_pre", expr);}
 
 // relation compounds
 relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
-relation_2 = expr:(relation_3 (relation_connective !DE_clause !DA_clause relation_3)*) {return _node("relation_2", expr);}
+relation_2 = expr:(relation_3 (cak !DE_clause !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
 relation_3 = expr:(relation_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
-relation_pre = expr:((pre_relation_connective !DE_clause !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
+relation_pre = expr:((pre_cak !DE_clause !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
 
 // flat lexeme prefixes
 lexeme = expr:((lexeme_1 / lexeme_2 / lexeme_3 / lexeme_4 / lexeme_n)) {return _node("lexeme", expr);}
@@ -226,12 +226,14 @@ number_string = expr:(TA_clause (TA_clause / BY_clause)*) {return _node("number_
 letter_string = expr:(BY_clause (TA_clause / BY_clause)*) {return _node("letter_string", expr);}
 
 // afterthough connectives
-predicate_tail_connective = expr:(KA_clause? SA_clause? JA_clause KAI_clause? free_post*) {return _node("predicate_tail_connective", expr);}
-relation_connective = expr:(KA_clause? SA_clause? CA_clause KAI_clause? free_post*) {return _node("relation_connective", expr);}
+jak = expr:(KA_clause? SA_clause? JA_clause KAI_clause? free_post*) {return _node("jak", expr);}
+jaik = expr:(KA_clause? SA_clause? JAI_clause KAI_clause? free_post*) {return _node("jaik", expr);}
+cak = expr:(KA_clause? SA_clause? CA_clause KAI_clause? free_post*) {return _node("cak", expr);}
 
 // forethough connectives
-pre_predicate_tail_connective = expr:(GA_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("pre_predicate_tail_connective", expr);}
-pre_relation_connective = expr:(GA_clause SA_clause? CA_clause KAI_clause? free_post*) {return _node("pre_relation_connective", expr);}
+pre_jak = expr:(GA_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("pre_jak", expr);}
+pre_jaik = expr:(GA_clause SA_clause? JAI_clause KAI_clause? free_post*) {return _node("pre_jaik", expr);}
+pre_cak = expr:(GA_clause SA_clause? CA_clause KAI_clause? free_post*) {return _node("pre_cak", expr);}
 pre_connective_separator = expr:(GI_clause KAI_clause? free_post*) {return _node("pre_connective_separator", expr);}
 
 // free prefix
@@ -272,6 +274,7 @@ GOI_clause = expr:(free_prefix* spaces? GOI free_post*) {return _node("GOI_claus
 GOI_clause_elidible = expr:(GOI_clause?) {return (expr == "" || !expr) ? ["GOI"] : _node_empty("GOI_clause_elidible", expr);}
 I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);}
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);}
+JAI_clause = expr:(free_prefix* spaces? JAI) {return _node("JAI_clause", expr);}
 KA_clause = expr:(free_prefix* spaces? KA) {return _node("KA_clause", expr);}
 KAI_clause = expr:(free_prefix* spaces? KAI) {return _node("KAI_clause", expr);}
 MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);}
@@ -320,7 +323,8 @@ GI = expr:(&particle (g i)) {return _node("GI", expr);}
 GO = expr:(&particle (g o)) {return _node("GO", expr);}
 GOI = expr:(&particle (g o i)) {return _node("GOI", expr);}
 I = expr:(&particle (i)) {return _node("I", expr);}
-JA = expr:(&particle (j vowel_tail)) {return _node("JA", expr);}
+JA = expr:(&particle (j vowel)) {return _node("JA", expr);}
+JAI = expr:(&particle !(JA post_word) (j vowel_tail)) {return _node("JAI", expr);}
 KA = expr:(&particle (k a)) {return _node("KA", expr);}
 KAI = expr:(&particle (k a i)) {return _node("KAI", expr);}
 MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
@@ -350,7 +354,7 @@ foreign_quote_word = expr:((!spaces .)+ ) !{ return _is_foreign_quote_delim(expr
 foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr); } { return _node("foreign_quote_close", expr); }
 
 // - Legal words
-foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant / coda)?) {return _node("foreign_word", expr);}
+foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(!coda consonant? vowel_tail_y !coda &post_word) {return _node("particle", expr);}
 root = expr:(((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word) {return _node("root", expr);}

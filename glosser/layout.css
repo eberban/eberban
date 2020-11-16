@@ -177,6 +177,10 @@ li.implicit {
     background: #ff9cb5;
 }
 
+.box.box-letters {
+    background: #ff9c9c;
+}
+
 .box.box-link {
     background: #d2b6ff;
 }

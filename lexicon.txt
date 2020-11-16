@@ -48,8 +48,9 @@ Particles
 
     PA - Free prefix
         pa : free scope starter (one to one match is not checked by grammar)
-        pa'a : indicate following lexeme is nonce-creation and may be nonstandard
-        pa'e : metadata tag / hashtag
+        pa'a : emphasis on the next word
+        pa'e : indicate following lexeme is nonce-creation and may be nonstandard
+        pa'i : metadata tag / hashtag
 
     PAI - Free scope terminator (one to one match is not checked by grammar)
         pai : free scope terminator 
@@ -81,15 +82,18 @@ Particles
         sa'i: midpoint scalar negator : not really
         ...
 
-    JA - Predicate-tail connectives
-        ja : A predicate-tail connective
-        je : E predicate-tail connective
+    JA - Distributive connectives
+        ja : A distributive connective
+        je : E distributive connective
         ji : predicate-tail connective question
-        jo : O predicate-tail connective
-        ju : U predicate-tail connective
+        jo : O distributive connective
+        ju : U distributive connective
+
+    JAI - Non logical connectives
+        jai : mixed conjunction, "and", forming a mass
         ... more with future non-logical connectives
 
-    CA - Relation and predicate connectives
+    CA - Relation connectives
         ca : A relation and predicate connective
         ce : E relation and predicate connective
         ci : relation and predicate connective question
@@ -225,36 +229,36 @@ Particles
 
 Root words
 
-    ban: x1 is a language/dialect used by x2 to express x3 (predicate) [bangu]
-    bla: x1 is in the future/after x2 in time;
-    bria: x1 is the arm of x2 [birka]
-    cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
-    cti'a: x1 eats x2 [citka]
-    dje: x1 is x2 full days in duration (default = 1) by standard x3 [djedi]
-    dra'u: x1 is milk from source x2 [ladru]
-    dzu: x1 walks/strides/paces on surface x2 using limbs x3 [cadzu]
-    gle: x1 is happy about x2 (abstraction) [gleki]
-    gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
-    jgai: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
-    ma'un: x1 is male [nanmu]
-    mi'un: x1 is female [ninmu]
-    mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
-    pe'on: x1 is a friend of x2 [pendo]
-    pin: x1 drinks liquid x2 out of container x3 [pinxe]
-    pli: x1 is a tool used by x2 for purpose x3 [modified pilno]
-    plie: x1 is an apple of species/strain x2 [plise]
-    pre: x1 is a person [prenu]
-    pre'i: x1 is a parent of/raises x2 [rirni/preri]
-    pru: x1 (abstraction) is in the past of/before x2 (event) (default = now) [purci]
-    skai: x1 is a computer for purpose x2 [skami]
-    sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
-    vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
-    zda'i: x1 is a nest/house/home of x2 [zdani]
-    zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
+    - ban: x1 is a language/dialect used by x2 to express x3 (predicate) [bangu]
+    - bla: x1 is in the future/after x2 in time;
+    - bria: x1 is the arm of x2 [birka]
+    - cna: x1 (abstraction) is in the present of/simultaneous with x2 in time
+    - cti'a: x1 eats x2 [citka]
+    - dje: x1 is x2 full days in duration (default = 1) by standard x3 [djedi]
+    - dra'u: x1 is milk from source x2 [ladru]
+    - dzu: x1 walks/strides/paces on surface x2 using limbs x3 [cadzu]
+    - a.ui  gle: x1 is happy about x2 (abstraction) [gleki]
+    - gre'u: x1 is a dog of special/breed x2 (broaden to canine ?) [gerku]
+    - jgai: x1 graps/holds x2 with x3 (part of x1) at locus x4 (part of x2) [jgari]
+    - ma'un: x1 is male [nanmu]
+    - mi'un: x1 is female [ninmu]
+    - mla'u: x1 is a cat of specie/breed x2 (broaden to feline ?) [mlatu]
+    - pe'on: x1 is a friend of x2 [pendo]
+    - pin: x1 drinks liquid x2 out of container x3 [pinxe]
+    - pli: x1 is a tool used by x2 for purpose x3 [modified pilno]
+    - plie: x1 is an apple of species/strain x2 [plise]
+    - pre: x1 is a person [prenu]
+    - pre'i: x1 is a parent of/raises x2 [rirni/preri]
+    - pru: x1 (abstraction) is in the past of/before x2 (event) (default = now) [purci]
+    - skai: x1 is a computer for purpose x2 [skami]
+    - sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
+    - vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
+    - zda'i: x1 is a nest/house/home of x2 [zdani]
+    - zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
     zva: x1 is at/attenting/present at x2 (event/location) [zvati]
     du'an: x1 (donor) gives/donates gift/present x2 to recipient x3 (without payment/exchange) [dunda]
     cku'a: x1 is a book containing work x2 by author x3 for audience x4 preserved in medium x5 [cukta]
-    cki'a: x1 inscribes/writes x2 on display/surface/storage medium x3 with writing implement x4 [ciska]
+    - cki'a: x1 inscribes/writes x2 on display/surface/storage medium x3 with writing implement x4 [ciska]
     zdu: x1 is a volitional entity employings/taking action/doing x2 for purpose x3 [zukte]
     dju: x1 knows fact(s) x2 (abstraction) about subject x3 by epistemology x4 [djuno]
 
