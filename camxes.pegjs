@@ -139,7 +139,7 @@ sentence = expr:(predicate / fragments) {return _node("sentence", expr);}
 fragments = expr:(DE_clause (predicate_place / FA_clause)* DEI_clause_elidible) {return _node("fragments", expr);}
 
 // predicate afterthough connectives
-predicate = expr:(predicate_1 (DE_clause_elidible relation_connective predicate_1)*) {return _node("predicate", expr);}
+predicate = expr:(predicate_1 (relation_connective !DO_clause DE_clause_elidible predicate_1)*) {return _node("predicate", expr);}
 // pre-tail terms
 predicate_1 = expr:(predicate_pre / DE_clause_elidible predicate_place* DO_clause_elidible predicate_tail DEI_clause_elidible) {return _node("predicate_1", expr);}
 // forethough connected predicates
@@ -174,17 +174,17 @@ predicate_place_tag_1 = expr:(predicate_place_modal / FA_clause) {return _node("
 predicate_place_modal = expr:(DU_clause relation_3) {return _node("predicate_place_modal", expr);}
 
 // forethough connected term structure
-predicate_term_pre = expr:((pre_predicate_tail_connective !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)) {return _node("predicate_term_pre", expr);}
+predicate_term_pre = expr:((pre_predicate_tail_connective !DA_clause !DO_clause predicate_term (pre_connective_separator !DO_clause predicate_term)+ GAI_clause_elidible)) {return _node("predicate_term_pre", expr);}
 
 // relation compounds
 relation = expr:(relation_2+) {return _node("relation", expr);}
 // relation afterthough connectives
-relation_2 = expr:(relation_3 (relation_connective !DA_clause relation_3)*) {return _node("relation_2", expr);}
+relation_2 = expr:(relation_3 (relation_connective !DE_clause !DA_clause relation_3)*) {return _node("relation_2", expr);}
 // basic relations
 relation_3 = expr:(relation_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("relation_3", expr);}
 
 // forethough connected relations
-relation_pre = expr:((pre_relation_connective !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
+relation_pre = expr:((pre_relation_connective !DE_clause !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_pre", expr);}
 
 // flat lexeme prefixes
 lexeme = expr:((lexeme_1 / lexeme_2 / lexeme_3 / lexeme_4 / lexeme_n)) {return _node("lexeme", expr);}

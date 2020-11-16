@@ -25,10 +25,10 @@ Particles
         dei : predicate elibile terminator
 
     DO - Predicate-tail starter
-        de : predicate-tail elidible starter
+        do : predicate-tail elidible starter
 
     DOI - Predicate-tail terminator
-        dei : predicate-tail elidible terminator
+        doi : predicate-tail elidible terminator
 
     DU - Place importer
         du : import x1 place from following relation (no compound or connective)
@@ -158,7 +158,7 @@ Particles
         ta'a : few
         ta'e : several
         ta'i : many
-        ta'u : most
+        ta'o : most
         ta'u : each/all
 
         tai'a : too few (subjective)
@@ -249,7 +249,7 @@ Root words
     skai: x1 is a computer for purpose x2 [skami]
     sku: x1 (agent) express x2 (text) for audience x3 via medium x4 [cusku]
     vla: x1 communicate with x2 about subject x3 in language x4 [tavla]
-    zda'i: x1 is a next/house/home of x2 [zdani]
+    zda'i: x1 is a nest/house/home of x2 [zdani]
     zdi: x1 (abstract) is amusing to x2 in property/aspect x3 [zdile]
     zva: x1 is at/attenting/present at x2 (event/location) [zvati]
     du'an: x1 (donor) gives/donates gift/present x2 to recipient x3 (without payment/exchange) [dunda]

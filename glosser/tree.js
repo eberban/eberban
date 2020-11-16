@@ -90,7 +90,7 @@ simplifyFunctions["paragraph"] = function(parse) {
     }
 }
 
-simplifyFunctions["sentence"] = function(parse) {
+simplifyFunctions["predicate"] = function(parse) {
     
     return {
         type: "sentence",
@@ -98,7 +98,15 @@ simplifyFunctions["sentence"] = function(parse) {
     }
 }
 
-simplifyFunctions["predicate"] = function(parse) {
+simplifyFunctions["fragments"] = function(parse) {
+    
+    return {
+        type: "sentence",
+        children: simplifyArrayOfTrees(parse.slice(1))
+    }
+}
+
+simplifyFunctions["predicate_1"] = function(parse) {
     
     return {
         type: "predicate",
