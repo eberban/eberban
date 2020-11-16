@@ -258,8 +258,15 @@ function constructBoxesOutput(parse, depth) {
         output += "<div class=\"box box-terminal\">";
         
         // we have a terminal
-        output += "&nbsp;<b>" + getVlasiskuLink(parse.word) + "</b>&nbsp;<br>";
+        output += "&nbsp;<b>" + parse.word + "</b>&nbsp;<br>";
+
+        if (parse.type === "foreign_word" || parse.type === "foreign_quote_word") {
+            output += "</div>";
+            return output;
+        }
+        
         output += "&nbsp;" + parse.type + "&nbsp;<br>";
+
         if (words[parse.word]) {
             output += "<span class=\"translation\">&nbsp;" + words[parse.word].short + "&nbsp;</span>";
         } else {
@@ -340,6 +347,7 @@ function boxClassForType(parse) {
     if (parse.type === "scope") { return "box box-scope"; }
     if (parse.type === "abstraction") { return "box box-abstraction"; } 
     if (parse.type === "borrowing") { return "box box-borrowing"; }
+    if (parse.type === "foreign quote") { return "box box-borrowing"; }
     // if (parse.type === "indicator") { return "box box-indicator"; }
 
     return "box box-not-shown";

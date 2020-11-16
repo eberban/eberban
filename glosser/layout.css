@@ -135,6 +135,7 @@ li.implicit {
     background: #ffffff;
     border: 1px black solid;
     margin: 2px;
+    display: block;
 }
 
 .box.box-predicate {

@@ -302,7 +302,7 @@ BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
 
 // PARTICLE FAMILIES
 A = expr:(&particle (a)) {return _node("A", expr);}
-BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h a / y h e)) {return _node("BY", expr);}
+BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)) {return _node("BY", expr);}
 XA = expr:(&particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)) {return _node("XA", expr);}
 BA = expr:(&particle !(BAI post_word) (b vowel_tail)) {return _node("BA", expr);}
 BAI = expr:(&particle (b a i)) {return _node("BAI", expr);}

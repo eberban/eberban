@@ -90,16 +90,23 @@ simplifyFunctions["paragraph"] = function(parse) {
     }
 }
 
-simplifyFunctions["predicate"] = function(parse) {
+// simplifyFunctions["predicate"] = function(parse) {
     
-    return {
-        type: "sentence",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
+//     return {
+//         type: "sentence",
+//         children: simplifyArrayOfTrees(parse.slice(1))
+//     }
+// }
 
-simplifyFunctions["fragments"] = function(parse) {
+// simplifyFunctions["fragments"] = function(parse) {
     
+//     return {
+//         type: "sentence",
+//         children: simplifyArrayOfTrees(parse.slice(1))
+//     }
+// }
+
+simplifyFunctions["sentence"] = function(parse) {
     return {
         type: "sentence",
         children: simplifyArrayOfTrees(parse.slice(1))

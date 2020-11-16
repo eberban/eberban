@@ -6832,7 +6832,7 @@ var camxes = (function() {
                 if (s4 !== peg$FAILED) {
                   s5 = peg$parseh();
                   if (s5 !== peg$FAILED) {
-                    s6 = peg$parsea();
+                    s6 = peg$parsevowel();
                     if (s6 !== peg$FAILED) {
                       s4 = [s4, s5, s6];
                       s3 = s4;
@@ -6847,29 +6847,6 @@ var camxes = (function() {
                 } else {
                   peg$currPos = s3;
                   s3 = peg$c0;
-                }
-                if (s3 === peg$FAILED) {
-                  s3 = peg$currPos;
-                  s4 = peg$parsey();
-                  if (s4 !== peg$FAILED) {
-                    s5 = peg$parseh();
-                    if (s5 !== peg$FAILED) {
-                      s6 = peg$parsee();
-                      if (s6 !== peg$FAILED) {
-                        s4 = [s4, s5, s6];
-                        s3 = s4;
-                      } else {
-                        peg$currPos = s3;
-                        s3 = peg$c0;
-                      }
-                    } else {
-                      peg$currPos = s3;
-                      s3 = peg$c0;
-                    }
-                  } else {
-                    peg$currPos = s3;
-                    s3 = peg$c0;
-                  }
                 }
               }
             }
