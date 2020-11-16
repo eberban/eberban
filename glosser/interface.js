@@ -130,8 +130,8 @@ function constructParseTreeOutput(parse, depth) {
             if (isString(parse[1])) {
                 // a literal
                 output += "<b> [" + getVlasiskuLink(parse[1]) + "]</b>";
-                if (shortDescriptions[parse[1]]) {
-                    output += " <span class=\"translation\">" + shortDescriptions[parse[1]] + "</span>";
+                if (words[parse[1]]) {
+                    output += " <span class=\"translation\">" + words[parse[1]].short + "</span>";
                 }
                 return output;
             }
@@ -193,8 +193,8 @@ function constructSimplifiedTreeOutput(parse, depth) {
         
         // we have a terminal
         output += " <b>[" + getVlasiskuLink(parse.word) + "]</b>";
-        if (shortDescriptions[parse.word]) {
-            output += " <span class=\"translation\">" + shortDescriptions[parse.word] + "</span>";
+        if (words[parse.word]) {
+            output += " <span class=\"translation\">" + words[parse.word].short + "</span>";
         }
         
     } else {
@@ -260,8 +260,8 @@ function constructBoxesOutput(parse, depth) {
         // we have a terminal
         output += "&nbsp;<b>" + getVlasiskuLink(parse.word) + "</b>&nbsp;<br>";
         output += "&nbsp;" + parse.type + "&nbsp;<br>";
-        if (shortDescriptions[parse.word]) {
-            output += "<span class=\"translation\">&nbsp;" + shortDescriptions[parse.word] + "&nbsp;</span>";
+        if (words[parse.word]) {
+            output += "<span class=\"translation\">&nbsp;" + words[parse.word].short + "&nbsp;</span>";
         } else {
             output += "...";
         }
@@ -527,10 +527,11 @@ function showGlossing(text, $element) {
     var output = "<dl class=\"dl-horizontal\">";
     
     for (var j = 0; j < text.length; j++) {
-        output += "<dt>" + getVlasiskuLink(text[j]) + "</dt>";
+        // output += "<dt>" + getVlasiskuLink(text[j]) + "</dt>";
+        output += "<dt>" + text[j] + "</dt>";
         
-        if (shortDescriptions[text[j]]) {
-            output += "<dd>" + shortDescriptions[text[j]] + "</dd>";
+        if (words[text[j]]) {
+            output += '<dd><span class="gloss-family">' + words[text[j]].family + '</span>' + (words[text[j]].long ? words[text[j]].long : words[text[j]].short) + "</dd>";
         } else {
             output += "<dd><span class=\"muted\">(?)</span></dd>";
         }

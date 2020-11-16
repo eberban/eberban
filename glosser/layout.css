@@ -242,3 +242,9 @@ li.implicit {
     color: black;
     font-style: italic;
 }
+
+.gloss-family {
+    margin-right: 25px;
+    font-weight: normal;
+    color: #888888;
+}

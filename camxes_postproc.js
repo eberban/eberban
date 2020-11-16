@@ -306,8 +306,8 @@ function process_parse_tree(
     /* If the node contains only one element and we want to trim the node,
        it gets replaced by its content. */ 
     else if (i == 1 && action != 'PASS') {
-      if (with_glossing && glosser.shortDescriptions[parse_tree[0]]) {
-        parse_tree[0] = "'" + glosser.shortDescriptions[parse_tree[0]] + "'"
+      if (with_glossing && glosser.words[parse_tree[0]]) {
+        parse_tree[0] = "'" + glosser.words[parse_tree[0]].short + "'"
       }
       return parse_tree[0];
     }

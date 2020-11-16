@@ -213,6 +213,7 @@ Particles
         xa('a)+ : laugther
 
         xu: true/false question
+        xu'u: indirect question marker
 
     BY - Literals
         Cy : consonant
@@ -254,6 +255,9 @@ Root words
     du'an: x1 (donor) gives/donates gift/present x2 to recipient x3 (without payment/exchange) [dunda]
     cku'a: x1 is a book containing work x2 by author x3 for audience x4 preserved in medium x5 [cukta]
     cki'a: x1 inscribes/writes x2 on display/surface/storage medium x3 with writing implement x4 [ciska]
+    zdu: x1 is a volitional entity employings/taking action/doing x2 for purpose x3 [zukte]
+    dju: x1 knows fact(s) x2 (abstraction) about subject x3 by epistemology x4 [djuno]
+
 
 Lexemes
 
