@@ -50,7 +50,7 @@
  *   -- is_number(v)
  */
 
-var glosser = require('./glosser/gismudata.js')
+var glosser = require('../gismudata.js')
 
 if (typeof alert !== 'function')
     alert = console.log; // For Node.js
