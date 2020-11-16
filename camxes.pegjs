@@ -327,7 +327,7 @@ MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
 O = expr:(&particle (o)) {return _node("O", expr);}
 PA = expr:(&particle (p a vowel_tail_1)) {return _node("PA", expr);}
 PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
-PE = expr:(&particle !PA (p (diphthong / vowel))) {return _node("PE", expr);}
+PE = expr:(&particle !((PA / PAI / PEI) post_word) (p vowel_tail)) {return _node("PE", expr);}
 PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
 TA = expr:(&particle !(TAI post_word) (t vowel_tail)) {return _node("TA", expr);}
@@ -372,7 +372,7 @@ iuv_diphthong = expr:((i / u) vowel) {return _node("iuv_diphthong", expr);}
 vi_diphthong = expr:((a / e / o) i) {return _node("vi_diphthong", expr);}
 vowel = expr:(a / e / i / o / u) {return _node("vowel", expr);}
 
-h = expr:(['h]) {return ["h", "h"];} // <LEAF>
+h = expr:(['h]) {return ["h", expr];} // <LEAF2>
 a = expr:([aA]) {return ["a", "a"];} // <LEAF>
 e = expr:([eE]) {return ["e", "e"];} // <LEAF>
 i = expr:([iI]) {return ["i", "i"];} // <LEAF>
@@ -393,6 +393,7 @@ sibilant = expr:((c / s !x / (j / z) !n !liquid)) {return _node("sibilant", expr
 coda = expr:((l / n / r)) {return _node("coda", expr);}
 voiced = expr:((b / d / g / j / v / z)) {return _node("voiced", expr);}
 unvoiced = expr:((c / f / k / p / s / t / x)) {return _node("unvoiced", expr);}
+
 l = expr:([lL] !l) {return ["l", "l"];} // <LEAF>
 m = expr:([mM] !m) {return ["m", "m"];} // <LEAF>
 n = expr:([nN] !n !affricate) {return ["n", "n"];} // <LEAF>

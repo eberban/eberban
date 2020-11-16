@@ -173,6 +173,10 @@ li.implicit {
     background: #ffb6b6;
 }
 
+.box.box-number {
+    background: #ff9cb5;
+}
+
 .box.box-free-adverbial {
     background: #d2b6ff;
 }

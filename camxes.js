@@ -205,7 +205,7 @@ var camxes = (function() {
         peg$c170 = function(expr) {return _node("vowel", expr);},
         peg$c171 = /^['h]/,
         peg$c172 = { type: "class", value: "['h]", description: "['h]" },
-        peg$c173 = function(expr) {return ["h", "h"];},
+        peg$c173 = function(expr) {return ["h", expr];},
         peg$c174 = /^[aA]/,
         peg$c175 = { type: "class", value: "[aA]", description: "[aA]" },
         peg$c176 = function(expr) {return ["a", "a"];},
@@ -8297,7 +8297,27 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = peg$currPos;
         peg$silentFails++;
-        s4 = peg$parsePA();
+        s4 = peg$currPos;
+        s5 = peg$parsePA();
+        if (s5 === peg$FAILED) {
+          s5 = peg$parsePAI();
+          if (s5 === peg$FAILED) {
+            s5 = peg$parsePEI();
+          }
+        }
+        if (s5 !== peg$FAILED) {
+          s6 = peg$parsepost_word();
+          if (s6 !== peg$FAILED) {
+            s5 = [s5, s6];
+            s4 = s5;
+          } else {
+            peg$currPos = s4;
+            s4 = peg$c0;
+          }
+        } else {
+          peg$currPos = s4;
+          s4 = peg$c0;
+        }
         peg$silentFails--;
         if (s4 === peg$FAILED) {
           s3 = peg$c16;
@@ -8309,10 +8329,7 @@ var camxes = (function() {
           s4 = peg$currPos;
           s5 = peg$parsep();
           if (s5 !== peg$FAILED) {
-            s6 = peg$parsediphthong();
-            if (s6 === peg$FAILED) {
-              s6 = peg$parsevowel();
-            }
+            s6 = peg$parsevowel_tail();
             if (s6 !== peg$FAILED) {
               s5 = [s5, s6];
               s4 = s5;

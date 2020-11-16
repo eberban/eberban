@@ -198,7 +198,7 @@ MA    <- &particle (m vowel_tail)
 O     <- &particle (o)
 PA    <- &particle (p a vowel_tail_1)
 PAI   <- &particle (p a i)
-PE    <- &particle !PA (p (diphthong / vowel))
+PE    <- &particle !((PA / PAI / PEI) post_word) (p vowel_tail)
 PEI   <- &particle (p e i)
 SA    <- &particle (s vowel_tail)
 TA    <- &particle !(TAI post_word) (t vowel_tail)
@@ -243,7 +243,7 @@ iuv_diphthong <- (i / u) vowel
 vi_diphthong <- (a / e / o) i 
 vowel <- a / e / i / o / u 
 
-h <- ['h] # <LEAF>
+h <- ['h] # <LEAF2>
 a <- [aA] # <LEAF>
 e <- [eE] # <LEAF>
 i <- [iI] # <LEAF>
@@ -264,6 +264,7 @@ sibilant <- (c / s !x / (j / z) !n !liquid)
 coda <- (l / n / r)
 voiced <- (b / d / g / j / v / z) 
 unvoiced <- (c / f / k / p / s / t / x) 
+
 l <- [lL] !l # <LEAF>
 m <- [mM] !m # <LEAF>
 n <- [nN] !n !affricate # <LEAF>

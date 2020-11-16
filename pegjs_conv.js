@@ -181,6 +181,9 @@ function peg_to_pegjs(peg) {
 	// Manual leaves
 	peg = peg.replace(/{return _node\("([0-9a-zA-Z_-]+)", expr\);}( +\/\/ <LEAF>)(?=[ \r\n])/gm,
 					  '{return ["$1", "$1"];}$2');
+
+	peg = peg.replace(/{return _node\("([0-9a-zA-Z_-]+)", expr\);}( +\/\/ <LEAF2>)(?=[ \r\n])/gm,
+					  '{return ["$1", expr];}$2');
 	// Particle leaves
 	// peg = peg.replace(/{return _node\("(?=p_)([0-9a-zA-Z_-]+)", expr\);}(?=[ \r\n])/gm,
 	// 				  '{return ["$1", "$1"];}');
