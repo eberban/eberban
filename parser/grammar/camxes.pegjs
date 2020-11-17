@@ -157,7 +157,8 @@ predicate_tail_1 = expr:(KA_clause* predicate_tail_2) {return _node("predicate_t
 // simple predicate-tail / forethough connected tails
 predicate_tail_2 = expr:(relation predicate_tail_terms / predicate_tail_jak_pre) {return _node("predicate_tail_2", expr);}
 // forethough connected tails structure
-predicate_tail_jak_pre = expr:((pre_jak !DE_clause DO_clause_elidible predicate_tail (pre_connective_separator DO_clause_elidible predicate_tail)+ GAI_clause_elidible) predicate_tail_terms) {return _node("predicate_tail_jak_pre", expr);}
+predicate_tail_jak_pre = expr:((pre_jak !DE_clause DO_clause_elidible predicate_tail (pre_connective_separator DO_clause_elidible predicate_tail)+ GAI_clause_elidible) predicate_tail_jak_pre_terms) {return _node("predicate_tail_jak_pre", expr);}
+predicate_tail_jak_pre_terms = expr:(predicate_tail_terms) {return _node("predicate_tail_jak_pre_terms", expr);}
 
 // terms followed by predicate-tail elidible terminator
 predicate_tail_terms = expr:(predicate_place* DOI_clause_elidible) {return _node("predicate_tail_terms", expr);}

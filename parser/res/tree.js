@@ -115,7 +115,8 @@ var map = [
     ["predicate_place_tag_jak_pre", "scope"],
 
     // show predicate-tail distributivity
-    ["predicate_tail_jak_pre", "scope"], 
+    // ["predicate_tail_jak_pre", "scope"], 
+    ["predicate_tail_jak_pre_terms", "scope"], 
     ["predicate_tail_1", "scope"],
     ["predicate_1_terms", "scope"],
     ["predicate_tail_jak_post_terms", "scope"],
