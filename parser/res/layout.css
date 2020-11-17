@@ -132,10 +132,9 @@ li.implicit {
 }
 
 .box.box-sentence {
-    background: #ffffff;
+    background: #eeeeee;
     border: 1px black solid;
     margin: 2px;
-    display: block;
 }
 
 .box.box-predicate {
@@ -184,6 +183,10 @@ li.implicit {
 
 .box.box-link {
     background: #d2b6ff;
+}
+
+.box.box-scope {
+    border-style: dashed;
 }
 
 /* 

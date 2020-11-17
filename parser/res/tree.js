@@ -74,205 +74,65 @@ function simplifyArrayOfTrees(parse) {
 
 var simplifyFunctions = {};
 
-simplifyFunctions["text"] = function(parse) {
-    
-    return {
-        type: "text",
-        children: simplifyArrayOfTrees(parse.slice(1))
+var map = [
+    // important structures
+    ["text", "text"],
+    ["paragraph", "paragraph"],
+    ["sentence", "sentence"],
+    ["predicate_1", "predicate"],
+    ["predicate_tail", "predicate tail"],
+    ["predicate_place", "place"],
+    ["predicate_place_tag", "tag"],
+    ["predicate_place_modal", "modal"],
+    ["predicate_term", "term"],
+    ["relation", "relation"],
+    ["lexeme", "lexeme"],
+    ["borrowing", "borrowing"],
+    ["foreign_word", "foreign"],
+    ["free_indicator", "indicator"],
+    ["free_link", "link"],
+    ["grammatical_quote", "quote"],
+    ["one_word_quote", "word quote"],
+    ["ungrammatical_quote", "ungrammatical quote"],
+    ["foreign_quote", "foreign quote"],
+    ["abstraction", "abstraction"],
+    ["number_string", "number"],
+    ["letter_string", "letters"],
+
+    // SCOPES
+    // manual scoping
+    ["scoped_relation", "scope"],
+    ["scoped_predicate_term", "scope"],
+
+    // predicate jak
+    ["predicate_jak_pre", "scope"],
+    ["predicate_jak_post", "scope"],
+
+    // predicate terms
+    ["predicate_term_jak_post", "scope"],
+    ["predicate_term_jaik_post", "scope"],
+    ["predicate_term_jak_pre", "scope"],
+    ["predicate_place_tag_jak_pre", "scope"],
+
+    // show predicate-tail distributivity
+    ["predicate_tail_jak_pre", "scope"], 
+    ["predicate_tail_1", "scope"],
+    ["predicate_1_terms", "scope"],
+    ["predicate_tail_jak_post_terms", "scope"],
+
+    // relations
+    ["relation_cak_post", "scope"],
+    ["relation_cak_pre", "scope"],
+];
+
+for (let replace of map) {
+    simplifyFunctions[replace[0]] = function(parse) {
+        return {
+            type: replace[1],
+            children: simplifyArrayOfTrees(parse.slice(1))
+        }
     }
 }
-
-simplifyFunctions["paragraph"] = function(parse) {
-    
-    return {
-        type: "paragraph",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-// simplifyFunctions["predicate"] = function(parse) {
-    
-//     return {
-//         type: "sentence",
-//         children: simplifyArrayOfTrees(parse.slice(1))
-//     }
-// }
-
-// simplifyFunctions["fragments"] = function(parse) {
-    
-//     return {
-//         type: "sentence",
-//         children: simplifyArrayOfTrees(parse.slice(1))
-//     }
-// }
-
-simplifyFunctions["sentence"] = function(parse) {
-    return {
-        type: "sentence",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["predicate_1"] = function(parse) {
-    
-    return {
-        type: "predicate",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["predicate_tail"] = function(parse) {
-    
-    return {
-        type: "predicate tail",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["predicate_place"] = function(parse) {
-    
-    return {
-        type: "place",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["predicate_place_tag"] = function(parse) {
-    
-    return {
-        type: "tag",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["predicate_place_modal"] = function(parse) {
-    
-    return {
-        type: "modal",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["predicate_term"] = function(parse) {
-    
-    return {
-        type: "term",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["relation"] = function(parse) {
-    
-    return {
-        type: "relation",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["lexeme"] = function(parse) {
-    
-    return {
-        type: "lexeme",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["borrowing"] = function(parse) {
-    
-    return {
-        type: "borrowing",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["foreign_word"] = function(parse) {
-    
-    return {
-        type: "foreign",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["free_indicator"] = function(parse) {
-    
-    return {
-        type: "indicator",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["free_link"] = function(parse) {
-    
-    return {
-        type: "link",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["grammatical_quote"] = function(parse) {
-    
-    return {
-        type: "quote",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["one_word_quote"] = function(parse) {
-    
-    return {
-        type: "word quote",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["ungrammatical_quote"] = function(parse) {
-    
-    return {
-        type: "ungrammatical quote",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["foreign_quote"] = function(parse) {
-    
-    return {
-        type: "foreign quote",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["abstraction"] = function(parse) {
-    
-    return {
-        type: "abstraction",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["scoped_relation"] = function(parse) {
-    
-    return {
-        type: "scope",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["number_string"] = function(parse) {
-    
-    return {
-        type: "number",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
-simplifyFunctions["letter_string"] = function(parse) {
-    
-    return {
-        type: "letters",
-        children: simplifyArrayOfTrees(parse.slice(1))
-    }
-}
-
 
 // lojban grammar ...
 /*

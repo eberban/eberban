@@ -286,26 +286,28 @@ function constructBoxesOutput(parse, depth) {
         }
         
         if (boxClassForType(parse) !== "box box-not-shown") {
-            output += "<br>" + parse.type;
+            if (parse.type !== "scope") {
+                output += "<br>" + parse.type;
 
-            if (parse.type === "lexeme") {
-                lexeme = "";
-                for (var child in parse.children) {
-                    if (parse.children[child].word) {
-                        lexeme += parse.children[child].word;
+                if (parse.type === "lexeme") {
+                    lexeme = "";
+                    for (var child in parse.children) {
+                        if (parse.children[child].word) {
+                            lexeme += parse.children[child].word;
+                        }
+                    }
+
+                    if (words[lexeme]) {
+                        output += " : <span class=\"translation\">&nbsp;" + words[lexeme].short + "&nbsp;</span>";
+                    } else {
+                        output += " : ...";
                     }
                 }
 
-                if (words[lexeme]) {
-                    output += " : <span class=\"translation\">&nbsp;" + words[lexeme].short + "&nbsp;</span>";
-                } else {
-                    output += " : ...";
-                }
-            }
-
-            if (parse.sumtiPlace) {
-                output += parse.sumtiPlace;
-            }
+                // if (parse.sumtiPlace) {
+                //     output += parse.sumtiPlace;
+                // }
+            }            
         }
         
         output += "</div>";
@@ -364,6 +366,7 @@ function boxClassForType(parse) {
     if (parse.type === "abstraction") { return "box box-abstraction"; } 
     if (parse.type === "borrowing") { return "box box-borrowing"; }
     if (parse.type === "foreign quote") { return "box box-borrowing"; }
+    if (parse.type === "scope") { return "box box-scope"; }
     // if (parse.type === "indicator") { return "box box-indicator"; }
 
     return "box box-not-shown";
