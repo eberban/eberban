@@ -85,12 +85,9 @@ var map = [
     ["predicate_place_tag", "tag"],
     ["predicate_place_modal", "modal"],
     ["predicate_term", "term"],
-    ["relation", "relation"],
     ["lexeme", "lexeme"],
     ["borrowing", "borrowing"],
     ["foreign_word", "foreign"],
-    ["free_indicator", "indicator"],
-    ["free_link", "link"],
     ["grammatical_quote", "quote"],
     ["one_word_quote", "word quote"],
     ["ungrammatical_quote", "ungrammatical quote"],
@@ -98,6 +95,17 @@ var map = [
     ["abstraction", "abstraction"],
     ["number_string", "number"],
     ["letter_string", "letters"],
+
+    // relation
+    ["relation", "relation"],
+    ["relation_link", "link"],
+    ["relation_relative_clause", "relative clause"],
+
+    // free
+    ["free_indicator", "indicator"],
+    ["free_discursive", "discursive"],
+    ["free_parenthetical", "note"],
+    ["free_subscript", "subscript"],
 
     // SCOPES
     // manual scoping

@@ -352,13 +352,13 @@ function boxClassForType(parse) {
 
     if (parse.type === "sentence") { return "box box-sentence"; }
     if (parse.type === "predicate") { return "box box-predicate"; }
-    // if (parse.type === "predicate tail") { return "box box-predicate-tail"; }
     if (parse.type === "place") { return "box box-place"; }
-    // if (parse.type === "tag") { return "box box-tag"; }
     if (parse.type === "modal") { return "box box-modal"; }
-    // if (parse.type === "term") { return "box box-term"; }
+    
     if (parse.type === "relation") { return "box box-relation"; }
     if (parse.type === "link") { return "box box-link"; }
+    if (parse.type === "relative clause") { return "box box-link"; }
+
     if (parse.type === "lexeme") { return "box box-lexeme"; }
     if (parse.type === "number") { return "box box-number"; }
     if (parse.type === "letters") { return "box box-letters"; }
@@ -366,8 +366,13 @@ function boxClassForType(parse) {
     if (parse.type === "abstraction") { return "box box-abstraction"; } 
     if (parse.type === "borrowing") { return "box box-borrowing"; }
     if (parse.type === "foreign quote") { return "box box-borrowing"; }
+
     if (parse.type === "scope") { return "box box-scope"; }
-    // if (parse.type === "indicator") { return "box box-indicator"; }
+
+    if (parse.type === "indicator") { return "box box-indicator"; }    
+    if (parse.type === "discursive") { return "box box-note"; }
+    if (parse.type === "note") { return "box box-note"; }
+    if (parse.type === "subscript") { return "box box-note"; }
 
     return "box box-not-shown";
 }

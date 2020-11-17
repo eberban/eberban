@@ -137,6 +137,10 @@ li.implicit {
     margin: 2px;
 }
 
+.box.box-note {
+    background: #eeeeee;
+}
+
 .box.box-predicate {
     background: #d3ffb6;
 }

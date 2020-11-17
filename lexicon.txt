@@ -55,21 +55,7 @@ Particles
     PAI - Free scope terminator (one to one match is not checked by grammar)
         pai : free scope terminator 
 
-    PE - Link starter
-        pe : discursive   
-        pe'a : parenthetical      
-        pi : free restrictive adverbial
-        po : free non-restrictive adverbial 
-        poi : relation affectation
-              one side should affectable MA
-              if both side are, left is now equal right
-        pu : subscript  
-        pi'a : which is associated with ...   
-    
-    PEI - Link terminator  
-        pei : Link elidible terminator 
-
-    Proposal : PE* - Free suffix
+    P* - Free suffixes
         pe: discursive start (+ relation)
         pei: discursive end
 
@@ -78,19 +64,19 @@ Particles
 
         pu: subscript
 
-    Proposal : KE - Relative clauses
+    KE - Relative clauses
         ke: restrictive clause
         ki: non-restrictive clause
 
         kei: relative clause elidible terminator
 
-    Proposal : VA - Relation marker
+    VA - Relation link
         va:  relation affectation
               one side should affectable MA
               if both side are, left is now equal right
         ve: which is associated with ...
 
-        vai: relation marker elidible terminator
+        vai: relation link elidible terminator
 
     SA - Relation transformer (swap / name) [lojban SE + LAhE + NAhE]
         sa : convert relation to name relation

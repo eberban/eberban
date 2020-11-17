@@ -184,15 +184,17 @@ predicate_place_tag_jak_post = expr:(predicate_place_tag_1 (JA_clause predicate_
 // basic predicate place tags
 predicate_place_tag_1 = expr:(predicate_place_modal / FA_clause) {return _node("predicate_place_tag_1", expr);}
 // predicate place modal
-predicate_place_modal = expr:(DU_clause relation_3) {return _node("predicate_place_modal", expr);}
+predicate_place_modal = expr:(DU_clause relation_2) {return _node("predicate_place_modal", expr);}
 
-// relation compounds
-relation = expr:(relation_2+) {return _node("relation", expr);}
+// relation compounds, links and relative clauses
+relation = expr:(relation_1+ (relation_link / relation_relative_clause)*) {return _node("relation", expr);}
+relation_link = expr:(VA_clause relation VAI_clause_elidible) {return _node("relation_link", expr);}
+relation_relative_clause = expr:(KE_clause predicate KEI_clause_elidible) {return _node("relation_relative_clause", expr);}
 // relation afterthough connectives
-relation_2 = expr:(relation_cak_post / relation_3) {return _node("relation_2", expr);}
-relation_cak_post = expr:(relation_3 (cak !DE_clause !DA_clause relation_3)+) {return _node("relation_cak_post", expr);}
+relation_1 = expr:(relation_cak_post / relation_2) {return _node("relation_1", expr);}
+relation_cak_post = expr:(relation_2 (cak !DE_clause !DA_clause relation_2)+) {return _node("relation_cak_post", expr);}
 // core relations
-relation_3 = expr:(relation_cak_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("relation_3", expr);}
+relation_2 = expr:(relation_cak_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / relation_place_swap / scoped_relation / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("relation_2", expr);}
 // forethough connected relations
 relation_cak_pre = expr:((pre_cak !DE_clause !DA_clause relation (pre_connective_separator relation)+ GAI_clause_elidible)) {return _node("relation_cak_pre", expr);}
 
@@ -222,7 +224,7 @@ foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("forei
 abstraction = expr:(BA_clause predicate BAI_clause_elidible) {return _node("abstraction", expr);}
 
 // relation place swap
-relation_place_swap = expr:(SA_clause relation_3) {return _node("relation_place_swap", expr);}
+relation_place_swap = expr:(SA_clause relation_2) {return _node("relation_place_swap", expr);}
 
 // scoped relation
 scoped_relation = expr:(GO_clause relation GOI_clause_elidible) {return _node("scoped_relation", expr);}
@@ -233,31 +235,34 @@ number_string = expr:(TA_clause (TA_clause / BY_clause)*) {return _node("number_
 letter_string = expr:(BY_clause (TA_clause / BY_clause)*) {return _node("letter_string", expr);}
 
 // afterthough connectives
-jak = expr:(KA_clause? SA_clause? JA_clause KAI_clause? free_post*) {return _node("jak", expr);}
+jak = expr:(KA_clause? SA_clause? JA_clause KAI_clause?) {return _node("jak", expr);}
 // jaik <- KA_clause? SA_clause? JAI_clause KAI_clause? free_post*
-jaik = expr:(JAI_clause free_post*) {return _node("jaik", expr);}
-cak = expr:(KA_clause? SA_clause? CA_clause KAI_clause? free_post*) {return _node("cak", expr);}
+jaik = expr:(JAI_clause) {return _node("jaik", expr);}
+cak = expr:(KA_clause? SA_clause? CA_clause KAI_clause?) {return _node("cak", expr);}
 
 // forethough connectives
-pre_jak = expr:(GA_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("pre_jak", expr);}
-pre_cak = expr:(GA_clause SA_clause? CA_clause KAI_clause? free_post*) {return _node("pre_cak", expr);}
-pre_connective_separator = expr:(GI_clause KAI_clause? free_post*) {return _node("pre_connective_separator", expr);}
+pre_jak = expr:(GA_clause SA_clause? JA_clause KAI_clause?) {return _node("pre_jak", expr);}
+pre_cak = expr:(GA_clause SA_clause? CA_clause KAI_clause?) {return _node("pre_cak", expr);}
+pre_connective_separator = expr:(GI_clause KAI_clause?) {return _node("pre_connective_separator", expr);}
 
 // free prefix
 free_prefix = expr:(PA_clause) {return _node("free_prefix", expr);}
 
 // free suffix
-free_post = expr:(PAI_clause / free_link / free_indicator) {return _node("free_post", expr);}
-free_link = expr:(PE_clause relation PEI_clause_elidible) {return _node("free_link", expr);}
+free_post = expr:(PAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript) {return _node("free_post", expr);}
+// free_link <- PE_clause relation PEI_clause_elidible
 free_indicator = expr:(XA_clause KAI_clause?) {return _node("free_indicator", expr);}
+free_discursive = expr:(PE_clause predicate PEI_clause_elidible) {return _node("free_discursive", expr);}
+free_parenthetical = expr:(PO_clause text POI_clause) {return _node("free_parenthetical", expr);}
+free_subscript = expr:(PU_clause string) {return _node("free_subscript", expr);}
 
 // PARTICLES CLAUSES
 A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);}
-XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);}
 BA_clause = expr:(free_prefix* spaces? BA) {return _node("BA_clause", expr);}
 BAI_clause = expr:(free_prefix* spaces? BAI free_post*) {return _node("BAI_clause", expr);}
 BAI_clause_elidible = expr:(BAI_clause?) {return (expr == "" || !expr) ? ["BAI"] : _node_empty("BAI_clause_elidible", expr);}
-CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);}
+BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
+CA_clause = expr:(free_prefix* spaces? CA free_post*) {return _node("CA_clause", expr);}
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);}
 DE_clause = expr:(free_prefix* spaces? DE free_post*) {return _node("DE_clause", expr);}
 DE_clause_elidible = expr:(DE_clause?) {return (expr == "" || !expr) ? ["DE"] : _node_empty("DE_clause_elidible", expr);}
@@ -280,22 +285,32 @@ GO_clause = expr:(free_prefix* spaces? GO) {return _node("GO_clause", expr);}
 GOI_clause = expr:(free_prefix* spaces? GOI free_post*) {return _node("GOI_clause", expr);}
 GOI_clause_elidible = expr:(GOI_clause?) {return (expr == "" || !expr) ? ["GOI"] : _node_empty("GOI_clause_elidible", expr);}
 I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);}
-JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);}
-JAI_clause = expr:(free_prefix* spaces? JAI) {return _node("JAI_clause", expr);}
-KA_clause = expr:(free_prefix* spaces? KA) {return _node("KA_clause", expr);}
-KAI_clause = expr:(free_prefix* spaces? KAI) {return _node("KAI_clause", expr);}
+JA_clause = expr:(free_prefix* spaces? JA free_post*) {return _node("JA_clause", expr);}
+JAI_clause = expr:(free_prefix* spaces? JAI free_post*) {return _node("JAI_clause", expr);}
+KA_clause = expr:(free_prefix* spaces? KA free_post*) {return _node("KA_clause", expr);}
+KAI_clause = expr:(free_prefix* spaces? KAI free_post*) {return _node("KAI_clause", expr);}
+KE_clause = expr:(free_prefix* spaces? KE free_post*) {return _node("KE_clause", expr);}
+KEI_clause = expr:(free_prefix* spaces? KEI free_post*) {return _node("KEI_clause", expr);}
+KEI_clause_elidible = expr:(KEI_clause?) {return (expr == "" || !expr) ? ["KEI"] : _node_empty("KEI_clause_elidible", expr);}
 MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);}
 O_clause = expr:(free_prefix* spaces? O) {return _node("O_clause", expr);}
 PA_clause = expr:(spaces? PA free_post*) {return _node("PA_clause", expr);}
 PAI_clause = expr:(spaces? PAI) {return _node("PAI_clause", expr);}
-PE_clause = expr:(free_prefix* spaces? PE) {return _node("PE_clause", expr);}
-PEI_clause = expr:(free_prefix* spaces? PEI) {return _node("PEI_clause", expr);}
+PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);}
+PEI_clause = expr:(free_prefix* spaces? PEI free_post*) {return _node("PEI_clause", expr);}
 PEI_clause_elidible = expr:(PEI_clause?) {return (expr == "" || !expr) ? ["PEI"] : _node_empty("PEI_clause_elidible", expr);}
+PO_clause = expr:(free_prefix* spaces? PO) {return _node("PO_clause", expr);}
+POI_clause = expr:(free_prefix* spaces? POI) {return _node("POI_clause", expr);}
+PU_clause = expr:(free_prefix* spaces? PU) {return _node("PU_clause", expr);}
 SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);}
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);}
 TAI_clause = expr:(free_prefix* spaces? TAI) {return _node("TAI_clause", expr);}
 TAI_clause_elidible = expr:(TAI_clause?) {return (expr == "" || !expr) ? ["TAI"] : _node_empty("TAI_clause_elidible", expr);}
 U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);}
+VA_clause = expr:(free_prefix* spaces? VA) {return _node("VA_clause", expr);}
+VAI_clause = expr:(free_prefix* spaces? VAI) {return _node("VAI_clause", expr);}
+VAI_clause_elidible = expr:(VAI_clause?) {return (expr == "" || !expr) ? ["VAI"] : _node_empty("VAI_clause_elidible", expr);}
+XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);}
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);}
 ZE_clause = expr:(free_prefix* spaces? ZE) {return _node("ZE_clause", expr);}
 ZEI_clause = expr:(free_prefix* spaces? ZEI free_post*) {return _node("ZEI_clause", expr);}
@@ -304,14 +319,11 @@ ZO_clause = expr:(free_prefix* spaces? ZO) {return _node("ZO_clause", expr);}
 ZOI_clause = expr:(free_prefix* spaces? ZOI free_post*) {return _node("ZOI_clause", expr);}
 ZU_clause = expr:(free_prefix* spaces? ZU) {return _node("ZU_clause", expr);}
 
-BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
-
 // PARTICLE FAMILIES
 A = expr:(&particle (a)) {return _node("A", expr);}
-BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)) {return _node("BY", expr);}
-XA = expr:(&particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)) {return _node("XA", expr);}
 BA = expr:(&particle !(BAI post_word) (b vowel_tail)) {return _node("BA", expr);}
 BAI = expr:(&particle (b a i)) {return _node("BAI", expr);}
+BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)) {return _node("BY", expr);}
 CA = expr:(&particle (c vowel)) {return _node("CA", expr);}
 DA = expr:(&particle (d a)) {return _node("DA", expr);}
 DE = expr:(&particle (d e)) {return _node("DE", expr);}
@@ -320,7 +332,7 @@ DO = expr:(&particle (d o)) {return _node("DO", expr);}
 DOI = expr:(&particle (d o i)) {return _node("DOI", expr);}
 DU = expr:(&particle (d u)) {return _node("DU", expr);}
 E = expr:(&particle (e)) {return _node("E", expr);}
-FA = expr:(&particle !(BY post_word) (f vowel_tail)) {return _node("FA", expr);}
+FA = expr:(&particle (f vowel_tail)) {return _node("FA", expr);}
 GA = expr:(&particle (g a)) {return _node("GA", expr);}
 GAI = expr:(&particle (g a i)) {return _node("GAI", expr);}
 GE = expr:(&particle (g e)) {return _node("GE", expr);}
@@ -330,20 +342,27 @@ GO = expr:(&particle (g o)) {return _node("GO", expr);}
 GOI = expr:(&particle (g o i)) {return _node("GOI", expr);}
 I = expr:(&particle (i)) {return _node("I", expr);}
 JA = expr:(&particle (j vowel)) {return _node("JA", expr);}
-JAI = expr:(&particle !((BY / JA) post_word) (j vowel_tail)) {return _node("JAI", expr);}
+JAI = expr:(&particle !(JA post_word) (j vowel_tail)) {return _node("JAI", expr);}
 KA = expr:(&particle (k a)) {return _node("KA", expr);}
 KAI = expr:(&particle (k a i)) {return _node("KAI", expr);}
+KE = expr:(&particle !(KA post_word) (k vowel_tail)) {return _node("KE", expr);}
+KEI = expr:(&particle (k e i)) {return _node("KEI", expr);}
 MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
 O = expr:(&particle (o)) {return _node("O", expr);}
 PA = expr:(&particle (p a vowel_tail_1?)) {return _node("PA", expr);}
 PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
-PE = expr:(&particle !((PA / PAI / PEI) post_word) (p vowel_tail)) {return _node("PE", expr);}
+PE = expr:(&particle (p e)) {return _node("PE", expr);}
 PEI = expr:(&particle (p e i)) {return _node("PEI", expr);}
+PO = expr:(&particle (p o)) {return _node("PO", expr);}
+POI = expr:(&particle (p o i)) {return _node("POI", expr);}
+PU = expr:(&particle (p u)) {return _node("PU", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
 TA = expr:(&particle !(TAI post_word) (t vowel_tail)) {return _node("TA", expr);}
 TAI = expr:(&particle (t a i)) {return _node("TAI", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
-// VA is available
+VA = expr:(&particle !(VAI post_word) (v vowel_tail)) {return _node("VA", expr);}
+VAI = expr:(&particle (v a i)) {return _node("VAI", expr);}
+XA = expr:(&particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)) {return _node("XA", expr);}
 ZA = expr:(&particle (z a)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}
