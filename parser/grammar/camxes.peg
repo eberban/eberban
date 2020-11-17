@@ -167,7 +167,6 @@ TA_clause           <- free_prefix* spaces? TA
 TAI_clause          <- free_prefix* spaces? TAI
 TAI_clause_elidible <- TAI_clause?
 U_clause            <- free_prefix* spaces? U
-# VA is in FA 
 ZA_clause           <- free_prefix* spaces? ZA
 ZE_clause           <- free_prefix* spaces? ZE
 ZEI_clause          <- free_prefix* spaces? ZEI free_post*
@@ -192,7 +191,7 @@ DO    <- &particle (d o)
 DOI   <- &particle (d o i)
 DU    <- &particle (d u)
 E     <- &particle (e)
-FA    <- &particle (f vowel / v vowel)
+FA    <- &particle !(BY post_word) (f vowel_tail)
 GA    <- &particle (g a)
 GAI   <- &particle (g a i)
 GE    <- &particle (g e)
@@ -202,7 +201,7 @@ GO    <- &particle (g o)
 GOI   <- &particle (g o i)
 I     <- &particle (i)
 JA    <- &particle (j vowel)
-JAI   <- &particle !(JA post_word) (j vowel_tail)
+JAI   <- &particle !((BY / JA) post_word) (j vowel_tail)
 KA    <- &particle (k a)
 KAI   <- &particle (k a i)
 MA    <- &particle (m vowel_tail)
@@ -215,7 +214,7 @@ SA    <- &particle (s vowel_tail)
 TA    <- &particle !(TAI post_word) (t vowel_tail)
 TAI   <- &particle (t a i)
 U     <- &particle (u)
-# VA is in FA 
+# VA is available
 ZA    <- &particle (z a)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)

@@ -296,7 +296,6 @@ TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);}
 TAI_clause = expr:(free_prefix* spaces? TAI) {return _node("TAI_clause", expr);}
 TAI_clause_elidible = expr:(TAI_clause?) {return (expr == "" || !expr) ? ["TAI"] : _node_empty("TAI_clause_elidible", expr);}
 U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);}
-// VA is in FA
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);}
 ZE_clause = expr:(free_prefix* spaces? ZE) {return _node("ZE_clause", expr);}
 ZEI_clause = expr:(free_prefix* spaces? ZEI free_post*) {return _node("ZEI_clause", expr);}
@@ -321,7 +320,7 @@ DO = expr:(&particle (d o)) {return _node("DO", expr);}
 DOI = expr:(&particle (d o i)) {return _node("DOI", expr);}
 DU = expr:(&particle (d u)) {return _node("DU", expr);}
 E = expr:(&particle (e)) {return _node("E", expr);}
-FA = expr:(&particle (f vowel / v vowel)) {return _node("FA", expr);}
+FA = expr:(&particle !(BY post_word) (f vowel_tail)) {return _node("FA", expr);}
 GA = expr:(&particle (g a)) {return _node("GA", expr);}
 GAI = expr:(&particle (g a i)) {return _node("GAI", expr);}
 GE = expr:(&particle (g e)) {return _node("GE", expr);}
@@ -331,7 +330,7 @@ GO = expr:(&particle (g o)) {return _node("GO", expr);}
 GOI = expr:(&particle (g o i)) {return _node("GOI", expr);}
 I = expr:(&particle (i)) {return _node("I", expr);}
 JA = expr:(&particle (j vowel)) {return _node("JA", expr);}
-JAI = expr:(&particle !(JA post_word) (j vowel_tail)) {return _node("JAI", expr);}
+JAI = expr:(&particle !((BY / JA) post_word) (j vowel_tail)) {return _node("JAI", expr);}
 KA = expr:(&particle (k a)) {return _node("KA", expr);}
 KAI = expr:(&particle (k a i)) {return _node("KAI", expr);}
 MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
@@ -344,7 +343,7 @@ SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
 TA = expr:(&particle !(TAI post_word) (t vowel_tail)) {return _node("TA", expr);}
 TAI = expr:(&particle (t a i)) {return _node("TAI", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
-// VA is in FA
+// VA is available
 ZA = expr:(&particle (z a)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}

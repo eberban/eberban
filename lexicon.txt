@@ -40,11 +40,11 @@ Particles
         fi : predicate 3rd place tag
         fo : predicate 4th place tag
         fu : predicate 5th place tag
-        va : next predicate place tag
-        ve : predicate place tag question
-        vi : predicate restrictive adverbial [poi'a]
-        vo : predicate non-restrictive adverbial [noi'a]
-        vu : predicate subordinating adverbial [soi'a] 
+        fai : next predicate place tag
+        fei : predicate place tag question
+        fue : predicate restrictive adverbial [poi'a]
+        fui : predicate non-restrictive adverbial [noi'a]
+        fuo : predicate subordinating adverbial [soi'a] 
 
     PA - Free prefix
         pa : free scope starter (one to one match is not checked by grammar)
@@ -67,7 +67,30 @@ Particles
         pi'a : which is associated with ...   
     
     PEI - Link terminator  
-        pei : Link elidible terminator    
+        pei : Link elidible terminator 
+
+    Proposal : PE* - Free suffix
+        pe: discursive start (+ relation)
+        pei: discursive end
+
+        po: parenthetical start (+ text)
+        poi: parenthetical end
+
+        pu: subscript
+
+    Proposal : KE - Relative clauses
+        ke: restrictive clause
+        ki: non-restrictive clause
+
+        kei: relative clause elidible terminator
+
+    Proposal : VA - Relation marker
+        va:  relation affectation
+              one side should affectable MA
+              if both side are, left is now equal right
+        ve: which is associated with ...
+
+        vai: relation marker elidible terminator
 
     SA - Relation transformer (swap / name) [lojban SE + LAhE + NAhE]
         sa : convert relation to name relation
@@ -85,7 +108,7 @@ Particles
     JA - Distributive connectives
         ja : A distributive connective
         je : E distributive connective
-        ji : predicate-tail connective question
+        ji : distributive connective question
         jo : O distributive connective
         ju : U distributive connective
 
@@ -94,11 +117,11 @@ Particles
         ... more with future non-logical connectives
 
     CA - Relation connectives
-        ca : A relation and predicate connective
-        ce : E relation and predicate connective
-        ci : relation and predicate connective question
-        co : O relation and predicate connective
-        cu : U relation and predicate connective
+        ca : A relation connective
+        ce : E relation connective
+        ci : relation connective question
+        co : O relation connective
+        cu : U relation connective
 
     GA - Forethought connective starter
         ga : forethought connective starter
