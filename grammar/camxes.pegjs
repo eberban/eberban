@@ -371,6 +371,9 @@ ZO = expr:(&particle (z o)) {return _node("ZO", expr);}
 ZOI = expr:(&particle (z o i)) {return _node("ZOI", expr);}
 ZU = expr:(&particle (z u)) {return _node("ZU", expr);}
 
+// Available space for future grammar rules
+CAI = expr:(&particle !(CA post_word) (c vowel_tail)) {return _node("CAI", expr);}
+DI = expr:(&particle (d i)) {return _node("DI", expr);}
 
 // MORPHOLOGY
 // - Forein text quoting
@@ -379,10 +382,10 @@ foreign_quote_word = expr:((!spaces .)+ ) !{ return _is_foreign_quote_delim(expr
 foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr); } { return _node("foreign_quote_close", expr); }
 
 // - Legal words
-foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?) {return _node("foreign_word", expr);}
+foreign_word = expr:(!coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(!coda consonant? vowel_tail_y !coda &post_word) {return _node("particle", expr);}
-root = expr:(((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word) {return _node("root", expr);}
+root = expr:(((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant) vowel_tail_y coda)) &post_word) {return _node("root", expr);}
 
 // - Legal vowels and vowel tails
 vowel_tail = expr:((diphthong / vowel) vowel_tail_1*) {return _node("vowel_tail", expr);}

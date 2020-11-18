@@ -242,6 +242,9 @@ ZO    <- &particle (z o)
 ZOI   <- &particle (z o i)
 ZU    <- &particle (z u)
 
+# Available space for future grammar rules
+CAI   <- &particle !(CA post_word) (c vowel_tail)
+DI    <- &particle (d i)
 
 # MORPHOLOGY
 # - Forein text quoting
@@ -250,10 +253,10 @@ foreign_quote_word <- (!spaces .)+
 foreign_quote_close <- native_word
 
 # - Legal words
-foreign_word <- (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?
+foreign_word <- !coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?
 native_word <-  root / particle
 particle <- !coda consonant? vowel_tail_y !coda &post_word
-root <- ((initial_consonant_pair vowel_tail_y) / (!coda consonant vowel_tail_y coda)) &post_word
+root <- ((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant) vowel_tail_y coda)) &post_word
 
 # - Legal vowels and vowel tails
 vowel_tail <- (diphthong / vowel) vowel_tail_1* 
