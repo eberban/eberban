@@ -175,8 +175,8 @@ Particles
         ta'u : each/all
 
         tai'a : too few (subjective)
-        tai'a : enough (subjective)
-        tai'a : too many (subjective)
+        tai'e : enough (subjective)
+        tai'i : too many (subjective)
 
         te   : decimal point  
         te'a : (base | number) separator
@@ -226,7 +226,7 @@ Particles
         xa('a)+ : laugther
 
         xu: true/false question
-        xu'u: indirect question marker
+        xu'e: indirect question marker
 
     BY - Literals
         Cy : consonant
