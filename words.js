@@ -13,6 +13,7 @@ words["ba"]                          = { family: "BA"       , short: "predicatio
 words["bai"]                         = { family: "BAI"      , short: ""                             , long: "abstraction elidible terminator", lojban: "kei"};
 words["ban"]                         = { family: "R"        , short: "language"                     , long: "x1 is a language/dialect used by x2 to express x3 (predicate)", lojban: "bangu" }
 words["be"]                          = { family: "BA"       , short: "relation"                     , long: "relation expressed in [predicate] (allow relation filling)", lojban: "BE filling but in NU"};
+words["ber"]                         = { family: "R"        , short: "eberbanic"                    , long: "x1 reflects eberbanic language/culture/nationality/community is aspect x2"};
 words["bi"]                          = { family: "BA"       , short: "event"                        , long: "x1 is the event of [predicate]", lojban: "nu"};
 words["bla"]                         = { family: "R"        , short: "future"                       , long: "x1 (abstraction) is in the future/after x2", lojban: "balvi" }
 words["bo"]                          = { family: "BA"       , short: "property"                     , long: "x1 is the property exhibited by [predicate]", lojban: "nu"};
@@ -49,6 +50,8 @@ words["ekanprei"]                    = { family: "L"        , short: "father"   
 words["esfemer"]                     = { family: "L"        , short: "woman"                        , long: "x1 is a woman/women", lojban: "ninmu"};
 words["esfeprei"]                    = { family: "L"        , short: "mother"                       , long: "x1 is a mother of x2", lojban: "mamta"};
 words["etatai"]                      = { family: "L"        , short: "number"                       , long: "x1 is a number of x2 in dimension/aspect x3 (default = unit)", lojban: "namcu"};
+words["eberban"]                     = { family: "L"        , short: "eberban"                      , long: "x1 is the eberban language used by x2 to express/communicate x3 (abstraction)"};
+words["eberpre"]                     = { family: "L"        , short: "eberbanist"                   , long: "x1 is an eberban speaker in aspect x2"};
 words["fa"]                          = { family: "FA"       , short: "x1"                           , long: "tag predicate place #1", lojban: "fa"};
 words["fai"]                         = { family: "FA"       , short: "x+"                           , long: "next predicate place tag", lojban: "sumti chaining"};
 words["fe"]                          = { family: "FA"       , short: "x2"                           , long: "tag predicate place #2", lojban: "fe" };
