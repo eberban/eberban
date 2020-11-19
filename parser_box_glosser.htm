@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-  <title>Lojban parser</title>
+  <title>eberban parser</title>
   <link type="text/css" href="./res/layout.css" rel="stylesheet">
   <link href="./res/bootstrap.css" rel="stylesheet">
   <script src="./res/jquery.js"></script>
@@ -23,18 +23,18 @@
   <div class="container">
     <div class="row">
       <div class="span12">
-        <h3>[Language name] parser <small>(text structure analyser). Uses <a
-              href="https://mw.lojban.org/papri/la_ilmentufa">camxes.js engine adapted by Ilmen and mia</a>, frontend by
-            la .uilym.</small></h3>
+        <h3>eberban parser <small>(text structure analyser). Uses <a
+              href="https://mw.lojban.org/papri/la_ilmentufa">camxes.js engine adapted by Ilmen</a>, frontend by uilym
+            (both adapted for eberban by mia) </small></h3>
       </div>
     </div>
     <div class="row">
       <div class="span12">
         <form onsubmit="parse(); return false;">
           <fieldset>
-            <!--legend>Type any Lojban text in the following textarea and press "Parse".</legend-->
+            <!--legend>Type any eberban text in the following textarea and press "Parse".</legend-->
             <textarea id="lojban-text-area" rows="5"
-              placeholder='Type any Lojban text in the following textarea and press "Parse".'
+              placeholder='Type any eberban text in the following textarea and press "Parse".'
               style="width: 100%;"></textarea>
             <button class="btn btn-primary" onclick="parse(); return false;"><i class="icon-search icon-white"></i>
               Parse</button>
@@ -48,7 +48,7 @@
               <div class="modal-body">
                 <p>The following options influence the way the parse output is shown.</p>
                 <legend>Mode</legend>
-                In which Lojban mode do you want to see the output?
+                In which mode do you want to see the output?
                 <div class="btn-toolbar">
                   <div class="btn-group">
                     <a class="btn highlight-button active" id="latin-button"
