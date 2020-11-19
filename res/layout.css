@@ -131,11 +131,18 @@ li.implicit {
     border-top: 0px;
 }
 
-.box.box-sentence {
-    background: #eeeeee;
+.box.box-parser {
+    background: #ffffff;
     border: 1px black solid;
     margin: 2px;
 }
+
+.box.box-sentence {
+    background: #ffffff;
+    border: 1px black solid;
+    margin: 2px;
+}
+
 
 .box.box-note {
     background: #eeeeee;

@@ -1,6 +1,13 @@
+# eberban PEG grammar - v0.1
+# ==========================
+
 # GRAMMAR
-# main rule
-text <- (free_indicator / free_vocative / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
+# main rule, allow language version/dialect annotation
+text <- parser_version? text_1
+parser_version <- DI_clause (!parser_version_number borrowing_content (dot !dot !y)? parser_version_number? / parser_version_number)
+parser_version_number <- spaces? TA+
+# main text rule
+text_1 <- (free_indicator / free_vocative / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
 
 # paragraphs
 paragraph <- DA_clause+ sentence*
@@ -85,7 +92,7 @@ borrowing <- ZA_clause borrowing_content (dot !dot !y)? free_post*
 borrowing_content <- spaces foreign_word (!spaces native_word)*
 
 # quotes
-grammatical_quote <- ZE_clause text ZEI_clause
+grammatical_quote <- ZE_clause text_1 ZEI_clause
 one_word_quote <- ZI_clause spaces? native_word
 ungrammatical_quote <- ZO_clause (!ZOI_clause spaces? native_word) ZOI_clause
 foreign_quote <- ZU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
@@ -123,7 +130,7 @@ free_post <- PAI_clause / free_indicator / free_discursive / free_parenthetical 
 # free_link <- PE_clause relation PEI_clause_elidible
 free_indicator <- XA_clause KAI_clause?
 free_discursive <- PE_clause predicate PEI_clause_elidible
-free_parenthetical <- PO_clause text POI_clause
+free_parenthetical <- PO_clause text_1 POI_clause
 free_subscript <- PU_clause string
 free_vocative <- (CAI_clause KAI_clause? free_indicator*)+ relation_2
 
@@ -136,6 +143,7 @@ BY_clause           <- free_prefix* spaces? BY
 CA_clause           <- free_prefix* spaces? CA free_post*
 CAI_clause          <- free_prefix* spaces? CAI
 DA_clause           <- free_prefix* spaces? DA free_post*
+DI_clause           <- spaces? DI
 DE_clause           <- free_prefix* spaces? DE free_post*
 DE_clause_elidible  <- DE_clause?
 DEI_clause          <- free_prefix* spaces? DEI free_post*
@@ -201,6 +209,7 @@ CAI   <- &particle !(CA post_word) (c vowel_tail)
 DA    <- &particle (d a)
 DE    <- &particle (d e)
 DEI   <- &particle (d e i)
+DI    <- &particle (d i)
 DO    <- &particle (d o)
 DOI   <- &particle (d o i)
 DU    <- &particle (d u)
@@ -243,9 +252,6 @@ ZI    <- &particle (z i)
 ZO    <- &particle (z o)
 ZOI   <- &particle (z o i)
 ZU    <- &particle (z u)
-
-# Available space for future grammar rules
-DI    <- &particle (d i) #maybe dialect/version indicator ?
 
 # MORPHOLOGY
 # - Forein text quoting

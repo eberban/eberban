@@ -350,6 +350,8 @@ function boxClassForType(parse) {
     
     // return "box box-not-shown";
 
+    if (parse.type === "parser version") { return "box box-parser"; }
+
     if (parse.type === "sentence") { return "box box-sentence"; }
     if (parse.type === "predicate") { return "box box-predicate"; }
     if (parse.type === "place") { return "box box-place"; }

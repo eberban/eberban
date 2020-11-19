@@ -34,6 +34,7 @@ words["cti'a"]                       = { family: "R"        , short: "eat"      
 words["cu"]                          = { family: "CA"       , short: "whether-or-not"               , long: "relation connective whether-or-not", lojban: "ju"};
 words["cy"]                          = { family: "BY"       , short: "C"                            , long: "letter C", lojban: "cy"};
 words["da'ul"]                       = { family: "R"        , short: "animal"                       , long: "x1 is an animal/creature of species x2", lojban: "danlu"};
+words["di"]                          = { family: "DI"       , short: ""                             , long: "define which dialect/version the text is in", lojban: "jo'au"};
 words["da"]                          = { family: "DA"       , short: "(paragraph)"                  , long: "paragraph break, introduce new topic", lojban: "ni'o"};
 words["de"]                          = { family: "DE"       , short: ""                             , long: "predicate-tail elidible starter", lojban: "i"};
 words["dei"]                         = { family: "DEI"      , short: ""                             , long: "predicate-tail elidible terminator", lojban: "iau"};

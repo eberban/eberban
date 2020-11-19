@@ -77,6 +77,7 @@ var simplifyFunctions = {};
 var map = [
     // important structures
     ["text", "text"],
+    ["parser_version", "parser version"],
     ["paragraph", "paragraph"],
     ["sentence", "sentence"],
     ["predicate_1", "predicate"],

@@ -1,5 +1,8 @@
+// eberban PEG grammar - v0.1
+// ==========================
+
 // GRAMMAR
-// main rule
+// main rule, allow language version/dialect annotation
 {
   var _g_foreign_quote_delim;
 
@@ -129,7 +132,11 @@
   }
 }
 
-text = expr:((free_indicator / free_vocative / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?) {return _node("text", expr);}
+text = expr:(parser_version? text_1) {return _node("text", expr);}
+parser_version = expr:(DI_clause (!parser_version_number borrowing_content (dot !dot !y)? parser_version_number? / parser_version_number)) {return _node("parser_version", expr);}
+parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
+// main text rule
+text_1 = expr:((free_indicator / free_vocative / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?) {return _node("text_1", expr);}
 
 // paragraphs
 paragraph = expr:(DA_clause+ sentence*) {return _node("paragraph", expr);}
@@ -214,7 +221,7 @@ borrowing = expr:(ZA_clause borrowing_content (dot !dot !y)? free_post*) {return
 borrowing_content = expr:(spaces foreign_word (!spaces native_word)*) {return _node("borrowing_content", expr);}
 
 // quotes
-grammatical_quote = expr:(ZE_clause text ZEI_clause) {return _node("grammatical_quote", expr);}
+grammatical_quote = expr:(ZE_clause text_1 ZEI_clause) {return _node("grammatical_quote", expr);}
 one_word_quote = expr:(ZI_clause spaces? native_word) {return _node("one_word_quote", expr);}
 ungrammatical_quote = expr:(ZO_clause (!ZOI_clause spaces? native_word) ZOI_clause) {return _node("ungrammatical_quote", expr);}
 foreign_quote = expr:(ZU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
@@ -252,7 +259,7 @@ free_post = expr:(PAI_clause / free_indicator / free_discursive / free_parenthet
 // free_link <- PE_clause relation PEI_clause_elidible
 free_indicator = expr:(XA_clause KAI_clause?) {return _node("free_indicator", expr);}
 free_discursive = expr:(PE_clause predicate PEI_clause_elidible) {return _node("free_discursive", expr);}
-free_parenthetical = expr:(PO_clause text POI_clause) {return _node("free_parenthetical", expr);}
+free_parenthetical = expr:(PO_clause text_1 POI_clause) {return _node("free_parenthetical", expr);}
 free_subscript = expr:(PU_clause string) {return _node("free_subscript", expr);}
 free_vocative = expr:((CAI_clause KAI_clause? free_indicator*)+ relation_2) {return _node("free_vocative", expr);}
 
@@ -265,6 +272,7 @@ BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
 CA_clause = expr:(free_prefix* spaces? CA free_post*) {return _node("CA_clause", expr);}
 CAI_clause = expr:(free_prefix* spaces? CAI) {return _node("CAI_clause", expr);}
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);}
+DI_clause = expr:(spaces? DI) {return _node("DI_clause", expr);}
 DE_clause = expr:(free_prefix* spaces? DE free_post*) {return _node("DE_clause", expr);}
 DE_clause_elidible = expr:(DE_clause?) {return (expr == "" || !expr) ? ["DE"] : _node_empty("DE_clause_elidible", expr);}
 DEI_clause = expr:(free_prefix* spaces? DEI free_post*) {return _node("DEI_clause", expr);}
@@ -330,6 +338,7 @@ CAI = expr:(&particle !(CA post_word) (c vowel_tail)) {return _node("CAI", expr)
 DA = expr:(&particle (d a)) {return _node("DA", expr);}
 DE = expr:(&particle (d e)) {return _node("DE", expr);}
 DEI = expr:(&particle (d e i)) {return _node("DEI", expr);}
+DI = expr:(&particle (d i)) {return _node("DI", expr);}
 DO = expr:(&particle (d o)) {return _node("DO", expr);}
 DOI = expr:(&particle (d o i)) {return _node("DOI", expr);}
 DU = expr:(&particle (d u)) {return _node("DU", expr);}
@@ -372,9 +381,6 @@ ZI = expr:(&particle (z i)) {return _node("ZI", expr);}
 ZO = expr:(&particle (z o)) {return _node("ZO", expr);}
 ZOI = expr:(&particle (z o i)) {return _node("ZOI", expr);}
 ZU = expr:(&particle (z u)) {return _node("ZU", expr);}
-
-// Available space for future grammar rules
-DI = expr:(&particle (d i)) {return _node("DI", expr);} //maybe dialect/version indicator ?
 
 // MORPHOLOGY
 // - Forein text quoting
