@@ -210,6 +210,7 @@ words["zo"]                          = { family: "ZO"       , short: "&#12317;" 
 words["zoi"]                         = { family: "ZOI"      , short: "&#12318;"                     , long: "end ungrammatical quote", lojban: "le'u"};
 words["zu"]                          = { family: "ZU"       , short: ""                             , long: "prefix a foreign word quote surrounded by the same 1 native word", lojban: "zoi"};
 words["zva"]                         = { family: "R"        , short: "attending"                    , long: "x1 is at/attenting/present at x2 (event/location)", lojban: "zvati"};
+words["ka'en"]                       = { family: "R"        , short: "able"                         , long: "x1 is able to do/be/capable of doing/being x2 (event/state) under conditions (event/state)", lojban: "kakne"};
 words["zy"]                          = { family: "BY"       , short: "Z"                            , long: "letter Z", lojban: "zy"};
 
 module.exports.shortDescriptions = shortDescriptions;
