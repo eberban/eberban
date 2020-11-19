@@ -106,6 +106,7 @@ var map = [
     ["free_discursive", "discursive"],
     ["free_parenthetical", "note"],
     ["free_subscript", "subscript"],
+    ["free_vocative", "vocative"],
 
     // SCOPES
     // manual scoping

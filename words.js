@@ -20,6 +20,10 @@ words["bo"]                          = { family: "BA"       , short: "property" 
 words["bria"]                        = { family: "R"        , short: "arm"                          , long: "x1 (abstraction) is a/the arm of x2", lojban: "cabna" }
 words["by"]                          = { family: "BY"       , short: "B"                            , long: "letter B", lojban: "by"};
 words["ca"]                          = { family: "CA"       , short: "or"                           , long: "relation connective or", lojban: "ja"};
+words["cai"]                         = { family: "CAI"      , short: "(you = )"                     , long: "identifies intended listener", lojban: "doi"};
+words["coi"]                         = { family: "CAI"      , short: "(hello)"                      , long: "greetings/hello", lojban: "coi"};
+words["co'o"]                        = { family: "CAI"      , short: "(bye)"                        , long: "parties/goodbye", lojban: "co'o"};
+words["ci'e"]                        = { family: "CAI"      , short: "(thank)"                      , long: "thanks - no thanks to you", lojban: "ki'e"};
 words["ce"]                          = { family: "CA"       , short: "and"                          , long: "relation connective and", lojban: "je"};
 words["ci"]                          = { family: "CA"       , short: "connective ?"                 , long: "relation connective question", lojban: "je'i"};
 words["cki'a"]                       = { family: "R"        , short: "write"                        , long: "x1 inscribes/writes x2 on display/surface/storage medium x3 with writing implement x4", lojban: "ciska"};

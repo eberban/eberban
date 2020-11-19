@@ -373,6 +373,7 @@ function boxClassForType(parse) {
     if (parse.type === "discursive") { return "box box-note"; }
     if (parse.type === "note") { return "box box-note"; }
     if (parse.type === "subscript") { return "box box-note"; }
+    if (parse.type === "vocative") { return "box box-note"; }
 
     return "box box-not-shown";
 }

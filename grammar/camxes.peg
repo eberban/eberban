@@ -1,6 +1,6 @@
 # GRAMMAR
 # main rule
-text <- free_indicator* (paragraph+ / sentence*) spaces? EOF?
+text <- (free_indicator / free_vocative / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
 
 # paragraphs
 paragraph <- DA_clause+ sentence*
@@ -106,26 +106,26 @@ number_string <- TA_clause (TA_clause / BY_clause)*
 letter_string <- BY_clause (TA_clause / BY_clause)*
 
 # afterthough connectives
-jak <- KA_clause? SA_clause? JA_clause KAI_clause?
-# jaik <- KA_clause? SA_clause? JAI_clause KAI_clause? free_post*
+jak <- KA_clause? SA_clause? JA_clause KAI_clause? free_post*
 jaik <- JAI_clause
-cak <- KA_clause? SA_clause? CA_clause KAI_clause?
+cak <- KA_clause? SA_clause? CA_clause KAI_clause?  free_post*
 
 # forethough connectives
-pre_jak <- GA_clause SA_clause? JA_clause KAI_clause?
-pre_cak <- GA_clause SA_clause? CA_clause KAI_clause?
-pre_connective_separator <- GI_clause KAI_clause?
+pre_jak <- GA_clause SA_clause? JA_clause KAI_clause? free_post*
+pre_cak <- GA_clause SA_clause? CA_clause KAI_clause? free_post*
+pre_connective_separator <- GI_clause KAI_clause? free_post*
 
 # free prefix
 free_prefix <- PA_clause
 
 # free suffix
-free_post <- PAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript
+free_post <- PAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript / free_vocative
 # free_link <- PE_clause relation PEI_clause_elidible
 free_indicator <- XA_clause KAI_clause?
 free_discursive <- PE_clause predicate PEI_clause_elidible
 free_parenthetical <- PO_clause text POI_clause
 free_subscript <- PU_clause string
+free_vocative <- (CAI_clause KAI_clause? free_indicator*)+ relation_2
 
 # PARTICLES CLAUSES
 A_clause            <- free_prefix* spaces? A
@@ -134,6 +134,7 @@ BAI_clause          <- free_prefix* spaces? BAI free_post*
 BAI_clause_elidible <- BAI_clause?
 BY_clause           <- free_prefix* spaces? BY
 CA_clause           <- free_prefix* spaces? CA free_post*
+CAI_clause          <- free_prefix* spaces? CAI
 DA_clause           <- free_prefix* spaces? DA free_post*
 DE_clause           <- free_prefix* spaces? DE free_post*
 DE_clause_elidible  <- DE_clause?
@@ -159,7 +160,7 @@ I_clause            <- free_prefix* spaces? I
 JA_clause           <- free_prefix* spaces? JA free_post*
 JAI_clause          <- free_prefix* spaces? JAI free_post*
 KA_clause           <- free_prefix* spaces? KA free_post*
-KAI_clause          <- free_prefix* spaces? KAI free_post*
+KAI_clause          <- free_prefix* spaces? KAI
 KE_clause           <- free_prefix* spaces? KE free_post*
 KEI_clause          <- free_prefix* spaces? KEI free_post*
 KEI_clause_elidible <- KEI_clause?
@@ -196,6 +197,7 @@ BA    <- &particle !(BAI post_word) (b vowel_tail)
 BAI   <- &particle (b a i)
 BY    <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)
 CA    <- &particle (c vowel)
+CAI   <- &particle !(CA post_word) (c vowel_tail)
 DA    <- &particle (d a)
 DE    <- &particle (d e)
 DEI   <- &particle (d e i)
@@ -243,8 +245,7 @@ ZOI   <- &particle (z o i)
 ZU    <- &particle (z u)
 
 # Available space for future grammar rules
-CAI   <- &particle !(CA post_word) (c vowel_tail)
-DI    <- &particle (d i)
+DI    <- &particle (d i) #maybe dialect/version indicator ?
 
 # MORPHOLOGY
 # - Forein text quoting
