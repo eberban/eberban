@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.1
+// eberban PEG grammar - v0.2
 // ==========================
 
 // GRAMMAR
@@ -374,7 +374,7 @@ U = expr:(&particle (u)) {return _node("U", expr);}
 VA = expr:(&particle !(VAI post_word) (v vowel_tail)) {return _node("VA", expr);}
 VAI = expr:(&particle (v a i)) {return _node("VAI", expr);}
 XA = expr:(&particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)) {return _node("XA", expr);}
-ZA = expr:(&particle (z a)) {return _node("ZA", expr);}
+ZA = expr:(&particle (z a i?)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}
 ZI = expr:(&particle (z i)) {return _node("ZI", expr);}

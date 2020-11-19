@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.1
+# eberban PEG grammar - v0.2
 # ==========================
 
 # GRAMMAR
@@ -245,7 +245,7 @@ U     <- &particle (u)
 VA    <- &particle !(VAI post_word) (v vowel_tail)
 VAI   <- &particle (v a i)
 XA    <- &particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)
-ZA    <- &particle (z a)
+ZA    <- &particle (z a i?)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)
 ZI    <- &particle (z i)
