@@ -43,37 +43,37 @@ var camxes = (function() {
         peg$c8 = function(expr) {return _node("paragraph", expr);},
         peg$c9 = function(expr) {return _node("sentence", expr);},
         peg$c10 = function(expr) {return _node("fragments", expr);},
-        peg$c11 = function(expr) {return _node("predicate", expr);},
-        peg$c12 = function(expr) {return _node("predicate_jak_post", expr);},
-        peg$c13 = function(expr) {return _node("predicate_1", expr);},
-        peg$c14 = function(expr) {return _node("predicate_1_terms", expr);},
-        peg$c15 = function(expr) {return _node("predicate_jak_pre", expr);},
-        peg$c16 = function(expr) {return _node("predicate_tail", expr);},
-        peg$c17 = function(expr) {return _node("predicate_tail_jak_post", expr);},
-        peg$c18 = function(expr) {return _node("predicate_tail_jak_post_terms", expr);},
-        peg$c19 = function(expr) {return _node("predicate_tail_1", expr);},
-        peg$c20 = function(expr) {return _node("predicate_tail_2", expr);},
-        peg$c21 = function(expr) {return _node("predicate_tail_jak_pre", expr);},
-        peg$c22 = function(expr) {return _node("predicate_tail_jak_pre_terms", expr);},
-        peg$c23 = function(expr) {return _node("predicate_tail_terms", expr);},
-        peg$c24 = function(expr) {return _node("predicate_place", expr);},
-        peg$c25 = function(expr) {return _node("predicate_term", expr);},
-        peg$c26 = function(expr) {return _node("predicate_term_jak_post", expr);},
-        peg$c27 = function(expr) {return _node("predicate_term_1", expr);},
-        peg$c28 = function(expr) {return _node("predicate_term_jaik_post", expr);},
-        peg$c29 = function(expr) {return _node("predicate_term_2", expr);},
-        peg$c30 = function(expr) {return _node("predicate_term_jak_pre", expr);},
-        peg$c31 = function(expr) {return _node("scoped_predicate_term", expr);},
-        peg$c32 = function(expr) {return _node("predicate_place_tag", expr);},
-        peg$c33 = function(expr) {return _node("predicate_place_tag_jak_post", expr);},
-        peg$c34 = function(expr) {return _node("predicate_place_tag_1", expr);},
-        peg$c35 = function(expr) {return _node("predicate_place_modal", expr);},
-        peg$c36 = function(expr) {return _node("relation", expr);},
-        peg$c37 = function(expr) {return _node("relation_link", expr);},
-        peg$c38 = function(expr) {return _node("relation_1", expr);},
-        peg$c39 = function(expr) {return _node("relation_cak_post", expr);},
-        peg$c40 = function(expr) {return _node("relation_2", expr);},
-        peg$c41 = function(expr) {return _node("relation_cak_pre", expr);},
+        peg$c11 = function(expr) {return _node("proposition", expr);},
+        peg$c12 = function(expr) {return _node("proposition_jak_post", expr);},
+        peg$c13 = function(expr) {return _node("proposition_1", expr);},
+        peg$c14 = function(expr) {return _node("proposition_1_terms", expr);},
+        peg$c15 = function(expr) {return _node("proposition_jak_pre", expr);},
+        peg$c16 = function(expr) {return _node("proposition_tail", expr);},
+        peg$c17 = function(expr) {return _node("proposition_tail_jak_post", expr);},
+        peg$c18 = function(expr) {return _node("proposition_tail_jak_post_terms", expr);},
+        peg$c19 = function(expr) {return _node("proposition_tail_1", expr);},
+        peg$c20 = function(expr) {return _node("proposition_tail_2", expr);},
+        peg$c21 = function(expr) {return _node("proposition_tail_jak_pre", expr);},
+        peg$c22 = function(expr) {return _node("proposition_tail_jak_pre_terms", expr);},
+        peg$c23 = function(expr) {return _node("proposition_tail_terms", expr);},
+        peg$c24 = function(expr) {return _node("proposition_place", expr);},
+        peg$c25 = function(expr) {return _node("proposition_term", expr);},
+        peg$c26 = function(expr) {return _node("proposition_term_jak_post", expr);},
+        peg$c27 = function(expr) {return _node("proposition_term_1", expr);},
+        peg$c28 = function(expr) {return _node("proposition_term_jaik_post", expr);},
+        peg$c29 = function(expr) {return _node("proposition_term_2", expr);},
+        peg$c30 = function(expr) {return _node("proposition_term_jak_pre", expr);},
+        peg$c31 = function(expr) {return _node("scoped_proposition_term", expr);},
+        peg$c32 = function(expr) {return _node("proposition_place_tag", expr);},
+        peg$c33 = function(expr) {return _node("proposition_place_tag_jak_post", expr);},
+        peg$c34 = function(expr) {return _node("proposition_place_tag_1", expr);},
+        peg$c35 = function(expr) {return _node("proposition_place_modal", expr);},
+        peg$c36 = function(expr) {return _node("predicate", expr);},
+        peg$c37 = function(expr) {return _node("predicate_link", expr);},
+        peg$c38 = function(expr) {return _node("predicate_1", expr);},
+        peg$c39 = function(expr) {return _node("predicate_cak_post", expr);},
+        peg$c40 = function(expr) {return _node("predicate_2", expr);},
+        peg$c41 = function(expr) {return _node("predicate_cak_pre", expr);},
         peg$c42 = function(expr) {return _node("lexeme", expr);},
         peg$c43 = function(expr) {return _node("lexeme_1", expr);},
         peg$c44 = function(expr) {return _node("lexeme_2", expr);},
@@ -89,17 +89,17 @@ var camxes = (function() {
         peg$c54 = function(expr) {return _node("foreign_quote", expr);},
         peg$c55 = function(expr) {return _node("foreign_quote_content", expr);},
         peg$c56 = function(expr) {return _node("abstraction", expr);},
-        peg$c57 = function(expr) {return _node("relation_place_swap", expr);},
-        peg$c58 = function(expr) {return _node("scoped_relation", expr);},
+        peg$c57 = function(expr) {return _node("predicate_place_swap", expr);},
+        peg$c58 = function(expr) {return _node("scoped_predicate", expr);},
         peg$c59 = function(expr) {return _node("string", expr);},
         peg$c60 = function(expr) {return _node("number_string", expr);},
         peg$c61 = function(expr) {return _node("letter_string", expr);},
         peg$c62 = function(expr) {return _node("jak", expr);},
         peg$c63 = function(expr) {return _node("jaik", expr);},
         peg$c64 = function(expr) {return _node("cak", expr);},
-        peg$c65 = function(expr) {return _node("pre_jak", expr);},
-        peg$c66 = function(expr) {return _node("pre_cak", expr);},
-        peg$c67 = function(expr) {return _node("pre_connective_separator", expr);},
+        peg$c65 = function(expr) {return _node("gajak", expr);},
+        peg$c66 = function(expr) {return _node("gacak", expr);},
+        peg$c67 = function(expr) {return _node("gik", expr);},
         peg$c68 = function(expr) {return _node("free_prefix", expr);},
         peg$c69 = function(expr) {return _node("free_post", expr);},
         peg$c70 = function(expr) {return _node("free_indicator", expr);},
@@ -863,7 +863,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate();
+      s1 = peg$parseproposition();
       if (s1 === peg$FAILED) {
         s1 = peg$parsefragments();
       }
@@ -894,13 +894,13 @@ var camxes = (function() {
       s2 = peg$parseDE_clause();
       if (s2 !== peg$FAILED) {
         s3 = [];
-        s4 = peg$parsepredicate_place();
+        s4 = peg$parseproposition_place();
         if (s4 === peg$FAILED) {
           s4 = peg$parseFA_clause();
         }
         while (s4 !== peg$FAILED) {
           s3.push(s4);
-          s4 = peg$parsepredicate_place();
+          s4 = peg$parseproposition_place();
           if (s4 === peg$FAILED) {
             s4 = peg$parseFA_clause();
           }
@@ -933,7 +933,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate() {
+    function peg$parseproposition() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 7,
@@ -945,9 +945,9 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_jak_post();
+      s1 = peg$parseproposition_jak_post();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsepredicate_1();
+        s1 = peg$parseproposition_1();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -960,7 +960,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_jak_post() {
+    function peg$parseproposition_jak_post() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
       var key    = peg$currPos * 240 + 8,
@@ -973,7 +973,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepredicate_1();
+      s2 = peg$parseproposition_1();
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
@@ -992,7 +992,7 @@ var camxes = (function() {
           if (s6 !== peg$FAILED) {
             s7 = peg$parseDE_clause_elidible();
             if (s7 !== peg$FAILED) {
-              s8 = peg$parsepredicate_1();
+              s8 = peg$parseproposition_1();
               if (s8 !== peg$FAILED) {
                 s5 = [s5, s6, s7, s8];
                 s4 = s5;
@@ -1031,7 +1031,7 @@ var camxes = (function() {
               if (s6 !== peg$FAILED) {
                 s7 = peg$parseDE_clause_elidible();
                 if (s7 !== peg$FAILED) {
-                  s8 = peg$parsepredicate_1();
+                  s8 = peg$parseproposition_1();
                   if (s8 !== peg$FAILED) {
                     s5 = [s5, s6, s7, s8];
                     s4 = s5;
@@ -1077,7 +1077,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_1() {
+    function peg$parseproposition_1() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 240 + 9,
@@ -1089,16 +1089,16 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_jak_pre();
+      s1 = peg$parseproposition_jak_pre();
       if (s1 === peg$FAILED) {
         s1 = peg$currPos;
         s2 = peg$parseDE_clause_elidible();
         if (s2 !== peg$FAILED) {
-          s3 = peg$parsepredicate_1_terms();
+          s3 = peg$parseproposition_1_terms();
           if (s3 !== peg$FAILED) {
             s4 = peg$parseDO_clause_elidible();
             if (s4 !== peg$FAILED) {
-              s5 = peg$parsepredicate_tail();
+              s5 = peg$parseproposition_tail();
               if (s5 !== peg$FAILED) {
                 s6 = peg$parseDEI_clause_elidible();
                 if (s6 !== peg$FAILED) {
@@ -1136,7 +1136,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_1_terms() {
+    function peg$parseproposition_1_terms() {
       var s0, s1, s2;
 
       var key    = peg$currPos * 240 + 10,
@@ -1149,10 +1149,10 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = [];
-      s2 = peg$parsepredicate_place();
+      s2 = peg$parseproposition_place();
       while (s2 !== peg$FAILED) {
         s1.push(s2);
-        s2 = peg$parsepredicate_place();
+        s2 = peg$parseproposition_place();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -1165,7 +1165,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_jak_pre() {
+    function peg$parseproposition_jak_pre() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9;
 
       var key    = peg$currPos * 240 + 11,
@@ -1178,7 +1178,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepre_jak();
+      s2 = peg$parsegajak();
       if (s2 !== peg$FAILED) {
         s3 = peg$currPos;
         peg$silentFails++;
@@ -1193,13 +1193,13 @@ var camxes = (function() {
         if (s3 !== peg$FAILED) {
           s4 = peg$parseDE_clause_elidible();
           if (s4 !== peg$FAILED) {
-            s5 = peg$parsepredicate();
+            s5 = peg$parseproposition();
             if (s5 !== peg$FAILED) {
               s6 = [];
               s7 = peg$currPos;
-              s8 = peg$parsepre_connective_separator();
+              s8 = peg$parsegik();
               if (s8 !== peg$FAILED) {
-                s9 = peg$parsepredicate();
+                s9 = peg$parseproposition();
                 if (s9 !== peg$FAILED) {
                   s8 = [s8, s9];
                   s7 = s8;
@@ -1215,9 +1215,9 @@ var camxes = (function() {
                 while (s7 !== peg$FAILED) {
                   s6.push(s7);
                   s7 = peg$currPos;
-                  s8 = peg$parsepre_connective_separator();
+                  s8 = peg$parsegik();
                   if (s8 !== peg$FAILED) {
-                    s9 = peg$parsepredicate();
+                    s9 = peg$parseproposition();
                     if (s9 !== peg$FAILED) {
                       s8 = [s8, s9];
                       s7 = s8;
@@ -1273,7 +1273,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail() {
+    function peg$parseproposition_tail() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 12,
@@ -1285,9 +1285,9 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_tail_jak_post();
+      s1 = peg$parseproposition_tail_jak_post();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsepredicate_tail_1();
+        s1 = peg$parseproposition_tail_1();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -1300,7 +1300,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_jak_post() {
+    function peg$parseproposition_tail_jak_post() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9;
 
       var key    = peg$currPos * 240 + 13,
@@ -1313,7 +1313,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepredicate_tail_1();
+      s2 = peg$parseproposition_tail_1();
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
@@ -1332,9 +1332,9 @@ var camxes = (function() {
           if (s6 !== peg$FAILED) {
             s7 = peg$parseDO_clause_elidible();
             if (s7 !== peg$FAILED) {
-              s8 = peg$parsepredicate_tail_1();
+              s8 = peg$parseproposition_tail_1();
               if (s8 !== peg$FAILED) {
-                s9 = peg$parsepredicate_tail_jak_post_terms();
+                s9 = peg$parseproposition_tail_jak_post_terms();
                 if (s9 !== peg$FAILED) {
                   s5 = [s5, s6, s7, s8, s9];
                   s4 = s5;
@@ -1377,9 +1377,9 @@ var camxes = (function() {
               if (s6 !== peg$FAILED) {
                 s7 = peg$parseDO_clause_elidible();
                 if (s7 !== peg$FAILED) {
-                  s8 = peg$parsepredicate_tail_1();
+                  s8 = peg$parseproposition_tail_1();
                   if (s8 !== peg$FAILED) {
-                    s9 = peg$parsepredicate_tail_jak_post_terms();
+                    s9 = peg$parseproposition_tail_jak_post_terms();
                     if (s9 !== peg$FAILED) {
                       s5 = [s5, s6, s7, s8, s9];
                       s4 = s5;
@@ -1429,7 +1429,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_jak_post_terms() {
+    function peg$parseproposition_tail_jak_post_terms() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 14,
@@ -1441,7 +1441,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_tail_terms();
+      s1 = peg$parseproposition_tail_terms();
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
         s1 = peg$c18(s1);
@@ -1453,7 +1453,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_1() {
+    function peg$parseproposition_tail_1() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 240 + 15,
@@ -1473,7 +1473,7 @@ var camxes = (function() {
         s3 = peg$parseKA_clause();
       }
       if (s2 !== peg$FAILED) {
-        s3 = peg$parsepredicate_tail_2();
+        s3 = peg$parseproposition_tail_2();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -1496,7 +1496,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_2() {
+    function peg$parseproposition_tail_2() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 240 + 16,
@@ -1509,9 +1509,9 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parserelation();
+      s2 = peg$parsepredicate();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parsepredicate_tail_terms();
+        s3 = peg$parseproposition_tail_terms();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -1524,7 +1524,7 @@ var camxes = (function() {
         s1 = peg$c0;
       }
       if (s1 === peg$FAILED) {
-        s1 = peg$parsepredicate_tail_jak_pre();
+        s1 = peg$parseproposition_tail_jak_pre();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -1537,7 +1537,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_jak_pre() {
+    function peg$parseproposition_tail_jak_pre() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11;
 
       var key    = peg$currPos * 240 + 17,
@@ -1551,7 +1551,7 @@ var camxes = (function() {
       s0 = peg$currPos;
       s1 = peg$currPos;
       s2 = peg$currPos;
-      s3 = peg$parsepre_jak();
+      s3 = peg$parsegajak();
       if (s3 !== peg$FAILED) {
         s4 = peg$currPos;
         peg$silentFails++;
@@ -1566,15 +1566,15 @@ var camxes = (function() {
         if (s4 !== peg$FAILED) {
           s5 = peg$parseDO_clause_elidible();
           if (s5 !== peg$FAILED) {
-            s6 = peg$parsepredicate_tail();
+            s6 = peg$parseproposition_tail();
             if (s6 !== peg$FAILED) {
               s7 = [];
               s8 = peg$currPos;
-              s9 = peg$parsepre_connective_separator();
+              s9 = peg$parsegik();
               if (s9 !== peg$FAILED) {
                 s10 = peg$parseDO_clause_elidible();
                 if (s10 !== peg$FAILED) {
-                  s11 = peg$parsepredicate_tail();
+                  s11 = peg$parseproposition_tail();
                   if (s11 !== peg$FAILED) {
                     s9 = [s9, s10, s11];
                     s8 = s9;
@@ -1594,11 +1594,11 @@ var camxes = (function() {
                 while (s8 !== peg$FAILED) {
                   s7.push(s8);
                   s8 = peg$currPos;
-                  s9 = peg$parsepre_connective_separator();
+                  s9 = peg$parsegik();
                   if (s9 !== peg$FAILED) {
                     s10 = peg$parseDO_clause_elidible();
                     if (s10 !== peg$FAILED) {
-                      s11 = peg$parsepredicate_tail();
+                      s11 = peg$parseproposition_tail();
                       if (s11 !== peg$FAILED) {
                         s9 = [s9, s10, s11];
                         s8 = s9;
@@ -1648,7 +1648,7 @@ var camxes = (function() {
         s2 = peg$c0;
       }
       if (s2 !== peg$FAILED) {
-        s3 = peg$parsepredicate_tail_jak_pre_terms();
+        s3 = peg$parseproposition_tail_jak_pre_terms();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -1671,7 +1671,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_jak_pre_terms() {
+    function peg$parseproposition_tail_jak_pre_terms() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 18,
@@ -1683,7 +1683,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_tail_terms();
+      s1 = peg$parseproposition_tail_terms();
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
         s1 = peg$c22(s1);
@@ -1695,7 +1695,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_tail_terms() {
+    function peg$parseproposition_tail_terms() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 240 + 19,
@@ -1709,10 +1709,10 @@ var camxes = (function() {
       s0 = peg$currPos;
       s1 = peg$currPos;
       s2 = [];
-      s3 = peg$parsepredicate_place();
+      s3 = peg$parseproposition_place();
       while (s3 !== peg$FAILED) {
         s2.push(s3);
-        s3 = peg$parsepredicate_place();
+        s3 = peg$parseproposition_place();
       }
       if (s2 !== peg$FAILED) {
         s3 = peg$parseDOI_clause_elidible();
@@ -1738,7 +1738,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_place() {
+    function peg$parseproposition_place() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 240 + 20,
@@ -1751,9 +1751,9 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepredicate_place_tag();
+      s2 = peg$parseproposition_place_tag();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parsepredicate_term();
+        s3 = peg$parseproposition_term();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -1776,7 +1776,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term() {
+    function peg$parseproposition_term() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 21,
@@ -1788,9 +1788,9 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_jak_post();
+      s1 = peg$parseproposition_term_jak_post();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsepredicate_term_1();
+        s1 = peg$parseproposition_term_1();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -1803,7 +1803,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_jak_post() {
+    function peg$parseproposition_term_jak_post() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
       var key    = peg$currPos * 240 + 22,
@@ -1816,7 +1816,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepredicate_term_1();
+      s2 = peg$parseproposition_term_1();
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
@@ -1844,7 +1844,7 @@ var camxes = (function() {
               s7 = peg$c0;
             }
             if (s7 !== peg$FAILED) {
-              s8 = peg$parsepredicate_term_1();
+              s8 = peg$parseproposition_term_1();
               if (s8 !== peg$FAILED) {
                 s5 = [s5, s6, s7, s8];
                 s4 = s5;
@@ -1892,7 +1892,7 @@ var camxes = (function() {
                   s7 = peg$c0;
                 }
                 if (s7 !== peg$FAILED) {
-                  s8 = peg$parsepredicate_term_1();
+                  s8 = peg$parseproposition_term_1();
                   if (s8 !== peg$FAILED) {
                     s5 = [s5, s6, s7, s8];
                     s4 = s5;
@@ -1938,7 +1938,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_1() {
+    function peg$parseproposition_term_1() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 23,
@@ -1950,9 +1950,9 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_jaik_post();
+      s1 = peg$parseproposition_term_jaik_post();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsepredicate_term_2();
+        s1 = peg$parseproposition_term_2();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -1965,7 +1965,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_jaik_post() {
+    function peg$parseproposition_term_jaik_post() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
       var key    = peg$currPos * 240 + 24,
@@ -1978,7 +1978,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepredicate_term_2();
+      s2 = peg$parseproposition_term_2();
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
@@ -2006,7 +2006,7 @@ var camxes = (function() {
               s7 = peg$c0;
             }
             if (s7 !== peg$FAILED) {
-              s8 = peg$parsepredicate_term_2();
+              s8 = peg$parseproposition_term_2();
               if (s8 !== peg$FAILED) {
                 s5 = [s5, s6, s7, s8];
                 s4 = s5;
@@ -2054,7 +2054,7 @@ var camxes = (function() {
                   s7 = peg$c0;
                 }
                 if (s7 !== peg$FAILED) {
-                  s8 = peg$parsepredicate_term_2();
+                  s8 = peg$parseproposition_term_2();
                   if (s8 !== peg$FAILED) {
                     s5 = [s5, s6, s7, s8];
                     s4 = s5;
@@ -2100,7 +2100,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_2() {
+    function peg$parseproposition_term_2() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 25,
@@ -2112,11 +2112,11 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_jak_pre();
+      s1 = peg$parseproposition_term_jak_pre();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsescoped_predicate_term();
+        s1 = peg$parsescoped_proposition_term();
         if (s1 === peg$FAILED) {
-          s1 = peg$parserelation();
+          s1 = peg$parsepredicate();
         }
       }
       if (s1 !== peg$FAILED) {
@@ -2130,7 +2130,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_jak_pre() {
+    function peg$parseproposition_term_jak_pre() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10;
 
       var key    = peg$currPos * 240 + 26,
@@ -2143,7 +2143,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepre_jak();
+      s2 = peg$parsegajak();
       if (s2 !== peg$FAILED) {
         s3 = peg$currPos;
         peg$silentFails++;
@@ -2167,11 +2167,11 @@ var camxes = (function() {
             s4 = peg$c0;
           }
           if (s4 !== peg$FAILED) {
-            s5 = peg$parsepredicate_term();
+            s5 = peg$parseproposition_term();
             if (s5 !== peg$FAILED) {
               s6 = [];
               s7 = peg$currPos;
-              s8 = peg$parsepre_connective_separator();
+              s8 = peg$parsegik();
               if (s8 !== peg$FAILED) {
                 s9 = peg$currPos;
                 peg$silentFails++;
@@ -2184,7 +2184,7 @@ var camxes = (function() {
                   s9 = peg$c0;
                 }
                 if (s9 !== peg$FAILED) {
-                  s10 = peg$parsepredicate_term();
+                  s10 = peg$parseproposition_term();
                   if (s10 !== peg$FAILED) {
                     s8 = [s8, s9, s10];
                     s7 = s8;
@@ -2204,7 +2204,7 @@ var camxes = (function() {
                 while (s7 !== peg$FAILED) {
                   s6.push(s7);
                   s7 = peg$currPos;
-                  s8 = peg$parsepre_connective_separator();
+                  s8 = peg$parsegik();
                   if (s8 !== peg$FAILED) {
                     s9 = peg$currPos;
                     peg$silentFails++;
@@ -2217,7 +2217,7 @@ var camxes = (function() {
                       s9 = peg$c0;
                     }
                     if (s9 !== peg$FAILED) {
-                      s10 = peg$parsepredicate_term();
+                      s10 = peg$parseproposition_term();
                       if (s10 !== peg$FAILED) {
                         s8 = [s8, s9, s10];
                         s7 = s8;
@@ -2277,7 +2277,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsescoped_predicate_term() {
+    function peg$parsescoped_proposition_term() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 240 + 27,
@@ -2292,7 +2292,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseGO_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parsepredicate_term();
+        s3 = peg$parseproposition_term();
         if (s3 !== peg$FAILED) {
           s4 = peg$parseGOI_clause_elidible();
           if (s4 !== peg$FAILED) {
@@ -2321,7 +2321,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_place_tag() {
+    function peg$parseproposition_place_tag() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 28,
@@ -2333,9 +2333,9 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_place_tag_jak_post();
+      s1 = peg$parseproposition_place_tag_jak_post();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsepredicate_place_tag_1();
+        s1 = peg$parseproposition_place_tag_1();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -2348,7 +2348,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_place_tag_jak_post() {
+    function peg$parseproposition_place_tag_jak_post() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 240 + 29,
@@ -2361,13 +2361,13 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepredicate_place_tag_1();
+      s2 = peg$parseproposition_place_tag_1();
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
         s5 = peg$parseJA_clause();
         if (s5 !== peg$FAILED) {
-          s6 = peg$parsepredicate_place_tag_1();
+          s6 = peg$parseproposition_place_tag_1();
           if (s6 !== peg$FAILED) {
             s5 = [s5, s6];
             s4 = s5;
@@ -2385,7 +2385,7 @@ var camxes = (function() {
             s4 = peg$currPos;
             s5 = peg$parseJA_clause();
             if (s5 !== peg$FAILED) {
-              s6 = peg$parsepredicate_place_tag_1();
+              s6 = peg$parseproposition_place_tag_1();
               if (s6 !== peg$FAILED) {
                 s5 = [s5, s6];
                 s4 = s5;
@@ -2423,7 +2423,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_place_tag_1() {
+    function peg$parseproposition_place_tag_1() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 30,
@@ -2435,7 +2435,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_place_modal();
+      s1 = peg$parseproposition_place_modal();
       if (s1 === peg$FAILED) {
         s1 = peg$parseFA_clause();
       }
@@ -2450,7 +2450,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_place_modal() {
+    function peg$parseproposition_place_modal() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 240 + 31,
@@ -2465,7 +2465,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseDU_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parserelation_2();
+        s3 = peg$parsepredicate_2();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -2488,7 +2488,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation() {
+    function peg$parsepredicate() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 240 + 32,
@@ -2502,21 +2502,21 @@ var camxes = (function() {
       s0 = peg$currPos;
       s1 = peg$currPos;
       s2 = [];
-      s3 = peg$parserelation_1();
+      s3 = peg$parsepredicate_1();
       if (s3 !== peg$FAILED) {
         while (s3 !== peg$FAILED) {
           s2.push(s3);
-          s3 = peg$parserelation_1();
+          s3 = peg$parsepredicate_1();
         }
       } else {
         s2 = peg$c0;
       }
       if (s2 !== peg$FAILED) {
         s3 = [];
-        s4 = peg$parserelation_link();
+        s4 = peg$parsepredicate_link();
         while (s4 !== peg$FAILED) {
           s3.push(s4);
-          s4 = peg$parserelation_link();
+          s4 = peg$parsepredicate_link();
         }
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
@@ -2540,7 +2540,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation_link() {
+    function peg$parsepredicate_link() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 240 + 33,
@@ -2555,7 +2555,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseVA_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parserelation();
+        s3 = peg$parsepredicate();
         if (s3 !== peg$FAILED) {
           s4 = peg$parseVAI_clause_elidible();
           if (s4 !== peg$FAILED) {
@@ -2584,7 +2584,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation_1() {
+    function peg$parsepredicate_1() {
       var s0, s1;
 
       var key    = peg$currPos * 240 + 34,
@@ -2596,9 +2596,9 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parserelation_cak_post();
+      s1 = peg$parsepredicate_cak_post();
       if (s1 === peg$FAILED) {
-        s1 = peg$parserelation_2();
+        s1 = peg$parsepredicate_2();
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;
@@ -2611,7 +2611,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation_cak_post() {
+    function peg$parsepredicate_cak_post() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
       var key    = peg$currPos * 240 + 35,
@@ -2624,7 +2624,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parserelation_2();
+      s2 = peg$parsepredicate_2();
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
@@ -2652,7 +2652,7 @@ var camxes = (function() {
               s7 = peg$c0;
             }
             if (s7 !== peg$FAILED) {
-              s8 = peg$parserelation_2();
+              s8 = peg$parsepredicate_2();
               if (s8 !== peg$FAILED) {
                 s5 = [s5, s6, s7, s8];
                 s4 = s5;
@@ -2700,7 +2700,7 @@ var camxes = (function() {
                   s7 = peg$c0;
                 }
                 if (s7 !== peg$FAILED) {
-                  s8 = peg$parserelation_2();
+                  s8 = peg$parsepredicate_2();
                   if (s8 !== peg$FAILED) {
                     s5 = [s5, s6, s7, s8];
                     s4 = s5;
@@ -2746,7 +2746,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation_2() {
+    function peg$parsepredicate_2() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 240 + 36,
@@ -2758,7 +2758,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parserelation_cak_pre();
+      s1 = peg$parsepredicate_cak_pre();
       if (s1 === peg$FAILED) {
         s1 = peg$currPos;
         s2 = peg$parselexeme();
@@ -2793,9 +2793,9 @@ var camxes = (function() {
                   if (s1 === peg$FAILED) {
                     s1 = peg$parseabstraction();
                     if (s1 === peg$FAILED) {
-                      s1 = peg$parserelation_place_swap();
+                      s1 = peg$parsepredicate_place_swap();
                       if (s1 === peg$FAILED) {
-                        s1 = peg$parsescoped_relation();
+                        s1 = peg$parsescoped_predicate();
                         if (s1 === peg$FAILED) {
                           s1 = peg$parseMA_clause();
                           if (s1 === peg$FAILED) {
@@ -2864,7 +2864,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation_cak_pre() {
+    function peg$parsepredicate_cak_pre() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9;
 
       var key    = peg$currPos * 240 + 37,
@@ -2877,7 +2877,7 @@ var camxes = (function() {
 
       s0 = peg$currPos;
       s1 = peg$currPos;
-      s2 = peg$parsepre_cak();
+      s2 = peg$parsegacak();
       if (s2 !== peg$FAILED) {
         s3 = peg$currPos;
         peg$silentFails++;
@@ -2901,13 +2901,13 @@ var camxes = (function() {
             s4 = peg$c0;
           }
           if (s4 !== peg$FAILED) {
-            s5 = peg$parserelation();
+            s5 = peg$parsepredicate();
             if (s5 !== peg$FAILED) {
               s6 = [];
               s7 = peg$currPos;
-              s8 = peg$parsepre_connective_separator();
+              s8 = peg$parsegik();
               if (s8 !== peg$FAILED) {
-                s9 = peg$parserelation();
+                s9 = peg$parsepredicate();
                 if (s9 !== peg$FAILED) {
                   s8 = [s8, s9];
                   s7 = s8;
@@ -2923,9 +2923,9 @@ var camxes = (function() {
                 while (s7 !== peg$FAILED) {
                   s6.push(s7);
                   s7 = peg$currPos;
-                  s8 = peg$parsepre_connective_separator();
+                  s8 = peg$parsegik();
                   if (s8 !== peg$FAILED) {
-                    s9 = peg$parserelation();
+                    s9 = peg$parsepredicate();
                     if (s9 !== peg$FAILED) {
                       s8 = [s8, s9];
                       s7 = s8;
@@ -3899,7 +3899,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseBA_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parsepredicate();
+        s3 = peg$parseproposition();
         if (s3 !== peg$FAILED) {
           s4 = peg$parseBAI_clause_elidible();
           if (s4 !== peg$FAILED) {
@@ -3928,7 +3928,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parserelation_place_swap() {
+    function peg$parsepredicate_place_swap() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 240 + 53,
@@ -3943,7 +3943,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseSA_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parserelation_2();
+        s3 = peg$parsepredicate_2();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -3966,7 +3966,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsescoped_relation() {
+    function peg$parsescoped_predicate() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 240 + 54,
@@ -3981,7 +3981,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseGO_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parserelation();
+        s3 = peg$parsepredicate();
         if (s3 !== peg$FAILED) {
           s4 = peg$parseGOI_clause_elidible();
           if (s4 !== peg$FAILED) {
@@ -4313,7 +4313,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepre_jak() {
+    function peg$parsegajak() {
       var s0, s1, s2, s3, s4, s5, s6, s7;
 
       var key    = peg$currPos * 240 + 61,
@@ -4380,7 +4380,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepre_cak() {
+    function peg$parsegacak() {
       var s0, s1, s2, s3, s4, s5, s6, s7;
 
       var key    = peg$currPos * 240 + 62,
@@ -4447,7 +4447,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepre_connective_separator() {
+    function peg$parsegik() {
       var s0, s1, s2, s3, s4, s5;
 
       var key    = peg$currPos * 240 + 63,
@@ -4618,7 +4618,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parsePI_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parserelation_2();
+        s3 = peg$parsepredicate_2();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -4803,7 +4803,7 @@ var camxes = (function() {
         s2 = peg$c0;
       }
       if (s2 !== peg$FAILED) {
-        s3 = peg$parserelation_2();
+        s3 = peg$parsepredicate_2();
         if (s3 === peg$FAILED) {
           s3 = peg$c1;
         }

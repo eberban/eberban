@@ -353,11 +353,11 @@ function boxClassForType(parse) {
     if (parse.type === "parser version") { return "box box-parser"; }
 
     if (parse.type === "sentence") { return "box box-sentence"; }
-    if (parse.type === "predicate") { return "box box-predicate"; }
+    if (parse.type === "proposition") { return "box box-proposition"; }
     if (parse.type === "place") { return "box box-place"; }
     if (parse.type === "modal") { return "box box-modal"; }
     
-    if (parse.type === "relation") { return "box box-relation"; }
+    if (parse.type === "predicate") { return "box box-predicate"; }
     if (parse.type === "link") { return "box box-link"; }
     if (parse.type === "relative clause") { return "box box-link"; }
 

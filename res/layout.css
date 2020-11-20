@@ -148,12 +148,8 @@ li.implicit {
     background: #eeeeee;
 }
 
-.box.box-predicate {
+.box.box-proposition {
     background: #d3ffb6;
-}
-
-.box.box-predicate-tail {
-    background: #b6ffc8;
 }
 
 .box.box-place {
@@ -168,7 +164,7 @@ li.implicit {
     background: #fd9dfd;
 }
 
-.box.box-relation {
+.box.box-predicate {
     background: #b6c3ff;
 }
 

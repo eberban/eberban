@@ -80,12 +80,12 @@ var map = [
     ["parser_version", "parser version"],
     ["paragraph", "paragraph"],
     ["sentence", "sentence"],
-    ["predicate_1", "predicate"],
-    ["predicate_tail", "predicate tail"],
-    ["predicate_place", "place"],
-    ["predicate_place_tag", "tag"],
-    ["predicate_place_modal", "modal"],
-    ["predicate_term", "term"],
+    ["proposition_1", "proposition"],
+    ["proposition_tail", "proposition tail"],
+    ["proposition_place", "place"],
+    ["proposition_place_tag", "tag"],
+    ["proposition_place_modal", "modal"],
+    ["proposition_term", "term"],
     ["lexeme", "lexeme"],
     ["borrowing", "borrowing"],
     ["foreign_word", "foreign"],
@@ -97,10 +97,10 @@ var map = [
     ["number_string", "number"],
     ["letter_string", "letters"],
 
-    // relation
-    ["relation", "relation"],
-    ["relation_link", "link"],
-    ["relation_relative_clause", "relative clause"],
+    // predicate
+    ["predicate", "predicate"],
+    ["predicate_link", "link"],
+    ["predicate_relative_clause", "relative clause"],
 
     // free
     ["free_indicator", "indicator"],
@@ -111,29 +111,29 @@ var map = [
 
     // SCOPES
     // manual scoping
-    ["scoped_relation", "scope"],
-    ["scoped_predicate_term", "scope"],
+    ["scoped_predicate", "scope"],
+    ["scoped_proposition_term", "scope"],
 
-    // predicate jak
-    ["predicate_jak_pre", "scope"],
-    ["predicate_jak_post", "scope"],
+    // proposition jak
+    ["proposition_jak_pre", "scope"],
+    ["proposition_jak_post", "scope"],
 
-    // predicate terms
-    ["predicate_term_jak_post", "scope"],
-    ["predicate_term_jaik_post", "scope"],
-    ["predicate_term_jak_pre", "scope"],
-    ["predicate_place_tag_jak_pre", "scope"],
+    // proposition terms
+    ["proposition_term_jak_post", "scope"],
+    ["proposition_term_jaik_post", "scope"],
+    ["proposition_term_jak_pre", "scope"],
+    ["proposition_place_tag_jak_pre", "scope"],
 
-    // show predicate-tail distributivity
-    // ["predicate_tail_jak_pre", "scope"], 
-    ["predicate_tail_jak_pre_terms", "scope"], 
-    ["predicate_tail_1", "scope"],
-    ["predicate_1_terms", "scope"],
-    ["predicate_tail_jak_post_terms", "scope"],
+    // show proposition-tail distributivity
+    // ["proposition_tail_jak_pre", "scope"], 
+    ["proposition_tail_jak_pre_terms", "scope"], 
+    ["proposition_tail_1", "scope"],
+    ["proposition_1_terms", "scope"],
+    ["proposition_tail_jak_post_terms", "scope"],
 
-    // relations
-    ["relation_cak_post", "scope"],
-    ["relation_cak_pre", "scope"],
+    // predicates
+    ["predicate_cak_post", "scope"],
+    ["predicate_cak_pre", "scope"],
 ];
 
 for (let replace of map) {
@@ -314,7 +314,7 @@ function numberSumti(parse) {
     
     // if it is a sentence, start searching through it
     // if (parse.type === "sentence") {
-    if (parse.type === "predicate") {
+    if (parse.type === "proposition") {
         numberSumtiInSentence(parse);
     }
     
@@ -336,8 +336,8 @@ function numberSumtiInSentence(parse) {
     for (var i = 0; i < parse.children.length; i++) {
         var child = parse.children[i];
         
-        if (child.type === "predicate tail") {
-            sentenceElements.push({type: "predicate tail start"});
+        if (child.type === "proposition tail") {
+            sentenceElements.push({type: "proposition tail start"});
             for (var j = 0; j < child.children.length; j++) {
                 var subchild = child.children[j];
                 sentenceElements.push(subchild);
@@ -355,7 +355,7 @@ function numberSumtiInSentence(parse) {
     for (var i = 0; i < sentenceElements.length; i++) {
         var child = sentenceElements[i];
 
-        if (child.type === "predicate tail start") {
+        if (child.type === "proposition tail start") {
             bridiTailStartSumtiCounter = sumtiCounter;
         }
 
