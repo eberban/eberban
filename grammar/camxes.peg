@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.3
+# eberban PEG grammar - v0.4
 # ==========================
 
 # GRAMMAR
@@ -126,9 +126,8 @@ free_prefix <- PA_clause
 
 # free suffix
 free_post <- PAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript / free_vocative
-# free_link <- PE_clause relation PEI_clause_elidible
 free_indicator <- XA_clause KAI_clause?
-free_discursive <- PE_clause predicate PEI_clause_elidible
+free_discursive <- PI_clause relation_2
 free_parenthetical <- PO_clause text_1 POI_clause
 free_subscript <- PU_clause string
 free_vocative <- (CAI_clause KAI_clause? free_indicator*)+ relation_2?
@@ -172,9 +171,7 @@ MA_clause           <- free_prefix* spaces? MA free_post*
 O_clause            <- free_prefix* spaces? O
 PA_clause           <- spaces? PA free_post*
 PAI_clause          <- spaces? PAI
-PE_clause           <- free_prefix* spaces? PE free_post*
-PEI_clause          <- free_prefix* spaces? PEI free_post*
-PEI_clause_elidible <- PEI_clause?
+PI_clause           <- free_prefix* spaces? PI
 PO_clause           <- free_prefix* spaces? PO
 POI_clause          <- free_prefix* spaces? POI
 PU_clause           <- free_prefix* spaces? PU
@@ -227,8 +224,7 @@ MA    <- &particle (m vowel_tail)
 O     <- &particle (o)
 PA    <- &particle (p a vowel_tail_1?)
 PAI   <- &particle (p a i)
-PE    <- &particle (p e)
-PEI   <- &particle (p e i)
+PI    <- &particle (p i)
 PO    <- &particle (p o)
 POI   <- &particle (p o i)
 PU    <- &particle (p u)
@@ -238,7 +234,7 @@ TAI   <- &particle (t a i)
 U     <- &particle (u)
 VA    <- &particle !(VAI post_word) (v vowel_tail)
 VAI   <- &particle (v a i)
-XA    <- &particle (x vowel_tail / diphthong vowel_tail_1* / vowel vowel_tail_1+)
+XA    <- &particle (x vowel_tail)
 ZA    <- &particle (z a i?)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)
