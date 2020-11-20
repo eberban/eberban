@@ -1,5 +1,10 @@
 var words = {};
 
+// TODO
+// - Add more attitudinals and their corresponding lexemes
+// - Add more members of lojban LAhE into SA
+// - Add more members of lojban JOI into JAI
+
 words["a.a"]                         = { family: "L"        , short: "lexeme"                       , long: "x1 is a lexeme meaning x2 with components x3 (set)", lojban: "lujvo"};
 words["a.u'i"]                       = { family: "L"        , short: "amusing"                      , long: "x1 is amusing to x2 in property/aspect x3", lojban: "zdile"};
 words["a.ui"]                        = { family: "L"        , short: "happy"                        , long: "x1 makes x2 happy", lojban: "gleki"};
@@ -71,6 +76,10 @@ words["fui"]                         = { family: "FA"       , short: "non-restri
 words["fuo"]                         = { family: "FA"       , short: "subordinating adverbial"      , long: "subordinating adverbial. the outer predicate is claimed to satisfy the first place of the provided relation, but is not itself claimed to occur ({mia fuo mie} = {fa bi mia do mie})", lojban: "soi'a"};
 words["fy"]                          = { family: "BY"       , short: "F"                            , long: "letter F", lojban: "fy"};
 words["ga"]                          = { family: "GA"       , short: ""                             , long: "forethought connective starter", lojban: "ga"};
+words["gai"]                         = { family: "GAI"      , short: ""                             , long: "forethought connective elidible terminator", lojban: "zantufa gi'i"};
+words["gi"]                          = { family: "GI"       , short: ""                             , long: "forethought connective separator", lojban: "zantufa gi"};
+words["go"]                          = { family: "GO"       , short: ""                             , long: "priority scope starter", lojban: "ke"};
+words["goi"]                         = { family: "GOI"      , short: ""                             , long: "priority scope elidible terminator", lojban: "ke'e"};
 words["gre'u"]                       = { family: "R"        , short: "dog"                          , long: "x1 is a dog (canine) of specie/breed x2", lojban: "gerku"};
 words["gy"]                          = { family: "BY"       , short: "G"                            , long: "letter G", lojban: "gy"};
 words["i'y"]                         = { family: "BY"       , short: "I"                            , long: "letter I", lojban: "i'y/ibu"};
@@ -156,11 +165,15 @@ words["ta'i"]                        = { family: "TA"       , short: "many"     
 words["ta'o"]                        = { family: "TA"       , short: "most"                         , long: "number: most", lojban: "so'e" };
 words["ta'u"]                        = { family: "TA"       , short: "each/all"                     , long: "number: each/all", lojban: "ro" };
 words["ta"]                          = { family: "TA"       , short: "0"                            , long: "number/digit: 0", lojban: "no"};
+words["tai"]                         = { family: "TAI"      , short: ""                             , long: "number/letter string elidible terminator", lojban: ""};
 words["tai'a"]                       = { family: "TA"       , short: "too few"                      , long: "too few (subjective)", lojban: "mo'a"};
 words["tai'e"]                       = { family: "TA"       , short: "enough"                       , long: "enough (subjective)", lojban: "rau"};
 words["tai'i"]                       = { family: "TA"       , short: "too many"                     , long: "too many (subjective)", lojban: "du'e"};
 words["te'a"]                        = { family: "TA"       , short: "number base"                  , long: "(base | number) separator", lojban: "vu'ai?" };
 words["te'e"]                        = { family: "TA"       , short: "thousands"                    , long: "thousands separator / number comma", lojban: "ki'o" };
+words["te'i"]                        = { family: "TA"       , short: "approximatly"                 , long: "approximately, (precise | approximate) separator", lojban: "ji'i" };
+words["te'o"]                        = { family: "TA"       , short: "at least"                     , long: "at least ... (default = some) / no less then", lojban: "su'o" };
+words["te'u"]                        = { family: "TA"       , short: "at most"                      , long: "at most ... (default = all) / no more than", lojban: "su'e" };
 words["te"]                          = { family: "TA"       , short: "."                            , long: "decimal separator", lojban: "pi" };
 words["tia"]                         = { family: "TA"       , short: "1"                            , long: "number/digit: 1", lojban: "pa" };
 words["tie"]                         = { family: "TA"       , short: "2"                            , long: "number/digit: 2", lojban: "re" };
@@ -177,6 +190,7 @@ words["tue"]                         = { family: "TA"       , short: "7"        
 words["tui"]                         = { family: "TA"       , short: "8"                            , long: "number/digit: 8", lojban: "bi" };
 words["tuo"]                         = { family: "TA"       , short: "9"                            , long: "number/digit: 9", lojban: "so" };
 words["tuu"]                         = { family: "TA"       , short: "A (10)"                       , long: "number/digit: A (10)", lojban: "dau" };
+words["to"]                          = { family: "TA"       , short: "number ?"                     , long: "digit/number question", lojban: "xo" };
 words["ty"]                          = { family: "BY"       , short: "T"                            , long: "letter T", lojban: "ty"};
 words["u'i"]                         = { family: "XA"       , short: "(amused)"                     , long: "attitudinal: amusement | - | weariness", lojban: "u'i"};
 words["u'y"]                         = { family: "BY"       , short: "U"                            , long: "letter U", lojban: "u'y/ubu"};
@@ -190,6 +204,8 @@ words["vla"]                         = { family: "R"        , short: "talk"     
 words["vue"]                         = { family: "VA"       , short: "restrictive"                  , long: "restrictive relative clause", lojban: "poi" };
 words["vui"]                         = { family: "VA"       , short: "non-restrictive"              , long: "non-restrictive relative clause", lojban: "noi"  };
 words["vy"]                          = { family: "BY"       , short: "V"                            , long: "letter V", lojban: "vy"};
+words["xa'a"]                        = { family: "XA"       , short: "(haha)"                       , long: "laughter. additional 'a may be added", lojban: "xa'a" }
+words["xa'a'a"]                      = { family: "XA"       , short: "(haha)"                       , long: "same as <xa'a>", lojban: "xa'a" }
 words["xu'a"]                        = { family: "XA"       , short: "(feeling ?)"                  , long: "attitudinal question", lojban: "pei" }
 words["xu'e"]                        = { family: "XA"       , short: "(indirect ?)"                 , long: "indirect question marker", lojban: "kau"};
 words["xu"]                          = { family: "XA"       , short: "true ?"                       , long: "true/false question marker", lojban: "xu" }

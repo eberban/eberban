@@ -554,10 +554,16 @@ function markupError(error, before, after) { // TODO
     after[error.position] = after[error.position] + "</span>";
 }
 
+
 /**
  * Shows the glossing in the interface.
  */
 function showGlossing(text, $element) {
+    function escapeHtml(str){
+        var p = document.createElement("p");
+        p.appendChild(document.createTextNode(str));
+        return p.innerHTML;
+    }
     
     var output = "<dl class=\"dl-horizontal\">";
     
@@ -566,7 +572,7 @@ function showGlossing(text, $element) {
         output += "<dt>" + text[j] + "</dt>";
         
         if (words[text[j]]) {
-            output += '<dd><span class="gloss-family">' + words[text[j]].family + '</span>' + (words[text[j]].long ? words[text[j]].long : words[text[j]].short) + "</dd>";
+            output += '<dd><span class="gloss-family">' + words[text[j]].family + '</span>' + (words[text[j]].long ? escapeHtml(words[text[j]].long) : words[text[j]].short) + "</dd>";
         } else {
             output += "<dd><span class=\"muted\">(?)</span></dd>";
         }
