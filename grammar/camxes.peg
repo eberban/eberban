@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.2
+# eberban PEG grammar - v0.3
 # ==========================
 
 # GRAMMAR
@@ -65,9 +65,8 @@ predicate_place_tag_1 <- predicate_place_modal / FA_clause
 predicate_place_modal <- DU_clause relation_2
 
 # relation compounds, links and relative clauses
-relation <- relation_1+ (relation_link / relation_relative_clause)*
+relation <- relation_1+ relation_link*
 relation_link <- VA_clause relation VAI_clause_elidible
-relation_relative_clause <- KE_clause predicate KEI_clause_elidible
 # relation afterthough connectives
 relation_1 <- relation_cak_post / relation_2
 relation_cak_post <- relation_2 (cak !DE_clause !DA_clause relation_2)+
@@ -132,7 +131,7 @@ free_indicator <- XA_clause KAI_clause?
 free_discursive <- PE_clause predicate PEI_clause_elidible
 free_parenthetical <- PO_clause text_1 POI_clause
 free_subscript <- PU_clause string
-free_vocative <- (CAI_clause KAI_clause? free_indicator*)+ relation_2
+free_vocative <- (CAI_clause KAI_clause? free_indicator*)+ relation_2?
 
 # PARTICLES CLAUSES
 A_clause            <- free_prefix* spaces? A
@@ -169,9 +168,6 @@ JA_clause           <- free_prefix* spaces? JA free_post*
 JAI_clause          <- free_prefix* spaces? JAI free_post*
 KA_clause           <- free_prefix* spaces? KA free_post*
 KAI_clause          <- free_prefix* spaces? KAI
-KE_clause           <- free_prefix* spaces? KE free_post*
-KEI_clause          <- free_prefix* spaces? KEI free_post*
-KEI_clause_elidible <- KEI_clause?
 MA_clause           <- free_prefix* spaces? MA free_post*
 O_clause            <- free_prefix* spaces? O
 PA_clause           <- spaces? PA free_post*
@@ -227,8 +223,6 @@ JA    <- &particle (j vowel)
 JAI   <- &particle !(JA post_word) (j vowel_tail)
 KA    <- &particle (k a)
 KAI   <- &particle (k a i)
-KE    <- &particle !(KA post_word) (k vowel_tail)
-KEI   <- &particle (k e i)
 MA    <- &particle (m vowel_tail)
 O     <- &particle (o)
 PA    <- &particle (p a vowel_tail_1?)

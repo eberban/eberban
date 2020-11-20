@@ -1,77 +1,77 @@
 Particles
 
     "A" - Flat lexeme prefix
-        a : 1-word lexeme prefix
-        e : 2-words lexeme prefix
-        i : 3-words lexeme prefix
-        o : 4-words lexeme prefix
-        u : n-words lexeme prefix + sufix
+*        a : 1-word lexeme prefix
+*        e : 2-words lexeme prefix
+*        i : 3-words lexeme prefix
+*        o : 4-words lexeme prefix
+*        u : n-words lexeme prefix + sufix
 
     BA - Abstraction
-        ba : x1 is predication [predicate] expressed in sentence x2
-        be : x1 is relation expressed by [predicate] (allow relation filling like BE)
-        bi : x1 is the event of [predicate]
+*        ba : x1 is predication [predicate] expressed in sentence x2
+*        be : x1 is relation expressed by [predicate] (allow relation filling like BE)
+*        bi : x1 is the event of [predicate]
 
     BAI - Abstraction terminator
-        bai : abstraction elidible terminator
+*        bai : abstraction elidible terminator
 
     DA - Paragraph marker
-        da: paragraph marker
+*        da: paragraph marker
 
     DE - Predicate starter
-        de : predicate elidible starter
+*        de : predicate elidible starter
 
     DEI - Predicate terminator
-        dei : predicate elibile terminator
+*        dei : predicate elibile terminator
 
     DO - Predicate-tail starter
-        do : predicate-tail elidible starter
+*        do : predicate-tail elidible starter
 
     DOI - Predicate-tail terminator
-        doi : predicate-tail elidible terminator
+*        doi : predicate-tail elidible terminator
 
     DU - Place importer
-        du : import x1 place from following relation (no compound or connective)
+*        du : import x1 place from following relation (no compound or connective)
 
 
     FA - Place marker    
-        fa : predicate 1st place tag
-        fe : predicate 2nd place tag
-        fi : predicate 3rd place tag
-        fo : predicate 4th place tag
-        fu : predicate 5th place tag
-        fai : next predicate place tag
-        fei : predicate place tag question
-        fue : predicate restrictive adverbial [poi'a]
-        fui : predicate non-restrictive adverbial [noi'a]
-        fuo : predicate subordinating adverbial [soi'a] 
+*        fa : predicate 1st place tag
+*        fe : predicate 2nd place tag
+*        fi : predicate 3rd place tag
+*        fo : predicate 4th place tag
+*        fu : predicate 5th place tag
+*        fai : next predicate place tag
+*        fei : predicate place tag question
+*        fue : predicate restrictive adverbial [poi'a]
+*        fui : predicate non-restrictive adverbial [noi'a]
+*        fuo : predicate subordinating adverbial [soi'a] 
 
     PA - Free prefix
-        pa : free scope starter (one to one match is not checked by grammar)
-        pa'a : emphasis on the next word
-        pa'e : indicate following lexeme is nonce-creation and may be nonstandard
-        pa'i : metadata tag / hashtag
+*        pa : free scope starter (one to one match is not checked by grammar)
+*        pa'a : emphasis on the next word
+*        pa'e : indicate following lexeme is nonce-creation and may be nonstandard
+*        pa'i : metadata tag / hashtag
 
     PAI - Free scope terminator (one to one match is not checked by grammar)
-        pai : free scope terminator 
+*        pai : free scope terminator 
 
     P* - Free suffixes
-        pe: discursive start (+ relation)
-        pei: discursive end
+*        pe: discursive start (+ relation)
+*        pei: discursive end
 
-        po: parenthetical start (+ text)
-        poi: parenthetical end
+*        po: parenthetical start (+ text)
+*        poi: parenthetical end
 
-        pu: subscript
+*        pu: subscript
 
     KE - Relative clauses
-        ke: restrictive clause
-        ki: non-restrictive clause
+*        ke: restrictive clause
+*        ki: non-restrictive clause
 
-        kei: relative clause elidible terminator
+*       kei: relative clause elidible terminator
 
     VA - Relation link
-        va:  relation affectation
+*        va:  relation affectation
               one side should affectable MA
               if both side are, left is now equal right
         ve: which is associated with ...
