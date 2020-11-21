@@ -64,7 +64,7 @@ proposition_place_tag_1 <- proposition_place_modal / FA_clause
 # proposition place modal
 proposition_place_modal <- DU_clause predicate_2
 
-# predicate compounds, links and relative clauses
+# predicate chains, followed by links
 predicate <- predicate_1+ predicate_link*
 predicate_link <- VA_clause predicate VAI_clause_elidible
 # predicate afterthough connectives

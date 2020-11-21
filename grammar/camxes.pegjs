@@ -193,7 +193,7 @@ proposition_place_tag_1 = expr:(proposition_place_modal / FA_clause) {return _no
 // proposition place modal
 proposition_place_modal = expr:(DU_clause predicate_2) {return _node("proposition_place_modal", expr);}
 
-// predicate compounds, links and relative clauses
+// predicate chains, followed by links
 predicate = expr:(predicate_1+ predicate_link*) {return _node("predicate", expr);}
 predicate_link = expr:(VA_clause predicate VAI_clause_elidible) {return _node("predicate_link", expr);}
 // predicate afterthough connectives
