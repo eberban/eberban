@@ -68,7 +68,7 @@ words["ekanmer"]                     = { family: "L"        , short: "man"      
 words["ekanprei"]                    = { family: "L"        , short: "father"                       , signature: "OO"         , long: "x1 is a father of x2", lojban: "patfu"};
 words["esfemer"]                     = { family: "L"        , short: "woman"                        , signature: "O"          , long: "x1 is a woman/women", lojban: "ninmu"};
 words["esfeprei"]                    = { family: "L"        , short: "mother"                       , signature: "OO"         , long: "x1 is a mother of x2", lojban: "mamta"};
-words["etatai"]                      = { family: "L"        , short: "number"                       , signature: "OOQ"        , long: "x1 is a number of x2 in dimension/aspect/property x3 (default = unit)", lojban: "namcu"};
+words["etatai"]                      = { family: "L"        , short: "number"                       , signature: "OQ"         , long: "x1 is a number in dimension/aspect/property x2 (default = unit)", lojban: "namcu"};
 words["fa'un"]                       = { family: "R"        , short: "occurs"                       , signature: "E"          , long: "x1 (event) is an event that happens/occurs/takes place", lojban: "fasnu"};
 words["fa"]                          = { family: "FA"       , short: "x1"                                                     , long: "tag proposition place #1", lojban: "fa"};
 words["fai"]                         = { family: "FA"       , short: "x+"                                                     , long: "next proposition place tag", lojban: "sumti chaining"};
@@ -174,7 +174,7 @@ words["sa'i"]                        = { family: "SA"       , short: "not really
 words["sa"]                          = { family: "SA"       , short: "name"                         , signature: "OO"         , long: "x1 is named [predicate], which is given by x2", lojban: "la"};
 words["sai"]                         = { family: "SA"       , short: "related to"                   , signature: "P"          , long: "x1 is related to [predicate] (vague transformation, expands to {ba mu fa [predicate] bai})", lojban: "tu'a"};
 words["se"]                          = { family: "SA"       , short: "x1 &#8652; x2"                                          , long: "switch 1st and 2nd places", lojban: "se"};
-words["sei"]                         = { family: "SA"       , short: "x1 &#8652; x?"                                          , long: "places switch question", lojban: "se'u'o" };
+words["sei"]                         = { family: "SA"       , short: "x1 &#8652; x?"                                          , long: "SA question", lojban: "se'u'o" };
 words["sfe"]                         = { family: "R"        , short: "female"                       , signature: "O"          , long: "x1 is female", lojban: "fetsi"};
 words["si"]                          = { family: "SA"       , short: "x1 &#8652; x3"                                          , long: "switch 1st and 3rd places", lojban: "te" };
 words["skai"]                        = { family: "R"        , short: "computer"                     , signature: "OP"         , long: "x1 is a computer for purpose x2 (predicate)", lojban: "skami"};
