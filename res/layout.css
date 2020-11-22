@@ -263,3 +263,32 @@ li.implicit {
     font-weight: normal;
     color: #888888;
 }
+
+.tip {
+    position: relative;
+    display: inline;
+    font-weight: bold;
+}
+
+.tip .tiptext {
+    display: block;
+    visibility: hidden;
+    width: 300px;
+    background-color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.1s;
+    white-space: normal;
+    font-weight: normal;
+    border: 1px solid black;
+}
+
+.tip:hover .tiptext {
+    visibility: visible;
+    opacity: 1;
+}

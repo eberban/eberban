@@ -2,6 +2,12 @@ $(document).ready(function() {
     $('label').popover();
 });
 
+function escapeHtml(str){
+    var p = document.createElement("p");
+    p.appendChild(document.createTextNode(str));
+    return p.innerHTML;
+}
+
 /**
  * Launches the parsing process by calling the parser with the data entered in the interface,
  * and processing the results.
@@ -258,14 +264,19 @@ function constructBoxesOutput(parse, depth) {
         output += "<div class=\"box box-terminal\">";
         
         // we have a terminal
-        output += "&nbsp;<b>" + parse.word + "</b>&nbsp;<br>";
+        output += '&nbsp;<div class="tip">' + parse.word;
 
         if (parse.type === "foreign_word" || parse.type === "foreign_quote_word") {
-            output += "</div>";
+            output +=  "</div>&nbsp;<br></div>";
             return output;
         }
+
+        if (words[parse.word] && words[parse.word].long) {
+            output += '<div class="tiptext">' + escapeHtml(words[parse.word].long) + '</div>'
+        }
         
-        output += "&nbsp;" + parse.type + "&nbsp;<br>";
+        output += "</div>&nbsp;<br>&nbsp;" + parse.type + "&nbsp;<br>";
+        // escapeHtml(words[text[j]].long) 
 
         if (words[parse.word]) {
             output += "<span class=\"translation\">&nbsp;" + words[parse.word].short + "&nbsp;</span>";
@@ -558,13 +569,7 @@ function markupError(error, before, after) { // TODO
 /**
  * Shows the glossing in the interface.
  */
-function showGlossing(text, $element) {
-    function escapeHtml(str){
-        var p = document.createElement("p");
-        p.appendChild(document.createTextNode(str));
-        return p.innerHTML;
-    }
-    
+function showGlossing(text, $element) {    
     var output = "<dl class=\"dl-horizontal\">";
     
     for (var j = 0; j < text.length; j++) {
