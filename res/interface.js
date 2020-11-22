@@ -353,7 +353,7 @@ function boxClassForType(parse) {
     if (parse.type === "parser version") { return "box box-parser"; }
 
     if (parse.type === "sentence") { return "box box-sentence"; }
-    if (parse.type === "proposition") { return "box box-proposition"; }
+    // if (parse.type === "proposition") { return "box box-proposition"; }
     if (parse.type === "place") { return "box box-place"; }
     if (parse.type === "modal") { return "box box-modal"; }
     
