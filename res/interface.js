@@ -383,7 +383,7 @@ function boxClassForType(parse) {
     if (parse.type === "scope") { return "box box-scope"; }
 
     if (parse.type === "indicator") { return "box box-indicator"; }    
-    if (parse.type === "discursive") { return "box box-note"; }
+    if (parse.type === "free predicate") { return "box box-note"; }
     if (parse.type === "note") { return "box box-note"; }
     if (parse.type === "subscript") { return "box box-note"; }
     if (parse.type === "vocative") { return "box box-note"; }

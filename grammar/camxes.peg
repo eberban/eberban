@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.5
+# eberban PEG grammar - v0.6
 # ==========================
 
 # GRAMMAR
@@ -125,12 +125,11 @@ gik <- GI_clause KAI_clause? free_post*
 free_prefix <- PA_clause
 
 # free suffix
-free_post <- PAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript / free_vocative
+free_post <- PAI_clause / free_indicator / free_predicate / free_parenthetical / free_subscript / free_vocative
 free_indicator <- XA_clause KAI_clause?
-free_discursive <- PI_clause predicate_2
+free_predicate <- PE_clause predicate_2
 free_parenthetical <- PO_clause text_1 POI_clause
 free_subscript <- PU_clause string
-free_vocative <- (CAI_clause KAI_clause? free_indicator*)+ predicate_2?
 
 # PARTICLES CLAUSES
 A_clause            <- free_prefix* spaces? A
@@ -139,7 +138,6 @@ BAI_clause          <- free_prefix* spaces? BAI free_post*
 BAI_clause_elidible <- BAI_clause?
 BY_clause           <- free_prefix* spaces? BY
 CA_clause           <- free_prefix* spaces? CA free_post*
-CAI_clause          <- free_prefix* spaces? CAI
 DA_clause           <- free_prefix* spaces? DA free_post*
 DI_clause           <- spaces? DI
 DE_clause           <- free_prefix* spaces? DE free_post*
@@ -171,7 +169,7 @@ MA_clause           <- free_prefix* spaces? MA free_post*
 O_clause            <- free_prefix* spaces? O
 PA_clause           <- spaces? PA free_post*
 PAI_clause          <- spaces? PAI
-PI_clause           <- free_prefix* spaces? PI
+PE_clause           <- free_prefix* spaces? PE
 PO_clause           <- free_prefix* spaces? PO
 POI_clause          <- free_prefix* spaces? POI
 PU_clause           <- free_prefix* spaces? PU
@@ -197,8 +195,7 @@ A     <- &particle (a)
 BA    <- &particle !(BAI post_word) (b vowel_tail)
 BAI   <- &particle (b a i)
 BY    <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)
-CA    <- &particle (c vowel)
-CAI   <- &particle !(CA post_word) (c vowel_tail)
+CA    <- &particle (c vowel_tail)
 DA    <- &particle (d a)
 DE    <- &particle (d e)
 DEI   <- &particle (d e i)
@@ -224,7 +221,7 @@ MA    <- &particle (m vowel_tail)
 O     <- &particle (o)
 PA    <- &particle (p a vowel_tail_1?)
 PAI   <- &particle (p a i)
-PI    <- &particle (p i)
+PE    <- &particle (p e i?)
 PO    <- &particle (p o)
 POI   <- &particle (p o i)
 PU    <- &particle (p u)

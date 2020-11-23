@@ -104,7 +104,7 @@ var map = [
 
     // free
     ["free_indicator", "indicator"],
-    ["free_discursive", "discursive"],
+    ["free_predicate", "free predicate"],
     ["free_parenthetical", "note"],
     ["free_subscript", "subscript"],
     ["free_vocative", "vocative"],
