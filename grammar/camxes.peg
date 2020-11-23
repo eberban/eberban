@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.6
+# eberban PEG grammar - v0.7
 # ==========================
 
 # GRAMMAR
@@ -7,7 +7,7 @@ text <- parser_version? text_1
 parser_version <- DI_clause (!parser_version_number borrowing_content (dot !dot !y)? parser_version_number? / parser_version_number)
 parser_version_number <- spaces? TA+
 # main text rule
-text_1 <- (free_indicator / free_vocative / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
+text_1 <- (free_indicator / free_predicate / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
 
 # paragraphs
 paragraph <- DA_clause+ sentence*
@@ -125,7 +125,7 @@ gik <- GI_clause KAI_clause? free_post*
 free_prefix <- PA_clause
 
 # free suffix
-free_post <- PAI_clause / free_indicator / free_predicate / free_parenthetical / free_subscript / free_vocative
+free_post <- PAI_clause / free_indicator / free_predicate / free_parenthetical / free_subscript
 free_indicator <- XA_clause KAI_clause?
 free_predicate <- PE_clause predicate_2
 free_parenthetical <- PO_clause text_1 POI_clause
@@ -293,7 +293,7 @@ unvoiced <- (c / f / k / p / s / t / x)
 
 l <- [lL] !l # <LEAF>
 m <- [mM] !m # <LEAF>
-n <- [nN] !n !affricate # <LEAF>
+n <- [nN] !n # <LEAF>
 r <- [rR] !r # <LEAF>
 b <- [bB] !b !unvoiced # <LEAF>
 d <- [dD] !d !unvoiced # <LEAF>
