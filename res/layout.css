@@ -1,199 +1,200 @@
-body, textarea {
-    font-family: sans-serif !important;
+body,
+textarea {
+	font-family: sans-serif !important;
 }
 
-span.translation {
-    color: #aaaaaa;
-    font-style: italic;
+.translation {
+	color: #aaaaaa;
+	font-style: italic;
+	font-weight: normal;
 }
 
 li.implicit {
-    color: #aaaaaa;
-    /* display: none; */
+	color: #aaaaaa;
+	/* display: none; */
 }
 
 .error-marker {
-    position: relative;
-    top: 6pt;
-    margin-right: -6px;
+	position: relative;
+	top: 6pt;
+	margin-right: -6px;
 }
 
 .error-sentence {
-    text-align: center;
-    font-style: italic;
+	text-align: center;
+	font-style: italic;
 }
 
 #parse-result {
-    max-height: 300px;
-    overflow-y: auto;
+	max-height: 300px;
+	overflow-y: auto;
 }
 
 .lojban-separator {
-    color: #aaaaaa;
+	color: #aaaaaa;
 }
 
 .lojban-selbri {
-    color: #6699cc;
-    font-weight: bold;
+	color: #6699cc;
+	font-weight: bold;
 }
 
 .lojban-sumti1 {
-    color: #dd3322;
+	color: #dd3322;
 }
 
 .lojban-sumti2 {
-    color: #cc5522;
+	color: #cc5522;
 }
 
 .lojban-sumti3 {
-    color: #bb7722;
+	color: #bb7722;
 }
 
 .lojban-sumti4 {
-    color: #aa9922;
+	color: #aa9922;
 }
 
 .lojban-sumti5 {
-    color: #99bb22;
+	color: #99bb22;
 }
 
 .lojban-sumti6 {
-    color: #88dd22;
+	color: #88dd22;
 }
 
 .lojban-modal {
-    color: #339944;
+	color: #339944;
 }
 
 .lojban-prenex {
-    color: #2288aa;
+	color: #2288aa;
 }
 
 .lojban-vocative {
-    color: #8822aa;
+	color: #8822aa;
 }
 
 .lojban-indicator {
-    color: #446699;
+	color: #446699;
 }
 
 .lojban-nesting {
-    transition: top 0.2s, box-shadow 0.2s;
+	transition: top 0.2s, box-shadow 0.2s;
 }
 
 .lojban-nesting:hover {
-    border-radius: 3px;
-    box-shadow: rgba(64, 128, 255, 0.4) 0px 0px 4px 0px;
+	border-radius: 3px;
+	box-shadow: rgba(64, 128, 255, 0.4) 0px 0px 4px 0px;
 }
 
 .lojban-error {
-    background-color: rgba(255, 0, 0, 0.2);
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 3px 3px;
-    padding: 4px;
-    margin-left: 4px;
-    margin-right: 4px;
+	background-color: rgba(255, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 3px 3px;
+	padding: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
 }
 
 /* Translations */
 .alternative {
-    color: #6699cc;
-    display: none;
+	color: #6699cc;
+	display: none;
 }
 
 .tengwar-highlighting {
-    font-family: "Tengwar Telcontar", "Tengwar Formal";
-    font-size: 110%;
+	font-family: "Tengwar Telcontar", "Tengwar Formal";
+	font-size: 110%;
 }
 
 .tengwar-highlighting .lojban-error {
-    padding-top: 0px;
-    padding-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 /* Boxes */
 #parse-result-boxes {
-    overflow-x: scroll;
+	overflow-x: scroll;
 }
 
 .box {
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
 
-    margin: 3px;
-    padding: 3px;
-    border: 1px black solid;
+	margin: 3px;
+	padding: 3px;
+	border: 1px black solid;
 
-    margin-top: 0px;
-    padding-top: 0px;
-    border-top: 0px;
+	margin-top: 0px;
+	padding-top: 0px;
+	border-top: 0px;
 }
 
 .box.box-parser {
-    background: #ffffff;
-    border: 1px black solid;
-    margin: 2px;
+	background: #ffffff;
+	border: 1px black solid;
+	margin: 2px;
 }
 
 .box.box-sentence {
-    background: #ffffff;
-    border: 1px black solid;
-    margin: 2px;
+	background: #ffffff;
+	border: 1px black solid;
+	margin: 2px;
 }
 
-
 .box.box-note {
-    background: #eeeeee;
+	background: #eeeeee;
 }
 
 .box.box-proposition {
-    background: #d3ffb6;
+	background: #d3ffb6;
 }
 
 .box.box-place {
-    background: #b6f4ff;
+	background: #b6f4ff;
 }
 
 .box.box-tag {
-    background: #c79dfd;
+	background: #c79dfd;
 }
 
 .box.box-modal {
-    background: #fd9dfd;
+	background: #fd9dfd;
 }
 
 .box.box-predicate {
-    background: #b6c3ff;
+	background: #b6c3ff;
 }
 
 .box.box-abstraction {
-    background: #f2ffb6;
+	background: #f2ffb6;
 }
 
 .box.box-lexeme {
-    background: #dce2ff;
+	background: #dce2ff;
 }
 
 .box.box-borrowing {
-    background: #ffb6b6;
+	background: #ffb6b6;
 }
 
 .box.box-number {
-    background: #ff9cb5;
+	background: #ff9cb5;
 }
 
 .box.box-letters {
-    background: #ff9c9c;
+	background: #ff9c9c;
 }
 
 .box.box-link {
-    background: #d2b6ff;
+	background: #d2b6ff;
 }
 
 .box.box-scope {
-    border-style: dashed;
+	border-style: dashed;
 }
 
 /* 
@@ -242,55 +243,55 @@ li.implicit {
 } */
 
 .box.box-terminal {
-    margin: 0px;
-    padding: 2px;
-    border: 0px;
+	margin: 0px;
+	padding: 2px;
+	border: 0px;
 }
 
 .box.box-not-shown {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
 }
 
 .box span.translation {
-    color: black;
-    font-style: italic;
+	color: black;
+	font-style: italic;
 }
 
 .gloss-family {
-    margin-right: 25px;
-    font-weight: normal;
-    color: #888888;
+	margin-right: 25px;
+	font-weight: normal;
+	color: #888888;
 }
 
 .tip {
-    position: relative;
-    display: inline;
-    font-weight: bold;
+	position: relative;
+	display: inline;
+	font-weight: bold;
 }
 
 .tip .tiptext {
-    display: block;
-    visibility: hidden;
-    width: 300px;
-    background-color: white;
-    text-align: left;
-    border-radius: 3px;
-    padding: 5px;
-    position: absolute;
-    top: 100%;
-    margin-left: -30px;
-    opacity: 0;
-    transition: opacity 0.1s;
-    white-space: normal;
-    font-weight: normal;
-    border: 1px solid black;
-    box-shadow: 0px 0px 2px black;
-    font-family: "Courier New", Courier, monospace;
+	display: block;
+	visibility: hidden;
+	width: 300px;
+	background-color: white;
+	text-align: left;
+	border-radius: 3px;
+	padding: 5px;
+	position: absolute;
+	top: 100%;
+	margin-left: -30px;
+	opacity: 0;
+	transition: opacity 0.1s;
+	white-space: normal;
+	font-weight: normal;
+	border: 1px solid black;
+	box-shadow: 0px 0px 2px black;
+	font-family: "Courier New", Courier, monospace;
 }
 
 .tip:hover .tiptext {
-    visibility: visible;
-    opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }

@@ -1484,3 +1484,8 @@ zyn:
   _signature: .
   eng_long: ___ is a month
   eng_short: month
+ecnavyn:
+  _family: L
+  _signature: .
+  eng_long: ___ is today
+  eng_short: today

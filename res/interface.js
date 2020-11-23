@@ -17,6 +17,7 @@ function parse() {
 	$('#result-row').slideDown();
 	try {
 		var start = new Date().getTime();
+		textToParse = camxes_preprocessing(textToParse);
 		var parse = camxes.parse(textToParse);
 		var end = new Date().getTime();
 		$('#time-label').html('(parsing took ' + (end - start) + ' ms)');
@@ -297,7 +298,13 @@ function constructBoxesOutput(parse, depth) {
 					}
 
 					if (words[lexeme]) {
-						output += ' : <span class="translation">&nbsp;' + words[lexeme].eng_short + '&nbsp;</span>';
+						output += ' : <div class="tip translation">&nbsp;' + words[lexeme].eng_short;
+
+						if (words[lexeme].eng_long) {
+							output += '<div class="tiptext">' + escapeHtml(words[lexeme].eng_long) + '</div>';
+						}
+
+						output += '&nbsp;</div>';
 					} else {
 						output += ' : ...';
 					}
