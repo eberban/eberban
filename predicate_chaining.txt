@@ -1,0 +1,64 @@
+ Terminology :
+
+ - (0) Proposition : A proposition is anything that has a truth value (which can be true or false).
+       It is equivalent to a nullary predicate (0 arguments).
+ - (T) Predicate : a proposition template with one or more open blanks (called arguments) which may be
+       filled in to yield a complete proposition with a truth value.
+ - (1) Property : predicate with 1 argument.
+ - (2) Relation : predicate with 2 arguments.
+ - (.) Entity: everything that satisfies a given property.
+ -     Event : a proposition that is claimed to occur (it is itself a proposition)
+
+ Predicate definitions :
+
+ Words have a precise definition which define their predicate. "___", "___", etc represents
+ the arguments of the predicate. The expected type of the argument can be provided,
+ otherwise the place is expected to receive a entity. "[___]" represents a proposition place,
+ while "[___N]" represents a property place, with N indicating which other place of the
+ predicate the property applies to. "{___}" represents a predicate place (rare).
+
+ Null values can be used as an argument. 
+ Each predicate definition can define how to handle a null value.
+ If it is not defined, an elliptical value is used. (value must be infered from context)
+
+ Predicate chaining :
+
+ Predicates can be chained by being next to each other. To avoid always using
+ abstractors to fill the arguments (thus leading to deep nesting), there are some chaining
+ rules listed below. 
+
+ If more than 2 predicates are chained, the chaining is right-grouping.
+ A B C = (A (B C))
+
+ Chaining rules :
+
+ Chaining takes places between a left predicate L and a right predicate R.
+ First, find the rightmost place of L which expect a non-entity (proposition/property/...), which
+ we will call LP. (If the rightmost place is not the one you want, use cia/cie/cii/cio/ciu)
+
+ If there is no such LP, the output predicate will be equivalent to {L ce R}, keeping the place
+ structure of R.
+
+ If this LP exist, we look at the arity of the argument it expects, which we'll call N (0 for a
+ proposition or event, 1 for a property, ...). We then remove the first N places of R, whose
+ meanings will be merged into the meaning of L (see examples). Then, LP is replaced by the place
+ structure of this reduced R.
+
+ Proposition/event example :
+
+ broi : ___ hopes ___ (event/proposition) occurs/is true
+ suin :           ___ is happy about ___
+
+ broi suin : ___ hopes (___ is happy about ___) occurs/is true
+           = ___ hopes ___ is happy about ___
+
+ Property example :
+
+ flun : ___ inspires ___ to satisfy property ___
+ spi :                                       ___ talks to ___
+
+ flun spi : ___ inspires ___ to satisfy property (XXX talks to ___)
+          = ___ inspires ___ to talk to ___
+
+ Note : Definitions with properties always describes an entity satisfying the property. This is
+        the place merged with the removed first place of the right predicate.
