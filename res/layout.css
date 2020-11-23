@@ -254,9 +254,10 @@ li.implicit {
 	border: 0px;
 }
 
-.box span.translation {
+.box .translation {
 	color: black;
 	font-style: italic;
+	font-weight: normal;
 }
 
 .gloss-family {
@@ -289,6 +290,8 @@ li.implicit {
 	border: 1px solid black;
 	box-shadow: 0px 0px 2px black;
 	font-family: "Courier New", Courier, monospace;
+	z-index: 100;
+	font-style: normal;
 }
 
 .tip:hover .tiptext {

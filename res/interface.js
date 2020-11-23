@@ -610,9 +610,9 @@ function showGlossing(text, $element) {
 		if (words[text[j]]) {
 			output +=
 				'<dd><span class="gloss-family">' +
-				words[text[j]].family +
+				words[text[j]]._family +
 				'</span>' +
-				(words[text[j]].long ? escapeHtml(words[text[j]].long) : words[text[j]].short) +
+				(words[text[j]].eng_long ? escapeHtml(words[text[j]].eng_long) : words[text[j]].eng_short) +
 				'</dd>';
 		} else {
 			output += '<dd><span class="muted">(?)</span></dd>';
