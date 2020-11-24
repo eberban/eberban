@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.8
+// eberban PEG grammar - v0.9
 // ==========================
 
 // GRAMMAR
@@ -215,8 +215,8 @@ lexeme_n = expr:(U_clause (!(dot? U) lexeme_word)+ (dot? U)) {return _node("lexe
 lexeme_word = expr:(initial_dot native_word) {return _node("lexeme_word", expr);}
 
 // borrowings
-borrowing = expr:(ZA_clause borrowing_content (dot !dot !y)? free_post*) {return _node("borrowing", expr);}
-borrowing_content = expr:(spaces foreign_word (!spaces native_word)*) {return _node("borrowing_content", expr);}
+borrowing = expr:(ZA_clause borrowing_content (dot / space_char / EOF) free_post*) {return _node("borrowing", expr);}
+borrowing_content = expr:(spaces foreign_word) {return _node("borrowing_content", expr);}
 
 // quotes
 grammatical_quote = expr:(ZE_clause text_1 ZEI_clause) {return _node("grammatical_quote", expr);}
@@ -375,7 +375,7 @@ foreign_quote_word = expr:((!spaces .)+ ) !{ return _is_foreign_quote_delim(expr
 foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr); } { return _node("foreign_quote_close", expr); }
 
 // - Legal words
-foreign_word = expr:(!coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?) {return _node("foreign_word", expr);}
+foreign_word = expr:(!coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(!coda consonant? vowel_tail_y !coda &post_word) {return _node("particle", expr);}
 root = expr:(((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant) vowel_tail_y coda)) &post_word) {return _node("root", expr);}
@@ -406,15 +406,15 @@ u = expr:([uU]) {return ["u", "u"];} // <LEAF>
 y = expr:([yY]) {return ["y", "y"];} // <LEAF>
 
 // - Legal consonant and consonant pairs
-consonant_cluster = expr:((!(coda coda coda) consonant consonant*)) {return _node("consonant_cluster", expr);}
+consonant_cluster = expr:((!(coda coda coda) consonant consonant? consonant? !consonant)) {return _node("consonant_cluster", expr);}
 initial_consonant_pair = expr:((&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
 initial = expr:((affricate / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
 
 consonant = expr:((voiced / unvoiced / liquid / m / n)) {return _node("consonant", expr);}
 affricate = expr:((t c / t s / d j / d z)) {return _node("affricate", expr);}
 liquid = expr:((l / r)) {return _node("liquid", expr);}
-other = expr:((p / t !l / k / f / x / b / d !l / g / v / m / n !liquid)) {return _node("other", expr);}
-sibilant = expr:((c / s !x / (j / z) !n !liquid)) {return _node("sibilant", expr);}
+other = expr:((p / t / k / f / x / b / d / g / v / m / n !liquid)) {return _node("other", expr);}
+sibilant = expr:((c / s / j / z)) {return _node("sibilant", expr);}
 coda = expr:((l / n / r)) {return _node("coda", expr);}
 voiced = expr:((b / d / g / j / v / z)) {return _node("voiced", expr);}
 unvoiced = expr:((c / f / k / p / s / t / x)) {return _node("unvoiced", expr);}
@@ -447,5 +447,5 @@ hesitation = expr:((space_char+ dot? / dot) !(y h y) y+ !(dot dot) (dot? &space_
 space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
 
 // - Special characters
-dot = expr:('.') {return _node("dot", expr);}
+dot = expr:('.' !'.') {return _node("dot", expr);}
 EOF = expr:(!.) {return _node("EOF", expr);}

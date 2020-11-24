@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.8
+# eberban PEG grammar - v0.9
 # ==========================
 
 # GRAMMAR
@@ -86,8 +86,8 @@ lexeme_n <- U_clause (!(dot? U) lexeme_word)+ (dot? U)
 lexeme_word <- initial_dot native_word
 
 # borrowings
-borrowing <- ZA_clause borrowing_content (dot !dot !y)? free_post*
-borrowing_content <- spaces foreign_word (!spaces native_word)*
+borrowing <- ZA_clause borrowing_content (dot / space_char / EOF) free_post*
+borrowing_content <- spaces foreign_word
 
 # quotes
 grammatical_quote <- ZE_clause text_1 ZEI_clause
@@ -246,7 +246,7 @@ foreign_quote_word <- (!spaces .)+
 foreign_quote_close <- native_word
 
 # - Legal words
-foreign_word <- !coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* (consonant consonant?)?
+foreign_word <- !coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?
 native_word <-  root / particle
 particle <- !coda consonant? vowel_tail_y !coda &post_word
 root <- ((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant) vowel_tail_y coda)) &post_word
@@ -277,15 +277,15 @@ u <- [uU] # <LEAF>
 y <- [yY] # <LEAF>
 
 # - Legal consonant and consonant pairs
-consonant_cluster <- (!(coda coda coda) consonant consonant*)
+consonant_cluster <- (!(coda coda coda) consonant consonant? consonant? !consonant)
 initial_consonant_pair <- (&initial consonant consonant !consonant)
 initial <- (affricate / sibilant? other? liquid?) !consonant
  
 consonant <- (voiced / unvoiced / liquid / m / n) 
 affricate <- (t c / t s / d j / d z) 
 liquid <- (l / r) 
-other <- (p / t !l / k / f / x / b / d !l / g / v / m / n !liquid) 
-sibilant <- (c / s !x / (j / z) !n !liquid) 
+other <- (p / t / k / f / x / b / d / g / v / m / n !liquid) 
+sibilant <- (c / s / j / z) 
 coda <- (l / n / r)
 voiced <- (b / d / g / j / v / z) 
 unvoiced <- (c / f / k / p / s / t / x) 
@@ -318,5 +318,5 @@ hesitation <- (space_char+ dot? / dot) !(y h y) y+ !(dot dot) (dot? &space_char 
 space_char <- [\t\n\r?!\u0020]
 
 # - Special characters
-dot <- '.'
+dot <- '.' !'.'
 EOF <- !.
