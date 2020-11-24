@@ -22,8 +22,8 @@ aba:
   eng_short: proposition
 ada:
   _family: L
-  _signature: ...
-  eng_long: ___ is a paragraph about subject ___ composed of sentence(s) ___
+  _signature: ..
+  eng_long: ___ is a paragraph composed of sentence(s) ___
   eng_short: paragraph
   jbo_similar: jufmei
 ade:
@@ -97,8 +97,8 @@ bria:
 broi:
   _family: R
   _signature: '.0'
-  eng_long: '___ hopes/wishes for/desires [___] is true'
-  eng_short: hope
+  eng_long: '___ wants/desires/hopes/wishes for [___] is true'
+  eng_short: want
   jbo_similar: pacna
 bun:
   _family: R
@@ -150,6 +150,11 @@ cii:
   _family: CA
   eng_long: 'perform predicate chaining with [left] x3 place instead of rightmost'
   eng_short: x3 chaining
+cil:
+  _family: R
+  _signature: 0
+  eng_long: '___ learns fact [___]'
+  eng_short: learn
 cio:
   _family: CA
   eng_long: 'perform predicate chaining with [left] x4 place instead of rightmost'
@@ -280,6 +285,11 @@ eberban:
   _signature: .
   eng_long: ___ is the eberban language
   eng_short: eberban
+ecnavyn:
+  _family: L
+  _signature: .
+  eng_long: ___ is today
+  eng_short: today
 eglunjgai:
   _family: L
   _signature: ..
@@ -1460,7 +1470,7 @@ zoi:
 zon:
   _family: R
   _signature: ..
-  eng_long: ___ pertains to/is about ___
+  eng_long: ___ pertains to/is about subject ___
   eng_short: about
 zu:
   _family: ZU
@@ -1484,8 +1494,3 @@ zyn:
   _signature: .
   eng_long: ___ is a month
   eng_short: month
-ecnavyn:
-  _family: L
-  _signature: .
-  eng_long: ___ is today
-  eng_short: today

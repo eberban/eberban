@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.7
+// eberban PEG grammar - v0.8
 // ==========================
 
 // GRAMMAR
@@ -186,7 +186,8 @@ scoped_proposition_term = expr:(GO_clause proposition_term GOI_clause_elidible) 
 
 // proposition place tags connectives
 proposition_place_tag = expr:(proposition_place_tag_jak_post / proposition_place_tag_1) {return _node("proposition_place_tag", expr);}
-proposition_place_tag_jak_post = expr:(proposition_place_tag_1 (JA_clause proposition_place_tag_1)+) {return _node("proposition_place_tag_jak_post", expr);}
+proposition_place_tag_jak_post = expr:(proposition_place_tag_1+) {return _node("proposition_place_tag_jak_post", expr);}
+// proposition_place_tag_jak_post <- proposition_place_tag_1 (JA_clause proposition_place_tag_1)+
 
 // basic proposition place tags
 proposition_place_tag_1 = expr:(proposition_place_modal / FA_clause) {return _node("proposition_place_tag_1", expr);}
@@ -194,11 +195,11 @@ proposition_place_tag_1 = expr:(proposition_place_modal / FA_clause) {return _no
 proposition_place_modal = expr:(DU_clause predicate_2) {return _node("proposition_place_modal", expr);}
 
 // predicate chains, followed by links
-predicate = expr:(predicate_1+ predicate_link*) {return _node("predicate", expr);}
+predicate = expr:(predicate_1 predicate_link*) {return _node("predicate", expr);}
 predicate_link = expr:(VA_clause predicate VAI_clause_elidible) {return _node("predicate_link", expr);}
 // predicate afterthough connectives
-predicate_1 = expr:(predicate_cak_post / predicate_2) {return _node("predicate_1", expr);}
-predicate_cak_post = expr:(predicate_2 (cak !DE_clause !DA_clause predicate_2)+) {return _node("predicate_cak_post", expr);}
+predicate_1 = expr:((predicate_cak_post / predicate_2) predicate_1?) {return _node("predicate_1", expr);}
+predicate_cak_post = expr:(predicate_2 (cak !DE_clause !DA_clause predicate_1)) {return _node("predicate_cak_post", expr);}
 // core predicates
 predicate_2 = expr:(predicate_cak_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_place_swap / scoped_predicate / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_2", expr);}
 // forethough connected predicates
@@ -214,8 +215,6 @@ lexeme_n = expr:(U_clause (!(dot? U) lexeme_word)+ (dot? U)) {return _node("lexe
 lexeme_word = expr:(initial_dot native_word) {return _node("lexeme_word", expr);}
 
 // borrowings
-// borrowing <- ZA_clause borrowing_content dot? free_post*
-
 borrowing = expr:(ZA_clause borrowing_content (dot !dot !y)? free_post*) {return _node("borrowing", expr);}
 borrowing_content = expr:(spaces foreign_word (!spaces native_word)*) {return _node("borrowing_content", expr);}
 

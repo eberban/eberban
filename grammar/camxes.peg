@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.7
+# eberban PEG grammar - v0.8
 # ==========================
 
 # GRAMMAR
@@ -57,7 +57,8 @@ scoped_proposition_term <- GO_clause proposition_term GOI_clause_elidible
 
 # proposition place tags connectives
 proposition_place_tag <- proposition_place_tag_jak_post / proposition_place_tag_1
-proposition_place_tag_jak_post <- proposition_place_tag_1 (JA_clause proposition_place_tag_1)+
+proposition_place_tag_jak_post <- proposition_place_tag_1+
+# proposition_place_tag_jak_post <- proposition_place_tag_1 (JA_clause proposition_place_tag_1)+
 
 # basic proposition place tags
 proposition_place_tag_1 <- proposition_place_modal / FA_clause
@@ -65,11 +66,11 @@ proposition_place_tag_1 <- proposition_place_modal / FA_clause
 proposition_place_modal <- DU_clause predicate_2
 
 # predicate chains, followed by links
-predicate <- predicate_1+ predicate_link*
+predicate <- predicate_1 predicate_link*
 predicate_link <- VA_clause predicate VAI_clause_elidible
 # predicate afterthough connectives
-predicate_1 <- predicate_cak_post / predicate_2
-predicate_cak_post <- predicate_2 (cak !DE_clause !DA_clause predicate_2)+
+predicate_1 <- (predicate_cak_post / predicate_2) predicate_1?
+predicate_cak_post <- predicate_2 (cak !DE_clause !DA_clause predicate_1)
 # core predicates
 predicate_2 <- predicate_cak_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_place_swap / scoped_predicate / MA_clause / free_prefix* spaces? (root / string) free_post*
 # forethough connected predicates
@@ -85,8 +86,6 @@ lexeme_n <- U_clause (!(dot? U) lexeme_word)+ (dot? U)
 lexeme_word <- initial_dot native_word
 
 # borrowings
-# borrowing <- ZA_clause borrowing_content dot? free_post*
-
 borrowing <- ZA_clause borrowing_content (dot !dot !y)? free_post*
 borrowing_content <- spaces foreign_word (!spaces native_word)*
 

@@ -28,121 +28,120 @@
  * Simplifies the given parse tree. Returns an array.
  */
 function simplifyTree(parse) {
-    
-    // if it is a terminal, just return that
-    if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
-        return [{
-            type: parse[0],
-            word: parse[1]
-        }]
-    }
-    
-    var f = simplifyFunctions[parse[0]];
-    
-    // if there is a simplification function, apply it
-    if (f) {
-        return [f(parse)];
-    }
-    
-    // else, we recursively search the children for things we do have a simplification function for
-    var result;
-    if (isString(parse[0])) {
-        result = simplifyArrayOfTrees(parse.slice(1));
-    } else {
-        result = simplifyArrayOfTrees(parse);
-    }
-    
-    return result;
+	// if it is a terminal, just return that
+	if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
+		return [
+			{
+				type: parse[0],
+				word: parse[1]
+			}
+		];
+	}
+
+	var f = simplifyFunctions[parse[0]];
+
+	// if there is a simplification function, apply it
+	if (f) {
+		return [ f(parse) ];
+	}
+
+	// else, we recursively search the children for things we do have a simplification function for
+	var result;
+	if (isString(parse[0])) {
+		result = simplifyArrayOfTrees(parse.slice(1));
+	} else {
+		result = simplifyArrayOfTrees(parse);
+	}
+
+	return result;
 }
 
 /**
  * Simplifies an array of trees.
  */
 function simplifyArrayOfTrees(parse) {
-    
-    var result = [];
-    
-    for (var i in parse) {
-        result = result.concat(simplifyTree(parse[i]));
-    }
-    
-    return result;
-}
+	var result = [];
 
+	for (var i in parse) {
+		result = result.concat(simplifyTree(parse[i]));
+	}
+
+	return result;
+}
 
 // The simplification functions
 
 var simplifyFunctions = {};
 
 var map = [
-    // important structures
-    ["text", "text"],
-    ["parser_version", "parser version"],
-    ["paragraph", "paragraph"],
-    ["sentence", "sentence"],
-    ["proposition_1", "proposition"],
-    ["proposition_tail", "proposition tail"],
-    ["proposition_place", "place"],
-    ["proposition_place_tag", "tag"],
-    ["proposition_place_modal", "modal"],
-    ["proposition_term", "term"],
-    ["lexeme", "lexeme"],
-    ["borrowing", "borrowing"],
-    ["foreign_word", "foreign"],
-    ["grammatical_quote", "quote"],
-    ["one_word_quote", "word quote"],
-    ["ungrammatical_quote", "ungrammatical quote"],
-    ["foreign_quote", "foreign quote"],
-    ["abstraction", "abstraction"],
-    ["number_string", "number"],
-    ["letter_string", "letters"],
+	// important structures
+	[ 'text', 'text' ],
+	[ 'parser_version', 'parser version' ],
+	[ 'paragraph', 'paragraph' ],
+	[ 'sentence', 'sentence' ],
+	[ 'proposition_1', 'proposition' ],
+	[ 'proposition_tail', 'proposition tail' ],
+	[ 'proposition_place', 'place' ],
+	[ 'proposition_place_tag', 'tag' ],
+	[ 'proposition_place_modal', 'modal' ],
+	[ 'proposition_term', 'term' ],
+	[ 'lexeme', 'lexeme' ],
+	[ 'borrowing', 'borrowing' ],
+	[ 'foreign_word', 'foreign' ],
+	[ 'grammatical_quote', 'quote' ],
+	[ 'one_word_quote', 'word quote' ],
+	[ 'ungrammatical_quote', 'ungrammatical quote' ],
+	[ 'foreign_quote', 'foreign quote' ],
+	[ 'abstraction', 'abstraction' ],
+	[ 'number_string', 'number' ],
+	[ 'letter_string', 'letters' ],
 
-    // predicate
-    ["predicate", "predicate"],
-    ["predicate_link", "link"],
-    ["predicate_relative_clause", "relative clause"],
+	// predicate
+	[ 'predicate', 'predicate' ],
+	[ 'predicate_link', 'link' ],
+	[ 'predicate_relative_clause', 'relative clause' ],
 
-    // free
-    ["free_indicator", "indicator"],
-    ["free_predicate", "free predicate"],
-    ["free_parenthetical", "note"],
-    ["free_subscript", "subscript"],
-    ["free_vocative", "vocative"],
+	// free
+	[ 'free_indicator', 'indicator' ],
+	[ 'free_predicate', 'free predicate' ],
+	[ 'free_parenthetical', 'note' ],
+	[ 'free_subscript', 'subscript' ],
+	[ 'free_vocative', 'vocative' ],
 
-    // SCOPES
-    // manual scoping
-    ["scoped_predicate", "scope"],
-    ["scoped_proposition_term", "scope"],
+	// SCOPES
+	// manual scoping
+	[ 'scoped_predicate', 'scope' ],
+	[ 'scoped_proposition_term', 'scope' ],
 
-    // proposition jak
-    ["proposition_jak_pre", "scope"],
-    ["proposition_jak_post", "scope"],
+	// proposition jak
+	[ 'proposition_jak_pre', 'scope' ],
+	[ 'proposition_jak_post', 'scope' ],
 
-    // proposition terms
-    ["proposition_term_jak_post", "scope"],
-    ["proposition_term_jaik_post", "scope"],
-    ["proposition_term_jak_pre", "scope"],
-    ["proposition_place_tag_jak_pre", "scope"],
+	// proposition terms
+	[ 'proposition_term_jak_post', 'scope' ],
+	[ 'proposition_term_jaik_post', 'scope' ],
+	[ 'proposition_term_jak_pre', 'scope' ],
+	[ 'proposition_place_tag_jak_pre', 'scope' ],
 
-    // show proposition-tail distributivity
-    // ["proposition_tail_jak_pre", "scope"], 
-    ["proposition_tail_jak_pre_terms", "scope"], 
-    ["proposition_tail_1", "scope"],
-    ["proposition_1_terms", "scope"],
-    ["proposition_tail_jak_post_terms", "scope"],
+	// show proposition-tail distributivity
+	// ["proposition_tail_jak_pre", "scope"],
+	[ 'proposition_tail_jak_pre_terms', 'scope' ],
+	[ 'proposition_tail_1', 'scope' ],
+	[ 'proposition_1_terms', 'scope' ],
+	[ 'proposition_tail_jak_post_terms', 'scope' ],
 
-    // predicates
-    ["predicate_cak_post", "scope"],
-    ["predicate_cak_pre", "scope"],
+	// predicates
+	// ["predicate_cak_post", "scope"],
+	[ 'predicate_cak_pre', 'scope' ]
 ];
 
 for (let replace of map) {
-    simplifyFunctions[replace[0]] = function(parse) {
-        return {
-            type: replace[1],
-            children: simplifyArrayOfTrees(parse.slice(1))
-        }
-    }
+	simplifyFunctions[replace[0]] = function(parse) {
+		return {
+			type: replace[1],
+			children: simplifyArrayOfTrees(parse.slice(1))
+		};
+	};
 }
 
 // lojban grammar ...
@@ -306,102 +305,100 @@ simplifyFunctions["relative_clause"] = function(parse) {
  * For placed sumti, also an attribute sumtiPlace is added with the place number.
  */
 function numberSumti(parse) {
-    
-    // if it is a terminal, do nothing
-    if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
-        return parse
-    }
-    
-    // if it is a sentence, start searching through it
-    // if (parse.type === "sentence") {
-    if (parse.type === "proposition") {
-        numberSumtiInSentence(parse);
-    }
-    
-    // and recursively search the children for things we can number as well
-    for (var i in parse) {
-        if (!isString(parse[i])) {
-            numberSumti(parse[i]);
-        }
-    }
-    
-    return parse;
+	// if it is a terminal, do nothing
+	if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
+		return parse;
+	}
+
+	// if it is a sentence, start searching through it
+	// if (parse.type === "sentence") {
+	if (parse.type === 'proposition') {
+		numberSumtiInSentence(parse);
+	}
+
+	// and recursively search the children for things we can number as well
+	for (var i in parse) {
+		if (!isString(parse[i])) {
+			numberSumti(parse[i]);
+		}
+	}
+
+	return parse;
 }
 
 function numberSumtiInSentence(parse) {
-    
-    // first, for convenience, merge the bridi head and tail together in one array
-    var sentenceElements = [];
-    
-    for (var i = 0; i < parse.children.length; i++) {
-        var child = parse.children[i];
-        
-        if (child.type === "proposition tail") {
-            sentenceElements.push({type: "proposition tail start"});
-            for (var j = 0; j < child.children.length; j++) {
-                var subchild = child.children[j];
-                sentenceElements.push(subchild);
-            }
-        } else {
-            sentenceElements.push(child);
-        }
-    }
-    
-    // now walk through this array
-    var sumtiCounter = 1;
-    var bridiTailStartSumtiCounter = 1;
-    var nextIsModal = false;
-    
-    for (var i = 0; i < sentenceElements.length; i++) {
-        var child = sentenceElements[i];
+	// first, for convenience, merge the bridi head and tail together in one array
+	var sentenceElements = [];
 
-        if (child.type === "proposition tail start") {
-            bridiTailStartSumtiCounter = sumtiCounter;
-        }
+	for (var i = 0; i < parse.children.length; i++) {
+		var child = parse.children[i];
 
-        if (child.type === "GIhA") {
-            sumtiCounter = bridiTailStartSumtiCounter;
-        }
+		if (child.type === 'proposition tail') {
+			sentenceElements.push({ type: 'proposition tail start' });
+			for (var j = 0; j < child.children.length; j++) {
+				var subchild = child.children[j];
+				sentenceElements.push(subchild);
+			}
+		} else {
+			sentenceElements.push(child);
+		}
+	}
 
-        if (child.type === "FA") {
-            sumtiCounter = placeTagToPlace(child);
-        }
-        
-        if (child.type === "BAI" || child.type === "FIhO" || child.type === "PU") {
-            nextIsModal = true;
-        }
-        
-        if (child.type === "sumti") {
-            if (nextIsModal) {
-                child.type = "modal sumti";
-                nextIsModal = false;
-            } else {
-                child.type = "sumti x";
-                child.sumtiPlace = sumtiCounter;
-                sumtiCounter++;
-            }
-        }
-        
-        if (child.type === "selbri" && sumtiCounter === 1) {
-            sumtiCounter++;
-        }
-    }
+	// now walk through this array
+	var sumtiCounter = 1;
+	var bridiTailStartSumtiCounter = 1;
+	var nextIsModal = false;
+
+	for (var i = 0; i < sentenceElements.length; i++) {
+		var child = sentenceElements[i];
+
+		if (child.type === 'proposition tail start') {
+			bridiTailStartSumtiCounter = sumtiCounter;
+		}
+
+		if (child.type === 'GIhA') {
+			sumtiCounter = bridiTailStartSumtiCounter;
+		}
+
+		if (child.type === 'FA') {
+			sumtiCounter = placeTagToPlace(child);
+		}
+
+		if (child.type === 'BAI' || child.type === 'FIhO' || child.type === 'PU') {
+			nextIsModal = true;
+		}
+
+		if (child.type === 'sumti') {
+			if (nextIsModal) {
+				child.type = 'modal sumti';
+				nextIsModal = false;
+			} else {
+				child.type = 'sumti x';
+				child.sumtiPlace = sumtiCounter;
+				sumtiCounter++;
+			}
+		}
+
+		if (child.type === 'selbri' && sumtiCounter === 1) {
+			sumtiCounter++;
+		}
+	}
 }
 
 function placeTagToPlace(tag) {
-    if (tag.word === "fa") {
-        return 1;
-    } else if (tag.word === "fe") {
-        return 2;
-    } else if (tag.word === "fi") {
-        return 3;
-    } else if (tag.word === "fo") {
-        return 4;
-    } else if (tag.word === "fu") {
-        return 5;
-    } else if (tag.word === "fai") {
-        return "fai";
-        /* Ilmen: Yeah that's an ugly lazy handling of "fai", but a cleaner 
+	if (tag.word === 'fa') {
+		return 1;
+	} else if (tag.word === 'fe') {
+		return 2;
+	} else if (tag.word === 'fi') {
+		return 3;
+	} else if (tag.word === 'fo') {
+		return 4;
+	} else if (tag.word === 'fu') {
+		return 5;
+	} else if (tag.word === 'fai') {
+		return 'fai';
+		/* Ilmen: Yeah that's an ugly lazy handling of "fai", but a cleaner 
          * handling will require more work. */
-    }
+	}
 }
