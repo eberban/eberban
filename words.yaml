@@ -1494,3 +1494,8 @@ zyn:
   _signature: .
   eng_long: ___ is a month
   eng_short: month
+gun:
+  _family: R
+  _signature: .1
+  eng_long: ___ works in satisfying [___1]
+  eng_short: work
