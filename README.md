@@ -1,4 +1,4 @@
-relation language test
+eberban
 =========
 
 This is a test language inspired by the lojban language. It aims at merging brivla and rafsi
@@ -7,11 +7,8 @@ Following a suggestion by uakci, it'll also try to remove sumti from the grammar
 working only with relations themselves.
 
 Main interfaces to the parsers:
-* `camxes.html`: HTML interface with various parsing options (only raw/parse tree works for now).
-* `glosser/glosser.htm`: Another HTML interface with different features, most prominently nested boxes output and glosses (only raw/parse tree works for now).
-* `run_camxes.js`: Command line interface (not changed yet).
-* `ircbot/camxes-bot.js`: IRC bot interface (not changed yet).
-
+* `parser_box_glosser.html`: HTML interface with various parsing options (only raw/parse tree works for now).
+* `parser_text_dynamic.html`: Another HTML interface with different features, most prominently nested boxes output and glosses.
 
 ### Requirements ###
 

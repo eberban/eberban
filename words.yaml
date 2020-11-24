@@ -97,9 +97,9 @@ bria:
 broi:
   _family: R
   _signature: '.0'
-  eng_long: '___ wants/desires/hopes/wishes for [___] is true'
+  eng_long: '___ wants/desires/wishes that [___] is true'
   eng_short: want
-  jbo_similar: pacna
+  jbo_similar: djica
 bun:
   _family: R
   _signature: .
