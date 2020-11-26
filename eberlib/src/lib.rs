@@ -36,9 +36,20 @@ pub mod dict {
     }
 }
 
+pub mod presentation {
+    use super::dict::Entry;
+
+    pub fn format_entry_type(entry: &Entry) -> String {
+        match &entry.signature {
+            None => format!("{}", entry.family),
+            Some(signature) => format!("{} ({})", entry.family, signature)
+        }
+    }
+}
+
 pub mod cli {
     use std::io::{self, BufRead};
-    use super::dict::Dictionary;
+    use super::{presentation,dict::Dictionary};
 
     pub fn run_interactive_dictionary(dict: Dictionary) {
         let stdin = io::stdin();
@@ -48,8 +59,12 @@ pub mod cli {
             match dict.get(&line.unwrap()) {
                 None => println!("=> not found"),
                 Some(entry) => {
-                    // TODO: [jqueiroz] properly format the output
-                    println!("=> {:?}", entry)
+                    println!("=> Type: {}", presentation::format_entry_type(&entry));
+                    println!("=> English: {} -- {}", &entry.english_short, &entry.english_long);
+                    match &entry.lojban_similar {
+                        Some(similar) => println!("=> Lojban: similar to {}", similar),
+                        _ => {}
+                    }
                 }
             }
         }
