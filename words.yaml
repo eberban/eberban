@@ -256,8 +256,8 @@ du:
   jbo_similar: fi'o
 dul:
   _family: R
-  _signature: ".0"
-  eng_long: "___ likes proposition/event [___]"
+  _signature: "..1"
+  eng_long: "___ likes that ___ satisfies property [___2] (default = exist/occurs/is true)"
   eng_short: like
 dy:
   _family: BY
@@ -1268,8 +1268,8 @@ tca:
   eng_short: group
 tcer:
   _family: R
-  _signature: ".1"
-  eng_long: "___ is much/extreme/intense in property [___1]"
+  _signature: "0"
+  eng_long: "[___] is intense"
   eng_short: much
 te:
   _family: TA
