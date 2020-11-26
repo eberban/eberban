@@ -3,7 +3,7 @@
 - [Introduction](introduction.md)
   - [Phonology]()
   - [Morphology]()
-  - [Predicates and propositions]()
+  - [Predicates and propositions](predicates_and_propositions.md)
   
 - [Basic predicates]()
   - [Root words [R]]()
