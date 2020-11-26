@@ -54,7 +54,7 @@ pub mod cli {
     pub fn run_interactive_dictionary(dict: Dictionary) {
         let stdin = io::stdin();
 
-        // TODO: [jqueiroz] search based on "english_short" and "lojban_similar" as well
+        // TODO: [jqueiroz] search based on "english_short" and "lojban_similar" as well ("?cilre" or "?learn")
         for line in stdin.lock().lines() {
             match dict.get(&line.unwrap()) {
                 None => println!("=> not found"),
