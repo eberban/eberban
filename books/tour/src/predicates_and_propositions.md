@@ -16,8 +16,8 @@ with a truth value. Thus, a proposition is a predicate with all of its open
 blanks filled (which is also called a *nullary* or *0-ary* predicate).
 
 In the above sentence, the verb "drinks" can be seen as a predicate
-`___ drinks ___`, where each `___` represent an open black. The first blank
-represents *the one who eats* while the second represents *what is eaten*.
+`___ drinks ___`, where each `___` represent an open blank. The first blank
+represents *the one who drinks* while the second represents *what is drunk*.
 "A cat" and "milk" are **entities** that fills those blanks to make the complete
 proposition. Definitions with some `___` defines what is called a
 **place structure**.
