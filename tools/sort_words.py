@@ -57,7 +57,7 @@ def main():
                 raise RuntimeError("A triple dash may only appear as the very first line")
         # Adjusts the line
         if line == "":
-            raise RuntimeError("The YAML file is malformed: some line is empty")
+            raise RuntimeError("The YAML file is malformed: some line is empty: lineno=%d" % lineno)
         # Reads the next definition
         if line != line.lstrip(" "):
             # If the line starts with spaces, then it is an inner definition (of family, signature, etc) for some word
