@@ -66,6 +66,11 @@ ban:
   eng_long: ___ is a language
   eng_short: language
   jbo_similar: bangu
+bar:
+  _family: R
+  _signature: ".1"
+  eng_long: ___ satisfies property [___1]
+  eng_short: satisfy
 be:
   _family: BA
   eng_long: "___ is the event of [proposition]"
@@ -222,12 +227,6 @@ dju:
   eng_long: "___ knows fact(s) [___]"
   eng_short: know
   jbo_similar: djuno
-fen:
-  _family: R
-  _signature: ".."
-  eng_long: ___ is a friend of ___
-  eng_short: friend
-  jbo_similar: pendo
 dla:
   _family: R
   _signature: "0"
@@ -447,6 +446,12 @@ fei:
   eng_long: proposition place tag question
   eng_short: x?
   jbo_similar: fi'a
+fen:
+  _family: R
+  _signature: ".."
+  eng_long: ___ is a friend of ___
+  eng_short: friend
+  jbo_similar: pendo
 fi:
   _family: FA
   eng_long: "tag proposition place #3"
@@ -1180,6 +1185,11 @@ spu:
   eng_long: ___ is a nest/house/home of ___
   eng_short: home
   jbo_similar: zdani
+stan:
+  _family: R
+  _signature: "..."
+  eng_long: ___ is a country of people ___ with land/territory ___
+  eng_short: country
 su:
   _family: SA
   eng_long: switch 1st and 5th places
@@ -1603,13 +1613,3 @@ zyn:
   _signature: "."
   eng_long: ___ is a month
   eng_short: month
-bar:
-  _family: R
-  _signature: ".1"
-  eng_long: ___ satisfies property [___1]
-  eng_short: satisfy
-stan:
-  _family: R
-  _signature: "..."
-  eng_long: ___ is a country of people ___ with land/territory ___
-  eng_short: country
