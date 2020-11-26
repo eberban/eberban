@@ -1,0 +1,6 @@
+[book]
+authors = ["mia entropy"]
+language = "en"
+multilingual = false
+src = "src"
+title = "An in-depth tour of eberban"
