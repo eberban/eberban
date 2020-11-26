@@ -222,7 +222,7 @@ dju:
   eng_long: "___ knows fact(s) [___]"
   eng_short: know
   jbo_similar: djuno
-djyi:
+fen:
   _family: R
   _signature: ".."
   eng_long: ___ is a friend of ___
@@ -636,9 +636,14 @@ ji:
   jbo_similar: "ji / gi'i / ji [cu]"
 jil:
   _family: R
-  _signature: "."
-  eng_long: ___ is good (<sa'ijil> for bad)
+  _signature: ".."
+  eng_long: ___ is good (<sa'ijil> for bad) according to ___
   eng_short: good
+jin:
+  _family: R
+  _signature: ".1"
+  eng_long: ___ is new in property [___1]
+  eng_short: new
 jlan:
   _family: R
   _signature: ".."
@@ -1598,3 +1603,13 @@ zyn:
   _signature: "."
   eng_long: ___ is a month
   eng_short: month
+bar:
+  _family: R
+  _signature: ".1"
+  eng_long: ___ satisfies property [___1]
+  eng_short: satisfy
+stan:
+  _family: R
+  _signature: "..."
+  eng_long: ___ is a country of people ___ with land/territory ___
+  eng_short: country
