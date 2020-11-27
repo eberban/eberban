@@ -7,4 +7,4 @@ rm -f books/tour/.gitignore
 git checkout -b tmp/gh-pages
 git add -A
 git commit -m "deployed on $(date) by ${USER}"
-git push origin gh-pages --force
+git push origin tmp/gh-pages:gh-pages --force
