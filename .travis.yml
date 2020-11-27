@@ -15,6 +15,7 @@ script:
   - mdbook build books/tour
 
 deploy:
+  provider: script
   script: ./deploy/mdbook.sh
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
