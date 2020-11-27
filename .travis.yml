@@ -13,4 +13,13 @@ before_script:
   - cargo install-update -a
 
 script:
-  - mdbook build books/tour && mdbook test books/tour
+  - mdbook build books/tour
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: books/tour
+  keep-history: false
+  on:
+    branch: master
