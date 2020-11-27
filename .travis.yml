@@ -1,5 +1,4 @@
 language: rust
-sudo: false
 
 cache:
   - cargo
@@ -16,10 +15,10 @@ script:
   - mdbook build books/tour
 
 deploy:
-  provider: pages
+  script: ./deploy/mdbook.sh
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: books/tour
+  local-dir: .
   keep-history: false
   on:
     branch: master
