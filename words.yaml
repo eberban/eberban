@@ -290,6 +290,16 @@ eberban:
   _signature: "."
   eng_long: ___ is the eberban language
   eng_short: eberban
+eberpre:
+  _family: L
+  _signature: ".1"
+  eng_long: ___ is an eberbanist in aspect/property [___1]
+  eng_short: eberbanist
+eberstan:
+  _family: L
+  _signature: "."
+  eng_long: ___ is the eberstan country of people ___ with land/territory ___
+  eng_short: eberstan
 ecnavyn:
   _family: L
   _signature: "."
