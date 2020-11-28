@@ -1613,3 +1613,13 @@ zyn:
   _signature: "."
   eng_long: ___ is a month
   eng_short: month
+zma:
+  _family: R
+  _signature: "..1"
+  eng_long: ___ is greater than ___ in property [___1/2]
+  eng_short: greater
+plen:
+  _family: R
+  _signature: "."
+  eng_long: ___ is rain
+  eng_short: rain
