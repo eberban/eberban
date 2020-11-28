@@ -2,7 +2,7 @@
 
 - [Introduction](introduction.md)
   - [Phonology]()
-  - [Morphology]()
+  - [Morphology](morphology.md)
   - [Predicates and propositions](predicates_and_propositions.md)
   
 - [Basic predicates]()
