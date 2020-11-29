@@ -59,12 +59,14 @@ In fact, it is only needed to separate 2 adjecents chains that **should not** me
 
 ## BY members
 
-- Vowels : *a'y, e'y, i'y, o'y, u'y, y'y*
-- Non coda consonants : consonant + `y` (*by, cy*, ...)
-- Q / i semi-vowel : *iy'y*
-- W / u semi-vowel : *uy'y*
-- Pause / dot : *y'a*
-- ' / h : *y'e*
-- L : *y'i*
-- N : *y'o*
-- R : *y'u*
+| Letter                | Representation in eberban            |
+|-----------------------|--------------------------------------|
+| Vowels                | *a'y, e'y, i'y, o'y, u'y, y'y*       |
+| Non coda consonants   | consonant + y (*by, cy*, &hellip;)   |
+| Q / i semi-vowel      | *iy'y*                               |
+| W / u semi-vowel      | *uy'y*                               |
+| Pause / dot           | *y'a*                                |
+| ' / h                 | *y'e*                                |
+| L                     | *y'i*                                |
+| N                     | *y'o*                                |
+| R                     | *y'u*                                |
