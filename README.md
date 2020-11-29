@@ -1,5 +1,5 @@
-eberban
 [![eberban](./vectors/logo.png)](https://mia-entropy.github.io/eberban/)
+eberban
 =========
 
 **eberban** is a [Lojban](https://mw.lojban.org/papri/Lojban)-inspired [constructed language](https://en.wikipedia.org/wiki/Constructed_language) aimed at being simple, regular and
