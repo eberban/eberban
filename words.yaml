@@ -125,12 +125,17 @@ byn:
   eng_short: second
 ca:
   _family: CA
-  eng_long: "[left] OR [right]. keep place structure of the right one"
+  eng_long: "[left] OR [right]"
   eng_short: or
   jbo_similar: ja
+cai:
+  _family: CA
+  eng_long: "[left] type of [right]. vague precision, [right] has a vague [left] aspect"
+  eng_short: type of
+  jbo_similar: tanru making
 ce:
   _family: CA
-  eng_long: "[left] AND [right]. keep place structure of the right one"
+  eng_long: "[left] AND [right]"
   eng_short: and
   jbo_similar: je
 cfa:
@@ -176,7 +181,7 @@ cna:
   jbo_similar: birka
 co:
   _family: CA
-  eng_long: "[left] if and only if [right]. keep place structure of the right one"
+  eng_long: "[left] if and only if [right]"
   eng_short: iif
   jbo_similar: jo
 cpei:
@@ -193,7 +198,7 @@ cty:
   jbo_similar: zvati
 cu:
   _family: CA
-  eng_long: "[left] whether or not [right]. keep place structure of the right one"
+  eng_long: "[left] whether or not [right]"
   eng_short: whether-or-not
   jbo_similar: ju
 cy:
