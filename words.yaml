@@ -752,18 +752,18 @@ ky:
   jbo_similar: ky
 ma:
   _family: MA
-  eng_long: binds a variable within an abstraction that represents an open space (such as <bo> properties)
+  eng_long: binds a variable within an abstraction that represents an open space (used in <ba> abstractions)
   eng_short: (open)
 ma'i:
   _family: MA
   _signature: "."
-  eng_long: ___ is this here near speaker
+  eng_long: ___ is this here, near the speaker
   eng_short: this
   jbo_similar: ti
 ma'o:
   _family: MA
   _signature: "."
-  eng_long: ___ is that here near listener
+  eng_long: ___ is that here, near the listener
   eng_short: that
   jbo_similar: ta
 ma'u:
@@ -791,25 +791,25 @@ mer:
 mi:
   _family: MA
   _signature: "."
-  eng_long: ___ is me/we/the speaker(s)/authors(s)
+  eng_long: ___ is me/the speaker/author
   eng_short: me
   jbo_similar: mi
 mi'i:
   _family: MA
   _signature: "."
-  eng_long: ___ is me/we/the the speaker(s)/authors(s) & others but no you the listener(s)
+  eng_long: ___ is me/the speaker/author & others but no you the listener
   eng_short: me & others
   jbo_similar: mi'a
 mi'o:
   _family: MA
   _signature: "."
-  eng_long: ___ is me/we/the the speaker(s)/authors(s) & you the listener(s)
+  eng_long: ___ is me/the speaker/author & you the listener
   eng_short: me & you
   jbo_similar: mi'o
 mi'oi:
   _family: MA
   _signature: "."
-  eng_long: ___ is me/we/the speaker(s)/authors(s) & you the listener(s) & others
+  eng_long: ___ is me/the speaker/author & you the listener & others
   eng_short: me & you & others
   jbo_similar: ma'a
 mia:
@@ -1441,7 +1441,7 @@ uy'y:
   jbo_similar: vy.bu
 va:
   _family: VA
-  eng_long: "predicate affectation. one side should be affectable [MA]. if both sides are, right is now equal left"
+  eng_long: "predicate variable affectation. one side should be affectable [MA]. if both sides are, right is now equal left"
   eng_short: "="
   jbo_similar: goi
 vai:

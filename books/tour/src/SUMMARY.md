@@ -6,12 +6,12 @@
   - [Predicates and propositions](predicates_and_propositions.md)
   
 - [Basic predicates](basic_predicates.md)
-  - [Root words [R]]()
-  - [Compounds [C]]()
-  - [Internal predicates [MA]]()
+  - [Root words [R]](root_words.md)
+  - [Surrogate predicates [MA]](surrogate_predicates.md)
   - [Borrowings [ZA]]()
   - [Quotes [ZE/ZI/ZO/ZU]]()
   - [Numbers and strings [TA/BY]]()
+  - [Compounds [C]]()
 
 - [Predicate places [FA]]()
   - [Numbered places [f*/fu*]]()

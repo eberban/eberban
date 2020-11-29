@@ -1,7 +1,8 @@
 # Basic predicates
 
 As seen before, predicates are a core aspect of eberban. There are many ways to
-make them, but this section will focus on the most simple ones.
+make them, but this section will focus on how definitions are expressed, and
+on the most simple ways to have a predicate.
 
 ## Terminology
 
