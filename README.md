@@ -11,6 +11,8 @@ expressive.
 - Expressive: predicates can be combined in a variety ways to add more details, greatly
   increasing the expressive power of the language.
 
+<!-- TODO: [jqueiroz] explicitly mention chaining -->
+
 > From a lojbanist perspective: it aims at merging brivla and rafsi (by having
 > all relation words follow a carefully designed pattern of coda consonants, non-coda consonants and vowels/apostrophes; [more details](https://mia-entropy.github.io/eberban/books/tour/book/morphology.html)).
 > Following a suggestion by la uakci, it also removes sumti from the grammar and
