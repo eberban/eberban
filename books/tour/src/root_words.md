@@ -7,7 +7,7 @@ building block of more complex predicates.
 
 | Word | Definition                                                                    |
 | ---- | ----------------------------------------------------------------------------- |
-| sfe  | ___ is female`                                                                |
+| sfe  | ___ is female                                                                 |
 | sin  | ___ greets/say hello to ___                                                   |
 | pli  | ___ is a tool used for satisfying property [___1]                             |
 | jon  | ___ is with/accompanies/is a companion of ___ in satisfying property [___1,2] |
