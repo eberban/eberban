@@ -1,4 +1,4 @@
-<div align="center"> <a src="https://mia-entropy.github.io/eberban/"><img src="./vectors/logo.png" width="50%" /></a> </div>
+<div align="center"> <a href="https://mia-entropy.github.io/eberban/"><img src="./vectors/logo.png" width="50%" /></a> </div>
 
 eberban
 =========
