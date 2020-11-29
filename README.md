@@ -8,7 +8,7 @@ expressive.
   particles, following relatively few yet composable grammar rules.
 - Regular: particles are organized into families, each with a unique prefix, enabling
   quick recognition and accelerating learning.
-- Expressive: predicates can be combined in a variety ways to add more details, greatly
+- Expressive: predicates can be combined in a variety of ways to add more details, greatly
   increasing the expressive power of the language.
 
 <!-- TODO: [jqueiroz] explicitly mention chaining -->
