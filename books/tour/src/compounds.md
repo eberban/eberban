@@ -4,8 +4,8 @@ Providing a root for every concept would be extremely impractical.
 Complex concepts are often based on multiple more basic concepts, and compounds
 are used for this purpose.
 
-Compounds allow to transform any string of valid eberban words into a single
-unit, ignoring their grammatical rules but keeping their meaning.
+Compounds allow transforming any string of valid eberban words into a single
+unit, ignoring their grammatical rules but keeping (to a certain extent) their meaning.
 
 A compound is first prefixed by *a, e, i, o* particles, respectively
 starting a compound composed of 1, 2, 3, 4. If a compound is made of more than
