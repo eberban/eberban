@@ -10,7 +10,7 @@
   - [Surrogate predicates [MA]](surrogate_predicates.md)
   - [Numbers and letters [TA/BY]](numbers_and_letters.md)
   - [Compounds [C]](compounds.md)
-  - [Borrowings [ZA]]()
+  - [Borrowings [ZA]](borrowings.md)
   - [Quotes [ZE/ZI/ZO/ZU]]()
 
 - [Predicate places [FA]]()
