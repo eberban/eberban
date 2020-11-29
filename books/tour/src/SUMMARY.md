@@ -11,7 +11,7 @@
   - [Numbers and letters [TA/BY]](numbers_and_letters.md)
   - [Compounds [C]](compounds.md)
   - [Borrowings [ZA]](borrowings.md)
-  - [Quotes [ZE/ZI/ZO/ZU]]()
+  - [Quotes [ZE/ZI/ZU]](quotes.md)
 
 - [Predicate places [FA]]()
   - [Numbered places [f*/fu*]]()
@@ -23,6 +23,7 @@
 - [Predicate chaining](predicate_chaining.md)
   - [Predicate modification [SA]]()
   - [Alternative chaining [CA]]()
+  - [Predicate links [VA]]()
 
 - [Free modifiers]()
   - [Prefix [PA]]()

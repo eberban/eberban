@@ -90,7 +90,6 @@ var map = [
 	[ 'foreign_word', 'foreign' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
-	[ 'ungrammatical_quote', 'ungrammatical quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
 	[ 'abstraction', 'abstraction' ],
 	[ 'number_string', 'number' ],

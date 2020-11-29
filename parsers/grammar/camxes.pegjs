@@ -1,5 +1,5 @@
-// eberban PEG grammar - v0.10
-// ==========================
+// eberban PEG grammar - v0.11
+// ===========================
 
 // GRAMMAR
 // main rule, allow language version/dialect annotation
@@ -201,7 +201,7 @@ predicate_link = expr:(VA_clause predicate VAI_clause_elidible) {return _node("p
 predicate_1 = expr:((predicate_cak_post / predicate_2) predicate_1?) {return _node("predicate_1", expr);}
 predicate_cak_post = expr:(predicate_2 (cak !DE_clause !DA_clause predicate_1)) {return _node("predicate_cak_post", expr);}
 // core predicates
-predicate_2 = expr:(predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_2", expr);}
+predicate_2 = expr:(predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_2", expr);}
 // forethough connected predicates
 predicate_cak_pre = expr:((gacak !DE_clause !DA_clause predicate (gik predicate)+ GAI_clause_elidible)) {return _node("predicate_cak_pre", expr);}
 
@@ -221,7 +221,6 @@ borrowing_content = expr:(spaces foreign_word) {return _node("borrowing_content"
 // quotes
 grammatical_quote = expr:(ZE_clause text_1 ZEI_clause) {return _node("grammatical_quote", expr);}
 one_word_quote = expr:(ZI_clause spaces? native_word) {return _node("one_word_quote", expr);}
-ungrammatical_quote = expr:(ZO_clause (!ZOI_clause spaces? native_word) ZOI_clause) {return _node("ungrammatical_quote", expr);}
 foreign_quote = expr:(ZU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
 foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("foreign_quote_content", expr);}
 
@@ -314,8 +313,6 @@ ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);}
 ZE_clause = expr:(free_prefix* spaces? ZE) {return _node("ZE_clause", expr);}
 ZEI_clause = expr:(free_prefix* spaces? ZEI free_post*) {return _node("ZEI_clause", expr);}
 ZI_clause = expr:(free_prefix* spaces? ZI) {return _node("ZI_clause", expr);}
-ZO_clause = expr:(free_prefix* spaces? ZO) {return _node("ZO_clause", expr);}
-ZOI_clause = expr:(free_prefix* spaces? ZOI free_post*) {return _node("ZOI_clause", expr);}
 ZU_clause = expr:(free_prefix* spaces? ZU) {return _node("ZU_clause", expr);}
 
 // PARTICLE FAMILIES
@@ -364,8 +361,6 @@ ZA = expr:(&particle (z a i?)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}
 ZI = expr:(&particle (z i)) {return _node("ZI", expr);}
-ZO = expr:(&particle (z o)) {return _node("ZO", expr);}
-ZOI = expr:(&particle (z o i)) {return _node("ZOI", expr);}
 ZU = expr:(&particle (z u)) {return _node("ZU", expr);}
 
 // MORPHOLOGY

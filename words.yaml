@@ -1580,17 +1580,6 @@ zi:
   eng_long: "quote the following word. ___ is word [word]"
   eng_short: "&#34;"
   jbo_similar: zo
-zo:
-  _family: ZO
-  _signature: "."
-  eng_long: "start ungrammatical quote. ___ is quote [quote]"
-  eng_short: "&#12317;"
-  jbo_similar: lo'u
-zoi:
-  _family: ZOI
-  eng_long: end ungrammatical quote
-  eng_short: "&#12318;"
-  jbo_similar: le'u
 zon:
   _family: R
   _signature: ".."

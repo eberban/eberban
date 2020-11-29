@@ -1,5 +1,5 @@
-# eberban PEG grammar - v0.10
-# ==========================
+# eberban PEG grammar - v0.11
+# ===========================
 
 # GRAMMAR
 # main rule, allow language version/dialect annotation
@@ -72,7 +72,7 @@ predicate_link <- VA_clause predicate VAI_clause_elidible
 predicate_1 <- (predicate_cak_post / predicate_2) predicate_1?
 predicate_cak_post <- predicate_2 (cak !DE_clause !DA_clause predicate_1)
 # core predicates
-predicate_2 <- predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*
+predicate_2 <- predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*
 # forethough connected predicates
 predicate_cak_pre <- (gacak !DE_clause !DA_clause predicate (gik predicate)+ GAI_clause_elidible)
 
@@ -92,7 +92,6 @@ borrowing_content <- spaces foreign_word
 # quotes
 grammatical_quote <- ZE_clause text_1 ZEI_clause
 one_word_quote <- ZI_clause spaces? native_word
-ungrammatical_quote <- ZO_clause (!ZOI_clause spaces? native_word) ZOI_clause
 foreign_quote <- ZU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
 
@@ -185,8 +184,6 @@ ZA_clause           <- free_prefix* spaces? ZA
 ZE_clause           <- free_prefix* spaces? ZE
 ZEI_clause          <- free_prefix* spaces? ZEI free_post*
 ZI_clause           <- free_prefix* spaces? ZI
-ZO_clause           <- free_prefix* spaces? ZO
-ZOI_clause          <- free_prefix* spaces? ZOI free_post*
 ZU_clause           <- free_prefix* spaces? ZU
 
 # PARTICLE FAMILIES
@@ -235,8 +232,6 @@ ZA    <- &particle (z a i?)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)
 ZI    <- &particle (z i)
-ZO    <- &particle (z o)
-ZOI   <- &particle (z o i)
 ZU    <- &particle (z u)
 
 # MORPHOLOGY
