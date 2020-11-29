@@ -36,24 +36,24 @@ In fact, it is only needed to separate 2 adjecents chains that **should not** me
 
 ## TA members
 
-| Word  | Definition            | Word  | Definition                          |
-| ----- | --------------------- | ----- | ----------------------------------- |
-| tia   | 1                     | tie   | 2                                   |
-| tii   | 3                     | tio   | 4                                   |
-| tiu   | 5                     | tua   | 6                                   |
-| tue   | 7                     | tui   | 8                                   |
-| tuo   | 9                     | tuu   | A (10)                              |
-| tu'a  | B (11)                | tu'e  | C (12)                              |
-| tu'i  | D (13)                | tu'o  | E (14)                              |
-| tu'u  | F (15)                | ta    | 0                                   |
+| Word  | Definition            | Word  | Definition                           |
+| ----- | --------------------- | ----- | ----------------------------------- -|
+| tia   | 1                     | tie   | 2                                    |
+| tii   | 3                     | tio   | 4                                    |
+| tiu   | 5                     | tua   | 6                                    |
+| tue   | 7                     | tui   | 8                                    |
+| tuo   | 9                     | tuu   | A (10)                               |
+| tu'a  | B (11)                | tu'e  | C (12)                               |
+| tu'i  | D (13)                | tu'o  | E (14)                               |
+| tu'u  | F (15)                | ta    | 0                                    |
 |       |
-| te    | decimal separator     | te'a  | `base . number` separator           |
-| te'e  | thousands separator   | te'i  | `precise . approximation` separator |
+| te    | decimal separator     | te'a  | `<base . number>` separator          |
+| te'e  | thousands separator   | te'i  | `<precise . approximation>` separator|
 |       |
-| ta'a  | few                   | ta'e  | several                             |
-| ta'i  | many                  | ta'o  | most                                |
-| ta'u  | each/all              | tai'a | too few (subjective)                |
-| tai'e | enough (subjective)   | tai'i | too many (subjective)               |
+| ta'a  | few                   | ta'e  | several                              |
+| ta'i  | many                  | ta'o  | most                                 |
+| ta'u  | each/all              | tai'a | too few (subjective)                 |
+| tai'e | enough (subjective)   | tai'i | too many (subjective)                |
 |       |
 | to    | number/digit question |
 
