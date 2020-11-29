@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.9
+# eberban PEG grammar - v0.10
 # ==========================
 
 # GRAMMAR
@@ -49,11 +49,11 @@ proposition_term_jak_post <- proposition_term_1 (jak !DE_clause !DO_clause propo
 proposition_term_1 <- proposition_term_jaik_post / proposition_term_2
 proposition_term_jaik_post <- proposition_term_2 (jaik !DE_clause !DO_clause proposition_term_2)+
 # simple predicate term / forethough connected terms
-proposition_term_2 <- proposition_term_jak_pre / scoped_proposition_term / predicate
+proposition_term_2 <- proposition_term_jak_pre / proposition_term_group / predicate
 # forethough connected term structure
 proposition_term_jak_pre <- (gajak !DA_clause !DO_clause proposition_term (gik !DO_clause proposition_term)+ GAI_clause_elidible)
-# scoped proposition term
-scoped_proposition_term <- GO_clause proposition_term GOI_clause_elidible
+# proposition term group
+proposition_term_group <- GO_clause proposition_term GOI_clause_elidible
 
 # proposition place tags connectives
 proposition_place_tag <- proposition_place_tag_jak_post / proposition_place_tag_1
@@ -72,18 +72,18 @@ predicate_link <- VA_clause predicate VAI_clause_elidible
 predicate_1 <- (predicate_cak_post / predicate_2) predicate_1?
 predicate_cak_post <- predicate_2 (cak !DE_clause !DA_clause predicate_1)
 # core predicates
-predicate_2 <- predicate_cak_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_place_swap / scoped_predicate / MA_clause / free_prefix* spaces? (root / string) free_post*
+predicate_2 <- predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*
 # forethough connected predicates
 predicate_cak_pre <- (gacak !DE_clause !DA_clause predicate (gik predicate)+ GAI_clause_elidible)
 
-# flat lexeme prefixes
-lexeme <- (lexeme_1 / lexeme_2 / lexeme_3 / lexeme_4  / lexeme_n) 
-lexeme_1 <- A_clause lexeme_word
-lexeme_2 <- E_clause lexeme_word lexeme_word
-lexeme_3 <- I_clause lexeme_word lexeme_word lexeme_word
-lexeme_4 <- O_clause lexeme_word lexeme_word lexeme_word lexeme_word
-lexeme_n <- U_clause (!(dot? U) lexeme_word)+ (dot? U)
-lexeme_word <- initial_dot native_word
+# compound prefixes
+compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) 
+compound_1 <- A_clause compound_word
+compound_2 <- E_clause compound_word compound_word
+compound_3 <- I_clause compound_word compound_word compound_word
+compound_4 <- O_clause compound_word compound_word compound_word compound_word
+compound_n <- U_clause (!(dot? U) compound_word)+ (dot? U)
+compound_word <- initial_dot native_word
 
 # borrowings
 borrowing <- ZA_clause borrowing_content (dot / space_char / EOF) free_post*
@@ -100,10 +100,10 @@ foreign_quote_content <- (foreign_quote_word spaces)*
 abstraction <- BA_clause proposition BAI_clause_elidible
 
 # predicate place swap
-predicate_place_swap <- SA_clause predicate_2
+predicate_pre_transform <- SA_clause predicate_2
 
-# scoped predicate
-scoped_predicate <- GO_clause predicate GOI_clause_elidible
+# predicate group
+predicate_group <- GO_clause predicate GOI_clause_elidible
 
 # string (numbers / literals)
 string <- (number_string / letter_string) TAI_clause_elidible

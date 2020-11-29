@@ -289,19 +289,19 @@ function constructBoxesOutput(parse, depth) {
 			if (parse.type !== 'scope') {
 				output += '<br>' + parse.type;
 
-				if (parse.type === 'lexeme') {
-					lexeme = '';
+				if (parse.type === 'compound') {
+					compound = '';
 					for (var child in parse.children) {
 						if (parse.children[child].word) {
-							lexeme += parse.children[child].word;
+							compound += parse.children[child].word;
 						}
 					}
 
-					if (words[lexeme]) {
-						output += ' : <div class="tip translation">&nbsp;' + words[lexeme].eng_short;
+					if (words[compound]) {
+						output += ' : <div class="tip translation">&nbsp;' + words[compound].eng_short;
 
-						if (words[lexeme].eng_long) {
-							output += '<div class="tiptext">' + escapeHtml(words[lexeme].eng_long) + '</div>';
+						if (words[compound].eng_long) {
+							output += '<div class="tiptext">' + escapeHtml(words[compound].eng_long) + '</div>';
 						}
 
 						output += '&nbsp;</div>';
@@ -380,8 +380,8 @@ function boxClassForType(parse) {
 		return 'box box-link';
 	}
 
-	if (parse.type === 'lexeme') {
-		return 'box box-lexeme';
+	if (parse.type === 'compound') {
+		return 'box box-compound';
 	}
 	if (parse.type === 'number') {
 		return 'box box-number';

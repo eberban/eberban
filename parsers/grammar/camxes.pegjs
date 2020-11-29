@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.9
+// eberban PEG grammar - v0.10
 // ==========================
 
 // GRAMMAR
@@ -178,11 +178,11 @@ proposition_term_jak_post = expr:(proposition_term_1 (jak !DE_clause !DO_clause 
 proposition_term_1 = expr:(proposition_term_jaik_post / proposition_term_2) {return _node("proposition_term_1", expr);}
 proposition_term_jaik_post = expr:(proposition_term_2 (jaik !DE_clause !DO_clause proposition_term_2)+) {return _node("proposition_term_jaik_post", expr);}
 // simple predicate term / forethough connected terms
-proposition_term_2 = expr:(proposition_term_jak_pre / scoped_proposition_term / predicate) {return _node("proposition_term_2", expr);}
+proposition_term_2 = expr:(proposition_term_jak_pre / proposition_term_group / predicate) {return _node("proposition_term_2", expr);}
 // forethough connected term structure
 proposition_term_jak_pre = expr:((gajak !DA_clause !DO_clause proposition_term (gik !DO_clause proposition_term)+ GAI_clause_elidible)) {return _node("proposition_term_jak_pre", expr);}
-// scoped proposition term
-scoped_proposition_term = expr:(GO_clause proposition_term GOI_clause_elidible) {return _node("scoped_proposition_term", expr);}
+// proposition term group
+proposition_term_group = expr:(GO_clause proposition_term GOI_clause_elidible) {return _node("proposition_term_group", expr);}
 
 // proposition place tags connectives
 proposition_place_tag = expr:(proposition_place_tag_jak_post / proposition_place_tag_1) {return _node("proposition_place_tag", expr);}
@@ -201,18 +201,18 @@ predicate_link = expr:(VA_clause predicate VAI_clause_elidible) {return _node("p
 predicate_1 = expr:((predicate_cak_post / predicate_2) predicate_1?) {return _node("predicate_1", expr);}
 predicate_cak_post = expr:(predicate_2 (cak !DE_clause !DA_clause predicate_1)) {return _node("predicate_cak_post", expr);}
 // core predicates
-predicate_2 = expr:(predicate_cak_pre / lexeme free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_place_swap / scoped_predicate / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_2", expr);}
+predicate_2 = expr:(predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / ungrammatical_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_2", expr);}
 // forethough connected predicates
 predicate_cak_pre = expr:((gacak !DE_clause !DA_clause predicate (gik predicate)+ GAI_clause_elidible)) {return _node("predicate_cak_pre", expr);}
 
-// flat lexeme prefixes
-lexeme = expr:((lexeme_1 / lexeme_2 / lexeme_3 / lexeme_4 / lexeme_n)) {return _node("lexeme", expr);}
-lexeme_1 = expr:(A_clause lexeme_word) {return _node("lexeme_1", expr);}
-lexeme_2 = expr:(E_clause lexeme_word lexeme_word) {return _node("lexeme_2", expr);}
-lexeme_3 = expr:(I_clause lexeme_word lexeme_word lexeme_word) {return _node("lexeme_3", expr);}
-lexeme_4 = expr:(O_clause lexeme_word lexeme_word lexeme_word lexeme_word) {return _node("lexeme_4", expr);}
-lexeme_n = expr:(U_clause (!(dot? U) lexeme_word)+ (dot? U)) {return _node("lexeme_n", expr);}
-lexeme_word = expr:(initial_dot native_word) {return _node("lexeme_word", expr);}
+// compound prefixes
+compound = expr:((compound_1 / compound_2 / compound_3 / compound_4 / compound_n)) {return _node("compound", expr);}
+compound_1 = expr:(A_clause compound_word) {return _node("compound_1", expr);}
+compound_2 = expr:(E_clause compound_word compound_word) {return _node("compound_2", expr);}
+compound_3 = expr:(I_clause compound_word compound_word compound_word) {return _node("compound_3", expr);}
+compound_4 = expr:(O_clause compound_word compound_word compound_word compound_word) {return _node("compound_4", expr);}
+compound_n = expr:(U_clause (!(dot? U) compound_word)+ (dot? U)) {return _node("compound_n", expr);}
+compound_word = expr:(initial_dot native_word) {return _node("compound_word", expr);}
 
 // borrowings
 borrowing = expr:(ZA_clause borrowing_content (dot / space_char / EOF) free_post*) {return _node("borrowing", expr);}
@@ -229,10 +229,10 @@ foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("forei
 abstraction = expr:(BA_clause proposition BAI_clause_elidible) {return _node("abstraction", expr);}
 
 // predicate place swap
-predicate_place_swap = expr:(SA_clause predicate_2) {return _node("predicate_place_swap", expr);}
+predicate_pre_transform = expr:(SA_clause predicate_2) {return _node("predicate_pre_transform", expr);}
 
-// scoped predicate
-scoped_predicate = expr:(GO_clause predicate GOI_clause_elidible) {return _node("scoped_predicate", expr);}
+// predicate group
+predicate_group = expr:(GO_clause predicate GOI_clause_elidible) {return _node("predicate_group", expr);}
 
 // string (numbers / literals)
 string = expr:((number_string / letter_string) TAI_clause_elidible) {return _node("string", expr);}

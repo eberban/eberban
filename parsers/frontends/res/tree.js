@@ -85,7 +85,7 @@ var map = [
 	[ 'proposition_place_tag', 'tag' ],
 	[ 'proposition_place_modal', 'modal' ],
 	[ 'proposition_term', 'term' ],
-	[ 'lexeme', 'lexeme' ],
+	[ 'compound', 'compound' ],
 	[ 'borrowing', 'borrowing' ],
 	[ 'foreign_word', 'foreign' ],
 	[ 'grammatical_quote', 'quote' ],
@@ -109,9 +109,9 @@ var map = [
 	[ 'free_vocative', 'vocative' ],
 
 	// SCOPES
-	// manual scoping
-	[ 'scoped_predicate', 'scope' ],
-	[ 'scoped_proposition_term', 'scope' ],
+	// manual groups
+	[ 'predicate_group', 'scope' ],
+	[ 'proposition_term_group', 'scope' ],
 
 	// proposition jak
 	[ 'proposition_jak_pre', 'scope' ],

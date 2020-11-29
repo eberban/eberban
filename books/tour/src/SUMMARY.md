@@ -7,7 +7,7 @@
   
 - [Basic predicates]()
   - [Root words [R]]()
-  - [Lexemes [L]]()
+  - [Compounds [C]]()
   - [Internal predicates [MA]]()
   - [Borrowings [ZA]]()
   - [Quotes [ZE/ZI/ZO/ZU]]()

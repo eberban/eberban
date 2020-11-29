@@ -63,7 +63,7 @@ var camxes = (function() {
         peg$c28 = function(expr) {return _node("proposition_term_jaik_post", expr);},
         peg$c29 = function(expr) {return _node("proposition_term_2", expr);},
         peg$c30 = function(expr) {return _node("proposition_term_jak_pre", expr);},
-        peg$c31 = function(expr) {return _node("scoped_proposition_term", expr);},
+        peg$c31 = function(expr) {return _node("proposition_term_group", expr);},
         peg$c32 = function(expr) {return _node("proposition_place_tag", expr);},
         peg$c33 = function(expr) {return _node("proposition_place_tag_jak_post", expr);},
         peg$c34 = function(expr) {return _node("proposition_place_tag_1", expr);},
@@ -74,13 +74,13 @@ var camxes = (function() {
         peg$c39 = function(expr) {return _node("predicate_cak_post", expr);},
         peg$c40 = function(expr) {return _node("predicate_2", expr);},
         peg$c41 = function(expr) {return _node("predicate_cak_pre", expr);},
-        peg$c42 = function(expr) {return _node("lexeme", expr);},
-        peg$c43 = function(expr) {return _node("lexeme_1", expr);},
-        peg$c44 = function(expr) {return _node("lexeme_2", expr);},
-        peg$c45 = function(expr) {return _node("lexeme_3", expr);},
-        peg$c46 = function(expr) {return _node("lexeme_4", expr);},
-        peg$c47 = function(expr) {return _node("lexeme_n", expr);},
-        peg$c48 = function(expr) {return _node("lexeme_word", expr);},
+        peg$c42 = function(expr) {return _node("compound", expr);},
+        peg$c43 = function(expr) {return _node("compound_1", expr);},
+        peg$c44 = function(expr) {return _node("compound_2", expr);},
+        peg$c45 = function(expr) {return _node("compound_3", expr);},
+        peg$c46 = function(expr) {return _node("compound_4", expr);},
+        peg$c47 = function(expr) {return _node("compound_n", expr);},
+        peg$c48 = function(expr) {return _node("compound_word", expr);},
         peg$c49 = function(expr) {return _node("borrowing", expr);},
         peg$c50 = function(expr) {return _node("borrowing_content", expr);},
         peg$c51 = function(expr) {return _node("grammatical_quote", expr);},
@@ -89,8 +89,8 @@ var camxes = (function() {
         peg$c54 = function(expr) {return _node("foreign_quote", expr);},
         peg$c55 = function(expr) {return _node("foreign_quote_content", expr);},
         peg$c56 = function(expr) {return _node("abstraction", expr);},
-        peg$c57 = function(expr) {return _node("predicate_place_swap", expr);},
-        peg$c58 = function(expr) {return _node("scoped_predicate", expr);},
+        peg$c57 = function(expr) {return _node("predicate_pre_transform", expr);},
+        peg$c58 = function(expr) {return _node("predicate_group", expr);},
         peg$c59 = function(expr) {return _node("string", expr);},
         peg$c60 = function(expr) {return _node("number_string", expr);},
         peg$c61 = function(expr) {return _node("letter_string", expr);},
@@ -2111,7 +2111,7 @@ var camxes = (function() {
       s0 = peg$currPos;
       s1 = peg$parseproposition_term_jak_pre();
       if (s1 === peg$FAILED) {
-        s1 = peg$parsescoped_proposition_term();
+        s1 = peg$parseproposition_term_group();
         if (s1 === peg$FAILED) {
           s1 = peg$parsepredicate();
         }
@@ -2274,7 +2274,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsescoped_proposition_term() {
+    function peg$parseproposition_term_group() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 237 + 27,
@@ -2671,7 +2671,7 @@ var camxes = (function() {
       s1 = peg$parsepredicate_cak_pre();
       if (s1 === peg$FAILED) {
         s1 = peg$currPos;
-        s2 = peg$parselexeme();
+        s2 = peg$parsecompound();
         if (s2 !== peg$FAILED) {
           s3 = [];
           s4 = peg$parsefree_post();
@@ -2703,9 +2703,9 @@ var camxes = (function() {
                   if (s1 === peg$FAILED) {
                     s1 = peg$parseabstraction();
                     if (s1 === peg$FAILED) {
-                      s1 = peg$parsepredicate_place_swap();
+                      s1 = peg$parsepredicate_pre_transform();
                       if (s1 === peg$FAILED) {
-                        s1 = peg$parsescoped_predicate();
+                        s1 = peg$parsepredicate_group();
                         if (s1 === peg$FAILED) {
                           s1 = peg$parseMA_clause();
                           if (s1 === peg$FAILED) {
@@ -2891,7 +2891,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme() {
+    function peg$parsecompound() {
       var s0, s1;
 
       var key    = peg$currPos * 237 + 38,
@@ -2903,15 +2903,15 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parselexeme_1();
+      s1 = peg$parsecompound_1();
       if (s1 === peg$FAILED) {
-        s1 = peg$parselexeme_2();
+        s1 = peg$parsecompound_2();
         if (s1 === peg$FAILED) {
-          s1 = peg$parselexeme_3();
+          s1 = peg$parsecompound_3();
           if (s1 === peg$FAILED) {
-            s1 = peg$parselexeme_4();
+            s1 = peg$parsecompound_4();
             if (s1 === peg$FAILED) {
-              s1 = peg$parselexeme_n();
+              s1 = peg$parsecompound_n();
             }
           }
         }
@@ -2927,7 +2927,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme_1() {
+    function peg$parsecompound_1() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 237 + 39,
@@ -2942,7 +2942,7 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseA_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parselexeme_word();
+        s3 = peg$parsecompound_word();
         if (s3 !== peg$FAILED) {
           s2 = [s2, s3];
           s1 = s2;
@@ -2965,7 +2965,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme_2() {
+    function peg$parsecompound_2() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 237 + 40,
@@ -2980,9 +2980,9 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseE_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parselexeme_word();
+        s3 = peg$parsecompound_word();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parselexeme_word();
+          s4 = peg$parsecompound_word();
           if (s4 !== peg$FAILED) {
             s2 = [s2, s3, s4];
             s1 = s2;
@@ -3009,7 +3009,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme_3() {
+    function peg$parsecompound_3() {
       var s0, s1, s2, s3, s4, s5;
 
       var key    = peg$currPos * 237 + 41,
@@ -3024,11 +3024,11 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseI_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parselexeme_word();
+        s3 = peg$parsecompound_word();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parselexeme_word();
+          s4 = peg$parsecompound_word();
           if (s4 !== peg$FAILED) {
-            s5 = peg$parselexeme_word();
+            s5 = peg$parsecompound_word();
             if (s5 !== peg$FAILED) {
               s2 = [s2, s3, s4, s5];
               s1 = s2;
@@ -3059,7 +3059,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme_4() {
+    function peg$parsecompound_4() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 237 + 42,
@@ -3074,13 +3074,13 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseO_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parselexeme_word();
+        s3 = peg$parsecompound_word();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parselexeme_word();
+          s4 = peg$parsecompound_word();
           if (s4 !== peg$FAILED) {
-            s5 = peg$parselexeme_word();
+            s5 = peg$parsecompound_word();
             if (s5 !== peg$FAILED) {
-              s6 = peg$parselexeme_word();
+              s6 = peg$parsecompound_word();
               if (s6 !== peg$FAILED) {
                 s2 = [s2, s3, s4, s5, s6];
                 s1 = s2;
@@ -3115,7 +3115,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme_n() {
+    function peg$parsecompound_n() {
       var s0, s1, s2, s3, s4, s5, s6, s7, s8;
 
       var key    = peg$currPos * 237 + 43,
@@ -3160,7 +3160,7 @@ var camxes = (function() {
           s5 = peg$c0;
         }
         if (s5 !== peg$FAILED) {
-          s6 = peg$parselexeme_word();
+          s6 = peg$parsecompound_word();
           if (s6 !== peg$FAILED) {
             s5 = [s5, s6];
             s4 = s5;
@@ -3204,7 +3204,7 @@ var camxes = (function() {
               s5 = peg$c0;
             }
             if (s5 !== peg$FAILED) {
-              s6 = peg$parselexeme_word();
+              s6 = peg$parsecompound_word();
               if (s6 !== peg$FAILED) {
                 s5 = [s5, s6];
                 s4 = s5;
@@ -3265,7 +3265,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parselexeme_word() {
+    function peg$parsecompound_word() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 237 + 44,
@@ -3746,7 +3746,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_place_swap() {
+    function peg$parsepredicate_pre_transform() {
       var s0, s1, s2, s3;
 
       var key    = peg$currPos * 237 + 53,
@@ -3784,7 +3784,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsescoped_predicate() {
+    function peg$parsepredicate_group() {
       var s0, s1, s2, s3, s4;
 
       var key    = peg$currPos * 237 + 54,
