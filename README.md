@@ -1,7 +1,7 @@
 eberban
 =========
 
-**eberban** is a Lojban-inspired [constructed language](https://en.wikipedia.org/wiki/Constructed_language) aimed at being simple, regular and
+**eberban** is a [Lojban](https://mw.lojban.org/papri/Lojban)-inspired [constructed language](https://en.wikipedia.org/wiki/Constructed_language) aimed at being simple, regular and
 expressive.
 
 - Simple: eberban is made entirely out of predicates, which are manipulated with
