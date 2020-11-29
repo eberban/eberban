@@ -1,6 +1,6 @@
 # Compounds [C]
 
-Providing a root for every concept is impossible but also very impractical.
+Providing a root for every concept would be extremely impractical.
 Complex concepts are often based on multiple more basic concepts, and compounds
 are used for this purpose.
 
