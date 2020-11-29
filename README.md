@@ -18,8 +18,7 @@ expressive.
 > Following a suggestion by la uakci, it also removes sumti from the grammar and
 > works only with predicates themselves.
 
-For more resources about the language, please visit this repository's [GitHub
-pages](https://mia-entropy.github.io/eberban/).
+For more resources about the language, please visit this repository's GitHub pages at [https://mia-entropy.github.io/eberban/](https://mia-entropy.github.io/eberban/).
 Among others, you will find an [in-depth tour of the language](https://mia-entropy.github.io/eberban/books/tour/book/) (WIP at the moment), a [visual parser](https://mia-entropy.github.io/eberban/parsers/frontends/parser_box_glosser.html) and a succint illustration of our [custom writing system](https://mia-entropy.github.io/eberban/vectors/writing_system.svg).
 If you would like to get involved, please also consider joining our [Discord server](https://discord.com/invite/KKB79RwWUc).
 
