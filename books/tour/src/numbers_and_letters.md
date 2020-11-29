@@ -31,8 +31,8 @@ The meaning is thus ambiguous, and disambiguation might be necessary.
 
 ## Elidible terminator
 
-Both chains can be terminated with word **tai**. It is only needed to
-separate 2 adjecents chains that **should not** form a single one.
+Both types of chains (numbers and strings) can be terminated with word **tai**, which is often elidable.
+In fact, it is only needed to separate 2 adjecents chains that **should not** merge into a single one.
 
 ## TA members
 
