@@ -5,7 +5,7 @@ concepts to express numbers. On the other hand, the **BY** family represents
 various letters.
 
 Multiple **TA** and **BY** can be chained together, and the final chain
-act as one predicate.
+acts as one predicate.
 
 ## Numbers
 
@@ -24,7 +24,7 @@ suffix letter. The value interpretation of the chain is context dependent.
 ## Strings
 
 If the first word of the chain is a **BY**, the chain is a predicate about
-something recognized by this letters. It could be a predicate chained (explaned later)
+something recognized by this sequence of letters. It could be a predicate chained (explaned later)
 with these initials, or a contextual predicate associated with these letters.
 
 The meaning is thus ambiguous, and disambiguation might be necessary.
