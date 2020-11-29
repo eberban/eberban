@@ -52,3 +52,23 @@ They always start with a vowel.
 All in all, an eberbanic text is actually a sequence of words and compounds.
 
 TODO...
+
+## Permissible consonant pairs
+
+|  |  |  |  |  |  |  |  |
+|--|--|--|--|--|--|--|--|
+|cp|ct|ck|cf|cm|cn|cl|cr|
+|sp|st|sk|sf|sm|sn|sl|sr|
+|jb|jd|jg|jv|jm|jn|jl|jr|
+|zb|zd|zg|zv|zm|zn|zl|zr|
+|pl|pr|tl|tr|kl|kr|fl|fr|
+|xl|xr|bl|br|dl|dr|gl|gr|
+|vl|vr|ml|mr|tc|ts|dj|dz|
+
+## Permissible diphthongs
+
+|  |  |  |  |  |  |
+|--|--|--|--|--|--|
+|  |  |ai|ei|oi|yi|
+|ia|ie|ii|io|iu|iy|
+|ua|ue|ui|uo|uu|uy|
