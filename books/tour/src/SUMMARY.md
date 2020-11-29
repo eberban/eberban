@@ -13,7 +13,7 @@
   - [Borrowings [ZA]](borrowings.md)
   - [Quotes [ZE/ZI/ZU]](quotes.md)
 
-- [Predicate modification [SA]]()
+- [Predicate modification [SA]](predicate_modification.md)
 
 - [Predicate places [FA/DU]](predicate_places.md)
 
