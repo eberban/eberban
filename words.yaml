@@ -28,13 +28,13 @@ ada:
   jbo_similar: jufmei
 ade:
   _family: C
-  _signature: "0T."
+  _signature: "0P."
   eng_long: "[___] is a proposition with predicate {___} among arguments ___"
   eng_short: proposition
   jbo_similar: bridi
 ado:
   _family: C
-  _signature: .0T.
+  _signature: .0P.
   eng_long: "___ is a proposition-tail of proposition [___] with predicate {___} among arguments ___"
   eng_short: proposition-tail
   jbo_similar: brirebla
@@ -68,7 +68,7 @@ ban:
   jbo_similar: bangu
 bar:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: ___ satisfies property [___1]
   eng_short: satisfy
 be:
@@ -84,7 +84,7 @@ ben:
   jbo_similar: fasnu
 ber:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ reflects eberbanic language/culture/nationality/community is aspect/property [___1]"
   eng_short: eberbanic
 bla:
@@ -120,7 +120,7 @@ by:
   jbo_similar: by
 byn:
   _family: R
-  _signature: .
+  _signature: "."
   eng_long: ___ is a second
   eng_short: second
 ca:
@@ -140,7 +140,7 @@ ce:
   jbo_similar: je
 cfa:
   _family: R
-  _signature: "..1"
+  _signature: "..[2]"
   eng_long: "___ requests to ___ that they satisfy property [___2]"
   eng_short: request
 ci:
@@ -162,7 +162,7 @@ cii:
   eng_short: x3 chaining
 cil:
   _family: R
-  _signature: "0"
+  _signature: ".0"
   eng_long: "___ learns fact [___]"
   eng_short: learn
 cio:
@@ -192,7 +192,7 @@ cpei:
   jbo_similar: citka
 cty:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ begins to satisfy property [___1] (default = being true/occurs) "
   eng_short: begin
   jbo_similar: zvati
@@ -234,7 +234,7 @@ dju:
   jbo_similar: djuno
 dla:
   _family: R
-  _signature: "0"
+  _signature: ".0"
   eng_long: "___ discovers [___] is true"
   eng_short: discover
   jbo_similar: facki
@@ -261,7 +261,7 @@ du:
   jbo_similar: fi'o
 dul:
   _family: R
-  _signature: "..1"
+  _signature: "..[2]"
   eng_long: "___ likes that ___ satisfies property [___2] (default = exist/occurs/is true)"
   eng_short: like
 dy:
@@ -297,12 +297,12 @@ eberban:
   eng_short: eberban
 eberpre:
   _family: C
-  _signature: ".1"
-  eng_long: ___ is an eberbanist in aspect/property [___1]
+  _signature: ".[1]"
+  eng_long: ___ is an eberbanic person in aspect/property [___1]
   eng_short: eberbanist
 eberstan:
   _family: C
-  _signature: "."
+  _signature: "..."
   eng_long: ___ is the eberstan country of people ___ with land/territory ___
   eng_short: eberstan
 ecnavyn:
@@ -319,7 +319,7 @@ eglunjgai:
 ekanmer:
   _family: C
   _signature: "."
-  eng_long: ___ is a man/men
+  eng_long: ___ is a man
   eng_short: man
   jbo_similar: nanmu
 ekanprei:
@@ -331,7 +331,7 @@ ekanprei:
 esfemer:
   _family: C
   _signature: "."
-  eng_long: ___ is a woman/women
+  eng_long: ___ is a woman
   eng_short: woman
   jbo_similar: ninmu
 esfeprei:
@@ -342,7 +342,7 @@ esfeprei:
   jbo_similar: mamta
 etatai:
   _family: C
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ is a number in dimension/cardinality/property [___1] (default = unit)"
   eng_short: number
   jbo_similar: namcu
@@ -501,7 +501,7 @@ flan:
   jbo_similar: ciska
 flun:
   _family: R
-  _signature: "..1"
+  _signature: "..[2]"
   eng_long: "___ inspires ___ to satisfy property [___2]"
   eng_short: inspire
 fo:
@@ -589,7 +589,7 @@ guar:
   jbo_similar: gerku
 gun:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ works in satisfying [___1]"
   eng_short: work
 gy:
@@ -656,17 +656,17 @@ ji:
   jbo_similar: "ji / gi'i / ji [cu]"
 jil:
   _family: R
-  _signature: ".."
-  eng_long: ___ is good (<sa'ijil> for bad) according to ___
+  _signature: "..[1]"
+  eng_long: ___ is good (<sa'ijil> for bad) according to ___ in property [___1]
   eng_short: good
 jin:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: ___ is new in property [___1]
   eng_short: new
 jlan:
   _family: R
-  _signature: ".."
+  _signature: ".0"
   eng_long: "___ complains/protests about [___] being true"
   eng_short: complain
   jbo_similar: pante
@@ -677,8 +677,8 @@ jo:
   jbo_similar: ".o / gi'o / jo [cu]"
 jon:
   _family: R
-  _signature: "..1"
-  eng_long: "___ is with/accompanies/is a companion of ___ in satisfying property [___1/2]"
+  _signature: "..[1,2]"
+  eng_long: "___ is with/accompanies/is a companion of ___ in satisfying property [___1,2]"
   eng_short: companion
   jbo_similar: "kansa"
 ju:
@@ -736,7 +736,7 @@ klian:
   jbo_similar: klaku
 kol:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ increases in how much it satisfies property [___1]"
   eng_short: increase
 kual:
@@ -870,7 +870,7 @@ miu:
   jbo_similar: ko'u
 mlin:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ is mild/non-extreme/gentle/somewhat in property [___1]"
   eng_short: mild
 mo:
@@ -986,7 +986,7 @@ pai:
   jbo_similar: fu'o
 pan:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ is able to do/be/capable of satisfying property [___1]"
   eng_short: able
   jbo_similar: kakne
@@ -1013,7 +1013,7 @@ pin:
   jbo_similar: pinxe
 pli:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ is a tool used for satisfying property [___1]"
   eng_short: tool
   jbo_similar: pilno
@@ -1104,7 +1104,7 @@ sai:
   jbo_similar: tu'a
 sal:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: ___ tries to satisfy property ___
   eng_short: try
 se:
@@ -1279,12 +1279,12 @@ tai'i:
   jbo_similar: du'e
 tan:
   _family: R
-  _signature: ".11"
+  _signature: ".[1][1]"
   eng_long: "___ comes early in the sequence (sorted by property [___1]) of things satisfying property [___1]"
   eng_short: Xth
 tca:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ is a group of things sharing property [___1]"
   eng_short: group
 tcer:
@@ -1354,7 +1354,7 @@ to:
   jbo_similar: xo
 triu:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ succeeds at satisfying property [___1]"
   eng_short: succeed
 tsan:
@@ -1608,7 +1608,7 @@ zon:
   eng_short: about
 zran:
   _family: R
-  _signature: ".1"
+  _signature: ".[1]"
   eng_long: "___ is strange in property [___1]"
   eng_short: strange
   jbo_similar: cizra
@@ -1636,8 +1636,8 @@ zyn:
   eng_short: month
 zma:
   _family: R
-  _signature: "..1"
-  eng_long: ___ is greater than ___ in property [___1/2]
+  _signature: "..[1,2]"
+  eng_long: ___ is greater than ___ in property [___1,2]
   eng_short: greater
 plen:
   _family: R

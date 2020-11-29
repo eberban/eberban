@@ -5,7 +5,7 @@
   - [Morphology](morphology.md)
   - [Predicates and propositions](predicates_and_propositions.md)
   
-- [Basic predicates]()
+- [Basic predicates](basic_predicates.md)
   - [Root words [R]]()
   - [Compounds [C]]()
   - [Internal predicates [MA]]()
