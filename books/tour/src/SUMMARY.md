@@ -13,15 +13,11 @@
   - [Borrowings [ZA]](borrowings.md)
   - [Quotes [ZE/ZI/ZU]](quotes.md)
 
-- [Predicate places [FA]]()
-  - [Numbered places [f*/fu*]]()
-  - [Modals [DU]]()
-  - [Adverbials [fi*]]()
-  - [Prenex [foi]]()
-  - [Place questions [fei]]()
+- [Predicate modification [SA]]()
+
+- [Predicate places [FA/DU]](predicate_places.md)
 
 - [Predicate chaining](predicate_chaining.md)
-  - [Predicate modification [SA]]()
   - [Alternative chaining [CA]]()
   - [Predicate links [VA]]()
 

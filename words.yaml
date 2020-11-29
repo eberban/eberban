@@ -256,7 +256,7 @@ don:
   jbo_similar: dunda
 du:
   _family: DU
-  eng_long: import 1st place of following predicate (non compound)
+  eng_long: import 1st place of following predicate (ignore chaining)
   eng_short: ""
   jbo_similar: fi'o
 dul:
@@ -474,12 +474,12 @@ fi:
   jbo_similar: fi
 fie:
   _family: FA
-  eng_long: "restrictive adverbial. the first place of the provided predicate is claimed to occur in conjunction with the outer proposition ({mia fue mie} = {fa bi mia do fa'un je do mie})"
+  eng_long: "restrictive adverbial. the first place of the provided predicate is claimed to occur in conjunction with the outer proposition ({mia fie mie} = {fa bi mia do fa'un je do mie})"
   eng_short: restrictive adverbial
   jbo_similar: poi'a
 fii:
   _family: FA
-  eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fui mie} = {fa bi mia bai va mua do fa'un de fa mua do mie})"
+  eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fii mie} = {fa bi mia bai va mua do fa'un de fa mua do mie})"
   eng_short: non-restrictive adverbial
   jbo_similar: noi'a
 fin:
@@ -490,7 +490,7 @@ fin:
   jbo_similar: finti
 fio:
   _family: FA
-  eng_long: "subordinating adverbial. the outer proposition is claimed to satisfy the first place of the provided predicate, but is not itself claimed to occur ({mia fuo mie} = {fa bi mia do mie})"
+  eng_long: "subordinating adverbial. the outer proposition is claimed to satisfy the first place of the provided predicate, but is not itself claimed to occur ({mia fio mie} = {fa bi mia do mie})"
   eng_short: subordinating adverbial
   jbo_similar: soi'a
 flan:
@@ -1013,8 +1013,8 @@ pin:
   jbo_similar: pinxe
 pli:
   _family: R
-  _signature: ".[1]"
-  eng_long: "___ is a tool used for satisfying property [___1]"
+  _signature: "..[2]"
+  eng_long: "___ is a tool used by ___ to satisfying property [___2]"
   eng_short: tool
   jbo_similar: pilno
   toaq_similar: chuo
