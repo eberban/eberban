@@ -75,12 +75,6 @@ nodejs run_camxes -m CTN "coi ro do"
 This will show terminators, selmaho and main node labels.
  
 
-### Running the IRC bots (TODO) ###
-
-Nothing easier; after having entered the ilmentufa directory, run the command `nodejs ircbot/camxes-bot` or `nodejs ircbot/cipra-bot` (the latter is for the experimental grammar).
-The list of the channels joined by the bot can be found and edited within the bot script.
-
-
 ### How to use one of these parsers in a HTML interface project ###
 
 For using a Javascript Lojban parser in a HTML interface, you'll need to include the desired `.js` parser (e.g. `camxes.js`)
