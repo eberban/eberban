@@ -1,7 +1,7 @@
 # Compounds [C]
 
 Providing a root for every concept would be extremely impractical.
-Complex concepts are often based on multiple more basic concepts, and compounds
+Complex concepts are often built upon multiple more primitive concepts, and compounds
 are used for this purpose.
 
 Compounds allow transforming any string of valid eberban words into a single
