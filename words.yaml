@@ -62,8 +62,8 @@ bai:
   jbo_similar: kei
 ban:
   _family: R
-  _signature: "."
-  eng_long: ___ is a language
+  _signature: ".."
+  eng_long: ___ is a language spoken by ___
   eng_short: language
   jbo_similar: bangu
 bar:
@@ -85,7 +85,7 @@ ben:
 ber:
   _family: R
   _signature: ".[1]"
-  eng_long: "___ reflects eberbanic language/culture/nationality/community is aspect/property [___1]"
+  eng_long: "___ reflects this (eberban) language/culture/nationality/community is aspect/property [___1]"
   eng_short: eberbanic
 bla:
   _family: R
@@ -292,8 +292,8 @@ e'y:
   jbo_similar: e'y/ebu
 eberban:
   _family: C
-  _signature: "."
-  eng_long: ___ is the eberban language
+  _signature: ".."
+  eng_long: ___ is the eberban language spoken by ___
   eng_short: eberban
 eberpre:
   _family: C

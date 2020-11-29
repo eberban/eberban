@@ -9,9 +9,9 @@
   - [Root words [R]](root_words.md)
   - [Surrogate predicates [MA]](surrogate_predicates.md)
   - [Numbers and letters [TA/BY]](numbers_and_letters.md)
+  - [Compounds [C]](compounds.md)
   - [Borrowings [ZA]]()
   - [Quotes [ZE/ZI/ZO/ZU]]()
-  - [Compounds [C]]()
 
 - [Predicate places [FA]]()
   - [Numbered places [f*/fu*]]()
