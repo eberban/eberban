@@ -126,11 +126,15 @@ li.implicit {
 
 	margin: 3px;
 	padding: 3px;
-	border: 1px black solid;
+	/* border: 1px black solid; */
 
 	margin-top: 0px;
 	padding-top: 0px;
 	border-top: 0px;
+
+	--color-pink: #fc9bcb;
+	--color-purple: #c895fc;
+	--color-blue: #95caff;
 }
 
 .box.box-parser {
@@ -149,98 +153,46 @@ li.implicit {
 	background: #eeeeee;
 }
 
-.box.box-proposition {
-	background: #d3ffb6;
-}
-
 .box.box-place {
-	background: #b6f4ff;
-}
-
-.box.box-tag {
-	background: #c79dfd;
+	background: var(--color-purple);
 }
 
 .box.box-modal {
-	background: #fd9dfd;
+	background: var(--color-pink);
 }
 
 .box.box-predicate {
-	background: #b6c3ff;
+	background: var(--color-blue);
 }
 
 .box.box-abstraction {
-	background: #f2ffb6;
+	background: #ffffff;
 }
 
 .box.box-lexeme {
-	background: #dce2ff;
+	background: var(--color-pink);
 }
 
 .box.box-borrowing {
-	background: #ffb6b6;
+	background: var(--color-pink);
 }
 
 .box.box-number {
-	background: #ff9cb5;
+	background: var(--color-pink);
 }
 
 .box.box-letters {
-	background: #ff9c9c;
+	background: var(--color-pink);
 }
 
 .box.box-link {
-	background: #d2b6ff;
+	background: var(--color-purple);
 }
 
 .box.box-scope {
-	border-style: dashed;
+	border: 1px black dashed;
+	border-top: 0px;
 }
-
-/* 
-.box.box-sumti {
-    background: #f099aa;
-}
-
-.box.box-sumti-fai {
-    background: #dd9966;
-}
-
-.box.box-sumti1 {
-    background: #f099aa;
-}
-
-.box.box-sumti2 {
-    background: #e8aaaa;
-}
-
-.box.box-sumti3 {
-    background: #e0bbaa;
-}
-
-.box.box-sumti4 {
-    background: #d8ccaa;
-}
-
-.box.box-sumti5 {
-    background: #d0ddaa;
-}
-
-.box.box-sumti6 {
-    background: #c8eeaa;
-} */
-
-/* .box.box-modal {
-    background: #88cc99;
-}
-
-.box.box-relation {
-    background: #ccaadd;
-}
-
-.box.box-prenex {
-    background: #88bbdd;
-} */
 
 .box.box-terminal {
 	margin: 0px;
