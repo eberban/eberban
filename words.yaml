@@ -1312,16 +1312,6 @@ te'i:
   eng_long: "approximately, (precise | approximate) separator"
   eng_short: approximatly
   jbo_similar: ji'i
-te'o:
-  _family: TA
-  eng_long: at least ... (default = some) / no less then
-  eng_short: at least
-  jbo_similar: su'o
-te'u:
-  _family: TA
-  eng_long: at most ... (default = all) / no more than
-  eng_short: at most
-  jbo_similar: su'e
 tia:
   _family: TA
   eng_long: "number/digit: 1"
