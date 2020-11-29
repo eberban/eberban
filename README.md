@@ -1,4 +1,4 @@
-[![eberban](./vectors/logo.png)](https://mia-entropy.github.io/eberban/)
+[<img src="./vectors/logo.png" width="50%" />](https://mia-entropy.github.io/eberban/) <br/>
 eberban
 =========
 
