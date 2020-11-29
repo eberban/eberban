@@ -20,7 +20,7 @@
   - [Prenex [foi]]()
   - [Place questions [fei]]()
 
-- [Predicate chaining]()
+- [Predicate chaining](predicate_chaining.md)
   - [Predicate modification [SA]]()
   - [Alternative chaining [CA]]()
 

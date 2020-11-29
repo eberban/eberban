@@ -9,7 +9,8 @@ make them, but this section will focus on the most simple ones.
       be true or false). It is equivalent to a nullary predicate (0 arguments).
 - **Predicate** : a proposition template with one or more open blanks (called
       arguments) which may be filled in to yield a complete proposition with a
-      truth value.
+      truth value. The number of arguments is called the **arity** of the
+      predicate.
 - **Property** : predicate with 1 argument.
 - **Relation** : predicate with 2 arguments.
 - **Entity** : everything that satisfies a given property.
