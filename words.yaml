@@ -670,6 +670,12 @@ jo:
   eng_long: distributive connective if-and-only-if
   eng_short: iif
   jbo_similar: ".o / gi'o / jo [cu]"
+jon:
+  _family: R
+  _signature: "..1"
+  eng_long: "___ is with/accompanies/is a companion of ___ in satisfying property [___1/2]"
+  eng_short: companion
+  jbo_similar: "kansa"
 ju:
   _family: JA
   eng_long: distributive connective whether-or-not
