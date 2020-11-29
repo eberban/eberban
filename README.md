@@ -1,58 +1,76 @@
 eberban
 =========
 
-This is a test language inspired by the lojban language. It aims at merging brivla and rafsi
-(by having all relation words start with a pair of consonnants followed by vowels and ').
-Following a suggestion by uakci, it'll also try to remove sumti from the grammar and
-working only with relations themselves.
+**eberban** is a lojban-inspired language aimed as being simple, regular and
+expressive.
 
-Main interfaces to the parsers:
-* `parser_box_glosser.html`: HTML interface with various parsing options (only raw/parse tree works for now).
-* `parser_text_dynamic.html`: Another HTML interface with different features, most prominently nested boxes output and glosses.
+- Simple : eberban is only made of predicates which are manipulated with
+  particles, with few grammar rules.
+- Regular : particles are organised into families with a unique prefix, allowing
+  to quickly recognise them.
+- Expressive : predicates can be combined in multiple ways to add more details.
+
+> From a lojbanist perspective : it aims at merging brivla and rafsi (by having
+> all relation words start with a pair of consonnants followed by vowels and ').
+> Following a suggestion by uakci, it'll also try to remove sumti from the
+> grammar and working only with predicates themselves.
+
+You can access all resources on the [GitHub
+pages](https://mia-entropy.github.io/eberban/).
 
 ### Requirements ###
 
-For generating a PEGJS grammar engine from its PEG grammar file, as well as for running the IRC bot interfaces, you need to have [Node.js](https://nodejs.org/) installed on your machine.
+For generating a PEGJS grammar engine from its PEG grammar file, as well as for
+running the IRC bot interfaces, you need to have [Node.js](https://nodejs.org/)
+installed on your machine.
 
-For generating a PEGJS engine, you may need to get the [Node.js module `pegjs`](http://pegjs.org/).
-For running the IRC bots, you may need to get the [Node.js module `irc`](https://github.com/martynsmith/node-irc).
+For generating a PEGJS engine, you may need to get the [Node.js module
+`pegjs`](http://pegjs.org/).
 
-However, as the necessary `node_modules` are already included in this project, I think you'll probably not have to download any of the aforementioned modules. ;)
-
+However, as the necessary `node_modules` are already included in this project, I
+think you'll probably not have to download any of the aforementioned modules. ;)
 
 ### Building a PEGJS parser ###
 
-For generating a PEGJS parser from a `.peg` grammar file, after having set the Ilmentufa directory as the working directory, run the following commands (we'll take the `camxes.peg` grammar for the example):
+For generating a PEGJS parser from a `.peg` grammar file, after having set
+`parsers/grammar` as the working directory, run the following commands (we'll
+take the `camxes.peg` grammar for the example):
 
 ```
 nodejs pegjs_conv camxes.peg
 nodejs build-camxes camxes.pegjs
 ```
 
-(In some installations, the keyword ``nodejs`` doesn't work and should be replaced with ``node`` instead in the above commands.)
+(In some installations, the keyword ``nodejs`` doesn't work and should be
+replaced with ``node`` instead in the above commands.)
 
-The first command (with `pegjs_conv`) converts the pure PEG grammar file (`*.peg`) to PEGJS format, creating or updating the file `camxes.pegjs` in this example.
-The second command (with `build-camxes`) creates or updates the corresponding parser engine, `camxes.js` in this case.
+The first command (with `pegjs_conv`) converts the pure PEG grammar file
+(`*.peg`) to PEGJS format, creating or updating the file `camxes.pegjs` in this
+example. The second command (with `build-camxes`) creates or updates the
+corresponding parser engine, `camxes.js` in this case.
 
 Building the parser can take several dozen seconds.
 
-Note : `build.bat` does both on Windows.
+> `build.bat`/`build.sh` performs both commands in a row.
 
 ### Running a parser from command line (TODO) ###
 
-Here's how to parse the Lojban text "coi ro do" with the standard grammar parser from command line:
+Here's how to parse the eberban text "sin fa mi fe mo" with the standard grammar
+parser from command line:
 
 ```
-nodejs run_camxes "coi ro do"
+nodejs run_camxes "sin fa mi fe mo"
 ```
 
-The standard grammar parser is used by default, but another grammar engine can be specified.
+The standard grammar parser is used by default, but another grammar engine can
+be specified.
 * The `-std` flag selects the standard grammar engine.
 * The `-beta` flag selects the Beta grammar engine.
 * The `-cbm` flag selects the Cmevla-Brivla Merger grammar engine.
 * The `-ckt` flag selects the Ce-Ki-Tau grammar engine.
 * The `-exp` flag selects the experimental or sandbox grammar engine.
-* `-p PATH` can be used for selecting a parser by giving its file path as a command line argument.
+* `-p PATH` can be used for selecting a parser by giving its file path as a
+  command line argument.
 
 Additionally, `-m MODE` can be used to specify output postprocessing options.
 Here, MODE can be any letter string, each letter standing for a specific option.
@@ -62,24 +80,33 @@ Here is the list of possible letters and their associated meaning:
 * C -> Show word classes (selmaho)
 * T -> Show terminators
 * N -> Show main node labels
-* R -> Raw output, do not prune the tree, except the morphology if 'M' not present.
+* R -> Raw output, do not prune the tree, except the morphology if 'M' not
+  present.
 * J -> JSON output
 * G -> Replace words by glosses
-* L -> Run the parser in a loop, consume every input line terminated by a newline and output parsed result
-* L -> A second 'L' means that run_camxes will expect every input line to begin with a mode string (possibly empty) followed by a space, after which the actual input follows.
+* L -> Run the parser in a loop, consume every input line terminated by a
+  newline and output parsed result
+* L -> A second 'L' means that run_camxes will expect every input line to begin
+  with a mode string (possibly empty) followed by a space, after which the
+  actual input follows.
 
 Example:
 ```
-nodejs run_camxes -m CTN "coi ro do"
+nodejs run_camxes -m CTN "sin fa mi fe mo"
 ```
-This will show terminators, selmaho and main node labels.
+This will show terminators, families and main node labels.
  
 
 ### How to use one of these parsers in a HTML interface project ###
 
-For using a Javascript Lojban parser in a HTML interface, you'll need to include the desired `.js` parser (e.g. `camxes.js`)
-to your HTML interface.
-You may also want including `camxes_preproc.js` and `camxes_postproc.js`, which provide useful features. The former does optional preprocessing of Lojban text, such as replacing digits with the corresponding PA cmavo, converting nonstandard spellings or scripts into normal Latin-based Lojban text. The latter script, the postprocessor, provides a function for trimming or prettifying the parse tree generated by the parser in function of the chosen postprocessing options.
+For using a Javascript eberban parser in a HTML interface, you'll need to
+include the desired `.js` parser (e.g. `camxes.js`) to your HTML interface. You
+may also want including `camxes_preproc.js` and `camxes_postproc.js`, which
+provide useful features. The former does optional preprocessing of eberban text,
+such as replacing digits with the corresponding PA cmavo, converting nonstandard
+spellings or scripts into normal Latin-based eberban text. The latter script,
+the postprocessor, provides a function for trimming or prettifying the parse
+tree generated by the parser in function of the chosen postprocessing options.
 
 Here's a simple example code:
 
@@ -106,23 +133,31 @@ function run_camxes(lojban_text) {
 </script>
 ```
 
-The postproc options are the sames as those of run_camxes.js described earlier in this file; please refer to the section `Running a parser from command line` above for more details.
+The postproc options are the sames as those of run_camxes.js described earlier
+in this file; please refer to the section `Running a parser from command line`
+above for more details.
 
-You can also look into `camxes.html`'s code to see a real example of using the Lojban parsers in a HTML interface.
+You can also look into `parsers\frontends\parser_text_dynamic.html`'s code to
+see a real example of using the eberban parsers in a HTML interface.
 
+### Using a Javascript eberban parser from another program or using a programming language other than Javascript ###
 
-### Using a Javascript Lojban parser from another program or using a programming language other than Javascript ###
-
-You can run a parser by making your program execute the following example command line:
+You can run a parser by making your program execute the following example
+command line:
 
 ```
 nodejs run_camxes.js -m J camxes.js "jbobau vlamei"
 ```
-(You can adapt it by providing other options flags described in the `Running a parser from command line` section above, but you'll want to keep the J option flag, so `run_camxes.js` outputs a JSON stringified array that will be easy for your program to read.)
+(You can adapt it by providing other options flags described in the `Running a
+parser from command line` section above, but you'll want to keep the J option
+flag, so `run_camxes.js` outputs a JSON stringified array that will be easy for
+your program to read.)
 
-`run_camxes.js` will then write the output parse tree in its `stdout`, so you'll need your program to read its `stdout` to get the parse result.
+`run_camxes.js` will then write the output parse tree in its `stdout`, so you'll
+need your program to read its `stdout` to get the parse result.
 
-For example, in a Python script, you can execute run_camxes.js with the `subprocess` Python module, and then read its output this way:
+For example, in a Python script, you can execute run_camxes.js with the
+`subprocess` Python module, and then read its output this way:
 
 ```
 import subprocess
