@@ -1,7 +1,7 @@
 # Borrowings [ZA]
 
-Borrowings allow to import words from other languages which would be difficult
-to translate and express using root words, such as names or species.
+Borrowings allow importing words from other languages which would be difficult
+to translate and express using root words, such as proper names, names of species and cultural concepts.
 
 A borrowing starts with the particle **za**, followed by the borrowed word then
 a mandatory pause. The borrowed word should be a phonetic retranscription in
