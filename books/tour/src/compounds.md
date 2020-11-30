@@ -13,10 +13,10 @@ starting a compound composed of 1, 2, 3 or 4 words. If a compound is made of mor
 
 Spaces are forbidden between the components of the compound.
 
-A compound have a unique meaning which is defined in the dictionnary, and
-while it's place structure can be arbitrary, it usualy provide places taken
-from its components. Usually the most important word is the rightmost one,
-while words are added to the left to add precisions.
+A compound has a unique, fixed meaning which is defined in the dictionary, and
+while its place structure can be arbitrary, it usually provides places taken
+from its individual components. Usually the most important word is the rightmost one,
+and additional words are added to the left to help narrow down the meaning, yielding greater precision.
 
 1-word compounds are also used to make predicate words corresponding to the
 rule of a particle.
