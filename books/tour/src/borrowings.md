@@ -18,7 +18,7 @@ If a more complex place structure is needed, **zai** can be used instead.
 In this case the borrowing can have an arbitrary place structure (to be inferred from context). It should
 only be used when the listener/reader is assumed to know the original word.
 
-> Phonetic retranscription is not mandatory. For exemple, borrowings can be
+> Phonetic retranscription is not mandatory. For example, borrowings can be
 > used to provide cultural words about countries or languages, by
 > providing their ISO 639-2 language code or ISO 3166 country code (with
 > minor changes if not compatible with eberban morphology). There are no
