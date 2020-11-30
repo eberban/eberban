@@ -1,8 +1,8 @@
 # Basic predicates
 
 As seen before, predicates are a core aspect of eberban. There are many ways to
-make them, but this section will focus on how definitions are expressed, and
-on the most simple ways to have a predicate.
+make them, but this section will focus on how definitions are expressed, and on
+the most simple ways to have a predicate.
 
 ## Terminology
 
@@ -55,5 +55,21 @@ shortly what each place expects.
 
 **Null values** can be used as an argument. Each predicate definition can define
 how to handle a null value. If it is not defined, an elliptical (infered from
-context) value is used. When a place is not filled in a sentence, it is as
-if it was filled with a null value.
+context) value is used. When a place is not filled in a sentence, it is as if it
+was filled with a null value.
+
+## Root conventions
+
+To help recognition and learning, root words also follow patterns.
+
+Common roots are in **CVC** form, and often are similar to other related roots.
+
+Less common roots are of **CCV**/**CCVC** form. The presence of a coda indicates
+the type of their rightmost chaining place (see chaining chapter).
+
+| Coda   | Rightmost chaining place type |
+| ------ | ----------------------------- |
+| *none* | no chaining place             |
+| n      | proposition place             |
+| r      | property place                |
+| l      | other                         |
