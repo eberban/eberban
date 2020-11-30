@@ -19,7 +19,7 @@
 
 - [Predicate chaining](predicate_chaining.md)
   - [Alternative chaining [CA]](alternative_chaining.md)
-  - [Predicate links [VA]]()
+  - [Predicate links [VA]](predicate_links.md)
 
 - [Free modifiers]()
   - [Prefix [PA]]()

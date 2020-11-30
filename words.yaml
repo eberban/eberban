@@ -1431,7 +1431,7 @@ uy'y:
   jbo_similar: vy.bu
 va:
   _family: VA
-  eng_long: "predicate variable affectation. one side should be affectable [MA]. if both sides are, right is now equal left"
+  eng_long: "predicate variable affectation. one side should be prefixed with <pa'o>"
   eng_short: "="
   jbo_similar: goi
 vai:
