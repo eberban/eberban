@@ -66,7 +66,7 @@ ban:
   eng_long: ___ is a language spoken by ___
   eng_short: language
   jbo_similar: bangu
-bar:
+OLD_bar:
   _family: R
   _signature: ".[1]"
   eng_long: ___ satisfies property [___1]
@@ -76,7 +76,7 @@ be:
   eng_long: "___ is the event of [proposition]"
   eng_short: event
   jbo_similar: nu
-ben:
+OLD_ben:
   _family: R
   _signature: "0"
   eng_long: "[___] is an event that happens/occurs/takes place"
@@ -87,7 +87,7 @@ ber:
   _signature: ".[1]"
   eng_long: "___ reflects this (eberban) language/culture/nationality/community is aspect/property [___1]"
   eng_short: eberbanic
-bla:
+OLD_bla:
   _family: R
   _signature: "00"
   eng_long: "[___] (event) is in the future/after [___] (event)"
@@ -99,13 +99,13 @@ bria:
   eng_long: ___ is a/the arm of ___
   eng_short: arm
   jbo_similar: cabna
-broi:
+OLD_broi:
   _family: R
   _signature: ".0"
   eng_long: "___ wants/desires/wishes that [___] is true"
   eng_short: want
   jbo_similar: djica
-bun:
+OLD_bun:
   _family: R
   _signature: "."
   eng_long: |-
@@ -118,7 +118,7 @@ by:
   eng_long: letter B
   eng_short: B
   jbo_similar: by
-byn:
+OLD_byn:
   _family: R
   _signature: "."
   eng_long: ___ is a second
@@ -138,7 +138,7 @@ ce:
   eng_long: "[left] AND [right]"
   eng_short: and
   jbo_similar: je
-cfa:
+OLD_cfa:
   _family: R
   _signature: "..[2]"
   eng_long: "___ requests to ___ that they satisfy property [___2]"
@@ -160,7 +160,7 @@ cii:
   _family: CA
   eng_long: "perform predicate chaining with [left] x3 place instead of rightmost"
   eng_short: x3 chaining
-cil:
+OLD_cil:
   _family: R
   _signature: ".0"
   eng_long: "___ learns fact [___]"
@@ -173,7 +173,7 @@ ciu:
   _family: CA
   eng_long: "perform predicate chaining with [left] x5 place instead of rightmost"
   eng_short: x5 chaining
-cna:
+OLD_cna:
   _family: R
   _signature: "00"
   eng_long: "[___] (event) is in the present of/simultaneous with [___] (event)"
@@ -184,13 +184,13 @@ co:
   eng_long: "[left] if and only if [right]"
   eng_short: iif
   jbo_similar: jo
-cpei:
+OLD_cpei:
   _family: R
   _signature: ".."
   eng_long: ___ eats ___
   eng_short: eat
   jbo_similar: citka
-cty:
+OLD_cty:
   _family: R
   _signature: ".[1]"
   eng_long: "___ begins to satisfy property [___1] (default = being true/occurs) "
@@ -226,13 +226,13 @@ di:
   eng_long: define which dialect/version the text is in
   eng_short: ""
   jbo_similar: jo'au
-dju:
+OLD_dju:
   _family: R
   _signature: ".0"
   eng_long: "___ knows fact(s) [___]"
   eng_short: know
   jbo_similar: djuno
-dla:
+OLD_dla:
   _family: R
   _signature: ".0"
   eng_long: "___ discovers [___] is true"
@@ -248,7 +248,7 @@ doi:
   eng_long: proposition-tail elidible terminator
   eng_short: ""
   jbo_similar: vau
-don:
+OLD_don:
   _family: R
   _signature: "..."
   eng_long: ___ (donor) gives/donates gift/present ___ to recipient ___ (without payment/exchange)
@@ -259,7 +259,7 @@ du:
   eng_long: import 1st place of following predicate (ignore chaining)
   eng_short: ""
   jbo_similar: fi'o
-dul:
+OLD_dul:
   _family: R
   _signature: "..[2]"
   eng_long: "___ likes that ___ satisfies property [___2] (default = exist/occurs/is true)"
@@ -269,12 +269,12 @@ dy:
   eng_long: letter D
   eng_short: D
   jbo_similar: dy
-dyn:
+OLD_dyn:
   _family: R
   _signature: "."
   eng_long: ___ is a minute
   eng_short: minute
-dzo:
+OLD_dzo:
   _family: R
   _signature: ".."
   eng_long: ___ is an animal/creature of species ___
@@ -295,46 +295,46 @@ eberban:
   _signature: ".."
   eng_long: ___ is the eberban language spoken by ___
   eng_short: eberban
-eberpre:
+OLD_eberpre:
   _family: C
   _signature: ".[1]"
   eng_long: ___ is an eberbanic person in aspect/property [___1]
   eng_short: eberbanist
-eberstan:
+OLD_eberstan:
   _family: C
   _signature: "..."
   eng_long: ___ is the eberstan country of people ___ with land/territory ___
   eng_short: eberstan
-ecnavyn:
+OLD_ecnavyn:
   _family: C
   _signature: "."
   eng_long: ___ is today
   eng_short: today
-eglunjgai:
+OLD_eglunjgai:
   _family: C
   _signature: ".."
   eng_long: ___ hugs ___
   eng_short: hug
   jbo_similar: birjai
-ekanmer:
+OLD_ekanmer:
   _family: C
   _signature: "."
   eng_long: ___ is a man
   eng_short: man
   jbo_similar: nanmu
-ekanprei:
+OLD_ekanprei:
   _family: C
   _signature: ".."
   eng_long: ___ is a father of ___
   eng_short: father
   jbo_similar: patfu
-esfemer:
+OLD_esfemer:
   _family: C
   _signature: "."
   eng_long: ___ is a woman
   eng_short: woman
   jbo_similar: ninmu
-esfeprei:
+OLD_esfeprei:
   _family: C
   _signature: ".."
   eng_long: ___ is a mother of ___
@@ -461,7 +461,7 @@ fei:
   eng_long: proposition place tag question
   eng_short: x?
   jbo_similar: fi'a
-fen:
+OLD_fen:
   _family: R
   _signature: ".."
   eng_long: ___ is a friend of ___
@@ -482,7 +482,7 @@ fii:
   eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fii mie} = {fa bi mia bai va mua do fa'un de fa mua do mie})"
   eng_short: non-restrictive adverbial
   jbo_similar: noi'a
-fin:
+OLD_fin:
   _family: R
   _signature: ".."
   eng_long: ___ invents/creates/composes/authors ___
@@ -493,13 +493,13 @@ fio:
   eng_long: "subordinating adverbial. the outer proposition is claimed to satisfy the first place of the provided predicate, but is not itself claimed to occur ({mia fio mie} = {fa bi mia do mie})"
   eng_short: subordinating adverbial
   jbo_similar: soi'a
-flan:
+fla:
   _family: R
   _signature: "..."
   eng_long: ___ writes ___ on ___
   eng_short: write
   jbo_similar: ciska
-flun:
+flur:
   _family: R
   _signature: "..[2]"
   eng_long: "___ inspires ___ to satisfy property [___2]"
@@ -514,7 +514,7 @@ foi:
   eng_long: don't fill a place. can be used to provide a topic or declare quantification and/or value of a variable
   eng_short: prenex
   jbo_similar: fai'i
-foil:
+OLD_foil:
   _family: R
   _signature: "."
   eng_long: ___ is a book
@@ -565,7 +565,7 @@ gi:
   eng_long: forethought connective separator
   eng_short: ""
   jbo_similar: zantufa gi
-glun:
+glu:
   _family: R
   _signature: ".."
   eng_long: ___ is affectionate towards ___
@@ -581,13 +581,13 @@ goi:
   eng_long: priority scope elidible terminator
   eng_short: ""
   jbo_similar: ke'e
-guar:
+gra:
   _family: R
   _signature: "."
   eng_long: ___ is a dog (canine)
   eng_short: dog
   jbo_similar: gerku
-gun:
+OLD_gun:
   _family: R
   _signature: ".[1]"
   eng_long: "___ works in satisfying [___1]"
@@ -627,7 +627,7 @@ jai:
   eng_long: "non-logical connective: mixed conjunction, mixed with"
   eng_short: with
   jbo_similar: joi
-jby:
+OLD_jby:
   _family: R
   _signature: ".."
   eng_long: ___ has purpose ___
@@ -637,7 +637,7 @@ je:
   eng_long: distributive connective and
   eng_short: and
   jbo_similar: ".e / gi'e / je [cu]"
-jen:
+OLD_jen:
   _family: R
   _signature: ".0"
   eng_long: "___ acknowledges/confirms of receipt and understanging of [___]"
@@ -654,17 +654,17 @@ ji:
   eng_long: distributive connective question
   eng_short: connective ?
   jbo_similar: "ji / gi'i / ji [cu]"
-jil:
+OLD_jil:
   _family: R
   _signature: "..[1]"
   eng_long: ___ is good (<sa'ijil> for bad) according to ___ in property [___1]
   eng_short: good
-jin:
+OLD_jin:
   _family: R
   _signature: ".[1]"
   eng_long: ___ is new in property [___1]
   eng_short: new
-jlan:
+OLD_jlan:
   _family: R
   _signature: ".0"
   eng_long: "___ complains/protests about [___] being true"
@@ -675,7 +675,7 @@ jo:
   eng_long: distributive connective if-and-only-if
   eng_short: iif
   jbo_similar: ".o / gi'o / jo [cu]"
-jon:
+OLD_jon:
   _family: R
   _signature: "..[1,2]"
   eng_long: "___ is with/accompanies/is a companion of ___ in satisfying property [___1,2]"
@@ -686,7 +686,7 @@ ju:
   eng_long: distributive connective whether-or-not
   eng_short: whether-or-not
   jbo_similar: ".u / gi'u / ju [cu]"
-jvan:
+jva:
   _family: R
   _signature: "..."
   eng_long: ___ welcomes ___ to ___
@@ -711,35 +711,35 @@ kai:
   eng_long: attached to particles to negate them
   eng_short: negation
   jbo_similar: nai
-kan:
+OLD_kan:
   _family: R
   _signature: "."
   eng_long: ___ is male
   eng_short: male
   jbo_similar: nakni
-kien:
+OLD_kien:
   _family: ZU
   _signature: ".."
   eng_long: ___ thanks ___
   eng_short: thank
   jbo_similar: ki'e
-kin:
+OLD_kin:
   _family: R
   _signature: ".0"
   eng_long: "___ believes fact(s) [___]"
   eng_short: believe
-klian:
+klia:
   _family: ZU
   _signature: "."
   eng_long: ___ cries
   eng_short: cry
   jbo_similar: klaku
-kol:
+OLD_kol:
   _family: R
   _signature: ".[1]"
   eng_long: "___ increases in how much it satisfies property [___1]"
   eng_short: increase
-kual:
+OLD_kual:
   _family: R
   _signature: "."
   eng_long: ___ walks
@@ -782,7 +782,7 @@ mel:
   _signature: "."
   eng_long: ___ is water
   eng_short: water
-mer:
+OLD_mer:
   _family: R
   _signature: "."
   eng_long: ___ is human
@@ -842,7 +842,7 @@ mia'u:
   eng_long: affectable/contextual variable 10
   eng_short: var I-10
   jbo_similar: fo'u
-mian:
+OLD_mian:
   _family: R
   _signature: "."
   eng_long: ___ is a cat (feline)
@@ -868,7 +868,7 @@ miu:
   eng_long: affectable/contextual variable 5
   eng_short: var I-5
   jbo_similar: ko'u
-mlin:
+OLD_mlin:
   _family: R
   _signature: ".[1]"
   eng_long: "___ is mild/non-extreme/gentle/somewhat in property [___1]"
@@ -891,7 +891,7 @@ mo'i:
   eng_long: ___ is you listener(s) & others
   eng_short: you & others
   jbo_similar: do'o
-mrin:
+OLD_mrin:
   _family: R
   _signature: "."
   eng_long: ___ is milk
@@ -984,7 +984,7 @@ pai:
   eng_long: end free suffix scope (matching start is not checked). following free suffix will apply to the scope instead of the preceding word
   eng_short: "}"
   jbo_similar: fu'o
-pan:
+OLD_pan:
   _family: R
   _signature: ".[1]"
   eng_long: "___ is able to do/be/capable of satisfying property [___1]"
@@ -1000,18 +1000,18 @@ pei:
   eng_long: define who is the listener
   eng_short: (vocative)
   jbo_similar: doi
-piin:
+OLD_piin:
   _family: R
   _signature: "."
   eng_long: ___ is a bird
   eng_short: bird
-pin:
+OLD_pin:
   _family: R
   _signature: ".."
   eng_long: ___ drinks liquid ___
   eng_short: drink
   jbo_similar: pinxe
-pli:
+plir:
   _family: R
   _signature: "..[2]"
   eng_long: "___ is a tool used by ___ to satisfying property [___2]"
@@ -1035,32 +1035,32 @@ poi:
   eng_long: parenthetical note terminator
   eng_short: )
   jbo_similar: toi
-pran:
+pra:
   _family: R
   _signature: ".."
   eng_long: ___ loves ___
   eng_short: love
-pre:
+OLD_pre:
   _family: R
   _signature: "."
   eng_long: ___ is a person
   eng_short: person
   jbo_similar: prenu
   toaq_similar: poq
-prei:
+prai:
   _family: R
   _signature: ".."
   eng_long: ___ is a parent of/raises ___
   eng_short: parent
   jbo_similar: rirni/preri
   toaq_similar: pao
-pru:
+OLD_pru:
   _family: R
   _signature: "00"
   eng_long: "[___] (event) is in the past of/before [___] (event) (default = now)"
   eng_short: past
   jbo_similar: purci
-prul:
+OLD_prul:
   _family: R
   _signature: "."
   eng_long: ___ is a chicken
@@ -1102,7 +1102,7 @@ sai:
   eng_long: "___ is related to [predicate] (vague transformation, expands to {ba mu fa [predicate] bai})"
   eng_short: related to
   jbo_similar: tu'a
-sal:
+OLD_sal:
   _family: R
   _signature: ".[1]"
   eng_long: ___ tries to satisfy property ___
@@ -1117,7 +1117,7 @@ sei:
   eng_long: SA question
   eng_short: (SA ?)
   jbo_similar: se'u'o
-sfe:
+OLD_sfe:
   _family: R
   _signature: "."
   eng_long: ___ is female
@@ -1145,7 +1145,7 @@ sii:
   _family: SA
   eng_long: "transform the [predicate] into a relation with only its 1st and 3nd place (all other have default value)"
   eng_short: relation x1 x3
-sin:
+OLD_sin:
   _family: R
   _signature: ".."
   eng_long: ___ greets/say hello to ___
@@ -1164,13 +1164,13 @@ skai:
   eng_long: ___ is a computer
   eng_short: computer
   jbo_similar: skami
-sku:
+OLD_sku:
   _family: R
   _signature: "..."
   eng_long: ___ says ___ (quote) to ___
   eng_short: express
   jbo_similar: cusku
-sna:
+OLD_sna:
   _family: R
   _signature: "00"
   eng_long: "[___] is a reason why [___] is the case"
@@ -1185,28 +1185,28 @@ soi:
   eng_long: the referent of (indirect pointer)
   eng_short: referent of
   jbo_similar: la'e
-son:
+OLD_son:
   _family: R
   _signature: ".."
   eng_long: ___ say goodbye to ___
   eng_short: goodbye
-spi:
+OLD_spi:
   _family: R
   _signature: ".."
   eng_long: ___ talks to ___
   eng_short: talk
-spin:
+OLD_spin:
   _family: R
   _signature: "."
   eng_long: ___ sleeps
   eng_short: sleep
-spu:
+OLD_spu:
   _family: R
   _signature: ".."
   eng_long: ___ is a nest/house/home of ___
   eng_short: home
   jbo_similar: zdani
-stan:
+OLD_stan:
   _family: R
   _signature: "..."
   eng_long: ___ is a country of people ___ with land/territory ___
@@ -1216,7 +1216,7 @@ su:
   eng_long: switch 1st and 5th places
   eng_short: x1 &#8652; x5
   jbo_similar: xe
-suin:
+OLD_suin:
   _family: R
   _signature: ".0"
   eng_long: "___ is happy about [___] being true"
@@ -1277,17 +1277,17 @@ tai'i:
   eng_long: too many (subjective)
   eng_short: too many
   jbo_similar: du'e
-tan:
+OLD_tan:
   _family: R
   _signature: ".[1][1]"
   eng_long: "___ comes early in the sequence (sorted by property [___1]) of things satisfying property [___1]"
   eng_short: Xth
-tca:
+OLD_tca:
   _family: R
   _signature: ".[1]"
   eng_long: "___ is a group of things sharing property [___1]"
   eng_short: group
-tcer:
+OLD_tcer:
   _family: R
   _signature: "0"
   eng_long: "[___] is intense"
@@ -1342,12 +1342,12 @@ to:
   eng_long: digit/number question
   eng_short: number ?
   jbo_similar: xo
-triu:
+OLD_triu:
   _family: R
   _signature: ".[1]"
   eng_long: "___ succeeds at satisfying property [___1]"
   eng_short: succeed
-tsan:
+OLD_tsan:
   _family: R
   _signature: "."
   eng_long: ___ is a sky
@@ -1393,7 +1393,7 @@ tui:
   eng_long: "number/digit: 8"
   eng_short: "8"
   jbo_similar: bi
-tun:
+OLD_tun:
   _family: R
   _signature: "..0"
   eng_long: "___ agrees with ___ that [___] is true"
@@ -1439,7 +1439,7 @@ vai:
   eng_long: predicate link elidible terminator
   eng_short: ""
   jbo_similar: ge'u/kei
-val:
+OLD_val:
   _family: R
   _signature: "..."
   eng_long: ___ goes to ___ from ___
@@ -1546,13 +1546,13 @@ zai:
   eng_long: "prefix a foreign word, place structure is infered from context"
   eng_short: (complex)
   jbo_similar: fu'ivla
-zdei:
+OLD_zdei:
   _family: R
   _signature: ".0"
   eng_long: "___ finds [___] amusing/fun"
   eng_short: amusing
   jbo_similar: zdile
-zdua:
+OLD_zdua:
   _family: R
   _signature: "."
   eng_long: ___ is complicated/complex
@@ -1568,7 +1568,7 @@ zei:
   eng_long: end grammatical quote
   eng_short: "&#12318;"
   jbo_similar: li'u
-zgan:
+OLD_zgan:
   _family: R
   _signature: ".."
   eng_long: ___ observes/notices/watches ___
@@ -1580,12 +1580,12 @@ zi:
   eng_long: "quote the following word. ___ is word [word]"
   eng_short: "&#34;"
   jbo_similar: zo
-zon:
+OLD_zon:
   _family: R
   _signature: ".."
   eng_long: ___ pertains to/is about subject ___
   eng_short: about
-zran:
+OLD_zran:
   _family: R
   _signature: ".[1]"
   eng_long: "___ is strange in property [___1]"
@@ -1597,7 +1597,7 @@ zu:
   eng_long: "prefix a foreign word quote surrounded by the same 1 native word. ___ is quote [quote]"
   eng_short: ""
   jbo_similar: zoi
-zva:
+OLD_zva:
   _family: R
   _signature: ".."
   eng_long: ___ is at ___ (location)
@@ -1613,12 +1613,12 @@ zyn:
   _signature: "."
   eng_long: ___ is a month
   eng_short: month
-zma:
+OLD_zma:
   _family: R
   _signature: "..[1,2]"
   eng_long: ___ is greater than ___ in property [___1,2]
   eng_short: greater
-plen:
+OLD_plen:
   _family: R
   _signature: "."
   eng_long: ___ is rain
