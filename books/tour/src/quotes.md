@@ -20,5 +20,5 @@ can also contain inner **ze** quotes, as a **zei** will match its opening
 text. **zu** is followed by a **single** arbitrary valid eberban word (no
 compounds or borrowing), which has the role of a delimiter. The quote ends when
 this word appear again with spaces before it. The delimiter word should not
-appear in the text, both writen with same letters or being pronounced, as it
-could lead to ambiguities on where the quote ends in vocal speech.
+appear in the text, either written with same letters or pronounced the same way, as it
+could lead to ambiguities regarding where the quote ends in written text and/or in vocal speech.
