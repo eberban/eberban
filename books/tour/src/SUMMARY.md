@@ -18,7 +18,7 @@
 - [Predicate places [FA/DU]](predicate_places.md)
 
 - [Predicate chaining](predicate_chaining.md)
-  - [Alternative chaining [CA]]()
+  - [Alternative chaining [CA]](alternative_chaining.md)
   - [Predicate links [VA]]()
 
 - [Free modifiers]()
