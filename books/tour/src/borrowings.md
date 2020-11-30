@@ -22,4 +22,4 @@ only be used when the listener/reader is assumed to know the original word.
 > used to provide cultural words about countries or languages, by
 > providing their ISO 639-2 language code or ISO 3166 country code (with
 > minor changes if not compatible with eberban morphology). There are no
-> country/language roots (except for eberban) to remain culturaly-neutral. 
+> country/language roots (except for eberban itself), to help maintain some level of cultural neutrality.
