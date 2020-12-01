@@ -22,10 +22,10 @@
   - [Predicate links [VA]](predicate_links.md)
 
 - [Free modifiers]()
-  - [Prefix [PA]]()
+  - [Prefix [LA]]()
   - [Indicators [XA]]()
-  - [Annotations [PE/PO]]()
-  - [Subscripts [PU]]()
+  - [Annotations [LE/LO]]()
+  - [Subscripts [LU]]()
 
 - [Abstractors [BA]]()
 
@@ -33,6 +33,10 @@
   - [Text structure [DA/DE/DO]]()
   - [Place connectives [JA/JAI]]()
   - [Place distribution [JA+DO]]()
+
+- [Grouping]()
+  - [Forethough connections [NA/NI]]()
+  - [Other grouping [NO]]()
 
 - [Vocabulary]()
   - [Useful concepts]()
