@@ -550,18 +550,18 @@ fy:
   eng_long: letter F
   eng_short: F
   jbo_similar: fy
-ga:
-  _family: GA
+na:
+  _family: NA
   eng_long: forethought connective starter
   eng_short: ""
   jbo_similar: ga
-gai:
-  _family: GAI
+nai:
+  _family: NAI
   eng_long: forethought connective elidible terminator
   eng_short: ""
   jbo_similar: zantufa gihi
-gi:
-  _family: GI
+ni:
+  _family: NI
   eng_long: forethought connective separator
   eng_short: ""
   jbo_similar: zantufa gi
@@ -571,13 +571,13 @@ glu:
   eng_long: ___ is affectionate towards ___
   eng_short: affectionate
   jbo_similar: xrotu
-go:
-  _family: GO
+no:
+  _family: NO
   eng_long: priority scope starter
   eng_short: ""
   jbo_similar: ke
-goi:
-  _family: GOI
+noi:
+  _family: NOI
   eng_long: priority scope elidible terminator
   eng_short: ""
   jbo_similar: kehe
@@ -958,32 +958,32 @@ ohy:
   eng_long: letter O
   eng_short: O
   jbo_similar: ohy/obu
-pa:
-  _family: PA
+la:
+  _family: LA
   eng_long: begin free suffix scope (matching end is not checked)
   eng_short: "{"
   jbo_similar: fuhe
-paha:
-  _family: PA
+laha:
+  _family: LA
   eng_long: "emphasis indicator, the next word is especially emphasized"
   eng_short: (emphasis)
   jbo_similar: bahe
-pahe:
-  _family: PA
+lahe:
+  _family: LA
   eng_long: "nonce-word indicator, indicates next word (compound) may be nonstandard"
   eng_short: (non-standard)
   jbo_similar: zahe
-pahi:
-  _family: PA
+lahi:
+  _family: LA
   eng_long: next word is a metadata tag / hashtag
   eng_short: (hashtag)
   jbo_similar: ciha
-paho:
-  _family: PA
+laho:
+  _family: LA
   eng_long: "rebind following variable, discarding its previous value (can be omitted inside of <va>)"
   eng_short: (rebind)
-pai:
-  _family: PAI
+lai:
+  _family: LAI
   eng_long: end free suffix scope (matching start is not checked). following free suffix will apply to the scope instead of the preceding word
   eng_short: "}"
   jbo_similar: fuho
@@ -993,13 +993,13 @@ OLD_pan:
   eng_long: "___ is able to do/be/capable of satisfying property [___1]"
   eng_short: able
   jbo_similar: kakne
-pe:
-  _family: PE
+le:
+  _family: LE
   eng_long: discursive starter
   eng_short: (discurive)
   jbo_similar: sei
-pei:
-  _family: PE
+lei:
+  _family: LE
   eng_long: define who is the listener
   eng_short: (vocative)
   jbo_similar: doi
@@ -1028,13 +1028,13 @@ plie:
   eng_short: apple
   jbo_similar: plise
   toaq_similar: shamū
-po:
-  _family: PO
+lo:
+  _family: LO
   eng_long: parenthetical note starter
   eng_short: (
   jbo_similar: to
-poi:
-  _family: POI
+loi:
+  _family: LOI
   eng_long: parenthetical note terminator
   eng_short: )
   jbo_similar: toi
@@ -1068,8 +1068,8 @@ OLD_prul:
   _signature: "."
   eng_long: ___ is a chicken
   eng_short: chicken
-pu:
-  _family: PU
+lu:
+  _family: LU
   eng_long: subscript marker
   eng_short: ""
   jbo_similar: xi
@@ -1521,17 +1521,17 @@ yha:
   eng_long: letter H/h
   eng_short: H
   jbo_similar: xy.bu
-yla:
+ly:
   _family: BY
   eng_long: letter L
   eng_short: L
   jbo_similar: ly
-yna:
+ny:
   _family: BY
   eng_long: letter N
   eng_short: "N"
   jbo_similar: ny
-yra:
+ry:
   _family: BY
   eng_long: letter R
   eng_short: R

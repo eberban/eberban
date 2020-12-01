@@ -30,37 +30,38 @@ to cmavo, and roots as analogous to gismu.
 
 Particles always follow the pattern __V__ or the pattern __CV__. In particular,
 they always have exactly zero or one consonants and one or more vowels and/or
-apostrophes. Particles starting with a vowel are technically preceded by a pause
-`'`, which may be omitted in writing if there are spaces alongside it. On the
-other hand, roots always follow either the pattern __CVC__, the pattern __CCV__
-or the pattern __CCVC__.
+apostrophes. On the
+other hand, roots always follow either the pattern __VC__, __CVC__, __CCV__
+or __CCVC__.
 <!--In particular, they always have exactly two consonants and one or more vowels and/or apostrophes.-->
 
-Additionally, particles and roots may never start with a coda consonant, and
-they may never end with a non-coda consonant. Borrowings may never start with a
-coda consonant, but they may end in any letter.
+Particles and roots starting with a vowel, **l, n** or **r** are technically preceded by a
+pause `'`, which may be omitted in writing if there are spaces alongside it. 
+They may never end with a non-coda consonant.
+
+Borrowings have the same starting rules, but may end in any letter, always
+followed by a pause.
 
 In written media, a sequence of words is typically, but not necessarily,
 separated by spaces (" ").
 
-<blockquote>
-  <b>For the advanced reader:</b> you may have noticed that all words start with
-  either a vowel (preceded by a pause) or a non-coda consonant, and that all
-  words (except borrowings) end with either a vowel or a coda. This is by
-  design. As we will later see, these seemingly artificial restrictions
-  involving coda ensure that, even if words (except borrowings) are strung
-  together without any spaces between them, they can still be uniquely
-  decomposed (i.e. spaces can be deterministically added back). This may seem
-  unimportant, and indeed in written media spaces are not particularly obnoxious
-  &ndash; they are recommended, even. But in spoken form spaces correspond to
-  pauses, and this unique decomposition property suddenly becomes important: it
-  means that, while speaking, we do not need to pause between every two words!
-  For our fellow language nerds out there: this cool property is also known as
-  self-segmenting morphophonology :-)
 
-  Additionally, there is a mandatory pause at the end of borrowings, allowing
-  segmenting to work with borrowings as well.
-</blockquote>
+>  **For the advanced reader:** you may have noticed that all words start with
+>  either a vowel (preceded by a pause) or a non-coda consonant, and that all
+>  words (except borrowings) end with either a vowel or a coda. This is by
+>  design. As we will later see, these seemingly artificial restrictions
+>  involving coda ensure that, even if words (except borrowings) are strung
+>  together without any spaces between them, they can still be uniquely
+>  decomposed (i.e. spaces can be deterministically added back). This may seem
+>  unimportant, and indeed in written media spaces are not particularly obnoxious
+>  &ndash; they are recommended, even. But in spoken form spaces correspond to
+>  pauses, and this unique decomposition property suddenly becomes important: it
+>  means that, while speaking, we do not need to pause between every two words!
+>  For our fellow language nerds out there: this cool property is also known as
+>  self-segmenting morphophonology :-)
+>
+>  Additionally, there is a mandatory pause at the end of borrowings, allowing
+>  segmenting to work with borrowings as well.
 
 ## Compounds
 In addition to words, eberban also has the concept of compounds. Think of them
