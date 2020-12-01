@@ -36,37 +36,39 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 
 ## TA members
 
-| Word  | Definition            | Word  | Definition                           |
-| ----- | --------------------- | ----- | ----------------------------------- -|
-| tia   | 1                     | tie   | 2                                    |
-| tii   | 3                     | tio   | 4                                    |
-| tiu   | 5                     | tua   | 6                                    |
-| tue   | 7                     | tui   | 8                                    |
-| tuo   | 9                     | tuu   | A (10)                               |
-| tu'a  | B (11)                | tu'e  | C (12)                               |
-| tu'i  | D (13)                | tu'o  | E (14)                               |
-| tu'u  | F (15)                | ta    | 0                                    |
+| Word  | Definition            | Word  | Definition                            |
+| ----- | --------------------- | ----- | ------------------------------------- |
+| tia   | 1                     | tie   | 2                                     |
+| tii   | 3                     | tio   | 4                                     |
+| tiu   | 5                     | tua   | 6                                     |
+| tue   | 7                     | tui   | 8                                     |
+| tuo   | 9                     | tuu   | A (10)                                |
+| tuha  | B (11)                | tuhe  | C (12)                                |
+| tuhi  | D (13)                | tuho  | E (14)                                |
+| tuhu  | F (15)                | ta    | 0                                     |
 |       |
-| te    | decimal separator     | te'a  | `<base . number>` separator          |
-| te'e  | thousands separator   | te'i  | `<precise . approximation>` separator|
+| te    | decimal separator     | teha  | `<base . number>` separator           |
+| tehe  | thousands separator   | tehi  | `<precise . approximation>` separator |
 |       |
-| ta'a  | few                   | ta'e  | several                              |
-| ta'i  | many                  | ta'o  | most                                 |
-| ta'u  | each/all              | tai'a | too few (subjective)                 |
-| tai'e | enough (subjective)   | tai'i | too many (subjective)                |
+| taha  | few                   | tahe  | several                               |
+| tahi  | many                  | taho  | most                                  |
+| tahu  | each/all              | taiha | too few (subjective)                  |
+| taihe | enough (subjective)   | taihi | too many (subjective)                 |
 |       |
 | to    | number/digit question |
 
 ## BY members
 
-| Letter                | Representation in eberban            |
-|-----------------------|--------------------------------------|
-| Vowels                | *a'y, e'y, i'y, o'y, u'y, y'y*       |
-| Non coda consonants   | consonant + y (*by, cy*, &hellip;)   |
-| Q / i semi-vowel      | *iy'y*                               |
-| W / u semi-vowel      | *uy'y*                               |
-| Pause / dot           | *y'a*                                |
-| ' / h                 | *y'e*                                |
-| L                     | *y'i*                                |
-| N                     | *y'o*                                |
-| R                     | *y'u*                                |
+| Letter              | Representation in eberban          |
+| ------------------- | ---------------------------------- |
+| Vowels              | *ahy, ehy, ihy, ohy, uhy, yhy*     |
+| Non coda consonants | consonant + y (*by, cy*, &hellip;) |
+| i semi-vowel        | *iy*                               |
+| u semi-vowel        | *uy*                               |
+| H                   | *yha*                              |
+| L                   | *yla*                              |
+| N                   | *yno*                              |
+| R                   | *yra*                              |
+| Q                   | *iny*                              |
+| W                   | *uny*                              |
+| Pause               | *yhe*                              |
