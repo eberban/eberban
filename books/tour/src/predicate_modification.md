@@ -10,11 +10,11 @@ right (no chaining).
 | sai  | ___ is related to [predicate] (vague transformation, expands to `ba mu fa [predicate] bai`)              |
 | sei  | SA question : what transformation would make the proposition true ?                                      |
 | soi  | the referent of (indirect pointer)                                                                       |
-| si'a | use the predicate as a predicate variable name (instead of using `mia`)                                  |
+| siha | use the predicate as a predicate variable name (instead of using `mia`)                                  |
 |      |
-| sa'a | contrary scalar negator : othan than .. (scale or set is implied)                                        |
-| sa'e | polar opposite scalar negator : not a .. (no scale is implied)                                           |
-| sa'i | midpoint scalar negator : not really ..                                                                  |
+| saha | contrary scalar negator : othan than .. (scale or set is implied)                                        |
+| sahe | polar opposite scalar negator : not a .. (no scale is implied)                                           |
+| sahi | midpoint scalar negator : not really ..                                                                  |
 |      |
 | se   | switch 1st and 2nd places                                                                                |
 | si   | switch 1st and 3nd places                                                                                |

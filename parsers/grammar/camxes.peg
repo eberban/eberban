@@ -1,10 +1,10 @@
-# eberban PEG grammar - v0.11
+# eberban PEG grammar - v0.12
 # ===========================
 
 # GRAMMAR
 # main rule, allow language version/dialect annotation
 text <- parser_version? text_1
-parser_version <- DI_clause (!parser_version_number borrowing_content (dot !dot !y)? parser_version_number? / parser_version_number)
+parser_version <- DI_clause (!parser_version_number borrowing_content (pause_char !pause_char !y)? parser_version_number? / parser_version_number)
 parser_version_number <- spaces? TA+
 # main text rule
 text_1 <- (free_indicator / free_predicate / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
@@ -77,17 +77,17 @@ predicate_2 <- predicate_cak_pre / compound free_post* / borrowing / grammatical
 predicate_cak_pre <- (gacak !DE_clause !DA_clause predicate (gik predicate)+ GAI_clause_elidible)
 
 # compound prefixes
-compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) 
+compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) &post_word
 compound_1 <- A_clause compound_word
 compound_2 <- E_clause compound_word compound_word
 compound_3 <- I_clause compound_word compound_word compound_word
 compound_4 <- O_clause compound_word compound_word compound_word compound_word
-compound_n <- U_clause (!(dot? U) compound_word)+ (dot? U)
-compound_word <- initial_dot native_word
+compound_n <- U_clause (!(pause_char? U) compound_word)+ (pause_char? U)
+compound_word <- initial_pause native_word
 
 # borrowings
-borrowing <- ZA_clause borrowing_content (dot / space_char / EOF) free_post*
-borrowing_content <- spaces foreign_word
+borrowing <- ZA_clause borrowing_content (pause_char / space_char / EOF) free_post*
+borrowing_content <- (spaces? !coda / spaces &coda) foreign_word
 
 # quotes
 grammatical_quote <- ZE_clause text_1 ZEI_clause
@@ -190,7 +190,7 @@ ZU_clause           <- free_prefix* spaces? ZU
 A     <- &particle (a)
 BA    <- &particle !(BAI post_word) (b vowel_tail)
 BAI   <- &particle (b a i)
-BY    <- &particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)
+BY    <- &particle (consonant y / vowel_y h y / (i / u) (y / n y) / y separator a / y h e)
 CA    <- &particle (c vowel_tail)
 DA    <- &particle (d a)
 DE    <- &particle (d e)
@@ -241,17 +241,19 @@ foreign_quote_word <- (!spaces .)+
 foreign_quote_close <- native_word
 
 # - Legal words
-foreign_word <- !coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?
+foreign_word <- (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?
 native_word <-  root / particle
 particle <- !coda consonant? vowel_tail_y !coda &post_word
-root <- ((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant) vowel_tail_y coda)) &post_word
+root <- ((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant)? vowel_tail_y coda)) &post_word
 
 # - Legal vowels and vowel tails
 vowel_tail <- (diphthong / vowel) vowel_tail_1* 
-vowel_tail_1 <- h (vi_diphthong / vowel )
+vowel_tail_1 <- separator (vi_diphthong / vowel )
 
 vowel_tail_y <- (diphthong_y / vowel_y) vowel_tail_y_1* 
-vowel_tail_y_1 <- h (vi_diphthong_y / vowel_y )
+vowel_tail_y_1 <- separator (vi_diphthong_y / vowel_y )
+
+separator <- h / l / n / r
 
 diphthong_y <- iuv_diphthong_y / vi_diphthong_y
 iuv_diphthong_y <- (i / u) vowel_y
@@ -263,7 +265,7 @@ iuv_diphthong <- (i / u) vowel
 vi_diphthong <- (a / e / o) i 
 vowel <- a / e / i / o / u 
 
-h <- ['h] # <LEAF2>
+h <- [hH] # <LEAF>
 a <- [aA] # <LEAF>
 e <- [eE] # <LEAF>
 i <- [iI] # <LEAF>
@@ -305,13 +307,13 @@ t <- [tT] !t !voiced # <LEAF>
 
 # - Spaces / Pause
 
-post_word <- (dot &vowel_y / &consonant / spaces)
-initial_dot <- (dot &vowel_y / !dot &consonant)
-spaces <- initial_spaces (dot &vowel_y)? / dot &vowel_y / EOF
+post_word <- (pause_char &(vowel_y / coda) / &consonant / spaces)
+initial_pause <- (pause_char &vowel_y / !pause_char &consonant)
+spaces <- initial_spaces (pause_char &(vowel_y / coda))? / pause_char &(vowel_y / coda) / EOF
 initial_spaces <- (hesitation / space_char)+
-hesitation <- (space_char+ dot? / dot) !(y h y) y+ !(dot dot) (dot? &space_char / &(dot y) / dot / EOF)
+hesitation <- (space_char+ pause_char? / pause_char) !(y h y) y+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char y) / pause_char / EOF)
 space_char <- [\t\n\r?!\u0020]
 
 # - Special characters
-dot <- '.' !'.'
+pause_char <- ([']) !pause_char
 EOF <- !.

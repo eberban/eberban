@@ -4,7 +4,7 @@ import sys
 VALID_FIELDS = ["_family", "_signature", "eng_long", "eng_short", "jbo_similar"]
 
 def is_valid_eberbanic_word_character(c):
-    return str.isalpha(c) or c == "'" or c == "."
+    return str.isalpha(c) or c == "'"
 
 def is_valid_outermost_key(key):
     return all([is_valid_eberbanic_word_character(c) for c in key])

@@ -4,12 +4,12 @@ a:
   eng_long: prefix a 1 word long compound
   eng_short: ""
   jbo_similar: lujvo making
-a'y:
+ahy:
   _family: BY
   eng_long: letter A
   eng_short: A
-  jbo_similar: a'y/abu
-a.a:
+  jbo_similar: ahy/abu
+a'a:
   _family: C
   _signature: ".0."
   eng_long: "___ is a compound meaning [___] with components ___"
@@ -54,7 +54,7 @@ ba:
   _family: BA
   eng_long: "[___] is [proposition] expressed in sentence ___ (text). if places are made open with one or more <ma>, the abstraction have to place structure discribed by them"
   eng_short: abstraction
-  jbo_similar: du'u/ka
+  jbo_similar: duhu/ka
 bai:
   _family: BAI
   eng_long: abstraction elidible terminator
@@ -147,7 +147,7 @@ ci:
   _family: CA
   eng_long: predicate connective question
   eng_short: connective ?
-  jbo_similar: je'i
+  jbo_similar: jehi
 cia:
   _family: CA
   eng_long: "perform predicate chaining with [left] x1 place instead of rightmost"
@@ -210,7 +210,7 @@ da:
   _family: DA
   eng_long: "paragraph break, introduce new topic"
   eng_short: (paragraph)
-  jbo_similar: ni'o
+  jbo_similar: niho
 de:
   _family: DE
   eng_long: proposition-tail elidible starter
@@ -225,7 +225,7 @@ di:
   _family: DI
   eng_long: define which dialect/version the text is in
   eng_short: ""
-  jbo_similar: jo'au
+  jbo_similar: johau
 OLD_dju:
   _family: R
   _signature: ".0"
@@ -258,7 +258,7 @@ du:
   _family: DU
   eng_long: import 1st place of following predicate (ignore chaining)
   eng_short: ""
-  jbo_similar: fi'o
+  jbo_similar: fiho
 OLD_dul:
   _family: R
   _signature: "..[2]"
@@ -285,11 +285,11 @@ e:
   eng_long: prefix a 2 words long compound
   eng_short: ""
   jbo_similar: lujvo making
-e'y:
+ehy:
   _family: BY
   eng_long: letter E
   eng_short: E
-  jbo_similar: e'y/ebu
+  jbo_similar: ehy/ebu
 eberban:
   _family: C
   _signature: ".."
@@ -396,12 +396,12 @@ etiuzyn:
   _signature: "."
   eng_long: ___ is a May
   eng_short: May
-etu'azyn:
+etuhazyn:
   _family: C
   _signature: "."
   eng_long: ___ is a November
   eng_short: November
-etu'ezyn:
+etuhezyn:
   _family: C
   _signature: "."
   eng_long: ___ is a December
@@ -460,7 +460,7 @@ fei:
   _family: FA
   eng_long: proposition place tag question
   eng_short: x?
-  jbo_similar: fi'a
+  jbo_similar: fiha
 OLD_fen:
   _family: R
   _signature: ".."
@@ -474,14 +474,14 @@ fi:
   jbo_similar: fi
 fie:
   _family: FA
-  eng_long: "restrictive adverbial. the first place of the provided predicate is claimed to occur in conjunction with the outer proposition ({mia fie mie} = {fa bi mia do fa'un je do mie})"
+  eng_long: "restrictive adverbial. the first place of the provided predicate is claimed to occur in conjunction with the outer proposition ({mia fie mie} = {fa bi mia do fahun je do mie})"
   eng_short: restrictive adverbial
-  jbo_similar: poi'a
+  jbo_similar: poiha
 fii:
   _family: FA
-  eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fii mie} = {fa bi mia bai va mua do fa'un de fa mua do mie})"
+  eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fii mie} = {fa bi mia bai va mua do fahun de fa mua do mie})"
   eng_short: non-restrictive adverbial
-  jbo_similar: noi'a
+  jbo_similar: noiha
 OLD_fin:
   _family: R
   _signature: ".."
@@ -492,7 +492,7 @@ fio:
   _family: FA
   eng_long: "subordinating adverbial. the outer proposition is claimed to satisfy the first place of the provided predicate, but is not itself claimed to occur ({mia fio mie} = {fa bi mia do mie})"
   eng_short: subordinating adverbial
-  jbo_similar: soi'a
+  jbo_similar: soiha
 fla:
   _family: R
   _signature: "..."
@@ -513,7 +513,7 @@ foi:
   _family: FA
   eng_long: don't fill a place. can be used to provide a topic or declare quantification and/or value of a variable
   eng_short: prenex
-  jbo_similar: fai'i
+  jbo_similar: faihi
 OLD_foil:
   _family: R
   _signature: "."
@@ -559,7 +559,7 @@ gai:
   _family: GAI
   eng_long: forethought connective elidible terminator
   eng_short: ""
-  jbo_similar: zantufa gi'i
+  jbo_similar: zantufa gihi
 gi:
   _family: GI
   eng_long: forethought connective separator
@@ -580,7 +580,7 @@ goi:
   _family: GOI
   eng_long: priority scope elidible terminator
   eng_short: ""
-  jbo_similar: ke'e
+  jbo_similar: kehe
 gra:
   _family: R
   _signature: "."
@@ -607,21 +607,24 @@ i:
   eng_long: prefix a 3 words long compound
   eng_short: ""
   jbo_similar: lujvo making
-i'y:
+ihy:
   _family: BY
   eng_long: letter I
   eng_short: I
-  jbo_similar: i'y/ibu
-iy'y:
+  jbo_similar: ihy/ibu
+iy:
   _family: BY
-  eng_long: letter Q/i semi-vowel
+  eng_long: i semi-vowel
+  eng_short: i-
+iny:
+  _family: BY
+  eng_long: letter Q
   eng_short: Q
-  jbo_similar: ky.bu
 ja:
   _family: JA
   eng_long: distributive connective or
   eng_short: or
-  jbo_similar: ".a / gi'a / ja [cu]"
+  jbo_similar: ".a / giha / ja [cu]"
 jai:
   _family: JAI
   eng_long: "non-logical connective: mixed conjunction, mixed with"
@@ -636,7 +639,7 @@ je:
   _family: JA
   eng_long: distributive connective and
   eng_short: and
-  jbo_similar: ".e / gi'e / je [cu]"
+  jbo_similar: ".e / gihe / je [cu]"
 OLD_jen:
   _family: R
   _signature: ".0"
@@ -653,11 +656,11 @@ ji:
   _family: JA
   eng_long: distributive connective question
   eng_short: connective ?
-  jbo_similar: "ji / gi'i / ji [cu]"
+  jbo_similar: "ji / gihi / ji [cu]"
 OLD_jil:
   _family: R
   _signature: "..[1]"
-  eng_long: ___ is good (<sa'ijil> for bad) according to ___ in property [___1]
+  eng_long: ___ is good (<sahijil> for bad) according to ___ in property [___1]
   eng_short: good
 OLD_jin:
   _family: R
@@ -674,7 +677,7 @@ jo:
   _family: JA
   eng_long: distributive connective if-and-only-if
   eng_short: iif
-  jbo_similar: ".o / gi'o / jo [cu]"
+  jbo_similar: ".o / giho / jo [cu]"
 OLD_jon:
   _family: R
   _signature: "..[1,2]"
@@ -685,7 +688,7 @@ ju:
   _family: JA
   eng_long: distributive connective whether-or-not
   eng_short: whether-or-not
-  jbo_similar: ".u / gi'u / ju [cu]"
+  jbo_similar: ".u / gihu / ju [cu]"
 jva:
   _family: R
   _signature: "..."
@@ -722,7 +725,7 @@ OLD_kien:
   _signature: ".."
   eng_long: ___ thanks ___
   eng_short: thank
-  jbo_similar: ki'e
+  jbo_similar: kihe
 OLD_kin:
   _family: R
   _signature: ".0"
@@ -754,19 +757,19 @@ ma:
   _family: MA
   eng_long: binds a variable within an abstraction that represents an open space (used in <ba> abstractions)
   eng_short: (open)
-ma'i:
+mahi:
   _family: MA
   _signature: "."
   eng_long: ___ is this here, near the speaker
   eng_short: this
   jbo_similar: ti
-ma'o:
+maho:
   _family: MA
   _signature: "."
   eng_long: ___ is that here, near the listener
   eng_short: that
   jbo_similar: ta
-ma'u:
+mahu:
   _family: MA
   _signature: "."
   eng_long: "___ is that younder, far from speaker and listener"
@@ -794,54 +797,54 @@ mi:
   eng_long: ___ is me/the speaker/author
   eng_short: me
   jbo_similar: mi
-mi'i:
+mihi:
   _family: MA
   _signature: "."
   eng_long: ___ is me/the speaker/author & others but no you the listener
   eng_short: me & others
-  jbo_similar: mi'a
-mi'o:
+  jbo_similar: miha
+miho:
   _family: MA
   _signature: "."
   eng_long: ___ is me/the speaker/author & you the listener
   eng_short: me & you
-  jbo_similar: mi'o
-mi'oi:
+  jbo_similar: miho
+mihoi:
   _family: MA
   _signature: "."
   eng_long: ___ is me/the speaker/author & you the listener & others
   eng_short: me & you & others
-  jbo_similar: ma'a
+  jbo_similar: maha
 mia:
   _family: MA
   eng_long: affectable/contextual variable 1
   eng_short: var I-1
-  jbo_similar: ko'a
-mia'a:
+  jbo_similar: koha
+miaha:
   _family: MA
   eng_long: affectable/contextual variable 6
   eng_short: var I-6
-  jbo_similar: fo'a
-mia'e:
+  jbo_similar: foha
+miahe:
   _family: MA
   eng_long: affectable/contextual variable 7
   eng_short: var I-7
-  jbo_similar: fo'e
-mia'i:
+  jbo_similar: fohe
+miahi:
   _family: MA
   eng_long: affectable/contextual variable 8
   eng_short: var I-8
-  jbo_similar: fo'i
-mia'o:
+  jbo_similar: fohi
+miaho:
   _family: MA
   eng_long: affectable/contextual variable 9
   eng_short: var I-9
-  jbo_similar: fo'o
-mia'u:
+  jbo_similar: foho
+miahu:
   _family: MA
   eng_long: affectable/contextual variable 10
   eng_short: var I-10
-  jbo_similar: fo'u
+  jbo_similar: fohu
 OLD_mian:
   _family: R
   _signature: "."
@@ -852,22 +855,22 @@ mie:
   _family: MA
   eng_long: affectable/contextual variable 2
   eng_short: var I-2
-  jbo_similar: ko'e
+  jbo_similar: kohe
 mii:
   _family: MA
   eng_long: affectable/contextual variable 3
   eng_short: var I-3
-  jbo_similar: ko'i
+  jbo_similar: kohi
 mio:
   _family: MA
   eng_long: affectable/contextual variable 4
   eng_short: var I-4
-  jbo_similar: ko'o
+  jbo_similar: koho
 miu:
   _family: MA
   eng_long: affectable/contextual variable 5
   eng_short: var I-5
-  jbo_similar: ko'u
+  jbo_similar: kohu
 OLD_mlin:
   _family: R
   _signature: ".[1]"
@@ -879,18 +882,18 @@ mo:
   eng_long: ___ is you listener(s)
   eng_short: you
   jbo_similar: do
-mo'a:
+moha:
   _family: MA
   _signature: "."
   eng_long: "___ is you (imperative), make it true for you, the listener"
   eng_short: you!
   jbo_similar: ko
-mo'i:
+mohi:
   _family: MA
   _signature: "."
   eng_long: ___ is you listener(s) & others
   eng_short: you & others
-  jbo_similar: do'o
+  jbo_similar: doho
 OLD_mrin:
   _family: R
   _signature: "."
@@ -901,35 +904,35 @@ mu:
   _family: MA
   eng_long: elliptical/unspecified predicate
   eng_short: (elliptical)
-mu'a:
+muha:
   _family: MA
   eng_long: "when the content of a place is overritten, it represents the previous content of the place"
   eng_short: (previous value)
-mu'e:
+muhe:
   _family: MA
   eng_long: binds to the relativized object of a relative clause
   eng_short: (object of relative clause)
-  jbo_similar: ke'a
-mu'i:
+  jbo_similar: keha
+muhi:
   _family: MA
   eng_long: referers to the current topic (most recent unquantified predicate in a prenex)
   eng_short: (topic)
-  jbo_similar: zoi'i
+  jbo_similar: zoihi
 mua:
   _family: MA
   eng_long: repeats the next to last proposition
   eng_short: (next to last prop)
-  jbo_similar: go'e
+  jbo_similar: gohe
 mue:
   _family: MA
   eng_long: repeats the last proposition
   eng_short: (last prop)
-  jbo_similar: go'i
+  jbo_similar: gohi
 mui:
   _family: MA
   eng_long: repeats the proposition in which this one is embeded
   eng_short: (outer prop)
-  jbo_similar: no'a
+  jbo_similar: noha
 muo:
   _family: MA
   eng_long: repeats current proposition
@@ -939,7 +942,7 @@ muu:
   _family: MA
   eng_long: repeats the next (future) proposition
   eng_short: (next prop)
-  jbo_similar: go'o
+  jbo_similar: goho
 my:
   _family: BY
   eng_long: letter M
@@ -950,32 +953,32 @@ o:
   eng_long: prefix a 4 words long compound
   eng_short: ""
   jbo_similar: lujvo making
-o'y:
+ohy:
   _family: BY
   eng_long: letter O
   eng_short: O
-  jbo_similar: o'y/obu
+  jbo_similar: ohy/obu
 pa:
   _family: PA
   eng_long: begin free suffix scope (matching end is not checked)
   eng_short: "{"
-  jbo_similar: fu'e
-pa'a:
+  jbo_similar: fuhe
+paha:
   _family: PA
   eng_long: "emphasis indicator, the next word is especially emphasized"
   eng_short: (emphasis)
-  jbo_similar: ba'e
-pa'e:
+  jbo_similar: bahe
+pahe:
   _family: PA
   eng_long: "nonce-word indicator, indicates next word (compound) may be nonstandard"
   eng_short: (non-standard)
-  jbo_similar: za'e
-pa'i:
+  jbo_similar: zahe
+pahi:
   _family: PA
   eng_long: next word is a metadata tag / hashtag
   eng_short: (hashtag)
-  jbo_similar: ci'a
-pa'o:
+  jbo_similar: ciha
+paho:
   _family: PA
   eng_long: "rebind following variable, discarding its previous value (can be omitted inside of <va>)"
   eng_short: (rebind)
@@ -983,7 +986,7 @@ pai:
   _family: PAI
   eng_long: end free suffix scope (matching start is not checked). following free suffix will apply to the scope instead of the preceding word
   eng_short: "}"
-  jbo_similar: fu'o
+  jbo_similar: fuho
 OLD_pan:
   _family: R
   _signature: ".[1]"
@@ -1081,27 +1084,27 @@ sa:
   eng_long: "___ is named [predicate]"
   eng_short: name
   jbo_similar: la
-sa'a:
+saha:
   _family: SA
   eng_long: "contrary scalar negator : other than .. (scale or set is implied)"
   eng_short: other than
-  jbo_similar: na'e
-sa'e:
+  jbo_similar: nahe
+sahe:
   _family: SA
   eng_long: "polar opposite scalar negator : not a .."
   eng_short: not
-  jbo_similar: to'e
-sa'i:
+  jbo_similar: tohe
+sahi:
   _family: SA
   eng_long: "midpoint scalar negator : not really"
   eng_short: not really
-  jbo_similar: no'e
+  jbo_similar: nohe
 sai:
   _family: SA
   _signature: "."
   eng_long: "___ is related to [predicate] (vague transformation, expands to {ba mu fa [predicate] bai})"
   eng_short: related to
-  jbo_similar: tu'a
+  jbo_similar: tuha
 OLD_sal:
   _family: R
   _signature: ".[1]"
@@ -1116,7 +1119,7 @@ sei:
   _family: SA
   eng_long: SA question
   eng_short: (SA ?)
-  jbo_similar: se'u'o
+  jbo_similar: sehuho
 OLD_sfe:
   _family: R
   _signature: "."
@@ -1128,11 +1131,11 @@ si:
   eng_long: switch 1st and 3rd places
   eng_short: x1 &#8652; x3
   jbo_similar: te
-si'a:
+siha:
   _family: SA
   eng_long: use the predicate as a predicate variable name (instead of using <mia>)
   eng_short: (named variable)
-  jbo_similar: ilmen's dau'u
+  jbo_similar: ilmenhs dauhu
 sia:
   _family: SA
   eng_long: "transform the [predicate] into a property with only its 1st place (all other have default value)"
@@ -1184,7 +1187,7 @@ soi:
   _family: SA
   eng_long: the referent of (indirect pointer)
   eng_short: referent of
-  jbo_similar: la'e
+  jbo_similar: lahe
 OLD_son:
   _family: R
   _signature: ".."
@@ -1232,27 +1235,27 @@ ta:
   eng_long: "number/digit: 0"
   eng_short: "0"
   jbo_similar: "no"
-ta'a:
+taha:
   _family: TA
   eng_long: "number: few"
   eng_short: few
-  jbo_similar: so'u
-ta'e:
+  jbo_similar: sohu
+tahe:
   _family: TA
   eng_long: "number: several"
   eng_short: several
-  jbo_similar: so'o
-ta'i:
+  jbo_similar: soho
+tahi:
   _family: TA
   eng_long: "number: many"
   eng_short: many
-  jbo_similar: so'i
-ta'o:
+  jbo_similar: sohi
+taho:
   _family: TA
   eng_long: "number: most"
   eng_short: most
-  jbo_similar: so'e
-ta'u:
+  jbo_similar: sohe
+tahu:
   _family: TA
   eng_long: "number: each/all"
   eng_short: each/all
@@ -1262,21 +1265,21 @@ tai:
   eng_long: number/letter string elidible terminator
   eng_short: ""
   jbo_similar: ""
-tai'a:
+taiha:
   _family: TA
   eng_long: too few (subjective)
   eng_short: too few
-  jbo_similar: mo'a
-tai'e:
+  jbo_similar: moha
+taihe:
   _family: TA
   eng_long: enough (subjective)
   eng_short: enough
   jbo_similar: rau
-tai'i:
+taihi:
   _family: TA
   eng_long: too many (subjective)
   eng_short: too many
-  jbo_similar: du'e
+  jbo_similar: duhe
 OLD_tan:
   _family: R
   _signature: ".[1][1]"
@@ -1297,21 +1300,21 @@ te:
   eng_long: decimal separator
   eng_short: .
   jbo_similar: pi
-te'a:
+teha:
   _family: TA
   eng_long: (base | number) separator
   eng_short: number base
-  jbo_similar: vu'ai?
-te'e:
+  jbo_similar: vuhai?
+tehe:
   _family: TA
   eng_long: thousands separator / number comma
   eng_short: thousands
-  jbo_similar: ki'o
-te'i:
+  jbo_similar: kiho
+tehi:
   _family: TA
   eng_long: "approximately, (precise | approximate) separator"
   eng_short: approximatly
-  jbo_similar: ji'i
+  jbo_similar: jihi
 tia:
   _family: TA
   eng_long: "number/digit: 1"
@@ -1353,27 +1356,27 @@ OLD_tsan:
   eng_long: ___ is a sky
   eng_short: sky
   jbo_similar: tsani
-tu'a:
+tuha:
   _family: TA
   eng_long: "number/digit: B (11)"
   eng_short: B (11)
   jbo_similar: dau
-tu'e:
+tuhe:
   _family: TA
   eng_long: "number/digit: C (12)"
   eng_short: C (12)
   jbo_similar: fei
-tu'i:
+tuhi:
   _family: TA
   eng_long: "number/digit: D (13)"
   eng_short: D (13)
   jbo_similar: gai
-tu'o:
+tuho:
   _family: TA
   eng_long: "number/digit: E (14)"
   eng_short: E (14)
   jbo_similar: rei/xei
-tu'u:
+tuhu:
   _family: TA
   eng_long: "number/digit: F (15)"
   eng_short: F (15)
@@ -1419,26 +1422,29 @@ u:
   eng_long: prefix and suffix an arbitrary words long compound
   eng_short: ""
   jbo_similar: lujvo making
-u'y:
+uhy:
   _family: BY
   eng_long: letter U
   eng_short: U
-  jbo_similar: u'y/ubu
-uy'y:
+  jbo_similar: uhy/ubu
+uy:
   _family: BY
-  eng_long: letter W/u semi-vowel
+  eng_long: u semi-vowel
+  eng_short: u-
+uny:
+  _family: BY
+  eng_long: letter W
   eng_short: W
-  jbo_similar: vy.bu
 va:
   _family: VA
-  eng_long: "predicate variable affectation. one side should be prefixed with <pa'o>"
+  eng_long: "predicate variable affectation. one side should be prefixed with <paho>"
   eng_short: "="
   jbo_similar: goi
 vai:
   _family: VAI
   eng_long: predicate link elidible terminator
   eng_short: ""
-  jbo_similar: ge'u/kei
+  jbo_similar: gehu/kei
 OLD_val:
   _family: R
   _signature: "..."
@@ -1470,31 +1476,31 @@ vyn:
   eng_long: ___ is a day
   eng_short: day
   jbo_similar: djedi
-xa'a:
+xaha:
   _family: XA
-  eng_long: laughter. additional 'a may be added
+  eng_long: laughter. additional ha may be added
   eng_short: (haha)
-  jbo_similar: xa'a
-xa'a'a:
+  jbo_similar: xaha
+xahaha:
   _family: XA
-  eng_long: same as <xa'a>
+  eng_long: same as <xaha>
   eng_short: (haha)
-  jbo_similar: xa'a
+  jbo_similar: xaha
 xu:
   _family: XA
   eng_long: true/false question marker
   eng_short: true ?
   jbo_similar: xu
-xu'a:
+xuha:
   _family: XA
   eng_long: indirect question marker
   eng_short: (indirect ?)
   jbo_similar: kau
-xu'i:
+xuhi:
   _family: XA
   eng_long: however/but/in constrast
   eng_short: however
-  jbo_similar: ku'i
+  jbo_similar: kuhi
 xy:
   _family: BY
   eng_long: letter X
@@ -1505,47 +1511,47 @@ xyn:
   _signature: "."
   eng_long: ___ is a week
   eng_short: week
-y'a:
+yhe:
   _family: BY
-  eng_long: pause character / .
-  eng_short: dot
+  eng_long: pause character / '
+  eng_short: (pause)
   jbo_similar: denpabu
-y'e:
+yha:
   _family: BY
-  eng_long: letter H/'
+  eng_long: letter H/h
   eng_short: H
   jbo_similar: xy.bu
-y'i:
+yla:
   _family: BY
   eng_long: letter L
   eng_short: L
   jbo_similar: ly
-y'o:
+yna:
   _family: BY
   eng_long: letter N
   eng_short: "N"
   jbo_similar: ny
-y'u:
+yra:
   _family: BY
   eng_long: letter R
   eng_short: R
   jbo_similar: ry
-y'y:
+yhy:
   _family: BY
   eng_long: letter Y
   eng_short: "Y"
-  jbo_similar: y'y/ybu
+  jbo_similar: yhy/ybu
 za:
   _family: ZA
   _signature: "."
-  eng_long: "prefix a foreign word, meaning '___ is a [word]'"
+  eng_long: "prefix a foreign word, meaning h___ is a [word]h"
   eng_short: (simple)
-  jbo_similar: cmevla/fu'ivla
+  jbo_similar: cmevla/fuhivla
 zai:
   _family: ZA
   eng_long: "prefix a foreign word, place structure is infered from context"
   eng_short: (complex)
-  jbo_similar: fu'ivla
+  jbo_similar: fuhivla
 OLD_zdei:
   _family: R
   _signature: ".0"
@@ -1567,7 +1573,7 @@ zei:
   _family: ZEI
   eng_long: end grammatical quote
   eng_short: "&#12318;"
-  jbo_similar: li'u
+  jbo_similar: lihu
 OLD_zgan:
   _family: R
   _signature: ".."

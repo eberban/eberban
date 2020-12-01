@@ -11,18 +11,18 @@ Pronouns are expressed with the following particles :
 | ----- | ------------------------------------------------------------- |
 | mi    | ___ is me/the speaker/authors                                 |
 | mo    | ___ is you listener                                           |
-| mi'o  | ___ is me/the speaker/author & you the listener               |
-| mi'oi | ___ is me/the speaker/author & you the listener & others      |
-| mi'i  | ___ is me/the speaker/author & others but no you the listener |
-| mo'a  | ___ is you (imperative), make it true for you, the listener   |
-| ma'i  | ___ is this here, near the speaker                            |
-| ma'o  | ___ is that here, near the listener                           |
-| ma'u  | ___ is that younder, far from speaker and listener            |
+| miho  | ___ is me/the speaker/author & you the listener               |
+| mihoi | ___ is me/the speaker/author & you the listener & others      |
+| mihi  | ___ is me/the speaker/author & others but no you the listener |
+| moha  | ___ is you (imperative), make it true for you, the listener   |
+| mahi  | ___ is this here, near the speaker                            |
+| maho  | ___ is that here, near the listener                           |
+| mahu  | ___ is that younder, far from speaker and listener            |
 
 ## Variables / 3rd person pronouns
 
 Particles starting with **mi-** are variables. They can be defined using `va`
-and `pa'o` (see chapters about **VA** and **PA** families for how to use them)
+and `paho` (see chapters about **VA** and **PA** families for how to use them)
 to have short words for a previously defined complex predicate. They can also be
 used as 3rd person pronouns.
 
@@ -30,9 +30,9 @@ By default, they have an elliptical/contextual value. However, while being
 elliptical *a variable always represents the same predicate/entity until it is
 redefined*.
 
-The current list is : mia, mie, mii, mio, miu, mia'a, mia'e, mia'i, mia'o,
-mia'u. This list can be extended if needed by following the pattern `"mi" +
-vowel + ' + vowel/diphthong`.
+The current list is : mia, mie, mii, mio, miu, miaha, miahe, miahi, miaho,
+miahu. This list can be extended if needed by following the pattern `"mi" +
+vowel + h + vowel/diphthong`.
 
 ## Propositions
 
@@ -61,7 +61,7 @@ distant predicates.
 | ma   | binds a variable within an abstraction that represents an open space (using in `ba` abstractions)        |
 | me   | predicate question / fill the blank question.                                                            |
 | mu   | elliptical/unspecified predicate, corresponds to the *null value*                                        |
-| mu'a | when the content of a place is overwritten, it represents the previous content/value of the place        |
-| mu'e | binds to the relativized object of a relative clause (see predicate links **VA** and adverbials **fi***) |
-| mu'i | referers to the current topic (see prenex **foi**)                                                       |
+| muha | when the content of a place is overwritten, it represents the previous content/value of the place        |
+| muhe | binds to the relativized object of a relative clause (see predicate links **VA** and adverbials **fi***) |
+| muhi | referers to the current topic (see prenex **foi**)                                                       |
 

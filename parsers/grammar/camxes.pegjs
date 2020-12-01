@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.11
+// eberban PEG grammar - v0.12
 // ===========================
 
 // GRAMMAR
@@ -133,7 +133,7 @@
 }
 
 text = expr:(parser_version? text_1) {return _node("text", expr);}
-parser_version = expr:(DI_clause (!parser_version_number borrowing_content (dot !dot !y)? parser_version_number? / parser_version_number)) {return _node("parser_version", expr);}
+parser_version = expr:(DI_clause (!parser_version_number borrowing_content (pause_char !pause_char !y)? parser_version_number? / parser_version_number)) {return _node("parser_version", expr);}
 parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
 // main text rule
 text_1 = expr:((free_indicator / free_predicate / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?) {return _node("text_1", expr);}
@@ -206,17 +206,17 @@ predicate_2 = expr:(predicate_cak_pre / compound free_post* / borrowing / gramma
 predicate_cak_pre = expr:((gacak !DE_clause !DA_clause predicate (gik predicate)+ GAI_clause_elidible)) {return _node("predicate_cak_pre", expr);}
 
 // compound prefixes
-compound = expr:((compound_1 / compound_2 / compound_3 / compound_4 / compound_n)) {return _node("compound", expr);}
+compound = expr:((compound_1 / compound_2 / compound_3 / compound_4 / compound_n) &post_word) {return _node("compound", expr);}
 compound_1 = expr:(A_clause compound_word) {return _node("compound_1", expr);}
 compound_2 = expr:(E_clause compound_word compound_word) {return _node("compound_2", expr);}
 compound_3 = expr:(I_clause compound_word compound_word compound_word) {return _node("compound_3", expr);}
 compound_4 = expr:(O_clause compound_word compound_word compound_word compound_word) {return _node("compound_4", expr);}
-compound_n = expr:(U_clause (!(dot? U) compound_word)+ (dot? U)) {return _node("compound_n", expr);}
-compound_word = expr:(initial_dot native_word) {return _node("compound_word", expr);}
+compound_n = expr:(U_clause (!(pause_char? U) compound_word)+ (pause_char? U)) {return _node("compound_n", expr);}
+compound_word = expr:(initial_pause native_word) {return _node("compound_word", expr);}
 
 // borrowings
-borrowing = expr:(ZA_clause borrowing_content (dot / space_char / EOF) free_post*) {return _node("borrowing", expr);}
-borrowing_content = expr:(spaces foreign_word) {return _node("borrowing_content", expr);}
+borrowing = expr:(ZA_clause borrowing_content (pause_char / space_char / EOF) free_post*) {return _node("borrowing", expr);}
+borrowing_content = expr:((spaces? !coda / spaces &coda) foreign_word) {return _node("borrowing_content", expr);}
 
 // quotes
 grammatical_quote = expr:(ZE_clause text_1 ZEI_clause) {return _node("grammatical_quote", expr);}
@@ -319,7 +319,7 @@ ZU_clause = expr:(free_prefix* spaces? ZU) {return _node("ZU_clause", expr);}
 A = expr:(&particle (a)) {return _node("A", expr);}
 BA = expr:(&particle !(BAI post_word) (b vowel_tail)) {return _node("BA", expr);}
 BAI = expr:(&particle (b a i)) {return _node("BAI", expr);}
-BY = expr:(&particle (consonant y / vowel_y h y / (i / u) y h y / vi_diphthong h y / y h vowel)) {return _node("BY", expr);}
+BY = expr:(&particle (consonant y / vowel_y h y / (i / u) (y / n y) / y separator a / y h e)) {return _node("BY", expr);}
 CA = expr:(&particle (c vowel_tail)) {return _node("CA", expr);}
 DA = expr:(&particle (d a)) {return _node("DA", expr);}
 DE = expr:(&particle (d e)) {return _node("DE", expr);}
@@ -370,17 +370,19 @@ foreign_quote_word = expr:((!spaces .)+ ) !{ return _is_foreign_quote_delim(expr
 foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr); } { return _node("foreign_quote_close", expr); }
 
 // - Legal words
-foreign_word = expr:(!coda (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?) {return _node("foreign_word", expr);}
+foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(!coda consonant? vowel_tail_y !coda &post_word) {return _node("particle", expr);}
-root = expr:(((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant) vowel_tail_y coda)) &post_word) {return _node("root", expr);}
+root = expr:(((initial_consonant_pair vowel_tail_y coda?) / (!coda (initial_consonant_pair / consonant)? vowel_tail_y coda)) &post_word) {return _node("root", expr);}
 
 // - Legal vowels and vowel tails
 vowel_tail = expr:((diphthong / vowel) vowel_tail_1*) {return _node("vowel_tail", expr);}
-vowel_tail_1 = expr:(h (vi_diphthong / vowel )) {return _node("vowel_tail_1", expr);}
+vowel_tail_1 = expr:(separator (vi_diphthong / vowel )) {return _node("vowel_tail_1", expr);}
 
 vowel_tail_y = expr:((diphthong_y / vowel_y) vowel_tail_y_1*) {return _node("vowel_tail_y", expr);}
-vowel_tail_y_1 = expr:(h (vi_diphthong_y / vowel_y )) {return _node("vowel_tail_y_1", expr);}
+vowel_tail_y_1 = expr:(separator (vi_diphthong_y / vowel_y )) {return _node("vowel_tail_y_1", expr);}
+
+separator = expr:(h / l / n / r) {return _node("separator", expr);}
 
 diphthong_y = expr:(iuv_diphthong_y / vi_diphthong_y) {return _node("diphthong_y", expr);}
 iuv_diphthong_y = expr:((i / u) vowel_y) {return _node("iuv_diphthong_y", expr);}
@@ -392,7 +394,7 @@ iuv_diphthong = expr:((i / u) vowel) {return _node("iuv_diphthong", expr);}
 vi_diphthong = expr:((a / e / o) i) {return _node("vi_diphthong", expr);}
 vowel = expr:(a / e / i / o / u) {return _node("vowel", expr);}
 
-h = expr:(['h]) {return ["h", expr];} // <LEAF2>
+h = expr:([hH]) {return ["h", "h"];} // <LEAF>
 a = expr:([aA]) {return ["a", "a"];} // <LEAF>
 e = expr:([eE]) {return ["e", "e"];} // <LEAF>
 i = expr:([iI]) {return ["i", "i"];} // <LEAF>
@@ -434,13 +436,13 @@ t = expr:([tT] !t !voiced) {return ["t", "t"];} // <LEAF>
 
 // - Spaces / Pause
 
-post_word = expr:((dot &vowel_y / &consonant / spaces)) {return _node("post_word", expr);}
-initial_dot = expr:((dot &vowel_y / !dot &consonant)) {return _node("initial_dot", expr);}
-spaces = expr:(initial_spaces (dot &vowel_y)? / dot &vowel_y / EOF) {return _node("spaces", expr);}
+post_word = expr:((pause_char &(vowel_y / coda) / &consonant / spaces)) {return _node("post_word", expr);}
+initial_pause = expr:((pause_char &vowel_y / !pause_char &consonant)) {return _node("initial_pause", expr);}
+spaces = expr:(initial_spaces (pause_char &(vowel_y / coda))? / pause_char &(vowel_y / coda) / EOF) {return _node("spaces", expr);}
 initial_spaces = expr:((hesitation / space_char)+) {return ["initial_spaces", _join(expr)];}
-hesitation = expr:((space_char+ dot? / dot) !(y h y) y+ !(dot dot) (dot? &space_char / &(dot y) / dot / EOF)) {return _node("hesitation", expr);}
+hesitation = expr:((space_char+ pause_char? / pause_char) !(y h y) y+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char y) / pause_char / EOF)) {return _node("hesitation", expr);}
 space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
 
 // - Special characters
-dot = expr:('.' !'.') {return _node("dot", expr);}
+pause_char = expr:(([']) !pause_char) {return _node("pause_char", expr);}
 EOF = expr:(!.) {return _node("EOF", expr);}
