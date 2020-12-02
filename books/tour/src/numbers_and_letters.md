@@ -24,7 +24,7 @@ suffix letter. The value interpretation of the chain is context dependent.
 ## Strings
 
 If the first word of the chain is a **BY**, the chain is a predicate about
-something recognized by this sequence of letters. It could be a predicate chained (explaned later)
+something recognized by this sequence of letters. It could be a predicate chain (explaned later)
 with these initials, or a contextual predicate associated with these letters.
 
 The meaning is thus ambiguous, and disambiguation might be necessary.
