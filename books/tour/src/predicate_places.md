@@ -1,11 +1,10 @@
 # Predicate places [FA/DU]
 
-Predicate places tags allow to fill the places of a proposition. It can
-corresponds to places of the main predicate, or other special places. They are
-followed by a predicate filling that place.
+Predicate place tags are used to fill the places of a proposition.
+They may apply to either existing places of the main predicate ("numbered places") or other special places (e.g. "imported places").
+They are followed by a (subordinate) predicate filling that place.
 
-If multiple places can be filled with the same predicate, multiple place tags
-can be chained in a row.
+It is possible to fill multiple places with the same predicate by chaining multiple place tags in a row.
 
 ```ebb
   spi fa mi fe mi
@@ -16,7 +15,7 @@ can be chained in a row.
 Usually, the main predicate of a proposition is placed first, then places are
 filled with **FA/DU**. However, it's possible to fill places before. In this
 case, the main predicate must be prefixed with **do**. It can be used to express
-the most import part first. 
+the most important part first.
 
 ```
   spi fa mi fe mi
@@ -28,14 +27,14 @@ the most import part first.
 
 ## Numbered places
 
-As their name implies, these particles allow to fill the numbered places of the
+As their name implies, these particles are used for filling the numbered places of the
 main predicate of a proposition.
 
-**fa, fe, fi, fo, fu, fua, fue, fui, fuo, fuu** allow to tag the 1st place up to
-the 10th place. If needed, an higher place can be tagged with subscripts.
+**fa, fe, fi, fo, fu, fua, fue, fui, fuo, fuu**, in this order, are used for filling the 1st place up to
+the 10th place. If needed, a higher place can be tagged with subscripts.
 
-**fai** allow to fill the next numered place, counting from the last filled
-numbered place (using explicit numbers with **fa**-like or **fai**).
+**fai** fills the next numered place, counting from the last filled
+numbered place (considering places filled with **fa**-like as well as **fai**).
 
 If no numbered place has been filled before, **fai** will fill the 1st place if
 used before the main predicate (with **do**), or the 2st place if used after.
@@ -62,7 +61,7 @@ is used to talk.
 
 ## Prenex
 
-**foi** don't fill a place, but allows to provide what is called a prenex. It can
+**foi** does not fill a place, but allows to provide what is called a prenex. It can
 be used to define a topic or declare quantified variables, separated from their
 use site, usually early/first in the proposition.
 
@@ -73,7 +72,7 @@ foi mian fa mi do dul fe mu'i
 
 ## Place question
 
-**fei** allows to ask which place of a predicate could be filled with the provided
+**fei** is used to ask which place of a predicate could be filled with the provided
 predicate.
 
 ```ebb
