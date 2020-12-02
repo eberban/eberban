@@ -16,7 +16,7 @@ can also contain inner **ze** quotes, as a **zei** will match its opening
 
 ## Foreign quote [ZU]
 
-**zu** allow to quote anything such as foreign text or ungrammatical eberban
+**zu** allows quoting anything such as foreign text or ungrammatical eberban
 text. **zu** is followed by a **single** arbitrary valid eberban word (no
 compounds or borrowing), which has the role of a delimiter. The quote ends when
 this word appear again with spaces before it. The delimiter word should not
