@@ -61,7 +61,7 @@ distant predicates.
 | ma   | binds a variable within an abstraction that represents an open space (using in `ba` abstractions)        |
 | me   | predicate question / fill the blank question.                                                            |
 | mu   | elliptical/unspecified predicate, corresponds to the *null value*                                        |
-| mu'a | when the content of a place is overritten, it represents the previous content/value of the place         |
+| mu'a | when the content of a place is overwritten, it represents the previous content/value of the place        |
 | mu'e | binds to the relativized object of a relative clause (see predicate links **VA** and adverbials **fi***) |
 | mu'i | referers to the current topic (see prenex **foi**)                                                       |
 

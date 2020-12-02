@@ -3,7 +3,7 @@
 When a predicate place expects something which is not an entity, it is mandatory
 to provide something of the correct type. While it's possible to manually create
 it with the use of abstractors (seen later in this book), multiple places like
-this leads to deep nesting, which is harder to follow and verbose.
+this leads to deep nesting, which is harder to follow and also verbose.
 
 The language provides a **chaining** mechanism to create complex but "flat"
 place structures from multiple adjacent predicates, avoiding the need of
@@ -12,7 +12,7 @@ abstractors in most cases.
 ## Chaining rules
 
 Chaining takes places between a left predicate **L** and a right predicate
-**R**. First, find the rightmost place of **L** which expect a non-entity
+**R**. First, find the rightmost place of **L** which expects a non-entity
 (proposition/property/...), which we will call **LP**.
 
 > If the rightmost place is not the one you want, see `cia/cie/cii/cio/ciu`
@@ -52,7 +52,7 @@ flun spi : ___ inspires ___ to satisfy property (XXX talks to ___)
          = ___ inspires ___ to talk to ___
 ```
 
-> Definitions with properties always describes an entity satisfying the property. This is
+> Definitions with properties always describe an entity satisfying the property. This is
 > the place merged with the removed first place of the right predicate.
 
 ## Chaining with more than 2 predicates

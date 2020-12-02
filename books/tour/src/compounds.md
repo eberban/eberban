@@ -1,22 +1,22 @@
 # Compounds [C]
 
-Providing a root for every concept is impossible but also very impractical.
-Complex concepts are often based on multiple more basic concepts, and compounds
+Providing a root for every concept would be extremely impractical.
+Complex concepts are often built upon multiple more primitive concepts, and compounds
 are used for this purpose.
 
-Compounds allow to transform any string of valid eberban words into a single
-unit, ignoring their grammatical rules but keeping their meaning.
+Compounds allow transforming any string of valid eberban words into a single
+unit, ignoring their grammatical rules but keeping (to a certain extent) their meaning.
 
-A compound is first prefixed by *a, e, i, o* particles, respectively
-starting a compound composed of 1, 2, 3, 4. If a compound is made of more than
+A compound is first prefixed by the particles *a, e, i, o*, respectively
+starting a compound composed of 1, 2, 3 or 4 words. If a compound is made of more than
 4 words, it must be prefixed by *u* and suffixed with `.u`.
 
 Spaces are forbidden between the components of the compound.
 
-A compound have a unique meaning which is defined in the dictionnary, and
-while it's place structure can be arbitrary, it usualy provide places taken
-from its components. Usually the most important word is the rightmost one,
-while words are added to the left to add precisions.
+A compound has a unique, fixed meaning which is defined in the dictionary, and
+while its place structure can be arbitrary, it usually provides places taken
+from its individual components. Usually the most important word is the rightmost one,
+and additional words are added to the left to help narrow down the meaning, yielding greater precision.
 
 1-word compounds are also used to make predicate words corresponding to the
 rule of a particle.
