@@ -59,16 +59,13 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 
 ## BY members
 
-| Letter              | Representation in eberban          |
-| ------------------- | ---------------------------------- |
-| Vowels              | *ahy, ehy, ihy, ohy, uhy, yhy*     |
-| Non coda consonants | consonant + y (*by, cy*, &hellip;) |
-| i semi-vowel        | *iy*                               |
-| u semi-vowel        | *uy*                               |
-| H                   | *yha*                              |
-| L                   | *yla*                              |
-| N                   | *yno*                              |
-| R                   | *yra*                              |
-| Q                   | *iny*                              |
-| W                   | *uny*                              |
-| Pause               | *yhe*                              |
+| Letter       | Representation in eberban          |
+| ------------ | ---------------------------------- |
+| Vowels       | *ahy, ehy, ihy, ohy, uhy, yhy*     |
+| Consonants   | consonant + y (*by, cy*, &hellip;) |
+| i semi-vowel | *iy*                               |
+| u semi-vowel | *uy*                               |
+| H            | *yha*                              |
+| Pause        | *yhe*                              |
+| Q            | *iny*                              |
+| W            | *uny*                              |
