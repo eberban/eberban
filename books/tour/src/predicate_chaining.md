@@ -20,8 +20,8 @@ Chaining takes places between a left predicate **L** and a right predicate
 
 If there is no such **LP**, the output predicate will be equivalent to `L ce R`,
 a predicate which represents something which satisfies both **L** and **R**.
-The place structure is composed of a place corresponding to both **L** and **R**
-first place (merged), followed by **L** other places, then **R** other places.
+Only the place structure of **R** is kept. To fill places of **L**, **ba**
+should be used (see chapter on abstractors).
 
 If this **LP** exist, we look at the arity of the argument it expects, which
 we'll call **N** (0 for a proposition or event, 1 for a property, ...). We then
