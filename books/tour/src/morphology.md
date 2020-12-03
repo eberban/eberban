@@ -55,17 +55,26 @@ TODO...
 
 ## Permissible consonant pairs
 
+Not all consonant pairs are allowed in eberban.
+The following table lists all permissible consonant pairs.
+
 |  |  |  |  |  |  |  |  |
 |--|--|--|--|--|--|--|--|
 |cp|ct|ck|cf|cm|cn|cl|cr|
 |sp|st|sk|sf|sm|sn|sl|sr|
 |jb|jd|jg|jv|jm|jn|jl|jr|
 |zb|zd|zg|zv|zm|zn|zl|zr|
+|  |  |  |  |  |  |  |&nbsp;|
 |pl|pr|tl|tr|kl|kr|fl|fr|
 |xl|xr|bl|br|dl|dr|gl|gr|
-|vl|vr|ml|mr|tc|ts|dj|dz|
+|vl|vr|ml|mr|  |  |  |  |
+|  |  |  |  |  |  |  |&nbsp;|
+|tc|ts|dj|dz|
 
 ## Permissible diphthongs
+
+Not all diphthongs pairs are allowed either.
+The following table lists all permissible diphthongs.
 
 |  |  |  |  |  |  |
 |--|--|--|--|--|--|
