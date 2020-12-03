@@ -26,7 +26,9 @@ Predicates have a precise definition which define their place structure.
 - `[___]` represents a proposition place.
 - `[___N]` represents a property place, with N indicating which other place of
   the predicate the property applies to. If the property applies to multiple
-  places, each place will be separated with a `,`.
+  places, each place will be separated with a `,`. In some cases, the place
+  structure talks about something that is not an argument but satisfies a
+  property. In this case, **X** will be used instead of a number.
 - `[___N|M]` represents a relation place. Same thing as properties, but the `,`
   separate the 2 places of the relation. If a predicate expect a predicate with
   more than 2 places (rare), more `|` are used.
