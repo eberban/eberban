@@ -94,7 +94,7 @@ something bigger, which is contextual by default.
 | *tarir* | `[___X] is in a medium interval of [___X]`                               |
 | *taron* | `[___X] is at a long distance in space of [___X]`                        |
 | *taror* | `[___X] is in a long interval of [___X]`                                 |
-| *tarun* | `[___X] is at an infinite/unmeasurable long distance in space of [___X]` |
+| *tarun* | `[___X] is at an infinite/unmeasurably long distance in space of [___X]` |
 | *tarur* | `[___X] is in the whole interval of [___X]`                              |
 | *taryn* | `[___X] is at a distance in space of ___ (number with space unit)`       |
 | *taryr* | `[___X] has a size of ___ (number with space unit)`                      |
