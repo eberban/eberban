@@ -2,8 +2,8 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [ master ]
-    
+    branches: [master]
+
   workflow_dispatch:
 
 jobs:
@@ -13,25 +13,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
       - name: Cache mdbook binary
         id: cache-mdbook
         uses: actions/cache@v2
         with:
           path: ~/.cargo/bin/mdbook
           key: ${{runner.os}}-mdbook
-      
+
       - name: Install Rust (if no cache)
         if: steps.cache-mdbook.outputs.cache-hit != 'true'
         uses: actions-rs/toolchain@v1
         with:
-            toolchain: stable
-            override: true
-      
+          toolchain: stable
+          override: true
+
       - name: Install mdbook (if no cache)
         if: steps.cache-mdbook.outputs.cache-hit != 'true'
-        run: cargo install --vers "^0.3" mdbook
-          
+        run: cargo install --vers "^0.4.4" mdbook
+
       - name: Build book
         run: ~/.cargo/bin/mdbook build books/tour
-
