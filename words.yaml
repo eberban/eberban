@@ -1722,7 +1722,7 @@ tanan:
 tanar:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a negligible time interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a negligible time interval of [___]"
   eng_short: negligible time interval
 tanen:
   _family: R
@@ -1732,7 +1732,7 @@ tanen:
 taner:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a short time interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a short time interval of [___]"
   eng_short: short time interval
 tanin:
   _family: R
@@ -1742,7 +1742,7 @@ tanin:
 tanir:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a medium time interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a medium time interval of [___]"
   eng_short: medium time interval
 tanon:
   _family: R
@@ -1752,7 +1752,7 @@ tanon:
 tanor:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a long time interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a long time interval of [___]"
   eng_short: long time interval
 tanun:
   _family: R
@@ -1762,7 +1762,7 @@ tanun:
 tanur:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in the whole time interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in the whole time interval of [___]"
   eng_short: whole time interval
 tanyn:
   _family: R
