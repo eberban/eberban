@@ -1722,7 +1722,7 @@ tanan:
 tanar:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a negligible interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a negligible time interval of [___] (default = now)"
   eng_short: negligible time interval
 tanen:
   _family: R
@@ -1732,7 +1732,7 @@ tanen:
 taner:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a short interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a short time interval of [___] (default = now)"
   eng_short: short time interval
 tanin:
   _family: R
@@ -1742,7 +1742,7 @@ tanin:
 tanir:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a medium interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a medium time interval of [___] (default = now)"
   eng_short: medium time interval
 tanon:
   _family: R
@@ -1752,7 +1752,7 @@ tanon:
 tanor:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in a long interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in a long time interval of [___] (default = now)"
   eng_short: long time interval
 tanun:
   _family: R
@@ -1762,7 +1762,7 @@ tanun:
 tanur:
   _family: R
   _signature: "00"
-  eng_long: "[___] (default = now) occurs in the whole interval of [___] (default = now)"
+  eng_long: "[___] (default = now) occurs in the whole time interval of [___] (default = now)"
   eng_short: whole time interval
 tanyn:
   _family: R
@@ -1783,7 +1783,7 @@ taran:
 tarar:
   _family: R
   _signature: "[X][X]"
-  eng_long: "[___X] (default = here) is in a negligible interval of [___X] (default = here)"
+  eng_long: "[___X] (default = here) is in a negligible space interval of [___X] (default = here)"
   eng_short: negligible space interval
 taren:
   _family: R
@@ -1793,7 +1793,7 @@ taren:
 tarer:
   _family: R
   _signature: "[X][X]"
-  eng_long: "[___X] (default = here) is in a short interval of [___X] (default = here)"
+  eng_long: "[___X] (default = here) is in a short space interval of [___X] (default = here)"
   eng_short: short space interval
 tarin:
   _family: R
@@ -1803,7 +1803,7 @@ tarin:
 tarir:
   _family: R
   _signature: "[X][X]"
-  eng_long: "[___X] (default = here) is in a medium interval of [___X] (default = here)"
+  eng_long: "[___X] (default = here) is in a medium space interval of [___X] (default = here)"
   eng_short: medium space interval
 taron:
   _family: R
@@ -1813,7 +1813,7 @@ taron:
 taror:
   _family: R
   _signature: "[X][X]"
-  eng_long: "[___X] (default = here) is in a long interval of [___X] (default = here)"
+  eng_long: "[___X] (default = here) is in a long space interval of [___X] (default = here)"
   eng_short: long space interval
 tarun:
   _family: R
@@ -1823,7 +1823,7 @@ tarun:
 tarur:
   _family: R
   _signature: "[X][X]"
-  eng_long: "[___X] (default = here) is in the whole interval of [___X] (default = here)"
+  eng_long: "[___X] (default = here) is in the whole space interval of [___X] (default = here)"
   eng_short: whole space interval
 taryn:
   _family: R
