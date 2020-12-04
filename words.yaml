@@ -1723,7 +1723,7 @@ tanar:
   _family: R
   _signature: "00"
   eng_long: "[___] (default = now) occurs in a negligible interval of [___] (default = now)"
-  eng_short: negligible time interal
+  eng_short: negligible time interval
 tanen:
   _family: R
   _signature: "00"
@@ -1733,7 +1733,7 @@ taner:
   _family: R
   _signature: "00"
   eng_long: "[___] (default = now) occurs in a short interval of [___] (default = now)"
-  eng_short: short time interal
+  eng_short: short time interval
 tanin:
   _family: R
   _signature: "00"
@@ -1743,7 +1743,7 @@ tanir:
   _family: R
   _signature: "00"
   eng_long: "[___] (default = now) occurs in a medium interval of [___] (default = now)"
-  eng_short: medium time interal
+  eng_short: medium time interval
 tanon:
   _family: R
   _signature: "00"
@@ -1753,7 +1753,7 @@ tanor:
   _family: R
   _signature: "00"
   eng_long: "[___] (default = now) occurs in a long interval of [___] (default = now)"
-  eng_short: long time interal
+  eng_short: long time interval
 tanun:
   _family: R
   _signature: "00"
@@ -1763,7 +1763,7 @@ tanur:
   _family: R
   _signature: "00"
   eng_long: "[___] (default = now) occurs in the whole interval of [___] (default = now)"
-  eng_short: whole time interal
+  eng_short: whole time interval
 tanyn:
   _family: R
   _signature: "00"
@@ -1773,7 +1773,7 @@ tanyr:
   _family: R
   _signature: "00"
   eng_long: "[___] (default = now) has a duration of ___ (number with time unit)"
-  eng_short: custom time interal
+  eng_short: custom time interval
 
 taran:
   _family: R
@@ -1784,7 +1784,7 @@ tarar:
   _family: R
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is in a negligible interval of [___X] (default = here)"
-  eng_short: negligible space interal
+  eng_short: negligible space interval
 taren:
   _family: R
   _signature: "[X][X]"
@@ -1794,7 +1794,7 @@ tarer:
   _family: R
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is in a short interval of [___X] (default = here)"
-  eng_short: short space interal
+  eng_short: short space interval
 tarin:
   _family: R
   _signature: "[X][X]"
@@ -1804,7 +1804,7 @@ tarir:
   _family: R
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is in a medium interval of [___X] (default = here)"
-  eng_short: medium space interal
+  eng_short: medium space interval
 taron:
   _family: R
   _signature: "[X][X]"
@@ -1814,7 +1814,7 @@ taror:
   _family: R
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is in a long interval of [___X] (default = here)"
-  eng_short: long space interal
+  eng_short: long space interval
 tarun:
   _family: R
   _signature: "[X][X]"
@@ -1824,7 +1824,7 @@ tarur:
   _family: R
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is in the whole interval of [___X] (default = here)"
-  eng_short: whole space interal
+  eng_short: whole space interval
 taryn:
   _family: R
   _signature: "[X][X]"
@@ -1834,7 +1834,7 @@ taryr:
   _family: R
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) has a size of ___ (number with space unit)"
-  eng_short: custom space interal
+  eng_short: custom space interval
 
 tenan:
   _family: R
