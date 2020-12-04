@@ -34,10 +34,15 @@ class DefinitionAggregator:
             self.current_word = None
             self.current_word_lines = []
     def aggregate(self):
+        def get_sorting_key(word):
+            if word.startswith("OLD_"):
+                return (1, word)
+            else:
+                return (0, word)
         if self.current_word is not None or self.current_word_lines != []:
             raise RuntimeError("Attempting to produce output, but there is still a leftover word left in the buffer")
         output_lines = []
-        for word, lines in sorted(self.aggregated_contents, key=lambda p: p[0]):
+        for word, lines in sorted(self.aggregated_contents, key=lambda p: get_sorting_key(p[0])):
             output_lines.append(word + ":")
             output_lines += lines
         return output_lines
