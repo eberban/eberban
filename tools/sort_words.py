@@ -7,6 +7,8 @@ def is_valid_eberbanic_word_character(c):
     return str.isalpha(c) or c == "'"
 
 def is_valid_outermost_key(key):
+    if key.startswith("OLD_"):
+        key = key[4:]
     return all([is_valid_eberbanic_word_character(c) for c in key])
 
 def is_valid_innermost_key(key):
