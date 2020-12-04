@@ -61,15 +61,15 @@ of a longer event, which is contextual by default.
 | Root    | Meaning                                                               |
 | ------- | --------------------------------------------------------------------- |
 | *tanan* | `[___] is at a negligible distance in time of [___]`                  |
-| *tanar* | `[___] occurs in a negligible interval of [___]`                      |
+| *tanar* | `[___] occurs in a negligible time interval of [___]`                 |
 | *tanen* | `[___] is at a short distance in time of [___]`                       |
-| *taner* | `[___] occurs in a short interval of [___]`                           |
+| *taner* | `[___] occurs in a short time interval of [___]`                      |
 | *tanin* | `[___] is at a medium distance in time of [___]`                      |
-| *tanir* | `[___] occurs in a medium interval of [___]`                          |
+| *tanir* | `[___] occurs in a medium time interval of [___]`                     |
 | *tanon* | `[___] is at a long distance in time of [___]`                        |
-| *tanor* | `[___] occurs in a long interval of [___]`                            |
+| *tanor* | `[___] occurs in a long time interval of [___]`                       |
 | *tanun* | `[___] is at an infinite/unmeasurable long distance in time of [___]` |
-| *tanur* | `[___] occurs in the whole interval of [___]`                         |
+| *tanur* | `[___] occurs in the whole time interval of [___]`                    |
 | *tanyn* | `[___] is at a distance in time of ___ (number with time unit)`       |
 | *tanyr* | `[___] has a duration of ___ (number with time unit)`                 |
 
@@ -87,15 +87,15 @@ something bigger, which is contextual by default.
 | Root    | Meaning                                                                  |
 | ------- | ------------------------------------------------------------------------ |
 | *taran* | `[___X] is at a negligible distance in space of [___X]`                  |
-| *tarar* | `[___X] is in a negligible interval of [___X]`                           |
+| *tarar* | `[___X] is in a negligible space interval of [___X]`                           |
 | *taren* | `[___X] is at a short distance in space of [___X]`                       |
-| *tarer* | `[___X] is in a short interval of [___X]`                                |
+| *tarer* | `[___X] is in a short space interval of [___X]`                                |
 | *tarin* | `[___X] is at a medium distance in space of [___X]`                      |
-| *tarir* | `[___X] is in a medium interval of [___X]`                               |
+| *tarir* | `[___X] is in a medium space interval of [___X]`                               |
 | *taron* | `[___X] is at a long distance in space of [___X]`                        |
-| *taror* | `[___X] is in a long interval of [___X]`                                 |
+| *taror* | `[___X] is in a long space interval of [___X]`                                 |
 | *tarun* | `[___X] is at an infinite/unmeasurably long distance in space of [___X]` |
-| *tarur* | `[___X] is in the whole interval of [___X]`                              |
+| *tarur* | `[___X] is in the whole space interval of [___X]`                              |
 | *taryn* | `[___X] is at a distance in space of ___ (number with space unit)`       |
 | *taryr* | `[___X] has a size of ___ (number with space unit)`                      |
 
