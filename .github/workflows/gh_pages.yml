@@ -35,13 +35,11 @@ jobs:
       - name: Build book
         run: |
           ~/.cargo/bin/mdbook build books/tour
-          rm -f books/tour/.gitignore
         
       - name: Commit changes to gh-pages
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Build book from master
-          branch: gh-pages
-          file_pattern: books/tour/book/*
-          push_options: '--force'
-          skip_dirty_check: true
+        run: |
+          rm -f books/tour/.gitignore
+          git checkout -b tmp/gh-pages
+          git add -A
+          git commit -m "Build mdbook"
+          git push origin tmp/gh-pages:gh-pages --force
