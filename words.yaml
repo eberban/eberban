@@ -1629,3 +1629,424 @@ OLD_plen:
   _signature: "."
   eng_long: ___ is rain
   eng_short: rain
+
+tan:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is in the past of/before [___] (default = now)"
+  eng_short: past
+tar:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is in the present of/concurrent with [___] (default = now)"
+  eng_short: present
+tal:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is in the future of/after [___] (default = now)"
+  eng_short: future
+
+tahan:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is forward/in front of [___X] (default = here)"
+  eng_short: forward
+tahen:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is backward of/behind [___X] (default = here)"
+  eng_short: backward
+tahin:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is leftward/to the left of [___X] (default = here)"
+  eng_short: left
+tahon:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is rightward/to the right of [___X] (default = here)"
+  eng_short: right
+tahun:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is downward of/under [___X] (default = here)"
+  eng_short: down
+tahyn:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is upward of/above [___X] (default = here)"
+  eng_short: up
+
+tahar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is northward/to the north of [___X] (default = here)"
+  eng_short: north
+taher:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is southward/to the south of [___X] (default = here)"
+  eng_short: south
+tahir:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is westward/to the west of [___X] (default = here)"
+  eng_short: west
+tahor:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is eastward/to the east of [___X] (default = here)"
+  eng_short: east
+
+tahal:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is within/inside [___X] (default = here)"
+  eng_short: inside
+tahel:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is surrounding/orbiting/outside [___X] (default = here)"
+  eng_short: outside
+tahil:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is passing through/transfixing [___X] (default = here)"
+  eng_short: through
+
+tanan:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is at a negligible distance in time of [___] (default = now)"
+  eng_short: negligible time distance
+tanar:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs in a negligible interval of [___] (default = now)"
+  eng_short: negligible time interal
+tanen:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is at a short distance in time of [___] (default = now)"
+  eng_short: short time distance
+taner:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs in a short interval of [___] (default = now)"
+  eng_short: short time interal
+tanin:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is at a medium distance in time of [___] (default = now)"
+  eng_short: medium time distance
+tanir:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs in a medium interval of [___] (default = now)"
+  eng_short: medium time interal
+tanon:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is at a long distance in time of [___] (default = now)"
+  eng_short: long time distance
+tanor:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs in a long interval of [___] (default = now)"
+  eng_short: long time interal
+tanun:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is at a infinite/unmeasurably long distance in time of [___] (default = now)"
+  eng_short: infinite time distance
+tanur:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs in the whole interval of [___] (default = now)"
+  eng_short: whole time interal
+tanyn:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) is at a distance in time of ___ (number with time unit)"
+  eng_short: custom time distance
+tanyr:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) has a duration of ___ (number with time unit)"
+  eng_short: custom time interal
+
+taran:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at a negligible distance in space of [___X] (default = here)"
+  eng_short: negligible space distance
+tarar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is in a negligible interval of [___X] (default = here)"
+  eng_short: negligible space interal
+taren:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at a short distance in space of [___X] (default = here)"
+  eng_short: short space distance
+tarer:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is in a short interval of [___X] (default = here)"
+  eng_short: short space interal
+tarin:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at a medium distance in space of [___X] (default = here)"
+  eng_short: medium space distance
+tarir:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is in a medium interval of [___X] (default = here)"
+  eng_short: medium space interal
+taron:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at a long distance in space of [___X] (default = here)"
+  eng_short: long space distance
+taror:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is in a long interval of [___X] (default = here)"
+  eng_short: long space interal
+tarun:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at a infinite/unmeasurably long distance in space of [___X] (default = here)"
+  eng_short: infinite space distance
+tarur:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is in the whole interval of [___X] (default = here)"
+  eng_short: whole space interal
+taryn:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at a distance in space of ___ (number with space unit)"
+  eng_short: custom space distance
+taryr:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) has a size of ___ (number with space unit)"
+  eng_short: custom space interal
+
+tenan:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at the actual starting point of [___]"
+  eng_short: actual starting point (time)
+tenar:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at the natural starting point of [___]"
+  eng_short: natural starting point (time)
+tenen:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs between the actual starting and end points of [___]"
+  eng_short: between actual start/end points (time)
+tener:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs between the natural starting and end points of [___]"
+  eng_short: between natural start/end points (time)
+tenin:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at an actual temporary halt of [___]"
+  eng_short: actual halt (time)
+tenir:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at an natural temporary halt of [___]"
+  eng_short: natural halt (time)
+tenon:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at an actual resumption of [___]"
+  eng_short: actual resumption (time)
+tenor:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at an natural resumption of [___]"
+  eng_short: natural resumption (time)
+tenun:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at the actual end point of [___]"
+  eng_short: actual end point (time)
+tenur:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at the natural end point of [___]"
+  eng_short: natural end point (time)
+tenyn:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at the actual point position of [___]"
+  eng_short: actual point position (time)
+tenyr:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] (default = now) occurs at the natural point position of [___]"
+  eng_short: natural point position (time)
+
+teran:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at the actual starting point of [___X]"
+  eng_short: actual starting point (space)
+terar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at the natural starting point of [___X]"
+  eng_short: natural starting point (space)
+teren:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is between the actual starting and end points of [___X]"
+  eng_short: between actual start/end points (space)
+terer:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is between the natural starting and end points of [___X]"
+  eng_short: between natural start/end points (space)
+terin:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at an actual temporary halt of [___X]"
+  eng_short: actual halt (space)
+terir:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at an natural temporary halt of [___X]"
+  eng_short: natural halt (space)
+teron:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at an actual resumption of [___X]"
+  eng_short: actual resumption (space)
+teror:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at an natural resumption of [___X]"
+  eng_short: natural resumption (space)
+terun:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at the actual end point of [___X]"
+  eng_short: actual end point (space)
+terur:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at the natural end point of [___X]"
+  eng_short: natural end point (space)
+teryn:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at the actual point position of [___X]"
+  eng_short: actual point position (space)
+teryr:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] (default = here) is at the natural point position of [___X]"
+  eng_short: natural point position (space)
+
+tian:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] occurs regularly inside of [___]"
+  eng_short: regularly (time)
+tien:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] occurs typically inside of [___]"
+  eng_short: typically (time)
+tiin:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] occurs continuously inside of [___]"
+  eng_short: continuously (time)
+tion:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] occurs habitually inside of [___]"
+  eng_short: habitually (time)
+
+tiar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is regularly inside of [___X]"
+  eng_short: regularly (space)
+tier:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is typically inside of [___X]"
+  eng_short: typically (space)
+tiir:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is continuously inside of [___X]"
+  eng_short: continuously (space)
+tior:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is habitually inside of [___X]"
+  eng_short: habitually (space)
+
+tuan:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] is in WHICH time direction of [___] ?"
+  eng_short: time direction question
+tuahan:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is in WHICH space direction of [___X] ?"
+  eng_short: space direction question
+tuanan:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] is in WHICH time distance of [___] ?"
+  eng_short: time distance question
+tuanar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is in WHICH space distance of [___X] ?"
+  eng_short: space distance question
+tuaran:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] is in WHICH time interval of [___] ?"
+  eng_short: time interval question
+tuarar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is in WHICH space interval of [___X] ?"
+  eng_short: space interval question
+tuen:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] is in WHICH time contour  of [___] ?"
+  eng_short: time contour  question
+tuer:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is in WHICH space contour  of [___X] ?"
+  eng_short: space contour  question
+tuihan:
+  _family: R
+  _signature: "00"
+  eng_long: "[___] is in WHICH subjective time interval of [___] ?"
+  eng_short: subjective time interval question
+tuihar:
+  _family: R
+  _signature: "[X][X]"
+  eng_long: "[___X] is in WHICH subjective space interval of [___X] ?"
+  eng_short: subjective space interval question
