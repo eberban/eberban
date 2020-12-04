@@ -5,7 +5,7 @@ what you would want. **CA** particles allows to perform chaining with
 alternative rules.
 
 **CA** can be prefixed with **ka** to negate the left predicate and suffixed with **kai** to negate
-the right part (this allow to cover all truth tables if needed).
+the right part (this allows covering all permutations of a truth table if needed).
 
 | Word | Definition                                                                               |
 | ---- | ---------------------------------------------------------------------------------------- |
