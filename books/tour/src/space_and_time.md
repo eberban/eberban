@@ -58,23 +58,28 @@ a reference point, which is the present by default.
 Temporal intervals specifies the duration of an event compared to the duration
 of a longer event, which is contextual by default.
 
-| Root    | Meaning                                                               |
-| ------- | --------------------------------------------------------------------- |
-| *tanan* | `[___] is at a negligible distance in time of [___]`                  |
-| *tanar* | `[___] occurs in a negligible time interval of [___]`                 |
-| *tanen* | `[___] is at a short distance in time of [___]`                       |
-| *taner* | `[___] occurs in a short time interval of [___]`                      |
-| *tanin* | `[___] is at a medium distance in time of [___]`                      |
-| *tanir* | `[___] occurs in a medium time interval of [___]`                     |
-| *tanon* | `[___] is at a long distance in time of [___]`                        |
-| *tanor* | `[___] occurs in a long time interval of [___]`                       |
-| *tanun* | `[___] is at an infinite/unmeasurable long distance in time of [___]` |
-| *tanur* | `[___] occurs in the whole time interval of [___]`                    |
-| *tanyn* | `[___] is at a distance in time of ___ (number with time unit)`       |
-| *tanyr* | `[___] has a duration of ___ (number with time unit)`                 |
+| Root    | Meaning                                                                |
+| ------- | ---------------------------------------------------------------------- |
+| *tanan* | `[___] is at a negligible distance in time of [___]`                   |
+| *tanar* | `[___] occurs in a negligible time interval of [___]`                  |
+| *tanen* | `[___] is at a short distance in time of [___]`                        |
+| *taner* | `[___] occurs in a short time interval of [___]`                       |
+| *tanin* | `[___] is at a medium distance in time of [___]`                       |
+| *tanir* | `[___] occurs in a medium time interval of [___]`                      |
+| *tanon* | `[___] is at a long distance in time of [___]`                         |
+| *tanor* | `[___] occurs in a long time interval of [___]`                        |
+| *tanun* | `[___] is at an infinite/unmeasurable long distance in time of [___]`  |
+| *tanur* | `[___] occurs in the whole time interval of [___]`                     |
+| *tanyn* | `[___] is at a distance in time of ___ (number with time length unit)` |
+| *tanyr* | `[___] has a duration of ___ (number with time length unit)`           |
 
 > The "time unit" of *tanyn/tanyr* can be either seconds/minutes/..., or another
 > event used as reference to provide length in multiples of the reference.
+
+> *tanyn/tanyr* number can have the form of digits followed by the literal for
+> each time unit (<byn> > <dyn> <gyn> <vyn> <xyn> <zyn> <jyn>)
+> Example: `2020jy11zy23vy` = 23th November 2020
+> In this case the unit may be the calendar system used.
 
 ## Spacial distance/interval (tar-)
 
@@ -84,42 +89,42 @@ point, which is "here" by default.
 Spacial intervals specifies the length of something compared to the length of
 something bigger, which is contextual by default.
 
-| Root    | Meaning                                                                  |
-| ------- | ------------------------------------------------------------------------ |
-| *taran* | `[___X] is at a negligible distance in space of [___X]`                  |
-| *tarar* | `[___X] is in a negligible space interval of [___X]`                     |
-| *taren* | `[___X] is at a short distance in space of [___X]`                       |
-| *tarer* | `[___X] is in a short space interval of [___X]`                          |
-| *tarin* | `[___X] is at a medium distance in space of [___X]`                      |
-| *tarir* | `[___X] is in a medium space interval of [___X]`                         |
-| *taron* | `[___X] is at a long distance in space of [___X]`                        |
-| *taror* | `[___X] is in a long space interval of [___X]`                           |
-| *tarun* | `[___X] is at an infinite/unmeasurably long distance in space of [___X]` |
-| *tarur* | `[___X] is in the whole space interval of [___X]`                        |
-| *taryn* | `[___X] is at a distance in space of ___ (number with space unit)`       |
-| *taryr* | `[___X] has a size of ___ (number with space unit)`                      |
+| Root    | Meaning                                                                   |
+| ------- | ------------------------------------------------------------------------- |
+| *taran* | `[___X] is at a negligible distance in space of [___X]`                   |
+| *tarar* | `[___X] is in a negligible space interval of [___X]`                      |
+| *taren* | `[___X] is at a short distance in space of [___X]`                        |
+| *tarer* | `[___X] is in a short space interval of [___X]`                           |
+| *tarin* | `[___X] is at a medium distance in space of [___X]`                       |
+| *tarir* | `[___X] is in a medium space interval of [___X]`                          |
+| *taron* | `[___X] is at a long distance in space of [___X]`                         |
+| *taror* | `[___X] is in a long space interval of [___X]`                            |
+| *tarun* | `[___X] is at an infinite/unmeasurably long distance in space of [___X]`  |
+| *tarur* | `[___X] is in the whole space interval of [___X]`                         |
+| *taryn* | `[___X] is at a distance in space of ___ (number with space length unit)` |
+| *taryr* | `[___X] has a size of ___ (number with space length unit)`                |
 
-> The "time unit" of *tanyn/tanyr* can be either meters, or another
-> thing used as reference to provide sizes in multiples of the reference.
+> The "time unit" of *tanyn/tanyr* can be either meters, or another thing used
+> as reference to provide sizes in multiples of the reference.
 
 ## Temporal contours (ten-)
 
 Temporal contours corresponds to precise stages of an event.
 
-| Root    | Meaning                                                             |
-| ------- | ------------------------------------------------------------------- |
-| *tenan* | `[___] occurs at the actual starting point of [___]`                |
-| *tenar* | `[___] occurs at the natural starting point of [___]`               |
-| *tenen* | `[___] occurs between the actual starting and end points of [___]`  |
-| *tener* | `[___] occurs between the natural starting and end points of [___]` |
-| *tenin* | `[___] occurs at an actual temporary halt of [___]`                 |
-| *tenir* | `[___] occurs at a natural temporary halt of [___]`                 |
-| *tenon* | `[___] occurs at an actual resumption of [___]`                     |
-| *tenor* | `[___] occurs at a natural resumption of [___]`                     |
-| *tenun* | `[___] occurs at the actual end point of [___]`                     |
-| *tenur* | `[___] occurs at the natural end point of [___]`                    |
-| *tenyn* | `[___] occurs at the actual point position of [___]`                |
-| *tenyr* | `[___] occurs at the natural point position of [___]`               |
+| Root    | Meaning                                                                                 |
+| ------- | --------------------------------------------------------------------------------------- |
+| *tenan* | `[___] occurs at the actual starting point of [___]`                                    |
+| *tenar* | `[___] occurs at the natural starting point of [___]`                                   |
+| *tenen* | `[___] occurs between the actual starting and end points of [___]`                      |
+| *tener* | `[___] occurs between the natural starting and end points of [___]`                     |
+| *tenin* | `[___] occurs at an actual temporary halt of [___]`                                     |
+| *tenir* | `[___] occurs at a natural temporary halt of [___]`                                     |
+| *tenon* | `[___] occurs at an actual resumption of [___]`                                         |
+| *tenor* | `[___] occurs at a natural resumption of [___]`                                         |
+| *tenun* | `[___] occurs at the actual end point of [___]`                                         |
+| *tenur* | `[___] occurs at the natural end point of [___]`                                        |
+| *tenyn* | `[___] occurs at the actual point position of [___X] (number with time position unit)`  |
+| *tenyr* | `[___] occurs at the natural point position of [___X] (number with time position unit)` |
 
 > The first place is "now" by default, while the second is contextual.
 
@@ -127,20 +132,20 @@ Temporal contours corresponds to precise stages of an event.
 
 Spacial contours corresponds to precise parts of something in space.
 
-| Root    | Meaning                                                           |
-| ------- | ----------------------------------------------------------------- |
-| *teran* | `[___X] is at the actual starting point of [___X]`                |
-| *terar* | `[___X] is at the natural starting point of [___X]`               |
-| *teren* | `[___X] is between the actual starting and end points of [___X]`  |
-| *terer* | `[___X] is between the natural starting and end points of [___X]` |
-| *terin* | `[___X] is at an actual temporary halt of [___X]`                 |
-| *terir* | `[___X] is at a natural temporary halt of [___X]`                 |
-| *teron* | `[___X] is at an actual resumption of [___X]`                     |
-| *teror* | `[___X] is at a natural resumption of [___X]`                     |
-| *terun* | `[___X] is at the actual end point of [___X]`                     |
-| *terur* | `[___X] is at the natural end point of [___X]`                    |
-| *teryn* | `[___X] is at the actual instantaneous point of [___X]`           |
-| *teryr* | `[___X] is at the natural instantaneous point of [___X]`          |
+| Root    | Meaning                                                                               |
+| ------- | ------------------------------------------------------------------------------------- |
+| *teran* | `[___X] is at the actual starting point of [___X]`                                    |
+| *terar* | `[___X] is at the natural starting point of [___X]`                                   |
+| *teren* | `[___X] is between the actual starting and end points of [___X]`                      |
+| *terer* | `[___X] is between the natural starting and end points of [___X]`                     |
+| *terin* | `[___X] is at an actual temporary halt of [___X]`                                     |
+| *terir* | `[___X] is at a natural temporary halt of [___X]`                                     |
+| *teron* | `[___X] is at an actual resumption of [___X]`                                         |
+| *teror* | `[___X] is at a natural resumption of [___X]`                                         |
+| *terun* | `[___X] is at the actual end point of [___X]`                                         |
+| *terur* | `[___X] is at the natural end point of [___X]`                                        |
+| *teryn* | `[___X] is at the actual point position of [___X] (number with space position unit)`  |
+| *teryr* | `[___X] is at the natural point position of [___X] (number with space position unit)` |
 
 > The first place is "here" by default, while the second is contextual.
 
