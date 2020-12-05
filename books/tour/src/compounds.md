@@ -9,7 +9,7 @@ unit, ignoring their grammatical rules but keeping (to a certain extent) their m
 
 A compound is first prefixed by the particles *a, e, i, o*, respectively
 starting a compound composed of 1, 2, 3 or 4 words. If a compound is made of more than
-4 words, it must be prefixed by *u* and suffixed with `.u`.
+4 words, it must be prefixed by *u* and suffixed with `'u`.
 
 Spaces are forbidden between the components of the compound.
 

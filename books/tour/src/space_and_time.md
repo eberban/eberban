@@ -38,12 +38,12 @@ Spacial directions specifies how 2 things are located related to each other.
 | *tahon* | `[___X] is rightward/to the right of [___X]`       |
 | *tahun* | `[___X] is downward of/under [___X]`               |
 | *tahyn* | `[___X] is upward of/above [___X]`                 |
-|         |
+|         | &nbsp;                                             |
 | *tahar* | `[___X] is northward/to the north of [___X]`       |
 | *taher* | `[___X] is southward/to the south of [___X]`       |
 | *tahir* | `[___X] is westward/to the west of [___X]`         |
 | *tahor* | `[___X] is eastward/to the east of [___X]`         |
-|         |
+|         | &nbsp;                                             |
 | *tahal* | `[___X] is within/inside of [___X]`                |
 | *tahel* | `[___X] is surrounding/orbiting/outside of [___X]` |
 | *tahil* | `[___X] is passing through/transfixing [___X]`     |
@@ -87,15 +87,15 @@ something bigger, which is contextual by default.
 | Root    | Meaning                                                                  |
 | ------- | ------------------------------------------------------------------------ |
 | *taran* | `[___X] is at a negligible distance in space of [___X]`                  |
-| *tarar* | `[___X] is in a negligible space interval of [___X]`                           |
+| *tarar* | `[___X] is in a negligible space interval of [___X]`                     |
 | *taren* | `[___X] is at a short distance in space of [___X]`                       |
-| *tarer* | `[___X] is in a short space interval of [___X]`                                |
+| *tarer* | `[___X] is in a short space interval of [___X]`                          |
 | *tarin* | `[___X] is at a medium distance in space of [___X]`                      |
-| *tarir* | `[___X] is in a medium space interval of [___X]`                               |
+| *tarir* | `[___X] is in a medium space interval of [___X]`                         |
 | *taron* | `[___X] is at a long distance in space of [___X]`                        |
-| *taror* | `[___X] is in a long space interval of [___X]`                                 |
+| *taror* | `[___X] is in a long space interval of [___X]`                           |
 | *tarun* | `[___X] is at an infinite/unmeasurably long distance in space of [___X]` |
-| *tarur* | `[___X] is in the whole space interval of [___X]`                              |
+| *tarur* | `[___X] is in the whole space interval of [___X]`                        |
 | *taryn* | `[___X] is at a distance in space of ___ (number with space unit)`       |
 | *taryr* | `[___X] has a size of ___ (number with space unit)`                      |
 

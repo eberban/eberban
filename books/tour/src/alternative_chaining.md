@@ -14,9 +14,9 @@ the right part (this allows covering all permutations of a truth table if needed
 | ci   | Chaining question. How [left] and [right] should be chained for the predicate to be true |
 | co   | [left] if and only if [right]                                                            |
 | cu   | [left] whether or not [right]                                                            |
-|      |
+|      | &nbsp;                                                                                   |
 | cai  | [left] type of [right]. vague precision, [right] has a vague [left] aspect               |
-|      |
+|      | &nbsp;                                                                                   |
 | cia  | perform predicate chaining with [left] 1st place instead of rightmost                    |
 | cie  | perform predicate chaining with [left] 2nd place instead of rightmost                    |
 | cii  | perform predicate chaining with [left] 3rd place instead of rightmost                    |

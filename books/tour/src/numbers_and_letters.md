@@ -46,16 +46,16 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 | tuha  | B (11)                | tuhe  | C (12)                                |
 | tuhi  | D (13)                | tuho  | E (14)                                |
 | tuhu  | F (15)                | ta    | 0                                     |
-|       |
+|       |                       |       | &nbsp;                                |
 | te    | decimal separator     | teha  | `<base . number>` separator           |
 | tehe  | thousands separator   | tehi  | `<precise . approximation>` separator |
-|       |
+|       |                       |       | &nbsp;                                |
 | taha  | few                   | tahe  | several                               |
 | tahi  | many                  | taho  | most                                  |
 | tahu  | each/all              | taiha | too few (subjective)                  |
 | taihe | enough (subjective)   | taihi | too many (subjective)                 |
-|       |
-| to    | number/digit question |
+|       |                       |       | &nbsp;                                |
+| to    | number/digit question |       |                                       |
 
 ## BY members
 
