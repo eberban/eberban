@@ -82,7 +82,7 @@ In addition to ``ba``, there are also two other members in the **BA** family for
 | Particle     | Purpose                             | Definition |
 |--------------|-------------------------------------|------------|
 | ba           | Generic abstractions       | allow to fill places of a predicate to make a new predicate. New places can be added with FA/DU, and new places can be created using ``ma`` |
-| be           | Propositional abstractions | ___ is the event of [proposition] |
-| bi           | Event abstractions         |___ is the event of [proposition]|
+| be           | Propositional abstractions | ___ is proposition [proposition] expressed in sentence ___ (text) |
+| bi           | Event abstractions         | ___ is the event of [proposition]                                 |
 
 <!-- TODO: [jqueiroz] Optional section -- Computer scientist's view: lambda functions -->
