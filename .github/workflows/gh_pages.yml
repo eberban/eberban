@@ -35,10 +35,12 @@ jobs:
       - name: Build book
         run: |
           ~/.cargo/bin/mdbook build books/tour
-        
+
       - name: Commit changes to gh-pages
         run: |
           rm -f books/tour/.gitignore
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
           git checkout -b tmp/gh-pages
           git add -A
           git commit -m "Build mdbook"
