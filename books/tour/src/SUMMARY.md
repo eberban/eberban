@@ -23,7 +23,7 @@
 
 - [Free modifiers [LA/LE/LI/LO/LU]](free_modifiers.md)
 
-- [Abstractors [BA]]()
+- [Abstractors [BA]](abstractors.md)
 
 - [Distributivity]()
   - [Text structure [DA/DE/DO]]()
