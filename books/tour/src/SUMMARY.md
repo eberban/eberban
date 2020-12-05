@@ -21,11 +21,7 @@
   - [Alternative chaining [CA]](alternative_chaining.md)
   - [Predicate links [VA]](predicate_links.md)
 
-- [Free modifiers]()
-  - [Prefix [LA]]()
-  - [Indicators [XA]]()
-  - [Annotations [LE/LO]]()
-  - [Subscripts [LU]]()
+- [Free modifiers [LA/LE/LI/LO/LU]](free_modifiers.md)
 
 - [Abstractors [BA]]()
 

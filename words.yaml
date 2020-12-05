@@ -718,18 +718,18 @@ laha:
   jbo_similar: ba'e
 lahe:
   _family: LA
+  eng_long: "rebind following variable, discarding its previous value"
+  eng_short: (rebind)
+lahi:
+  _family: LA
   eng_long: "nonce-word indicator, indicates next word (compound) may be nonstandard"
   eng_short: (non-standard)
   jbo_similar: za'e
-lahi:
+laho:
   _family: LA
   eng_long: next word is a metadata tag / hashtag
   eng_short: (hashtag)
   jbo_similar: ci'a
-laho:
-  _family: LA
-  eng_long: "rebind following variable, discarding its previous value (can be omitted inside of <va>)"
-  eng_short: (rebind)
 lai:
   _family: LAI
   eng_long: end free suffix scope (matching start is not checked). following free suffix will apply to the scope instead of the preceding word
@@ -738,13 +738,43 @@ lai:
 le:
   _family: LE
   eng_long: discursive starter
-  eng_short: (discurive)
+  eng_short: ""
   jbo_similar: sei
-lei:
-  _family: LE
-  eng_long: define who is the listener
-  eng_short: (vocative)
-  jbo_similar: doi
+liha:
+  _family: LI
+  eng_long: marker variable 1
+  eng_short: (marker var 1)
+lihe:
+  _family: LI
+  eng_long: marker variable 2
+  eng_short: (marker var 2)
+lihi:
+  _family: LI
+  eng_long: marker variable 3
+  eng_short: (marker var 3)
+liho:
+  _family: LI
+  eng_long: marker variable 4
+  eng_short: (marker var 4)
+lihu:
+  _family: LI
+  eng_long: marker variable 5
+  eng_short: (marker var 5)
+lina:
+  _family: LI
+  eng_long: true/false question marker
+  eng_short: true ?
+  jbo_similar: xu
+line:
+  _family: LI
+  eng_long: indirect question marker
+  eng_short: (indirect question)
+  jbo_similar: kau
+lira:
+  _family: LI
+  eng_long: however/but/in constrast
+  eng_short: however
+  jbo_similar: ku'i
 lo:
   _family: LO
   eng_long: parenthetical note starter
@@ -792,11 +822,6 @@ me:
   eng_long: "predicate question, fill the blank"
   eng_short: "?"
   jbo_similar: ma / mo
-mel:
-  _family: ZU
-  _signature: "."
-  eng_long: ___ is water
-  eng_short: water
 mi:
   _family: MA
   _signature: "."
@@ -888,6 +913,11 @@ mlir:
   _signature: ".[1]"
   eng_long: "___ is mild/non-extreme/gentle/somewhat in property [___1]"
   eng_short: mild
+mlo:
+  _family: ZU
+  _signature: "."
+  eng_long: ___ is water
+  eng_short: water
 mo:
   _family: MA
   _signature: "."
@@ -1866,31 +1896,6 @@ vyn:
   eng_long: ___ is a day
   eng_short: day
   jbo_similar: djedi
-xaha:
-  _family: XA
-  eng_long: laughter. additional ha may be added
-  eng_short: (haha)
-  jbo_similar: xa'a
-xahaha:
-  _family: XA
-  eng_long: same as <xaha>
-  eng_short: (haha)
-  jbo_similar: xa'a
-xu:
-  _family: XA
-  eng_long: true/false question marker
-  eng_short: true ?
-  jbo_similar: xu
-xuha:
-  _family: XA
-  eng_long: indirect question marker
-  eng_short: (indirect ?)
-  jbo_similar: kau
-xuhi:
-  _family: XA
-  eng_long: however/but/in constrast
-  eng_short: however
-  jbo_similar: ku'i
 xy:
   _family: BY
   eng_long: letter X
@@ -1922,6 +1927,11 @@ za:
   eng_long: 'prefix a foreign word, meaning "___ is a [word]"'
   eng_short: (simple)
   jbo_similar: cmevla/fu'ivla
+zaha:
+  _family: ZA
+  _signature: "."
+  eng_long: 'prefix a foreign word as an onomatopea, meaning "___ is the onomatopea [word]"'
+  eng_short: (onomatopea)
 zai:
   _family: ZA
   eng_long: "prefix a foreign word, place structure is infered from context"

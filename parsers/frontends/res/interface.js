@@ -409,7 +409,7 @@ function boxClassForType(parse) {
 	if (parse.type === 'indicator') {
 		return 'box box-indicator';
 	}
-	if (parse.type === 'free predicate') {
+	if (parse.type === 'discursive') {
 		return 'box box-note';
 	}
 	if (parse.type === 'note') {
