@@ -27,7 +27,7 @@
   - [Annotations [LE/LO]]()
   - [Subscripts [LU]]()
 
-- [Abstractors [BA]]()
+- [Abstractors [BA]](abstractors.md)
 
 - [Distributivity]()
   - [Text structure [DA/DE/DO]]()
