@@ -121,6 +121,11 @@ cfar:
   _signature: "..[2]"
   eng_long: "___ requests to ___ that they satisfy property [___2]"
   eng_short: request
+cfer:
+  _family: "R"
+  _signature: "..[2]"
+  eng_long: "___ suggests ___ that they satisfy property [___2]"
+  eng_short: suggest
 ci:
   _family: "CA"
   eng_long: predicate connective question
@@ -526,6 +531,11 @@ fy:
   eng_long: letter F
   eng_short: F
   jbo_similar: fy
+gli:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ is modified/altered/changed/transformed/converted into ___
+  eng_short: transformed
 glu:
   _family: "R"
   _signature: ".."
@@ -598,6 +608,11 @@ jgai:
   eng_long: ___ graps/holds ___
   eng_short: hold
   jbo_similar: jgari
+jgan:
+  _family: "R"
+  _signature: ".0"
+  eng_long: "___ causes [___] to be true"
+  eng_short: cause
 ji:
   _family: "JA"
   eng_long: distributive connective question
@@ -2032,7 +2047,7 @@ zno:
 zu:
   _family: "ZU"
   _signature: "."
-  eng_long: "prefix a foreign word quote surrounded by the same 1 native word. ___ is quote [quote]"
+  eng_long: "prefix a foreign word quote surrounded by the same 1 native word. ___ is quote [quote] in language/format ___"
   eng_short: ""
   jbo_similar: zoi
 zva:

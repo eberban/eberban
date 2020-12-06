@@ -46,7 +46,7 @@ shortly what each place expects.
 > **Example :**
 >
 > ```eng
-> cfa (..[2]) : ___ requests to ___ that they satisfy property [___2]
+> cfar (..[2]) : ___ requests to ___ that they satisfy property [___2]
 > ```
 >
 > Both the 1st and 2nd place expects an entity. The 3rd place expects a property
