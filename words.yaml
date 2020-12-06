@@ -318,6 +318,11 @@ esfeprei:
   eng_long: ___ is a mother of ___
   eng_short: mother
   jbo_similar: mamta
+eskaikle:
+  _family: "L"
+  _signature: ".."
+  eng_long: ___ plays video game/computer game ___
+  eng_short: play video game
 etarvyn:
   _family: "C"
   _signature: "."
@@ -621,10 +626,15 @@ jmar:
   _signature: ".[1]"
   eng_long: ___ is new in property [___1]
   eng_short: new
+jnei:
+  _family: "R"
+  _signature: "."
+  eng_long: ___ is an inspiration
+  eng_short: inspiration
 jner:
   _family: "R"
   _signature: ".0"
-  eng_long: "___ acknowledges/confirms of receipt and understanging of [___]"
+  eng_long: "___ acknowledges/confirms of receipt and understanding of [___]"
   eng_short: confirm
   jbo_similar: jenje
 jo:
@@ -684,6 +694,11 @@ klar:
   _signature: ".[1]"
   eng_long: "___ increases in how much it satisfies property [___1]"
   eng_short: increase
+kle:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ plays with ___
+  eng_short: play
 klia:
   _family: "ZU"
   _signature: "."
@@ -775,6 +790,11 @@ lira:
   eng_long: however/but/in constrast
   eng_short: however
   jbo_similar: ku'i
+lire:
+  _family: "LI"
+  eng_long: also/additionally
+  eng_short: additionally
+  jbo_similar: ji'a
 lo:
   _family: "LO"
   eng_long: parenthetical note starter
@@ -1510,6 +1530,11 @@ tcer:
   _signature: "0"
   eng_long: "[___] is intense"
   eng_short: much
+tci:
+  _family: "R"
+  _signature: "..0"
+  eng_long: ___ teaches to ___ about [___]
+  eng_short: teach
 tcur:
   _family: "R"
   _signature: ".[1]"
