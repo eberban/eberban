@@ -726,6 +726,12 @@ klie:
   eng_long: ___ thanks ___
   eng_short: thank
   jbo_similar: ki'e
+kra:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ is the source/origin of ___
+  eng_short: source
+  jbo_similar: krasi
 krin:
   _family: "R"
   _signature: ".0"
@@ -1281,6 +1287,12 @@ stir:
   _signature: ".[1][1]"
   eng_long: "___ comes early in the sequence (sorted by property [___1]) of things satisfying property [___1]"
   eng_short: Xth
+ston:
+  _family: "R"
+  _signature: ".0"
+  eng_long: "___ approves of action (or plan of making action) [___] being true"
+  eng_short: approve
+  jbo_similar: zanru
 stun:
   _family: "R"
   _signature: "..0"
