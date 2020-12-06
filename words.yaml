@@ -232,10 +232,15 @@ dlan:
   eng_long: "___ discovers [___] is true"
   eng_short: discover
   jbo_similar: facki
-dlur:
+dlu:
   _family: "R"
-  _signature: "..[2]"
-  eng_long: "___ likes that ___ satisfies property [___2] (default = exist/occurs/is true)"
+  _signature: ".."
+  eng_long: "___ likes ___"
+  eng_short: like
+dlun:
+  _family: "R"
+  _signature: ".0"
+  eng_long: "___ likes [___]"
   eng_short: like
 do:
   _family: "DO"
@@ -1920,7 +1925,7 @@ uy:
   eng_short: u-
 va:
   _family: "VA"
-  eng_long: "predicate variable affectation. one side should be prefixed with <paho>"
+  eng_long: "predicate variable affectation. one side should be prefixed with <lahe>"
   eng_short: "="
   jbo_similar: goi
 vai:
