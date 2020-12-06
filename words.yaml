@@ -1211,8 +1211,9 @@ sku:
 slar:
   _family: "R"
   _signature: ".[1]"
-  eng_long: ___ tries to satisfy property ___
+  eng_long: ___ tries to satisfy property [___1]
   eng_short: try
+  jbo_similar: troci
 snan:
   _family: "R"
   _signature: "00"
