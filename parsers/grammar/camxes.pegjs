@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.13
+// eberban PEG grammar - v0.14
 // ===========================
 
 // GRAMMAR
@@ -432,7 +432,7 @@ t = expr:([tT] !t !voiced) {return ["t", "t"];} // <LEAF>
 
 // - Spaces / Pause
 
-post_word = expr:((pause_char &(vowel_y / coda) / &consonant / spaces)) {return _node("post_word", expr);}
+post_word = expr:((pause_char &(vowel_y / coda) / !coda &consonant / spaces)) {return _node("post_word", expr);}
 initial_pause = expr:((pause_char &vowel_y / !pause_char &consonant)) {return _node("initial_pause", expr);}
 spaces = expr:(initial_spaces (pause_char &(vowel_y / coda))? / pause_char &(vowel_y / coda) / EOF) {return _node("spaces", expr);}
 initial_spaces = expr:((hesitation / space_char)+) {return ["initial_spaces", _join(expr)];}

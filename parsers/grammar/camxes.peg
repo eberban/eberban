@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.13
+# eberban PEG grammar - v0.14
 # ===========================
 
 # GRAMMAR
@@ -303,7 +303,7 @@ t <- [tT] !t !voiced # <LEAF>
 
 # - Spaces / Pause
 
-post_word <- (pause_char &(vowel_y / coda) / &consonant / spaces)
+post_word <- (pause_char &(vowel_y / coda) / !coda &consonant / spaces)
 initial_pause <- (pause_char &vowel_y / !pause_char &consonant)
 spaces <- initial_spaces (pause_char &(vowel_y / coda))? / pause_char &(vowel_y / coda) / EOF
 initial_spaces <- (hesitation / space_char)+
