@@ -12,9 +12,19 @@ a'a:
   jbo_similar: lujvo
 abe:
   _family: "C"
-  _signature: "0"
+  _signature: "0."
   eng_long: "[___] is a proposition expressed in sentence ___ (text)"
   eng_short: proposition
+abi:
+  _family: "C"
+  _signature: "00"
+  eng_long: "[___] is an event expressed by proposition [___]"
+  eng_short: event
+aca:
+  _family: "C"
+  _signature: "0."
+  eng_long: "[___] is a predicate chain with components ___"
+  eng_short: predicate chain
 ada:
   _family: "C"
   _signature: ".."
