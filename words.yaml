@@ -938,6 +938,12 @@ mlo:
   _signature: "."
   eng_long: ___ is water
   eng_short: water
+mlu:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ touches ___
+  eng_short: touch
+  jbo_similar: pencu
 mo:
   _family: "MA"
   _signature: "."
