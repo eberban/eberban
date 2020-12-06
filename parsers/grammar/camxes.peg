@@ -219,7 +219,7 @@ NO    <- &particle (n o)
 NOI   <- &particle (n o i)
 O     <- &particle (o)
 SA    <- &particle (s vowel_tail)
-TA    <- &particle !(TAI post_word) (t vowel_tail)
+TA    <- &particle !(TAI post_word) (t vowel_tail) / digit
 TAI   <- &particle (t a i)
 U     <- &particle (u)
 VA    <- &particle !(VAI post_word) (v vowel_tail)
@@ -313,3 +313,4 @@ space_char <- [\t\n\r?!\u0020]
 # - Special characters
 pause_char <- ([']) !pause_char
 EOF <- !.
+digit <- [.0123456789] # <LEAF2>

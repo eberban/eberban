@@ -1,4 +1,37 @@
 ---
+0:
+  _family: "TA"
+  eng_short: "ta"
+1:
+  _family: "TA"
+  eng_short: "tia"
+2:
+  _family: "TA"
+  eng_short: "tie"
+3:
+  _family: "TA"
+  eng_short: "tii"
+4:
+  _family: "TA"
+  eng_short: "tio"
+5:
+  _family: "TA"
+  eng_short: "tiu"
+6:
+  _family: "TA"
+  eng_short: "tua"
+7:
+  _family: "TA"
+  eng_short: "tue"
+8:
+  _family: "TA"
+  eng_short: "tui"
+9:
+  _family: "TA"
+  eng_short: "tuo"
+.:
+  _family: "TA"
+  eng_short: "te"
 a:
   _family: "A"
   eng_long: prefix a 1 word long compound

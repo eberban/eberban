@@ -348,7 +348,7 @@ NO = expr:(&particle (n o)) {return _node("NO", expr);}
 NOI = expr:(&particle (n o i)) {return _node("NOI", expr);}
 O = expr:(&particle (o)) {return _node("O", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
-TA = expr:(&particle !(TAI post_word) (t vowel_tail)) {return _node("TA", expr);}
+TA = expr:(&particle !(TAI post_word) (t vowel_tail) / digit) {return _node("TA", expr);}
 TAI = expr:(&particle (t a i)) {return _node("TAI", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
 VA = expr:(&particle !(VAI post_word) (v vowel_tail)) {return _node("VA", expr);}
@@ -442,3 +442,4 @@ space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
 // - Special characters
 pause_char = expr:(([']) !pause_char) {return _node("pause_char", expr);}
 EOF = expr:(!.) {return _node("EOF", expr);}
+digit = expr:([.0123456789]) {return ["digit", expr];} // <LEAF2>
