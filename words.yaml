@@ -1201,7 +1201,7 @@ sie:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 2nd place (all other have default value)"
   eng_short: relation x1 x2
-siha:
+sahi:
   _family: "SA"
   eng_long: use the predicate as a predicate variable name (instead of using <mia>)
   eng_short: (named variable)
