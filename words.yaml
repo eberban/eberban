@@ -1290,7 +1290,7 @@ stir:
 ston:
   _family: "R"
   _signature: ".0"
-  eng_long: "___ approves of action (or plan of making action) [___] being true"
+  eng_long: "___ approves of [___] being true"
   eng_short: approve
   jbo_similar: zanru
 stun:
