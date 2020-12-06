@@ -651,7 +651,7 @@ jve:
 jvir:
   _family: "R"
   _signature: "..[1]"
-  eng_long: ___ is good (<sahijil> for bad) according to ___ in property [___1]
+  eng_long: ___ is good (<sanajil> for bad) according to ___ in property [___1]
   eng_short: good
 jy:
   _family: "BY"
@@ -1090,35 +1090,40 @@ sa:
   jbo_similar: la
 saha:
   _family: "SA"
-  eng_long: "contrary scalar negator : other than .. (scale or set is implied)"
-  eng_short: other than
-  jbo_similar: na'e
-sahe:
-  _family: "SA"
-  eng_long: "polar opposite scalar negator : not a .."
-  eng_short: not
-  jbo_similar: to'e
-sahi:
-  _family: "SA"
-  eng_long: "midpoint scalar negator : not really"
-  eng_short: not really
-  jbo_similar: no'e
-sai:
-  _family: "SA"
   _signature: "."
   eng_long: "___ is related to [predicate] (vague transformation, expands to {ba mu fa [predicate] bai})"
   eng_short: related to
   jbo_similar: tu'a
+sahe:
+  _family: "SA"
+  eng_long: the referent of (indirect pointer)
+  eng_short: referent of
+  jbo_similar: la'e
+sai:
+  _family: "SA"
+  eng_long: SA question
+  eng_short: (SA ?)
+  jbo_similar: se'u'o
+sana:
+  _family: "SA"
+  eng_long: "contrary scalar negator : other than .. (scale or set is implied)"
+  eng_short: other than
+  jbo_similar: na'e
+sane:
+  _family: "SA"
+  eng_long: "polar opposite scalar negator : not a .."
+  eng_short: not
+  jbo_similar: to'e
+sani:
+  _family: "SA"
+  eng_long: "midpoint scalar negator : not really"
+  eng_short: not really
+  jbo_similar: no'e
 se:
   _family: "SA"
   eng_long: switch 1st and 2nd places
   eng_short: x1 &#8652; x2
   jbo_similar: se
-sei:
-  _family: "SA"
-  eng_long: SA question
-  eng_short: (SA ?)
-  jbo_similar: se'u'o
 sfe:
   _family: "R"
   _signature: "."
@@ -1161,6 +1166,10 @@ siu:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 5nd place (all other have default value)"
   eng_short: relation x1 x5
+siy:
+  _family: "SA"
+  eng_long: "transform the [predicate] into a proposition with all its places filled with default values"
+  eng_short: proposition
 skai:
   _family: "R"
   _signature: "."
@@ -1198,11 +1207,6 @@ so:
   eng_long: switch 1st and 4th places
   eng_short: x1 &#8652; x4
   jbo_similar: ve
-soi:
-  _family: "SA"
-  eng_long: the referent of (indirect pointer)
-  eng_short: referent of
-  jbo_similar: la'e
 spar:
   _family: "R"
   _signature: ".[1]"
