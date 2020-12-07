@@ -25,7 +25,7 @@ worry about it for now, as this will only be covered later.
 
 <!-- TODO: maybe add that pairs of consonants have some restrictions, but that we'll not go into details yet; could be another "advanced section", maybe? -->
 
-__Remark:__ If you are familiar with Lojban, you may view particles as analogous
+> If you are familiar with Lojban, you may view particles as analogous
 to cmavo, and roots as analogous to gismu.
 
 Particles always follow the pattern __V__ or the pattern __CV__. In particular,
@@ -35,9 +35,9 @@ other hand, roots always follow either the pattern __VC__, __CVC__, __CCV__
 or __CCVC__.
 <!--In particular, they always have exactly two consonants and one or more vowels and/or apostrophes.-->
 
-Particles and roots starting with a vowel, **l, n** or **r** are technically preceded by a
+Particles and roots starting with a vowel or coda (**l, n** or **r**) are technically preceded by a
 pause `'`, which may be omitted in writing if there are spaces alongside it. 
-They may never end with a non-coda consonant.
+Particles and roots may never end with a non-coda consonant.
 
 Borrowings have the same starting rules, but may end in any letter, always
 followed by a pause.
@@ -47,7 +47,7 @@ separated by spaces (" ").
 
 
 >  **For the advanced reader:** you may have noticed that all words start with
->  either a vowel (preceded by a pause) or a non-coda consonant, and that all
+>  either a vowel or coda, preceded by a pause, or a non-coda consonant, and that all
 >  words (except borrowings) end with either a vowel or a coda. This is by
 >  design. As we will later see, these seemingly artificial restrictions
 >  involving coda ensure that, even if words (except borrowings) are strung
@@ -69,7 +69,8 @@ as some kind of "super words", which combine several words to yield a more
 precise meaning, hence increasing the expressive power of the language.
 <!-- is it fair to say the that a compound _narrows_ the meaning of the (last) word? I
 guess not, as the last word could be somewhat figurative, as happens in some
-lujvo --> If you are familiar with lojban, you might find compound vaguely
+lujvo -->
+If you are familiar with lojban, you might find compound vaguely
 similar to lujvo, and to a lesser extent tanru. They always start with a vowel.
 All in all, an eberbanic text is actually a sequence of words and compounds.
 
@@ -95,7 +96,7 @@ The following table lists all permissible consonant pairs.
 
 ## Permissible diphthongs
 
-Not all diphthongs pairs are allowed either.
+Not all diphthongs are allowed either.
 The following table lists all permissible diphthongs.
 
 |     |     |     |     |     |     |
