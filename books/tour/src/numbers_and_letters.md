@@ -36,26 +36,27 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 
 ## TA members
 
-| Word  | Definition            | Word  | Definition                            |
-| ----- | --------------------- | ----- | ------------------------------------- |
-| tia   | 1                     | tie   | 2                                     |
-| tii   | 3                     | tio   | 4                                     |
-| tiu   | 5                     | tua   | 6                                     |
-| tue   | 7                     | tui   | 8                                     |
-| tuo   | 9                     | tuu   | A (10)                                |
-| tuha  | B (11)                | tuhe  | C (12)                                |
-| tuhi  | D (13)                | tuho  | E (14)                                |
-| tuhu  | F (15)                | ta    | 0                                     |
-|       |                       |       | &nbsp;                                |
-| te    | decimal separator     | teha  | `<base . number>` separator           |
-| tehe  | thousands separator   | tehi  | `<precise . approximation>` separator |
-|       |                       |       | &nbsp;                                |
-| taha  | few                   | tahe  | several                               |
-| tahi  | many                  | taho  | most                                  |
-| tahu  | each/all              | taiha | too few (subjective)                  |
-| taihe | enough (subjective)   | taihi | too many (subjective)                 |
-|       |                       |       | &nbsp;                                |
-| to    | number/digit question |       |                                       |
+| Word  | Definition                            | Word  | Definition                            |
+| ----- | ------------------------------------- | ----- | ------------------------------------- |
+| tia   | 1                                     | tie   | 2                                     |
+| tii   | 3                                     | tio   | 4                                     |
+| tiu   | 5                                     | tua   | 6                                     |
+| tue   | 7                                     | tui   | 8                                     |
+| tuo   | 9                                     | tuu   | A (10)                                |
+| tuha  | B (11)                                | tuhe  | C (12)                                |
+| tuhi  | D (13)                                | tuho  | E (14)                                |
+| tuhu  | F (15)                                | ta    | 0                                     |
+|       |                                       |       | &nbsp;                                |
+| te    | decimal separator                     | teha  | `<base . number>` separator           |
+| tehe  | thousands separator                   | tehi  | `<precise . approximation>` separator |
+| teho  | `<number . repeating part>` separator |       |                                       |
+|       |                                       |       | &nbsp;                                |
+| taha  | few                                   | tahe  | several                               |
+| tahi  | many                                  | taho  | most                                  |
+| tahu  | each/all                              | taiha | too few (subjective)                  |
+| taihe | enough (subjective)                   | taihi | too many (subjective)                 |
+|       |                                       |       | &nbsp;                                |
+| to    | number/digit question                 | toha  | negative sign                         |
 
 ## BY members
 

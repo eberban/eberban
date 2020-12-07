@@ -1,4 +1,7 @@
 ---
+.:
+  _family: "TA"
+  eng_short: "te"
 0:
   _family: "TA"
   eng_short: "ta"
@@ -29,9 +32,6 @@
 9:
   _family: "TA"
   eng_short: "tuo"
-.:
-  _family: "TA"
-  eng_short: "te"
 a:
   _family: "A"
   eng_long: prefix a 1 word long compound
@@ -1194,6 +1194,11 @@ sahe:
   eng_long: the referent of (indirect pointer)
   eng_short: referent of
   jbo_similar: la'e
+sahi:
+  _family: "SA"
+  eng_long: use the predicate as a predicate variable name (instead of using <mia>)
+  eng_short: (named variable)
+  jbo_similar: ilmen's dau'u
 sai:
   _family: "SA"
   eng_long: SA question
@@ -1244,11 +1249,6 @@ sie:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 2nd place (all other have default value)"
   eng_short: relation x1 x2
-sahi:
-  _family: "SA"
-  eng_long: use the predicate as a predicate variable name (instead of using <mia>)
-  eng_short: (named variable)
-  jbo_similar: ilmen's dau'u
 sii:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 3nd place (all other have default value)"
@@ -1364,9 +1364,9 @@ ta:
   jbo_similar: "no"
 taha:
   _family: "TA"
-  eng_long: "number: few"
-  eng_short: few
-  jbo_similar: so'u
+  eng_long: "number/digit: 0"
+  eng_short: "0"
+  jbo_similar: "no"
 tahal:
   _family: "R"
   _signature: "[X][X]"
@@ -1642,6 +1642,10 @@ tehi:
   eng_long: "approximately, (precise | approximate) separator"
   eng_short: approximatly
   jbo_similar: ji'i
+teho:
+  _family: "TA"
+  eng_long: "repeating digits, (number | repeating part) separator"
+  eng_short: repeating digits
 tenan:
   _family: "R"
   _signature: "00"
@@ -1832,6 +1836,10 @@ to:
   eng_long: digit/number question
   eng_short: number ?
   jbo_similar: xo
+toha:
+  _family: "TA"
+  eng_long: negative sign
+  eng_short: negative
 trir:
   _family: "R"
   _signature: ".[1]"
