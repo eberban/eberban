@@ -549,6 +549,12 @@ foi:
   eng_long: don't fill a place. can be used to provide a topic or declare quantification and/or value of a variable
   eng_short: prenex
   jbo_similar: fai'i
+fra:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ smells/scents ___
+  eng_short: smell
+  jbo_similar: sumne
 fu:
   _family: "FA"
   eng_long: "tag proposition place #5"
@@ -678,24 +684,6 @@ jle:
   eng_long: ___ drinks liquid ___
   eng_short: drink
   jbo_similar: pinxe
-vri:
-  _family: "R"
-  _signature: ".."
-  eng_long: ___ see/views/perceives visually ___
-  eng_short: see
-  jbo_similar: viska
-vro:
-  _family: "R"
-  _signature: ".."
-  eng_long: ___ hears ___
-  eng_short: hear
-  jbo_similar: tirna
-fra:
-  _family: "R"
-  _signature: ".."
-  eng_long: ___ smells/scents ___
-  eng_short: smell
-  jbo_similar: sumne
 jlor:
   _family: "R"
   _signature: "..[1,2]"
@@ -2022,6 +2010,18 @@ vla:
   _signature: "..."
   eng_long: ___ goes to ___ from ___
   eng_short: go
+vri:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ see/views/perceives visually ___
+  eng_short: see
+  jbo_similar: viska
+vro:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ hears ___
+  eng_short: hear
+  jbo_similar: tirna
 vy:
   _family: "BY"
   eng_long: letter V
