@@ -227,6 +227,11 @@ ctar:
   eng_long: "___ begins to satisfy property [___1] (default = being true/occurs) "
   eng_short: begin
   jbo_similar: zvati
+ctua:
+  _family: "R"
+  _signature: "."
+  eng_long: ___ is a rabbit
+  eng_short: rabbit
 cu:
   _family: "CA"
   eng_long: "[left] whether or not [right]"
