@@ -678,6 +678,24 @@ jle:
   eng_long: ___ drinks liquid ___
   eng_short: drink
   jbo_similar: pinxe
+vri:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ see/views/perceives visually ___
+  eng_short: see
+  jbo_similar: viska
+vro:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ hears ___
+  eng_short: hear
+  jbo_similar: tirna
+fra:
+  _family: "R"
+  _signature: ".."
+  eng_long: ___ smells/scents ___
+  eng_short: smell
+  jbo_similar: sumne
 jlor:
   _family: "R"
   _signature: "..[1,2]"
