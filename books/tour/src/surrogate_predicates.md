@@ -22,7 +22,7 @@ Pronouns are expressed with the following particles :
 ## Variables / 3rd person pronouns
 
 Particles starting with **mi-** are variables. They can be defined using `va`
-and `paho` (see chapters about **VA** and **PA** families for how to use them)
+and `lahe` (see chapters about **VA** and **LA** families for how to use them)
 to have short words for a previously defined complex predicate. They can also be
 used as 3rd person pronouns.
 

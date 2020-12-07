@@ -8,7 +8,7 @@ without **vai** it would link to the predicate inside the previous **VA**.
 
 | Word | Definition                                                                                       |
 | ---- | ------------------------------------------------------------------------------------------------ |
-| va   | predicate variable affectation. one side should be prefixed with `paho`                          |
+| va   | predicate variable affectation. one side should be prefixed with `lahe`                          |
 | ve   | which is associated with ... (can be used to quickly express possession)                         |
 | vie  | restrictive relative clause : [left] is restricted to cases where it satisfies [right] 1st place |
 | vii  | non-restrictive relative clause : adds incidental information                                    |
