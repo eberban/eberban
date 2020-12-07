@@ -1041,6 +1041,7 @@ mu:
   _family: "MA"
   eng_long: elliptical/unspecified predicate
   eng_short: (elliptical)
+  jbo_similar: co'e, zo'e
 mua:
   _family: "MA"
   eng_long: repeats the next to last proposition
@@ -2010,6 +2011,7 @@ vla:
   _signature: "..."
   eng_long: ___ goes to ___ from ___
   eng_short: go
+  jbo_similar: klama
 vri:
   _family: "R"
   _signature: ".."
