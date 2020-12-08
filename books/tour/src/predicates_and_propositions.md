@@ -56,10 +56,10 @@ cat drinks might be unimportant, or the speaker and listener might already know
 what it is drinking (maybe the cat is near them).
 
 ```ebb
-jle fa fen fe mlio
+jle fa jve fe mlio
 ```
 
-`fen` is the word for `___ is a friend of ___`. The value of its second place
+`jve` is the word for `___ is a friend of ___`. The value of its second place
 is not provided. From context, it might be obvious it's a friend of the
 speaker, but this is not guaranted.
 
