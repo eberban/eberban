@@ -5,7 +5,7 @@ Quotes allow embedding text into the discourse.
 ## Single word quote [ZI]
 
 **zi** allows quoting the next word, ignoring its grammar. The quote has the
-place structure `___ is word [word]`.
+place structure `___ is the word [word]`.
 
 ## Grammatical quote [ZE]
 
