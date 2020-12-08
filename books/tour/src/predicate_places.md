@@ -42,11 +42,11 @@ used before the main predicate (with **do**), or the 2st place if used after.
 
 ## Imported place
 
-The place structures of most words are deliberatly kept simple. However it is
+The place structure of most words is deliberatly kept simple. However, it is
 common for a predicate to not have a place for a concept we want to express.
 
-With **du**, it's possible to import the first place of the following predicate
-(it ignores predicate chaining which will be explained in the next section).
+With **du**, it's possible to import the first place of the immediately following predicate
+(it ignores predicate chaining, which will be explained in the next section).
 
 ```ebb
 spi fa mi fe mo du pli skai
