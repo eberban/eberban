@@ -10,6 +10,7 @@ pauses between a term made of multiple foreign words, should be borrowed using
 *h*. Incompatible chains of consonants should be borrowed using a buffer vowel,
 such as *y*. A word starting with *l/m/r* must be prefixed with another letter,
 as they are forbidden at the begining of every word.
+<!-- TODO: [jocoutin] is this still correct? words starting with l/m/r are valid, as long as they are preceded by a pause, right? -->
 
 Their place structure is `___ is a [word]`. Having a generic place structure
 makes comprehension easier to a listener/reader who might not be familiar with the borrowed word.
