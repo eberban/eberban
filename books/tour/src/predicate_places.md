@@ -38,6 +38,7 @@ numbered place (considering places filled with **fa**-like as well as **fai**).
 
 If no numbered place has been filled before, **fai** will fill the 1st place if
 used before the main predicate (with **do**), or the 2st place if used after.
+<!-- TODO: [jqueiroz] we should update this -->
 
 ## Imported place
 
