@@ -13,7 +13,7 @@ It is possible to fill multiple places with the same predicate by chaining multi
 ```
 
 Usually, the main predicate of a proposition is placed first, then places are
-filled with **FA/DU**. However, it's possible to fill places before. In this
+filled with **FA/DU**. However, it is possible to fill places before. In this
 case, the main predicate must be prefixed with **do**. It can be used to express
 the most important part first.
 
@@ -57,12 +57,12 @@ du pli: "with-tool:"
 skai  : ___ is a computer
 ```
 
-`du pli` imports the place expressing the concept of *a tool* to tell which tool
-is used to talk.
+`du pli` imports the place expressing the concept of *a tool*, allowing us to specify tell which tool
+is being used to talk.
 
 ## Prenex
 
-**foi** does not fill a place, but allows to provide what is called a prenex. It can
+**foi** does not fill a place, but allows providing what is called a prenex. It can
 be used to define a topic or declare quantified variables, separated from their
 use site, usually early/first in the proposition.
 
