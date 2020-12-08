@@ -1,13 +1,13 @@
 # Predicate modification [SA]
 
-A predicate can be prefixed with one or more **SA** particle to modify its
+A predicate can be prefixed with one or more **SA** particles to modify its
 meaning and place structure. It applies only to the predicate directly on its
 right (no chaining).
 
 | Word | Definition                                                                                               |
 | ---- | -------------------------------------------------------------------------------------------------------- |
 | sa   | ___ is named [predicate]                                                                                 |
-| sai  | SA question : what transformation would make the proposition true ?                                      |
+| sai  | SA question : what transformation would make the proposition true?                                       |
 |      | &nbsp;                                                                                                   |
 | se   | switch 1st and 2nd places                                                                                |
 | si   | switch 1st and 3nd places                                                                                |
