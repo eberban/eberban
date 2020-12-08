@@ -1,8 +1,8 @@
 # Predicate chaining
 
 When a predicate place expects something which is not an entity, it is mandatory
-to provide something of the correct type. While it's possible to manually create
-it with the use of abstractors (seen later in this book), multiple places like
+to provide an abstraction of the correct type. While it's possible to manually create
+abstractions with the use of abstractors (seen later in this book), multiple places like
 this leads to deep nesting, which is harder to follow and also verbose.
 
 The language provides a **chaining** mechanism to create complex but "flat"
