@@ -52,9 +52,9 @@ With **du**, it's possible to import the first place of the immediately followin
 spi fa mi fe mo du pli skai
 = I talk to you using a computer.
 
-pli  : ___ is a tool used by ___ to satisfying property [___2]
-du pli : "with-tool:"
-skai : ___ is a computer
+pli   : ___ is a tool used by ___ to satisfying property [___2]
+du pli: "with-tool:"
+skai  : ___ is a computer
 ```
 
 `du pli` imports the place expressing the concept of *a tool* to tell which tool
