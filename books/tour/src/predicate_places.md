@@ -49,15 +49,15 @@ With **du**, it's possible to import the first place of the immediately followin
 (it ignores predicate chaining, which will be explained in the next section).
 
 ```ebb
-spi fa mi fe mo du pli skai
+spi fa mi fe mo du plir skai
 = I talk to you using a computer.
 
-pli   : ___ is a tool used by ___ to satisfying property [___2]
-du pli: "with-tool:"
-skai  : ___ is a computer
+plir   : ___ is a tool used by ___ to satisfying property [___2]
+du plir: "with-tool:"
+skai   : ___ is a computer
 ```
 
-`du pli` imports the place expressing the concept of *a tool*, allowing us to specify tell which tool
+`du plir` imports the place expressing the concept of *a tool*, allowing us to specify tell which tool
 is being used to talk.
 
 ## Prenex
@@ -67,8 +67,8 @@ be used to define a topic or declare quantified variables, separated from their
 use site, usually early/first in the proposition.
 
 ```ebb
-foi mian fa mi do dul fe mu'i
-= About the cat : I like it.
+foi mlia fa mi do dul fe muhi
+= About the cat: I like it.
 ```
 
 ## Place question
@@ -77,10 +77,10 @@ foi mian fa mi do dul fe mu'i
 predicate.
 
 ```ebb
-val fa mo fei spu
-= Is a house your origin or destination ?
-= Are you going to or coming back from home ?
+vla fa mo fei zda
+= Is a house your origin or destination?
+= Are you going to or coming back from home?
 
-spu : ___ is a nest/house/home of ___
+zda: ___ is a nest/house/home of ___
 ```
 
