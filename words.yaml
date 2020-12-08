@@ -271,7 +271,7 @@ djo:
 dju:
   _family: "R"
   _signature: ".."
-  eng_long: "___ knows facts about ___"
+  eng_long: "___ knows ___"
   eng_short: know
   jbo_similar: djuno
 djun:
