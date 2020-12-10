@@ -80,6 +80,7 @@ var map = [
 	[ 'paragraph', 'paragraph' ],
 	[ 'sentence', 'sentence' ],
 	[ 'proposition', 'proposition' ],
+	[ 'predicate_chaining_import', 'import' ],
 
 	// predicate
 	[ 'predicate_unit', 'predicate' ],
