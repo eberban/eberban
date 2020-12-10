@@ -1347,8 +1347,9 @@ spe:
 spi:
   _family: "R"
   _signature: ".."
-  eng_long: ___ talks to ___
+  eng_long: ___ talks to ___ about ___
   eng_short: talk
+  jbo_similar: tavla
 spo:
   _family: "R"
   _signature: "."
