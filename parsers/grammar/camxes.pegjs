@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.14
+// eberban PEG grammar - v0.15
 // ===========================
 
 // GRAMMAR
@@ -138,72 +138,29 @@ parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number"
 // main text rule
 text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?) {return _node("text_1", expr);}
 
-// paragraphs
+// sentences
 paragraph = expr:(DA_clause+ sentence*) {return _node("paragraph", expr);}
-// a sentence is either a proposition or a fragment
-sentence = expr:(proposition / fragments) {return _node("sentence", expr);}
-// fragments : allow to answer questions without making a complete proposition
-fragments = expr:(DE_clause (proposition_place / FA_clause)* DEI_clause_elidible) {return _node("fragments", expr);}
+sentence = expr:(proposition) {return _node("sentence", expr);}
 
-// proposition afterthough connectives
-proposition = expr:(proposition_jak_post / proposition_1) {return _node("proposition", expr);}
-proposition_jak_post = expr:(proposition_1 (jak !DO_clause DE_clause_elidible proposition_1)+) {return _node("proposition_jak_post", expr);}
-// pre-tail terms
-proposition_1 = expr:(proposition_jak_pre / DE_clause_elidible proposition_1_terms DO_clause_elidible proposition_tail DEI_clause_elidible) {return _node("proposition_1", expr);}
-proposition_1_terms = expr:(proposition_place*) {return _node("proposition_1_terms", expr);}
-// forethough connected propositions
-proposition_jak_pre = expr:((gajak !DO_clause DE_clause_elidible proposition (gik proposition)+ NAI_clause_elidible)) {return _node("proposition_jak_pre", expr);}
+proposition = expr:(proposition_1 (jak proposition_1)*) {return _node("proposition", expr);}
+proposition_1 = expr:(proposition_jak_pre / DE_clause_elidible KA_clause* predicate_chaining DEI_clause_elidible) {return _node("proposition_1", expr);}
+proposition_jak_pre = expr:(najak proposition (nik proposition)+ NAI_clause_elidible) {return _node("proposition_jak_pre", expr);}
 
-// main proposition tail rule
-proposition_tail = expr:(proposition_tail_jak_post / proposition_tail_1) {return _node("proposition_tail", expr);}
-// proposition-tail afterthough connectives
-proposition_tail_jak_post = expr:(proposition_tail_1 (jak !DE_clause DO_clause_elidible proposition_tail_1 proposition_tail_jak_post_terms)+) {return _node("proposition_tail_jak_post", expr);}
-proposition_tail_jak_post_terms = expr:(proposition_tail_terms) {return _node("proposition_tail_jak_post_terms", expr);}
-// proposition-tail negation
-proposition_tail_1 = expr:(KA_clause* proposition_tail_2) {return _node("proposition_tail_1", expr);}
-// simple proposition-tail / forethough connected tails
-proposition_tail_2 = expr:(predicate proposition_tail_terms / proposition_tail_jak_pre) {return _node("proposition_tail_2", expr);}
-// forethough connected tails structure
-proposition_tail_jak_pre = expr:((gajak !DE_clause DO_clause_elidible proposition_tail (gik DO_clause_elidible proposition_tail)+ NAI_clause_elidible) proposition_tail_jak_pre_terms) {return _node("proposition_tail_jak_pre", expr);}
-proposition_tail_jak_pre_terms = expr:(proposition_tail_terms) {return _node("proposition_tail_jak_pre_terms", expr);}
+predicate_chaining = expr:(predicate_filling (CA_clause predicate_chaining)? / predicate_unit (CA_clause? predicate_chaining)?) {return _node("predicate_chaining", expr);}
+predicate_filling = expr:(predicate_unit predicate_filled_place+) {return _node("predicate_filling", expr);}
+predicate_filled_place = expr:(predicate_place_tag+ predicate_term predicate_link*) {return _node("predicate_filled_place", expr);}
+predicate_link = expr:(VA_clause predicate_unit+) {return _node("predicate_link", expr);}
+predicate_place_tag = expr:(FA_clause / predicate_place_import) {return _node("predicate_place_tag", expr);}
+predicate_place_import = expr:(DU_clause predicate_unit) {return _node("predicate_place_import", expr);}
 
-// terms followed by proposition-tail elidible terminator
-proposition_tail_terms = expr:(proposition_place* DOI_clause_elidible) {return _node("proposition_tail_terms", expr);}
-// place + term
-proposition_place = expr:(proposition_place_tag proposition_term) {return _node("proposition_place", expr);}
+predicate_term = expr:(predicate_term_jak_post / predicate_term_1) {return _node("predicate_term", expr);}
+predicate_term_jak_post = expr:(predicate_term_1 (jak predicate_term_1)+) {return _node("predicate_term_jak_post", expr);}
+predicate_term_1 = expr:(predicate_term_jaik_post / predicate_term_2) {return _node("predicate_term_1", expr);}
+predicate_term_jaik_post = expr:(predicate_term_2 (jaik predicate_term_2)+) {return _node("predicate_term_jaik_post", expr);}
+predicate_term_2 = expr:(predicate_unit) {return _node("predicate_term_2", expr);}
 
-// proposition term connectives
-proposition_term = expr:(proposition_term_jak_post / proposition_term_1) {return _node("proposition_term", expr);}
-proposition_term_jak_post = expr:(proposition_term_1 (jak !DE_clause !DO_clause proposition_term_1)+) {return _node("proposition_term_jak_post", expr);}
-proposition_term_1 = expr:(proposition_term_jaik_post / proposition_term_2) {return _node("proposition_term_1", expr);}
-proposition_term_jaik_post = expr:(proposition_term_2 (jaik !DE_clause !DO_clause proposition_term_2)+) {return _node("proposition_term_jaik_post", expr);}
-// simple predicate term / forethough connected terms
-proposition_term_2 = expr:(proposition_term_jak_pre / proposition_term_group / predicate) {return _node("proposition_term_2", expr);}
-// forethough connected term structure
-proposition_term_jak_pre = expr:((gajak !DA_clause !DO_clause proposition_term (gik !DO_clause proposition_term)+ NAI_clause_elidible)) {return _node("proposition_term_jak_pre", expr);}
-// proposition term group
-proposition_term_group = expr:(NO_clause proposition_term NOI_clause_elidible) {return _node("proposition_term_group", expr);}
-
-// proposition place tags connectives
-proposition_place_tag = expr:(proposition_place_tag_jak_post / proposition_place_tag_1) {return _node("proposition_place_tag", expr);}
-proposition_place_tag_jak_post = expr:(proposition_place_tag_1+) {return _node("proposition_place_tag_jak_post", expr);}
-// proposition_place_tag_jak_post <- proposition_place_tag_1 (JA_clause proposition_place_tag_1)+
-
-// basic proposition place tags
-proposition_place_tag_1 = expr:(proposition_place_modal / FA_clause) {return _node("proposition_place_tag_1", expr);}
-// proposition place modal
-proposition_place_modal = expr:(DU_clause predicate_2) {return _node("proposition_place_modal", expr);}
-
-// predicate chains, followed by links
-predicate = expr:(predicate_1 predicate_link*) {return _node("predicate", expr);}
-predicate_link = expr:(VA_clause predicate VAI_clause_elidible) {return _node("predicate_link", expr);}
-// predicate afterthough connectives
-predicate_1 = expr:((predicate_cak_post / predicate_2) predicate_1?) {return _node("predicate_1", expr);}
-predicate_cak_post = expr:(predicate_2 (cak !DE_clause !DA_clause predicate_1)) {return _node("predicate_cak_post", expr);}
-// core predicates
-predicate_2 = expr:(predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_2", expr);}
-// forethough connected predicates
-predicate_cak_pre = expr:((gacak !DE_clause !DA_clause predicate (gik predicate)+ NAI_clause_elidible)) {return _node("predicate_cak_pre", expr);}
+predicate_unit = expr:(SA_clause* predicate_unit_1) {return _node("predicate_unit", expr);}
+predicate_unit_1 = expr:(compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}
 
 // compound prefixes
 compound = expr:((compound_1 / compound_2 / compound_3 / compound_4 / compound_n) &post_word) {return _node("compound", expr);}
@@ -227,12 +184,6 @@ foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("forei
 // abstractions
 abstraction = expr:(BA_clause proposition BAI_clause_elidible) {return _node("abstraction", expr);}
 
-// predicate place swap
-predicate_pre_transform = expr:(SA_clause predicate_2) {return _node("predicate_pre_transform", expr);}
-
-// predicate group
-predicate_group = expr:(NO_clause predicate NOI_clause_elidible) {return _node("predicate_group", expr);}
-
 // string (numbers / literals)
 string = expr:((number_string / letter_string) TAI_clause_elidible) {return _node("string", expr);}
 number_string = expr:(TA_clause (TA_clause / BY_clause)*) {return _node("number_string", expr);}
@@ -244,9 +195,9 @@ jaik = expr:(JAI_clause) {return _node("jaik", expr);}
 cak = expr:(KA_clause? SA_clause? CA_clause KAI_clause? free_post*) {return _node("cak", expr);}
 
 // forethough connectives
-gajak = expr:(NA_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("gajak", expr);}
-gacak = expr:(NA_clause SA_clause? CA_clause KAI_clause? free_post*) {return _node("gacak", expr);}
-gik = expr:(NI_clause KAI_clause? free_post*) {return _node("gik", expr);}
+najak = expr:(NA_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("najak", expr);}
+nacak = expr:(NA_clause SA_clause? CA_clause KAI_clause? free_post*) {return _node("nacak", expr);}
+nik = expr:(NI_clause KAI_clause? free_post*) {return _node("nik", expr);}
 
 // free prefix
 free_prefix = expr:(LA_clause) {return _node("free_prefix", expr);}
@@ -254,7 +205,7 @@ free_prefix = expr:(LA_clause) {return _node("free_prefix", expr);}
 // free suffix
 free_post = expr:(LAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript) {return _node("free_post", expr);}
 free_indicator = expr:(LI_clause) {return _node("free_indicator", expr);}
-free_discursive = expr:(LE_clause predicate_2) {return _node("free_discursive", expr);}
+free_discursive = expr:(LE_clause predicate_unit+) {return _node("free_discursive", expr);}
 free_parenthetical = expr:(LO_clause text_1 LOI_clause) {return _node("free_parenthetical", expr);}
 free_subscript = expr:(LU_clause string) {return _node("free_subscript", expr);}
 

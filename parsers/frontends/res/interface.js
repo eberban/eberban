@@ -366,17 +366,14 @@ function boxClassForType(parse) {
 	if (parse.type === 'place') {
 		return 'box box-place';
 	}
-	if (parse.type === 'modal') {
-		return 'box box-modal';
+	if (parse.type === 'import') {
+		return 'box box-import';
 	}
 
 	if (parse.type === 'predicate') {
 		return 'box box-predicate';
 	}
 	if (parse.type === 'link') {
-		return 'box box-link';
-	}
-	if (parse.type === 'relative clause') {
 		return 'box box-link';
 	}
 
@@ -416,9 +413,6 @@ function boxClassForType(parse) {
 		return 'box box-note';
 	}
 	if (parse.type === 'subscript') {
-		return 'box box-note';
-	}
-	if (parse.type === 'vocative') {
 		return 'box box-note';
 	}
 
