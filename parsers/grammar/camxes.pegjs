@@ -146,12 +146,16 @@ proposition = expr:(proposition_1 (jak proposition_1)*) {return _node("propositi
 proposition_1 = expr:(proposition_jak_pre / DE_clause_elidible KA_clause* predicate_chaining DEI_clause_elidible) {return _node("proposition_1", expr);}
 proposition_jak_pre = expr:(najak proposition (nik proposition)+ NAI_clause_elidible) {return _node("proposition_jak_pre", expr);}
 
-predicate_chaining = expr:(predicate_filling (CA_clause predicate_chaining)? / predicate_unit (CA_clause? predicate_chaining)?) {return _node("predicate_chaining", expr);}
+predicate_chaining = expr:(predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?) {return _node("predicate_chaining", expr);}
+predicate_chaining_tag = expr:(CA_clause / predicate_chaining_import) {return _node("predicate_chaining_tag", expr);}
+predicate_chaining_import = expr:(DOI_clause predicate_unit) {return _node("predicate_chaining_import", expr);}
+
 predicate_filling = expr:(predicate_unit predicate_filled_place+) {return _node("predicate_filling", expr);}
 predicate_filled_place = expr:(predicate_place_tag+ predicate_term predicate_link*) {return _node("predicate_filled_place", expr);}
 predicate_link = expr:(VA_clause predicate_unit+) {return _node("predicate_link", expr);}
+
 predicate_place_tag = expr:(FA_clause / predicate_place_import) {return _node("predicate_place_tag", expr);}
-predicate_place_import = expr:(DU_clause predicate_unit) {return _node("predicate_place_import", expr);}
+predicate_place_import = expr:(DO_clause predicate_unit) {return _node("predicate_place_import", expr);}
 
 predicate_term = expr:(predicate_term_jak_post / predicate_term_1) {return _node("predicate_term", expr);}
 predicate_term_jak_post = expr:(predicate_term_1 (jak predicate_term_1)+) {return _node("predicate_term_jak_post", expr);}
@@ -222,11 +226,8 @@ DE_clause_elidible = expr:(DE_clause?) {return (expr == "" || !expr) ? ["DE"] : 
 DEI_clause = expr:(free_prefix* spaces? DEI free_post*) {return _node("DEI_clause", expr);}
 DEI_clause_elidible = expr:(DEI_clause?) {return (expr == "" || !expr) ? ["DEI"] : _node_empty("DEI_clause_elidible", expr);}
 DI_clause = expr:(spaces? DI) {return _node("DI_clause", expr);}
-DO_clause = expr:(free_prefix* spaces? DO free_post*) {return _node("DO_clause", expr);}
-DO_clause_elidible = expr:(DO_clause? ) {return (expr == "" || !expr) ? ["DO"] : _node_empty("DO_clause_elidible", expr);}
-DOI_clause = expr:(free_prefix* spaces? DOI free_post*) {return _node("DOI_clause", expr);}
-DOI_clause_elidible = expr:(DOI_clause?) {return (expr == "" || !expr) ? ["DOI"] : _node_empty("DOI_clause_elidible", expr);}
-DU_clause = expr:(free_prefix* spaces? DU) {return _node("DU_clause", expr);}
+DO_clause = expr:(free_prefix* spaces? DO) {return _node("DO_clause", expr);}
+DOI_clause = expr:(free_prefix* spaces? DOI) {return _node("DOI_clause", expr);}
 E_clause = expr:(free_prefix* spaces? E) {return _node("E_clause", expr);}
 FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);}
 I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);}
@@ -276,7 +277,6 @@ DEI = expr:(&particle (d e i)) {return _node("DEI", expr);}
 DI = expr:(&particle (d i)) {return _node("DI", expr);}
 DO = expr:(&particle (d o)) {return _node("DO", expr);}
 DOI = expr:(&particle (d o i)) {return _node("DOI", expr);}
-DU = expr:(&particle (d u)) {return _node("DU", expr);}
 E = expr:(&particle (e)) {return _node("E", expr);}
 FA = expr:(&particle (f vowel_tail)) {return _node("FA", expr);}
 I = expr:(&particle (i)) {return _node("I", expr);}

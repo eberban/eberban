@@ -2143,6 +2143,11 @@ zno:
   _signature: ".."
   eng_long: ___ pertains to/is about subject ___
   eng_short: about
+znon:
+  _family: "R"
+  _signature: ".0"
+  eng_long: ___ pertains to/is about subject [___]
+  eng_short: about
 zu:
   _family: "ZU"
   _signature: "."

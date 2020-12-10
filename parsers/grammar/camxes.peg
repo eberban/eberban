@@ -17,12 +17,16 @@ proposition <- proposition_1 (jak proposition_1)*
 proposition_1 <- proposition_jak_pre / DE_clause_elidible KA_clause* predicate_chaining DEI_clause_elidible
 proposition_jak_pre <- najak proposition (nik proposition)+ NAI_clause_elidible
 
-predicate_chaining <- predicate_filling (CA_clause predicate_chaining)? / predicate_unit (CA_clause? predicate_chaining)?
+predicate_chaining <- predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?
+predicate_chaining_tag <- CA_clause / predicate_chaining_import
+predicate_chaining_import <- DOI_clause predicate_unit
+
 predicate_filling <- predicate_unit predicate_filled_place+
 predicate_filled_place <- predicate_place_tag+ predicate_term predicate_link*
 predicate_link <- VA_clause predicate_unit+
+
 predicate_place_tag <- FA_clause / predicate_place_import
-predicate_place_import <- DU_clause predicate_unit
+predicate_place_import <- DO_clause predicate_unit
 
 predicate_term <- predicate_term_jak_post / predicate_term_1
 predicate_term_jak_post <- predicate_term_1 (jak predicate_term_1)+
@@ -93,11 +97,8 @@ DE_clause_elidible  <- DE_clause?
 DEI_clause          <- free_prefix* spaces? DEI free_post*
 DEI_clause_elidible <- DEI_clause?
 DI_clause           <- spaces? DI
-DO_clause           <- free_prefix* spaces? DO free_post*
-DO_clause_elidible  <- DO_clause? 
-DOI_clause          <- free_prefix* spaces? DOI free_post*
-DOI_clause_elidible <- DOI_clause?
-DU_clause           <- free_prefix* spaces? DU
+DO_clause           <- free_prefix* spaces? DO
+DOI_clause          <- free_prefix* spaces? DOI
 E_clause            <- free_prefix* spaces? E
 FA_clause           <- free_prefix* spaces? FA free_post*
 I_clause            <- free_prefix* spaces? I
@@ -147,7 +148,6 @@ DEI   <- &particle (d e i)
 DI    <- &particle (d i)
 DO    <- &particle (d o)
 DOI   <- &particle (d o i)
-DU    <- &particle (d u)
 E     <- &particle (e)
 FA    <- &particle (f vowel_tail)
 I     <- &particle (i)
