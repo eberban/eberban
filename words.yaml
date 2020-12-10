@@ -2,36 +2,47 @@
 .:
   _family: "TA"
   eng_short: "te"
+  eng_long: decimal separator
 0:
   _family: "TA"
   eng_short: "ta"
+  eng_long: "number/digit: 0"
 1:
   _family: "TA"
   eng_short: "tia"
+  eng_long: "number/digit: 1"
 2:
   _family: "TA"
   eng_short: "tie"
+  eng_long: "number/digit: 2"
 3:
   _family: "TA"
   eng_short: "tii"
+  eng_long: "number/digit: 3"
 4:
   _family: "TA"
   eng_short: "tio"
+  eng_long: "number/digit: 4"
 5:
   _family: "TA"
   eng_short: "tiu"
+  eng_long: "number/digit: 5"
 6:
   _family: "TA"
   eng_short: "tua"
+  eng_long: "number/digit: 6"
 7:
   _family: "TA"
   eng_short: "tue"
+  eng_long: "number/digit: 7"
 8:
   _family: "TA"
   eng_short: "tui"
+  eng_long: "number/digit: 8"
 9:
   _family: "TA"
   eng_short: "tuo"
+  eng_long: "number/digit: 9"
 a:
   _family: "A"
   eng_long: prefix a 1 word long compound
@@ -1327,6 +1338,12 @@ spar:
   eng_long: "___ is able to do/be/capable of satisfying property [___1]"
   eng_short: able
   jbo_similar: kakne
+spe:
+  _family: "R"
+  _signature: "."
+  eng_long: ___ is awake/alert/concious
+  eng_short: awake
+  jbo_similar: cikna
 spi:
   _family: "R"
   _signature: ".."
@@ -1337,6 +1354,7 @@ spo:
   _signature: "."
   eng_long: ___ sleeps
   eng_short: sleep
+  jbo_similar: sipna
 sta:
   _family: "R"
   _signature: "..."
