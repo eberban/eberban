@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.14
+# eberban PEG grammar - v0.15
 # ===========================
 
 # GRAMMAR
@@ -9,72 +9,29 @@ parser_version_number <- spaces? TA+
 # main text rule
 text_1 <- (free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
 
-# paragraphs
+# sentences
 paragraph <- DA_clause+ sentence*
-# a sentence is either a proposition or a fragment
-sentence <- proposition / fragments
-# fragments : allow to answer questions without making a complete proposition
-fragments <- DE_clause (proposition_place / FA_clause)* DEI_clause_elidible
+sentence <- proposition
 
-# proposition afterthough connectives
-proposition <- proposition_jak_post / proposition_1
-proposition_jak_post <- proposition_1 (jak !DO_clause DE_clause_elidible proposition_1)+
-# pre-tail terms
-proposition_1 <- proposition_jak_pre / DE_clause_elidible proposition_1_terms DO_clause_elidible proposition_tail DEI_clause_elidible
-proposition_1_terms <- proposition_place*
-# forethough connected propositions
-proposition_jak_pre <- (gajak !DO_clause DE_clause_elidible proposition (gik proposition)+ NAI_clause_elidible)
+proposition <- proposition_1 (jak proposition_1)*
+proposition_1 <- proposition_jak_pre / DE_clause_elidible KA_clause* predicate_chaining DEI_clause_elidible
+proposition_jak_pre <- najak proposition (nik proposition)+ NAI_clause_elidible
 
-# main proposition tail rule
-proposition_tail <- proposition_tail_jak_post / proposition_tail_1
-# proposition-tail afterthough connectives
-proposition_tail_jak_post <- proposition_tail_1 (jak !DE_clause DO_clause_elidible proposition_tail_1 proposition_tail_jak_post_terms)+
-proposition_tail_jak_post_terms <- proposition_tail_terms
-# proposition-tail negation
-proposition_tail_1 <- KA_clause* proposition_tail_2
-# simple proposition-tail / forethough connected tails
-proposition_tail_2 <- predicate proposition_tail_terms / proposition_tail_jak_pre
-# forethough connected tails structure
-proposition_tail_jak_pre <- (gajak !DE_clause DO_clause_elidible proposition_tail (gik DO_clause_elidible proposition_tail)+ NAI_clause_elidible) proposition_tail_jak_pre_terms
-proposition_tail_jak_pre_terms <- proposition_tail_terms
+predicate_chaining <- predicate_filling (CA_clause predicate_chaining)? / predicate_unit (CA_clause? predicate_chaining)?
+predicate_filling <- predicate_unit predicate_filled_place+
+predicate_filled_place <- predicate_place_tag+ predicate_term predicate_link*
+predicate_link <- VA_clause predicate_unit+
+predicate_place_tag <- FA_clause / predicate_place_import
+predicate_place_import <- DU_clause predicate_unit
 
-# terms followed by proposition-tail elidible terminator
-proposition_tail_terms <- proposition_place* DOI_clause_elidible
-# place + term
-proposition_place <- proposition_place_tag proposition_term
+predicate_term <- predicate_term_jak_post / predicate_term_1
+predicate_term_jak_post <- predicate_term_1 (jak predicate_term_1)+
+predicate_term_1 <- predicate_term_jaik_post / predicate_term_2
+predicate_term_jaik_post <- predicate_term_2 (jaik predicate_term_2)+
+predicate_term_2 <- predicate_unit
 
-# proposition term connectives
-proposition_term <- proposition_term_jak_post / proposition_term_1
-proposition_term_jak_post <- proposition_term_1 (jak !DE_clause !DO_clause proposition_term_1)+
-proposition_term_1 <- proposition_term_jaik_post / proposition_term_2
-proposition_term_jaik_post <- proposition_term_2 (jaik !DE_clause !DO_clause proposition_term_2)+
-# simple predicate term / forethough connected terms
-proposition_term_2 <- proposition_term_jak_pre / proposition_term_group / predicate
-# forethough connected term structure
-proposition_term_jak_pre <- (gajak !DA_clause !DO_clause proposition_term (gik !DO_clause proposition_term)+ NAI_clause_elidible)
-# proposition term group
-proposition_term_group <- NO_clause proposition_term NOI_clause_elidible
-
-# proposition place tags connectives
-proposition_place_tag <- proposition_place_tag_jak_post / proposition_place_tag_1
-proposition_place_tag_jak_post <- proposition_place_tag_1+
-# proposition_place_tag_jak_post <- proposition_place_tag_1 (JA_clause proposition_place_tag_1)+
-
-# basic proposition place tags
-proposition_place_tag_1 <- proposition_place_modal / FA_clause
-# proposition place modal
-proposition_place_modal <- DU_clause predicate_2
-
-# predicate chains, followed by links
-predicate <- predicate_1 predicate_link*
-predicate_link <- VA_clause predicate VAI_clause_elidible
-# predicate afterthough connectives
-predicate_1 <- (predicate_cak_post / predicate_2) predicate_1?
-predicate_cak_post <- predicate_2 (cak !DE_clause !DA_clause predicate_1)
-# core predicates
-predicate_2 <- predicate_cak_pre / compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / predicate_pre_transform / predicate_group / MA_clause / free_prefix* spaces? (root / string) free_post*
-# forethough connected predicates
-predicate_cak_pre <- (gacak !DE_clause !DA_clause predicate (gik predicate)+ NAI_clause_elidible)
+predicate_unit <- SA_clause* predicate_unit_1
+predicate_unit_1 <- compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*
 
 # compound prefixes
 compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) &post_word
@@ -98,12 +55,6 @@ foreign_quote_content <- (foreign_quote_word spaces)*
 # abstractions
 abstraction <- BA_clause proposition BAI_clause_elidible
 
-# predicate place swap
-predicate_pre_transform <- SA_clause predicate_2
-
-# predicate group
-predicate_group <- NO_clause predicate NOI_clause_elidible
-
 # string (numbers / literals)
 string <- (number_string / letter_string) TAI_clause_elidible
 number_string <- TA_clause (TA_clause / BY_clause)*
@@ -115,9 +66,9 @@ jaik <- JAI_clause
 cak <- KA_clause? SA_clause? CA_clause KAI_clause?  free_post*
 
 # forethough connectives
-gajak <- NA_clause SA_clause? JA_clause KAI_clause? free_post*
-gacak <- NA_clause SA_clause? CA_clause KAI_clause? free_post*
-gik <- NI_clause KAI_clause? free_post*
+najak <- NA_clause SA_clause? JA_clause KAI_clause? free_post*
+nacak <- NA_clause SA_clause? CA_clause KAI_clause? free_post*
+nik <- NI_clause KAI_clause? free_post*
 
 # free prefix
 free_prefix <- LA_clause
@@ -125,7 +76,7 @@ free_prefix <- LA_clause
 # free suffix
 free_post <- LAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript
 free_indicator <- LI_clause
-free_discursive <- LE_clause predicate_2
+free_discursive <- LE_clause predicate_unit+
 free_parenthetical <- LO_clause text_1 LOI_clause
 free_subscript <- LU_clause string
 

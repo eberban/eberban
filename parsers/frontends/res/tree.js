@@ -74,17 +74,20 @@ function simplifyArrayOfTrees(parse) {
 var simplifyFunctions = {};
 
 var map = [
-	// important structures
+	// text
 	[ 'text', 'text' ],
 	[ 'parser_version', 'parser version' ],
 	[ 'paragraph', 'paragraph' ],
 	[ 'sentence', 'sentence' ],
-	[ 'proposition_1', 'proposition' ],
-	[ 'proposition_tail', 'proposition tail' ],
-	[ 'proposition_place', 'place' ],
-	[ 'proposition_place_tag', 'tag' ],
-	[ 'proposition_place_modal', 'modal' ],
-	[ 'proposition_term', 'term' ],
+	[ 'proposition', 'proposition' ],
+
+	// predicate
+	[ 'predicate_unit', 'predicate' ],
+	[ 'predicate_filled_place', 'place' ],
+	[ 'predicate_place_import', 'import' ],
+	[ 'predicate_link', 'link' ],
+
+	// predicate units
 	[ 'compound', 'compound' ],
 	[ 'borrowing', 'borrowing' ],
 	[ 'foreign_word', 'foreign' ],
@@ -95,11 +98,6 @@ var map = [
 	[ 'number_string', 'number' ],
 	[ 'letter_string', 'letters' ],
 
-	// predicate
-	[ 'predicate', 'predicate' ],
-	[ 'predicate_link', 'link' ],
-	[ 'predicate_relative_clause', 'relative clause' ],
-
 	// free
 	[ 'free_indicator', 'indicator' ],
 	[ 'free_discursive', 'discursive' ],
@@ -107,31 +105,68 @@ var map = [
 	[ 'free_subscript', 'subscript' ],
 	[ 'free_vocative', 'vocative' ],
 
-	// SCOPES
-	// manual groups
-	[ 'predicate_group', 'scope' ],
-	[ 'proposition_term_group', 'scope' ],
+	// scopes
+	[ 'predicate_filling', 'scope' ]
 
-	// proposition jak
-	[ 'proposition_jak_pre', 'scope' ],
-	[ 'proposition_jak_post', 'scope' ],
+	// ===== OLD
 
-	// proposition terms
-	[ 'proposition_term_jak_post', 'scope' ],
-	[ 'proposition_term_jaik_post', 'scope' ],
-	[ 'proposition_term_jak_pre', 'scope' ],
-	[ 'proposition_place_tag_jak_pre', 'scope' ],
+	// [ 'text', 'text' ],
+	// [ 'parser_version', 'parser version' ],
+	// [ 'paragraph', 'paragraph' ],
+	// [ 'sentence', 'sentence' ],
+	// [ 'proposition_1', 'proposition' ],
+	// [ 'proposition_tail', 'proposition tail' ],
+	// [ 'proposition_place', 'place' ],
+	// [ 'proposition_place_tag', 'tag' ],
+	// [ 'proposition_place_modal', 'modal' ],
+	// [ 'proposition_term', 'term' ],
+	// [ 'compound', 'compound' ],
+	// [ 'borrowing', 'borrowing' ],
+	// [ 'foreign_word', 'foreign' ],
+	// [ 'grammatical_quote', 'quote' ],
+	// [ 'one_word_quote', 'word quote' ],
+	// [ 'foreign_quote', 'foreign quote' ],
+	// [ 'abstraction', 'abstraction' ],
+	// [ 'number_string', 'number' ],
+	// [ 'letter_string', 'letters' ],
 
-	// show proposition-tail distributivity
-	// ["proposition_tail_jak_pre", "scope"],
-	[ 'proposition_tail_jak_pre_terms', 'scope' ],
-	[ 'proposition_tail_1', 'scope' ],
-	[ 'proposition_1_terms', 'scope' ],
-	[ 'proposition_tail_jak_post_terms', 'scope' ],
+	// // predicate
+	// [ 'predicate', 'predicate' ],
+	// [ 'predicate_link', 'link' ],
+	// [ 'predicate_relative_clause', 'relative clause' ],
 
-	// predicates
-	// ["predicate_cak_post", "scope"],
-	[ 'predicate_cak_pre', 'scope' ]
+	// // free
+	// [ 'free_indicator', 'indicator' ],
+	// [ 'free_discursive', 'discursive' ],
+	// [ 'free_parenthetical', 'note' ],
+	// [ 'free_subscript', 'subscript' ],
+	// [ 'free_vocative', 'vocative' ],
+
+	// // SCOPES
+	// // manual groups
+	// [ 'predicate_group', 'scope' ],
+	// [ 'proposition_term_group', 'scope' ],
+
+	// // proposition jak
+	// [ 'proposition_jak_pre', 'scope' ],
+	// [ 'proposition_jak_post', 'scope' ],
+
+	// // proposition terms
+	// [ 'proposition_term_jak_post', 'scope' ],
+	// [ 'proposition_term_jaik_post', 'scope' ],
+	// [ 'proposition_term_jak_pre', 'scope' ],
+	// [ 'proposition_place_tag_jak_pre', 'scope' ],
+
+	// // show proposition-tail distributivity
+	// // ["proposition_tail_jak_pre", "scope"],
+	// [ 'proposition_tail_jak_pre_terms', 'scope' ],
+	// [ 'proposition_tail_1', 'scope' ],
+	// [ 'proposition_1_terms', 'scope' ],
+	// [ 'proposition_tail_jak_post_terms', 'scope' ],
+
+	// // predicates
+	// // ["predicate_cak_post", "scope"],
+	// [ 'predicate_cak_pre', 'scope' ]
 ];
 
 for (let replace of map) {
