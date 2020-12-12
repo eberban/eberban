@@ -364,7 +364,7 @@ eklacke:
   eng_long: ___ is a man
   eng_short: man
   jbo_similar: nanmu
-eklaprei:
+eklaprai:
   _family: "C"
   _signature: ".."
   eng_long: ___ is a father of ___
@@ -376,7 +376,7 @@ esfecke:
   eng_long: ___ is a woman
   eng_short: woman
   jbo_similar: ninmu
-esfeprei:
+esfeprai:
   _family: "C"
   _signature: ".."
   eng_long: ___ is a mother of ___
