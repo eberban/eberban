@@ -178,8 +178,8 @@ VAI   <- &particle (v a i)
 ZA    <- &particle (z &a vowel_tail)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)
-ZI    <- &particle (z i)
-ZU    <- &particle (z u)
+ZI    <- &particle (z &i vowel_tail)
+ZU    <- &particle (z &u vowel_tail)
 
 # MORPHOLOGY
 # - Forein text quoting

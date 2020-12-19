@@ -8682,7 +8682,7 @@ var camxes = (function() {
     }
 
     function peg$parseZI() {
-      var s0, s1, s2, s3, s4, s5;
+      var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 210 + 144,
           cached = peg$cache[key];
@@ -8708,10 +8708,25 @@ var camxes = (function() {
         s3 = peg$currPos;
         s4 = peg$parsez();
         if (s4 !== peg$FAILED) {
-          s5 = peg$parsei();
+          s5 = peg$currPos;
+          peg$silentFails++;
+          s6 = peg$parsei();
+          peg$silentFails--;
+          if (s6 !== peg$FAILED) {
+            peg$currPos = s5;
+            s5 = peg$c3;
+          } else {
+            s5 = peg$c0;
+          }
           if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
+            s6 = peg$parsevowel_tail();
+            if (s6 !== peg$FAILED) {
+              s4 = [s4, s5, s6];
+              s3 = s4;
+            } else {
+              peg$currPos = s3;
+              s3 = peg$c0;
+            }
           } else {
             peg$currPos = s3;
             s3 = peg$c0;
@@ -8743,7 +8758,7 @@ var camxes = (function() {
     }
 
     function peg$parseZU() {
-      var s0, s1, s2, s3, s4, s5;
+      var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 210 + 145,
           cached = peg$cache[key];
@@ -8769,10 +8784,25 @@ var camxes = (function() {
         s3 = peg$currPos;
         s4 = peg$parsez();
         if (s4 !== peg$FAILED) {
-          s5 = peg$parseu();
+          s5 = peg$currPos;
+          peg$silentFails++;
+          s6 = peg$parseu();
+          peg$silentFails--;
+          if (s6 !== peg$FAILED) {
+            peg$currPos = s5;
+            s5 = peg$c3;
+          } else {
+            s5 = peg$c0;
+          }
           if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
+            s6 = peg$parsevowel_tail();
+            if (s6 !== peg$FAILED) {
+              s4 = [s4, s5, s6];
+              s3 = s4;
+            } else {
+              peg$currPos = s3;
+              s3 = peg$c0;
+            }
           } else {
             peg$currPos = s3;
             s3 = peg$c0;
