@@ -307,8 +307,8 @@ VAI = expr:(&particle (v a i)) {return _node("VAI", expr);}
 ZA = expr:(&particle (z &a vowel_tail)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}
-ZI = expr:(&particle (z i)) {return _node("ZI", expr);}
-ZU = expr:(&particle (z u)) {return _node("ZU", expr);}
+ZI = expr:(&particle (z &i vowel_tail)) {return _node("ZI", expr);}
+ZU = expr:(&particle (z &u vowel_tail)) {return _node("ZU", expr);}
 
 // MORPHOLOGY
 // - Forein text quoting
