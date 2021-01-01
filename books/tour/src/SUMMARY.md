@@ -26,13 +26,11 @@
 - [Abstractors [BA]](abstractors.md)
 
 - [Distributivity]()
-  - [Text structure [DA/DE/DO]]()
+  - [Text structure [DA/DE]]()
   - [Place connectives [JA/JAI]]()
   - [Place distribution [JA+DO]]()
 
-- [Grouping]()
-  - [Forethough connections [NA/NI]]()
-  - [Other grouping [NO]]()
+- [Forethough connections [KA/KI]]()
 
 - [Vocabulary]()
   - [Useful concepts]()

@@ -5,14 +5,15 @@ vowels (**a, e, i, o, u, y**), 17 consonants (**b, c, d, f, g, j, k, l, m, n, p,
 r, s, t, v, x, z**), and a semi-consonant **h**, for a total of 24 letters.
 There is also one symbol denoting a pause in speech, namely the apostrophe
 **'**, which is optional in written media as long as there are spaces alongside
-it. Among the consonants, three special ones are designated coda (**l, n, r**).
+it. Among the consonants, three special ones are designated
+(alveolar) **sonorants** (**l, n, r**).
 
 ## Letter conventions
 
 While discussing letters, the following conventions are used:
 1. A vowel tail, represented as __V__, denotes any chain of vowels or diphthongs
-   separated by **h** or a coda.
-2. A __C__ denotes exactly one consonant (including coda).
+   separated by **h** or a sonorant.
+2. A __C__ denotes exactly one consonant (including sonorants).
 
 ## Words
 
@@ -35,9 +36,9 @@ other hand, roots always follow either the pattern __VC__, __CVC__, __CCV__
 or __CCVC__.
 <!--In particular, they always have exactly two consonants and one or more vowels and/or apostrophes.-->
 
-Particles and roots starting with a vowel, **l, n** or **r** are technically preceded by a
+Particles and roots starting with a vowel or a sonorant are technically preceded by a
 pause `'`, which may be omitted in writing if there are spaces alongside it. 
-They may never end with a non-coda consonant.
+They may never end with a non-sonorant.
 
 Borrowings have the same starting rules, but may end in any letter, always
 followed by a pause.
@@ -47,10 +48,10 @@ separated by spaces (" ").
 
 
 >  **For the advanced reader:** you may have noticed that all words start with
->  either a vowel (preceded by a pause) or a non-coda consonant, and that all
->  words (except borrowings) end with either a vowel or a coda. This is by
+>  either a vowel or sonorant (preceded by a pause), or a non-sonorant; and that all
+>  words (except borrowings) end with either a vowel or a sonorant. This is by
 >  design. As we will later see, these seemingly artificial restrictions
->  involving coda ensure that, even if words (except borrowings) are strung
+>  involving sonorants ensure that, even if words (except borrowings) are strung
 >  together without any spaces between them, they can still be uniquely
 >  decomposed (i.e. spaces can be deterministically added back). This may seem
 >  unimportant, and indeed in written media spaces are not particularly obnoxious

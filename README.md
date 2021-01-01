@@ -16,7 +16,7 @@ expressive.
 <!-- TODO: [jqueiroz] explicitly mention chaining -->
 
 > From a lojbanist perspective: it aims at merging brivla and rafsi (by having
-> all predicate words follow a carefully designed pattern of coda consonants, non-coda consonants and vowels/apostrophes; [more details](https://mia-entropy.github.io/eberban/books/tour/book/morphology.html)).
+> all predicate words follow a carefully designed pattern of sonorants non-sonorants consonants and vowels/apostrophes; [more details](https://mia-entropy.github.io/eberban/books/tour/book/morphology.html)).
 > Following a suggestion by la uakci, it also removes sumti from the grammar and
 > works only with predicates themselves.
 

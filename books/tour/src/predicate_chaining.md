@@ -1,5 +1,7 @@
 # Predicate chaining
 
+> **WARNING :** This chapter is outdated as chaining is being reworked.
+
 When a predicate place expects something which is not an entity, it is mandatory
 to provide something of the correct type. While it's possible to manually create
 it with the use of abstractors (seen later in this book), multiple places like

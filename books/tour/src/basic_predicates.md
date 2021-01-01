@@ -66,12 +66,12 @@ To help recognition and learning, root words also follow patterns.
 
 Common roots are in **CVC** form, and often are similar to other related roots.
 
-Less common roots are of **CCV**/**CCVC** form. The presence of a coda indicates
+Less common roots are of **CCV**/**CCVC** form. The presence of a sonorant indicates
 the type of their rightmost chaining place (see chaining chapter).
 
-| Coda   | Rightmost chaining place type |
-| ------ | ----------------------------- |
-| *none* | no chaining place             |
-| n      | proposition place             |
-| r      | property place                |
-| l      | other                         |
+| Sonorant | Rightmost chaining place type |
+| -------- | ----------------------------- |
+| *none*   | no chaining place             |
+| n        | proposition place             |
+| r        | property place                |
+| l        | other                         |
