@@ -4,8 +4,9 @@
 # GRAMMAR
 # main rule, allow language version/dialect annotation
 text <- parser_version? text_1
-parser_version <- DI_clause (!parser_version_number borrowing_content (pause_char !pause_char !y)? parser_version_number? / parser_version_number)
+parser_version <- KU_clause (!parser_version_number borrowing_content (pause_char !pause_char !y)? parser_version_number? / parser_version_number)
 parser_version_number <- spaces? TA+
+
 # main text rule
 text_1 <- (free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
 
@@ -13,26 +14,30 @@ text_1 <- (free_indicator / free_discursive / free_parenthetical)* (paragraph+ /
 paragraph <- DA_clause+ sentence*
 sentence <- proposition
 
-proposition <- proposition_1 (jak proposition_1)*
-proposition_1 <- proposition_jak_pre / DE_clause_elidible KA_clause* predicate_chaining DEI_clause_elidible
-proposition_jak_pre <- najak proposition (nik proposition)+ NAI_clause_elidible
+proposition <- proposition_1 (ja proposition_1)*
+proposition_1 <- proposition_keja / DE_clause_elidible prenex? KA_clause* predicate_chaining DEI_clause_elidible
+proposition_keja <- keja proposition (ki proposition)+ KEI_clause_elidible
+
+prenex <- (DO_clause prenex_term)+ DOI_clause
+prenex_term <- predicate_term predicate_link*
 
 predicate_chaining <- predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?
 predicate_chaining_tag <- CA_clause / predicate_chaining_import
-predicate_chaining_import <- DOI_clause predicate_unit
+predicate_chaining_import <- KOI_clause predicate_unit
 
 predicate_filling <- predicate_unit predicate_filled_place+
 predicate_filled_place <- predicate_place_tag+ predicate_term predicate_link*
 predicate_link <- VA_clause predicate_unit+
 
 predicate_place_tag <- FA_clause / predicate_place_import
-predicate_place_import <- DO_clause predicate_unit
+predicate_place_import <- KO_clause predicate_unit
 
-predicate_term <- predicate_term_jak_post / predicate_term_1
-predicate_term_jak_post <- predicate_term_1 (jak predicate_term_1)+
-predicate_term_1 <- predicate_term_jaik_post / predicate_term_2
-predicate_term_jaik_post <- predicate_term_2 (jaik predicate_term_2)+
-predicate_term_2 <- predicate_unit
+predicate_term <- predicate_term_ja / predicate_term_1
+predicate_term_ja <- predicate_term_1 (ja predicate_term_1)+
+predicate_term_1 <- predicate_term_jai / predicate_term_2
+predicate_term_jai <- predicate_term_2 (jai predicate_term_2)+
+predicate_term_2 <- predicate_term_keja / predicate_unit
+predicate_term_keja <- keja predicate_term (ki predicate_term)+ KEI_clause_elidible
 
 predicate_unit <- SA_clause* predicate_unit_1
 predicate_unit_1 <- compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*
@@ -48,7 +53,7 @@ compound_word <- initial_pause native_word
 
 # borrowings
 borrowing <- ZA_clause borrowing_content (pause_char / space_char / EOF) free_post*
-borrowing_content <- (spaces? !coda / spaces &coda) foreign_word
+borrowing_content <- (spaces? !sonorant / spaces &sonorant) foreign_word
 
 # quotes
 grammatical_quote <- ZE_clause text_1 ZEI_clause
@@ -65,116 +70,112 @@ number_string <- TA_clause (TA_clause / BY_clause)*
 letter_string <- BY_clause (TA_clause / BY_clause)*
 
 # afterthough connectives
-jak <- KA_clause? SA_clause? JA_clause KAI_clause? free_post*
-jaik <- JAI_clause
-cak <- KA_clause? SA_clause? CA_clause KAI_clause?  free_post*
+ja <- KA_clause? SA_clause? JA_clause KAI_clause? free_post*
+jai <- JAI_clause
 
 # forethough connectives
-najak <- NA_clause SA_clause? JA_clause KAI_clause? free_post*
-nacak <- NA_clause SA_clause? CA_clause KAI_clause? free_post*
-nik <- NI_clause KAI_clause? free_post*
+keja <- KE_clause SA_clause? JA_clause KAI_clause? free_post*
+ki <- KI_clause KAI_clause? free_post*
 
 # free prefix
-free_prefix <- LA_clause
+free_prefix <- PA_clause
 
 # free suffix
-free_post <- LAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript
-free_indicator <- LI_clause
-free_discursive <- LE_clause predicate_unit+
-free_parenthetical <- LO_clause text_1 LOI_clause
-free_subscript <- LU_clause string
+free_post <- PAI_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
+free_discursive <- PE_clause predicate_unit+
+free_indicator <- PI_clause
+free_parenthetical <- PO_clause text_1 POI_clause
+free_subscript <- PU_clause string
 
 # PARTICLES CLAUSES
-A_clause            <- free_prefix* spaces? A
-BA_clause           <- free_prefix* spaces? BA 
-BAI_clause          <- free_prefix* spaces? BAI free_post*
+A_clause            <- free_prefix* spaces? A                   # 1-word compound
+E_clause            <- free_prefix* spaces? E                   # 2-words compound
+I_clause            <- free_prefix* spaces? I                   # 3-words compound
+O_clause            <- free_prefix* spaces? O                   # 4-words compound
+U_clause            <- free_prefix* spaces? U                   # n-words compound starter and terminator
+
+BA_clause           <- free_prefix* spaces? BA                  # abstractors starter
+BAI_clause          <- free_prefix* spaces? BAI free_post*      # abstractors terminator
 BAI_clause_elidible <- BAI_clause?
-BY_clause           <- free_prefix* spaces? BY
-CA_clause           <- free_prefix* spaces? CA free_post*
-DA_clause           <- free_prefix* spaces? DA free_post*
-DE_clause           <- free_prefix* spaces? DE free_post*
+BY_clause           <- free_prefix* spaces? BY                  # letters
+CA_clause           <- free_prefix* spaces? CA free_post*       # chaining tags
+DA_clause           <- free_prefix* spaces? DA free_post*       # paragraph marker
+DE_clause           <- free_prefix* spaces? DE free_post*       # proposition starter
 DE_clause_elidible  <- DE_clause?
-DEI_clause          <- free_prefix* spaces? DEI free_post*
+DEI_clause          <- free_prefix* spaces? DEI free_post*      # proposition terminator
 DEI_clause_elidible <- DEI_clause?
-DI_clause           <- spaces? DI
-DO_clause           <- free_prefix* spaces? DO
-DOI_clause          <- free_prefix* spaces? DOI
-E_clause            <- free_prefix* spaces? E
-FA_clause           <- free_prefix* spaces? FA free_post*
-I_clause            <- free_prefix* spaces? I
-JA_clause           <- free_prefix* spaces? JA free_post*
-JAI_clause          <- free_prefix* spaces? JAI free_post*
-KA_clause           <- free_prefix* spaces? KA free_post*
-KAI_clause          <- free_prefix* spaces? KAI
-LA_clause           <- spaces? LA
-LAI_clause          <- spaces? LAI
-LE_clause           <- free_prefix* spaces? LE
-LI_clause           <- free_prefix* spaces? LI
-LO_clause           <- free_prefix* spaces? LO
-LOI_clause          <- free_prefix* spaces? LOI
-LU_clause           <- free_prefix* spaces? LU
-MA_clause           <- free_prefix* spaces? MA free_post*
-NA_clause           <- free_prefix* spaces? NA
-NAI_clause          <- free_prefix* spaces? NAI free_post*
-NAI_clause_elidible <- NAI_clause?
-NI_clause           <- free_prefix* spaces? NI
-NO_clause           <- free_prefix* spaces? NO
-NOI_clause          <- free_prefix* spaces? NOI free_post*
-NOI_clause_elidible <- NOI_clause?
-O_clause            <- free_prefix* spaces? O
-SA_clause           <- free_prefix* spaces? SA
-TA_clause           <- free_prefix* spaces? TA
-TAI_clause          <- free_prefix* spaces? TAI
+DO_clause           <- free_prefix* spaces? DO free_post*       # prenex starter/separator
+DOI_clause          <- free_prefix* spaces? DOI free_post*      # prenex terminator
+FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
+JA_clause           <- free_prefix* spaces? JA free_post*       # logical connectives
+JAI_clause          <- free_prefix* spaces? JAI free_post*      # set creator
+KA_clause           <- free_prefix* spaces? KA free_post*       # pre negation
+KAI_clause          <- free_prefix* spaces? KAI                 # post negation
+KE_clause           <- free_prefix* spaces? KE                  # forethought connective starter
+KEI_clause          <- free_prefix* spaces? KEI free_post*      # forethought connective terminator
+KEI_clause_elidible <- KEI_clause?
+KI_clause           <- free_prefix* spaces? KI                  # forethought connective separator
+KO_clause           <- free_prefix* spaces? KO                  # filling place import
+KOI_clause          <- free_prefix* spaces? KOI                 # chaining place import
+KU_clause           <- free_prefix* spaces? KU                  # parser version/dialect
+MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
+PA_clause           <- spaces? PA                               # free scope started
+PAI_clause          <- spaces? PAI                              # free scope terminator
+PE_clause           <- free_prefix* spaces? PE                  # free discursive (predicate)
+PI_clause           <- free_prefix* spaces? PI                  # free indicator (marker)
+PO_clause           <- free_prefix* spaces? PO                  # free parenthetical started (text)
+POI_clause          <- free_prefix* spaces? POI                 # free parenthetical terminator
+PU_clause           <- free_prefix* spaces? PU                  # free subscript
+SA_clause           <- free_prefix* spaces? SA                  # predicate unit transformation
+TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
+TAI_clause          <- free_prefix* spaces? TAI                 # number / string terminator
 TAI_clause_elidible <- TAI_clause?
-U_clause            <- free_prefix* spaces? U
-VA_clause           <- free_prefix* spaces? VA
-VAI_clause          <- free_prefix* spaces? VAI
-VAI_clause_elidible <- VAI_clause?
-ZA_clause           <- free_prefix* spaces? ZA
-ZE_clause           <- free_prefix* spaces? ZE
-ZEI_clause          <- free_prefix* spaces? ZEI free_post*
-ZI_clause           <- free_prefix* spaces? ZI
-ZU_clause           <- free_prefix* spaces? ZU
+VA_clause           <- free_prefix* spaces? VA                  # predicate link
+ZA_clause           <- free_prefix* spaces? ZA                  # borrowing
+ZE_clause           <- free_prefix* spaces? ZE                  # grammatical quote starter
+ZEI_clause          <- free_prefix* spaces? ZEI free_post*      # grammatical quote terminator
+ZI_clause           <- free_prefix* spaces? ZI                  # one word quote
+ZU_clause           <- free_prefix* spaces? ZU                  # foreign quote
 
 # PARTICLE FAMILIES
 A     <- &particle (a)
-BA    <- &particle !(BAI post_word) (b vowel_tail)
+E     <- &particle (e)
+I     <- &particle (i)
+O     <- &particle (o)
+U     <- &particle (u)
+
+BA    <- &particle !(BAI &post_word) (b vowel_tail)
 BAI   <- &particle (b a i)
 BY    <- &particle (consonant y / vowel_y h y / (i / u) (y / n y) / y h a / y h e)
 CA    <- &particle (c vowel_tail)
 DA    <- &particle (d a)
 DE    <- &particle (d e)
 DEI   <- &particle (d e i)
-DI    <- &particle (d i)
 DO    <- &particle (d o)
 DOI   <- &particle (d o i)
-E     <- &particle (e)
 FA    <- &particle (f vowel_tail)
-I     <- &particle (i)
 JA    <- &particle (j vowel)
-JAI   <- &particle !(JA post_word) (j vowel_tail)
+JAI   <- &particle !(JA &post_word) (j vowel_tail)
 KA    <- &particle (k a)
 KAI   <- &particle (k a i)
-LA    <- &particle (l a vowel_tail_1?)
-LAI   <- &particle (l a i)
-LE    <- &particle (l &e vowel_tail)
-LI    <- &particle (l &i vowel_tail)
-LO    <- &particle (l o)
-LOI   <- &particle (l o i)
-LU    <- &particle (l u)
+KE    <- &particle (k e)
+KEI   <- &particle (k e i)
+KI    <- &particle (k i)
+KO    <- &particle (k o)
+KOI   <- &particle (k o i)
+KU    <- &particle (k u)
 MA    <- &particle (m vowel_tail)
-NA    <- &particle (n a)
-NAI   <- &particle (n a i)
-NI    <- &particle (n i)
-NO    <- &particle (n o)
-NOI   <- &particle (n o i)
-O     <- &particle (o)
+PA    <- &particle (p a vowel_tail_1?)
+PAI   <- &particle (p a i)
+PE    <- &particle (p &e vowel_tail)
+PI    <- &particle (p &i vowel_tail)
+PO    <- &particle (p o)
+POI   <- &particle (p o i)
+PU    <- &particle (p u)
 SA    <- &particle (s vowel_tail)
-TA    <- &particle !(TAI post_word) (t vowel_tail) / digit
+TA    <- &particle !(TAI &post_word) (t vowel_tail) / digit
 TAI   <- &particle (t a i)
-U     <- &particle (u)
-VA    <- &particle !(VAI post_word) (v vowel_tail)
-VAI   <- &particle (v a i)
+VA    <- &particle (v vowel_tail)
 ZA    <- &particle (z &a vowel_tail)
 ZE    <- &particle (z e)
 ZEI   <- &particle (z e i)
@@ -191,7 +192,7 @@ foreign_quote_close <- native_word
 foreign_word <- (initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?
 native_word <-  root / particle
 particle <- consonant? vowel_tail_y &post_word
-root <- ((initial_consonant_pair vowel_tail_y coda?) / ((initial_consonant_pair / consonant)? vowel_tail_y coda)) &post_word
+root <- ((initial_consonant_pair vowel_tail_y sonorant?) / ((initial_consonant_pair / consonant)? vowel_tail_y sonorant)) &post_word
 
 # - Legal vowels and vowel tails
 vowel_tail <- (diphthong / vowel) vowel_tail_1* 
@@ -200,7 +201,7 @@ vowel_tail_1 <- separator (vi_diphthong / vowel )
 vowel_tail_y <- (diphthong_y / vowel_y) vowel_tail_y_1* 
 vowel_tail_y_1 <- separator (vi_diphthong_y / vowel_y )
 
-separator <- h / l / n / r
+separator <- h / sonorant
 
 diphthong_y <- iuv_diphthong_y / vi_diphthong_y
 iuv_diphthong_y <- (i / u) vowel_y
@@ -221,7 +222,7 @@ u <- [uU] # <LEAF>
 y <- [yY] # <LEAF>
 
 # - Legal consonant and consonant pairs
-consonant_cluster <- (!(coda coda coda) consonant consonant? consonant? !consonant)
+consonant_cluster <- (!(sonorant sonorant sonorant) consonant consonant? consonant? !consonant)
 initial_consonant_pair <- (&initial consonant consonant !consonant)
 initial <- (affricate / sibilant? other? liquid?) !consonant
  
@@ -230,7 +231,7 @@ affricate <- (t c / t s / d j / d z)
 liquid <- (l / r) 
 other <- (p / t / k / f / x / b / d / g / v / m / n !liquid) 
 sibilant <- (c / s / j / z) 
-coda <- (l / n / r)
+sonorant <- (l / n / r) # technically "alveolar sonorant" as "m" is not included
 voiced <- (b / d / g / j / v / z) 
 unvoiced <- (c / f / k / p / s / t / x) 
 
@@ -253,10 +254,9 @@ p <- [pP] !p !voiced # <LEAF>
 t <- [tT] !t !voiced # <LEAF>
 
 # - Spaces / Pause
-
-post_word <- (pause_char &(vowel_y / coda) / !coda &consonant / spaces)
+post_word <- (pause_char &(vowel_y / sonorant) / !sonorant &consonant / spaces)
 initial_pause <- (pause_char &vowel_y / !pause_char &consonant)
-spaces <- initial_spaces (pause_char &(vowel_y / coda))? / pause_char &(vowel_y / coda) / EOF
+spaces <- initial_spaces (pause_char &(vowel_y / sonorant))? / pause_char &(vowel_y / sonorant) / EOF
 initial_spaces <- (hesitation / space_char)+
 hesitation <- (space_char+ pause_char? / pause_char) !(y h y) y+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char y) / pause_char / EOF)
 space_char <- [\t\n\r?!\u0020]

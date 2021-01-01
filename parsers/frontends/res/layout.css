@@ -149,6 +149,10 @@ li.implicit {
 	margin: 2px;
 }
 
+.box.box-prenex {
+	background: var(--color-purple);
+}
+
 .box.box-note {
 	background: #eeeeee;
 }
@@ -163,6 +167,10 @@ li.implicit {
 
 .box.box-predicate {
 	background: var(--color-blue);
+}
+
+.box.box-set {
+	background: var(--color-pink);
 }
 
 .box.box-abstraction {

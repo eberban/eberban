@@ -53,11 +53,6 @@ abi:
   _signature: "00"
   eng_long: "[___] is an event expressed by proposition [___]"
   eng_short: event
-aca:
-  _family: "C"
-  _signature: "0."
-  eng_long: "[___] is a predicate chain with components ___"
-  eng_short: predicate chain
 ada:
   _family: "C"
   _signature: ".."
@@ -70,12 +65,6 @@ ade:
   eng_long: "[___] is a proposition with predicate {___} among arguments ___"
   eng_short: proposition
   jbo_similar: bridi
-ado:
-  _family: "C"
-  _signature: .0P.
-  eng_long: "___ is a proposition-tail of proposition [___] with predicate {___} among arguments ___"
-  eng_short: proposition-tail
-  jbo_similar: brirebla
 ahy:
   _family: "BY"
   eng_long: letter A
@@ -147,17 +136,17 @@ byn:
 ca:
   _family: "CA"
   eng_long: "[left] OR [right]"
-  eng_short: or
+  eng_short: chain-or
   jbo_similar: ja
 cai:
   _family: "CA"
   eng_long: "[left] type of [right]. vague precision, [right] has a vague [left] aspect"
-  eng_short: type of
+  eng_short: chain-type-of
   jbo_similar: tanru making
 ce:
   _family: "CA"
   eng_long: "[left] AND [right]"
-  eng_short: and
+  eng_short: chain-and
   jbo_similar: je
 cfar:
   _family: "R"
@@ -171,29 +160,29 @@ cfer:
   eng_short: suggest
 ci:
   _family: "CA"
-  eng_long: predicate connective question
-  eng_short: connective ?
+  eng_long: chaining question
+  eng_short: chain-?
   jbo_similar: je'i
 cia:
   _family: "CA"
-  eng_long: "perform predicate chaining with [left] x1 place instead of rightmost"
-  eng_short: x1 chaining
+  eng_long: "predicate chaining with 1st place"
+  eng_short: chain-1
 cie:
   _family: "CA"
-  eng_long: "perform predicate chaining with [left] x2 place instead of rightmost"
-  eng_short: x2 chaining
+  eng_long: "predicate chaining with 2nd place"
+  eng_short: chain-2
 cii:
   _family: "CA"
-  eng_long: "perform predicate chaining with [left] x3 place instead of rightmost"
-  eng_short: x3 chaining
+  eng_long: "predicate chaining with 3rd place"
+  eng_short: chain-3
 cio:
   _family: "CA"
-  eng_long: "perform predicate chaining with [left] x4 place instead of rightmost"
-  eng_short: x4 chaining
+  eng_long: "predicate chaining with 4th place"
+  eng_short: chain-4
 ciu:
   _family: "CA"
-  eng_long: "perform predicate chaining with [left] x5 place instead of rightmost"
-  eng_short: x5 chaining
+  eng_long: "predicate chaining with 5th place"
+  eng_short: chain-5
 cke:
   _family: "R"
   _signature: "."
@@ -213,7 +202,7 @@ cnur:
 co:
   _family: "CA"
   eng_long: "[left] if and only if [right]"
-  eng_short: iif
+  eng_short: chain-iif
   jbo_similar: jo
 cpei:
   _family: "R"
@@ -235,7 +224,7 @@ ctua:
 cu:
   _family: "CA"
   eng_long: "[left] whether or not [right]"
-  eng_short: whether-or-not
+  eng_short: chain-won
   jbo_similar: ju
 cy:
   _family: "BY"
@@ -249,16 +238,25 @@ da:
   jbo_similar: ni'o
 de:
   _family: "DE"
-  eng_long: proposition-tail elidible starter
+  eng_long: proposition elidible starter
   eng_short: ""
   jbo_similar: i
 dei:
   _family: "DEI"
-  eng_long: proposition-tail elidible terminator
+  eng_long: proposition elidible terminator
   eng_short: ""
   jbo_similar: iau
-di:
-  _family: "DI"
+do:
+  _family: "DO"
+  eng_long: prenex starter/separator
+  eng_short: ""
+doi:
+  _family: "DO"
+  eng_long: prenex terminator
+  eng_short: ""
+  jbo_similar: "zo'u"
+ku:
+  _family: "KU"
   eng_long: define which dialect/version the text is in
   eng_short: ""
   jbo_similar: jo'au
@@ -296,20 +294,15 @@ dlun:
   _signature: ".0"
   eng_long: "___ likes [___]"
   eng_short: like
-do:
-  _family: "DO"
-  eng_long: "proposition-tail elidible starter, prefix the main predicate of a proposition"
+ko:
+  _family: "KO"
+  eng_long: import and fill 1st place of following predicate unit
   eng_short: ""
-  jbo_similar: cu
-doi:
-  _family: "DO"
-  eng_long: proposition-tail elidible terminator
-  eng_short: ""
-  jbo_similar: vau
-du:
-  _family: "DU"
-  eng_long: import 1st place of following predicate (ignore chaining)
-  eng_short: ""
+  jbo_similar: fi'o
+koi:
+  _family: "KOI"
+  eng_long: import and chain 1st place of following predicate unit
+  eng_short: "chaining import"
   jbo_similar: fi'o
 dy:
   _family: "BY"
@@ -495,28 +488,28 @@ etuuzyn:
   eng_short: October
 fa:
   _family: "FA"
-  eng_long: "tag proposition place #1"
-  eng_short: x1
+  eng_long: "fill 1st place"
+  eng_short: fill-1
   jbo_similar: fa
 fai:
   _family: "FA"
-  eng_long: next proposition place tag
-  eng_short: x+
+  eng_long: "fill next place"
+  eng_short: fill-next
   jbo_similar: sumti chaining
 fe:
   _family: "FA"
-  eng_long: "tag proposition place #2"
-  eng_short: x2
+  eng_long: "fill 2st place"
+  eng_short: fill-2
   jbo_similar: fe
 fei:
   _family: "FA"
-  eng_long: proposition place tag question
-  eng_short: x?
+  eng_long: "place filling question"
+  eng_short: fill-?
   jbo_similar: fi'a
 fi:
   _family: "FA"
-  eng_long: "tag proposition place #3"
-  eng_short: x3
+  eng_long: "fill 3rd place"
+  eng_short: fill-3
   jbo_similar: fi
 fie:
   _family: "FA"
@@ -552,14 +545,9 @@ flur:
   eng_short: inspire
 fo:
   _family: "FA"
-  eng_long: "tag proposition place #4"
-  eng_short: x4
+  eng_long: "fill 4th place"
+  eng_short: fill-4
   jbo_similar: fo
-foi:
-  _family: "FA"
-  eng_long: don't fill a place. can be used to provide a topic or declare quantification and/or value of a variable
-  eng_short: prenex
-  jbo_similar: fai'i
 fra:
   _family: "R"
   _signature: ".."
@@ -568,29 +556,9 @@ fra:
   jbo_similar: sumne
 fu:
   _family: "FA"
-  eng_long: "tag proposition place #5"
-  eng_short: x5
+  eng_long: "fill 5th place"
+  eng_short: fill-5
   jbo_similar: fu
-fua:
-  _family: "FA"
-  eng_long: "tag proposition place #6"
-  eng_short: x6
-fue:
-  _family: "FA"
-  eng_long: "tag proposition place #7"
-  eng_short: x7
-fui:
-  _family: "FA"
-  eng_long: "tag proposition place #8"
-  eng_short: x8
-fuo:
-  _family: "FA"
-  eng_long: "tag proposition place #9"
-  eng_short: x9
-fuu:
-  _family: "FA"
-  eng_long: "tag proposition place #10"
-  eng_short: x10
 fy:
   _family: "BY"
   eng_long: letter F
@@ -643,12 +611,12 @@ iy:
   eng_short: i-
 ja:
   _family: "JA"
-  eng_long: distributive connective or
+  eng_long: distributive or
   eng_short: or
   jbo_similar: ".a / gi'a / ja [cu]"
 jai:
   _family: "JAI"
-  eng_long: "non-logical connective: mixed conjunction, mixed with"
+  eng_long: "adds element to a set"
   eng_short: with
   jbo_similar: joi
 jbe:
@@ -664,7 +632,7 @@ jda:
   jbo_similar: cadzu
 je:
   _family: "JA"
-  eng_long: distributive connective and
+  eng_long: distributive and
   eng_short: and
   jbo_similar: ".e / gi'e / je [cu]"
 jgai:
@@ -680,7 +648,7 @@ jgan:
   eng_short: cause
 ji:
   _family: "JA"
-  eng_long: distributive connective question
+  eng_long: distributive question
   eng_short: connective ?
   jbo_similar: "ji / gi'i / ji [cu]"
 jlan:
@@ -719,12 +687,12 @@ jner:
   jbo_similar: jenje
 jo:
   _family: "JA"
-  eng_long: distributive connective if-and-only-if
+  eng_long: distributive if-and-only-if
   eng_short: iif
   jbo_similar: ".o / gi'o / jo [cu]"
 ju:
   _family: "JA"
-  eng_long: distributive connective whether-or-not
+  eng_long: distributive whether-or-not
   eng_short: whether-or-not
   jbo_similar: ".u / gi'u / ju [cu]"
 jva:
@@ -807,92 +775,92 @@ ky:
   eng_long: letter K
   eng_short: K
   jbo_similar: ky
-la:
-  _family: "LA"
-  eng_long: begin free suffix scope (matching end is not checked)
+pa:
+  _family: "PA"
+  eng_long: begin free scope (matching end is not checked)
   eng_short: "{"
   jbo_similar: fu'e
-laha:
-  _family: "LA"
+paha:
+  _family: "PA"
   eng_long: "emphasis indicator, the next word is especially emphasized"
   eng_short: (emphasis)
   jbo_similar: ba'e
-lahe:
-  _family: "LA"
+pahe:
+  _family: "PA"
   eng_long: "rebind following variable, discarding its previous value"
   eng_short: (rebind)
-lahi:
-  _family: "LA"
+pahi:
+  _family: "PA"
   eng_long: "nonce-word indicator, indicates next word (compound) may be nonstandard"
   eng_short: (non-standard)
   jbo_similar: za'e
-laho:
-  _family: "LA"
+paho:
+  _family: "PA"
   eng_long: next word is a metadata tag / hashtag
   eng_short: (hashtag)
   jbo_similar: ci'a
-lai:
-  _family: "LAI"
+pai:
+  _family: "PAI"
   eng_long: end free suffix scope (matching start is not checked). following free suffix will apply to the scope instead of the preceding word
   eng_short: "}"
   jbo_similar: fu'o
-le:
-  _family: "LE"
+pe:
+  _family: "PE"
   eng_long: discursive starter
   eng_short: ""
   jbo_similar: sei
-liha:
-  _family: "LI"
+piha:
+  _family: "PI"
   eng_long: marker variable 1
   eng_short: (marker var 1)
-lihe:
-  _family: "LI"
+pihe:
+  _family: "PI"
   eng_long: marker variable 2
   eng_short: (marker var 2)
-lihi:
-  _family: "LI"
+pihi:
+  _family: "PI"
   eng_long: marker variable 3
   eng_short: (marker var 3)
-liho:
-  _family: "LI"
+piho:
+  _family: "PI"
   eng_long: marker variable 4
   eng_short: (marker var 4)
-lihu:
-  _family: "LI"
+pihu:
+  _family: "PI"
   eng_long: marker variable 5
   eng_short: (marker var 5)
-lina:
-  _family: "LI"
+pina:
+  _family: "PI"
   eng_long: true/false question marker
   eng_short: true ?
   jbo_similar: xu
-line:
-  _family: "LI"
+pine:
+  _family: "PI"
   eng_long: indirect question marker
   eng_short: (indirect question)
   jbo_similar: kau
-lira:
-  _family: "LI"
+pira:
+  _family: "PI"
   eng_long: however/but/in constrast
   eng_short: however
   jbo_similar: ku'i
-lire:
-  _family: "LI"
+pire:
+  _family: "PI"
   eng_long: also/additionally
   eng_short: additionally
   jbo_similar: ji'a
-lo:
-  _family: "LO"
+po:
+  _family: "PO"
   eng_long: parenthetical note starter
   eng_short: (
   jbo_similar: to
-loi:
-  _family: "LOI"
+poi:
+  _family: "POI"
   eng_long: parenthetical note terminator
   eng_short: )
   jbo_similar: toi
-lu:
-  _family: "LU"
+pu:
+  _family: "PU"
   eng_long: subscript marker
   eng_short: ""
   jbo_similar: xi
@@ -1097,31 +1065,21 @@ my:
   eng_long: letter M
   eng_short: M
   jbo_similar: my
-na:
-  _family: "NA"
+ke:
+  _family: "KE"
   eng_long: forethought connective starter
   eng_short: ""
   jbo_similar: ga
-nai:
-  _family: "NAI"
+kei:
+  _family: "KEI"
   eng_long: forethought connective elidible terminator
   eng_short: ""
   jbo_similar: zantufa gi'i
-ni:
-  _family: "NI"
+ki:
+  _family: "KI"
   eng_long: forethought connective separator
   eng_short: ""
   jbo_similar: zantufa gi
-no:
-  _family: "NO"
-  eng_long: priority scope starter
-  eng_short: ""
-  jbo_similar: ke
-noi:
-  _family: "NOI"
-  eng_long: priority scope elidible terminator
-  eng_short: ""
-  jbo_similar: ke'e
 ny:
   _family: "BY"
   eng_long: letter N

@@ -133,8 +133,9 @@
 }
 
 text = expr:(parser_version? text_1) {return _node("text", expr);}
-parser_version = expr:(DI_clause (!parser_version_number borrowing_content (pause_char !pause_char !y)? parser_version_number? / parser_version_number)) {return _node("parser_version", expr);}
+parser_version = expr:(KU_clause (!parser_version_number borrowing_content (pause_char !pause_char !y)? parser_version_number? / parser_version_number)) {return _node("parser_version", expr);}
 parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
+
 // main text rule
 text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?) {return _node("text_1", expr);}
 
@@ -142,26 +143,30 @@ text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* (paragra
 paragraph = expr:(DA_clause+ sentence*) {return _node("paragraph", expr);}
 sentence = expr:(proposition) {return _node("sentence", expr);}
 
-proposition = expr:(proposition_1 (jak proposition_1)*) {return _node("proposition", expr);}
-proposition_1 = expr:(proposition_jak_pre / DE_clause_elidible KA_clause* predicate_chaining DEI_clause_elidible) {return _node("proposition_1", expr);}
-proposition_jak_pre = expr:(najak proposition (nik proposition)+ NAI_clause_elidible) {return _node("proposition_jak_pre", expr);}
+proposition = expr:(proposition_1 (ja proposition_1)*) {return _node("proposition", expr);}
+proposition_1 = expr:(proposition_keja / DE_clause_elidible prenex? KA_clause* predicate_chaining DEI_clause_elidible) {return _node("proposition_1", expr);}
+proposition_keja = expr:(keja proposition (ki proposition)+ KEI_clause_elidible) {return _node("proposition_keja", expr);}
+
+prenex = expr:((DO_clause prenex_term)+ DOI_clause) {return _node("prenex", expr);}
+prenex_term = expr:(predicate_term predicate_link*) {return _node("prenex_term", expr);}
 
 predicate_chaining = expr:(predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?) {return _node("predicate_chaining", expr);}
 predicate_chaining_tag = expr:(CA_clause / predicate_chaining_import) {return _node("predicate_chaining_tag", expr);}
-predicate_chaining_import = expr:(DOI_clause predicate_unit) {return _node("predicate_chaining_import", expr);}
+predicate_chaining_import = expr:(KOI_clause predicate_unit) {return _node("predicate_chaining_import", expr);}
 
 predicate_filling = expr:(predicate_unit predicate_filled_place+) {return _node("predicate_filling", expr);}
 predicate_filled_place = expr:(predicate_place_tag+ predicate_term predicate_link*) {return _node("predicate_filled_place", expr);}
 predicate_link = expr:(VA_clause predicate_unit+) {return _node("predicate_link", expr);}
 
 predicate_place_tag = expr:(FA_clause / predicate_place_import) {return _node("predicate_place_tag", expr);}
-predicate_place_import = expr:(DO_clause predicate_unit) {return _node("predicate_place_import", expr);}
+predicate_place_import = expr:(KO_clause predicate_unit) {return _node("predicate_place_import", expr);}
 
-predicate_term = expr:(predicate_term_jak_post / predicate_term_1) {return _node("predicate_term", expr);}
-predicate_term_jak_post = expr:(predicate_term_1 (jak predicate_term_1)+) {return _node("predicate_term_jak_post", expr);}
-predicate_term_1 = expr:(predicate_term_jaik_post / predicate_term_2) {return _node("predicate_term_1", expr);}
-predicate_term_jaik_post = expr:(predicate_term_2 (jaik predicate_term_2)+) {return _node("predicate_term_jaik_post", expr);}
-predicate_term_2 = expr:(predicate_unit) {return _node("predicate_term_2", expr);}
+predicate_term = expr:(predicate_term_ja / predicate_term_1) {return _node("predicate_term", expr);}
+predicate_term_ja = expr:(predicate_term_1 (ja predicate_term_1)+) {return _node("predicate_term_ja", expr);}
+predicate_term_1 = expr:(predicate_term_jai / predicate_term_2) {return _node("predicate_term_1", expr);}
+predicate_term_jai = expr:(predicate_term_2 (jai predicate_term_2)+) {return _node("predicate_term_jai", expr);}
+predicate_term_2 = expr:(predicate_term_keja / predicate_unit) {return _node("predicate_term_2", expr);}
+predicate_term_keja = expr:(keja predicate_term (ki predicate_term)+ KEI_clause_elidible) {return _node("predicate_term_keja", expr);}
 
 predicate_unit = expr:(SA_clause* predicate_unit_1) {return _node("predicate_unit", expr);}
 predicate_unit_1 = expr:(compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}
@@ -177,7 +182,7 @@ compound_word = expr:(initial_pause native_word) {return _node("compound_word", 
 
 // borrowings
 borrowing = expr:(ZA_clause borrowing_content (pause_char / space_char / EOF) free_post*) {return _node("borrowing", expr);}
-borrowing_content = expr:((spaces? !coda / spaces &coda) foreign_word) {return _node("borrowing_content", expr);}
+borrowing_content = expr:((spaces? !sonorant / spaces &sonorant) foreign_word) {return _node("borrowing_content", expr);}
 
 // quotes
 grammatical_quote = expr:(ZE_clause text_1 ZEI_clause) {return _node("grammatical_quote", expr);}
@@ -194,116 +199,112 @@ number_string = expr:(TA_clause (TA_clause / BY_clause)*) {return _node("number_
 letter_string = expr:(BY_clause (TA_clause / BY_clause)*) {return _node("letter_string", expr);}
 
 // afterthough connectives
-jak = expr:(KA_clause? SA_clause? JA_clause KAI_clause? free_post*) {return _node("jak", expr);}
-jaik = expr:(JAI_clause) {return _node("jaik", expr);}
-cak = expr:(KA_clause? SA_clause? CA_clause KAI_clause? free_post*) {return _node("cak", expr);}
+ja = expr:(KA_clause? SA_clause? JA_clause KAI_clause? free_post*) {return _node("ja", expr);}
+jai = expr:(JAI_clause) {return _node("jai", expr);}
 
 // forethough connectives
-najak = expr:(NA_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("najak", expr);}
-nacak = expr:(NA_clause SA_clause? CA_clause KAI_clause? free_post*) {return _node("nacak", expr);}
-nik = expr:(NI_clause KAI_clause? free_post*) {return _node("nik", expr);}
+keja = expr:(KE_clause SA_clause? JA_clause KAI_clause? free_post*) {return _node("keja", expr);}
+ki = expr:(KI_clause KAI_clause? free_post*) {return _node("ki", expr);}
 
 // free prefix
-free_prefix = expr:(LA_clause) {return _node("free_prefix", expr);}
+free_prefix = expr:(PA_clause) {return _node("free_prefix", expr);}
 
 // free suffix
-free_post = expr:(LAI_clause / free_indicator / free_discursive / free_parenthetical / free_subscript) {return _node("free_post", expr);}
-free_indicator = expr:(LI_clause) {return _node("free_indicator", expr);}
-free_discursive = expr:(LE_clause predicate_unit+) {return _node("free_discursive", expr);}
-free_parenthetical = expr:(LO_clause text_1 LOI_clause) {return _node("free_parenthetical", expr);}
-free_subscript = expr:(LU_clause string) {return _node("free_subscript", expr);}
+free_post = expr:(PAI_clause / free_discursive / free_indicator / free_parenthetical / free_subscript) {return _node("free_post", expr);}
+free_discursive = expr:(PE_clause predicate_unit+) {return _node("free_discursive", expr);}
+free_indicator = expr:(PI_clause) {return _node("free_indicator", expr);}
+free_parenthetical = expr:(PO_clause text_1 POI_clause) {return _node("free_parenthetical", expr);}
+free_subscript = expr:(PU_clause string) {return _node("free_subscript", expr);}
 
 // PARTICLES CLAUSES
-A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);}
-BA_clause = expr:(free_prefix* spaces? BA) {return _node("BA_clause", expr);}
-BAI_clause = expr:(free_prefix* spaces? BAI free_post*) {return _node("BAI_clause", expr);}
+A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);} // 1-word compound
+E_clause = expr:(free_prefix* spaces? E) {return _node("E_clause", expr);} // 2-words compound
+I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);} // 3-words compound
+O_clause = expr:(free_prefix* spaces? O) {return _node("O_clause", expr);} // 4-words compound
+U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);} // n-words compound starter and terminator
+
+BA_clause = expr:(free_prefix* spaces? BA) {return _node("BA_clause", expr);} // abstractors starter
+BAI_clause = expr:(free_prefix* spaces? BAI free_post*) {return _node("BAI_clause", expr);} // abstractors terminator
 BAI_clause_elidible = expr:(BAI_clause?) {return (expr == "" || !expr) ? ["BAI"] : _node_empty("BAI_clause_elidible", expr);}
-BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);}
-CA_clause = expr:(free_prefix* spaces? CA free_post*) {return _node("CA_clause", expr);}
-DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);}
-DE_clause = expr:(free_prefix* spaces? DE free_post*) {return _node("DE_clause", expr);}
+BY_clause = expr:(free_prefix* spaces? BY) {return _node("BY_clause", expr);} // letters
+CA_clause = expr:(free_prefix* spaces? CA free_post*) {return _node("CA_clause", expr);} // chaining tags
+DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // paragraph marker
+DE_clause = expr:(free_prefix* spaces? DE free_post*) {return _node("DE_clause", expr);} // proposition starter
 DE_clause_elidible = expr:(DE_clause?) {return (expr == "" || !expr) ? ["DE"] : _node_empty("DE_clause_elidible", expr);}
-DEI_clause = expr:(free_prefix* spaces? DEI free_post*) {return _node("DEI_clause", expr);}
+DEI_clause = expr:(free_prefix* spaces? DEI free_post*) {return _node("DEI_clause", expr);} // proposition terminator
 DEI_clause_elidible = expr:(DEI_clause?) {return (expr == "" || !expr) ? ["DEI"] : _node_empty("DEI_clause_elidible", expr);}
-DI_clause = expr:(spaces? DI) {return _node("DI_clause", expr);}
-DO_clause = expr:(free_prefix* spaces? DO) {return _node("DO_clause", expr);}
-DOI_clause = expr:(free_prefix* spaces? DOI) {return _node("DOI_clause", expr);}
-E_clause = expr:(free_prefix* spaces? E) {return _node("E_clause", expr);}
-FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);}
-I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);}
-JA_clause = expr:(free_prefix* spaces? JA free_post*) {return _node("JA_clause", expr);}
-JAI_clause = expr:(free_prefix* spaces? JAI free_post*) {return _node("JAI_clause", expr);}
-KA_clause = expr:(free_prefix* spaces? KA free_post*) {return _node("KA_clause", expr);}
-KAI_clause = expr:(free_prefix* spaces? KAI) {return _node("KAI_clause", expr);}
-LA_clause = expr:(spaces? LA) {return _node("LA_clause", expr);}
-LAI_clause = expr:(spaces? LAI) {return _node("LAI_clause", expr);}
-LE_clause = expr:(free_prefix* spaces? LE) {return _node("LE_clause", expr);}
-LI_clause = expr:(free_prefix* spaces? LI) {return _node("LI_clause", expr);}
-LO_clause = expr:(free_prefix* spaces? LO) {return _node("LO_clause", expr);}
-LOI_clause = expr:(free_prefix* spaces? LOI) {return _node("LOI_clause", expr);}
-LU_clause = expr:(free_prefix* spaces? LU) {return _node("LU_clause", expr);}
-MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);}
-NA_clause = expr:(free_prefix* spaces? NA) {return _node("NA_clause", expr);}
-NAI_clause = expr:(free_prefix* spaces? NAI free_post*) {return _node("NAI_clause", expr);}
-NAI_clause_elidible = expr:(NAI_clause?) {return (expr == "" || !expr) ? ["NAI"] : _node_empty("NAI_clause_elidible", expr);}
-NI_clause = expr:(free_prefix* spaces? NI) {return _node("NI_clause", expr);}
-NO_clause = expr:(free_prefix* spaces? NO) {return _node("NO_clause", expr);}
-NOI_clause = expr:(free_prefix* spaces? NOI free_post*) {return _node("NOI_clause", expr);}
-NOI_clause_elidible = expr:(NOI_clause?) {return (expr == "" || !expr) ? ["NOI"] : _node_empty("NOI_clause_elidible", expr);}
-O_clause = expr:(free_prefix* spaces? O) {return _node("O_clause", expr);}
-SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);}
-TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);}
-TAI_clause = expr:(free_prefix* spaces? TAI) {return _node("TAI_clause", expr);}
+DO_clause = expr:(free_prefix* spaces? DO free_post*) {return _node("DO_clause", expr);} // prenex starter/separator
+DOI_clause = expr:(free_prefix* spaces? DOI free_post*) {return _node("DOI_clause", expr);} // prenex terminator
+FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
+JA_clause = expr:(free_prefix* spaces? JA free_post*) {return _node("JA_clause", expr);} // logical connectives
+JAI_clause = expr:(free_prefix* spaces? JAI free_post*) {return _node("JAI_clause", expr);} // set creator
+KA_clause = expr:(free_prefix* spaces? KA free_post*) {return _node("KA_clause", expr);} // pre negation
+KAI_clause = expr:(free_prefix* spaces? KAI) {return _node("KAI_clause", expr);} // post negation
+KE_clause = expr:(free_prefix* spaces? KE) {return _node("KE_clause", expr);} // forethought connective starter
+KEI_clause = expr:(free_prefix* spaces? KEI free_post*) {return _node("KEI_clause", expr);} // forethought connective terminator
+KEI_clause_elidible = expr:(KEI_clause?) {return (expr == "" || !expr) ? ["KEI"] : _node_empty("KEI_clause_elidible", expr);}
+KI_clause = expr:(free_prefix* spaces? KI) {return _node("KI_clause", expr);} // forethought connective separator
+KO_clause = expr:(free_prefix* spaces? KO) {return _node("KO_clause", expr);} // filling place import
+KOI_clause = expr:(free_prefix* spaces? KOI) {return _node("KOI_clause", expr);} // chaining place import
+KU_clause = expr:(free_prefix* spaces? KU) {return _node("KU_clause", expr);} // parser version/dialect
+MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // surrogate predicates (pronouns, ...)
+PA_clause = expr:(spaces? PA) {return _node("PA_clause", expr);} // free scope started
+PAI_clause = expr:(spaces? PAI) {return _node("PAI_clause", expr);} // free scope terminator
+PE_clause = expr:(free_prefix* spaces? PE) {return _node("PE_clause", expr);} // free discursive (predicate)
+PI_clause = expr:(free_prefix* spaces? PI) {return _node("PI_clause", expr);} // free indicator (marker)
+PO_clause = expr:(free_prefix* spaces? PO) {return _node("PO_clause", expr);} // free parenthetical started (text)
+POI_clause = expr:(free_prefix* spaces? POI) {return _node("POI_clause", expr);} // free parenthetical terminator
+PU_clause = expr:(free_prefix* spaces? PU) {return _node("PU_clause", expr);} // free subscript
+SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);} // predicate unit transformation
+TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
+TAI_clause = expr:(free_prefix* spaces? TAI) {return _node("TAI_clause", expr);} // number / string terminator
 TAI_clause_elidible = expr:(TAI_clause?) {return (expr == "" || !expr) ? ["TAI"] : _node_empty("TAI_clause_elidible", expr);}
-U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);}
-VA_clause = expr:(free_prefix* spaces? VA) {return _node("VA_clause", expr);}
-VAI_clause = expr:(free_prefix* spaces? VAI) {return _node("VAI_clause", expr);}
-VAI_clause_elidible = expr:(VAI_clause?) {return (expr == "" || !expr) ? ["VAI"] : _node_empty("VAI_clause_elidible", expr);}
-ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);}
-ZE_clause = expr:(free_prefix* spaces? ZE) {return _node("ZE_clause", expr);}
-ZEI_clause = expr:(free_prefix* spaces? ZEI free_post*) {return _node("ZEI_clause", expr);}
-ZI_clause = expr:(free_prefix* spaces? ZI) {return _node("ZI_clause", expr);}
-ZU_clause = expr:(free_prefix* spaces? ZU) {return _node("ZU_clause", expr);}
+VA_clause = expr:(free_prefix* spaces? VA) {return _node("VA_clause", expr);} // predicate link
+ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // borrowing
+ZE_clause = expr:(free_prefix* spaces? ZE) {return _node("ZE_clause", expr);} // grammatical quote starter
+ZEI_clause = expr:(free_prefix* spaces? ZEI free_post*) {return _node("ZEI_clause", expr);} // grammatical quote terminator
+ZI_clause = expr:(free_prefix* spaces? ZI) {return _node("ZI_clause", expr);} // one word quote
+ZU_clause = expr:(free_prefix* spaces? ZU) {return _node("ZU_clause", expr);} // foreign quote
 
 // PARTICLE FAMILIES
 A = expr:(&particle (a)) {return _node("A", expr);}
-BA = expr:(&particle !(BAI post_word) (b vowel_tail)) {return _node("BA", expr);}
+E = expr:(&particle (e)) {return _node("E", expr);}
+I = expr:(&particle (i)) {return _node("I", expr);}
+O = expr:(&particle (o)) {return _node("O", expr);}
+U = expr:(&particle (u)) {return _node("U", expr);}
+
+BA = expr:(&particle !(BAI &post_word) (b vowel_tail)) {return _node("BA", expr);}
 BAI = expr:(&particle (b a i)) {return _node("BAI", expr);}
 BY = expr:(&particle (consonant y / vowel_y h y / (i / u) (y / n y) / y h a / y h e)) {return _node("BY", expr);}
 CA = expr:(&particle (c vowel_tail)) {return _node("CA", expr);}
 DA = expr:(&particle (d a)) {return _node("DA", expr);}
 DE = expr:(&particle (d e)) {return _node("DE", expr);}
 DEI = expr:(&particle (d e i)) {return _node("DEI", expr);}
-DI = expr:(&particle (d i)) {return _node("DI", expr);}
 DO = expr:(&particle (d o)) {return _node("DO", expr);}
 DOI = expr:(&particle (d o i)) {return _node("DOI", expr);}
-E = expr:(&particle (e)) {return _node("E", expr);}
 FA = expr:(&particle (f vowel_tail)) {return _node("FA", expr);}
-I = expr:(&particle (i)) {return _node("I", expr);}
 JA = expr:(&particle (j vowel)) {return _node("JA", expr);}
-JAI = expr:(&particle !(JA post_word) (j vowel_tail)) {return _node("JAI", expr);}
+JAI = expr:(&particle !(JA &post_word) (j vowel_tail)) {return _node("JAI", expr);}
 KA = expr:(&particle (k a)) {return _node("KA", expr);}
 KAI = expr:(&particle (k a i)) {return _node("KAI", expr);}
-LA = expr:(&particle (l a vowel_tail_1?)) {return _node("LA", expr);}
-LAI = expr:(&particle (l a i)) {return _node("LAI", expr);}
-LE = expr:(&particle (l &e vowel_tail)) {return _node("LE", expr);}
-LI = expr:(&particle (l &i vowel_tail)) {return _node("LI", expr);}
-LO = expr:(&particle (l o)) {return _node("LO", expr);}
-LOI = expr:(&particle (l o i)) {return _node("LOI", expr);}
-LU = expr:(&particle (l u)) {return _node("LU", expr);}
+KE = expr:(&particle (k e)) {return _node("KE", expr);}
+KEI = expr:(&particle (k e i)) {return _node("KEI", expr);}
+KI = expr:(&particle (k i)) {return _node("KI", expr);}
+KO = expr:(&particle (k o)) {return _node("KO", expr);}
+KOI = expr:(&particle (k o i)) {return _node("KOI", expr);}
+KU = expr:(&particle (k u)) {return _node("KU", expr);}
 MA = expr:(&particle (m vowel_tail)) {return _node("MA", expr);}
-NA = expr:(&particle (n a)) {return _node("NA", expr);}
-NAI = expr:(&particle (n a i)) {return _node("NAI", expr);}
-NI = expr:(&particle (n i)) {return _node("NI", expr);}
-NO = expr:(&particle (n o)) {return _node("NO", expr);}
-NOI = expr:(&particle (n o i)) {return _node("NOI", expr);}
-O = expr:(&particle (o)) {return _node("O", expr);}
+PA = expr:(&particle (p a vowel_tail_1?)) {return _node("PA", expr);}
+PAI = expr:(&particle (p a i)) {return _node("PAI", expr);}
+PE = expr:(&particle (p &e vowel_tail)) {return _node("PE", expr);}
+PI = expr:(&particle (p &i vowel_tail)) {return _node("PI", expr);}
+PO = expr:(&particle (p o)) {return _node("PO", expr);}
+POI = expr:(&particle (p o i)) {return _node("POI", expr);}
+PU = expr:(&particle (p u)) {return _node("PU", expr);}
 SA = expr:(&particle (s vowel_tail)) {return _node("SA", expr);}
-TA = expr:(&particle !(TAI post_word) (t vowel_tail) / digit) {return _node("TA", expr);}
+TA = expr:(&particle !(TAI &post_word) (t vowel_tail) / digit) {return _node("TA", expr);}
 TAI = expr:(&particle (t a i)) {return _node("TAI", expr);}
-U = expr:(&particle (u)) {return _node("U", expr);}
-VA = expr:(&particle !(VAI post_word) (v vowel_tail)) {return _node("VA", expr);}
-VAI = expr:(&particle (v a i)) {return _node("VAI", expr);}
+VA = expr:(&particle (v vowel_tail)) {return _node("VA", expr);}
 ZA = expr:(&particle (z &a vowel_tail)) {return _node("ZA", expr);}
 ZE = expr:(&particle (z e)) {return _node("ZE", expr);}
 ZEI = expr:(&particle (z e i)) {return _node("ZEI", expr);}
@@ -320,7 +321,7 @@ foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr)
 foreign_word = expr:((initial_consonant_pair / consonant)? vowel_tail_y (consonant_cluster vowel_tail_y)* consonant? consonant?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(consonant? vowel_tail_y &post_word) {return _node("particle", expr);}
-root = expr:(((initial_consonant_pair vowel_tail_y coda?) / ((initial_consonant_pair / consonant)? vowel_tail_y coda)) &post_word) {return _node("root", expr);}
+root = expr:(((initial_consonant_pair vowel_tail_y sonorant?) / ((initial_consonant_pair / consonant)? vowel_tail_y sonorant)) &post_word) {return _node("root", expr);}
 
 // - Legal vowels and vowel tails
 vowel_tail = expr:((diphthong / vowel) vowel_tail_1*) {return _node("vowel_tail", expr);}
@@ -329,7 +330,7 @@ vowel_tail_1 = expr:(separator (vi_diphthong / vowel )) {return _node("vowel_tai
 vowel_tail_y = expr:((diphthong_y / vowel_y) vowel_tail_y_1*) {return _node("vowel_tail_y", expr);}
 vowel_tail_y_1 = expr:(separator (vi_diphthong_y / vowel_y )) {return _node("vowel_tail_y_1", expr);}
 
-separator = expr:(h / l / n / r) {return _node("separator", expr);}
+separator = expr:(h / sonorant) {return _node("separator", expr);}
 
 diphthong_y = expr:(iuv_diphthong_y / vi_diphthong_y) {return _node("diphthong_y", expr);}
 iuv_diphthong_y = expr:((i / u) vowel_y) {return _node("iuv_diphthong_y", expr);}
@@ -350,7 +351,7 @@ u = expr:([uU]) {return ["u", "u"];} // <LEAF>
 y = expr:([yY]) {return ["y", "y"];} // <LEAF>
 
 // - Legal consonant and consonant pairs
-consonant_cluster = expr:((!(coda coda coda) consonant consonant? consonant? !consonant)) {return _node("consonant_cluster", expr);}
+consonant_cluster = expr:((!(sonorant sonorant sonorant) consonant consonant? consonant? !consonant)) {return _node("consonant_cluster", expr);}
 initial_consonant_pair = expr:((&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
 initial = expr:((affricate / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
 
@@ -359,7 +360,7 @@ affricate = expr:((t c / t s / d j / d z)) {return _node("affricate", expr);}
 liquid = expr:((l / r)) {return _node("liquid", expr);}
 other = expr:((p / t / k / f / x / b / d / g / v / m / n !liquid)) {return _node("other", expr);}
 sibilant = expr:((c / s / j / z)) {return _node("sibilant", expr);}
-coda = expr:((l / n / r)) {return _node("coda", expr);}
+sonorant = expr:((l / n / r)) {return _node("sonorant", expr);} // technically "alveolar sonorant" as "m" is not included
 voiced = expr:((b / d / g / j / v / z)) {return _node("voiced", expr);}
 unvoiced = expr:((c / f / k / p / s / t / x)) {return _node("unvoiced", expr);}
 
@@ -382,10 +383,9 @@ p = expr:([pP] !p !voiced) {return ["p", "p"];} // <LEAF>
 t = expr:([tT] !t !voiced) {return ["t", "t"];} // <LEAF>
 
 // - Spaces / Pause
-
-post_word = expr:((pause_char &(vowel_y / coda) / !coda &consonant / spaces)) {return _node("post_word", expr);}
+post_word = expr:((pause_char &(vowel_y / sonorant) / !sonorant &consonant / spaces)) {return _node("post_word", expr);}
 initial_pause = expr:((pause_char &vowel_y / !pause_char &consonant)) {return _node("initial_pause", expr);}
-spaces = expr:(initial_spaces (pause_char &(vowel_y / coda))? / pause_char &(vowel_y / coda) / EOF) {return _node("spaces", expr);}
+spaces = expr:(initial_spaces (pause_char &(vowel_y / sonorant))? / pause_char &(vowel_y / sonorant) / EOF) {return _node("spaces", expr);}
 initial_spaces = expr:((hesitation / space_char)+) {return ["initial_spaces", _join(expr)];}
 hesitation = expr:((space_char+ pause_char? / pause_char) !(y h y) y+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char y) / pause_char / EOF)) {return _node("hesitation", expr);}
 space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
