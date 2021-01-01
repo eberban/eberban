@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	$('label').popover();
 });
 
@@ -224,11 +224,11 @@ function showBoxes(simplified, $element) {
 	output += constructBoxesOutput(simplified[0], 0);
 
 	/*output += "<p>Legend: ";
-    var types = ["sentence", "prenex", "selbri", "sumti"];
-    for (var type in types) {
-        output += "<div class=\"" + boxClassForType({ type: types[type] }) + "\">" + types[type] + "</div>";
-    }
-    output += "</p>";*/
+	var types = ["sentence", "prenex", "selbri", "sumti"];
+	for (var type in types) {
+		output += "<div class=\"" + boxClassForType({ type: types[type] }) + "\">" + types[type] + "</div>";
+	}
+	output += "</p>";*/
 
 	$element.html(output);
 }
@@ -323,38 +323,6 @@ function constructBoxesOutput(parse, depth) {
 }
 
 function boxClassForType(parse) {
-	// if (parse.type === "sentence") {
-	//     return "box box-sentence";
-	// }
-
-	// if (parse.type === "sumti x") {
-	//     if (parse.sumtiPlace > 5) {
-	//         return "box box-sumti6";
-	//     } else if (parse.sumtiPlace == "fai") {
-	//         return "box box-sumti-fai";
-	//     } else {
-	//         return "box box-sumti" + parse.sumtiPlace;
-	//     }
-	// }
-
-	// if (parse.type === "modal sumti") {
-	//     return "box box-modal";
-	// }
-
-	// if (parse.type === "sumti") {
-	//     return "box box-sumti";
-	// }
-
-	// if (parse.type === "selbri") {
-	//     return "box box-selbri";
-	// }
-
-	// if (parse.type === "prenex") {
-	//     return "box box-prenex";
-	// }
-
-	// return "box box-not-shown";
-
 	if (parse.type === 'parser version') {
 		return 'box box-parser';
 	}
@@ -362,17 +330,26 @@ function boxClassForType(parse) {
 	if (parse.type === 'sentence') {
 		return 'box box-sentence';
 	}
-	// if (parse.type === "proposition") { return "box box-proposition"; }
+
+	if (parse.type === 'prenex') {
+		return 'box box-prenex';
+	}
+	if (parse.type === "proposition") { return "box box-scope"; }
 	if (parse.type === 'place') {
 		return 'box box-place';
 	}
-	if (parse.type === 'import') {
+	if (parse.type === 'import' || parse.type === 'chaining import') {
 		return 'box box-import';
 	}
 
 	if (parse.type === 'predicate') {
 		return 'box box-predicate';
 	}
+
+	if (parse.type === 'set') {
+		return 'box box-set';
+	}
+
 	if (parse.type === 'link') {
 		return 'box box-link';
 	}
@@ -397,10 +374,6 @@ function boxClassForType(parse) {
 	}
 	if (parse.type === 'foreign quote') {
 		return 'box box-borrowing';
-	}
-
-	if (parse.type === 'scope') {
-		return 'box box-scope';
 	}
 
 	if (parse.type === 'indicator') {
