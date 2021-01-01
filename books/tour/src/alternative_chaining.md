@@ -1,5 +1,7 @@
 # Alternative chaining [CA]
 
+> **WARNING :** This chapter is outdated as chaining is being reworked.
+
 Predicate chaining is very powerful, but sometimes its algorithm doesn't do
 what you would want. **CA** particles allows to perform chaining with
 alternative rules.

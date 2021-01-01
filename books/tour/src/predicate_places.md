@@ -1,4 +1,4 @@
-# Predicate places [FA/DU]
+# Predicate places [FA/KO]
 
 Predicate place tags are used to fill the places of a proposition.
 They may apply to either existing places of the main predicate ("numbered places") or other special places (e.g. "imported places").
@@ -44,11 +44,11 @@ used before the main predicate (with **do**), or the 2st place if used after.
 The place structures of most words are deliberatly kept simple. However it is
 common for a predicate to not have a place for a concept we want to express.
 
-With **du**, it's possible to import the first place of the following predicate
+With **ko**, it's possible to import the first place of the following predicate
 (it ignores predicate chaining which will be explained in the next section).
 
 ```ebb
-spi fa mi fe mo du pli skai
+spi fa mi fe mo ko pli skai
 = I talk to you using a computer.
 
 pli  : ___ is a tool used by ___ to satisfying property [___2]
@@ -58,17 +58,6 @@ skai : ___ is a computer
 
 `du pli` imports the place expressing the concept of *a tool* to tell which tool
 is used to talk.
-
-## Prenex
-
-**foi** does not fill a place, but allows to provide what is called a prenex. It can
-be used to define a topic or declare quantified variables, separated from their
-use site, usually early/first in the proposition.
-
-```ebb
-foi mian fa mi do dul fe mu'i
-= About the cat : I like it.
-```
 
 ## Place question
 
