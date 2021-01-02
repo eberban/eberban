@@ -93,7 +93,7 @@ function among(v, s) {
 
 function is_selmaho(v) {
     if (!is_string(v)) return false;
-    return (0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUY]|(AI|EI|OI|AU))(H([AEIOUY]|(AI|EI|OI|AU)))*$/g));
+    return (0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUQ]|(AI|EI|OI|AU))(H([AEIOUQ]|(AI|EI|OI|AU)))*$/g));
 }
 
 function is_string(v) {

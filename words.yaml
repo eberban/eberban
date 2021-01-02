@@ -7,31 +7,31 @@
   eng_short: "ta"
 1:
   _family: "TA"
-  eng_short: "tia"
+  eng_short: "tya"
 2:
   _family: "TA"
-  eng_short: "tie"
+  eng_short: "tye"
 3:
   _family: "TA"
-  eng_short: "tii"
+  eng_short: "tyi"
 4:
   _family: "TA"
-  eng_short: "tio"
+  eng_short: "tyo"
 5:
   _family: "TA"
-  eng_short: "tiu"
+  eng_short: "tyu"
 6:
   _family: "TA"
-  eng_short: "tua"
+  eng_short: "twa"
 7:
   _family: "TA"
-  eng_short: "tue"
+  eng_short: "twe"
 8:
   _family: "TA"
-  eng_short: "tui"
+  eng_short: "twi"
 9:
   _family: "TA"
-  eng_short: "tuo"
+  eng_short: "two"
 a:
   _family: "A"
   eng_long: prefix a 1 word long compound
@@ -65,8 +65,8 @@ ade:
   eng_long: "[___] is a proposition with predicate {___} among arguments ___"
   eng_short: proposition
   jbo_similar: bridi
-ahy:
-  _family: "BY"
+ahq:
+  _family: "BQ"
   eng_long: letter A
   eng_short: A
   jbo_similar: a'y/abu
@@ -86,8 +86,8 @@ ba:
   _family: "BA"
   eng_long: "allow to fill places of a predicate to make a new predicate. New places can be added with FA/DU, and new places can be created using <ma>"
   eng_short: abstraction
-bai:
-  _family: "BAI"
+bay:
+  _family: "BAY"
   eng_long: abstraction elidible terminator
   eng_short: ""
   jbo_similar: kei
@@ -117,14 +117,14 @@ bler:
   _signature: ".[1]"
   eng_long: ___ satisfies property [___1]
   eng_short: satisfy
-bria:
+brya:
   _family: "R"
   _signature: ".."
   eng_long: ___ is a/the arm of ___
   eng_short: arm
   jbo_similar: cabna
-by:
-  _family: "BY"
+bq:
+  _family: "BQ"
   eng_long: letter B
   eng_short: B
   jbo_similar: by
@@ -138,7 +138,7 @@ ca:
   eng_long: "[left] OR [right]"
   eng_short: chain-or
   jbo_similar: ja
-cai:
+cay:
   _family: "CA"
   eng_long: "[left] type of [right]. vague precision, [right] has a vague [left] aspect"
   eng_short: chain-type-of
@@ -163,23 +163,23 @@ ci:
   eng_long: chaining question
   eng_short: chain-?
   jbo_similar: je'i
-cia:
+cya:
   _family: "CA"
   eng_long: "predicate chaining with 1st place"
   eng_short: chain-1
-cie:
+cye:
   _family: "CA"
   eng_long: "predicate chaining with 2nd place"
   eng_short: chain-2
-cii:
+cyi:
   _family: "CA"
   eng_long: "predicate chaining with 3rd place"
   eng_short: chain-3
-cio:
+cyo:
   _family: "CA"
   eng_long: "predicate chaining with 4th place"
   eng_short: chain-4
-ciu:
+cyu:
   _family: "CA"
   eng_long: "predicate chaining with 5th place"
   eng_short: chain-5
@@ -204,7 +204,7 @@ co:
   eng_long: "[left] if and only if [right]"
   eng_short: chain-iif
   jbo_similar: jo
-cpei:
+cpey:
   _family: "R"
   _signature: ".."
   eng_long: ___ eats ___
@@ -216,7 +216,7 @@ ctar:
   eng_long: "___ begins to satisfy property [___1] (default = being true/occurs) "
   eng_short: begin
   jbo_similar: zvati
-ctua:
+ctwa:
   _family: "R"
   _signature: "."
   eng_long: ___ is a rabbit
@@ -226,8 +226,8 @@ cu:
   eng_long: "[left] whether or not [right]"
   eng_short: chain-won
   jbo_similar: ju
-cy:
-  _family: "BY"
+cq:
+  _family: "BQ"
   eng_long: letter C
   eng_short: C
   jbo_similar: cy
@@ -241,8 +241,8 @@ de:
   eng_long: proposition elidible starter
   eng_short: ""
   jbo_similar: i
-dei:
-  _family: "DEI"
+dey:
+  _family: "DEY"
   eng_long: proposition elidible terminator
   eng_short: ""
   jbo_similar: iau
@@ -250,7 +250,7 @@ do:
   _family: "DO"
   eng_long: prenex starter/separator
   eng_short: ""
-doi:
+doy:
   _family: "DO"
   eng_long: prenex terminator
   eng_short: ""
@@ -299,13 +299,13 @@ ko:
   eng_long: import and fill 1st place of following predicate unit
   eng_short: ""
   jbo_similar: fi'o
-koi:
-  _family: "KOI"
+koy:
+  _family: "KOY"
   eng_long: import and chain 1st place of following predicate unit
   eng_short: "chaining import"
   jbo_similar: fi'o
-dy:
-  _family: "BY"
+dq:
+  _family: "BQ"
   eng_long: letter D
   eng_short: D
   jbo_similar: dy
@@ -340,14 +340,14 @@ ebersta:
   _signature: "..."
   eng_long: ___ is the eberstan country of people ___ with land/territory ___
   eng_short: eberstan
-eglujgai:
+eglujgay:
   _family: "C"
   _signature: ".."
   eng_long: ___ hugs ___
   eng_short: hug
   jbo_similar: birjai
-ehy:
-  _family: "BY"
+ehq:
+  _family: "BQ"
   eng_long: letter E
   eng_short: E
   jbo_similar: e'y/ebu
@@ -357,7 +357,7 @@ eklacke:
   eng_long: ___ is a man
   eng_short: man
   jbo_similar: nanmu
-eklaprai:
+eklapray:
   _family: "C"
   _signature: ".."
   eng_long: ___ is a father of ___
@@ -369,119 +369,119 @@ esfecke:
   eng_long: ___ is a woman
   eng_short: woman
   jbo_similar: ninmu
-esfeprai:
+esfepray:
   _family: "C"
   _signature: ".."
   eng_long: ___ is a mother of ___
   eng_short: mother
   jbo_similar: mamta
-eskaikle:
+eskaykle:
   _family: "L"
   _signature: ".."
   eng_long: ___ plays video game/computer game ___
   eng_short: play video game
-etarvyn:
+etarvqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is today
   eng_short: today
-etatai:
+etatay:
   _family: "C"
   _signature: ".[1]"
   eng_long: "___ is a number in dimension/cardinality/property [___1] (default = unit)"
   eng_short: number
   jbo_similar: namcu
-etiavyn:
+etyavqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Monday
   eng_short: Monday
-etiazyn:
+etyazqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a January
   eng_short: January
-etievyn:
+etyevqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Tuesday
   eng_short: Tuesday
-etiezyn:
+etyezqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a February
   eng_short: February
-etiivyn:
+etyivqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Wednesday
   eng_short: Wednesday
-etiizyn:
+etyizqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a March
   eng_short: March
-etiovyn:
+etyovqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Thursday
   eng_short: Thursday
-etiozyn:
+etyozqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is an April
   eng_short: April
-etiuvyn:
+etyuvqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Friday
   eng_short: Friday
-etiuzyn:
+etyuzqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a May
   eng_short: May
-etuavyn:
+etwavqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Saturday
   eng_short: Saturday
-etuazyn:
+etwazqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a June
   eng_short: June
-etuevyn:
+etwevqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a Sunday
   eng_short: Sunday
-etuezyn:
+etwezqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a July
   eng_short: July
-etuhazyn:
+etwhazqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a November
   eng_short: November
-etuhezyn:
+etuhezqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a December
   eng_short: December
-etuizyn:
+etwizqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is an August
   eng_short: August
-etuozyn:
+etwozqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is a September
   eng_short: September
-etuuzyn:
+etwuzqn:
   _family: "C"
   _signature: "."
   eng_long: ___ is an October
@@ -491,7 +491,7 @@ fa:
   eng_long: "fill 1st place"
   eng_short: fill-1
   jbo_similar: fa
-fai:
+fay:
   _family: "FA"
   eng_long: "fill next place"
   eng_short: fill-next
@@ -501,7 +501,7 @@ fe:
   eng_long: "fill 2st place"
   eng_short: fill-2
   jbo_similar: fe
-fei:
+fey:
   _family: "FA"
   eng_long: "place filling question"
   eng_short: fill-?
@@ -511,19 +511,19 @@ fi:
   eng_long: "fill 3rd place"
   eng_short: fill-3
   jbo_similar: fi
-fie:
+fye:
   _family: "FA"
-  eng_long: "restrictive adverbial. the first place of the provided predicate is claimed to occur in conjunction with the outer proposition ({mia fie mie} = {fa bi mia do fahun je do mie})"
+  eng_long: "restrictive adverbial. the first place of the provided predicate is claimed to occur in conjunction with the outer proposition ({mia fie mie} = {fa bi mia do fahun je do mie})" # TODO : Update equality
   eng_short: restrictive adverbial
   jbo_similar: poi'a
-fii:
+fyi:
   _family: "FA"
-  eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fii mie} = {fa bi mia bai va mua do fahun de fa mua do mie})"
+  eng_long: "non-restrictive adverbial. the first place of the provided predicate is claimed to be such that the outer proposition satisfies it, and the outer proposition is claimed ({mia fii mie} = {fa bi mia bai va mua do fahun de fa mua do mie})" # TODO : Update equality
   eng_short: non-restrictive adverbial
   jbo_similar: noi'a
-fio:
+fyo:
   _family: "FA"
-  eng_long: "subordinating adverbial. the outer proposition is claimed to satisfy the first place of the provided predicate, but is not itself claimed to occur ({mia fio mie} = {fa bi mia do mie})"
+  eng_long: "subordinating adverbial. the outer proposition is claimed to satisfy the first place of the provided predicate, but is not itself claimed to occur ({mia fio mie} = {fa bi mia do mie})" # TODO : Update equality
   eng_short: subordinating adverbial
   jbo_similar: soi'a
 fla:
@@ -532,7 +532,7 @@ fla:
   eng_long: ___ writes ___ on ___
   eng_short: write
   jbo_similar: ciska
-floi:
+floy:
   _family: "R"
   _signature: "."
   eng_long: ___ is a book
@@ -559,8 +559,8 @@ fu:
   eng_long: "fill 5th place"
   eng_short: fill-5
   jbo_similar: fu
-fy:
-  _family: "BY"
+fq:
+  _family: "BQ"
   eng_long: letter F
   eng_short: F
   jbo_similar: fy
@@ -581,12 +581,12 @@ gra:
   eng_long: ___ is a dog (canine)
   eng_short: dog
   jbo_similar: gerku
-gy:
-  _family: "BY"
+gq:
+  _family: "BQ"
   eng_long: letter G
   eng_short: G
   jbo_similar: gy
-gyn:
+gqn:
   _family: "R"
   _signature: "."
   eng_long: ___ is an hour
@@ -596,26 +596,22 @@ i:
   eng_long: prefix a 3 words long compound
   eng_short: ""
   jbo_similar: lujvo making
-ihy:
-  _family: "BY"
+ihq:
+  _family: "BQ"
   eng_long: letter I
   eng_short: I
   jbo_similar: i'y/ibu
-iny:
-  _family: "BY"
-  eng_long: letter Q
-  eng_short: Q
-iy:
-  _family: "BY"
-  eng_long: i semi-vowel
-  eng_short: i-
+yq:
+  _family: "BQ"
+  eng_long: letter Y
+  eng_short: "Y"
 ja:
   _family: "JA"
   eng_long: distributive or
   eng_short: or
   jbo_similar: ".a / gi'a / ja [cu]"
-jai:
-  _family: "JAI"
+jay:
+  _family: "JAY"
   eng_long: "adds element to a set"
   eng_short: with
   jbo_similar: joi
@@ -635,7 +631,7 @@ je:
   eng_long: distributive and
   eng_short: and
   jbo_similar: ".e / gi'e / je [cu]"
-jgai:
+jgay:
   _family: "R"
   _signature: ".."
   eng_long: ___ graps/holds ___
@@ -674,7 +670,7 @@ jmar:
   _signature: ".[1]"
   eng_long: ___ is new in property [___1]
   eng_short: new
-jnei:
+jney:
   _family: "R"
   _signature: "."
   eng_long: ___ is an inspiration
@@ -711,12 +707,12 @@ jvir:
   _signature: "..[1]"
   eng_long: ___ is good (<sanajil> for bad) according to ___ in property [___1]
   eng_short: good
-jy:
-  _family: "BY"
+jq:
+  _family: "BQ"
   eng_long: letter J
   eng_short: J
   jbo_similar: jy
-jyn:
+jqn:
   _family: "R"
   _signature: "."
   eng_long: ___ is a year
@@ -726,8 +722,8 @@ ka:
   eng_long: proposition negation / logically negates some particles
   eng_short: negation
   jbo_similar: na
-kai:
-  _family: "KAI"
+kay:
+  _family: "KAY"
   eng_long: attached to particles to negate them
   eng_short: negation
   jbo_similar: nai
@@ -747,14 +743,14 @@ kle:
   _signature: ".."
   eng_long: ___ plays with ___
   eng_short: play
-klia:
-  _family: "ZU"
+klya:
+  _family: "R"
   _signature: "."
   eng_long: ___ cries
   eng_short: cry
   jbo_similar: klaku
-klie:
-  _family: "ZU"
+klye:
+  _family: "R"
   _signature: ".."
   eng_long: ___ thanks ___
   eng_short: thank
@@ -770,8 +766,8 @@ krin:
   _signature: ".0"
   eng_long: "___ believes fact(s) [___]"
   eng_short: believe
-ky:
-  _family: "BY"
+kq:
+  _family: "BQ"
   eng_long: letter K
   eng_short: K
   jbo_similar: ky
@@ -799,8 +795,8 @@ paho:
   eng_long: next word is a metadata tag / hashtag
   eng_short: (hashtag)
   jbo_similar: ci'a
-pai:
-  _family: "PAI"
+pay:
+  _family: "PAY"
   eng_long: end free suffix scope (matching start is not checked). following free suffix will apply to the scope instead of the preceding word
   eng_short: "}"
   jbo_similar: fu'o
@@ -854,8 +850,8 @@ po:
   eng_long: parenthetical note starter
   eng_short: (
   jbo_similar: to
-poi:
-  _family: "POI"
+poy:
+  _family: "POY"
   eng_long: parenthetical note terminator
   eng_short: )
   jbo_similar: toi
@@ -864,8 +860,8 @@ pu:
   eng_long: subscript marker
   eng_short: ""
   jbo_similar: xi
-ly:
-  _family: "BY"
+lq:
+  _family: "BQ"
   eng_long: letter L
   eng_short: L
   jbo_similar: ly
@@ -902,37 +898,37 @@ mi:
   eng_long: ___ is me/the speaker/author
   eng_short: me
   jbo_similar: mi
-mia:
+mya:
   _family: "MA"
   eng_long: affectable/contextual variable 1
   eng_short: var I-1
   jbo_similar: ko'a
-miaha:
+myaha:
   _family: "MA"
   eng_long: affectable/contextual variable 6
   eng_short: var I-6
   jbo_similar: fo'a
-miahe:
+myahe:
   _family: "MA"
   eng_long: affectable/contextual variable 7
   eng_short: var I-7
   jbo_similar: fo'e
-miahi:
+myahi:
   _family: "MA"
   eng_long: affectable/contextual variable 8
   eng_short: var I-8
   jbo_similar: fo'i
-miaho:
+myaho:
   _family: "MA"
   eng_long: affectable/contextual variable 9
   eng_short: var I-9
   jbo_similar: fo'o
-miahu:
+myahu:
   _family: "MA"
   eng_long: affectable/contextual variable 10
   eng_short: var I-10
   jbo_similar: fo'u
-mie:
+mye:
   _family: "MA"
   eng_long: affectable/contextual variable 2
   eng_short: var I-2
@@ -949,34 +945,34 @@ miho:
   eng_long: ___ is me/the speaker/author & you the listener
   eng_short: me & you
   jbo_similar: mi'o
-mihoi:
+mihoy:
   _family: "MA"
   _signature: "."
   eng_long: ___ is me/the speaker/author & you the listener & others
   eng_short: me & you & others
   jbo_similar: ma'a
-mii:
+myi:
   _family: "MA"
   eng_long: affectable/contextual variable 3
   eng_short: var I-3
   jbo_similar: ko'i
-mio:
+myo:
   _family: "MA"
   eng_long: affectable/contextual variable 4
   eng_short: var I-4
   jbo_similar: ko'o
-miu:
+myu:
   _family: "MA"
   eng_long: affectable/contextual variable 5
   eng_short: var I-5
   jbo_similar: ko'u
-mlia:
+mlya:
   _family: "R"
   _signature: "."
   eng_long: ___ is a cat (feline)
   eng_short: cat
   jbo_similar: mlatu
-mlio:
+mlyo:
   _family: "R"
   _signature: "."
   eng_long: ___ is milk
@@ -1021,12 +1017,12 @@ mu:
   eng_long: elliptical/unspecified predicate
   eng_short: (elliptical)
   jbo_similar: co'e, zo'e
-mua:
+mwa:
   _family: "MA"
   eng_long: repeats the next to last proposition
   eng_short: (next to last prop)
   jbo_similar: go'e
-mue:
+mwe:
   _family: "MA"
   eng_long: repeats the last proposition
   eng_short: (last prop)
@@ -1045,23 +1041,23 @@ muhi:
   eng_long: referers to the current topic (most recent unquantified predicate in a prenex)
   eng_short: (topic)
   jbo_similar: zoi'i
-mui:
+mwi:
   _family: "MA"
   eng_long: repeats the proposition in which this one is embeded
   eng_short: (outer prop)
   jbo_similar: no'a
-muo:
+mwo:
   _family: "MA"
   eng_long: repeats current proposition
   eng_short: (current prop)
   jbo_similar: nei
-muu:
+mwu:
   _family: "MA"
   eng_long: repeats the next (future) proposition
   eng_short: (next prop)
   jbo_similar: go'o
-my:
-  _family: "BY"
+mq:
+  _family: "BQ"
   eng_long: letter M
   eng_short: M
   jbo_similar: my
@@ -1070,8 +1066,8 @@ ke:
   eng_long: forethought connective starter
   eng_short: ""
   jbo_similar: ga
-kei:
-  _family: "KEI"
+key:
+  _family: "KEY"
   eng_long: forethought connective elidible terminator
   eng_short: ""
   jbo_similar: zantufa gi'i
@@ -1080,8 +1076,8 @@ ki:
   eng_long: forethought connective separator
   eng_short: ""
   jbo_similar: zantufa gi
-ny:
-  _family: "BY"
+nq:
+  _family: "BQ"
   eng_long: letter N
   eng_short: "N"
   jbo_similar: ny
@@ -1090,24 +1086,24 @@ o:
   eng_long: prefix a 4 words long compound
   eng_short: ""
   jbo_similar: lujvo making
-ohy:
-  _family: "BY"
+ohq:
+  _family: "BQ"
   eng_long: letter O
   eng_short: O
   jbo_similar: o'y/obu
-plai:
+play:
   _family: "R"
   _signature: "."
   eng_long: ___ is rain
   eng_short: rain
-plie:
+plye:
   _family: "R"
   _signature: "."
   eng_long: ___ is an apple
   eng_short: apple
   jbo_similar: plise
   toaq_similar: shamū
-plii:
+plyi:
   _family: "R"
   _signature: "."
   eng_long: ___ is a bird
@@ -1124,7 +1120,7 @@ pra:
   _signature: ".."
   eng_long: ___ loves ___
   eng_short: love
-prai:
+pray:
   _family: "R"
   _signature: ".."
   eng_long: ___ is a parent of/raises ___
@@ -1138,18 +1134,18 @@ pre:
   eng_short: person
   jbo_similar: prenu
   toaq_similar: poq
-priu:
+pryu:
   _family: "R"
   _signature: "."
   eng_long: ___ is a chicken
   eng_short: chicken
-py:
-  _family: "BY"
+pq:
+  _family: "BQ"
   eng_long: letter P
   eng_short: P
   jbo_similar: py
-ry:
-  _family: "BY"
+rq:
+  _family: "BQ"
   eng_long: letter R
   eng_short: R
   jbo_similar: ry
@@ -1175,7 +1171,7 @@ sahi:
   eng_long: use the predicate as a predicate variable name (instead of using <mia>)
   eng_short: (named variable)
   jbo_similar: ilmen's dau'u
-sai:
+say:
   _family: "SA"
   eng_long: SA question
   eng_short: (SA ?)
@@ -1217,31 +1213,31 @@ si:
   eng_long: switch 1st and 3rd places
   eng_short: x1 &#8652; x3
   jbo_similar: te
-sia:
+sya:
   _family: "SA"
   eng_long: "transform the [predicate] into a property with only its 1st place (all other have default value)"
   eng_short: property x1
-sie:
+sye:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 2nd place (all other have default value)"
   eng_short: relation x1 x2
-sii:
+syi:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 3nd place (all other have default value)"
   eng_short: relation x1 x3
-sio:
+syo:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 4nd place (all other have default value)"
   eng_short: relation x1 x4
-siu:
+syu:
   _family: "SA"
   eng_long: "transform the [predicate] into a relation with only its 1st and 5nd place (all other have default value)"
   eng_short: relation x1 x5
-siy:
+syq:
   _family: "SA"
   eng_long: "transform the [predicate] into a proposition with all its places filled with default values"
   eng_short: proposition
-skai:
+skay:
   _family: "R"
   _signature: "."
   eng_long: ___ is a computer
@@ -1328,8 +1324,8 @@ su:
   eng_long: switch 1st and 5th places
   eng_short: x1 &#8652; x5
   jbo_similar: xe
-sy:
-  _family: "BY"
+sq:
+  _family: "BQ"
   eng_long: letter S
   eng_short: S
   jbo_similar: sy
@@ -1423,27 +1419,27 @@ tahun:
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is downward of/under [___X] (default = here)"
   eng_short: down
-tahyn:
+tahqn:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is upward of/above [___X] (default = here)"
   eng_short: up
-tai:
-  _family: "TAI"
+tay:
+  _family: "TAY"
   eng_long: number/letter string elidible terminator
   eng_short: ""
   jbo_similar: ""
-taiha:
+tayha:
   _family: "TA"
   eng_long: too few (subjective)
   eng_short: too few
   jbo_similar: mo'a
-taihe:
+tayhe:
   _family: "TA"
   eng_long: enough (subjective)
   eng_short: enough
   jbo_similar: rau
-taihi:
+tayhi:
   _family: "TA"
   eng_long: too many (subjective)
   eng_short: too many
@@ -1508,12 +1504,12 @@ tanur:
   _signature: "00"
   eng_long: "[___] (default = now) occurs in the whole time interval of [___]"
   eng_short: whole time interval
-tanyn:
+tanqn:
   _family: "R"
   _signature: "00"
   eng_long: "[___] (default = now) is at a distance in time of ___ (number with time length unit)"
   eng_short: custom time distance
-tanyr:
+tanqr:
   _family: "R"
   _signature: "00"
   eng_long: "[___] (default = now) has a duration of ___ (number with time length unit)"
@@ -1573,12 +1569,12 @@ tarur:
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is in the whole space interval of [___X] (default = here)"
   eng_short: whole space interval
-taryn:
+tarqn:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is at a distance in space of ___ (number with space length unit)"
   eng_short: custom space distance
-taryr:
+tarqr:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) has a size of ___ (number with space length unit)"
@@ -1672,12 +1668,12 @@ tenur:
   _signature: "00"
   eng_long: "[___] (default = now) occurs at the natural end point of [___]"
   eng_short: natural end point (time)
-tenyn:
+tenqn:
   _family: "R"
   _signature: "0[X]"
   eng_long: "[___] (default = now) occurs at the actual point position of [___X] (number with time position unit)"
   eng_short: actual point position (time)
-tenyr:
+tenqr:
   _family: "R"
   _signature: "0[X]"
   eng_long: "[___] (default = now) occurs at the natural point position of [___X] (number with time position unit)"
@@ -1732,77 +1728,77 @@ terur:
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is at the natural end point of [___X]"
   eng_short: natural end point (space)
-teryn:
+terqn:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is at the actual point position of [___X] (number with space position unit)"
   eng_short: actual point position (space)
-teryr:
+terqr:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] (default = here) is at the natural point position of [___X] (number with space position unit)"
   eng_short: natural point position (space)
-tia:
+tya:
   _family: "TA"
   eng_long: "number/digit: 1"
   eng_short: "1"
   jbo_similar: pa
-tian:
+tyan:
   _family: "R"
   _signature: "00"
   eng_long: "[___] occurs regularly inside of [___]"
   eng_short: regularly (time)
-tiar:
+tyar:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is regularly inside of [___X]"
   eng_short: regularly (space)
-tie:
+tye:
   _family: "TA"
   eng_long: "number/digit: 2"
   eng_short: "2"
   jbo_similar: re
-tien:
+tyen:
   _family: "R"
   _signature: "00"
   eng_long: "[___] occurs typically inside of [___]"
   eng_short: typically (time)
-tier:
+tyer:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is typically inside of [___X]"
   eng_short: typically (space)
-tii:
+tyi:
   _family: "TA"
   eng_long: "number/digit: 3"
   eng_short: "3"
   jbo_similar: ci
-tiin:
+tyin:
   _family: "R"
   _signature: "00"
   eng_long: "[___] occurs continuously inside of [___]"
   eng_short: continuously (time)
-tiir:
+tyir:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is continuously inside of [___X]"
   eng_short: continuously (space)
-tio:
+tyo:
   _family: "TA"
   eng_long: "number/digit: 4"
   eng_short: "4"
   jbo_similar: vo
-tion:
+tyon:
   _family: "R"
   _signature: "00"
   eng_long: "[___] occurs habitually inside of [___]"
   eng_short: habitually (time)
-tior:
+tyor:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is habitually inside of [___X]"
   eng_short: habitually (space)
-tiu:
+tyu:
   _family: "TA"
   eng_long: "number/digit: 5"
   eng_short: "5"
@@ -1821,58 +1817,58 @@ trir:
   _signature: ".[1]"
   eng_long: "___ succeeds at satisfying property [___1]"
   eng_short: succeed
-tsoi:
+tsoy:
   _family: "R"
   _signature: "."
   eng_long: ___ is a sky
   eng_short: sky
   jbo_similar: tsani
-tua:
+twa:
   _family: "TA"
   eng_long: "number/digit: 6"
   eng_short: "6"
   jbo_similar: xa
-tuahan:
+twahan:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is in WHICH space direction of [___X] ?"
   eng_short: space direction question
-tuan:
+twan:
   _family: "R"
   _signature: "00"
   eng_long: "[___] is in WHICH time direction of [___] ?"
   eng_short: time direction question
-tuanan:
+twanan:
   _family: "R"
   _signature: "00"
   eng_long: "[___] is in WHICH time distance of [___] ?"
   eng_short: time distance question
-tuanar:
+twanar:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is in WHICH space distance of [___X] ?"
   eng_short: space distance question
-tuaran:
+twaran:
   _family: "R"
   _signature: "00"
   eng_long: "[___] is in WHICH time interval of [___] ?"
   eng_short: time interval question
-tuarar:
+twarar:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is in WHICH space interval of [___X] ?"
   eng_short: space interval question
-tue:
+twe:
   _family: "TA"
   eng_long: "number/digit: 7"
   eng_short: "7"
   jbo_similar: ze
-tuen:
+twen:
   _family: "R"
   _signature: "00"
   eng_long: "[___] is in WHICH time contour  of [___] ?"
   eng_short: time contour  question
-tuer:
+twer:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is in WHICH space contour  of [___X] ?"
@@ -1902,33 +1898,33 @@ tuhu:
   eng_long: "number/digit: F (15)"
   eng_short: F (15)
   jbo_similar: vai
-tui:
+twi:
   _family: "TA"
   eng_long: "number/digit: 8"
   eng_short: "8"
   jbo_similar: bi
-tuihan:
+twihan:
   _family: "R"
   _signature: "00"
   eng_long: "[___] is in WHICH subjective time interval of [___] ?"
   eng_short: subjective time interval question
-tuihar:
+twihar:
   _family: "R"
   _signature: "[X][X]"
   eng_long: "[___X] is in WHICH subjective space interval of [___X] ?"
   eng_short: subjective space interval question
-tuo:
+two:
   _family: "TA"
   eng_long: "number/digit: 9"
   eng_short: "9"
   jbo_similar: so
-tuu:
+twu:
   _family: "TA"
   eng_long: "number/digit: A (10)"
   eng_short: A (10)
   jbo_similar: dau
-ty:
-  _family: "BY"
+tq:
+  _family: "BQ"
   eng_long: letter T
   eng_short: T
   jbo_similar: ty
@@ -1937,26 +1933,22 @@ u:
   eng_long: prefix and suffix an arbitrary words long compound
   eng_short: ""
   jbo_similar: lujvo making
-uhy:
-  _family: "BY"
+uhq:
+  _family: "BQ"
   eng_long: letter U
   eng_short: U
   jbo_similar: u'y/ubu
-uny:
-  _family: "BY"
+wq:
+  _family: "BQ"
   eng_long: letter W
   eng_short: W
-uy:
-  _family: "BY"
-  eng_long: u semi-vowel
-  eng_short: u-
 va:
   _family: "VA"
   eng_long: "predicate variable affectation. one side should be prefixed with <lahe>"
   eng_short: "="
   jbo_similar: goi
-vai:
-  _family: "VAI"
+vay:
+  _family: "VAY"
   eng_long: predicate link elidible terminator
   eng_short: ""
   jbo_similar: ge'u/kei
@@ -1965,12 +1957,12 @@ ve:
   eng_long: which is associated with ...
   eng_short: associated with
   jbo_similar: pe
-vie:
+vye:
   _family: "VA"
   eng_long: restrictive relative clause
   eng_short: restrictive
   jbo_similar: poi
-vii:
+vyi:
   _family: "VA"
   eng_long: non-restrictive relative clause
   eng_short: non-restrictive
@@ -1993,41 +1985,41 @@ vro:
   eng_long: ___ hears ___
   eng_short: hear
   jbo_similar: tirna
-vy:
-  _family: "BY"
+vq:
+  _family: "BQ"
   eng_long: letter V
   eng_short: V
   jbo_similar: vy
-vyn:
+vqn:
   _family: "R"
   _signature: "."
   eng_long: ___ is a day
   eng_short: day
   jbo_similar: djedi
-xy:
-  _family: "BY"
+xq:
+  _family: "BQ"
   eng_long: letter X
   eng_short: X
   jbo_similar: xy
-xyn:
+xqn:
   _family: "R"
   _signature: "."
   eng_long: ___ is a week
   eng_short: week
-yha:
-  _family: "BY"
+qha:
+  _family: "BQ"
   eng_long: letter H/h
   eng_short: H
   jbo_similar: xy.bu
-yhe:
-  _family: "BY"
+qhe:
+  _family: "BQ"
   eng_long: pause character / '
   eng_short: (pause)
   jbo_similar: denpabu
-yhy:
-  _family: "BY"
-  eng_long: letter Y
-  eng_short: "Y"
+qhq:
+  _family: "BQ"
+  eng_long: letter Q
+  eng_short: Q
   jbo_similar: y'y/ybu
 za:
   _family: "ZA"
@@ -2040,7 +2032,7 @@ zaha:
   _signature: "."
   eng_long: 'prefix a foreign word as an onomatopea, meaning "___ is the onomatopea [word]"'
   eng_short: (onomatopea)
-zai:
+zay:
   _family: "ZA"
   eng_long: "prefix a foreign word, place structure is infered from context"
   eng_short: (complex)
@@ -2057,7 +2049,7 @@ zden:
   eng_long: "___ finds [___] amusing/fun"
   eng_short: amusing
   jbo_similar: zdile
-zdua:
+zdwa:
   _family: "R"
   _signature: "."
   eng_long: ___ is complicated/complex
@@ -2068,8 +2060,8 @@ ze:
   eng_long: "start grammatical quote. ___ is quote [quote]"
   eng_short: "&#12317;"
   jbo_similar: lu
-zei:
-  _family: "ZEI"
+zey:
+  _family: "ZEY"
   eng_long: end grammatical quote
   eng_short: "&#12318;"
   jbo_similar: li'u
@@ -2118,12 +2110,12 @@ zva:
   eng_long: ___ is at ___ (location)
   eng_short: attending
   jbo_similar: zvati
-zy:
-  _family: "BY"
+zq:
+  _family: "BQ"
   eng_long: letter Z
   eng_short: Z
   jbo_similar: zy
-zyn:
+zqn:
   _family: "R"
   _signature: "."
   eng_long: ___ is a month
