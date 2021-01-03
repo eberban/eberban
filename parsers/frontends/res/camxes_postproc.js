@@ -351,7 +351,7 @@ function among(v, s) {
 function is_selmaho(v) {
 	if (!is_string(v)) return false;
 	// return v.startsWith("p_");
-	return 0 == v.search(/^[IUBCDFGJKLMNPRSTVXZ]?([AEIOUQ]|(AI|EI|OI|AU))(H([AEIOUQ]|(AI|EI|OI|AU)))*$/g);
+	return 0 == v.search(/^[YWBCDFGJKLMNPRSTVXZ]?([AEIOUQ]Y?)(H([AEIOUQ]Y?))*$/g);
 }
 
 // ========================================================================== //
