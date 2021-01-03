@@ -34,9 +34,9 @@ predicate_place_import <- KO_clause predicate_unit
 
 predicate_term <- predicate_term_ja / predicate_term_1
 predicate_term_ja <- predicate_term_1 (ja predicate_term_1)+
-predicate_term_1 <- predicate_term_jai / predicate_term_2
-predicate_term_jai <- predicate_term_2 (jai predicate_term_2)+
-predicate_term_2 <- predicate_term_keja / predicate_unit
+predicate_term_1 <- predicate_term_jay / predicate_term_2
+predicate_term_jay <- predicate_term_2 (jay predicate_term_2)+
+predicate_term_2 <- predicate_term_keja / predicate_unit+
 predicate_term_keja <- keja predicate_term (ki predicate_term)+ KEY_clause_elidible
 
 predicate_unit <- SA_clause* predicate_unit_1
@@ -71,7 +71,7 @@ letter_string <- BQ_clause (TA_clause / BQ_clause)*
 
 # afterthough connectives
 ja <- KA_clause? SA_clause? JA_clause KAY_clause? free_post*
-jai <- JAY_clause
+jay <- JAY_clause
 
 # forethough connectives
 keja <- KE_clause SA_clause? JA_clause KAY_clause? free_post*
@@ -220,7 +220,7 @@ q <- [qQ] # <LEAF>
 
 # - Legal consonant and consonant pairs
 consonant_cluster <- (!(sonorant sonorant sonorant) consonant consonant? consonant? !consonant)
-initial_consonant_pair <- (&initial consonant consonant !consonant)
+initial_consonant_pair <- !(!affricate yw) (&initial consonant consonant !consonant)
 initial <- (affricate / sibilant? other? liquid?) !consonant
  
 consonant <- (voiced / unvoiced / liquid / m / n) 

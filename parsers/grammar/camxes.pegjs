@@ -163,9 +163,9 @@ predicate_place_import = expr:(KO_clause predicate_unit) {return _node("predicat
 
 predicate_term = expr:(predicate_term_ja / predicate_term_1) {return _node("predicate_term", expr);}
 predicate_term_ja = expr:(predicate_term_1 (ja predicate_term_1)+) {return _node("predicate_term_ja", expr);}
-predicate_term_1 = expr:(predicate_term_jai / predicate_term_2) {return _node("predicate_term_1", expr);}
-predicate_term_jai = expr:(predicate_term_2 (jai predicate_term_2)+) {return _node("predicate_term_jai", expr);}
-predicate_term_2 = expr:(predicate_term_keja / predicate_unit) {return _node("predicate_term_2", expr);}
+predicate_term_1 = expr:(predicate_term_jay / predicate_term_2) {return _node("predicate_term_1", expr);}
+predicate_term_jay = expr:(predicate_term_2 (jay predicate_term_2)+) {return _node("predicate_term_jay", expr);}
+predicate_term_2 = expr:(predicate_term_keja / predicate_unit+) {return _node("predicate_term_2", expr);}
 predicate_term_keja = expr:(keja predicate_term (ki predicate_term)+ KEY_clause_elidible) {return _node("predicate_term_keja", expr);}
 
 predicate_unit = expr:(SA_clause* predicate_unit_1) {return _node("predicate_unit", expr);}
@@ -200,7 +200,7 @@ letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_
 
 // afterthough connectives
 ja = expr:(KA_clause? SA_clause? JA_clause KAY_clause? free_post*) {return _node("ja", expr);}
-jai = expr:(JAY_clause) {return _node("jai", expr);}
+jay = expr:(JAY_clause) {return _node("jay", expr);}
 
 // forethough connectives
 keja = expr:(KE_clause SA_clause? JA_clause KAY_clause? free_post*) {return _node("keja", expr);}
@@ -349,7 +349,7 @@ q = expr:([qQ]) {return ["q", "q"];} // <LEAF>
 
 // - Legal consonant and consonant pairs
 consonant_cluster = expr:((!(sonorant sonorant sonorant) consonant consonant? consonant? !consonant)) {return _node("consonant_cluster", expr);}
-initial_consonant_pair = expr:((&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
+initial_consonant_pair = expr:(!(!affricate yw) (&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
 initial = expr:((affricate / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
 
 consonant = expr:((voiced / unvoiced / liquid / m / n)) {return _node("consonant", expr);}

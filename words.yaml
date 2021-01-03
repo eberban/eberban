@@ -117,7 +117,7 @@ bler:
   _signature: ".[1]"
   eng_long: ___ satisfies property [___1]
   eng_short: satisfy
-brya:
+bra:
   _family: "R"
   _signature: ".."
   eng_long: ___ is a/the arm of ___
@@ -966,13 +966,13 @@ myu:
   eng_long: affectable/contextual variable 5
   eng_short: var I-5
   jbo_similar: ko'u
-mlya:
+mliya:
   _family: "R"
   _signature: "."
   eng_long: ___ is a cat (feline)
   eng_short: cat
   jbo_similar: mlatu
-mlyo:
+mliyo:
   _family: "R"
   _signature: "."
   eng_long: ___ is milk
