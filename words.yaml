@@ -2,36 +2,47 @@
 .:
   _family: "TA"
   eng_short: "te"
+  eng_long: decimal separator
 0:
   _family: "TA"
   eng_short: "ta"
+  eng_long: "number/digit: 0"
 1:
   _family: "TA"
   eng_short: "tya"
+  eng_long: "number/digit: 1"
 2:
   _family: "TA"
   eng_short: "tye"
+  eng_long: "number/digit: 2"
 3:
   _family: "TA"
   eng_short: "tyi"
+  eng_long: "number/digit: 3"
 4:
   _family: "TA"
   eng_short: "tyo"
+  eng_long: "number/digit: 4"
 5:
   _family: "TA"
   eng_short: "tyu"
+  eng_long: "number/digit: 5"
 6:
   _family: "TA"
   eng_short: "twa"
+  eng_long: "number/digit: 6"
 7:
   _family: "TA"
   eng_short: "twe"
+  eng_long: "number/digit: 7"
 8:
   _family: "TA"
   eng_short: "twi"
+  eng_long: "number/digit: 8"
 9:
   _family: "TA"
   eng_short: "two"
+  eng_long: "number/digit: 9"
 a:
   _family: "A"
   eng_long: prefix a 1 word long compound
