@@ -100,7 +100,7 @@ ba:
 ban:
   _family: "R"
   _signature: ".."
-  eng_long: ___ is a language spoken by ___
+  eng_long: ___ is a language/dialect used/spoken by ___
   eng_short: language
   jbo_similar: bangu
 bay:
@@ -1279,16 +1279,24 @@ spar:
   eng_long: "___ is able to do/be/capable of satisfying property [___1]"
   eng_short: able
   jbo_similar: kakne
+spe:
+  _family: "R"
+  _signature: "."
+  eng_long: ___ is awake/alert/conscious
+  eng_short: awake
+  jbo_similar: cikna
 spi:
   _family: "R"
-  _signature: ".."
-  eng_long: ___ talks to ___
+  _signature: "..."
+  eng_long: ___ talks to ___ about ___
   eng_short: talk
+  jbo_similar: tavla
 spo:
   _family: "R"
   _signature: "."
   eng_long: ___ sleeps
   eng_short: sleep
+  jbo_similar: sipna
 sq:
   _family: "BQ"
   eng_long: letter S
