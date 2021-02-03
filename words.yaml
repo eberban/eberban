@@ -257,6 +257,12 @@ dey:
   eng_long: proposition elidible terminator
   eng_short: ""
   jbo_similar: iau
+dji:
+  _family: "R"
+  _signature: ".0"
+  eng_long: "___ desires/wants/wishes [___]"
+  eng_short: desire
+  jbo_similar: djica
 djo:
   _family: "R"
   _signature: "..."
