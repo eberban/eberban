@@ -144,8 +144,8 @@ paragraph = expr:(PU_clause+ sentence*) {return _node("paragraph", expr);}
 sentence = expr:(proposition) {return _node("sentence", expr);}
 
 proposition = expr:(proposition_1 (day proposition_1)*) {return _node("proposition", expr);}
-proposition_1 = expr:(proposition_keja / PE_clause_elidible prenex? BA_clause* predicate_chaining PEY_clause_elidible) {return _node("proposition_1", expr);}
-proposition_keja = expr:(beday proposition (bi proposition)+ BEY_clause_elidible) {return _node("proposition_keja", expr);}
+proposition_1 = expr:(proposition_beday / PE_clause_elidible prenex? BA_clause* predicate_chaining PEY_clause_elidible) {return _node("proposition_1", expr);}
+proposition_beday = expr:(beday proposition (bi proposition)+ BEY_clause_elidible) {return _node("proposition_beday", expr);}
 
 prenex = expr:((PO_clause prenex_term)+ POY_clause) {return _node("prenex", expr);}
 prenex_term = expr:(predicate_term predicate_link*) {return _node("prenex_term", expr);}
@@ -161,12 +161,12 @@ predicate_link = expr:(CA_clause predicate_unit+) {return _node("predicate_link"
 predicate_place_tag = expr:(FA_clause / predicate_place_import) {return _node("predicate_place_tag", expr);}
 predicate_place_import = expr:(BO_clause predicate_unit) {return _node("predicate_place_import", expr);}
 
-predicate_term = expr:(predicate_term_ja / predicate_term_1) {return _node("predicate_term", expr);}
-predicate_term_ja = expr:(predicate_term_1 (day predicate_term_1)+) {return _node("predicate_term_ja", expr);}
-predicate_term_1 = expr:(predicate_term_jay / predicate_term_2) {return _node("predicate_term_1", expr);}
-predicate_term_jay = expr:(predicate_term_2 (da predicate_term_2)+) {return _node("predicate_term_jay", expr);}
-predicate_term_2 = expr:(predicate_term_keja / predicate_unit+) {return _node("predicate_term_2", expr);}
-predicate_term_keja = expr:(beday predicate_term (bi predicate_term)+ BEY_clause_elidible) {return _node("predicate_term_keja", expr);}
+predicate_term = expr:(predicate_term_day / predicate_term_1) {return _node("predicate_term", expr);}
+predicate_term_day = expr:(predicate_term_1 (day predicate_term_1)+) {return _node("predicate_term_day", expr);}
+predicate_term_1 = expr:(predicate_term_da / predicate_term_2) {return _node("predicate_term_1", expr);}
+predicate_term_da = expr:(predicate_term_2 (da predicate_term_2)+) {return _node("predicate_term_da", expr);}
+predicate_term_2 = expr:(predicate_term_beday / predicate_unit+) {return _node("predicate_term_2", expr);}
+predicate_term_beday = expr:(beday predicate_term (bi predicate_term)+ BEY_clause_elidible) {return _node("predicate_term_beday", expr);}
 
 predicate_unit = expr:((SA_clause / ZA_clause)* predicate_unit_1) {return _node("predicate_unit", expr);}
 predicate_unit_1 = expr:(compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}

@@ -44,7 +44,7 @@ var camxes = (function() {
         peg$c9 = function(expr) {return _node("sentence", expr);},
         peg$c10 = function(expr) {return _node("proposition", expr);},
         peg$c11 = function(expr) {return _node("proposition_1", expr);},
-        peg$c12 = function(expr) {return _node("proposition_keja", expr);},
+        peg$c12 = function(expr) {return _node("proposition_beday", expr);},
         peg$c13 = function(expr) {return _node("prenex", expr);},
         peg$c14 = function(expr) {return _node("prenex_term", expr);},
         peg$c15 = function(expr) {return _node("predicate_chaining", expr);},
@@ -56,11 +56,11 @@ var camxes = (function() {
         peg$c21 = function(expr) {return _node("predicate_place_tag", expr);},
         peg$c22 = function(expr) {return _node("predicate_place_import", expr);},
         peg$c23 = function(expr) {return _node("predicate_term", expr);},
-        peg$c24 = function(expr) {return _node("predicate_term_ja", expr);},
+        peg$c24 = function(expr) {return _node("predicate_term_day", expr);},
         peg$c25 = function(expr) {return _node("predicate_term_1", expr);},
-        peg$c26 = function(expr) {return _node("predicate_term_jay", expr);},
+        peg$c26 = function(expr) {return _node("predicate_term_da", expr);},
         peg$c27 = function(expr) {return _node("predicate_term_2", expr);},
-        peg$c28 = function(expr) {return _node("predicate_term_keja", expr);},
+        peg$c28 = function(expr) {return _node("predicate_term_beday", expr);},
         peg$c29 = function(expr) {return _node("predicate_unit", expr);},
         peg$c30 = function(expr) {return _node("predicate_unit_1", expr);},
         peg$c31 = function(expr) {return _node("compound", expr);},
@@ -932,7 +932,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parseproposition_keja();
+      s1 = peg$parseproposition_beday();
       if (s1 === peg$FAILED) {
         s1 = peg$currPos;
         s2 = peg$parsePE_clause_elidible();
@@ -987,7 +987,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parseproposition_keja() {
+    function peg$parseproposition_beday() {
       var s0, s1, s2, s3, s4, s5, s6, s7;
 
       var key    = peg$currPos * 208 + 8,
@@ -1578,7 +1578,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_ja();
+      s1 = peg$parsepredicate_term_day();
       if (s1 === peg$FAILED) {
         s1 = peg$parsepredicate_term_1();
       }
@@ -1593,7 +1593,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_ja() {
+    function peg$parsepredicate_term_day() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 208 + 20,
@@ -1680,7 +1680,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_jay();
+      s1 = peg$parsepredicate_term_da();
       if (s1 === peg$FAILED) {
         s1 = peg$parsepredicate_term_2();
       }
@@ -1695,7 +1695,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_jay() {
+    function peg$parsepredicate_term_da() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 208 + 22,
@@ -1782,7 +1782,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_keja();
+      s1 = peg$parsepredicate_term_beday();
       if (s1 === peg$FAILED) {
         s1 = [];
         s2 = peg$parsepredicate_unit();
@@ -1806,7 +1806,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_keja() {
+    function peg$parsepredicate_term_beday() {
       var s0, s1, s2, s3, s4, s5, s6, s7;
 
       var key    = peg$currPos * 208 + 24,

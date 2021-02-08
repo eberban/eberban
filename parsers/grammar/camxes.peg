@@ -15,8 +15,8 @@ paragraph <- PU_clause+ sentence*
 sentence <- proposition
 
 proposition <- proposition_1 (day proposition_1)*
-proposition_1 <- proposition_keja / PE_clause_elidible prenex? BA_clause* predicate_chaining PEY_clause_elidible
-proposition_keja <- beday proposition (bi proposition)+ BEY_clause_elidible
+proposition_1 <- proposition_beday / PE_clause_elidible prenex? BA_clause* predicate_chaining PEY_clause_elidible
+proposition_beday <- beday proposition (bi proposition)+ BEY_clause_elidible
 
 prenex <- (PO_clause prenex_term)+ POY_clause
 prenex_term <- predicate_term predicate_link*
@@ -32,12 +32,12 @@ predicate_link <- CA_clause predicate_unit+
 predicate_place_tag <- FA_clause / predicate_place_import
 predicate_place_import <- BO_clause predicate_unit
 
-predicate_term <- predicate_term_ja / predicate_term_1
-predicate_term_ja <- predicate_term_1 (day predicate_term_1)+
-predicate_term_1 <- predicate_term_jay / predicate_term_2
-predicate_term_jay <- predicate_term_2 (da predicate_term_2)+
-predicate_term_2 <- predicate_term_keja / predicate_unit+
-predicate_term_keja <- beday predicate_term (bi predicate_term)+ BEY_clause_elidible
+predicate_term <- predicate_term_day / predicate_term_1
+predicate_term_day <- predicate_term_1 (day predicate_term_1)+
+predicate_term_1 <- predicate_term_da / predicate_term_2
+predicate_term_da <- predicate_term_2 (da predicate_term_2)+
+predicate_term_2 <- predicate_term_beday / predicate_unit+
+predicate_term_beday <- beday predicate_term (bi predicate_term)+ BEY_clause_elidible
 
 predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
 predicate_unit_1 <- compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*
