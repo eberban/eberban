@@ -223,21 +223,6 @@ I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);} // 3-
 O_clause = expr:(free_prefix* spaces? O) {return _node("O_clause", expr);} // 4-words compound
 U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);} // n-words compound starter and terminator
 
-PA_clause = expr:(free_prefix* spaces? PA) {return _node("PA_clause", expr);} // abstractors starter
-PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // abstractors terminator
-PAY_clause_elidible = expr:(PAY_clause?) {return (expr == "" || !expr) ? ["PAY"] : _node_empty("PAY_clause_elidible", expr);}
-BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
-VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // chaining tags
-PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
-PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);} // proposition starter
-PE_clause_elidible = expr:(PE_clause?) {return (expr == "" || !expr) ? ["PE"] : _node_empty("PE_clause_elidible", expr);}
-PEY_clause = expr:(free_prefix* spaces? PEY free_post*) {return _node("PEY_clause", expr);} // proposition terminator
-PEY_clause_elidible = expr:(PEY_clause?) {return (expr == "" || !expr) ? ["PEY"] : _node_empty("PEY_clause_elidible", expr);}
-PO_clause = expr:(free_prefix* spaces? PO free_post*) {return _node("PO_clause", expr);} // prenex starter/separator
-POY_clause = expr:(free_prefix* spaces? POY free_post*) {return _node("POY_clause", expr);} // prenex terminator
-FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
-DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // logical connectives
-DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // set creator
 BA_clause = expr:(free_prefix* spaces? BA free_post*) {return _node("BA_clause", expr);} // pre negation
 BAY_clause = expr:(free_prefix* spaces? BAY) {return _node("BAY_clause", expr);} // post negation
 BE_clause = expr:(free_prefix* spaces? BE) {return _node("BE_clause", expr);} // forethought connective starter
@@ -246,8 +231,12 @@ BEY_clause_elidible = expr:(BEY_clause?) {return (expr == "" || !expr) ? ["BEY"]
 BI_clause = expr:(free_prefix* spaces? BI) {return _node("BI_clause", expr);} // forethought connective separator
 BO_clause = expr:(free_prefix* spaces? BO) {return _node("BO_clause", expr);} // filling place import
 BOY_clause = expr:(free_prefix* spaces? BOY) {return _node("BOY_clause", expr);} // chaining place import
+BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
 BU_clause = expr:(free_prefix* spaces? BU) {return _node("BU_clause", expr);} // parser version/dialect
-MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // surrogate predicates (pronouns, ...)
+CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);} // predicate link
+DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // set creator
+DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // logical connectives
+FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
 JA_clause = expr:(spaces? JA) {return _node("JA_clause", expr);} // free scope started
 JAY_clause = expr:(spaces? JAY) {return _node("JAY_clause", expr);} // free scope terminator
 JE_clause = expr:(free_prefix* spaces? JE) {return _node("JE_clause", expr);} // free discursive (predicate)
@@ -255,17 +244,28 @@ JI_clause = expr:(free_prefix* spaces? JI) {return _node("JI_clause", expr);} //
 JO_clause = expr:(free_prefix* spaces? JO) {return _node("JO_clause", expr);} // free parenthetical started (text)
 JOY_clause = expr:(free_prefix* spaces? JOY) {return _node("JOY_clause", expr);} // free parenthetical terminator
 JU_clause = expr:(free_prefix* spaces? JU) {return _node("JU_clause", expr);} // free subscript
+MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // surrogate predicates (pronouns, ...)
+PA_clause = expr:(free_prefix* spaces? PA) {return _node("PA_clause", expr);} // abstractors starter
+PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // abstractors terminator
+PAY_clause_elidible = expr:(PAY_clause?) {return (expr == "" || !expr) ? ["PAY"] : _node_empty("PAY_clause_elidible", expr);}
+PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);} // proposition starter
+PE_clause_elidible = expr:(PE_clause?) {return (expr == "" || !expr) ? ["PE"] : _node_empty("PE_clause_elidible", expr);}
+PEY_clause = expr:(free_prefix* spaces? PEY free_post*) {return _node("PEY_clause", expr);} // proposition terminator
+PEY_clause_elidible = expr:(PEY_clause?) {return (expr == "" || !expr) ? ["PEY"] : _node_empty("PEY_clause_elidible", expr);}
+PO_clause = expr:(free_prefix* spaces? PO free_post*) {return _node("PO_clause", expr);} // prenex starter/separator
+POY_clause = expr:(free_prefix* spaces? POY free_post*) {return _node("POY_clause", expr);} // prenex terminator
+PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
 SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);} // place binding tag
-ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // predicate unit transformation
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
 TAY_clause = expr:(free_prefix* spaces? TAY) {return _node("TAY_clause", expr);} // number / string terminator
 TAY_clause_elidible = expr:(TAY_clause?) {return (expr == "" || !expr) ? ["TAY"] : _node_empty("TAY_clause_elidible", expr);}
-CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);} // predicate link
+VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // chaining tags
 XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} // borrowing
 XE_clause = expr:(free_prefix* spaces? XE) {return _node("XE_clause", expr);} // grammatical quote starter
 XEY_clause = expr:(free_prefix* spaces? XEY free_post*) {return _node("XEY_clause", expr);} // grammatical quote terminator
 XI_clause = expr:(free_prefix* spaces? XI) {return _node("XI_clause", expr);} // one word quote
 XU_clause = expr:(free_prefix* spaces? XU) {return _node("XU_clause", expr);} // foreign quote
+ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // predicate unit transformation
 
 // PARTICLE FAMILIES
 A = expr:(&particle (a)) {return _node("A", expr);}
@@ -274,18 +274,6 @@ I = expr:(&particle (i)) {return _node("I", expr);}
 O = expr:(&particle (o)) {return _node("O", expr);}
 U = expr:(&particle (u)) {return _node("U", expr);}
 
-PA = expr:(&particle !(PAY &post_word) (p &a vtail)) {return _node("PA", expr);}
-PAY = expr:(&particle (p a y)) {return _node("PAY", expr);}
-BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
-VA = expr:(&particle (v vtail)) {return _node("VA", expr);}
-PU = expr:(&particle (p u)) {return _node("PU", expr);}
-PE = expr:(&particle (p e)) {return _node("PE", expr);}
-PEY = expr:(&particle (p e y)) {return _node("PEY", expr);}
-PO = expr:(&particle (p o)) {return _node("PO", expr);}
-POY = expr:(&particle (p o y)) {return _node("POY", expr);}
-FA = expr:(&particle (f vtail)) {return _node("FA", expr);}
-DA = expr:(&particle (d aeiou)) {return _node("DA", expr);}
-DAY = expr:(&particle (d aeiou y)) {return _node("DAY", expr);}
 BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BAY = expr:(&particle (b a y)) {return _node("BAY", expr);}
 BE = expr:(&particle (b e)) {return _node("BE", expr);}
@@ -293,8 +281,12 @@ BEY = expr:(&particle (b e y)) {return _node("BEY", expr);}
 BI = expr:(&particle (b i)) {return _node("BI", expr);}
 BO = expr:(&particle (b o)) {return _node("BO", expr);}
 BOY = expr:(&particle (b o y)) {return _node("BOY", expr);}
+BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
 BU = expr:(&particle (b u)) {return _node("BU", expr);}
-MA = expr:(&particle (m vtail)) {return _node("MA", expr);}
+CA = expr:(&particle (c vtail)) {return _node("CA", expr);}
+DA = expr:(&particle (d aeiou)) {return _node("DA", expr);}
+DAY = expr:(&particle (d aeiou y)) {return _node("DAY", expr);}
+FA = expr:(&particle (f vtail)) {return _node("FA", expr);}
 JA = expr:(&particle (j a vtail_1?)) {return _node("JA", expr);}
 JAY = expr:(&particle (j a y)) {return _node("JAY", expr);}
 JE = expr:(&particle (j &e vtail)) {return _node("JE", expr);}
@@ -302,16 +294,24 @@ JI = expr:(&particle (j &(i / y) vtail)) {return _node("JI", expr);}
 JO = expr:(&particle (j o)) {return _node("JO", expr);}
 JOY = expr:(&particle (j o y)) {return _node("JOY", expr);}
 JU = expr:(&particle (j u)) {return _node("JU", expr);}
+MA = expr:(&particle (m vtail)) {return _node("MA", expr);}
+PA = expr:(&particle !(PAY &post_word) (p &a vtail)) {return _node("PA", expr);}
+PAY = expr:(&particle (p a y)) {return _node("PAY", expr);}
+PE = expr:(&particle (p e)) {return _node("PE", expr);}
+PEY = expr:(&particle (p e y)) {return _node("PEY", expr);}
+PO = expr:(&particle (p o)) {return _node("PO", expr);}
+POY = expr:(&particle (p o y)) {return _node("POY", expr);}
+PU = expr:(&particle (p u)) {return _node("PU", expr);}
 SA = expr:(&particle (s vtail)) {return _node("SA", expr);}
-ZA = expr:(&particle (z vtail)) {return _node("ZA", expr);}
 TA = expr:(&particle !(TAY &post_word) (t vtail) / digit) {return _node("TA", expr);}
 TAY = expr:(&particle (t a y)) {return _node("TAY", expr);}
-CA = expr:(&particle (c vtail)) {return _node("CA", expr);}
+VA = expr:(&particle (v vtail)) {return _node("VA", expr);}
 XA = expr:(&particle (x &a vtail)) {return _node("XA", expr);}
 XE = expr:(&particle (x e)) {return _node("XE", expr);}
 XEY = expr:(&particle (x e y)) {return _node("XEY", expr);}
 XI = expr:(&particle (x &(i / y) vtail)) {return _node("XI", expr);}
 XU = expr:(&particle (x &(u / w) vtail)) {return _node("XU", expr);}
+ZA = expr:(&particle (z vtail)) {return _node("ZA", expr);}
 
 // MORPHOLOGY
 // - Forein text quoting

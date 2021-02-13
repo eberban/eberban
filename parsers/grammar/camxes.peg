@@ -94,21 +94,6 @@ I_clause            <- free_prefix* spaces? I                   # 3-words compou
 O_clause            <- free_prefix* spaces? O                   # 4-words compound
 U_clause            <- free_prefix* spaces? U                   # n-words compound starter and terminator
 
-PA_clause           <- free_prefix* spaces? PA                  # abstractors starter
-PAY_clause          <- free_prefix* spaces? PAY free_post*      # abstractors terminator
-PAY_clause_elidible <- PAY_clause?
-BQ_clause           <- free_prefix* spaces? BQ                  # letters
-VA_clause           <- free_prefix* spaces? VA free_post*       # chaining tags
-PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
-PE_clause           <- free_prefix* spaces? PE free_post*       # proposition starter
-PE_clause_elidible  <- PE_clause?
-PEY_clause          <- free_prefix* spaces? PEY free_post*      # proposition terminator
-PEY_clause_elidible <- PEY_clause?
-PO_clause           <- free_prefix* spaces? PO free_post*       # prenex starter/separator
-POY_clause          <- free_prefix* spaces? POY free_post*      # prenex terminator
-FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
-DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
-DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
 BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
 BAY_clause          <- free_prefix* spaces? BAY                 # post negation
 BE_clause           <- free_prefix* spaces? BE                  # forethought connective starter
@@ -117,8 +102,12 @@ BEY_clause_elidible <- BEY_clause?
 BI_clause           <- free_prefix* spaces? BI                  # forethought connective separator
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
 BOY_clause          <- free_prefix* spaces? BOY                 # chaining place import
+BQ_clause           <- free_prefix* spaces? BQ                  # letters
 BU_clause           <- free_prefix* spaces? BU                  # parser version/dialect
-MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
+CA_clause           <- free_prefix* spaces? CA                  # predicate link
+DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
+DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
+FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
 JA_clause           <- spaces? JA                               # free scope started
 JAY_clause          <- spaces? JAY                              # free scope terminator
 JE_clause           <- free_prefix* spaces? JE                  # free discursive (predicate)
@@ -126,17 +115,28 @@ JI_clause           <- free_prefix* spaces? JI                  # free indicator
 JO_clause           <- free_prefix* spaces? JO                  # free parenthetical started (text)
 JOY_clause          <- free_prefix* spaces? JOY                 # free parenthetical terminator
 JU_clause           <- free_prefix* spaces? JU                  # free subscript
+MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
+PA_clause           <- free_prefix* spaces? PA                  # abstractors starter
+PAY_clause          <- free_prefix* spaces? PAY free_post*      # abstractors terminator
+PAY_clause_elidible <- PAY_clause?
+PE_clause           <- free_prefix* spaces? PE free_post*       # proposition starter
+PE_clause_elidible  <- PE_clause?
+PEY_clause          <- free_prefix* spaces? PEY free_post*      # proposition terminator
+PEY_clause_elidible <- PEY_clause?
+PO_clause           <- free_prefix* spaces? PO free_post*       # prenex starter/separator
+POY_clause          <- free_prefix* spaces? POY free_post*      # prenex terminator
+PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA                  # place binding tag
-ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit transformation
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
 TAY_clause          <- free_prefix* spaces? TAY                 # number / string terminator
 TAY_clause_elidible <- TAY_clause?
-CA_clause           <- free_prefix* spaces? CA                  # predicate link
+VA_clause           <- free_prefix* spaces? VA free_post*       # chaining tags
 XA_clause           <- free_prefix* spaces? XA                  # borrowing
 XE_clause           <- free_prefix* spaces? XE                  # grammatical quote starter
 XEY_clause          <- free_prefix* spaces? XEY free_post*      # grammatical quote terminator
 XI_clause           <- free_prefix* spaces? XI                  # one word quote
 XU_clause           <- free_prefix* spaces? XU                  # foreign quote
+ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit transformation
 
 # PARTICLE FAMILIES
 A     <- &particle (a)
@@ -145,18 +145,6 @@ I     <- &particle (i)
 O     <- &particle (o)
 U     <- &particle (u)
 
-PA    <- &particle !(PAY &post_word) (p &a vtail)
-PAY   <- &particle (p a y)
-BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
-VA    <- &particle (v vtail)
-PU    <- &particle (p u)
-PE    <- &particle (p e)
-PEY   <- &particle (p e y)
-PO    <- &particle (p o)
-POY   <- &particle (p o y)
-FA    <- &particle (f vtail)
-DA    <- &particle (d aeiou)
-DAY   <- &particle (d aeiou y)
 BA    <- &particle (b a)
 BAY   <- &particle (b a y)
 BE    <- &particle (b e)
@@ -164,8 +152,12 @@ BEY   <- &particle (b e y)
 BI    <- &particle (b i)
 BO    <- &particle (b o)
 BOY   <- &particle (b o y)
+BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
 BU    <- &particle (b u)
-MA    <- &particle (m vtail)
+CA    <- &particle (c vtail)
+DA    <- &particle (d aeiou)
+DAY   <- &particle (d aeiou y)
+FA    <- &particle (f vtail)
 JA    <- &particle (j a vtail_1?)
 JAY   <- &particle (j a y)
 JE    <- &particle (j &e vtail)
@@ -173,16 +165,24 @@ JI    <- &particle (j &(i / y) vtail)
 JO    <- &particle (j o)
 JOY   <- &particle (j o y)
 JU    <- &particle (j u)
+MA    <- &particle (m vtail)
+PA    <- &particle !(PAY &post_word) (p &a vtail)
+PAY   <- &particle (p a y)
+PE    <- &particle (p e)
+PEY   <- &particle (p e y)
+PO    <- &particle (p o)
+POY   <- &particle (p o y)
+PU    <- &particle (p u)
 SA    <- &particle (s vtail)
-ZA    <- &particle (z vtail)
 TA    <- &particle !(TAY &post_word) (t vtail) / digit
 TAY   <- &particle (t a y)
-CA    <- &particle (c vtail)
+VA    <- &particle (v vtail)
 XA    <- &particle (x &a vtail)
 XE    <- &particle (x e)
 XEY   <- &particle (x e y)
 XI    <- &particle (x &(i / y) vtail)
 XU    <- &particle (x &(u / w) vtail)
+ZA    <- &particle (z vtail)
 
 # MORPHOLOGY
 # - Forein text quoting
