@@ -70,11 +70,11 @@ number_string <- TA_clause (TA_clause / BQ_clause)*
 letter_string <- BQ_clause (TA_clause / BQ_clause)*
 
 # afterthough connectives
-day <- BA_clause? SA_clause? DAY_clause BAY_clause? free_post*
+day <- BA_clause? DAY_clause BAY_clause? free_post*
 da <- DA_clause
 
 # forethough connectives
-beday <- BE_clause SA_clause? DAY_clause BAY_clause? free_post*
+beday <- BE_clause DAY_clause BAY_clause? free_post*
 bi <- BI_clause BAY_clause? free_post*
 
 # free prefix

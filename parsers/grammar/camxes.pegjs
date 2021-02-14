@@ -199,11 +199,11 @@ number_string = expr:(TA_clause (TA_clause / BQ_clause)*) {return _node("number_
 letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_string", expr);}
 
 // afterthough connectives
-day = expr:(BA_clause? SA_clause? DAY_clause BAY_clause? free_post*) {return _node("day", expr);}
+day = expr:(BA_clause? DAY_clause BAY_clause? free_post*) {return _node("day", expr);}
 da = expr:(DA_clause) {return _node("da", expr);}
 
 // forethough connectives
-beday = expr:(BE_clause SA_clause? DAY_clause BAY_clause? free_post*) {return _node("beday", expr);}
+beday = expr:(BE_clause DAY_clause BAY_clause? free_post*) {return _node("beday", expr);}
 bi = expr:(BI_clause BAY_clause? free_post*) {return _node("bi", expr);}
 
 // free prefix

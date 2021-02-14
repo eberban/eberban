@@ -3042,7 +3042,7 @@ var camxes = (function() {
     }
 
     function peg$parseday() {
-      var s0, s1, s2, s3, s4, s5, s6, s7;
+      var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 208 + 44,
           cached = peg$cache[key];
@@ -3059,31 +3059,22 @@ var camxes = (function() {
         s2 = peg$c1;
       }
       if (s2 !== peg$FAILED) {
-        s3 = peg$parseSA_clause();
-        if (s3 === peg$FAILED) {
-          s3 = peg$c1;
-        }
+        s3 = peg$parseDAY_clause();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parseDAY_clause();
+          s4 = peg$parseBAY_clause();
+          if (s4 === peg$FAILED) {
+            s4 = peg$c1;
+          }
           if (s4 !== peg$FAILED) {
-            s5 = peg$parseBAY_clause();
-            if (s5 === peg$FAILED) {
-              s5 = peg$c1;
+            s5 = [];
+            s6 = peg$parsefree_post();
+            while (s6 !== peg$FAILED) {
+              s5.push(s6);
+              s6 = peg$parsefree_post();
             }
             if (s5 !== peg$FAILED) {
-              s6 = [];
-              s7 = peg$parsefree_post();
-              while (s7 !== peg$FAILED) {
-                s6.push(s7);
-                s7 = peg$parsefree_post();
-              }
-              if (s6 !== peg$FAILED) {
-                s2 = [s2, s3, s4, s5, s6];
-                s1 = s2;
-              } else {
-                peg$currPos = s1;
-                s1 = peg$c0;
-              }
+              s2 = [s2, s3, s4, s5];
+              s1 = s2;
             } else {
               peg$currPos = s1;
               s1 = peg$c0;
@@ -3136,7 +3127,7 @@ var camxes = (function() {
     }
 
     function peg$parsebeday() {
-      var s0, s1, s2, s3, s4, s5, s6, s7;
+      var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 208 + 46,
           cached = peg$cache[key];
@@ -3150,31 +3141,22 @@ var camxes = (function() {
       s1 = peg$currPos;
       s2 = peg$parseBE_clause();
       if (s2 !== peg$FAILED) {
-        s3 = peg$parseSA_clause();
-        if (s3 === peg$FAILED) {
-          s3 = peg$c1;
-        }
+        s3 = peg$parseDAY_clause();
         if (s3 !== peg$FAILED) {
-          s4 = peg$parseDAY_clause();
+          s4 = peg$parseBAY_clause();
+          if (s4 === peg$FAILED) {
+            s4 = peg$c1;
+          }
           if (s4 !== peg$FAILED) {
-            s5 = peg$parseBAY_clause();
-            if (s5 === peg$FAILED) {
-              s5 = peg$c1;
+            s5 = [];
+            s6 = peg$parsefree_post();
+            while (s6 !== peg$FAILED) {
+              s5.push(s6);
+              s6 = peg$parsefree_post();
             }
             if (s5 !== peg$FAILED) {
-              s6 = [];
-              s7 = peg$parsefree_post();
-              while (s7 !== peg$FAILED) {
-                s6.push(s7);
-                s7 = peg$parsefree_post();
-              }
-              if (s6 !== peg$FAILED) {
-                s2 = [s2, s3, s4, s5, s6];
-                s1 = s2;
-              } else {
-                peg$currPos = s1;
-                s1 = peg$c0;
-              }
+              s2 = [s2, s3, s4, s5];
+              s1 = s2;
             } else {
               peg$currPos = s1;
               s1 = peg$c0;
