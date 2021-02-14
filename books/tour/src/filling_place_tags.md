@@ -1,4 +1,4 @@
-# Predicate places [FA/KO]
+# Filling place tags [FA/KO]
 
 Predicate place tags are used to fill the places of a proposition.
 They may apply to either existing places of the main predicate ("numbered places") or other special places (e.g. "imported places").
