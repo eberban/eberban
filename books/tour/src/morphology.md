@@ -1,19 +1,22 @@
 # Morphology
 
 The morphology of eberban is quite simple. In terms of letters, there are 6
-vowels (**a, e, i, o, u, y**), 17 consonants (**b, c, d, f, g, j, k, l, m, n, p,
-r, s, t, v, x, z**), and a semi-consonant **h**, for a total of 24 letters.
+vowels (**a, e, i, o, u, q**), 17 consonants (**b, c, d, f, g, j, k, l, m, n, p,
+r, s, t, v, x, z**), 2 semi-vowels *w* and *y* and a semi-consonant **h**,
+for a total of 26 letters.
 There is also one symbol denoting a pause in speech, namely the apostrophe
 **'**, which is optional in written media as long as there are spaces alongside
 it. Among the consonants, three special ones are designated
-(alveolar) **sonorants** (**l, n, r**).
+(alveolar) **sonorants** : **l, n, r**.
 
 ## Letter conventions
 
 While discussing letters, the following conventions are used:
-1. A vowel tail, represented as __V__, denotes any chain of vowels or diphthongs
-   separated by **h** or a sonorant.
-2. A __C__ denotes exactly one consonant (including sonorants).
+1. A __C__ denotes exactly one consonant (including sonorants).
+2. A vowel-tail, represented as __V__, denotes a chain of vowels separated by
+   a semi-vowel, **h** or a sonorant (w, y, h, n, l, r). The first vowel can
+   be preceded by a semi-vowel. **h** or sonorants can be preceded by **y**.
+   A final **y** at the end of the word is also allowed.
 
 ## Words
 
@@ -29,23 +32,19 @@ worry about it for now, as this will only be covered later.
 __Remark:__ If you are familiar with Lojban, you may view particles as analogous
 to cmavo, and roots as analogous to gismu.
 
-Particles always follow the pattern __V__ or the pattern __CV__. In particular,
-they always have exactly zero or one consonants and one or more vowels and/or
-apostrophes. On the
+Particles always follow the pattern __V__ or the pattern __CV__. On the
 other hand, roots always follow either the pattern __VC__, __CVC__, __CCV__
-or __CCVC__.
+or __CCVC__. The final __C__ must be a sonorant.
 <!--In particular, they always have exactly two consonants and one or more vowels and/or apostrophes.-->
 
 Particles and roots starting with a vowel or a sonorant are technically preceded by a
-pause `'`, which may be omitted in writing if there are spaces alongside it. 
-They may never end with a non-sonorant.
+pause, which may be omitted in writing if there are spaces alongside it. 
 
 Borrowings have the same starting rules, but may end in any letter, always
 followed by a pause.
 
 In written media, a sequence of words is typically, but not necessarily,
 separated by spaces (" ").
-
 
 >  **For the advanced reader:** you may have noticed that all words start with
 >  either a vowel or sonorant (preceded by a pause), or a non-sonorant; and that all
@@ -93,14 +92,3 @@ The following table lists all permissible consonant pairs.
 | vl  | vr  | ml  | mr  |     |     |     |        |
 |     |     |     |     |     |     |     | &nbsp; |
 | tc  | ts  | dj  | dz  |
-
-## Permissible diphthongs
-
-Not all diphthongs pairs are allowed either.
-The following table lists all permissible diphthongs.
-
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |
-|     |     | ai  | ei  | oi  | yi  |
-| ia  | ie  | ii  | io  | iu  | iy  |
-| ua  | ue  | ui  | uo  | uu  | uy  |
