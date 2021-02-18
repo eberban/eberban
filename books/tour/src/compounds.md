@@ -23,20 +23,20 @@ rule of a particle.
 
 ## Examples
 
-### ada
-___ is a paragraph composed of sentence(s) ___
+### apu
+_A_ is a paragraph composed of sentence(s) _E_.
 
-- *da* is the particle to start a paragraph (explaned later in the book)
+- *pu* is the particle to start a paragraph (explaned later in the book)
 
 ### eberban
-___ is the eberban language spoken by ___
+_A_ is the eberban language spoken by _E_.
 
-- ber : ___ reflects this (eberban) language/culture/nationality/community is aspect/property [___1]
-- ban : ___ is a language spoken by ___
+- ber : _A_ reflects this (eberban) language/culture/nationality/community is aspect/property [_E_]
+- ban : _A_ is a language spoken by _E_.
 
-### esfeprei
-___ is a mother of ___
+### etyevqn
+_A_ is a Tuesday.
 
-- sfe : ___ is female
-- prei : ___ is a parent of/raises ___
+- tye : number 2.
+- vqn : _A_ is a day.
     
