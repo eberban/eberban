@@ -16,7 +16,7 @@
 - [Filling place tags [FA/BO]](filling_place_tags.md)
 - [Place binding tags [SA]](place_binding_tags.md)
 - [Predicate unit transformation [ZA]](predicate_unit_transformation.md)
-- [Text structure [PE/PI/PO/PU]](text_structure.md)
+- [Text structure [PE/PO/PU]](text_structure.md)
 - [Abstractors [PA]](abstractors.md)
 - [Predicate chaining [VA/BOY]](predicate_chaining.md)
 - [Free modifiers [JA]](free_modifiers.md)
