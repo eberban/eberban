@@ -20,8 +20,8 @@ called relations.
 
 Predicates have a precise definition which define their place structure.
 
-- `_A_` represents an open place. `A` can be replaced with `E`, `I`, `O` or `U`,
-  which are vowels used in many particles families to indicate a place.
+- _A_ (`_A_`) represents an open place. _A_ can be replaced with _E_, _I_, _O_
+  or _U_, which are vowels used in many particles families to indicate a place.
 - Next to the letter the arity of the place can be added. If there is no number,
   it defaults to 1-ary.
 - As we'll see later, a core concept of the language is "predicate chaining",
@@ -31,9 +31,7 @@ Predicates have a precise definition which define their place structure.
 
 > **Example :**
 >
-> ```eng
-> tun: _A_ agrees with _E_ than [_I0_] is true.
-> ```
+> > tun: _A_ agrees with _E_ than [_I0_] is true.
 >
 > Both the 1st and 2nd place expects an property binding. The 3rd place expects
 > a proposition, and is the default chaining place.
