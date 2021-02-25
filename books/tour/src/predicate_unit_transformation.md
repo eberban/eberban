@@ -7,7 +7,7 @@ right (no chaining). Used or filled places comes from the new place structure.
 
 | Word | Definition                                                                        |
 | ---- | --------------------------------------------------------------------------------- |
-| za   | _A_ is named [predicate]                                                          |
+| za   | A is named [predicate]                                                          |
 | zay  | SA question : what transformation would make the proposition true ?               |
 | ze   | use the predicate as a predicate variable name (instead of using `mya` and alike) |
 |      | &nbsp;                                                                            |

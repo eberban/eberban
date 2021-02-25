@@ -34,7 +34,7 @@ to cmavo, and roots as analogous to gismu.
 
 Particles always follow the pattern __V__ or the pattern __CV__. On the
 other hand, roots always follow either the pattern __VC__, __CVC__, __CCV__
-or __CCVC__. The final __C__ must be a sonorant.
+or __CCVC__. The final __C__ (if any) must be a sonorant.
 <!--In particular, they always have exactly two consonants and one or more vowels and/or apostrophes.-->
 
 Particles and roots starting with a vowel or a sonorant are technically preceded by a

@@ -5,7 +5,7 @@ Quotes allow embedding text into the discourse.
 ## Single word quote [XI]
 
 **xi** allows quoting the next word, ignoring its grammar. The quote has the
-place structure "_A_ is word [word]". **xiy** will instead express the family
+place structure "A is word [word]". **xiy** will instead express the family
 of the word (specific particle family or root).
 
 ## Grammatical quote [XE]

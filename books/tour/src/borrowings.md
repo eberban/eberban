@@ -11,9 +11,9 @@ pauses between a term made of multiple foreign words, should be borrowed using
 *h*. Incompatible chains of consonants should be borrowed using a buffer vowel,
 such as *q*.
 
-Their place structure is "_A_ is a [word]". Having a generic place structure
+Their place structure is "A is a [word]". Having a generic place structure
 makes comprehension easier to a listener/reader who might not be familiar with
 the borrowed word.
 
 **xay** is used to import foreign names, by having the place structure
-"_A_ is named [name]".
+"A is named [name]".

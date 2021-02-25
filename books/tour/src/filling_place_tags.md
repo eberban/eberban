@@ -39,9 +39,9 @@ With **bo**, it's possible to import the first place of the following predicate
 spi fa mi fe mo bo ple ska
 = I talk to you using a computer.
 
-ple: _A_ is a tool used by _E_ to satisfy property [_I_]
+ple: A is a tool used by E to satisfy property [I]
 bo ple : "with-tool:"
-ska : _A_ is a computer
+ska : A is a computer
 ```
 
 `bo ple` imports the place expressing the concept of *a tool* to tell which tool
@@ -57,8 +57,8 @@ val fa mo fey spu
 = Is a house your origin or destination ?
 = Are you going to or coming back from home ?
 
-val: _A_ goes from _E_ to _I_
-spu: _A_ is a nest/house/home for _E_
+val: A goes from E to I
+spu: A is a nest/house/home for E
 ```
 
-Does "a house" fill the _E_ position (origin) or _I_ position (destination) ?
+Does "a house" fill the E position (origin) or I position (destination) ?

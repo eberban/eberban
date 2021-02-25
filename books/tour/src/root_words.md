@@ -5,9 +5,9 @@ building block of more complex predicates.
 
 ## Example of some root words
 
-| Word | Definition                                                                 |
-| ---- | -------------------------------------------------------------------------- |
-| sfe  | _A_ is female                                                              |
-| sni  | _A_ greets/say hello to _E_                                                |
-| pli  | _A_ is a tool used for satisfying property [_E_]                           |
-| cfe  | _A_ is with/accompanies/is a companion of _E_ in satisfying property [_I_] |
+| Word | Definition                                                           |
+| ---- | -------------------------------------------------------------------- |
+| sfe  | A is female                                                          |
+| sni  | A greets/say hello to E                                              |
+| pli  | A is a tool used for satisfying property [E]                         |
+| cfe  | A is with/accompanies/is a companion of E in satisfying property [I] |

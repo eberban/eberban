@@ -12,7 +12,7 @@ acts as one predicate.
 If the first word of the chain is a **TA**, the chain means :
 
 ```eng
-_A_ is the number [number] in dimension/cardinality/property [_E_] (default = unit)
+A is the number [number] in dimension/cardinality/property [E] (default = unit)
 ```
 
 The 2nd place allow to use a property as a dimension/cardinality. This is used
@@ -58,7 +58,7 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 | Letter     | Representation in eberban          |
 | ---------- | ---------------------------------- |
 | Vowels     | *ahq, ehq, ihq, ohq, uhq, qhq*     |
-| Consonants | consonant + y (*by, cy*, &hellip;) |
+| Consonants | consonant + q (*bq, cq*, &hellip;) |
 | y / w      | *yq* / *wq*                        |
 | H          | *qha*                              |
 | '          | *yhe*                              |

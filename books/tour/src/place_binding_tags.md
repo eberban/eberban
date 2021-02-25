@@ -22,18 +22,18 @@ the filling predicate is bound to the filled place.
 don fa mi fe ple
 = I like a tool.
 
-don: _A_ likes than _E_ (default: _A_) satisfy property [_I_] (default: contextual)
-                     |
-               ple: _A_ is a tool used by _E_ to satisfy property [_I_]
+don: A likes that E (default: A) satisfy property [I] (default: contextual)
+                  |
+             ple: A is a tool used by E to satisfy property [I]
 ```
 
 ```ebb
 don fa mi fe se ple
-= I like a user.
+= I like a tool-user.
 
-       don: _A_ likes than _E_ (default: _A_) satisfy property [_I_] (default: contextual)
-                            | 
-ple: _A_ is a tool used by _E_ to satisfy property [_I_]
+       don: A likes that E (default: A) satisfy property [I] (default: contextual)
+                         | 
+ple: A is a tool used by E to satisfy property [I]
 ```
 
 > **SA** and **ZA** can be interleaved.
