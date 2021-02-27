@@ -7,17 +7,14 @@ the discourse itself. All particles starting with **m** are member of **MA**.
 
 Pronouns are expressed with the following particles :
 
-| Word  | Definition                                              |
-| ----- | ------------------------------------------------------- |
-| mi    | A is me/a speaker/author                                |
-| mo    | A is you, a listener                                    |
-| miho  | A is me/a speaker/author & you a listener               |
-| mihoy | A is me/a speaker/author & you a listener & others      |
-| mihi  | A is me/a speaker/author & others but no you a listener |
-| moha  | A is you (imperative), make it true for you, a listener |
-| mahi  | A is this here, near a speaker                          |
-| maho  | A is that here, near a listener                         |
-| mahu  | A is that younder, far from speaker and listener        |
+| Word | Definition                                       |
+| ---- | ------------------------------------------------ |
+| mi   | A is me/a speaker/author                         |
+| mo   | A is you, a listener                             |
+| moy  | A is someone, neither a speaker or listener      |
+| mohi | A is this here, near a speaker                   |
+| moho | A is that here, near a listener                  |
+| mohu | A is that younder, far from speaker and listener |
 
 ## Variables / 3rd person pronouns
 
@@ -50,16 +47,16 @@ went to a party"*. The following particles allow to express similar things :
 Counting takes only into account complete proposition, and ignore proposition
 that are currently being defined when the word is used.
 
-Using subscripts **JU** (explained in another chapter) allow to refer to more distant predicates.
+Using subscripts **ja** (explained in another chapter) allow to refer to more distant predicates.
 
 ## Specials
 
-| Word | Definition                                                                                              |
-| ---- | ------------------------------------------------------------------------------------------------------- |
-| ma   | binds a variable within an abstraction that represents an open space (using in `pa` abstractions)       |
-| me   | predicate question / fill the blank question.                                                           |
-| mu   | elliptical/unspecified predicate, corresponds to the *null value*                                       |
-| muha | when the content of a place is overwritten, it represents the previous content/value of the place       |
-| muhe | binds to the relativized object of a relative clause (see predicate links **CA** and adverbials **fi**) |
-| muhi | referers to the current topic (see prenex **PO**)                                                       |
+| Word | Definition                                                                                        |
+| ---- | ------------------------------------------------------------------------------------------------- |
+| ma   | binds a variable within an abstraction that represents an open space (using in `pa` abstractions) |
+| may  | binds to the relativized object of a relative clause                                              |
+| me   | predicate question / fill the blank question.                                                     |
+| mey  | referers to the current topic (see prenex **PO**)                                                 |
+| mu   | elliptical/unspecified predicate, corresponds to the *null value*                                 |
+| muy  | when the content of a place is overwritten, it represents the previous content/value of the place |
 
