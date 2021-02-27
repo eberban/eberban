@@ -1,12 +1,12 @@
 {
-  "name": "ilmentufa",
+  "name": "eberban",
   "version": "0.0.0",
-  "description": "A  syntactical and not yet semantical parser for the Lojban language",
+  "description": "eberban language parser",
   "dependencies": {
     "pegjs": ">=0.7.0 <=0.8.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ilmen-vodhr/ilmentufa"
+    "url": "https://github.com/mia-entropy/eberban"
   }
 }

@@ -21,7 +21,7 @@ expressive.
 > works only with predicates themselves.
 
 For more resources about the language, please visit this repository's [GitHub pages](https://mia-entropy.github.io/eberban/).
-Among others, you will find an [in-depth tour of the language](https://mia-entropy.github.io/eberban/books/tour/book/) (WIP at the moment), a [visual parser](https://mia-entropy.github.io/eberban/parsers/frontends/parser_box_glosser.html) and a succint illustration of our [custom writing system](https://mia-entropy.github.io/eberban/vectors/writing_system.svg).
+Among others, you will find an [in-depth tour of the language](https://mia-entropy.github.io/eberban/books/tour/book/) (WIP at the moment), a [visual parser](https://mia-entropy.github.io/eberban/parsers/web/parser_box_glosser.html) and a succint illustration of our [custom writing system](https://mia-entropy.github.io/eberban/images/writing_system.svg).
 If you would like to get involved, please also consider joining our [Discord server](https://discord.com/invite/KKB79RwWUc).
 
 For details on how to build the parser and/or the grammar files, please check [docs/Parser.md](docs/Parser.md).
