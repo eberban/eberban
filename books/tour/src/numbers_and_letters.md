@@ -52,7 +52,7 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 |      |                                       |      | &nbsp;                                |
 | tey  | \\(10^3\\) (thousands) separator      | teya | \\(10^6\\) separator                  |
 | teye | \\(10^9\\) separator                  | teyi | \\(10^{12}\\) separator               |
-| teyo | \\(10^{16}\\) separator               | teyu | \\(10^{19}\\) separator               |
+| teyo | \\(10^{15}\\) separator               | teyu | \\(10^{18}\\) separator               |
 |      |                                       |      | &nbsp;                                |
 | to   | negative sign                         | toy  | number/digit question                 |
 
