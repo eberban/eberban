@@ -23,8 +23,3 @@
 - [Connectives [DA]]()
 - [Predicate links [CA]](predicate_links.md)
 - [Forethough connectives [BE/BI/BEI]]()
-
-- [Vocabulary]()
-  - [Useful concepts]()
-  - [Space and time](space_and_time.md)
-  - [Emotions]()

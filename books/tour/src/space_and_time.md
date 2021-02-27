@@ -1,4 +1,6 @@
-# Space and time (t-)
+# Space and time
+
+> **OUTDATED**
 
 By default, space and time informations are contextual, and must be provided
 explicitly to narrow down the propositions.
