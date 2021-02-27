@@ -207,14 +207,14 @@ beday = expr:(BE_clause DAY_clause BAY_clause? free_post*) {return _node("beday"
 bi = expr:(BI_clause BAY_clause? free_post*) {return _node("bi", expr);}
 
 // free prefix
-free_prefix = expr:(JA_clause) {return _node("free_prefix", expr);}
+free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}
 
 // free suffix
-free_post = expr:(JAY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript) {return _node("free_post", expr);}
+free_post = expr:(JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript) {return _node("free_post", expr);}
+free_subscript = expr:(JA_clause string) {return _node("free_subscript", expr);}
 free_discursive = expr:(JE_clause predicate_unit+) {return _node("free_discursive", expr);}
 free_indicator = expr:(JI_clause) {return _node("free_indicator", expr);}
 free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_parenthetical", expr);}
-free_subscript = expr:(JU_clause string) {return _node("free_subscript", expr);}
 
 // PARTICLES CLAUSES
 A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);} // 1-word compound
@@ -237,13 +237,13 @@ CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);} //
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // set creator
 DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // logical connectives
 FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
-JA_clause = expr:(spaces? JA) {return _node("JA_clause", expr);} // free scope started
-JAY_clause = expr:(spaces? JAY) {return _node("JAY_clause", expr);} // free scope terminator
+JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);} // free subscript
 JE_clause = expr:(free_prefix* spaces? JE) {return _node("JE_clause", expr);} // free discursive (predicate)
-JI_clause = expr:(free_prefix* spaces? JI) {return _node("JI_clause", expr);} // free indicator (marker)
+JI_clause = expr:(free_prefix* spaces? JI) {return _node("JI_clause", expr);} // free suffix (indicator / marker)
 JO_clause = expr:(free_prefix* spaces? JO) {return _node("JO_clause", expr);} // free parenthetical started (text)
 JOY_clause = expr:(free_prefix* spaces? JOY) {return _node("JOY_clause", expr);} // free parenthetical terminator
-JU_clause = expr:(free_prefix* spaces? JU) {return _node("JU_clause", expr);} // free subscript
+JU_clause = expr:(spaces? JU) {return _node("JU_clause", expr);} // free prefix / scope starter
+JUY_clause = expr:(spaces? JUY) {return _node("JUY_clause", expr);} // free scope terminator
 MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // surrogate predicates (pronouns, ...)
 PA_clause = expr:(free_prefix* spaces? PA) {return _node("PA_clause", expr);} // abstractors starter
 PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // abstractors terminator
@@ -287,13 +287,13 @@ CA = expr:(&particle (c vtail)) {return _node("CA", expr);}
 DA = expr:(&particle (d aeiou)) {return _node("DA", expr);}
 DAY = expr:(&particle (d aeiou y)) {return _node("DAY", expr);}
 FA = expr:(&particle (f vtail)) {return _node("FA", expr);}
-JA = expr:(&particle (j a vtail_1?)) {return _node("JA", expr);}
-JAY = expr:(&particle (j a y)) {return _node("JAY", expr);}
+JA = expr:(&particle (j a)) {return _node("JA", expr);}
 JE = expr:(&particle (j &e vtail)) {return _node("JE", expr);}
 JI = expr:(&particle (j &(i / y) vtail)) {return _node("JI", expr);}
 JO = expr:(&particle (j o)) {return _node("JO", expr);}
 JOY = expr:(&particle (j o y)) {return _node("JOY", expr);}
-JU = expr:(&particle (j u)) {return _node("JU", expr);}
+JU = expr:(&particle !(JUY &post_word) (j &(u / w) vtail)) {return _node("JU", expr);}
+JUY = expr:(&particle (j u y)) {return _node("JUY", expr);}
 MA = expr:(&particle (m vtail)) {return _node("MA", expr);}
 PA = expr:(&particle !(PAY &post_word) (p &a vtail)) {return _node("PA", expr);}
 PAY = expr:(&particle (p a y)) {return _node("PAY", expr);}

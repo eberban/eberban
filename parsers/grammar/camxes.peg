@@ -78,14 +78,14 @@ beday <- BE_clause DAY_clause BAY_clause? free_post*
 bi <- BI_clause BAY_clause? free_post*
 
 # free prefix
-free_prefix <- JA_clause
+free_prefix <- JU_clause
 
 # free suffix
-free_post <- JAY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
+free_post <- JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
+free_subscript <- JA_clause string
 free_discursive <- JE_clause predicate_unit+
 free_indicator <- JI_clause
 free_parenthetical <- JO_clause text_1 JOY_clause
-free_subscript <- JU_clause string
 
 # PARTICLES CLAUSES
 A_clause            <- free_prefix* spaces? A                   # 1-word compound
@@ -108,13 +108,13 @@ CA_clause           <- free_prefix* spaces? CA                  # predicate link
 DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
-JA_clause           <- spaces? JA                               # free scope started
-JAY_clause          <- spaces? JAY                              # free scope terminator
+JA_clause           <- free_prefix* spaces? JA                  # free subscript
 JE_clause           <- free_prefix* spaces? JE                  # free discursive (predicate)
-JI_clause           <- free_prefix* spaces? JI                  # free indicator (marker)
+JI_clause           <- free_prefix* spaces? JI                  # free suffix (indicator / marker)
 JO_clause           <- free_prefix* spaces? JO                  # free parenthetical started (text)
 JOY_clause          <- free_prefix* spaces? JOY                 # free parenthetical terminator
-JU_clause           <- free_prefix* spaces? JU                  # free subscript
+JU_clause           <- spaces? JU                               # free prefix / scope starter
+JUY_clause          <- spaces? JUY                              # free scope terminator
 MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
 PA_clause           <- free_prefix* spaces? PA                  # abstractors starter
 PAY_clause          <- free_prefix* spaces? PAY free_post*      # abstractors terminator
@@ -158,13 +158,13 @@ CA    <- &particle (c vtail)
 DA    <- &particle (d aeiou)
 DAY   <- &particle (d aeiou y)
 FA    <- &particle (f vtail)
-JA    <- &particle (j a vtail_1?)
-JAY   <- &particle (j a y)
+JA    <- &particle (j a)
 JE    <- &particle (j &e vtail)
 JI    <- &particle (j &(i / y) vtail)
 JO    <- &particle (j o)
 JOY   <- &particle (j o y)
-JU    <- &particle (j u)
+JU    <- &particle !(JUY &post_word) (j &(u / w) vtail)
+JUY   <- &particle (j u y)
 MA    <- &particle (m vtail)
 PA    <- &particle !(PAY &post_word) (p &a vtail)
 PAY   <- &particle (p a y)
