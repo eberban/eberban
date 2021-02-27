@@ -48,10 +48,15 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 | twuy | F (15)                                | ta   | 0                                     |
 |      |                                       |      | &nbsp;                                |
 | te   | decimal separator                     | teha | `<base . number>` separator           |
-| tehe | thousands separator                   | tehi | `<precise . approximation>` separator |
-| teho | `<number . repeating part>` separator |      |                                       |
+| tehe | `<precise . approximation>` separator | tehi | `<number . repeating part>` separator |
 |      |                                       |      | &nbsp;                                |
-| to   | number/digit question                 | toha | negative sign                         |
+| tey  | \\(10^3\\) (thousands) separator      | teya | \\(10^6\\) separator                  |
+| teye | \\(10^9\\) separator                  | teyi | \\(10^{12}\\) separator               |
+| teyo | \\(10^{16}\\) separator               | teyu | \\(10^{19}\\) separator               |
+|      |                                       |      | &nbsp;                                |
+| to   | negative sign                         | toy  | number/digit question                 |
+
+> TODO : Explain multiple \\(10^n\\) separators.
 
 ## BY members
 
@@ -61,4 +66,4 @@ In fact, it is only needed to separate 2 adjacent chains that **should not** mer
 | Consonants | consonant + q (*bq, cq*, &hellip;) |
 | y / w      | *yq* / *wq*                        |
 | H          | *qha*                              |
-| '          | *yhe*                              |
+| '          | *qhe*                              |
