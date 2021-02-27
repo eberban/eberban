@@ -20,7 +20,8 @@ such as chains and filled place, use **pa** abstractor.
 | Word   | Meaning                                                                                |
 | ------ | -------------------------------------------------------------------------------------- |
 | *ji*   | True/false question marker. Ask specificaly if marked word makes the proposition true. |
-| *jihi* | Indirect question marker. Transform a question word into an indirect question.         |
+| *jiha* | Indirect question marker. Transform a question word into an indirect question.         |
+| *jihe* | Imperative. The tagged predicate should make it true.                                  |
 | *jya*  | However/but/in contrast.                                                               |
 | *jye*  | Ditto.                                                                                 |
 | *jyi*  | Similarly.                                                                             |
