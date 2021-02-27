@@ -14,7 +14,7 @@ it. Among the consonants, three special ones are designated
 While discussing letters, the following conventions are used:
 1. A __C__ denotes exactly one consonant (including sonorants).
 2. A vowel-tail, represented as __V__, denotes a chain of vowels separated by
-   a semi-vowel, **h** or a sonorant (w, y, h, n, l, r). The first vowel can
+   a semi-vowel, **h** or a sonorant (n, l, r). The first vowel can
    be preceded by a semi-vowel. **h** or sonorants can be preceded by **y**.
    A final **y** at the end of the word is also allowed.
 
