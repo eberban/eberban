@@ -21,7 +21,7 @@
 | t      | [t]                | an unvoiced dental/alveolar stop |
 | k      | [k]                | an unvoiced velar stop           |
 | f      | [f]                | an unvoiced labial fricative     |
-| m      | [m]                | a voiced bilabial nasal          |
+| x      | [x]                | an unvoiced velar fricative      |
 | s      | [s]                | an unvoiced alveolar sibilant    |
 | c      | [ʃ], [ʂ]           | an unvoiced coronal sibilant     |
 | &nbsp; |
@@ -29,7 +29,7 @@
 | d      | [d]                | a voiced dental/alveolar stop    |
 | g      | [ɡ]                | a voiced velar stop              |
 | v      | [v]                | a voiced labial fricative        |
-| x      | [x]                | an unvoiced velar fricative      |
+| m      | [m]                | a voiced bilabial nasal          |
 | z      | [z]                | a voiced alveolar sibilant       |
 | j      | [ʒ], [ʐ]           | a voiced coronal sibilant        |
 
