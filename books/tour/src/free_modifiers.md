@@ -26,11 +26,11 @@ such as chains and filled place, use **pa** abstractor.
 | *jye*  | Ditto.                                                                                 |
 | *jyi*  | Similarly.                                                                             |
 | *jyo*  | Additionally.                                                                          |
-| *jyu*  | Uniquely, only, solely.                                                                |
+| *jyu*  | Uniquely/only/ solely.                                                                 |
 
 ## Parenthetical note [JO]
 
-**ko** and it's terminator **joy** allow to add a parenthetical note. This note
+**jo** and it's terminator **joy** allow to add a parenthetical note. This note
 can be any valid eberban text.
 
 ## Prefix markers [JU]

@@ -5,11 +5,11 @@ specify how it should be used. It doesn't modify the place structure.
 
 | Word | Definition                                                |
 | ---- | --------------------------------------------------------- |
-| sa   | tags 1st place                                            |
-| se   | tags 2nd place                                            |
-| si   | tags 3nd place                                            |
-| so   | tags 4nd place                                            |
-| su   | tags 5nd place                                            |
+| sa   | tags A place                                            |
+| se   | tags E place                                            |
+| si   | tags I place                                            |
+| so   | tags O place                                            |
+| su   | tags U place                                            |
 |      | &nbsp;                                                    |
 | say  | SA question : which tag would make the proposition true ? | 
 | sey | something related to the predicate (vague transformation)      |

@@ -14,7 +14,7 @@ A prenex allows to provide predicates before giving the main predicate
 of the propositon. They can be used for 2 things :
 
 - Declare variables ahead.
-- Provide a topic (**muhi** will refer to the latest topic)
+- Provide a topic (**mey** will refer to the latest topic)
 
 ## Paragraphs, chapters, sections, ... [PU]
 

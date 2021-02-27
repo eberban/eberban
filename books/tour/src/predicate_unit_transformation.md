@@ -8,11 +8,11 @@ right (no chaining). Used or filled places comes from the new place structure.
 | Word | Definition                                                                        |
 | ---- | --------------------------------------------------------------------------------- |
 | za   | A is named [predicate]                                                          |
-| zay  | SA question : what transformation would make the proposition true ?               |
+| zay  | ZA question : what transformation would make the proposition true ?               |
 | ze   | use the predicate as a predicate variable name (instead of using `mya` and alike) |
 |      | &nbsp;                                                                            |
 |      | *The following don't change the place structure but change the meaning:*          |
-| zwa  | contrary scalar negator : othan than .. (scale or set is implied)                 |
+| zwa  | contrary scalar negator : other than .. (scale or set is implied)                 |
 | zwe  | polar opposite scalar negator : not a .. (no scale is implied)                    |
 | zwi  | midpoint scalar negator : not really ..                                           |
 

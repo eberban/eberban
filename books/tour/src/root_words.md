@@ -10,4 +10,3 @@ building block of more complex predicates.
 | sfe  | A is female                                                          |
 | sni  | A greets/say hello to E                                              |
 | pli  | A is a tool used for satisfying property [E]                         |
-| cfe  | A is with/accompanies/is a companion of E in satisfying property [I] |

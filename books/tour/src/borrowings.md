@@ -17,3 +17,7 @@ the borrowed word.
 
 **xay** is used to import foreign names, by having the place structure
 "A is named [name]".
+
+**xaha** is used to import a foreign word with an arbitrary place structure
+infered from the context. Its usage should be rare, and can be used currently
+to import lojban words that may not have a translation yet.
