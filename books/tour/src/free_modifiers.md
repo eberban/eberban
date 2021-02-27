@@ -17,16 +17,16 @@ such as chains and filled place, use **pa** abstractor.
 
 ## Suffix markers [JI]
 
-| Word   | Meaning                                                                                |
-| ------ | -------------------------------------------------------------------------------------- |
-| *ji*   | True/false question marker. Ask specificaly if marked word makes the proposition true. |
-| *jiha* | Indirect question marker. Transform a question word into an indirect question.         |
-| *jihe* | Imperative. The tagged predicate should make it true.                                  |
-| *jya*  | However/but/in contrast.                                                               |
-| *jye*  | Ditto.                                                                                 |
-| *jyi*  | Similarly.                                                                             |
-| *jyo*  | Additionally.                                                                          |
-| *jyu*  | Uniquely/only/ solely.                                                                 |
+| Word   | Meaning                                                                        |
+| ------ | ------------------------------------------------------------------------------ |
+| *ji*   | Ask if the proposition is true, with emphasis placed on the marked word.       |
+| *jiha* | Indirect question marker. Transform a question word into an indirect question. |
+| *jihe* | Imperative. The tagged predicate should make it true.                          |
+| *jya*  | However/but/in contrast.                                                       |
+| *jye*  | Ditto.                                                                         |
+| *jyi*  | Similarly.                                                                     |
+| *jyo*  | Additionally.                                                                  |
+| *jyu*  | Uniquely/only/ solely.                                                         |
 
 ## Parenthetical note [JO]
 

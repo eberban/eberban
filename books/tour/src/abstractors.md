@@ -48,7 +48,7 @@ be filled by a new numbered place (inserted right after all pre-existing ones).
 | spi                  | A talks to E               |
 | ba spi du ple ma bai | A talks to E using-tool: I |
 
-Sample sentence: ``pa spi du ple ma bai fa mi fe mo fi ska`` &ndash; ``I talk to
+Sample sentence: ``pa spi du ple ma pay fa mi fe mo fi ska`` &ndash; ``I talk to
 you using-tool a computer``.
 
 Technically `ma` could be used to fill numbered places as well, not only
