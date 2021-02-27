@@ -1,38 +1,25 @@
 # Summary
 
 - [Introduction](introduction.md)
-  - [Phonology]()
   - [Morphology](morphology.md)
+  - [Phonology](phonology.md)
   - [Predicates and propositions](predicates_and_propositions.md)
   
 - [Basic predicates](basic_predicates.md)
   - [Root words [R]](root_words.md)
   - [Surrogate predicates [MA]](surrogate_predicates.md)
-  - [Numbers and letters [TA/BY]](numbers_and_letters.md)
+  - [Numbers and letters [TA/BQ]](numbers_and_letters.md)
   - [Compounds [C]](compounds.md)
-  - [Borrowings [ZA]](borrowings.md)
-  - [Quotes [ZE/ZI/ZU]](quotes.md)
+  - [Borrowings [XA]](borrowings.md)
+  - [Quotes [XE/XI/XU]](quotes.md)
 
-- [Predicate modification [SA]](predicate_modification.md)
-
-- [Predicate places [FA/DU]](predicate_places.md)
-
-- [Predicate chaining](predicate_chaining.md)
-  - [Alternative chaining [CA]](alternative_chaining.md)
-  - [Predicate links [VA]](predicate_links.md)
-
-- [Free modifiers [LA/LE/LI/LO/LU]](free_modifiers.md)
-
-- [Abstractors [BA]](abstractors.md)
-
-- [Distributivity]()
-  - [Text structure [DA/DE]]()
-  - [Place connectives [JA/JAI]]()
-  - [Place distribution [JA+DO]]()
-
-- [Forethough connections [KA/KI]]()
-
-- [Vocabulary]()
-  - [Useful concepts]()
-  - [Space and time (t-)](space_and_time.md)
-  - [Emotions]()
+- [Filling place tags [FA/BO]](filling_place_tags.md)
+- [Place binding tags [SA]](place_binding_tags.md)
+- [Predicate unit transformation [ZA]](predicate_unit_transformation.md)
+- [Text structure [PE/PO/PU]](text_structure.md)
+- [Abstractors [PA]](abstractors.md)
+- [Predicate chaining [VA/BOY]](predicate_chaining.md)
+- [Free modifiers [JA]](free_modifiers.md)
+- [Connectives [DA]]()
+- [Predicate links [CA]](predicate_links.md)
+- [Forethough connectives [BE/BI/BEI]]()
