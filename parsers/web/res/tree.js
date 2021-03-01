@@ -80,7 +80,8 @@ var map = [
 	[ 'paragraph', 'paragraph' ],
 	[ 'sentence', 'sentence' ],
 	[ 'prenex', 'prenex' ],
-	[ 'proposition', 'proposition' ],
+	[ 'predicate_scope_1', 'scope' ],
+	// [ 'proposition_1', 'proposition' ],
 
 	// predicate
 	[ 'predicate_unit', 'predicate' ],
@@ -97,7 +98,7 @@ var map = [
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
-	[ 'abstraction', 'abstraction' ],
+	[ 'predicate_subscope', 'subscope' ],
 	[ 'number_string', 'number' ],
 	[ 'letter_string', 'letters' ],
 
