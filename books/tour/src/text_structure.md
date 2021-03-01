@@ -1,6 +1,6 @@
-# Text structure [PE/PO/PU]
+# Text structure [PA/PO/PU]
 
-## Propositions [PE + PEY]
+## Propositions [PA + PAY]
 
 **pe** indicates the start of a proposition, while **pey** indicates the end
 of it. Both are elidable, meaning they can be removed if the text would not
