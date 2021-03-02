@@ -8,7 +8,7 @@ parser_version <- BU_clause (!parser_version_number borrowing_content (pause_cha
 parser_version_number <- spaces? TA+
 
 # main text rule
-text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs spaces? EOF?
+text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*

@@ -708,6 +708,9 @@ var camxes = (function() {
       }
       if (s2 !== peg$FAILED) {
         s3 = peg$parseparagraphs();
+        if (s3 === peg$FAILED) {
+          s3 = peg$c1;
+        }
         if (s3 !== peg$FAILED) {
           s4 = peg$parsespaces();
           if (s4 === peg$FAILED) {

@@ -137,7 +137,7 @@ parser_version = expr:(BU_clause (!parser_version_number borrowing_content (paus
 parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
 
 // main text rule
-text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragraphs spaces? EOF?) {return _node("text_1", expr);}
+text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragraphs? spaces? EOF?) {return _node("text_1", expr);}
 
 // text structure
 paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
