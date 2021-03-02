@@ -148,7 +148,8 @@ fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / pr
 
 // predicate scopes
 predicate_scope = expr:(predicate_scope_1 (day predicate_scope_1)*) {return _node("predicate_scope", expr);}
-predicate_scope_1 = expr:(PA_clause_elidible prenex? BA_clause* predicate_chaining PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
+predicate_scope_1 = expr:(PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
+predicate_scope_2 = expr:(predicate_chaining (DA_clause predicate_chaining)*) {return _node("predicate_scope_2", expr);}
 prenex = expr:((PO_clause prenex_term)+ POY_clause) {return _node("prenex", expr);}
 prenex_term = expr:(predicate_term) {return _node("prenex_term", expr);}
 
@@ -165,7 +166,7 @@ predicate_place_import = expr:(BO_clause predicate_unit) {return _node("predicat
 predicate_term = expr:(predicate_term_day / predicate_term_1) {return _node("predicate_term", expr);}
 predicate_term_day = expr:(predicate_term_1 (day predicate_term_1)+) {return _node("predicate_term_day", expr);}
 predicate_term_1 = expr:(predicate_term_da / predicate_term_2) {return _node("predicate_term_1", expr);}
-predicate_term_da = expr:(predicate_term_2 (da predicate_term_2)+) {return _node("predicate_term_da", expr);}
+predicate_term_da = expr:(predicate_term_2 (DA_clause predicate_term_2)+) {return _node("predicate_term_da", expr);}
 predicate_term_2 = expr:(predicate_unit+) {return _node("predicate_term_2", expr);}
 
 predicate_unit = expr:((SA_clause / ZA_clause)* predicate_unit_1) {return _node("predicate_unit", expr);}
@@ -200,7 +201,6 @@ letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_
 
 // connectives
 day = expr:(BA_clause? DAY_clause BAY_clause? free_post*) {return _node("day", expr);}
-da = expr:(DA_clause) {return _node("da", expr);}
 
 // free prefix
 free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}

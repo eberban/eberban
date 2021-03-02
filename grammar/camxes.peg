@@ -19,7 +19,8 @@ fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predica
 
 # predicate scopes
 predicate_scope <- predicate_scope_1 (day predicate_scope_1)*
-predicate_scope_1 <- PA_clause_elidible prenex? BA_clause* predicate_chaining PAY_clause_elidible
+predicate_scope_1 <- PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible
+predicate_scope_2 <- predicate_chaining (DA_clause predicate_chaining)*
 prenex <- (PO_clause prenex_term)+ POY_clause
 prenex_term <- predicate_term
 
