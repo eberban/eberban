@@ -137,15 +137,18 @@ parser_version = expr:(BU_clause (!parser_version_number borrowing_content (paus
 parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
 
 // main text rule
-text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?) {return _node("text_1", expr);}
+text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragraphs spaces? EOF?) {return _node("text_1", expr);}
 
-// sentences
-paragraph = expr:(PU_clause+ sentence*) {return _node("paragraph", expr);}
-sentence = expr:(predicate_scope) {return _node("sentence", expr);}
+// text structure
+paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
+paragraph = expr:(PU_clause* sentence (&PA_clause sentence)*) {return _node("paragraph", expr);}
+sentence = expr:(fragments_sentence / predicate_scope) {return _node("sentence", expr);}
+fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {return _node("fragments_sentence", expr);}
+fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import) {return _node("fragment", expr);}
 
+// predicate scopes
 predicate_scope = expr:(predicate_scope_1 (day predicate_scope_1)*) {return _node("predicate_scope", expr);}
 predicate_scope_1 = expr:(PA_clause_elidible prenex? BA_clause* predicate_chaining PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
-
 prenex = expr:((PO_clause prenex_term)+ POY_clause) {return _node("prenex", expr);}
 prenex_term = expr:(predicate_term) {return _node("prenex_term", expr);}
 

@@ -8,15 +8,18 @@ parser_version <- BU_clause (!parser_version_number borrowing_content (pause_cha
 parser_version_number <- spaces? TA+
 
 # main text rule
-text_1 <- (free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
+text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs spaces? EOF?
 
-# sentences
-paragraph <- PU_clause+ sentence*
-sentence <- predicate_scope
+# text structure
+paragraphs <- paragraph (&PU_clause paragraph)*
+paragraph <- PU_clause* sentence (&PA_clause sentence)*
+sentence <- fragments_sentence / predicate_scope
+fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
+fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
 
+# predicate scopes
 predicate_scope <- predicate_scope_1 (day predicate_scope_1)*
 predicate_scope_1 <- PA_clause_elidible prenex? BA_clause* predicate_chaining PAY_clause_elidible
-
 prenex <- (PO_clause prenex_term)+ POY_clause
 prenex_term <- predicate_term
 
@@ -33,7 +36,7 @@ predicate_place_import <- BO_clause predicate_unit
 predicate_term <- predicate_term_day / predicate_term_1
 predicate_term_day <- predicate_term_1 (day predicate_term_1)+
 predicate_term_1 <- predicate_term_da / predicate_term_2
-predicate_term_da <- predicate_term_2 (da predicate_term_2)+
+predicate_term_da <- predicate_term_2 (DA_clause predicate_term_2)+
 predicate_term_2 <- predicate_unit+
 
 predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
@@ -68,7 +71,6 @@ letter_string <- BQ_clause (TA_clause / BQ_clause)*
 
 # connectives
 day <- BA_clause? DAY_clause BAY_clause? free_post*
-da <- DA_clause
 
 # free prefix
 free_prefix <- JU_clause

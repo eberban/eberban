@@ -821,7 +821,7 @@ cir:
   _family: "R"
   eng_long: "A is a system with components E forming structure I."
   eng_short: "system"
-dal:  
+dan:  
   _family: "R"
   eng_long: "A is a member of set [E]."
   eng_short: "set member"
