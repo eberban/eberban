@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.16
+# eberban PEG grammar - v0.17
 # ===========================
 
 # GRAMMAR
@@ -8,26 +8,28 @@ parser_version <- BU_clause (!parser_version_number borrowing_content (pause_cha
 parser_version_number <- spaces? TA+
 
 # main text rule
-text_1 <- (free_indicator / free_discursive / free_parenthetical)* (paragraph+ / sentence*) spaces? EOF?
+text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? spaces? EOF?
 
-# sentences
-paragraph <- PU_clause+ sentence*
-sentence <- proposition
+# text structure
+paragraphs <- paragraph (&PU_clause paragraph)*
+paragraph <- PU_clause* sentence (&PA_clause sentence)*
+sentence <- fragments_sentence / predicate_scope
+fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
+fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
 
-proposition <- proposition_1 (day proposition_1)*
-proposition_1 <- proposition_beday / PE_clause_elidible prenex? BA_clause* predicate_chaining PEY_clause_elidible
-proposition_beday <- beday proposition (bi proposition)+ BEY_clause_elidible
-
+# predicate scopes
+predicate_scope <- predicate_scope_1 (day predicate_scope_1)*
+predicate_scope_1 <- PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible
+predicate_scope_2 <- predicate_chaining (DA_clause predicate_chaining)*
 prenex <- (PO_clause prenex_term)+ POY_clause
-prenex_term <- predicate_term predicate_link*
+prenex_term <- predicate_term
 
 predicate_chaining <- predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?
 predicate_chaining_tag <- VA_clause / predicate_chaining_import
 predicate_chaining_import <- BOY_clause predicate_unit
 
 predicate_filling <- predicate_unit predicate_filled_place+
-predicate_filled_place <- predicate_place_tag+ predicate_term predicate_link*
-predicate_link <- CA_clause predicate_unit+
+predicate_filled_place <- predicate_place_tag+ predicate_term
 
 predicate_place_tag <- FA_clause / predicate_place_import
 predicate_place_import <- BO_clause predicate_unit
@@ -35,12 +37,11 @@ predicate_place_import <- BO_clause predicate_unit
 predicate_term <- predicate_term_day / predicate_term_1
 predicate_term_day <- predicate_term_1 (day predicate_term_1)+
 predicate_term_1 <- predicate_term_da / predicate_term_2
-predicate_term_da <- predicate_term_2 (da predicate_term_2)+
-predicate_term_2 <- predicate_term_beday / predicate_unit+
-predicate_term_beday <- beday predicate_term (bi predicate_term)+ BEY_clause_elidible
+predicate_term_da <- predicate_term_2 (DA_clause predicate_term_2)+
+predicate_term_2 <- predicate_unit+
 
 predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
-predicate_unit_1 <- compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / abstraction / MA_clause / free_prefix* spaces? (root / string) free_post*
+predicate_unit_1 <- compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / predicate_subscope / MA_clause / free_prefix* spaces? (root / string) free_post*
 
 # compound prefixes
 compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) &post_word
@@ -61,21 +62,16 @@ one_word_quote <- XI_clause spaces? native_word
 foreign_quote <- XU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
 
-# abstractions
-abstraction <- PA_clause proposition PAY_clause_elidible
+# sub-scopes
+predicate_subscope <- PE_clause predicate_scope PEY_clause_elidible
 
 # string (numbers / literals)
 string <- (number_string / letter_string) TAY_clause_elidible
 number_string <- TA_clause (TA_clause / BQ_clause)*
 letter_string <- BQ_clause (TA_clause / BQ_clause)*
 
-# afterthough connectives
+# connectives
 day <- BA_clause? DAY_clause BAY_clause? free_post*
-da <- DA_clause
-
-# forethough connectives
-beday <- BE_clause DAY_clause BAY_clause? free_post*
-bi <- BI_clause BAY_clause? free_post*
 
 # free prefix
 free_prefix <- JU_clause
@@ -96,15 +92,10 @@ U_clause            <- free_prefix* spaces? U                   # n-words compou
 
 BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
 BAY_clause          <- free_prefix* spaces? BAY                 # post negation
-BE_clause           <- free_prefix* spaces? BE                  # forethought connective starter
-BEY_clause          <- free_prefix* spaces? BEY free_post*      # forethought connective terminator
-BEY_clause_elidible <- BEY_clause?
-BI_clause           <- free_prefix* spaces? BI                  # forethought connective separator
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
 BOY_clause          <- free_prefix* spaces? BOY                 # chaining place import
 BQ_clause           <- free_prefix* spaces? BQ                  # letters
 BU_clause           <- free_prefix* spaces? BU                  # parser version/dialect
-CA_clause           <- free_prefix* spaces? CA                  # predicate link
 DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
@@ -116,12 +107,12 @@ JOY_clause          <- free_prefix* spaces? JOY                 # free parenthet
 JU_clause           <- spaces? JU                               # free prefix / scope starter
 JUY_clause          <- spaces? JUY                              # free scope terminator
 MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
-PA_clause           <- free_prefix* spaces? PA                  # abstractors starter
-PAY_clause          <- free_prefix* spaces? PAY free_post*      # abstractors terminator
+PA_clause           <- free_prefix* spaces? PA free_post*       # predicate scope starter
+PA_clause_elidible  <- PA_clause?
+PAY_clause          <- free_prefix* spaces? PAY free_post*      # predicate scope terminator
 PAY_clause_elidible <- PAY_clause?
-PE_clause           <- free_prefix* spaces? PE free_post*       # proposition starter
-PE_clause_elidible  <- PE_clause?
-PEY_clause          <- free_prefix* spaces? PEY free_post*      # proposition terminator
+PE_clause           <- free_prefix* spaces? PE                  # predicate subscope starter
+PEY_clause          <- free_prefix* spaces? PEY free_post*      # predicate subscope terminator
 PEY_clause_elidible <- PEY_clause?
 PO_clause           <- free_prefix* spaces? PO free_post*       # prenex starter/separator
 POY_clause          <- free_prefix* spaces? POY free_post*      # prenex terminator
@@ -154,7 +145,6 @@ BO    <- &particle (b o)
 BOY   <- &particle (b o y)
 BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
 BU    <- &particle (b u)
-CA    <- &particle (c vtail)
 DA    <- &particle (d aeiou)
 DAY   <- &particle (d aeiou y)
 FA    <- &particle (f vtail)
@@ -166,7 +156,7 @@ JOY   <- &particle (j o y)
 JU    <- &particle !(JUY &post_word) (j &(u / w) vtail)
 JUY   <- &particle (j u y)
 MA    <- &particle (m vtail)
-PA    <- &particle !(PAY &post_word) (p &a vtail)
+PA    <- &particle (p a)
 PAY   <- &particle (p a y)
 PE    <- &particle (p e)
 PEY   <- &particle (p e y)

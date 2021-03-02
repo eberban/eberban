@@ -13,7 +13,7 @@ the language for variables.
 
 **je** attaches a predicate (without chaining) to the previous word to make a
 discursive, for example to provide emotions. To provide more complex predicates
-such as chains and filled place, use **pa** abstractor.
+such as chains and filled place, use **pe** abstractor.
 
 ## Suffix markers [JI]
 

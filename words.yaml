@@ -533,11 +533,11 @@ zwi:
   eng_short: "not really"
 pe:
   _family: "PE"
-  eng_long: "Start of a proposition."
+  eng_long: "Start of predicate subscope."
   eng_short: ""
 pey:
   _family: "PEY"
-  eng_long: "End of a proposition."
+  eng_long: "End of a predicate subscope."
   eng_short: ""
 po:
   _family: "PO"
@@ -545,7 +545,7 @@ po:
   eng_short: ""
 poy:
   _family: "POY"
-  eng_long: "Marks the end of the prenex part of a proposition."
+  eng_long: "Marks the end of the prenex part of a predicate scope."
   eng_short: ""
 pu:
   _family: "PU"
@@ -553,11 +553,11 @@ pu:
   eng_short: ""
 pa:
   _family: "PA"
-  eng_long: "Starts an abstraction."
+  eng_long: "Starts a predicate scope."
   eng_short: ""
 pay:
   _family: "PAY"
-  eng_long: "Ends an abstraction."
+  eng_long: "Ends an predicate scope."
   eng_short: ""
 ja:
   _family: "JA"
@@ -631,22 +631,6 @@ juy:
   _family: "JUY"
   eng_long: "Ends a free scope."
   eng_short: ""
-ca:
-  _family: "CA"
-  eng_long: "predicate variable affectation. one side should be prefixed with jwe. If no jwe is present the right variable is affected the left value."
-  eng_short: "var affectation"
-ce:
-  _family: "CA"
-  eng_long: "which is associated with ... (can be used to quickly express possession)"
-  eng_short: "associated with"
-cye:
-  _family: "CA"
-  eng_long: "restrictive relative clause : [left] is restricted to cases where it satisfies [right] 1st place"
-  eng_short: "restrictive relative clause"
-cyi:
-  _family: "CA"
-  eng_long: "non-restrictive relative clause : adds incidental information"
-  eng_short: "non-restrictive relative clause"
 ba:
   _family: "BA"
   eng_long: "Proposition negation."
@@ -654,18 +638,6 @@ ba:
 bay:
   _family: "BAY"
   eng_long: "Allow to negate various particles."
-  eng_short: ""
-be:
-  _family: "BE"
-  eng_long: "Starts forethough connective."
-  eng_short: ""
-bey:
-  _family: "BEY"
-  eng_long: "Ends forethough connective."
-  eng_short: ""
-bi:
-  _family: "BI"
-  eng_long: "Separate forethough connective elements."
   eng_short: ""
 bu:
   _family: "BU"
@@ -747,11 +719,11 @@ tan:
   eng_short: "every"
 gza:
   _family: "R"
-  eng_long: "A (default value of E0) is an agentive cause of event [E0]"
+  eng_long: "A (default value of E-A) is an agentive cause of event [E0]"
   eng_short: "does"
 zbe:
   _family: "R"
-  eng_long: "A learns/studies fact [E0] about I (default value of E0)."
+  eng_long: "A learns/studies fact [E0] about I (default value of E-A)."
   eng_short: "learns"
 gun:
   _family: "R"
@@ -809,6 +781,54 @@ pra:
   _family: "R"
   eng_long: "A loves [E]."
   eng_short: "loves"
+vyer:
+  _family: "R"
+  eng_long: "A visits [E] with guide I."
+  eng_short: "visits"
+sal:
+  _family: "R"
+  eng_long: "A (bound to E-A) is negligible in property/dimension [E]"
+  eng_short: "negligible"
+sel:
+  _family: "R"
+  eng_long: "A (bound to E-A) is small in property/dimension [E]"
+  eng_short: "small"
+sil:
+  _family: "R"
+  eng_long: "A (bound to E-A) is medium/average in property/dimension [E]"
+  eng_short: "medium"
+sol:
+  _family: "R"
+  eng_long: "A (bound to E-A) is large in property/dimension [E]"
+  eng_short: "large"
+sul:
+  _family: "R"
+  eng_long: "A (bound to E-A) is infinite in property/dimension [E]"
+  eng_short: "infinite"
+tca:
+  _family: "R"
+  eng_long: "A is a town/city"
+  eng_short: "city"
+zdil:
+  _family: "R"
+  eng_long: "A (bound to I-A) is amusing/entertaining to E in property I."
+  eng_short: "amusing"
+plu:
+  _family: "R"
+  eng_long: "A (bound to E-A) is complex/complicated in property E."
+  eng_short: "complicated"
+cir:
+  _family: "R"
+  eng_long: "A is a system with components E forming structure I."
+  eng_short: "system"
+dan:  
+  _family: "R"
+  eng_long: "A is a member of set [E]."
+  eng_short: "set member"
+ban:
+  _family: "R"
+  eng_long: "A is a language."
+  eng_short: "language"
 
 # Compounds (2):
 eberban:

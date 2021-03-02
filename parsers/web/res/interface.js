@@ -286,7 +286,7 @@ function constructBoxesOutput(parse, depth) {
 		}
 
 		if (boxClassForType(parse) !== 'box box-not-shown') {
-			if (parse.type !== 'scope') {
+			if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
 				output += '<br>' + parse.type;
 
 				if (parse.type === 'compound') {
@@ -334,7 +334,10 @@ function boxClassForType(parse) {
 	if (parse.type === 'prenex') {
 		return 'box box-prenex';
 	}
-	if (parse.type === "proposition") { return "box box-scope"; }
+	if (parse.type === "predicate scope") {
+		return "box box-scope";
+	}
+
 	if (parse.type === 'place') {
 		return 'box box-place';
 	}
@@ -366,8 +369,8 @@ function boxClassForType(parse) {
 	if (parse.type === 'scope') {
 		return 'box box-scope';
 	}
-	if (parse.type === 'abstraction') {
-		return 'box box-abstraction';
+	if (parse.type === 'subscope') {
+		return 'box box-subscope';
 	}
 	if (parse.type === 'borrowing') {
 		return 'box box-borrowing';
