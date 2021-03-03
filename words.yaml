@@ -21,27 +21,27 @@ u:
   eng_short: ""
 mi:
   _family: "MA"
-  eng_long: "A is me/a speaker/author."
+  eng_long: "Ⓐ is I/a speaker/author."
   eng_short: "me"
 mo:
   _family: "MA"
-  eng_long: "A is you, a listener."
+  eng_long: "Ⓐ is you, a listener."
   eng_short: "you"
 moy:
   _family: "MA"
-  eng_long: "A is someone, neither a speaker or listener."
+  eng_long: "Ⓐ is someone, neither a speaker or listener."
   eng_short: "other"
 mohi:
   _family: "MA"
-  eng_long: "A is this here, near a speaker."
+  eng_long: "Ⓐ is this here, near a speaker."
   eng_short: "this"
 moho:
   _family: "MA"
-  eng_long: "A is that here, near a listener."
+  eng_long: "Ⓐ is that here, near a listener."
   eng_short: "that"
 mohu:
   _family: "MA"
-  eng_long: "A is that younder, far from speaker and listener."
+  eng_long: "Ⓐ is that younder, far from speaker and listener."
   eng_short: "that younder"
 mya:
   _family: "MA"
@@ -333,11 +333,11 @@ toy:
   eng_short: "number?"
 xa:
   _family: "XA"
-  eng_long: "Borrowing: A is a [word]."
+  eng_long: "Borrowing: Ⓐ is a [word]."
   eng_short: ""
 xay:
   _family: "XA"
-  eng_long: "Name borrowing: A is named [word]."
+  eng_long: "Name borrowing: Ⓐ is named [word]."
   eng_short: ""
 xaha:
   _family: "XA"
@@ -361,24 +361,24 @@ xu:
   eng_short: ""
 fa:
   _family: "FA"
-  eng_long: "Fill place A of a predicate."
-  eng_short: "fill-A"
+  eng_long: "Fill place Ⓐ of a predicate."
+  eng_short: "fill-Ⓐ"
 fe:
   _family: "FA"
-  eng_long: "Fill place E of a predicate."
-  eng_short: "fill-E"
+  eng_long: "Fill place Ⓔ of a predicate."
+  eng_short: "fill-Ⓔ"
 fi:
   _family: "FA"
-  eng_long: "Fill place I of a predicate."
-  eng_short: "fill-I"
+  eng_long: "Fill place Ⓘ of a predicate."
+  eng_short: "fill-Ⓘ"
 fo:
   _family: "FA"
-  eng_long: "Fill place O of a predicate."
-  eng_short: "fill-O"
+  eng_long: "Fill place Ⓞ of a predicate."
+  eng_short: "fill-Ⓞ"
 fu:
   _family: "FA"
-  eng_long: "Fill place U of a predicate."
-  eng_short: "fill-U"
+  eng_long: "Fill place Ⓤ of a predicate."
+  eng_short: "fill-Ⓤ"
 fay:
   _family: "FA"
   eng_long: "Fill next place of a predicate."
@@ -389,24 +389,24 @@ fey:
   eng_short: "fill-?"
 va:
   _family: "VA"
-  eng_long: "Chain place A of a predicate."
-  eng_short: "chain-A"
+  eng_long: "Chain place Ⓐ of a predicate."
+  eng_short: "chain-Ⓐ"
 ve:
   _family: "VA"
-  eng_long: "Chain place E of a predicate."
-  eng_short: "chain-E"
+  eng_long: "Chain place Ⓔ of a predicate."
+  eng_short: "chain-Ⓔ"
 vi:
   _family: "VA"
-  eng_long: "Chain place I of a predicate."
-  eng_short: "chain-I"
+  eng_long: "Chain place Ⓘ of a predicate."
+  eng_short: "chain-Ⓘ"
 vo:
   _family: "VA"
-  eng_long: "Chain place O of a predicate."
-  eng_short: "chain-O"
+  eng_long: "Chain place Ⓞ of a predicate."
+  eng_short: "chain-Ⓞ"
 vu:
   _family: "VA"
-  eng_long: "Chain place U of a predicate."
-  eng_short: "chain-U"
+  eng_long: "Chain place Ⓤ of a predicate."
+  eng_short: "chain-Ⓤ"
 vya:
   _family: "VA"
   eng_long: "Logical OR chaining."
@@ -477,24 +477,24 @@ boy:
   eng_short: "chain-import"
 sa:
   _family: "SA"
-  eng_long: "A place binding tag."
-  eng_short: "bind-A"
+  eng_long: "Ⓐ place binding tag."
+  eng_short: "bind-Ⓐ"
 se:
   _family: "SA"
-  eng_long: "E place binding tag."
-  eng_short: "bind-E"
+  eng_long: "Ⓔ place binding tag."
+  eng_short: "bind-Ⓔ"
 si:
   _family: "SA"
-  eng_long: "I place binding tag."
-  eng_short: "bind-I"
+  eng_long: "Ⓘ place binding tag."
+  eng_short: "bind-Ⓘ"
 so:
   _family: "SA"
-  eng_long: "O place binding tag."
-  eng_short: "bind-O"
+  eng_long: "Ⓞ place binding tag."
+  eng_short: "bind-Ⓞ"
 su:
   _family: "SA"
-  eng_long: "U place binding tag."
-  eng_short: "bind-U"
+  eng_long: "Ⓤ place binding tag."
+  eng_short: "bind-Ⓤ"
 say:
   _family: "SA"
   eng_long: "Which place binding tag would make the proposition true ?"
@@ -509,7 +509,7 @@ soy:
   eng_short: "bind-event"
 za:
   _family: "ZA"
-  eng_long: "A is named [predicate]."
+  eng_long: "Ⓐ is named [predicate]."
   eng_short: "named"
 zay:
   _family: "ZA"
@@ -647,271 +647,271 @@ bu:
 # Roots :
 don:
   _family: "R"
-  eng_long: "A likes that E (default: A, bound to I-A) satisfies property [I] (default: contextual)."
+  eng_long: "Ⓐ likes that Ⓔ (default: Ⓐ) satisfies property [Ⓘ1] (default: contextual)."
   eng_short: "likes"
 jve:
   _family: "R"
-  eng_long: "A is a friend of [E]."
+  eng_long: "Ⓐ is a friend of [Ⓔ]."
   eng_short: "friend"
 kli:
   _family: "R"
-  eng_long: "A thanks/is thankful to E about [I0] being true."
+  eng_long: "Ⓐ thanks/is thankful to Ⓔ about [Ⓘ0] being true."
   eng_short: "thanks"
 kre:
   _family: "R"
-  eng_long: "A helps E (bound to I-A) to satisfy property [I]"
+  eng_long: "Ⓐ helps Ⓔ to satisfy property [Ⓘ1]"
   eng_short: "helps"
 lwan:
   _family: "R"
-  eng_long: "A is milk made from source/material E."
+  eng_long: "Ⓐ is milk made from source/material Ⓔ."
   eng_short: "milk"
 myan:
   _family: "R"
-  eng_long: "A is a cat."
+  eng_long: "Ⓐ is a cat."
   eng_short: "cat"
 ple:
   _family: "R"
-  eng_long: "A is a tool used by E to make I (bound to O-A) satisfy property [O]."
+  eng_long: "Ⓐ is a tool used by Ⓔ to make Ⓘ satisfy property [Ⓞ1]."
   eng_short: "tool"
 plin:
   _family: "R"
-  eng_long: "A drinks [E]."
+  eng_long: "Ⓐ drinks [Ⓔ]."
   eng_short: "drinks"
 sfe:
   _family: "R"
-  eng_long: "A is female."
+  eng_long: "Ⓐ is female."
   eng_short: "female"
 kla:
   _family: "R"
-  eng_long: "A is male."
+  eng_long: "Ⓐ is male."
   eng_short: "male"
 sfi:
   _family: "R"
-  eng_long: "A invents/creates/authors [E]"
+  eng_long: "Ⓐ invents/creates/authors [Ⓔ]"
   eng_short: "invents"
 ska:
   _family: "R"
-  eng_long: "A is a computer."
+  eng_long: "Ⓐ is a computer."
   eng_short: "computer"
 sni:
   _family: "R"
-  eng_long: "A greets/say hello to [E]."
+  eng_long: "Ⓐ greets/say hello to [Ⓔ]."
   eng_short: "greets"
 spi:
   _family: "R"
-  eng_long: "A talks to [E]."
+  eng_long: "Ⓐ talks to [Ⓔ]."
   eng_short: "talks"
 spu:
   _family: "R"
-  eng_long: "A is a nest/home for [E]."
+  eng_long: "Ⓐ is a nest/home for [Ⓔ]."
   eng_short: "home"
 tun:
   _family: "R"
-  eng_long: "A agrees with E that [I0] is true."
+  eng_long: "Ⓐ agrees with Ⓔ that [Ⓘ0] is true."
   eng_short: "agrees"
 val:
   _family: "R"
-  eng_long: "A goes from E to [I]."
+  eng_long: "Ⓐ goes from Ⓔ to [Ⓘ]."
   eng_short: "goes"
 tan:
   _family: "R"
-  eng_long: "A (bound to E-A) is the set of everything that satisfies [E]."
+  eng_long: "Ⓐ is the set of everything that satisfies [Ⓔ1]."
   eng_short: "every"
 gza:
   _family: "R"
-  eng_long: "A (default value of E-A) is an agentive cause of event [E0]"
+  eng_long: "Ⓐ (default value of Ⓔ-Ⓐ) is an agentive cause of event [Ⓔ0]"
   eng_short: "does"
 zbe:
   _family: "R"
-  eng_long: "A learns/studies fact [E0] about I (default value of E-A)."
+  eng_long: "Ⓐ learns/studies fact [Ⓔ0] about Ⓘ (default value of Ⓔ-Ⓐ)."
   eng_short: "learns"
 gun:
   _family: "R"
-  eng_long: "A (bound to E-A) labers/works by satisfying property [E]."
+  eng_long: "Ⓐ labers/works by satisfying property [Ⓔ1]."
   eng_short: "works"
 par:
   _family: "R"
-  eng_long: "[A0] is true/occurs earlier than E0 (default: now)."
+  eng_long: "[Ⓐ0] is true/occurs earlier than Ⓔ0 (default: now)."
   eng_short: "past"
 per:
   _family: "R"
-  eng_long: "[A0] is true/occurs concurrently with E0 (default: now)."
+  eng_long: "[Ⓐ0] is true/occurs concurrently with Ⓔ0 (default: now)."
   eng_short: "present"
 pir:
   _family: "R"
-  eng_long: "[A0] is true/occurs later than E0 (default: now)."
+  eng_long: "[Ⓐ0] is true/occurs later than Ⓔ0 (default: now)."
   eng_short: "future"
 jqn:
   _family: "R"
-  eng_long: "A is a year."
+  eng_long: "Ⓐ is a year."
   eng_short: "year"
 zqn:
   _family: "R"
-  eng_long: "A is a month."
+  eng_long: "Ⓐ is a month."
   eng_short: "month"
 mqn:
   _family: "R"
-  eng_long: "A is a week."
+  eng_long: "Ⓐ is a week."
   eng_short: "week"
 vqn:
   _family: "R"
-  eng_long: "A is a day."
+  eng_long: "Ⓐ is a day."
   eng_short: "day"
 gqn:
   _family: "R"
-  eng_long: "A is a hour."
+  eng_long: "Ⓐ is a hour."
   eng_short: "hour"
 dqn:
   _family: "R"
-  eng_long: "A is a minute."
+  eng_long: "Ⓐ is a minute."
   eng_short: "minute"
 bqn:
   _family: "R"
-  eng_long: "A is a second."
+  eng_long: "Ⓐ is a second."
   eng_short: "second"
 ber:
   _family: "R"
-  eng_long: "A reflects this language (eberban)."
+  eng_long: "Ⓐ reflects this language (eberban)."
   eng_short: "eberbanic"
 pre:
   _family: "R"
-  eng_long: "A is a person."
+  eng_long: "Ⓐ is a person."
   eng_short: "person"
 pra:
   _family: "R"
-  eng_long: "A loves [E]."
+  eng_long: "Ⓐ loves [Ⓔ]."
   eng_short: "loves"
 vyer:
   _family: "R"
-  eng_long: "A visits [E] with guide I."
+  eng_long: "Ⓐ visits [Ⓔ] with guide Ⓘ."
   eng_short: "visits"
 sal:
   _family: "R"
-  eng_long: "A (bound to E-A) is negligible in property/dimension [E]"
+  eng_long: "Ⓐ is negligible in property/dimension [Ⓔ1]"
   eng_short: "negligible"
 sel:
   _family: "R"
-  eng_long: "A (bound to E-A) is small in property/dimension [E]"
+  eng_long: "Ⓐ is small in property/dimension [Ⓔ1]"
   eng_short: "small"
 sil:
   _family: "R"
-  eng_long: "A (bound to E-A) is medium/average in property/dimension [E]"
+  eng_long: "Ⓐ is medium/average in property/dimension [Ⓔ1]"
   eng_short: "medium"
 sol:
   _family: "R"
-  eng_long: "A (bound to E-A) is large in property/dimension [E]"
+  eng_long: "Ⓐ is large in property/dimension [Ⓔ1]"
   eng_short: "large"
 sul:
   _family: "R"
-  eng_long: "A (bound to E-A) is infinite in property/dimension [E]"
+  eng_long: "Ⓐ is infinite in property/dimension [Ⓔ1]"
   eng_short: "infinite"
 tca:
   _family: "R"
-  eng_long: "A is a town/city"
+  eng_long: "Ⓐ is a town/city"
   eng_short: "city"
 zdil:
   _family: "R"
-  eng_long: "A (bound to I-A) is amusing/entertaining to E in property I."
+  eng_long: "Ⓐ is amusing/entertaining to Ⓔ in property Ⓘ1."
   eng_short: "amusing"
 plu:
   _family: "R"
-  eng_long: "A (bound to E-A) is complex/complicated in property E."
+  eng_long: "Ⓐ is complex/complicated in property Ⓔ1."
   eng_short: "complicated"
 cir:
   _family: "R"
-  eng_long: "A is a system with components E forming structure I."
+  eng_long: "Ⓐ is a system with components Ⓔ forming structure Ⓘ."
   eng_short: "system"
 dan:  
   _family: "R"
-  eng_long: "A is a member of set [E]."
+  eng_long: "Ⓐ is a member of set [Ⓔ]."
   eng_short: "set member"
 ban:
   _family: "R"
-  eng_long: "A is a language."
+  eng_long: "Ⓐ is a language."
   eng_short: "language"
 
 # Compounds (2):
 eberban:
   _family: "C2"
-  eng_long: "A is the eberban language."
+  eng_long: "Ⓐ is the eberban language."
   eng_short: "eberban"
 etyavqn:
   _family: "C2"
-  eng_long: "A is a Monday."
+  eng_long: "Ⓐ is a Monday."
   eng_short: "Monday"
 etyevqn:
   _family: "C2"
-  eng_long: "A is a Thusday."
+  eng_long: "Ⓐ is a Thusday."
   eng_short: "Thusday"
 etyivqn:
   _family: "C2"
-  eng_long: "A is a Wednesday."
+  eng_long: "Ⓐ is a Wednesday."
   eng_short: "Wednesday"
 etyovqn:
   _family: "C2"
-  eng_long: "A is a Thursday."
+  eng_long: "Ⓐ is a Thursday."
   eng_short: "Thursday"
 etyuvqn:
   _family: "C2"
-  eng_long: "A is a Friday."
+  eng_long: "Ⓐ is a Friday."
   eng_short: "Friday"
 etwavqn:
   _family: "C2"
-  eng_long: "A is a Saturday."
+  eng_long: "Ⓐ is a Saturday."
   eng_short: "Saturday"
 etwevqn:
   _family: "C2"
-  eng_long: "A is a Sunday."
+  eng_long: "Ⓐ is a Sunday."
   eng_short: "Sunday"
 etavqn:
   _family: "C2"
-  eng_long: "A is a Sunday."
+  eng_long: "Ⓐ is a Sunday."
   eng_short: "Sunday"
 etyajqn:
   _family: "C2"
-  eng_long: "A is a January."
+  eng_long: "Ⓐ is a January."
   eng_short: "January"
 etyejqn:
   _family: "C2"
-  eng_long: "A is a February."
+  eng_long: "Ⓐ is a February."
   eng_short: "February"
 etyijqn:
   _family: "C2"
-  eng_long: "A is a March."
+  eng_long: "Ⓐ is a March."
   eng_short: "March"
 etyojqn:
   _family: "C2"
-  eng_long: "A is a April."
+  eng_long: "Ⓐ is a April."
   eng_short: "April"
 etyujqn:
   _family: "C2"
-  eng_long: "A is a May."
+  eng_long: "Ⓐ is a May."
   eng_short: "May"
 etwajqn:
   _family: "C2"
-  eng_long: "A is a June."
+  eng_long: "Ⓐ is a June."
   eng_short: "June"
 etwejqn:
   _family: "C2"
-  eng_long: "A is a July."
+  eng_long: "Ⓐ is a July."
   eng_short: "July"
 etwijqn:
   _family: "C2"
-  eng_long: "A is a August."
+  eng_long: "Ⓐ is a August."
   eng_short: "August"
 etwojqn:
   _family: "C2"
-  eng_long: "A is a September."
+  eng_long: "Ⓐ is a September."
   eng_short: "September"
 etwujqn:
   _family: "C2"
-  eng_long: "A is a October."
+  eng_long: "Ⓐ is a October."
   eng_short: "October"
 etwayjqn:
   _family: "C2"
-  eng_long: "A is a November."
+  eng_long: "Ⓐ is a November."
   eng_short: "October"
 etweyjqn:
   _family: "C2"
-  eng_long: "A is a December."
+  eng_long: "Ⓐ is a December."
   eng_short: "December"
