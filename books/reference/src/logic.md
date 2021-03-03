@@ -34,7 +34,7 @@ represents open blanks. We can use variables to fill these blanks and write :
 thus be written as :
 
 > \\[\exists a \exists e \\: \text{is-a-cat}(a) \wedge \text{drinks}(a,e) \wedge 
-> \text{is-milk}(b)\\]
+> \text{is-milk}(e)\\]
 
 or, to match more closely how eberban grammar works :
 
@@ -75,7 +75,7 @@ definitions defining the variables, while annotations in the definition (such as
 to manipulate these variables directly, but provide particles that allowing to
 change how variables are bound together.
 
-## Second order logic
+## Second-order logic
 
 eberban is based on second-order logic, which allows to use predicate
 variables in addition to individual variables :
