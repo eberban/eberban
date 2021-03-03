@@ -1,0 +1,9 @@
+[book]
+authors = ["mia entropy"]
+language = "en"
+multilingual = false
+src = "src"
+title = "eberban Reference Grammar"
+
+[output.html]
+mathjax-support = true
