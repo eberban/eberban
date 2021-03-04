@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.17
+// eberban PEG grammar - v0.18
 // ===========================
 
 // GRAMMAR
@@ -170,7 +170,7 @@ predicate_term_da = expr:(predicate_term_2 (DA_clause predicate_term_2)+) {retur
 predicate_term_2 = expr:(predicate_unit+) {return _node("predicate_term_2", expr);}
 
 predicate_unit = expr:((SA_clause / ZA_clause)* predicate_unit_1) {return _node("predicate_unit", expr);}
-predicate_unit_1 = expr:(compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / predicate_subscope / MA_clause / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}
+predicate_unit_1 = expr:(compound free_post* / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}
 
 // compound prefixes
 compound = expr:((compound_1 / compound_2 / compound_3 / compound_4 / compound_n) &post_word) {return _node("compound", expr);}
@@ -186,6 +186,7 @@ borrowing = expr:(XA_clause borrowing_content (pause_char / space_char / EOF) fr
 borrowing_content = expr:((spaces? !sonorant / spaces &sonorant) foreign_word) {return _node("borrowing_content", expr);}
 
 // quotes
+quote = expr:(grammatical_quote / one_word_quote / foreign_quote) {return _node("quote", expr);}
 grammatical_quote = expr:(XE_clause text_1 XEY_clause) {return _node("grammatical_quote", expr);}
 one_word_quote = expr:(XI_clause spaces? native_word) {return _node("one_word_quote", expr);}
 foreign_quote = expr:(XU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
@@ -198,6 +199,12 @@ predicate_subscope = expr:(PE_clause predicate_scope PEY_clause_elidible) {retur
 string = expr:((number_string / letter_string) TAY_clause_elidible) {return _node("string", expr);}
 number_string = expr:(TA_clause (TA_clause / BQ_clause)*) {return _node("number_string", expr);}
 letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_string", expr);}
+
+// variables
+variable = expr:(variable_intrinsic / variable_individual / variable_predicate) {return _node("variable", expr);}
+variable_intrinsic = expr:(MA_clause) {return _node("variable_intrinsic", expr);}
+variable_individual = expr:(KA_clause) {return _node("variable_individual", expr);}
+variable_predicate = expr:(GA_clause) {return _node("variable_predicate", expr);}
 
 // connectives
 day = expr:(BA_clause? DAY_clause BAY_clause? free_post*) {return _node("day", expr);}
@@ -228,6 +235,7 @@ BU_clause = expr:(free_prefix* spaces? BU) {return _node("BU_clause", expr);} //
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // set creator
 DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // logical connectives
 FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
+GA_clause = expr:(free_prefix* spaces? GA free_post*) {return _node("GA_clause", expr);} // predicate variables
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);} // free subscript
 JE_clause = expr:(free_prefix* spaces? JE) {return _node("JE_clause", expr);} // free discursive (predicate)
 JI_clause = expr:(free_prefix* spaces? JI) {return _node("JI_clause", expr);} // free suffix (indicator / marker)
@@ -235,6 +243,7 @@ JO_clause = expr:(free_prefix* spaces? JO) {return _node("JO_clause", expr);} //
 JOY_clause = expr:(free_prefix* spaces? JOY) {return _node("JOY_clause", expr);} // free parenthetical terminator
 JU_clause = expr:(spaces? JU) {return _node("JU_clause", expr);} // free prefix / scope starter
 JUY_clause = expr:(spaces? JUY) {return _node("JUY_clause", expr);} // free scope terminator
+KA_clause = expr:(free_prefix* spaces? KA free_post*) {return _node("KA_clause", expr);} // individual variables
 MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // surrogate predicates (pronouns, ...)
 PA_clause = expr:(free_prefix* spaces? PA free_post*) {return _node("PA_clause", expr);} // predicate scope starter
 PA_clause_elidible = expr:(PA_clause?) {return (expr == "" || !expr) ? ["PA"] : _node_empty("PA_clause_elidible", expr);}
@@ -277,6 +286,7 @@ BU = expr:(&particle (b u)) {return _node("BU", expr);}
 DA = expr:(&particle (d aeiou)) {return _node("DA", expr);}
 DAY = expr:(&particle (d aeiou y)) {return _node("DAY", expr);}
 FA = expr:(&particle (f vtail)) {return _node("FA", expr);}
+GA = expr:(&particle (g vtail)) {return _node("GA", expr);}
 JA = expr:(&particle (j a)) {return _node("JA", expr);}
 JE = expr:(&particle (j &e vtail)) {return _node("JE", expr);}
 JI = expr:(&particle (j &(i / y) vtail)) {return _node("JI", expr);}
@@ -284,6 +294,7 @@ JO = expr:(&particle (j o)) {return _node("JO", expr);}
 JOY = expr:(&particle (j o y)) {return _node("JOY", expr);}
 JU = expr:(&particle !(JUY &post_word) (j &(u / w) vtail)) {return _node("JU", expr);}
 JUY = expr:(&particle (j u y)) {return _node("JUY", expr);}
+KA = expr:(&particle (k vtail)) {return _node("KA", expr);}
 MA = expr:(&particle (m vtail)) {return _node("MA", expr);}
 PA = expr:(&particle (p a)) {return _node("PA", expr);}
 PAY = expr:(&particle (p a y)) {return _node("PAY", expr);}

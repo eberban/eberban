@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.17
+# eberban PEG grammar - v0.18
 # ===========================
 
 # GRAMMAR
@@ -41,7 +41,7 @@ predicate_term_da <- predicate_term_2 (DA_clause predicate_term_2)+
 predicate_term_2 <- predicate_unit+
 
 predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
-predicate_unit_1 <- compound free_post* / borrowing / grammatical_quote / one_word_quote / foreign_quote / predicate_subscope / MA_clause / free_prefix* spaces? (root / string) free_post*
+predicate_unit_1 <- compound free_post* / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*
 
 # compound prefixes
 compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) &post_word
@@ -57,6 +57,7 @@ borrowing <- XA_clause borrowing_content (pause_char / space_char / EOF) free_po
 borrowing_content <- (spaces? !sonorant / spaces &sonorant) foreign_word
 
 # quotes
+quote <- grammatical_quote / one_word_quote / foreign_quote
 grammatical_quote <- XE_clause text_1 XEY_clause
 one_word_quote <- XI_clause spaces? native_word
 foreign_quote <- XU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
@@ -69,6 +70,12 @@ predicate_subscope <- PE_clause predicate_scope PEY_clause_elidible
 string <- (number_string / letter_string) TAY_clause_elidible
 number_string <- TA_clause (TA_clause / BQ_clause)*
 letter_string <- BQ_clause (TA_clause / BQ_clause)*
+
+# variables
+variable <- variable_intrinsic / variable_individual / variable_predicate
+variable_intrinsic <- MA_clause
+variable_individual <- KA_clause
+variable_predicate <- GA_clause
 
 # connectives
 day <- BA_clause? DAY_clause BAY_clause? free_post*
@@ -99,6 +106,7 @@ BU_clause           <- free_prefix* spaces? BU                  # parser version
 DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
+GA_clause           <- free_prefix* spaces? GA free_post*       # predicate variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
 JE_clause           <- free_prefix* spaces? JE                  # free discursive (predicate)
 JI_clause           <- free_prefix* spaces? JI                  # free suffix (indicator / marker)
@@ -106,6 +114,7 @@ JO_clause           <- free_prefix* spaces? JO                  # free parenthet
 JOY_clause          <- free_prefix* spaces? JOY                 # free parenthetical terminator
 JU_clause           <- spaces? JU                               # free prefix / scope starter
 JUY_clause          <- spaces? JUY                              # free scope terminator
+KA_clause           <- free_prefix* spaces? KA free_post*       # individual variables
 MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
 PA_clause           <- free_prefix* spaces? PA free_post*       # predicate scope starter
 PA_clause_elidible  <- PA_clause?
@@ -148,6 +157,7 @@ BU    <- &particle (b u)
 DA    <- &particle (d aeiou)
 DAY   <- &particle (d aeiou y)
 FA    <- &particle (f vtail)
+GA    <- &particle (g vtail)
 JA    <- &particle (j a)
 JE    <- &particle (j &e vtail)
 JI    <- &particle (j &(i / y) vtail)
@@ -155,6 +165,7 @@ JO    <- &particle (j o)
 JOY   <- &particle (j o y)
 JU    <- &particle !(JUY &post_word) (j &(u / w) vtail)
 JUY   <- &particle (j u y)
+KA    <- &particle (k vtail)
 MA    <- &particle (m vtail)
 PA    <- &particle (p a)
 PAY   <- &particle (p a y)
