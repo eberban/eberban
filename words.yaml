@@ -43,26 +43,6 @@ mohu:
   _family: "MA"
   eng_long: "Ⓐ is that younder, far from speaker and listener."
   eng_short: "that younder"
-mya:
-  _family: "MA"
-  eng_long: "Predicate variable A"
-  eng_short: "VAR-A"
-mye:
-  _family: "MA"
-  eng_long: "Predicate variable E"
-  eng_short: "VAR-E"
-myi:
-  _family: "MA"
-  eng_long: "Predicate variable I"
-  eng_short: "VAR-I"
-myo:
-  _family: "MA"
-  eng_long: "Predicate variable O"
-  eng_short: "VAR-O"
-myu:
-  _family: "MA"
-  eng_long: "Predicate variable U"
-  eng_short: "VAR-U"
 mwa:
   _family: "MA"
   eng_long: "Repeats a previous proposition (infered from context)"
@@ -93,12 +73,12 @@ may:
   eng_short: "relativized object"
 me:
   _family: "MA"
-  eng_long: "Predicate question / fill the blank question."
-  eng_short: "predicate?"
+  eng_long: "Individual question / fill the blank question."
+  eng_short: "individual?"
 mey:
   _family: "MA"
-  eng_long: "Referers to the current topic"
-  eng_short: "topic"
+  eng_long: "Predicate question / fill the blank question."
+  eng_short: "predicate?"
 mu:
   _family: "MA"
   eng_long: "Elliptical/unspecified predicate, corresponds to the null value"
@@ -671,8 +651,8 @@ myan:
   eng_short: "cat"
 ple:
   _family: "R"
-  eng_long: "Ⓐ is a tool used by Ⓔ to make Ⓘ satisfy property [Ⓞ1]."
-  eng_short: "tool"
+  eng_long: "Ⓐ use/employs Ⓔ for purpose [Ⓞ0]."
+  eng_short: "use"
 plin:
   _family: "R"
   eng_long: "Ⓐ drinks [Ⓔ]."
