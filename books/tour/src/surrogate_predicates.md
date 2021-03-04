@@ -16,6 +16,7 @@ Pronouns are expressed with the following particles :
 | moho | A is that here, near a listener                  |
 | mohu | A is that younder, far from speaker and listener |
 
+<!--
 ## Variables / 3rd person pronouns
 
 Particles starting with **mi-** are variables. They can be defined using `va`
@@ -29,6 +30,7 @@ redefined*.
 
 The current list is : mya, mye, myi, myo, myu. This list can be extended if
 needed by following the pattern `"my" + vowel + h + ...`.
+-->
 
 ## Propositions
 
