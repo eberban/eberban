@@ -19,7 +19,7 @@
   - [Compounds (C)](units/C.md)
   - [Borrowings (XA)](units/XA.md)
   - [Quotes (XE/XI/XU)](units/XE_XI_XU.md)
-  - [Subscopes (PA)](units/PA.md)
+
 
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA)]()
@@ -28,6 +28,7 @@
 
 ----
 
+- [Subscopes (PA)]()
 - [Free suffixes and prefixes]()
 - [Individuals and sets]()
 - [Text structure]()

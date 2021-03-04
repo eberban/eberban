@@ -2,18 +2,18 @@
 
 Quotes allow embedding text into the discourse.
 
-## Single word quote [XI]
-
-**xi** allows quoting the next word, ignoring its grammar. The quote has the
-place structure "Ⓐ is word [word]". **xiy** will instead express the family
-of the word (specific particle family or root).
-
 ## Grammatical quote [XE]
 
 **xe** allows quoting any grammatical eberban text, which is terminated with
 **xey**. Being grammatical, the text can be parsed and analysed by the parser. It
 can also contain inner **xe** quotes, as a **xey** will match its opening
 **xe**. "Ⓐ is text [text]".
+
+## Single word quote [XI]
+
+**xi** allows quoting the next word, ignoring its grammar. The quote has the
+place structure "Ⓐ is word [word]". **xiy** will instead express the family
+of the word (specific particle family or root).
 
 ## Foreign quote [XU]
 
