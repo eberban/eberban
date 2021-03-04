@@ -407,23 +407,23 @@ vu:
   _family: "VA"
   eng_long: "Chain place Ⓤ of a predicate."
   eng_short: "chain-Ⓤ"
-vya:
+vay:
   _family: "VA"
   eng_long: "Logical OR chaining."
   eng_short: "chain-or"
-vye:
+vey:
   _family: "VA"
   eng_long: "Logical AND chaining."
   eng_short: "chain-and"
-vyi:
+viy:
   _family: "VA"
   eng_long: "Chaining question."
   eng_short: "chain-?"
-vyo:
+voy:
   _family: "VA"
   eng_long: "Logical if-and-only-if chaining."
   eng_short: "chain-iif"
-vyu:
+vuy:
   _family: "VA"
   eng_long: "Logical whether-or-not chaining."
   eng_short: "chain-won"
