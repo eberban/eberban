@@ -270,8 +270,11 @@ function constructBoxesOutput(parse, depth) {
 		// escapeHtml(words[text[j]].long)
 
 		if (words[parse.word]) {
-			output += '<span class="translation">&nbsp;' + words[parse.word].eng_short + '&nbsp;</span>';
-		} else {
+			let short = words[parse.word].eng_short;
+			if (short) {
+				output += '<span class="translation">&nbsp;' +  escapeHtml(short) + '&nbsp;</span>';
+			}			
+		} else if (parse.type !== "KA" && parse.type !== "GA") {
 			output += '...';
 		}
 
