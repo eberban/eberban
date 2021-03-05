@@ -102,7 +102,7 @@ BAY_clause          <- free_prefix* spaces? BAY                 # post negation
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
 BOY_clause          <- free_prefix* spaces? BOY                 # chaining place import
 BQ_clause           <- free_prefix* spaces? BQ                  # letters
-BU_clause           <- free_prefix* spaces? BU                  # parser version/dialect
+BU_clause           <- spaces? BU                               # parser version/dialect
 DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
@@ -120,13 +120,13 @@ PA_clause           <- free_prefix* spaces? PA free_post*       # predicate scop
 PA_clause_elidible  <- PA_clause?
 PAY_clause          <- free_prefix* spaces? PAY free_post*      # predicate scope terminator
 PAY_clause_elidible <- PAY_clause?
-PE_clause           <- free_prefix* spaces? PE                  # predicate subscope starter
+PE_clause           <- free_prefix* spaces? PE free_post*       # predicate subscope starter
 PEY_clause          <- free_prefix* spaces? PEY free_post*      # predicate subscope terminator
 PEY_clause_elidible <- PEY_clause?
 PO_clause           <- free_prefix* spaces? PO free_post*       # prenex starter/separator
 POY_clause          <- free_prefix* spaces? POY free_post*      # prenex terminator
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
-SA_clause           <- free_prefix* spaces? SA                  # place binding tag
+SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
 TAY_clause          <- free_prefix* spaces? TAY                 # number / string terminator
 TAY_clause_elidible <- TAY_clause?

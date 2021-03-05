@@ -231,7 +231,7 @@ BAY_clause = expr:(free_prefix* spaces? BAY) {return _node("BAY_clause", expr);}
 BO_clause = expr:(free_prefix* spaces? BO) {return _node("BO_clause", expr);} // filling place import
 BOY_clause = expr:(free_prefix* spaces? BOY) {return _node("BOY_clause", expr);} // chaining place import
 BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
-BU_clause = expr:(free_prefix* spaces? BU) {return _node("BU_clause", expr);} // parser version/dialect
+BU_clause = expr:(spaces? BU) {return _node("BU_clause", expr);} // parser version/dialect
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // set creator
 DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // logical connectives
 FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
@@ -249,13 +249,13 @@ PA_clause = expr:(free_prefix* spaces? PA free_post*) {return _node("PA_clause",
 PA_clause_elidible = expr:(PA_clause?) {return (expr == "" || !expr) ? ["PA"] : _node_empty("PA_clause_elidible", expr);}
 PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // predicate scope terminator
 PAY_clause_elidible = expr:(PAY_clause?) {return (expr == "" || !expr) ? ["PAY"] : _node_empty("PAY_clause_elidible", expr);}
-PE_clause = expr:(free_prefix* spaces? PE) {return _node("PE_clause", expr);} // predicate subscope starter
+PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);} // predicate subscope starter
 PEY_clause = expr:(free_prefix* spaces? PEY free_post*) {return _node("PEY_clause", expr);} // predicate subscope terminator
 PEY_clause_elidible = expr:(PEY_clause?) {return (expr == "" || !expr) ? ["PEY"] : _node_empty("PEY_clause_elidible", expr);}
 PO_clause = expr:(free_prefix* spaces? PO free_post*) {return _node("PO_clause", expr);} // prenex starter/separator
 POY_clause = expr:(free_prefix* spaces? POY free_post*) {return _node("POY_clause", expr);} // prenex terminator
 PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
-SA_clause = expr:(free_prefix* spaces? SA) {return _node("SA_clause", expr);} // place binding tag
+SA_clause = expr:(free_prefix* spaces? SA free_post*) {return _node("SA_clause", expr);} // place binding tag
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
 TAY_clause = expr:(free_prefix* spaces? TAY) {return _node("TAY_clause", expr);} // number / string terminator
 TAY_clause_elidible = expr:(TAY_clause?) {return (expr == "" || !expr) ? ["TAY"] : _node_empty("TAY_clause_elidible", expr);}
