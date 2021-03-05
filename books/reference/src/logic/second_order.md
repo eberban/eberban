@@ -37,5 +37,5 @@ individual variables :
 > P_1 \wedge P_2 \wedge P_4
 > \\]
 >
-> \\(P_3\\) is not included as it's not a complete statement and is embeded
+> \\(P_3\\) is not included as it's not a complete statement and is embbeded
 > inside \\(P_2\\).

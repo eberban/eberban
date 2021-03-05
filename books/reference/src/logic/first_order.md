@@ -3,7 +3,7 @@
 It is possible to decompose the first proposition into 2 kinds of "things" :
 "drinks", which is a relation, and "a cat" or "milk", which are individuals or
 objects that satisfy this relation. In a more general case, a **predicate** is a
-proposition template with one or more **open blanks** (called **arguments**)
+proposition template with one or more **open blanks** (called **places**)
 that must be filled in to make a complete proposition with a truth value.
 
 The verb "drinks" can be seen as a predicate `Ⓐ drinks Ⓔ`, where Ⓐ and Ⓔ
