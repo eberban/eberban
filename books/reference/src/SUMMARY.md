@@ -22,7 +22,7 @@
 
 
 - [Predicate bindings](bindings/intro.md)
-  - [Unit transformations (SA/ZA)]()
+  - [Unit transformations (SA/ZA)](bindings/SA_ZA.md)
   - [Single binding (VA)]()
   - [Multiple bindings (FA)]()
 
