@@ -489,8 +489,8 @@ zay:
   eng_short: "ZA-question"
 ze:
   _family: "ZA"
-  eng_long: "Use the predicate as a predicate variable name"
-  eng_short: "variable"
+  eng_long: "Use the same instance and variables of the following unit instead of a new one."
+  eng_short: "re-use unit"
 zwa:
   _family: "ZA"
   eng_long: "Contrary scalar negator : other than .. (scale or set is implied)"

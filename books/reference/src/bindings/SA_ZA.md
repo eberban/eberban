@@ -26,11 +26,12 @@ the **right chaining place** is also modified.
 predicate unit. Any bindings will be made with the final place structure instead
 of the original.
 
-| Word | Definition                                                               |
-| ---- | ------------------------------------------------------------------------ |
-| za   | Ⓐ is named [predicate]                                                   |
-| zay  | ZA question : what transformation would make the proposition true ?      |
-|      | *The following don't change the place structure but change the meaning:* |
-| zwa  | contrary scalar negator : other than .. (scale or set is implied)        |
-| zwe  | polar opposite scalar negator : not a .. (no scale is implied)           |
-| zwi  | midpoint scalar negator : not really ..                                  |
+| Word | Definition                                                                      |
+| ---- | ------------------------------------------------------------------------------- |
+| za   | Ⓐ is named [predicate]                                                          |
+| zay  | ZA question : what transformation would make the proposition true ?             |
+| ze   | Use the same instance and variables of the following unit instead of a new one. |
+|      | *The following don't change the place structure but change the meaning:*        |
+| zwa  | contrary scalar negator : other than .. (scale or set is implied)               |
+| zwe  | polar opposite scalar negator : not a .. (no scale is implied)                  |
+| zwi  | midpoint scalar negator : not really ..                                         |
