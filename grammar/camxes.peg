@@ -18,11 +18,10 @@ fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
 fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
 
 # predicate scopes
-predicate_scope <- predicate_scope_1 (connective predicate_scope_1)*
-predicate_scope_1 <- PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible
+predicate_scope <- predicate_scope_arguments? predicate_scope_1 (connective predicate_scope_1)*
+predicate_scope_1 <- PA_clause_elidible BA_clause* predicate_scope_2 PAY_clause_elidible
 predicate_scope_2 <- predicate_chaining (DAY_clause predicate_chaining)*
-prenex <- (PO_clause prenex_term)+ POY_clause
-prenex_term <- predicate_term
+predicate_scope_arguments <- (KA_clause / GA_clause)+ PI_clause
 
 predicate_chaining <- predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?
 predicate_chaining_tag <- VA_clause / predicate_chaining_import
@@ -123,8 +122,7 @@ PAY_clause_elidible <- PAY_clause?
 PE_clause           <- free_prefix* spaces? PE free_post*       # predicate subscope starter
 PEY_clause          <- free_prefix* spaces? PEY free_post*      # predicate subscope terminator
 PEY_clause_elidible <- PEY_clause?
-PO_clause           <- free_prefix* spaces? PO free_post*       # prenex starter/separator
-POY_clause          <- free_prefix* spaces? POY free_post*      # prenex terminator
+PI_clause           <- free_prefix* spaces? PI free_post*       # predicate scope arguments terminator
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
@@ -171,8 +169,7 @@ PA    <- &particle (p a)
 PAY   <- &particle (p a y)
 PE    <- &particle (p e)
 PEY   <- &particle (p e y)
-PO    <- &particle (p o)
-POY   <- &particle (p o y)
+PI    <- &particle (p i)
 PU    <- &particle (p u)
 SA    <- &particle (s vtail)
 TA    <- &particle !(TAY &post_word) (t vtail) / digit

@@ -334,8 +334,8 @@ function boxClassForType(parse) {
 		return 'box box-sentence';
 	}
 
-	if (parse.type === 'prenex') {
-		return 'box box-prenex';
+	if (parse.type === 'arguments') {
+		return 'box box-arguments';
 	}
 	if (parse.type === "predicate scope") {
 		return "box box-scope";

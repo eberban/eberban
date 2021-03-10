@@ -539,13 +539,9 @@ pey:
   _family: "PEY"
   eng_long: "End of a predicate subscope."
   eng_short: ""
-po:
-  _family: "PO"
-  eng_long: "Starts a new prenex."
-  eng_short: ""
-poy:
-  _family: "POY"
-  eng_long: "Marks the end of the prenex part of a predicate scope."
+pi:
+  _family: "PI"
+  eng_long: "Ends the list of predicate scope arguments."
   eng_short: ""
 pu:
   _family: "PU"

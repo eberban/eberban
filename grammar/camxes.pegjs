@@ -147,11 +147,10 @@ fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {re
 fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import) {return _node("fragment", expr);}
 
 // predicate scopes
-predicate_scope = expr:(predicate_scope_1 (connective predicate_scope_1)*) {return _node("predicate_scope", expr);}
-predicate_scope_1 = expr:(PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
+predicate_scope = expr:(predicate_scope_arguments? predicate_scope_1 (connective predicate_scope_1)*) {return _node("predicate_scope", expr);}
+predicate_scope_1 = expr:(PA_clause_elidible BA_clause* predicate_scope_2 PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
 predicate_scope_2 = expr:(predicate_chaining (DAY_clause predicate_chaining)*) {return _node("predicate_scope_2", expr);}
-prenex = expr:((PO_clause prenex_term)+ POY_clause) {return _node("prenex", expr);}
-prenex_term = expr:(predicate_term) {return _node("prenex_term", expr);}
+predicate_scope_arguments = expr:((KA_clause / GA_clause)+ PI_clause) {return _node("predicate_scope_arguments", expr);}
 
 predicate_chaining = expr:(predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?) {return _node("predicate_chaining", expr);}
 predicate_chaining_tag = expr:(VA_clause / predicate_chaining_import) {return _node("predicate_chaining_tag", expr);}
@@ -252,8 +251,7 @@ PAY_clause_elidible = expr:(PAY_clause?) {return (expr == "" || !expr) ? ["PAY"]
 PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);} // predicate subscope starter
 PEY_clause = expr:(free_prefix* spaces? PEY free_post*) {return _node("PEY_clause", expr);} // predicate subscope terminator
 PEY_clause_elidible = expr:(PEY_clause?) {return (expr == "" || !expr) ? ["PEY"] : _node_empty("PEY_clause_elidible", expr);}
-PO_clause = expr:(free_prefix* spaces? PO free_post*) {return _node("PO_clause", expr);} // prenex starter/separator
-POY_clause = expr:(free_prefix* spaces? POY free_post*) {return _node("POY_clause", expr);} // prenex terminator
+PI_clause = expr:(free_prefix* spaces? PI free_post*) {return _node("PI_clause", expr);} // predicate scope arguments terminator
 PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
 SA_clause = expr:(free_prefix* spaces? SA free_post*) {return _node("SA_clause", expr);} // place binding tag
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
@@ -300,8 +298,7 @@ PA = expr:(&particle (p a)) {return _node("PA", expr);}
 PAY = expr:(&particle (p a y)) {return _node("PAY", expr);}
 PE = expr:(&particle (p e)) {return _node("PE", expr);}
 PEY = expr:(&particle (p e y)) {return _node("PEY", expr);}
-PO = expr:(&particle (p o)) {return _node("PO", expr);}
-POY = expr:(&particle (p o y)) {return _node("POY", expr);}
+PI = expr:(&particle (p i)) {return _node("PI", expr);}
 PU = expr:(&particle (p u)) {return _node("PU", expr);}
 SA = expr:(&particle (s vtail)) {return _node("SA", expr);}
 TA = expr:(&particle !(TAY &post_word) (t vtail) / digit) {return _node("TA", expr);}

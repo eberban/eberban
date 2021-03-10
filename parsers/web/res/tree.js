@@ -79,7 +79,7 @@ var map = [
 	[ 'parser_version', 'parser version' ],
 	[ 'paragraph', 'paragraph' ],
 	[ 'sentence', 'sentence' ],
-	[ 'prenex', 'prenex' ],
+	[ 'predicate_scope_arguments', 'arguments' ],
 	[ 'predicate_scope_1', 'scope' ],
 	// [ 'proposition_1', 'proposition' ],
 
