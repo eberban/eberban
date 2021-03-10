@@ -4,8 +4,6 @@
 - [Morphology](morphology.md)
 - [Phonology](phonology.md)
 
------
-
 - [eberban logic](logic/intro.md)
   - [Propositional logic](logic/propositional.md)
   - [First-order logic](logic/first_order.md)
@@ -23,17 +21,12 @@
 
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA)](bindings/SA_ZA.md)
-  - [Single binding (VA)]()
-  - [Multiple bindings (FA)]()
-
-----
+  - [Explicit bindings (VA/FA)](bindings/VA_FA.md)  
 
 - [Subscopes (PA)]()
 - [Free suffixes and prefixes]()
 - [Individuals and sets]()
 - [Text structure]()
 - [Distributivity]()
-
------
 
 - [eberban writing system]()

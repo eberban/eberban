@@ -333,72 +333,100 @@ xu:
   eng_short: ""
 fa:
   _family: "FA"
-  eng_long: "Fill place Ⓐ of a predicate."
-  eng_short: "fill-Ⓐ"
+  eng_long: "Binds Ⓐ place (restrictive)."
+  eng_short: "bind-Ⓐ"
 fe:
   _family: "FA"
-  eng_long: "Fill place Ⓔ of a predicate."
-  eng_short: "fill-Ⓔ"
+  eng_long: "Binds Ⓔ place (restrictive)."
+  eng_short: "bind-Ⓔ"
 fi:
   _family: "FA"
-  eng_long: "Fill place Ⓘ of a predicate."
-  eng_short: "fill-Ⓘ"
+  eng_long: "Binds Ⓘ place (restrictive)."
+  eng_short: "bind-Ⓘ"
 fo:
   _family: "FA"
-  eng_long: "Fill place Ⓞ of a predicate."
-  eng_short: "fill-Ⓞ"
+  eng_long: "Binds Ⓞ place (restrictive)."
+  eng_short: "bind-Ⓞ"
 fu:
   _family: "FA"
-  eng_long: "Fill place Ⓤ of a predicate."
-  eng_short: "fill-Ⓤ"
+  eng_long: "Binds Ⓤ place (restrictive)."
+  eng_short: "bind-Ⓤ"
+fwa:
+  _family: "FA"
+  eng_long: "Binds Ⓐ place (non-restrictive)."
+  eng_short: "bind-Ⓐ (non-res)"
+fwe:
+  _family: "FA"
+  eng_long: "Binds Ⓔ place (non-restrictive)."
+  eng_short: "bind-Ⓔ (non-res)"
+fwi:
+  _family: "FA"
+  eng_long: "Binds Ⓘ place (non-restrictive)."
+  eng_short: "bind-Ⓘ (non-res)"
+fwo:
+  _family: "FA"
+  eng_long: "Binds Ⓞ place (non-restrictive)."
+  eng_short: "bind-Ⓞ (non-res)"
+fwu:
+  _family: "FA"
+  eng_long: "Binds Ⓤ place (non-restrictive)."
+  eng_short: "bind-Ⓤ (non-res)"
 fay:
   _family: "FA"
-  eng_long: "Fill next place of a predicate."
-  eng_short: "fill-next"
+  eng_long: "Which place should be bound to make the proposition true ?"
+  eng_short: "bind-?"
 fey:
   _family: "FA"
-  eng_long: "Which place of the predicate should be filled to make the proposition true ?"
-  eng_short: "fill-?"
+  eng_long: "Binds with the next place in order. Can be usefull if there are more than 5 places."
+  eng_short: "bind-next"
 va:
   _family: "VA"
-  eng_long: "Chain place Ⓐ of a predicate."
-  eng_short: "chain-Ⓐ"
+  eng_long: "Binds Ⓐ place (restrictive)."
+  eng_short: "bind-Ⓐ"
 ve:
   _family: "VA"
-  eng_long: "Chain place Ⓔ of a predicate."
-  eng_short: "chain-Ⓔ"
+  eng_long: "Binds Ⓔ place (restrictive)."
+  eng_short: "bind-Ⓔ"
 vi:
   _family: "VA"
-  eng_long: "Chain place Ⓘ of a predicate."
-  eng_short: "chain-Ⓘ"
+  eng_long: "Binds Ⓘ place (restrictive)."
+  eng_short: "bind-Ⓘ"
 vo:
   _family: "VA"
-  eng_long: "Chain place Ⓞ of a predicate."
-  eng_short: "chain-Ⓞ"
+  eng_long: "Binds Ⓞ place (restrictive)."
+  eng_short: "bind-Ⓞ"
 vu:
   _family: "VA"
-  eng_long: "Chain place Ⓤ of a predicate."
-  eng_short: "chain-Ⓤ"
+  eng_long: "Binds Ⓤ place (restrictive)."
+  eng_short: "bind-Ⓤ"
+vwa:
+  _family: "VA"
+  eng_long: "Binds Ⓐ place (non-restrictive)."
+  eng_short: "bind-Ⓐ (non-res)"
+vwe:
+  _family: "VA"
+  eng_long: "Binds Ⓔ place (non-restrictive)."
+  eng_short: "bind-Ⓔ (non-res)"
+vwi:
+  _family: "VA"
+  eng_long: "Binds Ⓘ place (non-restrictive)."
+  eng_short: "bind-Ⓘ (non-res)"
+vwo:
+  _family: "VA"
+  eng_long: "Binds Ⓞ place (non-restrictive)."
+  eng_short: "bind-Ⓞ (non-res)"
+vwu:
+  _family: "VA"
+  eng_long: "Binds Ⓤ place (non-restrictive)."
+  eng_short: "bind-Ⓤ (non-res)"
 vay:
   _family: "VA"
-  eng_long: "Logical OR chaining."
-  eng_short: "chain-or"
+  eng_long: "Which place should be bound to make the proposition true ?"
+  eng_short: "bind-?"
 vey:
   _family: "VA"
-  eng_long: "Logical AND chaining."
-  eng_short: "chain-and"
-viy:
-  _family: "VA"
-  eng_long: "Chaining question."
-  eng_short: "chain-?"
-voy:
-  _family: "VA"
-  eng_long: "Logical if-and-only-if chaining."
-  eng_short: "chain-iif"
-vuy:
-  _family: "VA"
-  eng_long: "Logical whether-or-not chaining."
-  eng_short: "chain-won"
+  eng_long: "Binds with the usual right chaining place. Same as without a VA, but necessary if there is a FA before."
+  eng_short: "bind-default"
 day:
   _family: "DAY"
   eng_long: "Logical OR connective."
@@ -759,23 +787,23 @@ vyer:
   eng_short: "visits"
 sal:
   _family: "R"
-  eng_long: "Ⓐ is negligible in property/dimension [Ⓔ1]"
+  eng_long: "Ⓐ is negligible in property/dimension Ⓔ1"
   eng_short: "negligible"
 sel:
   _family: "R"
-  eng_long: "Ⓐ is small in property/dimension [Ⓔ1]"
+  eng_long: "Ⓐ is small in property/dimension Ⓔ1"
   eng_short: "small"
 sil:
   _family: "R"
-  eng_long: "Ⓐ is medium/average in property/dimension [Ⓔ1]"
+  eng_long: "Ⓐ is medium/average in property/dimension Ⓔ1"
   eng_short: "medium"
 sol:
   _family: "R"
-  eng_long: "Ⓐ is large in property/dimension [Ⓔ1]"
+  eng_long: "Ⓐ is large in property/dimension Ⓔ1"
   eng_short: "large"
 sul:
   _family: "R"
-  eng_long: "Ⓐ is infinite in property/dimension [Ⓔ1]"
+  eng_long: "Ⓐ is infinite in property/dimension Ⓔ1"
   eng_short: "infinite"
 tca:
   _family: "R"
