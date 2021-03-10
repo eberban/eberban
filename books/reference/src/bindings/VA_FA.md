@@ -70,7 +70,7 @@ changing the truth value.
 
 In the above example, the sentence is only true if the guide is a friend of
 a speaker, and the guide not being a friend makes the whole proposition false.
-If `fi` is replaced by `fyi`, the guide not being a friend of a speaker
+If `fi` is replaced by `fwi`, the guide not being a friend of a speaker
 doesn't make the whole proposition false.
 
 > \\[
