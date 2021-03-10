@@ -9,7 +9,7 @@ Pronouns are expressed with the following particles :
 
 | Word | Definition                                       |
 | ---- | ------------------------------------------------ |
-| mi   | Ⓐ is I/a speaker/author                         |
+| mi   | Ⓐ is I/a speaker/author                          |
 | mo   | Ⓐ is you, a listener                             |
 | moy  | Ⓐ is someone, neither a speaker or listener      |
 | mohi | Ⓐ is this here, near a speaker                   |
@@ -41,5 +41,5 @@ Using subscripts **ja** (explained in another chapter) allow to refer to more di
 | ---- | ------------------------------------------------------------------------------------------------- |
 | ma   | binds a variable within an abstraction that represents an open space (using in `pe` abstractions) |
 | may  | binds to the relativized object of a relative clause                                              |
-| me   | predicate question / fill the blank question.                                                     |
-| mey  | referers to the current topic (see prenex **PO**)                                                 |
+| me   | individuals question / fill the blank question / Ⓐ is what ?.                                     |
+| mey  | predicate question / fill the blank question                                                      |

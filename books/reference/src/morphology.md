@@ -2,7 +2,7 @@
 
 The morphology of eberban is quite simple. In terms of letters, there are 6
 vowels (**a, e, i, o, u, q**), 17 consonants (**b, c, d, f, g, j, k, l, m, n, p,
-r, s, t, v, x, z**), 2 semi-vowels *w* and *y* and a semi-consonant **h**,
+r, s, t, v, x, z**), 2 semi-vowels **w** and **y** and a semi-consonant **h**,
 for a total of 26 letters.
 There is also one symbol denoting a pause in speech, namely the apostrophe
 **'**, which is optional in written media as long as there are spaces alongside

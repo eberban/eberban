@@ -73,20 +73,12 @@ may:
   eng_short: "relativized object"
 me:
   _family: "MA"
-  eng_long: "Individual question / fill the blank question."
+  eng_long: "Individual question / fill the blank question / Ⓐ is what ?"
   eng_short: "individual?"
 mey:
   _family: "MA"
   eng_long: "Predicate question / fill the blank question."
   eng_short: "predicate?"
-mu:
-  _family: "MA"
-  eng_long: "Elliptical/unspecified predicate, corresponds to the null value"
-  eng_short: "elliptical"
-muy:
-  _family: "MA"
-  eng_long: "When the content of a place is overwritten, it represents the previous content/value of the place"
-  eng_short: "overwritten value"
 ahq:
   _family: "BQ"
   eng_long: "Letter A"
