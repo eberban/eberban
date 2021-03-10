@@ -147,9 +147,9 @@ fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {re
 fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import) {return _node("fragment", expr);}
 
 // predicate scopes
-predicate_scope = expr:(predicate_scope_1 (day predicate_scope_1)*) {return _node("predicate_scope", expr);}
+predicate_scope = expr:(predicate_scope_1 (connective predicate_scope_1)*) {return _node("predicate_scope", expr);}
 predicate_scope_1 = expr:(PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
-predicate_scope_2 = expr:(predicate_chaining (DA_clause predicate_chaining)*) {return _node("predicate_scope_2", expr);}
+predicate_scope_2 = expr:(predicate_chaining (DAY_clause predicate_chaining)*) {return _node("predicate_scope_2", expr);}
 prenex = expr:((PO_clause prenex_term)+ POY_clause) {return _node("prenex", expr);}
 prenex_term = expr:(predicate_term) {return _node("prenex_term", expr);}
 
@@ -163,10 +163,10 @@ predicate_filled_place = expr:(predicate_place_tag+ predicate_term) {return _nod
 predicate_place_tag = expr:(FA_clause / predicate_place_import) {return _node("predicate_place_tag", expr);}
 predicate_place_import = expr:(BO_clause predicate_unit) {return _node("predicate_place_import", expr);}
 
-predicate_term = expr:(predicate_term_day / predicate_term_1) {return _node("predicate_term", expr);}
-predicate_term_day = expr:(predicate_term_1 (day predicate_term_1)+) {return _node("predicate_term_day", expr);}
-predicate_term_1 = expr:(predicate_term_da / predicate_term_2) {return _node("predicate_term_1", expr);}
-predicate_term_da = expr:(predicate_term_2 (DA_clause predicate_term_2)+) {return _node("predicate_term_da", expr);}
+predicate_term = expr:(predicate_term_connective / predicate_term_1) {return _node("predicate_term", expr);}
+predicate_term_connective = expr:(predicate_term_1 (connective predicate_term_1)+) {return _node("predicate_term_connective", expr);}
+predicate_term_1 = expr:(predicate_term_set / predicate_term_2) {return _node("predicate_term_1", expr);}
+predicate_term_set = expr:(predicate_term_2 (DAY_clause predicate_term_2)+) {return _node("predicate_term_set", expr);}
 predicate_term_2 = expr:(predicate_unit+) {return _node("predicate_term_2", expr);}
 
 predicate_unit = expr:((SA_clause / ZA_clause)* predicate_unit_1) {return _node("predicate_unit", expr);}
@@ -207,7 +207,7 @@ variable_individual = expr:(KA_clause) {return _node("variable_individual", expr
 variable_predicate = expr:(GA_clause) {return _node("variable_predicate", expr);}
 
 // connectives
-day = expr:(BA_clause? DAY_clause BAY_clause? free_post*) {return _node("day", expr);}
+connective = expr:(BA_clause? DA_clause BAY_clause? free_post*) {return _node("connective", expr);}
 
 // free prefix
 free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}
@@ -232,8 +232,8 @@ BO_clause = expr:(free_prefix* spaces? BO) {return _node("BO_clause", expr);} //
 BOY_clause = expr:(free_prefix* spaces? BOY) {return _node("BOY_clause", expr);} // chaining place import
 BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
 BU_clause = expr:(spaces? BU) {return _node("BU_clause", expr);} // parser version/dialect
-DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // set creator
-DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // logical connectives
+DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // logical connectives
+DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // set creator
 FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
 GA_clause = expr:(free_prefix* spaces? GA free_post*) {return _node("GA_clause", expr);} // predicate variables
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);} // free subscript

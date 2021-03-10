@@ -58,9 +58,9 @@ var camxes = (function() {
         peg$c23 = function(expr) {return _node("predicate_place_tag", expr);},
         peg$c24 = function(expr) {return _node("predicate_place_import", expr);},
         peg$c25 = function(expr) {return _node("predicate_term", expr);},
-        peg$c26 = function(expr) {return _node("predicate_term_day", expr);},
+        peg$c26 = function(expr) {return _node("predicate_term_connective", expr);},
         peg$c27 = function(expr) {return _node("predicate_term_1", expr);},
-        peg$c28 = function(expr) {return _node("predicate_term_da", expr);},
+        peg$c28 = function(expr) {return _node("predicate_term_set", expr);},
         peg$c29 = function(expr) {return _node("predicate_term_2", expr);},
         peg$c30 = function(expr) {return _node("predicate_unit", expr);},
         peg$c31 = function(expr) {return _node("predicate_unit_1", expr);},
@@ -86,7 +86,7 @@ var camxes = (function() {
         peg$c51 = function(expr) {return _node("variable_intrinsic", expr);},
         peg$c52 = function(expr) {return _node("variable_individual", expr);},
         peg$c53 = function(expr) {return _node("variable_predicate", expr);},
-        peg$c54 = function(expr) {return _node("day", expr);},
+        peg$c54 = function(expr) {return _node("connective", expr);},
         peg$c55 = function(expr) {return _node("free_prefix", expr);},
         peg$c56 = function(expr) {return _node("free_post", expr);},
         peg$c57 = function(expr) {return _node("free_subscript", expr);},
@@ -1088,7 +1088,7 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
-        s5 = peg$parseday();
+        s5 = peg$parseconnective();
         if (s5 !== peg$FAILED) {
           s6 = peg$parsepredicate_scope_1();
           if (s6 !== peg$FAILED) {
@@ -1105,7 +1105,7 @@ var camxes = (function() {
         while (s4 !== peg$FAILED) {
           s3.push(s4);
           s4 = peg$currPos;
-          s5 = peg$parseday();
+          s5 = peg$parseconnective();
           if (s5 !== peg$FAILED) {
             s6 = peg$parsepredicate_scope_1();
             if (s6 !== peg$FAILED) {
@@ -1223,7 +1223,7 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
-        s5 = peg$parseDA_clause();
+        s5 = peg$parseDAY_clause();
         if (s5 !== peg$FAILED) {
           s6 = peg$parsepredicate_chaining();
           if (s6 !== peg$FAILED) {
@@ -1240,7 +1240,7 @@ var camxes = (function() {
         while (s4 !== peg$FAILED) {
           s3.push(s4);
           s4 = peg$currPos;
-          s5 = peg$parseDA_clause();
+          s5 = peg$parseDAY_clause();
           if (s5 !== peg$FAILED) {
             s6 = peg$parsepredicate_chaining();
             if (s6 !== peg$FAILED) {
@@ -1704,7 +1704,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_day();
+      s1 = peg$parsepredicate_term_connective();
       if (s1 === peg$FAILED) {
         s1 = peg$parsepredicate_term_1();
       }
@@ -1719,7 +1719,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_day() {
+    function peg$parsepredicate_term_connective() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 209 + 22,
@@ -1736,7 +1736,7 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
-        s5 = peg$parseday();
+        s5 = peg$parseconnective();
         if (s5 !== peg$FAILED) {
           s6 = peg$parsepredicate_term_1();
           if (s6 !== peg$FAILED) {
@@ -1754,7 +1754,7 @@ var camxes = (function() {
           while (s4 !== peg$FAILED) {
             s3.push(s4);
             s4 = peg$currPos;
-            s5 = peg$parseday();
+            s5 = peg$parseconnective();
             if (s5 !== peg$FAILED) {
               s6 = peg$parsepredicate_term_1();
               if (s6 !== peg$FAILED) {
@@ -1806,7 +1806,7 @@ var camxes = (function() {
       }
 
       s0 = peg$currPos;
-      s1 = peg$parsepredicate_term_da();
+      s1 = peg$parsepredicate_term_set();
       if (s1 === peg$FAILED) {
         s1 = peg$parsepredicate_term_2();
       }
@@ -1821,7 +1821,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parsepredicate_term_da() {
+    function peg$parsepredicate_term_set() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 209 + 24,
@@ -1838,7 +1838,7 @@ var camxes = (function() {
       if (s2 !== peg$FAILED) {
         s3 = [];
         s4 = peg$currPos;
-        s5 = peg$parseDA_clause();
+        s5 = peg$parseDAY_clause();
         if (s5 !== peg$FAILED) {
           s6 = peg$parsepredicate_term_2();
           if (s6 !== peg$FAILED) {
@@ -1856,7 +1856,7 @@ var camxes = (function() {
           while (s4 !== peg$FAILED) {
             s3.push(s4);
             s4 = peg$currPos;
-            s5 = peg$parseDA_clause();
+            s5 = peg$parseDAY_clause();
             if (s5 !== peg$FAILED) {
               s6 = peg$parsepredicate_term_2();
               if (s6 !== peg$FAILED) {
@@ -3203,7 +3203,7 @@ var camxes = (function() {
       return s0;
     }
 
-    function peg$parseday() {
+    function peg$parseconnective() {
       var s0, s1, s2, s3, s4, s5, s6;
 
       var key    = peg$currPos * 209 + 50,
@@ -3221,7 +3221,7 @@ var camxes = (function() {
         s2 = peg$c1;
       }
       if (s2 !== peg$FAILED) {
-        s3 = peg$parseDAY_clause();
+        s3 = peg$parseDA_clause();
         if (s3 !== peg$FAILED) {
           s4 = peg$parseBAY_clause();
           if (s4 === peg$FAILED) {

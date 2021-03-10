@@ -18,9 +18,9 @@ fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
 fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
 
 # predicate scopes
-predicate_scope <- predicate_scope_1 (day predicate_scope_1)*
+predicate_scope <- predicate_scope_1 (connective predicate_scope_1)*
 predicate_scope_1 <- PA_clause_elidible prenex? BA_clause* predicate_scope_2 PAY_clause_elidible
-predicate_scope_2 <- predicate_chaining (DA_clause predicate_chaining)*
+predicate_scope_2 <- predicate_chaining (DAY_clause predicate_chaining)*
 prenex <- (PO_clause prenex_term)+ POY_clause
 prenex_term <- predicate_term
 
@@ -34,10 +34,10 @@ predicate_filled_place <- predicate_place_tag+ predicate_term
 predicate_place_tag <- FA_clause / predicate_place_import
 predicate_place_import <- BO_clause predicate_unit
 
-predicate_term <- predicate_term_day / predicate_term_1
-predicate_term_day <- predicate_term_1 (day predicate_term_1)+
-predicate_term_1 <- predicate_term_da / predicate_term_2
-predicate_term_da <- predicate_term_2 (DA_clause predicate_term_2)+
+predicate_term <- predicate_term_connective / predicate_term_1
+predicate_term_connective <- predicate_term_1 (connective predicate_term_1)+
+predicate_term_1 <- predicate_term_set / predicate_term_2
+predicate_term_set <- predicate_term_2 (DAY_clause predicate_term_2)+
 predicate_term_2 <- predicate_unit+
 
 predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
@@ -78,7 +78,7 @@ variable_individual <- KA_clause
 variable_predicate <- GA_clause
 
 # connectives
-day <- BA_clause? DAY_clause BAY_clause? free_post*
+connective <- BA_clause? DA_clause BAY_clause? free_post*
 
 # free prefix
 free_prefix <- JU_clause
@@ -103,8 +103,8 @@ BO_clause           <- free_prefix* spaces? BO                  # filling place 
 BOY_clause          <- free_prefix* spaces? BOY                 # chaining place import
 BQ_clause           <- free_prefix* spaces? BQ                  # letters
 BU_clause           <- spaces? BU                               # parser version/dialect
-DA_clause           <- free_prefix* spaces? DA free_post*       # set creator
-DAY_clause          <- free_prefix* spaces? DAY free_post*      # logical connectives
+DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
+DAY_clause          <- free_prefix* spaces? DAY free_post*      # set creator
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
 GA_clause           <- free_prefix* spaces? GA free_post*       # predicate variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript

@@ -427,45 +427,45 @@ vey:
   _family: "VA"
   eng_long: "Binds with the usual right chaining place. Same as without a VA, but necessary if there is a FA before."
   eng_short: "bind-default"
-day:
-  _family: "DAY"
-  eng_long: "Logical OR connective."
-  eng_short: "or"
-dey:
-  _family: "DAY"
-  eng_long: "Logical AND connective."
-  eng_short: "and"
-diy:
-  _family: "DAY"
-  eng_long: "Chaining connective."
-  eng_short: "connective?"
-doy:
-  _family: "DAY"
-  eng_long: "Logical if-and-only-if connective."
-  eng_short: "iif"
-duy:
-  _family: "DAY"
-  eng_long: "Logical whether-or-not connective."
-  eng_short: "won"
 da:
   _family: "DA"
-  eng_long: "Level 1 set creator."
-  eng_short: "set-1"
+  eng_long: "Logical OR connective."
+  eng_short: "or"
 de:
   _family: "DA"
-  eng_long: "Level 1 set creator."
-  eng_short: "set-2"
+  eng_long: "Logical AND connective."
+  eng_short: "and"
 di:
   _family: "DA"
-  eng_long: "Level 1 set creator."
-  eng_short: "set-3"
+  eng_long: "Logical connective question."
+  eng_short: "connective?"
 do:
   _family: "DA"
-  eng_long: "Level 1 set creator."
-  eng_short: "set-4"
+  eng_long: "Logical if-and-only-if connective."
+  eng_short: "iif"
 du:
   _family: "DA"
+  eng_long: "Logical whether-or-not connective."
+  eng_short: "won"
+day:
+  _family: "DAY"
   eng_long: "Level 1 set creator."
+  eng_short: "set-1"
+dey:
+  _family: "DAY"
+  eng_long: "Level 2 set creator."
+  eng_short: "set-2"
+diy:
+  _family: "DAY"
+  eng_long: "Level 3 set creator."
+  eng_short: "set-3"
+doy:
+  _family: "DAY"
+  eng_long: "Level 4 set creator."
+  eng_short: "set-4"
+duy:
+  _family: "DAY"
+  eng_long: "Level 5 set creator."
   eng_short: "set-5"
 bo:
   _family: "BO"
