@@ -37,9 +37,9 @@ Using subscripts **ja** (explained in another chapter) allow to refer to more di
 
 ## Specials
 
-| Word | Definition                                                                                        |
-| ---- | ------------------------------------------------------------------------------------------------- |
-| ma   | binds a variable within an abstraction that represents an open space (using in `pe` abstractions) |
-| may  | binds to the relativized object of a relative clause                                              |
-| me   | individuals question / fill the blank question / Ⓐ is what ?.                                     |
-| mey  | predicate question / fill the blank question                                                      |
+| Word | Definition                                                                                 |
+| ---- | ------------------------------------------------------------------------------------------ |
+| ma   | binds a variable within an abstraction that represents an open space (used in `PE` scopes) |
+| may  | binds to the relativized object of a relative clause (used in `FA` scopes)                 |
+| me   | individuals question / fill the blank question / Ⓐ is what ?.                              |
+| mey  | predicate question / fill the blank question                                               |
