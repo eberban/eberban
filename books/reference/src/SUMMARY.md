@@ -24,7 +24,7 @@
 
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
-  - [Subscopes (PE)]()
+  - [Subscopes (PE)](struct/PE.md)
   - [Free suffixes and prefixes]()
   - [Individuals and sets]()
   - [Distributivity]()
