@@ -52,7 +52,8 @@ compound_n_end <- pause_char? o &post_word
 compound_word <- initial_pause native_word
 
 # borrowings
-borrowing <- free_prefix* spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF) free_post*
+borrowing <- free_prefix* borrowing_part+ free_post*
+borrowing_part <- spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF)
 borrowing_prefix <- (w &aeiouq / u)
 borrowing_content <- foreign_word
 
