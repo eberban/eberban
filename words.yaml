@@ -1,23 +1,23 @@
 # Particles
 a:
   _family: "A"
-  eng_long: "prefix a 1 word long compound."
+  eng_long: "Prefix a 1 word long compound."
   eng_short: ""
 e:
   _family: "E"
-  eng_long: "prefix a 2 words long compound."
+  eng_long: "Prefix a 2 words long compound."
   eng_short: ""
 i:
   _family: "I"
-  eng_long: "prefix a 3 words long compound."
+  eng_long: "Prefix a 3 words long compound."
   eng_short: ""
 o:
   _family: "O"
-  eng_long: "prefix a 4 words long compound."
+  eng_long: "Surround an arbitrary long compound."
   eng_short: ""
 u:
   _family: "U"
-  eng_long: "surround an arbitrary long compound."
+  eng_long: "Borrowing: Ⓐ is a [word]."
   eng_short: ""
 mi:
   _family: "MA"
@@ -305,30 +305,22 @@ toy:
   eng_short: "number?"
 xa:
   _family: "XA"
-  eng_long: "Borrowing: Ⓐ is a [word]."
+  eng_long: "Starts grammatically correct eberban quote. Ⓐ is text [quote]."
   eng_short: ""
 xay:
-  _family: "XA"
-  eng_long: "Name borrowing: Ⓐ is named [word]."
-  eng_short: ""
-xaha:
-  _family: "XA"
-  eng_long: "Complex borrowing: place structure is contextual."
+  _family: "XAY"
+  eng_long: "Ends grammatically correct eberban quote."
   eng_short: ""
 xe:
   _family: "XE"
-  eng_long: "Starts grammatically correct eberban quote."
+  eng_long: "Quote next word. Ⓐ is word [word]."
   eng_short: ""
 xey:
-  _family: "XEY"
-  eng_long: "Ends grammatically correct eberban quote."
+  _family: "XE"
+  eng_long: "Ⓐ is the family of word [word]."
   eng_short: ""
-xi:
-  _family: "XI"
-  eng_long: "Quote next word."
-  eng_short: ""
-xu:
-  _family: "XU"
+xo:
+  _family: "XO"
   eng_long: "Starts quote of arbitrary string of words."
   eng_short: ""
 fa:
