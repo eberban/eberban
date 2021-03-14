@@ -181,8 +181,9 @@ compound_n_end = expr:(pause_char? o &post_word) {return _node("compound_n_end",
 compound_word = expr:(initial_pause native_word) {return _node("compound_word", expr);}
 
 // borrowings
-borrowing = expr:(free_prefix* spaces? u borrowing_content (pause_char / space_char / EOF) free_post*) {return _node("borrowing", expr);}
-borrowing_content = expr:((spaces? !sonorant / spaces &sonorant) foreign_word) {return _node("borrowing_content", expr);}
+borrowing = expr:(free_prefix* spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF) free_post*) {return _node("borrowing", expr);}
+borrowing_prefix = expr:((w &aeiouq / u)) {return _node("borrowing_prefix", expr);}
+borrowing_content = expr:(foreign_word) {return _node("borrowing_content", expr);}
 
 // quotes
 quote = expr:(grammatical_quote / one_word_quote / foreign_quote) {return _node("quote", expr);}

@@ -8,7 +8,8 @@ A borrowing starts with the letter **u**, followed by the borrowed word, then
 a mandatory pause. The borrowed word should be a phonetic retranscription in
 the phonology and morphology of eberban. Incompatible chains of vowels should be
 borrowed using a buffer letter such as *h*. Incompatible chains of consonants
-should be borrowed using a buffer vowel such as *q*.
+should be borrowed using a buffer vowel such as *q*. If the borrowed word starts
+with a vowel then the **u** is replaced with a **w**.
 
 A chain of multiple borrowings will count as only one predicate unit composed
 of multiple parts.

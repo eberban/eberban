@@ -624,16 +624,16 @@ function getVlasiskuLink(word) {
 function outputWord(word, mode) {
 	if (mode === 1) {
 		// Latin mode
-		return addDotsToWord(word);
+		return word;
 	} else if (mode === 2) {
 		// Cyrillic mode
-		return wordToCyrillic(addDotsToWord(word));
+		return wordToCyrillic(word);
 	} else if (mode === 3) {
 		// Tengwar mode
-		return wordToTengwar(addDotsToWord(word));
+		return wordToTengwar(word);
 	} else if (mode === 4) {
 		// Hiragana mode
-		return wordToHiragana(addDotsToWord(word));
+		return wordToHiragana(word);
 	}
 }
 
