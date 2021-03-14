@@ -23,7 +23,7 @@
   - [Explicit bindings (VA/FA)](bindings/VA_FA.md)  
 
 - [Text structure]()
-  - [Sentences and paragraphs (PA/PI/PU)]()
+  - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Subscopes (PE)]()
   - [Free suffixes and prefixes]()
   - [Individuals and sets]()
