@@ -133,7 +133,9 @@
 }
 
 text = expr:(parser_version? text_1) {return _node("text", expr);}
-parser_version = expr:(BU_clause (!parser_version_number borrowing_content (pause_char !pause_char !q)? parser_version_number? / parser_version_number)) {return _node("parser_version", expr);}
+parser_version = expr:(BU_clause (parser_version_short / parser_version_long)) {return _node("parser_version", expr);}
+parser_version_long = expr:(borrowing_part parser_version_number?) {return _node("parser_version_long", expr);}
+parser_version_short = expr:(parser_version_number) {return _node("parser_version_short", expr);}
 parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
 
 // main text rule
@@ -263,9 +265,6 @@ ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} //
 // PARTICLE FAMILIES
 BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BAY = expr:(&particle (b a y)) {return _node("BAY", expr);}
-BE = expr:(&particle (b e)) {return _node("BE", expr);}
-BEY = expr:(&particle (b e y)) {return _node("BEY", expr);}
-BI = expr:(&particle (b i)) {return _node("BI", expr);}
 BO = expr:(&particle (b o)) {return _node("BO", expr);}
 BOY = expr:(&particle (b o y)) {return _node("BOY", expr);}
 BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}

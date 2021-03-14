@@ -4,7 +4,9 @@
 # GRAMMAR
 # main rule, allow language version/dialect annotation
 text <- parser_version? text_1
-parser_version <- BU_clause (!parser_version_number borrowing_content (pause_char !pause_char !q)? parser_version_number? / parser_version_number)
+parser_version <- BU_clause (parser_version_short / parser_version_long)
+parser_version_long <- borrowing_part parser_version_number?
+parser_version_short <- parser_version_number
 parser_version_number <- spaces? TA+
 
 # main text rule
@@ -134,9 +136,6 @@ ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit
 # PARTICLE FAMILIES
 BA    <- &particle (b a)
 BAY   <- &particle (b a y)
-BE    <- &particle (b e)
-BEY   <- &particle (b e y)
-BI    <- &particle (b i)
 BO    <- &particle (b o)
 BOY   <- &particle (b o y)
 BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
