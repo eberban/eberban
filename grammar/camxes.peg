@@ -54,7 +54,7 @@ compound_n_end <- pause_char? o &post_word
 compound_word <- initial_pause native_word
 
 # borrowings
-borrowing <- free_prefix* borrowing_part+ free_post*
+borrowing <- free_prefix* borrowing_part+ BE_clause_elidible free_post*
 borrowing_part <- spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF)
 borrowing_prefix <- (w &aeiouq / u)
 borrowing_content <- foreign_word
@@ -70,7 +70,7 @@ foreign_quote_content <- (foreign_quote_word spaces)*
 predicate_subscope <- PE_clause predicate_scope PEY_clause_elidible
 
 # string (numbers / literals)
-string <- (number_string / letter_string) TAY_clause_elidible
+string <- (number_string / letter_string) BE_clause_elidible
 number_string <- TA_clause (TA_clause / BQ_clause)*
 letter_string <- BQ_clause (TA_clause / BQ_clause)*
 
@@ -96,6 +96,8 @@ free_parenthetical <- JO_clause text_1 JOY_clause
 # PARTICLES CLAUSES
 BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
 BAY_clause          <- free_prefix* spaces? BAY                 # post negation
+BE_clause           <- spaces? BE                               # number / string / borrowing terminator
+BE_clause_elidible  <- BE_clause?
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
 BOY_clause          <- free_prefix* spaces? BOY                 # chaining place import
 BQ_clause           <- free_prefix* spaces? BQ                  # letters
@@ -124,8 +126,6 @@ PI_clause           <- free_prefix* spaces? PI free_post*       # predicate scop
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
-TAY_clause          <- free_prefix* spaces? TAY                 # number / string terminator
-TAY_clause_elidible <- TAY_clause?
 VA_clause           <- free_prefix* spaces? VA free_post*       # chaining tags
 XA_clause           <- free_prefix* spaces? XA                  # grammatical quote starter
 XAY_clause          <- free_prefix* spaces? XAY free_post*      # grammatical quote terminator
@@ -136,6 +136,7 @@ ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit
 # PARTICLE FAMILIES
 BA    <- &particle (b a)
 BAY   <- &particle (b a y)
+BE    <- &particle (b e)
 BO    <- &particle (b o)
 BOY   <- &particle (b o y)
 BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
@@ -160,8 +161,7 @@ PEY   <- &particle (p e y)
 PI    <- &particle (p i)
 PU    <- &particle (p u)
 SA    <- &particle (s vtail)
-TA    <- &particle !(TAY &post_word) (t vtail) / digit
-TAY   <- &particle (t a y)
+TA    <- &particle (t vtail) / digit
 VA    <- &particle (v vtail)
 XA    <- &particle !(XAY &post_word) (x &a vtail)
 XAY   <- &particle (x a y)

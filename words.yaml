@@ -191,10 +191,6 @@ zq:
   _family: "BQ"
   eng_long: "Letter Z"
   eng_short: "Z"
-tay:
-  _family: "TAY"
-  eng_long: "Ends string/number."
-  eng_short: ""
 ta:
   _family: "TA"
   eng_long: "Digit 0"
@@ -630,6 +626,10 @@ ba:
 bay:
   _family: "BAY"
   eng_long: "Allow to negate various particles."
+  eng_short: ""
+be:
+  _family: "BE"
+  eng_long: "Ends string/number/borrowing."
   eng_short: ""
 bu:
   _family: "BU"

@@ -183,7 +183,7 @@ compound_n_end = expr:(pause_char? o &post_word) {return _node("compound_n_end",
 compound_word = expr:(initial_pause native_word) {return _node("compound_word", expr);}
 
 // borrowings
-borrowing = expr:(free_prefix* borrowing_part+ free_post*) {return _node("borrowing", expr);}
+borrowing = expr:(free_prefix* borrowing_part+ BE_clause_elidible free_post*) {return _node("borrowing", expr);}
 borrowing_part = expr:(spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF)) {return _node("borrowing_part", expr);}
 borrowing_prefix = expr:((w &aeiouq / u)) {return _node("borrowing_prefix", expr);}
 borrowing_content = expr:(foreign_word) {return _node("borrowing_content", expr);}
@@ -199,7 +199,7 @@ foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("forei
 predicate_subscope = expr:(PE_clause predicate_scope PEY_clause_elidible) {return _node("predicate_subscope", expr);}
 
 // string (numbers / literals)
-string = expr:((number_string / letter_string) TAY_clause_elidible) {return _node("string", expr);}
+string = expr:((number_string / letter_string) BE_clause_elidible) {return _node("string", expr);}
 number_string = expr:(TA_clause (TA_clause / BQ_clause)*) {return _node("number_string", expr);}
 letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_string", expr);}
 
@@ -225,6 +225,8 @@ free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_pare
 // PARTICLES CLAUSES
 BA_clause = expr:(free_prefix* spaces? BA free_post*) {return _node("BA_clause", expr);} // pre negation
 BAY_clause = expr:(free_prefix* spaces? BAY) {return _node("BAY_clause", expr);} // post negation
+BE_clause = expr:(spaces? BE) {return _node("BE_clause", expr);} // number / string / borrowing terminator
+BE_clause_elidible = expr:(BE_clause?) {return (expr == "" || !expr) ? ["BE"] : _node_empty("BE_clause_elidible", expr);}
 BO_clause = expr:(free_prefix* spaces? BO) {return _node("BO_clause", expr);} // filling place import
 BOY_clause = expr:(free_prefix* spaces? BOY) {return _node("BOY_clause", expr);} // chaining place import
 BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
@@ -253,8 +255,6 @@ PI_clause = expr:(free_prefix* spaces? PI free_post*) {return _node("PI_clause",
 PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
 SA_clause = expr:(free_prefix* spaces? SA free_post*) {return _node("SA_clause", expr);} // place binding tag
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
-TAY_clause = expr:(free_prefix* spaces? TAY) {return _node("TAY_clause", expr);} // number / string terminator
-TAY_clause_elidible = expr:(TAY_clause?) {return (expr == "" || !expr) ? ["TAY"] : _node_empty("TAY_clause_elidible", expr);}
 VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // chaining tags
 XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} // grammatical quote starter
 XAY_clause = expr:(free_prefix* spaces? XAY free_post*) {return _node("XAY_clause", expr);} // grammatical quote terminator
@@ -265,6 +265,7 @@ ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} //
 // PARTICLE FAMILIES
 BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BAY = expr:(&particle (b a y)) {return _node("BAY", expr);}
+BE = expr:(&particle (b e)) {return _node("BE", expr);}
 BO = expr:(&particle (b o)) {return _node("BO", expr);}
 BOY = expr:(&particle (b o y)) {return _node("BOY", expr);}
 BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
@@ -289,8 +290,7 @@ PEY = expr:(&particle (p e y)) {return _node("PEY", expr);}
 PI = expr:(&particle (p i)) {return _node("PI", expr);}
 PU = expr:(&particle (p u)) {return _node("PU", expr);}
 SA = expr:(&particle (s vtail)) {return _node("SA", expr);}
-TA = expr:(&particle !(TAY &post_word) (t vtail) / digit) {return _node("TA", expr);}
-TAY = expr:(&particle (t a y)) {return _node("TAY", expr);}
+TA = expr:(&particle (t vtail) / digit) {return _node("TA", expr);}
 VA = expr:(&particle (v vtail)) {return _node("VA", expr);}
 XA = expr:(&particle !(XAY &post_word) (x &a vtail)) {return _node("XA", expr);}
 XAY = expr:(&particle (x a y)) {return _node("XAY", expr);}

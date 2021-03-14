@@ -12,7 +12,8 @@ should be borrowed using a buffer vowel such as *q*. If the borrowed word starts
 with a vowel then the **u** is replaced with a **w**.
 
 A chain of multiple borrowings will count as only one predicate unit composed
-of multiple parts.
+of multiple parts. To prevent 2 borrowings to form only one predicate unit,
+separate them with **be**.
 
 Their place structure is "Ⓐ is a [word]". Having a generic place structure
 makes comprehension easier to a listener/reader who might not be familiar with

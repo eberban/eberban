@@ -1,11 +1,10 @@
 # Numbers and string (TA/BQ)
 
-The **TA** family (all particles except **tay**) represents digits or
-concepts to express numbers. On the other hand, the **BQ** family represents
-various letters.
+The **TA** family represents digits or concepts to express numbers. On the other
+hand, the **BQ** family represents various letters.
 
-Multiple **TA** and **BQ** can be chained together, and the final chain
-acts as one predicate.
+Multiple **TA** and **BQ** can be chained together, and the final chain acts as
+one predicate.
 
 ## Numbers
 
@@ -24,15 +23,17 @@ suffix letter. The value interpretation of the chain is context dependent.
 ## Strings
 
 If the first word of the chain is a **BQ**, the chain is a predicate about
-something recognized by this sequence of letters. It could be a predicate chain (explaned later)
-with these initials, or a contextual predicate associated with these letters.
+something recognized by this sequence of letters. It could be a predicate chain
+(explaned later) with these initials, or a contextual predicate associated with
+these letters.
 
 The meaning is thus ambiguous, and disambiguation might be necessary.
 
 ## Elidible terminator
 
-Both types of chains (numbers and strings) can be terminated with the word **tay**, which is often elidable.
-In fact, it is only needed to separate 2 adjacent chains that **should not** merge into a single one.
+Both types of chains (numbers and strings) can be terminated with the word
+**be**, which is often elidable. In fact, it is only needed to separate 2
+adjacent chains that **should not** merge into a single one.
 
 ## TA members
 
