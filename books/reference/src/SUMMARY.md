@@ -15,8 +15,8 @@
   - [Extrinsic variables (KA/GA)](units/KA_GA.md)
   - [Numbers and string (TA/BQ)](units/TA_BQ.md)
   - [Compounds (C)](units/C.md)
-  - [Borrowings (XA)](units/XA.md)
-  - [Quotes (XE/XI/XU)](units/XE_XI_XU.md)
+  - [Borrowings (B)](units/B.md)
+  - [Quotes (XA/XE/XI)](units/XA_XE_XI.md)
 
 
 - [Predicate bindings](bindings/intro.md)
