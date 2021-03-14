@@ -1,8 +1,8 @@
 # Summary
 
-- [Introduction](introduction.md)  
-- [Morphology](morphology.md)
-- [Phonology](phonology.md)
+- [Introduction](intro/intro.md)  
+  - [Morphology](intro/morpho.md)
+  - [Phonology](intro/phono.md)
 
 - [eberban logic](logic/intro.md)
   - [Propositional logic](logic/propositional.md)
@@ -18,15 +18,16 @@
   - [Borrowings (B)](units/B.md)
   - [Quotes (XA/XE/XI)](units/XA_XE_XI.md)
 
-
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA)](bindings/SA_ZA.md)
   - [Explicit bindings (VA/FA)](bindings/VA_FA.md)  
 
-- [Subscopes (PA)]()
-- [Free suffixes and prefixes]()
-- [Individuals and sets]()
 - [Text structure]()
-- [Distributivity]()
+  - [Sentences and paragraphs (PA/PI/PU)]()
+  - [Subscopes (PE)]()
+  - [Free suffixes and prefixes]()
+  - [Individuals and sets]()
+  - [Distributivity]()
 
-- [eberban writing system]()
+- [Other]()
+  - [eberban writing system]()

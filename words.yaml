@@ -523,6 +523,14 @@ zwi:
   _family: "ZA"
   eng_long: "Midpoint scalar negator : not really .."
   eng_short: "not really"
+pa:
+  _family: "PA"
+  eng_long: "Starts a predicate scope."
+  eng_short: ""
+pay:
+  _family: "PAY"
+  eng_long: "Ends an predicate scope."
+  eng_short: ""
 pe:
   _family: "PE"
   eng_long: "Start of predicate subscope."
@@ -538,14 +546,6 @@ pi:
 pu:
   _family: "PU"
   eng_long: "Marks a new paragraph/section/change of subject."
-  eng_short: ""
-pa:
-  _family: "PA"
-  eng_long: "Starts a predicate scope."
-  eng_short: ""
-pay:
-  _family: "PAY"
-  eng_long: "Ends an predicate scope."
   eng_short: ""
 ja:
   _family: "JA"
