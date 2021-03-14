@@ -7,7 +7,7 @@ function addDotsToWord(word, previous) {
     
     // if word begins with a vowel: dot before
     if (isVowel(word.charAt(0))) {
-        preDot = ".";
+        preDot = "'";
     }
     
     // if word is a cmene: dot after
