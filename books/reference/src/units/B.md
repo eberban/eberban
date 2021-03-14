@@ -1,4 +1,4 @@
-# Borrowings (XA)
+# Borrowings (B)
 
 Borrowings allow importing words from other languages which would be difficult
 to translate and express using root words, such as proper names, names of
@@ -9,6 +9,9 @@ a mandatory pause. The borrowed word should be a phonetic retranscription in
 the phonology and morphology of eberban. Incompatible chains of vowels should be
 borrowed using a buffer letter such as *h*. Incompatible chains of consonants
 should be borrowed using a buffer vowel such as *q*.
+
+A chain of multiple borrowings will count as only one predicate unit composed
+of multiple parts.
 
 Their place structure is "Ⓐ is a [word]". Having a generic place structure
 makes comprehension easier to a listener/reader who might not be familiar with
