@@ -40,26 +40,26 @@ predicate_term_set <- predicate_term_2 (DAY_clause predicate_term_2)+
 predicate_term_2 <- predicate_unit+
 
 predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
-predicate_unit_1 <- compound free_post* / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*
+predicate_unit_1 <- compound / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*
 
 # compound prefixes
-compound <- (compound_1 / compound_2 / compound_3 / compound_4  / compound_n) &post_word
-compound_1 <- A_clause compound_word
-compound_2 <- E_clause compound_word compound_word
-compound_3 <- I_clause compound_word compound_word compound_word
-compound_4 <- O_clause compound_word compound_word compound_word compound_word
-compound_n <- U_clause (!(pause_char? U) compound_word)+ (pause_char? U)
+compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
+compound_1 <- a compound_word
+compound_2 <- e compound_word compound_word
+compound_3 <- i compound_word compound_word compound_word
+compound_n <- o (!compound_n_end compound_word)+ compound_n_end
+compound_n_end <- pause_char? o &post_word
 compound_word <- initial_pause native_word
 
 # borrowings
-borrowing <- XA_clause borrowing_content (pause_char / space_char / EOF) free_post*
+borrowing <- free_prefix* spaces? u borrowing_content (pause_char / space_char / EOF) free_post*
 borrowing_content <- (spaces? !sonorant / spaces &sonorant) foreign_word
 
 # quotes
 quote <- grammatical_quote / one_word_quote / foreign_quote
-grammatical_quote <- XE_clause text_1 XEY_clause
-one_word_quote <- XI_clause spaces? native_word
-foreign_quote <- XU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
+grammatical_quote <- XA_clause text_1 XAY_clause
+one_word_quote <- XE_clause spaces? native_word
+foreign_quote <- XO_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
 
 # sub-scopes
@@ -90,12 +90,6 @@ free_indicator <- JI_clause
 free_parenthetical <- JO_clause text_1 JOY_clause
 
 # PARTICLES CLAUSES
-A_clause            <- free_prefix* spaces? A                   # 1-word compound
-E_clause            <- free_prefix* spaces? E                   # 2-words compound
-I_clause            <- free_prefix* spaces? I                   # 3-words compound
-O_clause            <- free_prefix* spaces? O                   # 4-words compound
-U_clause            <- free_prefix* spaces? U                   # n-words compound starter and terminator
-
 BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
 BAY_clause          <- free_prefix* spaces? BAY                 # post negation
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
@@ -129,20 +123,13 @@ TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
 TAY_clause          <- free_prefix* spaces? TAY                 # number / string terminator
 TAY_clause_elidible <- TAY_clause?
 VA_clause           <- free_prefix* spaces? VA free_post*       # chaining tags
-XA_clause           <- free_prefix* spaces? XA                  # borrowing
-XE_clause           <- free_prefix* spaces? XE                  # grammatical quote starter
-XEY_clause          <- free_prefix* spaces? XEY free_post*      # grammatical quote terminator
-XI_clause           <- free_prefix* spaces? XI                  # one word quote
-XU_clause           <- free_prefix* spaces? XU                  # foreign quote
+XA_clause           <- free_prefix* spaces? XA                  # grammatical quote starter
+XAY_clause          <- free_prefix* spaces? XAY free_post*      # grammatical quote terminator
+XE_clause           <- free_prefix* spaces? XE                  # one word quote
+XO_clause           <- free_prefix* spaces? XO                  # foreign quote
 ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit transformation
 
 # PARTICLE FAMILIES
-A     <- &particle (a)
-E     <- &particle (e)
-I     <- &particle (i)
-O     <- &particle (o)
-U     <- &particle (u)
-
 BA    <- &particle (b a)
 BAY   <- &particle (b a y)
 BE    <- &particle (b e)
@@ -175,11 +162,10 @@ SA    <- &particle (s vtail)
 TA    <- &particle !(TAY &post_word) (t vtail) / digit
 TAY   <- &particle (t a y)
 VA    <- &particle (v vtail)
-XA    <- &particle (x &a vtail)
-XE    <- &particle (x e)
-XEY   <- &particle (x e y)
-XI    <- &particle (x &(i / y) vtail)
-XU    <- &particle (x &(u / w) vtail)
+XA    <- &particle !(XAY &post_word) (x &a vtail)
+XAY   <- &particle (x a y)
+XE    <- &particle (x &e vtail)
+XO    <- &particle (x &o vtail)
 ZA    <- &particle (z vtail)
 
 # MORPHOLOGY

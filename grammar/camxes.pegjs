@@ -169,26 +169,26 @@ predicate_term_set = expr:(predicate_term_2 (DAY_clause predicate_term_2)+) {ret
 predicate_term_2 = expr:(predicate_unit+) {return _node("predicate_term_2", expr);}
 
 predicate_unit = expr:((SA_clause / ZA_clause)* predicate_unit_1) {return _node("predicate_unit", expr);}
-predicate_unit_1 = expr:(compound free_post* / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}
+predicate_unit_1 = expr:(compound / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_1", expr);}
 
 // compound prefixes
-compound = expr:((compound_1 / compound_2 / compound_3 / compound_4 / compound_n) &post_word) {return _node("compound", expr);}
-compound_1 = expr:(A_clause compound_word) {return _node("compound_1", expr);}
-compound_2 = expr:(E_clause compound_word compound_word) {return _node("compound_2", expr);}
-compound_3 = expr:(I_clause compound_word compound_word compound_word) {return _node("compound_3", expr);}
-compound_4 = expr:(O_clause compound_word compound_word compound_word compound_word) {return _node("compound_4", expr);}
-compound_n = expr:(U_clause (!(pause_char? U) compound_word)+ (pause_char? U)) {return _node("compound_n", expr);}
+compound = expr:(free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*) {return _node("compound", expr);}
+compound_1 = expr:(a compound_word) {return _node("compound_1", expr);}
+compound_2 = expr:(e compound_word compound_word) {return _node("compound_2", expr);}
+compound_3 = expr:(i compound_word compound_word compound_word) {return _node("compound_3", expr);}
+compound_n = expr:(o (!compound_n_end compound_word)+ compound_n_end) {return _node("compound_n", expr);}
+compound_n_end = expr:(pause_char? o &post_word) {return _node("compound_n_end", expr);}
 compound_word = expr:(initial_pause native_word) {return _node("compound_word", expr);}
 
 // borrowings
-borrowing = expr:(XA_clause borrowing_content (pause_char / space_char / EOF) free_post*) {return _node("borrowing", expr);}
+borrowing = expr:(free_prefix* spaces? u borrowing_content (pause_char / space_char / EOF) free_post*) {return _node("borrowing", expr);}
 borrowing_content = expr:((spaces? !sonorant / spaces &sonorant) foreign_word) {return _node("borrowing_content", expr);}
 
 // quotes
 quote = expr:(grammatical_quote / one_word_quote / foreign_quote) {return _node("quote", expr);}
-grammatical_quote = expr:(XE_clause text_1 XEY_clause) {return _node("grammatical_quote", expr);}
-one_word_quote = expr:(XI_clause spaces? native_word) {return _node("one_word_quote", expr);}
-foreign_quote = expr:(XU_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
+grammatical_quote = expr:(XA_clause text_1 XAY_clause) {return _node("grammatical_quote", expr);}
+one_word_quote = expr:(XE_clause spaces? native_word) {return _node("one_word_quote", expr);}
+foreign_quote = expr:(XO_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*) {return _node("foreign_quote", expr);}
 foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("foreign_quote_content", expr);}
 
 // sub-scopes
@@ -219,12 +219,6 @@ free_indicator = expr:(JI_clause) {return _node("free_indicator", expr);}
 free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_parenthetical", expr);}
 
 // PARTICLES CLAUSES
-A_clause = expr:(free_prefix* spaces? A) {return _node("A_clause", expr);} // 1-word compound
-E_clause = expr:(free_prefix* spaces? E) {return _node("E_clause", expr);} // 2-words compound
-I_clause = expr:(free_prefix* spaces? I) {return _node("I_clause", expr);} // 3-words compound
-O_clause = expr:(free_prefix* spaces? O) {return _node("O_clause", expr);} // 4-words compound
-U_clause = expr:(free_prefix* spaces? U) {return _node("U_clause", expr);} // n-words compound starter and terminator
-
 BA_clause = expr:(free_prefix* spaces? BA free_post*) {return _node("BA_clause", expr);} // pre negation
 BAY_clause = expr:(free_prefix* spaces? BAY) {return _node("BAY_clause", expr);} // post negation
 BO_clause = expr:(free_prefix* spaces? BO) {return _node("BO_clause", expr);} // filling place import
@@ -258,20 +252,13 @@ TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} //
 TAY_clause = expr:(free_prefix* spaces? TAY) {return _node("TAY_clause", expr);} // number / string terminator
 TAY_clause_elidible = expr:(TAY_clause?) {return (expr == "" || !expr) ? ["TAY"] : _node_empty("TAY_clause_elidible", expr);}
 VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // chaining tags
-XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} // borrowing
-XE_clause = expr:(free_prefix* spaces? XE) {return _node("XE_clause", expr);} // grammatical quote starter
-XEY_clause = expr:(free_prefix* spaces? XEY free_post*) {return _node("XEY_clause", expr);} // grammatical quote terminator
-XI_clause = expr:(free_prefix* spaces? XI) {return _node("XI_clause", expr);} // one word quote
-XU_clause = expr:(free_prefix* spaces? XU) {return _node("XU_clause", expr);} // foreign quote
+XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} // grammatical quote starter
+XAY_clause = expr:(free_prefix* spaces? XAY free_post*) {return _node("XAY_clause", expr);} // grammatical quote terminator
+XE_clause = expr:(free_prefix* spaces? XE) {return _node("XE_clause", expr);} // one word quote
+XO_clause = expr:(free_prefix* spaces? XO) {return _node("XO_clause", expr);} // foreign quote
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // predicate unit transformation
 
 // PARTICLE FAMILIES
-A = expr:(&particle (a)) {return _node("A", expr);}
-E = expr:(&particle (e)) {return _node("E", expr);}
-I = expr:(&particle (i)) {return _node("I", expr);}
-O = expr:(&particle (o)) {return _node("O", expr);}
-U = expr:(&particle (u)) {return _node("U", expr);}
-
 BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BAY = expr:(&particle (b a y)) {return _node("BAY", expr);}
 BE = expr:(&particle (b e)) {return _node("BE", expr);}
@@ -304,11 +291,10 @@ SA = expr:(&particle (s vtail)) {return _node("SA", expr);}
 TA = expr:(&particle !(TAY &post_word) (t vtail) / digit) {return _node("TA", expr);}
 TAY = expr:(&particle (t a y)) {return _node("TAY", expr);}
 VA = expr:(&particle (v vtail)) {return _node("VA", expr);}
-XA = expr:(&particle (x &a vtail)) {return _node("XA", expr);}
-XE = expr:(&particle (x e)) {return _node("XE", expr);}
-XEY = expr:(&particle (x e y)) {return _node("XEY", expr);}
-XI = expr:(&particle (x &(i / y) vtail)) {return _node("XI", expr);}
-XU = expr:(&particle (x &(u / w) vtail)) {return _node("XU", expr);}
+XA = expr:(&particle !(XAY &post_word) (x &a vtail)) {return _node("XA", expr);}
+XAY = expr:(&particle (x a y)) {return _node("XAY", expr);}
+XE = expr:(&particle (x &e vtail)) {return _node("XE", expr);}
+XO = expr:(&particle (x &o vtail)) {return _node("XO", expr);}
 ZA = expr:(&particle (z vtail)) {return _node("ZA", expr);}
 
 // MORPHOLOGY
