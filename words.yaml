@@ -501,7 +501,7 @@ soy:
   eng_short: "bind-event"
 za:
   _family: "ZA"
-  eng_long: "Ⓐ is named [predicate]."
+  eng_long: "Ⓐ is named [predicate-Ⓐ]."
   eng_short: "named"
 zay:
   _family: "ZA"
@@ -511,6 +511,10 @@ ze:
   _family: "ZA"
   eng_long: "Use the same instance and variables of the following unit instead of a new one."
   eng_short: "re-use unit"
+zi:
+  _family: "ZA"
+  eng_long: "[ⒶN] is a predicate with places Ⓔ."
+  eng_short: "predicate"
 zwa:
   _family: "ZA"
   eng_long: "Contrary scalar negator : other than .. (scale or set is implied)"
@@ -543,6 +547,10 @@ pi:
   _family: "PI"
   eng_long: "Ends the list of predicate scope arguments."
   eng_short: ""
+po:
+  _family: "PO"
+  eng_long: "Predicate variable affectation."
+  eng_short: "="
 pu:
   _family: "PU"
   eng_long: "Marks a new paragraph/section/change of subject."

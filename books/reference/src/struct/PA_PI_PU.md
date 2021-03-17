@@ -10,8 +10,9 @@ proposition a posteriori.
 
 ## Predicate arguments [PI]
 
-A predicate can be expressed by following **PA** with a list of **KA/GA**
-variables terminated by **PI**. Each **KA/GA** binds to the Ⓐ, Ⓔ, etc in order.
+A predicate can be expressed by following **PA** with a list of **KAY/GAY**
+variables terminated by **PI**. Each **KAY/GAY** binds to the Ⓐ, Ⓔ, etc in
+order.
 
 ## Paragraphs, chapters, sections, ... [PU]
 

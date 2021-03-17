@@ -15,7 +15,7 @@ text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? s
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
 paragraph <- PU_clause* sentence (&PA_clause sentence)*
-sentence <- fragments_sentence / predicate_scope
+sentence <- predicate_scope / fragments_sentence
 fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
 fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
 
@@ -23,7 +23,7 @@ fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predica
 predicate_scope <- predicate_scope_arguments? predicate_scope_1 (connective predicate_scope_1)*
 predicate_scope_1 <- PA_clause_elidible BA_clause* predicate_scope_2 PAY_clause_elidible
 predicate_scope_2 <- predicate_chaining (DAY_clause predicate_chaining)*
-predicate_scope_arguments <- (KA_clause / GA_clause)+ PI_clause
+predicate_scope_arguments <- (KAY_clause / GAY_clause)+ PI_clause
 
 predicate_chaining <- predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?
 predicate_chaining_tag <- VA_clause / predicate_chaining_import
@@ -41,8 +41,10 @@ predicate_term_1 <- predicate_term_set / predicate_term_2
 predicate_term_set <- predicate_term_2 (DAY_clause predicate_term_2)+
 predicate_term_2 <- predicate_unit+
 
-predicate_unit <- (SA_clause / ZA_clause)* predicate_unit_1
-predicate_unit_1 <- compound / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*
+predicate_unit <- predicate_unit_po / predicate_unit_1
+predicate_unit_po <- GAY_clause PO_clause predicate_unit_1 / predicate_unit_1 PO_clause GAY_clause
+predicate_unit_1 <- (SA_clause / ZA_clause)* predicate_unit_2
+predicate_unit_2 <- compound / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*
 
 # compound prefixes
 compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
@@ -63,7 +65,7 @@ borrowing_content <- foreign_word
 quote <- grammatical_quote / one_word_quote / foreign_quote
 grammatical_quote <- XA_clause text_1 XAY_clause
 one_word_quote <- XE_clause spaces? native_word
-foreign_quote <- XO_clause (spaces?) foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
+foreign_quote <- XO_clause spaces? foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
 
 # sub-scopes
@@ -77,8 +79,8 @@ letter_string <- BQ_clause (TA_clause / BQ_clause)*
 # variables
 variable <- variable_intrinsic / variable_individual / variable_predicate
 variable_intrinsic <- MA_clause
-variable_individual <- KA_clause
-variable_predicate <- GA_clause
+variable_individual <- KAY_clause / KA_clause
+variable_predicate <- GAY_clause / GA_clause
 
 # connectives
 connective <- BA_clause? DA_clause BAY_clause? free_post*
@@ -105,7 +107,8 @@ BU_clause           <- spaces? BU                               # parser version
 DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # set creator
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
-GA_clause           <- free_prefix* spaces? GA free_post*       # predicate variables
+GA_clause           <- free_prefix* spaces? GA free_post*       # use predicate variables
+GAY_clause          <- free_prefix* spaces? GAY free_post*      # new predicate variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
 JE_clause           <- free_prefix* spaces? JE                  # free discursive (predicate)
 JI_clause           <- free_prefix* spaces? JI                  # free suffix (indicator / marker)
@@ -113,7 +116,8 @@ JO_clause           <- free_prefix* spaces? JO                  # free parenthet
 JOY_clause          <- free_prefix* spaces? JOY                 # free parenthetical terminator
 JU_clause           <- spaces? JU                               # free prefix / scope starter
 JUY_clause          <- spaces? JUY                              # free scope terminator
-KA_clause           <- free_prefix* spaces? KA free_post*       # individual variables
+KA_clause           <- free_prefix* spaces? KA free_post*       # use individual variables
+KAY_clause          <- free_prefix* spaces? KAY free_post*      # new individual variables
 MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
 PA_clause           <- free_prefix* spaces? PA free_post*       # predicate scope starter
 PA_clause_elidible  <- PA_clause?
@@ -123,6 +127,7 @@ PE_clause           <- free_prefix* spaces? PE free_post*       # predicate subs
 PEY_clause          <- free_prefix* spaces? PEY free_post*      # predicate subscope terminator
 PEY_clause_elidible <- PEY_clause?
 PI_clause           <- free_prefix* spaces? PI free_post*       # predicate scope arguments terminator
+PO_clause           <- spaces? PO                               # predicate variable affectation
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
@@ -144,7 +149,8 @@ BU    <- &particle (b u)
 DA    <- &particle (d aeiou)
 DAY   <- &particle (d aeiou y)
 FA    <- &particle (f vtail)
-GA    <- &particle (g vtail)
+GA    <- &particle (g !y_terminated vtail)
+GAY   <- &particle (g &y_terminated vtail)
 JA    <- &particle (j a)
 JE    <- &particle (j &e vtail)
 JI    <- &particle (j &(i / y) vtail)
@@ -152,13 +158,15 @@ JO    <- &particle (j o)
 JOY   <- &particle (j o y)
 JU    <- &particle !(JUY &post_word) (j &(u / w) vtail)
 JUY   <- &particle (j u y)
-KA    <- &particle (k vtail)
+KA    <- &particle (k !y_terminated vtail)
+KAY   <- &particle (k &y_terminated vtail)
 MA    <- &particle (m vtail)
 PA    <- &particle (p a)
 PAY   <- &particle (p a y)
 PE    <- &particle (p e)
 PEY   <- &particle (p e y)
 PI    <- &particle (p i)
+PO    <- &particle (p o)
 PU    <- &particle (p u)
 SA    <- &particle (s vtail)
 TA    <- &particle (t vtail) / digit
@@ -189,6 +197,7 @@ vtail_q_unit <- yw? aeiouq (yw aeiouq)* y?
 vtail <- vtail_unit vtail_1*
 vtail_1 <- separator vtail_unit
 vtail_unit <- yw? aeiou (yw aeiou)* y?
+y_terminated <- (aeiou / w / separator / y !post_word)+ y
 
 separator <- h / sonorant
 aeiouq <- a / e / i / o / u / q

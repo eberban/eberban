@@ -12,7 +12,7 @@
 - [Predicate units](units/intro.md)
   - [Root words (R)](units/R.md)
   - [Intrinsic variables (MA)](units/MA.md)
-  - [Extrinsic variables (KA/GA)](units/KA_GA.md)
+  - [Extrinsic variables (KA/KAY/GA/GAY)](units/KA_KAY_GA_GAY.md)
   - [Numbers and string (TA/BQ)](units/TA_BQ.md)
   - [Compounds (C)](units/C.md)
   - [Borrowings (B)](units/B.md)

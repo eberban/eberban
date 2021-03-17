@@ -274,7 +274,9 @@ function constructBoxesOutput(parse, depth) {
 			if (short) {
 				output += '<span class="translation">&nbsp;' +  escapeHtml(short) + '&nbsp;</span>';
 			}			
-		} else if (parse.type !== "KA" && parse.type !== "GA") {
+		} else if (parse.type === "KA" || parse.type === "GA" || parse.type === "KAY" || parse.type === "GAY") {
+			output += '<span class="translation">&nbsp;(var)&nbsp;</span>';
+		} else {
 			output += '...';
 		}
 
