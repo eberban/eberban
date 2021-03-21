@@ -12,8 +12,8 @@ same unit.
 
 In this inner predicate unit chain, the Ⓐ place of the first unit is bound
 to the **right chaining place** of the left unit. This can be changed with
-**SA** to use another place of the first unit of the chain, or with **may**
-in any part of the chain.
+[**SA**](SA_ZA.md#sa) to use another place of the first unit of the chain, or
+with [**may (MA)**](../units/MA.md) in any part of the chain.
 
 In most cases the last **FA/VA** of a sentence can be either **FA** or **VA**
 with no difference in meaning if there is en equivalent in the other family.

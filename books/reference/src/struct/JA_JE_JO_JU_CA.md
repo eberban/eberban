@@ -1,4 +1,4 @@
-# Free modifiers (J*/CA)
+# Free modifiers (JA/JE/JO/JU/CA)
 
 Free modifiers allow to add information to almost anything. Modifier attached to
 grammatical starters or terminators apply to the whole object they define.
@@ -12,7 +12,7 @@ precise when using a vague particle or use more variables.
 
 **je** attaches a predicate (without chaining) to the previous word to make a
 discursive, for example to provide emotions. To provide more complex predicates
-such as chains and filled place, use **pe** subscopes.
+such as chains and filled place, use [**PE** subscopes](PE.md).
 
 ## Parenthetical note [JO]
 
@@ -27,11 +27,11 @@ can be any valid eberban text.
 | *jwe* | Nonce-word indicator : the next word (usually a compound) may be non-standard. |
 | *jwi* | Next word is a metadata tag / hashtag.                                         |
 
-*ju* is a bit special. It starts a "free scope" which is closed by the free
-suffix *juy*. Any free modifier attached to either *ju* or *juy* will apply on
-the scope they represents instead of only the adjacent words, allowing to add
-information to a group of word even if they don't make a single grammatical
-unit.
+**ju** is a bit special. It starts a "free scope" which is closed by the free
+suffix **juy**. Any free modifier attached to either **ju** or **juy** will
+apply on the scope they represents instead of only the adjacent words, allowing
+to add information to a group of word even if they don't make a single
+grammatical unit.
 
 ## Suffix markers [CA]
 

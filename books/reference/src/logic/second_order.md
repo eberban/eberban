@@ -11,7 +11,7 @@ individual variables :
 > **spi:** Ⓐ talks to [Ⓔ] about subject Ⓘ0.  
 > **mo:** Ⓐ is you, a listener.
 
-`Ⓘ1` means the I place expects a predicate with 1 argument.
+`Ⓘ1` means the Ⓘ place expects a predicate with 1 argument.
 
 > We first define each statement/predicate :
 >

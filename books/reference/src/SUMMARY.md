@@ -21,11 +21,12 @@
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA)](bindings/SA_ZA.md)
   - [Explicit bindings (VA/FA)](bindings/VA_FA.md)  
+<!-- BO/BOY imports are missing, do we still need them ? -->
 
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU/BA)](struct/PA_PI_PU_BA.md)
   - [Subscopes (PE)](struct/PE.md)
-  - [Free modifiers (J*/CA)](struct/free.md)
+  - [Free modifiers (JA/JE/JO/JU/CA)](struct/JA_JE_JO_JU_CA.md)
   - [Sets (DAY)](struct/DAY.md)
   - [Logical connectives (DA)](struct/DA.md)
 

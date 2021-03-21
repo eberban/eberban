@@ -16,7 +16,7 @@ these.
 
 Nested sets can also be made using subscopes with `PE...PEY`.
 
-> `{A day {pe B day C} = A day {B dey C}`.
+> `{A day {pe B day C pey}} = A day {B dey C}`.
 
 While avaible in the main predicate scope grammar rule (mainly to allow its
 usage with subscopes and in answers), in can be used in a chain after a `FA`.

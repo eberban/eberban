@@ -1,7 +1,7 @@
 # Intrinsic variables (MA)
 
-Intrinsic variables (**MA** family) are particles providing predicates about
-the discourse itself. All particles starting with **m** are member of **MA**.
+Intrinsic variables (**MA** family) are particles providing predicates about the
+discourse itself. All particles starting with **m** are member of **MA**.
 
 ### Pronouns
 
@@ -18,28 +18,30 @@ Pronouns are expressed with the following particles :
 
 ## Propositions
 
-It is often useful to refer to other propositions. In the english sentences *"I
-went to a party. It was fun."*, *"it"* represents the previous proposition *"I
-went to a party"*. The following particles allow to express similar things :
+It is often useful to refer to other propositions.
 
-| Word | Definition                                                                  |
-| ---- | --------------------------------------------------------------------------- |
-| mwa  | repeats a previous proposition (infered from context)                       |
-| mwe  | repeats the last proposition                                                |
-| mwi  | repeats the proposition in which this one is embeded (used in abstractions) |
-| mwo  | repeats current proposition                                                 |
-| mwu  | repeats a future proposition (infered from context, usually the next)       |
+| Word | Definition                                                          |
+| ---- | ------------------------------------------------------------------- |
+| mwa  | a previous proposition (infered from context)                       |
+| mwe  | the last proposition                                                |
+| mwi  | the proposition in which this one is embeded (used in abstractions) |
+| mwo  | current proposition                                                 |
+| mwu  | a future proposition (infered from context, usually the next)       |
 
 Counting takes only into account complete proposition, and ignore proposition
 that are currently being defined when the word is used.
 
-Using subscripts **ja** (explained in another chapter) allow to refer to more distant predicates.
+Using [subscripts **JA**](../struct/free.md#ja) allow to refer to more distant
+predicates.
+
+> These predicates are 0-ary. To refer to previous predicates with their places,
+> see [**ze (ZA)**](../bindings/SA_ZA.md#za)
 
 ## Specials
 
-| Word | Definition                                                                                 |
-| ---- | ------------------------------------------------------------------------------------------ |
-| ma   | binds a variable within an abstraction that represents an open space (used in `PE` scopes) |
-| may  | binds to the relativized object of a relative clause (used in `FA` scopes)                 |
-| me   | individuals question / fill the blank question / Ⓐ is what ?.                              |
-| mey  | predicate question / fill the blank question                                               |
+| Word | Definition                                                                                                                                 |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| ma   | binds a variable within an abstraction that represents an open space (used in [`PE` scopes)](../struct/PA_PI_PU_BA.md#proposition-pa--pay) |
+| may  | binds to the relativized object of a relative clause (used in [`FA` scopes](../bindings/VA_FA.md))                                         |
+| me   | individuals question / fill the blank question / Ⓐ is what ?.                                                                              |
+| mey  | predicate question / fill the blank question                                                                                               |

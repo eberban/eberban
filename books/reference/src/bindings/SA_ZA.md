@@ -31,12 +31,13 @@ of the original.
 | za   | Ⓐ is named [predicate-Ⓐ]                                                        |
 | zay  | ZA question : what transformation would make the proposition true ?             |
 | ze   | Use the same instance and variables of the following unit instead of a new one. |
-|      | *The following don't change the place structure but change the meaning:*        |
 | zi   | Ⓐ is a predicate with places Ⓔ.                                                |
+|      | *The following don't change the place structure but change the meaning:*        |
 | zwa  | contrary scalar negator : other than .. (scale or set is implied)               |
 | zwe  | polar opposite scalar negator : not a .. (no scale is implied)                  |
 | zwi  | midpoint scalar negator : not really ..                                         |
 
-> When using **po** with a **GAY**, **SA/ZA** must be placed before the unit
-> itself : `GAY po ZA <unit>` or `ZA <unit> po GAY`. **SA** don't have any
-> effect on **GAY** affectation, and will only affect the surroundng statement.
+> When using [**po** with a **GAY**](../units/KA_KAY_GA_GAY.md), **SA/ZA** must
+> be placed before the unit itself : `GAY po ZA <unit>` or `ZA <unit> po GAY`.
+> **SA** don't have any effect on **GAY** affectation, and will only affect the
+> surroundng statement.

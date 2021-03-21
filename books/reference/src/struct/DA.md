@@ -2,7 +2,7 @@
 
 Logical connectives of family **DA** allow to connect two propositions, defining
 the final truth value based on the truth value of its components. **DA** can
-be prefixed with **BA** to negate the left component, while it can be suffixed
+be prefixed with **ba** to negate the left component, while it can be suffixed
 with **BAY** to negate the right component. **di** allow to ask a question about
 which logicial connective would make the result true.
 
