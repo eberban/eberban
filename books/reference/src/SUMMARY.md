@@ -29,5 +29,6 @@
   - [Free modifiers (JA/JE/JO/JU/CA)](struct/JA_JE_JO_JU_CA.md)
   - [Sets (DAY)](struct/DAY.md)
   - [Logical connectives (DA)](struct/DA.md)
+  - [Parser version/dialect (BU)](struct/BU.md)
 
 - [List of particle families](families.md)

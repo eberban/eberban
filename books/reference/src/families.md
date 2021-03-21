@@ -6,7 +6,7 @@
 | **BAY***                                                   | post negation                        |
 | **BE***                                                    | miscellaneous terminator             |
 | [**BQ**](units/TA_BQ.md)                                   | letters                              |
-| **BU***                                                    | parser version/dialect               |
+| [**BU**](struct/BU.md)*                                    | parser version/dialect               |
 | [**CA**](struct/JA_JE_JO_JU_CA.md#suffix-markers-ca)       | free suffix (indicator / marker)     |
 | [**DA**](struct/DA.md)                                     | logical connectives                  |
 | [**DAY**](struct/DAY.md)                                   | set creator                          |
