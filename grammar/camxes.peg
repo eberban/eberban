@@ -118,7 +118,7 @@ JU_clause           <- spaces? JU                               # free prefix / 
 JUY_clause          <- spaces? JUY                              # free scope terminator
 KA_clause           <- free_prefix* spaces? KA free_post*       # use individual variables
 KAY_clause          <- free_prefix* spaces? KAY free_post*      # new individual variables
-MA_clause           <- free_prefix* spaces? MA free_post*       # surrogate predicates (pronouns, ...)
+MA_clause           <- free_prefix* spaces? MA free_post*       # intrinsic variables (pronouns, ...)
 PA_clause           <- free_prefix* spaces? PA free_post*       # predicate scope starter
 PA_clause_elidible  <- PA_clause?
 PAY_clause          <- free_prefix* spaces? PAY free_post*      # predicate scope terminator

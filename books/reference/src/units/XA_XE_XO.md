@@ -1,4 +1,4 @@
-# Quotes (XE/XI/XU)
+# Quotes (XA/XE/XO)
 
 Quotes allow embedding text into the discourse.
 

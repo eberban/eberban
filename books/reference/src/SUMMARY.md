@@ -16,7 +16,7 @@
   - [Numbers and string (TA/BQ)](units/TA_BQ.md)
   - [Compounds (C)](units/C.md)
   - [Borrowings (B)](units/B.md)
-  - [Quotes (XA/XE/XI)](units/XA_XE_XI.md)
+  - [Quotes (XA/XE/XO)](units/XA_XE_XO.md)
 
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA)](bindings/SA_ZA.md)
@@ -30,5 +30,4 @@
   - [Sets (DAY)](struct/DAY.md)
   - [Logical connectives (DA)](struct/DA.md)
 
-- [Other]()
-  - [eberban writing system]()
+- [List of particle families](families.md)

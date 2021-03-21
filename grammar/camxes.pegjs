@@ -247,7 +247,7 @@ JU_clause = expr:(spaces? JU) {return _node("JU_clause", expr);} // free prefix 
 JUY_clause = expr:(spaces? JUY) {return _node("JUY_clause", expr);} // free scope terminator
 KA_clause = expr:(free_prefix* spaces? KA free_post*) {return _node("KA_clause", expr);} // use individual variables
 KAY_clause = expr:(free_prefix* spaces? KAY free_post*) {return _node("KAY_clause", expr);} // new individual variables
-MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // surrogate predicates (pronouns, ...)
+MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // intrinsic variables (pronouns, ...)
 PA_clause = expr:(free_prefix* spaces? PA free_post*) {return _node("PA_clause", expr);} // predicate scope starter
 PA_clause_elidible = expr:(PA_clause?) {return (expr == "" || !expr) ? ["PA"] : _node_empty("PA_clause_elidible", expr);}
 PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // predicate scope terminator
