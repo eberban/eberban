@@ -240,7 +240,7 @@ j <- [jJ] !j !z !unvoiced # <LEAF>
 z <- [zZ] !z !j !unvoiced # <LEAF>
 s <- [sS] !s !c !voiced # <LEAF>
 c <- [cC] !c !s !x !voiced # <LEAF>
-x <- [xX] !x !c !k !voiced # <LEAF>
+x <- [xX] !x !c !k !voiced !liquid # <LEAF>
 k <- [kK] !k !x !voiced # <LEAF>
 f <- [fF] !f !voiced # <LEAF>
 p <- [pP] !p !voiced # <LEAF>
