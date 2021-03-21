@@ -563,36 +563,36 @@ je:
   _family: "JE"
   eng_long: "Attaches a predicate (without chaining) to make a discursive."
   eng_short: "discursive"
-ji:
-  _family: "JI"
+ca:
+  _family: "CA"
   eng_long: "True/false question marker. Ask specificaly if marked word makes the proposition true."
   eng_short: "true/false?"
-jiha:
-  _family: "JI"
+cay:
+  _family: "CA"
   eng_long: "Indirect question marker. Transform a question word into an indirect question."
   eng_short: "indirect question"
-jihe:
-  _family: "JI"
-  eng_long: "Imperative. The tagged predicate should make it true."
+ce:
+  _family: "CA"
+  eng_long: "Imperative. The left chaining place of the tagged predicate should make it true."
   eng_short: "imperative"
-jya:
-  _family: "JI"
+cya:
+  _family: "CA"
   eng_long: "However/but/in contrast."
   eng_short: "however"
-jye:
-  _family: "JI"
+cye:
+  _family: "CA"
   eng_long: "Ditto."
   eng_short: "ditto"
-jyi:
-  _family: "JI"
+cyi:
+  _family: "CA"
   eng_long: "Similarly."
   eng_short: "similarly"
-jyo:
-  _family: "JI"
+cyo:
+  _family: "CA"
   eng_long: "Additionally."
   eng_short: "additionally"
-jyu:
-  _family: "JI"
+cyu:
+  _family: "CA"
   eng_long: "Uniquely/only/solely."
   eng_short: "uniquely"
 jo:
@@ -613,13 +613,9 @@ jwa:
   eng_short: "emphasis"
 jwe:
   _family: "JU"
-  eng_long: "Rebind the following variable, discarding its previous value."
-  eng_short: "rebind"
-jwi:
-  _family: "JU"
   eng_long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
   eng_short: "non-standard"
-jwo:
+jwi:
   _family: "JU"
   eng_long: "Next word is a metadata tag / hashtag."
   eng_short: "metadata"

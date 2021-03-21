@@ -25,8 +25,7 @@
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Subscopes (PE)](struct/PE.md)
-  - [Free modifiers](struct/free.md)
-  - [Individuals and sets]()
+  - [Free modifiers (J*/CA)](struct/free.md)
   - [Distributivity]()
 
 - [Other]()

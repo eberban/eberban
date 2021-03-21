@@ -38,7 +38,7 @@ predicate_place_import <- BO_clause predicate_unit
 predicate_term <- predicate_term_connective / predicate_term_1
 predicate_term_connective <- predicate_term_1 (connective predicate_term_1)+
 predicate_term_1 <- predicate_term_set / predicate_term_2
-predicate_term_set <- predicate_term_2 (DAY_clause predicate_term_2)+
+predicate_term_set <- predicate_term_2 (DAY_clause predicate_term_2)+ BE_clause_elidible
 predicate_term_2 <- predicate_unit+
 
 predicate_unit <- predicate_unit_po / predicate_unit_1
@@ -92,18 +92,19 @@ free_prefix <- JU_clause
 free_post <- JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
 free_subscript <- JA_clause string
 free_discursive <- JE_clause predicate_unit+
-free_indicator <- JI_clause
+free_indicator <- CA_clause
 free_parenthetical <- JO_clause text_1 JOY_clause
 
 # PARTICLES CLAUSES
 BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
 BAY_clause          <- free_prefix* spaces? BAY                 # post negation
-BE_clause           <- spaces? BE                               # number / string / borrowing terminator
+BE_clause           <- spaces? BE                               # miscellaneous terminator
 BE_clause_elidible  <- BE_clause?
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
 BOY_clause          <- free_prefix* spaces? BOY                 # chaining place import
 BQ_clause           <- free_prefix* spaces? BQ                  # letters
 BU_clause           <- spaces? BU                               # parser version/dialect
+CA_clause           <- free_prefix* spaces? CA                  # free suffix (indicator / marker)
 DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # set creator
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
@@ -111,7 +112,6 @@ GA_clause           <- free_prefix* spaces? GA free_post*       # use predicate 
 GAY_clause          <- free_prefix* spaces? GAY free_post*      # new predicate variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
 JE_clause           <- free_prefix* spaces? JE                  # free discursive (predicate)
-JI_clause           <- free_prefix* spaces? JI                  # free suffix (indicator / marker)
 JO_clause           <- free_prefix* spaces? JO                  # free parenthetical started (text)
 JOY_clause          <- free_prefix* spaces? JOY                 # free parenthetical terminator
 JU_clause           <- spaces? JU                               # free prefix / scope starter
@@ -146,6 +146,7 @@ BO    <- &particle (b o)
 BOY   <- &particle (b o y)
 BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
 BU    <- &particle (b u)
+CA    <- &particle (c vtail)
 DA    <- &particle (d aeiou)
 DAY   <- &particle (d aeiou y)
 FA    <- &particle (f vtail)
@@ -153,7 +154,6 @@ GA    <- &particle (g !y_terminated vtail)
 GAY   <- &particle (g &y_terminated vtail)
 JA    <- &particle (j a)
 JE    <- &particle (j &e vtail)
-JI    <- &particle (j &(i / y) vtail)
 JO    <- &particle (j o)
 JOY   <- &particle (j o y)
 JU    <- &particle !(JUY &post_word) (j &(u / w) vtail)
