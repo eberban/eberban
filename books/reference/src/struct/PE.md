@@ -8,6 +8,10 @@ and closing parenthesis.
 
 **PEY** is ellidible if its at the end of a sentence (before **PA**).
 
+A **PE** clause can only contain one complete proposition/predicate. However,
+multiple statements with logical connectives are allowed. (see chapter about
+**DA**).
+
 > Subscopes makes sentences more complex to understand, and spliting it in
 > mulitple simpler sentences might be easier to understand.
 

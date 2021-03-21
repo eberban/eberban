@@ -435,10 +435,14 @@ do:
   _family: "DA"
   eng_long: "Logical if-and-only-if connective."
   eng_short: "iif"
-du:
+doho:
   _family: "DA"
-  eng_long: "Logical whether-or-not connective."
-  eng_short: "won"
+  eng_long: "Logical if-and-only-if connective (swapped)."
+  eng_short: "siif"
+duhu:
+  _family: "DA"
+  eng_long: "Logical whether-or-not connective (swapped)."
+  eng_short: "swon"
 day:
   _family: "DAY"
   eng_long: "Level 1 set creator."

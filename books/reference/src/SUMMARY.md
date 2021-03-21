@@ -23,11 +23,11 @@
   - [Explicit bindings (VA/FA)](bindings/VA_FA.md)  
 
 - [Text structure]()
-  - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
+  - [Propositions and paragraphs (PA/PI/PU/BA)](struct/PA_PI_PU_BA.md)
   - [Subscopes (PE)](struct/PE.md)
   - [Free modifiers (J*/CA)](struct/free.md)
   - [Sets (DAY)](struct/DAY.md)
-  - [Distributivity]()
+  - [Logical connectives (DA)](struct/DA.md)
 
 - [Other]()
   - [eberban writing system]()
