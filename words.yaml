@@ -575,6 +575,10 @@ ce:
   _family: "CA"
   eng_long: "Imperative. The left chaining place of the tagged predicate should make it true."
   eng_short: "imperative"
+cey:
+  _family: "CA"
+  eng_long: "Answer. Atteched to sentence to indicate it's an answer to a previous question, and not a independent statement."
+  eng_short: "answer"
 cya:
   _family: "CA"
   eng_long: "However/but/in contrast."

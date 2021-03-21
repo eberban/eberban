@@ -26,6 +26,7 @@
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Subscopes (PE)](struct/PE.md)
   - [Free modifiers (J*/CA)](struct/free.md)
+  - [Sets (DAY)](struct/DAY.md)
   - [Distributivity]()
 
 - [Other]()

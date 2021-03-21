@@ -35,14 +35,15 @@ unit.
 
 ## Suffix markers [CA]
 
-| Word   | Meaning                                                                          |
-| ------ | -------------------------------------------------------------------------------- |
-| *ca*   | Ask if the proposition is true, with emphasis placed on the marked word.         |
-| *cay*  | Indirect question marker. Transform a question word into an indirect question.   |
-| *ce*   | Imperative. The left chaining place of the tagged predicate should make it true. |
-| &nbsp; |                                                                                  |
-| *cya*  | However/but/in contrast.                                                         |
-| *cye*  | Ditto.                                                                           |
-| *cyi*  | Similarly.                                                                       |
-| *cyo*  | Additionally.                                                                    |
-| *cyu*  | Uniquely/only/ solely.                                                           |
+| Word   | Meaning                                                                                                          |
+| ------ | ---------------------------------------------------------------------------------------------------------------- |
+| *ca*   | Ask if the proposition is true, with emphasis placed on the marked word.                                         |
+| *cay*  | Indirect question marker. Transform a question word into an indirect question.                                   |
+| *ce*   | Imperative. The left chaining place of the tagged predicate should make it true.                                 |
+| *cey*  | Answer. Atteched to sentence to indicate it's an answer to a previous question, and not a independent statement. |
+| &nbsp; |                                                                                                                  |
+| *cya*  | However/but/in contrast.                                                                                         |
+| *cye*  | Ditto.                                                                                                           |
+| *cyi*  | Similarly.                                                                                                       |
+| *cyo*  | Additionally.                                                                                                    |
+| *cyu*  | Uniquely/only/ solely.                                                                                           |
