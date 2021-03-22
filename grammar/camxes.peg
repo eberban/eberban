@@ -14,7 +14,7 @@ text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? s
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
-paragraph <- PU_clause* sentence (&PA_clause sentence)*
+paragraph <- PU_clause? sentence (&PA_clause sentence)*
 sentence <- predicate_scope / fragments_sentence
 fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
 fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
@@ -167,7 +167,7 @@ PE    <- &particle (p e)
 PEY   <- &particle (p e y)
 PI    <- &particle (p i)
 PO    <- &particle (p o)
-PU    <- &particle (p u)
+PU    <- &particle (p &(u / w) vtail)
 SA    <- &particle (s vtail)
 TA    <- &particle (t vtail) / digit
 VA    <- &particle (v vtail)

@@ -143,7 +143,7 @@ text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragrap
 
 // text structure
 paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
-paragraph = expr:(PU_clause* sentence (&PA_clause sentence)*) {return _node("paragraph", expr);}
+paragraph = expr:(PU_clause? sentence (&PA_clause sentence)*) {return _node("paragraph", expr);}
 sentence = expr:(predicate_scope / fragments_sentence) {return _node("sentence", expr);}
 fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {return _node("fragments_sentence", expr);}
 fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import) {return _node("fragment", expr);}
@@ -296,7 +296,7 @@ PE = expr:(&particle (p e)) {return _node("PE", expr);}
 PEY = expr:(&particle (p e y)) {return _node("PEY", expr);}
 PI = expr:(&particle (p i)) {return _node("PI", expr);}
 PO = expr:(&particle (p o)) {return _node("PO", expr);}
-PU = expr:(&particle (p u)) {return _node("PU", expr);}
+PU = expr:(&particle (p &(u / w) vtail)) {return _node("PU", expr);}
 SA = expr:(&particle (s vtail)) {return _node("SA", expr);}
 TA = expr:(&particle (t vtail) / digit) {return _node("TA", expr);}
 VA = expr:(&particle (v vtail)) {return _node("VA", expr);}
