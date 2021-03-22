@@ -1,3 +1,47 @@
+# Specials :
+_cardinal: "Ⓐ is (a set of) [number] things satisfying [Ⓔ1]."
+_measure: "Ⓐ has a measure of [number] (unitless) multiplied by [E] (conversion value with unit)."
+0:
+  _family: "TA"
+  eng_long: "Digit 0"
+  eng_short: "ta"
+1:
+  _family: "TA"
+  eng_long: "Digit 1"
+  eng_short: "tya"
+2:
+  _family: "TA"
+  eng_long: "Digit 2"
+  eng_short: "tye"
+3:
+  _family: "TA"
+  eng_long: "Digit 3"
+  eng_short: "tyi"
+4:
+  _family: "TA"
+  eng_long: "Digit 4"
+  eng_short: "tyo"
+5:
+  _family: "TA"
+  eng_long: "Digit 5"
+  eng_short: "tyu"
+6:
+  _family: "TA"
+  eng_long: "Digit 6"
+  eng_short: "twa"
+7:
+  _family: "TA"
+  eng_long: "Digit 7"
+  eng_short: "twe"
+8:
+  _family: "TA"
+  eng_long: "Digit 8"
+  eng_short: "twi"
+9:
+  _family: "TA"
+  eng_long: "Digit 9"
+  eng_short: "two"
+
 # Particles
 a:
   _family: "A"
@@ -643,6 +687,10 @@ be:
   _family: "BE"
   eng_long: "Ends string/number/borrowing."
   eng_short: ""
+bey:
+  _family: "BE"
+  eng_long: "Transform a cardinal number into an ordinal : Ⓐ is the [number]th member of ordered set [Ⓔ1]."
+  eng_short: "-th"
 bu:
   _family: "BU"
   eng_long: "Parser version/dialect marker"
@@ -833,6 +881,10 @@ ban:
   _family: "R"
   eng_long: "Ⓐ is a language."
   eng_short: "language"
+beyn:  
+  _family: "R"
+  eng_long: "Ⓐ (ordered set) is ordered following ordering rule [Ⓘ2]."
+  eng_short: "ordered set member"
 
 # Compounds (2):
 eberban:

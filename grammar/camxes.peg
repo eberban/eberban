@@ -141,7 +141,7 @@ ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit
 # PARTICLE FAMILIES
 BA    <- &particle (b a)
 BAY   <- &particle (b a y)
-BE    <- &particle (b e)
+BE    <- &particle (b &e vtail)
 BO    <- &particle (b o)
 BOY   <- &particle (b o y)
 BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)

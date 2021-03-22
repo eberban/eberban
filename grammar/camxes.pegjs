@@ -270,7 +270,7 @@ ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} //
 // PARTICLE FAMILIES
 BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BAY = expr:(&particle (b a y)) {return _node("BAY", expr);}
-BE = expr:(&particle (b e)) {return _node("BE", expr);}
+BE = expr:(&particle (b &e vtail)) {return _node("BE", expr);}
 BO = expr:(&particle (b o)) {return _node("BO", expr);}
 BOY = expr:(&particle (b o y)) {return _node("BOY", expr);}
 BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
