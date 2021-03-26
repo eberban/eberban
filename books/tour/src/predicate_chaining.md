@@ -1,3 +1,0 @@
-# Predicate chaining
-
-TODO
