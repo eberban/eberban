@@ -1,24 +1,35 @@
+const hideTitleList = [
+	"scope",
+	"unit",
+	"parallel binding",
+];
+
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
+	// text
 	["parser version", "box box-parser"],
 	["sentence", "box box-sentence"],
 	["arguments", "box box-arguments"],
-	["predicate scope", "box box-scope"],
-	["place", "box box-place"],
-	["import", "box box-import"],
-	["chaining import", "box box-import"],
-	["predicate", "box box-predicate"],
+
+	// scope
+	["scope", "box box-scope"],
+	["parallel binding", "box box-parallel"],
 	["set", "box box-set"],
+
+	// units	
+	["unit", "box box-unit"],
 	["compound", "box box-compound"],
 	["number", "box box-number"],
 	["letters", "box box-letters"],
-	["scope", "box box-scope"],
 	["subscope", "box box-subscope"],
 	["borrowing", "box box-borrowing"],
 	["foreign quote", "box box-borrowing"],
-	["indicator", "box box-indicator"],
+
+	// free
+	["indicator", "box box-note"],
 	["discursive", "box box-note"],
 	["subscript", "box box-note"],
+	["parenthetical", "box box-note"],
 ]);
 
 function boxClassForType(parse) {
@@ -160,7 +171,7 @@ function constructParseTreeOutput(parse, depth) {
 
 			if (isString(parse[1])) {
 				// a literal
-				output += '<b> ' + parse[1] + '</b>';
+				output += ' <b>[' + parse[1] + ']</b>';
 				if (words[parse[1]]) {
 					output += ' <span class="translation">' + words[parse[1]].eng_short + '</span>';
 				}
@@ -221,7 +232,7 @@ function constructSimplifiedTreeOutput(parse, depth) {
 
 	if (parse.word) {
 		// we have a terminal
-		output += ' <b>' + parse.word + '</b>';
+		output += ' <b>[' + parse.word + ']</b>';
 		if (words[parse.word]) {
 			output += ' <span class="translation">' + words[parse.word].eng_short + '</span>';
 		}
@@ -302,7 +313,7 @@ function constructBoxesOutput(parse, depth) {
 				output += '<span class="translation">&nbsp;' +  escapeHtml(short) + '&nbsp;</span>';
 			}			
 		} else if (parse.type === "KA" || parse.type === "GA" || parse.type === "KAY" || parse.type === "GAY") {
-			output += '<span class="translation">&nbsp;(var)&nbsp;</span>';
+			output += '<span class="translation">&nbsp;var&nbsp;</span>';
 		} else {
 			output += '...';
 		}
@@ -318,7 +329,9 @@ function constructBoxesOutput(parse, depth) {
 		}
 
 		if (boxClassForType(parse) !== 'box box-not-shown') {
-			if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
+			// if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
+			if (!hideTitleList.includes(parse.type)) {
+
 				output += '<br>' + parse.type;
 
 				if (parse.type === 'compound') {

@@ -1,43 +1,38 @@
 // List of important types in eberban that we want to show up in the simplified
 // tree.
-// TODO : Update to latest eberban rules.
 const important_types = [
 	// text
 	[ 'text', 'text' ],
 	[ 'parser_version', 'parser version' ],
 	[ 'paragraph', 'paragraph' ],
 	[ 'sentence', 'sentence' ],
-	[ 'predicate_scope_arguments', 'arguments' ],
-	[ 'predicate_scope_1', 'scope' ],
 
-	// predicate
-	[ 'predicate_unit', 'predicate' ],
-	[ 'predicate_term_jai', 'set' ],
-	[ 'predicate_filled_place', 'place' ],
-	[ 'predicate_place_import', 'import' ],
-	[ 'predicate_chaining_import', 'chaining import' ],
-	[ 'predicate_link', 'link' ],
 
-	// predicate units
+	// scope	
+	[ 'scope_arguments', 'arguments' ],
+	[ 'scope_1', 'scope' ],
+	[ 'parallel_term_set', 'set' ],
+	[ 'parallel_import', 'parallel import' ],
+	[ 'sequential_import', 'sequential import' ],
+	[ 'parallel', 'parallel binding' ],
+
+	// units
+	[ 'unit', 'unit' ],
 	[ 'compound', 'compound' ],
 	[ 'borrowing', 'borrowing' ],
 	[ 'foreign_word', 'foreign' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
-	[ 'predicate_subscope', 'subscope' ],
 	[ 'number_string', 'number' ],
 	[ 'letter_string', 'letters' ],
+	[ 'subscope', 'subscope' ],
 
 	// free
 	[ 'free_indicator', 'indicator' ],
 	[ 'free_discursive', 'discursive' ],
-	[ 'free_parenthetical', 'note' ],
+	[ 'free_parenthetical', 'parenthetical' ],
 	[ 'free_subscript', 'subscript' ],
-	[ 'free_vocative', 'vocative' ],
-
-	// scopes
-	[ 'predicate_filling', 'scope' ]
 ];
 
 // List of simplifying functions.

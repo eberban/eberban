@@ -83,27 +83,27 @@ li.implicit {
 }
 
 .box.box-arguments {
-	background: var(--color-purple);
+	background: var(--color-pink);
 }
 
 .box.box-note {
 	background: #eeeeee;
 }
 
-.box.box-place {
-	background: var(--color-purple);
-}
-
-.box.box-import {
+.box.box-parallel {
 	background: var(--color-pink);
 }
 
-.box.box-predicate {
+.box.box-import {
+	background: var(--color-purple);
+}
+
+.box.box-unit {
 	background: var(--color-blue);
 }
 
 .box.box-set {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-subscope {
@@ -111,22 +111,18 @@ li.implicit {
 }
 
 .box.box-compound {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-borrowing {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-number {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-letters {
-	background: var(--color-pink);
-}
-
-.box.box-link {
 	background: var(--color-purple);
 }
 
