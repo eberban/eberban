@@ -144,38 +144,40 @@ text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragrap
 // text structure
 paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
 paragraph = expr:(PU_clause? sentence (&PA_clause sentence)*) {return _node("paragraph", expr);}
-sentence = expr:(predicate_scope / fragments_sentence) {return _node("sentence", expr);}
+sentence = expr:(scope / fragments_sentence) {return _node("sentence", expr);}
 fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {return _node("fragments_sentence", expr);}
-fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import) {return _node("fragment", expr);}
+fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / sequential_import / parallel_import) {return _node("fragment", expr);}
 
-// predicate scopes
-predicate_scope = expr:(predicate_scope_arguments? predicate_scope_1 (connective predicate_scope_1)*) {return _node("predicate_scope", expr);}
-predicate_scope_1 = expr:(PA_clause_elidible BA_clause* predicate_scope_2 PAY_clause_elidible) {return _node("predicate_scope_1", expr);}
-predicate_scope_2 = expr:(predicate_chaining (DAY_clause predicate_chaining)*) {return _node("predicate_scope_2", expr);}
-predicate_scope_arguments = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("predicate_scope_arguments", expr);}
+// pred scopes
+scope = expr:(scope_arguments? scope_1 (connective scope_1)*) {return _node("scope", expr);}
+scope_1 = expr:(PA_clause_elidible BA_clause* scope_2 PAY_clause_elidible) {return _node("scope_1", expr);}
+scope_2 = expr:(sequential (DAY_clause sequential)*) {return _node("scope_2", expr);}
+scope_arguments = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("scope_arguments", expr);}
 
-predicate_chaining = expr:(predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?) {return _node("predicate_chaining", expr);}
-predicate_chaining_tag = expr:(VA_clause / predicate_chaining_import) {return _node("predicate_chaining_tag", expr);}
-predicate_chaining_import = expr:(BOY_clause predicate_unit) {return _node("predicate_chaining_import", expr);}
+// sequential chaining
+sequential = expr:(unit parallel (sequential_tag sequential)? / unit (sequential_tag? sequential)?) {return _node("sequential", expr);}
+sequential_tag = expr:(VA_clause / sequential_import) {return _node("sequential_tag", expr);}
+sequential_import = expr:(BOY_clause unit) {return _node("sequential_import", expr);}
 
-predicate_filling = expr:(predicate_unit predicate_filled_place+) {return _node("predicate_filling", expr);}
-predicate_filled_place = expr:(predicate_place_tag+ predicate_term) {return _node("predicate_filled_place", expr);}
+// parallel chaining
+parallel = expr:(parallel_item+) {return _node("parallel", expr);}
+parallel_item = expr:(parallel_tag+ parallel_term) {return _node("parallel_item", expr);}
+parallel_tag = expr:(FA_clause / parallel_import) {return _node("parallel_tag", expr);}
+parallel_import = expr:(BO_clause unit) {return _node("parallel_import", expr);}
 
-predicate_place_tag = expr:(FA_clause / predicate_place_import) {return _node("predicate_place_tag", expr);}
-predicate_place_import = expr:(BO_clause predicate_unit) {return _node("predicate_place_import", expr);}
+parallel_term = expr:(parallel_term_connective / parallel_term_1) {return _node("parallel_term", expr);}
+parallel_term_connective = expr:(parallel_term_1 (connective parallel_term_1)+) {return _node("parallel_term_connective", expr);}
+parallel_term_1 = expr:(parallel_term_set / parallel_term_2) {return _node("parallel_term_1", expr);}
+parallel_term_set = expr:(parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible) {return _node("parallel_term_set", expr);}
+parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
 
-predicate_term = expr:(predicate_term_connective / predicate_term_1) {return _node("predicate_term", expr);}
-predicate_term_connective = expr:(predicate_term_1 (connective predicate_term_1)+) {return _node("predicate_term_connective", expr);}
-predicate_term_1 = expr:(predicate_term_set / predicate_term_2) {return _node("predicate_term_1", expr);}
-predicate_term_set = expr:(predicate_term_2 (DAY_clause predicate_term_2)+ BE_clause_elidible) {return _node("predicate_term_set", expr);}
-predicate_term_2 = expr:(predicate_unit+) {return _node("predicate_term_2", expr);}
+// predicate unit
+unit = expr:(unit_po / unit_1) {return _node("unit", expr);}
+unit_po = expr:(GAY_clause PO_clause unit_1 / unit_1 PO_clause GAY_clause) {return _node("unit_po", expr);}
+unit_1 = expr:((SA_clause / ZA_clause)* unit_2) {return _node("unit_1", expr);}
+unit_2 = expr:(compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("unit_2", expr);}
 
-predicate_unit = expr:(predicate_unit_po / predicate_unit_1) {return _node("predicate_unit", expr);}
-predicate_unit_po = expr:(GAY_clause PO_clause predicate_unit_1 / predicate_unit_1 PO_clause GAY_clause) {return _node("predicate_unit_po", expr);}
-predicate_unit_1 = expr:((SA_clause / ZA_clause)* predicate_unit_2) {return _node("predicate_unit_1", expr);}
-predicate_unit_2 = expr:(compound / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("predicate_unit_2", expr);}
-
-// compound prefixes
+// compounds
 compound = expr:(free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*) {return _node("compound", expr);}
 compound_1 = expr:(a compound_word) {return _node("compound_1", expr);}
 compound_2 = expr:(e compound_word compound_word) {return _node("compound_2", expr);}
@@ -198,7 +200,7 @@ foreign_quote = expr:(XO_clause spaces? foreign_quote_open spaces foreign_quote_
 foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("foreign_quote_content", expr);}
 
 // sub-scopes
-predicate_subscope = expr:(PE_clause predicate_scope PEY_clause_elidible) {return _node("predicate_subscope", expr);}
+subscope = expr:(PE_clause scope PEY_clause_elidible) {return _node("subscope", expr);}
 
 // string (numbers / literals)
 string = expr:((number_string / letter_string) BE_clause_elidible) {return _node("string", expr);}
@@ -206,10 +208,10 @@ number_string = expr:(TA_clause (TA_clause / BQ_clause)*) {return _node("number_
 letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_string", expr);}
 
 // variables
-variable = expr:(variable_intrinsic / variable_individual / variable_predicate) {return _node("variable", expr);}
+variable = expr:(variable_intrinsic / variable_individual / variable_pred) {return _node("variable", expr);}
 variable_intrinsic = expr:(MA_clause) {return _node("variable_intrinsic", expr);}
 variable_individual = expr:(KAY_clause / KA_clause) {return _node("variable_individual", expr);}
-variable_predicate = expr:(GAY_clause / GA_clause) {return _node("variable_predicate", expr);}
+variable_pred = expr:(GAY_clause / GA_clause) {return _node("variable_pred", expr);}
 
 // connectives
 connective = expr:(BA_clause? DA_clause BAY_clause? free_post*) {return _node("connective", expr);}
@@ -220,7 +222,7 @@ free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}
 // free suffix
 free_post = expr:(JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript) {return _node("free_post", expr);}
 free_subscript = expr:(JA_clause string) {return _node("free_subscript", expr);}
-free_discursive = expr:(JE_clause predicate_unit+) {return _node("free_discursive", expr);}
+free_discursive = expr:(JE_clause unit+) {return _node("free_discursive", expr);}
 free_indicator = expr:(CA_clause) {return _node("free_indicator", expr);}
 free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_parenthetical", expr);}
 
@@ -237,10 +239,10 @@ CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);} //
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // logical connectives
 DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // set creator
 FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
-GA_clause = expr:(free_prefix* spaces? GA free_post*) {return _node("GA_clause", expr);} // use predicate variables
-GAY_clause = expr:(free_prefix* spaces? GAY free_post*) {return _node("GAY_clause", expr);} // new predicate variables
+GA_clause = expr:(free_prefix* spaces? GA free_post*) {return _node("GA_clause", expr);} // use pred variables
+GAY_clause = expr:(free_prefix* spaces? GAY free_post*) {return _node("GAY_clause", expr);} // new pred variables
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);} // free subscript
-JE_clause = expr:(free_prefix* spaces? JE) {return _node("JE_clause", expr);} // free discursive (predicate)
+JE_clause = expr:(free_prefix* spaces? JE) {return _node("JE_clause", expr);} // free discursive (pred)
 JO_clause = expr:(free_prefix* spaces? JO) {return _node("JO_clause", expr);} // free parenthetical started (text)
 JOY_clause = expr:(free_prefix* spaces? JOY) {return _node("JOY_clause", expr);} // free parenthetical terminator
 JU_clause = expr:(spaces? JU) {return _node("JU_clause", expr);} // free prefix / scope starter
@@ -248,15 +250,15 @@ JUY_clause = expr:(spaces? JUY) {return _node("JUY_clause", expr);} // free scop
 KA_clause = expr:(free_prefix* spaces? KA free_post*) {return _node("KA_clause", expr);} // use individual variables
 KAY_clause = expr:(free_prefix* spaces? KAY free_post*) {return _node("KAY_clause", expr);} // new individual variables
 MA_clause = expr:(free_prefix* spaces? MA free_post*) {return _node("MA_clause", expr);} // intrinsic variables (pronouns, ...)
-PA_clause = expr:(free_prefix* spaces? PA free_post*) {return _node("PA_clause", expr);} // predicate scope starter
+PA_clause = expr:(free_prefix* spaces? PA free_post*) {return _node("PA_clause", expr);} // pred scope starter
 PA_clause_elidible = expr:(PA_clause?) {return (expr == "" || !expr) ? ["PA"] : _node_empty("PA_clause_elidible", expr);}
-PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // predicate scope terminator
+PAY_clause = expr:(free_prefix* spaces? PAY free_post*) {return _node("PAY_clause", expr);} // pred scope terminator
 PAY_clause_elidible = expr:(PAY_clause?) {return (expr == "" || !expr) ? ["PAY"] : _node_empty("PAY_clause_elidible", expr);}
-PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);} // predicate subscope starter
-PEY_clause = expr:(free_prefix* spaces? PEY free_post*) {return _node("PEY_clause", expr);} // predicate subscope terminator
+PE_clause = expr:(free_prefix* spaces? PE free_post*) {return _node("PE_clause", expr);} // pred subscope starter
+PEY_clause = expr:(free_prefix* spaces? PEY free_post*) {return _node("PEY_clause", expr);} // pred subscope terminator
 PEY_clause_elidible = expr:(PEY_clause?) {return (expr == "" || !expr) ? ["PEY"] : _node_empty("PEY_clause_elidible", expr);}
-PI_clause = expr:(free_prefix* spaces? PI free_post*) {return _node("PI_clause", expr);} // predicate scope arguments terminator
-PO_clause = expr:(spaces? PO) {return _node("PO_clause", expr);} // predicate variable affectation
+PI_clause = expr:(free_prefix* spaces? PI free_post*) {return _node("PI_clause", expr);} // pred scope arguments terminator
+PO_clause = expr:(spaces? PO) {return _node("PO_clause", expr);} // pred variable affectation
 PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
 SA_clause = expr:(free_prefix* spaces? SA free_post*) {return _node("SA_clause", expr);} // place binding tag
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
@@ -265,7 +267,7 @@ XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} //
 XAY_clause = expr:(free_prefix* spaces? XAY free_post*) {return _node("XAY_clause", expr);} // grammatical quote terminator
 XE_clause = expr:(free_prefix* spaces? XE) {return _node("XE_clause", expr);} // one word quote
 XO_clause = expr:(free_prefix* spaces? XO) {return _node("XO_clause", expr);} // foreign quote
-ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // predicate unit transformation
+ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // pred unit transformation
 
 // PARTICLE FAMILIES
 BA = expr:(&particle (b a)) {return _node("BA", expr);}

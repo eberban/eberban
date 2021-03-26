@@ -15,38 +15,40 @@ text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? s
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
 paragraph <- PU_clause? sentence (&PA_clause sentence)*
-sentence <- predicate_scope / fragments_sentence
+sentence <- scope / fragments_sentence
 fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
-fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / predicate_chaining_import / predicate_place_import
+fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / sequential_import / parallel_import
 
-# predicate scopes
-predicate_scope <- predicate_scope_arguments? predicate_scope_1 (connective predicate_scope_1)*
-predicate_scope_1 <- PA_clause_elidible BA_clause* predicate_scope_2 PAY_clause_elidible
-predicate_scope_2 <- predicate_chaining (DAY_clause predicate_chaining)*
-predicate_scope_arguments <- (KAY_clause / GAY_clause)+ PI_clause
+# pred scopes
+scope <- scope_arguments? scope_1 (connective scope_1)*
+scope_1 <- PA_clause_elidible BA_clause* scope_2 PAY_clause_elidible
+scope_2 <- sequential (DAY_clause sequential)*
+scope_arguments <- (KAY_clause / GAY_clause)+ PI_clause
 
-predicate_chaining <- predicate_filling (predicate_chaining_tag predicate_chaining)? / predicate_unit (predicate_chaining_tag? predicate_chaining)?
-predicate_chaining_tag <- VA_clause / predicate_chaining_import
-predicate_chaining_import <- BOY_clause predicate_unit
+# sequential chaining
+sequential <- unit parallel (sequential_tag sequential)? / unit (sequential_tag? sequential)?
+sequential_tag <- VA_clause / sequential_import
+sequential_import <- BOY_clause unit
 
-predicate_filling <- predicate_unit predicate_filled_place+
-predicate_filled_place <- predicate_place_tag+ predicate_term
+# parallel chaining
+parallel <- parallel_item+
+parallel_item <- parallel_tag+ parallel_term
+parallel_tag <- FA_clause / parallel_import
+parallel_import <- BO_clause unit
 
-predicate_place_tag <- FA_clause / predicate_place_import
-predicate_place_import <- BO_clause predicate_unit
+parallel_term <- parallel_term_connective / parallel_term_1
+parallel_term_connective <- parallel_term_1 (connective parallel_term_1)+
+parallel_term_1 <- parallel_term_set / parallel_term_2
+parallel_term_set <- parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible
+parallel_term_2 <- unit+
 
-predicate_term <- predicate_term_connective / predicate_term_1
-predicate_term_connective <- predicate_term_1 (connective predicate_term_1)+
-predicate_term_1 <- predicate_term_set / predicate_term_2
-predicate_term_set <- predicate_term_2 (DAY_clause predicate_term_2)+ BE_clause_elidible
-predicate_term_2 <- predicate_unit+
+# predicate unit
+unit <- unit_po / unit_1
+unit_po <- GAY_clause PO_clause unit_1 / unit_1 PO_clause GAY_clause
+unit_1 <- (SA_clause / ZA_clause)* unit_2
+unit_2 <- compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*
 
-predicate_unit <- predicate_unit_po / predicate_unit_1
-predicate_unit_po <- GAY_clause PO_clause predicate_unit_1 / predicate_unit_1 PO_clause GAY_clause
-predicate_unit_1 <- (SA_clause / ZA_clause)* predicate_unit_2
-predicate_unit_2 <- compound / borrowing / quote / predicate_subscope / variable / free_prefix* spaces? (root / string) free_post*
-
-# compound prefixes
+# compounds
 compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
 compound_1 <- a compound_word
 compound_2 <- e compound_word compound_word
@@ -69,7 +71,7 @@ foreign_quote <- XO_clause spaces? foreign_quote_open spaces foreign_quote_conte
 foreign_quote_content <- (foreign_quote_word spaces)*
 
 # sub-scopes
-predicate_subscope <- PE_clause predicate_scope PEY_clause_elidible
+subscope <- PE_clause scope PEY_clause_elidible
 
 # string (numbers / literals)
 string <- (number_string / letter_string) BE_clause_elidible
@@ -77,10 +79,10 @@ number_string <- TA_clause (TA_clause / BQ_clause)*
 letter_string <- BQ_clause (TA_clause / BQ_clause)*
 
 # variables
-variable <- variable_intrinsic / variable_individual / variable_predicate
+variable <- variable_intrinsic / variable_individual / variable_pred
 variable_intrinsic <- MA_clause
 variable_individual <- KAY_clause / KA_clause
-variable_predicate <- GAY_clause / GA_clause
+variable_pred <- GAY_clause / GA_clause
 
 # connectives
 connective <- BA_clause? DA_clause BAY_clause? free_post*
@@ -91,7 +93,7 @@ free_prefix <- JU_clause
 # free suffix
 free_post <- JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
 free_subscript <- JA_clause string
-free_discursive <- JE_clause predicate_unit+
+free_discursive <- JE_clause unit+
 free_indicator <- CA_clause
 free_parenthetical <- JO_clause text_1 JOY_clause
 
@@ -108,10 +110,10 @@ CA_clause           <- free_prefix* spaces? CA                  # free suffix (i
 DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
 DAY_clause          <- free_prefix* spaces? DAY free_post*      # set creator
 FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
-GA_clause           <- free_prefix* spaces? GA free_post*       # use predicate variables
-GAY_clause          <- free_prefix* spaces? GAY free_post*      # new predicate variables
+GA_clause           <- free_prefix* spaces? GA free_post*       # use pred variables
+GAY_clause          <- free_prefix* spaces? GAY free_post*      # new pred variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
-JE_clause           <- free_prefix* spaces? JE                  # free discursive (predicate)
+JE_clause           <- free_prefix* spaces? JE                  # free discursive (pred)
 JO_clause           <- free_prefix* spaces? JO                  # free parenthetical started (text)
 JOY_clause          <- free_prefix* spaces? JOY                 # free parenthetical terminator
 JU_clause           <- spaces? JU                               # free prefix / scope starter
@@ -119,15 +121,15 @@ JUY_clause          <- spaces? JUY                              # free scope ter
 KA_clause           <- free_prefix* spaces? KA free_post*       # use individual variables
 KAY_clause          <- free_prefix* spaces? KAY free_post*      # new individual variables
 MA_clause           <- free_prefix* spaces? MA free_post*       # intrinsic variables (pronouns, ...)
-PA_clause           <- free_prefix* spaces? PA free_post*       # predicate scope starter
+PA_clause           <- free_prefix* spaces? PA free_post*       # pred scope starter
 PA_clause_elidible  <- PA_clause?
-PAY_clause          <- free_prefix* spaces? PAY free_post*      # predicate scope terminator
+PAY_clause          <- free_prefix* spaces? PAY free_post*      # pred scope terminator
 PAY_clause_elidible <- PAY_clause?
-PE_clause           <- free_prefix* spaces? PE free_post*       # predicate subscope starter
-PEY_clause          <- free_prefix* spaces? PEY free_post*      # predicate subscope terminator
+PE_clause           <- free_prefix* spaces? PE free_post*       # pred subscope starter
+PEY_clause          <- free_prefix* spaces? PEY free_post*      # pred subscope terminator
 PEY_clause_elidible <- PEY_clause?
-PI_clause           <- free_prefix* spaces? PI free_post*       # predicate scope arguments terminator
-PO_clause           <- spaces? PO                               # predicate variable affectation
+PI_clause           <- free_prefix* spaces? PI free_post*       # pred scope arguments terminator
+PO_clause           <- spaces? PO                               # pred variable affectation
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
@@ -136,7 +138,7 @@ XA_clause           <- free_prefix* spaces? XA                  # grammatical qu
 XAY_clause          <- free_prefix* spaces? XAY free_post*      # grammatical quote terminator
 XE_clause           <- free_prefix* spaces? XE                  # one word quote
 XO_clause           <- free_prefix* spaces? XO                  # foreign quote
-ZA_clause           <- free_prefix* spaces? ZA                  # predicate unit transformation
+ZA_clause           <- free_prefix* spaces? ZA                  # pred unit transformation
 
 # PARTICLE FAMILIES
 BA    <- &particle (b a)
