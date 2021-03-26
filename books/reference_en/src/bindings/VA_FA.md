@@ -1,14 +1,18 @@
 # Explicit bindings (VA/FA)
 
 **VA** and **FA** are similar families that allow to change the **right chaining
-place** of a predicate unit, and also allow to add non-restrictive bindings
-(**whether or not** connective).
+place** of a predicate unit, and also allow to add non-restrictive bindings.
 
 However while **VA** only change the chaining place, **FA** is followed by a
 whole predicate unit chain until the next **FA**, **VA** or the end of the
 sentence. This next **FA/VA** will then be bound to the same left unit as the
 current **FA**. **FA** thus allow to perform bindings multiple times with the
 same unit.
+
+The absense of **FA/VA** can also be seen as an implicit **vey**. Implicit or
+explicit **VA** is called **sequential binding**, while the usage of **FA** is
+called **parallel binding** as it allows to perform multiple bindings to the
+same left unit in parallel.
 
 In this inner predicate unit chain, the Ⓐ place of the first unit is bound
 to the **right chaining place** of the left unit. This can be changed with
@@ -53,27 +57,27 @@ with no difference in meaning if there is en equivalent in the other family.
 > P_1 \wedge P_2 \wedge (P_3 \wedge P_4) \wedge P_5 \wedge P_6
 > \\]
 
-| VA word | FA word | Definition                                                                                                      |
-| ------- | ------- | --------------------------------------------------------------------------------------------------------------- |
-| fa      | va      | Binds Ⓐ place (restrictive)                                                                                     |
-| fe      | ve      | Binds Ⓔ place (restrictive)                                                                                     |
-| fi      | vi      | Binds Ⓘ place (restrictive)                                                                                     |
-| fo      | vo      | Binds Ⓞ place (restrictive)                                                                                     |
-| fu      | vu      | Binds Ⓤ place (restrictive)                                                                                     |
-| &nbsp;  |
-| fwa     | vwa     | Binds Ⓐ place (non-restrictive)                                                                                 |
-| fwe     | vwe     | Binds Ⓔ place (non-restrictive)                                                                                 |
-| fwi     | vwi     | Binds Ⓘ place (non-restrictive)                                                                                 |
-| fwo     | vwo     | Binds Ⓞ place (non-restrictive)                                                                                 |
-| fwu     | vwu     | Binds Ⓤ place (non-restrictive)                                                                                 |
-| &nbsp;  |
-| fya     | vya     | Adverbial : Binds predicate unit (restrictive)
-| fye     | vye     | Adverbial : Binds predicate unit (non-restrictive)
-| fyi     | vyi     | Adverbial : Binds predicate unit (subordinative)
-| &nbsp;  |
-| fay     | vay     | Which place should be bound to make the proposition true ?                                                      |
-| fey     |         | Binds with the next place in order. Can be usefull if there are more than 5 places.                             |
-|         | vey     | Binds with the usual right chaining place. Same as without a **VA**, but necessary if there is a **FA** before. |
+| FA     | VA  | Definition                                                                                                      |
+| ------ | --- | --------------------------------------------------------------------------------------------------------------- |
+| fa     | va  | Binds Ⓐ place (restrictive)                                                                                     |
+| fe     | ve  | Binds Ⓔ place (restrictive)                                                                                     |
+| fi     | vi  | Binds Ⓘ place (restrictive)                                                                                     |
+| fo     | vo  | Binds Ⓞ place (restrictive)                                                                                     |
+| fu     | vu  | Binds Ⓤ place (restrictive)                                                                                     |
+| &nbsp; |     |                                                                                                                 |
+| fwa    | vwa | Binds Ⓐ place (non-restrictive)                                                                                 |
+| fwe    | vwe | Binds Ⓔ place (non-restrictive)                                                                                 |
+| fwi    | vwi | Binds Ⓘ place (non-restrictive)                                                                                 |
+| fwo    | vwo | Binds Ⓞ place (non-restrictive)                                                                                 |
+| fwu    | vwu | Binds Ⓤ place (non-restrictive)                                                                                 |
+| &nbsp; |     |                                                                                                                 |
+| fya    | vya | Adverbial : Binds predicate unit (restrictive)                                                                  |
+| fye    | vye | Adverbial : Binds predicate unit (non-restrictive)                                                              |
+| fyi    | vyi | Adverbial : Binds predicate unit (subordinative)                                                                |
+| &nbsp; |     |                                                                                                                 |
+| fay    | vay | Which place should be bound to make the proposition true ?                                                      |
+| fey    |     | Binds with the next place in order. Can be usefull if there are more than 5 places.                             |
+|        | vey | Binds with the usual right chaining place. Same as without a **VA**, but necessary if there is a **FA** before. |
 
 ## Non-restrictives
 

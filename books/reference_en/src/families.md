@@ -10,7 +10,7 @@
 | [**CA**](struct/JA_JE_JO_JU_CA.md#suffix-markers-ca)       | free suffix (indicator / marker)                             |
 | [**DA**](struct/DA.md)                                     | logical connectives                                          |
 | [**DAY**](struct/DAY.md)                                   | set creator                                                  |
-| [**FA**](bindings/VA_FA.md)                                | filling place tag                                            |
+| [**FA**](bindings/VA_FA.md)                                | parallel binding tag                                         |
 | [**GA**](units/KA_KAY_GA_GAY.md)                           | use predicate variables                                      |
 | [**GAY**](units/KA_KAY_GA_GAY.md)                          | new predicate variables                                      |
 | [**JA**](struct/JA_JE_JO_JU_CA.md#subscript-ja)*           | free subscript                                               |
@@ -31,11 +31,11 @@
 | [**PU**](struct/PA_PI_PU_BA.md)*                           | paragraph marker                                             |
 | [**SA**](bindings/SA_ZA.md)                                | place binding tag                                            |
 | [**TA**](units/TA_BQ.md)                                   | numbers/digits                                               |
-| [**VA**](bindings/VA_FA.md)                                | chaining tags                                                |
+| [**VA**](bindings/VA_FA.md)                                | parallel binding tags                                        |
 | [**XA**](units/XA_XE_XO.md)*                               | grammatical quote starter                                    |
 | [**XAY**](units/XA_XE_XO.md)*                              | grammatical quote terminator                                 |
 | [**XE**](units/XA_XE_XO.md)                                | one word quote                                               |
 | [**XO**](units/XA_XE_XO.md)*                               | foreign quote                                                |
-| [**ZA**](bindings/SA_ZA.md)                                | predicate unit transformation                                |
+| [**ZA**](bindings/SA_ZA.md)                                | unit transformation                                          |
 
 > Families with a `*` are composed of only one member.
