@@ -24,7 +24,6 @@ function parse() {
 		parse = remove_morphology(parse);
 		parse = remove_spaces(parse);
 		var simplified = simplifyTree(parse);
-		numberSumti(simplified);
 
 		if (parse) {
 			tokens = [];
@@ -133,7 +132,7 @@ function constructParseTreeOutput(parse, depth) {
 
 			if (isString(parse[1])) {
 				// a literal
-				output += '<b> [' + getVlasiskuLink(parse[1]) + ']</b>';
+				output += '<b> ' + parse[1] + '</b>';
 				if (words[parse[1]]) {
 					output += ' <span class="translation">' + words[parse[1]].eng_short + '</span>';
 				}
@@ -194,7 +193,7 @@ function constructSimplifiedTreeOutput(parse, depth) {
 
 	if (parse.word) {
 		// we have a terminal
-		output += ' <b>[' + getVlasiskuLink(parse.word) + ']</b>';
+		output += ' <b>' + parse.word + '</b>';
 		if (words[parse.word]) {
 			output += ' <span class="translation">' + words[parse.word].eng_short + '</span>';
 		}
@@ -476,19 +475,22 @@ function generateFixes(e) {
 function showHighlighting(simplified, tokens, $element) {
 	var output = '';
 
-	if ($('#latin-button').hasClass('active')) {
-		var mode = 1;
-		var classString = 'latin-highlighting';
-	} else if ($('#cyrillic-button').hasClass('active')) {
-		var mode = 2;
-		var classString = 'cyrillic-highlighting';
-	} else if ($('#tengwar-button').hasClass('active')) {
-		var mode = 3;
-		var classString = 'tengwar-highlighting';
-	} else if ($('#hiragana-button').hasClass('active')) {
-		var mode = 4;
-		var classString = 'hiragana-highlighting';
-	}
+	var mode = 1;
+	var classString = 'latin-highlighting';
+
+	// if ($('#latin-button').hasClass('active')) {
+	// 	var mode = 1;
+	// 	var classString = 'latin-highlighting';
+	// } else if ($('#cyrillic-button').hasClass('active')) {
+	// 	var mode = 2;
+	// 	var classString = 'cyrillic-highlighting';
+	// } else if ($('#tengwar-button').hasClass('active')) {
+	// 	var mode = 3;
+	// 	var classString = 'tengwar-highlighting';
+	// } else if ($('#hiragana-button').hasClass('active')) {
+	// 	var mode = 4;
+	// 	var classString = 'hiragana-highlighting';
+	// }
 
 	output += '<span class="highlighting ' + classString + '"><big>';
 	output += markupHighlighting(simplified, mode);
@@ -526,7 +528,7 @@ function markupHighlighting(simplified, mode) {
 	}
 
 	if (simplified.word) {
-		output += outputWord(simplified.word, mode);
+		output += simplified.word;
 	} else {
 		if (beforeOutput === '') {
 			for (child in simplified.children) {
@@ -544,7 +546,7 @@ function enumerateTokens(simplified, mode) {
 	var output = '';
 
 	if (simplified.word) {
-		output += outputWord(simplified.word, mode);
+		output += simplified.word;
 	} else {
 		for (child in simplified.children) {
 			var textToAdd = enumerateTokens(simplified.children[child], mode);
@@ -579,7 +581,6 @@ function showGlossing(text, $element) {
 	var output = '<dl class="dl-horizontal">';
 
 	for (var j = 0; j < text.length; j++) {
-		// output += "<dt>" + getVlasiskuLink(text[j]) + "</dt>";
 		output += '<dt>' + text[j] + '</dt>';
 
 		if (words[text[j]]) {
@@ -617,38 +618,6 @@ function showTranslation(parse, text, $element) {
 
 function isString(s) {
 	return typeof s === 'string' || s instanceof String;
-}
-
-function getVlasiskuLink(word) {
-	return '<a href="http://vlasisku.lojban.org/vlasisku/' + word + '">' + outputWord(word, getSelectedMode()) + '</a>';
-}
-
-function outputWord(word, mode) {
-	if (mode === 1) {
-		// Latin mode
-		return word;
-	} else if (mode === 2) {
-		// Cyrillic mode
-		return wordToCyrillic(word);
-	} else if (mode === 3) {
-		// Tengwar mode
-		return wordToTengwar(word);
-	} else if (mode === 4) {
-		// Hiragana mode
-		return wordToHiragana(word);
-	}
-}
-
-function getSelectedMode() {
-	if ($('#latin-button').hasClass('active')) {
-		return 1;
-	} else if ($('#cyrillic-button').hasClass('active')) {
-		return 2;
-	} else if ($('#tengwar-button').hasClass('active')) {
-		return 3;
-	} else if ($('#hiragana-button').hasClass('active')) {
-		return 4;
-	}
 }
 
 function endsWith(str, suffix) {
