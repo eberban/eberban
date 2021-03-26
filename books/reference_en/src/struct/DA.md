@@ -6,47 +6,22 @@ be prefixed with **ba** to negate the left component, while it can be suffixed
 with **BAY** to negate the right component. **di** allow to ask a question about
 which logicial connective would make the result true.
 
-## da (or)
+| left  | right |     | da    | de    | do    | du    | duhu  |
+| ----- | ----- | --- | ----- | ----- | ----- | ----- | ----- |
+| True  | True  |     | True  | True  | True  | True  | True  |
+| True  | False |     | True  | False | False | False | True  |
+| False | True  |     | True  | False | False | True  | False |
+| False | False |     | False | False | True  | False | False |
 
-| Left  | Right | Result |
-| ----- | ----- | ------ |
-| True  | True  | True   |
-| True  | False | True   |
-| False | True  | True   |
-| False | False | False  |
+Using these 5 words, **ba** and **bay**, all truth table can be expressed
+(except "always true" and "always false" ones).
 
-## de (and)
-
-| Left  | Right | Result |
-| ----- | ----- | ------ |
-| True  | True  | True   |
-| True  | False | False  |
-| False | True  | False  |
-| False | False | False  |
-
-## do (if and only if)
-
-| Left  | Right | Result |
-| ----- | ----- | ------ |
-| True  | True  | True   |
-| True  | False | False  |
-| False | True  | False  |
-| False | False | True   |
-
-## du (whether or not)
-
-| Left  | Right | Result |
-| ----- | ----- | ------ |
-| True  | True  | True   |
-| True  | False | True   |
-| False | True  | False  |
-| False | False | False  |
-
-## doho / duhu
-
-*doho* and *duhu* corresponds respectively to *do* and *du* but with their
-left and right columns swapped. Using these 6 words, *ba* and *bay*, all
-truth table can be expressed (except "always true" and "always false" ones).
+> **du** and **duhu** truth values ignores respectively their *left* and *right*
+> part, which is moved in its own separate statement. This can be usefull when
+> making complex statements to express first a sub-statement (instead of using
+> [subscopes](PE.md)) and then refering back to it with
+> [**mwa/mwe**](../units/MA.md). This is similar to using
+> [adverbials](../bindings/VA_FA.md).
 
 ## Predicate distributivity
 
@@ -54,3 +29,8 @@ When used on predicates instead of propositions, it has a distributive behavior.
 
 *pe **za udjon de za umiya** pey spi mo* is identical to ***za udjon** spi mo
 **de pa** **za umiya** spi mo*.
+
+## Grouping order
+
+**DA** have left priority : `((A DA B) DA C) DA D`. Custom priority can be
+expressed using [subscopes](PE.md).
