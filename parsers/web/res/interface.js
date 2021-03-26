@@ -1,3 +1,31 @@
+// List of types with their associated CSS classes.
+const boxClassForTypeMap = new Map([
+	["parser version", "box box-parser"],
+	["sentence", "box box-sentence"],
+	["arguments", "box box-arguments"],
+	["predicate scope", "box box-scope"],
+	["place", "box box-place"],
+	["import", "box box-import"],
+	["chaining import", "box box-import"],
+	["predicate", "box box-predicate"],
+	["set", "box box-set"],
+	["compound", "box box-compound"],
+	["number", "box box-number"],
+	["letters", "box box-letters"],
+	["scope", "box box-scope"],
+	["subscope", "box box-subscope"],
+	["borrowing", "box box-borrowing"],
+	["foreign quote", "box box-borrowing"],
+	["indicator", "box box-indicator"],
+	["discursive", "box box-note"],
+	["subscript", "box box-note"],
+]);
+
+function boxClassForType(parse) {
+	let boxClass = boxClassForTypeMap.get(parse.type);
+	return boxClass || "box box-not-shown";
+}
+
 $(document).ready(function () {
 	$('label').popover();
 });
@@ -324,79 +352,6 @@ function constructBoxesOutput(parse, depth) {
 	}
 
 	return output;
-}
-
-function boxClassForType(parse) {
-	if (parse.type === 'parser version') {
-		return 'box box-parser';
-	}
-
-	if (parse.type === 'sentence') {
-		return 'box box-sentence';
-	}
-
-	if (parse.type === 'arguments') {
-		return 'box box-arguments';
-	}
-	if (parse.type === "predicate scope") {
-		return "box box-scope";
-	}
-
-	if (parse.type === 'place') {
-		return 'box box-place';
-	}
-	if (parse.type === 'import' || parse.type === 'chaining import') {
-		return 'box box-import';
-	}
-
-	if (parse.type === 'predicate') {
-		return 'box box-predicate';
-	}
-
-	if (parse.type === 'set') {
-		return 'box box-set';
-	}
-
-	if (parse.type === 'link') {
-		return 'box box-link';
-	}
-
-	if (parse.type === 'compound') {
-		return 'box box-compound';
-	}
-	if (parse.type === 'number') {
-		return 'box box-number';
-	}
-	if (parse.type === 'letters') {
-		return 'box box-letters';
-	}
-	if (parse.type === 'scope') {
-		return 'box box-scope';
-	}
-	if (parse.type === 'subscope') {
-		return 'box box-subscope';
-	}
-	if (parse.type === 'borrowing') {
-		return 'box box-borrowing';
-	}
-	if (parse.type === 'foreign quote') {
-		return 'box box-borrowing';
-	}
-
-	if (parse.type === 'indicator') {
-		return 'box box-indicator';
-	}
-	if (parse.type === 'discursive') {
-		return 'box box-note';
-	}
-	if (parse.type === 'note') {
-		return 'box box-note';
-	}
-	if (parse.type === 'subscript') {
-		return 'box box-note';
-	}
-
-	return 'box box-not-shown';
 }
 
 /**

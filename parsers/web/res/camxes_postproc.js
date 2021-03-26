@@ -149,12 +149,6 @@ function newer_postprocessor(
 		// "cmene": "C", "cmevla": "C", "gismu": "G", "lujvo": "L",
 		// "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
 		// "selbri": "SELBRI", "sumti": "SUMTI"
-		// "DAI_clause": "DAI",
-		// "p_predicate_open": "VA",
-		// "p_predicate_tail_open": "VE",
-		// "p_predicate_tail_close": "VEI",
-		// "p_pre_connective_close": "GAI",
-		// "p_abstraction_close": "BAI",
 		root: 'R',
 		borrowing_content: 'B'
 	};
