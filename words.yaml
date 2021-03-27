@@ -558,7 +558,7 @@ zay:
 ze:
   _family: "ZA"
   eng_long: "Use the same instance and variables of the following unit instead of a new one."
-  eng_short: "re-use unit"
+  eng_short: "same"
 zi:
   _family: "ZA"
   eng_long: "[ⒶN] is a predicate with places Ⓔ."

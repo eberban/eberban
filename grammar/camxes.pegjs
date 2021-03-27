@@ -188,9 +188,10 @@ compound_word = expr:(initial_pause native_word) {return _node("compound_word", 
 
 // borrowings
 borrowing = expr:(free_prefix* borrowing_part+ BE_clause_elidible free_post*) {return _node("borrowing", expr);}
-borrowing_part = expr:(spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF)) {return _node("borrowing_part", expr);}
+borrowing_part = expr:(spaces? borrowing_prefix borrowing_content borrowing_end) {return _node("borrowing_part", expr);}
 borrowing_prefix = expr:((w &aeiouq / u)) {return _node("borrowing_prefix", expr);}
 borrowing_content = expr:(foreign_word) {return _node("borrowing_content", expr);}
+borrowing_end = expr:((pause_char / space_char / EOF)) {return _node("borrowing_end", expr);}
 
 // quotes
 quote = expr:(grammatical_quote / one_word_quote / foreign_quote) {return _node("quote", expr);}

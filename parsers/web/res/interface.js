@@ -195,8 +195,6 @@ function constructParseTreeOutput(parse, depth) {
 			output += '</ol>';
 			return output;
 		}
-
-		return '<i>(huh 2?)</i>';
 	}
 
 	return '<i>(huh? ' + parse + ')</i>';

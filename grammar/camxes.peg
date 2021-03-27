@@ -59,9 +59,10 @@ compound_word <- initial_pause native_word
 
 # borrowings
 borrowing <- free_prefix* borrowing_part+ BE_clause_elidible free_post*
-borrowing_part <- spaces? borrowing_prefix borrowing_content (pause_char / space_char / EOF)
+borrowing_part <- spaces? borrowing_prefix borrowing_content borrowing_end
 borrowing_prefix <- (w &aeiouq / u)
 borrowing_content <- foreign_word
+borrowing_end <- (pause_char / space_char / EOF)
 
 # quotes
 quote <- grammatical_quote / one_word_quote / foreign_quote
