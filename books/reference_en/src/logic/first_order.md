@@ -58,3 +58,7 @@ Each predicate word matches a proposition in the expression above, with the
 definitions providing the variables and how they are bound to each other. The
 language doesn't allow to manipulate these variables directly, but provide
 particles allowing to change how variables are bound together.
+
+> Predicate definitions can specify a "default value" for a place. This
+> default value is used only if this place is not bound with another predicate
+> place.
