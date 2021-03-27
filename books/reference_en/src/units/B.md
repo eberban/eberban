@@ -15,6 +15,6 @@ A chain of multiple borrowings will count as only one predicate unit composed
 of multiple parts. To prevent 2 borrowings to form only one predicate unit,
 separate them with **be**.
 
-Their place structure is "Ⓐ is a [word]". Having a generic place structure
+Their place structure is `(A) is a [word]`. Having a generic place structure
 makes comprehension easier to a listener/reader who might not be familiar with
 the borrowed word.

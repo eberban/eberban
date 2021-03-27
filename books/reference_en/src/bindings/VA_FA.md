@@ -14,62 +14,60 @@ explicit **VA** is called **sequential binding**, while the usage of **FA** is
 called **parallel binding** as it allows to perform multiple bindings to the
 same left unit in parallel.
 
-In this inner predicate unit chain, the Ⓐ place of the first unit is bound
-to the **right chaining place** of the left unit. This can be changed with
+In this inner predicate unit chain, the `A` place of the first unit is bound to
+the **right chaining place** of the left unit. This can be changed with
 [**SA**](SA_ZA.md#sa) to use another place of the first unit of the chain, or
 with [**may (MA)**](../units/MA.md) in any part of the chain.
 
 In most cases the last **FA/VA** of a sentence can be either **FA** or **VA**
 with no difference in meaning if there is en equivalent in the other family.
 
-> mi vyer fi jve mi ve/fe sol tca  
-> *I visit (guided by a friend of mine) a big city.*  
+> mi vyer fi jve mi ve/fe tca tol  
+> *I visit (guided by a friend of mine) a city (which is large).*  
 >
-> **vyer :** Ⓐ visits [Ⓔ] with guide Ⓘ.  
-> **jve :** Ⓐ is a friend of [Ⓔ].  
-> **sol :** Ⓐ is large in property/dimension Ⓔ1.  
-> **tca :** Ⓐ is a town/city.  
+> **vyer :** `(A) visits [E] with guide (I).`  
+> **jve :** `(A) is a friend of [E].`  
+> **tca :** `(A) is a town/city.`  
+> **tol :** `(A) is large/much (subjective) in property/dimension [E1].`  
 >
 > We first define each statement/predicate :
 >
-> \\[
-> P_1 = \exists a_1 \\: \text{mi}(a_1) \\\\
-> P_2 = \exists a_2 \exists e_2 \exists i_2 \\: \text{vyer}(a_2,e_2,i_2) \\\\
-> P_3 = \exists a_3 \exists e_3 \\: \text{jve}(a_3,e_3) \\\\
-> P_4 = \exists a_4 \\: \text{mi}(a_4) \\\\
-> P_5 = \exists a_5 \exists E_5 \\: \text{sol}(a_5,E_5) \\\\
-> P_6 = \exists a_6 \\: \text{tca}(a_6) \\\\
-> \\]
-> 
+>
+> - \\(P_1 = \exists a_1 \\: \text{mi}(a_1)\\)
+> - \\(P_2 = \exists a_2 \exists e_2 \exists i_2 \\: \text{vyer}(a_2,e_2,i_2)\\)
+> - \\(P_3 = \exists a_3 \exists e_3 \\: \text{jve}(a_3,e_3)\\)
+> - \\(P_4 = \exists a_4 \\: \text{mi}(a_4)\\)
+> - \\(P_5 = \exists a_5 \\: \text{tca}(a_5)\\)
+> - \\(P_6 = \exists a_6 \exists E_6 \\: \text{sol}(a_6,E_6)\\)
+>
+>
 > Then we state that some variables are bound together (shared between
 > statements or predicates) :
 >
 > - \\(a_1 = a_2\\)
-> - \\(\\color{green}{i}_2 = a_3\\) because `fi` binds the Ⓘ place
+> - \\(\\color{green}{i}_2 = a_3\\) because `fi` binds the `I` place
 > - \\(e_3 = a_4\\)
-> - \\(\\color{green}{e_2} = a_5\\) because `ve/fe` binds the Ⓔ place of the
+> - \\(\\color{green}{e_2} = a_5\\) because `ve/fe` binds the `E` place of the
 >   same unit as previous `fi`.
 > - \\(a_5 = a_6\\)
 >
 > Finally we express the complete statement :
 >
-> \\[
-> P_1 \wedge P_2 \wedge (P_3 \wedge P_4) \wedge P_5 \wedge P_6
-> \\]
+> \\(P_1 \wedge P_2 \wedge (P_3 \wedge P_4) \wedge P_5 \wedge P_6\\)
 
 | FA     | VA  | Definition                                                                                                      |
 | ------ | --- | --------------------------------------------------------------------------------------------------------------- |
-| fa     | va  | Binds Ⓐ place (restrictive)                                                                                     |
-| fe     | ve  | Binds Ⓔ place (restrictive)                                                                                     |
-| fi     | vi  | Binds Ⓘ place (restrictive)                                                                                     |
-| fo     | vo  | Binds Ⓞ place (restrictive)                                                                                     |
-| fu     | vu  | Binds Ⓤ place (restrictive)                                                                                     |
+| fa     | va  | Binds `A` place (restrictive)                                                                                   |
+| fe     | ve  | Binds `E` place (restrictive)                                                                                   |
+| fi     | vi  | Binds `I` place (restrictive)                                                                                   |
+| fo     | vo  | Binds `O` place (restrictive)                                                                                   |
+| fu     | vu  | Binds `U` place (restrictive)                                                                                   |
 | &nbsp; |     |                                                                                                                 |
-| fwa    | vwa | Binds Ⓐ place (non-restrictive)                                                                                 |
-| fwe    | vwe | Binds Ⓔ place (non-restrictive)                                                                                 |
-| fwi    | vwi | Binds Ⓘ place (non-restrictive)                                                                                 |
-| fwo    | vwo | Binds Ⓞ place (non-restrictive)                                                                                 |
-| fwu    | vwu | Binds Ⓤ place (non-restrictive)                                                                                 |
+| fwa    | vwa | Binds `A` place (non-restrictive)                                                                               |
+| fwe    | vwe | Binds `E` place (non-restrictive)                                                                               |
+| fwi    | vwi | Binds `I` place (non-restrictive)                                                                               |
+| fwo    | vwo | Binds `O` place (non-restrictive)                                                                               |
+| fwu    | vwu | Binds `U` place (non-restrictive)                                                                               |
 | &nbsp; |     |                                                                                                                 |
 | fya    | vya | Adverbial : Binds predicate unit (restrictive)                                                                  |
 | fye    | vye | Adverbial : Binds predicate unit (non-restrictive)                                                              |
@@ -81,21 +79,17 @@ with no difference in meaning if there is en equivalent in the other family.
 
 ## Non-restrictives
 
-The **non-restrictive** particles means that the sentence is true whether or
-not the right part is true. It allows to add additionnal details without
-changing the truth value. These additionnal details are made in a separate
-statement.
+The **non-restrictive** particles means that the sentence is true whether or not
+the right part is true. It allows to add additionnal details without changing
+the truth value. These additionnal details are made in a separate statement.
 
-In the above example, the proposition is only true if the guide is a friend of
-a speaker, and the guide not being a friend makes the whole proposition false.
-If `fi` is replaced by `fwi`, the guide not being a friend of a speaker
-doesn't make the proposition about the visit false.
+In the above example, the proposition is only true if the guide is a friend of a
+speaker, and the guide not being a friend makes the whole proposition false. If
+`fi` is replaced by `fwi`, the guide not being a friend of a speaker doesn't
+make the proposition about the visit false.
 
-> \\[
-> \require{cancel}
-> P_1 \wedge P_2 \wedge P_5 \wedge P_6 \\\\
-> P_3 \wedge P_4
-> \\]
+> - \\(P_1 \wedge P_2 \wedge P_5 \wedge P_6\\)
+> - \\(P_3 \wedge P_4\\)
 
 ## Adverbials
 

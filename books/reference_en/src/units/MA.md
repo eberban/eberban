@@ -7,14 +7,14 @@ discourse itself. All particles starting with **m** are member of **MA**.
 
 Pronouns are expressed with the following particles :
 
-| Word | Definition                                       |
-| ---- | ------------------------------------------------ |
-| mi   | Ⓐ is I/a speaker/author                          |
-| mo   | Ⓐ is you, a listener                             |
-| moy  | Ⓐ is someone, neither a speaker or listener      |
-| mohi | Ⓐ is this here, near a speaker                   |
-| moho | Ⓐ is that here, near a listener                  |
-| mohu | Ⓐ is that younder, far from speaker and listener |
+| Word | Definition                                            |
+| ---- | ----------------------------------------------------- |
+| mi   | `(A) is I/a speaker/author.`                          |
+| mo   | `(A) is you, a listener.`                             |
+| moy  | `(A) is someone, neither a speaker or listener.`      |
+| mohi | `(A) is this here, near a speaker.`                   |
+| moho | `(A) is that here, near a listener.`                  |
+| mohu | `(A) is that younder, far from speaker and listener.` |
 
 ## Propositions
 
@@ -43,5 +43,5 @@ predicates.
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | ma   | binds a variable within an abstraction that represents an open space (used in [`PE` scopes)](../struct/PA_PI_PU_BA.md#proposition-pa--pay) |
 | may  | binds to the relativized object of a relative clause (used in [`FA` scopes](../bindings/VA_FA.md))                                         |
-| me   | individuals question / fill the blank question / Ⓐ is what ?.                                                                              |
+| me   | individuals question / fill the blank question / `A` is what ?.                                                                            |
 | mey  | predicate question / fill the blank question                                                                                               |

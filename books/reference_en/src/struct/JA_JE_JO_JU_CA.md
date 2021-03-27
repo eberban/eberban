@@ -30,7 +30,7 @@ can be any valid eberban text.
 
 > **ju** and **juy** allows to attach information to a group of words which
 > isn't a single grammatical unit for the grammar (hense "free" scope).
-> 
+>
 > The parser currently doesn't check that each **ju** comes with its paired
 > **juy**.
 

@@ -14,13 +14,13 @@ If it neither have a decimal part (**te**) or letters then it is a **cardinal**
 with definition :
 
 ```eng
-Ⓐ is (a set of) [number] things satisfying [Ⓔ1].
+(A) is (a set of) [number] things satisfying [E1].
 ```
 
 Otherwise its a **measure** with definition :
 
 ```eng
-Ⓐ has a measure of [number] (unitless) multiplied by [E] (conversion value with unit).
+(A) has a measure of [number] in property/dimension/unit [E1].
 ```
 
 Letters can be used to have measures composed of multiple parts designated by
@@ -49,7 +49,7 @@ adjacent chains that **should not** merge into a single one.
 with place structure :
 
 ```eng
-Ⓐ is the [number]th member of ordered set [Ⓔ1].
+(A) is the [number]th member of ordered set [E1].
 ```
 
 ## TA members
