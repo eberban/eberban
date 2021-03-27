@@ -52,7 +52,7 @@ function escapeHtml(str) {
  * and processing the results.
  */
 function parse() {
-	var textToParse = $('#lojban-text-area').val();
+	var textToParse = $('#input_textarea').val();
 	$('#result-row').slideDown();
 	try {
 		var start = new Date().getTime();
@@ -68,8 +68,8 @@ function parse() {
 			tokens = [];
 			findTokens(parse, tokens);
 
-			var $parseResultHighlighted = $('#parse-result-highlighted');
-			showHighlighting(simplified[0], tokens, $parseResultHighlighted);
+			// var $parseResultHighlighted = $('#parse-result-highlighted');
+			// showHighlighting(simplified[0], tokens, $parseResultHighlighted);
 
 			var $parseResultRaw = $('#parse-result-raw');
 			showRawTree(parse, $parseResultRaw);
@@ -86,7 +86,7 @@ function parse() {
 			var $parseResultGlossing = $('#parse-result-glossing');
 			showGlossing(tokens, $parseResultGlossing);
 		}
-		$('#parse-result-highlighted-tab').html('Highlighted');
+		// $('#parse-result-highlighted-tab').html('Highlighted');
 		$('#parse-result-tree-tab').html('Parse tree');
 		$('#parse-result-raw-tab').html('Raw tree');
 		$('#parse-result-simplified-tab').html('Simplified tree');
@@ -94,8 +94,8 @@ function parse() {
 		$('#parse-result-glossing-tab').html('Glosses');
 	} catch (e) {
 		if (e.name && e.name === 'SyntaxError') {
-			$('#parse-result-highlighted-tab').html('<span class="muted">Highlighted</span>');
-			showSyntaxError(e, textToParse, $('#parse-result-highlighted'));
+			// $('#parse-result-highlighted-tab').html('<span class="muted">Highlighted</span>');
+			// showSyntaxError(e, textToParse, $('#parse-result-highlighted'));
 			$('#parse-result-raw-tab').html('<span class="muted">Raw tree</span>');
 			showSyntaxError(e, textToParse, $('#parse-result-raw'));
 			$('#parse-result-simplified-tab').html('<span class="muted">Simplified tree</span>');

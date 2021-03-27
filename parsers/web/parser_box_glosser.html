@@ -30,15 +30,11 @@
 		</div>
 		<div class="row">
 			<div class="span12">
-				<form onsubmit="parse(); return false;">
+				<form>
 					<fieldset>
-						<textarea id="lojban-text-area" rows="5"
+						<textarea id="input_textarea" rows="5"
 							placeholder='Type any eberban text in the following textarea and press "Parse".'
-							style="width: 100%;"></textarea>
-						<button class="btn btn-primary" onclick="parse(); return false;"><i class="icon-search icon-white"></i>
-							Parse</button>            
-              Parse</button>
-							Parse</button>            
+							style="width: 100%;"></textarea>         
 					</fieldset>
 				</form>
 			</div>
@@ -47,8 +43,8 @@
 			<div id="result-row" class="span12" style="display: none;">
 				<legend>Result <small><span id="time-label"></span></small></legend>
 				<ul class="nav nav-tabs">
-					<li><a id="parse-result-highlighted-tab" href="glosser.htm#parse-result-highlighted"
-							data-toggle="tab">Highlighted</a></li>
+					<!-- <li><a id="parse-result-highlighted-tab" href="glosser.htm#parse-result-highlighted"
+							data-toggle="tab">Highlighted</a></li> -->
 					<li><a id="parse-result-raw-tab" href="glosser.htm#parse-result-raw" data-toggle="tab">Raw tree</a></li>
 					<li><a id="parse-result-tree-tab" href="glosser.htm#parse-result-tree" data-toggle="tab">Parse tree</a></li>
 					<li><a id="parse-result-simplified-tab" href="glosser.htm#parse-result-simplified"
@@ -59,8 +55,8 @@
 					</li>
 				</ul>
 				<div class="tab-content">
-					<div id="parse-result-highlighted" class="tab-pane fade"><i>Here, the sentence will be shown with
-							highlighting...</i></div>
+					<!-- <div id="parse-result-highlighted" class="tab-pane fade"><i>Here, the sentence will be shown with
+							highlighting...</i></div> -->
 					<div id="parse-result-raw" class="tab-pane fade"><i>Here, the raw parse output will be shown...</i></div>
 					<div id="parse-result-tree" class="tab-pane fade"><i>Here, the parse result will be shown as a tree...</i>
 					</div>
@@ -80,6 +76,11 @@
 <script>
 	// parse on page reload
 	parse();
+
+	$('#input_textarea').bind("keyup",
+      function (e) {
+        parse();
+      });
 </script>
 
 </html>
