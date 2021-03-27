@@ -699,8 +699,12 @@ bu:
 # Roots :
 don:
   _family: "R"
-  eng_long: "Ⓐ likes that Ⓔ (default: Ⓐ) satisfies property [Ⓘ1] (default: contextual)."
+  eng_long: "Ⓐ likes [Ⓔ]."
   eng_short: "likes"
+dol:
+  _family: "R"
+  eng_long: "Ⓐ likes that [Ⓔ0] is true. (Ⓔ-Ⓐ defaults to Ⓐ : Ⓐ likes something about itself)"
+  eng_short: "likes that"
 jve:
   _family: "R"
   eng_long: "Ⓐ is a friend of [Ⓔ]."
