@@ -370,99 +370,123 @@ xo:
 fa:
   _family: "FA"
   eng_long: "Binds Ⓐ place (restrictive)."
-  eng_short: "bind-Ⓐ"
+  eng_short: "Ⓐ"
 fe:
   _family: "FA"
   eng_long: "Binds Ⓔ place (restrictive)."
-  eng_short: "bind-Ⓔ"
+  eng_short: "Ⓔ"
 fi:
   _family: "FA"
   eng_long: "Binds Ⓘ place (restrictive)."
-  eng_short: "bind-Ⓘ"
+  eng_short: "Ⓘ"
 fo:
   _family: "FA"
   eng_long: "Binds Ⓞ place (restrictive)."
-  eng_short: "bind-Ⓞ"
+  eng_short: "Ⓞ"
 fu:
   _family: "FA"
   eng_long: "Binds Ⓤ place (restrictive)."
-  eng_short: "bind-Ⓤ"
+  eng_short: "Ⓤ"
 fwa:
   _family: "FA"
   eng_long: "Binds Ⓐ place (non-restrictive)."
-  eng_short: "bind-Ⓐ (non-res)"
+  eng_short: "Ⓐ (non-res)"
 fwe:
   _family: "FA"
   eng_long: "Binds Ⓔ place (non-restrictive)."
-  eng_short: "bind-Ⓔ (non-res)"
+  eng_short: "Ⓔ (non-res)"
 fwi:
   _family: "FA"
   eng_long: "Binds Ⓘ place (non-restrictive)."
-  eng_short: "bind-Ⓘ (non-res)"
+  eng_short: "Ⓘ (non-res)"
 fwo:
   _family: "FA"
   eng_long: "Binds Ⓞ place (non-restrictive)."
-  eng_short: "bind-Ⓞ (non-res)"
+  eng_short: "Ⓞ (non-res)"
 fwu:
   _family: "FA"
   eng_long: "Binds Ⓤ place (non-restrictive)."
-  eng_short: "bind-Ⓤ (non-res)"
+  eng_short: "(non-res)"
 fay:
   _family: "FA"
   eng_long: "Which place should be bound to make the proposition true ?"
-  eng_short: "bind-?"
+  eng_short: "bind ?"
+fya:
+  _family: "FA"
+  eng_long: "Adverbial : Binds predicate unit (restrictive)"
+  eng_short: "res adverbial"
+fye:
+  _family: "FA"
+  eng_long: "Adverbial : Binds predicate unit (non-restrictive)"
+  eng_short: "non-res adverbial"
+fyi:
+  _family: "FA"
+  eng_long: "Adverbial : Binds predicate unit (subordinative)"
+  eng_short: "sub adverbial"
 fey:
   _family: "FA"
   eng_long: "Binds with the next place in order. Can be usefull if there are more than 5 places."
-  eng_short: "bind-next"
+  eng_short: "bind next"
 va:
   _family: "VA"
   eng_long: "Binds Ⓐ place (restrictive)."
-  eng_short: "bind-Ⓐ"
+  eng_short: "Ⓐ"
 ve:
   _family: "VA"
   eng_long: "Binds Ⓔ place (restrictive)."
-  eng_short: "bind-Ⓔ"
+  eng_short: "Ⓔ"
 vi:
   _family: "VA"
   eng_long: "Binds Ⓘ place (restrictive)."
-  eng_short: "bind-Ⓘ"
+  eng_short: "Ⓘ"
 vo:
   _family: "VA"
   eng_long: "Binds Ⓞ place (restrictive)."
-  eng_short: "bind-Ⓞ"
+  eng_short: "Ⓞ"
 vu:
   _family: "VA"
   eng_long: "Binds Ⓤ place (restrictive)."
-  eng_short: "bind-Ⓤ"
+  eng_short: "Ⓤ"
 vwa:
   _family: "VA"
   eng_long: "Binds Ⓐ place (non-restrictive)."
-  eng_short: "bind-Ⓐ (non-res)"
+  eng_short: "Ⓐ (non-res)"
 vwe:
   _family: "VA"
   eng_long: "Binds Ⓔ place (non-restrictive)."
-  eng_short: "bind-Ⓔ (non-res)"
+  eng_short: "Ⓔ (non-res)"
 vwi:
   _family: "VA"
   eng_long: "Binds Ⓘ place (non-restrictive)."
-  eng_short: "bind-Ⓘ (non-res)"
+  eng_short: "Ⓘ (non-res)"
 vwo:
   _family: "VA"
   eng_long: "Binds Ⓞ place (non-restrictive)."
-  eng_short: "bind-Ⓞ (non-res)"
+  eng_short: "Ⓞ (non-res)"
 vwu:
   _family: "VA"
   eng_long: "Binds Ⓤ place (non-restrictive)."
-  eng_short: "bind-Ⓤ (non-res)"
+  eng_short: "Ⓤ (non-res)"
 vay:
   _family: "VA"
   eng_long: "Which place should be bound to make the proposition true ?"
-  eng_short: "bind-?"
+  eng_short: "bind ?"
 vey:
   _family: "VA"
   eng_long: "Binds with the usual right chaining place. Same as without a VA, but necessary if there is a FA before."
-  eng_short: "bind-default"
+  eng_short: "bind default"
+vya:
+  _family: "VA"
+  eng_long: "Adverbial : Binds predicate unit (restrictive)"
+  eng_short: "res adverbial"
+vye:
+  _family: "VA"
+  eng_long: "Adverbial : Binds predicate unit (non-restrictive)"
+  eng_short: "non-res adverbial"
+vyi:
+  _family: "VA"
+  eng_long: "Adverbial : Binds predicate unit (subordinative)"
+  eng_short: "sub adverbial"
 da:
   _family: "DA"
   eng_long: "Logical OR connective."
@@ -481,12 +505,12 @@ do:
   eng_short: "iif"
 du:
   _family: "DA"
-  eng_long: "Logical Left (Right is part of a separate statement)"
-  eng_short: "whether or not"
+  eng_long: "Logical whether or not (right is non-restrictive)."
+  eng_short: "won right"
 duhu:
   _family: "DA"
-  eng_long: "Logical Right (Left is part of a separate statement)"
-  eng_short: "swapped whether or not"
+  eng_long: "Logical whether or not (left is non-restrictive)."
+  eng_short: "won left"
 day:
   _family: "DAY"
   eng_long: "Level 1 set creator."
