@@ -82,7 +82,7 @@ function join_expr(n) {
 /* Checks whether the argument node is a target for pruning. */
 function is_target_node(n) {
     return (among(n[0], ["particle", "root", "foreign_word"])
-            || is_selmaho(n[0]));
+            || is_family(n[0]));
 }
 
 function among(v, s) {
@@ -91,7 +91,7 @@ function among(v, s) {
     return false;
 }
 
-function is_selmaho(v) {
+function is_family(v) {
     if (!is_string(v)) return false;
     return 0 == v.search(/^[YWBCDFGJKLMNPRSTVXZ]?([AEIOUQ]Y?)(H([AEIOUQ]Y?))*$/g);
 }

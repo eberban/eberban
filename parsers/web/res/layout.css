@@ -30,73 +30,6 @@ li.implicit {
 	overflow-y: auto;
 }
 
-.lojban-separator {
-	color: #aaaaaa;
-}
-
-.lojban-selbri {
-	color: #6699cc;
-	font-weight: bold;
-}
-
-.lojban-sumti1 {
-	color: #dd3322;
-}
-
-.lojban-sumti2 {
-	color: #cc5522;
-}
-
-.lojban-sumti3 {
-	color: #bb7722;
-}
-
-.lojban-sumti4 {
-	color: #aa9922;
-}
-
-.lojban-sumti5 {
-	color: #99bb22;
-}
-
-.lojban-sumti6 {
-	color: #88dd22;
-}
-
-.lojban-modal {
-	color: #339944;
-}
-
-.lojban-prenex {
-	color: #2288aa;
-}
-
-.lojban-vocative {
-	color: #8822aa;
-}
-
-.lojban-indicator {
-	color: #446699;
-}
-
-.lojban-nesting {
-	transition: top 0.2s, box-shadow 0.2s;
-}
-
-.lojban-nesting:hover {
-	border-radius: 3px;
-	box-shadow: rgba(64, 128, 255, 0.4) 0px 0px 4px 0px;
-}
-
-.lojban-error {
-	background-color: rgba(255, 0, 0, 0.2);
-	border-radius: 3px;
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 3px 3px;
-	padding: 4px;
-	margin-left: 4px;
-	margin-right: 4px;
-}
-
 /* Translations */
 .alternative {
 	color: #6699cc;
@@ -149,28 +82,28 @@ li.implicit {
 	margin: 2px;
 }
 
-.box.box-prenex {
-	background: var(--color-purple);
+.box.box-arguments {
+	background: var(--color-pink);
 }
 
 .box.box-note {
 	background: #eeeeee;
 }
 
-.box.box-place {
-	background: var(--color-purple);
-}
-
-.box.box-import {
+.box.box-parallel {
 	background: var(--color-pink);
 }
 
-.box.box-predicate {
+.box.box-import {
+	background: var(--color-purple);
+}
+
+.box.box-unit {
 	background: var(--color-blue);
 }
 
 .box.box-set {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-subscope {
@@ -178,22 +111,18 @@ li.implicit {
 }
 
 .box.box-compound {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-borrowing {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-number {
-	background: var(--color-pink);
+	background: var(--color-purple);
 }
 
 .box.box-letters {
-	background: var(--color-pink);
-}
-
-.box.box-link {
 	background: var(--color-purple);
 }
 

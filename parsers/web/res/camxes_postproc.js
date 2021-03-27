@@ -41,7 +41,7 @@
  *                         name_substitution_map, node_action_for,
  *                         must_prefix_leaf_labels)
  *   -- among(v, s)
- *   -- is_selmaho(v)
+ *   -- is_family(v)
  *   -- prettify_brackets(str)
  *   -- str_print_uint(val, charset)
  *   -- str_replace(str, pos, len, sub)
@@ -149,12 +149,6 @@ function newer_postprocessor(
 		// "cmene": "C", "cmevla": "C", "gismu": "G", "lujvo": "L",
 		// "fuhivla": "Z", "prenex": "PRENEX", "sentence": "BRIDI",
 		// "selbri": "SELBRI", "sumti": "SUMTI"
-		// "DAI_clause": "DAI",
-		// "p_predicate_open": "VA",
-		// "p_predicate_tail_open": "VE",
-		// "p_predicate_tail_close": "VEI",
-		// "p_pre_connective_close": "GAI",
-		// "p_abstraction_close": "BAI",
 		root: 'R',
 		borrowing_content: 'B'
 	};
@@ -169,11 +163,11 @@ function newer_postprocessor(
 	else
 		var is_flattening_target = function(tree) {
 			var targets = special_selmaho;
-			return among(tree[0], targets) || is_selmaho(tree[0]);
+			return among(tree[0], targets) || is_family(tree[0]);
 		};
 	var is_branch_removal_target = function(tree) {
 		if (!with_spaces && among(tree[0], [ 'spaces', 'initial_spaces' ])) return true;
-		return !with_terminators && is_selmaho(tree[0]) && tree.length == 1;
+		return !with_terminators && is_family(tree[0]) && tree.length == 1;
 	};
 	var whitelist = [];
 	if (with_selmaho) whitelist = whitelist.concat(special_selmaho);
@@ -181,8 +175,8 @@ function newer_postprocessor(
 	//     whitelist = whitelist.concat(["prenex", "sentence", "selbri", "sumti"]);
 	var is_node_trimming_target = function(tree) {
 		if (!with_trimming) return false;
-		if (with_terminators && is_selmaho(tree[0]) && tree.length == 1) return false;
-		if (with_selmaho && is_selmaho(tree[0])) return false;
+		if (with_terminators && is_family(tree[0]) && tree.length == 1) return false;
+		if (with_selmaho && is_family(tree[0])) return false;
 		return !among(tree[0], whitelist);
 	};
 	var node_action_for = function(node) {
@@ -348,7 +342,7 @@ function among(v, s) {
 	return false;
 }
 
-function is_selmaho(v) {
+function is_family(v) {
 	if (!is_string(v)) return false;
 	// return v.startsWith("p_");
 	return 0 == v.search(/^[YWBCDFGJKLMNPRSTVXZ]?([AEIOUQ]Y?)(H([AEIOUQ]Y?))*$/g);

@@ -1,3 +1,42 @@
+const hideTitleList = [
+	"scope",
+	"unit",
+	"parallel binding",
+];
+
+// List of types with their associated CSS classes.
+const boxClassForTypeMap = new Map([
+	// text
+	["parser version", "box box-parser"],
+	["sentence", "box box-sentence"],
+	["arguments", "box box-arguments"],
+
+	// scope
+	["scope", "box box-scope"],
+	["parallel binding", "box box-parallel"],
+	["set", "box box-set"],
+
+	// units	
+	["unit", "box box-unit"],
+	["compound", "box box-compound"],
+	["number", "box box-number"],
+	["letters", "box box-letters"],
+	["subscope", "box box-subscope"],
+	["borrowing", "box box-borrowing"],
+	["foreign quote", "box box-borrowing"],
+
+	// free
+	["indicator", "box box-note"],
+	["discursive", "box box-note"],
+	["subscript", "box box-note"],
+	["parenthetical", "box box-note"],
+]);
+
+function boxClassForType(parse) {
+	let boxClass = boxClassForTypeMap.get(parse.type);
+	return boxClass || "box box-not-shown";
+}
+
 $(document).ready(function () {
 	$('label').popover();
 });
@@ -13,7 +52,7 @@ function escapeHtml(str) {
  * and processing the results.
  */
 function parse() {
-	var textToParse = $('#lojban-text-area').val();
+	var textToParse = $('#input_textarea').val();
 	$('#result-row').slideDown();
 	try {
 		var start = new Date().getTime();
@@ -24,14 +63,13 @@ function parse() {
 		parse = remove_morphology(parse);
 		parse = remove_spaces(parse);
 		var simplified = simplifyTree(parse);
-		numberSumti(simplified);
 
 		if (parse) {
 			tokens = [];
 			findTokens(parse, tokens);
 
-			var $parseResultHighlighted = $('#parse-result-highlighted');
-			showHighlighting(simplified[0], tokens, $parseResultHighlighted);
+			// var $parseResultHighlighted = $('#parse-result-highlighted');
+			// showHighlighting(simplified[0], tokens, $parseResultHighlighted);
 
 			var $parseResultRaw = $('#parse-result-raw');
 			showRawTree(parse, $parseResultRaw);
@@ -48,7 +86,7 @@ function parse() {
 			var $parseResultGlossing = $('#parse-result-glossing');
 			showGlossing(tokens, $parseResultGlossing);
 		}
-		$('#parse-result-highlighted-tab').html('Highlighted');
+		// $('#parse-result-highlighted-tab').html('Highlighted');
 		$('#parse-result-tree-tab').html('Parse tree');
 		$('#parse-result-raw-tab').html('Raw tree');
 		$('#parse-result-simplified-tab').html('Simplified tree');
@@ -56,8 +94,8 @@ function parse() {
 		$('#parse-result-glossing-tab').html('Glosses');
 	} catch (e) {
 		if (e.name && e.name === 'SyntaxError') {
-			$('#parse-result-highlighted-tab').html('<span class="muted">Highlighted</span>');
-			showSyntaxError(e, textToParse, $('#parse-result-highlighted'));
+			// $('#parse-result-highlighted-tab').html('<span class="muted">Highlighted</span>');
+			// showSyntaxError(e, textToParse, $('#parse-result-highlighted'));
 			$('#parse-result-raw-tab').html('<span class="muted">Raw tree</span>');
 			showSyntaxError(e, textToParse, $('#parse-result-raw'));
 			$('#parse-result-simplified-tab').html('<span class="muted">Simplified tree</span>');
@@ -133,7 +171,7 @@ function constructParseTreeOutput(parse, depth) {
 
 			if (isString(parse[1])) {
 				// a literal
-				output += '<b> [' + getVlasiskuLink(parse[1]) + ']</b>';
+				output += ' <b>[' + parse[1] + ']</b>';
 				if (words[parse[1]]) {
 					output += ' <span class="translation">' + words[parse[1]].eng_short + '</span>';
 				}
@@ -157,8 +195,6 @@ function constructParseTreeOutput(parse, depth) {
 			output += '</ol>';
 			return output;
 		}
-
-		return '<i>(huh 2?)</i>';
 	}
 
 	return '<i>(huh? ' + parse + ')</i>';
@@ -194,7 +230,7 @@ function constructSimplifiedTreeOutput(parse, depth) {
 
 	if (parse.word) {
 		// we have a terminal
-		output += ' <b>[' + getVlasiskuLink(parse.word) + ']</b>';
+		output += ' <b>[' + parse.word + ']</b>';
 		if (words[parse.word]) {
 			output += ' <span class="translation">' + words[parse.word].eng_short + '</span>';
 		}
@@ -270,7 +306,12 @@ function constructBoxesOutput(parse, depth) {
 		// escapeHtml(words[text[j]].long)
 
 		if (words[parse.word]) {
-			output += '<span class="translation">&nbsp;' + words[parse.word].eng_short + '&nbsp;</span>';
+			let short = words[parse.word].eng_short;
+			if (short) {
+				output += '<span class="translation">&nbsp;' +  escapeHtml(short) + '&nbsp;</span>';
+			}			
+		} else if (parse.type === "KA" || parse.type === "GA" || parse.type === "KAY" || parse.type === "GAY") {
+			output += '<span class="translation">&nbsp;var&nbsp;</span>';
 		} else {
 			output += '...';
 		}
@@ -286,7 +327,9 @@ function constructBoxesOutput(parse, depth) {
 		}
 
 		if (boxClassForType(parse) !== 'box box-not-shown') {
-			if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
+			// if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
+			if (!hideTitleList.includes(parse.type)) {
+
 				output += '<br>' + parse.type;
 
 				if (parse.type === 'compound') {
@@ -320,79 +363,6 @@ function constructBoxesOutput(parse, depth) {
 	}
 
 	return output;
-}
-
-function boxClassForType(parse) {
-	if (parse.type === 'parser version') {
-		return 'box box-parser';
-	}
-
-	if (parse.type === 'sentence') {
-		return 'box box-sentence';
-	}
-
-	if (parse.type === 'prenex') {
-		return 'box box-prenex';
-	}
-	if (parse.type === "predicate scope") {
-		return "box box-scope";
-	}
-
-	if (parse.type === 'place') {
-		return 'box box-place';
-	}
-	if (parse.type === 'import' || parse.type === 'chaining import') {
-		return 'box box-import';
-	}
-
-	if (parse.type === 'predicate') {
-		return 'box box-predicate';
-	}
-
-	if (parse.type === 'set') {
-		return 'box box-set';
-	}
-
-	if (parse.type === 'link') {
-		return 'box box-link';
-	}
-
-	if (parse.type === 'compound') {
-		return 'box box-compound';
-	}
-	if (parse.type === 'number') {
-		return 'box box-number';
-	}
-	if (parse.type === 'letters') {
-		return 'box box-letters';
-	}
-	if (parse.type === 'scope') {
-		return 'box box-scope';
-	}
-	if (parse.type === 'subscope') {
-		return 'box box-subscope';
-	}
-	if (parse.type === 'borrowing') {
-		return 'box box-borrowing';
-	}
-	if (parse.type === 'foreign quote') {
-		return 'box box-borrowing';
-	}
-
-	if (parse.type === 'indicator') {
-		return 'box box-indicator';
-	}
-	if (parse.type === 'discursive') {
-		return 'box box-note';
-	}
-	if (parse.type === 'note') {
-		return 'box box-note';
-	}
-	if (parse.type === 'subscript') {
-		return 'box box-note';
-	}
-
-	return 'box box-not-shown';
 }
 
 /**
@@ -471,19 +441,22 @@ function generateFixes(e) {
 function showHighlighting(simplified, tokens, $element) {
 	var output = '';
 
-	if ($('#latin-button').hasClass('active')) {
-		var mode = 1;
-		var classString = 'latin-highlighting';
-	} else if ($('#cyrillic-button').hasClass('active')) {
-		var mode = 2;
-		var classString = 'cyrillic-highlighting';
-	} else if ($('#tengwar-button').hasClass('active')) {
-		var mode = 3;
-		var classString = 'tengwar-highlighting';
-	} else if ($('#hiragana-button').hasClass('active')) {
-		var mode = 4;
-		var classString = 'hiragana-highlighting';
-	}
+	var mode = 1;
+	var classString = 'latin-highlighting';
+
+	// if ($('#latin-button').hasClass('active')) {
+	// 	var mode = 1;
+	// 	var classString = 'latin-highlighting';
+	// } else if ($('#cyrillic-button').hasClass('active')) {
+	// 	var mode = 2;
+	// 	var classString = 'cyrillic-highlighting';
+	// } else if ($('#tengwar-button').hasClass('active')) {
+	// 	var mode = 3;
+	// 	var classString = 'tengwar-highlighting';
+	// } else if ($('#hiragana-button').hasClass('active')) {
+	// 	var mode = 4;
+	// 	var classString = 'hiragana-highlighting';
+	// }
 
 	output += '<span class="highlighting ' + classString + '"><big>';
 	output += markupHighlighting(simplified, mode);
@@ -521,7 +494,7 @@ function markupHighlighting(simplified, mode) {
 	}
 
 	if (simplified.word) {
-		output += outputWord(simplified.word, mode);
+		output += simplified.word;
 	} else {
 		if (beforeOutput === '') {
 			for (child in simplified.children) {
@@ -539,7 +512,7 @@ function enumerateTokens(simplified, mode) {
 	var output = '';
 
 	if (simplified.word) {
-		output += outputWord(simplified.word, mode);
+		output += simplified.word;
 	} else {
 		for (child in simplified.children) {
 			var textToAdd = enumerateTokens(simplified.children[child], mode);
@@ -574,7 +547,6 @@ function showGlossing(text, $element) {
 	var output = '<dl class="dl-horizontal">';
 
 	for (var j = 0; j < text.length; j++) {
-		// output += "<dt>" + getVlasiskuLink(text[j]) + "</dt>";
 		output += '<dt>' + text[j] + '</dt>';
 
 		if (words[text[j]]) {
@@ -612,38 +584,6 @@ function showTranslation(parse, text, $element) {
 
 function isString(s) {
 	return typeof s === 'string' || s instanceof String;
-}
-
-function getVlasiskuLink(word) {
-	return '<a href="http://vlasisku.lojban.org/vlasisku/' + word + '">' + outputWord(word, getSelectedMode()) + '</a>';
-}
-
-function outputWord(word, mode) {
-	if (mode === 1) {
-		// Latin mode
-		return addDotsToWord(word);
-	} else if (mode === 2) {
-		// Cyrillic mode
-		return wordToCyrillic(addDotsToWord(word));
-	} else if (mode === 3) {
-		// Tengwar mode
-		return wordToTengwar(addDotsToWord(word));
-	} else if (mode === 4) {
-		// Hiragana mode
-		return wordToHiragana(addDotsToWord(word));
-	}
-}
-
-function getSelectedMode() {
-	if ($('#latin-button').hasClass('active')) {
-		return 1;
-	} else if ($('#cyrillic-button').hasClass('active')) {
-		return 2;
-	} else if ($('#tengwar-button').hasClass('active')) {
-		return 3;
-	} else if ($('#hiragana-button').hasClass('active')) {
-		return 4;
-	}
 }
 
 function endsWith(str, suffix) {
