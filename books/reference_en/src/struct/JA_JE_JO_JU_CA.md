@@ -21,29 +21,30 @@ can be any valid eberban text.
 
 ## Prefix markers [JU]
 
-| Word  | Meaning                                                                        |
-| ----- | ------------------------------------------------------------------------------ |
-| *jwa* | Emphasis indicator : the next word is especially emphasized.                   |
-| *jwe* | Nonce-word indicator : the next word (usually a compound) may be non-standard. |
-| *jwi* | Next word is a metadata tag / hashtag.                                         |
+| Word | Meaning                                                                                                                                        |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| jwa  | Emphasis indicator : the next word is especially emphasized.                                                                                   |
+| jwe  | Nonce-word indicator : the next word (usually a compound) may be non-standard.                                                                 |
+| jwi  | Next word is a metadata tag / hashtag.                                                                                                         |
+| ju   | Starts a *free scope* which is closed by the **free suffix juy (JUY)**. Any free modifier attached to either of them will apply to this scope. |
 
-**ju** is a bit special. It starts a "free scope" which is closed by the free
-suffix **juy**. Any free modifier attached to either **ju** or **juy** will
-apply on the scope they represents instead of only the adjacent words, allowing
-to add information to a group of word even if they don't make a single
-grammatical unit.
+> **ju** and **juy** allows to attach information to a group of words which
+> isn't a single grammatical unit for the grammar (hense "free" scope).
+> 
+> The parser currently doesn't check that each **ju** comes with its paired
+> **juy**.
 
 ## Suffix markers [CA]
 
 | Word   | Meaning                                                                                                          |
 | ------ | ---------------------------------------------------------------------------------------------------------------- |
-| *ca*   | Ask if the proposition is true, with emphasis placed on the marked word.                                         |
-| *cay*  | Indirect question marker. Transform a question word into an indirect question.                                   |
-| *ce*   | Imperative. The left chaining place of the tagged predicate should make it true.                                 |
-| *cey*  | Answer. Atteched to sentence to indicate it's an answer to a previous question, and not a independent statement. |
+| ca     | Ask if the proposition is true, with emphasis placed on the marked word.                                         |
+| cay    | Indirect question marker. Transform a question word into an indirect question.                                   |
+| ce     | Imperative. The left chaining place of the tagged predicate should make it true.                                 |
+| cey    | Answer. Attached to sentence to indicate it's an answer to a previous question, and not a independent statement. |
 | &nbsp; |                                                                                                                  |
-| *cya*  | However/but/in contrast.                                                                                         |
-| *cye*  | Ditto.                                                                                                           |
-| *cyi*  | Similarly.                                                                                                       |
-| *cyo*  | Additionally.                                                                                                    |
-| *cyu*  | Uniquely/only/ solely.                                                                                           |
+| cya    | However/but/in contrast.                                                                                         |
+| cye    | Ditto.                                                                                                           |
+| cyi    | Similarly.                                                                                                       |
+| cyo    | Additionally.                                                                                                    |
+| cyu    | Uniquely/only/ solely.                                                                                           |
