@@ -34,7 +34,7 @@ jobs:
 
       - name: Build book
         run: |
-          ~/.cargo/bin/mdbook build books/tour
+          ~/.cargo/bin/mdbook build books/reference_en
 
       - name: Commit changes to gh-pages
         run: |
