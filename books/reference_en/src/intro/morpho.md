@@ -74,4 +74,23 @@ permissible consonant pairs.
 |     |     |     |     |     |     |     | &nbsp; |
 | tc  | ts  | dj  | dz  |
 
-> TODO : Rules for consonants inside borrowings.
+## Permissible consonnant clusters in borrowings
+
+Borrowings have more relaxed rules regarding allowed consonnant clusters.
+A maximum of 3 consonnants in a row are allowed, and they can't all be
+sonorants. A consonnant cannot be followed by the same one.
+
+Consonnants are split into 2 categories called **voiced** (b, d, g, j, v, z)
+and **unvoiced** (c, f, k, p, s, t, x). A **voiced** consonnant cannot be
+followed by an **unvoiced** one, and vice-versa.
+
+Additionnaly the following rules applies :
+
+| Consonnant | Can't be followed by |
+| ---------- | -------------------- |
+| j          | z                    |
+| z          | j                    |
+| s          | c                    |
+| c          | s, x                 |
+| x          | c, k, l, r           |
+| k          | x                    |
