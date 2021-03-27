@@ -757,7 +757,7 @@ spu:
   _family: "R"
   eng_long: "Ⓐ is a nest/home for [Ⓔ]."
   eng_short: "home"
-tun:
+tlu:
   _family: "R"
   eng_long: "Ⓐ agrees with Ⓔ that [Ⓘ0] is true."
   eng_short: "agrees"
@@ -765,10 +765,6 @@ val:
   _family: "R"
   eng_long: "Ⓐ goes from Ⓔ to [Ⓘ]."
   eng_short: "goes"
-tan:
-  _family: "R"
-  eng_long: "Ⓐ is the set of everything that satisfies [Ⓔ1]."
-  eng_short: "every"
 gza:
   _family: "R"
   eng_long: "Ⓐ (default value of Ⓔ-Ⓐ) is an agentive cause of event [Ⓔ0]"
@@ -837,25 +833,45 @@ vyer:
   _family: "R"
   eng_long: "Ⓐ visits [Ⓔ] with guide Ⓘ."
   eng_short: "visits"
-sal:
+tan:
   _family: "R"
-  eng_long: "Ⓐ is negligible in property/dimension Ⓔ1"
+  eng_long: "Ⓐ is the empty set. (same as 'ta' cardinal but without a Ⓔ place)"
+  eng_short: "empty set"
+ten:
+  _family: "R"
+  eng_long: "Ⓐ is a set containing a small (subjective) number of things satisfying [Ⓔ1]."
+  eng_short: "small set"
+tin:
+  _family: "R"
+  eng_long: "Ⓐ is a set containing a medium (subjective) number of things satisfying [Ⓔ1]."
+  eng_short: "medium set"
+ton:
+  _family: "R"
+  eng_long: "Ⓐ is a set containing a large (subjective) number of things satisfying [Ⓔ1]."
+  eng_short: "large set"
+tun:
+  _family: "R"
+  eng_long: "Ⓐ is the set of everything that satisfies [Ⓔ1]."
+  eng_short: "every"
+tal:
+  _family: "R"
+  eng_long: "Ⓐ is negligible in property/dimension [Ⓔ1]"
   eng_short: "negligible"
-sel:
+tel:
   _family: "R"
-  eng_long: "Ⓐ is small in property/dimension Ⓔ1"
+  eng_long: "Ⓐ is small/mild (subjective) in property/dimension [Ⓔ1]"
   eng_short: "small"
-sil:
+til:
   _family: "R"
-  eng_long: "Ⓐ is medium/average in property/dimension Ⓔ1"
+  eng_long: "Ⓐ is medium/average (subjective) in property/dimension [Ⓔ1]"
   eng_short: "medium"
-sol:
+tol:
   _family: "R"
-  eng_long: "Ⓐ is large in property/dimension Ⓔ1"
+  eng_long: "Ⓐ is large/much (subjective) in property/dimension [Ⓔ1]"
   eng_short: "large"
-sul:
+tul:
   _family: "R"
-  eng_long: "Ⓐ is infinite in property/dimension Ⓔ1"
+  eng_long: "Ⓐ is infinite in property/dimension [Ⓔ1]"
   eng_short: "infinite"
 tca:
   _family: "R"
@@ -883,7 +899,7 @@ ban:
   eng_short: "language"
 beyn:  
   _family: "R"
-  eng_long: "Ⓐ (ordered set) is ordered following ordering rule [Ⓘ2]."
+  eng_long: "Ⓐ (ordered set) is ordered following ordering rule [Ⓔ2]."
   eng_short: "ordered set member"
 
 # Compounds (2):
