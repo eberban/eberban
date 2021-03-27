@@ -481,12 +481,12 @@ do:
   eng_short: "iif"
 du:
   _family: "DA"
-  eng_long: "Logical Right (Left is part of a separate statement)"
-  eng_short: "right"
+  eng_long: "Logical Left (Right is part of a separate statement)"
+  eng_short: "whether or not"
 duhu:
   _family: "DA"
-  eng_long: "Logical Left (Right is part of a separate statement)"
-  eng_short: "left"
+  eng_long: "Logical Right (Left is part of a separate statement)"
+  eng_short: "swapped whether or not"
 day:
   _family: "DAY"
   eng_long: "Level 1 set creator."

@@ -6,22 +6,15 @@ be prefixed with **ba** to negate the left component, while it can be suffixed
 with **BAY** to negate the right component. **di** allow to ask a question about
 which logicial connective would make the result true.
 
-| left  | right |     | da    | de    | do    | du    | duhu  |
-| ----- | ----- | --- | ----- | ----- | ----- | ----- | ----- |
-| True  | True  |     | True  | True  | True  | True  | True  |
-| True  | False |     | True  | False | False | False | True  |
-| False | True  |     | True  | False | False | True  | False |
-| False | False |     | False | False | True  | False | False |
+| left  | right |     | da (and) | de (or) | do (iif) | du    | duhu  |
+| ----- | ----- | --- | -------- | ------- | -------- | ----- | ----- |
+| True  | True  |     | True     | True    | True     | True  | True  |
+| True  | False |     | True     | False   | False    | True  | False |
+| False | True  |     | True     | False   | False    | False | True  |
+| False | False |     | False    | False   | True     | False | False |
 
 Using these 5 words, **ba** and **bay**, all truth table can be expressed
 (except "always true" and "always false" ones).
-
-> **du** and **duhu** truth values ignores respectively their *left* and *right*
-> part, which is moved in its own separate statement. This can be usefull when
-> making complex statements to express first a sub-statement (instead of using
-> [subscopes](PE.md)) and then refering back to it with
-> [**mwa/mwe**](../units/MA.md). This is similar to using
-> [adverbials](../bindings/VA_FA.md).
 
 ## Predicate distributivity
 
