@@ -414,15 +414,15 @@ fay:
 fya:
   _family: "FA"
   eng_long: "Adverbial : Binds predicate unit (restrictive)"
-  eng_short: "res adverbial"
+  eng_short: "res adv"
 fye:
   _family: "FA"
   eng_long: "Adverbial : Binds predicate unit (non-restrictive)"
-  eng_short: "non-res adverbial"
+  eng_short: "non-res adv"
 fyi:
   _family: "FA"
   eng_long: "Adverbial : Binds predicate unit (subordinative)"
-  eng_short: "sub adverbial"
+  eng_short: "sub adv"
 fey:
   _family: "FA"
   eng_long: "Binds with the next place in order. Can be usefull if there are more than 5 places."
@@ -478,15 +478,15 @@ vey:
 vya:
   _family: "VA"
   eng_long: "Adverbial : Binds predicate unit (restrictive)"
-  eng_short: "res adverbial"
+  eng_short: "res adv"
 vye:
   _family: "VA"
   eng_long: "Adverbial : Binds predicate unit (non-restrictive)"
-  eng_short: "non-res adverbial"
+  eng_short: "non-res adv"
 vyi:
   _family: "VA"
   eng_long: "Adverbial : Binds predicate unit (subordinative)"
-  eng_short: "sub adverbial"
+  eng_short: "sub adv"
 da:
   _family: "DA"
   eng_long: "Logical OR connective."
