@@ -901,6 +901,42 @@ beyn:
   _family: "R"
   eng_long: "Ⓐ (ordered set) is ordered following ordering rule [Ⓔ2]."
   eng_short: "ordered set member"
+zan:
+  _family: "R"
+  eng_long: "Ⓐ is the color of [Ⓔ]."
+  eng_short: "color"
+zal:
+  _family: "R"
+  eng_long: "Ⓐ is white/light [color adjective]."
+  eng_short: "white"
+zar:
+  _family: "R"
+  eng_long: "Ⓐ is black/dark [color adjective]."
+  eng_short: "black"
+zen:
+  _family: "R"
+  eng_long: "Ⓐ is red [color adjective]."
+  eng_short: "red"
+zel:
+  _family: "R"
+  eng_long: "Ⓐ is green [color adjective]."
+  eng_short: "green"
+zer:
+  _family: "R"
+  eng_long: "Ⓐ is blue [color adjective]."
+  eng_short: "blue"
+zin:
+  _family: "R"
+  eng_long: "Ⓐ is cyan [color adjective]."
+  eng_short: "cyan"
+zil:
+  _family: "R"
+  eng_long: "Ⓐ is magenta [color adjective]."
+  eng_short: "magenta"
+zir:
+  _family: "R"
+  eng_long: "Ⓐ is yellow [color adjective]."
+  eng_short: "yellow"
 
 # Compounds (2):
 eberban:
@@ -987,3 +1023,31 @@ etweyjqn:
   _family: "C2"
   eng_long: "Ⓐ is a December."
   eng_short: "December"
+ezenzil:
+  _family: "C2"
+  eng_long: "Ⓐ is pink [color adjective]."
+  eng_short: "pink"
+ezenzir:
+  _family: "C2"
+  eng_long: "Ⓐ is orange [color adjective]."
+  eng_short: "orange"
+ezelzin:
+  _family: "C2"
+  eng_long: "Ⓐ is spring green [color adjective]."
+  eng_short: "spring green"
+ezelzir:
+  _family: "C2"
+  eng_long: "Ⓐ is chartreuse green [color adjective]."
+  eng_short: "chartreuse green"
+ezerzin:
+  _family: "C2"
+  eng_long: "Ⓐ is azure [color adjective]."
+  eng_short: "azure"
+ezerzil:
+  _family: "C2"
+  eng_long: "Ⓐ is violet [color adjective]."
+  eng_short: "violet"
+ezalzar:
+  _family: "C2"
+  eng_long: "Ⓐ is grey [color adjective]."
+  eng_short: "grey"
