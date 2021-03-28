@@ -547,23 +547,46 @@ function showGlossing(text, $element) {
 	var output = '<dl class="glosser-definition dl-horizontal">';
 
 	for (var j = 0; j < text.length; j++) {
-		output += '<dt>' + text[j] + '</dt>';
+		let word = text[j];
 
-		if (words[text[j]]) {
+		if (word == 'a') {
+			word += addPause(text[j+1]);
+		} else if (word == 'e') {
+			word += addPause(text[j+1]) + addPause(text[j+2]);
+		} else if (word == 'i') {
+			word += addPause(text[j+1]) + addPause(text[j+2]) + addPause(text[j+3]);
+		} else if (word == 'o') {
+			for (var k = j+1; k < text.length; k++) {
+				word += addPause(text[k])
+
+				if (text[k] == 'o') {
+					break;
+				}
+			}
+		}
+
+		if (word != 'u' && word != 'o' && words[word]) {
+			output += '<dt>' + word + '</dt>';
 			output +=
 				'<dd><span class="gloss-family">' +
-				words[text[j]]._family +
+				words[word]._family +
 				'</span>' +
-				(words[text[j]].eng_long ? escapeHtml(words[text[j]].eng_long) : words[text[j]].eng_short) +
+				(words[word].eng_long ? escapeHtml(words[word].eng_long) : words[word].eng_short) +
 				'</dd>';
-		} else {
-			output += '<dd></dd>';
 		}
 	}
 
 	output += '</dl>';
 
 	$element.html(output);
+}
+
+function addPause(word) {
+	if (['a','e','i','o','u','w','y','n','l','r'].includes(word[0])) {
+		word = '\'' + word;
+	}
+
+	return word;
 }
 
 /**
