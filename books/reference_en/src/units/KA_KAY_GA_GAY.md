@@ -23,4 +23,6 @@ A **GAY** will only declare that there exist a predicate such that the statement
 is true. However a more useful usage is to bind it to another predicate unit
 using **po**, this **GAY** now being an alias of it. **po** can be used before
 or after a unit as long as there is at least one **GAY** on one side : `GAY po
-<unit>` or `<unit> po GAY`.
+<unit>` or `<unit> po GAY`. Each usage of **GA** will create **a new instance of
+the predicate** with independent variables. To refer to the same instance, use
+[**ze**](../bindings/SA_ZA.md).
