@@ -61,11 +61,15 @@ o:
   eng_short: ""
 u:
   _family: "U"
-  eng_long: "Borrowing: (A) is a [word]."
+  eng_long: "Borrowing: (A) is a [word]. (consonant/semi-vowel initial [word])"
+  eng_short: ""
+y:
+  _family: "U"
+  eng_long: "Borrowing: (A) is a [word]. (consonant initial [word] as first compound item)"
   eng_short: ""
 w:
   _family: "U"
-  eng_long: "Borrowing: (A) is a [word]."
+  eng_long: "Borrowing: (A) is a [word]. (vowel initial [word])"
   eng_short: ""
 mi:
   _family: "MA"

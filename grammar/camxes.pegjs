@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.18
+// eberban PEG grammar - v0.19
 // ===========================
 
 // GRAMMAR
@@ -179,12 +179,14 @@ unit_2 = expr:(compound / borrowing / quote / subscope / variable / free_prefix*
 
 // compounds
 compound = expr:(free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*) {return _node("compound", expr);}
-compound_1 = expr:(a compound_word) {return _node("compound_1", expr);}
-compound_2 = expr:(e compound_word compound_word) {return _node("compound_2", expr);}
-compound_3 = expr:(i compound_word compound_word compound_word) {return _node("compound_3", expr);}
-compound_n = expr:(o (!compound_n_end compound_word)+ compound_n_end) {return _node("compound_n", expr);}
-compound_n_end = expr:(pause_char? o &post_word) {return _node("compound_n_end", expr);}
-compound_word = expr:(initial_pause native_word) {return _node("compound_word", expr);}
+compound_1 = expr:(a compound_word_1) {return _node("compound_1", expr);}
+compound_2 = expr:(e compound_word_1 compound_word_n) {return _node("compound_2", expr);}
+compound_3 = expr:(i compound_word_1 compound_word_n compound_word_n) {return _node("compound_3", expr);}
+compound_n = expr:(o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end) {return _node("compound_n", expr);}
+compound_n_end = expr:(spaces? o &post_word) {return _node("compound_n_end", expr);}
+compound_word_1 = expr:(y compound_word_foreign / !u compound_word_n) {return _node("compound_word_1", expr);}
+compound_word_n = expr:(spaces? ((w &aeiouq / u) compound_word_foreign / native_word)) {return _node("compound_word_n", expr);}
+compound_word_foreign = expr:(foreign_word (pause_char / space_char / EOF)) {return _node("compound_word_foreign", expr);}
 
 // borrowings
 borrowing = expr:(free_prefix* borrowing_part+ BE_clause_elidible free_post*) {return _node("borrowing", expr);}
@@ -318,7 +320,7 @@ foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr)
 // - Legal words
 foreign_word = expr:((initial_consonant_pair / consonant)? vtail_q (consonant_cluster vtail_q)* consonant? consonant?) {return _node("foreign_word", expr);}
 native_word = expr:(root / particle) {return _node("native_word", expr);}
-particle = expr:(consonant? vtail_q &post_word) {return _node("particle", expr);}
+particle = expr:(consonant vtail_q &post_word) {return _node("particle", expr);}
 root = expr:(((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant)? vtail_q sonorant)) &post_word) {return _node("root", expr);}
 
 // - Vowel tails
@@ -379,8 +381,8 @@ p = expr:([pP] !p !voiced) {return ["p", "p"];} // <LEAF>
 t = expr:([tT] !t !voiced) {return ["t", "t"];} // <LEAF>
 
 // - Spaces / Pause
-post_word = expr:((pause_char &(aeiouq / sonorant) / !sonorant &consonant / spaces)) {return _node("post_word", expr);}
-initial_pause = expr:((pause_char &aeiouq / !pause_char &consonant)) {return _node("initial_pause", expr);}
+post_word = expr:((pause_char &(aeiouq / yw / sonorant) / !sonorant &consonant / spaces)) {return _node("post_word", expr);}
+initial_pause = expr:((pause_char &(aeiouq / sonorant) / !pause_char !sonorant &consonant)) {return _node("initial_pause", expr);}
 spaces = expr:(initial_spaces (pause_char &(aeiouq / sonorant))? / pause_char &(aeiouq / sonorant) / EOF) {return _node("spaces", expr);}
 initial_spaces = expr:((hesitation / space_char)+) {return ["initial_spaces", _join(expr)];}
 hesitation = expr:((space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char q) / pause_char / EOF)) {return _node("hesitation", expr);}

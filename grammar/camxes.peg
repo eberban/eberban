@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.18
+# eberban PEG grammar - v0.19
 # ===========================
 
 # GRAMMAR
@@ -50,12 +50,14 @@ unit_2 <- compound / borrowing / quote / subscope / variable / free_prefix* spac
 
 # compounds
 compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
-compound_1 <- a compound_word
-compound_2 <- e compound_word compound_word
-compound_3 <- i compound_word compound_word compound_word
-compound_n <- o (!compound_n_end compound_word)+ compound_n_end
-compound_n_end <- pause_char? o &post_word
-compound_word <- initial_pause native_word
+compound_1 <- a compound_word_1
+compound_2 <- e compound_word_1 compound_word_n
+compound_3 <- i compound_word_1 compound_word_n compound_word_n
+compound_n <- o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end
+compound_n_end <- spaces? o &post_word
+compound_word_1 <- y compound_word_foreign / !u compound_word_n
+compound_word_n <- spaces? ((w &aeiouq / u) compound_word_foreign / native_word)
+compound_word_foreign <- foreign_word (pause_char / space_char / EOF)
 
 # borrowings
 borrowing <- free_prefix* borrowing_part+ BE_clause_elidible free_post*
@@ -189,7 +191,7 @@ foreign_quote_close <- native_word
 # - Legal words
 foreign_word <- (initial_consonant_pair / consonant)? vtail_q (consonant_cluster vtail_q)* consonant? consonant?
 native_word <-  root / particle
-particle <- consonant? vtail_q &post_word
+particle <- consonant vtail_q &post_word
 root <- ((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant)? vtail_q sonorant)) &post_word
 
 # - Vowel tails
@@ -250,8 +252,8 @@ p <- [pP] !p !voiced # <LEAF>
 t <- [tT] !t !voiced # <LEAF>
 
 # - Spaces / Pause
-post_word <- (pause_char &(aeiouq / sonorant) / !sonorant &consonant / spaces)
-initial_pause <- (pause_char &aeiouq / !pause_char &consonant)
+post_word <- (pause_char &(aeiouq / yw / sonorant) / !sonorant &consonant / spaces)
+initial_pause <- (pause_char &(aeiouq / sonorant) / !pause_char !sonorant &consonant)
 spaces <- initial_spaces (pause_char &(aeiouq / sonorant))? / pause_char &(aeiouq / sonorant) / EOF
 initial_spaces <- (hesitation / space_char)+
 hesitation <- (space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char q) / pause_char / EOF)

@@ -14,8 +14,8 @@
   - [Intrinsic variables (MA)](units/MA.md)
   - [Extrinsic variables (KA/KAY/GA/GAY)](units/KA_KAY_GA_GAY.md)
   - [Numbers and string (TA/BQ)](units/TA_BQ.md)
-  - [Compounds (C)](units/C.md)
   - [Borrowings (B)](units/B.md)
+  - [Compounds (C)](units/C.md)
   - [Quotes (XA/XE/XO)](units/XA_XE_XO.md)
 
 - [Predicate bindings](bindings/intro.md)
