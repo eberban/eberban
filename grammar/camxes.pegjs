@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.19
+// eberban PEG grammar - v0.20
 // ===========================
 
 // GRAMMAR
@@ -149,8 +149,9 @@ fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {re
 fragment = expr:(DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / sequential_import / parallel_import) {return _node("fragment", expr);}
 
 // pred scopes
-scope = expr:(scope_arguments? scope_1 (connective scope_1)*) {return _node("scope", expr);}
-scope_1 = expr:(PA_clause_elidible BA_clause* scope_2 PAY_clause_elidible) {return _node("scope_1", expr);}
+scope = expr:(scope_arguments? scope_1 (scope_connective scope_1)*) {return _node("scope", expr);}
+scope_connective = expr:(BA_clause? DA_clause) {return _node("scope_connective", expr);}
+scope_1 = expr:(PA_clause_elidible BAY_clause? scope_2 PAY_clause_elidible) {return _node("scope_1", expr);}
 scope_2 = expr:(sequential (DAY_clause sequential)*) {return _node("scope_2", expr);}
 scope_arguments = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("scope_arguments", expr);}
 
@@ -166,7 +167,8 @@ parallel_tag = expr:(FA_clause / parallel_import) {return _node("parallel_tag", 
 parallel_import = expr:(BO_clause unit) {return _node("parallel_import", expr);}
 
 parallel_term = expr:(parallel_term_connective / parallel_term_1) {return _node("parallel_term", expr);}
-parallel_term_connective = expr:(parallel_term_1 (connective parallel_term_1)+) {return _node("parallel_term_connective", expr);}
+parallel_term_connective = expr:(parallel_term_1 (parallel_term_connective_2 parallel_term_1)+) {return _node("parallel_term_connective", expr);}
+parallel_term_connective_2 = expr:(BA_clause? DA_clause BAY_clause?) {return _node("parallel_term_connective_2", expr);}
 parallel_term_1 = expr:(parallel_term_set / parallel_term_2) {return _node("parallel_term_1", expr);}
 parallel_term_set = expr:(parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible) {return _node("parallel_term_set", expr);}
 parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
@@ -174,7 +176,7 @@ parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
 // predicate unit
 unit = expr:(unit_po / unit_1) {return _node("unit", expr);}
 unit_po = expr:(GAY_clause PO_clause unit_1 / unit_1 PO_clause GAY_clause) {return _node("unit_po", expr);}
-unit_1 = expr:((SA_clause / ZA_clause)* unit_2) {return _node("unit_1", expr);}
+unit_1 = expr:((SA_clause / ZA_clause / BA_clause !SA_clause)* unit_2) {return _node("unit_1", expr);}
 unit_2 = expr:(compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("unit_2", expr);}
 
 // compounds
@@ -216,9 +218,6 @@ variable_intrinsic = expr:(MA_clause) {return _node("variable_intrinsic", expr);
 variable_individual = expr:(KAY_clause / KA_clause) {return _node("variable_individual", expr);}
 variable_pred = expr:(GAY_clause / GA_clause) {return _node("variable_pred", expr);}
 
-// connectives
-connective = expr:(BA_clause? DA_clause BAY_clause? free_post*) {return _node("connective", expr);}
-
 // free prefix
 free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}
 
@@ -231,7 +230,7 @@ free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_pare
 
 // PARTICLES CLAUSES
 BA_clause = expr:(free_prefix* spaces? BA free_post*) {return _node("BA_clause", expr);} // pre negation
-BAY_clause = expr:(free_prefix* spaces? BAY) {return _node("BAY_clause", expr);} // post negation
+BAY_clause = expr:(free_prefix* spaces? BAY free_post*) {return _node("BAY_clause", expr);} // post negation
 BE_clause = expr:(spaces? BE) {return _node("BE_clause", expr);} // miscellaneous terminator
 BE_clause_elidible = expr:(BE_clause?) {return (expr == "" || !expr) ? ["BE"] : _node_empty("BE_clause_elidible", expr);}
 BO_clause = expr:(free_prefix* spaces? BO) {return _node("BO_clause", expr);} // filling place import

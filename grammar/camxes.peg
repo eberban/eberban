@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.19
+# eberban PEG grammar - v0.20
 # ===========================
 
 # GRAMMAR
@@ -20,8 +20,9 @@ fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
 fragment <- DAY_clause / FA_clause / VA_clause / SA_clause / ZA_clause / sequential_import / parallel_import
 
 # pred scopes
-scope <- scope_arguments? scope_1 (connective scope_1)*
-scope_1 <- PA_clause_elidible BA_clause* scope_2 PAY_clause_elidible
+scope <- scope_arguments? scope_1 (scope_connective scope_1)*
+scope_connective <- BA_clause? DA_clause
+scope_1 <- PA_clause_elidible BAY_clause? scope_2 PAY_clause_elidible
 scope_2 <- sequential (DAY_clause sequential)*
 scope_arguments <- (KAY_clause / GAY_clause)+ PI_clause
 
@@ -37,7 +38,8 @@ parallel_tag <- FA_clause / parallel_import
 parallel_import <- BO_clause unit
 
 parallel_term <- parallel_term_connective / parallel_term_1
-parallel_term_connective <- parallel_term_1 (connective parallel_term_1)+
+parallel_term_connective <- parallel_term_1 (parallel_term_connective_2 parallel_term_1)+
+parallel_term_connective_2 <- BA_clause? DA_clause BAY_clause?
 parallel_term_1 <- parallel_term_set / parallel_term_2
 parallel_term_set <- parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible
 parallel_term_2 <- unit+
@@ -45,7 +47,7 @@ parallel_term_2 <- unit+
 # predicate unit
 unit <- unit_po / unit_1
 unit_po <- GAY_clause PO_clause unit_1 / unit_1 PO_clause GAY_clause
-unit_1 <- (SA_clause / ZA_clause)* unit_2
+unit_1 <- (SA_clause / ZA_clause / BA_clause !SA_clause)* unit_2
 unit_2 <- compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*
 
 # compounds
@@ -87,9 +89,6 @@ variable_intrinsic <- MA_clause
 variable_individual <- KAY_clause / KA_clause
 variable_pred <- GAY_clause / GA_clause
 
-# connectives
-connective <- BA_clause? DA_clause BAY_clause? free_post*
-
 # free prefix
 free_prefix <- JU_clause
 
@@ -102,7 +101,7 @@ free_parenthetical <- JO_clause text_1 JOY_clause
 
 # PARTICLES CLAUSES
 BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
-BAY_clause          <- free_prefix* spaces? BAY                 # post negation
+BAY_clause          <- free_prefix* spaces? BAY free_post*      # post negation
 BE_clause           <- spaces? BE                               # miscellaneous terminator
 BE_clause_elidible  <- BE_clause?
 BO_clause           <- free_prefix* spaces? BO                  # filling place import
