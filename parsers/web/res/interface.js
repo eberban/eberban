@@ -327,19 +327,8 @@ function constructBoxesOutput(parse, depth) {
 		}
 
 		if (boxClassForType(parse) !== 'box box-not-shown') {
-			// if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
 			if (!hideTitleList.includes(parse.type)) {
-
-				
-
 				if (parse.type === 'compound') {
-					// compound = '';
-					// for (var child in parse.children) {
-					// 	if (parse.children[child].word) {
-					// 		compound += parse.children[child].word;
-					// 	}
-					// }
-
 					let compound_text = [];
 					let compound = "";
 
@@ -349,19 +338,15 @@ function constructBoxesOutput(parse, depth) {
 						}
 					}
 
-					console.log(`compound starting with ${compound_text[0]}`);
-
 					if (compound_text[0] == 'a') {
-						compound = 'a' + extractCanonicalCompound(compound_text, 1, 1);
+						compound = 'a' + extractCanonicalCompound(compound_text, 1, 1).word;
 					} else if (compound_text[0] == 'e') {
-						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2);
+						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2).word;
 					} else if (compound_text[0] == 'i') {
-						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3);
+						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3).word;
 					} else if (compound_text[0] == 'o') {
-						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1);
+						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1).word;
 					}
-
-					console.log(`box ${compound}`);
 
 					output += '<br><b>' + compound + '</b>';
 
@@ -573,20 +558,32 @@ function markupError(error, before, after) {
 function showGlossing(text, $element) {
 	var output = '<dl class="glosser-definition dl-horizontal">';
 
+	let skip_compound = 0;
 	for (var j = 0; j < text.length; j++) {
 		let word = text[j];
 
-		if (word == 'a') {
-			word += extractCanonicalCompound(text, j+1, 1);
-		} else if (word == 'e') {
-			word += extractCanonicalCompound(text, j+1, 2);
-		} else if (word == 'i') {
-			word += extractCanonicalCompound(text, j+1, 3);
-		} else if (word == 'o') {
-			word += extractCanonicalCompound(text, j+1, -1);
-		}
+		if (skip_compound == 0) {
+			let compound = "";
 
-		if (word != 'u' && word != 'o' && words[word]) {
+			if (word == 'a') {
+				({compound, skip_compound} = extractCanonicalCompound(text, j+1, 1));
+			} else if (word == 'e') {
+				({compound, skip_compound} = extractCanonicalCompound(text, j+1, 2));
+			} else if (word == 'i') {
+				({compound, skip_compound} = extractCanonicalCompound(text, j+1, 3));
+			} else if (word == 'o') {
+				({compound, skip_compound} = extractCanonicalCompound(text, j+1, -1));
+			}
+
+			word += compound;
+		} else {
+			skip_compound--;
+		}	
+
+		if (['u','w','y'].includes(word)) {
+			// skip next word which is the borrowing content
+			j++;
+		} else if (word != 'o' && words[word]) {
 			output += '<dt>' + word + '</dt>';
 			output +=
 				'<dd><span class="gloss-family">' +
@@ -606,6 +603,8 @@ function extractCanonicalCompound(text, startIndex, length) {
 	let offset = 0;
 	let word = "";
 
+	console.log(text);
+
 	// y-borrowings.
 	if (['y', 'u'].includes(text[startIndex])) {
 		word += "y" + text[startIndex + 1] + "'";
@@ -613,8 +612,17 @@ function extractCanonicalCompound(text, startIndex, length) {
 		length--;
 	}
 
+	// initial w-borrowing
+	if (['w'].includes(text[startIndex])) {
+		word += "w" + text[startIndex + 1] + "'";
+		offset += 2;
+		length--;
+	}
+
 	while (length != 0) {
 		let item = text[startIndex + offset];
+
+		console.log(`length ${length} offset ${offset} item ${item} word ${word}`);
 
 		// o terminator
 		if (item == 'o') {
@@ -624,9 +632,17 @@ function extractCanonicalCompound(text, startIndex, length) {
 			word += "o";
 			break;
 		}
-		
+
+		// non initial borrowings
+		if (['w', 'u'].includes(item)) {
+			if (!word.endsWith("'")) {
+				word += "'";
+			}
+			word += item + text[startIndex + offset + 1] + "'";
+			offset++;
+		}		
 		// Pause before sonorant initial.
-		if (['n','l','r'].includes(item[0])) {
+		else if (['n','l','r'].includes(item[0])) {
 			if (!word.endsWith("'")) {
 				word += "'";
 			}
@@ -650,10 +666,10 @@ function extractCanonicalCompound(text, startIndex, length) {
 	}
 
 	if (word.endsWith("'")) {
-		return word.substr(0, word.length - 1);
+		word = word.substr(0, word.length - 1);
 	}
 
-	return word;
+	return {word, offset};
 }
 
 /**

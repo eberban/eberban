@@ -55,7 +55,7 @@ compound_2 <- e compound_word_1 compound_word_n
 compound_3 <- i compound_word_1 compound_word_n compound_word_n
 compound_n <- o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end
 compound_n_end <- spaces? o &post_word
-compound_word_1 <- y compound_word_foreign / !u compound_word_n
+compound_word_1 <- y spaces? compound_word_foreign / !u compound_word_n
 compound_word_n <- spaces? ((w &aeiouq / u) compound_word_foreign / native_word)
 compound_word_foreign <- foreign_word (pause_char / space_char / EOF)
 
@@ -254,7 +254,7 @@ t <- [tT] !t !voiced # <LEAF>
 # - Spaces / Pause
 post_word <- (pause_char &(aeiouq / yw / sonorant) / !sonorant &consonant / spaces)
 initial_pause <- (pause_char &(aeiouq / sonorant) / !pause_char !sonorant &consonant)
-spaces <- initial_spaces (pause_char &(aeiouq / sonorant))? / pause_char &(aeiouq / sonorant) / EOF
+spaces <- initial_spaces (pause_char &(aeiouq / yw / sonorant))? / pause_char &(aeiouq / yw / sonorant) / EOF
 initial_spaces <- (hesitation / space_char)+
 hesitation <- (space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char q) / pause_char / EOF)
 space_char <- [\t\n\r?!\u0020]

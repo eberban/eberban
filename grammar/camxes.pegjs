@@ -184,7 +184,7 @@ compound_2 = expr:(e compound_word_1 compound_word_n) {return _node("compound_2"
 compound_3 = expr:(i compound_word_1 compound_word_n compound_word_n) {return _node("compound_3", expr);}
 compound_n = expr:(o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end) {return _node("compound_n", expr);}
 compound_n_end = expr:(spaces? o &post_word) {return _node("compound_n_end", expr);}
-compound_word_1 = expr:(y compound_word_foreign / !u compound_word_n) {return _node("compound_word_1", expr);}
+compound_word_1 = expr:(y spaces? compound_word_foreign / !u compound_word_n) {return _node("compound_word_1", expr);}
 compound_word_n = expr:(spaces? ((w &aeiouq / u) compound_word_foreign / native_word)) {return _node("compound_word_n", expr);}
 compound_word_foreign = expr:(foreign_word (pause_char / space_char / EOF)) {return _node("compound_word_foreign", expr);}
 
@@ -383,7 +383,7 @@ t = expr:([tT] !t !voiced) {return ["t", "t"];} // <LEAF>
 // - Spaces / Pause
 post_word = expr:((pause_char &(aeiouq / yw / sonorant) / !sonorant &consonant / spaces)) {return _node("post_word", expr);}
 initial_pause = expr:((pause_char &(aeiouq / sonorant) / !pause_char !sonorant &consonant)) {return _node("initial_pause", expr);}
-spaces = expr:(initial_spaces (pause_char &(aeiouq / sonorant))? / pause_char &(aeiouq / sonorant) / EOF) {return _node("spaces", expr);}
+spaces = expr:(initial_spaces (pause_char &(aeiouq / yw / sonorant))? / pause_char &(aeiouq / yw / sonorant) / EOF) {return _node("spaces", expr);}
 initial_spaces = expr:((hesitation / space_char)+) {return ["initial_spaces", _join(expr)];}
 hesitation = expr:((space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_char pause_char) (pause_char? &space_char / &(pause_char q) / pause_char / EOF)) {return _node("hesitation", expr);}
 space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}

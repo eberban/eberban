@@ -18,7 +18,8 @@ words, it must be prefixed and suffixed by **o**.
 
 If the first word starts with a sonorant or **w** its initial pause is optional.  
 If the first word is a **u**-initial borrowing, it can either be prefixed by a
-pause, or no pause but **u** replaced with **y**.
+pause, or no pause but **u** replaced with **y**. This **y** can however be
+followed by a pause.
 
 A compound have a **unique, fixed meaning which is defined in the dictionary**,
 and while its place structure can be arbitrary, it usually provides places taken
