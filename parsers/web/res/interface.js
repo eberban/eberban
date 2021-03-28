@@ -603,8 +603,6 @@ function extractCanonicalCompound(text, startIndex, length) {
 	let offset = 0;
 	let word = "";
 
-	console.log(text);
-
 	// y-borrowings.
 	if (['y', 'u'].includes(text[startIndex])) {
 		word += "y" + text[startIndex + 1] + "'";
@@ -621,8 +619,6 @@ function extractCanonicalCompound(text, startIndex, length) {
 
 	while (length != 0) {
 		let item = text[startIndex + offset];
-
-		console.log(`length ${length} offset ${offset} item ${item} word ${word}`);
 
 		// o terminator
 		if (item == 'o') {
