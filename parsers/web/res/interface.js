@@ -1,43 +1,39 @@
-const hideTitleList = [
-	"scope",
-	"unit",
-	"parallel binding",
-];
+const hideTitleList = [ 'scope', 'unit', 'parallel binding' ];
 
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
 	// text
-	["parser version", "box box-parser"],
-	["sentence", "box box-sentence"],
-	["arguments", "box box-arguments"],
+	[ 'parser version', 'box box-parser' ],
+	[ 'sentence', 'box box-sentence' ],
+	[ 'arguments', 'box box-arguments' ],
 
 	// scope
-	["scope", "box box-scope"],
-	["parallel binding", "box box-parallel"],
-	["set", "box box-set"],
+	[ 'scope', 'box box-scope' ],
+	[ 'parallel binding', 'box box-parallel' ],
+	[ 'set', 'box box-set' ],
 
-	// units	
-	["unit", "box box-unit"],
-	["compound", "box box-compound"],
-	["number", "box box-number"],
-	["letters", "box box-letters"],
-	["subscope", "box box-subscope"],
-	["borrowing", "box box-borrowing"],
-	["foreign quote", "box box-borrowing"],
+	// units
+	[ 'unit', 'box box-unit' ],
+	[ 'compound', 'box box-compound' ],
+	[ 'number', 'box box-number' ],
+	[ 'letters', 'box box-letters' ],
+	[ 'subscope', 'box box-subscope' ],
+	[ 'borrowing', 'box box-borrowing' ],
+	[ 'foreign quote', 'box box-borrowing' ],
 
 	// free
-	["indicator", "box box-note"],
-	["discursive", "box box-note"],
-	["subscript", "box box-note"],
-	["parenthetical", "box box-note"],
+	[ 'indicator', 'box box-note' ],
+	[ 'discursive', 'box box-note' ],
+	[ 'subscript', 'box box-note' ],
+	[ 'parenthetical', 'box box-note' ]
 ]);
 
 function boxClassForType(parse) {
 	let boxClass = boxClassForTypeMap.get(parse.type);
-	return boxClass || "box box-not-shown";
+	return boxClass || 'box box-not-shown';
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
 	$('label').popover();
 });
 
@@ -308,9 +304,9 @@ function constructBoxesOutput(parse, depth) {
 		if (words[parse.word]) {
 			let short = words[parse.word].eng_short;
 			if (short) {
-				output += '<span class="translation">&nbsp;' +  escapeHtml(short) + '&nbsp;</span>';
-			}			
-		} else if (parse.type === "KA" || parse.type === "GA" || parse.type === "KAY" || parse.type === "GAY") {
+				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
+			}
+		} else if (parse.type === 'KA' || parse.type === 'GA' || parse.type === 'KAY' || parse.type === 'GAY') {
 			output += '<span class="translation">&nbsp;var&nbsp;</span>';
 		} else {
 			output += '...';
@@ -330,7 +326,7 @@ function constructBoxesOutput(parse, depth) {
 			if (!hideTitleList.includes(parse.type)) {
 				if (parse.type === 'compound') {
 					let compound_text = [];
-					let compound = "";
+					let compound = '';
 
 					for (var child in parse.children) {
 						if (parse.children[child].word) {
@@ -339,13 +335,13 @@ function constructBoxesOutput(parse, depth) {
 					}
 
 					if (compound_text[0] == 'a') {
-						compound = 'a' + extractCanonicalCompound(compound_text, 1, 1).word;
+						compound = 'a' + extractCanonicalCompound(compound_text, 1, 1).compound;
 					} else if (compound_text[0] == 'e') {
-						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2).word;
+						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2).compound;
 					} else if (compound_text[0] == 'i') {
-						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3).word;
+						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3).compound;
 					} else if (compound_text[0] == 'o') {
-						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1).word;
+						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1).compound;
 					}
 
 					output += '<br><b>' + compound + '</b>';
@@ -563,24 +559,24 @@ function showGlossing(text, $element) {
 		let word = text[j];
 
 		if (skip_compound == 0) {
-			let compound = "";
+			let compound = '';
 
 			if (word == 'a') {
-				({compound, skip_compound} = extractCanonicalCompound(text, j+1, 1));
+				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 1));
 			} else if (word == 'e') {
-				({compound, skip_compound} = extractCanonicalCompound(text, j+1, 2));
+				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 2));
 			} else if (word == 'i') {
-				({compound, skip_compound} = extractCanonicalCompound(text, j+1, 3));
+				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 3));
 			} else if (word == 'o') {
-				({compound, skip_compound} = extractCanonicalCompound(text, j+1, -1));
+				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, -1));
 			}
 
 			word += compound;
 		} else {
 			skip_compound--;
-		}	
+		}
 
-		if (['u','w','y'].includes(word)) {
+		if ([ 'u', 'w', 'y' ].includes(word)) {
 			// skip next word which is the borrowing content
 			j++;
 		} else if (word != 'o' && words[word]) {
@@ -601,18 +597,18 @@ function showGlossing(text, $element) {
 
 function extractCanonicalCompound(text, startIndex, length) {
 	let offset = 0;
-	let word = "";
+	let compound = '';
 
 	// y-borrowings.
-	if (['y', 'u'].includes(text[startIndex])) {
-		word += "y" + text[startIndex + 1] + "'";
+	if ([ 'y', 'u' ].includes(text[startIndex])) {
+		compound += 'y' + text[startIndex + 1] + "'";
 		offset += 2;
 		length--;
 	}
 
 	// initial w-borrowing
-	if (['w'].includes(text[startIndex])) {
-		word += "w" + text[startIndex + 1] + "'";
+	if ([ 'w' ].includes(text[startIndex])) {
+		compound += 'w' + text[startIndex + 1] + "'";
 		offset += 2;
 		length--;
 	}
@@ -622,50 +618,47 @@ function extractCanonicalCompound(text, startIndex, length) {
 
 		// o terminator
 		if (item == 'o') {
-			if (!word.endsWith("'")) {
-				word += "'";
+			if (!compound.endsWith("'")) {
+				compound += "'";
 			}
-			word += "o";
+			compound += 'o';
 			break;
 		}
 
 		// non initial borrowings
-		if (['w', 'u'].includes(item)) {
-			if (!word.endsWith("'")) {
-				word += "'";
+		if ([ 'w', 'u' ].includes(item)) {
+			if (!compound.endsWith("'")) {
+				compound += "'";
 			}
-			word += item + text[startIndex + offset + 1] + "'";
+			compound += item + text[startIndex + offset + 1] + "'";
 			offset++;
-		}		
-		// Pause before sonorant initial.
-		else if (['n','l','r'].includes(item[0])) {
-			if (!word.endsWith("'")) {
-				word += "'";
+		} else if ([ 'n', 'l', 'r' ].includes(item[0])) {
+			// Pause before sonorant initial.
+			if (!compound.endsWith("'")) {
+				compound += "'";
 			}
-			word += item;
-		}
-		// Borrowings are split in 2 parts in `text`.
-		else if (['n','l','r'].includes(item)) {
-			if (!word.endsWith("'")) {
-				word += "'";
+			compound += item;
+		} else if ([ 'n', 'l', 'r' ].includes(item)) {
+			// Borrowings are split in 2 parts in `text`.
+			if (!compound.endsWith("'")) {
+				compound += "'";
 			}
-			word += item;
+			compound += item;
 			offset++;
-			word += text[startIndex + offset];
-			
+			compound += text[startIndex + offset];
 		} else {
-			word += item;
+			compound += item;
 		}
 
 		offset++;
 		length--;
 	}
 
-	if (word.endsWith("'")) {
-		word = word.substr(0, word.length - 1);
+	if (compound.endsWith("'")) {
+		compound = compound.substr(0, compound.length - 1);
 	}
 
-	return {word, offset};
+	return { compound, offset };
 }
 
 /**
