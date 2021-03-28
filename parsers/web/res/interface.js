@@ -330,18 +330,43 @@ function constructBoxesOutput(parse, depth) {
 			// if (parse.type !== 'scope' && parse.type !== 'subscope' && parse.type !== 'predicate') {
 			if (!hideTitleList.includes(parse.type)) {
 
-				output += '<br>' + parse.type;
+				
 
 				if (parse.type === 'compound') {
-					compound = '';
+					// compound = '';
+					// for (var child in parse.children) {
+					// 	if (parse.children[child].word) {
+					// 		compound += parse.children[child].word;
+					// 	}
+					// }
+
+					let compound_text = [];
+					let compound = "";
+
 					for (var child in parse.children) {
 						if (parse.children[child].word) {
-							compound += parse.children[child].word;
+							compound_text.push(parse.children[child].word);
 						}
 					}
 
+					console.log(`compound starting with ${compound_text[0]}`);
+
+					if (compound_text[0] == 'a') {
+						compound = 'a' + extractCanonicalCompound(compound_text, 1, 1);
+					} else if (compound_text[0] == 'e') {
+						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2);
+					} else if (compound_text[0] == 'i') {
+						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3);
+					} else if (compound_text[0] == 'o') {
+						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1);
+					}
+
+					console.log(`box ${compound}`);
+
+					output += '<br><b>' + compound + '</b>';
+
 					if (words[compound]) {
-						output += ' : <div class="tip translation">&nbsp;' + words[compound].eng_short;
+						output += ' = <div class="tip translation">' + words[compound].eng_short;
 
 						if (words[compound].eng_long) {
 							output += '<div class="tiptext">' + escapeHtml(words[compound].eng_long) + '</div>';
@@ -349,8 +374,10 @@ function constructBoxesOutput(parse, depth) {
 
 						output += '&nbsp;</div>';
 					} else {
-						output += ' : ...';
+						output += ' = <div class="tip translation">???</div>';
 					}
+				} else {
+					output += '<br>' + parse.type;
 				}
 
 				// if (parse.sumtiPlace) {
@@ -550,19 +577,13 @@ function showGlossing(text, $element) {
 		let word = text[j];
 
 		if (word == 'a') {
-			word += addPause(text[j+1]);
+			word += extractCanonicalCompound(text, j+1, 1);
 		} else if (word == 'e') {
-			word += addPause(text[j+1]) + addPause(text[j+2]);
+			word += extractCanonicalCompound(text, j+1, 2);
 		} else if (word == 'i') {
-			word += addPause(text[j+1]) + addPause(text[j+2]) + addPause(text[j+3]);
+			word += extractCanonicalCompound(text, j+1, 3);
 		} else if (word == 'o') {
-			for (var k = j+1; k < text.length; k++) {
-				word += addPause(text[k])
-
-				if (text[k] == 'o') {
-					break;
-				}
-			}
+			word += extractCanonicalCompound(text, j+1, -1);
 		}
 
 		if (word != 'u' && word != 'o' && words[word]) {
@@ -581,9 +602,55 @@ function showGlossing(text, $element) {
 	$element.html(output);
 }
 
-function addPause(word) {
-	if (['a','e','i','o','u','w','y','n','l','r'].includes(word[0])) {
-		word = '\'' + word;
+function extractCanonicalCompound(text, startIndex, length) {
+	let offset = 0;
+	let word = "";
+
+	// y-borrowings.
+	if (['y', 'u'].includes(text[startIndex])) {
+		word += "y" + text[startIndex + 1] + "'";
+		offset += 2;
+		length--;
+	}
+
+	while (length != 0) {
+		let item = text[startIndex + offset];
+
+		// o terminator
+		if (item == 'o') {
+			if (!word.endsWith("'")) {
+				word += "'";
+			}
+			word += "o";
+			break;
+		}
+		
+		// Pause before sonorant initial.
+		if (['n','l','r'].includes(item[0])) {
+			if (!word.endsWith("'")) {
+				word += "'";
+			}
+			word += item;
+		}
+		// Borrowings are split in 2 parts in `text`.
+		else if (['n','l','r'].includes(item)) {
+			if (!word.endsWith("'")) {
+				word += "'";
+			}
+			word += item;
+			offset++;
+			word += text[startIndex + offset];
+			
+		} else {
+			word += item;
+		}
+
+		offset++;
+		length--;
+	}
+
+	if (word.endsWith("'")) {
+		return word.substr(0, word.length - 1);
 	}
 
 	return word;
