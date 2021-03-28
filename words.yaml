@@ -971,15 +971,19 @@ gli:
   eng_short: "happy"
 jla:
   _family: "R"
-  eng_long: "(A) exists over interval [E] (measure, years by default). "
+  eng_long: "(A) exists over time interval [E] (measure, years by default)."
   eng_short: "exists"
 jle:
   _family: "R"
-  eng_long: "(A) has length [E] (measure, meters by default). "
+  eng_long: "(A) has length [E] (measure, meters by default)."
   eng_short: "length"
 jli:
   _family: "R"
-  eng_long: "(A) has volume [E] (measure, square-meters by default). "
+  eng_long: "(A) has area [E] (measure, meters^2 by default)."
+  eng_short: "area"
+jlo:
+  _family: "R"
+  eng_long: "(A) has volume [E] (measure, meters^3 by default)."
   eng_short: "volume"
 
 # Compounds (2):
