@@ -1,6 +1,6 @@
 # Specials :
 _cardinal: "(A) is (a set of) [number] things satisfying [E1]."
-_measure: "(A) has a measure of [number] in property/dimension/unit [E1]."
+_measure: "(A) is a measure of [number] in property/dimension/unit [E1]."
 0:
   _family: "TA"
   eng_long: "Digit 0"
@@ -591,18 +591,6 @@ zi:
   _family: "ZA"
   eng_long: "[A?] is a predicate with places (E)."
   eng_short: "predicate"
-zwa:
-  _family: "ZA"
-  eng_long: "Contrary scalar negator : other than .. (scale or set is implied)"
-  eng_short: "other than"
-zwe:
-  _family: "ZA"
-  eng_long: "Polar opposite scalar negator : not a .. (no scale is implied)"
-  eng_short: "not a"
-zwi:
-  _family: "ZA"
-  eng_long: "Midpoint scalar negator : not really .."
-  eng_short: "not really"
 pa:
   _family: "PA"
   eng_long: "Starts a predicate scope."
@@ -891,15 +879,15 @@ tal:
   eng_short: "negligible"
 tel:
   _family: "R"
-  eng_long: "(A) is small/mild (subjective) in property/dimension [E1]."
+  eng_long: "(A) is small/mild (subjective/contextual) in property/dimension [E1]."
   eng_short: "small"
 til:
   _family: "R"
-  eng_long: "(A) is medium/average (subjective) in property/dimension [E1]."
+  eng_long: "(A) is medium/average (subjective/contextual) in property/dimension [E1]."
   eng_short: "medium"
 tol:
   _family: "R"
-  eng_long: "(A) is large/much (subjective) in property/dimension [E1]."
+  eng_long: "(A) is large/much (subjective/contextual) in property/dimension [E1]."
   eng_short: "large"
 tul:
   _family: "R"
@@ -925,6 +913,10 @@ dan:
   _family: "R"
   eng_long: "(A) is a member of set [E]."
   eng_short: "set member"
+dal:
+  _family: "R"
+  eng_long: "(A) is a set containing only things that satisfies [E1]."
+  eng_short: "restrict set"
 ban:
   _family: "R"
   eng_long: "(A) is a language."
@@ -969,6 +961,26 @@ zir:
   _family: "R"
   eng_long: "(A) is yellow [color adjective]."
   eng_short: "yellow"
+tyen:
+  _family: "R"
+  eng_long: "(A) is a set where every pair of members satisfy relation [E2]."
+  eng_short: "set members relation"
+gli:
+  _family: "R"
+  eng_long: "(A) is happy about [E0] being true."
+  eng_short: "happy"
+jla:
+  _family: "R"
+  eng_long: "(A) exists over interval [E] (measure, years by default). "
+  eng_short: "exists"
+jle:
+  _family: "R"
+  eng_long: "(A) has length [E] (measure, meters by default). "
+  eng_short: "length"
+jli:
+  _family: "R"
+  eng_long: "(A) has volume [E] (measure, square-meters by default). "
+  eng_short: "volume"
 
 # Compounds (2):
 eberban:

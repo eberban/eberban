@@ -20,7 +20,7 @@ with definition :
 Otherwise its a **measure** with definition :
 
 ```eng
-(A) has a measure of [number] in property/dimension/unit [E1].
+(A) is a measure of [number] in property/dimension/unit [E1].
 ```
 
 Letters can be used to have measures composed of multiple parts designated by
