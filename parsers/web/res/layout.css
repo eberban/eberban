@@ -150,9 +150,10 @@ li.implicit {
 }
 
 .gloss-family {
-	margin-right: 25px;
+	display: inline-block;
 	font-weight: normal;
 	color: #888888;
+	width: 50px;
 }
 
 .tip {
@@ -186,4 +187,8 @@ li.implicit {
 .tip:hover .tiptext {
 	visibility: visible;
 	opacity: 1;
+}
+
+.glosser-definition {
+	font-family: "Courier New", Courier, monospace;
 }

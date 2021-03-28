@@ -544,7 +544,7 @@ function markupError(error, before, after) {
  * Shows the glossing in the interface.
  */
 function showGlossing(text, $element) {
-	var output = '<dl class="dl-horizontal">';
+	var output = '<dl class="glosser-definition dl-horizontal">';
 
 	for (var j = 0; j < text.length; j++) {
 		output += '<dt>' + text[j] + '</dt>';
@@ -557,7 +557,7 @@ function showGlossing(text, $element) {
 				(words[text[j]].eng_long ? escapeHtml(words[text[j]].eng_long) : words[text[j]].eng_short) +
 				'</dd>';
 		} else {
-			output += '<dd><span class="muted">(?)</span></dd>';
+			output += '<dd></dd>';
 		}
 	}
 
