@@ -583,7 +583,6 @@ function showGlossing(text, $element) {
 			j++;
 		} else if (word != 'o' && words[word]) {
 			if (!definitions[word]) {
-				console.log(`new word "${word}"`);
 				definitions[word] = [
 					words[word]._family,
 					words[word].eng_long ? escapeHtml(words[word].eng_long) : words[word].eng_short
@@ -595,7 +594,6 @@ function showGlossing(text, $element) {
 	definitions = sortMapByKey(definitions);
 
 		for (var key in definitions) {
-			console.log(`display word "${key}"`);
 			output += '<dt>' + key + '</dt>';
 			output +=
 				'<dd><span class="gloss-family">' +
