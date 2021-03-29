@@ -917,6 +917,10 @@ dal:
   _family: "R"
   eng_long: "(A) is a set containing only things that satisfies [E1]."
   eng_short: "restrict set"
+dar:
+  _family: "R"
+  eng_long: "(A) is a subset of [E]."
+  eng_short: "subset"
 ban:
   _family: "R"
   eng_long: "(A) is a language."

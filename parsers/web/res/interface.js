@@ -555,6 +555,8 @@ function showGlossing(text, $element) {
 	var output = '<dl class="glosser-definition dl-horizontal">';
 
 	let skip_compound = 0;
+	var definitions = {};
+
 	for (var j = 0; j < text.length; j++) {
 		let word = text[j];
 
@@ -580,19 +582,45 @@ function showGlossing(text, $element) {
 			// skip next word which is the borrowing content
 			j++;
 		} else if (word != 'o' && words[word]) {
-			output += '<dt>' + word + '</dt>';
+			if (!definitions[word]) {
+				console.log(`new word "${word}"`);
+				definitions[word] = [
+					words[word]._family,
+					words[word].eng_long ? escapeHtml(words[word].eng_long) : words[word].eng_short
+				];
+			}
+		}		
+	}
+
+	definitions = sortMapByKey(definitions);
+
+		for (var key in definitions) {
+			console.log(`display word "${key}"`);
+			output += '<dt>' + key + '</dt>';
 			output +=
 				'<dd><span class="gloss-family">' +
-				words[word]._family +
+				definitions[key][0] +
 				'</span>' +
-				(words[word].eng_long ? escapeHtml(words[word].eng_long) : words[word].eng_short) +
+				definitions[key][1] +
 				'</dd>';
-		}
-	}
+		};
 
 	output += '</dl>';
 
 	$element.html(output);
+}
+
+function sortMapByKey(map) {
+	var tupleArray = [];
+	for (var key in map) tupleArray.push([ key, map[key] ]);
+	tupleArray.sort(function(a, b) {
+		return a[0] > b[0];
+	});
+	var sortedMap = {};
+	tupleArray.forEach(function(el) {
+		sortedMap[el[0]] = el[1];
+	});
+	return sortedMap;
 }
 
 function extractCanonicalCompound(text, startIndex, length) {
