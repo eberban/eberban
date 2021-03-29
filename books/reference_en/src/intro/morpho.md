@@ -72,7 +72,8 @@ permissible consonant pairs.
 | bl  | br  | dl  | dr  | gl  | gr  | vl  | vr     |
 | ml  | mr  |     |     |     |     |     |        |
 |     |     |     |     |     |     |     | &nbsp; |
-| tc  | ts  | dj  | dz  |
+| tc  | ts  | dj  | dz  | kc  | ks  | gj  | gz     |
+| pc  | ps  | bj  | bz  |
 
 ## Permissible consonnant clusters in borrowings
 

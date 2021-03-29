@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.20
+// eberban PEG grammar - v0.21
 // ===========================
 
 // GRAMMAR
@@ -349,13 +349,14 @@ q = expr:([qQ]) {return ["q", "q"];} // <LEAF>
 
 // - Legal consonant and consonant pairs
 consonant_cluster = expr:((!(sonorant sonorant sonorant) consonant consonant? consonant? !consonant)) {return _node("consonant_cluster", expr);}
-initial_consonant_pair = expr:(!(!affricate yw) (&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
-initial = expr:((affricate / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
+initial_consonant_pair = expr:(!(!plosib consonant consonant yw) (&initial consonant consonant !consonant)) {return _node("initial_consonant_pair", expr);}
+initial = expr:((plosib / sibilant? other? liquid?) !consonant) {return _node("initial", expr);}
 
+plosib = expr:(plosive sibilant) {return _node("plosib", expr);}
 consonant = expr:((voiced / unvoiced / liquid / m / n)) {return _node("consonant", expr);}
-affricate = expr:((t c / t s / d j / d z)) {return _node("affricate", expr);}
 liquid = expr:((l / r)) {return _node("liquid", expr);}
 other = expr:((p / t / k / f / x / b / d / g / v / m / n !liquid)) {return _node("other", expr);}
+plosive = expr:((t / d / k / g / p / b)) {return _node("plosive", expr);}
 sibilant = expr:((c / s / j / z)) {return _node("sibilant", expr);}
 sonorant = expr:((l / n / r)) {return _node("sonorant", expr);} // technically "alveolar sonorant" as "m" is not included
 voiced = expr:((b / d / g / j / v / z)) {return _node("voiced", expr);}
