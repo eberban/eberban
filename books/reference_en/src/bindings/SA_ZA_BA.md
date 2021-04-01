@@ -26,12 +26,15 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 predicate unit. Any bindings will be made with the final place structure instead
 of the original.
 
-| Word | Definition                                                                        |
-| ---- | --------------------------------------------------------------------------------- |
-| za   | `(A) is named [predicate-(A)].`                                                   |
-| zay  | ZA question : what transformation would make the proposition true ?               |
-| ze   | Use the same instance and variables of the following unit instead of a new one.   |
-| zi   | `[A?] is a predicate with places (E).` (`?` indicates it takes a predicate as-is) |
+| Word | Definition                                                                                                 |
+| ---- | ---------------------------------------------------------------------------------------------------------- |
+| za   | `(A) is named [predicate-(A)].`                                                                            |
+| zay  | ZA question : what transformation would make the proposition true ?                                        |
+| ze   | Use the same instance and variables of the following unit instead of a new one.                            |
+| zi   | `[A?] is an instance of predicate [predicate] with places (E).` (`?` indicates it takes a predicate as-is) |
+| zo   | `(A) is something referred to by [predicate].`                                                             |
+| zoy  | `(A) is a reference/symbol refering to [predicate].`                                                       |
+| zu   | scalar negator : other than/un-/non-[predicate] (scale or set is implied). Keeps the same place structure. |
 
 > When using [**po** with a **GAY**](../units/KA_KAY_GA_GAY.md), **SA/ZA** must
 > be placed before the unit itself : `GAY po ZA <unit>` or `ZA <unit> po GAY`.

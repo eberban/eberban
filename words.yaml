@@ -589,8 +589,20 @@ ze:
   eng_short: "same"
 zi:
   _family: "ZA"
-  eng_long: "[A?] is a predicate with places (E)."
+  eng_long: "[A?] is an instance of predicate [predicate] with places (E)."
   eng_short: "predicate"
+zo:
+  _family: "ZA"
+  eng_long: "(A) is something referred to by [predicate]."
+  eng_short: "deref"
+zoy:
+  _family: "ZA"
+  eng_long: "(A) is a reference/symbol refering to [predicate]."
+  eng_short: "ref"
+zu:
+  _family: "ZA"
+  eng_long: "scalar negator : other than/un-/non-[predicate] (scale or set is implied). Keeps the same place structure."
+  eng_short: "other than"
 pa:
   _family: "PA"
   eng_long: "Starts a predicate scope."
@@ -759,7 +771,7 @@ kla:
   eng_short: "male"
 sfi:
   _family: "R"
-  eng_long: "(A) invents/creates/authors [E]"
+  eng_long: "(A) invents/creates/authors [E] with inspiration [I]."
   eng_short: "invents"
 ska:
   _family: "R"
@@ -775,7 +787,7 @@ spi:
   eng_short: "talks"
 spu:
   _family: "R"
-  eng_long: "(A) is a nest/home for [E]."
+  eng_long: "(A) is a nest/house/home for [E]."
   eng_short: "home"
 tlu:
   _family: "R"
@@ -797,18 +809,102 @@ gun:
   _family: "R"
   eng_long: "(A) labers/works by satisfying property [E1]."
   eng_short: "works"
-par:
+pan:
   _family: "R"
   eng_long: "[A0] is true/occurs earlier than (E0) (default: now)."
   eng_short: "past"
-per:
+par:
   _family: "R"
   eng_long: "[A0] is true/occurs concurrently with (E0) (default: now)."
   eng_short: "present"
-pir:
+pal:
   _family: "R"
   eng_long: "[A0] is true/occurs later than (E0) (default: now)."
   eng_short: "future"
+pen:
+  _family: "R"
+  eng_long: "(A) is at the same place as [E]."
+  eng_short: "same place"
+per:
+  _family: "R"
+  eng_long: "(A) is above/upward/up from [E]."
+  eng_short: "up"
+pel:
+  _family: "R"
+  eng_long: "(A) is below/downwars/down from [E]."
+  eng_short: "down"
+pin:
+  _family: "R"
+  eng_long: "(A) is is moving in direction [E1]."
+  eng_short: "moves"
+pir:
+  _family: "R"
+  eng_long: "(A) is leftward/left from [E]."
+  eng_short: "left"
+pil:
+  _family: "R"
+  eng_long: "(A) is rightward/right from [E]."
+  eng_short: "right"
+por:
+  _family: "R"
+  eng_long: "(A) is forward/to the front of [E]."
+  eng_short: "front"
+pol:
+  _family: "R"
+  eng_long: "(A) is backwrd/to the back of [E]."
+  eng_short: "back"
+pwir:
+  _family: "R"
+  eng_long: "(A) is westward/to the west of [E]."
+  eng_short: "west"
+pwil:
+  _family: "R"
+  eng_long: "(A) is eastward/to the east of [E]."
+  eng_short: "east"
+pwor:
+  _family: "R"
+  eng_long: "(A) is northward/to the north of [E]."
+  eng_short: "front"
+pwol:
+  _family: "R"
+  eng_long: "(A) is southward/to the south of [E]."
+  eng_short: "back"
+pun:
+  _family: "R"
+  eng_long: "(A0) (direction statement) is expressed in reference frame [E]."
+  eng_short: "reference frame"
+pwar:
+  _family: "R"
+  eng_long: "(A) is inside/within [E]."
+  eng_short: "inside"
+pwal:
+  _family: "R"
+  eng_long: "(A) is outside [E]."
+  eng_short: "outside"
+pwer:
+  _family: "R"
+  eng_long: "(A) is adjacent to/along [E]."
+  eng_short: "adjacent"
+pwel:
+  _family: "R"
+  eng_long: "(A) is tangential/passing by [E]."
+  eng_short: "tangential"
+pyar:
+  _family: "R"
+  eng_long: "(A) is surrounding/around [E]."
+  eng_short: "surrounding"
+pyal:
+  _family: "R"
+  eng_long: "(A) is transfixing/passing through [E]."
+  eng_short: "transfixing"
+pyer:
+  _family: "R"
+  eng_long: "(A) is towards [E]."
+  eng_short: "towards"
+pyel:
+  _family: "R"
+  eng_long: "(A) is away from [E]."
+  eng_short: "away from"
 jqn:
   _family: "R"
   eng_long: "(A) is a year."
@@ -923,7 +1019,7 @@ dar:
   eng_short: "subset"
 ban:
   _family: "R"
-  eng_long: "(A) is a language."
+  eng_long: "(A) (quote) is expressed in language [E]."
   eng_short: "language"
 beyn:  
   _family: "R"
@@ -931,7 +1027,7 @@ beyn:
   eng_short: "ordered set member"
 zan:
   _family: "R"
-  eng_long: "(A) is the color of [E]."
+  eng_long: "(A) is a color of [E]."
   eng_short: "color"
 zal:
   _family: "R"
@@ -984,16 +1080,65 @@ jle:
 jli:
   _family: "R"
   eng_long: "(A) has area [E] (measure, meters^2 by default)."
-  eng_short: "area"
+  eng_short: "area (measure)"
 jlo:
   _family: "R"
   eng_long: "(A) has volume [E] (measure, meters^3 by default)."
-  eng_short: "volume"
+  eng_short: "volume (measure)"
+bja:
+  _family: "R"
+  eng_long: "(A) (source) has translation [E] (result)."
+  eng_short: "translation"
+jni:
+  _family: "R"
+  eng_long: "(A) is a field/surface made of material [E]."
+  eng_short: "area (physical)"
+jno:
+  _family: "R"
+  eng_long: "(A) is a volume made of material [E]."
+  eng_short: "volume (physical)"
+tcey:
+  _family: "R"
+  eng_long: "(A) is a tree."
+  eng_short: "tree"
+grun:
+  _family: "R"
+  eng_long: "(A) is wild/untamed."
+  eng_short: "wild"
+cta:
+  _family: "R"
+  eng_long: "[A0] is regular/occurs regularly."
+  eng_short: "regular"
+cte:
+  _family: "R"
+  eng_long: "[A0] is typical/occurs typically."
+  eng_short: "typical"
+cti:
+  _family: "R"
+  eng_long: "[A0] is continuous/occurs continuously."
+  eng_short: "continuous"
+cto:
+  _family: "R"
+  eng_long: "[A0] is habitual/occurs habitually."
+  eng_short: "habitual"
+dji:
+  _family: "R"
+  eng_long: "(A) desires/wants/wishes [E0]"
+  eng_short: "want"
+bzi:
+  _family: "R"
+  eng_long: "(A) flies [in air/space]"
+  eng_short: "flies"
+floy:
+  _family: "R"
+  eng_long: "(A) is an airplane."
+  eng_short: "airplane"
+
 
 # Compounds (2):
 eberban:
   _family: "C2"
-  eng_long: "(A) is the eberban language."
+  eng_long: "(A) (quote) is expressed in eberban language (E)."
   eng_short: "eberban"
 etyavqn:
   _family: "C2"
@@ -1103,3 +1248,9 @@ ezalzar:
   _family: "C2"
   eng_long: "(A) is grey [color adjective]."
   eng_short: "grey"
+
+# Compounds (3):
+igruntceyjno:
+  _family: "C3"
+  eng_long: "(A) is a jungle."
+  eng_short: "jungle"
