@@ -1198,6 +1198,14 @@ floy:
   _family: "R"
   eng_long: "(A) is an airplane."
   eng_short: "airplane"
+jle:
+  _family: "R"
+  eng_long: "(A) is motivated by (E) to make [I0] true."
+  eng_short: "motivated"
+bli:
+  _family: "R"
+  eng_long: "(A) walks."
+  eng_short: "walks"
 
 
 # Compounds (2):
