@@ -38,7 +38,7 @@ bound the right unit itself. The parameters of this predicate arguments will be
 >
 > - \\(\\color{green}{a}_1 = a_2\\), because *mi* has no brackets place.
 > - \\(\\color{green}{e}_2 = a_3\\), because *don* has a `[E]` individual place.
-> - \\(\\color{green}{E}_3 = a_4\\), because *tun* has a `[E1]` individual
+> - \\(\\color{green}{E}_3 = P_4\\), because *tun* has a `[E1]` individual
 >   place.
 >
 > Finally we express the complete statement :

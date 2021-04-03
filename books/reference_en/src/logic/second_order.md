@@ -27,7 +27,7 @@ individual variables :
 >
 > - \\(a_1 = a_2\\)
 > - \\(e_2 = a_3\\)
-> - \\(E_3 = a_4\\)
+> - \\(E_3 = P_4\\)
 >
 > Finally we express the complete statement :
 >
