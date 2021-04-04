@@ -1,6 +1,6 @@
 # Negations (BA/BAY)
 
-**BA** (prefix) and **BAY** (suffix) are families used to express negations.
+**BA** and **BAY** are families used to express negations.
 
 ## Negating a unit
 
@@ -31,8 +31,8 @@ is still true.
 
 ## Negating a scope
 
-Any scope can be negated by adding the suffix **bay** after (implicit or
-explicit) **pa/pe**. The existential variables are also negated and the complete
+Any scope can be negated by adding **bay** at the begining of a scope (after
+**PI** if present). The existential variables are also negated and the complete
 statement is false.
 
 > *(pa) **bay** myan plin lwan* : It is false that {A cat is drinking milk}.
