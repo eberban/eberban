@@ -40,10 +40,3 @@ of the original.
 > be placed before the unit itself : `GAY po ZA <unit>` or `ZA <unit> po GAY`.
 > **SA** don't have any effect on **GAY** affectation, and will only affect the
 > surroundng statement.
-
-## BA
-
-**ba** will negate the following predicate unit.
-
-> **BA** cannot be placed before a **SA**, as **SA** allow to tag places for
-> bindings or **ZA** transformations and are irrelevent to negations.

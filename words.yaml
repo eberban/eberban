@@ -1206,6 +1206,10 @@ bli:
   _family: "R"
   eng_long: "(A) walks."
   eng_short: "walks"
+zba:
+  _family: "R"
+  eng_long: "(A) is enjoyable/great/nice for [E]."
+  eng_short: "nice"
 
 
 # Compounds (2):

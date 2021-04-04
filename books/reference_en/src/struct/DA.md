@@ -1,9 +1,11 @@
 # Logical connectives (DA)
 
-Logical connectives of family **DA** allow to connect two propositions, defining
-the final truth value based on the truth value of its components. **DA** can
-be prefixed with **ba** to negate the left component, while it can be suffixed
-with **BAY** to negate the right component. **di** allow to ask a question about
+## Connectives on scopes
+
+Logical connectives of family **DA** allow to connect two scopes, defining
+the final truth value based on the truth value of the scopes. **DA** can
+be prefixed with **ba** to negate the left scope, while it can be suffixed
+with **bay** to negate the right scope. **di** allow to ask a question about
 which logicial connective would make the result true.
 
 | left  | right |     | da (and) | de (or) | do (iif) | du    | duhu  |
@@ -16,9 +18,9 @@ which logicial connective would make the result true.
 Using these 5 words, **ba** and **bay**, all truth table can be expressed
 (except "always true" and "always false" ones).
 
-## Predicate distributivity
+## Connectives on units
 
-When used on predicates instead of propositions, it has a distributive behavior.
+When used on predicates units it has a distributive behavior.
 
 *pe **za udjon de za umiya** pey spi mo* is identical to ***za udjon** spi mo
 **de pa** **za umiya** spi mo*.
