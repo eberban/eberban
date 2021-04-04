@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.22
+# eberban PEG grammar - v0.23
 # ===========================
 
 # GRAMMAR
@@ -200,7 +200,7 @@ aeiouq <- a / e / i / o / u / q
 aeiou <- a / e / i / o / u
 yw <- y / w
 
-h <- [hH] # <LEAF>
+h <- [hH]? # <LEAF>
 y <- [yY] # <LEAF>
 w <- [wW] # <LEAF>
 a <- [aA] # <LEAF>
@@ -252,6 +252,6 @@ hesitation <- (space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_char pa
 space_char <- [\t\n\r?!\u0020]
 
 # - Special characters
-pause_char <- ([']) !pause_char
+pause_char <- ([',.]) !pause_char
 EOF <- !.
 digit <- [.0123456789] # <LEAF2>

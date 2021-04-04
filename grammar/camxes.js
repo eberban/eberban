@@ -290,8 +290,8 @@ var camxes = (function() {
         peg$c255 = /^[\t\n\r?! ]/,
         peg$c256 = { type: "class", value: "[\\t\\n\\r?! ]", description: "[\\t\\n\\r?! ]" },
         peg$c257 = function(expr) {return _join(expr);},
-        peg$c258 = /^[']/,
-        peg$c259 = { type: "class", value: "[']", description: "[']" },
+        peg$c258 = /^[',.]/,
+        peg$c259 = { type: "class", value: "[',.]", description: "[',.]" },
         peg$c260 = function(expr) {return _node("pause_char", expr);},
         peg$c261 = function(expr) {return _node("EOF", expr);},
         peg$c262 = /^[.0123456789]/,
@@ -9318,6 +9318,9 @@ var camxes = (function() {
       } else {
         s1 = peg$FAILED;
         if (peg$silentFails === 0) { peg$fail(peg$c161); }
+      }
+      if (s1 === peg$FAILED) {
+        s1 = peg$c1;
       }
       if (s1 !== peg$FAILED) {
         peg$reportedPos = s0;

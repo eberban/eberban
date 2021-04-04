@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.22
+// eberban PEG grammar - v0.23
 // ===========================
 
 // GRAMMAR
@@ -329,7 +329,7 @@ aeiouq = expr:(a / e / i / o / u / q) {return _node("aeiouq", expr);}
 aeiou = expr:(a / e / i / o / u) {return _node("aeiou", expr);}
 yw = expr:(y / w) {return _node("yw", expr);}
 
-h = expr:([hH]) {return ["h", "h"];} // <LEAF>
+h = expr:([hH]?) {return ["h", "h"];} // <LEAF>
 y = expr:([yY]) {return ["y", "y"];} // <LEAF>
 w = expr:([wW]) {return ["w", "w"];} // <LEAF>
 a = expr:([aA]) {return ["a", "a"];} // <LEAF>
@@ -381,6 +381,6 @@ hesitation = expr:((space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_ch
 space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
 
 // - Special characters
-pause_char = expr:(([']) !pause_char) {return _node("pause_char", expr);}
+pause_char = expr:(([',.]) !pause_char) {return _node("pause_char", expr);}
 EOF = expr:(!.) {return _node("EOF", expr);}
 digit = expr:([.0123456789]) {return ["digit", expr];} // <LEAF2>
