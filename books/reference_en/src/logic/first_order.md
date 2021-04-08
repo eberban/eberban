@@ -10,48 +10,49 @@ The verb "drinks" can be seen as a predicate `(A) drinks (E)`, where `(A)` and
 `(E)` represents open blanks. We can use variables (written in lowercase) to
 fill these blanks and write :
 
-> \\(\exists a \exists e \\: \text{drinks}(a,e)\\)  
-> There exist a \\(a\\) and a \\(e\\) such that \\(a\\) drinks \\(e\\).
+> \\(
+> \exists \\color{cyan}{a} \exists \\color{magenta}{e} \\
+> \text{drinks}(\\color{cyan}{a},\\color{magenta}{e})
+> \\)
+>   
+> There exist an \\(\\color{cyan}{a}\\) and there exist an
+> \\(\\color{magenta}{e}\\) such that \\(\\color{cyan}{a}\\) drinks
+> \\(\\color{magenta}{e}\\).
 
 "A cat" can be seen as an individual which fills the `A` place of the predicate
 `(A) drinks (E)`, but also of the predicate `(A) is a cat`. The entire sentence
 can thus be written as :
 
-> \\(\exists a \exists e \\: \text{is-a-cat}(a) \wedge \text{drinks}(a,e) \wedge
-> \text{is-milk}(e)\\)
+> \\(
+> \exists \\color{cyan}{a} \\:
+> \text{is-a-cat}(\\color{cyan}{a}) \wedge
+> \exists \\color{magenta}{e} \\:
+> \text{drinks}(\\color{cyan}{a},e) \wedge
+> \text{is-milk}(\\color{magenta}{e})
+> \\)
 
-or, to match more closely how eberban grammar works :
+In eberban, each root word defines such a predicate, and the chaining of these
+predicates express how the existential variables are shared between them, while
+the grammar provide tools to deviate from the default set of rules.
 
-> We first define each statement :
->
-> - \\(P_1 = \exists a_1 \\: \text{is-a-cat}(a_1)\\)
-> - \\(P_2 = \exists a_2 \exists e_2 \\: \text{drinks}(a_2,e_2)\\)
-> - \\(P_3 = \exists a_3 \\: \text{is-milk}(a_3)\\)
->
-> Then we state that some variables are bound together (shared between
-> statements) :
->
-> - \\(a_1 = a_2\\)
-> - \\(e_2 = a_3\\)
->
-> Finally we express the complete statement :
->
-> \\(P_1 \wedge P_2 \wedge P_3\\)
+The above sentence can be translated in eberban as *myan plin lwan*, with the
+following roots definitions :
 
-The eberban sentence to say that is :
+- **myan:** `(A) is a cat.`  
+- **plin:** `(A) drinks [E].`  
+- **lwan:** `(A) is milk.`
 
-> myan plin lwan
+In this book, the translations from eberban sentences to logic will be made by
+having usually one line per root word, the first one being the statement and
+embeding in some way the others.
 
-with the following definitions :
+\\[
+\begin{align}
+    P_1 &= \exists \color{cyan}{a_1} && \text{myan}(\color{cyan}{a_1}) & \wedge P_2(\color{cyan}{a_1}) \\\\
+    P_2(\color{cyan}{a_2}) &= \exists \color{magenta}{e_2} && \text{plin}(\color{cyan}{a_2}, \color{magenta}{e_2}) &\wedge P_3(\color{magenta}{e_2}) \\\\
+    P_3(\color{magenta}{a_3}) &= &&\text{lwan}(\color{magenta}{a_3})
+\end{align}
+\\]
 
-> **myan:** `(A) is a cat.`  
-> **plin:** `(A) drinks [E].`  
-> **lwan:** `(A) is milk.`
-
-Each predicate word matches a proposition in the expression above, with the
-definitions providing the variables and how they are bound to each other. The
-language doesn't allow to manipulate these variables directly, but provide
-particles allowing to change how variables are bound together.
-
-> Predicate definitions can specify a "default value" for a place. This default
-> value is used only if this place is not bound with another predicate place.
+> Variable names on each line are choosen to reflect the place structure of the
+> root. Using them as arguments is what makes them shared.
