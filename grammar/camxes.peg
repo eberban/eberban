@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.23
+# eberban PEG grammar - v0.24
 # ===========================
 
 # GRAMMAR
@@ -14,36 +14,33 @@ text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? s
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
-paragraph <- PU_clause? sentence (&PA_clause sentence)*
-sentence <- scope / fragments_sentence
+paragraph <- PU_clause? sentence (&(PA_clause / PO_clause) sentence)*
+sentence <- pred_var_declaration / scope / fragments_sentence
 fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
 fragment <- DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause
+pred_var_declaration <- PO_clause GAY_clause scope
 
 # pred scopes
-scope <- scope_1 (scope_connective scope_1)*
-scope_connective <- BA_clause? DA_clause
-scope_1 <- PA_clause_elidible BAY_clause? scope_2 PAY_clause_elidible
+scope <- scope_1 (DA_clause scope_1)*
+scope_1 <- PA_clause_elidible scope_2 PAY_clause_elidible
 scope_2 <- sequential (DAY_clause sequential)*
 
 # sequential chaining
 sequential <- unit parallel (VA_clause sequential)? / unit (VA_clause? sequential)?
 
 # parallel chaining
-parallel <- parallel_item+
+parallel <- parallel_item+ BE_clause_elidible
 parallel_item <- FA_clause parallel_term
 
 parallel_term <- parallel_term_connective / parallel_term_1
-parallel_term_connective <- parallel_term_1 (parallel_term_connective_2 parallel_term_1)+
-parallel_term_connective_2 <- BA_clause? DA_clause BAY_clause?
+parallel_term_connective <- parallel_term_1 (DA_clause parallel_term_1)+
 parallel_term_1 <- parallel_term_set / parallel_term_2
 parallel_term_set <- parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible
 parallel_term_2 <- unit+
 
 # predicate unit
-unit <- unit_po / unit_1
-unit_po <- GAY_clause PO_clause unit_1 / unit_1 PO_clause GAY_clause
-unit_1 <- (SA_clause / ZA_clause / BA_clause !SA_clause)* unit_2
-unit_2 <- compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*
+unit <- (SA_clause / ZA_clause)* unit_1
+unit_1 <- compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*
 
 # compounds
 compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
@@ -71,7 +68,7 @@ foreign_quote <- XO_clause spaces? foreign_quote_open spaces foreign_quote_conte
 foreign_quote_content <- (foreign_quote_word spaces)*
 
 # sub-scopes
-subscope <- PE_clause subscope_arguments? scope PEY_clause_elidible
+subscope <- PE_clause subscope_arguments? pred_var_declaration* scope PEY_clause_elidible
 subscope_arguments <- (KAY_clause / GAY_clause)+ PI_clause
 
 # string (numbers / literals)
@@ -96,8 +93,6 @@ free_indicator <- CA_clause
 free_parenthetical <- JO_clause text_1 JOY_clause
 
 # PARTICLES CLAUSES
-BA_clause           <- free_prefix* spaces? BA free_post*       # pre negation
-BAY_clause          <- free_prefix* spaces? BAY free_post*      # post negation
 BE_clause           <- spaces? BE                               # miscellaneous terminator
 BE_clause_elidible  <- BE_clause?
 BQ_clause           <- free_prefix* spaces? BQ                  # letters
@@ -137,8 +132,6 @@ XO_clause           <- free_prefix* spaces? XO                  # foreign quote
 ZA_clause           <- free_prefix* spaces? ZA                  # pred unit transformation
 
 # PARTICLE FAMILIES
-BA    <- &particle (b a)
-BAY   <- &particle (b a y)
 BE    <- &particle (b &e vtail)
 BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
 BU    <- &particle (b u)
@@ -200,7 +193,7 @@ aeiouq <- a / e / i / o / u / q
 aeiou <- a / e / i / o / u
 yw <- y / w
 
-h <- [hH]? # <LEAF>
+h <- [hH] # <LEAF>
 y <- [yY] # <LEAF>
 w <- [wW] # <LEAF>
 a <- [aA] # <LEAF>
@@ -252,6 +245,6 @@ hesitation <- (space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_char pa
 space_char <- [\t\n\r?!\u0020]
 
 # - Special characters
-pause_char <- ([',.]) !pause_char
+pause_char <- (['.]) !pause_char
 EOF <- !.
 digit <- [.0123456789] # <LEAF2>

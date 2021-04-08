@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.23
+// eberban PEG grammar - v0.24
 // ===========================
 
 // GRAMMAR
@@ -143,36 +143,33 @@ text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragrap
 
 // text structure
 paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
-paragraph = expr:(PU_clause? sentence (&PA_clause sentence)*) {return _node("paragraph", expr);}
-sentence = expr:(scope / fragments_sentence) {return _node("sentence", expr);}
+paragraph = expr:(PU_clause? sentence (&(PA_clause / PO_clause) sentence)*) {return _node("paragraph", expr);}
+sentence = expr:(pred_var_declaration / scope / fragments_sentence) {return _node("sentence", expr);}
 fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {return _node("fragments_sentence", expr);}
 fragment = expr:(DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause) {return _node("fragment", expr);}
+pred_var_declaration = expr:(PO_clause GAY_clause scope) {return _node("pred_var_declaration", expr);}
 
 // pred scopes
-scope = expr:(scope_1 (scope_connective scope_1)*) {return _node("scope", expr);}
-scope_connective = expr:(BA_clause? DA_clause) {return _node("scope_connective", expr);}
-scope_1 = expr:(PA_clause_elidible BAY_clause? scope_2 PAY_clause_elidible) {return _node("scope_1", expr);}
+scope = expr:(scope_1 (DA_clause scope_1)*) {return _node("scope", expr);}
+scope_1 = expr:(PA_clause_elidible scope_2 PAY_clause_elidible) {return _node("scope_1", expr);}
 scope_2 = expr:(sequential (DAY_clause sequential)*) {return _node("scope_2", expr);}
 
 // sequential chaining
 sequential = expr:(unit parallel (VA_clause sequential)? / unit (VA_clause? sequential)?) {return _node("sequential", expr);}
 
 // parallel chaining
-parallel = expr:(parallel_item+) {return _node("parallel", expr);}
+parallel = expr:(parallel_item+ BE_clause_elidible) {return _node("parallel", expr);}
 parallel_item = expr:(FA_clause parallel_term) {return _node("parallel_item", expr);}
 
 parallel_term = expr:(parallel_term_connective / parallel_term_1) {return _node("parallel_term", expr);}
-parallel_term_connective = expr:(parallel_term_1 (parallel_term_connective_2 parallel_term_1)+) {return _node("parallel_term_connective", expr);}
-parallel_term_connective_2 = expr:(BA_clause? DA_clause BAY_clause?) {return _node("parallel_term_connective_2", expr);}
+parallel_term_connective = expr:(parallel_term_1 (DA_clause parallel_term_1)+) {return _node("parallel_term_connective", expr);}
 parallel_term_1 = expr:(parallel_term_set / parallel_term_2) {return _node("parallel_term_1", expr);}
 parallel_term_set = expr:(parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible) {return _node("parallel_term_set", expr);}
 parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
 
 // predicate unit
-unit = expr:(unit_po / unit_1) {return _node("unit", expr);}
-unit_po = expr:(GAY_clause PO_clause unit_1 / unit_1 PO_clause GAY_clause) {return _node("unit_po", expr);}
-unit_1 = expr:((SA_clause / ZA_clause / BA_clause !SA_clause)* unit_2) {return _node("unit_1", expr);}
-unit_2 = expr:(compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("unit_2", expr);}
+unit = expr:((SA_clause / ZA_clause)* unit_1) {return _node("unit", expr);}
+unit_1 = expr:(compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("unit_1", expr);}
 
 // compounds
 compound = expr:(free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*) {return _node("compound", expr);}
@@ -200,7 +197,7 @@ foreign_quote = expr:(XO_clause spaces? foreign_quote_open spaces foreign_quote_
 foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("foreign_quote_content", expr);}
 
 // sub-scopes
-subscope = expr:(PE_clause subscope_arguments? scope PEY_clause_elidible) {return _node("subscope", expr);}
+subscope = expr:(PE_clause subscope_arguments? pred_var_declaration* scope PEY_clause_elidible) {return _node("subscope", expr);}
 subscope_arguments = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("subscope_arguments", expr);}
 
 // string (numbers / literals)
@@ -225,8 +222,6 @@ free_indicator = expr:(CA_clause) {return _node("free_indicator", expr);}
 free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_parenthetical", expr);}
 
 // PARTICLES CLAUSES
-BA_clause = expr:(free_prefix* spaces? BA free_post*) {return _node("BA_clause", expr);} // pre negation
-BAY_clause = expr:(free_prefix* spaces? BAY free_post*) {return _node("BAY_clause", expr);} // post negation
 BE_clause = expr:(spaces? BE) {return _node("BE_clause", expr);} // miscellaneous terminator
 BE_clause_elidible = expr:(BE_clause?) {return (expr == "" || !expr) ? ["BE"] : _node_empty("BE_clause_elidible", expr);}
 BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
@@ -266,8 +261,6 @@ XO_clause = expr:(free_prefix* spaces? XO) {return _node("XO_clause", expr);} //
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // pred unit transformation
 
 // PARTICLE FAMILIES
-BA = expr:(&particle (b a)) {return _node("BA", expr);}
-BAY = expr:(&particle (b a y)) {return _node("BAY", expr);}
 BE = expr:(&particle (b &e vtail)) {return _node("BE", expr);}
 BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
 BU = expr:(&particle (b u)) {return _node("BU", expr);}
@@ -329,7 +322,7 @@ aeiouq = expr:(a / e / i / o / u / q) {return _node("aeiouq", expr);}
 aeiou = expr:(a / e / i / o / u) {return _node("aeiou", expr);}
 yw = expr:(y / w) {return _node("yw", expr);}
 
-h = expr:([hH]?) {return ["h", "h"];} // <LEAF>
+h = expr:([hH]) {return ["h", "h"];} // <LEAF>
 y = expr:([yY]) {return ["y", "y"];} // <LEAF>
 w = expr:([wW]) {return ["w", "w"];} // <LEAF>
 a = expr:([aA]) {return ["a", "a"];} // <LEAF>
@@ -381,6 +374,6 @@ hesitation = expr:((space_char+ pause_char? / pause_char) !(q h q) q+ !(pause_ch
 space_char = expr:([\t\n\r?!\u0020]) {return _join(expr);}
 
 // - Special characters
-pause_char = expr:(([',.]) !pause_char) {return _node("pause_char", expr);}
+pause_char = expr:((['.]) !pause_char) {return _node("pause_char", expr);}
 EOF = expr:(!.) {return _node("EOF", expr);}
 digit = expr:([.0123456789]) {return ["digit", expr];} // <LEAF2>

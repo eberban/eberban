@@ -23,9 +23,8 @@
   - [Explicit bindings (VA/FA)](bindings/VA_FA.md)  
 
 - [Text structure]()
-  - [Propositions and paragraphs (PA/PI/PU/BA)](struct/PA_PI_PU_BA.md)
+  - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Subscopes (PE)](struct/PE.md)
-  - [Negations (BA/BAY)](struct/BA_BAY.md)
   - [Free modifiers (JA/JE/JO/JU/CA)](struct/JA_JE_JO_JU_CA.md)
   - [Sets (DAY)](struct/DAY.md)
   - [Logical connectives (DA)](struct/DA.md)

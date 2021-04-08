@@ -1,4 +1,4 @@
-# Propositions and paragraphs (PA/PI/PU/BA)
+# Propositions and paragraphs (PA/PI/PU)
 
 ## Proposition [PA + PAY]
 
@@ -28,8 +28,3 @@ in subject. While **pu** is a small change in subject and is analog to a
 paragraph separator; **pwa**, **pwe**, **pwi**, **pwo**, **pwu** each express an
 even greater change in subject, and can be used to separate subsections,
 sections, chapters, parts, etc ...
-
-## Proposition negation [BA]
-
-A proposition can be stated to be false by using **ba** at the start of a
-proposition (after **pi** if present).

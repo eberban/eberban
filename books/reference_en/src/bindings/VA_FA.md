@@ -32,7 +32,6 @@ with no difference in meaning if there is en equivalent in the other family.
 >
 > We first define each statement/predicate :
 >
->
 > - \\(P_1 = \exists a_1 \\: \text{mi}(a_1)\\)
 > - \\(P_2 = \exists a_2 \exists e_2 \exists i_2 \\: \text{vyer}(a_2,e_2,i_2)\\)
 > - \\(P_3 = \exists a_3 \exists e_3 \\: \text{jve}(a_3,e_3)\\)

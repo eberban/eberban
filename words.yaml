@@ -589,8 +589,12 @@ ze:
   eng_short: "same"
 zi:
   _family: "ZA"
-  eng_long: "[A?] is an instance of predicate [predicate] with places (E)."
-  eng_short: "predicate"
+  eng_long: "Wide-scope negation : negates the predicate and all the followings until the end of the scope with the existential variables they create. It is false that there exist a, e,... such that unit(a, e, ...)."
+  eng_short: "not"
+zya:
+  _family: "ZA"
+  eng_long: "Narrow-scope negation : negates the predicate unit but not the existential variables it create. There exist a, e,... such that unit(a, e, ...) is false."
+  eng_short: "non-"
 zo:
   _family: "ZA"
   eng_long: "(A) is something referred to by [predicate]."
@@ -599,10 +603,6 @@ zoy:
   _family: "ZA"
   eng_long: "(A) is a reference/symbol refering to [predicate]."
   eng_short: "ref"
-zu:
-  _family: "ZA"
-  eng_long: "scalar negator : other than/un-/non-[predicate] (scale or set is implied). Keeps the same place structure."
-  eng_short: "other than"
 pa:
   _family: "PA"
   eng_long: "Starts a predicate scope."
@@ -626,7 +626,7 @@ pi:
 po:
   _family: "PO"
   eng_long: "Predicate variable affectation."
-  eng_short: "="
+  eng_short: "pred affectation"
 pu:
   _family: "PU"
   eng_long: "Marks a new paragraph/section/change of subject."

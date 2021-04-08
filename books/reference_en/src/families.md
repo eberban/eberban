@@ -2,8 +2,6 @@
 
 | Family                                                     | Purpose                                                      |
 | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| **BA***                                                    | pre negation                                                 |
-| **BAY***                                                   | post negation                                                |
 | **BE**                                                     | miscellaneous terminator + [ordinals](../src/units/TA_BQ.md) |
 | [**BQ**](units/TA_BQ.md)                                   | letters                                                      |
 | [**BU**](struct/BU.md)*                                    | parser version/dialect                                       |
