@@ -144,10 +144,10 @@ text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragrap
 // text structure
 paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
 paragraph = expr:(PU_clause? sentence (&(PA_clause / PO_clause) sentence)*) {return _node("paragraph", expr);}
-sentence = expr:(pred_var_declaration / scope / fragments_sentence) {return _node("sentence", expr);}
+sentence = expr:(function / scope / fragments_sentence) {return _node("sentence", expr);}
 fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {return _node("fragments_sentence", expr);}
 fragment = expr:(DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause) {return _node("fragment", expr);}
-pred_var_declaration = expr:(PO_clause GAY_clause scope) {return _node("pred_var_declaration", expr);}
+function = expr:(PO_clause GAY_clause arguments_list? scope) {return _node("function", expr);}
 
 // pred scopes
 scope = expr:(scope_1 (DA_clause scope_1)*) {return _node("scope", expr);}
@@ -197,8 +197,8 @@ foreign_quote = expr:(XO_clause spaces? foreign_quote_open spaces foreign_quote_
 foreign_quote_content = expr:((foreign_quote_word spaces)*) {return _node("foreign_quote_content", expr);}
 
 // sub-scopes
-subscope = expr:(PE_clause subscope_arguments? pred_var_declaration* scope PEY_clause_elidible) {return _node("subscope", expr);}
-subscope_arguments = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("subscope_arguments", expr);}
+subscope = expr:(PE_clause arguments_list? function* scope PEY_clause_elidible) {return _node("subscope", expr);}
+arguments_list = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("arguments_list", expr);}
 
 // string (numbers / literals)
 string = expr:((number_string / letter_string) BE_clause_elidible) {return _node("string", expr);}

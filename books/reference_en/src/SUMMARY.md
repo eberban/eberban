@@ -25,6 +25,7 @@
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Subscopes (PE)](struct/PE.md)
+  - [Function declaration (PO)](struct/PO.md)
   - [Free modifiers (JA/JE/JO/JU/CA)](struct/JA_JE_JO_JU_CA.md)
   - [Sets (DAY)](struct/DAY.md)
   - [Logical connectives (DA)](struct/DA.md)

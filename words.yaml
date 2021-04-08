@@ -625,8 +625,8 @@ pi:
   eng_short: ""
 po:
   _family: "PO"
-  eng_long: "Predicate variable affectation."
-  eng_short: "pred affectation"
+  eng_long: "Function declaration."
+  eng_short: "function :"
 pu:
   _family: "PU"
   eng_long: "Marks a new paragraph/section/change of subject."
