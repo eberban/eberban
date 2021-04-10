@@ -58,7 +58,7 @@ predicate unit.
 | ---- | ------------------------------------------------------------------- |
 | za   | `(A) is named [predicate-(A)].`                                     |
 | zay  | ZA question : what transformation would make the proposition true ? |
-| ze   | `(A)` is the same `A` as in the previous instance of this unit.     |
+| ze   | Use the previous instance of this unit.                             |
 | zi   | Wide-scope negation.                                                |
 | zya  | Narrow-scope negation.                                              |
 | zo   | `(A) is something referred to by [predicate].`                      |
@@ -76,15 +76,20 @@ predicate unit.
 > The place can be selected by adding **SA** after **za**.
 
 
-> **ze** allow to reuse a variable of the previous instance of this unit.
+> **ze** allow to reuse previous instance of this unit and all of its variables.
 >
 > \\[
 > P_1(\\color{magenta}{a_1}) = \exists e_1 \exists i_1 \\: \text{unit3}(\\color{magenta}{a_1},e_1,i_1) \wedge P_2(i_1) \\\\
 > \vdots \\\\
-> P_5(\\color{cyan}{a_5}) = (\\color{cyan}{a_5} = \\color{magenta}{a_1}) \wedge P_2(\\color{cyan}{a_5})
+> P_5(\\color{cyan}{a_5}) = (\\color{cyan}{a_5} = \\color{magenta}{a_1}) \wedge P_2(i_1)
 > \\]
-> 
-> The place can be selected by adding **SA** after **ze**.
+>
+> Any **SA/ZA** can be placed before **ze** as if it was a new instance. Here
+> is an example with **se ze unit3** :
+>
+> \\[
+> P_5(e_5) = (e_5 = e_1) \wedge P_2(i_1)
+> \\]
 
 
 > **zo** and **zoy** are similar to **za** but use the unit itself. Other bindings will be

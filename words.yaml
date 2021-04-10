@@ -373,59 +373,59 @@ xo:
   eng_short: ""
 fa:
   _family: "FA"
-  eng_long: "Binds (A) place (restrictive)."
+  eng_long: "Binds (A) place (parallel, restrictive)."
   eng_short: "(A)"
 fe:
   _family: "FA"
-  eng_long: "Binds (E) place (restrictive)."
+  eng_long: "Binds (E) place (parallel, restrictive)."
   eng_short: "(E)"
 fi:
   _family: "FA"
-  eng_long: "Binds (I) place (restrictive)."
+  eng_long: "Binds (I) place (parallel, restrictive)."
   eng_short: "(I)"
 fo:
   _family: "FA"
-  eng_long: "Binds (O) place (restrictive)."
+  eng_long: "Binds (O) place (parallel, restrictive)."
   eng_short: "(O)"
 fu:
   _family: "FA"
-  eng_long: "Binds (U) place (restrictive)."
+  eng_long: "Binds (U) place (parallel, restrictive)."
   eng_short: "(U)"
 fwa:
   _family: "FA"
-  eng_long: "Binds (A) place (non-restrictive)."
+  eng_long: "Binds (A) place (parallel, non-restrictive)."
   eng_short: "(A) (non-res)"
 fwe:
   _family: "FA"
-  eng_long: "Binds (E) place (non-restrictive)."
+  eng_long: "Binds (E) place (parallel, non-restrictive)."
   eng_short: "(E) (non-res)"
 fwi:
   _family: "FA"
-  eng_long: "Binds (I) place (non-restrictive)."
+  eng_long: "Binds (I) place (parallel, non-restrictive)."
   eng_short: "(E) (non-res)"
 fwo:
   _family: "FA"
-  eng_long: "Binds (O) place (non-restrictive)."
+  eng_long: "Binds (O) place (parallel, non-restrictive)."
   eng_short: "(O) (non-res)"
 fwu:
   _family: "FA"
-  eng_long: "Binds (U) place (non-restrictive)."
+  eng_long: "Binds (U) place (parallel, non-restrictive)."
   eng_short: "(U) (non-res)"
 fay:
   _family: "FA"
-  eng_long: "Which place should be bound to make the proposition true ?"
+  eng_long: "Which place should be bound (in parallel) to make the proposition true ?"
   eng_short: "bind ?"
 fya:
   _family: "FA"
-  eng_long: "Adverbial : Binds predicate unit (restrictive)"
+  eng_long: "Adverbial : Binds predicate unit (parallel, restrictive)"
   eng_short: "res adv"
 fye:
   _family: "FA"
-  eng_long: "Adverbial : Binds predicate unit (non-restrictive)"
+  eng_long: "Adverbial : Binds predicate unit (parallel, non-restrictive)"
   eng_short: "non-res adv"
 fyi:
   _family: "FA"
-  eng_long: "Adverbial : Binds predicate unit (subordinative)"
+  eng_long: "Adverbial : Binds predicate unit (parallel, subordinative)"
   eng_short: "sub adv"
 fey:
   _family: "FA"
@@ -433,47 +433,47 @@ fey:
   eng_short: "bind next"
 va:
   _family: "VA"
-  eng_long: "Binds (A) place (restrictive)."
+  eng_long: "Binds (A) place (sequential, restrictive)."
   eng_short: "(A)"
 ve:
   _family: "VA"
-  eng_long: "Binds (E) place (restrictive)."
+  eng_long: "Binds (E) place (sequential, restrictive)."
   eng_short: "(E)"
 vi:
   _family: "VA"
-  eng_long: "Binds (I) place (restrictive)."
+  eng_long: "Binds (I) place (sequential, restrictive)."
   eng_short: "(I)"
 vo:
   _family: "VA"
-  eng_long: "Binds (O) place (restrictive)."
+  eng_long: "Binds (O) place (sequential, restrictive)."
   eng_short: "(O)"
 vu:
   _family: "VA"
-  eng_long: "Binds (U) place (restrictive)."
+  eng_long: "Binds (U) place (sequential, restrictive)."
   eng_short: "(U)"
 vwa:
   _family: "VA"
-  eng_long: "Binds (A) place (non-restrictive)."
+  eng_long: "Binds (A) place (sequential, non-restrictive)."
   eng_short: "(A) (non-res)"
 vwe:
   _family: "VA"
-  eng_long: "Binds (E) place (non-restrictive)."
+  eng_long: "Binds (E) place (sequential, non-restrictive)."
   eng_short: "(E) (non-res)"
 vwi:
   _family: "VA"
-  eng_long: "Binds (I) place (non-restrictive)."
+  eng_long: "Binds (I) place (sequential, non-restrictive)."
   eng_short: "(I) (non-res)"
 vwo:
   _family: "VA"
-  eng_long: "Binds (O) place (non-restrictive)."
+  eng_long: "Binds (O) place (sequential, non-restrictive)."
   eng_short: "(O) (non-res)"
 vwu:
   _family: "VA"
-  eng_long: "Binds (U) place (non-restrictive)."
+  eng_long: "Binds (U) place (sequential, non-restrictive)."
   eng_short: "(U) (non-res)"
 vay:
   _family: "VA"
-  eng_long: "Which place should be bound to make the proposition true ?"
+  eng_long: "Which place should be bound (sequentially) to make the proposition true ?"
   eng_short: "bind ?"
 vey:
   _family: "VA"
@@ -481,15 +481,15 @@ vey:
   eng_short: "bind default"
 vya:
   _family: "VA"
-  eng_long: "Adverbial : Binds predicate unit (restrictive)"
+  eng_long: "Adverbial : Binds predicate unit (sequential, restrictive)"
   eng_short: "res adv"
 vye:
   _family: "VA"
-  eng_long: "Adverbial : Binds predicate unit (non-restrictive)"
+  eng_long: "Adverbial : Binds predicate unit (sequential, non-restrictive)"
   eng_short: "non-res adv"
 vyi:
   _family: "VA"
-  eng_long: "Adverbial : Binds predicate unit (subordinative)"
+  eng_long: "Adverbial : Binds predicate unit (sequential, subordinative)"
   eng_short: "sub adv"
 da:
   _family: "DA"
