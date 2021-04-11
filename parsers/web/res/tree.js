@@ -11,8 +11,6 @@ const important_types = [
 	// scope	
 	[ 'scope_1', 'scope' ],
 	[ 'parallel_term_set', 'set' ],
-	[ 'parallel_import', 'parallel import' ],
-	[ 'sequential_import', 'sequential import' ],
 	[ 'parallel', 'parallel binding' ],
 	[ 'arguments_list', 'arguments' ],
 

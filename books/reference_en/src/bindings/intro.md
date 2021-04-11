@@ -11,7 +11,7 @@ to override this default behavior.
 
 When predicates are chained after each other, for each pair of consecutive
 units, the left unit right chaining place will be bound to the right unit left
-chaining place.
+chaining place. This is called **sequential binding**.
 
 However, if the left unit right chaining place expects a predicate, it will be
 bound to the right unit itself. The parameters of this predicate arguments will be

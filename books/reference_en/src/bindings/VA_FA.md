@@ -1,59 +1,5 @@
 # Explicit bindings (VA/FA)
 
-**VA** and **FA** are similar families that allow to change the **right chaining
-place** of a predicate unit, and also allow to add non-restrictive bindings.
-
-However while **VA** only change the chaining place, **FA** is followed by a
-whole predicate unit chain until the next **FA**, **VA** or the end of the
-sentence. This next **FA/VA** will then be bound to the same left unit as the
-current **FA**. **FA** thus allow to perform bindings multiple times with the
-same unit.
-
-The absense of **FA/VA** can also be seen as an implicit **vey**. Implicit or
-explicit **VA** is called **sequential binding**, while the usage of **FA** is
-called **parallel binding** as it allows to perform multiple bindings to the
-same left unit in parallel.
-
-In this inner predicate unit chain, the `A` place of the first unit is bound to
-the **right chaining place** of the left unit. This can be changed with
-[**SA**](SA_ZA.md#sa) to use another place of the first unit of the chain, or
-with [**may (MA)**](../units/MA.md) in any part of the chain.
-
-In most cases the last **FA/VA** of a sentence can be either **FA** or **VA**
-with no difference in meaning if there is en equivalent in the other family.
-
-> mi vyer fi jve mi ve/fe tca tol  
-> *I visit (guided by a friend of mine) a city (which is large).*  
->
-> **vyer :** `(A) visits [E] with guide (I).`  
-> **jve :** `(A) is a friend of [E].`  
-> **tca :** `(A) is a town/city.`  
-> **tol :** `(A) is large/much (subjective) in property/dimension [E1].`  
->
-> We first define each statement/predicate :
->
-> - \\(P_1 = \exists a_1 \\: \text{mi}(a_1)\\)
-> - \\(P_2 = \exists a_2 \exists e_2 \exists i_2 \\: \text{vyer}(a_2,e_2,i_2)\\)
-> - \\(P_3 = \exists a_3 \exists e_3 \\: \text{jve}(a_3,e_3)\\)
-> - \\(P_4 = \exists a_4 \\: \text{mi}(a_4)\\)
-> - \\(P_5 = \exists a_5 \\: \text{tca}(a_5)\\)
-> - \\(P_6 = \exists a_6 \exists E_6 \\: \text{sol}(a_6,E_6)\\)
->
->
-> Then we state that some variables are bound together (shared between
-> statements or predicates) :
->
-> - \\(a_1 = a_2\\)
-> - \\(\\color{green}{i}_2 = a_3\\) because `fi` binds the `I` place
-> - \\(e_3 = a_4\\)
-> - \\(\\color{green}{e_2} = a_5\\) because `ve/fe` binds the `E` place of the
->   same unit as previous `fi`.
-> - \\(a_5 = a_6\\)
->
-> Finally we express the complete statement :
->
-> \\(P_1 \wedge P_2 \wedge (P_3 \wedge P_4) \wedge P_5 \wedge P_6\\)
-
 | FA     | VA  | Definition                                                                                                      |
 | ------ | --- | --------------------------------------------------------------------------------------------------------------- |
 | fa     | va  | Binds `A` place (restrictive)                                                                                   |
@@ -76,25 +22,105 @@ with no difference in meaning if there is en equivalent in the other family.
 | fey    |     | Binds with the next place in order. Can be usefull if there are more than 5 places.                             |
 |        | vey | Binds with the usual right chaining place. Same as without a **VA**, but necessary if there is a **FA** before. |
 
-## Non-restrictives
+**FA** and **VA** are placed between 2 units, before any **SA/ZA** of the right
+unit.
 
-The **non-restrictive** particles means that the sentence is true whether or not
-the right part is true. It allows to add additionnal details without changing
-the truth value. These additionnal details are made in a separate statement.
+## Sequential binding modifier : VA
 
-In the above example, the proposition is only true if the guide is a friend of a
-speaker, and the guide not being a friend makes the whole proposition false. If
-`fi` is replaced by `fwi`, the guide not being a friend of a speaker doesn't
-make the proposition about the visit false.
+**VA** allows to change how sequential binding is performed, overwriting the
+default rules.
 
-> - \\(P_1 \wedge P_2 \wedge P_5 \wedge P_6\\)
-> - \\(P_3 \wedge P_4\\)
+**va/ve/vi/vo/vu** allow to change which place is used in the binding.
 
-## Adverbials
+> Lets define **unit3** as `(A) ... (E) ... (I1)`
+> Default sequential bindings between this unit expressed in \\(P_1\\) and
+> a following one in \\(P_2\\) is :
+>
+> \\[ P_1(a_1) = \exists e_1 \exists I_1 \\: \text{unit3}(a_1, e_1, I_1) \wedge P_2(a_1)\\]
+>
+> By using **ve** between **unit3** and the following unit will result in this
+> bind :
+>
+> \\[ P_1(a_1) = \exists e_1 \exists I_1 \\: \text{unit3}(a_1, e_1, I_1) \wedge P_2(\color{magenta}{e_1})\\]
+>
+> Since the `I` place expects a predicate, using **vi** between **unit3** and
+> the following unit will result in this bind :
+> 
+> \\[ P_1(a_1) = \exists e_1 \\: \text{unit3}(a_1, e_1, \color{magenta}{P_2})\\]
+>
+> **va** is usefull is the unit have a bracket place that we don't want to bind
+> to.
 
-**Adverbials** allows to bind over the predicate itself instead of one of its
-variables. It's a tool for adding reordering flexibility to the language.
-Subordinative adverbial only claims the inner clause and the outer (relativized)
-part is not claimed to be true. This is not the case for restrictive and
-non-restrictive adverbials. "I hope that ..." / "... which I hope is true"
-doesn't claim that "..." is true.
+**vwa/vwe/vwi/vwo/vwu** are called **non-restrictive bindings**. Instead
+of the binding being part of the current statement, it is part of its own
+independent statement. It is used to add additionnal information which can be
+false without changing the truth value of the main statement.
+
+> By using **vwa** between **unit3** and the following unit will result in this
+> bind, \\(\color{magenta}{P^\alpha_1}\\) being an independent statement :
+>
+> \\[
+> P_1(a_1) = \exists e_1 \exists I_1 \\: \text{unit3}(a_1, e_1, I_1) \\\\
+> \color{magenta}{P^\alpha_1 = P_2(a_1)}
+> \\]
+
+**vya/vye/vyi** are called **adverbials**. They allow to perform a bind on the
+predicate itself.
+
+> **vya** performs a restrictive bind over the predicate itself :
+> 
+> \\[
+> P_1(a_1) = \color{magenta}{P^\alpha_1} \wedge \color{cyan}{P_2}(\color{magenta}{P^\alpha_1}) \\\\
+> \color{magenta}{P^\alpha_1} = \exists e_1 \exists I_1 \\: \text{unit3}(a_1, e_1, I_1)
+> \\]
+>
+> **vye** performs a non-restrictive bind, which is stated in its own
+> \\(P^\beta_1\\) independant statement.
+> 
+> \\[
+> P_1(a_1) = \color{magenta}{P^\alpha_1} \\\\
+> \color{magenta}{P^\alpha_1} = \exists e_1 \exists I_1 \\: \text{unit3}(a_1, e_1, I_1) \\\\
+> P^\beta_1 = \color{cyan}{P_2}(\color{magenta}{P^\alpha_1})
+> \\]
+>
+> **vyi** performs a subordinative bind. This predicate itself is not stated to
+> be true.
+> 
+> \\[
+> P_1(a_1) = \color{cyan}{P_2}(\color{magenta}{P^\alpha_1}) \\\\
+> \color{magenta}{P^\alpha_1} = \exists e_1 \exists I_1 \\: \text{unit3}(a_1, e_1, I_1)
+> \\]
+
+## Parallel binding modifier : FA
+
+**FA** allow to perform multiple bindings on the same left unit. Each **FA**
+starts a **FA-scope** that ends when reaching another **FA** or **VA**, and
+thus can't contain other **FA** or **VA** (for more complex statements,
+use [subscopes](../struct/PE.md)). This chain of **FA-scopes** can also be
+terminated with **be** (may be usefull when dealing with
+[sets](../struct/DAY.md) and [connectives](../struct/DA.md)).
+
+**FA** contains an equivalent of every **VA**, performing the same logic but
+in a parallel way.
+
+> mi vyer fi jve mi ve tca pcaro tol  
+> *I visit (guided by a friend of mine) a city (which area is large).*  
+>
+> - jve: `(A) is a friend of [E].`
+> - mi: `(A) is I/a speaker/author.`
+> - pcaro: `(A) has area [E] (measure, meters^2 by default / object(s) with same area).`
+> - tca: `(A) is a town/city.`
+> - tol: `(A) is a large number (subjective/contextual) in dimension/unit [E1].`
+> - vyer: `(A) visits [E] with guide (I).`
+>
+> \\[
+> \begin{align}
+> P_1 &= \exists a_1 &&\text{mi}(a_1) &\wedge P_2(a_1) \\\\
+> P_2(a_2) &= \exists e_2 \exists i_2 &&\text{vyer}(a_2,e_2,i_2) &\wedge \color{cyan}{P_3}(i_2) &\wedge \color{magenta}{P_5}(e_2) \\\\
+> \color{cyan}{P_3}(a_3) &= \exists e_3 &&\text{jve}(a_3,e_3) &\wedge P_4(e_3) \\\\
+> P_4(a_4) &= &&\text{mi}(a_4) \\\\
+> \color{magenta}{P_5}(a_5) &= &&\text{tca}(a_5) &\wedge P_6(a_5) \\\\
+> P_6(a_6) &= \exists e_6 &&\text{pcaro}(a_6,e_6) &\wedge P_7(e_6) \\\\
+> P_7(a_7) &= \exists e_7 &&\text{tol}(a_7,e_7)
+> \end {align}
+> \\]

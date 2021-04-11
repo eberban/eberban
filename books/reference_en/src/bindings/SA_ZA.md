@@ -43,8 +43,8 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 > **sey** and **soy** adds a new variable allowing to speak about the unit itself :
 > 
 > \\[
-> P_1(\\color{green}{x}) = \text{is-event}(\\color{green}{x}, P^\prime_1) \wedge P_2(\\color{magenta}{i_1}) \\\\
-> P^\prime_1 = \exists a_1 \exists e_1 \exists \\color{magenta}{i_1} \\: \text{unit3}(a_1,e_1,\\color{magenta}{i_1})
+> P_1(\\color{green}{x}) = \text{is-event}(\\color{green}{x}, P^\alpha_1) \wedge P_2(\\color{magenta}{i_1}) \\\\
+> P^\alpha_1 = \exists a_1 \exists e_1 \exists \\color{magenta}{i_1} \\: \text{unit3}(a_1,e_1,\\color{magenta}{i_1})
 > \\]
 >
 > **Further bindings will still use the original places of the unit.**
@@ -69,8 +69,8 @@ predicate unit.
 > made with this *name variable* instead of the original places.
 > 
 > \\[
-> P_1(\\color{green}{x}) = \text{is-named}(\\color{green}{x}, \\color{magenta}{a_1}) \wedge \\color{cyan}{P^\prime_1} \wedge P_2(\\color{green}{x}) \\\\
-> \\color{cyan}{P^\prime_1} = \exists \\color{magenta}{a_1} \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
+> P_1(\\color{green}{x}) = \text{is-named}(\\color{green}{x}, \\color{magenta}{a_1}) \wedge \\color{cyan}{P^\alpha_1} \wedge P_2(\\color{green}{x}) \\\\
+> \\color{cyan}{P^\alpha_1} = \exists \\color{magenta}{a_1} \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
 > \\]
 >
 > The place can be selected by adding **SA** after **za**.
@@ -96,8 +96,8 @@ predicate unit.
 > made with this *referred/symbol variable* instead of the original places.
 > 
 > \\[
-> P_1(\\color{green}{x}) = \text{is-symbol}(\\color{green}{x}, \\color{cyan}{P^\prime_1}) \wedge P_2(\\color{green}{x}) \\\\
-> \\color{cyan}{P^\prime_1} = \exists a_1 \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
+> P_1(\\color{green}{x}) = \text{is-symbol}(\\color{green}{x}, \\color{magenta}{P^\alpha_1}) \wedge P_2(\\color{green}{x}) \\\\
+> \\color{magenta}{P^\alpha_1} = \exists a_1 \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
 > \\]
 
 
