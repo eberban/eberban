@@ -17,17 +17,18 @@ with definition :
 (A) is (a set of) [number] things satisfying [E1].
 ```
 
-Otherwise its a **measure** with definition :
+Otherwise its an **abstract number** with definition :
 
 ```eng
-(A) is a measure of [number] in property/dimension/unit [E1].
+(A) is the (abstract) number [number] with dimension/unit [E1] (default:
+contextual, usually explicited by another unit).
 ```
 
 Letters can be used to have measures composed of multiple parts designated by
 the suffix letter. The value interpretation of the chain is context dependent,
 often provided by another predicate it is used with.
 
-> You can have a natural number **measure** by adding a final **te**, which will
+> You can have a natural abstract number by adding a final **te**, which will
 > not change the value but count as a decimal part.
 
 ## Strings

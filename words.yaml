@@ -1,6 +1,6 @@
 # Specials :
 _cardinal: "(A) is (a set of) [number] things satisfying [E1]."
-_measure: "(A) is a measure of [number] in property/dimension/unit [E1]."
+_number: "(A) is the (abstract) number [number] with dimension/unit [E1] (default: contextual, usually explicited by another unit)."
 0:
   _family: "TA"
   eng_long: "Digit 0"
@@ -1068,23 +1068,23 @@ tun:
   eng_short: "every"
 tal:
   _family: "R"
-  eng_long: "(A) is negligible in property/dimension [E1]."
+  eng_long: "(A) is a negligible number in dimension/unit [E1]."
   eng_short: "negligible"
 tel:
   _family: "R"
-  eng_long: "(A) is small/mild (subjective/contextual) in property/dimension [E1]."
+  eng_long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
   eng_short: "small"
 til:
   _family: "R"
-  eng_long: "(A) is medium/average (subjective/contextual) in property/dimension [E1]."
+  eng_long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
   eng_short: "medium"
 tol:
   _family: "R"
-  eng_long: "(A) is large/much (subjective/contextual) in property/dimension [E1]."
+  eng_long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
   eng_short: "large"
 tul:
   _family: "R"
-  eng_long: "(A) is infinite in property/dimension [E1]."
+  eng_long: "(A) is an infinite number in dimension/unit [E1]."
   eng_short: "infinite"
 tca:
   _family: "R"
