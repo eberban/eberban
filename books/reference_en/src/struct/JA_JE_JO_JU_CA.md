@@ -26,6 +26,7 @@ can be any valid eberban text.
 | jwa  | Emphasis indicator : the next word is especially emphasized.                                                                                   |
 | jwe  | Nonce-word indicator : the next word (usually a compound) may be non-standard.                                                                 |
 | jwi  | Next word is a metadata tag / hashtag.                                                                                                         |
+| jwo  | Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope.                                                                          |
 | ju   | Starts a *free scope* which is closed by the **free suffix juy (JUY)**. Any free modifier attached to either of them will apply to this scope. |
 
 > **ju** and **juy** allows to attach information to a group of words which

@@ -699,6 +699,10 @@ jwi:
   _family: "JU"
   eng_long: "Next word is a metadata tag / hashtag."
   eng_short: "metadata"
+jwo:
+  _family: "JU"
+  eng_long: "Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope."
+  eng_short: "bracket place"
 juy:
   _family: "JUY"
   eng_long: "Ends a free scope."
