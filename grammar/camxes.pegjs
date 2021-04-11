@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.24
+// eberban PEG grammar - v0.25
 // ===========================
 
 // GRAMMAR
@@ -169,7 +169,8 @@ parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
 
 // predicate unit
 unit = expr:((SA_clause / ZA_clause)* unit_1) {return _node("unit", expr);}
-unit_1 = expr:(compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*) {return _node("unit_1", expr);}
+unit_1 = expr:(compound / borrowing / quote / subscope / variable / unit_2) {return _node("unit_1", expr);}
+unit_2 = expr:(free_prefix* spaces? (root / number_string) free_post*) {return _node("unit_2", expr);}
 
 // compounds
 compound = expr:(free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*) {return _node("compound", expr);}
@@ -201,9 +202,7 @@ subscope = expr:(PE_clause arguments_list? function* scope PEY_clause_elidible) 
 arguments_list = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("arguments_list", expr);}
 
 // string (numbers / literals)
-string = expr:((number_string / letter_string) BE_clause_elidible) {return _node("string", expr);}
-number_string = expr:(TA_clause (TA_clause / BQ_clause)*) {return _node("number_string", expr);}
-letter_string = expr:(BQ_clause (TA_clause / BQ_clause)*) {return _node("letter_string", expr);}
+number_string = expr:((TA_clause / BQ_clause)+ BE_clause_elidible) {return _node("number_string", expr);}
 
 // variables
 variable = expr:(variable_intrinsic / variable_individual / variable_pred) {return _node("variable", expr);}
@@ -216,7 +215,7 @@ free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}
 
 // free suffix
 free_post = expr:(JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript) {return _node("free_post", expr);}
-free_subscript = expr:(JA_clause string) {return _node("free_subscript", expr);}
+free_subscript = expr:(JA_clause number_string) {return _node("free_subscript", expr);}
 free_discursive = expr:(JE_clause unit+) {return _node("free_discursive", expr);}
 free_indicator = expr:(CA_clause) {return _node("free_indicator", expr);}
 free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_parenthetical", expr);}

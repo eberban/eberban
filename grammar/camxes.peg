@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.24
+# eberban PEG grammar - v0.25
 # ===========================
 
 # GRAMMAR
@@ -40,7 +40,8 @@ parallel_term_2 <- unit+
 
 # predicate unit
 unit <- (SA_clause / ZA_clause)* unit_1
-unit_1 <- compound / borrowing / quote / subscope / variable / free_prefix* spaces? (root / string) free_post*
+unit_1 <- compound / borrowing / quote / subscope / variable / unit_2
+unit_2 <- free_prefix* spaces? (root / number_string) free_post*
 
 # compounds
 compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
@@ -72,9 +73,7 @@ subscope <- PE_clause arguments_list? function* scope PEY_clause_elidible
 arguments_list <- (KAY_clause / GAY_clause)+ PI_clause
 
 # string (numbers / literals)
-string <- (number_string / letter_string) BE_clause_elidible
-number_string <- TA_clause (TA_clause / BQ_clause)*
-letter_string <- BQ_clause (TA_clause / BQ_clause)*
+number_string <- (TA_clause / BQ_clause)+ BE_clause_elidible
 
 # variables
 variable <- variable_intrinsic / variable_individual / variable_pred
@@ -87,7 +86,7 @@ free_prefix <- JU_clause
 
 # free suffix
 free_post <- JUY_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
-free_subscript <- JA_clause string
+free_subscript <- JA_clause number_string
 free_discursive <- JE_clause unit+
 free_indicator <- CA_clause
 free_parenthetical <- JO_clause text_1 JOY_clause

@@ -7,7 +7,6 @@ const important_types = [
 	[ 'paragraph', 'paragraph' ],
 	[ 'sentence', 'sentence' ],
 
-
 	// scope	
 	[ 'scope_1', 'scope' ],
 	[ 'parallel_term_set', 'set' ],
@@ -23,7 +22,6 @@ const important_types = [
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
 	[ 'number_string', 'number' ],
-	[ 'letter_string', 'letters' ],
 	[ 'subscope', 'subscope' ],
 
 	// free
