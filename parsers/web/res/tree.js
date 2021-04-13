@@ -9,7 +9,7 @@ const important_types = [
 
 	// scope	
 	[ 'scope_1', 'scope' ],
-	[ 'parallel_term_set', 'set' ],
+	[ 'parallel_term_plural', 'plural' ],
 	[ 'parallel', 'parallel binding' ],
 	[ 'arguments_list', 'arguments' ],
 

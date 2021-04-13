@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.25
+// eberban PEG grammar - v0.26
 // ===========================
 
 // GRAMMAR
@@ -134,9 +134,9 @@
 
 text = expr:(parser_version? text_1) {return _node("text", expr);}
 parser_version = expr:(BU_clause (parser_version_short / parser_version_long)) {return _node("parser_version", expr);}
-parser_version_long = expr:(borrowing_part parser_version_number?) {return _node("parser_version_long", expr);}
+parser_version_long = expr:(borrowing_unit parser_version_number?) {return _node("parser_version_long", expr);}
 parser_version_short = expr:(parser_version_number) {return _node("parser_version_short", expr);}
-parser_version_number = expr:(spaces? TA+) {return _node("parser_version_number", expr);}
+parser_version_number = expr:(spaces? (TA / BQ)+) {return _node("parser_version_number", expr);}
 
 // main text rule
 text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragraphs? spaces? EOF?) {return _node("text_1", expr);}
@@ -155,40 +155,25 @@ scope_1 = expr:(PA_clause_elidible scope_2 PAY_clause_elidible) {return _node("s
 scope_2 = expr:(sequential (DAY_clause sequential)*) {return _node("scope_2", expr);}
 
 // sequential chaining
-sequential = expr:(unit parallel (VA_clause sequential)? / unit (VA_clause? sequential)?) {return _node("sequential", expr);}
+sequential = expr:(unit parallel? (VA_clause? sequential)?) {return _node("sequential", expr);}
 
 // parallel chaining
-parallel = expr:(parallel_item+ BE_clause_elidible) {return _node("parallel", expr);}
-parallel_item = expr:(FA_clause parallel_term) {return _node("parallel_item", expr);}
+parallel = expr:(parallel_item+) {return _node("parallel", expr);}
+parallel_item = expr:(FA_clause parallel_term FAY_clause_elidible) {return _node("parallel_item", expr);}
 
 parallel_term = expr:(parallel_term_connective / parallel_term_1) {return _node("parallel_term", expr);}
 parallel_term_connective = expr:(parallel_term_1 (DA_clause parallel_term_1)+) {return _node("parallel_term_connective", expr);}
-parallel_term_1 = expr:(parallel_term_set / parallel_term_2) {return _node("parallel_term_1", expr);}
-parallel_term_set = expr:(parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible) {return _node("parallel_term_set", expr);}
+parallel_term_1 = expr:(parallel_term_plural / parallel_term_2) {return _node("parallel_term_1", expr);}
+parallel_term_plural = expr:(parallel_term_2 (DAY_clause parallel_term_2)+) {return _node("parallel_term_plural", expr);}
 parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
 
 // predicate unit
 unit = expr:((SA_clause / ZA_clause)* unit_1) {return _node("unit", expr);}
-unit_1 = expr:(compound / borrowing / quote / subscope / variable / unit_2) {return _node("unit_1", expr);}
-unit_2 = expr:(free_prefix* spaces? (root / number_string) free_post*) {return _node("unit_2", expr);}
-
-// compounds
-compound = expr:(free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*) {return _node("compound", expr);}
-compound_1 = expr:(a compound_word_1) {return _node("compound_1", expr);}
-compound_2 = expr:(e compound_word_1 compound_word_n) {return _node("compound_2", expr);}
-compound_3 = expr:(i compound_word_1 compound_word_n compound_word_n) {return _node("compound_3", expr);}
-compound_n = expr:(o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end) {return _node("compound_n", expr);}
-compound_n_end = expr:(spaces? o &post_word) {return _node("compound_n_end", expr);}
-compound_word_1 = expr:(y spaces? compound_word_foreign / !u compound_word_n) {return _node("compound_word_1", expr);}
-compound_word_n = expr:(spaces? ((w &aeiouq / u) compound_word_foreign / native_word)) {return _node("compound_word_n", expr);}
-compound_word_foreign = expr:(foreign_word (pause_char / space_char / EOF)) {return _node("compound_word_foreign", expr);}
+unit_1 = expr:(borrowing / quote / subscope / variable / unit_2) {return _node("unit_1", expr);}
+unit_2 = expr:(free_prefix* spaces? (root / number_string / compound) free_post*) {return _node("unit_2", expr);}
 
 // borrowings
-borrowing = expr:(free_prefix* borrowing_part+ BE_clause_elidible free_post*) {return _node("borrowing", expr);}
-borrowing_part = expr:(spaces? borrowing_prefix borrowing_content borrowing_end) {return _node("borrowing_part", expr);}
-borrowing_prefix = expr:((w &aeiouq / u)) {return _node("borrowing_prefix", expr);}
-borrowing_content = expr:(foreign_word) {return _node("borrowing_content", expr);}
-borrowing_end = expr:((pause_char / space_char / EOF)) {return _node("borrowing_end", expr);}
+borrowing = expr:(free_prefix* (spaces? borrowing_unit)+ BE_clause_elidible free_post*) {return _node("borrowing", expr);}
 
 // quotes
 quote = expr:(grammatical_quote / one_word_quote / foreign_quote) {return _node("quote", expr);}
@@ -205,10 +190,7 @@ arguments_list = expr:((KAY_clause / GAY_clause)+ PI_clause) {return _node("argu
 number_string = expr:((TA_clause / BQ_clause)+ BE_clause_elidible) {return _node("number_string", expr);}
 
 // variables
-variable = expr:(variable_intrinsic / variable_individual / variable_pred) {return _node("variable", expr);}
-variable_intrinsic = expr:(MA_clause) {return _node("variable_intrinsic", expr);}
-variable_individual = expr:(KAY_clause / KA_clause) {return _node("variable_individual", expr);}
-variable_pred = expr:(GAY_clause / GA_clause) {return _node("variable_pred", expr);}
+variable = expr:(MA_clause / KAY_clause / KA_clause / GAY_clause / GA_clause) {return _node("variable", expr);}
 
 // free prefix
 free_prefix = expr:(JU_clause) {return _node("free_prefix", expr);}
@@ -227,8 +209,10 @@ BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} //
 BU_clause = expr:(spaces? BU) {return _node("BU_clause", expr);} // parser version/dialect
 CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);} // free suffix (indicator / marker)
 DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // logical connectives
-DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // set creator
-FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // filling place tag
+DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // plural value creator
+FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // parallel binding tag
+FAY_clause = expr:(free_prefix* spaces? FAY free_post*) {return _node("FAY_clause", expr);} // parallel binding terminator
+FAY_clause_elidible = expr:(FAY_clause?) {return (expr == "" || !expr) ? ["FAY"] : _node_empty("FAY_clause_elidible", expr);}
 GA_clause = expr:(free_prefix* spaces? GA free_post*) {return _node("GA_clause", expr);} // use pred variables
 GAY_clause = expr:(free_prefix* spaces? GAY free_post*) {return _node("GAY_clause", expr);} // new pred variables
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);} // free subscript
@@ -252,7 +236,7 @@ PO_clause = expr:(spaces? PO) {return _node("PO_clause", expr);} // pred variabl
 PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
 SA_clause = expr:(free_prefix* spaces? SA free_post*) {return _node("SA_clause", expr);} // place binding tag
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
-VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // chaining tags
+VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // sequential binding tags
 XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} // grammatical quote starter
 XAY_clause = expr:(free_prefix* spaces? XAY free_post*) {return _node("XAY_clause", expr);} // grammatical quote terminator
 XE_clause = expr:(free_prefix* spaces? XE) {return _node("XE_clause", expr);} // one word quote
@@ -265,8 +249,9 @@ BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return 
 BU = expr:(&particle (b u)) {return _node("BU", expr);}
 CA = expr:(&particle (c vtail)) {return _node("CA", expr);}
 DA = expr:(&particle !(DAY &post_word) (d vtail)) {return _node("DA", expr);}
-DAY = expr:(&particle (d aeiou y)) {return _node("DAY", expr);}
-FA = expr:(&particle (f vtail)) {return _node("FA", expr);}
+DAY = expr:(&particle (d a y)) {return _node("DAY", expr);}
+FA = expr:(&particle !(FAY &post_word) (f vtail)) {return _node("FA", expr);}
+FAY = expr:(&particle (f a y)) {return _node("FAY", expr);}
 GA = expr:(&particle (g !y_terminated vtail)) {return _node("GA", expr);}
 GAY = expr:(&particle (g &y_terminated vtail)) {return _node("GAY", expr);}
 JA = expr:(&particle (j a)) {return _node("JA", expr);}
@@ -300,11 +285,28 @@ foreign_quote_open = expr:(native_word) { _assign_foreign_quote_delim(expr); ret
 foreign_quote_word = expr:((!spaces .)+ ) !{ return _is_foreign_quote_delim(expr); } { return ["foreign_quote_word", join_expr(expr)]; }
 foreign_quote_close = expr:(native_word) &{ return _is_foreign_quote_delim(expr); } { return _node("foreign_quote_close", expr); }
 
-// - Legal words
+// - Compounds
+compound = expr:((compound_1 / compound_2 / compound_3 / compound_n) &post_word) {return _node("compound", expr);}
+compound_1 = expr:(a compound_word_1) {return _node("compound_1", expr);}
+compound_2 = expr:(e compound_word_1 compound_word_n) {return _node("compound_2", expr);}
+compound_3 = expr:(i compound_word_1 compound_word_n compound_word_n) {return _node("compound_3", expr);}
+compound_n = expr:(o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end) {return _node("compound_n", expr);}
+compound_n_end = expr:(spaces? o &post_word) {return _node("compound_n_end", expr);}
+compound_word_1 = expr:(y spaces? compound_word_foreign / !u compound_word_n) {return _node("compound_word_1", expr);}
+compound_word_n = expr:(spaces? (borrowing_prefix compound_word_foreign / native_word)) {return _node("compound_word_n", expr);}
+compound_word_foreign = expr:(foreign_word (pause_char / space_char / EOF)) {return _node("compound_word_foreign", expr);}
+
+// - Foreign words
+borrowing_unit = expr:(borrowing_prefix borrowing_content borrowing_end) {return _node("borrowing_unit", expr);}
+borrowing_prefix = expr:((w &aeiouq / u !aeiouq)) {return _node("borrowing_prefix", expr);}
+borrowing_content = expr:(foreign_word) {return _node("borrowing_content", expr);}
+borrowing_end = expr:((pause_char / space_char / EOF)) {return _node("borrowing_end", expr);}
 foreign_word = expr:((initial_consonant_pair / consonant)? vtail_q (consonant_cluster vtail_q)* consonant? consonant?) {return _node("foreign_word", expr);}
+
+// - Native words
 native_word = expr:(root / particle) {return _node("native_word", expr);}
 particle = expr:(consonant vtail_q &post_word) {return _node("particle", expr);}
-root = expr:(((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant)? vtail_q sonorant)) &post_word) {return _node("root", expr);}
+root = expr:(((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant) vtail_q sonorant)) &post_word) {return _node("root", expr);}
 
 // - Vowel tails
 vtail_q = expr:(vtail_q_unit vtail_q_1*) {return _node("vtail_q", expr);}

@@ -1,13 +1,13 @@
-# eberban PEG grammar - v0.25
+# eberban PEG grammar - v0.26
 # ===========================
 
 # GRAMMAR
 # main rule, allow language version/dialect annotation
 text <- parser_version? text_1
 parser_version <- BU_clause (parser_version_short / parser_version_long)
-parser_version_long <- borrowing_part parser_version_number?
+parser_version_long <- borrowing_unit parser_version_number?
 parser_version_short <- parser_version_number
-parser_version_number <- spaces? TA+
+parser_version_number <- spaces? (TA / BQ)+
 
 # main text rule
 text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? spaces? EOF?
@@ -26,40 +26,25 @@ scope_1 <- PA_clause_elidible scope_2 PAY_clause_elidible
 scope_2 <- sequential (DAY_clause sequential)*
 
 # sequential chaining
-sequential <- unit parallel (VA_clause sequential)? / unit (VA_clause? sequential)?
+sequential <- unit parallel? (VA_clause? sequential)?
 
 # parallel chaining
-parallel <- parallel_item+ BE_clause_elidible
-parallel_item <- FA_clause parallel_term
+parallel <- parallel_item+
+parallel_item <- FA_clause parallel_term FAY_clause_elidible
 
 parallel_term <- parallel_term_connective / parallel_term_1
 parallel_term_connective <- parallel_term_1 (DA_clause parallel_term_1)+
-parallel_term_1 <- parallel_term_set / parallel_term_2
-parallel_term_set <- parallel_term_2 (DAY_clause parallel_term_2)+ BE_clause_elidible
+parallel_term_1 <- parallel_term_plural / parallel_term_2
+parallel_term_plural <- parallel_term_2 (DAY_clause parallel_term_2)+
 parallel_term_2 <- unit+
 
 # predicate unit
 unit <- (SA_clause / ZA_clause)* unit_1
-unit_1 <- compound / borrowing / quote / subscope / variable / unit_2
-unit_2 <- free_prefix* spaces? (root / number_string) free_post*
-
-# compounds
-compound <- free_prefix* spaces? (compound_1 / compound_2 / compound_3 / compound_n) &post_word free_post*
-compound_1 <- a compound_word_1
-compound_2 <- e compound_word_1 compound_word_n
-compound_3 <- i compound_word_1 compound_word_n compound_word_n
-compound_n <- o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end
-compound_n_end <- spaces? o &post_word
-compound_word_1 <- y spaces? compound_word_foreign / !u compound_word_n
-compound_word_n <- spaces? ((w &aeiouq / u) compound_word_foreign / native_word)
-compound_word_foreign <- foreign_word (pause_char / space_char / EOF)
+unit_1 <- borrowing / quote / subscope / variable / unit_2
+unit_2 <- free_prefix* spaces? (root / number_string / compound) free_post*
 
 # borrowings
-borrowing <- free_prefix* borrowing_part+ BE_clause_elidible free_post*
-borrowing_part <- spaces? borrowing_prefix borrowing_content borrowing_end
-borrowing_prefix <- (w &aeiouq / u)
-borrowing_content <- foreign_word
-borrowing_end <- (pause_char / space_char / EOF)
+borrowing <- free_prefix* (spaces? borrowing_unit)+ BE_clause_elidible free_post*
 
 # quotes
 quote <- grammatical_quote / one_word_quote / foreign_quote
@@ -76,10 +61,7 @@ arguments_list <- (KAY_clause / GAY_clause)+ PI_clause
 number_string <- (TA_clause / BQ_clause)+ BE_clause_elidible
 
 # variables
-variable <- variable_intrinsic / variable_individual / variable_pred
-variable_intrinsic <- MA_clause
-variable_individual <- KAY_clause / KA_clause
-variable_pred <- GAY_clause / GA_clause
+variable <- MA_clause / KAY_clause / KA_clause / GAY_clause / GA_clause
 
 # free prefix
 free_prefix <- JU_clause
@@ -98,8 +80,10 @@ BQ_clause           <- free_prefix* spaces? BQ                  # letters
 BU_clause           <- spaces? BU                               # parser version/dialect
 CA_clause           <- free_prefix* spaces? CA                  # free suffix (indicator / marker)
 DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
-DAY_clause          <- free_prefix* spaces? DAY free_post*      # set creator
-FA_clause           <- free_prefix* spaces? FA free_post*       # filling place tag
+DAY_clause          <- free_prefix* spaces? DAY free_post*      # plural value creator
+FA_clause           <- free_prefix* spaces? FA free_post*       # parallel binding tag
+FAY_clause          <- free_prefix* spaces? FAY free_post*      # parallel binding terminator
+FAY_clause_elidible <- FAY_clause?
 GA_clause           <- free_prefix* spaces? GA free_post*       # use pred variables
 GAY_clause          <- free_prefix* spaces? GAY free_post*      # new pred variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
@@ -123,7 +107,7 @@ PO_clause           <- spaces? PO                               # pred variable 
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
-VA_clause           <- free_prefix* spaces? VA free_post*       # chaining tags
+VA_clause           <- free_prefix* spaces? VA free_post*       # sequential binding tags
 XA_clause           <- free_prefix* spaces? XA                  # grammatical quote starter
 XAY_clause          <- free_prefix* spaces? XAY free_post*      # grammatical quote terminator
 XE_clause           <- free_prefix* spaces? XE                  # one word quote
@@ -136,8 +120,9 @@ BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
 BU    <- &particle (b u)
 CA    <- &particle (c vtail)
 DA    <- &particle !(DAY &post_word) (d vtail)
-DAY   <- &particle (d aeiou y)
-FA    <- &particle (f vtail)
+DAY   <- &particle (d a y)
+FA    <- &particle !(FAY &post_word) (f vtail)
+FAY   <- &particle (f a y)
 GA    <- &particle (g !y_terminated vtail)
 GAY   <- &particle (g &y_terminated vtail)
 JA    <- &particle (j a)
@@ -171,11 +156,28 @@ foreign_quote_open <- native_word
 foreign_quote_word <- (!spaces .)+ 
 foreign_quote_close <- native_word
 
-# - Legal words
+# - Compounds
+compound <- (compound_1 / compound_2 / compound_3 / compound_n) &post_word
+compound_1 <- a compound_word_1
+compound_2 <- e compound_word_1 compound_word_n
+compound_3 <- i compound_word_1 compound_word_n compound_word_n
+compound_n <- o compound_word_1 (!compound_n_end compound_word_n)* compound_n_end
+compound_n_end <- spaces? o &post_word
+compound_word_1 <- y spaces? compound_word_foreign / !u compound_word_n
+compound_word_n <- spaces? (borrowing_prefix compound_word_foreign / native_word)
+compound_word_foreign <- foreign_word (pause_char / space_char / EOF)
+
+# - Foreign words
+borrowing_unit <- borrowing_prefix borrowing_content borrowing_end
+borrowing_prefix <- (w &aeiouq / u !aeiouq)
+borrowing_content <- foreign_word
+borrowing_end <- (pause_char / space_char / EOF)
 foreign_word <- (initial_consonant_pair / consonant)? vtail_q (consonant_cluster vtail_q)* consonant? consonant?
+
+# - Native words
 native_word <-  root / particle
 particle <- consonant vtail_q &post_word
-root <- ((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant)? vtail_q sonorant)) &post_word
+root <- ((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant) vtail_q sonorant)) &post_word
 
 # - Vowel tails
 vtail_q <- vtail_q_unit vtail_q_1*

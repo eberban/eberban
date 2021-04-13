@@ -9,6 +9,7 @@
 | [**DA**](struct/DA.md)                                     | logical connectives                                          |
 | [**DAY**](struct/DAY.md)                                   | set creator                                                  |
 | [**FA**](bindings/VA_FA.md)                                | parallel binding tag                                         |
+| [**FAY**](bindings/VA_FA.md)                               | parallel binding terminator                                  |
 | [**GA**](units/KA_KAY_GA_GAY.md)                           | use predicate variables                                      |
 | [**GAY**](units/KA_KAY_GA_GAY.md)                          | new predicate variables                                      |
 | [**JA**](struct/JA_JE_JO_JU_CA.md#subscript-ja)*           | free subscript                                               |

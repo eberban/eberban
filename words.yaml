@@ -371,6 +371,10 @@ xo:
   _family: "XO"
   eng_long: "Starts quote of arbitrary string of words."
   eng_short: ""
+fay:
+  _family: "FAY"
+  eng_long: "Parallel binding terminator."
+  eng_short: "stop parallel"
 fa:
   _family: "FA"
   eng_long: "Binds (A) place (parallel, restrictive)."
@@ -411,10 +415,6 @@ fwu:
   _family: "FA"
   eng_long: "Binds (U) place (parallel, non-restrictive)."
   eng_short: "(U) (non-res)"
-fay:
-  _family: "FA"
-  eng_long: "Which place should be bound (in parallel) to make the proposition true ?"
-  eng_short: "bind ?"
 fya:
   _family: "FA"
   eng_long: "Adverbial : Binds predicate unit (parallel, restrictive)"
@@ -429,8 +429,8 @@ fyi:
   eng_short: "sub adv"
 fey:
   _family: "FA"
-  eng_long: "Binds with the next place in order. Can be usefull if there are more than 5 places."
-  eng_short: "bind next"
+  eng_long: "Which place should be bound (parallel) to make the proposition true ?"
+  eng_short: "bind ?"
 va:
   _family: "VA"
   eng_long: "Binds (A) place (sequential, restrictive)."
@@ -471,14 +471,10 @@ vwu:
   _family: "VA"
   eng_long: "Binds (U) place (sequential, non-restrictive)."
   eng_short: "(U) (non-res)"
-vay:
+vey:
   _family: "VA"
   eng_long: "Which place should be bound (sequentially) to make the proposition true ?"
   eng_short: "bind ?"
-vey:
-  _family: "VA"
-  eng_long: "Binds with the usual right chaining place. Same as without a VA, but necessary if there is a FA before."
-  eng_short: "bind default"
 vya:
   _family: "VA"
   eng_long: "Adverbial : Binds predicate unit (sequential, restrictive)"
@@ -517,24 +513,8 @@ duhu:
   eng_short: "won left"
 day:
   _family: "DAY"
-  eng_long: "Level 1 set creator."
-  eng_short: "set-1"
-dey:
-  _family: "DAY"
-  eng_long: "Level 2 set creator."
-  eng_short: "set-2"
-diy:
-  _family: "DAY"
-  eng_long: "Level 3 set creator."
-  eng_short: "set-3"
-doy:
-  _family: "DAY"
-  eng_long: "Level 4 set creator."
-  eng_short: "set-4"
-duy:
-  _family: "DAY"
-  eng_long: "Level 5 set creator."
-  eng_short: "set-5"
+  eng_long: "Form a group (plural variable) from multiple individuals."
+  eng_short: "with"
 bo:
   _family: "BO"
   eng_long: "Import a place to be filled."

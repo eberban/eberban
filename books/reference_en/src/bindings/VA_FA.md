@@ -18,9 +18,8 @@
 | fye    | vye | Adverbial : Binds predicate unit (non-restrictive)                                                              |
 | fyi    | vyi | Adverbial : Binds predicate unit (subordinative)                                                                |
 | &nbsp; |     |                                                                                                                 |
-| fay    | vay | Which place should be bound to make the proposition true ?                                                      |
-| fey    |     | Binds with the next place in order. Can be usefull if there are more than 5 places.                             |
-|        | vey | Binds with the usual right chaining place. Same as without a **VA**, but necessary if there is a **FA** before. |
+| fey    | vey | Which place should be bound to make the proposition true ?                                                      |
+
 
 **FA** and **VA** are placed between 2 units, before any **SA/ZA** of the right
 unit.
@@ -96,9 +95,10 @@ predicate itself.
 **FA** allow to perform multiple bindings on the same left unit. Each **FA**
 starts a **FA-scope** that ends when reaching another **FA** or **VA**, and
 thus can't contain other **FA** or **VA** (for more complex statements,
-use [subscopes](../struct/PE.md)). This chain of **FA-scopes** can also be
-terminated with **be** (may be usefull when dealing with
-[sets](../struct/DAY.md) and [connectives](../struct/DA.md)).
+use [subscopes](../struct/PE.md)). **fay** is a terminator for **FA** which can
+be used to return to the sequential binding without using a **VA**.
+(is needed when using [**DAY**](../struct/DAY.md) in the sequential binding
+immediately after a **FA-scope** also contains **DAY**)
 
 **FA** contains an equivalent of every **VA**, performing the same logic but
 in a parallel way.

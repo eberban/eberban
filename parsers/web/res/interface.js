@@ -1,4 +1,4 @@
-const hideTitleList = [ 'scope', 'unit', 'parallel binding' ];
+const hideTitleList = [ 'scope', 'unit', 'parallel binding', 'plural' ];
 
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
@@ -10,7 +10,7 @@ const boxClassForTypeMap = new Map([
 	// scope
 	[ 'scope', 'box box-scope' ],
 	[ 'parallel binding', 'box box-parallel' ],
-	[ 'set', 'box box-set' ],
+	[ 'plural', 'box box-scope' ],
 
 	// units
 	[ 'unit', 'box box-unit' ],
