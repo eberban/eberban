@@ -90,12 +90,22 @@ li.implicit {
 	background: #eeeeee;
 }
 
-.box.box-parallel {
-	background: var(--color-pink);
+.box.box-sequential {
+	background: white;
 }
 
-.box.box-import {
+.box.box-sequential-unit {
 	background: var(--color-purple);
+}
+
+.box.box-sequential-neg {
+	/* background: #ffffff; */
+	border: 1px red dashed;
+	border-top: 0px;
+}
+
+.box.box-explicit {
+	background: var(--color-pink);
 }
 
 .box.box-unit {
@@ -106,9 +116,9 @@ li.implicit {
 	background: var(--color-purple);
 }
 
-.box.box-subscope {
+/* .box.box-subscope {
 	background: #ffffff;
-}
+} */
 
 .box.box-compound {
 	background: var(--color-purple);
@@ -127,6 +137,13 @@ li.implicit {
 }
 
 .box.box-scope {
+	background: #ffffff;
+	border: 1px black dashed;
+	border-top: 0px;
+}
+
+.box.box-scope-conn {
+	background: #dddddd;
 	border: 1px black dashed;
 	border-top: 0px;
 }

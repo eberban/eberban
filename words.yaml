@@ -372,157 +372,173 @@ xo:
   eng_long: "Starts quote of arbitrary string of words."
   eng_short: ""
 fay:
-  _family: "FAY"
-  eng_long: "Parallel binding terminator."
-  eng_short: "stop parallel"
+  _family: "FA"
+  eng_long: "Additional explicit bracket place restrictive binding."
+  eng_short: "[ ]"
 fa:
   _family: "FA"
-  eng_long: "Binds (A) place (parallel, restrictive)."
+  eng_long: "Additional explicit (A) place restrictive binding."
   eng_short: "(A)"
 fe:
   _family: "FA"
-  eng_long: "Binds (E) place (parallel, restrictive)."
+  eng_long: "Additional explicit (E) place restrictive binding."
   eng_short: "(E)"
 fi:
   _family: "FA"
-  eng_long: "Binds (I) place (parallel, restrictive)."
+  eng_long: "Additional explicit (I) place restrictive binding."
   eng_short: "(I)"
 fo:
   _family: "FA"
-  eng_long: "Binds (O) place (parallel, restrictive)."
+  eng_long: "Additional explicit (O) place restrictive binding."
   eng_short: "(O)"
 fu:
   _family: "FA"
-  eng_long: "Binds (U) place (parallel, restrictive)."
+  eng_long: "Additional explicit (U) place restrictive binding."
   eng_short: "(U)"
 fwa:
   _family: "FA"
-  eng_long: "Binds (A) place (parallel, non-restrictive)."
+  eng_long: "Additional explicit (A) place non-restrictive binding."
   eng_short: "(A) (non-res)"
 fwe:
   _family: "FA"
-  eng_long: "Binds (E) place (parallel, non-restrictive)."
+  eng_long: "Additional explicit (E) place non-restrictive binding."
   eng_short: "(E) (non-res)"
 fwi:
   _family: "FA"
-  eng_long: "Binds (I) place (parallel, non-restrictive)."
-  eng_short: "(E) (non-res)"
+  eng_long: "Additional explicit (I) place non-restrictive binding."
+  eng_short: "(I) (non-res)"
 fwo:
   _family: "FA"
-  eng_long: "Binds (O) place (parallel, non-restrictive)."
+  eng_long: "Additional explicit (O) place non-restrictive binding."
   eng_short: "(O) (non-res)"
 fwu:
   _family: "FA"
-  eng_long: "Binds (U) place (parallel, non-restrictive)."
+  eng_long: "Additional explicit (U) place non-restrictive binding."
   eng_short: "(U) (non-res)"
+fey:
+  _family: "FA"
+  eng_long: "Which place should be bound to make the proposition true ?"
+  eng_short: "bind ?"
 fya:
   _family: "FA"
-  eng_long: "Adverbial : Binds predicate unit (parallel, restrictive)"
+  eng_long: "Additional explicit adverbial bind (restrictive)"
   eng_short: "res adv"
 fye:
   _family: "FA"
-  eng_long: "Adverbial : Binds predicate unit (parallel, non-restrictive)"
+  eng_long: "Additional explicit adverbial bind (non-restrictive)"
   eng_short: "non-res adv"
 fyi:
   _family: "FA"
-  eng_long: "Adverbial : Binds predicate unit (parallel, subordinative)"
+  eng_long: "Additional explicit adverbial bind (subordinative)"
   eng_short: "sub adv"
-fey:
-  _family: "FA"
-  eng_long: "Which place should be bound (parallel) to make the proposition true ?"
-  eng_short: "bind ?"
+vay:
+  _family: "VAY"
+  eng_long: "Close explicit binding group."
+  eng_short: ""
 va:
   _family: "VA"
-  eng_long: "Binds (A) place (sequential, restrictive)."
+  eng_long: "First explicit (A) place restrictive binding."
   eng_short: "(A)"
 ve:
   _family: "VA"
-  eng_long: "Binds (E) place (sequential, restrictive)."
+  eng_long: "First explicit (E) place restrictive binding."
   eng_short: "(E)"
 vi:
   _family: "VA"
-  eng_long: "Binds (I) place (sequential, restrictive)."
+  eng_long: "First explicit (I) place restrictive binding."
   eng_short: "(I)"
 vo:
   _family: "VA"
-  eng_long: "Binds (O) place (sequential, restrictive)."
+  eng_long: "First explicit (O) place restrictive binding."
   eng_short: "(O)"
 vu:
   _family: "VA"
-  eng_long: "Binds (U) place (sequential, restrictive)."
+  eng_long: "First explicit (U) place restrictive binding."
   eng_short: "(U)"
 vwa:
   _family: "VA"
-  eng_long: "Binds (A) place (sequential, non-restrictive)."
+  eng_long: "First explicit (A) place non-restrictive binding."
   eng_short: "(A) (non-res)"
 vwe:
   _family: "VA"
-  eng_long: "Binds (E) place (sequential, non-restrictive)."
+  eng_long: "First explicit (E) place non-restrictive binding."
   eng_short: "(E) (non-res)"
 vwi:
   _family: "VA"
-  eng_long: "Binds (I) place (sequential, non-restrictive)."
+  eng_long: "First explicit (I) place non-restrictive binding."
   eng_short: "(I) (non-res)"
 vwo:
   _family: "VA"
-  eng_long: "Binds (O) place (sequential, non-restrictive)."
+  eng_long: "First explicit (O) place non-restrictive binding."
   eng_short: "(O) (non-res)"
 vwu:
   _family: "VA"
-  eng_long: "Binds (U) place (sequential, non-restrictive)."
+  eng_long: "First explicit (U) place non-restrictive binding."
   eng_short: "(U) (non-res)"
 vey:
   _family: "VA"
-  eng_long: "Which place should be bound (sequentially) to make the proposition true ?"
+  eng_long: "Which place should be bound to make the proposition true ?"
   eng_short: "bind ?"
 vya:
   _family: "VA"
-  eng_long: "Adverbial : Binds predicate unit (sequential, restrictive)"
+  eng_long: "First explicit adverbial bind (restrictive)"
   eng_short: "res adv"
 vye:
   _family: "VA"
-  eng_long: "Adverbial : Binds predicate unit (sequential, non-restrictive)"
+  eng_long: "First explicit adverbial bind (non-restrictive)"
   eng_short: "non-res adv"
 vyi:
   _family: "VA"
-  eng_long: "Adverbial : Binds predicate unit (sequential, subordinative)"
+  eng_long: "First explicit adverbial bind (subordinative)"
   eng_short: "sub adv"
 da:
   _family: "DA"
-  eng_long: "Logical OR connective."
-  eng_short: "or"
+  eng_long: "Binding logical OR connective."
+  eng_short: "or (bind)"
 de:
   _family: "DA"
-  eng_long: "Logical AND connective."
-  eng_short: "and"
+  eng_long: "Binding logical AND connective."
+  eng_short: "and (bind)"
 di:
   _family: "DA"
-  eng_long: "Logical connective question."
-  eng_short: "connective?"
+  eng_long: "Binding logical connective question."
+  eng_short: "conn? (bind)"
 do:
   _family: "DA"
-  eng_long: "Logical if-and-only-if connective."
-  eng_short: "iif"
+  eng_long: "Binding logical if-and-only-if connective."
+  eng_short: "iif (bind)"
 du:
   _family: "DA"
-  eng_long: "Logical whether or not (right is non-restrictive)."
-  eng_short: "won right"
+  eng_long: "Binding logical whether or not (right is non-restrictive)."
+  eng_short: "won right (bind)"
 duhu:
   _family: "DA"
-  eng_long: "Logical whether or not (left is non-restrictive)."
-  eng_short: "won left"
+  eng_long: "Binding logical whether or not (left is non-restrictive)."
+  eng_short: "won left (bind)"
 day:
   _family: "DAY"
-  eng_long: "Form a group (plural variable) from multiple individuals."
-  eng_short: "with"
-bo:
-  _family: "BO"
-  eng_long: "Import a place to be filled."
-  eng_short: "fill-import"
-boy:
-  _family: "BO"
-  eng_long: "Import a place to be chained."
-  eng_short: "chain-import"
+  eng_long: "Distributive logical OR connective."
+  eng_short: "or (dist)"
+dey:
+  _family: "DAY"
+  eng_long: "Distributive logical AND connective."
+  eng_short: "and (dist)"
+diy:
+  _family: "DAY"
+  eng_long: "Distributive logical connective question."
+  eng_short: "conn? (dist)"
+doy:
+  _family: "DAY"
+  eng_long: "Distributive logical if-and-only-if connective."
+  eng_short: "iif (dist)"
+duy:
+  _family: "DAY"
+  eng_long: "Distributive logical whether or not (right is non-restrictive)."
+  eng_short: "won right (dist)"
+duhuy:
+  _family: "DAY"
+  eng_long: "Distributive logical whether or not (left is non-restrictive)."
+  eng_short: "won left (dist)"
 sa:
   _family: "SA"
   eng_long: "(A) place binding tag."
@@ -568,10 +584,6 @@ ze:
   eng_long: "Use the same instance and variables of the following unit instead of a new one."
   eng_short: "same"
 zi:
-  _family: "ZA"
-  eng_long: "Wide-scope negation : negates the predicate and all the followings until the end of the scope with the existential variables they create. It is false that there exist a, e,... such that unit(a, e, ...)."
-  eng_short: "not"
-zya:
   _family: "ZA"
   eng_long: "Narrow-scope negation : negates the predicate unit but not the existential variables it create. There exist a, e,... such that unit(a, e, ...) is false."
   eng_short: "non-"
@@ -689,12 +701,12 @@ juy:
   eng_short: ""
 ba:
   _family: "BA"
-  eng_long: "Proposition negation."
-  eng_short: "negation"
-bay:
-  _family: "BAY"
-  eng_long: "Allow to negate various particles."
-  eng_short: ""
+  eng_long: "Form a group (plural variable) from multiple individuals."
+  eng_short: "with"
+bi:
+  _family: "BI"
+  eng_long: "Wide scope negation ranging over existential variables, units and bindings."
+  eng_short: "not"
 be:
   _family: "BE"
   eng_long: "Ends string/number/borrowing."

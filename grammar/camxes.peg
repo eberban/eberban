@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.26
+# eberban PEG grammar - v0.27
 # ===========================
 
 # GRAMMAR
@@ -15,28 +15,33 @@ text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? s
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
 paragraph <- PU_clause? sentence (&(PA_clause / PO_clause) sentence)*
-sentence <- function / scope / fragments_sentence
-fragments_sentence <- PA_clause_elidible fragment+ PAY_clause_elidible
-fragment <- DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause
+sentence <- function / sentence_scope / sentence_fragments
+
 function <- PO_clause GAY_clause arguments_list? scope
+sentence_scope <- PA_clause_elidible scope
 
-# pred scopes
-scope <- scope_1 (DA_clause scope_1)*
-scope_1 <- PA_clause_elidible scope_2 PAY_clause_elidible
-scope_2 <- sequential (DAY_clause sequential)*
+sentence_fragments <- PA_clause_elidible fragment+
+fragment <- DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause
 
-# sequential chaining
-sequential <- unit parallel? (VA_clause? sequential)?
+# scope
+scope <- scope_dist_connectives / scope_1
+scope_dist_connectives <- scope_1 (DAY_clause scope)
 
-# parallel chaining
-parallel <- parallel_item+
-parallel_item <- FA_clause parallel_term FAY_clause_elidible
+scope_1 <- scope_bind_connectives / scope_2
+scope_bind_connectives <- scope_2 (DA_clause scope_1)
 
-parallel_term <- parallel_term_connective / parallel_term_1
-parallel_term_connective <- parallel_term_1 (DA_clause parallel_term_1)+
-parallel_term_1 <- parallel_term_plural / parallel_term_2
-parallel_term_plural <- parallel_term_2 (DAY_clause parallel_term_2)+
-parallel_term_2 <- unit+
+scope_2 <- scope_plural / scope_3
+scope_plural <- scope_3 (BA_clause scope_2)
+
+scope_3 <- sequential
+
+# bindings
+sequential <- sequential_neg / sequential_unit+
+sequential_neg <- BI_clause sequential_unit+
+sequential_unit <- unit explicit_binding?
+explicit_binding <- explicit_binding_va explicit_binding_fa* VAY_clause_elidible
+explicit_binding_va <- BI_clause? VA_clause scope 
+explicit_binding_fa <- BI_clause? FA_clause scope
 
 # predicate unit
 unit <- (SA_clause / ZA_clause)* unit_1
@@ -74,16 +79,16 @@ free_indicator <- CA_clause
 free_parenthetical <- JO_clause text_1 JOY_clause
 
 # PARTICLES CLAUSES
+BA_clause           <- spaces? BA                               # plural value builder (with)
 BE_clause           <- spaces? BE                               # miscellaneous terminator
 BE_clause_elidible  <- BE_clause?
-BQ_clause           <- free_prefix* spaces? BQ                  # letters
+BI_clause           <- free_prefix* spaces? BI free_post*       # wide-scope negation
 BU_clause           <- spaces? BU                               # parser version/dialect
+BQ_clause           <- free_prefix* spaces? BQ                  # letters
 CA_clause           <- free_prefix* spaces? CA                  # free suffix (indicator / marker)
-DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
-DAY_clause          <- free_prefix* spaces? DAY free_post*      # plural value creator
-FA_clause           <- free_prefix* spaces? FA free_post*       # parallel binding tag
-FAY_clause          <- free_prefix* spaces? FAY free_post*      # parallel binding terminator
-FAY_clause_elidible <- FAY_clause?
+DA_clause           <- free_prefix* spaces? DA free_post*       # binding logical connectives
+DAY_clause          <- free_prefix* spaces? DAY free_post*      # distributive logical connectives
+FA_clause           <- free_prefix* spaces? FA free_post*       # continue parallel binding
 GA_clause           <- free_prefix* spaces? GA free_post*       # use pred variables
 GAY_clause          <- free_prefix* spaces? GAY free_post*      # new pred variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
@@ -107,7 +112,9 @@ PO_clause           <- spaces? PO                               # pred variable 
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
-VA_clause           <- free_prefix* spaces? VA free_post*       # sequential binding tags
+VA_clause           <- free_prefix* spaces? VA free_post*       # starts parallel binding clause
+VAY_clause          <- free_prefix* spaces? VAY free_post*      # parallel binding clause terminator
+VAY_clause_elidible <- VAY_clause?
 XA_clause           <- free_prefix* spaces? XA                  # grammatical quote starter
 XAY_clause          <- free_prefix* spaces? XAY free_post*      # grammatical quote terminator
 XE_clause           <- free_prefix* spaces? XE                  # one word quote
@@ -115,14 +122,15 @@ XO_clause           <- free_prefix* spaces? XO                  # foreign quote
 ZA_clause           <- free_prefix* spaces? ZA                  # pred unit transformation
 
 # PARTICLE FAMILIES
+BA    <- &particle (b a)
 BE    <- &particle (b &e vtail)
-BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
+BI    <- &particle (b i)
 BU    <- &particle (b u)
+BQ    <- &particle (consonant q / yw q / aeiouq h q / q h a / q h e)
 CA    <- &particle (c vtail)
-DA    <- &particle !(DAY &post_word) (d vtail)
-DAY   <- &particle (d a y)
-FA    <- &particle !(FAY &post_word) (f vtail)
-FAY   <- &particle (f a y)
+DA    <- &particle (d !y_terminated vtail)
+DAY   <- &particle (d &y_terminated vtail)
+FA    <- &particle (f vtail)
 GA    <- &particle (g !y_terminated vtail)
 GAY   <- &particle (g &y_terminated vtail)
 JA    <- &particle (j a)
@@ -143,7 +151,8 @@ PO    <- &particle (p o)
 PU    <- &particle (p &(u / w) vtail)
 SA    <- &particle (s vtail)
 TA    <- &particle (t vtail) / digit
-VA    <- &particle (v vtail)
+VA    <- &particle !(VAY &post_word) (v vtail)
+VAY   <- &particle (v a y)
 XA    <- &particle !(XAY &post_word) (x &a vtail)
 XAY   <- &particle (x a y)
 XE    <- &particle (x &e vtail)

@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.26
+// eberban PEG grammar - v0.27
 // ===========================
 
 // GRAMMAR
@@ -144,28 +144,33 @@ text_1 = expr:((free_indicator / free_discursive / free_parenthetical)* paragrap
 // text structure
 paragraphs = expr:(paragraph (&PU_clause paragraph)*) {return _node("paragraphs", expr);}
 paragraph = expr:(PU_clause? sentence (&(PA_clause / PO_clause) sentence)*) {return _node("paragraph", expr);}
-sentence = expr:(function / scope / fragments_sentence) {return _node("sentence", expr);}
-fragments_sentence = expr:(PA_clause_elidible fragment+ PAY_clause_elidible) {return _node("fragments_sentence", expr);}
-fragment = expr:(DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause) {return _node("fragment", expr);}
+sentence = expr:(function / sentence_scope / sentence_fragments) {return _node("sentence", expr);}
+
 function = expr:(PO_clause GAY_clause arguments_list? scope) {return _node("function", expr);}
+sentence_scope = expr:(PA_clause_elidible scope) {return _node("sentence_scope", expr);}
 
-// pred scopes
-scope = expr:(scope_1 (DA_clause scope_1)*) {return _node("scope", expr);}
-scope_1 = expr:(PA_clause_elidible scope_2 PAY_clause_elidible) {return _node("scope_1", expr);}
-scope_2 = expr:(sequential (DAY_clause sequential)*) {return _node("scope_2", expr);}
+sentence_fragments = expr:(PA_clause_elidible fragment+) {return _node("sentence_fragments", expr);}
+fragment = expr:(DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause) {return _node("fragment", expr);}
 
-// sequential chaining
-sequential = expr:(unit parallel? (VA_clause? sequential)?) {return _node("sequential", expr);}
+// scope
+scope = expr:(scope_dist_connectives / scope_1) {return _node("scope", expr);}
+scope_dist_connectives = expr:(scope_1 (DAY_clause scope)) {return _node("scope_dist_connectives", expr);}
 
-// parallel chaining
-parallel = expr:(parallel_item+) {return _node("parallel", expr);}
-parallel_item = expr:(FA_clause parallel_term FAY_clause_elidible) {return _node("parallel_item", expr);}
+scope_1 = expr:(scope_bind_connectives / scope_2) {return _node("scope_1", expr);}
+scope_bind_connectives = expr:(scope_2 (DA_clause scope_1)) {return _node("scope_bind_connectives", expr);}
 
-parallel_term = expr:(parallel_term_connective / parallel_term_1) {return _node("parallel_term", expr);}
-parallel_term_connective = expr:(parallel_term_1 (DA_clause parallel_term_1)+) {return _node("parallel_term_connective", expr);}
-parallel_term_1 = expr:(parallel_term_plural / parallel_term_2) {return _node("parallel_term_1", expr);}
-parallel_term_plural = expr:(parallel_term_2 (DAY_clause parallel_term_2)+) {return _node("parallel_term_plural", expr);}
-parallel_term_2 = expr:(unit+) {return _node("parallel_term_2", expr);}
+scope_2 = expr:(scope_plural / scope_3) {return _node("scope_2", expr);}
+scope_plural = expr:(scope_3 (BA_clause scope_2)) {return _node("scope_plural", expr);}
+
+scope_3 = expr:(sequential) {return _node("scope_3", expr);}
+
+// bindings
+sequential = expr:(sequential_neg / sequential_unit+) {return _node("sequential", expr);}
+sequential_neg = expr:(BI_clause sequential_unit+) {return _node("sequential_neg", expr);}
+sequential_unit = expr:(unit explicit_binding?) {return _node("sequential_unit", expr);}
+explicit_binding = expr:(explicit_binding_va explicit_binding_fa* VAY_clause_elidible) {return _node("explicit_binding", expr);}
+explicit_binding_va = expr:(BI_clause? VA_clause scope) {return _node("explicit_binding_va", expr);}
+explicit_binding_fa = expr:(BI_clause? FA_clause scope) {return _node("explicit_binding_fa", expr);}
 
 // predicate unit
 unit = expr:((SA_clause / ZA_clause)* unit_1) {return _node("unit", expr);}
@@ -203,16 +208,16 @@ free_indicator = expr:(CA_clause) {return _node("free_indicator", expr);}
 free_parenthetical = expr:(JO_clause text_1 JOY_clause) {return _node("free_parenthetical", expr);}
 
 // PARTICLES CLAUSES
+BA_clause = expr:(spaces? BA) {return _node("BA_clause", expr);} // plural value builder (with)
 BE_clause = expr:(spaces? BE) {return _node("BE_clause", expr);} // miscellaneous terminator
 BE_clause_elidible = expr:(BE_clause?) {return (expr == "" || !expr) ? ["BE"] : _node_empty("BE_clause_elidible", expr);}
-BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
+BI_clause = expr:(free_prefix* spaces? BI free_post*) {return _node("BI_clause", expr);} // wide-scope negation
 BU_clause = expr:(spaces? BU) {return _node("BU_clause", expr);} // parser version/dialect
+BQ_clause = expr:(free_prefix* spaces? BQ) {return _node("BQ_clause", expr);} // letters
 CA_clause = expr:(free_prefix* spaces? CA) {return _node("CA_clause", expr);} // free suffix (indicator / marker)
-DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // logical connectives
-DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // plural value creator
-FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // parallel binding tag
-FAY_clause = expr:(free_prefix* spaces? FAY free_post*) {return _node("FAY_clause", expr);} // parallel binding terminator
-FAY_clause_elidible = expr:(FAY_clause?) {return (expr == "" || !expr) ? ["FAY"] : _node_empty("FAY_clause_elidible", expr);}
+DA_clause = expr:(free_prefix* spaces? DA free_post*) {return _node("DA_clause", expr);} // binding logical connectives
+DAY_clause = expr:(free_prefix* spaces? DAY free_post*) {return _node("DAY_clause", expr);} // distributive logical connectives
+FA_clause = expr:(free_prefix* spaces? FA free_post*) {return _node("FA_clause", expr);} // continue parallel binding
 GA_clause = expr:(free_prefix* spaces? GA free_post*) {return _node("GA_clause", expr);} // use pred variables
 GAY_clause = expr:(free_prefix* spaces? GAY free_post*) {return _node("GAY_clause", expr);} // new pred variables
 JA_clause = expr:(free_prefix* spaces? JA) {return _node("JA_clause", expr);} // free subscript
@@ -236,7 +241,9 @@ PO_clause = expr:(spaces? PO) {return _node("PO_clause", expr);} // pred variabl
 PU_clause = expr:(free_prefix* spaces? PU free_post*) {return _node("PU_clause", expr);} // paragraph marker
 SA_clause = expr:(free_prefix* spaces? SA free_post*) {return _node("SA_clause", expr);} // place binding tag
 TA_clause = expr:(free_prefix* spaces? TA) {return _node("TA_clause", expr);} // numbers/digits
-VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // sequential binding tags
+VA_clause = expr:(free_prefix* spaces? VA free_post*) {return _node("VA_clause", expr);} // starts parallel binding clause
+VAY_clause = expr:(free_prefix* spaces? VAY free_post*) {return _node("VAY_clause", expr);} // parallel binding clause terminator
+VAY_clause_elidible = expr:(VAY_clause?) {return (expr == "" || !expr) ? ["VAY"] : _node_empty("VAY_clause_elidible", expr);}
 XA_clause = expr:(free_prefix* spaces? XA) {return _node("XA_clause", expr);} // grammatical quote starter
 XAY_clause = expr:(free_prefix* spaces? XAY free_post*) {return _node("XAY_clause", expr);} // grammatical quote terminator
 XE_clause = expr:(free_prefix* spaces? XE) {return _node("XE_clause", expr);} // one word quote
@@ -244,14 +251,15 @@ XO_clause = expr:(free_prefix* spaces? XO) {return _node("XO_clause", expr);} //
 ZA_clause = expr:(free_prefix* spaces? ZA) {return _node("ZA_clause", expr);} // pred unit transformation
 
 // PARTICLE FAMILIES
+BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BE = expr:(&particle (b &e vtail)) {return _node("BE", expr);}
-BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
+BI = expr:(&particle (b i)) {return _node("BI", expr);}
 BU = expr:(&particle (b u)) {return _node("BU", expr);}
+BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
 CA = expr:(&particle (c vtail)) {return _node("CA", expr);}
-DA = expr:(&particle !(DAY &post_word) (d vtail)) {return _node("DA", expr);}
-DAY = expr:(&particle (d a y)) {return _node("DAY", expr);}
-FA = expr:(&particle !(FAY &post_word) (f vtail)) {return _node("FA", expr);}
-FAY = expr:(&particle (f a y)) {return _node("FAY", expr);}
+DA = expr:(&particle (d !y_terminated vtail)) {return _node("DA", expr);}
+DAY = expr:(&particle (d &y_terminated vtail)) {return _node("DAY", expr);}
+FA = expr:(&particle (f vtail)) {return _node("FA", expr);}
 GA = expr:(&particle (g !y_terminated vtail)) {return _node("GA", expr);}
 GAY = expr:(&particle (g &y_terminated vtail)) {return _node("GAY", expr);}
 JA = expr:(&particle (j a)) {return _node("JA", expr);}
@@ -272,7 +280,8 @@ PO = expr:(&particle (p o)) {return _node("PO", expr);}
 PU = expr:(&particle (p &(u / w) vtail)) {return _node("PU", expr);}
 SA = expr:(&particle (s vtail)) {return _node("SA", expr);}
 TA = expr:(&particle (t vtail) / digit) {return _node("TA", expr);}
-VA = expr:(&particle (v vtail)) {return _node("VA", expr);}
+VA = expr:(&particle !(VAY &post_word) (v vtail)) {return _node("VA", expr);}
+VAY = expr:(&particle (v a y)) {return _node("VAY", expr);}
 XA = expr:(&particle !(XAY &post_word) (x &a vtail)) {return _node("XA", expr);}
 XAY = expr:(&particle (x a y)) {return _node("XAY", expr);}
 XE = expr:(&particle (x &e vtail)) {return _node("XE", expr);}

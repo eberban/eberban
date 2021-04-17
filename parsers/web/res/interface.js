@@ -1,4 +1,15 @@
-const hideTitleList = [ 'scope', 'unit', 'parallel binding', 'plural' ];
+const hideTitleList = [
+	'scope',
+	'distributive connectives scope',
+	'binding connectives scope',
+	'plural value',
+	'unit',
+	'sequential unit',
+	'sequential negation',
+	'sequential binding',
+	'explicit binding',
+	'subscope',
+];
 
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
@@ -8,9 +19,14 @@ const boxClassForTypeMap = new Map([
 	[ 'arguments', 'box box-arguments' ],
 
 	// scope
-	[ 'scope', 'box box-scope' ],
-	[ 'parallel binding', 'box box-parallel' ],
-	[ 'plural', 'box box-scope' ],
+	// [ 'scope', 'box box-scope' ],
+	[ 'distributive connectives scope', 'box box-scope-conn' ],
+	[ 'binding connectives scope', 'box box-scope-conn' ],
+	[ 'plural value', 'box box-scope-conn' ],
+	[ 'sequential binding', 'box box-sequential' ],
+	[ 'sequential unit', 'box box-sequential-unit' ],
+	[ 'sequential negation', 'box box-sequential-neg' ],
+	[ 'explicit binding', 'box box-explicit' ],
 
 	// units
 	[ 'unit', 'box box-unit' ],
@@ -25,7 +41,7 @@ const boxClassForTypeMap = new Map([
 	[ 'indicator', 'box box-note' ],
 	[ 'discursive', 'box box-note' ],
 	[ 'subscript', 'box box-note' ],
-	[ 'parenthetical', 'box box-note' ]
+	[ 'parenthetical', 'box box-note' ],
 ]);
 
 function boxClassForType(parse) {

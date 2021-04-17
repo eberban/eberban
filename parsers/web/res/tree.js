@@ -8,9 +8,16 @@ const important_types = [
 	[ 'sentence', 'sentence' ],
 
 	// scope	
-	[ 'scope_1', 'scope' ],
-	[ 'parallel_term_plural', 'plural' ],
-	[ 'parallel', 'parallel binding' ],
+	[ 'scope', 'scope' ],
+	[ 'scope_dist_connectives', 'distributive connectives scope' ],
+	[ 'scope_bind_connectives', 'binding connectives scope' ],
+	[ 'scope_plural', 'plural value' ],
+	[ 'sequential', 'sequential binding' ],
+	[ 'sequential_neg', 'sequential negation' ],
+	[ 'sequential_unit', 'sequential unit' ],
+	[ 'explicit_binding', 'explicit binding' ],
+	[ 'explicit_binding_va', 'first explicit binding' ],
+	[ 'explicit_binding_fa', 'other explicit binding' ],
 	[ 'arguments_list', 'arguments' ],
 
 	// units

@@ -59,8 +59,7 @@ predicate unit.
 | za   | `(A) is named [predicate-(A)].`                                     |
 | zay  | ZA question : what transformation would make the proposition true ? |
 | ze   | Use the previous instance of this unit.                             |
-| zi   | Wide-scope negation.                                                |
-| zya  | Narrow-scope negation.                                              |
+| zi   | Narrow-scope negation.                                              |
 | zo   | `(A) is something referred to by [predicate].`                      |
 | zoy  | `(A) is a reference/symbol refering to [predicate].`                |
 
@@ -100,6 +99,7 @@ predicate unit.
 > \\color{magenta}{P^\alpha_1} = \exists a_1 \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
 > \\]
 
+## Outdated
 
 > Prefixing by **zi** negates the entire content of the formula :
 > 
