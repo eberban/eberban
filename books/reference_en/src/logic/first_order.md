@@ -11,24 +11,24 @@ The verb "drinks" can be seen as a predicate `(A) drinks (E)`, where `(A)` and
 fill these blanks and write :
 
 > \\(
-> \exists \\color{cyan}{a} \exists \\color{magenta}{e} \\
-> \text{drinks}(\\color{cyan}{a},\\color{magenta}{e})
+> \exists \color{cyan}{a} \exists \color{magenta}{e} \\
+> \text{drinks}(\color{cyan}{a},\color{magenta}{e})
 > \\)
 >   
-> There exist an \\(\\color{cyan}{a}\\) and there exist an
-> \\(\\color{magenta}{e}\\) such that \\(\\color{cyan}{a}\\) drinks
-> \\(\\color{magenta}{e}\\).
+> There exist an \\(\color{cyan}{a}\\) and there exist an
+> \\(\color{magenta}{e}\\) such that \\(\color{cyan}{a}\\) drinks
+> \\(\color{magenta}{e}\\).
 
 "A cat" can be seen as an individual which fills the `A` place of the predicate
 `(A) drinks (E)`, but also of the predicate `(A) is a cat`. The entire sentence
 can thus be written as :
 
 > \\(
-> \exists \\color{cyan}{a} \\:
-> \text{is-a-cat}(\\color{cyan}{a}) \wedge
-> \exists \\color{magenta}{e} \\:
-> \text{drinks}(\\color{cyan}{a},e) \wedge
-> \text{is-milk}(\\color{magenta}{e})
+> \exists \color{cyan}{a} \\:
+> \text{is-a-cat}(\color{cyan}{a}) \wedge
+> \exists \color{magenta}{e} \\:
+> \text{drinks}(\color{cyan}{a},\color{magenta}{e}) \wedge
+> \text{is-milk}(\color{magenta}{e})
 > \\)
 
 In eberban, each root word defines such a predicate, and the chaining of these
@@ -43,16 +43,12 @@ following roots definitions :
 - **lwan:** `(A) is milk.`
 
 In this book, the translations from eberban sentences to logic will be made by
-having usually one line per root word, the first one being the statement and
-embeding in some way the others.
+having usually one line per root word, \\(S_n\\) lines expressing statements
+while \\(F_n\\) express formulas that are embeded in other statements or
+formulas.
 
 \\[
-\begin{align}
-    P_1 &= \exists \color{cyan}{a_1} && \text{myan}(\color{cyan}{a_1}) & \wedge P_2(\color{cyan}{a_1}) \\\\
-    P_2(\color{cyan}{a_2}) &= \exists \color{magenta}{e_2} && \text{plin}(\color{cyan}{a_2}, \color{magenta}{e_2}) &\wedge P_3(\color{magenta}{e_2}) \\\\
-    P_3(\color{magenta}{a_3}) &= &&\text{lwan}(\color{magenta}{a_3})
-\end{align}
+S_1 = \exists \color{cyan}{a_1} [\text{myan}(\color{cyan}{a_1}) \wedge F_2] \\\\
+F_2 = \exists \color{magenta}{e_2} [\text{plin}(\color{cyan}{a_1}, \color{magenta}{e_2}) \wedge F_3] \\\\
+F_3 = [\text{lwan}(\color{magenta}{e_2})]
 \\]
-
-> Variable names on each line are choosen to reflect the place structure of the
-> root. Using them as arguments is what makes them shared.
