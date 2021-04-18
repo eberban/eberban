@@ -36,7 +36,7 @@ scope_plural <- scope_3 (BA_clause scope_2)
 scope_3 <- sequential
 
 # bindings
-sequential <- sequential_neg / sequential_unit+
+sequential <- sequential_neg / sequential_unit sequential?
 sequential_neg <- BI_clause sequential_unit+
 sequential_unit <- unit explicit_binding?
 explicit_binding <- explicit_binding_va explicit_binding_fa* VAY_clause_elidible

@@ -165,7 +165,7 @@ scope_plural = expr:(scope_3 (BA_clause scope_2)) {return _node("scope_plural", 
 scope_3 = expr:(sequential) {return _node("scope_3", expr);}
 
 // bindings
-sequential = expr:(sequential_neg / sequential_unit+) {return _node("sequential", expr);}
+sequential = expr:(sequential_neg / sequential_unit sequential?) {return _node("sequential", expr);}
 sequential_neg = expr:(BI_clause sequential_unit+) {return _node("sequential_neg", expr);}
 sequential_unit = expr:(unit explicit_binding?) {return _node("sequential_unit", expr);}
 explicit_binding = expr:(explicit_binding_va explicit_binding_fa* VAY_clause_elidible) {return _node("explicit_binding", expr);}
