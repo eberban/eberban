@@ -93,8 +93,8 @@ moho:
   eng_short: "that"
 mohu:
   _family: "MA"
-  eng_long: "(A) is that younder, far from speaker and listener."
-  eng_short: "that younder"
+  eng_long: "(A) is that yonder, far from speaker and listener."
+  eng_short: "that yonder"
 mwa:
   _family: "MA"
   eng_long: "Repeats a previous proposition (infered from context)"
@@ -589,7 +589,7 @@ zi:
   eng_short: "non-"
 zo:
   _family: "ZA"
-  eng_long: "(A) is something referred to by [predicate]."
+  eng_long: "(A) is something referred to by [predicate-(A)]."
   eng_short: "deref"
 zoy:
   _family: "ZA"

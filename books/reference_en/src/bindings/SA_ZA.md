@@ -23,31 +23,52 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 > If we define **unit3** as `(A) ... (E) ... [I]`, it will by default have this
 > kind of bindings :  
 > 
-> \\[P_1(\\color{cyan}{a_1}) = \exists \\color{magenta}{e_1} \exists i_1 \\: \text{unit3}(\\color{cyan}{a_1},\\color{magenta}{e_1},i_1) \wedge P_2(i_1) \\]
+> \\[F_1 = \exists \color{magenta}{e_1} \exists i_1 [\text{unit3}(\color{cyan}{x},\color{magenta}{e_1},i_1) \wedge F_2] \\]
+>
+> Here \\(\color{cyan}{x}\\) represents the variable of the previous unit this
+> unit is bound to. In practice \\(\color{cyan}{x}\\) must be replaced by a
+> real variable name.
+> 
+> -----
 > 
 > If it is prefixed by **se**, the bindings will be changed to :
 > 
-> \\[P_1(\\color{magenta}{e_1}) = \exists \\color{cyan}{a_1} \exists i_1 \\: \text{unit3}(\\color{cyan}{a_1},\\color{magenta}{e_1},i_1) \wedge P_2(i_1) \\]
+> \\[F_1 = \exists \color{magenta}{a_1} \exists i_1 [\text{unit3}(\color{magenta}{a_1},\color{cyan}{x},i_1) \wedge F_2] \\]
+>
+> Notice \\(\color{cyan}{x}\\) is now used as the second argument of **unit3**,
+> and the existential variable now corresponds to the `A` place. 
+>
+> -----
+>
+> Since **unit3** has an `I` **bracket place**, \\(F_2\\) will bind to
+> \\(i_1\\). However for units that don't have a bracket place, \\(F_2\\) would
+> bind to \\(\color{cyan}{x}\\).
 > 
-> If however `I` was not a bracket place, prefixing with **se** would give :
+> -----
 > 
-> \\[P_1(\\color{magenta}{e_1}) = \exists \\color{cyan}{a_1} \exists i_1 \\: \text{unit3}(\\color{cyan}{a_1},\\color{magenta}{e_1},i_1) \wedge P_2(\\color{magenta}{e_1}) \\]
+> **sey** and **soy** allow to speak about the unit itself :
 > 
-> If \\(P_1\\) is more than 1-ary, additionnal **sa/se/si/so/su/say** can be
-> used to choose the other places. If the number of **SA** is less than the
+> \\[
+> F_1 = [\text{is-event}(\color{cyan}{x}, F^\prime_1) \wedge F_2] \\\\
+> F^\prime_1 = \exists a_1 \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)]
+> \\]
+>
+> \\(F_2\\) will use the variable corresponding to the bracket place of
+> **unit3** if any, the one for the `A` place if none.
+> 
+> -----
+> 
+> **SA** works similarly with predicate bindings. Here is an example with
+> **si sa**, bound to a 2-ary predicate place :
+> 
+> \\[
+> F_1 = \forall i_1 \forall a_1 [\color{cyan}{X_0}(i_1, a_1) \leftrightarrow (\exists e_1 [\text{unit3}(a_1,e_1,i_1) \wedge F_2])]
+> \\]
+> 
+> If the number of **SA** is less than the
 > arity, `A`, `E`, etc in order are used, skipping places that have been chosen
 > with **SA**. It is allowed to use the same **SA**, which states the both
 > variables are also equal.
-
-
-> **sey** and **soy** adds a new variable allowing to speak about the unit itself :
-> 
-> \\[
-> P_1(\\color{green}{x}) = \text{is-event}(\\color{green}{x}, P^\alpha_1) \wedge P_2(\\color{magenta}{i_1}) \\\\
-> P^\alpha_1 = \exists a_1 \exists e_1 \exists \\color{magenta}{i_1} \\: \text{unit3}(a_1,e_1,\\color{magenta}{i_1})
-> \\]
->
-> **Further bindings will still use the original places of the unit.**
 
 ## ZA
 
@@ -60,7 +81,7 @@ predicate unit.
 | zay  | ZA question : what transformation would make the proposition true ? |
 | ze   | Use the previous instance of this unit.                             |
 | zi   | Narrow-scope negation.                                              |
-| zo   | `(A) is something referred to by [predicate].`                      |
+| zo   | `(A) is something referred to by [predicate-(A)].`                  |
 | zoy  | `(A) is a reference/symbol refering to [predicate].`                |
 
 
@@ -68,49 +89,37 @@ predicate unit.
 > made with this *name variable* instead of the original places.
 > 
 > \\[
-> P_1(\\color{green}{x}) = \text{is-named}(\\color{green}{x}, \\color{magenta}{a_1}) \wedge \\color{cyan}{P^\alpha_1} \wedge P_2(\\color{green}{x}) \\\\
-> \\color{cyan}{P^\alpha_1} = \exists \\color{magenta}{a_1} \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
+> F_1 = \exists \color{magenta}{a_1} [\text{is-named}(\color{cyan}{x}, \color{magenta}{a_1}) \wedge F^\prime_1 \wedge F_2]\\\\
+> F^\prime_1 = \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)]
 > \\]
 >
 > The place can be selected by adding **SA** after **za**.
-
-
-> **ze** allow to reuse previous instance of this unit and all of its variables.
 >
-> \\[
-> P_1(\\color{magenta}{a_1}) = \exists e_1 \exists i_1 \\: \text{unit3}(\\color{magenta}{a_1},e_1,i_1) \wedge P_2(i_1) \\\\
-> \vdots \\\\
-> P_5(\\color{cyan}{a_5}) = (\\color{cyan}{a_5} = \\color{magenta}{a_1}) \wedge P_2(i_1)
-> \\]
+> -----
+> 
+> **zo** is similar to **za** but express something that is refered by the
+> predicate `A` place. The `A` place of the predicate is a symbol for this new
+> `A` place.
 >
-> Any **SA/ZA** can be placed before **ze** as if it was a new instance. Here
-> is an example with **se ze unit3** :
->
-> \\[
-> P_5(e_5) = (e_5 = e_1) \wedge P_2(i_1)
-> \\]
+> -----
+> 
+> **ze** allow to re-use a previous instance of this unit and all of its
+> variables as if all bindings were made on the original.
 
-
-> **zo** and **zoy** are similar to **za** but use the unit itself. Other bindings will be
+> **zoy** is similar to **za/zo** but use the unit itself. Other bindings will be
 > made with this *referred/symbol variable* instead of the original places.
 > 
 > \\[
-> P_1(\\color{green}{x}) = \text{is-symbol}(\\color{green}{x}, \\color{magenta}{P^\alpha_1}) \wedge P_2(\\color{green}{x}) \\\\
-> \\color{magenta}{P^\alpha_1} = \exists a_1 \exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1)
+> F_1 = \exists Z [\text{is-symbol}(\\color{cyan}{x}, Z) \wedge F^\prime_1 \wedge F_2] \\\\
+> F^\prime_1 = Z \leftrightarrow (\exists a_1 \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)])
 > \\]
 
-## Outdated
-
-> Prefixing by **zi** negates the entire content of the formula :
+> Prefixing by **zi** negates only the unit :
+>
+> \\[F_1 = \exists e_1 \exists i_1 [\color{cyan}{(\neg}\text{unit3}(x,e_1,i_1)\\color{cyan}) \wedge F_2] \\]
 > 
-> \\[P_1(a_1) = \\color{magenta}{\neg(}\exists e_1 \exists i_1 \\: \text{unit3}(a_1,e_1,i_1) \wedge P_2(i_1)\\color{magenta}) \\]
+> To also negate the existential variables and the bindings, **bi** must be used instead :
+> 
+> \\[F_1 = \\color{magenta}{\neg(}\exists e_1 \exists i_1 [\text{unit3}(x,e_1,i_1) \wedge F_2]\\color{magenta}) \\]
 >
-> Prefixing by **zya** negates only the unit itself :
->
-> \\[P_1(a_1) = \exists e_1 \exists i_1 \\: \\color{cyan}{\neg(}\text{unit3}(a_1,e_1,i_1)\\color{cyan}) \wedge P_2(i_1) \\]
->
-> Both can be used at the same time in any order :
->
-> \\[P_1(a_1) = \\color{magenta}{\neg(}\exists e_1 \exists i_1 \\: \\color{cyan}{\neg(}\text{unit3}(a_1,e_1,i_1)\\color{cyan}) \wedge P_2(i_1)\\color{magenta}) \\]
->
-> The same **zi**/**zya** can be used multiple times, but every pair of them cancel each other.
+> **bi** must be placed before any **SA/ZA**.

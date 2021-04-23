@@ -7,14 +7,14 @@ discourse itself. All particles starting with **m** are member of **MA**.
 
 Pronouns are expressed with the following particles :
 
-| Word | Definition                                            |
-| ---- | ----------------------------------------------------- |
-| mi   | `(A) is I/a speaker/author.`                          |
-| mo   | `(A) is you, a listener.`                             |
-| moy  | `(A) is someone, neither a speaker or listener.`      |
-| mohi | `(A) is this here, near a speaker.`                   |
-| moho | `(A) is that here, near a listener.`                  |
-| mohu | `(A) is that younder, far from speaker and listener.` |
+| Word | Definition                                           |
+| ---- | ---------------------------------------------------- |
+| mi   | `(A) is I/a speaker/author.`                         |
+| mo   | `(A) is you, a listener.`                            |
+| moy  | `(A) is someone, neither a speaker or listener.`     |
+| mohi | `(A) is this here, near a speaker.`                  |
+| moho | `(A) is that here, near a listener.`                 |
+| mohu | `(A) is that yonder, far from speaker and listener.` |
 
 ## Propositions
 
