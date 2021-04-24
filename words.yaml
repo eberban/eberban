@@ -131,23 +131,23 @@ mey:
   _family: "MA"
   eng_long: "Predicate question / fill the blank question."
   eng_short: "predicate?"
-ahq:
+qha:
   _family: "BQ"
   eng_long: "Letter A"
   eng_short: "A"
-ehq:
+qhe:
   _family: "BQ"
   eng_long: "Letter E"
   eng_short: "E"
-ihq:
+qhi:
   _family: "BQ"
   eng_long: "Letter I"
   eng_short: "I"
-ohq:
+qho:
   _family: "BQ"
   eng_long: "Letter O"
   eng_short: "O"
-uhq:
+qhu:
   _family: "BQ"
   eng_long: "Letter U"
   eng_short: "U"
@@ -155,11 +155,11 @@ qhq:
   _family: "BQ"
   eng_long: "Letter Q"
   eng_short: "Q"
-qha:
+qna:
   _family: "BQ"
   eng_long: "Letter H"
   eng_short: "H"
-qhe:
+qne:
   _family: "BQ"
   eng_long: "Letter '"
   eng_short: "'"
@@ -191,7 +191,7 @@ kq:
   _family: "BQ"
   eng_long: "Letter K"
   eng_short: "K"
-lq:
+qlq:
   _family: "BQ"
   eng_long: "Letter L"
   eng_short: "L"
@@ -199,7 +199,7 @@ mq:
   _family: "BQ"
   eng_long: "Letter M"
   eng_short: "M"
-nq:
+qnq:
   _family: "BQ"
   eng_long: "Letter N"
   eng_short: "N"
@@ -207,7 +207,7 @@ pq:
   _family: "BQ"
   eng_long: "Letter P"
   eng_short: "P"
-rq:
+qrq:
   _family: "BQ"
   eng_long: "Letter R"
   eng_short: "R"
@@ -223,7 +223,7 @@ vq:
   _family: "BQ"
   eng_long: "Letter V"
   eng_short: "V"
-wq:
+qwq:
   _family: "BQ"
   eng_long: "Letter W"
   eng_short: "W"
@@ -231,7 +231,7 @@ xq:
   _family: "BQ"
   eng_long: "Letter X"
   eng_short: "X"
-yq:
+qyq:
   _family: "BQ"
   eng_long: "Letter Y"
   eng_short: "Y"
@@ -934,7 +934,7 @@ kre:
   _family: "R"
   eng_long: "(A) helps (E) to satisfy property [I1]"
   eng_short: "helps"
-lwan:
+mlan:
   _family: "R"
   eng_long: "(A) is milk made from source/material (E)."
   eng_short: "milk"

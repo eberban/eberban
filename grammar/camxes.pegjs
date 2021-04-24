@@ -1,4 +1,4 @@
-// eberban PEG grammar - v0.27
+// eberban PEG grammar - v0.28
 // ===========================
 
 // GRAMMAR
@@ -255,7 +255,7 @@ BA = expr:(&particle (b a)) {return _node("BA", expr);}
 BE = expr:(&particle (b &e vtail)) {return _node("BE", expr);}
 BI = expr:(&particle (b i)) {return _node("BI", expr);}
 BU = expr:(&particle (b u)) {return _node("BU", expr);}
-BQ = expr:(&particle (consonant q / yw q / aeiouq h q / q h a / q h e)) {return _node("BQ", expr);}
+BQ = expr:(&particle (consonant q / q h aeiouq / q yw q / q sonorant q / q n a / q n e)) {return _node("BQ", expr);}
 CA = expr:(&particle (c vtail)) {return _node("CA", expr);}
 DA = expr:(&particle (d !y_terminated vtail)) {return _node("DA", expr);}
 DAY = expr:(&particle (d &y_terminated vtail)) {return _node("DAY", expr);}
@@ -314,8 +314,8 @@ foreign_word = expr:((initial_consonant_pair / consonant)? vtail_q (consonant_cl
 
 // - Native words
 native_word = expr:(root / particle) {return _node("native_word", expr);}
-particle = expr:(consonant vtail_q &post_word) {return _node("particle", expr);}
-root = expr:(((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant) vtail_q sonorant)) &post_word) {return _node("root", expr);}
+particle = expr:(!sonorant (consonant / &q) vtail_q &post_word) {return _node("particle", expr);}
+root = expr:(!sonorant ((initial_consonant_pair vtail_q sonorant?) / ((initial_consonant_pair / consonant) vtail_q sonorant)) &post_word) {return _node("root", expr);}
 
 // - Vowel tails
 vtail_q = expr:(vtail_q_unit vtail_q_1*) {return _node("vtail_q", expr);}

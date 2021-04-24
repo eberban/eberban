@@ -8,13 +8,13 @@ Any predicate unit can be prefixed with **ba** to negates its statement.
 However the existential variables are not negated, and the complete statement
 is still true.
 
-> *myan plin **ba** lwan* : A cat is drinking something that is not milk.
+> *myan plin **ba** mlan* : A cat is drinking something that is not milk.
 >
 > We first define each statement :
 >
 > - \\(P_1 = \exists a_1 \\: \text{myan}(a_1)\\)
 > - \\(P_2 = \exists a_2 \exists e_2 \\: \text{plin}(a_2,e_2)\\)
-> - \\(P_3 = \exists a_3 \\: \neg\text{lwan}(a_3)\\)
+> - \\(P_3 = \exists a_3 \\: \neg\text{mlan}(a_3)\\)
 >
 > Then we state that some variables are bound together (shared between
 > statements) :
@@ -35,13 +35,13 @@ Any scope can be negated by adding **bay** at the begining of a scope (after
 **PI** if present). The existential variables are also negated and the complete
 statement is false.
 
-> *(pa) **bay** myan plin lwan* : It is false that {A cat is drinking milk}.
+> *(pa) **bay** myan plin mlan* : It is false that {A cat is drinking milk}.
 >
 > We first define each statement :
 >
 > - \\(P_1 = \exists a_1 \\: \text{myan}(a_1)\\)
 > - \\(P_2 = \exists a_2 \exists e_2 \\: \text{plin}(a_2,e_2)\\)
-> - \\(P_3 = \exists a_3 \\: \text{lwan}(a_3)\\)
+> - \\(P_3 = \exists a_3 \\: \text{mlan}(a_3)\\)
 >
 > Then we state that some variables are bound together (shared between
 > statements) :

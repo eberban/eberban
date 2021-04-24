@@ -22,25 +22,28 @@ While discussing letters, the following conventions are used:
 Letters may be combined to form *words*. There are two main types of words:
 *particles* and *roots*. Particles exert grammatical functions, while roots
 denote concepts with an intrinsic meaning, such as "cat", "language" or "teach".
+Particles are organised in families sharing the same grammar and usually
+starting with the same consonnant.
+
 There are also 2 other types of words : *compounds* and *borrowings*. Compounds
 are made from one or multiple particles or roots, while borrowings allows to
-imports foreign words or names. They're the only 2 types of words that can start
-with vowels, and must be preceded by a pause (**'** and/or space).
+imports foreign words or names.
 
 > **Remark:** If you are familiar with Lojban, you may view particles as
 > analogous to cmavo, roots gismu, compounds to lujvo and borrowings to
 > fu'ivla/cmevla.
 
-Particles always follow the pattern pattern **CV**. On the other hand, roots
-always follow either the pattern **CVC**, **CCV** or **CCVC**. The final **C**
-(if any) must be a sonorant. Borrowings may end in any letter, always followed
-by a pause.
+Particles always follow the pattern pattern **CV** or stars with an **q**.
+On the other hand, roots always follow either the pattern **CVC**, **CCV** or
+**CCVC**. The final **C** (if any) must be a sonorant. Borrowings may end in any
+letter, always followed by a pause. No words can start with a sonorant.
 
-In written media, a sequence of words is typically, but not necessarily,
-separated by spaces (" ").
+All words starting with a vowel or semi-vowel must be preceded by a pause
+(**'** and/or space). In written media, a sequence of words is typically, but
+not necessarily, separated by spaces (" ").
 
 >  **For the advanced reader:** you may have noticed that all words start with
->  either a vowel or sonorant (preceded by a pause), or a non-sonorant; and that
+>  either a vowel/semi-vowel (preceded by a pause), or a non-sonorant; and that
 >  all words (except borrowings) end with either a vowel or a sonorant. This is
 >  by design. As we will later see, these seemingly artificial restrictions
 >  involving sonorants ensure that, even if words (except borrowings) are strung

@@ -35,12 +35,12 @@ In eberban, each root word defines such a predicate, and the chaining of these
 predicates express how the existential variables are shared between them, while
 the grammar provide tools to deviate from the default set of rules.
 
-The above sentence can be translated in eberban as *myan plin lwan*, with the
+The above sentence can be translated in eberban as *myan plin mlan*, with the
 following roots definitions :
 
 - **myan:** `(A) is a cat.`  
 - **plin:** `(A) drinks [E].`  
-- **lwan:** `(A) is milk.`
+- **mlan:** `(A) is milk.`
 
 In this book, the translations from eberban sentences to logic will be made by
 having usually one line per root word, \\(S_n\\) lines expressing statements
@@ -50,5 +50,5 @@ formulas.
 \\[
 S_1 = \exists \color{cyan}{a_1} [\text{myan}(\color{cyan}{a_1}) \wedge F_2] \\\\
 F_2 = \exists \color{magenta}{e_2} [\text{plin}(\color{cyan}{a_1}, \color{magenta}{e_2}) \wedge F_3] \\\\
-F_3 = [\text{lwan}(\color{magenta}{e_2})]
+F_3 = [\text{mlan}(\color{magenta}{e_2})]
 \\]

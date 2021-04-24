@@ -22,7 +22,7 @@ bound to the right unit itself. The parameters of this predicate arguments will 
     P_1         &= \exists a_1 &&\text{mi}(a_1)         &\wedge P_2(\\color{cyan}{a_1}) \\\\
     P_2(a_2)    &= \exists e_2 &&\text{don}(a_2,e_2)    &\wedge P_3(\\color{purple}{e_2}) \\\\
     P_3(a_3)    &=             &&\text{tun}(a_3,\\color{magenta}{P_4}) \\\\
-    P_4(a_4)    &=             &&\text{lwan}(a_4)
+    P_4(a_4)    &=             &&\text{mlan}(a_4)
 \end{align}
 \\]
 

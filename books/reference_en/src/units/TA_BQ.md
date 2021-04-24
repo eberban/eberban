@@ -71,8 +71,9 @@ with place structure :
 
 | Letter     | Representation in eberban          |
 | ---------- | ---------------------------------- |
-| Vowels     | *ahq, ehq, ihq, ohq, uhq, qhq*     |
+| Vowels     | *qha, qhe, qhi, qho, qhu, qhq*     |
+| Sonorants  | *qnq*, *qrq*, *qlq*                |
 | Consonants | consonant + q (*bq, cq*, &hellip;) |
-| y / w      | *yq* / *wq*                        |
-| H          | *qha*                              |
-| '          | *qhe*                              |
+| y / w      | *qyq* / *qwq*                      |
+| h          | *qna*                              |
+| '          | *qne*                              |
