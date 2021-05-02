@@ -1206,6 +1206,18 @@ zba:
   _family: "R"
   eng_long: "(A) is enjoyable/great/nice for [E]."
   eng_short: "nice"
+jvin:
+  _family: "R"
+  eng_long: "(A) dances."
+  eng_short: "dances"
+blan:
+  _family: "R"
+  eng_long: "(A) is beautiful."
+  eng_short: "beautiful"
+kca:
+  _family: "R"
+  eng_long: "(A0) is possible/can be true."
+  eng_short: "possible"
 
 
 # Compounds (2):
