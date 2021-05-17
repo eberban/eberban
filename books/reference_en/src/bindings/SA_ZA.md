@@ -49,8 +49,8 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 > **sey** and **soy** allow to speak about the unit itself :
 > 
 > \\[
-> F_1 = [\text{is-event}(\color{cyan}{x}, F^\prime_1) \wedge F_2] \\\\
-> F^\prime_1 = \exists a_1 \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)]
+> F_1 = \exists Z_1 [\text{is-event}(\color{cyan}{x}, Z_1) \wedge F^\prime_1 \wedge F_2] \\\\
+> F^\prime_1 = Z_1 \leftrightarrow (\exists a_1 \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)])
 > \\]
 >
 > \\(F_2\\) will use the variable corresponding to the bracket place of
@@ -110,8 +110,8 @@ predicate unit.
 > made with this *referred/symbol variable* instead of the original places.
 > 
 > \\[
-> F_1 = \exists Z [\text{is-symbol}(\\color{cyan}{x}, Z) \wedge F^\prime_1 \wedge F_2] \\\\
-> F^\prime_1 = Z \leftrightarrow (\exists a_1 \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)])
+> F_1 = \exists Z_1 [\text{is-symbol}(\\color{cyan}{x}, Z_1) \wedge F^\prime_1 \wedge F_2] \\\\
+> F^\prime_1 = Z_1 \leftrightarrow (\exists a_1 \exists e_1 \exists i_1 [\text{unit3}(a_1,e_1,i_1)])
 > \\]
 
 > Prefixing by **zi** negates only the unit :
