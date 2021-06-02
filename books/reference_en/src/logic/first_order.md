@@ -35,10 +35,10 @@ In eberban, each root word defines such a predicate, and the chaining of these
 predicates express how the existential variables are shared between them, while
 the grammar provide tools to deviate from the default set of rules.
 
-The above sentence can be translated in eberban as *myan plin mlan*, with the
+The above sentence can be translated in eberban as *mian plin mlan*, with the
 following roots definitions :
 
-- **myan:** `(A) is a cat.`  
+- **mian:** `(A) is a cat.`  
 - **plin:** `(A) drinks [E].`  
 - **mlan:** `(A) is milk.`
 
@@ -48,7 +48,7 @@ while \\(F_n\\) express formulas that are embeded in other statements or
 formulas.
 
 \\[
-S_1 = \exists \color{cyan}{a_1} [\text{myan}(\color{cyan}{a_1}) \wedge F_2] \\\\
+S_1 = \exists \color{cyan}{a_1} [\text{mian}(\color{cyan}{a_1}) \wedge F_2] \\\\
 F_2 = \exists \color{magenta}{e_2} [\text{plin}(\color{cyan}{a_1}, \color{magenta}{e_2}) \wedge F_3] \\\\
 F_3 = [\text{mlan}(\color{magenta}{e_2})]
 \\]

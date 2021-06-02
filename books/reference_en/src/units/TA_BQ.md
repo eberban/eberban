@@ -36,7 +36,7 @@ The chain be terminated with the word **be**, which is often elidable. In fact,
 it is only needed to separate 2 adjacent chains that **should not** merge into a
 single one.
 
-**bey** can be used after a **cardinal** to transform it into an **ordinal**
+**bei** can be used after a **cardinal** to transform it into an **ordinal**
 with place structure :
 
 ```eng
@@ -45,25 +45,29 @@ with place structure :
 
 ## TA members
 
-| Word | Definition                            | Word | Definition                            |
-| ---- | ------------------------------------- | ---- | ------------------------------------- |
-| tya  | 1                                     | tye  | 2                                     |
-| tyi  | 3                                     | tyo  | 4                                     |
-| tyu  | 5                                     | twa  | 6                                     |
-| twe  | 7                                     | twi  | 8                                     |
-| two  | 9                                     | twu  | A (10)                                |
-| tway | B (11)                                | twey | C (12)                                |
-| twiy | D (13)                                | twoy | E (14)                                |
-| twuy | F (15)                                | ta   | 0                                     |
-|      |                                       |      | &nbsp;                                |
-| te   | decimal separator                     | teha | `<base . number>` separator           |
-| tehe | `<precise . approximation>` separator | tehi | `<number . repeating part>` separator |
-|      |                                       |      | &nbsp;                                |
-| tey  | \\(10^3\\) (thousands) separator      | teya | \\(10^6\\) separator                  |
-| teye | \\(10^9\\) separator                  | teyi | \\(10^{12}\\) separator               |
-| teyo | \\(10^{15}\\) separator               | teyu | \\(10^{18}\\) separator               |
-|      |                                       |      | &nbsp;                                |
-| to   | negative sign                         | toy  | number/digit question                 |
+| Word | Digit | Word | Digit | Word | Digit  | Word | Digit |
+| ---- | ----- | ---- | ----- | ---- | ------ | ---- | ----- |
+| ta   | 0     | tia  | 4     | tai  | 8      | taia | C/12  |
+| te   | 1     | tie  | 5     | tei  | 9      | taie | D/13  |
+| to   | 2     | tio  | 6     | toi  | ↊/A/10 | taio | E/14  |
+| tu   | 3     | tiu  | 7     | tui  | ↋/B/11 | taiu | F/15  |
+
+&nbsp;
+
+| Word  | Definition                            | Word  | Definition                            |
+| ----- | ------------------------------------- | ----- | ------------------------------------- |
+| ti    | decimal separator                     | tiha  | `<base . number>` separator           |
+| tihe  | `<precise . approximation>` separator | tihi  | `<number . repeating part>` separator |
+|       |                                       |       | &nbsp;                                |
+| taha  | \\(10^3\\) separator (kilo)           | tahe  | \\(10^6\\) separator (mega)           |
+| taho  | \\(10^9\\) separator (giga)           | tahu  | \\(10^{12}\\) separator (tera)        |
+| tahia | \\(10^{15}\\) separator (peta)        | tahie | \\(10^{18}\\) separator (exa)         |
+| tahio | \\(10^{21}\\) separator (zetta)       | tahiu | \\(10^{24}\\) separator (yotta)       |  |
+|       |                                       |       | &nbsp;                                |
+| tae   | negative sign                         | tao   | number/digit question                 |
+
+> `tiha`'s base part is the highest digit of that base. Base 10 is thus `tei tiha`,
+> base 6 ``
 
 > TODO : Explain multiple \\(10^n\\) separators.
 
@@ -74,6 +78,5 @@ with place structure :
 | Vowels     | *qha, qhe, qhi, qho, qhu, qhq*     |
 | Sonorants  | *qnq*, *qrq*, *qlq*                |
 | Consonants | consonant + q (*bq, cq*, &hellip;) |
-| y / w      | *qyq* / *qwq*                      |
 | h          | *qna*                              |
 | '          | *qne*                              |

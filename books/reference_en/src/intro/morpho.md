@@ -2,20 +2,15 @@
 
 The morphology of eberban is quite simple. In terms of letters, there are 6
 vowels (**a, e, i, o, u, q**), 17 consonants (**b, c, d, f, g, j, k, l, m, n, p,
-r, s, t, v, x, z**), 2 semi-vowels **w** and **y** and a semi-consonant **h**,
-for a total of 26 letters. There is also one symbol denoting a pause in speech,
+r, s, t, v, x, z**) and a semi-consonant **h**,
+for a total of 24 letters. There is also one symbol denoting a pause in speech,
 namely the apostrophe **'**, which is optional in written media as long as there
 are spaces alongside it. Among the consonants, three special ones are designated
 (alveolar) **sonorants** : **l, n, r**.
 
-## Letter conventions
-
-While discussing letters, the following conventions are used:
-1. A **C** denotes exactly one consonant (including sonorants).
-2. A vowel-tail, represented as **V**, denotes a chain of vowels separated by a
-   semi-vowel, **h** or a sonorant (n, l, r). The first vowel can be preceded by
-   a semi-vowel if it doesn't follow a consonant pair. **h** or sonorants can be
-   preceded by **y**. A final **y** at the end of the word is also allowed.
+Vowels and **h** can appear in clusters. **h** can appear only between 2 vowels,
+and the same vowel cannot appear more than one in a row. We call these
+*vowel clusters*.
 
 ## Words
 
@@ -26,24 +21,29 @@ Particles are organised in families sharing the same grammar and usually
 starting with the same consonnant.
 
 There are also 2 other types of words : *compounds* and *borrowings*. Compounds
-are made from one or multiple particles or roots, while borrowings allows to
-imports foreign words or names.
+are made from one or multiple smaller words, while borrowings allows to
+imports foreign words or names. Compounds starts with **a, e, i, o** and
+borrowings with **u**.
 
 > **Remark:** If you are familiar with Lojban, you may view particles as
-> analogous to cmavo, roots gismu, compounds to lujvo and borrowings to
+> analogous to cmavo, roots to gismu, compounds to lujvo and borrowings to
 > fu'ivla/cmevla.
 
-Particles always follow the pattern pattern **CV** or stars with an **q**.
-On the other hand, roots always follow either the pattern **CVC**, **CCV** or
-**CCVC**. The final **C** (if any) must be a sonorant. Borrowings may end in any
-letter, always followed by a pause. No words can start with a sonorant.
+Particles starts with a non-sonorant consonant and can't contain a sonorant.
 
-All words starting with a vowel or semi-vowel must be preceded by a pause
+Roots can either start with a non-sonorant consonant but then contain at least
+one sonorant, or start with a permissible consonant pair and any number of
+sonorants. Sonorants can appear as the second consonant of an initial pair,
+between vowel clusters and at the end of roots.
+
+Words starting with **q** are considered particles and can contain sonorants.
+
+All words starting with a vowel must be preceded by a pause
 (**'** and/or space). In written media, a sequence of words is typically, but
 not necessarily, separated by spaces (" ").
 
 >  **For the advanced reader:** you may have noticed that all words start with
->  either a vowel/semi-vowel (preceded by a pause), or a non-sonorant; and that
+>  either a vowel (preceded by a pause), or a non-sonorant; and that
 >  all words (except borrowings) end with either a vowel or a sonorant. This is
 >  by design. As we will later see, these seemingly artificial restrictions
 >  involving sonorants ensure that, even if words (except borrowings) are strung

@@ -20,8 +20,8 @@ Using these 5 words, **ba** and **bay**, all truth table can be expressed
 
 When used on predicates units it has a distributive behavior.
 
-*pe **za udjon de za umiya** pey spi mo* is identical to ***za udjon** spi mo
-**de pa** **za umiya** spi mo*.
+*pe **za udjon de za umia** pey spi mo* is identical to ***za udjon** spi mo
+**de pa** **za umia** spi mo*.
 
 ## Grouping order
 

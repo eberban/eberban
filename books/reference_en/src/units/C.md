@@ -16,10 +16,8 @@ words, it must be prefixed and suffixed by **o**.
 > however using a/e/i is prefered. They're equivalent and have the same meaning,
 > and only the canonical (shorter one) will be listed in the dictionary.
 
-If the first word starts with a sonorant or **w** its initial pause is optional.  
-If the first word is a **u**-initial borrowing, it can either be prefixed by a
-pause, or no pause but **u** replaced with **y**. This **y** can however be
-followed by a pause.
+If the first word starts with **u** (a borrowing) then the pause before this
+**u** is optional.
 
 A compound have a **unique, fixed meaning which is defined in the dictionary**,
 and while its place structure can be arbitrary, it usually provides places taken
@@ -38,13 +36,22 @@ of a particle.
 - **pu** is the particle to start a paragraph (explaned later in the book)
 
 ### eberban
-`(E) is the eberban language.`
+`(A) (quote) is expressed in eberban language (E).`
 
 - **ber :** `(A) reflects this language (eberban).`
-- **ban :** `(A) is a language.`
+- **ban :** `(A) (quote) is expressed in language [E].`
 
-### etyevqn
-`(A) is a Tuesday.`
+### igruntceijno
+`(A) is a jungle.`
 
-- **tye :** number 2.
-- **vqn :** `(A) is a day.`
+- **grun :** `(A) is wild/untamed.`
+- **tcei :** `(A) is a tree.`
+- **jno :** `(A) is a volume made of material [E].`
+
+### eufrans'ban
+`(A) (quote) is expressed in the French language (E).`
+
+- **ufrans' :** borrowing of "France"
+- **ban :** `(A) (quote) is expressed in language [E].`
+
+> How to borrow cultural words may change in the future.

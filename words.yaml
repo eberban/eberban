@@ -8,39 +8,47 @@ _number: "(A) is the (abstract) number [number] with dimension/unit [E1] (defaul
 1:
   _family: "TA"
   eng_long: "Digit 1"
-  eng_short: "tya"
+  eng_short: "te"
 2:
   _family: "TA"
   eng_long: "Digit 2"
-  eng_short: "tye"
+  eng_short: "to"
 3:
   _family: "TA"
   eng_long: "Digit 3"
-  eng_short: "tyi"
+  eng_short: "tu"
 4:
   _family: "TA"
   eng_long: "Digit 4"
-  eng_short: "tyo"
+  eng_short: "tia"
 5:
   _family: "TA"
   eng_long: "Digit 5"
-  eng_short: "tyu"
+  eng_short: "tie"
 6:
   _family: "TA"
   eng_long: "Digit 6"
-  eng_short: "twa"
+  eng_short: "tio"
 7:
   _family: "TA"
   eng_long: "Digit 7"
-  eng_short: "twe"
+  eng_short: "tiu"
 8:
   _family: "TA"
   eng_long: "Digit 8"
-  eng_short: "twi"
+  eng_short: "tai"
 9:
   _family: "TA"
   eng_long: "Digit 9"
-  eng_short: "two"
+  eng_short: "tei"
+↊:
+  _family: "TA"
+  eng_long: "Digit ↊/A/10"
+  eng_short: "toi"
+↋:
+  _family: "TA"
+  eng_long: "Digit ↋/B/11"
+  eng_short: "tui"
 
 # Particles
 a:
@@ -79,7 +87,7 @@ mo:
   _family: "MA"
   eng_long: "(A) is you, a listener."
   eng_short: "you"
-moy:
+moi:
   _family: "MA"
   eng_long: "(A) is someone, neither a speaker or listener."
   eng_short: "other"
@@ -95,31 +103,27 @@ mohu:
   _family: "MA"
   eng_long: "(A) is that yonder, far from speaker and listener."
   eng_short: "that yonder"
-mwa:
-  _family: "MA"
-  eng_long: "Repeats a previous proposition (infered from context)"
-  eng_short: "prev prop"
-mwe:
+mua:
   _family: "MA"
   eng_long: "Repeats the last proposition"
   eng_short: "last prop"
-mwi:
+mue:
   _family: "MA"
   eng_long: "Repeats the proposition in which this one is embeded (used in abstractions)"
   eng_short: "outer prop"
-mwo:
+mui:
   _family: "MA"
   eng_long: "Repeats current proposition"
   eng_short: "current prop"
-mwu:
+muo:
   _family: "MA"
-  eng_long: "Repeats a future proposition (infered from context, usually the next)"
-  eng_short: "future prop"
+  eng_long: "Repeats the next proposition"
+  eng_short: "next prop"
 ma:
   _family: "MA"
   eng_long: "Binds a variable within an abstraction that represents an open space."
   eng_short: "open place"
-may:
+mai:
   _family: "MA"
   eng_long: "Binds to the relativized object of a relative clause."
   eng_short: "relativized object"
@@ -127,7 +131,7 @@ me:
   _family: "MA"
   eng_long: "Individual question / fill the blank question / (A) is what ?"
   eng_short: "individual?"
-mey:
+mei:
   _family: "MA"
   eng_long: "Predicate question / fill the blank question."
   eng_short: "predicate?"
@@ -223,18 +227,10 @@ vq:
   _family: "BQ"
   eng_long: "Letter V"
   eng_short: "V"
-qwq:
-  _family: "BQ"
-  eng_long: "Letter W"
-  eng_short: "W"
 xq:
   _family: "BQ"
   eng_long: "Letter X"
   eng_short: "X"
-qyq:
-  _family: "BQ"
-  eng_long: "Letter Y"
-  eng_short: "Y"
 zq:
   _family: "BQ"
   eng_long: "Letter Z"
@@ -243,111 +239,119 @@ ta:
   _family: "TA"
   eng_long: "Digit 0"
   eng_short: "0"
-tya:
+te:
   _family: "TA"
   eng_long: "Digit 1"
   eng_short: "1"
-tye:
+to:
   _family: "TA"
   eng_long: "Digit 2"
   eng_short: "2"
-tyi:
+tu:
   _family: "TA"
   eng_long: "Digit 3"
   eng_short: "3"
-tyo:
+tia:
   _family: "TA"
   eng_long: "Digit 4"
   eng_short: "4"
-tyu:
+tie:
   _family: "TA"
   eng_long: "Digit 5"
   eng_short: "5"
-twa:
+tio:
   _family: "TA"
   eng_long: "Digit 6"
   eng_short: "6"
-twe:
+tiu:
   _family: "TA"
   eng_long: "Digit 7"
   eng_short: "7"
-twi:
+tai:
   _family: "TA"
   eng_long: "Digit 8"
   eng_short: "8"
-two:
+tei:
   _family: "TA"
   eng_long: "Digit 9"
   eng_short: "9"
-twu:
+toi:
   _family: "TA"
-  eng_long: "Digit A (10)"
+  eng_long: "Digit ↊/A (10)"
   eng_short: "A"
-tway:
+tui:
   _family: "TA"
-  eng_long: "Digit B (11)"
+  eng_long: "Digit ↋/B (11)"
   eng_short: "B"
-twey:
+taia:
   _family: "TA"
   eng_long: "Digit C (12)"
   eng_short: "C"
-twiy:
+taie:
   _family: "TA"
   eng_long: "Digit D (13)"
   eng_short: "D"
-twoy:
+taio:
   _family: "TA"
   eng_long: "Digit E (14)"
   eng_short: "E"
-twuy:
+taiu:
   _family: "TA"
   eng_long: "Digit F (15)"
   eng_short: "F"
-te:
+ti:
   _family: "TA"
   eng_long: "Decimal separator"
   eng_short: "."
-teha:
+tiha:
   _family: "TA"
   eng_long: "<base . number> separator"
   eng_short: "base"
-tehe:
+tihe:
   _family: "TA"
   eng_long: "<precise . approximation> separator"
   eng_short: "approx"
-tehi:
+tihi:
   _family: "TA"
   eng_long: "<precise . repeating part> separator"
   eng_short: "repeating"
-tey:
+taha:
   _family: "TA"
-  eng_long: "10^3 (thousands) separator"
+  eng_long: "10^3 separator (kilo)"
   eng_short: "10^3"
-teya:
+tahe:
   _family: "TA"
-  eng_long: "10^6 separator"
+  eng_long: "10^6 separator (mega)"
   eng_short: "10^6"
-teye:
+taho:
   _family: "TA"
-  eng_long: "10^9 separator"
+  eng_long: "10^9 separator (giga)"
   eng_short: "10^9"
-teyi:
+tahu:
   _family: "TA"
-  eng_long: "10^12 separator"
+  eng_long: "10^12 separator (tera)"
   eng_short: "10^12"
-teyo:
+tehia:
   _family: "TA"
-  eng_long: "10^15 separator"
+  eng_long: "10^15 separator (peta)"
   eng_short: "10^15"
-teyu:
+tehie:
   _family: "TA"
-  eng_long: "10^18 separator"
+  eng_long: "10^18 separator (exa)"
   eng_short: "10^18"
-to:
+tehio:
+  _family: "TA"
+  eng_long: "10^18 separator (zetta)"
+  eng_short: "10^21"
+tehiu:
+  _family: "TA"
+  eng_long: "10^18 separator (yotta)"
+  eng_short: "10^25"
+tae:
   _family: "TA"
   eng_long: "negative sign"
   eng_short: "-"
-toy:
+tao:
   _family: "TA"
   eng_long: "number/digit question"
   eng_short: "number?"
@@ -355,15 +359,15 @@ xa:
   _family: "XA"
   eng_long: "Starts grammatically correct eberban quote. (A) is text [quote]."
   eng_short: ""
-xay:
-  _family: "XAY"
+xai:
+  _family: "XAI"
   eng_long: "Ends grammatically correct eberban quote."
   eng_short: ""
 xe:
   _family: "XE"
   eng_long: "Quote next word. (A) is word [word]."
   eng_short: ""
-xey:
+xei:
   _family: "XE"
   eng_long: "(A) is the family of word [word]."
   eng_short: ""
@@ -371,10 +375,6 @@ xo:
   _family: "XO"
   eng_long: "Starts quote of arbitrary string of words."
   eng_short: ""
-fay:
-  _family: "FA"
-  eng_long: "Additional explicit bracket place restrictive binding."
-  eng_short: "[ ]"
 fa:
   _family: "FA"
   eng_long: "Additional explicit (A) place restrictive binding."
@@ -391,50 +391,42 @@ fo:
   _family: "FA"
   eng_long: "Additional explicit (O) place restrictive binding."
   eng_short: "(O)"
-fu:
+fai:
   _family: "FA"
-  eng_long: "Additional explicit (U) place restrictive binding."
-  eng_short: "(U)"
-fwa:
+  eng_long: "Additional explicit bracket place restrictive binding."
+  eng_short: "[ ]"
+fua:
   _family: "FA"
   eng_long: "Additional explicit (A) place non-restrictive binding."
   eng_short: "(A) (non-res)"
-fwe:
+fue:
   _family: "FA"
   eng_long: "Additional explicit (E) place non-restrictive binding."
   eng_short: "(E) (non-res)"
-fwi:
+fui:
   _family: "FA"
   eng_long: "Additional explicit (I) place non-restrictive binding."
   eng_short: "(I) (non-res)"
-fwo:
+fuo:
   _family: "FA"
   eng_long: "Additional explicit (O) place non-restrictive binding."
   eng_short: "(O) (non-res)"
-fwu:
-  _family: "FA"
-  eng_long: "Additional explicit (U) place non-restrictive binding."
-  eng_short: "(U) (non-res)"
-fey:
+fei:
   _family: "FA"
   eng_long: "Which place should be bound to make the proposition true ?"
   eng_short: "bind ?"
-fya:
+fia:
   _family: "FA"
   eng_long: "Additional explicit adverbial bind (restrictive)"
   eng_short: "res adv"
-fye:
+fie:
   _family: "FA"
   eng_long: "Additional explicit adverbial bind (non-restrictive)"
   eng_short: "non-res adv"
-fyi:
+fio:
   _family: "FA"
   eng_long: "Additional explicit adverbial bind (subordinative)"
   eng_short: "sub adv"
-vay:
-  _family: "VAY"
-  eng_long: "Close explicit binding group."
-  eng_short: ""
 va:
   _family: "VA"
   eng_long: "First explicit (A) place restrictive binding."
@@ -451,43 +443,39 @@ vo:
   _family: "VA"
   eng_long: "First explicit (O) place restrictive binding."
   eng_short: "(O)"
-vu:
-  _family: "VA"
-  eng_long: "First explicit (U) place restrictive binding."
-  eng_short: "(U)"
-vwa:
+vai:
+  _family: "VAI"
+  eng_long: "Close explicit binding group."
+  eng_short: ""
+vua:
   _family: "VA"
   eng_long: "First explicit (A) place non-restrictive binding."
   eng_short: "(A) (non-res)"
-vwe:
+vue:
   _family: "VA"
   eng_long: "First explicit (E) place non-restrictive binding."
   eng_short: "(E) (non-res)"
-vwi:
+vui:
   _family: "VA"
   eng_long: "First explicit (I) place non-restrictive binding."
   eng_short: "(I) (non-res)"
-vwo:
+vuo:
   _family: "VA"
   eng_long: "First explicit (O) place non-restrictive binding."
   eng_short: "(O) (non-res)"
-vwu:
-  _family: "VA"
-  eng_long: "First explicit (U) place non-restrictive binding."
-  eng_short: "(U) (non-res)"
-vey:
+vei:
   _family: "VA"
   eng_long: "Which place should be bound to make the proposition true ?"
   eng_short: "bind ?"
-vya:
+via:
   _family: "VA"
   eng_long: "First explicit adverbial bind (restrictive)"
   eng_short: "res adv"
-vye:
+vie:
   _family: "VA"
   eng_long: "First explicit adverbial bind (non-restrictive)"
   eng_short: "non-res adv"
-vyi:
+vio:
   _family: "VA"
   eng_long: "First explicit adverbial bind (subordinative)"
   eng_short: "sub adv"
@@ -515,30 +503,6 @@ duhu:
   _family: "DA"
   eng_long: "Binding logical whether or not (left is non-restrictive)."
   eng_short: "won left (bind)"
-day:
-  _family: "DAY"
-  eng_long: "Distributive logical OR connective."
-  eng_short: "or (dist)"
-dey:
-  _family: "DAY"
-  eng_long: "Distributive logical AND connective."
-  eng_short: "and (dist)"
-diy:
-  _family: "DAY"
-  eng_long: "Distributive logical connective question."
-  eng_short: "conn? (dist)"
-doy:
-  _family: "DAY"
-  eng_long: "Distributive logical if-and-only-if connective."
-  eng_short: "iif (dist)"
-duy:
-  _family: "DAY"
-  eng_long: "Distributive logical whether or not (right is non-restrictive)."
-  eng_short: "won right (dist)"
-duhuy:
-  _family: "DAY"
-  eng_long: "Distributive logical whether or not (left is non-restrictive)."
-  eng_short: "won left (dist)"
 sa:
   _family: "SA"
   eng_long: "(A) place binding tag."
@@ -555,19 +519,15 @@ so:
   _family: "SA"
   eng_long: "(O) place binding tag."
   eng_short: "(O)"
-su:
-  _family: "SA"
-  eng_long: "(U) place binding tag."
-  eng_short: "(U)"
-say:
+sai:
   _family: "SA"
   eng_long: "Which place binding tag would make the proposition true ?"
   eng_short: "bind-?"
-sey:
+sei:
   _family: "SA"
   eng_long: "Something related to the predicate (vague)."
   eng_short: "bind-related"
-soy:
+soi:
   _family: "SA"
   eng_long: "Event of the predicate being true."
   eng_short: "bind-event"
@@ -575,7 +535,7 @@ za:
   _family: "ZA"
   eng_long: "(A) is named [predicate-(A)]."
   eng_short: "named"
-zay:
+zai:
   _family: "ZA"
   eng_long: "Which transformation would make the proposition true ?"
   eng_short: "ZA-question"
@@ -591,7 +551,7 @@ zo:
   _family: "ZA"
   eng_long: "(A) is something referred to by [predicate-(A)]."
   eng_short: "deref"
-zoy:
+zoi:
   _family: "ZA"
   eng_long: "(A) is a reference/symbol refering to [predicate]."
   eng_short: "ref"
@@ -599,16 +559,16 @@ pa:
   _family: "PA"
   eng_long: "Starts a predicate scope."
   eng_short: ""
-pay:
-  _family: "PAY"
+pai:
+  _family: "PAI"
   eng_long: "Ends an predicate scope."
   eng_short: ""
 pe:
   _family: "PE"
   eng_long: "Start of predicate subscope."
   eng_short: ""
-pey:
-  _family: "PEY"
+pei:
+  _family: "PEI"
   eng_long: "End of a predicate subscope."
   eng_short: ""
 pi:
@@ -617,8 +577,8 @@ pi:
   eng_short: ""
 po:
   _family: "PO"
-  eng_long: "Function declaration."
-  eng_short: "function :"
+  eng_long: "Define predicate definition."
+  eng_short: "define"
 pu:
   _family: "PU"
   eng_long: "Marks a new paragraph/section/change of subject."
@@ -627,15 +587,47 @@ ja:
   _family: "JA"
   eng_long: "Attaches a subscript number/string."
   eng_short: "subscript"
-je:
-  _family: "JE"
+jai:
+  _family: "JAI"
   eng_long: "Attaches a predicate (without chaining) to make a discursive."
   eng_short: "discursive"
+je:
+  _family: "JE"
+  eng_long: "Starts a free scope."
+  eng_short: ""
+jei:
+  _family: "JEI"
+  eng_long: "Ends a free scope."
+  eng_short: ""
+jo:
+  _family: "JO"
+  eng_long: "Starts parenthetical note."
+  eng_short: ""
+joi:
+  _family: "JOI"
+  eng_long: "Ends parenthetical note."
+  eng_short: ""
+jua:
+  _family: "JU"
+  eng_long: "Emphasis indicator : the next word is especially emphasized."
+  eng_short: "emphasis"
+jue:
+  _family: "JU"
+  eng_long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
+  eng_short: "non-standard"
+jui:
+  _family: "JU"
+  eng_long: "Next word is a metadata tag / hashtag."
+  eng_short: "metadata"
+juo:
+  _family: "JU"
+  eng_long: "Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope."
+  eng_short: "bracket place"
 ca:
   _family: "CA"
   eng_long: "True/false question marker. Ask specificaly if marked word makes the proposition true."
   eng_short: "true/false?"
-cay:
+cai:
   _family: "CA"
   eng_long: "Indirect question marker. Transform a question word into an indirect question."
   eng_short: "indirect question"
@@ -643,62 +635,26 @@ ce:
   _family: "CA"
   eng_long: "Imperative. The left chaining place of the tagged predicate should make it true."
   eng_short: "imperative"
-cey:
+cei:
   _family: "CA"
   eng_long: "Answer. Atteched to sentence to indicate it's an answer to a previous question, and not a independent statement."
   eng_short: "answer"
-cya:
+cia:
   _family: "CA"
   eng_long: "However/but/in contrast."
   eng_short: "however"
-cye:
-  _family: "CA"
-  eng_long: "Ditto."
-  eng_short: "ditto"
-cyi:
+cie:
   _family: "CA"
   eng_long: "Similarly."
   eng_short: "similarly"
-cyo:
+cio:
   _family: "CA"
   eng_long: "Additionally."
   eng_short: "additionally"
-cyu:
+ciu:
   _family: "CA"
   eng_long: "Uniquely/only/solely."
   eng_short: "uniquely"
-jo:
-  _family: "JO"
-  eng_long: "Starts parenthetical note."
-  eng_short: ""
-joy:
-  _family: "JOY"
-  eng_long: "Ends parenthetical note."
-  eng_short: ""
-ju:
-  _family: "JU"
-  eng_long: "Starts a free scope."
-  eng_short: ""
-jwa:
-  _family: "JU"
-  eng_long: "Emphasis indicator : the next word is especially emphasized."
-  eng_short: "emphasis"
-jwe:
-  _family: "JU"
-  eng_long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
-  eng_short: "non-standard"
-jwi:
-  _family: "JU"
-  eng_long: "Next word is a metadata tag / hashtag."
-  eng_short: "metadata"
-jwo:
-  _family: "JU"
-  eng_long: "Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope."
-  eng_short: "bracket place"
-juy:
-  _family: "JUY"
-  eng_long: "Ends a free scope."
-  eng_short: ""
 ba:
   _family: "BA"
   eng_long: "Form a group (plural variable) from multiple individuals."
@@ -711,7 +667,7 @@ be:
   _family: "BE"
   eng_long: "Ends string/number/borrowing."
   eng_short: ""
-bey:
+bei:
   _family: "BE"
   eng_long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [Ⓔ1]."
   eng_short: "-th"
@@ -725,193 +681,193 @@ bu:
 # # # Points :
 pca:
   _family: "R"
-  eng_long: "(A) is at the same place as [E]."
-  eng_short: "same place"
-pcay:
-  _family: "R"
   eng_long: "[A0] is true/occurs concurrently with/at the same time as (E0) (default: now)."
   eng_short: "present"
+pci:
+  _family: "R"
+  eng_long: "(A) is at the same place as [E]."
+  eng_short: "same place"
 
 # # # Modifiers :
-pcan:
+pce:
   _family: "R"
   eng_long: "(A) is moving in direction [E1]."
   eng_short: "moves"
-pcar:
+pco:
   _family: "R"
   eng_long: "(A0) (direction statement) is expressed in reference frame [E]."
   eng_short: "reference frame"
 
 # # # Directions :
-pcana:
-  _family: "R"
-  eng_long: "(A) is backward/to the back (relative N/X-) of [E]."
-  eng_short: "back"
-pcane:
-  _family: "R"
-  eng_long: "(A) is forward/to the front (relative N/X+) of  [E]."
-  eng_short: "front"
-pcara:
-  _family: "R"
-  eng_long: "(A) is leftward/to the left (relative R/Y-) of [E]."
-  eng_short: "left"
-pcare:
-  _family: "R"
-  eng_long: "(A) is rightward/to the right (relative R/Y+) of [E]."
-  eng_short: "right"
-pcala:
-  _family: "R"
-  eng_long: "(A) is below/downwars/down (L/Z-) from [E]."
-  eng_short: "down"
-pcale:
-  _family: "R"
-  eng_long: "(A) is above/upward/up (L/Z+) from [E]."
-  eng_short: "up"
-pcaya:
+pcai:
   _family: "R"
   eng_long: "[A0] is true/occurs earlier (T-) than (E0) (default: now)."
   eng_short: "past"
-pcaye:
+pcia:
   _family: "R"
   eng_long: "[A0] is true/occurs later (T+) than (E0) (default: now)."
   eng_short: "future"
-pcanay:
+pcei:
   _family: "R"
-  eng_long: "(A) is southward/to the south (absolute X-) of [E]."
+  eng_long: "(A) is backward/to the back (relative X-) of [E]."
+  eng_short: "back"
+pcie:
+  _family: "R"
+  eng_long: "(A) is forward/to the front (relative X+) of  [E]."
+  eng_short: "front"
+pcoi:
+  _family: "R"
+  eng_long: "(A) is leftward/to the left (relative Y-) of [E]."
+  eng_short: "left"
+pcio:
+  _family: "R"
+  eng_long: "(A) is rightward/to the right (relative Y+) of [E]."
+  eng_short: "right"
+pcui:
+  _family: "R"
+  eng_long: "(A) is below/downwars/down (Z-) from [E]."
+  eng_short: "down"
+pciu:
+  _family: "R"
+  eng_long: "(A) is above/upward/up (Z+) from [E]."
+  eng_short: "up"
+pcein:
+  _family: "R"
+  eng_long: "(A) is southward/to the south (polar X-) of [E]."
   eng_short: "south"
-pcaney:
+pcien:
   _family: "R"
-  eng_long: "(A) is northward/to the north (absolute X+) of [E]."
+  eng_long: "(A) is northward/to the north (polar X+) of [E]."
   eng_short: "north"
-pcaray:
+pcoin:
   _family: "R"
-  eng_long: "(A) is westward/to the west (absolute Y-) of [E]."
+  eng_long: "(A) is westward/to the west (polar Y-) of [E]."
   eng_short: "west"
-pcarey:
+pcion:
   _family: "R"
-  eng_long: "(A) is eastward/to the east (absolute Y+) of [E]."
+  eng_long: "(A) is eastward/to the east (polar Y+) of [E]."
   eng_short: "east"
 
 # # # Distances :
-pcani:
+pcan:
   _family: "R"
   eng_long: "(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here)."
   eng_short: "space distance"
-pcayi:
+pcin:
   _family: "R"
   eng_long: "(A0) is true/occurs at a distance in time of [E0] (mesure, years by default / event with this duration) from (I0) (default: now)."
   eng_short: "time distance"
 
 # # # Lengths : 
-pcano:
-  _family: "R"
-  eng_long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
-  eng_short: "length"
-pcaro:
-  _family: "R"
-  eng_long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
-  eng_short: "area (measure)"
-pcalo:
-  _family: "R"
-  eng_long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
-  eng_short: "volume (measure)"
-pcayo:
+pcar:
   _family: "R"
   eng_long: "(A0) is true/occurs over time interval/length [E] (measure, years by default / event with same duration)."
   eng_short: "time length"
+pcer:
+  _family: "R"
+  eng_long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
+  eng_short: "length"
+pcor:
+  _family: "R"
+  eng_long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
+  eng_short: "area (measure)"
+pcur:
+  _family: "R"
+  eng_long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
+  eng_short: "volume (measure)"
 
 # # # Contours :
-pcawa:
+pcana:
   _family: "R"
   eng_long: "(A) (default: here) is at the starting point of [E]."
   eng_short: "space start"
-pcawe:
+pcane:
   _family: "R"
   eng_long: "(A) (default: here) is between the starting and end point of [E]."
   eng_short: "space between"
-pcawi:
+pcani:
   _family: "R"
   eng_long: "(A) (default: here) is at an halt/interruption of [E]."
   eng_short: "space halt"
-pcawo:
+pcano:
   _family: "R"
   eng_long: "(A) (default: here) is at the resumption of [E]."
   eng_short: "space resumption"
-pcawu:
+pcanu:
   _family: "R"
   eng_long: "(A) (default: here) is at the end point of [E]."
   eng_short: "space end"
 
-pcaway:
+pcina:
   _family: "R"
   eng_long: "(A0) (default: now) is at the starting point of [E0]."
   eng_short: "time start"
-pcawey:
+pcine:
   _family: "R"
   eng_long: "(A0) (default: now) is between the starting and end point of [E0]."
   eng_short: "time between"
-pcawiy:
+pcini:
   _family: "R"
   eng_long: "(A0) (default: now) is at an halt/interruption of [E0]."
   eng_short: "time halt"
-pcawoy:
+pcino:
   _family: "R"
   eng_long: "(A0) (default: now) is at the resumption of [E0]."
   eng_short: "time resumption"
-pcawuy:
+pcinu:
   _family: "R"
   eng_long: "(A0) (default: now) is at the end point of [E0]."
   eng_short: "time end"
 
 # # # Other :
-pcena:
-  _family: "R"
-  eng_long: "(A) is inside/within [E]."
-  eng_short: "inside"
-pcene:
-  _family: "R"
-  eng_long: "(A) is outside [E]."
-  eng_short: "outside"
-pceni:
-  _family: "R"
-  eng_long: "(A) is adjacent to/along [E]."
-  eng_short: "adjacent"
-pceno:
-  _family: "R"
-  eng_long: "(A) is tangential/passing by [E]."
-  eng_short: "tangential"
-pcera:
-  _family: "R"
-  eng_long: "(A) is surrounding/around [E]."
-  eng_short: "surrounding"
-pcere:
-  _family: "R"
-  eng_long: "(A) is transfixing/passing through [E]."
-  eng_short: "transfixing"
-pceri:
-  _family: "R"
-  eng_long: "(A) is towards [E]."
-  eng_short: "towards"
-pcero:
-  _family: "R"
-  eng_long: "(A) is away from [E]."
-  eng_short: "away from"
-pceya:
+pcala:
   _family: "R"
   eng_long: "[A0] is regular/occurs regularly."
   eng_short: "regular"
-pceye:
+pcale:
   _family: "R"
   eng_long: "[A0] is typical/occurs typically."
   eng_short: "typical"
-pceyi:
+pcali:
   _family: "R"
   eng_long: "[A0] is continuous/occurs continuously."
   eng_short: "continuous"
-pceyo:
+pcalo:
   _family: "R"
   eng_long: "[A0] is habitual/occurs habitually."
   eng_short: "habitual"
+pcila:
+  _family: "R"
+  eng_long: "(A) is inside/within [E]."
+  eng_short: "inside"
+pcilai:
+  _family: "R"
+  eng_long: "(A) is outside [E]."
+  eng_short: "outside"
+pcile:
+  _family: "R"
+  eng_long: "(A) is adjacent to/along [E]."
+  eng_short: "adjacent"
+pcilei:
+  _family: "R"
+  eng_long: "(A) is tangential/passing by [E]."
+  eng_short: "tangential"
+pcilo:
+  _family: "R"
+  eng_long: "(A) is surrounding/around [E]."
+  eng_short: "surrounding"
+pciloi:
+  _family: "R"
+  eng_long: "(A) is transfixing/passing through [E]."
+  eng_short: "transfixing"
+pcilu:
+  _family: "R"
+  eng_long: "(A) is towards [E]."
+  eng_short: "towards"
+pcilui:
+  _family: "R"
+  eng_long: "(A) is away from [E]."
+  eng_short: "away from"
 
 # Unclassified :
 don:
@@ -936,9 +892,9 @@ kre:
   eng_short: "helps"
 mlan:
   _family: "R"
-  eng_long: "(A) is milk made from source/material (E)."
+  eng_long: "(A) is milk."
   eng_short: "milk"
-myan:
+mian:
   _family: "R"
   eng_long: "(A) is a cat."
   eng_short: "cat"
@@ -1038,7 +994,7 @@ pra:
   _family: "R"
   eng_long: "(A) loves [E]."
   eng_short: "loves"
-vyer:
+vier:
   _family: "R"
   eng_long: "(A) visits [E] with guide (I)."
   eng_short: "visits"
@@ -1114,7 +1070,7 @@ ban:
   _family: "R"
   eng_long: "(A) (quote) is expressed in language [E]."
   eng_short: "language"
-beyn:  
+bein:  
   _family: "R"
   eng_long: "(A) (ordered set) is ordered following ordering rule [E2]."
   eng_short: "ordered set member"
@@ -1154,7 +1110,7 @@ zir:
   _family: "R"
   eng_long: "(A) is yellow [color adjective]."
   eng_short: "yellow"
-tyen:
+tien:
   _family: "R"
   eng_long: "(A) is a set where every pair of members satisfy relation [E2]."
   eng_short: "set members relation"
@@ -1174,7 +1130,7 @@ jno:
   _family: "R"
   eng_long: "(A) is a volume made of material [E]."
   eng_short: "volume (physical)"
-tcey:
+tcei:
   _family: "R"
   eng_long: "(A) is a tree."
   eng_short: "tree"
@@ -1190,7 +1146,7 @@ bzi:
   _family: "R"
   eng_long: "(A) flies [in air/space]"
   eng_short: "flies"
-floy:
+flea:
   _family: "R"
   eng_long: "(A) is an airplane."
   eng_short: "airplane"
@@ -1219,89 +1175,98 @@ kca:
   eng_long: "(A0) is possible/can be true."
   eng_short: "possible"
 
+# Compounds (1):
+apu:
+  _family: "C1"
+  eng_long: "(A) is a paragraph composed of sentence(s) (E)."
+  eng_short: "paragraph"
 
 # Compounds (2):
 eberban:
   _family: "C2"
   eng_long: "(A) (quote) is expressed in eberban language (E)."
   eng_short: "eberban"
-etyavqn:
+eufrans'ban:
   _family: "C2"
-  eng_long: "(A) is a Monday."
-  eng_short: "Monday"
-etyevqn:
-  _family: "C2"
-  eng_long: "(A) is a Thusday."
-  eng_short: "Thusday"
-etyivqn:
-  _family: "C2"
-  eng_long: "(A) is a Wednesday."
-  eng_short: "Wednesday"
-etyovqn:
-  _family: "C2"
-  eng_long: "(A) is a Thursday."
-  eng_short: "Thursday"
-etyuvqn:
-  _family: "C2"
-  eng_long: "(A) is a Friday."
-  eng_short: "Friday"
-etwavqn:
-  _family: "C2"
-  eng_long: "(A) is a Saturday."
-  eng_short: "Saturday"
-etwevqn:
-  _family: "C2"
-  eng_long: "(A) is a Sunday."
-  eng_short: "Sunday"
+  eng_long: "(A) (quote) is expressed in the French language (E)."
+  eng_short: "french language"
 etavqn:
   _family: "C2"
   eng_long: "(A) is a Sunday."
   eng_short: "Sunday"
-etyajqn:
+etevqn:
+  _family: "C2"
+  eng_long: "(A) is a Monday."
+  eng_short: "Monday"
+etovqn:
+  _family: "C2"
+  eng_long: "(A) is a Thusday."
+  eng_short: "Thusday"
+etuvqn:
+  _family: "C2"
+  eng_long: "(A) is a Wednesday."
+  eng_short: "Wednesday"
+etiavqn:
+  _family: "C2"
+  eng_long: "(A) is a Thursday."
+  eng_short: "Thursday"
+etievqn:
+  _family: "C2"
+  eng_long: "(A) is a Friday."
+  eng_short: "Friday"
+etiovqn:
+  _family: "C2"
+  eng_long: "(A) is a Saturday."
+  eng_short: "Saturday"
+etiuvqn:
+  _family: "C2"
+  eng_long: "(A) is a Sunday."
+  eng_short: "Sunday"
+etajqn:
   _family: "C2"
   eng_long: "(A) is a January."
   eng_short: "January"
-etyejqn:
+etejqn:
   _family: "C2"
   eng_long: "(A) is a February."
   eng_short: "February"
-etyijqn:
+etojqn:
   _family: "C2"
   eng_long: "(A) is a March."
   eng_short: "March"
-etyojqn:
+etujqn:
   _family: "C2"
   eng_long: "(A) is a April."
   eng_short: "April"
-etyujqn:
+etiajqn:
   _family: "C2"
   eng_long: "(A) is a May."
   eng_short: "May"
-etwajqn:
+etiejqn:
   _family: "C2"
   eng_long: "(A) is a June."
   eng_short: "June"
-etwejqn:
+etiojqn:
   _family: "C2"
   eng_long: "(A) is a July."
   eng_short: "July"
-etwijqn:
+etiujqn:
   _family: "C2"
   eng_long: "(A) is a August."
   eng_short: "August"
-etwojqn:
+etaijqn:
   _family: "C2"
   eng_long: "(A) is a September."
   eng_short: "September"
-etwujqn:
+eteijqn:
   _family: "C2"
   eng_long: "(A) is a October."
   eng_short: "October"
-etwayjqn:
+etoijqn:
   _family: "C2"
   eng_long: "(A) is a November."
   eng_short: "October"
-etweyjqn:
+etuijqn:
   _family: "C2"
   eng_long: "(A) is a December."
   eng_short: "December"
@@ -1335,7 +1300,7 @@ ezalzar:
   eng_short: "grey"
 
 # Compounds (3):
-igruntceyjno:
+igruntceijno:
   _family: "C3"
   eng_long: "(A) is a jungle."
   eng_short: "jungle"

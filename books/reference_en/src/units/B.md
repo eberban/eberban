@@ -9,7 +9,7 @@ a mandatory pause. The borrowed word should be a phonetic retranscription in
 the phonology and morphology of eberban. Incompatible chains of vowels should be
 borrowed using a buffer letter such as *h*. Incompatible chains of consonants
 should be borrowed using a buffer vowel such as *q*. If the borrowed word starts
-with a vowel then the **u** is replaced with a **w**.
+with **u** the borrowed must be prefixed with **h**.
 
 A chain of multiple borrowings will count as only one predicate unit composed
 of multiple parts. To prevent 2 borrowings to form only one predicate unit,

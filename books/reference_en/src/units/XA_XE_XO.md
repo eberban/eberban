@@ -5,15 +5,15 @@ Quotes allow embedding text into the discourse.
 ## Grammatical quote [XA]
 
 **xa** allows quoting any grammatical eberban text, which is terminated with
-**xay**. Being grammatical, the text can be parsed and analysed by the parser.
-It can also contain inner **xa** quotes, as a **xay** will match its opening
+**xai**. Being grammatical, the text can be parsed and analysed by the parser.
+It can also contain inner **xa** quotes, as a **xai** will match its opening
 **xa**. Its meaning is `(A) is text [text]`.
 
 ## Single word quote [XE]
 
 **xe** allows quoting the next word, ignoring its grammar. The quote has the
-place structure `(A) is word [word]`. **xey** will instead express the family of
-the word (specific particle family or root) : `xey xay = (A) is a XA particle`. 
+place structure `(A) is word [word]`. **xei** will instead express the family of
+the word (specific particle family or root) : `xei xai = (A) is a XA particle`. 
 
 ## Foreign quote [XO]
 
