@@ -12,7 +12,7 @@ A compound is first prefixed by the particles **e, i, o**, respectively starting
 compound composed of 2, 3, or 4 words. If a compound is made of more than 4
 words, it must be prefixed and suffixed by **a**.
 
-> Note : it's totally valid to have a *o-compound* with less than 5 words,
+> Note : it's totally valid to have a *a-compound* with less than 5 words,
 > however using e/i/o is prefered. They're equivalent and have the same meaning,
 > and only the canonical (shorter one) will be listed in the dictionary.
 

@@ -1,4 +1,4 @@
-# Numbers (TA/BQ)
+# Numbers (TA)
 
 The **TA** family represents digits or concepts to express numbers.  Multiple
 **TA** can be chained together, and the final chain acts asone predicate.

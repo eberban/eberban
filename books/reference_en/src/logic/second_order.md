@@ -7,7 +7,7 @@ The eberban sentence *mi don tun mian* means "I like all cats".
 
 > - **mi:** `(A) is me/a speaker/author.`  
 > - **don:** `(A) likes [E].`  
-> - **tun:** `(A) is the set of everything that satisfies [E1].`  
+> - **tun:** `(A) is everything that satisfies [E1].`  
 > - **mian:** `(A) is a cat.`
 >
 > `E1` means the `E` place expects a predicate with 1 argument.

@@ -35,16 +35,16 @@ using **FA**, as **VA** would create an inner explicit binding.
 > - tca: `(A) is a town/city.`
 > - tel: `(A) is a small number (subjective/contextual) in dimension/unit [E1].`
 > - tol: `(A) is a large number (subjective/contextual) in dimension/unit [E1].`
-> - vyer: `(A) visits [E] with guide (I).`
+> - vier: `(A) visits [E] with guide (I).`
 >
 > -----
 >
-> **Sentence without VA/FA :** *mi vyer tca*  
+> **Sentence without VA/FA :** *mi vier tca*  
 > I visit a city.
 >
 > \\[
 > S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
-> F_2 = \exists e_2 \exists i_2 [vyer(a_1, e_2, i_2) \wedge F_3] \\\\
+> F_2 = \exists e_2 \exists i_2 [vier(a_1, e_2, i_2) \wedge F_3] \\\\
 > F_3 = tca(e_2)
 > \\]
 >
@@ -52,13 +52,13 @@ using **FA**, as **VA** would create an inner explicit binding.
 >
 > **Sentence with VA/FA :**
 >
-> *mi vyer [vi mo vai] tca [\<va pcan tel> \<fa pcor tol> vai]*  
+> *mi vier [vi mo vai] tca [\<va pcan tel> \<fa pcor tol> vai]*  
 > I visit (guided by you) a city (which is near (small in distance) and is large
 > in size).
 >
 > \\[
 > S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
-> F_2 = \exists e_2 \exists i_2 [vyer(a_1, \color{magenta}{e_2}, i_2) \wedge
+> F_2 = \exists e_2 \exists i_2 [vier(a_1, \color{magenta}{e_2}, i_2) \wedge
 >   \color{magenta}{F_{2:1}} \wedge F_3] \\\\
 > \color{magenta}{F_{2:1}} = [mo(\color{magenta}{i_2})] \\\\
 > F_3 = [tca(\color{cyan}{e_2}) \wedge \color{cyan}{F_{3:1}} \wedge
@@ -84,7 +84,7 @@ binding being part of the current statement, it is part of its own independent
 statement. It is used to add additionnal information which can be false without
 changing the truth value of the main statement.
 
-> *mi don tun mian zar*  
+> *mi don tun mian dzo*  
 > I like all cats that are black.
 >
 > \\[
@@ -93,10 +93,10 @@ changing the truth value of the main statement.
 > F_3 = \exists E_3 [tun(e_2, E_3) \wedge F_4] \\\\
 > F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mian(a_4) \color{magenta}{\wedge
 > F_5}]) \\\\
-> \color{magenta}{F_5} = zar(a_4)
+> \color{magenta}{F_5} = dzo(a_4)
 > \\]
 >
-> *mi don tun mian [vua zar vai]*  
+> *mi don tun mian [vua dzo vai]*  
 > I like all cats. They are black (all cats are black).
 >
 > \\[
@@ -104,7 +104,7 @@ changing the truth value of the main statement.
 > F_2 = \exists e_2 [don(a_1,e_2) \wedge F_3] \\\\
 > F_3 = \exists E_3 [tun(e_2, E_3) \wedge F_4] \\\\
 > F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mian(a_4)]) \\\\
-> \color{magenta}{S_5} = zar(a_4)
+> \color{magenta}{S_5} = dzo(a_4)
 > \\]
 >
 
