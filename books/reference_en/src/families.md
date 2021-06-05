@@ -7,7 +7,6 @@
 | **BI**                                            | wide-scope negation                                          |
 | **BO**                                            | variable assignement                                         |
 | [**BU**](struct/BU.md)*                           | parser version/dialect                                       |
-| [**BQ**](units/TA_BQ.md)                          | letters                                                      |
 | [**CA**](struct/J-_C-.md#suffix-markers-ca)       | free suffix (indicator / marker)                             |
 | [**DA**](struct/DA.md)                            | logical connectives                                          |
 | [**FA**](bindings/VA_FA.md)                       | parallel binding tag                                         |
@@ -31,10 +30,10 @@
 | [**SA**](bindings/SA_ZA.md)                       | place binding tag                                            |
 | [**TA**](units/TA_BQ.md)                          | numbers/digits                                               |
 | [**VA**](bindings/VA_FA.md)                       | parallel binding tags                                        |
-| [**XA**](units/XA_XE_XO.md)*                      | grammatical quote starter                                    |
-| [**XAI**](units/XA_XE_XO.md)*                     | grammatical quote terminator                                 |
-| [**XE**](units/XA_XE_XO.md)                       | one word quote                                               |
-| [**XO**](units/XA_XE_XO.md)*                      | foreign quote                                                |
+| [**LA**](units/LA_LE_LO.md)*                      | grammatical quote starter                                    |
+| [**KAI**](units/LA_LE_LO.md)*                     | grammatical quote terminator                                 |
+| [**LE**](units/LA_LE_LO.md)                       | one word quote                                               |
+| [**LO**](units/LA_LE_LO.md)*                      | foreign quote                                                |
 | [**ZA**](bindings/SA_ZA.md)                       | unit transformation                                          |
 
 > Families with a `*` are composed of only one member.

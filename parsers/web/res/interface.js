@@ -30,6 +30,9 @@ const boxClassForTypeMap = new Map([
 
 	// units
 	[ 'unit', 'box box-unit' ],
+	[ 'quote', 'box box-unit' ],
+	[ 'word quote', 'box box-unit' ],
+	[ 'foreign quote', 'box box-unit' ],
 	[ 'compound', 'box box-compound' ],
 	[ 'number', 'box box-number' ],
 	[ 'letters', 'box box-letters' ],
@@ -351,13 +354,13 @@ function constructBoxesOutput(parse, depth) {
 					}
 
 					if (compound_text[0] == 'a') {
-						compound = 'a' + extractCanonicalCompound(compound_text, 1, 1).compound;
+						compound = 'a' + extractCanonicalCompound(compound_text, 1, -1).compound;
 					} else if (compound_text[0] == 'e') {
 						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2).compound;
 					} else if (compound_text[0] == 'i') {
 						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3).compound;
 					} else if (compound_text[0] == 'o') {
-						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1).compound;
+						compound += 'o' + extractCanonicalCompound(compound_text, 1, 4).compound;
 					}
 
 					output += '<br><b>' + compound + '</b>';
@@ -641,16 +644,16 @@ function extractCanonicalCompound(text, startIndex, length) {
 	let offset = 0;
 	let compound = '';
 
-	// y-borrowings.
-	if ([ 'y', 'u' ].includes(text[startIndex])) {
-		compound += 'y' + text[startIndex + 1] + "'";
-		offset += 2;
-		length--;
-	}
+	// // y-borrowings.
+	// if ([ 'y', 'u' ].includes(text[startIndex])) {
+	// 	compound += 'y' + text[startIndex + 1] + "'";
+	// 	offset += 2;
+	// 	length--;
+	// }
 
-	// initial w-borrowing
-	if ([ 'w' ].includes(text[startIndex])) {
-		compound += 'w' + text[startIndex + 1] + "'";
+	// initial borrowing
+	if ([ 'u' ].includes(text[startIndex])) {
+		compound += 'u' + text[startIndex + 1] + "'";
 		offset += 2;
 		length--;
 	}
@@ -658,29 +661,23 @@ function extractCanonicalCompound(text, startIndex, length) {
 	while (length != 0) {
 		let item = text[startIndex + offset];
 
-		// o terminator
-		if (item == 'o') {
+		// a terminator
+		if (item == 'a') {
 			if (!compound.endsWith("'")) {
 				compound += "'";
 			}
-			compound += 'o';
+			compound += 'a';
 			break;
 		}
 
 		// non initial borrowings
-		if ([ 'w', 'u' ].includes(item)) {
+		if ([ 'u' ].includes(item)) {
 			if (!compound.endsWith("'")) {
 				compound += "'";
 			}
 			compound += item + text[startIndex + offset + 1] + "'";
 			offset++;
-		} else if ([ 'n', 'l', 'r' ].includes(item[0])) {
-			// Pause before sonorant initial.
-			if (!compound.endsWith("'")) {
-				compound += "'";
-			}
-			compound += item;
-		} else if ([ 'n', 'l', 'r' ].includes(item)) {
+		} else if ([ 'n', 'r' ].includes(item)) {
 			// Borrowings are split in 2 parts in `text`.
 			if (!compound.endsWith("'")) {
 				compound += "'";

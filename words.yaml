@@ -69,15 +69,7 @@ o:
   eng_short: ""
 u:
   _family: "U"
-  eng_long: "Borrowing: (A) is a [word]. (consonant/semi-vowel initial [word])"
-  eng_short: ""
-y:
-  _family: "U"
-  eng_long: "Borrowing: (A) is a [word]. (consonant initial [word] as first compound item)"
-  eng_short: ""
-w:
-  _family: "U"
-  eng_long: "Borrowing: (A) is a [word]. (vowel initial [word])"
+  eng_long: "Borrowing: (A) is a [word]."
   eng_short: ""
 mi:
   _family: "MA"
@@ -135,106 +127,6 @@ mei:
   _family: "MA"
   eng_long: "Predicate question / fill the blank question."
   eng_short: "predicate?"
-qha:
-  _family: "BQ"
-  eng_long: "Letter A"
-  eng_short: "A"
-qhe:
-  _family: "BQ"
-  eng_long: "Letter E"
-  eng_short: "E"
-qhi:
-  _family: "BQ"
-  eng_long: "Letter I"
-  eng_short: "I"
-qho:
-  _family: "BQ"
-  eng_long: "Letter O"
-  eng_short: "O"
-qhu:
-  _family: "BQ"
-  eng_long: "Letter U"
-  eng_short: "U"
-qhq:
-  _family: "BQ"
-  eng_long: "Letter Q"
-  eng_short: "Q"
-qna:
-  _family: "BQ"
-  eng_long: "Letter H"
-  eng_short: "H"
-qne:
-  _family: "BQ"
-  eng_long: "Letter '"
-  eng_short: "'"
-bq:
-  _family: "BQ"
-  eng_long: "Letter B"
-  eng_short: "B"
-cq:
-  _family: "BQ"
-  eng_long: "Letter C"
-  eng_short: "C"
-dq:
-  _family: "BQ"
-  eng_long: "Letter D"
-  eng_short: "D"
-fq:
-  _family: "BQ"
-  eng_long: "Letter F"
-  eng_short: "F"
-gq:
-  _family: "BQ"
-  eng_long: "Letter G"
-  eng_short: "G"
-jq:
-  _family: "BQ"
-  eng_long: "Letter J"
-  eng_short: "J"
-kq:
-  _family: "BQ"
-  eng_long: "Letter K"
-  eng_short: "K"
-qlq:
-  _family: "BQ"
-  eng_long: "Letter L"
-  eng_short: "L"
-mq:
-  _family: "BQ"
-  eng_long: "Letter M"
-  eng_short: "M"
-qnq:
-  _family: "BQ"
-  eng_long: "Letter N"
-  eng_short: "N"
-pq:
-  _family: "BQ"
-  eng_long: "Letter P"
-  eng_short: "P"
-qrq:
-  _family: "BQ"
-  eng_long: "Letter R"
-  eng_short: "R"
-sq:
-  _family: "BQ"
-  eng_long: "Letter S"
-  eng_short: "S"
-tq:
-  _family: "BQ"
-  eng_long: "Letter T"
-  eng_short: "T"
-vq:
-  _family: "BQ"
-  eng_long: "Letter V"
-  eng_short: "V"
-xq:
-  _family: "BQ"
-  eng_long: "Letter X"
-  eng_short: "X"
-zq:
-  _family: "BQ"
-  eng_long: "Letter Z"
-  eng_short: "Z"
 ta:
   _family: "TA"
   eng_long: "Digit 0"
@@ -331,19 +223,19 @@ tahu:
   _family: "TA"
   eng_long: "10^12 separator (tera)"
   eng_short: "10^12"
-tehia:
+tahia:
   _family: "TA"
   eng_long: "10^15 separator (peta)"
   eng_short: "10^15"
-tehie:
+tahie:
   _family: "TA"
   eng_long: "10^18 separator (exa)"
   eng_short: "10^18"
-tehio:
+tahio:
   _family: "TA"
   eng_long: "10^18 separator (zetta)"
   eng_short: "10^21"
-tehiu:
+tahiu:
   _family: "TA"
   eng_long: "10^18 separator (yotta)"
   eng_short: "10^25"
@@ -355,24 +247,56 @@ tao:
   _family: "TA"
   eng_long: "number/digit question"
   eng_short: "number?"
-xa:
-  _family: "XA"
+teha:
+  _family: "TA"
+  eng_long: "Vector tag 0"
+  eng_short: "vec 0"
+tehe:
+  _family: "TA"
+  eng_long: "Vector tag 1"
+  eng_short: "vec 1"
+teho:
+  _family: "TA"
+  eng_long: "Vector tag 2"
+  eng_short: "vec 2"
+tehu:
+  _family: "TA"
+  eng_long: "Vector tag 3"
+  eng_short: "vec 3"
+tehia:
+  _family: "TA"
+  eng_long: "Vector tag 4"
+  eng_short: "vec 4"
+tehie:
+  _family: "TA"
+  eng_long: "Vector tag 5"
+  eng_short: "vec 5"
+tehio:
+  _family: "TA"
+  eng_long: "Vector tag 6"
+  eng_short: "vec 6"
+tehiu:
+  _family: "TA"
+  eng_long: "Vector tag 7"
+  eng_short: "vec 7"
+la:
+  _family: "LA"
   eng_long: "Starts grammatically correct eberban quote. (A) is text [quote]."
   eng_short: ""
-xai:
-  _family: "XAI"
+lai:
+  _family: "LAI"
   eng_long: "Ends grammatically correct eberban quote."
   eng_short: ""
-xe:
-  _family: "XE"
+le:
+  _family: "LE"
   eng_long: "Quote next word. (A) is word [word]."
   eng_short: ""
-xei:
-  _family: "XE"
+lei:
+  _family: "LE"
   eng_long: "(A) is the family of word [word]."
   eng_short: ""
-xo:
-  _family: "XO"
+lo:
+  _family: "LO"
   eng_long: "Starts quote of arbitrary string of words."
   eng_short: ""
 fa:
@@ -820,51 +744,51 @@ pcinu:
   eng_short: "time end"
 
 # # # Other :
-pcala:
+pcara:
   _family: "R"
   eng_long: "[A0] is regular/occurs regularly."
   eng_short: "regular"
-pcale:
+pcare:
   _family: "R"
   eng_long: "[A0] is typical/occurs typically."
   eng_short: "typical"
-pcali:
+pcari:
   _family: "R"
   eng_long: "[A0] is continuous/occurs continuously."
   eng_short: "continuous"
-pcalo:
+pcaro:
   _family: "R"
   eng_long: "[A0] is habitual/occurs habitually."
   eng_short: "habitual"
-pcila:
+pcira:
   _family: "R"
   eng_long: "(A) is inside/within [E]."
   eng_short: "inside"
-pcilai:
+pcirai:
   _family: "R"
   eng_long: "(A) is outside [E]."
   eng_short: "outside"
-pcile:
+pcire:
   _family: "R"
   eng_long: "(A) is adjacent to/along [E]."
   eng_short: "adjacent"
-pcilei:
+pcirei:
   _family: "R"
   eng_long: "(A) is tangential/passing by [E]."
   eng_short: "tangential"
-pcilo:
+pciro:
   _family: "R"
   eng_long: "(A) is surrounding/around [E]."
   eng_short: "surrounding"
-pciloi:
+pciroi:
   _family: "R"
   eng_long: "(A) is transfixing/passing through [E]."
   eng_short: "transfixing"
-pcilu:
+pciru:
   _family: "R"
   eng_long: "(A) is towards [E]."
   eng_short: "towards"
-pcilui:
+pcirui:
   _family: "R"
   eng_long: "(A) is away from [E]."
   eng_short: "away from"
@@ -874,7 +798,7 @@ don:
   _family: "R"
   eng_long: "(A) likes [E]."
   eng_short: "likes"
-dol:
+dona:
   _family: "R"
   eng_long: "(A) likes that [E0] is true. ((E.A) defaults to (A) : (A) likes something about itself)"
   eng_short: "likes that"
@@ -938,7 +862,7 @@ tlu:
   _family: "R"
   eng_long: "(A) agrees with (E) that [I0] is true."
   eng_short: "agrees"
-val:
+van:
   _family: "R"
   eng_long: "(A) goes from (E) to [I]."
   eng_short: "goes"
@@ -954,31 +878,31 @@ gun:
   _family: "R"
   eng_long: "(A) labers/works by satisfying property [E1]."
   eng_short: "works"
-jqn:
+lion:
   _family: "R"
   eng_long: "(A) is a year."
   eng_short: "year"
-zqn:
+lien:
   _family: "R"
   eng_long: "(A) is a month."
   eng_short: "month"
-mqn:
+lian:
   _family: "R"
   eng_long: "(A) is a week."
   eng_short: "week"
-vqn:
+lun:
   _family: "R"
   eng_long: "(A) is a day."
   eng_short: "day"
-gqn:
+lon:
   _family: "R"
   eng_long: "(A) is a hour."
   eng_short: "hour"
-dqn:
+len:
   _family: "R"
   eng_long: "(A) is a minute."
   eng_short: "minute"
-bqn:
+lan:
   _family: "R"
   eng_long: "(A) is a second."
   eng_short: "second"
@@ -1000,23 +924,23 @@ vier:
   eng_short: "visits"
 tan:
   _family: "R"
-  eng_long: "(A) is the empty set. (same as 'ta' cardinal but without a (E) place)"
-  eng_short: "empty set"
+  eng_long: "(A) is nothing. (same as 'ta' cardinal but without a (E) place)"
+  eng_short: "nothing"
 ten:
   _family: "R"
-  eng_long: "(A) is a set containing a small (subjective) number of things satisfying [E1]."
-  eng_short: "small set"
+  eng_long: "(A) is a small (subjective) amount of things satisfying [E1]."
+  eng_short: "small amount of"
 tin:
   _family: "R"
-  eng_long: "(A) is a set containing a medium (subjective) number of things satisfying [E1]."
-  eng_short: "medium set"
+  eng_long: "(A) is a medium (subjective) amount of things satisfying [E1]."
+  eng_short: "medium amount of "
 ton:
   _family: "R"
-  eng_long: "(A) is a set containing a large (subjective) number of things satisfying [E1]."
-  eng_short: "large set"
+  eng_long: "(A) is a large (subjective) amount of things satisfying [E1]."
+  eng_short: "large amount of"
 tun:
   _family: "R"
-  eng_long: "(A) is the set of everything that satisfies [E1]."
+  eng_long: "(A) is everything that satisfies [E1]."
   eng_short: "every"
 tal:
   _family: "R"
@@ -1056,16 +980,12 @@ cir:
   eng_short: "system"
 dan:  
   _family: "R"
-  eng_long: "(A) is a member of set [E]."
-  eng_short: "set member"
+  eng_long: "(A) is among [E]."
+  eng_short: "among"
 dal:
   _family: "R"
-  eng_long: "(A) is a set containing only things that satisfies [E1]."
-  eng_short: "restrict set"
-dar:
-  _family: "R"
-  eng_long: "(A) is a subset of [E]."
-  eng_short: "subset"
+  eng_long: "Everything among (A) also satisfies [E1]."
+  eng_short: "for each"
 ban:
   _family: "R"
   eng_long: "(A) (quote) is expressed in language [E]."
@@ -1074,39 +994,39 @@ bein:
   _family: "R"
   eng_long: "(A) (ordered set) is ordered following ordering rule [E2]."
   eng_short: "ordered set member"
-zan:
+dza:
   _family: "R"
   eng_long: "(A) is a color of [E]."
   eng_short: "color"
-zal:
+dze:
   _family: "R"
   eng_long: "(A) is white/light [color adjective]."
   eng_short: "white"
-zar:
+dzo:
   _family: "R"
   eng_long: "(A) is black/dark [color adjective]."
   eng_short: "black"
-zen:
+dzia:
   _family: "R"
   eng_long: "(A) is red [color adjective]."
   eng_short: "red"
-zel:
+dzie:
   _family: "R"
   eng_long: "(A) is green [color adjective]."
   eng_short: "green"
-zer:
+dzio:
   _family: "R"
   eng_long: "(A) is blue [color adjective]."
   eng_short: "blue"
-zin:
+dzua:
   _family: "R"
   eng_long: "(A) is cyan [color adjective]."
   eng_short: "cyan"
-zil:
+dzue:
   _family: "R"
   eng_long: "(A) is magenta [color adjective]."
   eng_short: "magenta"
-zir:
+dzuo:
   _family: "R"
   eng_long: "(A) is yellow [color adjective]."
   eng_short: "yellow"
@@ -1175,12 +1095,6 @@ kca:
   eng_long: "(A0) is possible/can be true."
   eng_short: "possible"
 
-# Compounds (1):
-apu:
-  _family: "C1"
-  eng_long: "(A) is a paragraph composed of sentence(s) (E)."
-  eng_short: "paragraph"
-
 # Compounds (2):
 eberban:
   _family: "C2"
@@ -1190,114 +1104,86 @@ eufrans'ban:
   _family: "C2"
   eng_long: "(A) (quote) is expressed in the French language (E)."
   eng_short: "french language"
-etavqn:
+etalun:
   _family: "C2"
   eng_long: "(A) is a Sunday."
   eng_short: "Sunday"
-etevqn:
+etelun:
   _family: "C2"
   eng_long: "(A) is a Monday."
   eng_short: "Monday"
-etovqn:
+etolun:
   _family: "C2"
   eng_long: "(A) is a Thusday."
   eng_short: "Thusday"
-etuvqn:
+etulun:
   _family: "C2"
   eng_long: "(A) is a Wednesday."
   eng_short: "Wednesday"
-etiavqn:
+etialun:
   _family: "C2"
   eng_long: "(A) is a Thursday."
   eng_short: "Thursday"
-etievqn:
+etielun:
   _family: "C2"
   eng_long: "(A) is a Friday."
   eng_short: "Friday"
-etiovqn:
+etiolun:
   _family: "C2"
   eng_long: "(A) is a Saturday."
   eng_short: "Saturday"
-etiuvqn:
+etiulun:
   _family: "C2"
   eng_long: "(A) is a Sunday."
   eng_short: "Sunday"
-etajqn:
+etalien:
   _family: "C2"
   eng_long: "(A) is a January."
   eng_short: "January"
-etejqn:
+etelien:
   _family: "C2"
   eng_long: "(A) is a February."
   eng_short: "February"
-etojqn:
+etolien:
   _family: "C2"
   eng_long: "(A) is a March."
   eng_short: "March"
-etujqn:
+etulien:
   _family: "C2"
   eng_long: "(A) is a April."
   eng_short: "April"
-etiajqn:
+etialien:
   _family: "C2"
   eng_long: "(A) is a May."
   eng_short: "May"
-etiejqn:
+etielien:
   _family: "C2"
   eng_long: "(A) is a June."
   eng_short: "June"
-etiojqn:
+etiolien:
   _family: "C2"
   eng_long: "(A) is a July."
   eng_short: "July"
-etiujqn:
+etiulien:
   _family: "C2"
   eng_long: "(A) is a August."
   eng_short: "August"
-etaijqn:
+etailien:
   _family: "C2"
   eng_long: "(A) is a September."
   eng_short: "September"
-eteijqn:
+eteilien:
   _family: "C2"
   eng_long: "(A) is a October."
   eng_short: "October"
-etoijqn:
+etoilien:
   _family: "C2"
   eng_long: "(A) is a November."
   eng_short: "October"
-etuijqn:
+etuilien:
   _family: "C2"
   eng_long: "(A) is a December."
   eng_short: "December"
-ezenzil:
-  _family: "C2"
-  eng_long: "(A) is pink [color adjective]."
-  eng_short: "pink"
-ezenzir:
-  _family: "C2"
-  eng_long: "(A) is orange [color adjective]."
-  eng_short: "orange"
-ezelzin:
-  _family: "C2"
-  eng_long: "(A) is spring green [color adjective]."
-  eng_short: "spring green"
-ezelzir:
-  _family: "C2"
-  eng_long: "(A) is chartreuse green [color adjective]."
-  eng_short: "chartreuse green"
-ezerzin:
-  _family: "C2"
-  eng_long: "(A) is azure [color adjective]."
-  eng_short: "azure"
-ezerzil:
-  _family: "C2"
-  eng_long: "(A) is violet [color adjective]."
-  eng_short: "violet"
-ezalzar:
-  _family: "C2"
-  eng_long: "(A) is grey [color adjective]."
-  eng_short: "grey"
 
 # Compounds (3):
 igruntceijno:

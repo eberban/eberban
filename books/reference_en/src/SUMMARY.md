@@ -13,10 +13,10 @@
   - [Root words (R)](units/R.md)
   - [Intrinsic variables (MA)](units/MA.md)
   - [Extrinsic variables (KA/GA)](units/KA_GA.md)
-  - [Numbers (TA/BQ)](units/TA_BQ.md)
+  - [Numbers (TA)](units/TA.md)
   - [Borrowings (B)](units/B.md)
   - [Compounds (C)](units/C.md)
-  - [Quotes (XA/XE/XO)](units/XA_XE_XO.md)
+  - [Quotes (LE/LE/LO)](units/LA_LE_LO.md)
 
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA/BI)](bindings/SA_ZA_BI.md)

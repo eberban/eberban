@@ -1,16 +1,15 @@
 # Morphology
 
-The morphology of eberban is quite simple. In terms of letters, there are 6
-vowels (**a, e, i, o, u, q**), 17 consonants (**b, c, d, f, g, j, k, l, m, n, p,
-r, s, t, v, x, z**) and a semi-consonant **h**,
-for a total of 24 letters. There is also one symbol denoting a pause in speech,
-namely the apostrophe **'**, which is optional in written media as long as there
-are spaces alongside it. Among the consonants, three special ones are designated
-(alveolar) **sonorants** : **l, n, r**.
+The morphology of eberban is quite simple. In terms of letters, there are 5
+vowels (**a, e, i, o, u**), 16 consonants (**b, c, d, f, g, j, k, l, m, n, p, r,
+s, t, v, z**) and a semi-consonant **h**, for a total of 22 letters. There is
+also one symbol denoting a pause in speech, namely the apostrophe **'**, which
+is optional in written media as long as there are spaces alongside it. Among the
+consonants, two special ones are designated as **sonorants** : **n** and **r**.
 
 Vowels and **h** can appear in clusters. **h** can appear only between 2 vowels,
-and the same vowel cannot appear more than one in a row. We call these
-*vowel clusters*.
+and the same vowel cannot appear more than one in a row. We call these *vowel
+clusters*.
 
 ## Words
 
@@ -21,9 +20,9 @@ Particles are organised in families sharing the same grammar and usually
 starting with the same consonnant.
 
 There are also 2 other types of words : *compounds* and *borrowings*. Compounds
-are made from one or multiple smaller words, while borrowings allows to
-imports foreign words or names. Compounds starts with **a, e, i, o** and
-borrowings with **u**.
+are made from one or multiple smaller words, while borrowings allows to imports
+foreign words or names. Compounds starts with **a, e, i, o** and borrowings with
+**u**.
 
 > **Remark:** If you are familiar with Lojban, you may view particles as
 > analogous to cmavo, roots to gismu, compounds to lujvo and borrowings to
@@ -36,25 +35,23 @@ one sonorant, or start with a permissible consonant pair and any number of
 sonorants. Sonorants can appear as the second consonant of an initial pair,
 between vowel clusters and at the end of roots.
 
-Words starting with **q** are considered particles and can contain sonorants.
-
-All words starting with a vowel must be preceded by a pause
-(**'** and/or space). In written media, a sequence of words is typically, but
-not necessarily, separated by spaces (" ").
+All words starting with a vowel must be preceded by a pause (**'** and/or
+space). In written media, a sequence of words is typically, but not necessarily,
+separated by spaces (" ").
 
 >  **For the advanced reader:** you may have noticed that all words start with
->  either a vowel (preceded by a pause), or a non-sonorant; and that
->  all words (except borrowings) end with either a vowel or a sonorant. This is
->  by design. As we will later see, these seemingly artificial restrictions
->  involving sonorants ensure that, even if words (except borrowings) are strung
->  together without any spaces between them, they can still be uniquely
->  decomposed (i.e. spaces can be deterministically added back). This may seem
->  unimportant, and indeed in written media spaces are not particularly
->  obnoxious &ndash; they are recommended, even. But in spoken form spaces
->  correspond to pauses, and this unique decomposition property suddenly becomes
->  important: it means that, while speaking, we do not need to pause between
->  every two words! For our fellow language nerds out there: this cool property
->  is also known as self-segmenting morphophonology :-)
+>  either a vowel (preceded by a pause), or a non-sonorant; and that all words
+>  (except borrowings) end with either a vowel or a sonorant. This is by design.
+>  As we will later see, these seemingly artificial restrictions involving
+>  sonorants ensure that, even if words (except borrowings) are strung together
+>  without any spaces between them, they can still be uniquely decomposed (i.e.
+>  spaces can be deterministically added back). This may seem unimportant, and
+>  indeed in written media spaces are not particularly obnoxious &ndash; they
+>  are recommended, even. But in spoken form spaces correspond to pauses, and
+>  this unique decomposition property suddenly becomes important: it means that,
+>  while speaking, we do not need to pause between every two words! For our
+>  fellow language nerds out there: this cool property is also known as
+>  self-segmenting morphophonology :-)
 >
 >  Additionally, there is a mandatory pause at the end of borrowings, allowing
 >  segmenting to work with borrowings as well.
@@ -80,13 +77,13 @@ permissible consonant pairs.
 
 ## Permissible consonnant clusters in borrowings
 
-Borrowings have more relaxed rules regarding allowed consonnant clusters.
-A maximum of 3 consonnants in a row are allowed, and they can't all be
-sonorants. A consonnant cannot be followed by the same one.
+Borrowings have more relaxed rules regarding allowed consonnant clusters. A
+maximum of 3 consonnants in a row are allowed, and they can't all be sonorants.
+A consonnant cannot be followed by the same one.
 
-Consonnants are split into 2 categories called **voiced** (b, d, g, j, v, z)
-and **unvoiced** (c, f, k, p, s, t, x). A **voiced** consonnant cannot be
-followed by an **unvoiced** one, and vice-versa.
+Consonnants are split into 2 categories called **voiced** (b, d, g, j, v, z) and
+**unvoiced** (c, f, k, p, s, t). A **voiced** consonnant cannot be followed by
+an **unvoiced** one, and vice-versa.
 
 Additionnaly the following rules applies :
 
@@ -95,6 +92,4 @@ Additionnaly the following rules applies :
 | j          | z                    |
 | z          | j                    |
 | s          | c                    |
-| c          | s, x                 |
-| x          | c, k, l, r           |
-| k          | x                    |
+| c          | s                    |

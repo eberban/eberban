@@ -23,12 +23,12 @@ const important_types = [
 	// units
 	[ 'unit', 'unit' ],
 	[ 'compound', 'compound' ],
-	[ 'borrowing', 'borrowing' ],
+	[ 'unit_borrowing', 'borrowing' ],
 	[ 'foreign_word', 'foreign' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
-	[ 'number_string', 'number' ],
+	[ 'unit_number', 'number' ],
 	[ 'subscope', 'subscope' ],
 
 	// free
