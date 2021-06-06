@@ -33,14 +33,10 @@ that are currently being defined when the word is used.
 Using [subscripts **JA**](../struct/free.md#ja) allow to refer to more distant
 predicates.
 
-> These predicates are 0-ary. To refer to previous predicates with their places,
-> see [**ze (ZA)**](../bindings/SA_ZA.md#za)
-
 ## Specials
 
-| Word | Definition                                                                                                                                 |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| ma   | binds a variable within an abstraction that represents an open space (used in [`PE` scopes)](../struct/PA_PI_PU_BA.md#proposition-pa--pay) |
-| mai  | binds to the relativized object of a relative clause (used in [`FA` scopes](../bindings/VA_FA.md))                                         |
-| me   | individuals question / fill the blank question / `A` is what ?.                                                                            |
-| mei  | predicate question / fill the blank question                                                                                               |
+| Word | Definition                                                      |
+| ---- | --------------------------------------------------------------- |
+| ma   | binds a variable within an scope that represents an open space. |
+| me   | individuals question / fill the blank question / `A` is what ?. |
+| mei  | predicate question / fill the blank question                    |

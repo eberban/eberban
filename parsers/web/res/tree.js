@@ -9,8 +9,8 @@ const important_types = [
 
 	// scope	
 	[ 'scope', 'scope' ],
-	[ 'scope_dist_connectives', 'distributive connectives scope' ],
-	[ 'scope_bind_connectives', 'binding connectives scope' ],
+	[ 'scope_group', 'scope group' ],
+	[ 'scope_connectives', 'connectives scope' ],
 	[ 'scope_plural', 'plural value' ],
 	[ 'sequential', 'sequential binding' ],
 	[ 'sequential_neg', 'sequential negation' ],

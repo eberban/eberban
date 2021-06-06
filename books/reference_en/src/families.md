@@ -2,10 +2,10 @@
 
 | Family                                            | Purpose                                                      |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| **BA**                                            | plural value builder (with)                                  |
+| **BA***                                           | plural value builder (with)                                  |
 | **BE**                                            | miscellaneous terminator + [ordinals](../src/units/TA_BQ.md) |
-| **BI**                                            | wide-scope negation                                          |
-| **BO**                                            | variable assignement                                         |
+| **BI***                                           | wide-scope negation                                          |
+| **BO***                                           | variable assignement                                         |
 | [**BU**](struct/BU.md)*                           | parser version/dialect                                       |
 | [**CA**](struct/J-_C-.md#suffix-markers-ca)       | free suffix (indicator / marker)                             |
 | [**DA**](struct/DA.md)                            | logical connectives                                          |
@@ -22,16 +22,16 @@
 | [**MA**](units/MA.md)                             | intrinsic variables (pronouns, ...)                          |
 | [**PA**](struct/PA_PI_PU.md)*                     | predicate scope starter                                      |
 | [**PAI**](struct/PA_PI_PU.md)*                    | predicate scope terminator                                   |
-| [**PE**](struct/PE.md)*                           | predicate subscope starter                                   |
-| [**PEI**](struct/PE.md)*                          | predicate subscope terminator                                |
+| [**PE**](struct/DA.md)*                           | scope group starter                                          |
+| [**PEI**](struct/DA.md)*                          | scope group terminator                                       |
 | [**PI**](struct/PA_PI_PU.md)*                     | predicate scope arguments terminator                         |
-| [**PO**](units/KA_GA.md)*                         | predicate variable affectation                               |
+| [**PO**](units/KA_GA.md)*                         | predicate definition                                         |
 | [**PU**](struct/PA_PI_PU.md)                      | paragraph marker                                             |
 | [**SA**](bindings/SA_ZA.md)                       | place binding tag                                            |
 | [**TA**](units/TA_BQ.md)                          | numbers/digits                                               |
 | [**VA**](bindings/VA_FA.md)                       | parallel binding tags                                        |
 | [**LA**](units/LA_LE_LO.md)*                      | grammatical quote starter                                    |
-| [**KAI**](units/LA_LE_LO.md)*                     | grammatical quote terminator                                 |
+| [**LAI**](units/LA_LE_LO.md)*                     | grammatical quote terminator                                 |
 | [**LE**](units/LA_LE_LO.md)                       | one word quote                                               |
 | [**LO**](units/LA_LE_LO.md)*                      | foreign quote                                                |
 | [**ZA**](bindings/SA_ZA.md)                       | unit transformation                                          |

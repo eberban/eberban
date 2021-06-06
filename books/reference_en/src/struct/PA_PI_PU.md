@@ -10,16 +10,12 @@ posteriori.
 
 ## Predicate arguments [PI]
 
-A predicate can be expressed by following **PA** with a list of
+A predicate can be expressed by following **PA/VA/FA** with a list of
 [**KA/GA**](../units/KA_GA.md) variables terminated by **pi**. Each
 **KA/GA** binds to the `A`, `E`, etc in order.
 Any [**ma**](../units/MA.md) in the scope will add bind following places. If
 neither **PI** or **ma** are used then the scope have the same place structure
 as the first unit in this scope.
-
-> Declaring these arguments is usefull when using [subscopes](PE.md). At the
-> sentence level these arguments are made existential, but are relevant when
-> refering to other sentences with the [mua serie](../units/MA.md#propositions).
 
 ## Paragraphs, sections, chapters, ... [PU]
 

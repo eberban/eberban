@@ -84,6 +84,8 @@ li.implicit {
 
 .box.box-arguments {
 	background: var(--color-pink);
+	border: 1px black solid;
+	border-top: 0px;
 }
 
 .box.box-note {
@@ -138,12 +140,12 @@ li.implicit {
 
 .box.box-scope {
 	background: #ffffff;
-	border: 1px black dashed;
+	/* border: 1px black dashed; */
 	border-top: 0px;
 }
 
 .box.box-scope-conn {
-	background: #dddddd;
+	/* background: #dddddd; */
 	border: 1px black dashed;
 	border-top: 0px;
 }

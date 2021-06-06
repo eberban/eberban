@@ -1,5 +1,6 @@
 const hideTitleList = [
 	'scope',
+	'scope group',
 	'distributive connectives scope',
 	'binding connectives scope',
 	'plural value',
@@ -19,11 +20,9 @@ const boxClassForTypeMap = new Map([
 	[ 'arguments', 'box box-arguments' ],
 
 	// scope
-	// [ 'scope', 'box box-scope' ],
-	[ 'distributive connectives scope', 'box box-scope-conn' ],
-	[ 'binding connectives scope', 'box box-scope-conn' ],
+	[ 'scope', 'box box-scope' ],
+	[ 'scope group', 'box box-scope-conn' ],
 	[ 'plural value', 'box box-scope-conn' ],
-	[ 'sequential binding', 'box box-sequential' ],
 	[ 'sequential unit', 'box box-sequential-unit' ],
 	[ 'sequential negation', 'box box-sequential-neg' ],
 	[ 'explicit binding', 'box box-explicit' ],
@@ -325,8 +324,8 @@ function constructBoxesOutput(parse, depth) {
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
-		} else if (parse.type === 'KA' || parse.type === 'GA' || parse.type === 'KAY' || parse.type === 'GAY') {
-			output += '<span class="translation">&nbsp;var&nbsp;</span>';
+		} else if (parse.type === 'KA' || parse.type === 'GA') {
+			output += '';
 		} else {
 			output += '...';
 		}

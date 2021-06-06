@@ -24,8 +24,7 @@
 
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
-  - [Subscopes (PE)](struct/PE.md)
-  - [Function declaration (PO)](struct/PO.md)
+  - [Predicate definition (PO)](struct/PO.md)
   - [Free modifiers (J-/C-)](struct/J-_C-.md)
   - [Logical connectives (DA)](struct/DA.md)
   - [Parser version/dialect (BU)](struct/BU.md)

@@ -8,12 +8,6 @@ grammatical starters or terminators apply to the whole object they define.
 **ja** attaches a number or letter string to a word. It can be used to be more
 precise when using a vague particle or use more variables.
 
-## Discursive [JAI]
-
-**jai** attaches a single unit to the previous word to make a discursive, for
-example to provide emotions. To provide more complex units wrap them in [**PE**
-subscopes](PE.md) or use **JO/JOI**.
-
 ## Free scopes [JE/JEI]
 
 **je** and **jei** allows to attach information to a group of words which isn't
@@ -34,7 +28,7 @@ can be any valid eberban text.
 | jua  | Emphasis indicator : the next word is especially emphasized.                   |
 | jue  | Nonce-word indicator : the next word (usually a compound) may be non-standard. |
 | jui  | Next word is a metadata tag / hashtag.                                         |
-| juo  | Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope.          |
+| juo  | Tags an open-place unit (KA/GA/ma) as the bracket place of a scope.          |
 
 ## Suffix markers [CA]
 

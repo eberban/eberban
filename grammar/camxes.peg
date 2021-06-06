@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.30
+# eberban PEG grammar - v0.31
 # ===========================
 
 # GRAMMAR
@@ -10,40 +10,50 @@ parser_version_short <- parser_version_number
 parser_version_number <- spaces? TA+
 
 # main text rule
-text_1 <- (free_indicator / free_discursive / free_parenthetical)* paragraphs? spaces? EOF?
+text_1 <- (free_indicator / free_parenthetical)* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
 paragraph <- PU_clause? sentence (&(PA_clause / PO_clause) sentence)*
-sentence <- function / sentence_scope / sentence_fragments
+sentence <- definition / sentence_scope / sentence_fragments
 
-function <- PO_clause function_name arguments_list? scope
-function_name <- GA_clause / unit_compound / unit_root
+arguments_list <- (KA_clause / GA_clause)+ PI_clause
+
+definition <- PO_clause definition_key arguments_list? scope POI_clause_elidible
+definition_key <- GA_clause / unit_compound / unit_root
+
 sentence_scope <- PA_clause_elidible scope PAI_clause_elidible
 
 sentence_fragments <- PA_clause_elidible fragment+ PAI_clause_elidible
 fragment <- DA_clause / FA_clause / VA_clause / SA_clause / ZA_clause
 
+subscope <- arguments_list? definition* scope
+
 # scope
-scope <- scope_bind_connectives / scope_1
-scope_bind_connectives <- scope_1 (DA_clause scope)
+scope <- scope_1 # allow to find only the top-level scopes when using connectives
 
-scope_1 <- scope_plural / scope_2
-scope_plural <- scope_2 (BA_clause scope_1)
+scope_1 <- scope_connectives / scope_2
+scope_connectives <- scope_2 (DA_clause scope_2)+
 
-scope_2 <- sequential
+scope_2 <- scope_group / scope_3
+scope_group <- PE_clause scope_1 PEI_clause_elidible
+
+scope_3 <- scope_plural / scope_4
+scope_plural <- scope_4 (BA_clause scope_4)+
+
+scope_4 <- sequential
 
 # bindings
 sequential <- sequential_neg / sequential_unit sequential?
 sequential_neg <- BI_clause sequential_unit+
 sequential_unit <- unit explicit_binding?
 explicit_binding <- explicit_binding_va explicit_binding_fa* VAI_clause_elidible
-explicit_binding_va <- BI_clause? VA_clause scope 
-explicit_binding_fa <- BI_clause? FA_clause scope
+explicit_binding_va <- BI_clause? VA_clause subscope 
+explicit_binding_fa <- BI_clause? FA_clause subscope
 
 # predicate unit
 unit <- (SA_clause / ZA_clause)* unit_1
-unit_1 <-  quote / subscope / variable / unit_borrowing / unit_root / unit_number / unit_compound
+unit_1 <- quote / variable / unit_borrowing / unit_root / unit_number / unit_compound
 unit_root <- free_prefix* spaces? root free_post*
 unit_number <- free_prefix* spaces? number free_post*
 unit_compound <- free_prefix* spaces? compound free_post*
@@ -56,10 +66,6 @@ one_word_quote <- LE_clause spaces? native_word
 foreign_quote <- LO_clause spaces? foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
 
-# sub-scopes
-subscope <- PE_clause arguments_list? function* scope PEI_clause_elidible
-arguments_list <- (KA_clause / GA_clause)+ PI_clause
-
 # number
 number <- TA_clause+ BE_clause_elidible
 
@@ -70,9 +76,8 @@ variable <- MA_clause / BO_clause? KA_clause / BO_clause? GA_clause
 free_prefix <- JE_clause / JU_clause
 
 # free suffix
-free_post <- JEI_clause / free_discursive / free_indicator / free_parenthetical / free_subscript
+free_post <- JEI_clause / free_indicator / free_parenthetical / free_subscript
 free_subscript <- JA_clause number
-free_discursive <- JAI_clause unit
 free_indicator <- CA_clause
 free_parenthetical <- JO_clause text_1 JOI_clause
 
@@ -84,11 +89,10 @@ BI_clause           <- free_prefix* spaces? BI free_post*       # wide-scope neg
 BO_clause           <- spaces? BO                               # variable assignement
 BU_clause           <- spaces? BU                               # parser version/dialect
 CA_clause           <- free_prefix* spaces? CA                  # free suffix (indicator / marker)
-DA_clause           <- free_prefix* spaces? DA free_post*       # binding logical connectives
+DA_clause           <- free_prefix* spaces? DA free_post*       # logical connectives
 FA_clause           <- free_prefix* spaces? FA free_post*       # continue explicit binding
 GA_clause           <- free_prefix* spaces? GA free_post*       # pred variables
 JA_clause           <- free_prefix* spaces? JA                  # free subscript
-JAI_clause          <- free_prefix* spaces? JAI                 # free discursive (pred)
 JE_clause           <- spaces? JE                               # free scope starter
 JEI_clause          <- spaces? JEI                              # free scope termiator
 JO_clause           <- free_prefix* spaces? JO                  # free parenthetical started (text)
@@ -100,11 +104,13 @@ PA_clause           <- free_prefix* spaces? PA free_post*       # pred scope sta
 PA_clause_elidible  <- PA_clause?
 PAI_clause          <- free_prefix* spaces? PAI free_post*      # pred scope terminator
 PAI_clause_elidible <- PAI_clause?
-PE_clause           <- free_prefix* spaces? PE free_post*       # pred subscope starter
-PEI_clause          <- free_prefix* spaces? PEI free_post*      # pred subscope terminator
+PE_clause           <- free_prefix* spaces? PE free_post*       # scope grouping starter
+PEI_clause          <- free_prefix* spaces? PEI free_post*      # scope grouping terminator
 PEI_clause_elidible <- PEI_clause?
 PI_clause           <- free_prefix* spaces? PI free_post*       # pred scope arguments terminator
-PO_clause           <- spaces? PO                               # pred variable affectation
+PO_clause           <- spaces? PO                               # definition starter
+POI_clause          <- spaces? POI                              # definition terminator
+POI_clause_elidible <- POI_clause?
 PU_clause           <- free_prefix* spaces? PU free_post*       # paragraph marker
 SA_clause           <- free_prefix* spaces? SA free_post*       # place binding tag
 TA_clause           <- free_prefix* spaces? TA                  # numbers/digits
@@ -128,7 +134,6 @@ DA    <- &particle (d aeiou)
 FA    <- &particle (f haeiou)
 GA    <- &particle (g haeiou)
 JA    <- &particle (j a)
-JAI   <- &particle (j a i)
 JE    <- &particle (j e)
 JEI   <- &particle (j e i)
 JO    <- &particle (j o)
@@ -142,6 +147,7 @@ PE    <- &particle (p e)
 PEI   <- &particle (p e i)
 PI    <- &particle (p i)
 PO    <- &particle (p o)
+POI   <- &particle (p o i)
 PU    <- &particle (p &u haeiou)
 SA    <- &particle (s haeiou)
 TA    <- &particle (t haeiou) / digit

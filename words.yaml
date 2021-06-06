@@ -113,12 +113,8 @@ muo:
   eng_short: "next prop"
 ma:
   _family: "MA"
-  eng_long: "Binds a variable within an abstraction that represents an open space."
+  eng_long: "Binds a variable within an scope that represents an open space."
   eng_short: "open place"
-mai:
-  _family: "MA"
-  eng_long: "Binds to the relativized object of a relative clause."
-  eng_short: "relativized object"
 me:
   _family: "MA"
   eng_long: "Individual question / fill the blank question / (A) is what ?"
@@ -405,28 +401,28 @@ vio:
   eng_short: "sub adv"
 da:
   _family: "DA"
-  eng_long: "Binding logical OR connective."
-  eng_short: "or (bind)"
+  eng_long: "Logical OR connective."
+  eng_short: "or"
 de:
   _family: "DA"
-  eng_long: "Binding logical AND connective."
-  eng_short: "and (bind)"
+  eng_long: "Logical AND connective."
+  eng_short: "and"
 di:
   _family: "DA"
-  eng_long: "Binding logical connective question."
-  eng_short: "conn? (bind)"
+  eng_long: "Logical connective question."
+  eng_short: "conn?"
 do:
   _family: "DA"
-  eng_long: "Binding logical if-and-only-if connective."
-  eng_short: "iif (bind)"
+  eng_long: "Logical if-and-only-if connective."
+  eng_short: "iif"
 du:
   _family: "DA"
-  eng_long: "Binding logical whether or not (right is non-restrictive)."
-  eng_short: "won right (bind)"
-duhu:
+  eng_long: "Logical whether or not (right is non-restrictive)."
+  eng_short: "won right"
+dui:
   _family: "DA"
-  eng_long: "Binding logical whether or not (left is non-restrictive)."
-  eng_short: "won left (bind)"
+  eng_long: "Logical whether or not (left is non-restrictive)."
+  eng_short: "won left"
 sa:
   _family: "SA"
   eng_long: "(A) place binding tag."
@@ -489,15 +485,15 @@ pai:
   eng_short: ""
 pe:
   _family: "PE"
-  eng_long: "Start of predicate subscope."
-  eng_short: ""
+  eng_long: "Starts a scope group (higher precedence than connectives)."
+  eng_short: "["
 pei:
-  _family: "PEI"
-  eng_long: "End of a predicate subscope."
-  eng_short: ""
+  _family: "PE"
+  eng_long: "Ends a scope group (higher precedence than connectives)."
+  eng_short: "]"
 pi:
   _family: "PI"
-  eng_long: "Ends the list of predicate scope arguments."
+  eng_long: "Ends the list of arguments."
   eng_short: ""
 po:
   _family: "PO"
@@ -583,10 +579,6 @@ ba:
   _family: "BA"
   eng_long: "Form a group (plural variable) from multiple individuals."
   eng_short: "with"
-bi:
-  _family: "BI"
-  eng_long: "Wide scope negation ranging over existential variables, units and bindings."
-  eng_short: "not"
 be:
   _family: "BE"
   eng_long: "Ends string/number/borrowing."
@@ -595,6 +587,14 @@ bei:
   _family: "BE"
   eng_long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [Ⓔ1]."
   eng_short: "-th"
+bi:
+  _family: "BI"
+  eng_long: "Wide scope negation ranging over existential variables, units and bindings."
+  eng_short: "not"
+bo:
+  _family: "BO"
+  eng_long: "Create a new variable and discard previous value if any."
+  eng_short: "new var"
 bu:
   _family: "BU"
   eng_long: "Parser version/dialect marker"
