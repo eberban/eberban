@@ -38,5 +38,3 @@ predicates.
 | Word | Definition                                                      |
 | ---- | --------------------------------------------------------------- |
 | ma   | binds a variable within an scope that represents an open space. |
-| me   | individuals question / fill the blank question / `A` is what ?. |
-| mei  | predicate question / fill the blank question                    |

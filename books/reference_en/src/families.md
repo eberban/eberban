@@ -20,12 +20,12 @@
 | [**JU**](struct/J-_C-.md#prefix-markers-ju)       | free prefix                                                  |
 | [**KA**](units/KA_GA.md)                          | individual variables                                         |
 | [**MA**](units/MA.md)                             | intrinsic variables (pronouns, ...)                          |
-| [**PA**](struct/PA_PI_PU.md)*                     | predicate scope starter                                      |
+| [**PA**](struct/PA_PI_PU.md)                      | predicate scope starter                                      |
 | [**PAI**](struct/PA_PI_PU.md)*                    | predicate scope terminator                                   |
 | [**PE**](struct/DA.md)*                           | scope group starter                                          |
 | [**PEI**](struct/DA.md)*                          | scope group terminator                                       |
 | [**PI**](struct/PA_PI_PU.md)*                     | predicate scope arguments terminator                         |
-| [**PO**](units/KA_GA.md)*                         | predicate definition                                         |
+| [**PO**](units/KA_GA.md)                          | predicate definition                                         |
 | [**PU**](struct/PA_PI_PU.md)                      | paragraph marker                                             |
 | [**SA**](bindings/SA_ZA.md)                       | place binding tag                                            |
 | [**TA**](units/TA_BQ.md)                          | numbers/digits                                               |

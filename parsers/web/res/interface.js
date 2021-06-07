@@ -17,6 +17,7 @@ const boxClassForTypeMap = new Map([
 	// text
 	[ 'parser version', 'box box-parser' ],
 	[ 'sentence', 'box box-sentence' ],
+	[ 'definition', 'box box-sentence' ],
 	[ 'arguments', 'box box-arguments' ],
 
 	// scope

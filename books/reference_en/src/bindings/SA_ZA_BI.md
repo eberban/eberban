@@ -3,8 +3,7 @@
 ## SA
 
 **SA** allow to change which is the **left chaining place** of the following
-predicate unit. **sai** allows to ask which **SA** should be used to make the
-proposition true. Other **SA** allow to use special variables that are related
+predicate unit. Other **SA** allow to use special variables that are related
 to the predicate unit. If the predicate unit don't have a bracket place, the
 **right chaining place** is also modified.
 
@@ -15,7 +14,6 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 | si   | tags `I` place                                            |
 | so   | tags `O` place                                            |
 |      | &nbsp;                                                    |
-| sai  | SA question : which SA would make the proposition true ?  |
 | sei  | something related to the predicate (vague transformation) |
 | soi  | event of the predicate being true                         |
 

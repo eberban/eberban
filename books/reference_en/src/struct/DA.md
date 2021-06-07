@@ -3,10 +3,9 @@
 > Work in progress, exact meaning is not defined yet.
 
 Logical connectives of family **DA** allow to connect two scopes, defining
-the final truth value based on the truth value of the scopes. **di** allow to
-ask a question about which logicial connective would make the result true.
+the final truth value based on the truth value of the scopes. 
 
-| left  | right |     | da (and) | de (or) | do (iif) | du    | dui  |
+| left  | right |     | da (and) | de (or) | di (iif) | do    | du    |
 | ----- | ----- | --- | -------- | ------- | -------- | ----- | ----- |
 | True  | True  |     | True     | True    | True     | True  | True  |
 | True  | False |     | True     | False   | False    | True  | False |

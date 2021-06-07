@@ -286,11 +286,15 @@ lai:
 le:
   _family: "LE"
   eng_long: "Quote next word. (A) is word [word]."
-  eng_short: ""
+  eng_short: "[word]"
 lei:
   _family: "LE"
   eng_long: "(A) is the family of word [word]."
-  eng_short: ""
+  eng_short: "[family]"
+lehi:
+  _family: "LE"
+  eng_long: "Provides a predicate describing the meaning of the following particle"
+  eng_short: "[meaning]"
 lo:
   _family: "LO"
   eng_long: "Starts quote of arbitrary string of words."
@@ -331,10 +335,6 @@ fuo:
   _family: "FA"
   eng_long: "Additional explicit (O) place non-restrictive binding."
   eng_short: "(O) (non-res)"
-fei:
-  _family: "FA"
-  eng_long: "Which place should be bound to make the proposition true ?"
-  eng_short: "bind ?"
 fia:
   _family: "FA"
   eng_long: "Additional explicit adverbial bind (restrictive)"
@@ -347,6 +347,22 @@ fio:
   _family: "FA"
   eng_long: "Additional explicit adverbial bind (subordinative)"
   eng_short: "sub adv"
+faha:
+  _family: "FA"
+  eng_long: "Binds same place (restrictive)"
+  eng_short: "same (res)"
+fahe:
+  _family: "FA"
+  eng_long: "Binds next place (restrictive)"
+  eng_short: "next (res)"
+fuha:
+  _family: "FA"
+  eng_long: "Binds same place (non-restrictive)"
+  eng_short: "same (non-res)"
+fuhe:
+  _family: "FA"
+  eng_long: "Binds next place (non-restrictive)"
+  eng_short: "next (non-res)"
 va:
   _family: "VA"
   eng_long: "First explicit (A) place restrictive binding."
@@ -409,17 +425,13 @@ de:
   eng_short: "and"
 di:
   _family: "DA"
-  eng_long: "Logical connective question."
-  eng_short: "conn?"
-do:
-  _family: "DA"
   eng_long: "Logical if-and-only-if connective."
   eng_short: "iif"
-du:
+do:
   _family: "DA"
   eng_long: "Logical whether or not (right is non-restrictive)."
   eng_short: "won right"
-dui:
+du:
   _family: "DA"
   eng_long: "Logical whether or not (left is non-restrictive)."
   eng_short: "won left"
@@ -477,8 +489,28 @@ zoi:
   eng_short: "ref"
 pa:
   _family: "PA"
-  eng_long: "Starts a predicate scope."
-  eng_short: ""
+  eng_long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
+  eng_short: "[assertion]"
+paha:
+  _family: "PA"
+  eng_long: "Starts an vocative. Defines the listener as the A place of the scope."
+  eng_short: "[vocative]"
+pahe:
+  _family: "PA"
+  eng_long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
+  eng_short: "[declaration]"
+pahi:
+  _family: "PA"
+  eng_long: "Starts a directive sentence, that is requested, wished or ordered to be true."
+  eng_short: "[directive]"
+paho:
+  _family: "PA"
+  eng_long: "Starts an admonitive sentence, that describes only a potential act or situation which may occur unless avoided (used for warnings). "
+  eng_short: "[admonitive]"
+pahu:
+  _family: "PA"
+  eng_long: "Starts an hortative sentence, that is used for statements that are untrue or unreal but whished to be true or real (\"if only ..\"). "
+  eng_short: "[hortative]"
 pai:
   _family: "PAI"
   eng_long: "Ends an predicate scope."
@@ -497,8 +529,16 @@ pi:
   eng_short: ""
 po:
   _family: "PO"
-  eng_long: "Define predicate definition."
-  eng_short: "define"
+  eng_long: "Start a predicate definition."
+  eng_short: ""
+poha:
+  _family: "PO"
+  eng_long: "Start a question definition, the arguments being the unknown informations."
+  eng_short: "[question]"
+poi:
+  _family: "POI"
+  eng_long: "Ends a predicate definition."
+  eng_short: ""
 pu:
   _family: "PU"
   eng_long: "Marks a new paragraph/section/change of subject."
@@ -519,6 +559,10 @@ jei:
   _family: "JEI"
   eng_long: "Ends a free scope."
   eng_short: ""
+ji:
+  _family: "JI"
+  eng_long: "Override particule meaning with provided predicate."
+  eng_short: "override"
 jo:
   _family: "JO"
   eng_long: "Starts parenthetical note."

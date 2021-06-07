@@ -1,5 +1,7 @@
 # Free modifiers (J-/C-)
 
+> This part is outdated and need to be reworked.
+
 Free modifiers allow to add information to almost anything. Modifier attached to
 grammatical starters or terminators apply to the whole object they define.
 
@@ -34,10 +36,7 @@ can be any valid eberban text.
 
 | Word   | Meaning                                                                                                          |
 | ------ | ---------------------------------------------------------------------------------------------------------------- |
-| ca     | Ask if the proposition is true, with emphasis placed on the marked word.                                         |
 | cai    | Indirect question marker. Transform a question word into an indirect question.                                   |
-| ce     | Imperative. The left chaining place of the tagged predicate should make it true.                                 |
-| cei    | Answer. Attached to sentence to indicate it's an answer to a previous question, and not a independent statement. |
 | &nbsp; |                                                                                                                  |
 | cia    | However/but/in contrast.                                                                                         |
 | cie    | Similarly.                                                                                                       |

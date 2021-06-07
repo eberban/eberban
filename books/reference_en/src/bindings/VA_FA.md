@@ -1,22 +1,25 @@
 # Explicit bindings (VA/FA)
 
-| FA     | VA  | Definition                                                                                                      |
-| ------ | --- | --------------------------------------------------------------------------------------------------------------- |
-| fa     | va  | Binds `A` place (restrictive)                                                                                   |
-| fe     | ve  | Binds `E` place (restrictive)                                                                                   |
-| fi     | vi  | Binds `I` place (restrictive)                                                                                   |
-| fo     | vo  | Binds `O` place (restrictive)                                                                                   |
-| &nbsp; |     |                                                                                                                 |
-| fua    | vua | Binds `A` place (non-restrictive)                                                                               |
-| fue    | vue | Binds `E` place (non-restrictive)                                                                               |
-| fui    | vui | Binds `I` place (non-restrictive)                                                                               |
-| fuo    | vuo | Binds `O` place (non-restrictive)                                                                               |
-| &nbsp; |     |                                                                                                                 |
-| fia    | via | Adverbial : Binds predicate unit (restrictive)                                                                  |
-| fie    | vie | Adverbial : Binds predicate unit (non-restrictive)                                                              |
-| fio    | vio | Adverbial : Binds predicate unit (subordinative)                                                                |
-| &nbsp; |     |                                                                                                                 |
-| fei    | vei | Which place should be bound to make the proposition true ?                                                      |
+| FA     | VA  | Definition                                                 |
+| ------ | --- | ---------------------------------------------------------- |
+| fa     | va  | Binds `A` place (restrictive)                              |
+| fe     | ve  | Binds `E` place (restrictive)                              |
+| fi     | vi  | Binds `I` place (restrictive)                              |
+| fo     | vo  | Binds `O` place (restrictive)                              |
+| &nbsp; |     |                                                            |
+| fua    | vua | Binds `A` place (non-restrictive)                          |
+| fue    | vue | Binds `E` place (non-restrictive)                          |
+| fui    | vui | Binds `I` place (non-restrictive)                          |
+| fuo    | vuo | Binds `O` place (non-restrictive)                          |
+| &nbsp; |     |                                                            |
+| fia    | via | Adverbial : Binds predicate unit (restrictive)             |
+| fie    | vie | Adverbial : Binds predicate unit (non-restrictive)         |
+| fio    | vio | Adverbial : Binds predicate unit (subordinative)           |
+| &nbsp; |     |                                                            |
+| faha   |     | Binds same place (restrictive)                             |
+| fahe   |     | Binds next place (restrictive)                             |
+| fuha   |     | Binds same place (non-restrictive)                         |
+| fuhe   |     | Binds next place (non-restrictive)                         |
 
 If you want to bind a unit to another place than the default one, or perform
 multiple bindings on the unit, you can use **VA**, terminated by **vai**, to

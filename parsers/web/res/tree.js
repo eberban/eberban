@@ -5,6 +5,7 @@ const important_types = [
 	[ 'text', 'text' ],
 	[ 'parser_version', 'parser version' ],
 	[ 'paragraph', 'paragraph' ],
+	[ 'definition', 'definition' ],
 	[ 'sentence', 'sentence' ],
 
 	// scope	

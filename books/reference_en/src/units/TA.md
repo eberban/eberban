@@ -52,13 +52,13 @@ with place structure :
 
 | Word  | Definition                            | Word  | Definition                            |
 | ----- | ------------------------------------- | ----- | ------------------------------------- |
-| ti    | decimal separator                     | tiha  | `<base . number>` separator           |
+| ti    | decimal separator                     | tiha  | `<base digit. number>` separator      |
 | tihe  | `<precise . approximation>` separator | tihi  | `<number . repeating part>` separator |
 |       |                                       |       | &nbsp;                                |
-| taha  | \\(10^3\\) separator (kilo)           | tahe  | \\(10^6\\) separator (mega)           |
-| taho  | \\(10^9\\) separator (giga)           | tahu  | \\(10^{12}\\) separator (tera)        |
-| tahia | \\(10^{15}\\) separator (peta)        | tahie | \\(10^{18}\\) separator (exa)         |
-| tahio | \\(10^{21}\\) separator (zetta)       | tahiu | \\(10^{24}\\) separator (yotta)       |
+| taha  | \\(base^3\\) separator (kilo)         | tahe  | \\(base^6\\) separator (mega)         |
+| taho  | \\(base^9\\) separator (giga)         | tahu  | \\(base^{12}\\) separator (tera)      |
+| tahia | \\(base^{15}\\) separator (peta)      | tahie | \\(base^{18}\\) separator (exa)       |
+| tahio | \\(base^{21}\\) separator (zetta)     | tahiu | \\(base^{24}\\) separator (yotta)     |
 |       |                                       |       | &nbsp;                                |
 | teha  | Vector tag 0                          | tehe  | Vector tag 4                          |
 | teho  | Vector tag 1                          | tehu  | Vector tag 5                          |
@@ -67,7 +67,7 @@ with place structure :
 |       |                                       |       | &nbsp;                                |
 | tae   | negative sign                         | tao   | number/digit question                 |
 
-> `tiha` "base" is the highest digit possible in that base. Base 10 is thus `tei
-> tiha ..`, base 6 is `tie tiha ..`, ..
+> `tiha` "base digit" is the highest digit possible in that base. Base 10 is
+> thus `tei (9) tiha ..`, base 6 is `tie (5) tiha ..`, ..
 
-> TODO : Explain multiple \\(10^n\\) separators.
+> TODO : Explain multiple \\(base^n\\) separators.

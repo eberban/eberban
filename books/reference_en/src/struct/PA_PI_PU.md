@@ -2,11 +2,20 @@
 
 ## Proposition [PA + PAI]
 
-**pa** indicates the start of a proposition, while **pai** indicates the end of
+**PA** indicates the start of a sentence, while **pai** indicates the end of
 it. Both are elidable, meaning they can be removed if the text would not be
-parsed differenly. **pa** is often only used to separate propositions, while
+parsed differenly. **PA** is often only used to separate propositions, while
 **pai** is more rarely used if something needs to be attached to a proposition a
 posteriori.
+
+Each member of **PA** encore a different illocution :
+
+- **pa :** assertive sentence, that can be believ or disbelieved, and is either true or false.
+- **paha :** vocative. Defines the listener as the `A` place of the scope.
+- **pahe :** declarative sentence, that is true only because uttered (used for declarations, announcements, etc).
+- **pahi :** directive sentence, that is requested, wished or ordered to be true.
+- **paho :** admonitive sentence, that describes only a potential act or situation which may occur unless avoided (used for warnings).
+- **pahu :** hortative sentence, that is used for statements that are untrue or unreal but whished to be true or real ("if only ..").
 
 ## Predicate arguments [PI]
 
