@@ -1,0 +1,21 @@
+{
+  "name": "eberban",
+  "version": "0.0.0",
+  "description": "eberban language main library",
+  "author": "mia entropy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mia-entropy/eberban"
+  },
+
+  "dependencies": {
+    "pegjs": ">=0.7.0 <=0.8.0"
+  },
+  
+  "scripts": {
+    "peg_to_pegjs": "node ./scripts/peg_to_pegjs ./grammar/eberban.peg",
+
+    "prebuild_peg": "npm run peg_to_pegjs",
+    "build_peg": "node ./scripts/build_peg ./grammar/eberban.pegjs"
+  }
+}

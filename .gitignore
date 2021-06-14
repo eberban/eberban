@@ -1,2 +1,6 @@
 node_modules
 books/*/book
+
+# Only keep source PEG file.
+node/grammar/eberban.js
+node/grammar/eberban.pegjs
