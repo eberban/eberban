@@ -1,9 +1,3 @@
-var IS_NODEJS_ENV = new Function("try {return this===global;} catch(e) {return false;}");
-
-
-
-// =========================================================================== //
-
 function remove_spaces(tree) {
     if (tree.length > 0 && among(tree[0], ["spaces", "initial_spaces"])) return null;
     var i = 0;

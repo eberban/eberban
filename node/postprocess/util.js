@@ -1,9 +1,3 @@
-var IS_NODEJS_ENV = new Function("try {return this===global;} catch(e) {return false;}");
-
-
-
-// =========================================================================== //
-
 function remove_spaces(tree) {
     if (tree.length > 0 && among(tree[0], ["spaces", "initial_spaces"])) return null;
     var i = 0;
@@ -16,7 +10,6 @@ function remove_spaces(tree) {
     }
     return tree;
 }
-
 /*
  * EXAMPLE OF PARSE TREE PRUNING PROCEDURE
  * 
@@ -85,7 +78,7 @@ function among(v, s) {
 
 function is_family(v) {
     if (!is_string(v)) return false;
-    return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUQH])+$/g);
+    return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUH])+$/g);
 }
 
 function is_string(v) {
@@ -96,3 +89,16 @@ function is_array(v) {
     return Object.prototype.toString.call(v) === '[object Array]';
 }
 
+function is_number(v) {
+	return Object.prototype.toString.call(v) === '[object Number]';
+}
+
+module.exports.remove_spaces = remove_spaces;
+module.exports.remove_morphology = remove_morphology;
+module.exports.join_expr = join_expr;
+module.exports.is_target_node = is_target_node;
+module.exports.among = among;
+module.exports.is_family = is_family;
+module.exports.is_string = is_string;
+module.exports.is_array = is_array;
+module.exports.is_number = is_number;
