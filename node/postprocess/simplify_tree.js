@@ -1,3 +1,5 @@
+const { is_string } = require('./util');
+
 // List of important types in eberban that we want to show up in the simplified
 // tree.
 const important_types = [
@@ -83,7 +85,7 @@ for (let replace of important_types) {
  */
 function simplifyTree(parse) {
 	// if it is a terminal, just return that
-	if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
+	if (parse.length == 2 && is_string(parse[0]) && is_string(parse[1])) {
 		return [
 			{
 				type: parse[0],
@@ -101,7 +103,7 @@ function simplifyTree(parse) {
 
 	// else, we recursively search the children for things we do have a simplification function for
 	var result;
-	if (isString(parse[0])) {
+	if (is_string(parse[0])) {
 		result = simplifyArrayOfTrees(parse.slice(1));
 	} else {
 		result = simplifyArrayOfTrees(parse);

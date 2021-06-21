@@ -1,6 +1,7 @@
-const $ = require('jquery');
-const { camxes } = require('../grammar/eberban');
+export const { camxes } = require('../grammar/eberban');
 const { remove_morphology, remove_spaces } = require('../postprocess/util');
+const { simplifyTree } = require('../postprocess/simplify_tree');
+export const { postprocessing } = require('../postprocess/process_parse_tree');
 const yaml = require('js-yaml');
 
 var request = new XMLHttpRequest();
@@ -62,10 +63,6 @@ function boxClassForType(parse) {
 	return boxClass || 'box box-not-shown';
 }
 
-$(document).ready(function() {
-	$('label').popover();
-});
-
 function escapeHtml(str) {
 	var p = document.createElement('p');
 	p.appendChild(document.createTextNode(str));
@@ -81,7 +78,7 @@ export function parse() {
 	$('#result-row').slideDown();
 	try {
 		var start = new Date().getTime();
-		textToParse = camxes_preprocessing(textToParse);
+		textToParse = ' ' + textToParse; // add initial space to help parser
 		var parse = camxes.parse(textToParse);
 		var end = new Date().getTime();
 		$('#time-label').html('(parsing took ' + (end - start) + ' ms)');
@@ -90,7 +87,7 @@ export function parse() {
 		var simplified = simplifyTree(parse);
 
 		if (parse) {
-			tokens = [];
+			var tokens = [];
 			findTokens(parse, tokens);
 
 			// var $parseResultHighlighted = $('#parse-result-highlighted');
@@ -145,7 +142,7 @@ function findTokens(parse, tokens) {
 		if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
 			tokens.push(parse[1]);
 		} else {
-			for (child in parse) {
+			for (var child in parse) {
 				findTokens(parse[child], tokens);
 			}
 		}

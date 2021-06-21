@@ -54,6 +54,8 @@
 
 if (typeof alert !== 'function') alert = console.log; // For Node.js
 
+const { is_array, is_family, is_string, is_number } = require('./util');
+
 /*
  * Main function.
  */
@@ -342,11 +344,11 @@ function among(v, s) {
 	return false;
 }
 
-function is_family(v) {
-	if (!is_string(v)) return false;
-	// return v.startsWith("p_");
-	return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUQH])+$/g);
-}
+// function is_family(v) {
+// 	if (!is_string(v)) return false;
+// 	// return v.startsWith("p_");
+// 	return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUQH])+$/g);
+// }
 
 // ========================================================================== //
 
