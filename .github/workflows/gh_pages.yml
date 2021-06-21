@@ -36,6 +36,29 @@ jobs:
         run: |
           ~/.cargo/bin/mdbook build books/reference_en
 
+      - name: Install node
+        uses: actions/setup-node@v1.4.1
+        with:
+          node-version: "13.9.0"
+        
+      - name: npm install
+        run: |
+          cd node
+          npm install
+          cd ..
+
+      - name: build PEG
+        run: |
+          cd node
+          npm run build_peg
+          cd ..
+
+      - name: build JS bundle
+        run: |
+          cd node
+          npm run webpack
+          cd ..
+
       - name: Commit changes to gh-pages
         run: |
           rm -f .gitignore
@@ -43,5 +66,5 @@ jobs:
           git config user.name "GitHub Actions"
           git checkout -b tmp/gh-pages
           git add -A
-          git commit -m "Build mdbook"
+          git commit -m "Update GitHub pages"
           git push origin tmp/gh-pages:gh-pages --force
