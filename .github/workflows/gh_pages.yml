@@ -37,23 +37,23 @@ jobs:
           ~/.cargo/bin/mdbook build books/reference_en
 
       - name: Install node
-        uses: actions/setup-node@v1.4.1
+        uses: actions/setup-node@v1
         with:
-          node-version: "13.9.0"
+          node-version: "12.18.3"
         
-      - name: npm install
+      - name: Install NPM dependencies
         run: |
           cd node
           npm install
           cd ..
 
-      - name: build PEG
+      - name: Build PEG grammar
         run: |
           cd node
           npm run build_peg
           cd ..
 
-      - name: build JS bundle
+      - name: Build JS bundle
         run: |
           cd node
           npm run webpack
