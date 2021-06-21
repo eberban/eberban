@@ -1,1 +1,0 @@
-cargo run -- interactive-dictionary -d ../words.yaml

@@ -14,19 +14,12 @@ at being simple, regular and expressive.
 - Expressive: predicates can be combined and transformed in a variety of ways,
   greatly increasing the expressive power of the language.
 
-> From a lojbanist perspective: it aims at merging brivla and rafsi (by having
-> all predicate words follow a carefully designed pattern of sonorants
-> non-sonorants consonants and vowels/apostrophes; [more
-> details](https://mia-entropy.github.io/eberban/books/tour/book/morphology.html)).
-> Following a suggestion by la uakci, it also removes sumti from the grammar and
-> works only with predicates themselves.
-
 For more resources about the language, please visit this repository's [GitHub
 pages](https://mia-entropy.github.io/eberban/). Among others, you will find a
 [reference
 grammar](https://mia-entropy.github.io/eberban/books/reference_en/book/) (WIP at
 the moment), a [visual
-parser](https://mia-entropy.github.io/eberban/parsers/web/parser_box_glosser.html)
+parser](https://mia-entropy.github.io/eberban/web/parser_box_glosser.html)
 and a succint illustration of our [custom writing
 system](https://mia-entropy.github.io/eberban/images/writing_system.svg). If you
 would like to get involved, please also consider joining our [Discord
