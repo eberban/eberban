@@ -35,13 +35,32 @@ jobs:
       - name: Build book
         run: |
           ~/.cargo/bin/mdbook build books/reference_en
+        
+      - name: Install NPM dependencies
+        run: |
+          cd node
+          npm install
+          cd ..
+
+      - name: Build PEG grammar
+        run: |
+          cd node
+          npm run build_peg
+          cd ..
+
+      - name: Build JS bundle
+        run: |
+          cd node
+          npm run webpack
+          cd ..
 
       - name: Commit changes to gh-pages
         run: |
           rm -f .gitignore
+          echo "node_modules" > .gitignore
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
           git checkout -b tmp/gh-pages
           git add -A
-          git commit -m "Build mdbook"
+          git commit -m "Update GitHub pages"
           git push origin tmp/gh-pages:gh-pages --force

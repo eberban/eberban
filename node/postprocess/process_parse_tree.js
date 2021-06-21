@@ -50,9 +50,11 @@
  *   -- is_number(v)
  */
 
-var glosser = require('../gismudata.js');
+// var glosser = require('../gismudata.js');
 
 if (typeof alert !== 'function') alert = console.log; // For Node.js
+
+const { is_array, is_family, is_string, is_number } = require('./util');
 
 /*
  * Main function.
@@ -307,9 +309,9 @@ function process_parse_tree(
 		/* If the node contains only one element and we want to trim the node,
        it gets replaced by its content. */
 
-		if (with_glossing && glosser.words[parse_tree[0]]) {
-			parse_tree[0] = "'" + glosser.words[parse_tree[0]].short + "'";
-		}
+		// if (with_glossing && glosser.words[parse_tree[0]]) {
+		// 	parse_tree[0] = "'" + glosser.words[parse_tree[0]].short + "'";
+		// }
 		return parse_tree[0];
 	} else if (must_prefix_leaf_labels && i == 2 && has_name && is_string(parse_tree[1])) {
 		/* If 'must_prefix_leaf_labels' is set and the node is a pair of string,
@@ -342,11 +344,11 @@ function among(v, s) {
 	return false;
 }
 
-function is_family(v) {
-	if (!is_string(v)) return false;
-	// return v.startsWith("p_");
-	return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUQH])+$/g);
-}
+// function is_family(v) {
+// 	if (!is_string(v)) return false;
+// 	// return v.startsWith("p_");
+// 	return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUQH])+$/g);
+// }
 
 // ========================================================================== //
 
@@ -402,26 +404,7 @@ function str_replace(str, pos, len, sub) {
 	} else return str;
 }
 
-function is_string(v) {
-	return Object.prototype.toString.call(v) === '[object String]';
-}
-
-function is_array(v) {
-	return Object.prototype.toString.call(v) === '[object Array]';
-}
-
-function is_number(v) {
-	return Object.prototype.toString.call(v) === '[object Number]';
-}
-
-if (typeof module !== 'undefined') {
-	module.exports.postprocessing = camxes_postprocessing;
-	module.exports.postprocess = camxes_postprocessing; // Alias
-	module.exports.process_parse_tree = process_parse_tree;
-	module.exports.prettify_brackets = prettify_brackets;
-	if (typeof process !== 'undefined' && require !== 'undefined' && require.main === module) {
-		var fs = require('fs');
-		var input = process.argv.length > 2 ? process.argv[2] : fs.readFileSync(0, 'utf-8');
-		console.log(camxes_postprocessing(input, 'T'));
-	}
-}
+module.exports.postprocessing = camxes_postprocessing;
+module.exports.postprocess = camxes_postprocessing; // Alias
+module.exports.process_parse_tree = process_parse_tree;
+module.exports.prettify_brackets = prettify_brackets;

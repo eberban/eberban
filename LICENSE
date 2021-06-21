@@ -23,9 +23,8 @@ SOFTWARE.
 
                    ---------------------------------------
 
-
-The files “camxes.js.peg” and “camxes.js” are copyright (c) 2013, 2014 Masato
-Hagiwara and licensed as follow:
+The files “node/scripts/{build_peg.js | peg_to_pegjs.js}” are copyright (c)
+2013, 2014 Masato Hagiwara and licensed as follow:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,3 +1,14 @@
+export const { camxes } = require('../grammar/eberban');
+const { remove_morphology, remove_spaces } = require('../postprocess/util');
+const { simplifyTree } = require('../postprocess/simplify_tree');
+export const { postprocessing } = require('../postprocess/process_parse_tree');
+const yaml = require('js-yaml');
+
+var request = new XMLHttpRequest();
+request.open('GET', '../words.yaml', false); // `false` makes the request synchronous
+request.send(null);
+var words = yaml.load(request.responseText);
+
 const hideTitleList = [
 	'scope',
 	'scope group',
@@ -9,7 +20,7 @@ const hideTitleList = [
 	'sequential negation',
 	'sequential binding',
 	'explicit binding',
-	'subscope',
+	'subscope'
 ];
 
 // List of types with their associated CSS classes.
@@ -44,17 +55,13 @@ const boxClassForTypeMap = new Map([
 	[ 'indicator', 'box box-note' ],
 	[ 'discursive', 'box box-note' ],
 	[ 'subscript', 'box box-note' ],
-	[ 'parenthetical', 'box box-note' ],
+	[ 'parenthetical', 'box box-note' ]
 ]);
 
 function boxClassForType(parse) {
 	let boxClass = boxClassForTypeMap.get(parse.type);
 	return boxClass || 'box box-not-shown';
 }
-
-$(document).ready(function() {
-	$('label').popover();
-});
 
 function escapeHtml(str) {
 	var p = document.createElement('p');
@@ -66,12 +73,12 @@ function escapeHtml(str) {
  * Launches the parsing process by calling the parser with the data entered in the interface,
  * and processing the results.
  */
-function parse() {
+export function parse() {
 	var textToParse = $('#input_textarea').val();
 	$('#result-row').slideDown();
 	try {
 		var start = new Date().getTime();
-		textToParse = camxes_preprocessing(textToParse);
+		textToParse = ' ' + textToParse; // add initial space to help parser
 		var parse = camxes.parse(textToParse);
 		var end = new Date().getTime();
 		$('#time-label').html('(parsing took ' + (end - start) + ' ms)');
@@ -80,7 +87,7 @@ function parse() {
 		var simplified = simplifyTree(parse);
 
 		if (parse) {
-			tokens = [];
+			var tokens = [];
 			findTokens(parse, tokens);
 
 			// var $parseResultHighlighted = $('#parse-result-highlighted');
@@ -135,7 +142,7 @@ function findTokens(parse, tokens) {
 		if (parse.length == 2 && isString(parse[0]) && isString(parse[1])) {
 			tokens.push(parse[1]);
 		} else {
-			for (child in parse) {
+			for (var child in parse) {
 				findTokens(parse[child], tokens);
 			}
 		}
@@ -556,17 +563,6 @@ function enumerateTokens(simplified, mode) {
 	return output;
 }
 
-function isModalSumti(sumti) {
-	var tag = sumti[1][0];
-	return tag === 'tag'; // TODO It would be much nicer to make some methods for walking the parse tree, and using them
-}
-
-function markupError(error, before, after) {
-	// TODO
-	before[error.position] = '<span class="lojban-error" title="' + error.message + '">' + before[error.position];
-	after[error.position] = after[error.position] + '</span>';
-}
-
 /**
  * Shows the glossing in the interface.
  */
@@ -607,20 +603,15 @@ function showGlossing(text, $element) {
 					words[word].eng_long ? escapeHtml(words[word].eng_long) : words[word].eng_short
 				];
 			}
-		}		
+		}
 	}
 
 	definitions = sortMapByKey(definitions);
 
-		for (var key in definitions) {
-			output += '<dt>' + key + '</dt>';
-			output +=
-				'<dd><span class="gloss-family">' +
-				definitions[key][0] +
-				'</span>' +
-				definitions[key][1] +
-				'</dd>';
-		};
+	for (var key in definitions) {
+		output += '<dt>' + key + '</dt>';
+		output += '<dd><span class="gloss-family">' + definitions[key][0] + '</span>' + definitions[key][1] + '</dd>';
+	}
 
 	output += '</dl>';
 

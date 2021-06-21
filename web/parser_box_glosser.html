@@ -6,17 +6,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 	<title>eberban visual parser</title>
 	<link type="text/css" href="./res/layout.css" rel="stylesheet">
-	<link rel="icon" href="./../../images/favicon.ico">
+	<link rel="icon" href="./../images/favicon.ico">
 	<link href="./res/bootstrap.css" rel="stylesheet">
-	<script src="./res/jquery.js"></script>
-	<script src="./res/js-yaml.min.js"></script>
-	<script src="./res/words.js"></script>
-	<script src="./res/remove_morphology.js"></script>
-	<script src="./res/camxes_preproc.js"></script>
-	<script src="./res/interface.js"></script>
-	<script src="./res/tree.js"></script>
-	<script src="./../../grammar/camxes.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="./res/bootstrap.js"></script>
+	<script src="./res/bundle.js"></script>
 </head>
 
 <body>
@@ -45,13 +39,13 @@
 				<ul class="nav nav-tabs">
 					<!-- <li><a id="parse-result-highlighted-tab" href="glosser.htm#parse-result-highlighted"
 							data-toggle="tab">Highlighted</a></li> -->
-					<li><a id="parse-result-raw-tab" href="glosser.htm#parse-result-raw" data-toggle="tab">Raw tree</a></li>
-					<li><a id="parse-result-tree-tab" href="glosser.htm#parse-result-tree" data-toggle="tab">Parse tree</a></li>
-					<li><a id="parse-result-simplified-tab" href="glosser.htm#parse-result-simplified"
+					<li><a id="parse-result-raw-tab" href="#parse-result-raw" data-toggle="tab">Raw tree</a></li>
+					<li><a id="parse-result-tree-tab" href="#parse-result-tree" data-toggle="tab">Parse tree</a></li>
+					<li><a id="parse-result-simplified-tab" href="#parse-result-simplified"
 							data-toggle="tab">Simplified tree</a></li>
-					<li class="active"><a id="parse-result-boxes-tab" href="glosser.htm#parse-result-boxes"
+					<li class="active"><a id="parse-result-boxes-tab" href="#parse-result-boxes"
 							data-toggle="tab">Boxes</a></li>
-					<li><a id="parse-result-glossing-tab" href="glosser.htm#parse-result-glossing" data-toggle="tab">Glosses</a>
+					<li><a id="parse-result-glossing-tab" href="#parse-result-glossing" data-toggle="tab">Glosses</a>
 					</li>
 				</ul>
 				<div class="tab-content">
@@ -74,12 +68,16 @@
 </body>
 
 <script>
+	// $(document).ready(function() {
+	// 	$('label').popover();
+	// });
+
 	// parse on page reload
-	parse();
+	bundle.parse();
 
 	$('#input_textarea').bind("keyup",
       function (e) {
-        parse();
+        bundle.parse();
       });
 </script>
 

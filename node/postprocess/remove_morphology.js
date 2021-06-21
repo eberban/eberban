@@ -1,17 +1,3 @@
-var IS_NODEJS_ENV = new Function("try {return this===global;} catch(e) {return false;}");
-
-if (IS_NODEJS_ENV()) {
-    module.exports = remove_morphology;
-
-    /* Just for testing the program from the terminal. */
-    var test_input = ["text",["text_part_2",[["free",["vocative",[["COI_clause",["COI_pre",["COI",[["c","c"],["o","o"],["i","i"]]],["spaces",["initial_spaces"]]]]]],["sumti",["sumti_1",["sumti_2",["sumti_3",["sumti_4",["sumti_5",["quantifier",["number",["PA_clause",["PA_pre",["PA",[["r","r"],["o","o"]]],["spaces",["initial_spaces"]]]]],["BOI"]],["sumti_6",["KOhA_clause",["KOhA_pre",["KOhA",[["d","d"],["o","o"]]]]]]]]]]]],["DOhU"]]]]];
-
-    console.log(JSON.stringify(remove_morphology(test_input)));
-    process.exit();
-}
-
-// =========================================================================== //
-
 function remove_spaces(tree) {
     if (tree.length > 0 && among(tree[0], ["spaces", "initial_spaces"])) return null;
     var i = 0;
