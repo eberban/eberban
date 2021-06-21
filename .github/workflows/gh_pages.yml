@@ -35,11 +35,6 @@ jobs:
       - name: Build book
         run: |
           ~/.cargo/bin/mdbook build books/reference_en
-
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "12.18.3"
         
       - name: Install NPM dependencies
         run: |
@@ -62,6 +57,7 @@ jobs:
       - name: Commit changes to gh-pages
         run: |
           rm -f .gitignore
+          echo "node_modules" > .gitignore
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
           git checkout -b tmp/gh-pages
