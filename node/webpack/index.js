@@ -5,7 +5,7 @@ export const { postprocessing } = require('../postprocess/process_parse_tree');
 const yaml = require('js-yaml');
 
 var request = new XMLHttpRequest();
-request.open('GET', '../../words.yaml', false); // `false` makes the request synchronous
+request.open('GET', '../words.yaml', false); // `false` makes the request synchronous
 request.send(null);
 var words = yaml.load(request.responseText);
 
