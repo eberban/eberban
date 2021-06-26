@@ -1,13 +1,12 @@
 export const { camxes } = require('../grammar/eberban');
-const { remove_morphology, remove_spaces } = require('../postprocess/util');
-const { simplifyTree } = require('../postprocess/simplify_tree');
-export const { postprocessing } = require('../postprocess/process_parse_tree');
-const yaml = require('js-yaml');
+const { remove_morphology, remove_spaces } = require('../src/util');
+const { simplifyTree } = require('../src/simplify_tree');
+export const { postprocessing } = require('../src/process_parse_tree');
 
-var request = new XMLHttpRequest();
-request.open('GET', '../words.yaml', false); // `false` makes the request synchronous
-request.send(null);
-var words = yaml.load(request.responseText);
+const { words_en: words, words_en } = require('../src/dictionary');
+
+console.log(`words: ${words_en}`);
+
 
 const hideTitleList = [
 	'scope',

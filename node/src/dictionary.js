@@ -1,0 +1,1 @@
+module.exports.words_en = require('../../dictionary/en.yaml');
