@@ -42,16 +42,10 @@ jobs:
           npm install
           cd ..
 
-      - name: Build PEG grammar
-        run: |
-          cd node
-          npm run build_peg
-          cd ..
-
       - name: Build JS bundle
         run: |
           cd node
-          npm run webpack
+          npm run build
           cd ..
 
       - name: Commit changes to gh-pages
