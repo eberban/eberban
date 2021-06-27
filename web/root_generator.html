@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">window["_gaUserPrefs"] = { ioo: function () { return true; } }</script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>eberban root generator</title>
+	<link type="text/css" href="./res/layout.css" rel="stylesheet">
+	<link rel="icon" href="./../images/favicon.ico">
+	<link href="./res/bootstrap.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="./res/bootstrap.js"></script>
+	<script src="./res/root_generator.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>eberban root generator</h1>
+
+		<p>
+			This page generates random valid eberban roots that are not yet
+			present in the official dictionary. Refresh the page to generate
+			new words.
+		</p>
+
+		<p>
+			Words are classified by length, shorter forms being prefered for
+			more common concepts.
+		</p>
+
+		<div id="words"></div>
+	</div>
+
+</body>
+
+<script>
+	$('#words').html(bundle.html_3_columns());
+</script>
+
+</html>

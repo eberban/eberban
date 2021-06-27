@@ -1,10 +1,4 @@
-const fs = require('fs');
-const yaml = require('yaml');
-
-var words = fs.readFileSync('../dictionary/en.yaml', 'utf8');
-words = yaml.parse(words);
-
-const complexity = {
+const generators = {
 	A: () => pick_random([ generate_CVCV(1, 0), generate_CCVCV(1, -1) ]),
 	B: () => pick_random([ generate_CVCV(1, 1), generate_CVCV(2, 0), generate_CCVCV(1, 0), generate_CCVCV(2, -1) ]),
     C: () => pick_random([ generate_CVCV(2, 1), generate_CVCV(2, 1), generate_CCVCV(1, 1), generate_CCVCV(2, 0) ])
@@ -139,17 +133,5 @@ function generate_CCVCV(v1, v2) {
 	return word;
 }
 
-if (process.argv.length != 4 || !['A','B','C'].includes(process.argv[3])) {
-    console.log('usage : word_generator <amount> {A/B/C} ');
-    return;
-}
-
-repeat(process.argv[2], () => {
-    while (true) {
-        let word = complexity[process.argv[3]]();
-        if (words[word] == undefined) {
-            console.log(word);
-            return;
-        }
-    }
-});
+module.exports.generators = generators;
+module.exports.repeat = repeat;
