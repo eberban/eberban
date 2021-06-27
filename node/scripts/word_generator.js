@@ -139,14 +139,14 @@ function generate_CCVCV(v1, v2) {
 	return word;
 }
 
-if (process.argv.length != 4 || !['A','B','C'].includes(process.argv[2])) {
-    console.log('usage : word_generator {A/B/C} <amount>');
+if (process.argv.length != 4 || !['A','B','C'].includes(process.argv[3])) {
+    console.log('usage : word_generator <amount> {A/B/C} ');
     return;
 }
 
-repeat(process.argv[3], () => {
+repeat(process.argv[2], () => {
     while (true) {
-        let word = complexity[process.argv[2]]();
+        let word = complexity[process.argv[3]]();
         if (words[word] == undefined) {
             console.log(word);
             return;

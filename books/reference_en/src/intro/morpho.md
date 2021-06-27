@@ -1,11 +1,11 @@
 # Morphology
 
-The morphology of eberban is quite simple. In terms of letters, there are 5
-vowels (**a, e, i, o, u**), 16 consonants (**b, c, d, f, g, j, k, l, m, n, p, r,
-s, t, v, z**) and a semi-consonant **h**, for a total of 22 letters. There is
-also one symbol denoting a pause in speech, namely the apostrophe **'**, which
-is optional in written media as long as there are spaces alongside it. Among the
-consonants, two special ones are designated as **sonorants** : **n** and **r**.
+The morphology of eberban is composed of 5 vowels (**a, e, i, o, u**), 16
+consonants (**b, c, d, f, g, j, k, l, m, n, p, r, s, t, v, z**) and a
+semi-consonant **h**, for a total of 22 letters. There is also one symbol **'**
+(**.** is also accepted) marking word boundary, which is optional in written
+media as long as there are spaces alongside it. Among the consonants, two
+special ones are designated as **sonorants** : **n** and **r**.
 
 Vowels and **h** can appear in clusters. **h** can appear only between 2 vowels,
 and the same vowel cannot appear more than one in a row. We call these *vowel
@@ -19,10 +19,15 @@ denote concepts with an intrinsic meaning, such as "cat", "language" or "teach".
 Particles are organised in families sharing the same grammar and usually
 starting with the same consonnant.
 
+
 There are also 2 other types of words : *compounds* and *borrowings*. Compounds
 are made from one or multiple smaller words, while borrowings allows to imports
 foreign words or names. Compounds starts with **a, e, i, o** and borrowings with
 **u**.
+
+Borrowings must end in a vowel which can be followed by a sonorant. In written
+media it must be followed by a space or word boundary marker, while in speech
+the last vowel must be stressed.
 
 > **Remark:** If you are familiar with Lojban, you may view particles as
 > analogous to cmavo, roots to gismu, compounds to lujvo and borrowings to
@@ -41,7 +46,7 @@ separated by spaces (" ").
 
 >  **For the advanced reader:** you may have noticed that all words start with
 >  either a vowel (preceded by a pause), or a non-sonorant; and that all words
->  (except borrowings) end with either a vowel or a sonorant. This is by design.
+>  end with either a vowel or a sonorant. This is by design.
 >  As we will later see, these seemingly artificial restrictions involving
 >  sonorants ensure that, even if words (except borrowings) are strung together
 >  without any spaces between them, they can still be uniquely decomposed (i.e.

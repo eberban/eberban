@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.32
+# eberban PEG grammar - v0.33
 # ===========================
 
 # GRAMMAR
@@ -29,11 +29,11 @@ subscope <- arguments_list? definition* scope
 # scope
 scope <- scope_1 # allow to find only the top-level scopes when using connectives
 
-scope_1 <- scope_connectives / scope_2
-scope_connectives <- scope_2 (DA_clause scope_2)+
+scope_1 <- scope_2 scope_left_bind*
+scope_left_bind <- PE_clause explicit_binding? scope_1?
 
-scope_2 <- scope_group / scope_3
-scope_group <- PE_clause scope_1 PEI_clause_elidible
+scope_2 <- scope_connectives / scope_3
+scope_connectives <- scope_3 (DA_clause scope_3)+
 
 scope_3 <- scope_plural / scope_4
 scope_plural <- scope_4 (BA_clause scope_4)+
@@ -106,9 +106,7 @@ PA_clause           <- free_prefix* spaces? PA free_post*                      #
 PA_clause_elidible  <- PA_clause?                                              #
 PAI_clause          <- free_prefix* spaces? PAI free_post*                     # pred scope terminator
 PAI_clause_elidible <- PAI_clause?                                             #
-PE_clause           <- free_prefix* spaces? PE free_post*                      # scope grouping starter
-PEI_clause          <- free_prefix* spaces? PEI free_post*                     # scope grouping terminator
-PEI_clause_elidible <- PEI_clause?                                             #
+PE_clause           <- free_prefix* spaces? PE free_post*                      # left scope grouping
 PI_clause           <- free_prefix* spaces? PI free_post*                      # pred scope arguments terminator
 PO_clause           <- spaces? PO                                              # definition starter
 POI_clause          <- spaces? POI                                             # definition terminator
@@ -147,7 +145,6 @@ MA    <- &particle (m haeiou)
 PA    <- &particle !(PAI &post_word) (p &a haeiou)
 PAI   <- &particle (p a i)
 PE    <- &particle (p e)
-PEI   <- &particle (p e i)
 PI    <- &particle (p i)
 PO    <- &particle !(POI &post_word) (p &o haeiou)
 POI   <- &particle (p o i)
@@ -181,7 +178,7 @@ compound_word <- spaces? (borrowing / native_word)
 borrowing <-  u (spaces &u / !u) borrowing_content borrowing_end
 borrowing_content <- foreign_word
 borrowing_end <- (pause_char / space_char / EOF)
-foreign_word <- (initial_consonant_pair / consonant / h)? haeiou (consonant_cluster haeiou)* consonant? consonant?
+foreign_word <- (initial_consonant_pair / consonant / h)? haeiou (consonant_cluster haeiou)* sonorant?
 
 # - Native words
 native_word <- root / particle

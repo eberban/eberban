@@ -1,1238 +1,1457 @@
 # eberban word list (en)
 ---
 # Specials :
-_cardinal: "(A) is (a set of) [number] things satisfying [E1]."
-_number: "(A) is the (abstract) number [number] with dimension/unit [E1] (default: contextual, usually explicited by another unit)."
+_cardinal:
+  long: "(A) is (a set of) [number] things satisfying [E1]."
+  type: [ICollective, Property]
+_number:
+  long: |
+    (A) is the (abstract) number [number] with dimension/unit [E1]
+    (default: contextual, usually explicited by another unit).
 0:
-  _family: "TA"
-  eng_long: "Digit 0"
-  eng_short: "ta"
+  family: "TA"
+  long: "Digit 0"
+  short: "ta"
 1:
-  _family: "TA"
-  eng_long: "Digit 1"
-  eng_short: "te"
+  family: "TA"
+  long: "Digit 1"
+  short: "te"
 2:
-  _family: "TA"
-  eng_long: "Digit 2"
-  eng_short: "to"
+  family: "TA"
+  long: "Digit 2"
+  short: "to"
 3:
-  _family: "TA"
-  eng_long: "Digit 3"
-  eng_short: "tu"
+  family: "TA"
+  long: "Digit 3"
+  short: "tu"
 4:
-  _family: "TA"
-  eng_long: "Digit 4"
-  eng_short: "tia"
+  family: "TA"
+  long: "Digit 4"
+  short: "tia"
 5:
-  _family: "TA"
-  eng_long: "Digit 5"
-  eng_short: "tie"
+  family: "TA"
+  long: "Digit 5"
+  short: "tie"
 6:
-  _family: "TA"
-  eng_long: "Digit 6"
-  eng_short: "tio"
+  family: "TA"
+  long: "Digit 6"
+  short: "tio"
 7:
-  _family: "TA"
-  eng_long: "Digit 7"
-  eng_short: "tiu"
+  family: "TA"
+  long: "Digit 7"
+  short: "tiu"
 8:
-  _family: "TA"
-  eng_long: "Digit 8"
-  eng_short: "tai"
+  family: "TA"
+  long: "Digit 8"
+  short: "tai"
 9:
-  _family: "TA"
-  eng_long: "Digit 9"
-  eng_short: "tei"
+  family: "TA"
+  long: "Digit 9"
+  short: "tei"
 ↊:
-  _family: "TA"
-  eng_long: "Digit ↊/A/10"
-  eng_short: "toi"
+  family: "TA"
+  long: "Digit ↊/A/10"
+  short: "toi"
 ↋:
-  _family: "TA"
-  eng_long: "Digit ↋/B/11"
-  eng_short: "tui"
+  family: "TA"
+  long: "Digit ↋/B/11"
+  short: "tui"
 
 # Particles
 a:
-  _family: "A"
-  eng_long: "Prefix a 1 word long compound."
-  eng_short: ""
+  family: "A"
+  long: "Prefix a 1 word long compound."
+  short: ""
 e:
-  _family: "E"
-  eng_long: "Prefix a 2 words long compound."
-  eng_short: ""
+  family: "E"
+  long: "Prefix a 2 words long compound."
+  short: ""
 i:
-  _family: "I"
-  eng_long: "Prefix a 3 words long compound."
-  eng_short: ""
+  family: "I"
+  long: "Prefix a 3 words long compound."
+  short: ""
 o:
-  _family: "O"
-  eng_long: "Surround an arbitrary long compound."
-  eng_short: ""
+  family: "O"
+  long: "Surround an arbitrary long compound."
+  short: ""
 u:
-  _family: "U"
-  eng_long: "Borrowing: (A) is a [word]."
-  eng_short: ""
+  family: "U"
+  long: "Borrowing: (A) is a [word]."
+  short: ""
+  type: [ICollective]
 mi:
-  _family: "MA"
-  eng_long: "(A) is I/a speaker/author."
-  eng_short: "me"
+  family: "MA"
+  long: "(A) is I/a speaker/author."
+  short: "me"
+  type: [IDistributive]
 mo:
-  _family: "MA"
-  eng_long: "(A) is you, a listener."
-  eng_short: "you"
+  family: "MA"
+  long: "(A) is you, a listener."
+  short: "you"
+  type: [IDistributive]
 moi:
-  _family: "MA"
-  eng_long: "(A) is someone, neither a speaker or listener."
-  eng_short: "other"
+  family: "MA"
+  long: "(A) is someone, neither a speaker or listener."
+  short: "other"
+  type: [IDistributive]
 mohi:
-  _family: "MA"
-  eng_long: "(A) is this here, near a speaker."
-  eng_short: "this"
+  family: "MA"
+  long: "(A) is this here, near a speaker."
+  short: "this"
+  type: [IDistributive]
 moho:
-  _family: "MA"
-  eng_long: "(A) is that here, near a listener."
-  eng_short: "that"
+  family: "MA"
+  long: "(A) is that here, near a listener."
+  short: "that"
+  type: [IDistributive]
 mohu:
-  _family: "MA"
-  eng_long: "(A) is that yonder, far from speaker and listener."
-  eng_short: "that yonder"
+  family: "MA"
+  long: "(A) is that yonder, far from speaker and listener."
+  short: "that yonder"
+  type: [IDistributive]
 mua:
-  _family: "MA"
-  eng_long: "Repeats the last proposition"
-  eng_short: "last prop"
+  family: "MA"
+  long: "Repeats the last proposition"
+  short: "last prop"
+  type: Proposition
 mue:
-  _family: "MA"
-  eng_long: "Repeats the proposition in which this one is embeded (used in abstractions)"
-  eng_short: "outer prop"
+  family: "MA"
+  long: "Repeats the proposition in which this one is embeded (used in abstractions)"
+  short: "outer prop"
+  type: Proposition
 mui:
-  _family: "MA"
-  eng_long: "Repeats current proposition"
-  eng_short: "current prop"
+  family: "MA"
+  long: "Repeats current proposition"
+  short: "current prop"
+  type: Proposition
 muo:
-  _family: "MA"
-  eng_long: "Repeats the next proposition"
-  eng_short: "next prop"
+  family: "MA"
+  long: "Repeats the next proposition"
+  short: "next prop"
+  type: Proposition
 ma:
-  _family: "MA"
-  eng_long: "Binds a variable within an scope that represents an open space."
-  eng_short: "open place"
-me:
-  _family: "MA"
-  eng_long: "Individual question / fill the blank question / (A) is what ?"
-  eng_short: "individual?"
-mei:
-  _family: "MA"
-  eng_long: "Predicate question / fill the blank question."
-  eng_short: "predicate?"
+  family: "MA"
+  long: "Binds a variable within an scope that represents an open space."
+  short: "open place"
 ta:
-  _family: "TA"
-  eng_long: "Digit 0"
-  eng_short: "0"
+  family: "TA"
+  long: "Digit 0"
+  short: "0"
 te:
-  _family: "TA"
-  eng_long: "Digit 1"
-  eng_short: "1"
+  family: "TA"
+  long: "Digit 1"
+  short: "1"
 to:
-  _family: "TA"
-  eng_long: "Digit 2"
-  eng_short: "2"
+  family: "TA"
+  long: "Digit 2"
+  short: "2"
 tu:
-  _family: "TA"
-  eng_long: "Digit 3"
-  eng_short: "3"
+  family: "TA"
+  long: "Digit 3"
+  short: "3"
 tia:
-  _family: "TA"
-  eng_long: "Digit 4"
-  eng_short: "4"
+  family: "TA"
+  long: "Digit 4"
+  short: "4"
 tie:
-  _family: "TA"
-  eng_long: "Digit 5"
-  eng_short: "5"
+  family: "TA"
+  long: "Digit 5"
+  short: "5"
 tio:
-  _family: "TA"
-  eng_long: "Digit 6"
-  eng_short: "6"
+  family: "TA"
+  long: "Digit 6"
+  short: "6"
 tiu:
-  _family: "TA"
-  eng_long: "Digit 7"
-  eng_short: "7"
+  family: "TA"
+  long: "Digit 7"
+  short: "7"
 tai:
-  _family: "TA"
-  eng_long: "Digit 8"
-  eng_short: "8"
+  family: "TA"
+  long: "Digit 8"
+  short: "8"
 tei:
-  _family: "TA"
-  eng_long: "Digit 9"
-  eng_short: "9"
+  family: "TA"
+  long: "Digit 9"
+  short: "9"
 toi:
-  _family: "TA"
-  eng_long: "Digit ↊/A (10)"
-  eng_short: "A"
+  family: "TA"
+  long: "Digit ↊/A (10)"
+  short: "A"
 tui:
-  _family: "TA"
-  eng_long: "Digit ↋/B (11)"
-  eng_short: "B"
+  family: "TA"
+  long: "Digit ↋/B (11)"
+  short: "B"
 taia:
-  _family: "TA"
-  eng_long: "Digit C (12)"
-  eng_short: "C"
+  family: "TA"
+  long: "Digit C (12)"
+  short: "C"
 taie:
-  _family: "TA"
-  eng_long: "Digit D (13)"
-  eng_short: "D"
+  family: "TA"
+  long: "Digit D (13)"
+  short: "D"
 taio:
-  _family: "TA"
-  eng_long: "Digit E (14)"
-  eng_short: "E"
+  family: "TA"
+  long: "Digit E (14)"
+  short: "E"
 taiu:
-  _family: "TA"
-  eng_long: "Digit F (15)"
-  eng_short: "F"
+  family: "TA"
+  long: "Digit F (15)"
+  short: "F"
 ti:
-  _family: "TA"
-  eng_long: "Decimal separator"
-  eng_short: "."
+  family: "TA"
+  long: "Decimal separator"
+  short: "."
 tiha:
-  _family: "TA"
-  eng_long: "<base . number> separator"
-  eng_short: "base"
+  family: "TA"
+  long: "<base . number> separator"
+  short: "base"
 tihe:
-  _family: "TA"
-  eng_long: "<precise . approximation> separator"
-  eng_short: "approx"
+  family: "TA"
+  long: "<precise . approximation> separator"
+  short: "approx"
 tihi:
-  _family: "TA"
-  eng_long: "<precise . repeating part> separator"
-  eng_short: "repeating"
+  family: "TA"
+  long: "<precise . repeating part> separator"
+  short: "repeating"
+tiho:
+  family: "TA"
+  long: "<numerator . denominator> separator"
+  short: "fraction"
 taha:
-  _family: "TA"
-  eng_long: "10^3 separator (kilo)"
-  eng_short: "10^3"
+  family: "TA"
+  long: "10^3 separator (kilo)"
+  short: "10^3"
 tahe:
-  _family: "TA"
-  eng_long: "10^6 separator (mega)"
-  eng_short: "10^6"
+  family: "TA"
+  long: "10^6 separator (mega)"
+  short: "10^6"
 taho:
-  _family: "TA"
-  eng_long: "10^9 separator (giga)"
-  eng_short: "10^9"
+  family: "TA"
+  long: "10^9 separator (giga)"
+  short: "10^9"
 tahu:
-  _family: "TA"
-  eng_long: "10^12 separator (tera)"
-  eng_short: "10^12"
+  family: "TA"
+  long: "10^12 separator (tera)"
+  short: "10^12"
 tahia:
-  _family: "TA"
-  eng_long: "10^15 separator (peta)"
-  eng_short: "10^15"
+  family: "TA"
+  long: "10^15 separator (peta)"
+  short: "10^15"
 tahie:
-  _family: "TA"
-  eng_long: "10^18 separator (exa)"
-  eng_short: "10^18"
+  family: "TA"
+  long: "10^18 separator (exa)"
+  short: "10^18"
 tahio:
-  _family: "TA"
-  eng_long: "10^18 separator (zetta)"
-  eng_short: "10^21"
+  family: "TA"
+  long: "10^21 separator (zetta)"
+  short: "10^21"
 tahiu:
-  _family: "TA"
-  eng_long: "10^18 separator (yotta)"
-  eng_short: "10^25"
+  family: "TA"
+  long: "10^24 separator (yotta)"
+  short: "10^24"
 tae:
-  _family: "TA"
-  eng_long: "negative sign"
-  eng_short: "-"
-tao:
-  _family: "TA"
-  eng_long: "number/digit question"
-  eng_short: "number?"
+  family: "TA"
+  long: "negative sign"
+  short: "-"
 teha:
-  _family: "TA"
-  eng_long: "Vector tag 0"
-  eng_short: "vec 0"
+  family: "TA"
+  long: "Vector tag 0"
+  short: "vec 0"
 tehe:
-  _family: "TA"
-  eng_long: "Vector tag 1"
-  eng_short: "vec 1"
+  family: "TA"
+  long: "Vector tag 1"
+  short: "vec 1"
 teho:
-  _family: "TA"
-  eng_long: "Vector tag 2"
-  eng_short: "vec 2"
+  family: "TA"
+  long: "Vector tag 2"
+  short: "vec 2"
 tehu:
-  _family: "TA"
-  eng_long: "Vector tag 3"
-  eng_short: "vec 3"
+  family: "TA"
+  long: "Vector tag 3"
+  short: "vec 3"
 tehia:
-  _family: "TA"
-  eng_long: "Vector tag 4"
-  eng_short: "vec 4"
+  family: "TA"
+  long: "Vector tag 4"
+  short: "vec 4"
 tehie:
-  _family: "TA"
-  eng_long: "Vector tag 5"
-  eng_short: "vec 5"
+  family: "TA"
+  long: "Vector tag 5"
+  short: "vec 5"
 tehio:
-  _family: "TA"
-  eng_long: "Vector tag 6"
-  eng_short: "vec 6"
+  family: "TA"
+  long: "Vector tag 6"
+  short: "vec 6"
 tehiu:
-  _family: "TA"
-  eng_long: "Vector tag 7"
-  eng_short: "vec 7"
+  family: "TA"
+  long: "Vector tag 7"
+  short: "vec 7"
 la:
-  _family: "LA"
-  eng_long: "Starts grammatically correct eberban quote. (A) is text [quote]."
-  eng_short: ""
+  family: "LA"
+  long: "Starts grammatically correct eberban quote. (A) is text [quote]."
+  short: ""
+  type: [IDistributive]
 lai:
-  _family: "LAI"
-  eng_long: "Ends grammatically correct eberban quote."
-  eng_short: ""
+  family: "LAI"
+  long: "Ends grammatically correct eberban quote."
+  short: ""
 le:
-  _family: "LE"
-  eng_long: "Quote next word. (A) is word [word]."
-  eng_short: "[word]"
+  family: "LE"
+  long: "Quote next word. (A) is word [word]."
+  short: "[word]"
+  type: [IDistributive]
 lei:
-  _family: "LE"
-  eng_long: "(A) is the family of word [word]."
-  eng_short: "[family]"
+  family: "LE"
+  long: "(A) is the family of word [word]."
+  short: "[family]"
+  type: [IDistributive]
 lehi:
-  _family: "LE"
-  eng_long: "Provides a predicate describing the meaning of the following particle"
-  eng_short: "[meaning]"
+  family: "LE"
+  long: "Provides a predicate describing the meaning of the following particle"
+  short: "[meaning]"
+  type: [IDistributive]
 lo:
-  _family: "LO"
-  eng_long: "Starts quote of arbitrary string of words."
-  eng_short: ""
+  family: "LO"
+  long: "Starts quote of arbitrary string of words."
+  short: ""
+  type: [IDistributive]
 fa:
-  _family: "FA"
-  eng_long: "Additional explicit (A) place restrictive binding."
-  eng_short: "(A)"
+  family: "FA"
+  long: "Additional explicit (A) place restrictive binding."
+  short: "(A)"
 fe:
-  _family: "FA"
-  eng_long: "Additional explicit (E) place restrictive binding."
-  eng_short: "(E)"
+  family: "FA"
+  long: "Additional explicit (E) place restrictive binding."
+  short: "(E)"
 fi:
-  _family: "FA"
-  eng_long: "Additional explicit (I) place restrictive binding."
-  eng_short: "(I)"
+  family: "FA"
+  long: "Additional explicit (I) place restrictive binding."
+  short: "(I)"
 fo:
-  _family: "FA"
-  eng_long: "Additional explicit (O) place restrictive binding."
-  eng_short: "(O)"
+  family: "FA"
+  long: "Additional explicit (O) place restrictive binding."
+  short: "(O)"
 fai:
-  _family: "FA"
-  eng_long: "Additional explicit bracket place restrictive binding."
-  eng_short: "[ ]"
+  family: "FA"
+  long: "Additional explicit bracket place restrictive binding."
+  short: "[ ]"
 fua:
-  _family: "FA"
-  eng_long: "Additional explicit (A) place non-restrictive binding."
-  eng_short: "(A) (non-res)"
+  family: "FA"
+  long: "Additional explicit (A) place non-restrictive binding."
+  short: "(A) (non-res)"
 fue:
-  _family: "FA"
-  eng_long: "Additional explicit (E) place non-restrictive binding."
-  eng_short: "(E) (non-res)"
+  family: "FA"
+  long: "Additional explicit (E) place non-restrictive binding."
+  short: "(E) (non-res)"
 fui:
-  _family: "FA"
-  eng_long: "Additional explicit (I) place non-restrictive binding."
-  eng_short: "(I) (non-res)"
+  family: "FA"
+  long: "Additional explicit (I) place non-restrictive binding."
+  short: "(I) (non-res)"
 fuo:
-  _family: "FA"
-  eng_long: "Additional explicit (O) place non-restrictive binding."
-  eng_short: "(O) (non-res)"
+  family: "FA"
+  long: "Additional explicit (O) place non-restrictive binding."
+  short: "(O) (non-res)"
 fia:
-  _family: "FA"
-  eng_long: "Additional explicit adverbial bind (restrictive)"
-  eng_short: "res adv"
+  family: "FA"
+  long: "Additional explicit adverbial bind (restrictive)"
+  short: "res adv"
 fie:
-  _family: "FA"
-  eng_long: "Additional explicit adverbial bind (non-restrictive)"
-  eng_short: "non-res adv"
+  family: "FA"
+  long: "Additional explicit adverbial bind (non-restrictive)"
+  short: "non-res adv"
 fio:
-  _family: "FA"
-  eng_long: "Additional explicit adverbial bind (subordinative)"
-  eng_short: "sub adv"
+  family: "FA"
+  long: "Additional explicit adverbial bind (subordinative)"
+  short: "sub adv"
 faha:
-  _family: "FA"
-  eng_long: "Binds same place (restrictive)"
-  eng_short: "same (res)"
+  family: "FA"
+  long: "Binds same place (restrictive)"
+  short: "same (res)"
 fahe:
-  _family: "FA"
-  eng_long: "Binds next place (restrictive)"
-  eng_short: "next (res)"
+  family: "FA"
+  long: "Binds next place (restrictive)"
+  short: "next (res)"
 fuha:
-  _family: "FA"
-  eng_long: "Binds same place (non-restrictive)"
-  eng_short: "same (non-res)"
+  family: "FA"
+  long: "Binds same place (non-restrictive)"
+  short: "same (non-res)"
 fuhe:
-  _family: "FA"
-  eng_long: "Binds next place (non-restrictive)"
-  eng_short: "next (non-res)"
+  family: "FA"
+  long: "Binds next place (non-restrictive)"
+  short: "next (non-res)"
 va:
-  _family: "VA"
-  eng_long: "First explicit (A) place restrictive binding."
-  eng_short: "(A)"
+  family: "VA"
+  long: "First explicit (A) place restrictive binding."
+  short: "(A)"
 ve:
-  _family: "VA"
-  eng_long: "First explicit (E) place restrictive binding."
-  eng_short: "(E)"
+  family: "VA"
+  long: "First explicit (E) place restrictive binding."
+  short: "(E)"
 vi:
-  _family: "VA"
-  eng_long: "First explicit (I) place restrictive binding."
-  eng_short: "(I)"
+  family: "VA"
+  long: "First explicit (I) place restrictive binding."
+  short: "(I)"
 vo:
-  _family: "VA"
-  eng_long: "First explicit (O) place restrictive binding."
-  eng_short: "(O)"
+  family: "VA"
+  long: "First explicit (O) place restrictive binding."
+  short: "(O)"
 vai:
-  _family: "VAI"
-  eng_long: "Close explicit binding group."
-  eng_short: ""
+  family: "VAI"
+  long: "Close explicit binding group."
+  short: ""
 vua:
-  _family: "VA"
-  eng_long: "First explicit (A) place non-restrictive binding."
-  eng_short: "(A) (non-res)"
+  family: "VA"
+  long: "First explicit (A) place non-restrictive binding."
+  short: "(A) (non-res)"
 vue:
-  _family: "VA"
-  eng_long: "First explicit (E) place non-restrictive binding."
-  eng_short: "(E) (non-res)"
+  family: "VA"
+  long: "First explicit (E) place non-restrictive binding."
+  short: "(E) (non-res)"
 vui:
-  _family: "VA"
-  eng_long: "First explicit (I) place non-restrictive binding."
-  eng_short: "(I) (non-res)"
+  family: "VA"
+  long: "First explicit (I) place non-restrictive binding."
+  short: "(I) (non-res)"
 vuo:
-  _family: "VA"
-  eng_long: "First explicit (O) place non-restrictive binding."
-  eng_short: "(O) (non-res)"
-vei:
-  _family: "VA"
-  eng_long: "Which place should be bound to make the proposition true ?"
-  eng_short: "bind ?"
+  family: "VA"
+  long: "First explicit (O) place non-restrictive binding."
+  short: "(O) (non-res)"
 via:
-  _family: "VA"
-  eng_long: "First explicit adverbial bind (restrictive)"
-  eng_short: "res adv"
+  family: "VA"
+  long: "First explicit adverbial bind (restrictive)"
+  short: "res adv"
 vie:
-  _family: "VA"
-  eng_long: "First explicit adverbial bind (non-restrictive)"
-  eng_short: "non-res adv"
+  family: "VA"
+  long: "First explicit adverbial bind (non-restrictive)"
+  short: "non-res adv"
 vio:
-  _family: "VA"
-  eng_long: "First explicit adverbial bind (subordinative)"
-  eng_short: "sub adv"
+  family: "VA"
+  long: "First explicit adverbial bind (subordinative)"
+  short: "sub adv"
 da:
-  _family: "DA"
-  eng_long: "Logical OR connective."
-  eng_short: "or"
+  family: "DA"
+  long: "Logical OR connective."
+  short: "or"
 de:
-  _family: "DA"
-  eng_long: "Logical AND connective."
-  eng_short: "and"
+  family: "DA"
+  long: "Logical AND connective."
+  short: "and"
 di:
-  _family: "DA"
-  eng_long: "Logical if-and-only-if connective."
-  eng_short: "iif"
+  family: "DA"
+  long: "Logical if-and-only-if connective."
+  short: "iif"
 do:
-  _family: "DA"
-  eng_long: "Logical whether or not (right is non-restrictive)."
-  eng_short: "won right"
+  family: "DA"
+  long: "Logical whether or not (right is non-restrictive)."
+  short: "won right"
 du:
-  _family: "DA"
-  eng_long: "Logical whether or not (left is non-restrictive)."
-  eng_short: "won left"
+  family: "DA"
+  long: "Logical whether or not (left is non-restrictive)."
+  short: "won left"
 sa:
-  _family: "SA"
-  eng_long: "(A) place binding tag."
-  eng_short: "(A)"
+  family: "SA"
+  long: "(A) place binding tag."
+  short: "(A)"
 se:
-  _family: "SA"
-  eng_long: "(E) place binding tag."
-  eng_short: "(E)"
+  family: "SA"
+  long: "(E) place binding tag."
+  short: "(E)"
 si:
-  _family: "SA"
-  eng_long: "(I) place binding tag."
-  eng_short: "(I)"
+  family: "SA"
+  long: "(I) place binding tag."
+  short: "(I)"
 so:
-  _family: "SA"
-  eng_long: "(O) place binding tag."
-  eng_short: "(O)"
-sai:
-  _family: "SA"
-  eng_long: "Which place binding tag would make the proposition true ?"
-  eng_short: "bind-?"
-sei:
-  _family: "SA"
-  eng_long: "Something related to the predicate (vague)."
-  eng_short: "bind-related"
-soi:
-  _family: "SA"
-  eng_long: "Event of the predicate being true."
-  eng_short: "bind-event"
+  family: "SA"
+  long: "(O) place binding tag."
+  short: "(O)"
 za:
-  _family: "ZA"
-  eng_long: "(A) is named [predicate-(A)]."
-  eng_short: "named"
-zai:
-  _family: "ZA"
-  eng_long: "Which transformation would make the proposition true ?"
-  eng_short: "ZA-question"
+  family: "ZA"
+  long: "(A) is named [predicate-(A)]."
+  short: "named"
+  type: [ICollective]
 ze:
-  _family: "ZA"
-  eng_long: "Use the same instance and variables of the following unit instead of a new one."
-  eng_short: "same"
+  family: "ZA"
+  long: "Use the same instance and variables of the following unit instead of a new one."
+  short: "same"
 zi:
-  _family: "ZA"
-  eng_long: "Narrow-scope negation : negates the predicate unit but not the existential variables it create. There exist a, e,... such that unit(a, e, ...) is false."
-  eng_short: "non-"
+  family: "ZA"
+  long: |
+    Narrow-scope negation : negates the predicate unit but not the existential variables it creates.
+    There exist a, e,... such that unit(a, e, ...) is false.
+  short: "non-"
 zo:
-  _family: "ZA"
-  eng_long: "(A) is something referred to by [predicate-(A)]."
-  eng_short: "deref"
+  family: "ZA"
+  long: "(A) is something referred to by [predicate-(A)]."
+  short: "deref"
+  type: [ICollective]
 zoi:
-  _family: "ZA"
-  eng_long: "(A) is a reference/symbol refering to [predicate]."
-  eng_short: "ref"
+  family: "ZA"
+  long: "(A) is a reference/symbol refering to [predicate]."
+  short: "ref"
+  type: [ICollective]
 pa:
-  _family: "PA"
-  eng_long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
-  eng_short: "[assertion]"
-paha:
-  _family: "PA"
-  eng_long: "Starts an vocative. Defines the listener as the A place of the scope."
-  eng_short: "[vocative]"
-pahe:
-  _family: "PA"
-  eng_long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
-  eng_short: "[declaration]"
-pahi:
-  _family: "PA"
-  eng_long: "Starts a directive sentence, that is requested, wished or ordered to be true."
-  eng_short: "[directive]"
-paho:
-  _family: "PA"
-  eng_long: "Starts an admonitive sentence, that describes only a potential act or situation which may occur unless avoided (used for warnings). "
-  eng_short: "[admonitive]"
-pahu:
-  _family: "PA"
-  eng_long: "Starts an hortative sentence, that is used for statements that are untrue or unreal but whished to be true or real (\"if only ..\"). "
-  eng_short: "[hortative]"
+  family: "PA"
+  long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
+  short: "[assertion]"
+pae:
+  family: "PA"
+  long: "Starts an vocative. Defines the listener as the A place of the scope."
+  short: "[vocative]"
+pao:
+  family: "PA"
+  long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
+  short: "[declaration]"
+pau:
+  family: "PA"
+  long: "Starts a directive sentence, that is requested, wished or ordered to be true."
+  short: "[directive]"
 pai:
-  _family: "PAI"
-  eng_long: "Ends an predicate scope."
-  eng_short: ""
+  family: "PAI"
+  long: "Ends an predicate scope."
+  short: ""
 pe:
-  _family: "PE"
-  eng_long: "Starts a scope group (higher precedence than connectives)."
-  eng_short: "["
-pei:
-  _family: "PE"
-  eng_long: "Ends a scope group (higher precedence than connectives)."
-  eng_short: "]"
+  family: "PE"
+  long: "Left grouping binding."
+  short: "[left grouping]"
 pi:
-  _family: "PI"
-  eng_long: "Ends the list of arguments."
-  eng_short: ""
+  family: "PI"
+  long: "Ends the list of arguments."
+  short: ""
 po:
-  _family: "PO"
-  eng_long: "Start a predicate definition."
-  eng_short: ""
-poha:
-  _family: "PO"
-  eng_long: "Start a question definition, the arguments being the unknown informations."
-  eng_short: "[question]"
+  family: "PO"
+  long: "Start a predicate definition."
+  short: ""
+poa:
+  family: "PO"
+  long: "Start a question definition, the arguments being the unknown informations."
+  short: "[question]"
 poi:
-  _family: "POI"
-  eng_long: "Ends a predicate definition."
-  eng_short: ""
+  family: "POI"
+  long: "Ends a predicate definition."
+  short: ""
 pu:
-  _family: "PU"
-  eng_long: "Marks a new paragraph/section/change of subject."
-  eng_short: ""
+  family: "PU"
+  long: "Marks a new paragraph/section/change of subject."
+  short: ""
 ja:
-  _family: "JA"
-  eng_long: "Attaches a subscript number/string."
-  eng_short: "subscript"
+  family: "JA"
+  long: "Attaches a subscript number/string."
+  short: "subscript"
 jai:
-  _family: "JAI"
-  eng_long: "Attaches a predicate (without chaining) to make a discursive."
-  eng_short: "discursive"
+  family: "JAI"
+  long: "Attaches a predicate (without chaining) to make a discursive."
+  short: "discursive"
 je:
-  _family: "JE"
-  eng_long: "Starts a free scope."
-  eng_short: ""
+  family: "JE"
+  long: "Starts a free scope."
+  short: ""
 jei:
-  _family: "JEI"
-  eng_long: "Ends a free scope."
-  eng_short: ""
+  family: "JEI"
+  long: "Ends a free scope."
+  short: ""
 ji:
-  _family: "JI"
-  eng_long: "Override particule meaning with provided predicate."
-  eng_short: "override"
+  family: "JI"
+  long: "Override particule meaning with provided predicate."
+  short: "override"
 jo:
-  _family: "JO"
-  eng_long: "Starts parenthetical note."
-  eng_short: ""
+  family: "JO"
+  long: "Starts parenthetical note."
+  short: ""
 joi:
-  _family: "JOI"
-  eng_long: "Ends parenthetical note."
-  eng_short: ""
+  family: "JOI"
+  long: "Ends parenthetical note."
+  short: ""
 jua:
-  _family: "JU"
-  eng_long: "Emphasis indicator : the next word is especially emphasized."
-  eng_short: "emphasis"
+  family: "JU"
+  long: "Emphasis indicator : the next word is especially emphasized."
+  short: "emphasis"
 jue:
-  _family: "JU"
-  eng_long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
-  eng_short: "non-standard"
+  family: "JU"
+  long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
+  short: "non-standard"
 jui:
-  _family: "JU"
-  eng_long: "Next word is a metadata tag / hashtag."
-  eng_short: "metadata"
+  family: "JU"
+  long: "Next word is a metadata tag / hashtag."
+  short: "metadata"
 juo:
-  _family: "JU"
-  eng_long: "Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope."
-  eng_short: "bracket place"
-ca:
-  _family: "CA"
-  eng_long: "True/false question marker. Ask specificaly if marked word makes the proposition true."
-  eng_short: "true/false?"
-cai:
-  _family: "CA"
-  eng_long: "Indirect question marker. Transform a question word into an indirect question."
-  eng_short: "indirect question"
-ce:
-  _family: "CA"
-  eng_long: "Imperative. The left chaining place of the tagged predicate should make it true."
-  eng_short: "imperative"
-cei:
-  _family: "CA"
-  eng_long: "Answer. Atteched to sentence to indicate it's an answer to a previous question, and not a independent statement."
-  eng_short: "answer"
+  family: "JU"
+  long: "Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope."
+  short: "bracket place"
 cia:
-  _family: "CA"
-  eng_long: "However/but/in contrast."
-  eng_short: "however"
+  family: "CA"
+  long: "However/but/in contrast."
+  short: "however"
 cie:
-  _family: "CA"
-  eng_long: "Similarly."
-  eng_short: "similarly"
+  family: "CA"
+  long: "Similarly."
+  short: "similarly"
 cio:
-  _family: "CA"
-  eng_long: "Additionally."
-  eng_short: "additionally"
+  family: "CA"
+  long: "Additionally."
+  short: "additionally"
 ciu:
-  _family: "CA"
-  eng_long: "Uniquely/only/solely."
-  eng_short: "uniquely"
+  family: "CA"
+  long: "Uniquely/only/solely."
+  short: "uniquely"
 ba:
-  _family: "BA"
-  eng_long: "Form a group (plural variable) from multiple individuals."
-  eng_short: "with"
+  family: "BA"
+  long: "Form a group (plural variable) from multiple individuals."
+  short: "with"
 be:
-  _family: "BE"
-  eng_long: "Ends string/number/borrowing."
-  eng_short: ""
+  family: "BE"
+  long: "Ends string/number/borrowing."
+  short: ""
 bei:
-  _family: "BE"
-  eng_long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [Ⓔ1]."
-  eng_short: "-th"
+  family: "BE"
+  long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [Ⓔ1]."
+  short: "-th"
+  type: [ICollective]
 bi:
-  _family: "BI"
-  eng_long: "Wide scope negation ranging over existential variables, units and bindings."
-  eng_short: "not"
+  family: "BI"
+  long: "Wide scope negation ranging over existential variables, units and bindings."
+  short: "not"
 bo:
-  _family: "BO"
-  eng_long: "Create a new variable and discard previous value if any."
-  eng_short: "new var"
+  family: "BO"
+  long: "Create a new variable and discard previous value if any."
+  short: "new var"
 bu:
-  _family: "BU"
-  eng_long: "Parser version/dialect marker"
-  eng_short: "version/dialect"
+  family: "BU"
+  long: "Parser version/dialect marker"
+  short: "version/dialect"
 
 # Roots :
-# # Time / Space :
-# # # Points :
-pca:
-  _family: "R"
-  eng_long: "[A0] is true/occurs concurrently with/at the same time as (E0) (default: now)."
-  eng_short: "present"
-pci:
-  _family: "R"
-  eng_long: "(A) is at the same place as [E]."
-  eng_short: "same place"
-
-# # # Modifiers :
-pce:
-  _family: "R"
-  eng_long: "(A) is moving in direction [E1]."
-  eng_short: "moves"
-pco:
-  _family: "R"
-  eng_long: "(A0) (direction statement) is expressed in reference frame [E]."
-  eng_short: "reference frame"
-
-# # # Directions :
-pcai:
-  _family: "R"
-  eng_long: "[A0] is true/occurs earlier (T-) than (E0) (default: now)."
-  eng_short: "past"
-pcia:
-  _family: "R"
-  eng_long: "[A0] is true/occurs later (T+) than (E0) (default: now)."
-  eng_short: "future"
+fuir:
+  family: "R"
+  long: "(A) knows fact [E0] from source (I)."
+  short: "knows"
+  type: [IDistributive, Proposition, IDistributive]
+  sequential: true
+zvu:
+  family: "R"
+  long: |
+    "(A) satify relation [E2] with its future self.
+    Allow to describe the evolution of something.
+    Arguments of the relation defines the distributivity of (A)."
+  short: "relation with future self"
+  type: [IArgument, [IArgument, IArgument]]
+  sequential: true
+zde:
+  family: "R"
+  long: "(A0) (default: now) is true/occurs concurrently with/at the same time as [E0] (default: now)."
+  short: "present"
+  type: [Proposition, Proposition]
+  sequential: true
+skir:
+  family: "R"
+  long: "(A) is at the same place as [E]."
+  short: "same place"
+  type: [IDistributive, IDistributive]
+  sequential: true
+jgo:
+  family: "R"
+  long: "(A0) (default: now) occurs before [E0] (default: now)."
+  short: "before"
+  type: [Proposition, Proposition]
+  sequential: true
+slo:
+  family: "R"
+  long: "(A0) (default: now) occurs after [E0] (default: now)."
+  short: "after"
+  type: [Proposition, Proposition]
+  sequential: true
 pcei:
-  _family: "R"
-  eng_long: "(A) is backward/to the back (relative X-) of [E]."
-  eng_short: "back"
-pcie:
-  _family: "R"
-  eng_long: "(A) is forward/to the front (relative X+) of  [E]."
-  eng_short: "front"
-pcoi:
-  _family: "R"
-  eng_long: "(A) is leftward/to the left (relative Y-) of [E]."
-  eng_short: "left"
-pcio:
-  _family: "R"
-  eng_long: "(A) is rightward/to the right (relative Y+) of [E]."
-  eng_short: "right"
-pcui:
-  _family: "R"
-  eng_long: "(A) is below/downwars/down (Z-) from [E]."
-  eng_short: "down"
-pciu:
-  _family: "R"
-  eng_long: "(A) is above/upward/up (Z+) from [E]."
-  eng_short: "up"
-pcein:
-  _family: "R"
-  eng_long: "(A) is southward/to the south (polar X-) of [E]."
-  eng_short: "south"
-pcien:
-  _family: "R"
-  eng_long: "(A) is northward/to the north (polar X+) of [E]."
-  eng_short: "north"
-pcoin:
-  _family: "R"
-  eng_long: "(A) is westward/to the west (polar Y-) of [E]."
-  eng_short: "west"
-pcion:
-  _family: "R"
-  eng_long: "(A) is eastward/to the east (polar Y+) of [E]."
-  eng_short: "east"
+  family: "R"
+  long: "(A) is backward/to the back of [E]."
+  short: "back"
+  type: [IDistributive, IDistributive]
+  sequential: true
+vlo:
+  family: "R"
+  long: "(A) is forward/to the front of [E]."
+  short: "front"
+  type: [IDistributive, IDistributive]
+  sequential: true
+fle:
+  family: "R"
+  long: "(A) is leftward/to the left of [E]."
+  short: "left"
+  type: [IDistributive, IDistributive]
+  sequential: true
+zre:
+  family: "R"
+  long: "(A) is rightward/to the right of [E]."
+  short: "right"
+  type: [IDistributive, IDistributive]
+  sequential: true
+gze:
+  family: "R"
+  long: "(A) is below/downwars/down from [E]."
+  short: "down"
+  type: [IDistributive, IDistributive]
+  sequential: true
+bri:
+  family: "R"
+  long: "(A) is above/upward/up from [E]."
+  short: "up"
+  type: [IDistributive, IDistributive]
+  sequential: true
+cfae:
+  family: "R"
+  long: "(A) is southward/to the south of [E]."
+  short: "south"
+  type: [IDistributive, IDistributive]
+  sequential: true
+jgao:
+  family: "R"
+  long: "(A) is northward/to the north of [E]."
+  short: "north"
+  type: [IDistributive, IDistributive]
+  sequential: true
+tloe:
+  family: "R"
+  long: "(A) is westward/to the west of [E]."
+  short: "west"
+  type: [IDistributive, IDistributive]
+  sequential: true
+glea:
+  family: "R"
+  long: "(A) is eastward/to the east of [E]."
+  short: "east"
+  type: [IDistributive, IDistributive]
+  sequential: true
+vuno:
+  family: "R"
+  long: "(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here)."
+  short: "space distance"
+  type: [IDistributive, Number, IDistributive]
+  sequential: true
+ganu:
+  family: "R"
+  long: "(A0) is true/occurs at a distance in time of [E] (mesure, years by default / event with this duration) from (I0) (default: now)."
+  short: "time distance"
+  type: [Proposition, Number, Proposition]
+  sequential: true
+zini:
+  family: "R"
+  long: "(A0) is true/occurs over time interval/length [E] (measure, years by default / event with same duration)."
+  short: "time length"
+  type: [Proposition, Number]
+  sequential: true
+cunu:
+  family: "R"
+  long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
+  short: "length"
+  type: [IDistributive, Number]
+  sequential: true
+zono:
+  family: "R"
+  long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
+  short: "area (measure)"
+  type: [IDistributive, Number]
+  sequential: true
+tana:
+  family: "R"
+  long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
+  short: "volume (measure)"
+  type: [IDistributive, Number]
+  sequential: true
 
-# # # Distances :
-pcan:
-  _family: "R"
-  eng_long: "(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here)."
-  eng_short: "space distance"
-pcin:
-  _family: "R"
-  eng_long: "(A0) is true/occurs at a distance in time of [E0] (mesure, years by default / event with this duration) from (I0) (default: now)."
-  eng_short: "time distance"
+keun:
+  family: "R"
+  long: "(A) (default: here) is at the starting point of [E]."
+  short: "space start"
+  type: [IDistributive, IDistributive]
+  sequential: true
+daen:
+  family: "R"
+  long: "(A) (default: here) is between the starting and end point of [E]."
+  short: "space between"
+  type: [IDistributive, IDistributive]
+  sequential: true
+moan:
+  family: "R"
+  long: "(A) (default: here) is at an halt/interruption of [E]."
+  short: "space halt"
+  type: [IDistributive, IDistributive]
+  sequential: true
+taon:
+  family: "R"
+  long: "(A) (default: here) is at the resumption of [E]."
+  short: "space resumption"
+  type: [IDistributive, IDistributive]
+  sequential: true
+cuan:
+  family: "R"
+  long: "(A) (default: here) is at the end point of [E]."
+  short: "space end"
+  type: [IDistributive, IDistributive]
+  sequential: true
 
-# # # Lengths : 
-pcar:
-  _family: "R"
-  eng_long: "(A0) is true/occurs over time interval/length [E] (measure, years by default / event with same duration)."
-  eng_short: "time length"
-pcer:
-  _family: "R"
-  eng_long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
-  eng_short: "length"
-pcor:
-  _family: "R"
-  eng_long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
-  eng_short: "area (measure)"
-pcur:
-  _family: "R"
-  eng_long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
-  eng_short: "volume (measure)"
-
-# # # Contours :
-pcana:
-  _family: "R"
-  eng_long: "(A) (default: here) is at the starting point of [E]."
-  eng_short: "space start"
-pcane:
-  _family: "R"
-  eng_long: "(A) (default: here) is between the starting and end point of [E]."
-  eng_short: "space between"
-pcani:
-  _family: "R"
-  eng_long: "(A) (default: here) is at an halt/interruption of [E]."
-  eng_short: "space halt"
-pcano:
-  _family: "R"
-  eng_long: "(A) (default: here) is at the resumption of [E]."
-  eng_short: "space resumption"
-pcanu:
-  _family: "R"
-  eng_long: "(A) (default: here) is at the end point of [E]."
-  eng_short: "space end"
-
-pcina:
-  _family: "R"
-  eng_long: "(A0) (default: now) is at the starting point of [E0]."
-  eng_short: "time start"
-pcine:
-  _family: "R"
-  eng_long: "(A0) (default: now) is between the starting and end point of [E0]."
-  eng_short: "time between"
-pcini:
-  _family: "R"
-  eng_long: "(A0) (default: now) is at an halt/interruption of [E0]."
-  eng_short: "time halt"
-pcino:
-  _family: "R"
-  eng_long: "(A0) (default: now) is at the resumption of [E0]."
-  eng_short: "time resumption"
-pcinu:
-  _family: "R"
-  eng_long: "(A0) (default: now) is at the end point of [E0]."
-  eng_short: "time end"
-
-# # # Other :
-pcara:
-  _family: "R"
-  eng_long: "[A0] is regular/occurs regularly."
-  eng_short: "regular"
-pcare:
-  _family: "R"
-  eng_long: "[A0] is typical/occurs typically."
-  eng_short: "typical"
-pcari:
-  _family: "R"
-  eng_long: "[A0] is continuous/occurs continuously."
-  eng_short: "continuous"
-pcaro:
-  _family: "R"
-  eng_long: "[A0] is habitual/occurs habitually."
-  eng_short: "habitual"
-pcira:
-  _family: "R"
-  eng_long: "(A) is inside/within [E]."
-  eng_short: "inside"
-pcirai:
-  _family: "R"
-  eng_long: "(A) is outside [E]."
-  eng_short: "outside"
-pcire:
-  _family: "R"
-  eng_long: "(A) is adjacent to/along [E]."
-  eng_short: "adjacent"
-pcirei:
-  _family: "R"
-  eng_long: "(A) is tangential/passing by [E]."
-  eng_short: "tangential"
-pciro:
-  _family: "R"
-  eng_long: "(A) is surrounding/around [E]."
-  eng_short: "surrounding"
-pciroi:
-  _family: "R"
-  eng_long: "(A) is transfixing/passing through [E]."
-  eng_short: "transfixing"
-pciru:
-  _family: "R"
-  eng_long: "(A) is towards [E]."
-  eng_short: "towards"
-pcirui:
-  _family: "R"
-  eng_long: "(A) is away from [E]."
-  eng_short: "away from"
-
-# Unclassified :
+keur:
+  family: "R"
+  long: "(A0) (default: now) is at the starting point of [E0]."
+  short: "time start"
+  type: [Proposition, Proposition]
+  sequential: true
+daer:
+  family: "R"
+  long: "(A0) (default: now) is between the starting and end point of [E0]."
+  short: "time between"
+  type: [Proposition, Proposition]
+  sequential: true
+moar:
+  family: "R"
+  long: "(A0) (default: now) is at an halt/interruption of [E0]."
+  short: "time halt"
+  type: [Proposition, Proposition]
+  sequential: true
+taor:
+  family: "R"
+  long: "(A0) (default: now) is at the resumption of [E0]."
+  short: "time resumption"
+  type: [Proposition, Proposition]
+  sequential: true
+cuar:
+  family: "R"
+  long: "(A0) (default: now) is at the end point of [E0]."
+  short: "time end"
+  type: [Proposition, Proposition]
+  sequential: true
+mura:
+  family: "R"
+  long: "(A0) is regular/occurs regularly."
+  short: "regular"
+  type: [Proposition]
+geno:
+  family: "R"
+  long: "(A0) is typical/occurs typically."
+  short: "typical"
+  type: [Proposition]
+foru:
+  family: "R"
+  long: "(A0) is continuous/occurs continuously."
+  short: "continuous"
+  type: [Proposition]
+jenu:
+  family: "R"
+  long: "(A0) is habitual/occurs habitually."
+  short: "habitual"
+  type: [Proposition]
+fena:
+  family: "R"
+  long: "(A) is inside/within [E]."
+  short: "inside"
+laro:
+  family: "R"
+  long: "(A) is outside [E]."
+  short: "outside"
+  type: [IDistributive, IDistributive]
+  sequential: true
+suru:
+  family: "R"
+  long: "(A) is adjacent to/along [E]."
+  short: "adjacent"
+  type: [IDistributive, IDistributive]
+  sequential: true
+manu:
+  family: "R"
+  long: "(A) is tangential/passing by [E]."
+  short: "passing by"
+  type: [IDistributive, IDistributive]
+  sequential: true
+varu:
+  family: "R"
+  long: "(A) is surrounding/around [E]."
+  short: "surrounding"
+  type: [IDistributive, IDistributive]
+  sequential: true
+mere:
+  family: "R"
+  long: "(A) is transfixing/passing through [E]."
+  short: "passing through"
+  type: [IDistributive, IDistributive]
+  sequential: true
+tinu:
+  family: "R"
+  long: "(A) is towards [E]."
+  short: "towards"
+  type: [IDistributive, IDistributive]
+  sequential: true
+keru:
+  family: "R"
+  long: "(A) is away from [E]."
+  short: "away from"
+  type: [IDistributive, IDistributive]
+  sequential: true
 don:
-  _family: "R"
-  eng_long: "(A) likes [E]."
-  eng_short: "likes"
+  family: "R"
+  long: "(A) likes [E]."
+  short: "likes"
+  type: [IDistributive, IDistributive]
+  sequential: true
 dona:
-  _family: "R"
-  eng_long: "(A) likes that [E0] is true. ((E.A) defaults to (A) : (A) likes something about itself)"
-  eng_short: "likes that"
+  family: "R"
+  long: "(A) likes that [E0] is true. ((E.A) defaults to (A) : (A) likes something about itself)"
+  short: "likes that"
+  type: [IDistributive, Proposition]
+  sequential: true
 jve:
-  _family: "R"
-  eng_long: "(A) is a friend of [E]."
-  eng_short: "friend"
+  family: "R"
+  long: "(A) is a friend of [E]."
+  short: "friend"
+  type: [IDistributive, IDistributive]
+  sequential: true
 kli:
-  _family: "R"
-  eng_long: "(A) thanks/is thankful to (E) about [I0] being true."
-  eng_short: "thanks"
+  family: "R"
+  long: "(A) thanks/is thankful to [E] about (I0) being true."
+  short: "thanks"
+  type: [IDistributive, IDistributive, Proposition]
+  sequential: true
 kre:
-  _family: "R"
-  eng_long: "(A) helps (E) to satisfy property [I1]"
-  eng_short: "helps"
-mlan:
-  _family: "R"
-  eng_long: "(A) is milk."
-  eng_short: "milk"
+  family: "R"
+  long: |
+    (A) helps [E] to satisfy property (I1).
+    [E] is the one satisfying (I1), and (A) doesn't need to satisfy (I1).
+  short: "helps"
+  type: [IDistributive, IDistributive, Proposition]
+  sequential: true
+luenu:
+  family: "R"
+  long: "(A) is milk."
+  short: "milk"
+  type: [IDistributive]
 mian:
-  _family: "R"
-  eng_long: "(A) is a cat."
-  eng_short: "cat"
+  family: "R"
+  long: "(A) is a cat."
+  short: "cat"
+  type: [IDistributive]
 ple:
-  _family: "R"
-  eng_long: "(A) use/employs (E) for purpose [I0]."
-  eng_short: "use"
-plin:
-  _family: "R"
-  eng_long: "(A) drinks [E]."
-  eng_short: "drinks"
+  family: "R"
+  long: "(A) use/employs [E] for purpose (I0)."
+  short: "use"
+  type: [ICollective, ICollective, Proposition]
+  sequential: true
+puana:
+  family: "R"
+  long: "(A) drinks [E]."
+  short: "drinks"
+  type: [IDistributive, IDistributive]
+  sequential: true
+bouri:
+  family: "R"
+  long: "(A) eats [E]."
+  short: "eats"
+  type: [IDistributive, IDistributive]
+  sequential: true
 sfe:
-  _family: "R"
-  eng_long: "(A) is female."
-  eng_short: "female"
+  family: "R"
+  long: "(A) is female."
+  short: "female"
+  type: [IDistributive]
 kla:
-  _family: "R"
-  eng_long: "(A) is male."
-  eng_short: "male"
-sfi:
-  _family: "R"
-  eng_long: "(A) invents/creates/authors [E] with inspiration [I]."
-  eng_short: "invents"
-ska:
-  _family: "R"
-  eng_long: "(A) is a computer."
-  eng_short: "computer"
+  family: "R"
+  long: "(A) is male."
+  short: "male"
+  type: [IDistributive]
+tsen:
+  family: "R"
+  long: "(A) invents/creates/authors [E] with inspiration (I)."
+  short: "invents"
+  type: [ICollective, IDistributive, IDistributive]
+  sequential: true
+skao:
+  family: "R"
+  long: "(A) is a computer."
+  short: "computer"
+  type: [IDistributive]
 sni:
-  _family: "R"
-  eng_long: "(A) greets/say hello to [E]."
-  eng_short: "greets"
+  family: "R"
+  long: "(A) greets/say hello to [E]."
+  short: "greets"
+  type: [IDistributive, IDistributive]
+  sequential: true
 spi:
-  _family: "R"
-  eng_long: "(A) talks to [E]."
-  eng_short: "talks"
+  family: "R"
+  long: "(A) talks to [E] about (I)."
+  short: "talks"
+  type: [IDistributive, IDistributive, IDistributive]
+  sequential: true
 spu:
-  _family: "R"
-  eng_long: "(A) is a nest/house/home for [E]."
-  eng_short: "home"
-tlu:
-  _family: "R"
-  eng_long: "(A) agrees with (E) that [I0] is true."
-  eng_short: "agrees"
+  family: "R"
+  long: "(A) is a nest/house/home for [E]."
+  short: "home"
+  type: [IDistributive, IDistributive]
+  sequential: true
+zaor:
+  family: "R"
+  long: "(A) agrees with [E] that (I0) is true."
+  short: "agrees"
+  type: [IDistributive, IDistributive, Proposition]
+  sequential: true
 van:
-  _family: "R"
-  eng_long: "(A) goes from (E) to [I]."
-  eng_short: "goes"
+  family: "R"
+  long: "(A) goes to [E] from (I)."
+  short: "goes"
+  type: [IDistributive, IDistributive, IDistributive]
+  sequential: true
 gza:
-  _family: "R"
-  eng_long: "(A) (default value of (E.A)) is an agentive cause of event [E0]"
-  eng_short: "does"
-zbe:
-  _family: "R"
-  eng_long: "(A) learns/studies fact [E0] about (I) (default value of (E.A))."
-  eng_short: "learns"
-gun:
-  _family: "R"
-  eng_long: "(A) labers/works by satisfying property [E1]."
-  eng_short: "works"
-lion:
-  _family: "R"
-  eng_long: "(A) is a year."
-  eng_short: "year"
-lien:
-  _family: "R"
-  eng_long: "(A) is a month."
-  eng_short: "month"
-lian:
-  _family: "R"
-  eng_long: "(A) is a week."
-  eng_short: "week"
-lun:
-  _family: "R"
-  eng_long: "(A) is a day."
-  eng_short: "day"
-lon:
-  _family: "R"
-  eng_long: "(A) is a hour."
-  eng_short: "hour"
-len:
-  _family: "R"
-  eng_long: "(A) is a minute."
-  eng_short: "minute"
-lan:
-  _family: "R"
-  eng_long: "(A) is a second."
-  eng_short: "second"
+  family: "R"
+  long: "(A) (default value of (E.A)) is an agentive cause of event [E0]"
+  short: "does"
+  type: [ICollective, Proposition]
+  sequential: true
+kini:
+  family: "R"
+  long: "(A) learns/studies fact [E0]."
+  short: "learns"
+  type: [IDistributive, Proposition]
+  sequential: true
+seru:
+  family: "R"
+  long: "(A0) is about subject [E]."
+  short: "about"
+  type: [Proposition, IDistributive]
+  sequential: true
+snai:
+  family: "R"
+  long: "(A) labers/works by satisfying property [E1]."
+  short: "works"
+  type: [ICollective, Property]
+  sequential: true
+bire:
+  family: "R"
+  long: "(A) is a year."
+  short: "year"
+  type: [IDistributive]
+gare:
+  family: "R"
+  long: "(A) is a month."
+  short: "month"
+  type: [IDistributive]
+kora:
+  family: "R"
+  long: "(A) is a week."
+  short: "week"
+  type: [IDistributive]
+dena:
+  family: "R"
+  long: "(A) is a day."
+  short: "day"
+  type: [IDistributive]
+sura:
+  family: "R"
+  long: "(A) is a hour."
+  short: "hour"
+  type: [IDistributive]
+jero:
+  family: "R"
+  long: "(A) is a minute."
+  short: "minute"
+  type: [IDistributive]
+cona:
+  family: "R"
+  long: "(A) is a second."
+  short: "second"
+  type: [IDistributive]
 ber:
-  _family: "R"
-  eng_long: "(A) reflects this language (eberban)."
-  eng_short: "eberbanic"
+  family: "R"
+  long: "(A) reflects this language (eberban)."
+  short: "eberbanic"
+  type: [IDistributive]
 pre:
-  _family: "R"
-  eng_long: "(A) is a person."
-  eng_short: "person"
+  family: "R"
+  long: "(A) is a person."
+  short: "person"
+  type: [IDistributive]
 pra:
-  _family: "R"
-  eng_long: "(A) loves [E]."
-  eng_short: "loves"
+  family: "R"
+  long: "(A) loves [E]."
+  short: "loves"
+  type: [IDistributive, IDistributive]
+  sequential: true
 vier:
-  _family: "R"
-  eng_long: "(A) visits [E] with guide (I)."
-  eng_short: "visits"
+  family: "R"
+  long: "(A) visits [E]."
+  short: "visits"
+  type: [IDistributive, IDistributive]
+  sequential: true
 tan:
-  _family: "R"
-  eng_long: "(A) is nothing. (same as 'ta' cardinal but without a (E) place)"
-  eng_short: "nothing"
+  family: "R"
+  long: "(A) is nothing. (same as 'ta' cardinal but without a (E) place)"
+  short: "nothing"
+  type: [IDistributive]
 ten:
-  _family: "R"
-  eng_long: "(A) is a small (subjective) amount of things satisfying [E1]."
-  eng_short: "small amount of"
+  family: "R"
+  long: "(A) is a small (subjective) amount of things satisfying [E1]."
+  short: "small amount of"
+  type: [ICollective, Property]
+  sequential: true
 tin:
-  _family: "R"
-  eng_long: "(A) is a medium (subjective) amount of things satisfying [E1]."
-  eng_short: "medium amount of "
+  family: "R"
+  long: "(A) is a medium (subjective) amount of things satisfying [E1]."
+  short: "medium amount of "
+  type: [ICollective, Property]
+  sequential: true
 ton:
-  _family: "R"
-  eng_long: "(A) is a large (subjective) amount of things satisfying [E1]."
-  eng_short: "large amount of"
+  family: "R"
+  long: "(A) is a large (subjective) amount of things satisfying [E1]."
+  short: "large amount of"
+  type: [ICollective, Property]
+  sequential: true
 tun:
-  _family: "R"
-  eng_long: "(A) is everything that satisfies [E1]."
-  eng_short: "every"
+  family: "R"
+  long: "(A) is everything that satisfies [E1]."
+  short: "every"
+  type: [ICollective, Property]
+  sequential: true
 tal:
-  _family: "R"
-  eng_long: "(A) is a negligible number in dimension/unit [E1]."
-  eng_short: "negligible"
+  family: "R"
+  long: "(A) is a negligible number in dimension/unit [E1]."
+  short: "negligible"
+  type: [Number, Property]
+  sequential: true
 tel:
-  _family: "R"
-  eng_long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
-  eng_short: "small"
+  family: "R"
+  long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
+  short: "small"
+  type: [Number, Property]
+  sequential: true
 til:
-  _family: "R"
-  eng_long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
-  eng_short: "medium"
+  family: "R"
+  long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
+  short: "medium"
+  type: [Number, Property]
+  sequential: true
 tol:
-  _family: "R"
-  eng_long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
-  eng_short: "large"
+  family: "R"
+  long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
+  short: "large"
+  type: [Number, Property]
+  sequential: true
 tul:
-  _family: "R"
-  eng_long: "(A) is an infinite number in dimension/unit [E1]."
-  eng_short: "infinite"
-tca:
-  _family: "R"
-  eng_long: "(A) is a town/city."
-  eng_short: "city"
+  family: "R"
+  long: "(A) is an infinite number in dimension/unit [E1]."
+  short: "infinite"
+  type: [Number, Property]
+  sequential: true
+zbur:
+  family: "R"
+  long: "(A) is a town/city."
+  short: "city"
+  type: [IDistributive]
 zdil:
-  _family: "R"
-  eng_long: "(A) is amusing/entertaining to (E) in property (I1)."
-  eng_short: "amusing"
-plu:
-  _family: "R"
-  eng_long: "(A) is complex/complicated in property (E1)."
-  eng_short: "complicated"
-cir:
-  _family: "R"
-  eng_long: "(A) is a system with components (E) forming structure (I)."
-  eng_short: "system"
-dan:  
-  _family: "R"
-  eng_long: "(A) is among [E]."
-  eng_short: "among"
+  family: "R"
+  long: "(A) is amusing/entertaining to (E) (default: speaker) in property (I1)."
+  short: "amusing"
+  type: [IDistributive, IDistributive, Property]
+tore:
+  family: "R"
+  long: "(A) is complex/complicated in property (E1)."
+  short: "complicated"
+  type: [IDistributive, Property]
+zane:
+  family: "R"
+  long: "(A) is a system with components [E] forming structure (I)."
+  short: "system"
+  type: [IDistributive, IDistributive, IDistributive]
+  sequential: true
+dan:
+  family: "R"
+  long: "(A) is among [E]."
+  short: "among"
+  type: [IDistributive, ICollective]
+  sequential: true
 dal:
-  _family: "R"
-  eng_long: "Everything among (A) also satisfies [E1]."
-  eng_short: "for each"
+  family: "R"
+  long: "Everything among (A) also satisfies [E1]."
+  short: "for each"
+  type: [IDistributive, Property]
+  sequential: true
 ban:
-  _family: "R"
-  eng_long: "(A) (quote) is expressed in language [E]."
-  eng_short: "language"
-bein:  
-  _family: "R"
-  eng_long: "(A) (ordered set) is ordered following ordering rule [E2]."
-  eng_short: "ordered set member"
-dza:
-  _family: "R"
-  eng_long: "(A) is a color of [E]."
-  eng_short: "color"
-dze:
-  _family: "R"
-  eng_long: "(A) is white/light [color adjective]."
-  eng_short: "white"
-dzo:
-  _family: "R"
-  eng_long: "(A) is black/dark [color adjective]."
-  eng_short: "black"
-dzia:
-  _family: "R"
-  eng_long: "(A) is red [color adjective]."
-  eng_short: "red"
-dzie:
-  _family: "R"
-  eng_long: "(A) is green [color adjective]."
-  eng_short: "green"
-dzio:
-  _family: "R"
-  eng_long: "(A) is blue [color adjective]."
-  eng_short: "blue"
-dzua:
-  _family: "R"
-  eng_long: "(A) is cyan [color adjective]."
-  eng_short: "cyan"
-dzue:
-  _family: "R"
-  eng_long: "(A) is magenta [color adjective]."
-  eng_short: "magenta"
-dzuo:
-  _family: "R"
-  eng_long: "(A) is yellow [color adjective]."
-  eng_short: "yellow"
-tien:
-  _family: "R"
-  eng_long: "(A) is a set where every pair of members satisfy relation [E2]."
-  eng_short: "set members relation"
+  family: "R"
+  long: "(A) (quote) is expressed in language [E]."
+  short: "language"
+  type: [IDistributive, IDistributive]
+  sequential: true
+speu:
+  family: "R"
+  long: "(A) (ordered set) is ordered following ordering rule [E2]."
+  short: "ordered set member"
+  type: [ICollective, Relation]
+  sequential: true
+fir:
+  family: "R"
+  long: "(A) is a color of [E]."
+  short: "color"
+  type: [IDistributive, IDistributive]
+  sequential: true
+cion:
+  family: "R"
+  long: |
+    (A) is a color with {Hue, Saturation, Value} [E].
+    [E] is a 3-vector with these components :
+    - teha : Hue of the color between 0 and 1.
+             0 is red primary
+             1/3 is green primary
+             2/3 is blue primary
+             Default: 0
+    - tehe : Color saturation between 0 and 1.
+             0 saturation is a shade of gray.
+             Default: 1
+    - teho : Color value between 0 and 1.
+             0 value is black.
+             Default: 1
+  short: "color"
+  type: [IDistributive, Number]
+  sequential: true
+zen:
+  family: "R"
+  long: "(A) is white/light [color adjective]."
+  short: "white"
+  type: [IDistributive]
+gon:
+  family: "R"
+  long: "(A) is black/dark [color adjective]."
+  short: "black"
+  type: [IDistributive]
+bor:
+  family: "R"
+  long: "(A) is red [color adjective]."
+  short: "red"
+  type: [IDistributive]
+ter:
+  family: "R"
+  long: "(A) is green [color adjective]."
+  short: "green"
+  type: [IDistributive]
+mir:
+  family: "R"
+  long: "(A) is blue [color adjective]."
+  short: "blue"
+  type: [IDistributive]
+zne:
+  family: "R"
+  long: "(A) is cyan [color adjective]."
+  short: "cyan"
+  type: [IDistributive]
+dzu:
+  family: "R"
+  long: "(A) is magenta [color adjective]."
+  short: "magenta"
+  type: [IDistributive]
+jgu:
+  family: "R"
+  long: "(A) is yellow [color adjective]."
+  short: "yellow"
+  type: [IDistributive]
+sare:
+  family: "R"
+  long: "(A) is a set where every pair of members satisfy relation [E2]."
+  short: "set members relation"
+  type: [ICollective, Relation]
+  sequential: true
 gli:
-  _family: "R"
-  eng_long: "(A) is happy about [E0] being true."
-  eng_short: "happy"
-bja:
-  _family: "R"
-  eng_long: "(A) (source) has translation [E] (result)."
-  eng_short: "translation"
-jni:
-  _family: "R"
-  eng_long: "(A) is a field/surface made of material [E]."
-  eng_short: "area (physical)"
-jno:
-  _family: "R"
-  eng_long: "(A) is a volume made of material [E]."
-  eng_short: "volume (physical)"
-tcei:
-  _family: "R"
-  eng_long: "(A) is a tree."
-  eng_short: "tree"
-grun:
-  _family: "R"
-  eng_long: "(A) is wild/untamed."
-  eng_short: "wild"
+  family: "R"
+  long: "(A) is happy about [E0] being true."
+  short: "happy"
+  type: [IDistributive, Proposition]
+  sequential: true
+siro:
+  family: "R"
+  long: "(A) (source) has translation [E] (result)."
+  short: "translation"
+  type: [IDistributive, IDistributive]
+  sequential: true
+cuina:
+  family: "R"
+  long: "(A) is a tree."
+  short: "tree"
+  type: [IDistributive]
+jnaor:
+  family: "R"
+  long: "(A) is wild/untamed."
+  short: "wild"
+  type: [IDistributive]
 dji:
-  _family: "R"
-  eng_long: "(A) desires/wants/wishes [E0]"
-  eng_short: "want"
-bzi:
-  _family: "R"
-  eng_long: "(A) flies [in air/space]"
-  eng_short: "flies"
-flea:
-  _family: "R"
-  eng_long: "(A) is an airplane."
-  eng_short: "airplane"
+  family: "R"
+  long: "(A) desires/wants/wishes [E0]"
+  short: "want"
+  type: [IDistributive, Proposition]
+  sequential: true
+fuere:
+  family: "R"
+  long: "(A) flies [in air/space]"
+  short: "flies"
+  type: [IDistributive]
+foina:
+  family: "R"
+  long: "(A) is an airplane."
+  short: "airplane"
+  type: [IDistributive]
 jle:
-  _family: "R"
-  eng_long: "(A) is motivated by (E) to make [I0] true."
-  eng_short: "motivated"
-bli:
-  _family: "R"
-  eng_long: "(A) walks."
-  eng_short: "walks"
-zba:
-  _family: "R"
-  eng_long: "(A) is enjoyable/great/nice for [E]."
-  eng_short: "nice"
+  family: "R"
+  long: "(A) is motivated to make [E0] true by (I)."
+  short: "motivated"
+  type: [IDistributive, Proposition, ICollective]
+  sequential: true
+zuan:
+  family: "R"
+  long: "(A) walks."
+  short: "walks"
+  type: [IDistributive]
+vune:
+  family: "R"
+  long: "(A) is enjoyable/great/nice for [E]."
+  short: "nice"
+  type: [IDistributive, IDistributive]
+  sequential: true
 jvin:
-  _family: "R"
-  eng_long: "(A) dances."
-  eng_short: "dances"
+  family: "R"
+  long: "(A) dances with characteristics (E)."
+  short: "dances"
+  type: [ICollective, IDistributive]
 blan:
-  _family: "R"
-  eng_long: "(A) is beautiful."
-  eng_short: "beautiful"
+  family: "R"
+  long: "(A) is beautiful."
+  short: "beautiful"
+  type: [IDistributive]
 kca:
-  _family: "R"
-  eng_long: "(A0) is possible/can be true."
-  eng_short: "possible"
+  family: "R"
+  long: "(A0) is possible/can be true."
+  short: "possible"
+  type: [Proposition]
+pien:
+  family: "R"
+  long: "(A) is bread."
+  short: "bread"
+  type: [IDistributive]
+cnue:
+  family: "R"
+  long: "(A) is a piece/portion/part of [E]."
+  short: "portion"
+  type: [IDistributive, ICollective]
+  sequential: true
 
 # Compounds (2):
 eberban:
-  _family: "C2"
-  eng_long: "(A) (quote) is expressed in eberban language (E)."
-  eng_short: "eberban"
-eufrans'ban:
-  _family: "C2"
-  eng_long: "(A) (quote) is expressed in the French language (E)."
-  eng_short: "french language"
-etalun:
-  _family: "C2"
-  eng_long: "(A) is a Sunday."
-  eng_short: "Sunday"
-etelun:
-  _family: "C2"
-  eng_long: "(A) is a Monday."
-  eng_short: "Monday"
-etolun:
-  _family: "C2"
-  eng_long: "(A) is a Thusday."
-  eng_short: "Thusday"
-etulun:
-  _family: "C2"
-  eng_long: "(A) is a Wednesday."
-  eng_short: "Wednesday"
-etialun:
-  _family: "C2"
-  eng_long: "(A) is a Thursday."
-  eng_short: "Thursday"
-etielun:
-  _family: "C2"
-  eng_long: "(A) is a Friday."
-  eng_short: "Friday"
-etiolun:
-  _family: "C2"
-  eng_long: "(A) is a Saturday."
-  eng_short: "Saturday"
-etiulun:
-  _family: "C2"
-  eng_long: "(A) is a Sunday."
-  eng_short: "Sunday"
-etalien:
-  _family: "C2"
-  eng_long: "(A) is a January."
-  eng_short: "January"
-etelien:
-  _family: "C2"
-  eng_long: "(A) is a February."
-  eng_short: "February"
-etolien:
-  _family: "C2"
-  eng_long: "(A) is a March."
-  eng_short: "March"
-etulien:
-  _family: "C2"
-  eng_long: "(A) is a April."
-  eng_short: "April"
-etialien:
-  _family: "C2"
-  eng_long: "(A) is a May."
-  eng_short: "May"
-etielien:
-  _family: "C2"
-  eng_long: "(A) is a June."
-  eng_short: "June"
-etiolien:
-  _family: "C2"
-  eng_long: "(A) is a July."
-  eng_short: "July"
-etiulien:
-  _family: "C2"
-  eng_long: "(A) is a August."
-  eng_short: "August"
-etailien:
-  _family: "C2"
-  eng_long: "(A) is a September."
-  eng_short: "September"
-eteilien:
-  _family: "C2"
-  eng_long: "(A) is a October."
-  eng_short: "October"
-etoilien:
-  _family: "C2"
-  eng_long: "(A) is a November."
-  eng_short: "October"
-etuilien:
-  _family: "C2"
-  eng_long: "(A) is a December."
-  eng_short: "December"
-
-# Compounds (3):
-igruntceijno:
-  _family: "C3"
-  eng_long: "(A) is a jungle."
-  eng_short: "jungle"
+  family: "C2"
+  long: "(A) (quote) is expressed in eberban language (E)."
+  short: "eberban"
+  type: [IDistributive, IDistributive]
+eufranse'ban:
+  family: "C2"
+  long: "(A) (quote) is expressed in the French language (E)."
+  short: "french language"
+  type: [IDistributive, IDistributive]
+etadena:
+  family: "C2"
+  long: "(A) is a Sunday."
+  short: "Sunday"
+  type: [IDistributive]
+etedena:
+  family: "C2"
+  long: "(A) is a Monday."
+  short: "Monday"
+  type: [IDistributive]
+etodena:
+  family: "C2"
+  long: "(A) is a Thusday."
+  short: "Thusday"
+  type: [IDistributive]
+etudena:
+  family: "C2"
+  long: "(A) is a Wednesday."
+  short: "Wednesday"
+  type: [IDistributive]
+etiadena:
+  family: "C2"
+  long: "(A) is a Thursday."
+  short: "Thursday"
+  type: [IDistributive]
+etiedena:
+  family: "C2"
+  long: "(A) is a Friday."
+  short: "Friday"
+  type: [IDistributive]
+etiodena:
+  family: "C2"
+  long: "(A) is a Saturday."
+  short: "Saturday"
+  type: [IDistributive]
+etiudena:
+  family: "C2"
+  long: "(A) is a Sunday."
+  short: "Sunday"
+  type: [IDistributive]
+etagare:
+  family: "C2"
+  long: "(A) is a January."
+  short: "January"
+  type: [IDistributive]
+etegare:
+  family: "C2"
+  long: "(A) is a February."
+  short: "February"
+  type: [IDistributive]
+etogare:
+  family: "C2"
+  long: "(A) is a March."
+  short: "March"
+  type: [IDistributive]
+etugare:
+  family: "C2"
+  long: "(A) is a April."
+  short: "April"
+  type: [IDistributive]
+etiagare:
+  family: "C2"
+  long: "(A) is a May."
+  short: "May"
+  type: [IDistributive]
+etiegare:
+  family: "C2"
+  long: "(A) is a June."
+  short: "June"
+  type: [IDistributive]
+etiogare:
+  family: "C2"
+  long: "(A) is a July."
+  short: "July"
+  type: [IDistributive]
+etiugare:
+  family: "C2"
+  long: "(A) is a August."
+  short: "August"
+  type: [IDistributive]
+etaigare:
+  family: "C2"
+  long: "(A) is a September."
+  short: "September"
+  type: [IDistributive]
+eteigare:
+  family: "C2"
+  long: "(A) is a October."
+  short: "October"
+  type: [IDistributive]
+etoigare:
+  family: "C2"
+  long: "(A) is a November."
+  short: "October"
+  type: [IDistributive]
+etuigare:
+  family: "C2"
+  long: "(A) is a December."
+  short: "December"
+  type: [IDistributive]
+ekrevier:
+  family: "C2"
+  long: "(A) visits [E] with guide (I)."
+  short: "guided visit"
+  type: [IDistributive, IDistributive, IDistributive]
+  sequential: true
+evaza:
+  family: "C2"
+  long: |
+    (A) is named [E].
+    Allows to make names from a scope.
+  short: "named (binding)"
+  type: [ICollective, ICollective]
+  sequential: true

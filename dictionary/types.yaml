@@ -1,0 +1,24 @@
+IDistributive:
+  name: Individual (Distributive)
+  description: A plural individual place with distributive behavior.
+ICollective:
+  name: Individual (Collective)
+  description: A plural individual place that doesn't distribute.
+IArgument:
+  name: Invididual (Argument)
+  description: A plural individual predicate argument.
+Number:
+  name: Number
+  description: A number that may have a unit of measurement.
+Proposition:
+  name: Proposition (0-ary predicate)
+  description: A proposition or event.
+  expansion: []
+Property:
+  name: Property (1-ary predicate)
+  description: A property of something.
+  expansion: [ IArgument ]
+Relation:
+  name: Relation (2-ary predicate)
+  description: A relation between 2 things.
+  expansion: [ IArgument, IArgument ]

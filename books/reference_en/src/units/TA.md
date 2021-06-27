@@ -54,18 +54,19 @@ with place structure :
 | ----- | ------------------------------------- | ----- | ------------------------------------- |
 | ti    | decimal separator                     | tiha  | `<base digit. number>` separator      |
 | tihe  | `<precise . approximation>` separator | tihi  | `<number . repeating part>` separator |
+| tiho  | `<numerator . denominator>` separator |       |                                       |
 |       |                                       |       | &nbsp;                                |
 | taha  | \\(base^3\\) separator (kilo)         | tahe  | \\(base^6\\) separator (mega)         |
 | taho  | \\(base^9\\) separator (giga)         | tahu  | \\(base^{12}\\) separator (tera)      |
 | tahia | \\(base^{15}\\) separator (peta)      | tahie | \\(base^{18}\\) separator (exa)       |
 | tahio | \\(base^{21}\\) separator (zetta)     | tahiu | \\(base^{24}\\) separator (yotta)     |
 |       |                                       |       | &nbsp;                                |
-| teha  | Vector tag 0                          | tehe  | Vector tag 4                          |
-| teho  | Vector tag 1                          | tehu  | Vector tag 5                          |
-| tehia | Vector tag 2                          | tehie | Vector tag 6                          |
-| tehio | Vector tag 3                          | tehiu | Vector tag 7                          |
+| teha  | Vector tag 0                          | tehe  | Vector tag 1                          |
+| teho  | Vector tag 2                          | tehu  | Vector tag 3                          |
+| tehia | Vector tag 4                          | tehie | Vector tag 5                          |
+| tehio | Vector tag 6                          | tehiu | Vector tag 7                          |
 |       |                                       |       | &nbsp;                                |
-| tae   | negative sign                         | tao   | number/digit question                 |
+| tae   | negative sign                         |       |                                       |
 
 > `tiha` "base digit" is the highest digit possible in that base. Base 10 is
 > thus `tei (9) tiha ..`, base 6 is `tie (5) tiha ..`, ..

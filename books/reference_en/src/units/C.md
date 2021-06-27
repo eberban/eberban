@@ -33,17 +33,10 @@ yielding greater precision.
 - **ber :** `(A) reflects this language (eberban).`
 - **ban :** `(A) (quote) is expressed in language [E].`
 
-### igruntceijno
-`(A) is a jungle.`
-
-- **grun :** `(A) is wild/untamed.`
-- **tcei :** `(A) is a tree.`
-- **jno :** `(A) is a volume made of material [E].`
-
-### eufrans'ban
+### eufranse'ban
 `(A) (quote) is expressed in the French language (E).`
 
-- **ufrans' :** borrowing of "France"
+- **ufranse' :** borrowing of "french" ("français" in french).
 - **ban :** `(A) (quote) is expressed in language [E].`
 
 > How to borrow cultural words may change in the future.

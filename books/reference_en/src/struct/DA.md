@@ -17,5 +17,4 @@ Using these 5 words and **bi**, all truth table can be expressed
 
 ## Grouping order
 
-**DA** have left priority : `((A DA B) DA C) DA D`. Custom priority can be
-expressed using grouping parenthesis **PE .. PEI** .
+**DA** have right priority : `A DA (B DA (C DA D))`.

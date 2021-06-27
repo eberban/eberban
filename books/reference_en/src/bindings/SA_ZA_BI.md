@@ -13,9 +13,6 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 | se   | tags `E` place                                            |
 | si   | tags `I` place                                            |
 | so   | tags `O` place                                            |
-|      | &nbsp;                                                    |
-| sei  | something related to the predicate (vague transformation) |
-| soi  | event of the predicate being true                         |
 
 > If we define **unit3** as `(A) ... (E) ... [I]`, it will by default have this
 > kind of bindings :  
@@ -42,20 +39,6 @@ to the predicate unit. If the predicate unit don't have a bracket place, the
 > Since **unit3** has an `I` **bracket place**, \\(F_2\\) will bind to
 > \\(i_1\\). However for units that don't have a bracket place, \\(F_2\\) would
 > bind to \\(\color{cyan}{x}\\).
->
-> -----
->
-> **sei** and **soi** allow to speak about the unit itself :
->
-> \\[
-> F_1 = \exists Z_1 [\text{is-event}(\color{cyan}{x}, Z_1) \wedge F^\prime_1
-> \wedge F_2] \\\\
-> F^\prime_1 = Z_1 \leftrightarrow (\exists a_1 \exists e_1 \exists i_1
-> [\text{unit3}(a_1,e_1,i_1)])
-> \\]
->
-> \\(F_2\\) will use the variable corresponding to the bracket place of
-> **unit3** if any, the one for the `A` place if none.
 >
 > -----
 >
