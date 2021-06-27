@@ -945,9 +945,21 @@ kla:
   type: [IDistributive]
 tsen:
   family: "R"
-  long: "(A) invents/creates/authors [E] with inspiration (I)."
-  short: "invents"
-  type: [ICollective, IDistributive, IDistributive]
+  long: "(A) invents/creates/authors [E]."
+  short: "creates"
+  type: [ICollective, IDistributive]
+  sequential: true
+zuna:
+  family: "R"
+  long: "(A) is inspired by [E]. [E] is a source of inspiration for (A)."
+  short: "inspired"
+  type: [ICollective, IDistributive]
+  sequential: true
+zvar:
+  family: "R"
+  long: "(A) has goal/purpose/aims to satisfy [E1]."
+  short: "purpose"
+  type: [IDistributive, Property]
   sequential: true
 skao:
   family: "R"
@@ -1134,6 +1146,11 @@ zdil:
   long: "(A) is amusing/entertaining to (E) (default: speaker) in property (I1)."
   short: "amusing"
   type: [IDistributive, IDistributive, Property]
+more:
+  family: "R"
+  long: "(A) is simple in property (E1)."
+  short: "simple"
+  type: [IDistributive, Property]
 tore:
   family: "R"
   long: "(A) is complex/complicated in property (E1)."
@@ -1159,10 +1176,9 @@ dal:
   sequential: true
 ban:
   family: "R"
-  long: "(A) (quote) is expressed in language [E]."
+  long: "(A) is a language."
   short: "language"
-  type: [IDistributive, IDistributive]
-  sequential: true
+  type: [IDistributive]
 speu:
   family: "R"
   long: "(A) (ordered set) is ordered following ordering rule [E2]."
@@ -1321,18 +1337,52 @@ cnue:
   short: "portion"
   type: [IDistributive, ICollective]
   sequential: true
+fen:
+  family: "R"
+  long: "(A) (text) is expressed in language [E]."
+  short: "in language"
+  type: [IDistributive, IDistributive]
+  sequential: true
+vin:
+  family: "R"
+  long: "(A) is written/inscribed on display/storage medium [E]."
+  short: "written"
+  type: [IDistributive, IDistributive]
+  sequential: true
+soane:
+  family: "R"
+  long: "(A) is stolen from [E]."
+  short: "stolen"
+  type: [IDistributive, ICollective]
+  sequential: true
+sfa:
+  family: "R"
+  long: "(A) is an occurence of [E0] being true."
+  short: "occurent"
+  type: [IDistributive, Proposition]
+  sequential: true
 
 # Compounds (2):
+etsenban:
+  family: "C2"
+  long: "(A) is a constructed language/conlang."
+  short: "conlang"
+  type: [IDistributive]
 eberban:
   family: "C2"
-  long: "(A) (quote) is expressed in eberban language (E)."
+  long: "(A) is the eberban language."
   short: "eberban"
-  type: [IDistributive, IDistributive]
+  type: [IDistributive]
+eujbo'ban:
+  family: "C2"
+  long: "(A) is the lojban language."
+  short: "lojban"
+  type: [IDistributive]
 eufranse'ban:
   family: "C2"
-  long: "(A) (quote) is expressed in the French language (E)."
+  long: "(A) is the French language."
   short: "french language"
-  type: [IDistributive, IDistributive]
+  type: [IDistributive]
 etadena:
   family: "C2"
   long: "(A) is a Sunday."
