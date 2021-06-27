@@ -1,6 +1,6 @@
 const fs = require('fs');
 const yaml = require('yaml');
-const { repeat, generators } = require('../src/word_generator');
+const { repeat, generators } = require('../src/root_generator');
 
 var words = fs.readFileSync('../dictionary/en.yaml', 'utf8');
 words = yaml.parse(words);
