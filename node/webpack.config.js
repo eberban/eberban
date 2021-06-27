@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     parser: './webpack/parser.js',
     root_generator: './webpack/root_generator.js',
+    dictionary: './webpack/dictionary.js',
   },
   output: {
     library: 'bundle',

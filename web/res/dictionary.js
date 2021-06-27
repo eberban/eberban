@@ -31,24 +31,14 @@ eval("module.exports.words_en = __webpack_require__(/*! ../../dictionary/en.yaml
 
 /***/ }),
 
-/***/ "./src/root_generator.js":
+/***/ "./webpack/dictionary.js":
 /*!*******************************!*\
-  !*** ./src/root_generator.js ***!
+  !*** ./webpack/dictionary.js ***!
   \*******************************/
-/***/ ((module) => {
-
-eval("const generators = {\n\tA: () => pick_random([ generate_CVCV(1, 0), generate_CCVCV(1, -1) ]),\n\tB: () => pick_random([ generate_CVCV(1, 1), generate_CVCV(2, 0), generate_CCVCV(1, 0), generate_CCVCV(2, -1) ]),\n    C: () => pick_random([ generate_CVCV(2, 1), generate_CVCV(2, 1), generate_CCVCV(1, 1), generate_CCVCV(2, 0) ])\n};\n\nconst single = [ 'b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'p', 's', 't', 'v', 'z' ];\n\nconst pair = [\n\t'cp',\n\t'ct',\n\t'ck',\n\t'cf',\n\t'cm',\n\t'cn',\n\t'cl',\n\t'cr',\n\t'sp',\n\t'st',\n\t'sk',\n\t'sf',\n\t'sm',\n\t'sn',\n\t'sl',\n\t'sr',\n\t'jb',\n\t'jd',\n\t'jg',\n\t'jv',\n\t'jm',\n\t'jn',\n\t'jl',\n\t'jr',\n\t'zb',\n\t'zd',\n\t'zg',\n\t'zv',\n\t'zm',\n\t'zn',\n\t'zl',\n\t'zr',\n\n\t'pl',\n\t'pr',\n\t'tl',\n\t'tr',\n\t'kl',\n\t'kr',\n\t'fl',\n\t'fr',\n\t'bl',\n\t'br',\n\t'dl',\n\t'dr',\n\t'gl',\n\t'gr',\n\t'vl',\n\t'vr',\n\t'ml',\n\t'mr',\n\n\t'tc',\n\t'ts',\n\t'dj',\n\t'dz',\n\t'kc',\n\t'ks',\n\t'gj',\n\t'gz',\n\t'pc',\n\t'ps',\n\t'bj',\n\t'bz'\n];\n\nconst vowel = [ 'a', 'e', 'o', 'i', 'u' ];\n\nconst sonorant = [ 'n', 'r' ];\n\nfunction rand(upper) {\n\treturn Math.floor(Math.random() * upper);\n}\n\nfunction pick_random(array) {\n\treturn array[rand(array.length)];\n}\n\nfunction repeat(number, f) {\n\tfor (let i = 0; i < number; i++) {\n\t\tf();\n\t}\n}\n\nfunction generate_vowels(amount) {\n\tif (amount <= 0) return '';\n\n\tvar chain = pick_random(vowel);\n\n\trepeat(amount - 1, () => {\n\t\twhile (true) {\n\t\t\tvar v = pick_random(vowel);\n\n\t\t\tif (chain.slice(-1) != v) {\n\t\t\t\tchain += v;\n\t\t\t\treturn;\n\t\t\t}\n\t\t}\n\t});\n\n\treturn chain;\n}\n\nfunction generate_CVCV(v1, v2) {\n\tvar word = '';\n\tword += pick_random(single);\n\tword += generate_vowels(v1);\n\tword += pick_random(sonorant);\n\tword += generate_vowels(v2);\n\treturn word;\n}\n\nfunction generate_CCVCV(v1, v2) {\n\tvar word = '';\n\tword += pick_random(pair);\n\tword += generate_vowels(v1);\n\n\tif (v2 >= 0) {\n\t\tword += pick_random(sonorant);\n\t}\n\n\tword += generate_vowels(v2);\n\n\treturn word;\n}\n\nmodule.exports.generators = generators;\nmodule.exports.repeat = repeat;\n\n//# sourceURL=webpack://bundle/./src/root_generator.js?");
-
-/***/ }),
-
-/***/ "./webpack/root_generator.js":
-/*!***********************************!*\
-  !*** ./webpack/root_generator.js ***!
-  \***********************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"html_3_columns\": () => (/* binding */ html_3_columns)\n/* harmony export */ });\n/* module decorator */ module = __webpack_require__.hmd(module);\nconst { words_en: words } = __webpack_require__(/*! ../src/dictionary */ \"./src/dictionary.js\");\nconst { repeat, generators } = __webpack_require__(/*! ../src/root_generator */ \"./src/root_generator.js\");\n\nfunction generate_words(amount, type) {\n    var list = [];\n\n    repeat(amount, () => {\n        while (true) {\n            let word = generators[type]();\n            if (words[word] == undefined) {\n                list.push(word);\n                return;\n            }\n        }\n    });\n\n    return list;\n}\n\nfunction html_1_column(list, title) {\n    let output = `<div class=\"span4\"><h3>${title}</h3>`;\n\n    list.forEach(element => {\n        output += `${element}<br/>`;\n    });\n\n    output += `</div>`;\n\n    return output;\n}\n\nfunction html_3_columns() {\n    var short = generate_words(20, 'A');\n    var medium = generate_words(20, 'B');\n    var long = generate_words(20, 'C');\n\n    let output = `<div class=\"row\">`\n\n    output += html_1_column(short, \"Short\");\n    output += html_1_column(medium, \"Medium\");\n    output += html_1_column(long, \"Long\");\n\n    output += `</div>`\n\n    return output;\n}\n\nmodule.exports.words = words;\n\n//# sourceURL=webpack://bundle/./webpack/root_generator.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"html_dictionary\": () => (/* binding */ html_dictionary)\n/* harmony export */ });\nconst { words_en: words } = __webpack_require__(/*! ../src/dictionary */ \"./src/dictionary.js\");\n\nconst words_sorted = Object.keys(words).sort();\n\nconst ignored = [\n    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number'\n]\n\nfunction html_word_entry(word, entry) {\n    var output = `<div class=\"entry\"><h3>`;\n\n    output += `${word}: `;\n    output += `<span class=\"label label-inverse\">${entry.family}</span> `;\n\n    if (entry.sequential) output += `<span class=\"label label-info\">Sequential</span> `;\n\n    output += `<small>${entry.short}</small> `\n    \n\n    output += `</h3>`;\n\n    output += `<pre>${entry.long.replace(/(?:\\r\\n|\\r|\\n)/g, '<br/>')}</pre>`\n\n    output += `</div>`;\n    return output;\n}\n\nfunction html_dictionary() {\n    var output = '';\n\n    Object.keys(words_sorted).forEach(index => {        \n        var word = words_sorted[index];\n        if (ignored.includes(word)) return;\n        output += html_word_entry(word, words[word]);\n    })\n\n    return output;\n}\n\n//# sourceURL=webpack://bundle/./webpack/dictionary.js?");
 
 /***/ })
 
@@ -66,16 +56,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -91,21 +78,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/harmony module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.hmd = (module) => {
-/******/ 			module = Object.create(module);
-/******/ 			if (!module.children) module.children = [];
-/******/ 			Object.defineProperty(module, 'exports', {
-/******/ 				enumerable: true,
-/******/ 				set: () => {
-/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
-/******/ 				}
-/******/ 			});
-/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -129,8 +101,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./webpack/root_generator.js");
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./webpack/dictionary.js");
 /******/ 	bundle = __webpack_exports__;
 /******/ 	
 /******/ })()

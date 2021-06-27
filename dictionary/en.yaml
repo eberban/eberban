@@ -48,15 +48,6 @@ _number:
   family: "TA"
   long: "Digit 9"
   short: "tei"
-↊:
-  family: "TA"
-  long: "Digit ↊/A/10"
-  short: "toi"
-↋:
-  family: "TA"
-  long: "Digit ↋/B/11"
-  short: "tui"
-
 # Particles
 a:
   family: "A"
@@ -601,9 +592,10 @@ be:
   short: ""
 bei:
   family: "BE"
-  long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [Ⓔ1]."
+  long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [E]."
   short: "-th"
-  type: [ICollective]
+  type: [ICollective, ICollective]
+  sequential: true
 bi:
   family: "BI"
   long: "Wide scope negation ranging over existential variables, units and bindings."

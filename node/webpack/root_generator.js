@@ -44,3 +44,5 @@ export function html_3_columns() {
 
     return output;
 }
+
+module.exports.words = words;
