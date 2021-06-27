@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './webpack/index.js',
+  entry: './webpack/parser.js',
   output: {
     library: 'bundle',
-    filename: 'bundle.js',
+    filename: 'parser.js',
     path: path.resolve(__dirname, '../web/res'),
   },
   module: {
