@@ -30,7 +30,7 @@ subscope <- arguments_list? definition* scope
 scope <- scope_1 # allow to find only the top-level scopes when using connectives
 
 scope_1 <- scope_2 scope_left_bind*
-scope_left_bind <- PE_clause explicit_binding? scope_1?
+scope_left_bind <- PE_clause explicit_binding? scope_2?
 
 scope_2 <- scope_connectives / scope_3
 scope_connectives <- scope_3 (DA_clause scope_3)+

@@ -5,8 +5,6 @@ export const { postprocessing } = require('../src/process_parse_tree');
 
 const { words_en: words } = require('../src/dictionary');
 
-console.table(words);
-
 const hideTitleList = [
 	'scope',
 	'scope group',

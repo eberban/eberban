@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     library: 'bundle',
-    filename: '[name].js',
+    filename: 'wp_[name].js',
     path: path.resolve(__dirname, '../web/res'),
   },
   module: {

@@ -1,5 +1,6 @@
 const { words_en: words } = require('../src/dictionary');
 const { repeat, generators } = require('../src/root_generator');
+export default words;
 
 function generate_words(amount, type) {
     var list = [];
@@ -44,5 +45,3 @@ export function html_3_columns() {
 
     return output;
 }
-
-module.exports.words = words;
