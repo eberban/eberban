@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.33
+# eberban PEG grammar - v0.34
 # ===========================
 
 # GRAMMAR
@@ -30,7 +30,7 @@ subscope <- arguments_list? definition* scope
 scope <- scope_1 # allow to find only the top-level scopes when using connectives
 
 scope_1 <- scope_2 scope_left_bind*
-scope_left_bind <- PE_clause explicit_binding? scope_2?
+scope_left_bind <- unit_transform* PE_clause arguments_list? scope_2?
 
 scope_2 <- scope_connectives / scope_3
 scope_connectives <- scope_3 (DA_clause scope_3)+
@@ -49,7 +49,8 @@ explicit_binding_va <- BI_clause? VA_clause subscope
 explicit_binding_fa <- BI_clause? FA_clause subscope
 
 # predicate unit
-unit <- (SA_clause / ZA_clause)* unit_1
+unit <- unit_transform* unit_1
+unit_transform <- SA_clause / ZA_clause
 unit_1 <- quote / variable / unit_borrowing / unit_root / unit_number / unit_compound
 unit_root <- free_prefix* spaces? root free_post*
 unit_number <- free_prefix* spaces? number free_post*
@@ -144,8 +145,8 @@ KA    <- &particle (k haeiou)
 MA    <- &particle (m haeiou)
 PA    <- &particle !(PAI &post_word) (p &a haeiou)
 PAI   <- &particle (p a i)
-PE    <- &particle (p e)
-PI    <- &particle (p i)
+PE    <- &particle (p &e haeiou)
+PI    <- &particle (p &i haeiou)
 PO    <- &particle !(POI &post_word) (p &o haeiou)
 POI   <- &particle (p o i)
 PU    <- &particle (p &u haeiou)

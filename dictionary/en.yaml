@@ -505,7 +505,11 @@ pe:
 pi:
   family: "PI"
   long: "Ends the list of arguments."
-  short: ""
+  short: "[args end]"
+pia:
+  family: "PI"
+  long: "Ends the list of arguments, and mark the scope as a sequential (E place) predicate."
+  short: "[args end seq]"
 po:
   family: "PO"
   long: "Start a predicate definition."
