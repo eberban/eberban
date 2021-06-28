@@ -619,9 +619,9 @@ fuir:
 zvu:
   family: "R"
   long: |
-    "(A) satify relation [E2] with its future self.
+    (A) satify relation [E2] with its future self.
     Allow to describe the evolution of something.
-    Arguments of the relation defines the distributivity of (A)."
+    Arguments of the relation defines the distributivity of (A).
   short: "relation with future self"
   type: [IArgument, [IArgument, IArgument]]
   sequential: true
