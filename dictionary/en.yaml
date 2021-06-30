@@ -295,11 +295,10 @@ lei:
   long: "(A) is the family of word [word]."
   short: "[family]"
   type: [IDistributive]
-lehi:
+leu:
   family: "LE"
-  long: "Provides a predicate describing the meaning of the following particle"
+  long: "Provides a predicate describing the meaning of the following particle."
   short: "[meaning]"
-  type: [IDistributive]
 lo:
   family: "LO"
   long: "Starts quote of arbitrary string of words."
@@ -417,26 +416,6 @@ vio:
   family: "VA"
   long: "First explicit adverbial bind (subordinative)"
   short: "sub adv"
-da:
-  family: "DA"
-  long: "Logical OR connective."
-  short: "or"
-de:
-  family: "DA"
-  long: "Logical AND connective."
-  short: "and"
-di:
-  family: "DA"
-  long: "Logical if-and-only-if connective."
-  short: "iif"
-do:
-  family: "DA"
-  long: "Logical whether or not (right is non-restrictive)."
-  short: "won right"
-du:
-  family: "DA"
-  long: "Logical whether or not (left is non-restrictive)."
-  short: "won left"
 sa:
   family: "SA"
   long: "(A) place binding tag."
@@ -500,8 +479,12 @@ pai:
   short: ""
 pe:
   family: "PE"
-  long: "Left grouping binding."
-  short: "[left grouping]"
+  long: "Inline scope starter."
+  short: "["
+pei:
+  family: "PEI"
+  long: "Inline scope elidible terminator."
+  short: "]"
 pi:
   family: "PI"
   long: "Ends the list of arguments."
@@ -513,7 +496,7 @@ pia:
 po:
   family: "PO"
   long: "Start a predicate definition."
-  short: ""
+  short: "[definition]"
 poa:
   family: "PO"
   long: "Start a question definition, the arguments being the unknown informations."
@@ -526,79 +509,63 @@ pu:
   family: "PU"
   long: "Marks a new paragraph/section/change of subject."
   short: ""
-ja:
-  family: "JA"
-  long: "Attaches a subscript number/string."
-  short: "subscript"
-jai:
-  family: "JAI"
-  long: "Attaches a predicate (without chaining) to make a discursive."
-  short: "discursive"
-je:
-  family: "JE"
-  long: "Starts a free scope."
-  short: ""
-jei:
-  family: "JEI"
-  long: "Ends a free scope."
-  short: ""
-ji:
-  family: "JI"
-  long: "Override particule meaning with provided predicate."
-  short: "override"
-jo:
-  family: "JO"
-  long: "Starts parenthetical note."
-  short: ""
-joi:
-  family: "JOI"
-  long: "Ends parenthetical note."
-  short: ""
-jua:
-  family: "JU"
+da:
+  family: "DA"
   long: "Emphasis indicator : the next word is especially emphasized."
-  short: "emphasis"
-jue:
-  family: "JU"
+  short: "[emphasis]"
+daha:
+  family: "DA"
   long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
-  short: "non-standard"
-jui:
-  family: "JU"
+  short: "[non-standard]"
+dahe:
+  family: "DA"
   long: "Next word is a metadata tag / hashtag."
-  short: "metadata"
-juo:
-  family: "JU"
-  long: "Tags an open-place unit (KAY/GAY/ma) as the bracket place of a scope."
-  short: "bracket place"
-cia:
-  family: "CA"
+  short: "[metadata]"
+dae:
+  family: "DA"
   long: "However/but/in contrast."
-  short: "however"
-cie:
-  family: "CA"
+  short: "[however]"
+dai:
+  family: "DA"
   long: "Similarly."
-  short: "similarly"
-cio:
-  family: "CA"
+  short: "[similarly]"
+dao:
+  family: "DA"
   long: "Additionally."
-  short: "additionally"
-ciu:
-  family: "CA"
+  short: "[additionally]"
+dau:
+  family: "DA"
   long: "Uniquely/only/solely."
-  short: "uniquely"
+  short: "[uniquely]"
+di:
+  family: "DI"
+  long: "Attaches a subscript number/string."
+  short: "[subscript]"
+du:
+  family: "DU"
+  long: "Override particule meaning with provided predicate."
+  short: "[override]"
+do:
+  family: "DO"
+  long: "Starts parenthetical note."
+  short: "("
+doi:
+  family: "DOI"
+  long: "Ends parenthetical note."
+  short: ")"
 ba:
   family: "BA"
-  long: "Form a group (plural variable) from multiple individuals."
-  short: "with"
+  long: "List separator."
+  short: ","
 be:
   family: "BE"
   long: "Ends string/number/borrowing."
   short: ""
 bei:
   family: "BE"
-  long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered set [E]."
+  long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered list [E]."
   short: "-th"
-  type: [ICollective, ICollective]
+  type: [ICollective, List]
   sequential: true
 bi:
   family: "BI"
@@ -614,6 +581,56 @@ bu:
   short: "version/dialect"
 
 # Roots :
+kor:
+  family: "R"
+  long: "(A) is a plural value/group composed of invididuals in list [E]."
+  short: "group"
+  type: [ICollective, List]
+  sequential: true
+jor:
+  family: "R"
+  long: "This predicate is true if all predicates in list (A) are true."
+  short: "AND (Pred)"
+  type: [List0]
+lar:
+  family: "R"
+  long: "This predicate is true if at least one predicate in list (A) is true."
+  short: "OR (Pred)"
+  type: [List0]
+sir:
+  family: "R"
+  long: "This predicate is true if exactly (E) (default: 1) predicate in list (A) is true."
+  short: "XOR (Pred)"
+  type: [List0, Number]
+jon:
+  family: "R"
+  long: "This predicate is true if all individuals in list (A) satisfies property [E1]."
+  short: "AND (Indiv)"
+  type: [List, Property]
+lan:
+  family: "R"
+  long: "This predicate is true if at least one individual in list (A) satisfies property [E1]."
+  short: "OR (Indiv)"
+  type: [List, Property]
+sin:
+  family: "R"
+  long: "This predicate is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
+  short: "XOR (Indiv)"
+  type: [List, Property, Number]
+kano:
+  family: "R"
+  long: |
+    (A) is greater than [E] in property (I1).
+    (I1) should express a property that can be compared and ordered.
+  short: "greater"
+  type: [IDistributive, IDistributive, Property]
+gere:
+  family: "R"
+  long: |
+    (A) is less than [E] in property (I1).
+    (I1) should express a property that can be compared and ordered.
+  short: "less"
+  type: [IDistributive, IDistributive, Property]
 fuir:
   family: "R"
   long: "(A) knows fact [E0] from source (I)."
@@ -624,6 +641,8 @@ zvu:
   family: "R"
   long: |
     (A) satify relation [E2] with its future self.
+    [E2].A = Future (A).
+    [E2].E = Current (A). 
     Allow to describe the evolution of something.
     Arguments of the relation defines the distributivity of (A).
   short: "relation with future self"
@@ -1003,7 +1022,7 @@ van:
 gza:
   family: "R"
   long: "(A) (default value of (E.A)) is an agentive cause of event [E0]"
-  short: "does"
+  short: "agentive cause"
   type: [ICollective, Proposition]
   sequential: true
 kini:
@@ -1110,31 +1129,31 @@ tun:
   short: "every"
   type: [ICollective, Property]
   sequential: true
-tal:
+tar:
   family: "R"
   long: "(A) is a negligible number in dimension/unit [E1]."
   short: "negligible"
   type: [Number, Property]
   sequential: true
-tel:
+ter:
   family: "R"
   long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
   short: "small"
   type: [Number, Property]
   sequential: true
-til:
+tir:
   family: "R"
   long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
   short: "medium"
   type: [Number, Property]
   sequential: true
-tol:
+tor:
   family: "R"
   long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
   short: "large"
   type: [Number, Property]
   sequential: true
-tul:
+tur:
   family: "R"
   long: "(A) is an infinite number in dimension/unit [E1]."
   short: "infinite"
@@ -1145,7 +1164,7 @@ zbur:
   long: "(A) is a town/city."
   short: "city"
   type: [IDistributive]
-zdil:
+zdir:
   family: "R"
   long: "(A) is amusing/entertaining to (E) (default: speaker) in property (I1)."
   short: "amusing"
@@ -1185,9 +1204,9 @@ ban:
   type: [IDistributive]
 speu:
   family: "R"
-  long: "(A) (ordered set) is ordered following ordering rule [E2]."
+  long: "(A) (ordered list) is ordered following ordering rule [E2]."
   short: "ordered set member"
-  type: [ICollective, Relation]
+  type: [List, Relation]
   sequential: true
 fir:
   family: "R"
@@ -1229,7 +1248,7 @@ bor:
   long: "(A) is red [color adjective]."
   short: "red"
   type: [IDistributive]
-ter:
+der:
   family: "R"
   long: "(A) is green [color adjective]."
   short: "green"
@@ -1362,9 +1381,20 @@ soane:
 sfa:
   family: "R"
   long: "(A) is an occurence of [E0] being true."
-  short: "occurent"
+  short: "occurence"
   type: [IDistributive, Proposition]
   sequential: true
+tcu:
+  family: "R"
+  long: "(A) requires/needs [E0] to being true. [E0] is a necessity for (A)."
+  short: "needs"
+  type: [IDistributive, Proposition]
+  sequential: true
+minu:
+  family: "R"
+  long: "(A) sleeps."
+  short: "sleeps"
+  type: [IDistributive]
 
 # Compounds (2):
 etsenban:

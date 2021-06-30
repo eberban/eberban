@@ -15,8 +15,8 @@ It can also contain inner **la** quotes, as a **lai** will match its opening
 place structure `(A) is word [word]`. **lei** will instead express the family of
 the word (specific particle family or root) : `lei lai = (A) is a LA particle`. 
 
-**lehi** provides a predicate describing the meaning of the following particle.
-This predicate can be used to answer questions asked using **ji GA** (TOOD).
+**leu** provides a predicate describing the meaning of the following particle.
+This predicate can be used to answer questions asked using **du GA**.
 
 ## Foreign quote [LO]
 

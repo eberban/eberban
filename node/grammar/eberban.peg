@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.34
+# eberban PEG grammar - v0.35
 # ===========================
 
 # GRAMMAR
@@ -10,7 +10,7 @@ parser_version_short <- parser_version_number
 parser_version_number <- spaces? TA+
 
 # main text rule
-text_1 <- (free_indicator / free_parenthetical)* paragraphs? spaces? EOF?
+text_1 <- free_parenthetical* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
@@ -19,43 +19,35 @@ paragraph_unit <- definition / sentence
 
 arguments_list <- (KA_clause / GA_clause)* PI_clause
 
-definition <- PO_clause definition_key arguments_list? scope POI_clause_elidible
+definition <- PO_clause definition_key scope POI_clause_elidible
 definition_key <- GA_clause / unit_compound / unit_root
-
-sentence <- PA_clause_elidible arguments_list? scope PAI_clause_elidible
-
-subscope <- arguments_list? definition* scope
+sentence <- PA_clause_elidible scope PAI_clause_elidible
 
 # scope
-scope <- scope_1 # allow to find only the top-level scopes when using connectives
+scope <- arguments_list? scope_1
 
-scope_1 <- scope_2 scope_left_bind*
-scope_left_bind <- unit_transform* PE_clause arguments_list? scope_2?
+scope_1 <- scope_group / scope_2
+scope_group <- scope_2 (BA_clause scope_2)+
 
-scope_2 <- scope_connectives / scope_3
-scope_connectives <- scope_3 (DA_clause scope_3)+
-
-scope_3 <- scope_plural / scope_4
-scope_plural <- scope_4 (BA_clause scope_4)+
-
-scope_4 <- sequential
+scope_2 <- sequential
 
 # bindings
 sequential <- sequential_neg / sequential_unit sequential?
 sequential_neg <- BI_clause sequential_unit+
 sequential_unit <- unit explicit_binding?
 explicit_binding <- explicit_binding_va explicit_binding_fa* VAI_clause_elidible
-explicit_binding_va <- BI_clause? VA_clause subscope 
-explicit_binding_fa <- BI_clause? FA_clause subscope
+explicit_binding_va <- BI_clause? VA_clause scope 
+explicit_binding_fa <- BI_clause? FA_clause scope
 
 # predicate unit
-unit <- unit_transform* unit_1
-unit_transform <- SA_clause / ZA_clause
-unit_1 <- quote / variable / unit_borrowing / unit_root / unit_number / unit_compound
+unit <- (SA_clause / ZA_clause)* unit_1
+unit_1 <- quote / variable / unit_scope / unit_borrowing / unit_root / unit_number / unit_compound
+
 unit_root <- free_prefix* spaces? root free_post*
 unit_number <- free_prefix* spaces? number free_post*
 unit_compound <- free_prefix* spaces? compound free_post*
 unit_borrowing <- free_prefix* (spaces? borrowing)+ BE_clause_elidible free_post*
+unit_scope <- PE_clause scope PEI_clause_elidible
 
 # quotes
 quote <- grammatical_quote / one_word_quote / foreign_quote
@@ -70,82 +62,77 @@ number <- TA_clause+ BE_clause_elidible
 # variables
 variable <- MA_clause / BO_clause? KA_clause / BO_clause? GA_clause
 
-# free prefix
-free_prefix <- JE_clause / JU_clause
+# free affixes
+free_prefix <- DA_clause
 
-# free suffix
-free_post <- JEI_clause / free_indicator / free_parenthetical / free_subscript
-free_subscript <- JA_clause number
-free_indicator <- CA_clause
-free_parenthetical <- JO_clause text_1 JOI_clause
+free_post <- free_parenthetical / free_subscript
+free_subscript <- DI_clause number
+free_parenthetical <- DO_clause text_1 DOI_clause
 
-# particle override
-override <- JI_clause (GA_clause / override_word)
+override <- DU_clause (GA_clause / override_word)
 override_word <- spaces? (root / compound / &particle (m a))
 
+
 # PARTICLES CLAUSES
-BA_clause           <- spaces? BA                                              # plural value builder (with)
-BE_clause           <- spaces? BE                                              # miscellaneous terminator
-BE_clause_elidible  <- BE_clause?                                              #
+BE_clause           <- free_prefix* spaces? BE free_post*                      # miscellaneous terminator
 BI_clause           <- free_prefix* spaces? BI free_post*                      # wide-scope negation
-BO_clause           <- spaces? BO                                              # variable assignement
+BO_clause           <- free_prefix* spaces? BO free_post*                      # variable assignement
 BU_clause           <- spaces? BU                                              # parser version/dialect
-CA_clause           <- free_prefix* spaces? CA                                 # free suffix (indicator / marker)
-DA_clause           <- free_prefix* spaces? DA override? free_post*            # logical connectives
-FA_clause           <- free_prefix* spaces? FA override? free_post*            # continue explicit binding
+DA_clause           <- spaces? DA                                              # free prefix
+DI_clause           <- free_prefix* spaces? DI free_post*                      # free subscript
+DO_clause           <- free_prefix* spaces? DO                                 # free parenthetical starter
+DOI_clause          <- free_prefix* spaces? DOI                                # free parenthetical terminator
+DU_clause           <- free_prefix* spaces? DU free_post*                      # particle override
+BA_clause           <- free_prefix* spaces? BA free_post* override?            # scope grouping (plural with, sets, lists)
+FA_clause           <- free_prefix* spaces? FA free_post* override?            # continue explicit binding
 GA_clause           <- free_prefix* spaces? GA free_post*                      # pred variables
-JA_clause           <- free_prefix* spaces? JA                                 # free subscript
-JE_clause           <- spaces? JE                                              # free scope starter
-JEI_clause          <- spaces? JEI                                             # free scope termiator
-JI_clause           <- spaces? JI                                              # particle override
-JO_clause           <- free_prefix* spaces? JO                                 # free parenthetical started (text)
-JOI_clause          <- free_prefix* spaces? JOI                                # free parenthetical terminator
-JU_clause           <- spaces? JU                                              # free prefix / scope starter
 KA_clause           <- free_prefix* spaces? KA free_post*                      # individual variables
 MA_clause           <- free_prefix* spaces? MA free_post*                      # intrinsic variables (pronouns, ...)
 PA_clause           <- free_prefix* spaces? PA free_post*                      # pred scope starter
-PA_clause_elidible  <- PA_clause?                                              #
 PAI_clause          <- free_prefix* spaces? PAI free_post*                     # pred scope terminator
-PAI_clause_elidible <- PAI_clause?                                             #
-PE_clause           <- free_prefix* spaces? PE free_post*                      # left scope grouping
+PE_clause           <- free_prefix* spaces? PE free_post*                      # unit scope starter
+PEI_clause          <- free_prefix* spaces? PEI free_post*                     # unit scope elidible terminator
 PI_clause           <- free_prefix* spaces? PI free_post*                      # pred scope arguments terminator
-PO_clause           <- spaces? PO                                              # definition starter
-POI_clause          <- spaces? POI                                             # definition terminator
-POI_clause_elidible <- POI_clause?                                             #
+PO_clause           <- free_prefix* spaces? PO free_post*                      # definition starter
+POI_clause          <- free_prefix* spaces? POI free_post*                     # definition terminator
 PU_clause           <- free_prefix* spaces? PU free_post*                      # paragraph marker
-SA_clause           <- free_prefix* spaces? SA override? free_post*            # place binding tag
-TA_clause           <- free_prefix* spaces? TA                                 # numbers/digits
-VA_clause           <- free_prefix* spaces? VA override? free_post*            # starts explicit binding clause
+SA_clause           <- free_prefix* spaces? SA free_post* override?            # place binding tag
+TA_clause           <- free_prefix* spaces? TA free_post*                      # numbers/digits
+VA_clause           <- free_prefix* spaces? VA free_post* override?            # starts explicit binding clause
 VAI_clause          <- free_prefix* spaces? VAI free_post*                     # explicit binding clause terminator
-VAI_clause_elidible <- VAI_clause?                                             #
 LA_clause           <- free_prefix* spaces? LA                                 # grammatical quote starter
-LAI_clause          <- free_prefix* spaces? LAI free_post*                     # grammatical quote terminator
-LE_clause           <- free_prefix* spaces? LE                                 # one word quote
+LAI_clause          <- spaces? LAI free_post*                                  # grammatical quote terminator
+LE_clause           <- free_prefix* spaces? LE free_post*                      # one word quote
 LO_clause           <- free_prefix* spaces? LO                                 # foreign quote
-ZA_clause           <- free_prefix* spaces? ZA override?                       # pred unit transformation
+ZA_clause           <- free_prefix* spaces? ZA free_post* override?            # pred unit transformation
+
+BE_clause_elidible  <- BE_clause?
+PA_clause_elidible  <- PA_clause?
+PAI_clause_elidible <- PAI_clause?
+PEI_clause_elidible <- PEI_clause?
+POI_clause_elidible <- POI_clause?
+VAI_clause_elidible <- VAI_clause?
 
 # PARTICLE FAMILIES
-BA    <- &particle (b a)
+BA    <- &particle (b &a haeiou)
 BE    <- &particle (b &e haeiou)
 BI    <- &particle (b i)
 BO    <- &particle (b o)
 BU    <- &particle (b u)
 CA    <- &particle (c haeiou)
-DA    <- &particle (d aeiou)
+DA    <- &particle (d &a haeiou)
+DI    <- &particle (d i)
+DO    <- &particle (d o)
+DOI   <- &particle (d o i)
+DU    <- &particle (d u)
 FA    <- &particle (f haeiou)
 GA    <- &particle (g haeiou)
-JA    <- &particle (j a)
-JE    <- &particle (j e)
-JEI   <- &particle (j e i)
-JI    <- &particle (j i)
-JO    <- &particle (j o)
-JOI   <- &particle (j o i)
-JU    <- &particle (j &u haeiou)
 KA    <- &particle (k haeiou)
 MA    <- &particle (m haeiou)
 PA    <- &particle !(PAI &post_word) (p &a haeiou)
 PAI   <- &particle (p a i)
-PE    <- &particle (p &e haeiou)
+PE    <- &particle (p e)
+PEI   <- &particle (p e i)
 PI    <- &particle (p &i haeiou)
 PO    <- &particle !(POI &post_word) (p &o haeiou)
 POI   <- &particle (p o i)

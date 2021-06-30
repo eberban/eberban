@@ -7,6 +7,21 @@ ICollective:
 IArgument:
   name: Invididual (Argument)
   description: A plural individual predicate argument.
+List:
+  name: List
+  description: A list of predicates.
+ListI:
+  name: Individual List
+  description: A list of individuals.
+List0:
+  name: Proposition List
+  description: A list of propositions.
+List1:
+  name: Property List
+  description: A list of properties.
+List2:
+  name: Relation List
+  description: A list of relations.
 Number:
   name: Number
   description: A number that may have a unit of measurement.

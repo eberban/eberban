@@ -16,7 +16,7 @@
   - [Numbers (TA)](units/TA.md)
   - [Borrowings (B)](units/B.md)
   - [Compounds (C)](units/C.md)
-  - [Quotes (LE/LE/LO)](units/LA_LE_LO.md)
+  - [Quotes (LA/LE/LO)](units/LA_LE_LO.md)
 
 - [Predicate bindings](bindings/intro.md)
   - [Unit transformations (SA/ZA/BI)](bindings/SA_ZA_BI.md)
@@ -25,8 +25,8 @@
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Predicate definition (PO)](struct/PO.md)
-  - [Free modifiers (J-/C-)](struct/J-_C-.md)
-  - [Logical connectives (DA)](struct/DA.md)
+  - [Lists (BA)](struct/BA.md)
+  - [Free modifiers (DA/DI/DO/DU)](struct/DA_DI_DO_DU.md)
   - [Parser version/dialect (BU)](struct/BU.md)
 
 - [List of particle families](families.md)

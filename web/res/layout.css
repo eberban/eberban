@@ -25,9 +25,8 @@ li.implicit {
 	font-style: italic;
 }
 
-#parse-result {
-	max-height: 300px;
-	overflow-y: auto;
+#parse-result-boxes {
+	padding-bottom: 200px;
 }
 
 /* Translations */
@@ -44,11 +43,6 @@ li.implicit {
 .tengwar-highlighting .lojban-error {
 	padding-top: 0px;
 	padding-bottom: 0px;
-}
-
-/* Boxes */
-#parse-result-boxes {
-	overflow-x: scroll;
 }
 
 .box {
@@ -77,6 +71,8 @@ li.implicit {
 }
 
 .box.box-sentence {
+	display: block;
+	text-align: left;
 	background: #ffffff;
 	border: 1px black solid;
 	margin: 2px;
@@ -191,7 +187,7 @@ li.implicit {
 	padding: 5px;
 	position: absolute;
 	top: 100%;
-	margin-left: -30px;
+	margin-left: 0px;
 	opacity: 0;
 	transition: opacity 0.1s;
 	white-space: normal;

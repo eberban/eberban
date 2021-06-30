@@ -6,6 +6,8 @@ export const { postprocessing } = require('../src/process_parse_tree');
 const { words_en: words } = require('../src/dictionary');
 
 const hideTitleList = [
+	'sentence',
+	'definition',
 	'scope',
 	'scope group',
 	'distributive connectives scope',
@@ -16,7 +18,6 @@ const hideTitleList = [
 	'sequential negation',
 	'sequential binding',
 	'explicit binding',
-	'subscope'
 ];
 
 // List of types with their associated CSS classes.
