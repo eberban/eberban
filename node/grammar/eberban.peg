@@ -114,38 +114,38 @@ POI_clause_elidible <- POI_clause?
 VAI_clause_elidible <- VAI_clause?
 
 # PARTICLE FAMILIES
-BA    <- &particle (b &a haeiou)
-BE    <- &particle (b &e haeiou)
-BI    <- &particle (b i)
-BO    <- &particle (b o)
-BU    <- &particle (b u)
-CA    <- &particle (c haeiou)
-DA    <- &particle (d &a haeiou)
-DI    <- &particle (d i)
-DO    <- &particle (d o)
-DOI   <- &particle (d o i)
-DU    <- &particle (d u)
-FA    <- &particle (f haeiou)
-GA    <- &particle (g haeiou)
-KA    <- &particle (k haeiou)
-MA    <- &particle (m haeiou)
-PA    <- &particle !(PAI &post_word) (p &a haeiou)
-PAI   <- &particle (p a i)
-PE    <- &particle (p e)
-PEI   <- &particle (p e i)
-PI    <- &particle (p &i haeiou)
-PO    <- &particle !(POI &post_word) (p &o haeiou)
-POI   <- &particle (p o i)
-PU    <- &particle (p &u haeiou)
-SA    <- &particle (s haeiou)
-TA    <- &particle (t haeiou) / digit
-VA    <- &particle !(VAI &post_word) (v haeiou)
-VAI   <- &particle (v a i)
-LA    <- &particle !(LAI &post_word) (l &a haeiou)
-LAI   <- &particle (l a i)
-LE    <- &particle (l &e haeiou)
-LO    <- &particle (l &o haeiou)
-ZA    <- &particle (z haeiou)
+BA    <- &particle                   (b &a haeiou)      &post_word
+BE    <- &particle                   (b &e haeiou)      &post_word
+BI    <- &particle                   (b i)              &post_word
+BO    <- &particle                   (b o)              &post_word
+BU    <- &particle                   (b u)              &post_word
+CA    <- &particle                   (c haeiou)         &post_word
+DA    <- &particle                   (d &a haeiou)      &post_word
+DI    <- &particle                   (d i)              &post_word
+DO    <- &particle                   (d o)              &post_word
+DOI   <- &particle                   (d o i)            &post_word
+DU    <- &particle                   (d u)              &post_word
+FA    <- &particle                   (f haeiou)         &post_word
+GA    <- &particle                   (g haeiou)         &post_word
+KA    <- &particle                   (k haeiou)         &post_word
+MA    <- &particle                   (m haeiou)         &post_word
+PA    <- &particle !(PAI &post_word) (p &a haeiou)      &post_word
+PAI   <- &particle                   (p a i)            &post_word
+PE    <- &particle                   (p e)              &post_word
+PEI   <- &particle                   (p e i)            &post_word
+PI    <- &particle                   (p &i haeiou)      &post_word
+PO    <- &particle !(POI &post_word) (p &o haeiou)      &post_word
+POI   <- &particle                   (p o i)            &post_word
+PU    <- &particle                   (p &u haeiou)      &post_word
+SA    <- &particle                   (s haeiou)         &post_word
+TA    <- &particle                   (t haeiou) / digit &post_word
+VA    <- &particle !(VAI &post_word) (v haeiou)         &post_word
+VAI   <- &particle                   (v a i)            &post_word
+LA    <- &particle !(LAI &post_word) (l &a haeiou)      &post_word
+LAI   <- &particle                   (l a i)            &post_word
+LE    <- &particle                   (l &e haeiou)      &post_word
+LO    <- &particle                   (l &o haeiou)      &post_word
+ZA    <- &particle                   (z haeiou)         &post_word
 
 # MORPHOLOGY
 # - Forein text quoting
@@ -170,7 +170,7 @@ foreign_word <- (initial_consonant_pair / consonant / h)? haeiou (consonant_clus
 
 # - Native words
 native_word <- root / particle
-particle <- !sonorant particle_1  &post_word
+particle <- !sonorant particle_1 &post_word
 root <- !sonorant (root_1 / root_2 / root_3) &post_word
 
 particle_1 <- consonant haeiou
