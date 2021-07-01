@@ -44,22 +44,22 @@ All words starting with a vowel must be preceded by a pause (**'** and/or
 space). In written media, a sequence of words is typically, but not necessarily,
 separated by spaces (" ").
 
->  **For the advanced reader:** you may have noticed that all words start with
->  either a vowel (preceded by a pause), or a non-sonorant; and that all words
->  end with either a vowel or a sonorant. This is by design.
->  As we will later see, these seemingly artificial restrictions involving
->  sonorants ensure that, even if words (except borrowings) are strung together
->  without any spaces between them, they can still be uniquely decomposed (i.e.
->  spaces can be deterministically added back). This may seem unimportant, and
->  indeed in written media spaces are not particularly obnoxious &ndash; they
->  are recommended, even. But in spoken form spaces correspond to pauses, and
->  this unique decomposition property suddenly becomes important: it means that,
->  while speaking, we do not need to pause between every two words! For our
->  fellow language nerds out there: this cool property is also known as
->  self-segmenting morphophonology :-)
+> **For the advanced reader:** you may have noticed that all words start with
+> either a vowel (preceded by a pause), or a non-sonorant; and that all words
+> end with either a vowel or a sonorant. This is by design.
+> As we will later see, these seemingly artificial restrictions involving
+> sonorants ensure that, even if words (except borrowings) are strung together
+> without any spaces between them, they can still be uniquely decomposed (i.e.
+> spaces can be deterministically added back). This may seem unimportant, and
+> indeed in written media spaces are not particularly obnoxious &ndash; they
+> are recommended, even. But in spoken form spaces correspond to pauses, and
+> this unique decomposition property suddenly becomes important: it means that,
+> while speaking, we do not need to pause between every two words! For our
+> fellow language nerds out there: this cool property is also known as
+> self-segmenting morphophonology :-)
 >
->  Additionally, there is a mandatory pause at the end of borrowings, allowing
->  segmenting to work with borrowings as well.
+> Additionally, the penultimate vowel of borrowings is stressed, allowing
+> segmenting to work with borrowings as well.
 
 ## Permissible consonant pairs
 
