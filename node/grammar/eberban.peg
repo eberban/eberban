@@ -70,41 +70,47 @@ free_subscript <- DI_clause number
 free_parenthetical <- DO_clause text_1 DOI_clause
 
 override <- DU_clause (GA_clause / override_word)
-override_word <- spaces? (root / compound / &particle (m a))
+override_word <- spaces? (root / compound / ma)
 
 
 # PARTICLES CLAUSES
-BE_clause           <- free_prefix* spaces? BE free_post*                      # miscellaneous terminator
-BI_clause           <- free_prefix* spaces? BI free_post*                      # wide-scope negation
-BO_clause           <- free_prefix* spaces? BO free_post*                      # variable assignement
-BU_clause           <- spaces? BU                                              # parser version/dialect
-DA_clause           <- spaces? DA                                              # free prefix
-DI_clause           <- free_prefix* spaces? DI free_post*                      # free subscript
+BA_clause           <- free_prefix* spaces? BA  free_post* override?           # scope grouping (plural with, sets, lists)
+BE_clause           <- free_prefix* spaces? BE  free_post*                     # miscellaneous terminator
+BI_clause           <- free_prefix* spaces? BI  free_post*                     # wide-scope negation
+BO_clause           <- free_prefix* spaces? BO  free_post*                     # variable assignement
+BU_clause           <-              spaces? BU                                 # parser version/dialect
+
+DA_clause           <-              spaces? DA                                 # free prefix
+DI_clause           <- free_prefix* spaces? DI  free_post*                     # free subscript
 DO_clause           <- free_prefix* spaces? DO                                 # free parenthetical starter
 DOI_clause          <- free_prefix* spaces? DOI                                # free parenthetical terminator
-DU_clause           <- free_prefix* spaces? DU free_post*                      # particle override
-BA_clause           <- free_prefix* spaces? BA free_post* override?            # scope grouping (plural with, sets, lists)
-FA_clause           <- free_prefix* spaces? FA free_post* override?            # continue explicit binding
-GA_clause           <- free_prefix* spaces? GA free_post*                      # pred variables
-KA_clause           <- free_prefix* spaces? KA free_post*                      # individual variables
-MA_clause           <- free_prefix* spaces? MA free_post*                      # intrinsic variables (pronouns, ...)
-PA_clause           <- free_prefix* spaces? PA free_post*                      # pred scope starter
-PAI_clause          <- free_prefix* spaces? PAI free_post*                     # pred scope terminator
-PE_clause           <- free_prefix* spaces? PE free_post*                      # unit scope starter
-PEI_clause          <- free_prefix* spaces? PEI free_post*                     # unit scope elidible terminator
-PI_clause           <- free_prefix* spaces? PI free_post*                      # pred scope arguments terminator
-PO_clause           <- free_prefix* spaces? PO free_post*                      # definition starter
-POI_clause          <- free_prefix* spaces? POI free_post*                     # definition terminator
-PU_clause           <- free_prefix* spaces? PU free_post*                      # paragraph marker
-SA_clause           <- free_prefix* spaces? SA free_post* override?            # place binding tag
-TA_clause           <- free_prefix* spaces? TA free_post*                      # numbers/digits
-VA_clause           <- free_prefix* spaces? VA free_post* override?            # starts explicit binding clause
+DU_clause           <- free_prefix* spaces? DU  free_post*                     # free particle override
+
+SA_clause           <- free_prefix* spaces? SA  free_post* override?           # place binding tag
+ZA_clause           <- free_prefix* spaces? ZA  free_post* override?           # pred unit transformation
+VA_clause           <- free_prefix* spaces? VA  free_post* override?           # starts explicit binding clause
+FA_clause           <- free_prefix* spaces? FA  free_post* override?           # continue explicit binding
 VAI_clause          <- free_prefix* spaces? VAI free_post*                     # explicit binding clause terminator
+
+GA_clause           <- free_prefix* spaces? GA  free_post*                     # pred variables
+KA_clause           <- free_prefix* spaces? KA  free_post*                     # individual variables
+MA_clause           <- free_prefix* spaces? MA  free_post*                     # intrinsic variables (pronouns, ...)
+
+PA_clause           <- free_prefix* spaces? PA  free_post*                     # pred scope starter
+PAI_clause          <- free_prefix* spaces? PAI free_post*                     # pred scope terminator
+PE_clause           <- free_prefix* spaces? PE  free_post*                     # unit scope starter
+PEI_clause          <- free_prefix* spaces? PEI free_post*                     # unit scope elidible terminator
+PI_clause           <- free_prefix* spaces? PI  free_post*                     # pred scope arguments terminator
+PO_clause           <- free_prefix* spaces? PO  free_post*                     # definition starter
+POI_clause          <- free_prefix* spaces? POI free_post*                     # definition terminator
+PU_clause           <- free_prefix* spaces? PU  free_post*                     # paragraph marker
+
+TA_clause           <- free_prefix* spaces? TA  free_post*                     # numbers/digits
+
 LA_clause           <- free_prefix* spaces? LA                                 # grammatical quote starter
-LAI_clause          <- spaces? LAI free_post*                                  # grammatical quote terminator
-LE_clause           <- free_prefix* spaces? LE free_post*                      # one word quote
+LAI_clause          <-              spaces? LAI free_post*                     # grammatical quote terminator
+LE_clause           <- free_prefix* spaces? LE  free_post*                     # one word quote
 LO_clause           <- free_prefix* spaces? LO                                 # foreign quote
-ZA_clause           <- free_prefix* spaces? ZA free_post* override?            # pred unit transformation
 
 BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
@@ -129,6 +135,7 @@ FA    <- &particle                   (f haeiou)         &post_word
 GA    <- &particle                   (g haeiou)         &post_word
 KA    <- &particle                   (k haeiou)         &post_word
 MA    <- &particle                   (m haeiou)         &post_word
+ma    <- &particle                   (m a)              &post_word
 PA    <- &particle !(PAI &post_word) (p &a haeiou)      &post_word
 PAI   <- &particle                   (p a i)            &post_word
 PE    <- &particle                   (p e)              &post_word

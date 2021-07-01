@@ -29,33 +29,33 @@ using **FA**, as **VA** would create an inner explicit binding.
 
 > **Vocabulary :**
 >
-> - jve: `(A) is a friend of [E].`
+> - jven: `(A) is a friend of [E].`
 > - mi: `(A) is I/a speaker/author.`
-> - pcor: `(A) has area [E] (measure, meters^2 by default / object(s) with same
+> - zono: `(A) has area [E] (measure, meters^2 by default / object(s) with same
 >   area).`
-> - pcan: `(A) is at a distance in space of [E] (mesure, meters by default /
+> - vuno: `(A) is at a distance in space of [E] (mesure, meters by default /
 >   object with this length) from (I) (default: here).`
-> - tca: `(A) is a town/city.`
-> - tel: `(A) is a small number (subjective/contextual) in dimension/unit [E1].`
-> - tol: `(A) is a large number (subjective/contextual) in dimension/unit [E1].`
+> - zbur: `(A) is a town/city.`
+> - ter: `(A) is a small number (subjective/contextual) in dimension/unit [E1].`
+> - tor: `(A) is a large number (subjective/contextual) in dimension/unit [E1].`
 > - vier: `(A) visits [E] with guide (I).`
 >
 > -----
 >
-> **Sentence without VA/FA :** *mi vier tca*  
+> **Sentence without VA/FA :** *mi vier zbur*  
 > I visit a city.
 >
 > \\[
 > S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
 > F_2 = \exists e_2 \exists i_2 [vier(a_1, e_2, i_2) \wedge F_3] \\\\
-> F_3 = tca(e_2)
+> F_3 = zbur(e_2)
 > \\]
 >
 > -----
 >
 > **Sentence with VA/FA :**
 >
-> *mi vier [vi mo vai] tca [\<va pcan tel> \<fa pcor tol> vai]*  
+> *mi vier [vi mo vai] zbur [\<va vuno ter> \<fa zono tor> vai]*  
 > I visit (guided by you) a city (which is near (small in distance) and is large
 > in size).
 >
@@ -64,14 +64,14 @@ using **FA**, as **VA** would create an inner explicit binding.
 > F_2 = \exists e_2 \exists i_2 [vier(a_1, \color{magenta}{e_2}, i_2) \wedge
 >   \color{magenta}{F_{2:1}} \wedge F_3] \\\\
 > \color{magenta}{F_{2:1}} = [mo(\color{magenta}{i_2})] \\\\
-> F_3 = [tca(\color{cyan}{e_2}) \wedge \color{cyan}{F_{3:1}} \wedge
+> F_3 = [zbur(\color{cyan}{e_2}) \wedge \color{cyan}{F_{3:1}} \wedge
 > \color{cyan}{F_{3:3}}] \\\\
 > \color{cyan}{F_{3:1}} = \exists e_{3:1} \exists i_{3:1}
-> [pcan(\color{cyan}{i_2}, e_{3:1}, i_{3:1}) \wedge F_{3:2}] \\\\
-> F_{3:2} = \exists e_{3:2} [tel(e_{3:1}, e_{3:2})] \\\\
+> [vuno(\color{cyan}{i_2}, e_{3:1}, i_{3:1}) \wedge F_{3:2}] \\\\
+> F_{3:2} = \exists e_{3:2} [ter(e_{3:1}, e_{3:2})] \\\\
 > \color{cyan}{F_{3:3}} = \exists e_{3:3} \exists i_{3:3}
-> [pcor(\color{cyan}{i_2}, e_{3:3}, i_{3:3}) \wedge F_{3:4}] \\\\
-> F_{3:4} = \exists e_{3:2} [tol(e_{3:3}, e_{3:4})] 
+> [zono(\color{cyan}{i_2}, e_{3:3}, i_{3:3}) \wedge F_{3:4}] \\\\
+> F_{3:4} = \exists e_{3:2} [tor(e_{3:3}, e_{3:4})] 
 > \\]
 
 **FA** and **VA** contains the same particles having the same usage, with the

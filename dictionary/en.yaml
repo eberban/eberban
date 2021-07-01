@@ -908,7 +908,7 @@ dona:
   short: "likes that"
   type: [IDistributive, Proposition]
   sequential: true
-jve:
+jven:
   family: "R"
   long: "(A) is a friend of [E]."
   short: "friend"

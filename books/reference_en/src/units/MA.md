@@ -30,7 +30,7 @@ It is often useful to refer to other propositions.
 Counting takes only into account complete proposition, and ignore proposition
 that are currently being defined when the word is used.
 
-Using [subscripts **JA**](../struct/free.md#ja) allow to refer to more distant
+Using [subscripts **DI**](../struct/DA_DI_DO_DU.md) allow to refer to more distant
 predicates.
 
 ## Specials
