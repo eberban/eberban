@@ -1191,7 +1191,7 @@ dan:
   short: "among"
   type: [IDistributive, ICollective]
   sequential: true
-dal:
+dar:
   family: "R"
   long: "Everything among (A) also satisfies [E1]."
   short: "for each"
@@ -1530,4 +1530,16 @@ evaza:
     Allows to make names from a scope.
   short: "named (binding)"
   type: [ICollective, ICollective]
+  sequential: true
+etanakano:
+  family: "C2"
+  long: "(A) is bigger (in volume) than [E]."
+  short: "bigger (volume)"
+  type: [IDistributive, IDistributive]
+  sequential: true
+egerekano:
+  family: "C2"
+  long: "(A) is smaller (in volume) than [E]."
+  short: "smaller (volume)"
+  type: [IDistributive, IDistributive]
   sequential: true
