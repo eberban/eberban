@@ -27,7 +27,7 @@ foreign words or names. Compounds starts with **a, e, i, o** and borrowings with
 
 Borrowings must end in a vowel which can be followed by a sonorant. In written
 media it must be followed by a space or word boundary marker, while in speech
-the last vowel must be stressed.
+the penultimate vowel must be stressed.
 
 > **Remark:** If you are familiar with Lojban, you may view particles as
 > analogous to cmavo, roots to gismu, compounds to lujvo and borrowings to
