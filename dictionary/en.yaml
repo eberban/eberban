@@ -570,7 +570,7 @@ bei:
   family: "BE"
   long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered list [E]."
   short: "-th"
-  type: [ICollective, List]
+  type: [ICollective, List<IArgument>]
   sequential: true
 bi:
   family: "BI"
@@ -590,38 +590,38 @@ kor:
   family: "R"
   long: "(A) is a plural value/group composed of invididuals in list [E]."
   short: "group"
-  type: [ICollective, List]
+  type: [ICollective, List<IArgument>]
   sequential: true
 jor:
   family: "R"
   long: "This predicate is true if all predicates in list (A) are true."
   short: "AND (Pred)"
-  type: [List0]
+  type: [List<Proposition>]
 lar:
   family: "R"
   long: "This predicate is true if at least one predicate in list (A) is true."
   short: "OR (Pred)"
-  type: [List0]
+  type: [List<Proposition>]
 sir:
   family: "R"
   long: "This predicate is true if exactly (E) (default: 1) predicate in list (A) is true."
   short: "XOR (Pred)"
-  type: [List0, Number]
+  type: [List<Proposition>, Number]
 jon:
   family: "R"
   long: "This predicate is true if all individuals in list (A) satisfies property [E1]."
   short: "AND (Indiv)"
-  type: [List, Property]
+  type: [List<IArgument>, Property]
 lan:
   family: "R"
   long: "This predicate is true if at least one individual in list (A) satisfies property [E1]."
   short: "OR (Indiv)"
-  type: [List, Property]
+  type: [List<IArgument>, Property]
 sin:
   family: "R"
   long: "This predicate is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
   short: "XOR (Indiv)"
-  type: [List, Property, Number]
+  type: [List<IArgument>, Property, Number]
 kano:
   family: "R"
   long: |
@@ -1002,8 +1002,8 @@ sni:
   sequential: true
 spi:
   family: "R"
-  long: "(A) talks to [E] about (I)."
-  short: "talks"
+  long: "(A) says [E] to (I)."
+  short: "says"
   type: [IDistributive, IDistributive, IDistributive]
   sequential: true
 spu:
@@ -1193,7 +1193,9 @@ dan:
   sequential: true
 dar:
   family: "R"
-  long: "Everything among (A) also satisfies [E1]."
+  long: |
+    Everything among (A) also satisfies [E1].
+    For each x among (A), [E1](x) is true.
   short: "for each"
   type: [IDistributive, Property]
   sequential: true
@@ -1206,7 +1208,7 @@ speu:
   family: "R"
   long: "(A) (ordered list) is ordered following ordering rule [E2]."
   short: "ordered set member"
-  type: [List, Relation]
+  type: [List<_>, Relation]
   sequential: true
 fir:
   family: "R"
@@ -1301,15 +1303,15 @@ jnaor:
   long: "(A) is wild/untamed."
   short: "wild"
   type: [IDistributive]
-dji:
+djin:
   family: "R"
-  long: "(A) desires/wants/wishes [E0]"
+  long: "(A) desires/wants/wishes [E0]."
   short: "want"
   type: [IDistributive, Proposition]
   sequential: true
 fuere:
   family: "R"
-  long: "(A) flies [in air/space]"
+  long: "(A) flies [in air/space]."
   short: "flies"
   type: [IDistributive]
 foina:
@@ -1394,6 +1396,86 @@ minu:
   family: "R"
   long: "(A) sleeps."
   short: "sleeps"
+  type: [IDistributive]
+jun:
+  family: "R"
+  long: "(A) is good."
+  short: "good"
+  type: [IDistributive]
+gur:
+  family: "R"
+  long: "(A) is bad."
+  short: "bad"
+  type: [IDistributive]
+kin:
+  family: "R"
+  long: "(A) is a kind of [E]."
+  short: "kind"
+  type: [IDistributive, IDistributive]
+  sequential: true
+kunu:
+  family: "R"
+  long: "(A) feels sentiment/emotion/sensation [E]."
+  short: "feels"
+  type: [IDistributive, IDistributive]
+  sequential: true
+viru:
+  family: "R"
+  long: "(A) sees [E]."
+  short: "sees"
+  type: [IDistributive, IDistributive]
+  sequential: true
+pure:
+  family: "R"
+  long: "(A) hears/listen to [E]."
+  short: "hears"
+  type: [IDistributive, IDistributive]
+  sequential: true
+len:
+  family: "R"
+  long: "(A) is a word."
+  short: "word"
+  type: [IDistributive]
+vina:
+  family: "R"
+  long: "(A) is alive."
+  short: "alive"
+  type: [IDistributive]
+mori:
+  family: "R"
+  long: "(A) is dead."
+  short: "dead"
+  type: [IDistributive]
+suer:
+  family: "R"
+  long: "(A) is similar to [E]."
+  short: "similar"
+  type: [IDistributive, IDistributive]
+  sequential: true
+paor:
+  family: "R"
+  long: "(A) is the truth."
+  short: "truth"
+  type: [IDistributive]
+cfeo:
+  family: "R"
+  long: "(A) is a solid [state of matter]."
+  short: "solid"
+  type: [IDistributive]
+zrao:
+  family: "R"
+  long: "(A) is a liquid [state of matter]."
+  short: "liquid"
+  type: [IDistributive]
+djio:
+  family: "R"
+  long: "(A) is a gaz [state of matter]."
+  short: "gaz"
+  type: [IDistributive]
+leno:
+  family: "R"
+  long: "(A) is water."
+  short: "water"
   type: [IDistributive]
 
 # Compounds (2):
@@ -1542,4 +1624,10 @@ egerekano:
   long: "(A) is smaller (in volume) than [E]."
   short: "smaller (volume)"
   type: [IDistributive, IDistributive]
+  sequential: true
+evinzane:
+  family: "C2"
+  long: "(A) is a writing system with symbols (E) and set of rules (I)."
+  short: "smaller (volume)"
+  type: [IDistributive, IDistributive, List<Proposition>]
   sequential: true
