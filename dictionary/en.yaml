@@ -80,22 +80,27 @@ mo:
   long: "(A) is you, a listener."
   short: "you"
   type: [IDistributive]
-moi:
+mio:
+  family: "MA"
+  long: "(A) is I/a speaker/author or you, a listener."
+  short: "we"
+  type: [IDistributive]
+me:
   family: "MA"
   long: "(A) is someone, neither a speaker or listener."
   short: "other"
   type: [IDistributive]
-mohi:
+mei:
   family: "MA"
   long: "(A) is this here, near a speaker."
   short: "this"
   type: [IDistributive]
-moho:
+meo:
   family: "MA"
   long: "(A) is that here, near a listener."
   short: "that"
   type: [IDistributive]
-mohu:
+meu:
   family: "MA"
   long: "(A) is that yonder, far from speaker and listener."
   short: "that yonder"

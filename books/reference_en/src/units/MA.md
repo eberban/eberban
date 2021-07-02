@@ -11,10 +11,11 @@ Pronouns are expressed with the following particles :
 | ---- | ---------------------------------------------------- |
 | mi   | `(A) is I/a speaker/author.`                         |
 | mo   | `(A) is you, a listener.`                            |
-| moi  | `(A) is someone, neither a speaker or listener.`     |
-| mohi | `(A) is this here, near a speaker.`                  |
-| moho | `(A) is that here, near a listener.`                 |
-| mohu | `(A) is that yonder, far from speaker and listener.` |
+| mio  | `(A) is I/a speaker/author or you, a listener.`      |
+| me   | `(A) is someone, neither a speaker or listener.`     |
+| mei  | `(A) is this here, near a speaker.`                  |
+| meo  | `(A) is that here, near a listener.`                 |
+| meu  | `(A) is that yonder, far from speaker and listener.` |
 
 ## Propositions
 
