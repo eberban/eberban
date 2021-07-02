@@ -938,7 +938,7 @@ luenu:
   long: "(A) is milk."
   short: "milk"
   type: [IDistributive]
-mian:
+mlian:
   family: "R"
   long: "(A) is a cat."
   short: "cat"
@@ -1002,11 +1002,11 @@ sni:
   sequential: true
 spi:
   family: "R"
-  long: "(A) says [E] to (I)."
-  short: "says"
+  long: "(A) talks about/says [E] to (I)."
+  short: "talks"
   type: [IDistributive, IDistributive, IDistributive]
   sequential: true
-spu:
+spur:
   family: "R"
   long: "(A) is a nest/house/home for [E]."
   short: "home"
@@ -1477,6 +1477,31 @@ leno:
   long: "(A) is water."
   short: "water"
   type: [IDistributive]
+gouru:
+  family: "R"
+  long: "(A) is a dog."
+  short: "dog"
+  type: [IDistributive]
+kanae:
+  family: "R"
+  long: "(A) is a wolf."
+  short: "wolf"
+  type: [IDistributive]
+kroan:
+  family: "R"
+  long: "(A) is a frog."
+  short: "frog"
+  type: [IDistributive]
+moriu:
+  family: "R"
+  long: "(A) is a bird."
+  short: "bird"
+  type: [IDistributive]
+cein:
+  family: "R"
+  long: "(A) is a room."
+  short: "room"
+  type: [IDistributive]
 
 # Compounds (2):
 etsenban:
@@ -1631,3 +1656,8 @@ evinzane:
   short: "smaller (volume)"
   type: [IDistributive, IDistributive, List<Proposition>]
   sequential: true
+espimoriu:
+  family: "C2"
+  long: "(A) is a parrot."
+  short: "parrot"
+  type: [IDistributive]

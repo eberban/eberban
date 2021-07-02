@@ -87,26 +87,26 @@ binding being part of the current statement, it is part of its own independent
 statement. It is used to add additionnal information which can be false without
 changing the truth value of the main statement.
 
-> *mi don tun mian dzo*  
+> *mi don tun mlian dzo*  
 > I like all cats that are black.
 >
 > \\[
 > S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
 > F_2 = \exists e_2 [don(a_1,e_2) \wedge F_3] \\\\
 > F_3 = \exists E_3 [tun(e_2, E_3) \wedge F_4] \\\\
-> F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mian(a_4) \color{magenta}{\wedge
+> F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mlian(a_4) \color{magenta}{\wedge
 > F_5}]) \\\\
 > \color{magenta}{F_5} = dzo(a_4)
 > \\]
 >
-> *mi don tun mian [vua dzo vai]*  
+> *mi don tun mlian [vua dzo vai]*  
 > I like all cats. They are black (all cats are black).
 >
 > \\[
 > S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
 > F_2 = \exists e_2 [don(a_1,e_2) \wedge F_3] \\\\
 > F_3 = \exists E_3 [tun(e_2, E_3) \wedge F_4] \\\\
-> F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mian(a_4)]) \\\\
+> F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mlian(a_4)]) \\\\
 > \color{magenta}{S_5} = dzo(a_4)
 > \\]
 >
