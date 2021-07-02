@@ -9,11 +9,11 @@ part of the vector will be defined by the predicates it will be used with. Tag
 is placed before the number it qualifies, and a number not starting with a tag
 is considered to have an implicit **teha**.
 
-If it doesn't have a decimal part (**te**), no vector tag and is positive then
-it is a **cardinal** with definition :
+If it doesn't have a decimal part (**te**), no vector tag and is greater than 0
+then it is a **cardinal** with definition :
 
 ```eng
-(A) is (a set of) [number] things satisfying [E1].
+(A) is (a group of) [number] things satisfying [E1].
 ```
 
 Otherwise its an **abstract number** with definition :

@@ -2,7 +2,7 @@
 ---
 # Specials :
 _cardinal:
-  long: "(A) is (a set of) [number] things satisfying [E1]."
+  long: "(A) is (a group of) [number] things satisfying [E1]."
   type: [ICollective, Property]
 _number:
   long: |
@@ -1100,11 +1100,6 @@ vier:
   short: "visits"
   type: [IDistributive, IDistributive]
   sequential: true
-tan:
-  family: "R"
-  long: "(A) is nothing. (same as 'ta' cardinal but without a (E) place)"
-  short: "nothing"
-  type: [IDistributive]
 ten:
   family: "R"
   long: "(A) is a small (subjective) amount of things satisfying [E1]."
