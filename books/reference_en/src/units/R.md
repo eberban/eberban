@@ -7,4 +7,4 @@ majority of the eberban dictionnary.
 >
 > **sfe :** `(A) is female.`  
 > **sni :** `(A) greets/say hello to [E].`  
-> **ple :** `(A) use/employs (E) for purpose [I0].`
+> **kcia :** `(A) [tool] is used to make [I0] [purpose] true.`

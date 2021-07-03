@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.35
+# eberban PEG grammar - v0.35.1
 # ===========================
 
 # GRAMMAR
@@ -157,7 +157,7 @@ ZA    <- &particle                   (z haeiou)         &post_word
 # MORPHOLOGY
 # - Forein text quoting
 foreign_quote_open <- native_word
-foreign_quote_word <- (!spaces .)+ 
+foreign_quote_word <- (!space_char .)+ 
 foreign_quote_close <- native_word
 
 # - Compounds

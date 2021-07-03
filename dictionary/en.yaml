@@ -565,7 +565,7 @@ doi:
 ba:
   family: "BA"
   long: "List separator."
-  short: ","
+  short: "[list]"
 be:
   family: "BE"
   long: "Ends string/number/borrowing."
@@ -947,11 +947,11 @@ mlian:
   long: "(A) is a cat."
   short: "cat"
   type: [IDistributive]
-ple:
+kcia:
   family: "R"
-  long: "(A) use/employs [E] for purpose (I0)."
-  short: "use"
-  type: [ICollective, ICollective, Proposition]
+  long: "(A) [tool] is used to make [I0] [purpose] true."
+  short: "tool"
+  type: [ICollective, Proposition]
   sequential: true
 puana:
   family: "R"
@@ -1036,15 +1036,15 @@ vanu:
   sequential: true
 gza:
   family: "R"
-  long: "(A) (default value of (E.A)) is an agentive cause of event [E0]"
+  long: "(A) is an agentive cause of event [E0]."
   short: "agentive cause"
   type: [ICollective, Proposition]
   sequential: true
 kini:
   family: "R"
-  long: "(A) learns/studies fact [E0]."
+  long: "(A) learns/studies fact [E0] about (I)."
   short: "learns"
-  type: [IDistributive, Proposition]
+  type: [IDistributive, Proposition, IDistributive]
   sequential: true
 seru:
   family: "R"
@@ -1502,7 +1502,7 @@ kroan:
   long: "(A) is a frog."
   short: "frog"
   type: [IDistributive]
-moriu:
+tori:
   family: "R"
   long: "(A) is a bird."
   short: "bird"
@@ -1548,7 +1548,7 @@ zvoe:
 zbui:
   family: "R"
   long: "(A) have sex/sexual intercourse/copulates/mates with [E]."
-  short: "intercourse"
+  short: "sex"
   type: [IDistributive, IDistributive]
   sequential: true
 jiro:
@@ -1581,6 +1581,47 @@ slaen:
   family: "R"
   long: "(A) is tied/pinned to [E]."
   short: "tied"
+  type: [IDistributive, IDistributive]
+  sequential: true
+sfo:
+  family: "R"
+  long: "(A) is something that contains this word."
+  short: "this"
+  type: [IDistributive]
+skien:
+  family: "R"
+  long: "(A) is a computer program."
+  short: "program"
+  type: [IDistributive]
+sen:
+  family: "R"
+  long: "If (A0) is true then [E0] is true, otherwise (I0) is true."
+  short: "if then"
+  type: [Proposition, Proposition, Proposition]
+zari:
+  family: "R"
+  long: "(A) is a recipe, algorithm, procedure to achieve result [E]."
+  short: "recipe"
+  type: [IDistributive, IDistributive]
+  sequential: true
+zein:
+  family: "R"
+  long: |
+    (A) [supply/commodity] is provided to [E].
+    Use with {gza} to talk about the provider.
+  short: "provided"
+  type: [IDistributive, IDistributive]
+  sequential: true
+curo:
+  family: "R"
+  long: "(A) is the grammar of [E]."
+  short: "grammar"
+  type: [IDistributive, IDistributive]
+  sequential: true
+cpena:
+  family: "R"
+  long: "(A) is a document with content [E]."
+  short: "document"
   type: [IDistributive, IDistributive]
   sequential: true
 
@@ -1753,14 +1794,33 @@ esiervanu:
   short: "hyperlink"
   type: [IDistributive, IDistributive]
 emeruezane:
-  family: "R"
+  family: "C2"
   long: "(A) is an organism with body parts [E] forming body (I)."
   short: "body"
   type: [ICollective, ICollective, ICollective]
   sequential: true
 egzeslaen:
-  family: "R"
-  long: "(A) hangs from [I]."
+  family: "C2"
+  long: "(A) hangs from [E]."
   short: "hang"
   type: [IDistributive, IDistributive]
   sequential: true
+eskaozari:
+  family: "C2"
+  long: "(A) is a source code of [E]."
+  short: "source code"
+  type: [IDistributive, IDistributive]
+  sequential: true
+ecuroskien:
+  family: "C2"
+  long: "(A) is a parser from grammar [E]."
+  short: "parser"
+  type: [IDistributive, IDistributive]
+  sequential: true
+
+ilenpoba:
+  family: "C2"
+  long: "(A) is a dictionary."
+  short: "dictionary"
+  type: [IDistributive]
+
