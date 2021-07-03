@@ -11,11 +11,10 @@ posteriori.
 Each member of **PA** encore a different illocution :
 
 - **pa :** assertive sentence, that can be believ or disbelieved, and is either true or false.
-- **paha :** vocative. Defines the listener as the `A` place of the scope.
-- **pahe :** declarative sentence, that is true only because uttered (used for declarations, announcements, etc).
-- **pahi :** directive sentence, that is requested, wished or ordered to be true.
-- **paho :** admonitive sentence, that describes only a potential act or situation which may occur unless avoided (used for warnings).
-- **pahu :** hortative sentence, that is used for statements that are untrue or unreal but whished to be true or real ("if only ..").
+- **paha :** vocative. Defines the listener as the `A` place of this scope.
+- **pahe :** defines the subject of the discourse as the `A` place of this scope.
+- **pao :** declarative sentence, that is true only because uttered (used for declarations, announcements, etc).
+- **pau :** directive sentence, that is requested, wished or ordered to be true.
 
 ## Predicate arguments [PI]
 

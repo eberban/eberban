@@ -78,6 +78,13 @@ li.implicit {
 	margin: 2px;
 }
 
+.box.box-paragraph {
+	display: block;
+	text-align: left;
+	background: #ffffff;
+	margin: 2px;
+}
+
 .box.box-arguments {
 	background: var(--color-pink);
 	border: 1px black solid;

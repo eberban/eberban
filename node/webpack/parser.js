@@ -6,6 +6,7 @@ export const { postprocessing } = require('../src/process_parse_tree');
 const { words_en: words } = require('../src/dictionary');
 
 const hideTitleList = [
+	'paragraph',
 	'sentence',
 	'definition',
 	'scope',
@@ -24,6 +25,7 @@ const hideTitleList = [
 const boxClassForTypeMap = new Map([
 	// text
 	[ 'parser version', 'box box-parser' ],
+	[ 'paragraph', 'box box-paragraph' ],
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
 	[ 'arguments', 'box box-arguments' ],

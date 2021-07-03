@@ -466,10 +466,14 @@ pa:
   family: "PA"
   long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
   short: "[assertion]"
-pae:
+paha:
   family: "PA"
-  long: "Starts an vocative. Defines the listener as the A place of the scope."
+  long: "Starts an vocative. Defines the listener as the (A) place of this scope."
   short: "[vocative]"
+pahe:
+  family: "PA"
+  long: "Defines the subject of the discourse as the (A) place of this scope."
+  short: "[subject]"
 pao:
   family: "PA"
   long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
@@ -513,7 +517,7 @@ poi:
 pu:
   family: "PU"
   long: "Marks a new paragraph/section/change of subject."
-  short: ""
+  short: "[paragraph]"
 da:
   family: "DA"
   long: "Emphasis indicator : the next word is especially emphasized."
@@ -596,17 +600,17 @@ jor:
   family: "R"
   long: "This predicate is true if all predicates in list (A) are true."
   short: "AND (Pred)"
-  type: [List<Proposition>]
+  type: [List<_>]
 lar:
   family: "R"
   long: "This predicate is true if at least one predicate in list (A) is true."
   short: "OR (Pred)"
-  type: [List<Proposition>]
+  type: [List<_>]
 sir:
   family: "R"
   long: "This predicate is true if exactly (E) (default: 1) predicate in list (A) is true."
   short: "XOR (Pred)"
-  type: [List<Proposition>, Number]
+  type: [List<_>, Number]
 jon:
   family: "R"
   long: "This predicate is true if all individuals in list (A) satisfies property [E1]."
@@ -661,7 +665,7 @@ zde:
   sequential: true
 skir:
   family: "R"
-  long: "(A) is at the same place as [E]."
+  long: "(A) (default: here) is at the same place as [E] (default: here)."
   short: "same place"
   type: [IDistributive, IDistributive]
   sequential: true
@@ -679,61 +683,61 @@ slo:
   sequential: true
 pcei:
   family: "R"
-  long: "(A) is backward/to the back of [E]."
+  long: "(A) (default: here) is backward/to the back of [E] (default: here)."
   short: "back"
   type: [IDistributive, IDistributive]
   sequential: true
 vlo:
   family: "R"
-  long: "(A) is forward/to the front of [E]."
+  long: "(A) (default: here) is forward/to the front of [E] (default: here)."
   short: "front"
   type: [IDistributive, IDistributive]
   sequential: true
 fle:
   family: "R"
-  long: "(A) is leftward/to the left of [E]."
+  long: "(A) (default: here) is leftward/to the left of [E] (default: here)."
   short: "left"
   type: [IDistributive, IDistributive]
   sequential: true
 zre:
   family: "R"
-  long: "(A) is rightward/to the right of [E]."
+  long: "(A) (default: here) is rightward/to the right of [E] (default: here)."
   short: "right"
   type: [IDistributive, IDistributive]
   sequential: true
 gze:
   family: "R"
-  long: "(A) is below/downwars/down from [E]."
+  long: "(A) (default: here) is below/downwars/down from [E] (default: here)."
   short: "down"
   type: [IDistributive, IDistributive]
   sequential: true
 bri:
   family: "R"
-  long: "(A) is above/upward/up from [E]."
+  long: "(A) (default: here) is above/upward/up from [E] (default: here)."
   short: "up"
   type: [IDistributive, IDistributive]
   sequential: true
 cfae:
   family: "R"
-  long: "(A) is southward/to the south of [E]."
+  long: "(A) (default: here) is southward/to the south of [E] (default: here)."
   short: "south"
   type: [IDistributive, IDistributive]
   sequential: true
 jgao:
   family: "R"
-  long: "(A) is northward/to the north of [E]."
+  long: "(A) (default: here) is northward/to the north of [E] (default: here)."
   short: "north"
   type: [IDistributive, IDistributive]
   sequential: true
 tloe:
   family: "R"
-  long: "(A) is westward/to the west of [E]."
+  long: "(A) (default: here) is westward/to the west of [E] (default: here)."
   short: "west"
   type: [IDistributive, IDistributive]
   sequential: true
 glea:
   family: "R"
-  long: "(A) is eastward/to the east of [E]."
+  long: "(A) (default: here) is eastward/to the east of [E] (default: here)."
   short: "east"
   type: [IDistributive, IDistributive]
   sequential: true
@@ -776,62 +780,62 @@ tana:
 
 keun:
   family: "R"
-  long: "(A) (default: here) is at the starting point of [E]."
+  long: "(A) (default: here) is at the starting point of [E] (default: here)."
   short: "space start"
   type: [IDistributive, IDistributive]
   sequential: true
 daen:
   family: "R"
-  long: "(A) (default: here) is between the starting and end point of [E]."
+  long: "(A) (default: here) is between the starting and end point of [E] (default: here)."
   short: "space between"
   type: [IDistributive, IDistributive]
   sequential: true
 moan:
   family: "R"
-  long: "(A) (default: here) is at an halt/interruption of [E]."
+  long: "(A) (default: here) is at an halt/interruption of [E (default: here)]."
   short: "space halt"
   type: [IDistributive, IDistributive]
   sequential: true
 taon:
   family: "R"
-  long: "(A) (default: here) is at the resumption of [E]."
+  long: "(A) (default: here) is at the resumption of [E] (default: here)."
   short: "space resumption"
   type: [IDistributive, IDistributive]
   sequential: true
 cuan:
   family: "R"
-  long: "(A) (default: here) is at the end point of [E]."
+  long: "(A) (default: here) is at the end point of [E] (default: here)."
   short: "space end"
   type: [IDistributive, IDistributive]
   sequential: true
 
 keur:
   family: "R"
-  long: "(A0) (default: now) is at the starting point of [E0]."
+  long: "(A0) (default: now) is at the starting point of [E0] (default: now)."
   short: "time start"
   type: [Proposition, Proposition]
   sequential: true
 daer:
   family: "R"
-  long: "(A0) (default: now) is between the starting and end point of [E0]."
+  long: "(A0) (default: now) is between the starting and end point of [E0] (default: now)."
   short: "time between"
   type: [Proposition, Proposition]
   sequential: true
 moar:
   family: "R"
-  long: "(A0) (default: now) is at an halt/interruption of [E0]."
+  long: "(A0) (default: now) is at an halt/interruption of [E0] (default: now)."
   short: "time halt"
   type: [Proposition, Proposition]
   sequential: true
 taor:
   family: "R"
-  long: "(A0) (default: now) is at the resumption of [E0]."
+  long: "(A0) (default: now) is at the resumption of [E0] (default: now)."
   short: "time resumption"
   type: [Proposition, Proposition]
   sequential: true
 cuar:
   family: "R"
-  long: "(A0) (default: now) is at the end point of [E0]."
+  long: "(A0) (default: now) is at the end point of [E0] (default: now)."
   short: "time end"
   type: [Proposition, Proposition]
   sequential: true
@@ -996,9 +1000,9 @@ skao:
   type: [IDistributive]
 sni:
   family: "R"
-  long: "(A) greets/say hello to [E]."
-  short: "greets"
-  type: [IDistributive, IDistributive]
+  long: "(A) welcomes/say hello to/greets [E] to place (I)."
+  short: "welcomes"
+  type: [IDistributive, IDistributive, IDistributive]
   sequential: true
 spi:
   family: "R"
@@ -1022,6 +1026,12 @@ van:
   family: "R"
   long: "(A) goes to [E] from (I)."
   short: "goes"
+  type: [IDistributive, IDistributive, IDistributive]
+  sequential: true
+vanu:
+  family: "R"
+  long: "(A) is a path to [E] from (I)."
+  short: "path"
   type: [IDistributive, IDistributive, IDistributive]
   sequential: true
 gza:
@@ -1277,8 +1287,8 @@ jgu:
   type: [IDistributive]
 sare:
   family: "R"
-  long: "(A) is a set where every pair of members satisfy relation [E2]."
-  short: "set members relation"
+  long: "(A) is a group where every pair of members mutualy satisfy relation [E2]."
+  short: "mutual"
   type: [ICollective, Relation]
   sequential: true
 gli:
@@ -1502,6 +1512,77 @@ cein:
   long: "(A) is a room."
   short: "room"
   type: [IDistributive]
+caun:
+  family: "R"
+  long: "(A) is an animal."
+  short: "animal"
+  type: [IDistributive]
+flur:
+  family: "R"
+  long: "(A) is a plant."
+  short: "plant"
+  type: [IDistributive]
+bjan:
+  family: "R"
+  long: "(A) is behaves friendly/kindly towards [E]."
+  short: "friendly"
+  type: [IDistributive, IDistributive]
+  sequential: true
+lane:
+  family: "R"
+  long: "(A) is a rule/law prescribing/mandating/requiring [E0]."
+  short: "rule"
+  type: [IDistributive, Proposition]
+  sequential: true
+zire:
+  family: "R"
+  long: "(A) respects [E]."
+  short: "respects"
+  type: [IDistributive, IDistributive]
+  sequential: true
+zvoe:
+  family: "R"
+  long: "(A) is a content, something that is to be expressed though medium (E)."
+  short: "content"
+  type: [IDistributive, IDistributive]
+zbui:
+  family: "R"
+  long: "(A) have sex/sexual intercourse/copulates/mates with [E]."
+  short: "intercourse"
+  type: [IDistributive, IDistributive]
+  sequential: true
+jiro:
+  family: "R"
+  long: "(A) shares [E] with (I)."
+  short: "shares"
+  type: [IDistributive, IDistributive, IDistributive]
+  sequential: true
+mare:
+  family: "R"
+  long: "(A) is legal, allowed by authority (E)."
+  short: "allowed"
+  type: [IDistributive, IDistributive]
+sier:
+  family: "R"
+  long: "(A) is the Internet."
+  short: "internet"
+  type: [IDistributive]
+stini:
+  family: "R"
+  long: "(A) is rigid/not bandable."
+  short: "rigid"
+  type: [IDistributive]
+merue:
+  family: "R"
+  long: "(A) is an organism / form of life."
+  short: "organism"
+  type: [IDistributive]
+slaen:
+  family: "R"
+  long: "(A) is tied/pinned to [E]."
+  short: "tied"
+  type: [IDistributive, IDistributive]
+  sequential: true
 
 # Compounds (2):
 etsenban:
@@ -1521,8 +1602,13 @@ eujbo'ban:
   type: [IDistributive]
 eufranse'ban:
   family: "C2"
-  long: "(A) is the French language."
+  long: "(A) is the french language."
   short: "french language"
+  type: [IDistributive]
+euinglici'ban:
+  family: "C2"
+  long: "(A) is the english language."
+  short: "english language"
   type: [IDistributive]
 etadena:
   family: "C2"
@@ -1661,3 +1747,20 @@ espimoriu:
   long: "(A) is a parrot."
   short: "parrot"
   type: [IDistributive]
+esiervanu:
+  family: "C2"
+  long: "(A) is an hyperlink to/URL of resource [E]."
+  short: "hyperlink"
+  type: [IDistributive, IDistributive]
+emeruezane:
+  family: "R"
+  long: "(A) is an organism with body parts [E] forming body (I)."
+  short: "body"
+  type: [ICollective, ICollective, ICollective]
+  sequential: true
+egzeslaen:
+  family: "R"
+  long: "(A) hangs from [I]."
+  short: "hang"
+  type: [IDistributive, IDistributive]
+  sequential: true
