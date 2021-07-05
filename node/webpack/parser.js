@@ -10,7 +10,7 @@ const hideTitleList = [
 	'sentence',
 	'definition',
 	'scope',
-	'scope group',
+	'list element',
 	'distributive connectives scope',
 	'binding connectives scope',
 	'plural value',
@@ -20,6 +20,16 @@ const hideTitleList = [
 	'sequential binding',
 	'explicit binding',
 ];
+
+const hideFamily = [
+	'a',
+	'e',
+	'i',
+	'o',
+	'u',
+	'foreign_word',
+	'foreign_quote_word',
+]
 
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
@@ -32,8 +42,8 @@ const boxClassForTypeMap = new Map([
 
 	// scope
 	[ 'scope', 'box box-scope' ],
-	[ 'scope group', 'box box-scope-conn' ],
-	[ 'plural value', 'box box-scope-conn' ],
+	[ 'list element', 'box box-scope-conn' ],
+	// [ 'plural value', 'box box-scope-conn' ],
 	[ 'sequential unit', 'box box-sequential-unit' ],
 	[ 'sequential negation', 'box box-sequential-neg' ],
 	[ 'explicit binding', 'box box-explicit' ],
@@ -314,7 +324,8 @@ function constructBoxesOutput(parse, depth) {
 		// we have a terminal
 		output += '&nbsp;<div class="tip">' + parse.word;
 
-		if (parse.type === 'foreign_word' || parse.type === 'foreign_quote_word') {
+		if (hideFamily.includes(parse.type)) {
+		// if (parse.type === 'foreign_word' || parse.type === 'foreign_quote_word') {
 			output += '</div>&nbsp;<br></div>';
 			return output;
 		}

@@ -48,27 +48,23 @@ _number:
   family: "TA"
   long: "Digit 9"
   short: "tei"
+
 # Particles
 a:
   family: "A"
-  long: "Prefix a 1 word long compound."
-  short: ""
+  long: "Surround an arbitrary long compound."
 e:
   family: "E"
   long: "Prefix a 2 words long compound."
-  short: ""
 i:
   family: "I"
   long: "Prefix a 3 words long compound."
-  short: ""
 o:
   family: "O"
-  long: "Surround an arbitrary long compound."
-  short: ""
+  long: "Prefix a 4 words long compound."
 u:
   family: "U"
   long: "Borrowing: (A) is a [word]."
-  short: ""
   type: [ICollective]
 mi:
   family: "MA"
@@ -466,14 +462,10 @@ pa:
   family: "PA"
   long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
   short: "[assertion]"
-paha:
+pae:
   family: "PA"
   long: "Starts an vocative. Defines the listener as the (A) place of this scope."
   short: "[vocative]"
-pahe:
-  family: "PA"
-  long: "Defines the subject of the discourse as the (A) place of this scope."
-  short: "[subject]"
 pao:
   family: "PA"
   long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
@@ -584,10 +576,6 @@ bo:
   family: "BO"
   long: "Create a new variable and discard previous value if any."
   short: "new var"
-bu:
-  family: "BU"
-  long: "Parser version/dialect marker"
-  short: "version/dialect"
 
 # Roots :
 kor:
@@ -598,19 +586,19 @@ kor:
   sequential: true
 jor:
   family: "R"
-  long: "This predicate is true if all predicates in list (A) are true."
-  short: "AND (Pred)"
-  type: [List<_>]
+  long: "This predicate is true if all propositons in list (A) are true."
+  short: "AND (0)"
+  type: [List<Proposition>]
 lar:
   family: "R"
-  long: "This predicate is true if at least one predicate in list (A) is true."
-  short: "OR (Pred)"
-  type: [List<_>]
+  long: "This predicate is true if at least one propositon in list (A) is true."
+  short: "OR (0)"
+  type: [List<Proposition>]
 sir:
   family: "R"
-  long: "This predicate is true if exactly (E) (default: 1) predicate in list (A) is true."
-  short: "XOR (Pred)"
-  type: [List<_>, Number]
+  long: "This predicate is true if exactly (E) (default: 1) propositon(s) in list (A) is true."
+  short: "XOR (0)"
+  type: [List<Proposition>, Number]
 jon:
   family: "R"
   long: "This predicate is true if all individuals in list (A) satisfies property [E1]."
@@ -1006,8 +994,8 @@ sni:
   sequential: true
 spi:
   family: "R"
-  long: "(A) talks about/says [E] to (I)."
-  short: "talks"
+  long: "(A) says [E] to (I)."
+  short: "says"
   type: [IDistributive, IDistributive, IDistributive]
   sequential: true
 spur:
@@ -1048,9 +1036,9 @@ kini:
   sequential: true
 seru:
   family: "R"
-  long: "(A0) is about subject [E]."
+  long: "(A) is about subject [E]."
   short: "about"
-  type: [Proposition, IDistributive]
+  type: [IDistributive, IDistributive]
   sequential: true
 snai:
   family: "R"
@@ -1624,6 +1612,29 @@ cpena:
   short: "document"
   type: [IDistributive, IDistributive]
   sequential: true
+tsir:
+  family: "R"
+  long: "(A) finds/discovers [E]."
+  short: "finds"
+  type: [IDistributive, IDistributive]
+  sequential: true
+tcon:
+  family: "R"
+  long: "(A) is related to/associated wit/akin to [E] by relationship (I2)."
+  short: "related"
+  type: [IDistributive, IDistributive, Relation]
+  sequential: true
+bun:
+  family: "R"
+  long: "(A) is a version of [E]."
+  short: "version"
+  type: [IDistributive, IDistributive]
+  sequential: true
+bju:
+  family: "R"
+  long: "(A) is a text."
+  short: "text"
+  type: [IDistributive]
 
 # Compounds (2):
 etsenban:
@@ -1817,6 +1828,11 @@ ecuroskien:
   short: "parser"
   type: [IDistributive, IDistributive]
   sequential: true
+epuzoi:
+  family: "C2"
+  long: "(A) is a paragraph."
+  short: "paragraph"
+  type: [IDistributive]
 
 ilenpoba:
   family: "C2"

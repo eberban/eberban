@@ -1,16 +1,9 @@
-# eberban PEG grammar - v0.35.1
+# eberban PEG grammar - v0.36
 # ===========================
 
 # GRAMMAR
-# main rule, allow language version/dialect annotation
-text <- parser_version? text_1
-parser_version <- BU_clause (parser_version_short / parser_version_long)
-parser_version_long <- spaces? borrowing parser_version_number?
-parser_version_short <- parser_version_number
-parser_version_number <- spaces? TA+
-
 # main text rule
-text_1 <- free_parenthetical* paragraphs? spaces? EOF?
+text <- free_parenthetical* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
@@ -26,8 +19,9 @@ sentence <- PA_clause_elidible scope PAI_clause_elidible
 # scope
 scope <- arguments_list? scope_1
 
-scope_1 <- scope_group / scope_2
-scope_group <- scope_2 (BA_clause scope_2)+
+scope_1 <- scope_list / scope_2
+scope_list <- scope_list_element (BA_clause scope_list_element)+
+scope_list_element <- scope_2
 
 scope_2 <- sequential
 
@@ -51,7 +45,7 @@ unit_scope <- PE_clause scope PEI_clause_elidible
 
 # quotes
 quote <- grammatical_quote / one_word_quote / foreign_quote
-grammatical_quote <- LA_clause text_1 LAI_clause
+grammatical_quote <- LA_clause text LAI_clause
 one_word_quote <- LE_clause spaces? native_word
 foreign_quote <- LO_clause spaces? foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
@@ -67,7 +61,7 @@ free_prefix <- DA_clause
 
 free_post <- free_parenthetical / free_subscript
 free_subscript <- DI_clause number
-free_parenthetical <- DO_clause text_1 DOI_clause
+free_parenthetical <- DO_clause text DOI_clause
 
 override <- DU_clause (GA_clause / override_word)
 override_word <- spaces? (root / compound / ma)
@@ -78,7 +72,6 @@ BA_clause           <- free_prefix* spaces? BA  free_post* override?           #
 BE_clause           <- free_prefix* spaces? BE  free_post*                     # miscellaneous terminator
 BI_clause           <- free_prefix* spaces? BI  free_post*                     # wide-scope negation
 BO_clause           <- free_prefix* spaces? BO  free_post*                     # variable assignement
-BU_clause           <-              spaces? BU                                 # parser version/dialect
 
 DA_clause           <-              spaces? DA                                 # free prefix
 DI_clause           <- free_prefix* spaces? DI  free_post*                     # free subscript
@@ -124,7 +117,6 @@ BA    <- &particle                   (b &a haeiou)      &post_word
 BE    <- &particle                   (b &e haeiou)      &post_word
 BI    <- &particle                   (b i)              &post_word
 BO    <- &particle                   (b o)              &post_word
-BU    <- &particle                   (b u)              &post_word
 CA    <- &particle                   (c haeiou)         &post_word
 DA    <- &particle                   (d &a haeiou)      &post_word
 DI    <- &particle                   (d i)              &post_word

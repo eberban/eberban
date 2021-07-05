@@ -5,16 +5,14 @@ const { is_string } = require('./util');
 const important_types = [
 	// text
 	[ 'text', 'text' ],
-	[ 'parser_version', 'parser version' ],
 	[ 'paragraph', 'paragraph' ],
 	[ 'definition', 'definition' ],
 	[ 'sentence', 'sentence' ],
 
 	// scope	
 	[ 'scope', 'scope' ],
-	[ 'scope_group', 'scope group' ],
-	[ 'scope_connectives', 'connectives scope' ],
-	[ 'scope_plural', 'plural value' ],
+	[ 'scope_list', 'list' ],
+	[ 'scope_list_element', 'list element' ],
 	[ 'sequential', 'sequential binding' ],
 	[ 'sequential_neg', 'sequential negation' ],
 	[ 'sequential_unit', 'sequential unit' ],
@@ -35,10 +33,10 @@ const important_types = [
 	[ 'subscope', 'subscope' ],
 
 	// free
-	[ 'free_indicator', 'indicator' ],
-	[ 'free_discursive', 'discursive' ],
+	[ 'free_prefix', 'prefix' ],
 	[ 'free_parenthetical', 'parenthetical' ],
 	[ 'free_subscript', 'subscript' ],
+	[ 'free_override', 'override' ],
 ];
 
 // List of simplifying functions.

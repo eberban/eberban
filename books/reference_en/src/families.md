@@ -6,7 +6,6 @@
 | **BE**                           | miscellaneous terminator + [ordinals](../src/units/TA.md) |
 | [**BI**](bindings/SA_ZA_BI.md)   | wide-scope negation                                       |
 | [**BO**](units/KA_GA.md)         | variable assignement                                      |
-| [**BU**](struct/BU.md)           | parser version/dialect                                    |
 | &nbsp;                           |
 | [**DA**](struct/DA_DI_DO_DU.md)  | free prefix                                               |
 | [**DI**](struct/DA_DI_DO_DU.md)  | free subscript                                            |

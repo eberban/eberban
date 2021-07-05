@@ -27,6 +27,5 @@
   - [Predicate definition (PO)](struct/PO.md)
   - [Lists (BA)](struct/BA.md)
   - [Free modifiers (DA/DI/DO/DU)](struct/DA_DI_DO_DU.md)
-  - [Parser version/dialect (BU)](struct/BU.md)
 
 - [List of particle families](families.md)
