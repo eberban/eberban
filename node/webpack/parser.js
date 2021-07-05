@@ -39,6 +39,7 @@ const boxClassForTypeMap = new Map([
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
 	[ 'arguments', 'box box-arguments' ],
+	[ 'defined predicate', 'box box-arguments' ],
 
 	// scope
 	[ 'scope', 'box box-scope' ],

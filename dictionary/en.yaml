@@ -53,18 +53,23 @@ _number:
 a:
   family: "A"
   long: "Surround an arbitrary long compound."
+  short: ""
 e:
   family: "E"
   long: "Prefix a 2 words long compound."
+  short: ""
 i:
   family: "I"
   long: "Prefix a 3 words long compound."
+  short: ""
 o:
   family: "O"
   long: "Prefix a 4 words long compound."
+  short: ""
 u:
   family: "U"
   long: "Borrowing: (A) is a [word]."
+  short: ""
   type: [I.c]
 mi:
   family: "MA"
@@ -580,40 +585,71 @@ bo:
 # Roots :
 kor:
   family: "R"
-  long: "(A) is a plural value/group composed of invididuals in list [E]."
+  long: "(A) [group] are the members of list [E]."
   short: "group"
   type: [I.c, "{I}"]
   sequential: true
-jor:
+cna:
   family: "R"
-  long: "This predicate is true if all propositons in list (A) are true."
-  short: "AND (0)"
-  type: ["{P.0}"]
-lar:
-  family: "R"
-  long: "This predicate is true if at least one propositon in list (A) is true."
-  short: "OR (0)"
-  type: ["{P.0}"]
-sir:
-  family: "R"
-  long: "This predicate is true if exactly (E) (default: 1) propositon(s) in list (A) is true."
-  short: "XOR (0)"
-  type: ["{P.0}", N]
-jon:
-  family: "R"
-  long: "This predicate is true if all individuals in list (A) satisfies property [E1]."
-  short: "AND (Indiv)"
+  long: "This proposition is true if all individuals in list (A) satisfies property [E1]."
+  short: "AND-I"
   type: ["{I}", P.1]
-lan:
+cne:
   family: "R"
-  long: "This predicate is true if at least one individual in list (A) satisfies property [E1]."
-  short: "OR (Indiv)"
+  long: "This proposition is true if at least one individual in list (A) satisfies property [E1]."
+  short: "OR-I"
   type: ["{I}", P.1]
-sin:
+cni:
   family: "R"
-  long: "This predicate is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
-  short: "XOR (Indiv)"
+  long: "This proposition is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
+  short: "XOR-I"
   type: ["{I}", P.1, N]
+cana:
+  family: "R"
+  long: "This proposition is true if all propositions in list (A) are true."
+  short: "AND-P0"
+  type: ["{P.0}"]
+cane:
+  family: "R"
+  long: "This proposition is true if at least one proposition in list (A) is true."
+  short: "OR-P0"
+  type: ["{P.0}"]
+cani:
+  family: "R"
+  long: "This proposition is true if exactly (E) (default: 1) proposition(s) in list (A) is true."
+  short: "XOR-P0"
+  type: ["{P.0}", N]
+cena:
+  family: "R"
+  long: "This proposition is true if (A) satisfies all properties in list [E]."
+  short: "AND-P1"
+  type: [I, "{P.1}"]
+cene:
+  family: "R"
+  long: "This proposition is true if (A) satisfies at least one property in list [E]."
+  short: "OR-P1"
+  type: [I, "{P.1}"]
+ceni:
+  family: "R"
+  long: "This proposition is true if (A) satisfies exactly (I) (default: 1) proposition(s) in list [E]."
+  short: "XOR-P1"
+  type: [I, "{P.1}", N]
+cina:
+  family: "R"
+  long: "This proposition is true if (A) and (E) satisfies all relations in list [I]."
+  short: "AND-P2"
+  type: [I, I, "{P.2}"]
+cine:
+  family: "R"
+  long: "This proposition is true if (A) and (E) satisfies at least one relation in list [I]."
+  short: "OR-P2"
+  type: [I, I, "{P.2}"]
+cini:
+  family: "R"
+  long: "This proposition is true if (A) and (E) satisfies exactly (O) (default: 1) relation(s) in list [I]."
+  short: "XOR-P2"
+  type: [I, I, "{P.2}", N]
+
 kano:
   family: "R"
   long: |
@@ -1197,11 +1233,6 @@ dar:
   short: "for each"
   type: [I.d, P.1]
   sequential: true
-ban:
-  family: "R"
-  long: "(A) is a language."
-  short: "language"
-  type: [I.d]
 speu:
   family: "R"
   long: "(A) (ordered list) is ordered following ordering rule [E2]."
@@ -1360,10 +1391,10 @@ cnue:
   short: "portion"
   type: [I.d, I.c]
   sequential: true
-fen:
+ban:
   family: "R"
-  long: "(A) (text) is expressed in language [E]."
-  short: "in language"
+  long: "(A) is expressed in language [E]."
+  short: "language"
   type: [I.d, I.d]
   sequential: true
 vin:
@@ -1635,6 +1666,12 @@ bju:
   long: "(A) is a text."
   short: "text"
   type: [I.d]
+bion:
+  family: "R"
+  long: "(A) is ill/sick from disease [E]."
+  short: "disease"
+  type: [I.d, I.d]
+  sequential: true
 
 # Compounds (2):
 etsenban:

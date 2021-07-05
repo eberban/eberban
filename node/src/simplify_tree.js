@@ -20,6 +20,7 @@ const important_types = [
 	[ 'explicit_binding_va', 'first explicit binding' ],
 	[ 'explicit_binding_fa', 'other explicit binding' ],
 	[ 'arguments_list', 'arguments' ],
+	[ 'definition_key', 'defined predicate'],
 
 	// units
 	[ 'unit', 'unit' ],
