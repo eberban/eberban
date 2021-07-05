@@ -3,7 +3,7 @@
 # Specials :
 _cardinal:
   long: "(A) is (a group of) [number] things satisfying [E1]."
-  type: [ICollective, Property]
+  type: [I.c, P.1]
 _number:
   long: |
     (A) is the (abstract) number [number] with dimension/unit [E1]
@@ -65,62 +65,62 @@ o:
 u:
   family: "U"
   long: "Borrowing: (A) is a [word]."
-  type: [ICollective]
+  type: [I.c]
 mi:
   family: "MA"
   long: "(A) is I/a speaker/author."
   short: "me"
-  type: [IDistributive]
+  type: [I.d]
 mo:
   family: "MA"
   long: "(A) is you, a listener."
   short: "you"
-  type: [IDistributive]
+  type: [I.d]
 mio:
   family: "MA"
   long: "(A) is I/a speaker/author or you, a listener."
   short: "we"
-  type: [IDistributive]
+  type: [I.d]
 me:
   family: "MA"
   long: "(A) is someone, neither a speaker or listener."
   short: "other"
-  type: [IDistributive]
+  type: [I.d]
 mei:
   family: "MA"
   long: "(A) is this here, near a speaker."
   short: "this"
-  type: [IDistributive]
+  type: [I.d]
 meo:
   family: "MA"
   long: "(A) is that here, near a listener."
   short: "that"
-  type: [IDistributive]
+  type: [I.d]
 meu:
   family: "MA"
   long: "(A) is that yonder, far from speaker and listener."
   short: "that yonder"
-  type: [IDistributive]
+  type: [I.d]
 mua:
   family: "MA"
   long: "Repeats the last proposition"
   short: "last prop"
-  type: Proposition
+  type: P.0
 mue:
   family: "MA"
   long: "Repeats the proposition in which this one is embeded (used in abstractions)"
   short: "outer prop"
-  type: Proposition
+  type: P.0
 mui:
   family: "MA"
   long: "Repeats current proposition"
   short: "current prop"
-  type: Proposition
+  type: P.0
 muo:
   family: "MA"
   long: "Repeats the next proposition"
   short: "next prop"
-  type: Proposition
+  type: P.0
 ma:
   family: "MA"
   long: "Binds a variable within an scope that represents an open space."
@@ -281,7 +281,7 @@ la:
   family: "LA"
   long: "Starts grammatically correct eberban quote. (A) is text [quote]."
   short: ""
-  type: [IDistributive]
+  type: [I.d]
 lai:
   family: "LAI"
   long: "Ends grammatically correct eberban quote."
@@ -290,12 +290,12 @@ le:
   family: "LE"
   long: "Quote next word. (A) is word [word]."
   short: "[word]"
-  type: [IDistributive]
+  type: [I.d]
 lei:
   family: "LE"
   long: "(A) is the family of word [word]."
   short: "[family]"
-  type: [IDistributive]
+  type: [I.d]
 leu:
   family: "LE"
   long: "Provides a predicate describing the meaning of the following particle."
@@ -304,7 +304,7 @@ lo:
   family: "LO"
   long: "Starts quote of arbitrary string of words."
   short: ""
-  type: [IDistributive]
+  type: [I.d]
 fa:
   family: "FA"
   long: "Additional explicit (A) place restrictive binding."
@@ -437,7 +437,7 @@ za:
   family: "ZA"
   long: "(A) is named [predicate-(A)]."
   short: "named"
-  type: [ICollective]
+  type: [I.c]
 ze:
   family: "ZA"
   long: "Use the same instance and variables of the following unit instead of a new one."
@@ -452,12 +452,12 @@ zo:
   family: "ZA"
   long: "(A) is something referred to by [predicate-(A)]."
   short: "deref"
-  type: [ICollective]
+  type: [I.c]
 zoi:
   family: "ZA"
   long: "(A) is a reference/symbol refering to [predicate]."
   short: "ref"
-  type: [ICollective]
+  type: [I.c]
 pa:
   family: "PA"
   long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
@@ -566,7 +566,7 @@ bei:
   family: "BE"
   long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered list [E]."
   short: "-th"
-  type: [ICollective, List<IArgument>]
+  type: [I.c, "{I}"]
   sequential: true
 bi:
   family: "BI"
@@ -582,57 +582,57 @@ kor:
   family: "R"
   long: "(A) is a plural value/group composed of invididuals in list [E]."
   short: "group"
-  type: [ICollective, List<IArgument>]
+  type: [I.c, "{I}"]
   sequential: true
 jor:
   family: "R"
   long: "This predicate is true if all propositons in list (A) are true."
   short: "AND (0)"
-  type: [List<Proposition>]
+  type: ["{P.0}"]
 lar:
   family: "R"
   long: "This predicate is true if at least one propositon in list (A) is true."
   short: "OR (0)"
-  type: [List<Proposition>]
+  type: ["{P.0}"]
 sir:
   family: "R"
   long: "This predicate is true if exactly (E) (default: 1) propositon(s) in list (A) is true."
   short: "XOR (0)"
-  type: [List<Proposition>, Number]
+  type: ["{P.0}", N]
 jon:
   family: "R"
   long: "This predicate is true if all individuals in list (A) satisfies property [E1]."
   short: "AND (Indiv)"
-  type: [List<IArgument>, Property]
+  type: ["{I}", P.1]
 lan:
   family: "R"
   long: "This predicate is true if at least one individual in list (A) satisfies property [E1]."
   short: "OR (Indiv)"
-  type: [List<IArgument>, Property]
+  type: ["{I}", P.1]
 sin:
   family: "R"
   long: "This predicate is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
   short: "XOR (Indiv)"
-  type: [List<IArgument>, Property, Number]
+  type: ["{I}", P.1, N]
 kano:
   family: "R"
   long: |
     (A) is greater than [E] in property (I1).
     (I1) should express a property that can be compared and ordered.
   short: "greater"
-  type: [IDistributive, IDistributive, Property]
+  type: [I.d, I.d, P.1]
 gere:
   family: "R"
   long: |
     (A) is less than [E] in property (I1).
     (I1) should express a property that can be compared and ordered.
   short: "less"
-  type: [IDistributive, IDistributive, Property]
+  type: [I.d, I.d, P.1]
 fuir:
   family: "R"
   long: "(A) knows fact [E0] from source (I)."
   short: "knows"
-  type: [IDistributive, Proposition, IDistributive]
+  type: [I.d, P.0, I.d]
   sequential: true
 zvu:
   family: "R"
@@ -643,210 +643,210 @@ zvu:
     Allow to describe the evolution of something.
     Arguments of the relation defines the distributivity of (A).
   short: "relation with future self"
-  type: [IArgument, [IArgument, IArgument]]
+  type: [I, [I, I]]
   sequential: true
 zde:
   family: "R"
   long: "(A0) (default: now) is true/occurs concurrently with/at the same time as [E0] (default: now)."
   short: "present"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 skir:
   family: "R"
   long: "(A) (default: here) is at the same place as [E] (default: here)."
   short: "same place"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 jgo:
   family: "R"
   long: "(A0) (default: now) occurs before [E0] (default: now)."
   short: "before"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 slo:
   family: "R"
   long: "(A0) (default: now) occurs after [E0] (default: now)."
   short: "after"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 pcei:
   family: "R"
   long: "(A) (default: here) is backward/to the back of [E] (default: here)."
   short: "back"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 vlo:
   family: "R"
   long: "(A) (default: here) is forward/to the front of [E] (default: here)."
   short: "front"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 fle:
   family: "R"
   long: "(A) (default: here) is leftward/to the left of [E] (default: here)."
   short: "left"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 zre:
   family: "R"
   long: "(A) (default: here) is rightward/to the right of [E] (default: here)."
   short: "right"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 gze:
   family: "R"
   long: "(A) (default: here) is below/downwars/down from [E] (default: here)."
   short: "down"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 bri:
   family: "R"
   long: "(A) (default: here) is above/upward/up from [E] (default: here)."
   short: "up"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 cfae:
   family: "R"
   long: "(A) (default: here) is southward/to the south of [E] (default: here)."
   short: "south"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 jgao:
   family: "R"
   long: "(A) (default: here) is northward/to the north of [E] (default: here)."
   short: "north"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 tloe:
   family: "R"
   long: "(A) (default: here) is westward/to the west of [E] (default: here)."
   short: "west"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 glea:
   family: "R"
   long: "(A) (default: here) is eastward/to the east of [E] (default: here)."
   short: "east"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 vuno:
   family: "R"
   long: "(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here)."
   short: "space distance"
-  type: [IDistributive, Number, IDistributive]
+  type: [I.d, N, I.d]
   sequential: true
 ganu:
   family: "R"
   long: "(A0) is true/occurs at a distance in time of [E] (mesure, years by default / event with this duration) from (I0) (default: now)."
   short: "time distance"
-  type: [Proposition, Number, Proposition]
+  type: [P.0, N, P.0]
   sequential: true
 zini:
   family: "R"
   long: "(A0) is true/occurs over time interval/length [E] (measure, years by default / event with same duration)."
   short: "time length"
-  type: [Proposition, Number]
+  type: [P.0, N]
   sequential: true
 cunu:
   family: "R"
   long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
   short: "length"
-  type: [IDistributive, Number]
+  type: [I.d, N]
   sequential: true
 zono:
   family: "R"
   long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
   short: "area (measure)"
-  type: [IDistributive, Number]
+  type: [I.d, N]
   sequential: true
 tana:
   family: "R"
   long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
   short: "volume (measure)"
-  type: [IDistributive, Number]
+  type: [I.d, N]
   sequential: true
 
 keun:
   family: "R"
   long: "(A) (default: here) is at the starting point of [E] (default: here)."
   short: "space start"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 daen:
   family: "R"
   long: "(A) (default: here) is between the starting and end point of [E] (default: here)."
   short: "space between"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 moan:
   family: "R"
   long: "(A) (default: here) is at an halt/interruption of [E (default: here)]."
   short: "space halt"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 taon:
   family: "R"
   long: "(A) (default: here) is at the resumption of [E] (default: here)."
   short: "space resumption"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 cuan:
   family: "R"
   long: "(A) (default: here) is at the end point of [E] (default: here)."
   short: "space end"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 
 keur:
   family: "R"
   long: "(A0) (default: now) is at the starting point of [E0] (default: now)."
   short: "time start"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 daer:
   family: "R"
   long: "(A0) (default: now) is between the starting and end point of [E0] (default: now)."
   short: "time between"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 moar:
   family: "R"
   long: "(A0) (default: now) is at an halt/interruption of [E0] (default: now)."
   short: "time halt"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 taor:
   family: "R"
   long: "(A0) (default: now) is at the resumption of [E0] (default: now)."
   short: "time resumption"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 cuar:
   family: "R"
   long: "(A0) (default: now) is at the end point of [E0] (default: now)."
   short: "time end"
-  type: [Proposition, Proposition]
+  type: [P.0, P.0]
   sequential: true
 mura:
   family: "R"
   long: "(A0) is regular/occurs regularly."
   short: "regular"
-  type: [Proposition]
+  type: [P.0]
 geno:
   family: "R"
   long: "(A0) is typical/occurs typically."
   short: "typical"
-  type: [Proposition]
+  type: [P.0]
 foru:
   family: "R"
   long: "(A0) is continuous/occurs continuously."
   short: "continuous"
-  type: [Proposition]
+  type: [P.0]
 jenu:
   family: "R"
   long: "(A0) is habitual/occurs habitually."
   short: "habitual"
-  type: [Proposition]
+  type: [P.0]
 fena:
   family: "R"
   long: "(A) is inside/within [E]."
@@ -855,67 +855,67 @@ laro:
   family: "R"
   long: "(A) is outside [E]."
   short: "outside"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 suru:
   family: "R"
   long: "(A) is adjacent to/along [E]."
   short: "adjacent"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 manu:
   family: "R"
   long: "(A) is tangential/passing by [E]."
   short: "passing by"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 varu:
   family: "R"
   long: "(A) is surrounding/around [E]."
   short: "surrounding"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 mere:
   family: "R"
   long: "(A) is transfixing/passing through [E]."
   short: "passing through"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 tinu:
   family: "R"
   long: "(A) is towards [E]."
   short: "towards"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 keru:
   family: "R"
   long: "(A) is away from [E]."
   short: "away from"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 don:
   family: "R"
   long: "(A) likes [E]."
   short: "likes"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 dona:
   family: "R"
   long: "(A) likes that [E0] is true. ((E.A) defaults to (A) : (A) likes something about itself)"
   short: "likes that"
-  type: [IDistributive, Proposition]
+  type: [I.d, P.0]
   sequential: true
 jven:
   family: "R"
   long: "(A) is a friend of [E]."
   short: "friend"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 kli:
   family: "R"
   long: "(A) thanks/is thankful to [E] about (I0) being true."
   short: "thanks"
-  type: [IDistributive, IDistributive, Proposition]
+  type: [I.d, I.d, P.0]
   sequential: true
 kre:
   family: "R"
@@ -923,271 +923,271 @@ kre:
     (A) helps [E] to satisfy property (I1).
     [E] is the one satisfying (I1), and (A) doesn't need to satisfy (I1).
   short: "helps"
-  type: [IDistributive, IDistributive, Proposition]
+  type: [I.d, I.d, P.0]
   sequential: true
 luenu:
   family: "R"
   long: "(A) is milk."
   short: "milk"
-  type: [IDistributive]
+  type: [I.d]
 mlian:
   family: "R"
   long: "(A) is a cat."
   short: "cat"
-  type: [IDistributive]
+  type: [I.d]
 kcia:
   family: "R"
   long: "(A) [tool] is used to make [I0] [purpose] true."
   short: "tool"
-  type: [ICollective, Proposition]
+  type: [I.c, P.0]
   sequential: true
 puana:
   family: "R"
   long: "(A) drinks [E]."
   short: "drinks"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 bouri:
   family: "R"
   long: "(A) eats [E]."
   short: "eats"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 sfe:
   family: "R"
   long: "(A) is female."
   short: "female"
-  type: [IDistributive]
+  type: [I.d]
 kla:
   family: "R"
   long: "(A) is male."
   short: "male"
-  type: [IDistributive]
+  type: [I.d]
 tsen:
   family: "R"
   long: "(A) invents/creates/authors [E]."
   short: "creates"
-  type: [ICollective, IDistributive]
+  type: [I.c, I.d]
   sequential: true
 zuna:
   family: "R"
   long: "(A) is inspired by [E]. [E] is a source of inspiration for (A)."
   short: "inspired"
-  type: [ICollective, IDistributive]
+  type: [I.c, I.d]
   sequential: true
 zvar:
   family: "R"
   long: "(A) has goal/purpose/aims to satisfy [E1]."
   short: "purpose"
-  type: [IDistributive, Property]
+  type: [I.d, P.1]
   sequential: true
 skao:
   family: "R"
   long: "(A) is a computer."
   short: "computer"
-  type: [IDistributive]
+  type: [I.d]
 sni:
   family: "R"
   long: "(A) welcomes/say hello to/greets [E] to place (I)."
   short: "welcomes"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 spi:
   family: "R"
   long: "(A) says [E] to (I)."
   short: "says"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 spur:
   family: "R"
   long: "(A) is a nest/house/home for [E]."
   short: "home"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 zaor:
   family: "R"
   long: "(A) agrees with [E] that (I0) is true."
   short: "agrees"
-  type: [IDistributive, IDistributive, Proposition]
+  type: [I.d, I.d, P.0]
   sequential: true
 van:
   family: "R"
   long: "(A) goes to [E] from (I)."
   short: "goes"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 vanu:
   family: "R"
   long: "(A) is a path to [E] from (I)."
   short: "path"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 gza:
   family: "R"
   long: "(A) is an agentive cause of event [E0]."
   short: "agentive cause"
-  type: [ICollective, Proposition]
+  type: [I.c, P.0]
   sequential: true
 kini:
   family: "R"
   long: "(A) learns/studies fact [E0] about (I)."
   short: "learns"
-  type: [IDistributive, Proposition, IDistributive]
+  type: [I.d, P.0, I.d]
   sequential: true
 seru:
   family: "R"
   long: "(A) is about subject [E]."
   short: "about"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 snai:
   family: "R"
   long: "(A) labers/works by satisfying property [E1]."
   short: "works"
-  type: [ICollective, Property]
+  type: [I.c, P.1]
   sequential: true
 bire:
   family: "R"
   long: "(A) is a year."
   short: "year"
-  type: [IDistributive]
+  type: [I.d]
 gare:
   family: "R"
   long: "(A) is a month."
   short: "month"
-  type: [IDistributive]
+  type: [I.d]
 kora:
   family: "R"
   long: "(A) is a week."
   short: "week"
-  type: [IDistributive]
+  type: [I.d]
 dena:
   family: "R"
   long: "(A) is a day."
   short: "day"
-  type: [IDistributive]
+  type: [I.d]
 sura:
   family: "R"
   long: "(A) is a hour."
   short: "hour"
-  type: [IDistributive]
+  type: [I.d]
 jero:
   family: "R"
   long: "(A) is a minute."
   short: "minute"
-  type: [IDistributive]
+  type: [I.d]
 cona:
   family: "R"
   long: "(A) is a second."
   short: "second"
-  type: [IDistributive]
+  type: [I.d]
 ber:
   family: "R"
   long: "(A) reflects this language (eberban)."
   short: "eberbanic"
-  type: [IDistributive]
+  type: [I.d]
 pre:
   family: "R"
   long: "(A) is a person."
   short: "person"
-  type: [IDistributive]
+  type: [I.d]
 pra:
   family: "R"
   long: "(A) loves [E]."
   short: "loves"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 vier:
   family: "R"
   long: "(A) visits [E]."
   short: "visits"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 ten:
   family: "R"
   long: "(A) is a small (subjective) amount of things satisfying [E1]."
   short: "small amount of"
-  type: [ICollective, Property]
+  type: [I.c, P.1]
   sequential: true
 tin:
   family: "R"
   long: "(A) is a medium (subjective) amount of things satisfying [E1]."
   short: "medium amount of "
-  type: [ICollective, Property]
+  type: [I.c, P.1]
   sequential: true
 ton:
   family: "R"
   long: "(A) is a large (subjective) amount of things satisfying [E1]."
   short: "large amount of"
-  type: [ICollective, Property]
+  type: [I.c, P.1]
   sequential: true
 tun:
   family: "R"
   long: "(A) is everything that satisfies [E1]."
   short: "every"
-  type: [ICollective, Property]
+  type: [I.c, P.1]
   sequential: true
 tar:
   family: "R"
   long: "(A) is a negligible number in dimension/unit [E1]."
   short: "negligible"
-  type: [Number, Property]
+  type: [N, P.1]
   sequential: true
 ter:
   family: "R"
   long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
   short: "small"
-  type: [Number, Property]
+  type: [N, P.1]
   sequential: true
 tir:
   family: "R"
   long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
   short: "medium"
-  type: [Number, Property]
+  type: [N, P.1]
   sequential: true
 tor:
   family: "R"
   long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
   short: "large"
-  type: [Number, Property]
+  type: [N, P.1]
   sequential: true
 tur:
   family: "R"
   long: "(A) is an infinite number in dimension/unit [E1]."
   short: "infinite"
-  type: [Number, Property]
+  type: [N, P.1]
   sequential: true
 zbur:
   family: "R"
   long: "(A) is a town/city."
   short: "city"
-  type: [IDistributive]
+  type: [I.d]
 zdir:
   family: "R"
   long: "(A) is amusing/entertaining to (E) (default: speaker) in property (I1)."
   short: "amusing"
-  type: [IDistributive, IDistributive, Property]
+  type: [I.d, I.d, P.1]
 more:
   family: "R"
   long: "(A) is simple in property (E1)."
   short: "simple"
-  type: [IDistributive, Property]
+  type: [I.d, P.1]
 tore:
   family: "R"
   long: "(A) is complex/complicated in property (E1)."
   short: "complicated"
-  type: [IDistributive, Property]
+  type: [I.d, P.1]
 zane:
   family: "R"
   long: "(A) is a system with components [E] forming structure (I)."
   short: "system"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 dan:
   family: "R"
   long: "(A) is among [E]."
   short: "among"
-  type: [IDistributive, ICollective]
+  type: [I.d, I.c]
   sequential: true
 dar:
   family: "R"
@@ -1195,24 +1195,24 @@ dar:
     Everything among (A) also satisfies [E1].
     For each x among (A), [E1](x) is true.
   short: "for each"
-  type: [IDistributive, Property]
+  type: [I.d, P.1]
   sequential: true
 ban:
   family: "R"
   long: "(A) is a language."
   short: "language"
-  type: [IDistributive]
+  type: [I.d]
 speu:
   family: "R"
   long: "(A) (ordered list) is ordered following ordering rule [E2]."
   short: "ordered set member"
-  type: [List<_>, Relation]
+  type: ["{_}", P.2]
   sequential: true
 fir:
   family: "R"
   long: "(A) is a color of [E]."
   short: "color"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 cion:
   family: "R"
@@ -1231,366 +1231,366 @@ cion:
              0 value is black.
              Default: 1
   short: "color"
-  type: [IDistributive, Number]
+  type: [I.d, N]
   sequential: true
 zen:
   family: "R"
   long: "(A) is white/light [color adjective]."
   short: "white"
-  type: [IDistributive]
+  type: [I.d]
 gon:
   family: "R"
   long: "(A) is black/dark [color adjective]."
   short: "black"
-  type: [IDistributive]
+  type: [I.d]
 bor:
   family: "R"
   long: "(A) is red [color adjective]."
   short: "red"
-  type: [IDistributive]
+  type: [I.d]
 der:
   family: "R"
   long: "(A) is green [color adjective]."
   short: "green"
-  type: [IDistributive]
+  type: [I.d]
 mir:
   family: "R"
   long: "(A) is blue [color adjective]."
   short: "blue"
-  type: [IDistributive]
+  type: [I.d]
 zne:
   family: "R"
   long: "(A) is cyan [color adjective]."
   short: "cyan"
-  type: [IDistributive]
+  type: [I.d]
 dzu:
   family: "R"
   long: "(A) is magenta [color adjective]."
   short: "magenta"
-  type: [IDistributive]
+  type: [I.d]
 jgu:
   family: "R"
   long: "(A) is yellow [color adjective]."
   short: "yellow"
-  type: [IDistributive]
+  type: [I.d]
 sare:
   family: "R"
   long: "(A) is a group where every pair of members mutualy satisfy relation [E2]."
   short: "mutual"
-  type: [ICollective, Relation]
+  type: [I.c, P.2]
   sequential: true
 gli:
   family: "R"
   long: "(A) is happy about [E0] being true."
   short: "happy"
-  type: [IDistributive, Proposition]
+  type: [I.d, P.0]
   sequential: true
 siro:
   family: "R"
   long: "(A) (source) has translation [E] (result)."
   short: "translation"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 cuina:
   family: "R"
   long: "(A) is a tree."
   short: "tree"
-  type: [IDistributive]
+  type: [I.d]
 jnaor:
   family: "R"
   long: "(A) is wild/untamed."
   short: "wild"
-  type: [IDistributive]
+  type: [I.d]
 djin:
   family: "R"
   long: "(A) desires/wants/wishes [E0]."
   short: "want"
-  type: [IDistributive, Proposition]
+  type: [I.d, P.0]
   sequential: true
 fuere:
   family: "R"
   long: "(A) flies [in air/space]."
   short: "flies"
-  type: [IDistributive]
+  type: [I.d]
 foina:
   family: "R"
   long: "(A) is an airplane."
   short: "airplane"
-  type: [IDistributive]
+  type: [I.d]
 jle:
   family: "R"
   long: "(A) is motivated to make [E0] true by (I)."
   short: "motivated"
-  type: [IDistributive, Proposition, ICollective]
+  type: [I.d, P.0, I.c]
   sequential: true
 zuan:
   family: "R"
   long: "(A) walks."
   short: "walks"
-  type: [IDistributive]
+  type: [I.d]
 vune:
   family: "R"
   long: "(A) is enjoyable/great/nice for [E]."
   short: "nice"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 jvin:
   family: "R"
   long: "(A) dances with characteristics (E)."
   short: "dances"
-  type: [ICollective, IDistributive]
+  type: [I.c, I.d]
 blan:
   family: "R"
   long: "(A) is beautiful."
   short: "beautiful"
-  type: [IDistributive]
+  type: [I.d]
 kca:
   family: "R"
   long: "(A0) is possible/can be true."
   short: "possible"
-  type: [Proposition]
+  type: [P.0]
 pien:
   family: "R"
   long: "(A) is bread."
   short: "bread"
-  type: [IDistributive]
+  type: [I.d]
 cnue:
   family: "R"
   long: "(A) is a piece/portion/part of [E]."
   short: "portion"
-  type: [IDistributive, ICollective]
+  type: [I.d, I.c]
   sequential: true
 fen:
   family: "R"
   long: "(A) (text) is expressed in language [E]."
   short: "in language"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 vin:
   family: "R"
   long: "(A) is written/inscribed on display/storage medium [E]."
   short: "written"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 soane:
   family: "R"
   long: "(A) is stolen from [E]."
   short: "stolen"
-  type: [IDistributive, ICollective]
+  type: [I.d, I.c]
   sequential: true
 sfa:
   family: "R"
   long: "(A) is an occurence of [E0] being true."
   short: "occurence"
-  type: [IDistributive, Proposition]
+  type: [I.d, P.0]
   sequential: true
 tcu:
   family: "R"
   long: "(A) requires/needs [E0] to being true. [E0] is a necessity for (A)."
   short: "needs"
-  type: [IDistributive, Proposition]
+  type: [I.d, P.0]
   sequential: true
 minu:
   family: "R"
   long: "(A) sleeps."
   short: "sleeps"
-  type: [IDistributive]
+  type: [I.d]
 jun:
   family: "R"
   long: "(A) is good."
   short: "good"
-  type: [IDistributive]
+  type: [I.d]
 gur:
   family: "R"
   long: "(A) is bad."
   short: "bad"
-  type: [IDistributive]
+  type: [I.d]
 kin:
   family: "R"
   long: "(A) is a kind of [E]."
   short: "kind"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 kunu:
   family: "R"
   long: "(A) feels sentiment/emotion/sensation [E]."
   short: "feels"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 viru:
   family: "R"
   long: "(A) sees [E]."
   short: "sees"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 pure:
   family: "R"
   long: "(A) hears/listen to [E]."
   short: "hears"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 len:
   family: "R"
   long: "(A) is a word."
   short: "word"
-  type: [IDistributive]
+  type: [I.d]
 vina:
   family: "R"
   long: "(A) is alive."
   short: "alive"
-  type: [IDistributive]
+  type: [I.d]
 mori:
   family: "R"
   long: "(A) is dead."
   short: "dead"
-  type: [IDistributive]
+  type: [I.d]
 suer:
   family: "R"
   long: "(A) is similar to [E]."
   short: "similar"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 paor:
   family: "R"
   long: "(A) is the truth."
   short: "truth"
-  type: [IDistributive]
+  type: [I.d]
 cfeo:
   family: "R"
   long: "(A) is a solid [state of matter]."
   short: "solid"
-  type: [IDistributive]
+  type: [I.d]
 zrao:
   family: "R"
   long: "(A) is a liquid [state of matter]."
   short: "liquid"
-  type: [IDistributive]
+  type: [I.d]
 djio:
   family: "R"
   long: "(A) is a gaz [state of matter]."
   short: "gaz"
-  type: [IDistributive]
+  type: [I.d]
 leno:
   family: "R"
   long: "(A) is water."
   short: "water"
-  type: [IDistributive]
+  type: [I.d]
 gouru:
   family: "R"
   long: "(A) is a dog."
   short: "dog"
-  type: [IDistributive]
+  type: [I.d]
 kanae:
   family: "R"
   long: "(A) is a wolf."
   short: "wolf"
-  type: [IDistributive]
+  type: [I.d]
 kroan:
   family: "R"
   long: "(A) is a frog."
   short: "frog"
-  type: [IDistributive]
+  type: [I.d]
 tori:
   family: "R"
   long: "(A) is a bird."
   short: "bird"
-  type: [IDistributive]
+  type: [I.d]
 cein:
   family: "R"
   long: "(A) is a room."
   short: "room"
-  type: [IDistributive]
+  type: [I.d]
 caun:
   family: "R"
   long: "(A) is an animal."
   short: "animal"
-  type: [IDistributive]
+  type: [I.d]
 flur:
   family: "R"
   long: "(A) is a plant."
   short: "plant"
-  type: [IDistributive]
+  type: [I.d]
 bjan:
   family: "R"
   long: "(A) is behaves friendly/kindly towards [E]."
   short: "friendly"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 lane:
   family: "R"
   long: "(A) is a rule/law prescribing/mandating/requiring [E0]."
   short: "rule"
-  type: [IDistributive, Proposition]
+  type: [I.d, P.0]
   sequential: true
 zire:
   family: "R"
   long: "(A) respects [E]."
   short: "respects"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 zvoe:
   family: "R"
   long: "(A) is a content, something that is to be expressed though medium (E)."
   short: "content"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
 zbui:
   family: "R"
   long: "(A) have sex/sexual intercourse/copulates/mates with [E]."
   short: "sex"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 jiro:
   family: "R"
   long: "(A) shares [E] with (I)."
   short: "shares"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 mare:
   family: "R"
   long: "(A) is legal, allowed by authority (E)."
   short: "allowed"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
 sier:
   family: "R"
   long: "(A) is the Internet."
   short: "internet"
-  type: [IDistributive]
+  type: [I.d]
 stini:
   family: "R"
   long: "(A) is rigid/not bandable."
   short: "rigid"
-  type: [IDistributive]
+  type: [I.d]
 merue:
   family: "R"
   long: "(A) is an organism / form of life."
   short: "organism"
-  type: [IDistributive]
+  type: [I.d]
 slaen:
   family: "R"
   long: "(A) is tied/pinned to [E]."
   short: "tied"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 sfo:
   family: "R"
   long: "(A) is something that contains this word."
   short: "this"
-  type: [IDistributive]
+  type: [I.d]
 skien:
   family: "R"
   long: "(A) is a computer program."
   short: "program"
-  type: [IDistributive]
+  type: [I.d]
 sen:
   family: "R"
   long: "If (A0) is true then [E0] is true, otherwise (I0) is true."
   short: "if then"
-  type: [Proposition, Proposition, Proposition]
+  type: [P.0, P.0, P.0]
 zari:
   family: "R"
   long: "(A) is a recipe, algorithm, procedure to achieve result [E]."
   short: "recipe"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 zein:
   family: "R"
@@ -1598,175 +1598,175 @@ zein:
     (A) [supply/commodity] is provided to [E].
     Use with {gza} to talk about the provider.
   short: "provided"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 curo:
   family: "R"
   long: "(A) is the grammar of [E]."
   short: "grammar"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 cpena:
   family: "R"
   long: "(A) is a document with content [E]."
   short: "document"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 tsir:
   family: "R"
   long: "(A) finds/discovers [E]."
   short: "finds"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 tcon:
   family: "R"
   long: "(A) is related to/associated wit/akin to [E] by relationship (I2)."
   short: "related"
-  type: [IDistributive, IDistributive, Relation]
+  type: [I.d, I.d, P.2]
   sequential: true
 bun:
   family: "R"
   long: "(A) is a version of [E]."
   short: "version"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 bju:
   family: "R"
   long: "(A) is a text."
   short: "text"
-  type: [IDistributive]
+  type: [I.d]
 
 # Compounds (2):
 etsenban:
   family: "C2"
   long: "(A) is a constructed language/conlang."
   short: "conlang"
-  type: [IDistributive]
+  type: [I.d]
 eberban:
   family: "C2"
   long: "(A) is the eberban language."
   short: "eberban"
-  type: [IDistributive]
+  type: [I.d]
 eujbo'ban:
   family: "C2"
   long: "(A) is the lojban language."
   short: "lojban"
-  type: [IDistributive]
+  type: [I.d]
 eufranse'ban:
   family: "C2"
   long: "(A) is the french language."
   short: "french language"
-  type: [IDistributive]
+  type: [I.d]
 euinglici'ban:
   family: "C2"
   long: "(A) is the english language."
   short: "english language"
-  type: [IDistributive]
+  type: [I.d]
 etadena:
   family: "C2"
   long: "(A) is a Sunday."
   short: "Sunday"
-  type: [IDistributive]
+  type: [I.d]
 etedena:
   family: "C2"
   long: "(A) is a Monday."
   short: "Monday"
-  type: [IDistributive]
+  type: [I.d]
 etodena:
   family: "C2"
   long: "(A) is a Thusday."
   short: "Thusday"
-  type: [IDistributive]
+  type: [I.d]
 etudena:
   family: "C2"
   long: "(A) is a Wednesday."
   short: "Wednesday"
-  type: [IDistributive]
+  type: [I.d]
 etiadena:
   family: "C2"
   long: "(A) is a Thursday."
   short: "Thursday"
-  type: [IDistributive]
+  type: [I.d]
 etiedena:
   family: "C2"
   long: "(A) is a Friday."
   short: "Friday"
-  type: [IDistributive]
+  type: [I.d]
 etiodena:
   family: "C2"
   long: "(A) is a Saturday."
   short: "Saturday"
-  type: [IDistributive]
+  type: [I.d]
 etiudena:
   family: "C2"
   long: "(A) is a Sunday."
   short: "Sunday"
-  type: [IDistributive]
+  type: [I.d]
 etagare:
   family: "C2"
   long: "(A) is a January."
   short: "January"
-  type: [IDistributive]
+  type: [I.d]
 etegare:
   family: "C2"
   long: "(A) is a February."
   short: "February"
-  type: [IDistributive]
+  type: [I.d]
 etogare:
   family: "C2"
   long: "(A) is a March."
   short: "March"
-  type: [IDistributive]
+  type: [I.d]
 etugare:
   family: "C2"
   long: "(A) is a April."
   short: "April"
-  type: [IDistributive]
+  type: [I.d]
 etiagare:
   family: "C2"
   long: "(A) is a May."
   short: "May"
-  type: [IDistributive]
+  type: [I.d]
 etiegare:
   family: "C2"
   long: "(A) is a June."
   short: "June"
-  type: [IDistributive]
+  type: [I.d]
 etiogare:
   family: "C2"
   long: "(A) is a July."
   short: "July"
-  type: [IDistributive]
+  type: [I.d]
 etiugare:
   family: "C2"
   long: "(A) is a August."
   short: "August"
-  type: [IDistributive]
+  type: [I.d]
 etaigare:
   family: "C2"
   long: "(A) is a September."
   short: "September"
-  type: [IDistributive]
+  type: [I.d]
 eteigare:
   family: "C2"
   long: "(A) is a October."
   short: "October"
-  type: [IDistributive]
+  type: [I.d]
 etoigare:
   family: "C2"
   long: "(A) is a November."
   short: "October"
-  type: [IDistributive]
+  type: [I.d]
 etuigare:
   family: "C2"
   long: "(A) is a December."
   short: "December"
-  type: [IDistributive]
+  type: [I.d]
 ekrevier:
   family: "C2"
   long: "(A) visits [E] with guide (I)."
   short: "guided visit"
-  type: [IDistributive, IDistributive, IDistributive]
+  type: [I.d, I.d, I.d]
   sequential: true
 evaza:
   family: "C2"
@@ -1774,69 +1774,69 @@ evaza:
     (A) is named [E].
     Allows to make names from a scope.
   short: "named (binding)"
-  type: [ICollective, ICollective]
+  type: [I.c, I.c]
   sequential: true
 etanakano:
   family: "C2"
   long: "(A) is bigger (in volume) than [E]."
   short: "bigger (volume)"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 egerekano:
   family: "C2"
   long: "(A) is smaller (in volume) than [E]."
   short: "smaller (volume)"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 evinzane:
   family: "C2"
   long: "(A) is a writing system with symbols (E) and set of rules (I)."
   short: "smaller (volume)"
-  type: [IDistributive, IDistributive, List<Proposition>]
+  type: [I.d, I.d, List<P.0>]
   sequential: true
 espimoriu:
   family: "C2"
   long: "(A) is a parrot."
   short: "parrot"
-  type: [IDistributive]
+  type: [I.d]
 esiervanu:
   family: "C2"
   long: "(A) is an hyperlink to/URL of resource [E]."
   short: "hyperlink"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
 emeruezane:
   family: "C2"
   long: "(A) is an organism with body parts [E] forming body (I)."
   short: "body"
-  type: [ICollective, ICollective, ICollective]
+  type: [I.c, I.c, I.c]
   sequential: true
 egzeslaen:
   family: "C2"
   long: "(A) hangs from [E]."
   short: "hang"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 eskaozari:
   family: "C2"
   long: "(A) is a source code of [E]."
   short: "source code"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 ecuroskien:
   family: "C2"
   long: "(A) is a parser from grammar [E]."
   short: "parser"
-  type: [IDistributive, IDistributive]
+  type: [I.d, I.d]
   sequential: true
 epuzoi:
   family: "C2"
   long: "(A) is a paragraph."
   short: "paragraph"
-  type: [IDistributive]
+  type: [I.d]
 
 ilenpoba:
   family: "C2"
   long: "(A) is a dictionary."
   short: "dictionary"
-  type: [IDistributive]
+  type: [I.d]
 
