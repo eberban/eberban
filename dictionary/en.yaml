@@ -1672,6 +1672,28 @@ bion:
   short: "disease"
   type: [I.d, I.d]
   sequential: true
+leun:
+  family: "R"
+  long: "(A) is light [energy]."
+  short: "light"
+  type: [I.d]
+cmir:
+  family: "R"
+  long: "(A) emits/produce [E]."
+  short: "emits"
+  type: [I.d, I.d]
+  sequential: true
+smai:
+  family: "R"
+  long: "(A) receives/absorbs [E]."
+  short: "receives"
+  type: [I.d, I.d]
+  sequential: true
+flua:
+  family: "R"
+  long: "(A) is a sound."
+  short: "sound"
+  type: [I.d]
 
 # Compounds (2):
 etsenban:
