@@ -13,6 +13,8 @@ Pronouns are expressed with the following particles :
 | mo   | `(A) is you, a listener.`                            |
 | mio  | `(A) is I/a speaker/author or you, a listener.`      |
 | me   | `(A) is someone, neither a speaker or listener.`     |
+| mia  | `(A) is indefinite specific (a).`                    |
+| moa  | `(A) is definite specific (the).`                    |
 | mei  | `(A) is this here, near a speaker.`                  |
 | meo  | `(A) is that here, near a listener.`                 |
 | meu  | `(A) is that yonder, far from speaker and listener.` |

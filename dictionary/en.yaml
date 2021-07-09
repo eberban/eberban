@@ -91,6 +91,22 @@ me:
   long: "(A) is someone, neither a speaker or listener."
   short: "other"
   type: [I.d]
+mia:
+  family: "MA"
+  long: |
+    (A) is indefinite specific.
+    The speaker has a specific individual in mind, but the listener is not
+    expected to know which one.
+  short: "a"
+  type: [I.d]
+moa:
+  family: "MA"
+  long: |
+    (A) is definite specific.
+    The speaker has a specific individual in mind and the listener is expected
+    to know which one from context.
+  short: "the"
+  type: [I.d]
 mei:
   family: "MA"
   long: "(A) is this here, near a speaker."
