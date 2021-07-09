@@ -589,66 +589,79 @@ kor:
   short: "group"
   type: [I.c, "{I}"]
   sequential: true
+  tags: [list]
 cna:
   family: "R"
   long: "This proposition is true if all individuals in list (A) satisfies property [E1]."
   short: "AND-I"
   type: ["{I}", P.1]
+  tags: [list, connective]
 cne:
   family: "R"
   long: "This proposition is true if at least one individual in list (A) satisfies property [E1]."
   short: "OR-I"
   type: ["{I}", P.1]
+  tags: [list, connective]
 cni:
   family: "R"
   long: "This proposition is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
   short: "XOR-I"
   type: ["{I}", P.1, N]
+  tags: [list, connective]
 cana:
   family: "R"
   long: "This proposition is true if all propositions in list (A) are true."
   short: "AND-P0"
   type: ["{P.0}"]
+  tags: [list, connective]
 cane:
   family: "R"
   long: "This proposition is true if at least one proposition in list (A) is true."
   short: "OR-P0"
   type: ["{P.0}"]
+  tags: [list, connective]
 cani:
   family: "R"
   long: "This proposition is true if exactly (E) (default: 1) proposition(s) in list (A) is true."
   short: "XOR-P0"
   type: ["{P.0}", N]
+  tags: [list, connective]
 cena:
   family: "R"
   long: "This proposition is true if (A) satisfies all properties in list [E]."
   short: "AND-P1"
   type: [I, "{P.1}"]
+  tags: [list, connective]
 cene:
   family: "R"
   long: "This proposition is true if (A) satisfies at least one property in list [E]."
   short: "OR-P1"
   type: [I, "{P.1}"]
+  tags: [list, connective]
 ceni:
   family: "R"
   long: "This proposition is true if (A) satisfies exactly (I) (default: 1) proposition(s) in list [E]."
   short: "XOR-P1"
   type: [I, "{P.1}", N]
+  tags: [list, connective]
 cina:
   family: "R"
   long: "This proposition is true if (A) and (E) satisfies all relations in list [I]."
   short: "AND-P2"
   type: [I, I, "{P.2}"]
+  tags: [list, connective]
 cine:
   family: "R"
   long: "This proposition is true if (A) and (E) satisfies at least one relation in list [I]."
   short: "OR-P2"
   type: [I, I, "{P.2}"]
+  tags: [list, connective]
 cini:
   family: "R"
   long: "This proposition is true if (A) and (E) satisfies exactly (O) (default: 1) relation(s) in list [I]."
   short: "XOR-P2"
   type: [I, I, "{P.2}", N]
+  tags: [list, connective]
 
 kano:
   family: "R"
@@ -687,120 +700,140 @@ zde:
   short: "present"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 skir:
   family: "R"
   long: "(A) (default: here) is at the same place as [E] (default: here)."
   short: "same place"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 jgo:
   family: "R"
   long: "(A0) (default: now) occurs before [E0] (default: now)."
   short: "before"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 slo:
   family: "R"
   long: "(A0) (default: now) occurs after [E0] (default: now)."
   short: "after"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 pcei:
   family: "R"
   long: "(A) (default: here) is backward/to the back of [E] (default: here)."
   short: "back"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 vlo:
   family: "R"
   long: "(A) (default: here) is forward/to the front of [E] (default: here)."
   short: "front"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 fle:
   family: "R"
   long: "(A) (default: here) is leftward/to the left of [E] (default: here)."
   short: "left"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 zre:
   family: "R"
   long: "(A) (default: here) is rightward/to the right of [E] (default: here)."
   short: "right"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 gze:
   family: "R"
   long: "(A) (default: here) is below/downwars/down from [E] (default: here)."
   short: "down"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 bri:
   family: "R"
   long: "(A) (default: here) is above/upward/up from [E] (default: here)."
   short: "up"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 cfae:
   family: "R"
   long: "(A) (default: here) is southward/to the south of [E] (default: here)."
   short: "south"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 jgao:
   family: "R"
   long: "(A) (default: here) is northward/to the north of [E] (default: here)."
   short: "north"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 tloe:
   family: "R"
   long: "(A) (default: here) is westward/to the west of [E] (default: here)."
   short: "west"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 glea:
   family: "R"
   long: "(A) (default: here) is eastward/to the east of [E] (default: here)."
   short: "east"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 vuno:
   family: "R"
   long: "(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here)."
   short: "space distance"
   type: [I.d, N, I.d]
   sequential: true
+  tags: [space]
 ganu:
   family: "R"
   long: "(A0) is true/occurs at a distance in time of [E] (mesure, years by default / event with this duration) from (I0) (default: now)."
   short: "time distance"
   type: [P.0, N, P.0]
   sequential: true
+  tags: [time]
 zini:
   family: "R"
   long: "(A0) is true/occurs over time interval/length [E] (measure, years by default / event with same duration)."
   short: "time length"
   type: [P.0, N]
   sequential: true
+  tags: [time]
 cunu:
   family: "R"
   long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
   short: "length"
   type: [I.d, N]
   sequential: true
+  tags: [space]
 zono:
   family: "R"
   long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
   short: "area (measure)"
   type: [I.d, N]
   sequential: true
+  tags: [space]
 tana:
   family: "R"
   long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
   short: "volume (measure)"
   type: [I.d, N]
   sequential: true
+  tags: [space]
 
 keun:
   family: "R"
@@ -808,30 +841,35 @@ keun:
   short: "space start"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 daen:
   family: "R"
   long: "(A) (default: here) is between the starting and end point of [E] (default: here)."
   short: "space between"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 moan:
   family: "R"
   long: "(A) (default: here) is at an halt/interruption of [E (default: here)]."
   short: "space halt"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 taon:
   family: "R"
   long: "(A) (default: here) is at the resumption of [E] (default: here)."
   short: "space resumption"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 cuan:
   family: "R"
   long: "(A) (default: here) is at the end point of [E] (default: here)."
   short: "space end"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 
 keur:
   family: "R"
@@ -839,96 +877,113 @@ keur:
   short: "time start"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 daer:
   family: "R"
   long: "(A0) (default: now) is between the starting and end point of [E0] (default: now)."
   short: "time between"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 moar:
   family: "R"
   long: "(A0) (default: now) is at an halt/interruption of [E0] (default: now)."
   short: "time halt"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 taor:
   family: "R"
   long: "(A0) (default: now) is at the resumption of [E0] (default: now)."
   short: "time resumption"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 cuar:
   family: "R"
   long: "(A0) (default: now) is at the end point of [E0] (default: now)."
   short: "time end"
   type: [P.0, P.0]
   sequential: true
+  tags: [time]
 mura:
   family: "R"
   long: "(A0) is regular/occurs regularly."
   short: "regular"
   type: [P.0]
+  tags: [time]
 geno:
   family: "R"
   long: "(A0) is typical/occurs typically."
   short: "typical"
   type: [P.0]
+  tags: [time]
 foru:
   family: "R"
   long: "(A0) is continuous/occurs continuously."
   short: "continuous"
   type: [P.0]
+  tags: [time]
 jenu:
   family: "R"
   long: "(A0) is habitual/occurs habitually."
   short: "habitual"
   type: [P.0]
+  tags: [time]
 fena:
   family: "R"
   long: "(A) is inside/within [E]."
   short: "inside"
+  tags: [space]
 laro:
   family: "R"
   long: "(A) is outside [E]."
   short: "outside"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 suru:
   family: "R"
   long: "(A) is adjacent to/along [E]."
   short: "adjacent"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 manu:
   family: "R"
   long: "(A) is tangential/passing by [E]."
   short: "passing by"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 varu:
   family: "R"
   long: "(A) is surrounding/around [E]."
   short: "surrounding"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 mere:
   family: "R"
   long: "(A) is transfixing/passing through [E]."
   short: "passing through"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 tinu:
   family: "R"
   long: "(A) is towards [E]."
   short: "towards"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 keru:
   family: "R"
   long: "(A) is away from [E]."
   short: "away from"
   type: [I.d, I.d]
   sequential: true
+  tags: [space]
 don:
   family: "R"
   long: "(A) likes [E]."
@@ -971,6 +1026,7 @@ mlian:
   long: "(A) is a cat."
   short: "cat"
   type: [I.d]
+  tags: [animal]
 kcia:
   family: "R"
   long: "(A) [tool] is used to make [I0] [purpose] true."
@@ -1087,36 +1143,43 @@ bire:
   long: "(A) is a year."
   short: "year"
   type: [I.d]
+  tags: [time, unit]
 gare:
   family: "R"
   long: "(A) is a month."
   short: "month"
   type: [I.d]
+  tags: [time, unit]
 kora:
   family: "R"
   long: "(A) is a week."
   short: "week"
   type: [I.d]
+  tags: [time, unit]
 dena:
   family: "R"
   long: "(A) is a day."
   short: "day"
   type: [I.d]
+  tags: [time, unit]
 sura:
   family: "R"
   long: "(A) is a hour."
   short: "hour"
   type: [I.d]
+  tags: [time, unit]
 jero:
   family: "R"
   long: "(A) is a minute."
   short: "minute"
   type: [I.d]
+  tags: [time, unit]
 cona:
   family: "R"
   long: "(A) is a second."
   short: "second"
   type: [I.d]
+  tags: [time, unit]
 ber:
   family: "R"
   long: "(A) reflects this language (eberban)."
@@ -1245,10 +1308,11 @@ fir:
   short: "color"
   type: [I.d, I.d]
   sequential: true
+  tags: [color]
 cion:
   family: "R"
   long: |
-    (A) is a color with {Hue, Saturation, Value} [E].
+    (A) has color with {Hue, Saturation, Value} [E].
     [E] is a 3-vector with these components :
     - teha : Hue of the color between 0 and 1.
              0 is red primary
@@ -1261,49 +1325,58 @@ cion:
     - teho : Color value between 0 and 1.
              0 value is black.
              Default: 1
-  short: "color"
+  short: "HSV-color"
   type: [I.d, N]
   sequential: true
+  tags: [color]
 zen:
   family: "R"
   long: "(A) is white/light [color adjective]."
   short: "white"
   type: [I.d]
+  tags: [color]
 gon:
   family: "R"
   long: "(A) is black/dark [color adjective]."
   short: "black"
   type: [I.d]
+  tags: [color]
 bor:
   family: "R"
   long: "(A) is red [color adjective]."
   short: "red"
   type: [I.d]
+  tags: [color]
 der:
   family: "R"
   long: "(A) is green [color adjective]."
   short: "green"
   type: [I.d]
+  tags: [color]
 mir:
   family: "R"
   long: "(A) is blue [color adjective]."
   short: "blue"
   type: [I.d]
+  tags: [color]
 zne:
   family: "R"
   long: "(A) is cyan [color adjective]."
   short: "cyan"
   type: [I.d]
+  tags: [color]
 dzu:
   family: "R"
   long: "(A) is magenta [color adjective]."
   short: "magenta"
   type: [I.d]
+  tags: [color]
 jgu:
   family: "R"
   long: "(A) is yellow [color adjective]."
   short: "yellow"
   type: [I.d]
+  tags: [color]
 sare:
   family: "R"
   long: "(A) is a group where every pair of members mutualy satisfy relation [E2]."
@@ -1491,41 +1564,49 @@ cfeo:
   long: "(A) is a solid [state of matter]."
   short: "solid"
   type: [I.d]
+  tags: [matter]
 zrao:
   family: "R"
   long: "(A) is a liquid [state of matter]."
   short: "liquid"
   type: [I.d]
+  tags: [matter]
 djio:
   family: "R"
   long: "(A) is a gaz [state of matter]."
   short: "gaz"
   type: [I.d]
+  tags: [matter]
 leno:
   family: "R"
   long: "(A) is water."
   short: "water"
   type: [I.d]
+  tags: [matter]
 gouru:
   family: "R"
   long: "(A) is a dog."
   short: "dog"
   type: [I.d]
+  tags: [animal]
 kanae:
   family: "R"
   long: "(A) is a wolf."
   short: "wolf"
   type: [I.d]
+  tags: [animal]
 kroan:
   family: "R"
   long: "(A) is a frog."
   short: "frog"
   type: [I.d]
+  tags: [animal]
 tori:
   family: "R"
   long: "(A) is a bird."
   short: "bird"
   type: [I.d]
+  tags: [animal]
 cein:
   family: "R"
   long: "(A) is a room."
@@ -1536,6 +1617,7 @@ caun:
   long: "(A) is an animal."
   short: "animal"
   type: [I.d]
+  tags: [animal]
 flur:
   family: "R"
   long: "(A) is a plant."
@@ -1706,121 +1788,145 @@ eberban:
   long: "(A) is the eberban language."
   short: "eberban"
   type: [I.d]
+  tags: [language]
 eujbo'ban:
   family: "C2"
   long: "(A) is the lojban language."
   short: "lojban"
   type: [I.d]
+  tags: [language]
 eufranse'ban:
   family: "C2"
   long: "(A) is the french language."
   short: "french language"
   type: [I.d]
+  tags: [language]
 euinglici'ban:
   family: "C2"
   long: "(A) is the english language."
   short: "english language"
   type: [I.d]
+  tags: [language]
 etadena:
   family: "C2"
   long: "(A) is a Sunday."
   short: "Sunday"
   type: [I.d]
+  tags: [time, day]
 etedena:
   family: "C2"
   long: "(A) is a Monday."
   short: "Monday"
   type: [I.d]
+  tags: [time, day]
 etodena:
   family: "C2"
   long: "(A) is a Thusday."
   short: "Thusday"
   type: [I.d]
+  tags: [time, day]
 etudena:
   family: "C2"
   long: "(A) is a Wednesday."
   short: "Wednesday"
   type: [I.d]
+  tags: [time, day]
 etiadena:
   family: "C2"
   long: "(A) is a Thursday."
   short: "Thursday"
   type: [I.d]
+  tags: [time, day]
 etiedena:
   family: "C2"
   long: "(A) is a Friday."
   short: "Friday"
   type: [I.d]
+  tags: [time, day]
 etiodena:
   family: "C2"
   long: "(A) is a Saturday."
   short: "Saturday"
   type: [I.d]
+  tags: [time, day]
 etiudena:
   family: "C2"
   long: "(A) is a Sunday."
   short: "Sunday"
   type: [I.d]
+  tags: [time, day]
 etagare:
   family: "C2"
   long: "(A) is a January."
   short: "January"
   type: [I.d]
+  tags: [time, month]
 etegare:
   family: "C2"
   long: "(A) is a February."
   short: "February"
   type: [I.d]
+  tags: [time, month]
 etogare:
   family: "C2"
   long: "(A) is a March."
   short: "March"
   type: [I.d]
+  tags: [time, month]
 etugare:
   family: "C2"
   long: "(A) is a April."
   short: "April"
   type: [I.d]
+  tags: [time, month]
 etiagare:
   family: "C2"
   long: "(A) is a May."
   short: "May"
   type: [I.d]
+  tags: [time, month]
 etiegare:
   family: "C2"
   long: "(A) is a June."
   short: "June"
   type: [I.d]
+  tags: [time, month]
 etiogare:
   family: "C2"
   long: "(A) is a July."
   short: "July"
   type: [I.d]
+  tags: [time, month]
 etiugare:
   family: "C2"
   long: "(A) is a August."
   short: "August"
   type: [I.d]
+  tags: [time, month]
 etaigare:
   family: "C2"
   long: "(A) is a September."
   short: "September"
   type: [I.d]
+  tags: [time, month]
 eteigare:
   family: "C2"
   long: "(A) is a October."
   short: "October"
   type: [I.d]
+  tags: [time, month]
 etoigare:
   family: "C2"
   long: "(A) is a November."
   short: "October"
   type: [I.d]
+  tags: [time, month]
 etuigare:
   family: "C2"
   long: "(A) is a December."
   short: "December"
   type: [I.d]
+  tags: [time, month]
 ekrevier:
   family: "C2"
   long: "(A) visits [E] with guide (I)."
@@ -1858,6 +1964,7 @@ espimoriu:
   long: "(A) is a parrot."
   short: "parrot"
   type: [I.d]
+  tags: [animal]
 esiervanu:
   family: "C2"
   long: "(A) is an hyperlink to/URL of resource [E]."

@@ -15,7 +15,18 @@
 
 <body>
 	<div class="container">
-		<h1>eberban dictionary <small>use <b>Ctrl+F</b> to search</small></h1>
+		<h1>eberban dictionary</h1>
+
+		<form class="row">
+			<span id="search-reset" class="btn span2">Clear search</span>
+			<input type="text"
+				placeholder="Search eberban words, words in definitions, @family and #tags ..."
+				class="span10 input-medium"
+				id="search"
+				style="padding: 4px 14px; height: revert;"
+			>
+		</form>
+		
 
 		<div id="dictionary"></div>
 	</div>
@@ -23,7 +34,34 @@
 </body>
 
 <script>
-	$('#dictionary').html(bundle.html_dictionary());
+	function update() {
+		let search = $('#search').val();
+		let filters = search.split(' ');
+		$('#dictionary').html(bundle.html_dictionary(filters));
+
+		$('.dictionary-tag').click((event) => {
+			$('#search').val(`#${event.currentTarget.innerHTML}`);
+			update();
+		});
+
+		$('.dictionary-family').click((event) => {
+			$('#search').val(`@${event.currentTarget.innerHTML}`);
+			update();
+		});
+
+		window.scrollTo(0, 0);
+	}
+
+	update();
+
+	$('#search').bind("keyup", (e) => {
+		update();
+	});	
+
+	$('#search-reset').click((e) => {
+		$('#search').val('');
+		update();
+	});	
 </script>
 
 </html>
