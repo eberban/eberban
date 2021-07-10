@@ -756,12 +756,11 @@ fuir:
 zvu:
   family: "R"
   long: |
-    (A) satify relation [E2] with its future self.
-    [E2].A = Future (A).
-    [E2].E = Current (A). 
+    (A) satify relation [E2] with its future self. 
     Allow to describe the evolution of something.
-    Arguments of the relation defines the distributivity of (A).
-  short: "relation with future self"
+
+    [E2] is used with (future, current) in this order.
+  short: "evolution"
   type: [I, [I, I]]
   sequential: true
 zde:
@@ -1889,6 +1888,13 @@ pana:
   type: [I.d, I.d]
   sequential: true
   tags: [kinship, family]
+dzana:
+  family: "R"
+  long: "(A) is married to [E]."
+  short: "married"
+  type: [I.d, I.d]
+  sequential: true
+  tags: [kinship, family]
 
 # Compounds (2):
 etsenban:
@@ -2072,7 +2078,7 @@ evinzane:
   short: "smaller (volume)"
   type: [I.d, I.d, List<P.0>]
   sequential: true
-espimoriu:
+espitori:
   family: "C2"
   long: "(A) is a parrot."
   short: "parrot"

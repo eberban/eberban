@@ -88,11 +88,16 @@ export function html_dictionary(filters) {
 			}
 		}
 
+		// Cache html output.
+		if (words[word].html_output == undefined) {
+			words[word].html_output = html_word_entry(word, words[word]);
+		}
+
 		if (exact_match) {
 			// Exact match => first entry
-			output = html_word_entry(word, words[word]) + output;
+			output = words[word].html_output + output;
 		} else {
-			output += html_word_entry(word, words[word]);
+			output += words[word].html_output;
 		}
 	});
 
