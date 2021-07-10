@@ -345,6 +345,7 @@ lai:
   family: "LAI"
   long: "Ends grammatically correct eberban quote."
   short: ""
+  tags: [terminator]
 le:
   family: "LE"
   long: "Quote next word. (A) is word [word]."
@@ -448,7 +449,7 @@ vai:
   family: "VAI"
   long: "Close explicit binding group."
   short: ""
-  tags: [elidable]
+  tags: [terminator, elidable]
 vua:
   family: "VA"
   long: "First explicit (A) place non-restrictive binding."
@@ -539,7 +540,7 @@ pai:
   family: "PAI"
   long: "Ends an predicate scope."
   short: ""
-  tags: [elidable]
+  tags: [terminator, elidable]
 pe:
   family: "PE"
   long: "Inline scope starter."
@@ -548,7 +549,7 @@ pei:
   family: "PEI"
   long: "Inline scope elidible terminator."
   short: "]"
-  tags: [elidable]
+  tags: [terminator, elidable]
 pi:
   family: "PI"
   long: "Ends the list of arguments."
@@ -569,7 +570,7 @@ poi:
   family: "POI"
   long: "Ends a predicate definition."
   short: ""
-  tags: [elidable]
+  tags: [terminator, elidable]
 pu:
   family: "PU"
   long: "Marks a new paragraph/section/change of subject."
@@ -618,6 +619,7 @@ doi:
   family: "DOI"
   long: "Ends parenthetical note."
   short: ")"
+  tags: [terminator]
 ba:
   family: "BA"
   long: "List separator."
@@ -657,18 +659,21 @@ cna:
   long: "This proposition is true if all individuals in list (A) satisfies property [E1]."
   short: "AND-I"
   type: ["{I}", P.1]
+  sequential: true
   tags: [list, connective]
 cne:
   family: "R"
   long: "This proposition is true if at least one individual in list (A) satisfies property [E1]."
   short: "OR-I"
   type: ["{I}", P.1]
+  sequential: true
   tags: [list, connective]
 cni:
   family: "R"
   long: "This proposition is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
   short: "XOR-I"
   type: ["{I}", P.1, N]
+  sequential: true
   tags: [list, connective]
 cana:
   family: "R"
@@ -693,34 +698,37 @@ cena:
   long: "This proposition is true if (A) satisfies all properties in list [E]."
   short: "AND-P1"
   type: [I, "{P.1}"]
+  sequential: true
   tags: [list, connective]
 cene:
   family: "R"
   long: "This proposition is true if (A) satisfies at least one property in list [E]."
   short: "OR-P1"
   type: [I, "{P.1}"]
+  sequential: true
   tags: [list, connective]
 ceni:
   family: "R"
   long: "This proposition is true if (A) satisfies exactly (I) (default: 1) proposition(s) in list [E]."
   short: "XOR-P1"
   type: [I, "{P.1}", N]
+  sequential: true
   tags: [list, connective]
 cina:
   family: "R"
-  long: "This proposition is true if (A) and (E) satisfies all relations in list [I]."
+  long: "This proposition is true if (A) and (E) satisfies all relations in list (I)."
   short: "AND-P2"
   type: [I, I, "{P.2}"]
   tags: [list, connective]
 cine:
   family: "R"
-  long: "This proposition is true if (A) and (E) satisfies at least one relation in list [I]."
+  long: "This proposition is true if (A) and (E) satisfies at least one relation in list (I)."
   short: "OR-P2"
   type: [I, I, "{P.2}"]
   tags: [list, connective]
 cini:
   family: "R"
-  long: "This proposition is true if (A) and (E) satisfies exactly (O) (default: 1) relation(s) in list [I]."
+  long: "This proposition is true if (A) and (E) satisfies exactly (O) (default: 1) relation(s) in list (I)."
   short: "XOR-P2"
   type: [I, I, "{P.2}", N]
   tags: [list, connective]
@@ -1053,13 +1061,6 @@ don:
   type: [I.d, I.d]
   sequential: true
   tags: [emotion]
-dona:
-  family: "R"
-  long: "(A) likes that [E0] is true. ((E.A) defaults to (A) : (A) likes something about itself)"
-  short: "likes that"
-  type: [I.d, P.0]
-  sequential: true
-  tags: [emotion]
 jven:
   family: "R"
   long: "(A) is a friend of [E]."
@@ -1388,17 +1389,21 @@ fir:
 cion:
   family: "R"
   long: |
-    (A) has color with {Hue, Saturation, Value} [E].
+    (A) is [E] HSV-colored.
+
     [E] is a 3-vector with these components :
-    - teha : Hue of the color between 0 and 1.
-             0 is red primary
-             1/3 is green primary
-             2/3 is blue primary
+    
+    {teha} : Hue of the color between 0 and 1.
+             0 is red primary.
+             1/3 is green primary.
+             2/3 is blue primary.
              Default: 0
-    - tehe : Color saturation between 0 and 1.
+    
+    {tehe} : Color saturation between 0 and 1.
              0 saturation is a shade of gray.
              Default: 1
-    - teho : Color value between 0 and 1.
+    
+    {teho} : Color value between 0 and 1.
              0 value is black.
              Default: 1
   short: "HSV-color"
@@ -1856,6 +1861,13 @@ fana:
   family: "R"
   long: "(A) is a parent of [E]."
   short: "parent"
+  type: [I.d, I.d]
+  sequential: true
+  tags: [kinship, family]
+kana:
+  family: "R"
+  long: "(A) is a sibling/brother/sister of [E]."
+  short: "sibling"
   type: [I.d, I.d]
   sequential: true
   tags: [kinship, family]

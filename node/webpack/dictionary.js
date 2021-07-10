@@ -5,7 +5,7 @@ const words_sorted = Object.keys(words).sort();
 const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'a', 'e', 'i', 'o', 'u' ];
 
 function html_word_entry(word, entry) {
-	var output = `<div class="entry"><h3>`;
+	var output = `<div class="dictionary-entry well well-small"><h3>`;
 
 	output += `${word}: `;
 
@@ -14,7 +14,7 @@ function html_word_entry(word, entry) {
 	output += `<span class="btn btn-mini btn-inverse dictionary-family">${entry.family}</span> `;
 
 	if (entry.sequential) {
-		output += `<span class="btn btn-mini btn-important dictionary-seq">sequential</span> `;
+		output += `<span class="btn btn-mini btn-danger dictionary-seq">sequential</span> `;
 	}
 
 	if (entry.tags != undefined) {
@@ -25,7 +25,26 @@ function html_word_entry(word, entry) {
 
 	output += `</h3>`;
 
-	output += `<pre>${entry.long.replace(/(?:\r\n|\r|\n)/g, '<br/>')}</pre>`;
+	let paragraphs = entry.long.split(/(\r\n|\r|\n){2,}/);
+
+	paragraphs.forEach((p) => {
+		p = p.replace(/\(((A|E|I|O)\d?)\)/g,'<span class="label label-success">$1</span>')
+		p = p.replace(/\[((A|E|I|O)\d?)\]/g,'<span class="label label-important">$1</span>')
+		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
+			let out = '<em>';
+			let list = p1.split(' ');
+
+			list.forEach((word) => {
+				out += `<a href="#" class="dictionary-word-link">${word}</a> `
+			})
+
+			out += '</em>';
+
+			return out;
+		});
+
+		output += `<p>${p}</p>`
+	})
 
 	output += `</div>`;
 	return output;

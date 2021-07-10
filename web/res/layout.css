@@ -214,3 +214,8 @@ li.implicit {
 .glosser-definition {
 	font-family: "Courier New", Courier, monospace;
 }
+
+.dictionary-entry {
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
