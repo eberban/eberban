@@ -2,25 +2,26 @@ const { words_en: words } = require('../src/dictionary');
 
 const words_sorted = Object.keys(words).sort();
 
-const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number' ];
+const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'a', 'e', 'i', 'o', 'u' ];
 
 function html_word_entry(word, entry) {
 	var output = `<div class="entry"><h3>`;
 
 	output += `${word}: `;
-	output += `<span class="btn btn-mini btn-inverse dictionary-family">${entry.family}</span> `;
 
 	output += `<small>${entry.short}</small> `;
 
-    
-    
-	if (entry.sequential) output += `<span class="btn btn-mini disabled">sequential</span> `;
+	output += `<span class="btn btn-mini btn-inverse dictionary-family">${entry.family}</span> `;
 
-    if (entry.tags != undefined) {
-        entry.tags.forEach((e) => {
-            output += `<span class="btn btn-mini btn-info dictionary-tag">${e}</span> `;
-        })
-    }
+	if (entry.sequential) {
+		output += `<span class="btn btn-mini btn-important dictionary-seq">sequential</span> `;
+	}
+
+	if (entry.tags != undefined) {
+		entry.tags.forEach((e) => {
+			output += `<span class="btn btn-mini btn-info dictionary-tag">${e}</span> `;
+		});
+	}
 
 	output += `</h3>`;
 
@@ -37,7 +38,7 @@ export function html_dictionary(filters) {
 		var word = words_sorted[index];
 		if (ignored.includes(word)) return;
 
-        let exact_match = false;
+		let exact_match = false;
 
 		for (var filter in filters) {
 			filter = filters[filter].toLowerCase();
@@ -52,9 +53,9 @@ export function html_dictionary(filters) {
 					return;
 				}
 			} else {
-                if (word == filter) {
-                    exact_match = true;
-                }
+				if (word == filter) {
+					exact_match = true;
+				}
 
 				if (
 					!(
@@ -68,12 +69,12 @@ export function html_dictionary(filters) {
 			}
 		}
 
-        if (exact_match) {
-            // Exact match => first entry
-            output = html_word_entry(word, words[word]) + output;
-        } else {
-            output += html_word_entry(word, words[word]);
-        }
+		if (exact_match) {
+			// Exact match => first entry
+			output = html_word_entry(word, words[word]) + output;
+		} else {
+			output += html_word_entry(word, words[word]);
+		}
 	});
 
 	return output;

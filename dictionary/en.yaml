@@ -150,154 +150,192 @@ ta:
   family: "TA"
   long: "Digit 0"
   short: "0"
+  tags: [digit, number]
 te:
   family: "TA"
   long: "Digit 1"
   short: "1"
+  tags: [digit, number]
 to:
   family: "TA"
   long: "Digit 2"
   short: "2"
+  tags: [digit, number]
 tu:
   family: "TA"
   long: "Digit 3"
   short: "3"
+  tags: [digit, number]
 tia:
   family: "TA"
   long: "Digit 4"
   short: "4"
+  tags: [digit, number]
 tie:
   family: "TA"
   long: "Digit 5"
   short: "5"
+  tags: [digit, number]
 tio:
   family: "TA"
   long: "Digit 6"
   short: "6"
+  tags: [digit, number]
 tiu:
   family: "TA"
   long: "Digit 7"
   short: "7"
+  tags: [digit, number]
 tai:
   family: "TA"
   long: "Digit 8"
   short: "8"
+  tags: [digit, number]
 tei:
   family: "TA"
   long: "Digit 9"
   short: "9"
+  tags: [digit, number]
 toi:
   family: "TA"
   long: "Digit ↊/A (10)"
   short: "A"
+  tags: [digit, number]
 tui:
   family: "TA"
   long: "Digit ↋/B (11)"
   short: "B"
+  tags: [digit, number]
 taia:
   family: "TA"
   long: "Digit C (12)"
   short: "C"
+  tags: [digit, number]
 taie:
   family: "TA"
   long: "Digit D (13)"
   short: "D"
+  tags: [digit, number]
 taio:
   family: "TA"
   long: "Digit E (14)"
   short: "E"
+  tags: [digit, number]
 taiu:
   family: "TA"
   long: "Digit F (15)"
   short: "F"
+  tags: [digit, number]
 ti:
   family: "TA"
   long: "Decimal separator"
   short: "."
+  tags: [separator, number]
 tiha:
   family: "TA"
   long: "<base . number> separator"
   short: "base"
+  tags: [separator, number]
 tihe:
   family: "TA"
   long: "<precise . approximation> separator"
   short: "approx"
+  tags: [separator, number]
 tihi:
   family: "TA"
   long: "<precise . repeating part> separator"
   short: "repeating"
+  tags: [separator, number]
 tiho:
   family: "TA"
   long: "<numerator . denominator> separator"
   short: "fraction"
+  tags: [separator, number]
 taha:
   family: "TA"
   long: "10^3 separator (kilo)"
   short: "10^3"
+  tags: [separator, number]
 tahe:
   family: "TA"
   long: "10^6 separator (mega)"
   short: "10^6"
+  tags: [separator, number]
 taho:
   family: "TA"
   long: "10^9 separator (giga)"
   short: "10^9"
+  tags: [separator, number]
 tahu:
   family: "TA"
   long: "10^12 separator (tera)"
   short: "10^12"
+  tags: [separator, number]
 tahia:
   family: "TA"
   long: "10^15 separator (peta)"
   short: "10^15"
+  tags: [separator, number]
 tahie:
   family: "TA"
   long: "10^18 separator (exa)"
   short: "10^18"
+  tags: [separator, number]
 tahio:
   family: "TA"
   long: "10^21 separator (zetta)"
   short: "10^21"
+  tags: [separator, number]
 tahiu:
   family: "TA"
   long: "10^24 separator (yotta)"
   short: "10^24"
+  tags: [separator, number]
 tae:
   family: "TA"
   long: "negative sign"
   short: "-"
+  tags: [number]
 teha:
   family: "TA"
   long: "Vector tag 0"
   short: "vec 0"
+  tags: [separator, number]
 tehe:
   family: "TA"
   long: "Vector tag 1"
   short: "vec 1"
+  tags: [separator, number]
 teho:
   family: "TA"
   long: "Vector tag 2"
   short: "vec 2"
+  tags: [separator, number]
 tehu:
   family: "TA"
   long: "Vector tag 3"
   short: "vec 3"
+  tags: [separator, number]
 tehia:
   family: "TA"
   long: "Vector tag 4"
   short: "vec 4"
+  tags: [separator, number]
 tehie:
   family: "TA"
   long: "Vector tag 5"
   short: "vec 5"
+  tags: [separator, number]
 tehio:
   family: "TA"
   long: "Vector tag 6"
   short: "vec 6"
+  tags: [separator, number]
 tehiu:
   family: "TA"
   long: "Vector tag 7"
   short: "vec 7"
+  tags: [separator, number]
 la:
   family: "LA"
   long: "Starts grammatically correct eberban quote. (A) is text [quote]."
@@ -410,6 +448,7 @@ vai:
   family: "VAI"
   long: "Close explicit binding group."
   short: ""
+  tags: [elidable]
 vua:
   family: "VA"
   long: "First explicit (A) place non-restrictive binding."
@@ -469,6 +508,7 @@ zi:
     Narrow-scope negation : negates the predicate unit but not the existential variables it creates.
     There exist a, e,... such that unit(a, e, ...) is false.
   short: "non-"
+  tags: [negation]
 zo:
   family: "ZA"
   long: "(A) is something referred to by [predicate-(A)]."
@@ -499,6 +539,7 @@ pai:
   family: "PAI"
   long: "Ends an predicate scope."
   short: ""
+  tags: [elidable]
 pe:
   family: "PE"
   long: "Inline scope starter."
@@ -507,6 +548,7 @@ pei:
   family: "PEI"
   long: "Inline scope elidible terminator."
   short: "]"
+  tags: [elidable]
 pi:
   family: "PI"
   long: "Ends the list of arguments."
@@ -527,6 +569,7 @@ poi:
   family: "POI"
   long: "Ends a predicate definition."
   short: ""
+  tags: [elidable]
 pu:
   family: "PU"
   long: "Marks a new paragraph/section/change of subject."
@@ -583,16 +626,19 @@ be:
   family: "BE"
   long: "Ends string/number/borrowing."
   short: ""
+  tags: [terminator, elidable, number]
 bei:
   family: "BE"
   long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered list [E]."
   short: "-th"
   type: [I.c, "{I}"]
   sequential: true
+  tags: [terminator, number]
 bi:
   family: "BI"
   long: "Wide scope negation ranging over existential variables, units and bindings."
   short: "not"
+  tags: [negation]
 bo:
   family: "BO"
   long: "Create a new variable and discard previous value if any."
@@ -744,112 +790,112 @@ pcei:
   short: "back"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 vlo:
   family: "R"
   long: "(A) (default: here) is forward/to the front of [E] (default: here)."
   short: "front"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 fle:
   family: "R"
   long: "(A) (default: here) is leftward/to the left of [E] (default: here)."
   short: "left"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 zre:
   family: "R"
   long: "(A) (default: here) is rightward/to the right of [E] (default: here)."
   short: "right"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 gze:
   family: "R"
   long: "(A) (default: here) is below/downwars/down from [E] (default: here)."
   short: "down"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 bri:
   family: "R"
   long: "(A) (default: here) is above/upward/up from [E] (default: here)."
   short: "up"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 cfae:
   family: "R"
   long: "(A) (default: here) is southward/to the south of [E] (default: here)."
   short: "south"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 jgao:
   family: "R"
   long: "(A) (default: here) is northward/to the north of [E] (default: here)."
   short: "north"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 tloe:
   family: "R"
   long: "(A) (default: here) is westward/to the west of [E] (default: here)."
   short: "west"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 glea:
   family: "R"
   long: "(A) (default: here) is eastward/to the east of [E] (default: here)."
   short: "east"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, direction]
 vuno:
   family: "R"
-  long: "(A) is at a distance in space of [E] (mesure, meters by default / object with this length) from (I) (default: here)."
+  long: "(A) is at a distance in space of [E] (default: 1 meter) from (I) (default: here)."
   short: "space distance"
   type: [I.d, N, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, measument]
 ganu:
   family: "R"
-  long: "(A0) is true/occurs at a distance in time of [E] (mesure, years by default / event with this duration) from (I0) (default: now)."
+  long: "(A0) is true/occurs at a distance in time of [E] (default: 1 year) from (I0) (default: now)."
   short: "time distance"
   type: [P.0, N, P.0]
   sequential: true
-  tags: [time]
+  tags: [time, measument]
 zini:
   family: "R"
-  long: "(A0) is true/occurs over time interval/length [E] (measure, years by default / event with same duration)."
+  long: "(A0) is true/occurs over time interval/length [E] (default: 1 year)."
   short: "time length"
   type: [P.0, N]
   sequential: true
-  tags: [time]
+  tags: [time, measument]
 cunu:
   family: "R"
-  long: "(A) has length [E] (measure, meters by default / object(s) with same length)."
+  long: "(A) has length [E] (default: 1 meter)."
   short: "length"
   type: [I.d, N]
   sequential: true
-  tags: [space]
+  tags: [space, measument]
 zono:
   family: "R"
-  long: "(A) has area [E] (measure, meters^2 by default / object(s) with same area)."
+  long: "(A) has area [E] (default: 1 square meters)."
   short: "area (measure)"
   type: [I.d, N]
   sequential: true
-  tags: [space]
+  tags: [space, measument]
 tana:
   family: "R"
-  long: "(A) has volume [E] (measure, meters^3 by default / object(s) with same volume)."
+  long: "(A) has volume [E] (default: 1 cubic meter)."
   short: "volume (measure)"
   type: [I.d, N]
   sequential: true
-  tags: [space]
+  tags: [space, measument]
 
 keun:
   family: "R"
@@ -857,35 +903,35 @@ keun:
   short: "space start"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, interval]
 daen:
   family: "R"
   long: "(A) (default: here) is between the starting and end point of [E] (default: here)."
   short: "space between"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, interval]
 moan:
   family: "R"
   long: "(A) (default: here) is at an halt/interruption of [E (default: here)]."
   short: "space halt"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, interval]
 taon:
   family: "R"
   long: "(A) (default: here) is at the resumption of [E] (default: here)."
   short: "space resumption"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, interval]
 cuan:
   family: "R"
   long: "(A) (default: here) is at the end point of [E] (default: here)."
   short: "space end"
   type: [I.d, I.d]
   sequential: true
-  tags: [space]
+  tags: [space, interval]
 
 keur:
   family: "R"
@@ -893,59 +939,59 @@ keur:
   short: "time start"
   type: [P.0, P.0]
   sequential: true
-  tags: [time]
+  tags: [time, interval]
 daer:
   family: "R"
   long: "(A0) (default: now) is between the starting and end point of [E0] (default: now)."
   short: "time between"
   type: [P.0, P.0]
   sequential: true
-  tags: [time]
+  tags: [time, interval]
 moar:
   family: "R"
   long: "(A0) (default: now) is at an halt/interruption of [E0] (default: now)."
   short: "time halt"
   type: [P.0, P.0]
   sequential: true
-  tags: [time]
+  tags: [time, interval]
 taor:
   family: "R"
   long: "(A0) (default: now) is at the resumption of [E0] (default: now)."
   short: "time resumption"
   type: [P.0, P.0]
   sequential: true
-  tags: [time]
+  tags: [time, interval]
 cuar:
   family: "R"
   long: "(A0) (default: now) is at the end point of [E0] (default: now)."
   short: "time end"
   type: [P.0, P.0]
   sequential: true
-  tags: [time]
+  tags: [time, interval]
 mura:
   family: "R"
   long: "(A0) is regular/occurs regularly."
   short: "regular"
   type: [P.0]
-  tags: [time]
+  tags: [time, interval]
 geno:
   family: "R"
   long: "(A0) is typical/occurs typically."
   short: "typical"
   type: [P.0]
-  tags: [time]
+  tags: [time, interval]
 foru:
   family: "R"
   long: "(A0) is continuous/occurs continuously."
   short: "continuous"
   type: [P.0]
-  tags: [time]
+  tags: [time, interval]
 jenu:
   family: "R"
   long: "(A0) is habitual/occurs habitually."
   short: "habitual"
   type: [P.0]
-  tags: [time]
+  tags: [time, interval]
 fena:
   family: "R"
   long: "(A) is inside/within [E]."
@@ -1006,24 +1052,28 @@ don:
   short: "likes"
   type: [I.d, I.d]
   sequential: true
+  tags: [emotion]
 dona:
   family: "R"
   long: "(A) likes that [E0] is true. ((E.A) defaults to (A) : (A) likes something about itself)"
   short: "likes that"
   type: [I.d, P.0]
   sequential: true
+  tags: [emotion]
 jven:
   family: "R"
   long: "(A) is a friend of [E]."
   short: "friend"
   type: [I.d, I.d]
   sequential: true
+  tags: [emotion]
 kli:
   family: "R"
   long: "(A) thanks/is thankful to [E] about (I0) being true."
   short: "thanks"
   type: [I.d, I.d, P.0]
   sequential: true
+  tags: [emotion]
 kre:
   family: "R"
   long: |
@@ -1212,6 +1262,7 @@ pra:
   short: "loves"
   type: [I.d, I.d]
   sequential: true
+  tags: [emotion]
 vier:
   family: "R"
   long: "(A) visits [E]."
@@ -1224,54 +1275,63 @@ ten:
   short: "small amount of"
   type: [I.c, P.1]
   sequential: true
+  tags: [group]
 tin:
   family: "R"
   long: "(A) is a medium (subjective) amount of things satisfying [E1]."
   short: "medium amount of "
   type: [I.c, P.1]
   sequential: true
+  tags: [group]
 ton:
   family: "R"
   long: "(A) is a large (subjective) amount of things satisfying [E1]."
   short: "large amount of"
   type: [I.c, P.1]
   sequential: true
+  tags: [group]
 tun:
   family: "R"
   long: "(A) is everything that satisfies [E1]."
   short: "every"
   type: [I.c, P.1]
   sequential: true
+  tags: [group]
 tar:
   family: "R"
   long: "(A) is a negligible number in dimension/unit [E1]."
   short: "negligible"
   type: [N, P.1]
   sequential: true
+  tags: [number]
 ter:
   family: "R"
   long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
   short: "small"
   type: [N, P.1]
   sequential: true
+  tags: [number]
 tir:
   family: "R"
   long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
   short: "medium"
   type: [N, P.1]
   sequential: true
+  tags: [number]
 tor:
   family: "R"
   long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
   short: "large"
   type: [N, P.1]
   sequential: true
+  tags: [number]
 tur:
   family: "R"
   long: "(A) is an infinite number in dimension/unit [E1]."
   short: "infinite"
   type: [N, P.1]
   sequential: true
+  tags: [number]
 zbur:
   family: "R"
   long: "(A) is a town/city."
@@ -1792,6 +1852,31 @@ flua:
   long: "(A) is a sound."
   short: "sound"
   type: [I.d]
+fana:
+  family: "R"
+  long: "(A) is a parent of [E]."
+  short: "parent"
+  type: [I.d, I.d]
+  sequential: true
+  tags: [kinship, family]
+mana:
+  family: "R"
+  long: |
+    (A) is a mother of [E].
+    Equivalent to {sfe fana}.
+  short: "mother"
+  type: [I.d, I.d]
+  sequential: true
+  tags: [kinship, family]
+pana:
+  family: "R"
+  long: |
+    (A) is a father of [E].
+    Equivalent to {kla fana}.
+  short: "father"
+  type: [I.d, I.d]
+  sequential: true
+  tags: [kinship, family]
 
 # Compounds (2):
 etsenban:
