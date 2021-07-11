@@ -1,8 +1,27 @@
 const { words_en: words } = require('../src/dictionary');
 
-const words_sorted = Object.keys(words).sort();
-
 const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'a', 'e', 'i', 'o', 'u' ];
+
+const words_sorted = Object.keys(words)
+	.filter(word => !ignored.includes(word))
+	.sort();
+
+export function count_word_types() {
+	let roots = 0;
+	let particles = 0;
+	let compounds = 0;
+
+	words_sorted.forEach((w) => {
+		if(words[w].family.startsWith("C"))
+			compounds++;
+		else if(words[w].family == 'R')
+			roots++;
+		else
+			particles++;
+	});
+
+	return {roots, particles, compounds};
+}
 
 function html_word_entry(word, entry) {
 	var output = `<div class="dictionary-entry well well-small"><h3>`;
@@ -28,8 +47,8 @@ function html_word_entry(word, entry) {
 	let paragraphs = entry.long.split(/(\r\n|\r|\n){2,}/);
 
 	paragraphs.forEach((p) => {
-		p = p.replace(/\(((A|E|I|O)\d?)\)/g,'<span class="label label-success">$1</span>')
-		p = p.replace(/\[((A|E|I|O)\d?)\]/g,'<span class="label label-important">$1</span>')
+		p = p.replace(/\(((A|E|I|O)(\d|_)?)\)/g,'<span class="label label-success">$1</span>')
+		p = p.replace(/\[((A|E|I|O)(\d|_)?)\]/g,'<span class="label label-important">$1</span>')
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');
@@ -55,7 +74,6 @@ export function html_dictionary(filters) {
 
 	Object.keys(words_sorted).forEach((index) => {
 		var word = words_sorted[index];
-		if (ignored.includes(word)) return;
 
 		let exact_match = false;
 

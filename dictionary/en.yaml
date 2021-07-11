@@ -1558,7 +1558,10 @@ vin:
   sequential: true
 soane:
   family: "R"
-  long: "(A) is stolen from [E]."
+  long: |
+    (A) is stolen from [E].
+
+    Use with {gza} to express who/what steals (A).
   short: "stolen"
   type: [I.d, I.c]
   sequential: true
@@ -1630,7 +1633,7 @@ mori:
   type: [I.d]
 suer:
   family: "R"
-  long: "(A) is similar to [E]."
+  long: "(A) is similar to/like [E]."
   short: "similar"
   type: [I.d, I.d]
   sequential: true
@@ -1789,7 +1792,8 @@ zein:
   family: "R"
   long: |
     (A) [supply/commodity] is provided to [E].
-    Use with {gza} to talk about the provider.
+
+    Use with {gza} to express who/what provides (A).
   short: "provided"
   type: [I.d, I.d]
   sequential: true
@@ -1895,6 +1899,61 @@ dzana:
   type: [I.d, I.d]
   sequential: true
   tags: [kinship, family]
+kineo:
+  family: "R"
+  long: (A) touches [E].
+  short: "touches"
+  type: [I.d, I.d]
+  sequential: true
+vario:
+  family: "R"
+  long: (A) is strange/weird.
+  short: "strange"
+  type: [I.d]
+zvao:
+  family: "R"
+  long: (A0) is an accident/unintentional.
+  short: "accident"
+  type: [P.0]
+tera:
+  family: "R"
+  long: "(A) is a planet in orbit around (E) (default: Sun)."
+  short: "planet"
+  type: [I.d, I.c]
+sora:
+  family: "R"
+  long: (A) is a star.
+  short: "star"
+  type: [I.d]
+luna:
+  family: "R"
+  long: "(A) is a major natural satellite/moon in orbit around planet (E) (default: Earth)."
+  short: "moon"
+  type: [I.d, I.c]
+zoni:
+  family: "R"
+  long: (A) pertains to [E].
+  short: "pertains"
+  type: [I.d, I.d]
+  sequential: true
+kari:
+  family: "R"
+  long: |
+    (A) has axiomatic belief that [E0] is true.
+    [E0] is an axiom, is presupposed to be true and it's truth value is never
+    put into doupt.
+  short: "axiomatic belief"
+  type: [I.d, P.0]
+  sequential: true
+lor:
+  family: "R"
+  long: |
+    (A) is not bound outside of this scope.
+
+    Can be used with {sen} to define the default meaning of a unbound parameter.
+    Use {zoi} for predicate places.
+  short: "unbound"
+  type: [I.d]
 
 # Compounds (2):
 etsenban:

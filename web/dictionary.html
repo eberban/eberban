@@ -15,7 +15,7 @@
 
 <body>
 	<div class="container">
-		<h1>eberban dictionary</h1>
+		<h1>eberban dictionary <small id="words-count"></small></h1>
 
 		<form class="row">
 			<span id="search-reset" class="btn span2">Clear search</span>
@@ -34,6 +34,10 @@
 </body>
 
 <script>
+	let word_count = bundle.count_word_types();
+
+	$('#words-count').html(`(${word_count.particles} particles, ${word_count.roots} roots, ${word_count.compounds} compounds)`);
+
 	function update() {
 		let search = $('#search').val();
 		let filters = search.split(' ');
