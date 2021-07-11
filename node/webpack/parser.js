@@ -19,6 +19,7 @@ const hideTitleList = [
 	'sequential negation',
 	'sequential binding',
 	'explicit binding',
+	'borrowing unit',
 ];
 
 const hideFamily = [
@@ -58,6 +59,7 @@ const boxClassForTypeMap = new Map([
 	[ 'number', 'box box-number' ],
 	[ 'letters', 'box box-letters' ],
 	[ 'subscope', 'box box-subscope' ],
+	[ 'borrowing unit', 'box box-borrowing-unit' ],
 	[ 'borrowing', 'box box-borrowing' ],
 	[ 'foreign quote', 'box box-borrowing' ],
 
@@ -343,7 +345,7 @@ function constructBoxesOutput(parse, depth) {
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
-		} else if (parse.type === 'KA' || parse.type === 'GA') {
+		} else if (['KA', 'GA', 'borrowing'].includes(parse.type)) {
 			output += '';
 		} else {
 			output += '...';
@@ -604,7 +606,7 @@ function showGlossing(text, $element) {
 			skip_compound--;
 		}
 
-		if ([ 'u', 'w', 'y' ].includes(word)) {
+		if (word == 'u') {
 			// skip next word which is the borrowing content
 			j++;
 		} else if (word != 'o' && words[word]) {
@@ -646,57 +648,24 @@ function extractCanonicalCompound(text, startIndex, length) {
 	let offset = 0;
 	let compound = '';
 
-	// // y-borrowings.
-	// if ([ 'y', 'u' ].includes(text[startIndex])) {
-	// 	compound += 'y' + text[startIndex + 1] + "'";
-	// 	offset += 2;
-	// 	length--;
-	// }
-
-	// initial borrowing
-	if ([ 'u' ].includes(text[startIndex])) {
-		compound += 'u' + text[startIndex + 1] + "'";
-		offset += 2;
-		length--;
-	}
-
 	while (length != 0) {
 		let item = text[startIndex + offset];
 
 		// a terminator
 		if (item == 'a') {
-			if (!compound.endsWith("'")) {
-				compound += "'";
-			}
-			compound += 'a';
+			compound += ' a';
 			break;
 		}
-
-		// non initial borrowings
-		if ([ 'u' ].includes(item)) {
-			if (!compound.endsWith("'")) {
-				compound += "'";
-			}
-			compound += item + text[startIndex + offset + 1] + "'";
+		
+		if (item == 'u') {
+			compound += ' ' + item + text[startIndex + offset + 1];
 			offset++;
-		} else if ([ 'n', 'r' ].includes(item)) {
-			// Borrowings are split in 2 parts in `text`.
-			if (!compound.endsWith("'")) {
-				compound += "'";
-			}
-			compound += item;
-			offset++;
-			compound += text[startIndex + offset];
 		} else {
-			compound += item;
+			compound += ' ' + item;
 		}
 
 		offset++;
 		length--;
-	}
-
-	if (compound.endsWith("'")) {
-		compound = compound.substr(0, compound.length - 1);
 	}
 
 	return { compound, offset };

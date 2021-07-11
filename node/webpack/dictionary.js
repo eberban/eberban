@@ -26,7 +26,19 @@ export function count_word_types() {
 function html_word_entry(word, entry) {
 	var output = `<div class="dictionary-entry well well-small"><h3>`;
 
-	output += `${word}: `;
+	if(entry.family.startsWith('C')) {
+		word.split(' ').forEach(part => {
+			if (ignored.includes(part[0])) {
+				output += `${part} `;
+			} else {
+				output += `<a href="#" class="dictionary-word-link">${part}</a> `
+			}
+		})
+
+		output += ': ';
+	} else {
+		output += `${word}: `;
+	}
 
 	output += `<small>${entry.short}</small> `;
 

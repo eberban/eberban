@@ -25,7 +25,7 @@ const important_types = [
 	// units
 	[ 'unit', 'unit' ],
 	[ 'compound', 'compound' ],
-	[ 'unit_borrowing', 'borrowing' ],
+	[ 'unit_borrowing', 'borrowing unit' ],
 	[ 'foreign_word', 'foreign' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],

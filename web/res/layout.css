@@ -129,6 +129,10 @@ li.implicit {
 	background: var(--color-purple);
 }
 
+.box.box-borrowing-unit {
+	background: var(--color-purple);
+}
+
 .box.box-borrowing {
 	background: var(--color-purple);
 }

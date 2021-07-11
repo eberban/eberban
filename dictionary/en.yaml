@@ -1956,162 +1956,162 @@ lor:
   type: [I.d]
 
 # Compounds (2):
-etsenban:
+e tsen ban:
   family: "C2"
   long: "(A) is a constructed language/conlang."
   short: "conlang"
   type: [I.d]
-eberban:
+e ber ban:
   family: "C2"
   long: "(A) is the eberban language."
   short: "eberban"
   type: [I.d]
   tags: [language]
-eujbo'ban:
+e ujbo ban:
   family: "C2"
   long: "(A) is the lojban language."
   short: "lojban"
   type: [I.d]
   tags: [language]
-eufranse'ban:
+e ufranse ban:
   family: "C2"
   long: "(A) is the french language."
   short: "french language"
   type: [I.d]
   tags: [language]
-euinglici'ban:
+e uinglici ban:
   family: "C2"
   long: "(A) is the english language."
   short: "english language"
   type: [I.d]
   tags: [language]
-etadena:
+e ta dena:
   family: "C2"
   long: "(A) is a Sunday."
   short: "Sunday"
   type: [I.d]
   tags: [time, day]
-etedena:
+e te dena:
   family: "C2"
   long: "(A) is a Monday."
   short: "Monday"
   type: [I.d]
   tags: [time, day]
-etodena:
+e to dena:
   family: "C2"
   long: "(A) is a Thusday."
   short: "Thusday"
   type: [I.d]
   tags: [time, day]
-etudena:
+e tu dena:
   family: "C2"
   long: "(A) is a Wednesday."
   short: "Wednesday"
   type: [I.d]
   tags: [time, day]
-etiadena:
+e tia dena:
   family: "C2"
   long: "(A) is a Thursday."
   short: "Thursday"
   type: [I.d]
   tags: [time, day]
-etiedena:
+e tie dena:
   family: "C2"
   long: "(A) is a Friday."
   short: "Friday"
   type: [I.d]
   tags: [time, day]
-etiodena:
+e tio dena:
   family: "C2"
   long: "(A) is a Saturday."
   short: "Saturday"
   type: [I.d]
   tags: [time, day]
-etiudena:
+e tiu dena:
   family: "C2"
   long: "(A) is a Sunday."
   short: "Sunday"
   type: [I.d]
   tags: [time, day]
-etagare:
+e ta gare:
   family: "C2"
   long: "(A) is a January."
   short: "January"
   type: [I.d]
   tags: [time, month]
-etegare:
+e te gare:
   family: "C2"
   long: "(A) is a February."
   short: "February"
   type: [I.d]
   tags: [time, month]
-etogare:
+e to gare:
   family: "C2"
   long: "(A) is a March."
   short: "March"
   type: [I.d]
   tags: [time, month]
-etugare:
+e tu gare:
   family: "C2"
   long: "(A) is a April."
   short: "April"
   type: [I.d]
   tags: [time, month]
-etiagare:
+e tia gare:
   family: "C2"
   long: "(A) is a May."
   short: "May"
   type: [I.d]
   tags: [time, month]
-etiegare:
+e tie gare:
   family: "C2"
   long: "(A) is a June."
   short: "June"
   type: [I.d]
   tags: [time, month]
-etiogare:
+e tio gare:
   family: "C2"
   long: "(A) is a July."
   short: "July"
   type: [I.d]
   tags: [time, month]
-etiugare:
+e tiu gare:
   family: "C2"
   long: "(A) is a August."
   short: "August"
   type: [I.d]
   tags: [time, month]
-etaigare:
+e tai gare:
   family: "C2"
   long: "(A) is a September."
   short: "September"
   type: [I.d]
   tags: [time, month]
-eteigare:
+e tei gare:
   family: "C2"
   long: "(A) is a October."
   short: "October"
   type: [I.d]
   tags: [time, month]
-etoigare:
+e toi gare:
   family: "C2"
   long: "(A) is a November."
   short: "October"
   type: [I.d]
   tags: [time, month]
-etuigare:
+e tui gare:
   family: "C2"
   long: "(A) is a December."
   short: "December"
   type: [I.d]
   tags: [time, month]
-ekrevier:
+e kre vier:
   family: "C2"
   long: "(A) visits [E] with guide (I)."
   short: "guided visit"
   type: [I.d, I.d, I.d]
   sequential: true
-evaza:
+e va za:
   family: "C2"
   long: |
     (A) is named [E].
@@ -2119,67 +2119,67 @@ evaza:
   short: "named (binding)"
   type: [I.c, I.c]
   sequential: true
-etanakano:
+e tana kano:
   family: "C2"
   long: "(A) is bigger (in volume) than [E]."
   short: "bigger (volume)"
   type: [I.d, I.d]
   sequential: true
-egerekano:
+e gere kano:
   family: "C2"
   long: "(A) is smaller (in volume) than [E]."
   short: "smaller (volume)"
   type: [I.d, I.d]
   sequential: true
-evinzane:
+e vin zane:
   family: "C2"
   long: "(A) is a writing system with symbols (E) and set of rules (I)."
   short: "smaller (volume)"
   type: [I.d, I.d, List<P.0>]
   sequential: true
-espitori:
+e spi tori:
   family: "C2"
   long: "(A) is a parrot."
   short: "parrot"
   type: [I.d]
   tags: [animal]
-esiervanu:
+e sier vanu:
   family: "C2"
   long: "(A) is an hyperlink to/URL of resource [E]."
   short: "hyperlink"
   type: [I.d, I.d]
-emeruezane:
+e merue zane:
   family: "C2"
   long: "(A) is an organism with body parts [E] forming body (I)."
   short: "body"
   type: [I.c, I.c, I.c]
   sequential: true
-egzeslaen:
+e gze slaen:
   family: "C2"
   long: "(A) hangs from [E]."
   short: "hang"
   type: [I.d, I.d]
   sequential: true
-eskaozari:
+e skao zari:
   family: "C2"
   long: "(A) is a source code of [E]."
   short: "source code"
   type: [I.d, I.d]
   sequential: true
-ecuroskien:
+e curo skien:
   family: "C2"
   long: "(A) is a parser from grammar [E]."
   short: "parser"
   type: [I.d, I.d]
   sequential: true
-epuzoi:
+e pu zoi:
   family: "C2"
   long: "(A) is a paragraph."
   short: "paragraph"
   type: [I.d]
 
-ilenpoba:
-  family: "C2"
+i len po ba:
+  family: "C3"
   long: "(A) is a dictionary."
   short: "dictionary"
   type: [I.d]
