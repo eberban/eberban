@@ -1,5 +1,7 @@
 # Explicit bindings (VA/FA)
 
+> This chapter use outdated definitions.
+
 | FA     | VA  | Definition                                                 |
 | ------ | --- | ---------------------------------------------------------- |
 | fa     | va  | Binds `A` place (restrictive)                              |

@@ -2136,7 +2136,6 @@ e vin zane:
   long: "(A) is a writing system with symbols (E) and set of rules (I)."
   short: "smaller (volume)"
   type: [I.d, I.d, List<P.0>]
-  sequential: true
 e spi tori:
   family: "C2"
   long: "(A) is a parrot."
