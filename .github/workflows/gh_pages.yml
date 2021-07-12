@@ -32,9 +32,17 @@ jobs:
         if: steps.cache-mdbook.outputs.cache-hit != 'true'
         run: cargo install --vers "^0.4.4" mdbook
 
-      - name: Build book
+      - name: Install mdbook-linkcheck (if no cache)
+        if: steps.cache-mdbook.outputs.cache-hit != 'true'
+        run: cargo install mdbook-linkcheck
+
+      - name: Build reference book
         run: |
           ~/.cargo/bin/mdbook build books/reference_en
+
+      - name: Build tour book
+        run: |
+          ~/.cargo/bin/mdbook build books/tour_en
         
       - name: Install NPM dependencies
         run: |

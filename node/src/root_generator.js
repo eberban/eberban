@@ -1,7 +1,7 @@
 const generators = {
 	A: () => pick_random([ generate_CVCV(1, 0), generate_CCVCV(1, -1) ]),
 	B: () => pick_random([ generate_CVCV(1, 1), generate_CVCV(2, 0), generate_CCVCV(1, 0), generate_CCVCV(2, -1) ]),
-    C: () => pick_random([ generate_CVCV(1, 2), generate_CVCV(2, 1), generate_CCVCV(1, 1), generate_CCVCV(2, 0) ])
+    C: () => pick_random([ generate_CVCV(1, 2), generate_CVCV(2, 1), generate_CVCV(3, 0), generate_CCVCV(1, 1), generate_CCVCV(2, 0) ])
 };
 
 const single = [ 'b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'p', 's', 't', 'v', 'z' ];

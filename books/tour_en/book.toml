@@ -1,0 +1,12 @@
+[book]
+authors = ["mia entropy"]
+language = "en"
+multilingual = false
+src = "src"
+title = "A tour of the eberban language"
+
+[output.html]
+mathjax-support = true
+
+[output.linkcheck]
+warning-policy = "error"

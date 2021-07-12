@@ -1835,7 +1835,7 @@ bju:
 bion:
   family: "R"
   long: "(A) is ill/sick from disease [E]."
-  short: "disease"
+  short: "sick"
   type: [I.d, I.d]
   sequential: true
 leun:
@@ -2176,10 +2176,18 @@ e pu zoi:
   long: "(A) is a paragraph."
   short: "paragraph"
   type: [I.d]
+e bion cnue:
+  family: "C2"
+  long: "(A) [ill/sickness] is characterized by symptom [E1]."
+  short: "symptom"
+  type: [I.d, P.1]
+  sequential: true
 
 i len po ba:
   family: "C3"
   long: "(A) is a dictionary."
   short: "dictionary"
   type: [I.d]
+
+
 
