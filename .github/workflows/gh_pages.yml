@@ -19,7 +19,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cargo/bin/mdbook
-          key: ${{runner.os}}-mdbook
+          key: ${{runner.os}}-rust
 
       - name: Install Rust (if no cache)
         if: steps.cache-mdbook.outputs.cache-hit != 'true'
