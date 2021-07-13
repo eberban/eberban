@@ -3,6 +3,10 @@ textarea {
 	font-family: sans-serif !important;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .translation {
 	color: #aaaaaa;
 	font-style: italic;

@@ -59,8 +59,8 @@ function html_word_entry(word, entry) {
 	let paragraphs = entry.long.split(/(\r\n|\r|\n){2,}/);
 
 	paragraphs.forEach((p) => {
-		p = p.replace(/\(((A|E|I|O)(\d|_)?)\)/g,'<span class="label label-success">$1</span>')
-		p = p.replace(/\[((A|E|I|O)(\d|_)?)\]/g,'<span class="label label-important">$1</span>')
+		p = p.replace(/\(((A|E|I|O)(\d|_)?)\)/g,'<span class="label label-success">$&</span>')
+		p = p.replace(/\[((A|E|I|O)(\d|_)?)\]/g,'<span class="label label-important">$&</span>')
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');

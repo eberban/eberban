@@ -1954,6 +1954,11 @@ lor:
     Use {zoi} for predicate places.
   short: "unbound"
   type: [I.d]
+menoe:
+  family: "R"
+  long: "(A) is an apple."
+  short: "apple"
+  type: [I.c]
 
 # Compounds (2):
 e tsen ban:
