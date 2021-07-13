@@ -73,7 +73,7 @@ u:
   type: [I.c]
 mi:
   family: "MA"
-  long: "(A) is I/a speaker/author."
+  long: "(A) is I/me/a speaker/author."
   short: "me"
   type: [I.d]
 mo:
@@ -1520,9 +1520,9 @@ vune:
   sequential: true
 jvin:
   family: "R"
-  long: "(A) dances with characteristics (E)."
+  long: "(A) dances."
   short: "dances"
-  type: [I.c, I.d]
+  type: [I.d]
 blan:
   family: "R"
   long: "(A) is beautiful."
@@ -1958,6 +1958,11 @@ menoe:
   family: "R"
   long: "(A) is an apple."
   short: "apple"
+  type: [I.c]
+kcaro:
+  family: "R"
+  long: "(A) is an table."
+  short: "table"
   type: [I.c]
 
 # Compounds (2):

@@ -1,0 +1,7 @@
+.gloss--glossed {
+    background-color: var(--quote-bg);
+    padding: 0.001px 20px;
+    margin-bottom: 1em;
+    border-top: .1em solid var(--quote-border);
+    border-bottom: .1em solid var(--quote-border);
+}

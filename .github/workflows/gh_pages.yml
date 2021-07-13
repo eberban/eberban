@@ -14,28 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # - name: Cache mdbook binary
-      #   id: cache-mdbook
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ~/.cargo/bin/mdbook*
-      #     key: ${{runner.os}}-rust
-
-      # - name: Install Rust (if no cache)
-      #   if: steps.cache-mdbook.outputs.cache-hit != 'true'
-      #   uses: actions-rs/toolchain@v1
-      #   with:
-      #     toolchain: stable
-      #     override: true
-
-      # - name: Install mdbook (if no cache)
-      #   if: steps.cache-mdbook.outputs.cache-hit != 'true'
-      #   run: cargo install --vers "^0.4.4" mdbook
-
-      # - name: Install mdbook-linkcheck (if no cache)
-      #   if: steps.cache-mdbook.outputs.cache-hit != 'true'
-      #   run: cargo install mdbook-linkcheck
-
       - name: Install mdbook
         run: |
           curl -LSfs https://japaric.github.io/trust/install.sh | \
@@ -45,6 +23,13 @@ jobs:
         run: |
           curl -LSfs https://japaric.github.io/trust/install.sh | \
             sh -s -- --git Michael-F-Bryan/mdbook-linkcheck --tag v0.7.0
+
+      - name: Install mdbook-regex-replacer
+        uses: actions-rs/install@v0.1
+        with:
+          crate: mdbook-regex-replacer
+          version: latest
+          use-tool-cache: true
 
       - name: Build reference book
         run: |

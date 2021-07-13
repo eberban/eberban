@@ -7,6 +7,21 @@ title = "A tour of the eberban language"
 
 [output.html]
 mathjax-support = true
+additional-css = [
+    "res/leipzig.min.css",
+    "res/style.css",
+]
+additional-js = [
+    "res/leipzig.min.js",
+    "res/leipzig_apply.js",
+]
 
 [output.linkcheck]
 warning-policy = "error"
+
+[preprocessor.regex-replacer]
+command="mdbook-regex-replacer"
+
+[[preprocessor.regex-replacer.items]]
+regex="``gloss\n(?P<content>(?s:.)*?)\n``"
+rep="<div data-gloss>\n\n${content}\n</div>"
