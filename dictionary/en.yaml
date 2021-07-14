@@ -556,7 +556,7 @@ pi:
   short: "[args end]"
 pia:
   family: "PI"
-  long: "Ends the list of arguments, and mark the scope as a sequential (E place) predicate."
+  long: "Ends the list of arguments, and mark the scope as a switch (E place) predicate."
   short: "[args end seq]"
 po:
   family: "PO"
@@ -634,7 +634,7 @@ bei:
   long: "Transform a cardinal number into an ordinal : (A) is the [number]th member of ordered list [E]."
   short: "-th"
   type: [I.c, "{I}"]
-  sequential: true
+  switch: true
   tags: [terminator, number]
 bi:
   family: "BI"
@@ -652,28 +652,28 @@ kor:
   long: "(A) [group] are the members of list [E]."
   short: "group"
   type: [I.c, "{I}"]
-  sequential: true
+  switch: true
   tags: [list]
 cna:
   family: "R"
   long: "This proposition is true if all individuals in list (A) satisfies property [E1]."
   short: "AND-I"
   type: ["{I}", P.1]
-  sequential: true
+  switch: true
   tags: [list, connective]
 cne:
   family: "R"
   long: "This proposition is true if at least one individual in list (A) satisfies property [E1]."
   short: "OR-I"
   type: ["{I}", P.1]
-  sequential: true
+  switch: true
   tags: [list, connective]
 cni:
   family: "R"
   long: "This proposition is true if exactly (I) (default: 1) individuals in list (A) satisfies property [E1]."
   short: "XOR-I"
   type: ["{I}", P.1, N]
-  sequential: true
+  switch: true
   tags: [list, connective]
 cana:
   family: "R"
@@ -698,21 +698,21 @@ cena:
   long: "This proposition is true if (A) satisfies all properties in list [E]."
   short: "AND-P1"
   type: [I, "{P.1}"]
-  sequential: true
+  switch: true
   tags: [list, connective]
 cene:
   family: "R"
   long: "This proposition is true if (A) satisfies at least one property in list [E]."
   short: "OR-P1"
   type: [I, "{P.1}"]
-  sequential: true
+  switch: true
   tags: [list, connective]
 ceni:
   family: "R"
   long: "This proposition is true if (A) satisfies exactly (I) (default: 1) proposition(s) in list [E]."
   short: "XOR-P1"
   type: [I, "{P.1}", N]
-  sequential: true
+  switch: true
   tags: [list, connective]
 cina:
   family: "R"
@@ -752,7 +752,7 @@ fuir:
   long: "(A) knows fact [E0] from source (I)."
   short: "knows"
   type: [I.d, P.0, I.d]
-  sequential: true
+  switch: true
 zvu:
   family: "R"
   long: |
@@ -762,146 +762,146 @@ zvu:
     [E2] is used with (future, current) in this order.
   short: "evolution"
   type: [I, [I, I]]
-  sequential: true
+  switch: true
 zde:
   family: "R"
   long: "(A0) (default: now) is true/occurs concurrently with/at the same time as [E0] (default: now)."
   short: "present"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time]
 skir:
   family: "R"
   long: "(A) (default: here) is at the same place as [E] (default: here)."
   short: "same place"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 jgo:
   family: "R"
   long: "(A0) (default: now) occurs before [E0] (default: now)."
   short: "before"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time]
 slo:
   family: "R"
   long: "(A0) (default: now) occurs after [E0] (default: now)."
   short: "after"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time]
 pcei:
   family: "R"
   long: "(A) (default: here) is backward/to the back of [E] (default: here)."
   short: "back"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 vlo:
   family: "R"
   long: "(A) (default: here) is forward/to the front of [E] (default: here)."
   short: "front"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 fle:
   family: "R"
   long: "(A) (default: here) is leftward/to the left of [E] (default: here)."
   short: "left"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 zre:
   family: "R"
   long: "(A) (default: here) is rightward/to the right of [E] (default: here)."
   short: "right"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 gze:
   family: "R"
   long: "(A) (default: here) is below/downwars/down from [E] (default: here)."
   short: "down"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 bri:
   family: "R"
   long: "(A) (default: here) is above/upward/up from [E] (default: here)."
   short: "up"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 cfae:
   family: "R"
   long: "(A) (default: here) is southward/to the south of [E] (default: here)."
   short: "south"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 jgao:
   family: "R"
   long: "(A) (default: here) is northward/to the north of [E] (default: here)."
   short: "north"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 tloe:
   family: "R"
   long: "(A) (default: here) is westward/to the west of [E] (default: here)."
   short: "west"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 glea:
   family: "R"
   long: "(A) (default: here) is eastward/to the east of [E] (default: here)."
   short: "east"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, direction]
 vuno:
   family: "R"
   long: "(A) is at a distance in space of [E] (default: 1 meter) from (I) (default: here)."
   short: "space distance"
   type: [I.d, N, I.d]
-  sequential: true
+  switch: true
   tags: [space, measument]
 ganu:
   family: "R"
   long: "(A0) is true/occurs at a distance in time of [E] (default: 1 year) from (I0) (default: now)."
   short: "time distance"
   type: [P.0, N, P.0]
-  sequential: true
+  switch: true
   tags: [time, measument]
 zini:
   family: "R"
   long: "(A0) is true/occurs over time interval/length [E] (default: 1 year)."
   short: "time length"
   type: [P.0, N]
-  sequential: true
+  switch: true
   tags: [time, measument]
 cunu:
   family: "R"
   long: "(A) has length [E] (default: 1 meter)."
   short: "length"
   type: [I.d, N]
-  sequential: true
+  switch: true
   tags: [space, measument]
 zono:
   family: "R"
   long: "(A) has area [E] (default: 1 square meters)."
   short: "area (measure)"
   type: [I.d, N]
-  sequential: true
+  switch: true
   tags: [space, measument]
 tana:
   family: "R"
   long: "(A) has volume [E] (default: 1 cubic meter)."
   short: "volume (measure)"
   type: [I.d, N]
-  sequential: true
+  switch: true
   tags: [space, measument]
 
 keun:
@@ -909,35 +909,35 @@ keun:
   long: "(A) (default: here) is at the starting point of [E] (default: here)."
   short: "space start"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, interval]
 daen:
   family: "R"
   long: "(A) (default: here) is between the starting and end point of [E] (default: here)."
   short: "space between"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, interval]
 moan:
   family: "R"
   long: "(A) (default: here) is at an halt/interruption of [E (default: here)]."
   short: "space halt"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, interval]
 taon:
   family: "R"
   long: "(A) (default: here) is at the resumption of [E] (default: here)."
   short: "space resumption"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, interval]
 cuan:
   family: "R"
   long: "(A) (default: here) is at the end point of [E] (default: here)."
   short: "space end"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space, interval]
 
 keur:
@@ -945,35 +945,35 @@ keur:
   long: "(A0) (default: now) is at the starting point of [E0] (default: now)."
   short: "time start"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time, interval]
 daer:
   family: "R"
   long: "(A0) (default: now) is between the starting and end point of [E0] (default: now)."
   short: "time between"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time, interval]
 moar:
   family: "R"
   long: "(A0) (default: now) is at an halt/interruption of [E0] (default: now)."
   short: "time halt"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time, interval]
 taor:
   family: "R"
   long: "(A0) (default: now) is at the resumption of [E0] (default: now)."
   short: "time resumption"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time, interval]
 cuar:
   family: "R"
   long: "(A0) (default: now) is at the end point of [E0] (default: now)."
   short: "time end"
   type: [P.0, P.0]
-  sequential: true
+  switch: true
   tags: [time, interval]
 mura:
   family: "R"
@@ -1009,70 +1009,70 @@ laro:
   long: "(A) is outside [E]."
   short: "outside"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 suru:
   family: "R"
   long: "(A) is adjacent to/along [E]."
   short: "adjacent"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 manu:
   family: "R"
   long: "(A) is tangential/passing by [E]."
   short: "passing by"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 varu:
   family: "R"
   long: "(A) is surrounding/around [E]."
   short: "surrounding"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 mere:
   family: "R"
   long: "(A) is transfixing/passing through [E]."
   short: "passing through"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 tinu:
   family: "R"
   long: "(A) is towards [E]."
   short: "towards"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 keru:
   family: "R"
   long: "(A) is away from [E]."
   short: "away from"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [space]
 don:
   family: "R"
   long: "(A) likes [E]."
   short: "likes"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [emotion]
 jven:
   family: "R"
   long: "(A) is a friend of [E]."
   short: "friend"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [emotion]
 kli:
   family: "R"
   long: "(A) thanks/is thankful to [E] about (I0) being true."
   short: "thanks"
   type: [I.d, I.d, P.0]
-  sequential: true
+  switch: true
   tags: [emotion]
 kre:
   family: "R"
@@ -1081,7 +1081,7 @@ kre:
     [E] is the one satisfying (I1), and (A) doesn't need to satisfy (I1).
   short: "helps"
   type: [I.d, I.d, P.0]
-  sequential: true
+  switch: true
 luenu:
   family: "R"
   long: "(A) is milk."
@@ -1098,19 +1098,19 @@ kcia:
   long: "(A) [tool] is used to make [I0] [purpose] true."
   short: "tool"
   type: [I.c, P.0]
-  sequential: true
+  switch: true
 puana:
   family: "R"
   long: "(A) drinks [E]."
   short: "drinks"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 bouri:
   family: "R"
   long: "(A) eats [E]."
   short: "eats"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 sfe:
   family: "R"
   long: "(A) is female."
@@ -1126,19 +1126,19 @@ tsen:
   long: "(A) invents/creates/authors [E]."
   short: "creates"
   type: [I.c, I.d]
-  sequential: true
+  switch: true
 zuna:
   family: "R"
   long: "(A) is inspired by [E]. [E] is a source of inspiration for (A)."
   short: "inspired"
   type: [I.c, I.d]
-  sequential: true
+  switch: true
 zvar:
   family: "R"
   long: "(A) has goal/purpose/aims to satisfy [E1]."
   short: "purpose"
   type: [I.d, P.1]
-  sequential: true
+  switch: true
 skao:
   family: "R"
   long: "(A) is a computer."
@@ -1149,61 +1149,61 @@ sni:
   long: "(A) welcomes/say hello to/greets [E] to place (I)."
   short: "welcomes"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 spi:
   family: "R"
   long: "(A) says [E] to (I)."
   short: "says"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 spur:
   family: "R"
   long: "(A) is a nest/house/home for [E]."
   short: "home"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 zaor:
   family: "R"
   long: "(A) agrees with [E] that (I0) is true."
   short: "agrees"
   type: [I.d, I.d, P.0]
-  sequential: true
+  switch: true
 van:
   family: "R"
   long: "(A) goes to [E] from (I)."
   short: "goes"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 vanu:
   family: "R"
   long: "(A) is a path to [E] from (I)."
   short: "path"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 gza:
   family: "R"
   long: "(A) is an agentive cause of event [E0]."
   short: "agentive cause"
   type: [I.c, P.0]
-  sequential: true
+  switch: true
 kini:
   family: "R"
   long: "(A) learns/studies fact [E0] about (I)."
   short: "learns"
   type: [I.d, P.0, I.d]
-  sequential: true
+  switch: true
 seru:
   family: "R"
   long: "(A) is about subject [E]."
   short: "about"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 snai:
   family: "R"
   long: "(A) labers/works by satisfying property [E1]."
   short: "works"
   type: [I.c, P.1]
-  sequential: true
+  switch: true
 bire:
   family: "R"
   long: "(A) is a year."
@@ -1261,76 +1261,76 @@ pra:
   long: "(A) loves [E]."
   short: "loves"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [emotion]
 vier:
   family: "R"
   long: "(A) visits [E]."
   short: "visits"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 ten:
   family: "R"
   long: "(A) is a small (subjective) amount of things satisfying [E1]."
   short: "small amount of"
   type: [I.c, P.1]
-  sequential: true
+  switch: true
   tags: [group]
 tin:
   family: "R"
   long: "(A) is a medium (subjective) amount of things satisfying [E1]."
   short: "medium amount of "
   type: [I.c, P.1]
-  sequential: true
+  switch: true
   tags: [group]
 ton:
   family: "R"
   long: "(A) is a large (subjective) amount of things satisfying [E1]."
   short: "large amount of"
   type: [I.c, P.1]
-  sequential: true
+  switch: true
   tags: [group]
 tun:
   family: "R"
   long: "(A) is everything that satisfies [E1]."
   short: "every"
   type: [I.c, P.1]
-  sequential: true
+  switch: true
   tags: [group]
 tar:
   family: "R"
   long: "(A) is a negligible number in dimension/unit [E1]."
   short: "negligible"
   type: [N, P.1]
-  sequential: true
+  switch: true
   tags: [number]
 ter:
   family: "R"
   long: "(A) is a small number (subjective/contextual) in dimension/unit [E1]."
   short: "small"
   type: [N, P.1]
-  sequential: true
+  switch: true
   tags: [number]
 tir:
   family: "R"
   long: "(A) is a medium number (subjective/contextual) in dimension/unit [E1]."
   short: "medium"
   type: [N, P.1]
-  sequential: true
+  switch: true
   tags: [number]
 tor:
   family: "R"
   long: "(A) is a large number (subjective/contextual) in dimension/unit [E1]."
   short: "large"
   type: [N, P.1]
-  sequential: true
+  switch: true
   tags: [number]
 tur:
   family: "R"
   long: "(A) is an infinite number in dimension/unit [E1]."
   short: "infinite"
   type: [N, P.1]
-  sequential: true
+  switch: true
   tags: [number]
 zbur:
   family: "R"
@@ -1357,13 +1357,13 @@ zane:
   long: "(A) is a system with components [E] forming structure (I)."
   short: "system"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 dan:
   family: "R"
   long: "(A) is among [E]."
   short: "among"
   type: [I.d, I.c]
-  sequential: true
+  switch: true
 dar:
   family: "R"
   long: |
@@ -1371,19 +1371,19 @@ dar:
     For each x among (A), [E1](x) is true.
   short: "for each"
   type: [I.d, P.1]
-  sequential: true
+  switch: true
 speu:
   family: "R"
   long: "(A) (ordered list) is ordered following ordering rule [E2]."
   short: "ordered set member"
   type: ["{_}", P.2]
-  sequential: true
+  switch: true
 fir:
   family: "R"
   long: "(A) is a color of [E]."
   short: "color"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [color]
 cion:
   family: "R"
@@ -1407,7 +1407,7 @@ cion:
              Default: 1
   short: "HSV-color"
   type: [I.d, N]
-  sequential: true
+  switch: true
   tags: [color]
 zen:
   family: "R"
@@ -1462,19 +1462,19 @@ sare:
   long: "(A) is a group where every pair of members mutualy satisfy relation [E2]."
   short: "mutual"
   type: [I.c, P.2]
-  sequential: true
+  switch: true
 gli:
   family: "R"
   long: "(A) is happy about [E0] being true."
   short: "happy"
   type: [I.d, P.0]
-  sequential: true
+  switch: true
 siro:
   family: "R"
   long: "(A) (source) has translation [E] (result)."
   short: "translation"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 cuina:
   family: "R"
   long: "(A) is a tree."
@@ -1490,7 +1490,7 @@ djin:
   long: "(A) desires/wants/wishes [E0]."
   short: "want"
   type: [I.d, P.0]
-  sequential: true
+  switch: true
 fuere:
   family: "R"
   long: "(A) flies [in air/space]."
@@ -1506,7 +1506,7 @@ jle:
   long: "(A) is motivated to make [E0] true by (I)."
   short: "motivated"
   type: [I.d, P.0, I.c]
-  sequential: true
+  switch: true
 zuan:
   family: "R"
   long: "(A) walks."
@@ -1517,7 +1517,7 @@ vune:
   long: "(A) is enjoyable/great/nice for [E]."
   short: "nice"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 jvin:
   family: "R"
   long: "(A) dances."
@@ -1543,19 +1543,19 @@ cnue:
   long: "(A) is a piece/portion/part of [E]."
   short: "portion"
   type: [I.d, I.c]
-  sequential: true
+  switch: true
 ban:
   family: "R"
   long: "(A) is expressed in language [E]."
   short: "language"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 vin:
   family: "R"
   long: "(A) is written/inscribed on display/storage medium [E]."
   short: "written"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 soane:
   family: "R"
   long: |
@@ -1564,19 +1564,19 @@ soane:
     Use with {gza} to express who/what steals (A).
   short: "stolen"
   type: [I.d, I.c]
-  sequential: true
+  switch: true
 sfa:
   family: "R"
   long: "(A) is an occurence of [E0] being true."
   short: "occurence"
   type: [I.d, P.0]
-  sequential: true
+  switch: true
 tcu:
   family: "R"
   long: "(A) requires/needs [E0] to being true. [E0] is a necessity for (A)."
   short: "needs"
   type: [I.d, P.0]
-  sequential: true
+  switch: true
 minu:
   family: "R"
   long: "(A) sleeps."
@@ -1597,25 +1597,25 @@ kin:
   long: "(A) is a kind of [E]."
   short: "kind"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 kunu:
   family: "R"
   long: "(A) feels sentiment/emotion/sensation [E]."
   short: "feels"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 viru:
   family: "R"
   long: "(A) sees [E]."
   short: "sees"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 pure:
   family: "R"
   long: "(A) hears/listen to [E]."
   short: "hears"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 len:
   family: "R"
   long: "(A) is a word."
@@ -1636,7 +1636,7 @@ suer:
   long: "(A) is similar to/like [E]."
   short: "similar"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 paor:
   family: "R"
   long: "(A) is the truth."
@@ -1711,19 +1711,19 @@ bjan:
   long: "(A) is behaves friendly/kindly towards [E]."
   short: "friendly"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 lane:
   family: "R"
   long: "(A) is a rule/law prescribing/mandating/requiring [E0]."
   short: "rule"
   type: [I.d, P.0]
-  sequential: true
+  switch: true
 zire:
   family: "R"
   long: "(A) respects [E]."
   short: "respects"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 zvoe:
   family: "R"
   long: "(A) is a content, something that is to be expressed though medium (E)."
@@ -1734,13 +1734,13 @@ zbui:
   long: "(A) have sex/sexual intercourse/copulates/mates with [E]."
   short: "sex"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 jiro:
   family: "R"
   long: "(A) shares [E] with (I)."
   short: "shares"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 mare:
   family: "R"
   long: "(A) is legal, allowed by authority (E)."
@@ -1766,7 +1766,7 @@ slaen:
   long: "(A) is tied/pinned to [E]."
   short: "tied"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 sfo:
   family: "R"
   long: "(A) is something that contains this word."
@@ -1787,7 +1787,7 @@ zari:
   long: "(A) is a recipe, algorithm, procedure to achieve result [E]."
   short: "recipe"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 zein:
   family: "R"
   long: |
@@ -1796,37 +1796,37 @@ zein:
     Use with {gza} to express who/what provides (A).
   short: "provided"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 curo:
   family: "R"
   long: "(A) is the grammar of [E]."
   short: "grammar"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 cpena:
   family: "R"
   long: "(A) is a document with content [E]."
   short: "document"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 tsir:
   family: "R"
   long: "(A) finds/discovers [E]."
   short: "finds"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 tcon:
   family: "R"
   long: "(A) is related to/associated wit/akin to [E] by relationship (I2)."
   short: "related"
   type: [I.d, I.d, P.2]
-  sequential: true
+  switch: true
 bun:
   family: "R"
   long: "(A) is a version of [E]."
   short: "version"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 bju:
   family: "R"
   long: "(A) is a text."
@@ -1837,7 +1837,7 @@ bion:
   long: "(A) is ill/sick from disease [E]."
   short: "sick"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 leun:
   family: "R"
   long: "(A) is light [energy]."
@@ -1848,13 +1848,13 @@ cmir:
   long: "(A) emits/produce [E]."
   short: "emits"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 smai:
   family: "R"
   long: "(A) receives/absorbs [E]."
   short: "receives"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 flua:
   family: "R"
   long: "(A) is a sound."
@@ -1865,14 +1865,14 @@ fana:
   long: "(A) is a parent of [E]."
   short: "parent"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [kinship, family]
 kana:
   family: "R"
   long: "(A) is a sibling/brother/sister of [E]."
   short: "sibling"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [kinship, family]
 mana:
   family: "R"
@@ -1881,7 +1881,7 @@ mana:
     Equivalent to {sfe fana}.
   short: "mother"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [kinship, family]
 pana:
   family: "R"
@@ -1890,21 +1890,21 @@ pana:
     Equivalent to {kla fana}.
   short: "father"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [kinship, family]
 dzana:
   family: "R"
   long: "(A) is married to [E]."
   short: "married"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
   tags: [kinship, family]
 kineo:
   family: "R"
   long: (A) touches [E].
   short: "touches"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 vario:
   family: "R"
   long: (A) is strange/weird.
@@ -1935,7 +1935,7 @@ zoni:
   long: (A) pertains to [E].
   short: "pertains"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 kari:
   family: "R"
   long: |
@@ -1944,7 +1944,7 @@ kari:
     put into doupt.
   short: "axiomatic belief"
   type: [I.d, P.0]
-  sequential: true
+  switch: true
 lor:
   family: "R"
   long: |
@@ -2120,7 +2120,7 @@ e kre vier:
   long: "(A) visits [E] with guide (I)."
   short: "guided visit"
   type: [I.d, I.d, I.d]
-  sequential: true
+  switch: true
 e va za:
   family: "C2"
   long: |
@@ -2128,19 +2128,19 @@ e va za:
     Allows to make names from a scope.
   short: "named (binding)"
   type: [I.c, I.c]
-  sequential: true
+  switch: true
 e tana kano:
   family: "C2"
   long: "(A) is bigger (in volume) than [E]."
   short: "bigger (volume)"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 e gere kano:
   family: "C2"
   long: "(A) is smaller (in volume) than [E]."
   short: "smaller (volume)"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 e vin zane:
   family: "C2"
   long: "(A) is a writing system with symbols (E) and set of rules (I)."
@@ -2162,25 +2162,25 @@ e merue zane:
   long: "(A) is an organism with body parts [E] forming body (I)."
   short: "body"
   type: [I.c, I.c, I.c]
-  sequential: true
+  switch: true
 e gze slaen:
   family: "C2"
   long: "(A) hangs from [E]."
   short: "hang"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 e skao zari:
   family: "C2"
   long: "(A) is a source code of [E]."
   short: "source code"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 e curo skien:
   family: "C2"
   long: "(A) is a parser from grammar [E]."
   short: "parser"
   type: [I.d, I.d]
-  sequential: true
+  switch: true
 e pu zoi:
   family: "C2"
   long: "(A) is a paragraph."
@@ -2191,7 +2191,7 @@ e bion cnue:
   long: "(A) [ill/sickness] is characterized by symptom [E1]."
   short: "symptom"
   type: [I.d, P.1]
-  sequential: true
+  switch: true
 
 i len po ba:
   family: "C3"

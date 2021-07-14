@@ -44,8 +44,8 @@ function html_word_entry(word, entry) {
 
 	output += `<span class="btn btn-mini btn-inverse dictionary-family">${entry.family}</span> `;
 
-	if (entry.sequential) {
-		output += `<span class="btn btn-mini btn-danger dictionary-seq">sequential</span> `;
+	if (entry.switch) {
+		output += `<span class="btn btn-mini btn-danger dictionary-seq">switch</span> `;
 	}
 
 	if (entry.tags != undefined) {

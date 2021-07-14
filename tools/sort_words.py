@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-VALID_FIELDS = ["family", "_signature", "long", "short", "type", "sequential"]
+VALID_FIELDS = ["family", "_signature", "long", "short", "type", "switch"]
 
 def is_valid_eberbanic_word_character(c):
     return str.isalpha(c) or str.isdigit(c) or c == "'" or c == "."
