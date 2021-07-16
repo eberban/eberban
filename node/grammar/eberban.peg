@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.37
+# eberban PEG grammar - v0.37.1
 # ===========================
 
 # GRAMMAR
@@ -35,7 +35,7 @@ va_scope_next <- BI_clause? FA_clause scope
 
 # predicate unit
 predicate <- (SA_clause / ZA_clause)* predicate_1
-predicate_1 <- quote / variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
+predicate_1 <- predicate_simple / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
 
 predicate_root <- free_prefix* spaces? root free_post*
 predicate_number <- free_prefix* spaces? number free_post*
@@ -44,7 +44,7 @@ predicate_borrowing <- free_prefix* borrowing_group free_post*
 predicate_scope <- PE_clause scope PEI_clause_elidible
 
 # quotes
-quote <- grammatical_quote / one_word_quote / foreign_quote
+predicate_quote <- grammatical_quote / one_word_quote / foreign_quote
 grammatical_quote <- LA_clause text LAI_clause
 one_word_quote <- LE_clause spaces? native_word
 foreign_quote <- LO_clause spaces? foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
@@ -56,8 +56,11 @@ number <- TA_clause+ BE_clause_elidible
 # borrowings
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
+# simple
+predicate_simple <- BA_clause / MA_clause
+
 # variables
-variable <- MA_clause / BO_clause? KA_clause / BO_clause? GA_clause
+predicate_variable <- BO_clause? (KA_clause / GA_clause)
 
 # free affixes
 free_prefix <- DA_clause
