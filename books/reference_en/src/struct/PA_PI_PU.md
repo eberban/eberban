@@ -11,8 +11,7 @@ posteriori.
 Each member of **PA** encore a different illocution :
 
 - **pa :** assertive sentence, that can be believ or disbelieved, and is either true or false.
-- **paha :** vocative. Defines the listener as the `A` place of this scope.
-- **pahe :** defines the subject of the discourse as the `A` place of this scope.
+- **pae :** vocative. Defines the listener as the `A` place of this scope.
 - **pao :** declarative sentence, that is true only because uttered (used for declarations, announcements, etc).
 - **pau :** directive sentence, that is requested, wished or ordered to be true.
 

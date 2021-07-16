@@ -1,6 +1,6 @@
-# Lists (BA)
+# Lists (BU)
 
-Particle **ba** will divide a scope into multiple subscopes being items
+Particle **bu** will divide a scope into multiple subscopes being items
 of a list.
 
 Some predicates accepts list as argument, such as

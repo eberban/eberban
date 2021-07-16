@@ -13,8 +13,8 @@ Pronouns are expressed with the following particles :
 | mo   | `(A) is you, a listener.`                            |
 | mio  | `(A) is I/a speaker/author or you, a listener.`      |
 | me   | `(A) is someone, neither a speaker or listener.`     |
-| mia  | `(A) is indefinite specific (a).`                    |
-| moa  | `(A) is definite specific (the).`                    |
+| mai  | `(A) is indefinite specific (a).`                    |
+| mao  | `(A) is definite specific (the).`                    |
 | mei  | `(A) is this here, near a speaker.`                  |
 | meo  | `(A) is that here, near a listener.`                 |
 | meu  | `(A) is that yonder, far from speaker and listener.` |
@@ -36,8 +36,8 @@ that are currently being defined when the word is used.
 Using [subscripts **DI**](../struct/DA_DI_DO_DU.md) allow to refer to more distant
 predicates.
 
-## Specials
+## Open place (BA)
 
 | Word | Definition                                                      |
 | ---- | --------------------------------------------------------------- |
-| ma   | binds a variable within an scope that represents an open space. |
+| ba   | binds a variable within an scope that represents an open space. |

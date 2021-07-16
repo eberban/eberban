@@ -25,7 +25,7 @@
 - [Text structure]()
   - [Propositions and paragraphs (PA/PI/PU)](struct/PA_PI_PU.md)
   - [Predicate definition (PO)](struct/PO.md)
-  - [Lists (BA)](struct/BA.md)
+  - [Lists (BU)](struct/BU.md)
   - [Free modifiers (DA/DI/DO/DU)](struct/DA_DI_DO_DU.md)
 
 - [List of particle families](families.md)

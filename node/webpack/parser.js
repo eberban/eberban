@@ -11,15 +11,11 @@ const hideTitleList = [
 	'definition',
 	'scope',
 	'list element',
-	'distributive connectives scope',
-	'binding connectives scope',
-	'plural value',
-	'unit',
-	'sequential unit',
-	'sequential negation',
-	'sequential binding',
-	'explicit binding',
-	'borrowing unit',
+	'predicate',
+	'chaining unit',
+	'chaining negation',
+	'VA-scope',
+	'borrowing group',
 ];
 
 const hideFamily = [
@@ -35,7 +31,6 @@ const hideFamily = [
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
 	// text
-	[ 'parser version', 'box box-parser' ],
 	[ 'paragraph', 'box box-paragraph' ],
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
@@ -44,23 +39,21 @@ const boxClassForTypeMap = new Map([
 
 	// scope
 	[ 'scope', 'box box-scope' ],
-	[ 'list element', 'box box-scope-conn' ],
-	// [ 'plural value', 'box box-scope-conn' ],
-	[ 'sequential unit', 'box box-sequential-unit' ],
-	[ 'sequential negation', 'box box-sequential-neg' ],
-	[ 'explicit binding', 'box box-explicit' ],
+	[ 'list element', 'box box-scope-highlight' ],
+	[ 'chaining unit', 'box box-chaining-unit' ],
+	[ 'chaining negation', 'box box-chaining-neg' ],
+	[ 'VA-scope', 'box box-va-scope' ],
 
 	// units
-	[ 'unit', 'box box-unit' ],
-	[ 'quote', 'box box-unit' ],
-	[ 'word quote', 'box box-unit' ],
-	[ 'foreign quote', 'box box-unit' ],
+	[ 'predicate', 'box box-predicate' ],
+	[ 'quote', 'box box-predicate' ],
+	[ 'word quote', 'box box-predicate' ],
+	[ 'foreign quote', 'box box-predicate' ],
 	[ 'compound', 'box box-compound' ],
 	[ 'number', 'box box-number' ],
 	[ 'letters', 'box box-letters' ],
 	[ 'subscope', 'box box-subscope' ],
-	[ 'borrowing unit', 'box box-borrowing-unit' ],
-	[ 'borrowing', 'box box-borrowing' ],
+	[ 'borrowing group', 'box box-borrowing' ],
 	[ 'foreign quote', 'box box-borrowing' ],
 
 	// free
@@ -399,10 +392,6 @@ function constructBoxesOutput(parse, depth) {
 				} else {
 					output += '<br>' + parse.type;
 				}
-
-				// if (parse.sumtiPlace) {
-				//     output += parse.sumtiPlace;
-				// }
 			}
 		}
 

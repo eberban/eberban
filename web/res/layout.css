@@ -39,16 +39,6 @@ li.implicit {
 	display: none;
 }
 
-.tengwar-highlighting {
-	font-family: "Tengwar Telcontar", "Tengwar Formal";
-	font-size: 110%;
-}
-
-.tengwar-highlighting .lojban-error {
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
 .box {
 	text-align: center;
 	display: inline-block;
@@ -66,12 +56,6 @@ li.implicit {
 	--color-pink: #fc9bcb;
 	--color-purple: #c895fc;
 	--color-blue: #95caff;
-}
-
-.box.box-parser {
-	background: #ffffff;
-	border: 1px black solid;
-	margin: 2px;
 }
 
 .box.box-sentence {
@@ -103,31 +87,26 @@ li.implicit {
 	background: white;
 }
 
-.box.box-sequential-unit {
+.box.box-chaining-unit {
 	background: var(--color-purple);
 }
 
-.box.box-sequential-neg {
-	/* background: #ffffff; */
+.box.box-chaining-neg {
 	border: 1px red dashed;
 	border-top: 0px;
 }
 
-.box.box-explicit {
+.box.box-va-scope {
 	background: var(--color-pink);
 }
 
-.box.box-unit {
+.box.box-predicate {
 	background: var(--color-blue);
 }
 
 .box.box-set {
 	background: var(--color-purple);
 }
-
-/* .box.box-subscope {
-	background: #ffffff;
-} */
 
 .box.box-compound {
 	background: var(--color-purple);
@@ -145,18 +124,12 @@ li.implicit {
 	background: var(--color-purple);
 }
 
-.box.box-letters {
-	background: var(--color-purple);
-}
-
 .box.box-scope {
 	background: #ffffff;
-	/* border: 1px black dashed; */
 	border-top: 0px;
 }
 
-.box.box-scope-conn {
-	/* background: #dddddd; */
+.box.box-scope-highlight {
 	border: 1px black dashed;
 	border-top: 0px;
 }

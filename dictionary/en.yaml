@@ -91,7 +91,7 @@ me:
   long: "(A) is someone, neither a speaker or listener."
   short: "other"
   type: [I.d]
-mia:
+mai:
   family: "MA"
   long: |
     (A) is indefinite specific.
@@ -99,7 +99,7 @@ mia:
     expected to know which one.
   short: "a"
   type: [I.d]
-moa:
+mao:
   family: "MA"
   long: |
     (A) is definite specific.
@@ -124,26 +124,26 @@ meu:
   type: [I.d]
 mua:
   family: "MA"
-  long: "Repeats the last proposition"
+  long: "Repeats the last proposition."
   short: "last prop"
   type: P.0
 mue:
   family: "MA"
-  long: "Repeats the proposition in which this one is embeded (used in abstractions)"
+  long: "Repeats the proposition in which this one is embeded (used in abstractions)."
   short: "outer prop"
   type: P.0
 mui:
   family: "MA"
-  long: "Repeats current proposition"
+  long: "Repeats current proposition."
   short: "current prop"
   type: P.0
 muo:
   family: "MA"
-  long: "Repeats the next proposition"
+  long: "Repeats the next proposition."
   short: "next prop"
   type: P.0
-ma:
-  family: "MA"
+ba:
+  family: "BA"
   long: "Binds a variable within an scope that represents an open space."
   short: "open place"
 ta:
@@ -367,117 +367,53 @@ lo:
   type: [I.d]
 fa:
   family: "FA"
-  long: "Additional explicit (A) place restrictive binding."
-  short: "(A)"
+  long: "Switch to the A place of the predicate before the current VA-scope."
+  short: "switch-A"
 fe:
   family: "FA"
-  long: "Additional explicit (E) place restrictive binding."
-  short: "(E)"
+  long: "Switch to the E place of the predicate before the current VA-scope."
+  short: "switch-E"
 fi:
   family: "FA"
-  long: "Additional explicit (I) place restrictive binding."
-  short: "(I)"
+  long: "Switch to the I place of the predicate before the current VA-scope."
+  short: "switch-I"
 fo:
   family: "FA"
-  long: "Additional explicit (O) place restrictive binding."
-  short: "(O)"
+  long: "Switch to the O place of the predicate before the current VA-scope."
+  short: "switch-O"
 fai:
   family: "FA"
-  long: "Additional explicit bracket place restrictive binding."
-  short: "[ ]"
+  long: "Switch to the implicit switch place of the predicate before the current VA-scope."
+  short: "switch-implicit"
 fua:
   family: "FA"
-  long: "Additional explicit (A) place non-restrictive binding."
-  short: "(A) (non-res)"
+  long: "Switch to the same place as the previous FA/VA."
+  short: "switch-same"
 fue:
   family: "FA"
-  long: "Additional explicit (E) place non-restrictive binding."
-  short: "(E) (non-res)"
-fui:
-  family: "FA"
-  long: "Additional explicit (I) place non-restrictive binding."
-  short: "(I) (non-res)"
-fuo:
-  family: "FA"
-  long: "Additional explicit (O) place non-restrictive binding."
-  short: "(O) (non-res)"
-fia:
-  family: "FA"
-  long: "Additional explicit adverbial bind (restrictive)"
-  short: "res adv"
-fie:
-  family: "FA"
-  long: "Additional explicit adverbial bind (non-restrictive)"
-  short: "non-res adv"
-fio:
-  family: "FA"
-  long: "Additional explicit adverbial bind (subordinative)"
-  short: "sub adv"
-faha:
-  family: "FA"
-  long: "Binds same place (restrictive)"
-  short: "same (res)"
-fahe:
-  family: "FA"
-  long: "Binds next place (restrictive)"
-  short: "next (res)"
-fuha:
-  family: "FA"
-  long: "Binds same place (non-restrictive)"
-  short: "same (non-res)"
-fuhe:
-  family: "FA"
-  long: "Binds next place (non-restrictive)"
-  short: "next (non-res)"
+  long: "Switch to the next place relative to the previous FA/VA."
+  short: "switch-next"
 va:
   family: "VA"
-  long: "First explicit (A) place restrictive binding."
-  short: "(A)"
+  long: "Switch to the A place of the predicate word before it, and start a VA-scope."
+  short: "〈 switch-A"
 ve:
   family: "VA"
-  long: "First explicit (E) place restrictive binding."
-  short: "(E)"
+  long: "Switch to the E place of the predicate word before it, and start a VA-scope."
+  short: "〈 switch-E"
 vi:
   family: "VA"
-  long: "First explicit (I) place restrictive binding."
-  short: "(I)"
+  long: "Switch to the I place of the predicate word before it, and start a VA-scope."
+  short: "〈 switch-I"
 vo:
   family: "VA"
-  long: "First explicit (O) place restrictive binding."
-  short: "(O)"
+  long: "Switch to the O place of the predicate word before it, and start a VA-scope."
+  short: "〈 switch-O"
 vai:
   family: "VAI"
-  long: "Close explicit binding group."
-  short: ""
+  long: "Close the current VA-scope."
+  short: "〉"
   tags: [terminator, elidable]
-vua:
-  family: "VA"
-  long: "First explicit (A) place non-restrictive binding."
-  short: "(A) (non-res)"
-vue:
-  family: "VA"
-  long: "First explicit (E) place non-restrictive binding."
-  short: "(E) (non-res)"
-vui:
-  family: "VA"
-  long: "First explicit (I) place non-restrictive binding."
-  short: "(I) (non-res)"
-vuo:
-  family: "VA"
-  long: "First explicit (O) place non-restrictive binding."
-  short: "(O) (non-res)"
-via:
-  family: "VA"
-  long: "First explicit adverbial bind (restrictive)"
-  short: "res adv"
-vie:
-  family: "VA"
-  long: "First explicit adverbial bind (non-restrictive)"
-  short: "non-res adv"
-vio:
-  family: "VA"
-  long: "First explicit adverbial bind (subordinative)"
-  short: "sub adv"
 sa:
   family: "SA"
   long: "(A) place binding tag."
@@ -522,7 +458,7 @@ zoi:
   type: [I.c]
 pa:
   family: "PA"
-  long: "Starts an assertive sentence, that can be believ or disbelieved, and is either true or false."
+  long: "Starts an assertive sentence, that can be believed or disbelieved, and is either true or false."
   short: "[assertion]"
 pae:
   family: "PA"
@@ -620,8 +556,8 @@ doi:
   long: "Ends parenthetical note."
   short: ")"
   tags: [terminator]
-ba:
-  family: "BA"
+bu:
+  family: "BU"
   long: "List separator."
   short: "[list]"
 be:
@@ -2193,7 +2129,7 @@ e bion cnue:
   type: [I.d, P.1]
   switch: true
 
-i len po ba:
+i len po bu:
   family: "C3"
   long: "(A) is a dictionary."
   short: "dictionary"
