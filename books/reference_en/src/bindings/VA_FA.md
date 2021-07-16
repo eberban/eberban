@@ -2,26 +2,15 @@
 
 > This chapter use outdated definitions.
 
-| FA     | VA  | Definition                                                 |
-| ------ | --- | ---------------------------------------------------------- |
-| fa     | va  | Binds `A` place (restrictive)                              |
-| fe     | ve  | Binds `E` place (restrictive)                              |
-| fi     | vi  | Binds `I` place (restrictive)                              |
-| fo     | vo  | Binds `O` place (restrictive)                              |
-| &nbsp; |     |                                                            |
-| fua    | vua | Binds `A` place (non-restrictive)                          |
-| fue    | vue | Binds `E` place (non-restrictive)                          |
-| fui    | vui | Binds `I` place (non-restrictive)                          |
-| fuo    | vuo | Binds `O` place (non-restrictive)                          |
-| &nbsp; |     |                                                            |
-| fia    | via | Adverbial : Binds predicate unit (restrictive)             |
-| fie    | vie | Adverbial : Binds predicate unit (non-restrictive)         |
-| fio    | vio | Adverbial : Binds predicate unit (subordinative)           |
-| &nbsp; |     |                                                            |
-| faha   |     | Binds same place (restrictive)                             |
-| fahe   |     | Binds next place (restrictive)                             |
-| fuha   |     | Binds same place (non-restrictive)                         |
-| fuhe   |     | Binds next place (non-restrictive)                         |
+| FA     | VA  | Definition       |
+| ------ | --- | ---------------- |
+| fa     | va  | Binds `A` place  |
+| fe     | ve  | Binds `E` place  |
+| fi     | vi  | Binds `I` place  |
+| fo     | vo  | Binds `O` place  |
+| &nbsp; |     |                  |
+| fua    |     | Binds same place |
+| fue    |     | Binds next place |
 
 If you want to bind a unit to another place than the default one, or perform
 multiple bindings on the unit, you can use **VA**, terminated by **vai**, to
@@ -81,92 +70,3 @@ only difference being that a **VA** is used for the first binding while a **FA**
 is used for subsequent bindings.
 
 **va/ve/vi/vo** allow to choose which place is used in the binding.
-
------
-
-**vua/vue/vui/vuo** are called **non-restrictive bindings**. Instead of the
-binding being part of the current statement, it is part of its own independent
-statement. It is used to add additionnal information which can be false without
-changing the truth value of the main statement.
-
-> *mi don tun mlian dzo*  
-> I like all cats that are black.
->
-> \\[
-> S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
-> F_2 = \exists e_2 [don(a_1,e_2) \wedge F_3] \\\\
-> F_3 = \exists E_3 [tun(e_2, E_3) \wedge F_4] \\\\
-> F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mlian(a_4) \color{magenta}{\wedge
-> F_5}]) \\\\
-> \color{magenta}{F_5} = dzo(a_4)
-> \\]
->
-> *mi don tun mlian [vua dzo vai]*  
-> I like all cats. They are black (all cats are black).
->
-> \\[
-> S_1 = \exists a_1 [mi(a_1) \wedge F_2] \\\\
-> F_2 = \exists e_2 [don(a_1,e_2) \wedge F_3] \\\\
-> F_3 = \exists E_3 [tun(e_2, E_3) \wedge F_4] \\\\
-> F_4 = \forall a_4 (E_3(a_4) \leftrightarrow [mlian(a_4)]) \\\\
-> \color{magenta}{S_5} = dzo(a_4)
-> \\]
->
-
-----
-
-**via/vie/vio** are called **adverbials**. They allow to perform a bind on the
-predicate itself.
-
-**via** performs a restrictive bind over the predicate itself.
-
-> *jvin [\<va to pre\> \<fia blan\> vai]*  
-> The fact/event of [3 persons dance] is true and is beautiful.  
-> = 3 persons dance beautifully.  
-> (They may be more persons dancing)
->
-> \\[
-> \color{magenta}{S_1} = \exists \color{cyan}{Z_1} [\color{cyan}{Z_1} \wedge
-> F_1^\prime \wedge \color{magenta}{F_{1:3}}] \\\\
-> F_1^\prime = \color{cyan}{Z_1} \leftrightarrow (\exists a_1 [jvin(a_1) \wedge
-> F_{1:1}]) \\\\
-> F_{1:1} = \exists E_{1:1} [to(a_1,E_{1:1}) \wedge F_{1:2}] \\\\
-> F_{1:2} = \forall a_{1:2} (E_{1:1}(a_{1:2}) \leftrightarrow [pre(a_{1:2})])
-> \\\\
-> \color{magenta}{F_{1:3}} = blan(\color{cyan}{Z_1})
-> \\]
-
-**vie** performs a non-restrictive bind, which is stated in its own independant
-statement.
-
-> *jvin [\<va to pre\> \<fie blan\> vai]*  
-> 3 persons dance. They're dancing beautifully.  
-> (There are only 3 persons dancing, and they're all dancing beautifully)
->
-> \\[
-> \color{magenta}{S_1} = \exists \color{cyan}{Z_1} [\color{cyan}{Z_1} \wedge
-> F_1^\prime] \\\\
-> F_1^\prime = \color{cyan}{Z_1} \leftrightarrow (\exists a_1 [jvin(a_1) \wedge
-> F_{1:1}]) \\\\
-> F_{1:1} = \exists E_{1:1} [to(a_1,E_{1:1}) \wedge F_{1:2}] \\\\
-> F_{1:2} = \forall a_{1:2} (E_{1:1}(a_{1:2}) \leftrightarrow [pre(a_{1:2})])
-> \\\\
-> \color{magenta}{S_{1:3}} = blan(\color{cyan}{Z_1})
-> \\]
-
-**vio** performs a subordinative bind. This main sentence is not stated to be
-true.
-
-> *jvin [\<va to pre\> \<fio kca\> vai]* It is possible that 3 persons dance.
-> (It's only a possibility, we don't state that 3 persons are dancing)
->
-> \\[
-> \color{magenta}{F_1} = \exists \color{cyan}{Z_1} [\color{cyan}{Z_1} \wedge
-> F_1^\prime] \\\\
-> F_1^\prime = \color{cyan}{Z_1} \leftrightarrow (\exists a_1 [jvin(a_1) \wedge
-> F_{1:1}]) \\\\
-> F_{1:1} = \exists E_{1:1} [to(a_1,E_{1:1}) \wedge F_{1:2}] \\\\
-> F_{1:2} = \forall a_{1:2} (E_{1:1}(a_{1:2}) \leftrightarrow [pre(a_{1:2})])
-> \\\\
-> \color{magenta}{S_{1:3}} = \color{magenta}{F_1} \wedge kca(\color{cyan}{Z_1})
-> \\]
