@@ -9,6 +9,7 @@ Pronouns are expressed with the following particles :
 
 | Word | Definition                                           |
 | ---- | ---------------------------------------------------- |
+| ma   | `(A) is not bound outside of this scope.`            |
 | mi   | `(A) is I/a speaker/author.`                         |
 | mo   | `(A) is you, a listener.`                            |
 | mio  | `(A) is I/a speaker/author or you, a listener.`      |

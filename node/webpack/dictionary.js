@@ -59,8 +59,9 @@ function html_word_entry(word, entry) {
 	let paragraphs = entry.long.split(/(\r\n|\r|\n){2,}/);
 
 	paragraphs.forEach((p) => {
-		p = p.replace(/\(((A|E|I|O)(\d|_)?)\)/g,'<span class="label label-success">$&</span>')
-		p = p.replace(/\[((A|E|I|O)(\d|_)?)\]/g,'<span class="label label-important">$&</span>')
+		p = escapeHTML(p);
+		p = p.replace(/\(((A|E|I|O)(\d|c|d|n|s(\d|_)?)?)\)/g,'<span class="label label-success place">$&</span>')
+		p = p.replace(/\[((A|E|I|O)(\d|c|d|n|s(\d|_)?)?)\]/g,'<span class="label label-important place">$&</span>')
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');
@@ -79,6 +80,12 @@ function html_word_entry(word, entry) {
 
 	output += `</div>`;
 	return output;
+}
+
+function escapeHTML(str){
+    var p = document.createElement("p");
+    p.appendChild(document.createTextNode(str));
+    return p.innerHTML;
 }
 
 export function html_dictionary(filters) {
