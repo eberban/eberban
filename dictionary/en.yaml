@@ -672,17 +672,19 @@ cini:
 kano:
   family: "R"
   long: |
-    (A) is greater than [E] in property (I1).
-    (I1) should express a property that can be compared and ordered.
-  short: "greater"
-  type: [I.d, I.d, P.1]
+    (A) satisfies more property [E1] than (I) (default: average thing satisfying property [E1]).
+    [E1] should express a property that can be compared and ordered.
+  short: "more"
+  type: [I.d, P.1, I.d]
+  switch: true
 gere:
   family: "R"
   long: |
-    (A) is less than [E] in property (I1).
-    (I1) should express a property that can be compared and ordered.
+    (A) satisfies less property [E1] than (I) (default: average thing satisfying property [E1]).
+    [E1] should express a property that can be compared and ordered.
   short: "less"
-  type: [I.d, I.d, P.1]
+  type: [I.d, P.1, I.d]
+  switch: true
 fuir:
   family: "R"
   long: "(A) knows fact [E0] from source (I)."
@@ -2057,21 +2059,13 @@ e kre vier:
   short: "guided visit"
   type: [I.d, I.d, I.d]
   switch: true
-e va za:
-  family: "C2"
-  long: |
-    (A) is named [E].
-    Allows to make names from a scope.
-  short: "named (binding)"
-  type: [I.c, I.c]
-  switch: true
 e tana kano:
   family: "C2"
   long: "(A) is bigger (in volume) than [E]."
   short: "bigger (volume)"
   type: [I.d, I.d]
   switch: true
-e gere kano:
+e tana gere:
   family: "C2"
   long: "(A) is smaller (in volume) than [E]."
   short: "smaller (volume)"
@@ -2128,6 +2122,19 @@ e bion cnue:
   short: "symptom"
   type: [I.d, P.1]
   switch: true
+e tor vuno:
+  family: "C2"
+  long: "(A) is far (large distance) from [E]."
+  short: "far"
+  type: [I.d, I.d]
+  switch: true
+e ter vuno:
+  family: "C2"
+  long: "(A) is close (short distance) to [E]."
+  short: "close"
+  type: [I.d, I.d]
+  switch: true
+
 
 i len po bu:
   family: "C3"
