@@ -1671,6 +1671,10 @@ kcaro:
   family: "R"
   long: "(Ad) is an table."
   short: "table"
+guro:
+  family: "R"
+  long: "(Ad) is a country/territory."
+  short: "country"
 
 # Compounds (2):
 e tsen ban:
@@ -1681,22 +1685,83 @@ e ber ban:
   family: "C2"
   long: "(Ad) is the eberban language."
   short: "eberban"
-  tags: [language]
+  tags: [cultural]
 e ujbo ban:
   family: "C2"
   long: "(Ad) is the lojban language."
   short: "lojban"
-  tags: [language]
+  tags: [cultural]
 e ufranse ban:
   family: "C2"
   long: "(Ad) is the french language."
   short: "french language"
-  tags: [language]
+  tags: [cultural]
+e ufranse guro:
+  family: "C2"
+  long: "(Ad) is France."
+  short: "France"
+  tags: [cultural]
 e uinglici ban:
   family: "C2"
   long: "(Ad) is the english language."
   short: "english language"
-  tags: [language]
+  tags: [cultural]
+e unihon ban:
+  family: "C2"
+  long: "(Ad) is the japanese language."
+  short: "japanese language"
+  tags: [cultural]
+e unihon guro:
+  family: "C2"
+  long: "(Ad) is Japan."
+  short: "Japan"
+  tags: [cultural]
+e udjonguo ban:
+  family: "C2"
+  long: "(Ad) is chinese language."
+  short: "chinese language"
+  tags: [cultural]
+e udjonguo guro:
+  family: "C2"
+  long: "(Ad) is China."
+  short: "China"
+  tags: [cultural]
+e udoitce ban:
+  family: "C2"
+  long: "(Ad) is german language."
+  short: "german language"
+  tags: [cultural]
+e udoitce guro:
+  family: "C2"
+  long: "(Ad) is Germany."
+  short: "Germany"
+  tags: [cultural]
+e umiser guro:
+  family: "C2"
+  long: "(Ad) is Egypt."
+  short: "Egypt"
+  tags: [cultural]
+e uhangu ban:
+  family: "C2"
+  long: "(Ad) is korean language."
+  short: "korean language"
+  tags: [cultural]
+e uhangu guro:
+  family: "C2"
+  long: "(Ad) is South Korea."
+  short: "South Korea"
+  tags: [cultural]
+e utcoson ban:
+  family: "C2"
+  long: "(Ad) is korean language."
+  short: "korean language"
+  tags: [cultural]
+e utcoson guro:
+  family: "C2"
+  long: "(Ad) is North Korea."
+  short: "North Korea"
+  tags: [cultural]
+
 e ta dena:
   family: "C2"
   long: "(Ad) is a Sunday."
