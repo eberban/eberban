@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', function() {
-	Leipzig({ abbreviations: {}}).gloss();
+	Leipzig({ abbreviations: {}, firstLineOrig: true}).gloss();
 });

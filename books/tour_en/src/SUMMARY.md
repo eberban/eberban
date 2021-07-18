@@ -1,6 +1,6 @@
 # Summary
 
-- [Introduction](chapters/1.md)
+- [Introduction](chapters/1-0.md)
   - [Morphology](chapters/1-1.md)
   - [Phonology](chapters/1-2.md)
 - [Grammar]()
@@ -8,13 +8,14 @@
   - [Explicit switches](chapters/2-2.md)
   - [Predicate places](chapters/2-3.md)
   - [Discourse predicates](chapters/2-4.md)
-  - [Borrowings]()
+  - [Borrowings](chapters/2-5.md)
   - [Text structure](chapters/2-6.md)
   - [Compounds]()
   - [Quotes]()
   - [Numbers and distributivity]()
   - [Variables, arguments and definitions]()
   - [Lists]()
+  - [Predicate transformations]()
   - [Free modifiers]()
 - [Vocabulary]()
   - [Space and time]()
