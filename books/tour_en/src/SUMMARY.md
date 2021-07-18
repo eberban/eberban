@@ -10,7 +10,7 @@
   - [Discourse predicates](chapters/2-4.md)
   - [Borrowings](chapters/2-5.md)
   - [Text structure](chapters/2-6.md)
-  - [Compounds]()
+  - [Compounds](chapters/2-7.md)
   - [Quotes]()
   - [Numbers and distributivity]()
   - [Variables, arguments and definitions]()
