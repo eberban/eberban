@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.37.1
+# eberban PEG grammar - v0.37.2
 # ===========================
 
 # GRAMMAR
@@ -196,10 +196,9 @@ initial <- (plosib / sibilant? other? liquid?) !consonant
 plosib <- plosive sibilant
 consonant <- (voiced / unvoiced / liquid / m / n) 
 liquid <- (l / r) 
-other <- (p / t / k / f / b / d / g / v / m / n !liquid)
+other <- (p / t !l / k / f / b / d !l / g / v / m / n !liquid)
 plosive <- (t / d / k / g / p / b)
 sibilant <- (c / s / j / z) 
-# sonorant <- (l / n / r) # technically "alveolar sonorant" as "m" is not included
 sonorant <- (n / r)
 voiced <- (b / d / g / j / v / z) 
 unvoiced <- (c / f / k / p / s / t) 

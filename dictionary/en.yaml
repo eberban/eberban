@@ -741,7 +741,7 @@ jgao:
   short: "north"
   switch: true
   tags: [space, direction]
-tloe:
+troe:
   family: "R"
   long: "(Ad) (default: speaker) is westward/to the west of [Ed] (default: speaker)."
   short: "west"
@@ -1675,6 +1675,10 @@ guro:
   family: "R"
   long: "(Ad) is a country/territory."
   short: "country"
+drai:
+  family: "R"
+  long: "(Ad) is a god."
+  short: "god"
 
 # Compounds (2):
 e tsen ban:
@@ -1928,6 +1932,11 @@ e ter vuno:
   family: "C2"
   long: "(Ad) is close (short distance) to [Ed]."
   short: "close"
+  switch: true
+e za zoi:
+  family: "C2"
+  long: "(Ad) is a name of [Ec]."
+  short: "name"
   switch: true
 
 i len po bu:

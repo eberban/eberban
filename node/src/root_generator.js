@@ -42,7 +42,6 @@ const pair = [
 
 	'pl',
 	'pr',
-	'tl',
 	'tr',
 	'kl',
 	'kr',
@@ -50,7 +49,6 @@ const pair = [
 	'fr',
 	'bl',
 	'br',
-	'dl',
 	'dr',
 	'gl',
 	'gr',
