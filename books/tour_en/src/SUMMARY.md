@@ -11,7 +11,7 @@
   - [Borrowings](chapters/2-5.md)
   - [Text structure](chapters/2-6.md)
   - [Compounds](chapters/2-7.md)
-  - [Quotes]()
+  - [Quotes](chapters/2-8.md)
   - [Numbers and distributivity]()
   - [Variables, arguments and definitions]()
   - [Lists]()

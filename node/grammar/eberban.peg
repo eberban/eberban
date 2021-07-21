@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.37.2
+# eberban PEG grammar - v0.37.3
 # ===========================
 
 # GRAMMAR
@@ -46,7 +46,7 @@ predicate_scope <- PE_clause scope PEI_clause_elidible
 # quotes
 predicate_quote <- grammatical_quote / one_word_quote / foreign_quote
 grammatical_quote <- LA_clause text LAI_clause
-one_word_quote <- LE_clause spaces? native_word
+one_word_quote <- LE_clause spaces? (native_word / compound / borrowing)
 foreign_quote <- LO_clause spaces? foreign_quote_open spaces foreign_quote_content foreign_quote_close free_post*
 foreign_quote_content <- (foreign_quote_word spaces)*
 
