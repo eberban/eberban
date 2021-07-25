@@ -1,6 +1,6 @@
-const { words_en: words } = require('../src/dictionary');
+const { dictionary_en: dictionary } = require('../src/dictionary');
 const { repeat, generators } = require('../src/root_generator');
-export default words;
+export default dictionary;
 
 function generate_words(amount, type) {
     var list = [];
@@ -8,7 +8,7 @@ function generate_words(amount, type) {
     repeat(amount, () => {
         while (true) {
             let word = generators[type]();
-            if (words[word] == undefined) {
+            if (dictionary[word] == undefined) {
                 list.push(word);
                 return;
             }

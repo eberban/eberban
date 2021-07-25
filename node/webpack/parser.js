@@ -3,7 +3,7 @@ const { remove_morphology, remove_spaces } = require('../src/util');
 const { simplifyTree } = require('../src/simplify_tree');
 export const { postprocessing } = require('../src/process_parse_tree');
 
-const { words_en: words } = require('../src/dictionary');
+const { dictionary_en: dictionary } = require('../src/dictionary');
 
 const hideTitleList = [
 	'paragraph',
@@ -199,8 +199,8 @@ function constructParseTreeOutput(parse, depth) {
 			if (isString(parse[1])) {
 				// a literal
 				output += ' <b>[' + parse[1] + ']</b>';
-				if (words[parse[1]]) {
-					output += ' <span class="translation">' + words[parse[1]].short + '</span>';
+				if (dictionary[parse[1]]) {
+					output += ' <span class="translation">' + dictionary[parse[1]].short + '</span>';
 				}
 				return output;
 			}
@@ -258,8 +258,8 @@ function constructSimplifiedTreeOutput(parse, depth) {
 	if (parse.word) {
 		// we have a terminal
 		output += ' <b>[' + parse.word + ']</b>';
-		if (words[parse.word]) {
-			output += ' <span class="translation">' + words[parse.word].short + '</span>';
+		if (dictionary[parse.word]) {
+			output += ' <span class="translation">' + dictionary[parse.word].short + '</span>';
 		}
 	} else {
 		// we have a non-terminal
@@ -326,15 +326,15 @@ function constructBoxesOutput(parse, depth) {
 			return output;
 		}
 
-		if (words[parse.word] && words[parse.word].long) {
-			output += '<div class="tiptext">' + escapeHtml(words[parse.word].long) + '</div>';
+		if (dictionary[parse.word] && dictionary[parse.word].long) {
+			output += '<div class="tiptext">' + escapeHtml(dictionary[parse.word].long) + '</div>';
 		}
 
 		output += '</div>&nbsp;<br>&nbsp;' + parse.type + '&nbsp;<br>';
 		// escapeHtml(words[text[j]].long)
 
-		if (words[parse.word]) {
-			let short = words[parse.word].short;
+		if (dictionary[parse.word]) {
+			let short = dictionary[parse.word].short;
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
@@ -378,11 +378,11 @@ function constructBoxesOutput(parse, depth) {
 
 					output += '<br><b>' + compound + '</b>';
 
-					if (words[compound]) {
-						output += ' = <div class="tip translation">' + words[compound].short;
+					if (dictionary[compound]) {
+						output += ' = <div class="tip translation">' + dictionary[compound].short;
 
-						if (words[compound].long) {
-							output += '<div class="tiptext">' + escapeHtml(words[compound].long) + '</div>';
+						if (dictionary[compound].long) {
+							output += '<div class="tiptext">' + escapeHtml(dictionary[compound].long) + '</div>';
 						}
 
 						output += '&nbsp;</div>';
@@ -598,11 +598,11 @@ function showGlossing(text, $element) {
 		if (word == 'u') {
 			// skip next word which is the borrowing content
 			j++;
-		} else if (word != 'o' && words[word]) {
+		} else if (word != 'o' && dictionary[word]) {
 			if (!definitions[word]) {
 				definitions[word] = [
-					words[word].family,
-					words[word].long ? escapeHtml(words[word].long) : words[word].short
+					dictionary[word].family,
+					dictionary[word].long ? escapeHtml(dictionary[word].long) : dictionary[word].short
 				];
 			}
 		}
