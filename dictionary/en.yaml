@@ -671,9 +671,8 @@ zvu:
   switch: true
 zde:
   family: "R"
-  long: "(A0) (default: now) is true/occurs concurrently with/at the same time as [E0] (default: now)."
+  long: "(A0) (default: now) is true/occurs concurrently with/at the same time as (E0) (default: now)."
   short: "present"
-  switch: true
   tags: [time]
 skir:
   family: "R"
@@ -683,15 +682,13 @@ skir:
   tags: [space]
 jgo:
   family: "R"
-  long: "(A0) (default: now) occurs before [E0] (default: now)."
-  short: "before"
-  switch: true
+  long: "(A0) (default: now) occurs before/is in the past of (E0) (default: now)."
+  short: "past"
   tags: [time]
 slo:
   family: "R"
-  long: "(A0) (default: now) occurs after [E0] (default: now)."
-  short: "after"
-  switch: true
+  long: "(A0) (default: now) occurs after/in the future of (E0) (default: now)."
+  short: "future"
   tags: [time]
 pcei:
   family: "R"
@@ -1640,7 +1637,7 @@ zvao:
   short: "accident"
 tera:
   family: "R"
-  long: "(Ad) is a planet in orbit around (Ec) (default: Sun)."
+  long: "(Ad) is a planet."
   short: "planet"
 sora:
   family: "R"
@@ -1648,7 +1645,7 @@ sora:
   short: "star"
 luna:
   family: "R"
-  long: "(Ad) is a major natural satellite/moon in orbit around planet (Ec) (default: Earth)."
+  long: "(Ad) is a major natural satellite/moon."
   short: "moon"
 zoni:
   family: "R"
@@ -1938,6 +1935,16 @@ e za zoi:
   long: "(Ad) is a name of [Ec]."
   short: "name"
   switch: true
+e spur tera:
+  family: "C2"
+  long: "(Ad) is the home planet of species (Ed) (default: humans)."
+  short: "home planet"
+e spur sora:
+  family: "C2"
+  long: "(Ad) is the home star of species (Ed) (default: humans)."
+  short: "home star"
+
+
 
 i len po bu:
   family: "C3"
