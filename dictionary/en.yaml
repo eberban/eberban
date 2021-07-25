@@ -752,13 +752,13 @@ glea:
   tags: [space, direction]
 vuno:
   family: "R"
-  long: "(Ad) is at a distance in space of [En] (default: 1 meter) from (Id) (default: speaker)."
+  long: "(Ad) is at a distance in space of (In) (default: 1 meter) from [Ed] (default: speaker)."
   short: "space distance"
   switch: true
   tags: [space, measument]
 ganu:
   family: "R"
-  long: "(A0) is true/occurs at a distance in time of [En] (default: 1 year) from (I0) (default: now)."
+  long: "(A0) is true/occurs at a distance in time of (In) (default: 1 day) from [E0] (default: now)."
   short: "time distance"
   switch: true
   tags: [time, measument]
@@ -1043,38 +1043,45 @@ snai:
   switch: true
 bire:
   family: "R"
-  long: "(Ad) is a year."
+  long: "(Ad) is a year in which [E0] is true/occurs."
   short: "year"
+  switch: true
   tags: [time, unit]
 gare:
   family: "R"
-  long: "(Ad) is a month."
+  long: "(Ad) is a month in which [E0] is true/occurs."
   short: "month"
+  switch: true
   tags: [time, unit]
 kora:
   family: "R"
-  long: "(Ad) is a week."
+  long: "(Ad) is a week in which [E0] is true/occurs."
   short: "week"
+  switch: true
   tags: [time, unit]
 dena:
   family: "R"
-  long: "(Ad) is a day."
+  long: "(Ad) is a day in which [E0] is true/occurs."
   short: "day"
+  switch: true
   tags: [time, unit]
 sura:
   family: "R"
-  long: "(Ad) is a hour."
+  long: "(Ad) is a hour in which [E0] is true/occurs."
   short: "hour"
+  switch: true
   tags: [time, unit]
 jero:
   family: "R"
-  long: "(Ad) is a minute."
+  long: "(Ad) is a minute in which [E0] is true/occurs."
   short: "minute"
+  switch: true
   tags: [time, unit]
 cona:
   family: "R"
-  long: "(Ad) is a second."
+  long: "(Ad) is a second in which [E0] is true/occurs."
   short: "second"
+  switch: true
   tags: [time, unit]
 ber:
   family: "R"
@@ -1692,7 +1699,7 @@ sla:
     (Ad) refers to a proposition/event that is true/occurs.
 
     Allows to use invidivuals representing events in proposition places.
-    
+
     {zde va sla emenedena fe mi van mao zbur} = Tomorrow I'll go to the city.
   short: "event"
 
@@ -1784,102 +1791,102 @@ e utcoson guro:
 
 e ta dena:
   family: "C2"
-  long: "(Ad) is a Sunday."
+  long: "(A0) occurs on a Sunday."
   short: "Sunday"
   tags: [time, day]
 e te dena:
   family: "C2"
-  long: "(Ad) is a Monday."
+  long: "(A0) occurs on a Monday."
   short: "Monday"
   tags: [time, day]
 e to dena:
   family: "C2"
-  long: "(Ad) is a Thusday."
+  long: "(A0) occurs on a Thusday."
   short: "Thusday"
   tags: [time, day]
 e tu dena:
   family: "C2"
-  long: "(Ad) is a Wednesday."
+  long: "(A0) occurs on a Wednesday."
   short: "Wednesday"
   tags: [time, day]
 e tia dena:
   family: "C2"
-  long: "(Ad) is a Thursday."
+  long: "(A0) occurs on a Thursday."
   short: "Thursday"
   tags: [time, day]
 e tie dena:
   family: "C2"
-  long: "(Ad) is a Friday."
+  long: "(A0) occurs on a Friday."
   short: "Friday"
   tags: [time, day]
 e tio dena:
   family: "C2"
-  long: "(Ad) is a Saturday."
+  long: "(A0) occurs on a Saturday."
   short: "Saturday"
   tags: [time, day]
 e tiu dena:
   family: "C2"
-  long: "(Ad) is a Sunday."
+  long: "(A0) occurs on a Sunday."
   short: "Sunday"
   tags: [time, day]
 e ta gare:
   family: "C2"
-  long: "(Ad) is a January."
+  long: "(A0) occurs in January."
   short: "January"
   tags: [time, month]
 e te gare:
   family: "C2"
-  long: "(Ad) is a February."
+  long: "(A0) occurs in February."
   short: "February"
   tags: [time, month]
 e to gare:
   family: "C2"
-  long: "(Ad) is a March."
+  long: "(A0) occurs in March."
   short: "March"
   tags: [time, month]
 e tu gare:
   family: "C2"
-  long: "(Ad) is a April."
+  long: "(A0) occurs in April."
   short: "April"
   tags: [time, month]
 e tia gare:
   family: "C2"
-  long: "(Ad) is a May."
+  long: "(A0) occurs in May."
   short: "May"
   tags: [time, month]
 e tie gare:
   family: "C2"
-  long: "(Ad) is a June."
+  long: "(A0) occurs in June."
   short: "June"
   tags: [time, month]
 e tio gare:
   family: "C2"
-  long: "(Ad) is a July."
+  long: "(A0) occurs in July."
   short: "July"
   tags: [time, month]
 e tiu gare:
   family: "C2"
-  long: "(Ad) is a August."
+  long: "(A0) occurs in August."
   short: "August"
   tags: [time, month]
 e tai gare:
   family: "C2"
-  long: "(Ad) is a September."
+  long: "(A0) occurs in September."
   short: "September"
   tags: [time, month]
 e tei gare:
   family: "C2"
-  long: "(Ad) is a October."
+  long: "(A0) occurs in October."
   short: "October"
   tags: [time, month]
 e toi gare:
   family: "C2"
-  long: "(Ad) is a November."
+  long: "(A0) occurs in November."
   short: "October"
   tags: [time, month]
 e tui gare:
   family: "C2"
-  long: "(Ad) is a December."
+  long: "(A0) occurs in December."
   short: "December"
   tags: [time, month]
 e kre vier:
@@ -1962,24 +1969,22 @@ e spur sora:
   family: "C2"
   long: "(Ad) is the home star of species (Ed) (default: humans)."
   short: "home star"
-e mene dena:
+e slo ganu:
   family: "C2"
   long: |
-    (Ad) is (In) (default: 1) days after (Ed) (default: today).
+    (A0) occurs (In) (default: 1) days after (E0) (default: today).
     Using only the A place thus defaults to "tomorrow".
   short: "days after"
-e dara dena:
+e jgo ganu:
   family: "C2"
   long: |
-    (Ad) is (In) (default: 1) days before (Ed) (default: today).
+    (A0) occurs (In) (default: 1) days before (E0) (default: today).
     Using only the A place thus defaults to "yesterday".
   short: "days before"
 e zde dena:
   family: "C2"
-  long: (Ad) is today.
+  long: (A0) occurs today.
   short: "today"
-  
-
 
 i len po bu:
   family: "C3"
