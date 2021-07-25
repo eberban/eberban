@@ -1693,15 +1693,11 @@ dara:
   long: "(Ac) comes (In) (default: 1) places before [Ec] in sequence (Os)"
   short: "comes before"
   switch: true
-sla:
+vaoni:
   family: "R"
-  long: |
-    (Ad) refers to a proposition/event that is true/occurs.
-
-    Allows to use invidivuals representing events in proposition places.
-
-    {zde va sla emenedena fe mi van mao zbur} = Tomorrow I'll go to the city.
-  short: "event"
+  long: "(Ac) can be metaphorically compared to [Ec]."
+  short: "metaphor"
+  switch: true
 
 # Compounds (2):
 e tsen ban:
