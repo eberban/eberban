@@ -1,1 +1,1 @@
-module.exports.words_en = require('../../dictionary/en.yaml');
+module.exports.dictionary_en = require('../../dictionary/en.yaml');

@@ -1,10 +1,10 @@
-const { words_en: words } = require('../src/dictionary');
+let { dictionary_en: dictionary } = require('../src/dictionary');
 
 const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'a', 'e', 'i', 'o', 'u' ];
 
-const words_sorted = Object.keys(words)
-	.filter(word => !ignored.includes(word))
-	.sort();
+const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort();
+
+words_sorted.forEach((word) => (dictionary[word].without_spaces = word.replaceAll(' ', '').toLowerCase()));
 
 export function count_word_types() {
 	let roots = 0;
@@ -12,28 +12,25 @@ export function count_word_types() {
 	let compounds = 0;
 
 	words_sorted.forEach((w) => {
-		if(words[w].family.startsWith("C"))
-			compounds++;
-		else if(words[w].family == 'R')
-			roots++;
-		else
-			particles++;
+		if (dictionary[w].family.startsWith('C')) compounds++;
+		else if (dictionary[w].family == 'R') roots++;
+		else particles++;
 	});
 
-	return {roots, particles, compounds};
+	return { roots, particles, compounds };
 }
 
 function html_word_entry(word, entry) {
 	var output = `<div class="dictionary-entry well well-small"><h3>`;
 
-	if(entry.family.startsWith('C')) {
-		word.split(' ').forEach(part => {
+	if (entry.family.startsWith('C')) {
+		word.split(' ').forEach((part) => {
 			if (ignored.includes(part[0])) {
 				output += `${part} `;
 			} else {
-				output += `<a href="#" class="dictionary-word-link">${part}</a> `
+				output += `<a href="#" class="dictionary-word-link">${part}</a> `;
 			}
-		})
+		});
 
 		output += ': ';
 	} else {
@@ -60,32 +57,32 @@ function html_word_entry(word, entry) {
 
 	paragraphs.forEach((p) => {
 		p = escapeHTML(p);
-		p = p.replace(/\(((A|E|I|O)(\d|c|d|n|s(\d|_)?)?)\)/g,'<span class="label label-success place">$&</span>')
-		p = p.replace(/\[((A|E|I|O)(\d|c|d|n|s(\d|_)?)?)\]/g,'<span class="label label-important place">$&</span>')
+		p = p.replace(/\(((A|E|I|O)(\d|c|d|n|s(\d|_)?)?)\)/g, '<span class="label label-success place">$&</span>');
+		p = p.replace(/\[((A|E|I|O)(\d|c|d|n|s(\d|_)?)?)\]/g, '<span class="label label-important place">$&</span>');
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');
 
 			list.forEach((word) => {
-				out += `<a href="#" class="dictionary-word-link">${word}</a> `
-			})
+				out += `<a href="#" class="dictionary-word-link">${word}</a> `;
+			});
 
 			out += '</em>';
 
 			return out;
 		});
 
-		output += `<p>${p}</p>`
-	})
+		output += `<p>${p}</p>`;
+	});
 
 	output += `</div>`;
 	return output;
 }
 
-function escapeHTML(str){
-    var p = document.createElement("p");
-    p.appendChild(document.createTextNode(str));
-    return p.innerHTML;
+function escapeHTML(str) {
+	var p = document.createElement('p');
+	p.appendChild(document.createTextNode(str));
+	return p.innerHTML;
 }
 
 export function html_dictionary(filters) {
@@ -101,11 +98,11 @@ export function html_dictionary(filters) {
 			if (filter.startsWith('#')) {
 				filter = filter.slice(1);
 
-				if (words[word].tags == undefined || !words[word].tags.includes(filter)) {
+				if (dictionary[word].tags == undefined || !dictionary[word].tags.includes(filter)) {
 					return;
 				}
 			} else if (filter.startsWith('@')) {
-				if (words[word].family != filter.slice(1).toUpperCase()) {
+				if (dictionary[word].family != filter.slice(1).toUpperCase()) {
 					return;
 				}
 			} else {
@@ -116,8 +113,9 @@ export function html_dictionary(filters) {
 				if (
 					!(
 						word.includes(filter) ||
-						words[word].short.toLowerCase().includes(filter) ||
-						words[word].long.toLowerCase().includes(filter)
+						dictionary[word].without_spaces.includes(filter) ||
+						dictionary[word].short.toLowerCase().includes(filter) ||
+						dictionary[word].long.toLowerCase().includes(filter)
 					)
 				) {
 					return;
@@ -126,15 +124,15 @@ export function html_dictionary(filters) {
 		}
 
 		// Cache html output.
-		if (words[word].html_output == undefined) {
-			words[word].html_output = html_word_entry(word, words[word]);
+		if (dictionary[word].html_output == undefined) {
+			dictionary[word].html_output = html_word_entry(word, dictionary[word]);
 		}
 
 		if (exact_match) {
 			// Exact match => first entry
-			output = words[word].html_output + output;
+			output = dictionary[word].html_output + output;
 		} else {
-			output += words[word].html_output;
+			output += dictionary[word].html_output;
 		}
 	});
 
