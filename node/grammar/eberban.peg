@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.37.3
+# eberban PEG grammar - v0.38
 # ===========================
 
 # GRAMMAR
@@ -34,7 +34,7 @@ va_scope_first <- BI_clause? VA_clause scope
 va_scope_next <- BI_clause? FA_clause scope
 
 # predicate unit
-predicate <- (SA_clause / ZA_clause)* predicate_1
+predicate <- (SA_clause !SA_clause / ZA_clause)* predicate_1
 predicate_1 <- predicate_simple / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
 
 predicate_root <- free_prefix* spaces? root free_post*
@@ -86,7 +86,7 @@ DO_clause           <- free_prefix* spaces? DO                                 #
 DOI_clause          <- free_prefix* spaces? DOI                                # free parenthetical terminator
 DU_clause           <- free_prefix* spaces? DU  free_post*                     # free particle override
 
-SA_clause           <- free_prefix* spaces? SA  free_post* override?           # place binding tag
+SA_clause           <- free_prefix* spaces? SA  free_post* override?           # chaining override
 ZA_clause           <- free_prefix* spaces? ZA  free_post* override?           # predicate transformation
 VA_clause           <- free_prefix* spaces? VA  free_post* override?           # explicit switch + VA-scope
 FA_clause           <- free_prefix* spaces? FA  free_post* override?           # next explicit switch

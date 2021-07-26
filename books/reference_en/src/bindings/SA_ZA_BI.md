@@ -2,6 +2,8 @@
 
 ## SA
 
+> __Deprecated :__ __SA__ no longer works that way.
+
 **SA** allow to change which is the **left chaining place** of the following
 predicate unit. Other **SA** allow to use special variables that are related
 to the predicate unit. If the predicate unit don't have a bracket place, the

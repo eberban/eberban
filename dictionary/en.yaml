@@ -405,20 +405,72 @@ vai:
   tags: [terminator, elidable]
 sa:
   family: "SA"
-  long: "(A) place binding tag."
-  short: "(A)"
+  long: |
+    Bind A place and disable switching.
+    This is the default behavior of non switch predicates.
+  short: "A|A"
 se:
   family: "SA"
-  long: "(E) place binding tag."
-  short: "(E)"
+  long: "Bind E place and disable switching."
+  short: "E|E"
 si:
   family: "SA"
-  long: "(I) place binding tag."
-  short: "(I)"
+  long: "Bind I place and disable switching."
+  short: "I|I"
 so:
   family: "SA"
-  long: "(O) place binding tag."
-  short: "(O)"
+  long: "Bind O place and disable switching."
+  short: "O|O"
+sae:
+  family: "SA"
+  long: |
+    Bind A place then switch to the E place.
+    This is the default behavior of switch predicates.
+  short: "A|E"
+sai:
+  family: "SA"
+  long: Bind A place then switch to the I place.
+  short: "A|I"
+sao:
+  family: "SA"
+  long: Bind A place then switch to the O place.
+  short: "A|O"
+sea:
+  family: "SA"
+  long: Bind E place then switch to the A place.
+  short: "E|A"
+sei:
+  family: "SA"
+  long: Bind E place then switch to the I place.
+  short: "E|I"
+seo:
+  family: "SA"
+  long: Bind E place then switch to the O place.
+  short: "E|O"
+sia:
+  family: "SA"
+  long: Bind I place then switch to the A place.
+  short: "I|A"
+sie:
+  family: "SA"
+  long: Bind I place then switch to the E place.
+  short: "I|E"
+sio:
+  family: "SA"
+  long: Bind I place then switch to the O place.
+  short: "I|O"
+soa:
+  family: "SA"
+  long: Bind O place then switch to the A place.
+  short: "O|A"
+soe:
+  family: "SA"
+  long: Bind O place then switch to the E place.
+  short: "O|E"
+soi:
+  family: "SA"
+  long: Bind O place then switch to the I place.
+  short: "O|I"
 za:
   family: "ZA"
   long: "(Ac) is named [predicate-(A)]."
@@ -1698,6 +1750,10 @@ vaoni:
   long: "(Ac) can be metaphorically compared to [Ec]."
   short: "metaphor"
   switch: true
+kroni:
+  family: "R"
+  long: "(Ad) is a leg."
+  short: "leg"
 
 # Compounds (2):
 e tsen ban:
