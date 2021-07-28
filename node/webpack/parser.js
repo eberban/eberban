@@ -57,10 +57,11 @@ const boxClassForTypeMap = new Map([
 	[ 'foreign quote', 'box box-borrowing' ],
 
 	// free
-	[ 'indicator', 'box box-note' ],
-	[ 'discursive', 'box box-note' ],
+	[ 'metadata', 'box box-note' ],
+	[ 'interjection', 'box box-note' ],
 	[ 'subscript', 'box box-note' ],
-	[ 'parenthetical', 'box box-note' ]
+	[ 'parenthetical', 'box box-note' ],
+	[ 'override', 'box box-note' ],
 ]);
 
 function boxClassForType(parse) {

@@ -35,10 +35,11 @@ const important_types = [
 	[ 'predicate_scope', 'predicate scope' ],
 
 	// free
-	[ 'free_prefix', 'prefix' ],
+	[ 'free_metadata', 'metadata' ],
+	[ 'free_interjection', 'interjection' ],
 	[ 'free_parenthetical', 'parenthetical' ],
 	[ 'free_subscript', 'subscript' ],
-	[ 'free_override', 'override' ],
+	[ 'override', 'override' ],
 ];
 
 // List of simplifying functions.

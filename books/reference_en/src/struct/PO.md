@@ -15,6 +15,6 @@ asking. No arguments only ask if the proposition is true or false.
 
 ## Exemple
 
-*po ga mlian dzo (poi)* (We define "ga" as the property of being a black cat.)
+*po ga mian dzo (poi)* (We define "ga" as the property of being a black cat.)
 *pa mi don tun ga* (I like all things that satisfies "ga".)
 

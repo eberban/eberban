@@ -329,29 +329,29 @@ tehiu:
   long: "Vector tag 7"
   short: "vec 7"
   tags: [separator, number]
-la:
-  family: "LA"
+ca:
+  family: "CA"
   long: "Starts grammatically correct eberban quote. (Ad) is text [quote]."
   short: ""
-lai:
-  family: "LAI"
+cai:
+  family: "CAI"
   long: "Ends grammatically correct eberban quote."
   short: ""
   tags: [terminator]
-le:
-  family: "LE"
+ce:
+  family: "CE"
   long: "Quote next word. (Ad) is word [word]."
   short: "[word]"
-lei:
-  family: "LE"
+cei:
+  family: "CE"
   long: "(Ad) is the family of word [word]."
   short: "[family]"
-leu:
-  family: "LE"
+ceu:
+  family: "CE"
   long: "Provides a predicate describing the meaning of the following particle."
   short: "[meaning]"
-lo:
-  family: "LO"
+co:
+  family: "CO"
   long: "(Ad) is a quote of an arbitrary string of space separated \"words\"."
   short: ""
 fa:
@@ -551,15 +551,15 @@ pu:
   short: "[paragraph]"
 da:
   family: "DA"
-  long: "Emphasis indicator : the next word is especially emphasized."
+  long: "Emphasis indicator : the attached word is especially emphasized."
   short: "[emphasis]"
 daha:
   family: "DA"
-  long: "Nonce-word indicator : the next word (usually a compound) may be non-standard."
+  long: "Nonce-word indicator : the attached word (usually a compound) may be non-standard."
   short: "[non-standard]"
 dahe:
   family: "DA"
-  long: "Next word is a metadata tag / hashtag."
+  long: "Attached word is a metadata tag / hashtag."
   short: "[metadata]"
 dae:
   family: "DA"
@@ -577,6 +577,10 @@ dau:
   family: "DA"
   long: "Uniquely/only/solely."
   short: "[uniquely]"
+de:
+  family: "DE"
+  long: "Attach a single predicate that acts as an interjection."
+  short: ""
 di:
   family: "DI"
   long: "Attaches a subscript number/string."
@@ -584,7 +588,7 @@ di:
 du:
   family: "DU"
   long: "Override particule meaning with provided predicate."
-  short: "[override]"
+  short: ""
 do:
   family: "DO"
   long: "Starts parenthetical note."
@@ -841,65 +845,61 @@ tana:
 
 keun:
   family: "R"
-  long: "(Ad) (default: speaker) is at the starting point of [Ed]."
+  long: "(Ad) is a starting point of [Ed]."
   short: "space start"
   switch: true
   tags: [space, interval]
 daen:
   family: "R"
-  long: "(Ad) (default: speaker) is between the starting and end point of [Ed]."
+  long: "(Ad) is between the starting and end point of [Ed]."
   short: "space between"
   switch: true
   tags: [space, interval]
 moan:
   family: "R"
-  long: "(Ad) (default: speaker) is at an halt/interruption of [Ed]."
+  long: "(Ad) is a halt/interruption of [Ed]."
   short: "space halt"
   switch: true
   tags: [space, interval]
 taon:
   family: "R"
-  long: "(Ad) (default: speaker) is at the resumption of [Ed]."
+  long: "(Ad) is the resumption of [Ed]."
   short: "space resumption"
   switch: true
   tags: [space, interval]
 cuan:
   family: "R"
-  long: "(Ad) (default: speaker) is at the end point of [Ed]."
+  long: "(Ad) is an end point of [Ed]."
   short: "space end"
   switch: true
   tags: [space, interval]
 
 keur:
   family: "R"
-  long: "(A0) (default: now) is at the starting point of [E0] (default: now)."
+  long: "(A0) begins to occur/be true."
   short: "time start"
-  switch: true
   tags: [time, interval]
 daer:
   family: "R"
-  long: "(A0) (default: now) is between the starting and end point of [E0] (default: now)."
+  long: "A (non-final) slice of (A0) is ongoingly happening."
   short: "time between"
-  switch: true
   tags: [time, interval]
 moar:
   family: "R"
-  long: "(A0) (default: now) is at an halt/interruption of [E0] (default: now)."
+  long: "(A0) halts/temporarly cease to be true/is paused."
   short: "time halt"
-  switch: true
   tags: [time, interval]
 taor:
   family: "R"
-  long: "(A0) (default: now) is at the resumption of [E0] (default: now)."
+  long: "(A0) resumes after being halted."
   short: "time resumption"
-  switch: true
   tags: [time, interval]
 cuar:
   family: "R"
-  long: "(A0) (default: now) is at the end point of [E0] (default: now)."
+  long: "(A0) stops to occur/be true."
   short: "time end"
-  switch: true
   tags: [time, interval]
+
 mura:
   family: "R"
   long: "(A0) is regular/occurs regularly."
@@ -925,7 +925,7 @@ fena:
   long: "(Ad) is inside/within [Ed]."
   short: "inside"
   tags: [space]
-laro:
+jaro:
   family: "R"
   long: "(Ad) is outside [Ed]."
   short: "outside"
@@ -992,11 +992,11 @@ kre:
     [Ed] is the one satisfying (I1), and (Ad) doesn't need to satisfy (I1).
   short: "helps"
   switch: true
-luenu:
+vaule:
   family: "R"
   long: "(Ad) is milk."
   short: "milk"
-mlian:
+mian:
   family: "R"
   long: "(Ad) is a cat."
   short: "cat"
@@ -1208,7 +1208,7 @@ tur:
   short: "infinite"
   switch: true
   tags: [number]
-zbur:
+peol:
   family: "R"
   long: "(Ad) is a town/city."
   short: "city"
@@ -1446,7 +1446,7 @@ pure:
   long: "(Ad) hears/listen to [Ed]."
   short: "hears"
   switch: true
-len:
+cen:
   family: "R"
   long: "(Ad) is a word."
   short: "word"
@@ -1482,7 +1482,7 @@ djio:
   long: "(Ad) is a gaz [state of matter]."
   short: "gaz"
   tags: [matter]
-leno:
+jeno:
   family: "R"
   long: "(Ad) is water."
   short: "water"
@@ -1525,7 +1525,7 @@ bjan:
   long: "(Ad) is behaves friendly/kindly towards [Ed]."
   short: "friendly"
   switch: true
-lane:
+slari:
   family: "R"
   long: "(Ad) is a rule/law prescribing/mandating/requiring [E0]."
   short: "rule"
@@ -1629,7 +1629,7 @@ bion:
   long: "(Ad) is ill/sick from disease [Ed]."
   short: "sick"
   switch: true
-leun:
+saul:
   family: "R"
   long: "(Ad) is light [energy]."
   short: "light"
@@ -1702,7 +1702,7 @@ sora:
   family: "R"
   long: (Ad) is a star.
   short: "star"
-luna:
+zila:
   family: "R"
   long: "(Ad) is a major natural satellite/moon."
   short: "moon"
@@ -1745,7 +1745,7 @@ dara:
   long: "(Ac) comes (In) (default: 1) places before [Ec] in sequence (Os)"
   short: "comes before"
   switch: true
-vaoni:
+marne:
   family: "R"
   long: "(Ac) can be metaphorically compared to [Ec]."
   short: "metaphor"
@@ -1754,6 +1754,37 @@ kroni:
   family: "R"
   long: "(Ad) is a leg."
   short: "leg"
+kani:
+  family: "R"
+  long: "(Ad) infers from their current sensorial experience that [E0] is the case."
+  short: "infers from senses"
+  switch: true
+mara:
+  family: "R"
+  long: "(Ad) remembers the past experience of perceiving that [E0] was the case."
+  short: "remembers"
+  switch: true
+zule:
+  family: "R"
+  long: "(Ad) has got second-hand information or hearsay according to which [E0] is the case."
+  short: "hearsay"
+  switch: true
+muni:
+  family: "R"
+  long: "(Ad) intuits that [E0] is the case."
+  short: "intuits"
+  switch: true
+sana:
+  family: "R"
+  long: "(Ad) has cultural knowledge, collective wisdom according to which [E0] is the case."
+  short: "cultural knowledge"
+  switch: true
+valo:
+  family: "R"
+  long: "(Ad) infers (from several sources of information) that [E0] is the case."
+  short: "infers from multiple sources"
+  switch: true
+
 
 # Compounds (2):
 e tsen ban:
@@ -2038,7 +2069,7 @@ e zde dena:
   long: (A0) occurs today.
   short: "today"
 
-i len po bu:
+i cen po bu:
   family: "C3"
   long: "(Ad) is a dictionary."
   short: "dictionary"

@@ -1,79 +1,24 @@
 const generators = {
 	A: () => pick_random([ generate_CVCV(1, 0), generate_CCVCV(1, -1) ]),
 	B: () => pick_random([ generate_CVCV(1, 1), generate_CVCV(2, 0), generate_CCVCV(1, 0), generate_CCVCV(2, -1) ]),
-    C: () => pick_random([ generate_CVCV(1, 2), generate_CVCV(2, 1), generate_CVCV(3, 0), generate_CCVCV(1, 1), generate_CCVCV(2, 0) ])
+	C: () =>
+		pick_random([
+			generate_CVCV(1, 2),
+			generate_CVCV(2, 1),
+			generate_CVCV(3, 0),
+			generate_CCVCV(1, 1),
+			generate_CCVCV(2, 0)
+		]),
+	D: () =>
+		pick_random([
+			// bias towards CVCCV :p
+			generate_CVCCV(1, 1),
+			generate_CVCCV(1, 1),
+			generate_CVCCV(1, 1),
+			generate_CVhVC(),
+			generate_CCVhV()
+		])
 };
-
-const single = [ 'b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'p', 's', 't', 'v', 'z' ];
-
-const pair = [
-	'cp',
-	'ct',
-	'ck',
-	'cf',
-	'cm',
-	'cn',
-	'cl',
-	'cr',
-	'sp',
-	'st',
-	'sk',
-	'sf',
-	'sm',
-	'sn',
-	'sl',
-	'sr',
-	'jb',
-	'jd',
-	'jg',
-	'jv',
-	'jm',
-	'jn',
-	'jl',
-	'jr',
-	'zb',
-	'zd',
-	'zg',
-	'zv',
-	'zm',
-	'zn',
-	'zl',
-	'zr',
-
-	'pl',
-	'pr',
-	'tr',
-	'kl',
-	'kr',
-	'fl',
-	'fr',
-	'bl',
-	'br',
-	'dr',
-	'gl',
-	'gr',
-	'vl',
-	'vr',
-	'ml',
-	'mr',
-
-	'tc',
-	'ts',
-	'dj',
-	'dz',
-	'kc',
-	'ks',
-	'gj',
-	'gz',
-	'pc',
-	'ps',
-	'bj',
-	'bz'
-];
-
-const vowel = [ 'a', 'e', 'o', 'i', 'u' ];
-
-const sonorant = [ 'n', 'r' ];
 
 function rand(upper) {
 	return Math.floor(Math.random() * upper);
@@ -119,7 +64,7 @@ function generate_CVCV(v1, v2) {
 
 function generate_CCVCV(v1, v2) {
 	var word = '';
-	word += pick_random(pair);
+	word += pick_random(initial_pair);
 	word += generate_vowels(v1);
 
 	if (v2 >= 0) {
@@ -130,6 +75,150 @@ function generate_CCVCV(v1, v2) {
 
 	return word;
 }
+
+function generate_CVCCV(v1, v2) {
+	var word = '';
+	word += pick_random(single);
+	word += generate_vowels(v1);
+
+	if (v2 >= 0) {
+		word += pick_random(middle_pair);
+	}
+
+	word += generate_vowels(v2);
+
+	return word;
+}
+
+function generate_CVhVC() {
+	var word = '';
+	word += pick_random(single);
+	word += generate_vowels(1);
+	word += 'h';
+	word += generate_vowels(1);
+	word += pick_random(sonorant);
+	return word;
+}
+
+function generate_CCVhV() {
+	var word = '';
+	word += pick_random(initial_pair);
+	word += generate_vowels(1);
+	word += 'h';
+	word += generate_vowels(1);
+	return word;
+}
+
+const vowel = [ 'a', 'e', 'o', 'i', 'u' ];
+const sonorant = [ 'n', 'r', 'l' ];
+const single = [ 'b', 'c', 'd', 'f', 'g', 'j', 'k', 'm', 'p', 's', 't', 'v', 'z' ];
+const initial_pair = [
+	'bj',
+	'bz',
+	'bl',
+	'br',
+	'cf',
+	'ck',
+	'cm',
+	'cp',
+	'ct',
+	'cn',
+	'cl',
+	'cr',
+	'dj',
+	'dz',
+	'dr',
+	'fn',
+	'fl',
+	'fr',
+	'gj',
+	'gz',
+	'gn',
+	'gl',
+	'gr',
+	'jb',
+	'jd',
+	'jg',
+	'jm',
+	'jv',
+	'jn',
+	'jl',
+	'jr',
+	'kc',
+	'ks',
+	'kn',
+	'kl',
+	'kr',
+	'ml',
+	'mr',
+	'pc',
+	'ps',
+	'pl',
+	'pr',
+	'sf',
+	'sk',
+	'sm',
+	'sp',
+	'st',
+	'sn',
+	'sl',
+	'sr',
+	'tc',
+	'ts',
+	'tr',
+	'vn',
+	'vl',
+	'vr',
+	'zb',
+	'zd',
+	'zg',
+	'zm',
+	'zv',
+	'zn',
+	'zl',
+	'zr'
+];
+const middle_pair = [
+	'bd',
+	'bg',
+	'bm',
+	'bv',
+	'db',
+	'dg',
+	'dm',
+	'dv',
+	'fc',
+	'fk',
+	'fp',
+	'fs',
+	'ft',
+	'gb',
+	'gd',
+	'gm',
+	'gv',
+	'kf',
+	'km',
+	'kp',
+	'kt',
+	'mn',
+	'pf',
+	'pk',
+	'pm',
+	'pt',
+	'tf',
+	'tk',
+	'tm',
+	'tp',
+	'vb',
+	'vd',
+	'vg',
+	'vj',
+	'vz',
+	'nl',
+	'nr',
+	'ln',
+	'rn'
+];
 
 module.exports.generators = generators;
 module.exports.repeat = repeat;
