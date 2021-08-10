@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.39
+# eberban PEG grammar - v0.39.1
 # ===========================
 
 # GRAMMAR
@@ -193,17 +193,16 @@ aeiou <- a / e / i / o / u
 consonant_cluster <- !(sonorant sonorant sonorant) consonant consonant? consonant? !consonant
 
 middle_pair <- !initial_pair &middle_patterns consonant consonant !consonant
-middle_patterns <- (middle_n / middle_sonorants / middle_plosive / middle_sibilant)
-middle_n <- (m / liquid) n
-middle_sonorants <- n liquid
-middle_plosive <- (f / v)? plosive (f / v / plosive / m)? !consonant
-middle_sibilant <- (f / v / sonorant) sibilant
+middle_patterns <- (middle_n / middle_fv / middle_plosive)
+middle_n <- (m / liquid) n / n liquid
+middle_fv <- (f / v) (plosive / sibilant / m)
+middle_plosive <- plosive (f / v / plosive / m)
 
 initial_pair <- &initial consonant consonant !consonant
 initial <- (plosib / sibilant? other? sonorant?) !consonant
 
 plosib <- plosive sibilant
-other <- (p / b / m) !n / (t / d) !n !l / v / f / k / g / n !liquid
+other <- (p / b) !n / (t / d) !n !l / v / f / k / g / m / n !liquid
 plosive <- t / d / k / g / p / b
 
 consonant <- (voiced / unvoiced / liquid / nasal) 
@@ -243,7 +242,6 @@ m <- [mM] !m # <LEAF>
 # - Spaces / Pause
 post_word <- (pause_char &aeiou) / !sonorant &consonant / spaces
 spaces <- space_char+ (pause_char &aeiou)? / pause_char &aeiou / EOF
-
 
 # - Special characters
 pause_char <- (['.]) !pause_char
