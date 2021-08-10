@@ -1784,7 +1784,38 @@ valo:
   long: "(Ad) infers (from several sources of information) that [E0] is the case."
   short: "infers from multiple sources"
   switch: true
-
+bael:
+  family: "R"
+  long: "(Ad) is standing."
+  short: "standing"
+ctua:
+  family: "R"
+  long: "(Ad) is sitting on [Ed]."
+  short: "sit"
+  switch: true
+pron:
+  family: "R"
+  long: "(Ad) is lying down on [Ed]."
+  short: "lying down"
+  switch: true
+gavgi:
+  family: "R"
+  long: " (Ad) is a crystal/gem/mineral with orderly atomic structure (Ed)."
+  short: "crystal"
+jala:
+  family: "R"
+  long: " (Ad) is awake."
+  short: "awake"
+celia:
+  family: "R"
+  long: " (Ad) is the science/study/body of knowledge about topic [Ed]."
+  short: "science"
+  switch: true
+filu:
+  family: "R"
+  long: " (Ad) gives birth to/begets [Ed]."
+  short: "gives birth"
+  switch: true
 
 # Compounds (2):
 e tsen ban:
