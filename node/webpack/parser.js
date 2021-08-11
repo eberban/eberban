@@ -24,7 +24,7 @@ const hideFamily = [
 	'i',
 	'o',
 	'u',
-	'foreign_word',
+	'freeform_content',
 	'foreign_quote_word',
 ]
 
@@ -322,7 +322,6 @@ function constructBoxesOutput(parse, depth) {
 		output += '&nbsp;<div class="tip">' + parse.word;
 
 		if (hideFamily.includes(parse.type)) {
-		// if (parse.type === 'foreign_word' || parse.type === 'foreign_quote_word') {
 			output += '</div>&nbsp;<br></div>';
 			return output;
 		}
@@ -339,7 +338,7 @@ function constructBoxesOutput(parse, depth) {
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
-		} else if (['KA', 'GA', 'borrowing'].includes(parse.type)) {
+		} else if (['KA', 'GA', 'borrowing', "assignable name"].includes(parse.type)) {
 			output += '';
 		} else {
 			output += '...';

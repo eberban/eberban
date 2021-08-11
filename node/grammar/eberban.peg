@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.39.1
+# eberban PEG grammar - v0.40
 # ===========================
 
 # GRAMMAR
@@ -13,7 +13,7 @@ paragraph_unit <- definition / sentence
 arguments_list <- (KA_clause / GA_clause)* PI_clause
 
 definition <- PO_clause definition_key scope POI_clause_elidible
-definition_key <- GA_clause / predicate_compound / predicate_root
+definition_key <- GA_clause / assignable_name / predicate_compound / predicate_root
 sentence <- PA_clause_elidible scope PAI_clause_elidible
 
 # scope
@@ -61,7 +61,7 @@ borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 predicate_simple <- BA_clause / MA_clause
 
 # variables
-predicate_variable <- BO_clause? (KA_clause / GA_clause)
+predicate_variable <- BO_clause? (KA_clause / GA_clause / spaces? assignable_name)
 
 # free affixes
 override <- DU_clause predicate_1 # avoid nested free
@@ -161,19 +161,17 @@ foreign_quote_word <- (!space_char .)+
 foreign_quote_close <- native_word
 
 # - Compounds
-compound <- (compound_2 / compound_3 / compound_4 / compound_n) &post_word
+compound <- (compound_2 / compound_3 / compound_4)
 compound_2 <- e compound_word compound_word
 compound_3 <- i compound_word compound_word compound_word
 compound_4 <- o compound_word compound_word compound_word compound_word
-compound_n <- a compound_word (!compound_n_end compound_word)* compound_n_end
-compound_n_end <- spaces? a &post_word
-compound_word <- spaces? (borrowing / native_word)
+compound_word <- spaces? (compound / borrowing / native_word)
 
-# - Foreign words
-borrowing <-  u (spaces &u / !u) borrowing_content borrowing_end
-borrowing_content <- foreign_word
-borrowing_end <- (pause_char / space_char / EOF)
-foreign_word <- (initial_pair / consonant / h)? haeiou (consonant_cluster haeiou)* sonorant?
+# - Free-form words
+assignable_name <- a (spaces &a / !a) freeform_content freeform_end
+borrowing <- u (spaces &u / !u) freeform_content freeform_end
+freeform_content <- (initial_pair / consonant / h)? haeiou (consonant_cluster haeiou)* sonorant?
+freeform_end <- (pause_char / space_char / EOF)
 
 # - Native words
 native_word <- root / particle

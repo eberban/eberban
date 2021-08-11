@@ -27,7 +27,8 @@ const important_types = [
 	[ 'compound', 'compound' ],
 	[ 'borrowing_group', 'borrowing group' ],
 	[ 'borrowing', 'borrowing' ],
-	[ 'foreign_word', 'foreign' ],
+	[ 'assignable_name', 'assignable name'],
+	[ 'freeform_content', 'freeform' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
@@ -54,6 +55,14 @@ for (let replace of important_types) {
 		};
 	};
 }
+
+var importantTypesMap = {};
+
+// Convert important types array to map.
+for (let type of important_types) {
+	importantTypesMap[type[0]] = type[1];
+}
+
 
 /**
  * This file contains functions that simplify the parse tree returned by camxes.js.
@@ -87,9 +96,16 @@ for (let replace of important_types) {
 function simplifyTree(parse) {
 	// if it is a terminal, just return that
 	if (parse.length == 2 && is_string(parse[0]) && is_string(parse[1])) {
+		let type = parse[0];
+
+		if (importantTypesMap[type] != undefined)
+			type = importantTypesMap[type];
+
+		console.log(type);
+
 		return [
 			{
-				type: parse[0],
+				type: type,
 				word: parse[1]
 			}
 		];
