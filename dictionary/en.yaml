@@ -80,8 +80,21 @@ mo:
 mio:
   family: "MA"
   long: "(Ad) is I/a speaker/author or you, a listener."
-  short: "we"
+  short: "inclusive we"
+mie:
+  family: "MA"
+  long: "(Ad) is I/a speaker/author or someone, neither a speaker or listener."
+  short: "exclusive we"
 ma:
+  family: "MA"
+  long: |
+    (Ad) exists.
+
+    Performs no restrictions over the existential variable.
+    However, it can be useful to more precisely control the scope of existential
+    claims, or perform tricks using the chaining system.
+  short: "exists"
+mau:
   family: "MA"
   long: |
     (Ad) is not bound outside of this scope.
@@ -89,10 +102,6 @@ ma:
     Can be used with {sen} to define the default meaning of a unbound parameter.
     Use {zoi} for predicate places.
   short: "unbound"
-me:
-  family: "MA"
-  long: "(Ad) is someone, neither a speaker or listener."
-  short: "other"
 mai:
   family: "MA"
   long: |
@@ -107,6 +116,10 @@ mao:
     The speaker has a specific individual in mind and the listener is expected
     to know which one from context.
   short: "the"
+me:
+  family: "MA"
+  long: "(Ad) is someone, neither a speaker or listener."
+  short: "other"
 mei:
   family: "MA"
   long: "(Ad) is this here, near a speaker."
@@ -121,19 +134,19 @@ meu:
   short: "that yonder"
 mua:
   family: "MA"
-  long: "(A0) is the last/previous proposition."
+  long: "States the last/previous proposition."
   short: "last prop"
 mue:
   family: "MA"
-  long: "(A0) is the proposition (0-ary scope) in which this one is embeded."
+  long: "States the proposition (0-ary scope) in which this one is embeded."
   short: "outer prop"
 mui:
   family: "MA"
-  long: "(A0) is the current proposition."
+  long: "States the current proposition."
   short: "current prop"
 muo:
   family: "MA"
-  long: "(A0) is the next proposition."
+  long: "States the next proposition."
   short: "next prop"
 ba:
   family: "BA"
@@ -697,20 +710,24 @@ cini:
   short: "XOR-P2"
   tags: [list, connective]
 
-kano:
+con:
   family: "R"
-  long: |
-    (Ac) satisfies more property [E1] than (Ic) (default: average thing satisfying property [E1]).
-    [E1] should express a property that can be compared and ordered.
-  short: "more"
+  long: "(An) is greater than [En]."
+  short: ">"
   switch: true
-gere:
+  tags: [maths, ordering]
+cal:
   family: "R"
-  long: |
-    (Ac) satisfies less property [E1] than (Ic) (default: average thing satisfying property [E1]).
-    [E1] should express a property that can be compared and ordered.
-  short: "less"
+  long: "(An) is less than [En]."
+  short: "<"
   switch: true
+  tags: [maths, ordering]
+cpu:
+  family: "R"
+  long: "(An) is equal to [En]."
+  short: "="
+  switch: true
+  tags: [maths, ordering]
 fuir:
   family: "R"
   long: "(Ad) knows fact [E0] from source (Id)."
@@ -824,22 +841,40 @@ zini:
   short: "time length"
   switch: true
   tags: [time, measument]
-cunu:
+zulu:
+  family: "R"
+  long: "(Ad) has an age/elapsed time since birth/creation of [En] (default: 1 year)."
+  short: "age"
+  switch: true
+  tags: [time, measument]
+zgie:
   family: "R"
   long: "(Ad) has length [En] (default: 1 meter)."
   short: "length"
   switch: true
   tags: [space, measument]
-zono:
+fniu:
+  family: "R"
+  long: "(Ad) has height [En] (default: 1 meter)."
+  short: "height"
+  switch: true
+  tags: [space, measument]
+cpea:
   family: "R"
   long: "(Ad) has area [En] (default: 1 square meters)."
   short: "area (measure)"
   switch: true
   tags: [space, measument]
-tana:
+jvao:
   family: "R"
   long: "(Ad) has volume [En] (default: 1 cubic meter)."
   short: "volume (measure)"
+  switch: true
+  tags: [space, measument]
+ckia:
+  family: "R"
+  long: "(Ad) has speed [En] (default: 1 meter/second)."
+  short: "speed"
   switch: true
   tags: [space, measument]
 
@@ -967,6 +1002,7 @@ keru:
   short: "away from"
   switch: true
   tags: [space]
+
 don:
   family: "R"
   long: "(Ad) likes [Ed]."
@@ -1816,6 +1852,82 @@ filu:
   long: " (Ad) gives birth to/begets [Ed]."
   short: "gives birth"
   switch: true
+del:
+  family: "R"
+  long: " (Ad) is a typical/average representative of something that satisfies [E1]."
+  short: "typical"
+  switch: true
+zma:
+  family: "R"
+  long: |
+    (Ad) is the least in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Least" means being the lowest in the population.
+    The property must have a clear ordering strategy.
+  short: "very little"
+  switch: true
+  tags: [intensity]
+zmi:
+  family: "R"
+  long: |
+    (Ad) is moderate in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Moderate" means being close to the median in the population.
+    The property must have a clear ordering strategy.
+  short: "moderate"
+  switch: true
+  tags: [intensity]
+zmu:
+  family: "R"
+  long: |
+    (Ad) is the most in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Most" means being the highest in the population.
+    The property must have a clear ordering strategy.
+  short: "very little"
+  switch: true
+  tags: [intensity]
+zmae:
+  family: "R"
+  long: |
+    (Ad) is very little in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Very little" means being below the first quartile in the population.
+    The property must have a clear ordering strategy.
+  short: "very little"
+  switch: true
+  tags: [intensity]
+zmei:
+  family: "R"
+  long: |
+    (Ad) is little in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Little" means being between the first quartile and the median in the population.
+    The property must have a clear ordering strategy.
+  short: "little"
+  switch: true
+  tags: [intensity]
+zmio:
+  family: "R"
+  long: |
+    (Ad) is much in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Much" means being between the median and the third quartile in the population.
+    The property must have a clear ordering strategy.
+  short: "much"
+  switch: true
+  tags: [intensity]
+zmou:
+  family: "R"
+  long: |
+    (Ad) is very much in property [E1] in population/sample (Ic) (default: contextual).
+
+    "Very much" means being between above the third quartile in the population.
+    The property must have a clear ordering strategy.
+  short: "much"
+  switch: true
+  tags: [intensity]
+
 
 # Compounds (2):
 e tsen ban:
@@ -2008,20 +2120,10 @@ e kre vier:
   long: "(Ad) visits [Ed] with guide (Id)."
   short: "guided visit"
   switch: true
-e tana kano:
-  family: "C2"
-  long: "(Ad) is bigger (in volume) than [Ed]."
-  short: "bigger (volume)"
-  switch: true
-e tana gere:
-  family: "C2"
-  long: "(Ad) is smaller (in volume) than [Ed]."
-  short: "smaller (volume)"
-  switch: true
 e vin zane:
   family: "C2"
   long: "(Ad) is a writing system with symbols (Ed) and set of rules (Is0)."
-  short: "smaller (volume)"
+  short: "writing system"
 e spi tori:
   family: "C2"
   long: "(Ad) is a parrot."
@@ -2099,6 +2201,55 @@ e zde dena:
   family: "C2"
   long: (A0) occurs today.
   short: "today"
+e cpu con:
+  family: "C2"
+  long: "(An) is greater than or equal to [En]."
+  short: "≥"
+  switch: true
+  tags: [maths, ordering]
+e cpu cal:
+  family: "C2"
+  long: "(An) is less than or equal to [En]."
+  short: "≤"
+  switch: true
+  tags: [maths, ordering]
+e fniu cal:
+  family: "C2"
+  long: (Ad) is less tall than [Ed].
+  short: "less tall"
+  switch: true
+  tags: [space, measument, ordering]
+e fniu con:
+  family: "C2"
+  long: (Ad) is taller than [Ed].
+  short: "taller"
+  switch: true
+  tags: [space, measument, ordering]
+e jvao cal:
+  family: "C2"
+  long: (Ad) is smaller/has less volume tall than [Ed].
+  short: "smaller"
+  switch: true
+  tags: [space, measument, ordering]
+e jvao con:
+  family: "R"
+  long: (Ad) is bigger/has more volume than [Ed].
+  short: "bigger "
+  switch: true
+  tags: [space, measument, ordering]
+e zulu cal:
+  family: "C2"
+  long: (Ad) is younger than [Ed].
+  short: "younger"
+  switch: true
+  tags: [time, measument, ordering]
+e zulu con:
+  family: "C2"
+  long: (Ad) is older than [Ed].
+  short: "older"
+  switch: true
+  tags: [time, measument, ordering]
+
 
 i cen po bu:
   family: "C3"
