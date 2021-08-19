@@ -367,6 +367,12 @@ co:
   family: "CO"
   long: "(Ad) is a quote of an arbitrary string of space separated \"words\"."
   short: ""
+cu:
+  family: "CU"
+  long: |
+    Erase the currently sentence/defintion.
+    Used when a mistake is made to redo the sentence/definition."
+  short: "[erased]"
 fa:
   family: "FA"
   long: "Switch to the A place of the predicate before the current VA-scope."
@@ -383,10 +389,10 @@ fo:
   family: "FA"
   long: "Switch to the O place of the predicate before the current VA-scope."
   short: "switch-O"
-fai:
+fu:
   family: "FA"
-  long: "Switch to the implicit switch place of the predicate before the current VA-scope."
-  short: "switch-implicit"
+  long: "Switch to the default switch place of the predicate before the current VA-scope."
+  short: "switch-default"
 fua:
   family: "FA"
   long: "Switch to the same place as the previous FA/VA."
@@ -411,6 +417,10 @@ vo:
   family: "VA"
   long: "Switch to the O place of the predicate word before it, and start a VA-scope."
   short: "〈 switch-O"
+vu:
+  family: "VA"
+  long: "Switch to the default switch place of the predicate word before it, and start a VA-scope."
+  short: "〈 switch-default"
 vai:
   family: "VAI"
   long: "Close the current VA-scope."
@@ -615,6 +625,10 @@ bu:
   family: "BU"
   long: "List separator."
   short: "[list]"
+buhu:
+  family: "BU"
+  long: "Erase the current list item."
+  short: "[erased]"
 be:
   family: "BE"
   long: "Ends string/number/borrowing."
@@ -1047,7 +1061,7 @@ puana:
   long: "(Ad) drinks [Ed]."
   short: "drinks"
   switch: true
-bouri:
+buri:
   family: "R"
   long: "(Ad) eats [Ed]."
   short: "eats"
@@ -1927,6 +1941,10 @@ zmou:
   short: "much"
   switch: true
   tags: [intensity]
+sahar:
+  family: "R"
+  long: " (Ad) is a flower."
+  short: "flower"
 
 
 # Compounds (2):

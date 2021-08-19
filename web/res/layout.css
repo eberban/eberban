@@ -58,9 +58,22 @@ li.implicit {
 	--color-blue: #95caff;
 }
 
-.box.box-sentence {
+.box.box-paragraph-unit {
 	display: block;
 	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	/* background: #ffffff;
+	margin: 2px; */
+}
+
+.erased {
+	opacity: 0.3;
+}
+
+.box.box-sentence {
+	/* display: block;
+	text-align: left; */
 	background: #ffffff;
 	border: 1px black solid;
 	margin: 2px;

@@ -6,6 +6,8 @@ const important_types = [
 	// text
 	[ 'text', 'text' ],
 	[ 'paragraph', 'paragraph' ],
+	[ 'paragraph_unit', 'paragraph unit' ],
+	[ 'paragraph_unit_erased', 'erased' ],
 	[ 'definition', 'definition' ],
 	[ 'sentence', 'sentence' ],
 
@@ -20,14 +22,14 @@ const important_types = [
 	[ 'va_scope_first', 'explicit switch' ],
 	[ 'va_scope_next', 'explicit switch' ],
 	[ 'arguments_list', 'arguments' ],
-	[ 'definition_key', 'defined predicate'],
+	[ 'defined', 'defined predicate'],
 
 	// predicates
 	[ 'predicate', 'predicate' ],
 	[ 'compound', 'compound' ],
 	[ 'borrowing_group', 'borrowing group' ],
 	[ 'borrowing', 'borrowing' ],
-	[ 'assignable_name', 'assignable name'],
+	[ 'freeform_variable', 'freeform variable'],
 	[ 'freeform_content', 'freeform' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],

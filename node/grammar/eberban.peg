@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.40
+# eberban PEG grammar - v0.41
 # ===========================
 
 # GRAMMAR
@@ -8,12 +8,15 @@ text <- (free_interjection / free_parenthetical)* paragraphs? spaces? EOF?
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
 paragraph <- PU_clause? paragraph_unit (&(PA_clause / PO_clause) paragraph_unit)*
-paragraph_unit <- definition / sentence
+
+paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
+paragraph_unit_erased <- paragraph_unit_1 CU_clause
+paragraph_unit_1 <- definition / sentence
 
 arguments_list <- (KA_clause / GA_clause)* PI_clause
 
-definition <- PO_clause definition_key scope POI_clause_elidible
-definition_key <- GA_clause / assignable_name / predicate_compound / predicate_root
+definition <- PO_clause defined scope POI_clause_elidible
+defined <- GA_clause / freeform_variable / predicate_compound / predicate_root
 sentence <- PA_clause_elidible scope PAI_clause_elidible
 
 # scope
@@ -36,7 +39,7 @@ va_scope_next <- BI_clause? FA_clause scope
 # predicate unit
 predicate <- predicate_1 free*
 predicate_1 <- (SA_clause !SA_clause / ZA_clause)* predicate_2
-predicate_2 <- predicate_simple / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
+predicate_2 <- BA_clause / MA_clause / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
 
 predicate_root <- spaces? root
 predicate_number <- spaces? number
@@ -57,11 +60,8 @@ number <- TA_clause+ BE_clause_elidible
 # borrowings
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
-# simple
-predicate_simple <- BA_clause / MA_clause
-
 # variables
-predicate_variable <- BO_clause? (KA_clause / GA_clause / spaces? assignable_name)
+predicate_variable <- BO_clause? (KA_clause / GA_clause / spaces? freeform_variable)
 
 # free affixes
 override <- DU_clause predicate_1 # avoid nested free
@@ -111,6 +111,8 @@ CA_clause  <- spaces? CA                   # grammatical quote starter
 CAI_clause <- spaces? CAI                  # grammatical quote terminator
 CE_clause  <- spaces? CE                   # one word quote
 CO_clause  <- spaces? CO                   # foreign quote
+                                           #
+CU_clause  <- spaces? CU                   # paragraph unit eraser
 
 BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
@@ -124,11 +126,12 @@ BA    <- &particle                   (b a)              &post_word
 BE    <- &particle                   (b &e haeiou)      &post_word
 BI    <- &particle                   (b i)              &post_word
 BO    <- &particle                   (b o)              &post_word
-BU    <- &particle                   (b u)              &post_word
+BU    <- &particle                   (b &u haeiou)      &post_word
 CA    <- &particle !(CAI &post_word) (c &a haeiou)      &post_word
 CAI   <- &particle                   (c a i)            &post_word
 CE    <- &particle                   (c &e haeiou)      &post_word
 CO    <- &particle                   (c &o haeiou)      &post_word
+CU    <- &particle                   (c u)              &post_word
 DA    <- &particle                   (d &a haeiou)      &post_word
 DE    <- &particle                   (d &e haeiou)      &post_word
 DI    <- &particle                   (d i)              &post_word
@@ -168,7 +171,7 @@ compound_4 <- o compound_word compound_word compound_word compound_word
 compound_word <- spaces? (compound / borrowing / native_word)
 
 # - Free-form words
-assignable_name <- a (spaces &a / !a) freeform_content freeform_end
+freeform_variable <- a (spaces &a / !a) freeform_content freeform_end
 borrowing <- u (spaces &u / !u) freeform_content freeform_end
 freeform_content <- (initial_pair / consonant / h)? haeiou (consonant_cluster haeiou)* sonorant?
 freeform_end <- (pause_char / space_char / EOF)

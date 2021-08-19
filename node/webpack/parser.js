@@ -7,6 +7,7 @@ const { dictionary_en: dictionary } = require('../src/dictionary');
 
 const hideTitleList = [
 	'paragraph',
+	'paragraph unit',
 	'sentence',
 	'definition',
 	'scope',
@@ -16,6 +17,7 @@ const hideTitleList = [
 	'chaining negation',
 	'VA-scope',
 	'borrowing group',
+	'erased'
 ];
 
 const hideFamily = [
@@ -32,6 +34,8 @@ const hideFamily = [
 const boxClassForTypeMap = new Map([
 	// text
 	[ 'paragraph', 'box box-paragraph' ],
+	[ 'paragraph unit', 'box box-paragraph-unit' ],
+	[ 'erased', 'erased' ],
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
 	[ 'arguments', 'box box-arguments' ],
@@ -316,7 +320,13 @@ function constructBoxesOutput(parse, depth) {
 	var output = '';
 
 	if (parse.word) {
-		output += '<div class="box box-terminal">';
+		output += '<div class="box box-terminal';
+		
+		if (parse.css_classes != undefined) {
+			output += ` ${parse.css_classes}`;
+		}
+		
+		output += '">';
 
 		// we have a terminal
 		output += '&nbsp;<div class="tip">' + parse.word;
@@ -348,7 +358,23 @@ function constructBoxesOutput(parse, depth) {
 	} else {
 		// we have a non-terminal
 
-		output += '<div class="' + boxClassForType(parse) + '">';
+		output += '<div class="' + boxClassForType(parse);
+
+		if (parse.css_classes != undefined) {
+			output += ` ${parse.css_classes}`;
+		}
+
+		output += '">';
+
+		// handle erased scope list elements
+		if (parse.type === 'list')  {
+			for (var child in parse.children) {
+				if (parse.children[child].word == 'buhu') {
+					parse.children[child].css_classes = 'erased';
+					parse.children[child-1].css_classes = 'erased';
+				}
+			}
+		}
 
 		for (var child in parse.children) {
 			output += constructBoxesOutput(parse.children[child], depth + 1);

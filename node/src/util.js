@@ -66,7 +66,7 @@ function join_expr(n) {
 
 /* Checks whether the argument node is a target for pruning. */
 function is_target_node(n) {
-    return (among(n[0], ["particle", "root", "borrowing", "assignable_name"])
+    return (among(n[0], ["particle", "root", "borrowing", "freeform_variable"])
             || is_family(n[0]));
 }
 
