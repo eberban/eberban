@@ -15,7 +15,7 @@ const hideTitleList = [
 	'predicate',
 	'chaining unit',
 	'chaining negation',
-	'VA-scope',
+	'VE-scope',
 	'borrowing group',
 	'erased'
 ];
@@ -46,7 +46,7 @@ const boxClassForTypeMap = new Map([
 	[ 'list element', 'box box-scope-highlight' ],
 	[ 'chaining unit', 'box box-chaining-unit' ],
 	[ 'chaining negation', 'box box-chaining-neg' ],
-	[ 'VA-scope', 'box box-va-scope' ],
+	[ 'VE-scope', 'box box-va-scope' ],
 
 	// units
 	[ 'predicate', 'box box-predicate' ],
@@ -348,7 +348,7 @@ function constructBoxesOutput(parse, depth) {
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
-		} else if (['KA', 'GA', 'borrowing', "assignable name"].includes(parse.type)) {
+		} else if (['KE', 'GE', 'borrowing', "freeform variable"].includes(parse.type)) {
 			output += '';
 		} else {
 			output += '...';
@@ -392,14 +392,12 @@ function constructBoxesOutput(parse, depth) {
 						}
 					}
 
-					if (compound_text[0] == 'a') {
-						compound = 'a' + extractCanonicalCompound(compound_text, 1, -1).compound;
-					} else if (compound_text[0] == 'e') {
-						compound += 'e' + extractCanonicalCompound(compound_text, 1, 2).compound;
-					} else if (compound_text[0] == 'i') {
-						compound += 'i' + extractCanonicalCompound(compound_text, 1, 3).compound;
+					if (compound_text[0] == 'e') {
+						compound = 'e' + extractCanonicalCompound(compound_text, 1, 2).compound;
+					} else if (compound_text[0] == 'a') {
+						compound += 'a' + extractCanonicalCompound(compound_text, 1, 3).compound;
 					} else if (compound_text[0] == 'o') {
-						compound += 'o' + extractCanonicalCompound(compound_text, 1, 4).compound;
+						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1).compound;
 					}
 
 					output += '<br><b>' + compound + '</b>';
@@ -606,11 +604,9 @@ function showGlossing(text, $element) {
 		if (skip_compound == 0) {
 			let compound = '';
 
-			if (word == 'a') {
-				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 1));
-			} else if (word == 'e') {
+			if (word == 'e') {
 				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 2));
-			} else if (word == 'i') {
+			} else if (word == 'a') {
 				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 3));
 			} else if (word == 'o') {
 				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, -1));
@@ -666,9 +662,9 @@ function extractCanonicalCompound(text, startIndex, length) {
 	while (length != 0) {
 		let item = text[startIndex + offset];
 
-		// a terminator
-		if (item == 'a') {
-			compound += ' a';
+		// o terminator
+		if (item == 'o') {
+			compound += ' o';
 			break;
 		}
 		

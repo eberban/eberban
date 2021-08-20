@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.42
+# eberban PEG grammar - v0.43
 # ===========================
 
 # GRAMMAR
@@ -13,10 +13,10 @@ paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
 paragraph_unit_erased <- paragraph_unit_1 CU_clause
 paragraph_unit_1 <- definition / sentence
 
-arguments_list <- (KA_clause / GA_clause)* PI_clause
+arguments_list <- (KE_clause / GE_clause)* PI_clause
 
 definition <- PO_clause defined scope POI_clause_elidible
-defined <- GA_clause / freeform_variable / predicate_compound / predicate_root
+defined <- GE_clause / freeform_variable / predicate_compound / predicate_root
 sentence <- PA_clause_elidible scope PAI_clause_elidible
 
 # scope
@@ -31,15 +31,15 @@ scope_2 <- chaining
 # chaining and explicit switches
 chaining <- chaining_neg / chaining_unit chaining?
 chaining_neg <- BI_clause chaining_unit+
-chaining_unit <- predicate va_scope?
-va_scope <- va_scope_first va_scope_next* VAI_clause_elidible
-va_scope_first <- BI_clause? VA_clause scope 
-va_scope_next <- BI_clause? FA_clause scope
+chaining_unit <- predicate ve_scope?
+ve_scope <- ve_scope_first ve_scope_next* VEI_clause_elidible
+ve_scope_first <- BI_clause? VE_clause scope 
+ve_scope_next <- BI_clause? FE_clause scope
 
 # predicate unit
 predicate <- predicate_1 free*
-predicate_1 <- (SA_clause !SA_clause / ZA_clause)* predicate_2
-predicate_2 <- BA_clause / MA_clause / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
+predicate_1 <- (SE_clause !SE_clause / ZE_clause)* predicate_2
+predicate_2 <- BA_clause / ME_clause / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
 
 predicate_root <- spaces? root
 predicate_number <- spaces? number
@@ -55,13 +55,13 @@ foreign_quote <- CO_clause spaces? foreign_quote_open spaces foreign_quote_conte
 foreign_quote_content <- (foreign_quote_word spaces)*
 
 # numbers
-number <- TA_clause+ BE_clause_elidible
+number <- TE_clause+ BE_clause_elidible
 
 # borrowings
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
 # variables
-predicate_variable <- BO_clause? (KA_clause / GA_clause / spaces? freeform_variable)
+predicate_variable <- BO_clause? (KE_clause / GE_clause / spaces? freeform_variable)
 
 # free affixes
 override <- DU_clause predicate_1 # avoid nested free
@@ -86,15 +86,15 @@ DO_clause  <- spaces? DO                   # free parenthetical starter
 DOI_clause <- spaces? DOI                  # free parenthetical terminator
 DU_clause  <- spaces? DU                   # free particle override
                                            #
-SA_clause  <- spaces? SA  override?        # chaining override
-ZA_clause  <- spaces? ZA  override?        # predicate transformation
-VA_clause  <- spaces? VA  override? free*  # explicit switch + VA-scope
-FA_clause  <- spaces? FA  override? free*  # next explicit switch
-VAI_clause <- spaces? VAI                  # VA-scope terminator
+SE_clause  <- spaces? SE  override?        # chaining override
+ZE_clause  <- spaces? ZE  override?        # predicate transformation
+VE_clause  <- spaces? VE  override? free*  # explicit switch + VE-scope
+FE_clause  <- spaces? FE  override? free*  # next explicit switch
+VEI_clause <- spaces? VEI                  # VE-scope terminator
                                            #
-GA_clause  <- spaces? GA                   # predicate variables
-KA_clause  <- spaces? KA                   # individual variables
-MA_clause  <- spaces? MA                   # discourse predicates
+GE_clause  <- spaces? GE                   # predicate variables
+KE_clause  <- spaces? KE                   # individual variables
+ME_clause  <- spaces? ME                   # discourse predicates
                                            #
 PA_clause  <- spaces? PA  free*            # sentence starter
 PAI_clause <- spaces? PAI free*            # sentence terminator
@@ -105,7 +105,7 @@ PO_clause  <- spaces? PO  free*            # definition starter
 POI_clause <- spaces? POI free*            # definition terminator
 PU_clause  <- spaces? PU  free*            # paragraph marker
                                            #
-TA_clause  <- spaces? TA                   # numbers/digits
+TE_clause  <- spaces? TE                   # numbers/digits
                                            #
 CA_clause  <- spaces? CA                   # grammatical quote starter
 CAI_clause <- spaces? CAI                  # grammatical quote terminator
@@ -119,42 +119,42 @@ PA_clause_elidible  <- PA_clause?
 PAI_clause_elidible <- PAI_clause?
 PEI_clause_elidible <- PEI_clause?
 POI_clause_elidible <- POI_clause?
-VAI_clause_elidible <- VAI_clause?
+VEI_clause_elidible <- VEI_clause?
 
 # PARTICLE FAMILIES
 BA    <- &particle                   (b a)              &post_word
-BE    <- &particle                   (b &e haeiou)      &post_word
+BE    <- &particle                   (b &e hieaou)      &post_word
 BI    <- &particle                   (b i)              &post_word
 BO    <- &particle                   (b o)              &post_word
-BU    <- &particle                   (b &u haeiou)      &post_word
-CA    <- &particle !(CAI &post_word) (c &a haeiou)      &post_word
+BU    <- &particle                   (b &u hieaou)      &post_word
+CA    <- &particle !(CAI &post_word) (c &a hieaou)      &post_word
 CAI   <- &particle                   (c a i)            &post_word
-CE    <- &particle                   (c &e haeiou)      &post_word
-CO    <- &particle                   (c &o haeiou)      &post_word
+CE    <- &particle                   (c &e hieaou)      &post_word
+CO    <- &particle                   (c &o hieaou)      &post_word
 CU    <- &particle                   (c u)              &post_word
-DA    <- &particle                   (d &a haeiou)      &post_word
-DE    <- &particle                   (d &e haeiou)      &post_word
+DA    <- &particle                   (d &a hieaou)      &post_word
+DE    <- &particle                   (d &e hieaou)      &post_word
 DI    <- &particle                   (d i)              &post_word
 DO    <- &particle                   (d o)              &post_word
 DOI   <- &particle                   (d o i)            &post_word
 DU    <- &particle                   (d u)              &post_word
-FA    <- &particle                   (f haeiou)         &post_word
-GA    <- &particle                   (g haeiou)         &post_word
-KA    <- &particle                   (k haeiou)         &post_word
-MA    <- &particle                   (m haeiou)         &post_word
-PA    <- &particle !(PAI &post_word) (p &a haeiou)      &post_word
+FE    <- &particle                   (f hieaou)         &post_word
+GE    <- &particle                   (g hieaou)         &post_word
+KE    <- &particle                   (k hieaou)         &post_word
+ME    <- &particle                   (m hieaou)         &post_word
+PA    <- &particle !(PAI &post_word) (p &a hieaou)      &post_word
 PAI   <- &particle                   (p a i)            &post_word
 PE    <- &particle                   (p e)              &post_word
 PEI   <- &particle                   (p e i)            &post_word
-PI    <- &particle                   (p &i haeiou)      &post_word
-PO    <- &particle !(POI &post_word) (p &o haeiou)      &post_word
+PI    <- &particle                   (p &i hieaou)      &post_word
+PO    <- &particle !(POI &post_word) (p &o hieaou)      &post_word
 POI   <- &particle                   (p o i)            &post_word
-PU    <- &particle                   (p &u haeiou)      &post_word
-SA    <- &particle                   (s haeiou)         &post_word
-TA    <- &particle                   (t haeiou) / digit &post_word
-VA    <- &particle !(VAI &post_word) (v haeiou)         &post_word
-VAI   <- &particle                   (v a i)            &post_word
-ZA    <- &particle                   (z haeiou)         &post_word
+PU    <- &particle                   (p &u hieaou)      &post_word
+SE    <- &particle                   (s hieaou)         &post_word
+TE    <- &particle                   (t hieaou) / digit &post_word
+VE    <- &particle !(VEI &post_word) (v hieaou)         &post_word
+VEI   <- &particle                   (v e i)            &post_word
+ZE    <- &particle                   (z hieaou)         &post_word
 
 
 # MORPHOLOGY
@@ -164,16 +164,17 @@ foreign_quote_word <- (!space_char .)+
 foreign_quote_close <- native_word
 
 # - Compounds
-compound <- (compound_2 / compound_3 / compound_4)
+compound <- (compound_2 / compound_3 / compound_n)
 compound_2 <- e compound_word compound_word
-compound_3 <- i compound_word compound_word compound_word
-compound_4 <- o compound_word compound_word compound_word compound_word
-compound_word <- spaces? (compound / borrowing / native_word)
+compound_3 <- a compound_word compound_word compound_word
+compound_n <- o (!compound_n_end compound_word)+ compound_n_end
+compound_n_end <- spaces o spaces
+compound_word <- spaces? (borrowing / native_word)
 
 # - Free-form words
-freeform_variable <- a (spaces &a / !a) freeform_content freeform_end
-borrowing <- u (spaces &u / !u) freeform_content freeform_end
-freeform_content <- (initial_pair / consonant / h)? haeiou (consonant_cluster haeiou)* sonorant?
+freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
+borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
+freeform_content <- (initial_pair / consonant / h)? hieaou (consonant_cluster hieaou)* sonorant?
 freeform_end <- (pause_char / space_char / EOF)
 
 # - Native words
@@ -181,19 +182,19 @@ native_word <- root / particle
 particle <- !sonorant particle_1 &post_word
 root <- !sonorant (root_1 / root_2 / root_3) &post_word
 
-particle_1 <- consonant haeiou !medial_pair
+particle_1 <- consonant hieaou !medial_pair
 
-root_1 <- consonant haeiou ((medial_pair / sonorant) haeiou)+ sonorant?
-root_2 <- consonant haeiou sonorant
-root_3 <- initial_pair haeiou ((medial_pair / sonorant) haeiou)* sonorant?
+root_1 <- consonant hieaou (hyphen (medial_pair / sonorant) hieaou)+ sonorant?
+root_2 <- consonant hieaou sonorant
+root_3 <- initial_pair hieaou (hyphen (medial_pair / sonorant) hieaou)* sonorant?
 
 # - Legal clusters
-haeiou <- aeiou+ (h aeiou+)*
-aeiou <- a / e / i / o / u
+hieaou <- ieaou (hyphen h ieaou)*
+ieaou <- vowel (hyphen vowel)*
 
 consonant_cluster <- (consonant_cluster_1 / consonant_cluster_2) !consonant
-consonant_cluster_1 <- &medial_pair consonant initial_pair / medial_pair
-consonant_cluster_2 <- sonorant? (initial_pair / consonant) / sonorant
+consonant_cluster_1 <- hyphen &medial_pair consonant initial_pair / hyphen medial_pair
+consonant_cluster_2 <- sonorant? hyphen (initial_pair / consonant) / sonorant hyphen
 
 medial_pair <- !initial_pair &medial_patterns consonant consonant !consonant
 medial_patterns <- (medial_n / medial_fv / medial_plosive)
@@ -207,19 +208,21 @@ initial <- (plosib / sibilant? other? sonorant?) !consonant
 plosib <- plosive sibilant
 other <- (p / b) !n / (t / d) !n !l / v / f / k / g / m / n !liquid
 plosive <- t / d / k / g / p / b
+sibilant <- c / s / j / z
+sonorant <- n / r / l
 
 consonant <- (voiced / unvoiced / liquid / nasal) 
 nasal <- m / n
 liquid <- l / r
-sibilant <- c / s / j / z
-sonorant <- n / r / l
 voiced <- b / d / g / v / z / j
 unvoiced <- p / t / k / f / s / c
 
+vowel <- i / e / a / o / u
+
 # Legal letters
-a <- [aA] !a # <LEAF>
-e <- [eE] !e # <LEAF>
 i <- [iI] !i # <LEAF>
+e <- [eE] !e # <LEAF>
+a <- [aA] !a # <LEAF>
 o <- [oO] !o # <LEAF>
 u <- [uU] !u # <LEAF>
 
@@ -228,25 +231,26 @@ n <- [nN] !n # <LEAF>
 r <- [rR] !r # <LEAF>
 l <- [lL] !l # <LEAF>
 
-b <- [bB] !b !unvoiced # <LEAF>
-d <- [dD] !d !unvoiced # <LEAF>
-g <- [gG] !g !unvoiced # <LEAF>
-v <- [vV] !v !unvoiced # <LEAF>
-j <- [jJ] !j !z !unvoiced # <LEAF>
-z <- [zZ] !z !j !unvoiced # <LEAF>
-s <- [sS] !s !c !voiced # <LEAF>
-c <- [cC] !c !s !voiced # <LEAF>
-k <- [kK] !k !voiced # <LEAF>
-f <- [fF] !f !voiced # <LEAF>
-p <- [pP] !p !voiced # <LEAF>
-t <- [tT] !t !voiced # <LEAF>
 m <- [mM] !m # <LEAF>
+p <- [pP] !p !voiced # <LEAF>
+b <- [bB] !b !unvoiced # <LEAF>
+f <- [fF] !f !voiced # <LEAF>
+v <- [vV] !v !unvoiced # <LEAF>
+t <- [tT] !t !voiced # <LEAF>
+d <- [dD] !d !unvoiced # <LEAF>
+s <- [sS] !s !c !voiced # <LEAF>
+z <- [zZ] !z !j !unvoiced # <LEAF>
+c <- [cC] !c !s !voiced # <LEAF>
+j <- [jJ] !j !z !unvoiced # <LEAF>
+g <- [gG] !g !unvoiced # <LEAF>
+k <- [kK] !k !voiced # <LEAF>
 
 # - Spaces / Pause
-post_word <- (pause_char &aeiou) / !sonorant &consonant / spaces
-spaces <- space_char+ (pause_char &aeiou)? / pause_char &aeiou / EOF
+post_word <- (pause_char &vowel) / !sonorant &consonant / spaces
+spaces <- space_char+ (pause_char &vowel)? / pause_char &vowel / EOF
 
 # - Special characters
+hyphen <- ([\u2010\u2014\u002D] [\n\r]*)? # hyphens + line break support
 pause_char <- (['.]) !pause_char
 space_char <- [\t\n\r?!\u0020]
 digit <- [.0123456789] # <LEAF2>

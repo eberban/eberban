@@ -18,9 +18,9 @@ const important_types = [
 	[ 'chaining', 'chaining' ],
 	[ 'chaining_neg', 'chaining negation' ],
 	[ 'chaining_unit', 'chaining unit' ],
-	[ 'va_scope', 'VA-scope' ],
-	[ 'va_scope_first', 'explicit switch' ],
-	[ 'va_scope_next', 'explicit switch' ],
+	[ 've_scope', 'VE-scope' ],
+	[ 've_scope_first', 'explicit switch' ],
+	[ 've_scope_next', 'explicit switch' ],
 	[ 'arguments_list', 'arguments' ],
 	[ 'defined', 'defined predicate'],
 
@@ -102,8 +102,6 @@ function simplifyTree(parse) {
 
 		if (importantTypesMap[type] != undefined)
 			type = importantTypesMap[type];
-
-		console.log(type);
 
 		return [
 			{
