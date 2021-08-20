@@ -389,15 +389,35 @@ fo:
   family: "FA"
   long: "Switch to the O place of the predicate before the current VA-scope."
   short: "switch-O"
-fu:
-  family: "FA"
-  long: "Switch to the default switch place of the predicate before the current VA-scope."
-  short: "switch-default"
 fua:
+  family: "FA"
+  long: |
+    Switch to a reference of the A place of the predicate before the current VA-scope.
+    This reference is an individual representing the content of the place.
+  short: "switch-A-ref"
+fue:
+  family: "FA"
+  long: |
+    Switch to a reference of the E place of the predicate before the current VA-scope.
+    This reference is an individual representing the content of the place.
+  short: "switch-E-ref"
+fui:
+  family: "FA"
+  long: |
+    Switch to a reference of the I place of the predicate before the current VA-scope.
+    This reference is an individual representing the content of the place.
+  short: "switch-I-ref"
+fuo:
+  family: "FA"
+  long: |
+    Switch to a reference of the O place of the predicate before the current VA-scope.
+    This reference is an individual representing the content of the place.
+  short: "switch-O-ref"
+foa:
   family: "FA"
   long: "Switch to the same place as the previous FA/VA."
   short: "switch-same"
-fue:
+foe:
   family: "FA"
   long: "Switch to the next place relative to the previous FA/VA."
   short: "switch-next"
@@ -417,10 +437,30 @@ vo:
   family: "VA"
   long: "Switch to the O place of the predicate word before it, and start a VA-scope."
   short: "〈 switch-O"
-vu:
+vua:
   family: "VA"
-  long: "Switch to the default switch place of the predicate word before it, and start a VA-scope."
-  short: "〈 switch-default"
+  long: |
+    Switch to a reference of the A place of the predicate word before it, and start a VA-scope.  
+    This reference is an individual representing the content of the place.
+  short: "〈 switch-A-ref"
+vue:
+  family: "VA"
+  long: |
+    Switch to a reference of the E place of the predicate word before it, and start a VA-scope.  
+    This reference is an individual representing the content of the place.
+  short: "〈 switch-E-ref"
+vui:
+  family: "VA"
+  long: |
+    Switch to a reference of the I place of the predicate word before it, and start a VA-scope.  
+    This reference is an individual representing the content of the place.
+  short: "〈 switch-I-ref"
+vuo:
+  family: "VA"
+  long: |
+    Switch to a reference of the O place of the predicate word before it, and start a VA-scope.  
+    This reference is an individual representing the content of the place.
+  short: "〈 switch-O-ref"
 vai:
   family: "VAI"
   long: "Close the current VA-scope."

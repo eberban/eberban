@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.41
+# eberban PEG grammar - v0.42
 # ===========================
 
 # GRAMMAR
@@ -181,23 +181,25 @@ native_word <- root / particle
 particle <- !sonorant particle_1 &post_word
 root <- !sonorant (root_1 / root_2 / root_3) &post_word
 
-particle_1 <- consonant haeiou !middle_pair
+particle_1 <- consonant haeiou !medial_pair
 
-root_1 <- consonant haeiou ((middle_pair / sonorant) haeiou)+ sonorant?
+root_1 <- consonant haeiou ((medial_pair / sonorant) haeiou)+ sonorant?
 root_2 <- consonant haeiou sonorant
-root_3 <- initial_pair haeiou ((middle_pair / sonorant) haeiou)* sonorant?
+root_3 <- initial_pair haeiou ((medial_pair / sonorant) haeiou)* sonorant?
 
 # - Legal clusters
 haeiou <- aeiou+ (h aeiou+)*
 aeiou <- a / e / i / o / u
 
-consonant_cluster <- !(sonorant sonorant sonorant) consonant consonant? consonant? !consonant
+consonant_cluster <- (consonant_cluster_1 / consonant_cluster_2) !consonant
+consonant_cluster_1 <- &medial_pair consonant initial_pair / medial_pair
+consonant_cluster_2 <- sonorant? (initial_pair / consonant) / sonorant
 
-middle_pair <- !initial_pair &middle_patterns consonant consonant !consonant
-middle_patterns <- (middle_n / middle_fv / middle_plosive)
-middle_n <- (m / liquid) n / n liquid
-middle_fv <- (f / v) (plosive / sibilant / m)
-middle_plosive <- plosive (f / v / plosive / m)
+medial_pair <- !initial_pair &medial_patterns consonant consonant !consonant
+medial_patterns <- (medial_n / medial_fv / medial_plosive)
+medial_n <- (m / liquid) n / n liquid
+medial_fv <- (f / v) (plosive / sibilant / m)
+medial_plosive <- plosive (f / v / plosive / m)
 
 initial_pair <- &initial consonant consonant !consonant
 initial <- (plosib / sibilant? other? sonorant?) !consonant

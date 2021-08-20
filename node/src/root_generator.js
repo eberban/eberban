@@ -82,7 +82,7 @@ function generate_CVCCV(v1, v2) {
 	word += generate_vowels(v1);
 
 	if (v2 >= 0) {
-		word += pick_random(middle_pair);
+		word += pick_random(medial_pair);
 	}
 
 	word += generate_vowels(v2);
@@ -179,7 +179,7 @@ const initial_pair = [
 	'zl',
 	'zr'
 ];
-const middle_pair = [
+const medial_pair = [
 	'bd',
 	'bg',
 	'bm',
