@@ -1030,7 +1030,7 @@ buri:
   family: "R"
   long: "(Ed) eats [Ad]."
   short: "eats"
-sfe:
+zve:
   family: "R"
   long: "(Ed) is female."
   short: "female"
@@ -1151,7 +1151,7 @@ ten:
   long: "(Ec) is a small (subjective) amount of things satisfying [A1]."
   short: "small amount of"
   tags: [group]
-tin:
+tan:
   family: "R"
   long: "(Ec) is a medium (subjective) amount of things satisfying [A1]."
   short: "medium amount of "
@@ -1166,7 +1166,7 @@ tun:
   long: "(Ec) is everything that satisfies [A1]."
   short: "every"
   tags: [group]
-tar:
+tir:
   family: "R"
   long: "(En) is a negligible number in dimension/unit [A1]."
   short: "negligible"
@@ -1176,7 +1176,7 @@ ter:
   long: "(En) is a small number (subjective/contextual) in dimension/unit [A1]."
   short: "small"
   tags: [number]
-tir:
+tar:
   family: "R"
   long: "(En) is a medium number (subjective/contextual) in dimension/unit [A1]."
   short: "medium"
@@ -1605,7 +1605,7 @@ mana:
   family: "R"
   long: |
     (Ed) is a mother of [Ad].
-    Equivalent to {sfe fana}.
+    Equivalent to {zve fana}.
   short: "mother"
   tags: [kinship, family]
 pana:
@@ -1743,7 +1743,7 @@ del:
   family: "R"
   long: " (Ed) is a typical/average representative of something that satisfies [A1]."
   short: "typical"
-zma:
+zmi:
   family: "R"
   long: |
     (Ed) is the least in property [A1] in population/sample (Oc) (default: contextual).
@@ -1752,7 +1752,7 @@ zma:
     The property must have a clear ordering strategy.
   short: "very little"
   tags: [intensity]
-zmi:
+zma:
   family: "R"
   long: |
     (Ed) is moderate in property [A1] in population/sample (Oc) (default: contextual).
@@ -1770,7 +1770,7 @@ zmu:
     The property must have a clear ordering strategy.
   short: "very little"
   tags: [intensity]
-zmae:
+zmia:
   family: "R"
   long: |
     (Ed) is very little in property [A1] in population/sample (Oc) (default: contextual).
@@ -1779,7 +1779,7 @@ zmae:
     The property must have a clear ordering strategy.
   short: "very little"
   tags: [intensity]
-zmei:
+zmae:
   family: "R"
   long: |
     (Ed) is little in property [A1] in population/sample (Oc) (default: contextual).
@@ -1788,7 +1788,7 @@ zmei:
     The property must have a clear ordering strategy.
   short: "little"
   tags: [intensity]
-zmio:
+zmeo:
   family: "R"
   long: |
     (Ed) is much in property [A1] in population/sample (Oc) (default: contextual).
@@ -1810,7 +1810,6 @@ sahar:
   family: "R"
   long: " (Ed) is a flower."
   short: "flower"
-
 
 # Compounds (2):
 e tsen ban:
@@ -1898,12 +1897,12 @@ e utcoson guro:
   short: "North Korea"
   tags: [cultural]
 
-e ta dena:
+e te dena:
   family: "C2"
   long: "(E0) occurs on a Sunday."
   short: "Sunday"
   tags: [time, day]
-e te dena:
+e ta dena:
   family: "C2"
   long: "(E0) occurs on a Monday."
   short: "Monday"
@@ -1918,32 +1917,32 @@ e tu dena:
   long: "(E0) occurs on a Wednesday."
   short: "Wednesday"
   tags: [time, day]
-e tia dena:
+e tei dena:
   family: "C2"
   long: "(E0) occurs on a Thursday."
   short: "Thursday"
   tags: [time, day]
-e tie dena:
+e tai dena:
   family: "C2"
   long: "(E0) occurs on a Friday."
   short: "Friday"
   tags: [time, day]
-e tio dena:
+e toi dena:
   family: "C2"
   long: "(E0) occurs on a Saturday."
   short: "Saturday"
   tags: [time, day]
-e tiu dena:
+e tui dena:
   family: "C2"
   long: "(E0) occurs on a Sunday."
   short: "Sunday"
   tags: [time, day]
-e ta gare:
+e te gare:
   family: "C2"
   long: "(E0) occurs in January."
   short: "January"
   tags: [time, month]
-e te gare:
+e ta gare:
   family: "C2"
   long: "(E0) occurs in February."
   short: "February"
@@ -1958,42 +1957,42 @@ e tu gare:
   long: "(E0) occurs in April."
   short: "April"
   tags: [time, month]
-e tia gare:
+e tai gare:
   family: "C2"
   long: "(E0) occurs in May."
   short: "May"
   tags: [time, month]
-e tie gare:
+e tei gare:
   family: "C2"
   long: "(E0) occurs in June."
   short: "June"
   tags: [time, month]
-e tio gare:
+e toi gare:
   family: "C2"
   long: "(E0) occurs in July."
   short: "July"
   tags: [time, month]
-e tiu gare:
+e tui gare:
   family: "C2"
   long: "(E0) occurs in August."
   short: "August"
   tags: [time, month]
-e tai gare:
+e tie gare:
   family: "C2"
   long: "(E0) occurs in September."
   short: "September"
   tags: [time, month]
-e tei gare:
+e tia gare:
   family: "C2"
   long: "(E0) occurs in October."
   short: "October"
   tags: [time, month]
-e toi gare:
+e tio gare:
   family: "C2"
   long: "(E0) occurs in November."
   short: "October"
   tags: [time, month]
-e tui gare:
+e tiu gare:
   family: "C2"
   long: "(E0) occurs in December."
   short: "December"
@@ -2115,7 +2114,6 @@ e zulu cir:
   long: (Ed) is older than [Ad].
   short: "older"
   tags: [time, measument, ordering]
-
 
 a cen po bu:
   family: "C3"
