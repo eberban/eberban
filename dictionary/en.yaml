@@ -1389,7 +1389,7 @@ sfo:
   short: "relation"
 sfu:
   family: "R"
-  long: "(Ed) is that fact that [E0] is true."
+  long: "(Ed) is the fact that [E0] is true."
   short: "fact"
 tri:
   family: "R"
