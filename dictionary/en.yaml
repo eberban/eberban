@@ -904,27 +904,27 @@ cuan:
 keur:
   family: "R"
   long: "(E0) begins to occur/be true."
-  short: "time start"
+  short: "begins"
   tags: [time, interval]
 daer:
   family: "R"
   long: "A (non-final) slice of (E0) is ongoingly happening."
-  short: "time between"
+  short: "onging"
   tags: [time, interval]
 moar:
   family: "R"
   long: "(E0) halts/temporarly cease to be true/is paused."
-  short: "time halt"
+  short: "halts"
   tags: [time, interval]
 taor:
   family: "R"
   long: "(E0) resumes after being halted."
-  short: "time resumption"
+  short: "resumes"
   tags: [time, interval]
 cuar:
   family: "R"
   long: "(E0) stops to occur/be true."
-  short: "time end"
+  short: "ends"
   tags: [time, interval]
 
 mura:
@@ -1371,10 +1371,32 @@ soane:
 
     Use with {gza} to express who/what steals (Ed).
   short: "stolen"
+sfi:
+  family: "R"
+  long: "(Ed) is the abstract concept of [A0]."
+  short: "concept"
+sfe:
+  family: "R"
+  long: "(Ed) is an event/occurence/instance of [A0] being true."
+  short: "event"
 sfa:
   family: "R"
-  long: "(Ed) is an occurence of [A0] being true."
-  short: "occurence"
+  long: "(Ed) is the property [E1]."
+  short: "property"
+sfo:
+  family: "R"
+  long: "(Ed) is the relation [E2]."
+  short: "relation"
+sfu:
+  family: "R"
+  long: "(Ed) is that fact that [E0] is true."
+  short: "fact"
+tri:
+  family: "R"
+  long: 
+    (Ed) tries/attemps to do/bring about [E0].
+    Success is neither implied or disimplied.
+  short: "attemps"
 tcu:
   family: "R"
   long: "(Ed) requires/needs [A0] to being true. [A0] is a necessity for (Ed)."
@@ -1524,7 +1546,7 @@ slaen:
   family: "R"
   long: "(Ed) is tied/pinned to [Ad]."
   short: "tied"
-sfo:
+gan:
   family: "R"
   long: "(Ed) is something that contains this word."
   short: "this"
