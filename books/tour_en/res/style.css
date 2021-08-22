@@ -5,3 +5,18 @@
     border-top: .1em solid var(--quote-border);
     border-bottom: .1em solid var(--quote-border);
 }
+
+.content img {
+    display: block;
+    margin: auto;
+}
+
+.gloss__abbr {
+    text-transform: none;
+}
+
+.cursive {
+    font-family: freeserif, "times new roman", serif;
+    font-style: italic;
+    font-size: 125%;
+}
