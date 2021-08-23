@@ -1163,7 +1163,7 @@ ton:
   tags: [group]
 tun:
   family: "R"
-  long: "(Ec) is everything that satisfies [A1]."
+  long: "(Ec) are everything/the only things that satisfies [A1] among (Oc) (default: everything)."
   short: "every"
   tags: [group]
 tir:
