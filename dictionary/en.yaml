@@ -1772,7 +1772,7 @@ zmi:
 
     "Least" means being the lowest in the population.
     The property must have a clear ordering strategy.
-  short: "very little"
+  short: "least"
   tags: [intensity]
 zma:
   family: "R"
@@ -1790,7 +1790,7 @@ zmu:
 
     "Most" means being the highest in the population.
     The property must have a clear ordering strategy.
-  short: "very little"
+  short: "most"
   tags: [intensity]
 zmia:
   family: "R"
@@ -2122,7 +2122,7 @@ e jvao cal:
   short: "smaller"
   tags: [space, measument, ordering]
 e jvao cir:
-  family: "R"
+  family: "C2"
   long: (Ed) is bigger/has more volume than [Ad].
   short: "bigger "
   tags: [space, measument, ordering]
