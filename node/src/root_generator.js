@@ -109,7 +109,7 @@ function generate_CCVhV() {
 	return word;
 }
 
-const vowel = [ 'a', 'e', 'o', 'i', 'u' ];
+const vowel = [ 'i', 'e', 'a', 'o', 'u' ];
 const sonorant = [ 'n', 'r', 'l' ];
 const single = [ 'b', 'c', 'd', 'f', 'g', 'j', 'k', 'm', 'p', 's', 't', 'v', 'z' ];
 const initial_pair = [
@@ -128,6 +128,8 @@ const initial_pair = [
 	'dj',
 	'dz',
 	'dr',
+	'fc',
+	'fs',
 	'fn',
 	'fl',
 	'fr',
@@ -167,6 +169,8 @@ const initial_pair = [
 	'tc',
 	'ts',
 	'tr',
+	'vj',
+	'vz',
 	'vn',
 	'vl',
 	'vr',
@@ -188,11 +192,9 @@ const medial_pair = [
 	'dg',
 	'dm',
 	'dv',
-	'fc',
 	'fk',
 	'fm',
 	'fp',
-	'fs',
 	'ft',
 	'gb',
 	'gd',
@@ -213,9 +215,7 @@ const medial_pair = [
 	'vb',
 	'vd',
 	'vg',
-	'vj',
 	'vm',
-	'vz',
 	'nl',
 	'nr',
 	'ln',

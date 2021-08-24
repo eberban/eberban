@@ -761,74 +761,75 @@ zvu:
   short: "evolution"
 zde:
   family: "R"
+  long: "(E0) (default: now) occurs before/is in the past of (A0) (default: now)."
+  short: "past"
+  tags: [time]
+zda:
+  family: "R"
   long: "(E0) (default: now) is true/occurs concurrently with/at the same time as (A0) (default: now)."
   short: "present"
+  tags: [time]
+zdo:
+  family: "R"
+  long: "(E0) (default: now) occurs after/in the future of (A0) (default: now)."
+  short: "future"
   tags: [time]
 skir:
   family: "R"
   long: "(Ed) (default: speaker) is at the same place as [Ad] (default: speaker)."
   short: "same place"
   tags: [space]
-jgo:
-  family: "R"
-  long: "(E0) (default: now) occurs before/is in the past of (A0) (default: now)."
-  short: "past"
-  tags: [time]
-slo:
-  family: "R"
-  long: "(E0) (default: now) occurs after/in the future of (A0) (default: now)."
-  short: "future"
-  tags: [time]
-pcei:
-  family: "R"
-  long: "(Ed) (default: speaker) is backward/to the back of [Ad] (default: speaker)."
-  short: "back"
-  tags: [space, direction]
-vlo:
-  family: "R"
-  long: "(Ed) (default: speaker) is forward/to the front of [Ad] (default: speaker)."
-  short: "front"
-  tags: [space, direction]
-fle:
-  family: "R"
-  long: "(Ed) (default: speaker) is leftward/to the left of [Ad] (default: speaker)."
-  short: "left"
-  tags: [space, direction]
-zre:
-  family: "R"
-  long: "(Ed) (default: speaker) is rightward/to the right of [Ad] (default: speaker)."
-  short: "right"
-  tags: [space, direction]
-gze:
-  family: "R"
-  long: "(Ed) (default: speaker) is below/downwars/down from [Ad] (default: speaker)."
-  short: "down"
-  tags: [space, direction]
 bri:
   family: "R"
   long: "(Ed) (default: speaker) is above/upward/up from [Ad] (default: speaker)."
   short: "up"
   tags: [space, direction]
-cfae:
+brin:
   family: "R"
-  long: "(Ed) (default: speaker) is southward/to the south of [Ad] (default: speaker)."
-  short: "south"
+  long: "(Ed) (default: speaker) is below/downwars/down from [Ad] (default: speaker)."
+  short: "down"
   tags: [space, direction]
-jgao:
+bre:
+  family: "R"
+  long: "(Ed) (default: speaker) is forward/to the front of [Ad] (default: speaker)."
+  short: "front"
+  tags: [space, direction]
+bren:
   family: "R"
   long: "(Ed) (default: speaker) is northward/to the north of [Ad] (default: speaker)."
   short: "north"
   tags: [space, direction]
-troe:
+bra:
   family: "R"
-  long: "(Ed) (default: speaker) is westward/to the west of [Ad] (default: speaker)."
-  short: "west"
+  long: "(Ed) (default: speaker) is backward/to the back of [Ad] (default: speaker)."
+  short: "back"
   tags: [space, direction]
-glea:
+bran:
+  family: "R"
+  long: "(Ed) (default: speaker) is southward/to the south of [Ad] (default: speaker)."
+  short: "south"
+  tags: [space, direction]
+bro:
+  family: "R"
+  long: "(Ed) (default: speaker) is rightward/to the right of [Ad] (default: speaker)."
+  short: "right"
+  tags: [space, direction]
+bron:
   family: "R"
   long: "(Ed) (default: speaker) is eastward/to the east of [Ad] (default: speaker)."
   short: "east"
   tags: [space, direction]
+bru:
+  family: "R"
+  long: "(Ed) (default: speaker) is leftward/to the left of [Ad] (default: speaker)."
+  short: "left"
+  tags: [space, direction]
+brun:
+  family: "R"
+  long: "(Ed) (default: speaker) is westward/to the west of [Ad] (default: speaker)."
+  short: "west"
+  tags: [space, direction]
+
 vuno:
   family: "R"
   long: "(Ed) is at a distance in space of (On) (default: 1 meter) from [Ad] (default: speaker)."
@@ -875,53 +876,53 @@ ckia:
   short: "speed"
   tags: [space, measument]
 
-keun:
+fsi:
   family: "R"
   long: "(Ed) is a starting point of [Ad]."
   short: "space start"
   tags: [space, interval]
-daen:
+fse:
   family: "R"
   long: "(Ed) is between the starting and end point of [Ad]."
   short: "space between"
   tags: [space, interval]
-moan:
+fsa:
   family: "R"
   long: "(Ed) is a halt/interruption of [Ad]."
   short: "space halt"
   tags: [space, interval]
-taon:
+fso:
   family: "R"
   long: "(Ed) is the resumption of [Ad]."
   short: "space resumption"
   tags: [space, interval]
-cuan:
+fsu:
   family: "R"
   long: "(Ed) is an end point of [Ad]."
   short: "space end"
   tags: [space, interval]
 
-keur:
+cmi:
   family: "R"
   long: "(E0) begins to occur/be true."
   short: "begins"
   tags: [time, interval]
-daer:
+cme:
   family: "R"
   long: "A (non-final) slice of (E0) is ongoingly happening."
   short: "onging"
   tags: [time, interval]
-moar:
+cma:
   family: "R"
   long: "(E0) halts/temporarly cease to be true/is paused."
   short: "halts"
   tags: [time, interval]
-taor:
+cmo:
   family: "R"
   long: "(E0) resumes after being halted."
   short: "resumes"
   tags: [time, interval]
-cuar:
+cmu:
   family: "R"
   long: "(E0) stops to occur/be true."
   short: "ends"
@@ -1832,6 +1833,10 @@ sahar:
   family: "R"
   long: " (Ed) is a flower."
   short: "flower"
+vjeo:
+  family: "R"
+  long: " (Ed) holds/grasps [Ad]."
+  short: "holds"
 
 # Compounds (2):
 e tsen ban:
@@ -2080,19 +2085,19 @@ e spur sora:
   family: "C2"
   long: "(Ed) is the home star of species (Ad) (default: humans)."
   short: "home star"
-e slo ganu:
+e zdo ganu:
   family: "C2"
   long: |
     (E0) occurs (On) (default: 1) days after (A0) (default: today).
     Using only the A place thus defaults to "tomorrow".
   short: "days after"
-e jgo ganu:
+e zde ganu:
   family: "C2"
   long: |
     (E0) occurs (On) (default: 1) days before (A0) (default: today).
     Using only the A place thus defaults to "yesterday".
   short: "days before"
-e zde dena:
+e zda dena:
   family: "C2"
   long: (E0) occurs today.
   short: "today"
@@ -2136,6 +2141,10 @@ e zulu cir:
   long: (Ed) is older than [Ad].
   short: "older"
   tags: [time, measument, ordering]
+e jven vjeo:
+  family: "C2"
+  long: (Ed) hugs [Ad].
+  short: "hugs"
 
 a cen po bu:
   family: "C3"

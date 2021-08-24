@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.43.1
+# eberban PEG grammar - v0.43.2
 # =============================
 
 # GRAMMAR
@@ -203,9 +203,8 @@ medial_fv <- (f / v) (plosive / sibilant / m)
 medial_plosive <- plosive (f / v / plosive / m)
 
 initial_pair <- &initial consonant consonant !consonant
-initial <- (plosib / sibilant? other? sonorant?) !consonant
+initial <- ((plosive / f / v) sibilant / sibilant? other? sonorant?) !consonant
 
-plosib <- plosive sibilant
 other <- (p / b) !n / (t / d) !n !l / v / f / k / g / m / n !liquid
 plosive <- t / d / k / g / p / b
 sibilant <- c / s / j / z

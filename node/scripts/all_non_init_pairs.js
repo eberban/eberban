@@ -15,10 +15,12 @@ let pairs_medial_available = [
 
 single.forEach((first) =>
 	single.forEach((second) => {
-		try {
-			camxes.parse(first + second + 'a');
-			pairs_initial.push(first + second);
-		} catch (e) {}
+		if (first != second) {
+			try {
+				camxes.parse(first + second + 'a');
+				pairs_initial.push(first + second);
+			} catch (e) {}
+		}
 	})
 );
 
@@ -28,15 +30,17 @@ console.log(pairs_initial.map(pair => `'${pair}'`).join(', '));
 
 single.forEach((first) =>
 	single.forEach((second) => {
-		try {
-			camxes.parse('sa' + first + second + 'a');
-			if (
-                !pairs_initial.includes(first + second) &&
-                !(sonorants.includes(first) && !sonorants.includes(second))
-            ) {
-				pairs_medial.push(first + second);
-			}
-		} catch (e) {}
+		if (first != second) {
+			try {
+				camxes.parse('sa' + first + second + 'a');
+				if (
+					!pairs_initial.includes(first + second) &&
+					!(sonorants.includes(first) && !sonorants.includes(second))
+				) {
+					pairs_medial.push(first + second);
+				}
+			} catch (e) {}
+		}
 	})
 );
 
