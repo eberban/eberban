@@ -1,5 +1,5 @@
-# eberban PEG grammar - v0.43
-# ===========================
+# eberban PEG grammar - v0.43.1
+# =============================
 
 # GRAMMAR
 # main text rule
@@ -220,38 +220,39 @@ unvoiced <- p / t / k / f / s / c
 vowel <- i / e / a / o / u
 
 # Legal letters
-i <- [iI] !i # <LEAF>
-e <- [eE] !e # <LEAF>
-a <- [aA] !a # <LEAF>
-o <- [oO] !o # <LEAF>
-u <- [uU] !u # <LEAF>
+i <- [iI]+ !i # <LEAF>
+e <- [eE]+ !e # <LEAF>
+a <- [aA]+ !a # <LEAF>
+o <- [oO]+ !o # <LEAF>
+u <- [uU]+ !u # <LEAF>
 
-h <- [hH] !h # <LEAF>
-n <- [nN] !n # <LEAF>
-r <- [rR] !r # <LEAF>
-l <- [lL] !l # <LEAF>
+h <- [hH]+ !h # <LEAF>
+n <- [nN]+ !n # <LEAF>
+r <- [rR]+ !r # <LEAF>
+l <- [lL]+ !l # <LEAF>
 
-m <- [mM] !m # <LEAF>
-p <- [pP] !p !voiced # <LEAF>
-b <- [bB] !b !unvoiced # <LEAF>
-f <- [fF] !f !voiced # <LEAF>
-v <- [vV] !v !unvoiced # <LEAF>
-t <- [tT] !t !voiced # <LEAF>
-d <- [dD] !d !unvoiced # <LEAF>
-s <- [sS] !s !c !voiced # <LEAF>
-z <- [zZ] !z !j !unvoiced # <LEAF>
-c <- [cC] !c !s !voiced # <LEAF>
-j <- [jJ] !j !z !unvoiced # <LEAF>
-g <- [gG] !g !unvoiced # <LEAF>
-k <- [kK] !k !voiced # <LEAF>
+m <- [mM]+ !m # <LEAF>
+p <- [pP]+ !p !voiced # <LEAF>
+b <- [bB]+ !b !unvoiced # <LEAF>
+f <- [fF]+ !f !voiced # <LEAF>
+v <- [vV]+ !v !unvoiced # <LEAF>
+t <- [tT]+ !t !voiced # <LEAF>
+d <- [dD]+ !d !unvoiced # <LEAF>
+s <- [sS]+ !s !c !voiced # <LEAF>
+z <- [zZ]+ !z !j !unvoiced # <LEAF>
+c <- [cC]+ !c !s !voiced # <LEAF>
+j <- [jJ]+ !j !z !unvoiced # <LEAF>
+g <- [gG]+ !g !unvoiced # <LEAF>
+k <- [kK]+ !k !voiced # <LEAF>
 
 # - Spaces / Pause
 post_word <- (pause_char &vowel) / !sonorant &consonant / spaces
-spaces <- space_char+ (pause_char &vowel)? / pause_char &vowel / EOF
+spaces <- space_char+ hesitation? (pause_char &vowel)? / pause_char &vowel / EOF
+hesitation <- (n (space_char+ / EOF))+
 
 # - Special characters
 hyphen <- ([\u2010\u2014\u002D] [\n\r]*)? # hyphens + line break support
-pause_char <- (['.]) !pause_char
-space_char <- [\t\n\r?!\u0020]
+pause_char <- (['’`]) !pause_char
+space_char <- [\t\n\r\u0020?!.,;:<>()\[\]{}"“”«»„“] # ignore foreign punctuation
 digit <- [.0123456789] # <LEAF2>
 EOF <- !.
