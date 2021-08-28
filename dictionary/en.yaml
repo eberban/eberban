@@ -1023,7 +1023,7 @@ kcia:
   family: "R"
   long: "(Ed) [tool] is used to make [I0] [purpose] true."
   short: "tool"
-puana:
+kali:
   family: "R"
   long: "(Ed) drinks [Ad]."
   short: "drinks"
@@ -1833,10 +1833,35 @@ sahar:
   family: "R"
   long: " (Ed) is a flower."
   short: "flower"
-vjeo:
+kena:
   family: "R"
   long: " (Ed) holds/grasps [Ad]."
   short: "holds"
+clo:
+  family: "R"
+  long: " (Ed) have purpose to satisfy property [A1]."
+  short: "purpose"
+jara:
+  family: "R"
+  long: " (Ed) has satisfying property [A1] as one of their jobs/occupations (paid work)."
+  short: "paid work"
+zera:
+  family: "R"
+  long: " (Ed) has satisfying property [A1] as a personality trait."
+  short: "personality trait"
+bzen:
+  family: "R"
+  long: " (E0) is the case for reason (A0)."
+  short: "reason"
+blae:
+  family: "R"
+  long: " (Ed) is owned by [Ac]."
+  short: "owned"
+tse:
+  family: "R"
+  long: " (En) is the amount of individual things in [Ac]."
+  short: "amount"
+
 
 # Compounds (2):
 e tsen ban:
@@ -2141,7 +2166,7 @@ e zulu cir:
   long: (Ed) is older than [Ad].
   short: "older"
   tags: [time, measument, ordering]
-e jven vjeo:
+e jven kena:
   family: "C2"
   long: (Ed) hugs [Ad].
   short: "hugs"
