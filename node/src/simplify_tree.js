@@ -13,8 +13,8 @@ const important_types = [
 
 	// scope	
 	[ 'scope', 'scope' ],
-	[ 'scope_list', 'list' ],
-	[ 'scope_list_element', 'list element' ],
+	[ 'scope_sequence', 'sequence' ],
+	[ 'scope_sequence_item', 'sequence item' ],
 	[ 'chaining', 'chaining' ],
 	[ 'chaining_neg', 'chaining negation' ],
 	[ 'chaining_unit', 'chaining unit' ],

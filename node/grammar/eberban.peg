@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.43.2
+# eberban PEG grammar - v0.43.3
 # =============================
 
 # GRAMMAR
@@ -22,9 +22,9 @@ sentence <- PA_clause_elidible scope PAI_clause_elidible
 # scope
 scope <- arguments_list? scope_1
 
-scope_1 <- scope_list / scope_2
-scope_list <- scope_list_element (BU_clause scope_list_element)+
-scope_list_element <- scope_2
+scope_1 <- scope_sequence / scope_2
+scope_sequence <- scope_sequence_item (BU_clause scope_sequence_item)+
+scope_sequence_item <- scope_2
 
 scope_2 <- chaining
 
@@ -77,7 +77,7 @@ BA_clause  <- spaces? BA                   # inline argument
 BE_clause  <- spaces? BE                   # miscellaneous terminator
 BI_clause  <- spaces? BI  free*            # wide-scope negation
 BO_clause  <- spaces? BO                   # variable assignement
-BU_clause  <- spaces? BU                   # list separator
+BU_clause  <- spaces? BU                   # sequence separator
                                            #
 DA_clause  <- spaces? DA                   # free metadata
 DE_clause  <- spaces? DE                   # free interjection
@@ -100,7 +100,7 @@ PA_clause  <- spaces? PA  free*            # sentence starter
 PAI_clause <- spaces? PAI free*            # sentence terminator
 PE_clause  <- spaces? PE  free*            # predicate scope starter
 PEI_clause <- spaces? PEI                  # predicate scope elidible terminator
-PI_clause  <- spaces? PI                   # arguments list terminator
+PI_clause  <- spaces? PI                   # arguments sequence terminator
 PO_clause  <- spaces? PO  free*            # definition starter
 POI_clause <- spaces? POI free*            # definition terminator
 PU_clause  <- spaces? PU  free*            # paragraph marker

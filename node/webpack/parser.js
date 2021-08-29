@@ -11,7 +11,7 @@ const hideTitleList = [
 	'sentence',
 	'definition',
 	'scope',
-	'list element',
+	'sequence item',
 	'predicate',
 	'chaining unit',
 	'chaining negation',
@@ -43,7 +43,7 @@ const boxClassForTypeMap = new Map([
 
 	// scope
 	[ 'scope', 'box box-scope' ],
-	[ 'list element', 'box box-scope-highlight' ],
+	[ 'sequence item', 'box box-scope-highlight' ],
 	[ 'chaining unit', 'box box-chaining-unit' ],
 	[ 'chaining negation', 'box box-chaining-neg' ],
 	[ 'VE-scope', 'box box-va-scope' ],
@@ -366,8 +366,8 @@ function constructBoxesOutput(parse, depth) {
 
 		output += '">';
 
-		// handle erased scope list elements
-		if (parse.type === 'list')  {
+		// handle erased scope sequence elements
+		if (parse.type === 'sequence')  {
 			for (var child in parse.children) {
 				if (parse.children[child].word == 'buhu') {
 					parse.children[child].css_classes = 'erased';

@@ -62,15 +62,15 @@ function html_word_entry(word, entry) {
 
 	paragraphs.forEach((p) => {
 		p = escapeHTML(p);
+		p = p.replace(/  (\r\n|\r|\n)/g, '<br />');
 		p = p.replace(/\(((E|A|O|U)(\d|c|d|n|s(\d|_)?)?)\)/g, '<span class="label label-success place">$&</span>');
 		p = p.replace(/\[((E|A|O|U)(\d|c|d|n|s(\d|_)?)?)\]/g, '<span class="label label-important place">$&</span>');
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');
 
-			list.forEach((word) => {
-				out += `<a href="#" class="dictionary-word-link">${word}</a> `;
-			});
+			out += list.map((word) => `<a href="#" class="dictionary-word-link">${word}</a>`).join(' ');
+			
 
 			out += '</em>';
 
