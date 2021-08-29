@@ -1018,9 +1018,9 @@ mian:
   long: "(Ed) is a cat."
   short: "cat"
   tags: [animal]
-kcia:
+gla:
   family: "R"
-  long: "(Ed) [tool] is used to make [I0] [purpose] true."
+  long: "(Ed) [tool] is used to make [A0] [purpose] true."
   short: "tool"
 kali:
   family: "R"
@@ -1057,7 +1057,11 @@ skao:
 sni:
   family: "R"
   long: "(Ed) welcomes/say hello to/greets [Ad] to place (Od)."
-  short: "welcomes"
+  short: "greets"
+sna:
+  family: "R"
+  long: "(Ed) says goodbye to [Ad] from place (Od)."
+  short: "goodbye"
 spi:
   family: "R"
   long: "(Ed) says [Ad] to (Od)."
@@ -1534,10 +1538,10 @@ flur:
   family: "R"
   long: "(Ed) is a plant."
   short: "plant"
-bjan:
+jveno:
   family: "R"
-  long: "(Ed) is behaves friendly/kindly towards [Ad]."
-  short: "friendly"
+  long: "(Ed) is kind/behaves friendly towards [Ad]."
+  short: "kind"
 slari:
   family: "R"
   long: "(Ed) is a rule/law prescribing/mandating/requiring [A0]."
@@ -1907,6 +1911,26 @@ zgi:
     - {tehoi} : years ({bire})  
   short: "duration (vec)"
   tags: [time, vector]
+dzui:
+  family: "R"
+  long: " (Ec) is able to satisfy property [A1]."
+  short: "able"
+dukma:
+  family: "R"
+  long: " (Ed) is magic/sorcery/witchcraft."
+  short: "magic"
+bena:
+  family: "R"
+  long: " (Ed) is healthy/fit/well/in good health."
+  short: "healthy"
+jogma:
+  family: "R"
+  long: "(Ed) is a wound."
+  short: "wound"
+melu:
+  family: "R"
+  long: "(Ed) (default: water) is raining."
+  short: "rain"
 
 # Compounds (2):
 e tsen ban:
@@ -2248,6 +2272,10 @@ e tor zdo:
   long: "(E0) (default: now) occurs a long time after/in the future of (A0) (default: now)."
   short: "long time after"
   tags: [time, measument, ordering]
+e cmo bena:
+  family: "C2"
+  long: (Ed) heals/recovers/returns to health.
+  short: "heals"
 
 a cen po bu:
   family: "C3"
