@@ -4,9 +4,7 @@
 _cardinal:
   long: "(Ec) is (a group of) [number] things satisfying [A1]."
 _number:
-  long: |
-    (En) is the (abstract) number [number] with dimension/unit [A1]
-    (default: contextual, usually explicited by another unit).
+  long: "(En) is the (abstract) number [number] times [An] (default: 1)."
 0:
   family: "TE"
   long: "Digit 0"
@@ -761,17 +759,23 @@ zvu:
   short: "evolution"
 zde:
   family: "R"
-  long: "(E0) (default: now) occurs before/is in the past of (A0) (default: now)."
+  long: |
+    (E0) (default: now) occurs before/is in the past of (A0) (default: now) with distance (On) (unitless=day).
+    The distance is between the end of (E0) and the start of (A0).
   short: "past"
   tags: [time]
 zda:
   family: "R"
-  long: "(E0) (default: now) is true/occurs concurrently with/at the same time as (A0) (default: now)."
+  long: |
+    (E0) (default: now) is true/occurs concurrently with/at the same time as (A0) (default: now).
+    This is true as long as there is an overlap betwenn (E0) and (A0).
   short: "present"
   tags: [time]
 zdo:
   family: "R"
-  long: "(E0) (default: now) occurs after/in the future of (A0) (default: now)."
+  long: |
+    (E0) (default: now) occurs after/in the future of (A0) (default: now) with distance (On) (unitless=day).
+    The distance is between the end of (A0) and the start of (E0).
   short: "future"
   tags: [time]
 skir:
@@ -832,47 +836,42 @@ brun:
 
 vuno:
   family: "R"
-  long: "(Ed) is at a distance in space of (On) (default: 1 meter) from [Ad] (default: speaker)."
-  short: "space distance"
+  long: "(Ed) is at a distance in space of (On) (default: 1, unitless=meter) from [Ad] (default: speaker)."
+  short: "distance"
   tags: [space, measument]
-ganu:
-  family: "R"
-  long: "(E0) is true/occurs at a distance in time of (On) (default: 1 day) from [A0] (default: now)."
-  short: "time distance"
-  tags: [time, measument]
 zini:
   family: "R"
-  long: "(E0) is true/occurs over time interval/length [An] (default: 1 year)."
-  short: "time length"
+  long: "(E0) is true/occurs over duration (An) (default: 1, unitless=year)."
+  short: "duration"
   tags: [time, measument]
 zulu:
   family: "R"
-  long: "(Ed) has an age/elapsed time since birth/creation of [An] (default: 1 year)."
+  long: "(Ed) has an age/elapsed time since birth/creation of [An] (default: 1, unitless=year)."
   short: "age"
   tags: [time, measument]
 zgie:
   family: "R"
-  long: "(Ed) has length [An] (default: 1 meter)."
+  long: "(Ed) has length [An] (default: 1, unitless=meter)."
   short: "length"
   tags: [space, measument]
 fniu:
   family: "R"
-  long: "(Ed) has height [An] (default: 1 meter)."
+  long: "(Ed) has height [An] (default: 1, unitless=meter)."
   short: "height"
   tags: [space, measument]
 cpea:
   family: "R"
-  long: "(Ed) has area [An] (default: 1 square meters)."
+  long: "(Ed) has area [An] (default: 1, unitless=meter^2)."
   short: "area (measure)"
   tags: [space, measument]
 jvao:
   family: "R"
-  long: "(Ed) has volume [An] (default: 1 cubic meter)."
+  long: "(Ed) has volume [An] (default: 1, unitless=meter^3)."
   short: "volume (measure)"
   tags: [space, measument]
 ckia:
   family: "R"
-  long: "(Ed) has speed [An] (default: 1 meter/second)."
+  long: "(Ed) has speed [An] (default: 1, unitless=meter/second)."
   short: "speed"
   tags: [space, measument]
 
@@ -1097,39 +1096,69 @@ snai:
   short: "works"
 bire:
   family: "R"
-  long: "(Ed) is a year in which [A0] is true/occurs."
+  long: "(En) is 1 year times [An] (default: 1)."
   short: "year"
   tags: [time, unit]
 gare:
   family: "R"
-  long: "(Ed) is a month in which [A0] is true/occurs."
+  long: "(En) is 1 month times [An] (default: 1)."
   short: "month"
   tags: [time, unit]
 kora:
   family: "R"
-  long: "(Ed) is a week in which [A0] is true/occurs."
+  long: "(En) is 1 week times [An] (default: 1)."
   short: "week"
   tags: [time, unit]
 dena:
   family: "R"
-  long: "(Ed) is a day in which [A0] is true/occurs."
+  long: "(En) is 1 day times [An] (default: 1)."
   short: "day"
   tags: [time, unit]
 sura:
   family: "R"
-  long: "(Ed) is a hour in which [A0] is true/occurs."
+  long: "(En) is 1 hour times [An] (default: 1)."
   short: "hour"
   tags: [time, unit]
 jero:
   family: "R"
-  long: "(Ed) is a minute in which [A0] is true/occurs."
+  long: "(En) is 1 minute times [An] (default: 1)."
   short: "minute"
   tags: [time, unit]
 vola:
   family: "R"
-  long: "(Ed) is a second in which [A0] is true/occurs."
+  long: "(En) is 1 second times [An] (default: 1)."
   short: "second"
   tags: [time, unit]
+mual:
+  family: "R"
+  long: "(En) is 1 meter times [An] (default: 1)."
+  short: "meter"
+  tags: [space, unit]
+gulo:
+  family: "R"
+  long: "(En) is 1 kilogram times [An] (default: 1)."
+  short: "kilogram"
+  tags: [unit]
+pere:
+  family: "R"
+  long: "(En) is 1 ampere times [An] (default: 1)."
+  short: "ampere"
+  tags: [unit]
+keli:
+  family: "R"
+  long: "(En) is 1 kelvin times [An] (default: 1)."
+  short: "kelvin"
+  tags: [unit]
+saur:
+  family: "R"
+  long: "(En) is 1 candela times [An] (default: 1)."
+  short: "candela"
+  tags: [unit]
+sti:
+  family: "R"
+  long: "(En) is the inverse (1/x) of [An] (default: 1)."
+  short: "inverse"
+  tags: [math]
 ber:
   family: "R"
   long: "(Ed) reflects this language (eberban)."
@@ -1169,27 +1198,27 @@ tun:
   tags: [group]
 tir:
   family: "R"
-  long: "(En) is a negligible number in dimension/unit [A1]."
+  long: "(En) is a negligible number times [An] (default: 1)."
   short: "negligible"
   tags: [number]
 ter:
   family: "R"
-  long: "(En) is a small number (subjective/contextual) in dimension/unit [A1]."
+  long: "(En) is a small number (subjective/contextual) times [An] (default: 1)."
   short: "small"
   tags: [number]
 tar:
   family: "R"
-  long: "(En) is a medium number (subjective/contextual) in dimension/unit [A1]."
+  long: "(En) is a medium number (subjective/contextual) times [An] (default: 1)."
   short: "medium"
   tags: [number]
 tor:
   family: "R"
-  long: "(En) is a large number (subjective/contextual) in dimension/unit [A1]."
+  long: "(En) is a large number (subjective/contextual) times [An] (default: 1)."
   short: "large"
   tags: [number]
 tur:
   family: "R"
-  long: "(En) is an infinite number in dimension/unit [A1]."
+  long: "(En) is an infinite number times [An] (default: 1)."
   short: "infinite"
   tags: [number]
 peol:
@@ -1238,17 +1267,17 @@ cion:
 
     [An] is a 3-vector with these components :
     
-    {teha} : Hue of the color between 0 and 1.
+    {teha} : Hue of the color between 0 and 1 unitless.
              0 is red primary.
              1/3 is green primary.
              2/3 is blue primary.
              Default: 0
     
-    {tehe} : Color saturation between 0 and 1.
+    {tehe} : Color saturation between 0 and 1 unitless.
              0 saturation is a shade of gray.
              Default: 1
     
-    {teho} : Color value between 0 and 1.
+    {teho} : Color value between 0 and 1 unitless.
              0 value is black.
              Default: 1
   short: "HSV-color"
@@ -1793,7 +1822,7 @@ zmu:
     The property must have a clear ordering strategy.
   short: "most"
   tags: [intensity]
-zmia:
+zmie:
   family: "R"
   long: |
     (Ed) is very little in property [A1] in population/sample (Oc) (default: contextual).
@@ -1802,7 +1831,7 @@ zmia:
     The property must have a clear ordering strategy.
   short: "very little"
   tags: [intensity]
-zmae:
+zmea:
   family: "R"
   long: |
     (Ed) is little in property [A1] in population/sample (Oc) (default: contextual).
@@ -1811,7 +1840,7 @@ zmae:
     The property must have a clear ordering strategy.
   short: "little"
   tags: [intensity]
-zmeo:
+zmao:
   family: "R"
   long: |
     (Ed) is much in property [A1] in population/sample (Oc) (default: contextual).
@@ -2110,22 +2139,25 @@ e spur sora:
   family: "C2"
   long: "(Ed) is the home star of species (Ad) (default: humans)."
   short: "home star"
-e zdo ganu:
+e dena zdo:
   family: "C2"
   long: |
-    (E0) occurs (On) (default: 1) days after (A0) (default: today).
-    Using only the A place thus defaults to "tomorrow".
-  short: "days after"
-e zde ganu:
+    (E0) occurs one day after (A0) (default: today).
+    Using only the E place thus defaults to "tomorrow".
+  short: "next day"
+  tags: [time, measument, ordering]
+e dena zde:
   family: "C2"
   long: |
-    (E0) occurs (On) (default: 1) days before (A0) (default: today).
-    Using only the A place thus defaults to "yesterday".
-  short: "days before"
-e zda dena:
+    (E0) occurs one day before (A0) (default: today).
+    Using only the E place thus defaults to "yesterday".
+  short: "previous day"
+  tags: [time, measument, ordering]
+e dena zda:
   family: "C2"
   long: (E0) occurs today.
   short: "today"
+  tags: [time]
 e cpu cir:
   family: "C2"
   long: "(En) is greater than or equal to [An]."
@@ -2170,6 +2202,36 @@ e jven kena:
   family: "C2"
   long: (Ed) hugs [Ad].
   short: "hugs"
+e ter zde:
+  family: "C2"
+  long: "(E0) (default: now) occurs a short time before/in the past of (A0) (default: now)."
+  short: "short time before"
+  tags: [time, measument, ordering]
+e tar zde:
+  family: "C2"
+  long: "(E0) (default: now) occurs a medium time before/in the past of (A0) (default: now)."
+  short: "medium time before"
+  tags: [time, measument, ordering]
+e tor zde:
+  family: "C2"
+  long: "(E0) (default: now) occurs a long time before/in the past of (A0) (default: now)."
+  short: "long time before"
+  tags: [time, measument, ordering]
+e ter zdo:
+  family: "C2"
+  long: "(E0) (default: now) occurs a short time after/in the future of (A0) (default: now)."
+  short: "short time after"
+  tags: [time, measument, ordering]
+e tar zdo:
+  family: "C2"
+  long: "(E0) (default: now) occurs a medium time after/in the future of (A0) (default: now)."
+  short: "medium time after"
+  tags: [time, measument, ordering]
+e tor zdo:
+  family: "C2"
+  long: "(E0) (default: now) occurs a long time after/in the future of (A0) (default: now)."
+  short: "long time after"
+  tags: [time, measument, ordering]
 
 a cen po bu:
   family: "C3"
