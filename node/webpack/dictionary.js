@@ -110,12 +110,34 @@ export function html_dictionary(filters) {
 				if (dictionary[word].family != filter.slice(1).toUpperCase()) {
 					return;
 				}
+			} else if (filter.startsWith('!')) {
+				filter = filter.slice(1);
+
+				if (word == filter) {
+					exact_match = true;
+				} else if (
+					!(
+						word.includes(filter) ||
+						dictionary[word].without_spaces.includes(filter)
+					)
+				) {
+					return;
+				}
+			} else if (filter.startsWith('?')) {
+				filter = filter.slice(1);
+				
+				if (
+					!(
+						dictionary[word].short.toLowerCase().includes(filter) ||
+						dictionary[word].long.toLowerCase().includes(filter)
+					)
+				) {
+					return;
+				}
 			} else {
 				if (word == filter) {
 					exact_match = true;
-				}
-
-				if (
+				} else if (
 					!(
 						word.includes(filter) ||
 						dictionary[word].without_spaces.includes(filter) ||
