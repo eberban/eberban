@@ -315,8 +315,8 @@ function peg_add_js_parser_actions(peg) {
 		'$1 = expr:($2) { _assign_foreign_quote_delim(expr);' + ' return _node("$1", expr); }'
 	);
 	peg = peg.replace(
-		/^(foreign_quote[-_]word) *= *([^\r\n]+)/gm,
-		'$1 = expr:($2) !{ return _is_foreign_quote_delim(expr); } ' + '{ return ["$1", join_expr(expr)]; }'
+		/^(foreign_quote[-_]content) *= *([^\r\n]+)/gm,
+		'$1 = expr:($2) { return ["$1", _join(expr)]; }'
 	);
 	peg = peg.split('((non_space+))').join('(non_space+)');
 	peg = peg.replace(

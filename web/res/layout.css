@@ -40,6 +40,7 @@ li.implicit {
 }
 
 .box {
+	width: max-content;
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;
@@ -212,4 +213,16 @@ li.implicit {
 .dictionary-entry {
 	padding-top: 0px;
 	padding-bottom: 2px;
+}
+
+.foreign-quote-content {
+	white-space: pre-wrap;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.foreign-quote-content .tip {
+/* .foreign-quote div:nth-last-of-type(2) .tip { */
+	white-space: pre-wrap;
+	font-family: "Courier New", Courier, monospace;
+	border: 1px solid black;
 }

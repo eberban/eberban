@@ -27,7 +27,7 @@ const hideFamily = [
 	'o',
 	'u',
 	'freeform_content',
-	'foreign_quote_word',
+	'foreign quote content',
 ]
 
 // List of types with their associated CSS classes.
@@ -52,13 +52,13 @@ const boxClassForTypeMap = new Map([
 	[ 'predicate', 'box box-predicate' ],
 	[ 'quote', 'box box-predicate' ],
 	[ 'word quote', 'box box-predicate' ],
-	[ 'foreign quote', 'box box-predicate' ],
+	[ 'foreign quote', 'box box-borrowing foreign-quote' ],
 	[ 'compound', 'box box-compound' ],
 	[ 'number', 'box box-number' ],
 	[ 'letters', 'box box-letters' ],
 	[ 'subscope', 'box box-subscope' ],
 	[ 'borrowing group', 'box box-borrowing' ],
-	[ 'foreign quote', 'box box-borrowing' ],
+	[ 'foreign quote content', 'box box-not-shown foreign-quote-content'],
 
 	// free
 	[ 'metadata', 'box box-note' ],
@@ -256,13 +256,14 @@ function constructSimplifiedTreeOutput(parse, depth) {
 	}
 
 	var output = parse.type;
-	if (parse.sumtiPlace) {
-		output += parse.sumtiPlace;
-	}
 
 	if (parse.word) {
 		// we have a terminal
-		output += ' <b>[' + parse.word + ']</b>';
+		if (parse.type == 'foreign quote content') {
+			output += ' <b>[<span class="foreign-quote-content">' + escapeHtml(parse.word) + '</span>]</b>';
+		} else {
+			output += ' <b>[' + parse.word + ']</b>';
+		}
 		if (dictionary[parse.word]) {
 			output += ' <span class="translation">' + dictionary[parse.word].short + '</span>';
 		}
@@ -325,11 +326,15 @@ function constructBoxesOutput(parse, depth) {
 		if (parse.css_classes != undefined) {
 			output += ` ${parse.css_classes}`;
 		}
+
+		if (parse.type == 'foreign quote content') {
+			output += " foreign-quote-content";
+		}
 		
 		output += '">';
 
 		// we have a terminal
-		output += '&nbsp;<div class="tip">' + parse.word;
+		output += '&nbsp;<div class="tip">' + escapeHtml(parse.word);
 
 		if (hideFamily.includes(parse.type)) {
 			output += '</div>&nbsp;<br></div>';

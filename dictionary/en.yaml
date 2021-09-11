@@ -509,26 +509,26 @@ suo:
   long: "Bind U place then switch to the O place."
   short: "<UO>"
 za:
-  family: "ZA"
+  family: "ZI"
   long: "(Ec) is named [predicate-(E)]."
   short: "named"
 ze:
-  family: "ZA"
+  family: "ZI"
   long: "Use the same instance and variables of the following unit instead of a new one."
   short: "same"
 zi:
-  family: "ZA"
+  family: "ZI"
   long: |
     Narrow-scope negation : negates the predicate unit but not the existential variables it creates.
     There exist e, a,... such that unit(e, a, ...) is false.
   short: "non-"
   tags: [negation]
 zo:
-  family: "ZA"
+  family: "ZI"
   long: "(Ec) is something referred to by [predicate-E]."
   short: "deref"
 zoi:
-  family: "ZA"
+  family: "ZI"
   long: "(Ec) is a reference/symbol refering to [predicate]."
   short: "ref"
 pa:
@@ -652,10 +652,10 @@ bei:
   family: "BE"
   long: "Transform a cardinal number into an ordinal : (Ec) is the [number]th member of sequence [As]."
   short: "-th"
-  tags: [terminator, number]
+  tags: [terminator, number, list]
 bi:
   family: "BI"
-  long: "Wide scope negation ranging over existential variables, units and bindings."
+  long: "Wide scope negation ranging over existential variables and predicates."
   short: "not"
   tags: [negation]
 bo:
@@ -666,7 +666,7 @@ bo:
 # Roots :
 kor:
   family: "R"
-  long: "(Ec) [group] are the members of sequence [As]."
+  long: "(Ec) are all the members of sequence [As]."
   short: "group"
   tags: [sequence]
 cna:
@@ -760,23 +760,40 @@ zvu:
 zde:
   family: "R"
   long: |
-    (E0) (default: now) occurs before/is in the past of (A0) (default: now) with distance (On) (unitless={zgi}).
-    The distance is between the end of (E0) and the start of (A0).
-  short: "past"
+    (Ed) [time interval] ends before the start of [Ad] (default: now) [time interval]
+    with distance (On) (unitless={zgi}).
+  short: "before"
   tags: [time]
 zda:
   family: "R"
-  long: |
-    (E0) (default: now) is true/occurs concurrently with/at the same time as (A0) (default: now).
-    This is true as long as there is an overlap betwenn (E0) and (A0).
-  short: "present"
+  long: "(Ed) [time interval] overlaps/is concurrent with [Ad] (default: now) [time interval]."
+  short: "concurrent"
   tags: [time]
 zdo:
   family: "R"
   long: |
-    (E0) (default: now) occurs after/in the future of (A0) (default: now) with distance (On) (unitless={zgi}).
-    The distance is between the end of (A0) and the start of (E0).
-  short: "future"
+    (Ed) [time interval] begins after the end of [Ad] (default: now) [time interval]
+    with distance (On) (unitless={zgi}).
+  short: "after"
+  tags: [time]
+zdei:
+  family: "R"
+  long: |
+    (Ed) [time interval] starts [Ad] [time interval].  
+    (Ed) and [Ad] share the same starting point and (Ed) is within [Ad].
+  short: "starts"
+  tags: [time]
+zdai:
+  family: "R"
+  long: "(Ed) [time interval] is within [Ad] (default: now)."
+  short: "concurrent"
+  tags: [time]
+zdoi:
+  family: "R"
+  long: |
+    (Ed) [time interval] finishes [Ad] [time interval].  
+    (Ed) and [Ad] share the same end point and (Ed) is within [Ad].
+  short: "finishes"
   tags: [time]
 skir:
   family: "R"
@@ -841,7 +858,7 @@ vuno:
   tags: [space, measument]
 zini:
   family: "R"
-  long: "(E0) is true/occurs over duration (An) (default: 1, unitless={zgi})."
+  long: "(Ed) [time interval] have duration (An) (default: 1, unitless={zgi})."
   short: "duration"
   tags: [time, measument]
 zulu:
@@ -900,53 +917,6 @@ fsu:
   long: "(Ed) is an end point of [Ad]."
   short: "space end"
   tags: [space, interval]
-
-cmi:
-  family: "R"
-  long: "(E0) begins to occur/be true."
-  short: "begins"
-  tags: [time, interval]
-cme:
-  family: "R"
-  long: "A (non-final) slice of (E0) is ongoingly happening."
-  short: "onging"
-  tags: [time, interval]
-cma:
-  family: "R"
-  long: "(E0) halts/temporarly cease to be true/is paused."
-  short: "halts"
-  tags: [time, interval]
-cmo:
-  family: "R"
-  long: "(E0) resumes after being halted."
-  short: "resumes"
-  tags: [time, interval]
-cmu:
-  family: "R"
-  long: "(E0) stops to occur/be true."
-  short: "ends"
-  tags: [time, interval]
-
-mura:
-  family: "R"
-  long: "(E0) is regular/occurs regularly."
-  short: "regular"
-  tags: [time, interval]
-geno:
-  family: "R"
-  long: "(E0) is typical/occurs typically."
-  short: "typical"
-  tags: [time, interval]
-foru:
-  family: "R"
-  long: "(E0) is continuous/occurs continuously."
-  short: "continuous"
-  tags: [time, interval]
-jenu:
-  family: "R"
-  long: "(E0) is habitual/occurs habitually."
-  short: "habitual"
-  tags: [time, interval]
 fena:
   family: "R"
   long: "(Ed) is inside/within [Ad]."
@@ -1413,24 +1383,26 @@ sfi:
   short: "concept"
 sfe:
   family: "R"
-  long: "(Ed) is an event/occurence/instance of [A0] being true."
-  short: "event"
+  long: |
+    (Ed) [time interval] is an occurrence of [A0] being true.
+    [A0] is true at each instant of (Ed), and was not true immediately before and after this interval.
+  short: "occurence"
 sfa:
   family: "R"
-  long: "(Ed) is the property [E1]."
+  long: "(Ed) is the property [A1]."
   short: "property"
 sfo:
   family: "R"
-  long: "(Ed) is the relation [E2]."
+  long: "(Ed) is the relation [A2]."
   short: "relation"
 sfu:
   family: "R"
-  long: "(Ed) is the fact that [E0] is true."
+  long: "(Ed) is the fact that [A0] is true."
   short: "fact"
 tri:
   family: "R"
   long: 
-    (Ed) tries/attemps to do/bring about [E0].
+    (Ed) tries/attemps to do/bring about [A0].
     Success is neither implied or disimplied.
   short: "attemps"
 tcu:
@@ -1931,6 +1903,11 @@ melu:
   family: "R"
   long: "(Ed) (default: water) is raining."
   short: "rain"
+bein:
+  family: "BE"
+  long: "(Ec) is the last member of sequence [As]."
+  short: "last"
+  tags: [number, list]
 
 # Compounds (2):
 e tsen ban:
@@ -2020,102 +1997,102 @@ e utcoson guro:
 
 e te dena:
   family: "C2"
-  long: "(E0) occurs on a Sunday."
+  long: "(Ed) [time interval] is a Sunday."
   short: "Sunday"
   tags: [time, day]
 e ta dena:
   family: "C2"
-  long: "(E0) occurs on a Monday."
+  long: "(Ed) [time interval] is a Monday."
   short: "Monday"
   tags: [time, day]
 e to dena:
   family: "C2"
-  long: "(E0) occurs on a Thusday."
+  long: "(Ed) [time interval] is a Thusday."
   short: "Thusday"
   tags: [time, day]
 e tu dena:
   family: "C2"
-  long: "(E0) occurs on a Wednesday."
+  long: "(Ed) [time interval] is a Wednesday."
   short: "Wednesday"
   tags: [time, day]
 e tei dena:
   family: "C2"
-  long: "(E0) occurs on a Thursday."
+  long: "(Ed) [time interval] is a Thursday."
   short: "Thursday"
   tags: [time, day]
 e tai dena:
   family: "C2"
-  long: "(E0) occurs on a Friday."
+  long: "(Ed) [time interval] is a Friday."
   short: "Friday"
   tags: [time, day]
 e toi dena:
   family: "C2"
-  long: "(E0) occurs on a Saturday."
+  long: "(Ed) [time interval] is a Saturday."
   short: "Saturday"
   tags: [time, day]
 e tui dena:
   family: "C2"
-  long: "(E0) occurs on a Sunday."
+  long: "(Ed) [time interval] is a Sunday."
   short: "Sunday"
   tags: [time, day]
 e te gare:
   family: "C2"
-  long: "(E0) occurs in January."
+  long: "(Ed) [time interval] is January."
   short: "January"
   tags: [time, month]
 e ta gare:
   family: "C2"
-  long: "(E0) occurs in February."
+  long: "(Ed) [time interval] is February."
   short: "February"
   tags: [time, month]
 e to gare:
   family: "C2"
-  long: "(E0) occurs in March."
+  long: "(Ed) [time interval] is March."
   short: "March"
   tags: [time, month]
 e tu gare:
   family: "C2"
-  long: "(E0) occurs in April."
+  long: "(Ed) [time interval] is April."
   short: "April"
   tags: [time, month]
 e tai gare:
   family: "C2"
-  long: "(E0) occurs in May."
+  long: "(Ed) [time interval] is May."
   short: "May"
   tags: [time, month]
 e tei gare:
   family: "C2"
-  long: "(E0) occurs in June."
+  long: "(Ed) [time interval] is June."
   short: "June"
   tags: [time, month]
 e toi gare:
   family: "C2"
-  long: "(E0) occurs in July."
+  long: "(Ed) [time interval] is July."
   short: "July"
   tags: [time, month]
 e tui gare:
   family: "C2"
-  long: "(E0) occurs in August."
+  long: "(Ed) [time interval] is August."
   short: "August"
   tags: [time, month]
 e tie gare:
   family: "C2"
-  long: "(E0) occurs in September."
+  long: "(Ed) [time interval] is September."
   short: "September"
   tags: [time, month]
 e tia gare:
   family: "C2"
-  long: "(E0) occurs in October."
+  long: "(Ed) [time interval] is October."
   short: "October"
   tags: [time, month]
 e tio gare:
   family: "C2"
-  long: "(E0) occurs in November."
+  long: "(Ed) [time interval] is November."
   short: "October"
   tags: [time, month]
 e tiu gare:
   family: "C2"
-  long: "(E0) occurs in December."
+  long: "(Ed) [time interval] is December."
   short: "December"
   tags: [time, month]
 e kre vier:
@@ -2244,32 +2221,32 @@ e jven kena:
   short: "hugs"
 e ter zde:
   family: "C2"
-  long: "(E0) (default: now) occurs a short time before/in the past of (A0) (default: now)."
+  long: "(Ed) (default: now) [time interval] occurs a short time before/in the past of [Ad] (default: now) [time interval]."
   short: "short time before"
   tags: [time, measument, ordering]
 e tar zde:
   family: "C2"
-  long: "(E0) (default: now) occurs a medium time before/in the past of (A0) (default: now)."
+  long: "(Ed) (default: now) [time interval] occurs a medium time before/in the past of [Ad] (default: now) [time interval]."
   short: "medium time before"
   tags: [time, measument, ordering]
 e tor zde:
   family: "C2"
-  long: "(E0) (default: now) occurs a long time before/in the past of (A0) (default: now)."
+  long: "(Ed) (default: now) [time interval] occurs a long time before/in the past of [Ad] (default: now) [time interval]."
   short: "long time before"
   tags: [time, measument, ordering]
 e ter zdo:
   family: "C2"
-  long: "(E0) (default: now) occurs a short time after/in the future of (A0) (default: now)."
+  long: "(Ed) (default: now) [time interval] occurs a short time after/in the future of [Ad] (default: now) [time interval]."
   short: "short time after"
   tags: [time, measument, ordering]
 e tar zdo:
   family: "C2"
-  long: "(E0) (default: now) occurs a medium time after/in the future of (A0) (default: now)."
+  long: "(Ed) (default: now) [time interval] occurs a medium time after/in the future of [Ad] (default: now) [time interval]."
   short: "medium time after"
   tags: [time, measument, ordering]
 e tor zdo:
   family: "C2"
-  long: "(E0) (default: now) occurs a long time after/in the future of (A0) (default: now)."
+  long: "(Ed) (default: now) [time interval] occurs a long time after/in the future of [Ad] (default: now) [time interval]."
   short: "long time after"
   tags: [time, measument, ordering]
 e cmo bena:

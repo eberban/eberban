@@ -34,6 +34,7 @@ const important_types = [
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
+	[ 'foreign_quote_content', 'foreign quote content' ],
 	[ 'unit_number', 'number' ],
 	[ 'predicate_scope', 'predicate scope' ],
 
@@ -56,6 +57,19 @@ for (let replace of important_types) {
 			children: simplifyArrayOfTrees(parse.slice(1))
 		};
 	};
+}
+
+simplifyFunctions['foreign_quote_content'] = function(parse) {
+	let text = '';
+
+	parse.slice(1).forEach(x => {
+		text += x[0];
+	})
+
+	return {
+		type: 'foreign quote content',
+		word: text,
+	}
 }
 
 var importantTypesMap = {};
