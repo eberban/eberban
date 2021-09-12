@@ -3,11 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('gloss:complete', function(event) {
-	console.log({document});
+	let element = document.getElementById("content");
 
-	let element = document.documentElement;
-
-	// element.innerHTML = element.innerHTML.replaceAll(/\$\$\{(.+)\}/g, '<span class="cursive">$1</span>');
 	element.innerHTML = element.innerHTML.replaceAll(/\$\((.+?)\)/g, '<span class="cursive">$1</span>');
 });
 
