@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="13.856405mm"
+   height="14mm"
+   viewBox="0 0 13.856405 14"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="eberban_bg.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="7.9999996"
+     inkscape:cx="19.375001"
+     inkscape:cy="37.062502"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1912"
+     inkscape:window-y="684"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g4534"
+     showguides="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824"
+       empspacing="4"
+       enabled="false"
+       originx="-4.0378443e-07"
+       originy="-9.9999996e-08" />
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid837"
+       visible="true"
+       originx="-4.0378443e-07"
+       originy="-9.9999996e-08" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1858"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#f500fe;stop-opacity:1;"
+         offset="0"
+         id="stop1856" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1748"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#f500fe;stop-opacity:1;"
+         offset="0"
+         id="stop1746" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect861"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="background hex"
+     style="display:inline">
+    <path
+       style="fill:#66b2ff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 0.8660254,10.5 12.990382,3.5 6.9282034,9.9999999e-8 0.8660254,3.5 Z"
+       id="path3905"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\test.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+    <path
+       style="fill:#ff66b3;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 0.8660254,10.5 12.1243566,-7 v 7 L 6.9282034,14 Z"
+       id="path4112"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\test.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g4534"
+     inkscape:label="background rect"
+     style="display:inline">
+    <path
+       style="fill:#66b2ff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 4.0378444e-7,11 13.856406,3.0000001 V 9.9999999e-8 H 4.0378444e-7 Z"
+       id="path4530"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#ff66b3;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 4.0378444e-7,11 13.856406,3.0000001 V 14 H 4.0378444e-7 Z"
+       id="path4532"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <g
+     inkscape:label="text"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:none">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 6.9282034,2.0000001 -4.330128,2.5 v 5 l 7.7942296,-4.5 V 10"
+       id="path872"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 5.1961524,4.0000001 -1.732051,1 v 3"
+       id="path1075"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 6.9282034,4.0000001 v 2 l 2.598076,-1.5"
+       id="path1279"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 3.4641014,10 2.598076,-1.4999999 v -2"
+       id="path1460"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 9.5262794,9.5000001 1.7320506,-1 v -3"
+       id="path1462"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\square.png"
+       inkscape:export-xdpi="5866.1304"
+       inkscape:export-ydpi="5866.1304" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="border"
+     style="display:none">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.35;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0.8660254,3.5 6.9282034,9.9999999e-8 12.990382,3.5 v 7 L 6.9282034,14 0.8660254,10.5 Z"
+       id="path1301"
+       inkscape:export-filename="E:\Libraries\Documents\eberban_plus\path1465.png"
+       inkscape:export-xdpi="2035.5406"
+       inkscape:export-ydpi="2035.5406" />
+  </g>
+</svg>

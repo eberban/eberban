@@ -786,7 +786,7 @@ zdei:
 zdai:
   family: "R"
   long: "(Ed) [time interval] is within [Ad] (default: now)."
-  short: "concurrent"
+  short: "within"
   tags: [time]
 zdoi:
   family: "R"
