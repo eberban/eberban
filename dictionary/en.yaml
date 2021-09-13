@@ -6,65 +6,65 @@ _cardinal:
 _number:
   long: "(En) is the (abstract) number [number] times [An] (default: 1)."
 0:
-  family: "TE"
+  family: "TI"
   long: "Digit 0"
   short: "te"
 1:
-  family: "TE"
+  family: "TI"
   long: "Digit 1"
   short: "ta"
 2:
-  family: "TE"
+  family: "TI"
   long: "Digit 2"
   short: "to"
 3:
-  family: "TE"
+  family: "TI"
   long: "Digit 3"
   short: "tu"
 4:
-  family: "TE"
+  family: "TI"
   long: "Digit 4"
   short: "tei"
 5:
-  family: "TE"
+  family: "TI"
   long: "Digit 5"
   short: "tai"
 6:
-  family: "TE"
+  family: "TI"
   long: "Digit 6"
   short: "toi"
 7:
-  family: "TE"
+  family: "TI"
   long: "Digit 7"
   short: "tui"
 8:
-  family: "TE"
+  family: "TI"
   long: "Digit 8"
   short: "tie"
 9:
-  family: "TE"
+  family: "TI"
   long: "Digit 9"
   short: "tia"
 
 # Particles
 mi:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is I/me/a speaker/author."
   short: "me"
 mo:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is you, a listener."
   short: "you"
 mio:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is I/a speaker/author or you, a listener."
   short: "inclusive we"
 mie:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is I/a speaker/author or someone, neither a speaker or listener."
   short: "exclusive we"
 ma:
-  family: "ME"
+  family: "MI"
   long: |
     (Ed) exists.
 
@@ -73,7 +73,7 @@ ma:
     claims, or perform tricks using the chaining system.
   short: "exists"
 mau:
-  family: "ME"
+  family: "MI"
   long: |
     (Ed) is not bound outside of this scope.
 
@@ -81,49 +81,49 @@ mau:
     Use {zoi} for predicate places.
   short: "unbound"
 mai:
-  family: "ME"
+  family: "MI"
   long: |
     (Ed) is indefinite specific.
     The speaker has a specific individual in mind, but the listener is not
     expected to know which one.
   short: "a"
 mao:
-  family: "ME"
+  family: "MI"
   long: |
     (Ed) is definite specific.
     The speaker has a specific individual in mind and the listener is expected
     to know which one from context.
   short: "the"
 me:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is someone, neither a speaker or listener."
   short: "other"
 mei:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is this here, near a speaker."
   short: "this"
 meo:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is that here, near a listener."
   short: "that"
 meu:
-  family: "ME"
+  family: "MI"
   long: "(Ed) is that yonder, far from speaker and listener."
   short: "that yonder"
 mua:
-  family: "ME"
+  family: "MI"
   long: "States the last/previous proposition."
   short: "last prop"
 mue:
-  family: "ME"
+  family: "MI"
   long: "States the proposition (0-ary scope) in which this one is embeded."
   short: "outer prop"
 mui:
-  family: "ME"
+  family: "MI"
   long: "States the current proposition."
   short: "current prop"
 muo:
-  family: "ME"
+  family: "MI"
   long: "States the next proposition."
   short: "next prop"
 ba:
@@ -131,192 +131,192 @@ ba:
   long: "Inline argument marker."
   short: "[inline arg]"
 te:
-  family: "TE"
+  family: "TI"
   long: "Digit 0"
   short: "0"
   tags: [digit, number]
 ta:
-  family: "TE"
+  family: "TI"
   long: "Digit 1"
   short: "1"
   tags: [digit, number]
 to:
-  family: "TE"
+  family: "TI"
   long: "Digit 2"
   short: "2"
   tags: [digit, number]
 tu:
-  family: "TE"
+  family: "TI"
   long: "Digit 3"
   short: "3"
   tags: [digit, number]
 tei:
-  family: "TE"
+  family: "TI"
   long: "Digit 4"
   short: "4"
   tags: [digit, number]
 tai:
-  family: "TE"
+  family: "TI"
   long: "Digit 5"
   short: "5"
   tags: [digit, number]
 toi:
-  family: "TE"
+  family: "TI"
   long: "Digit 6"
   short: "6"
   tags: [digit, number]
 tui:
-  family: "TE"
+  family: "TI"
   long: "Digit 7"
   short: "7"
   tags: [digit, number]
 tie:
-  family: "TE"
+  family: "TI"
   long: "Digit 8"
   short: "8"
   tags: [digit, number]
 tia:
-  family: "TE"
+  family: "TI"
   long: "Digit 9"
   short: "9"
   tags: [digit, number]
 tio:
-  family: "TE"
+  family: "TI"
   long: "Digit ↊/A (10)"
   short: "A"
   tags: [digit, number]
 tiu:
-  family: "TE"
+  family: "TI"
   long: "Digit ↋/B (11)"
   short: "B"
   tags: [digit, number]
 teie:
-  family: "TE"
+  family: "TI"
   long: "Digit C (12)"
   short: "C"
   tags: [digit, number]
 teia:
-  family: "TE"
+  family: "TI"
   long: "Digit D (13)"
   short: "D"
   tags: [digit, number]
 teio:
-  family: "TE"
+  family: "TI"
   long: "Digit E (14)"
   short: "E"
   tags: [digit, number]
 teiu:
-  family: "TE"
+  family: "TI"
   long: "Digit F (15)"
   short: "F"
   tags: [digit, number]
 ti:
-  family: "TE"
+  family: "TI"
   long: "Decimal separator"
   short: "."
   tags: [separator, number]
 tiha:
-  family: "TE"
+  family: "TI"
   long: "<base . number> separator"
   short: "base"
   tags: [separator, number]
 tihe:
-  family: "TE"
+  family: "TI"
   long: "<precise . approximation> separator"
   short: "approx"
   tags: [separator, number]
 tihi:
-  family: "TE"
+  family: "TI"
   long: "<precise . repeating part> separator"
   short: "repeating"
   tags: [separator, number]
 tiho:
-  family: "TE"
+  family: "TI"
   long: "<numerator . denominator> separator"
   short: "fraction"
   tags: [separator, number]
 tahe:
-  family: "TE"
+  family: "TI"
   long: "10^3 separator (kilo)"
   short: "10^3"
   tags: [separator, number]
 taha:
-  family: "TE"
+  family: "TI"
   long: "10^6 separator (mega)"
   short: "10^6"
   tags: [separator, number]
 taho:
-  family: "TE"
+  family: "TI"
   long: "10^9 separator (giga)"
   short: "10^9"
   tags: [separator, number]
 tahu:
-  family: "TE"
+  family: "TI"
   long: "10^12 separator (tera)"
   short: "10^12"
   tags: [separator, number]
 tahei:
-  family: "TE"
+  family: "TI"
   long: "10^15 separator (peta)"
   short: "10^15"
   tags: [separator, number]
 tahai:
-  family: "TE"
+  family: "TI"
   long: "10^18 separator (exa)"
   short: "10^18"
   tags: [separator, number]
 tahoi:
-  family: "TE"
+  family: "TI"
   long: "10^21 separator (zetta)"
   short: "10^21"
   tags: [separator, number]
 tahui:
-  family: "TE"
+  family: "TI"
   long: "10^24 separator (yotta)"
   short: "10^24"
   tags: [separator, number]
 tea:
-  family: "TE"
+  family: "TI"
   long: "negative sign"
   short: "-"
   tags: [number]
 tehe:
-  family: "TE"
+  family: "TI"
   long: "Vector component 0"
   short: "vec 0:"
   tags: [separator, number, vector]
 teha:
-  family: "TE"
+  family: "TI"
   long: "Vector component 1"
   short: "vec 1:"
   tags: [separator, number, vector]
 teho:
-  family: "TE"
+  family: "TI"
   long: "Vector component 2"
   short: "vec 2:"
   tags: [separator, number, vector]
 tehu:
-  family: "TE"
+  family: "TI"
   long: "Vector component 3"
   short: "vec 3:"
   tags: [separator, number, vector]
 tehei:
-  family: "TE"
+  family: "TI"
   long: "Vector component 4"
   short: "vec 4:"
   tags: [separator, number, vector]
 tehai:
-  family: "TE"
+  family: "TI"
   long: "Vector component 5"
   short: "vec 5:"
   tags: [separator, number, vector]
 tehoi:
-  family: "TE"
+  family: "TI"
   long: "Vector component 6"
   short: "vec 6:"
   tags: [separator, number, vector]
 tehui:
-  family: "TE"
+  family: "TI"
   long: "Vector component 7"
   short: "vec 7:"
   tags: [separator, number, vector]
@@ -1904,10 +1904,61 @@ melu:
   long: "(Ed) (default: water) is raining."
   short: "rain"
 bein:
-  family: "BE"
+  family: "R"
   long: "(Ec) is the last member of sequence [As]."
   short: "last"
   tags: [number, list]
+seni:
+  family: "R"
+  long: |
+    (E0) is obligated to be performed under authority (Ac). (E0) is a duty.
+    
+    Examples: praying (in some religions), voting (in some countries), parents
+    taking care of their children is societally obligated
+  short: "obligated"
+sene:
+  family: "R"
+  long: |
+    (E0) is encouraged to be performed under authority (Ac). 
+    (Ed) is a virtuous/upstanding behavior.
+    
+    Examples: charity, volunteer work, being polite
+  short: "encouraged"
+sena:
+  family: "R"
+  long: |
+    (E0) is neither encouraged nor discouraged (i.e. permitted) by authority (Ac).
+    (E0) is tolerated.  
+    
+    Examples: basically most actions are {sena}, there are so many examples
+    -- the act of breathing is sena
+  short: "tolerated"
+seno:
+  family: "R"
+  long: |
+    (E0) is discouraged to be performed under authority (Ac); (Ed) is reprehensible.
+    
+    Examples: lying (not under oath), crimes with are technically illegal but
+    not prosecuted, laughing at a funeral, breaking certain religious laws
+  short: "discouraged"
+senu:
+  family: "R"
+  long: |
+    (E0) is forbidden to be done by authority (Ac).
+    
+    Examples: for many religions speaking badly of their deity is forbidden,
+    crimes which are prosecuted, cheating on your partner in a monogamous relationship
+  short: "forbidden"
+molai:
+  family: "R"
+  long: |
+    (Ec) is made to satisfy [A1] as a reward/punishment.  
+    (Ec) is awarded/punished, with result that they satisfy [A1].
+  short: "reward/punishment"
+buiur:
+  family: "R"
+  long: "(Ed) is meat from animal/source [Ad]."
+  short: "meat"
 
 # Compounds (2):
 e tsen ban:
