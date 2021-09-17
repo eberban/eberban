@@ -224,3 +224,7 @@ const medial_pair = [
 
 module.exports.generators = generators;
 module.exports.repeat = repeat;
+module.exports.initial_pair = initial_pair;
+module.exports.medial_pair = medial_pair;
+module.exports.vowel = vowel;
+module.exports.sonorant = sonorant;

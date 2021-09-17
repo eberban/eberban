@@ -237,7 +237,7 @@ function process_peg_code(peg) {
 	//    var re = new RegExp(" *[\\&\\!]" + EXTERN_PREDICATE_SYMBOL, "g");
 	//    peg = peg.replace(re, "");
 	peg = peg.replace(/<-/g, '=');
-	peg = peg.replace(/-/g, '_');
+	// peg = peg.replace(/-/g, '_');
 	peg = peg.replace(/ {2,}/g, ' ');
 	peg = peg_add_js_parser_actions(peg);
 	return peg;

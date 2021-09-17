@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.44.1
+# eberban PEG grammar - v0.44.2
 # =============================
 
 # GRAMMAR
@@ -184,26 +184,28 @@ root <- !sonorant (root_1 / root_2 / root_3) &post_word
 
 particle_1 <- consonant hieaou !medial_pair
 
-root_1 <- consonant hieaou (hyphen (medial_pair / sonorant) hieaou)+ sonorant?
+root_1 <- consonant hieaou ((medial_pair / hyphen sonorant) hieaou)+ sonorant?
 root_2 <- consonant hieaou sonorant
-root_3 <- initial_pair hieaou (hyphen (medial_pair / sonorant) hieaou)* sonorant?
+root_3 <- initial_pair hieaou ((medial_pair / hyphen sonorant) hieaou)* sonorant?
 
 # - Legal clusters
 hieaou <- ieaou (hyphen h ieaou)*
 ieaou <- vowel (hyphen vowel)*
 
 consonant_cluster <- (consonant_cluster_1 / consonant_cluster_2) !consonant
-consonant_cluster_1 <- hyphen &medial_pair consonant initial_pair / hyphen medial_pair
-consonant_cluster_2 <- sonorant? hyphen (initial_pair / consonant) / sonorant hyphen
+consonant_cluster_1 <- &medial_pair !sonorant consonant hyphen initial_pair
+consonant_cluster_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant consonant) / sonorant hyphen 
 
-medial_pair <- !initial_pair &medial_patterns consonant consonant !consonant
+medial_pair <- !initial medial_patterns
 medial_patterns <- (medial_n / medial_fv / medial_plosive)
-medial_n <- (m / liquid) n / n liquid
-medial_fv <- (f / v) (plosive / sibilant / m)
-medial_plosive <- plosive (f / v / plosive / m)
+medial_n <- (m / liquid) hyphen n / n hyphen liquid
+medial_fv <- (f / v) hyphen (plosive / sibilant / m)
+medial_plosive <- plosive hyphen (f / v / plosive / m)
 
+# initial pairs cannot contain an hyphen
 initial_pair <- &initial consonant consonant !consonant
-initial <- ((plosive / f / v) sibilant / sibilant? other? sonorant?) !consonant
+# we need to support hyphenation to use `!initial` in `medial_pair`
+initial <- ((plosive / f / v) hyphen sibilant / sibilant hyphen other / sibilant hyphen sonorant / other hyphen sonorant)
 
 other <- (p / b) !n / (t / d) !n !l / v / f / k / g / m / n !liquid
 plosive <- t / d / k / g / p / b
@@ -219,30 +221,30 @@ unvoiced <- p / t / k / f / s / c
 vowel <- i / e / a / o / u
 
 # Legal letters
-i <- [iI]+ !i # <LEAF>
-e <- [eE]+ !e # <LEAF>
-a <- [aA]+ !a # <LEAF>
-o <- [oO]+ !o # <LEAF>
-u <- [uU]+ !u # <LEAF>
+i <- [iI]+ # <LEAF>
+e <- [eE]+ # <LEAF>
+a <- [aA]+ # <LEAF>
+o <- [oO]+ # <LEAF>
+u <- [uU]+ # <LEAF>
 
-h <- [hH]+ !h # <LEAF>
-n <- [nN]+ !n # <LEAF>
-r <- [rR]+ !r # <LEAF>
-l <- [lL]+ !l # <LEAF>
+h <- [hH]+ # <LEAF>
+n <- [nN]+ # <LEAF>
+r <- [rR]+ # <LEAF>
+l <- [lL]+ # <LEAF>
 
-m <- [mM]+ !m # <LEAF>
-p <- [pP]+ !p !voiced # <LEAF>
-b <- [bB]+ !b !unvoiced # <LEAF>
-f <- [fF]+ !f !voiced # <LEAF>
-v <- [vV]+ !v !unvoiced # <LEAF>
-t <- [tT]+ !t !voiced # <LEAF>
-d <- [dD]+ !d !unvoiced # <LEAF>
-s <- [sS]+ !s !c !voiced # <LEAF>
-z <- [zZ]+ !z !j !unvoiced # <LEAF>
-c <- [cC]+ !c !s !voiced # <LEAF>
-j <- [jJ]+ !j !z !unvoiced # <LEAF>
-g <- [gG]+ !g !unvoiced # <LEAF>
-k <- [kK]+ !k !voiced # <LEAF>
+m <- [mM]+ # <LEAF>
+p <- [pP]+ !voiced # <LEAF>
+b <- [bB]+ !unvoiced # <LEAF>
+f <- [fF]+ !voiced # <LEAF>
+v <- [vV]+ !unvoiced # <LEAF>
+t <- [tT]+ !voiced # <LEAF>
+d <- [dD]+ !unvoiced # <LEAF>
+s <- [sS]+ !c !voiced # <LEAF>
+z <- [zZ]+ !j !unvoiced # <LEAF>
+c <- [cC]+ !s !voiced # <LEAF>
+j <- [jJ]+ !z !unvoiced # <LEAF>
+g <- [gG]+ !unvoiced # <LEAF>
+k <- [kK]+ !voiced # <LEAF>
 
 # - Spaces / Pause
 post_word <- (pause_char &vowel) / !sonorant &consonant / spaces
@@ -253,7 +255,6 @@ hesitation <- (n (space_char+ / EOF))+
 hyphen <- (hyphen_char [\n\r]*)? # hyphens + line break support
 hyphen_char <- [\u2010\u2014\u002D]
 pause_char <- (['’`]) !pause_char
-# space_char <- [\t\n\r\u0020?!.,;:<>()\[\]{}"“”«»„“] # ignore foreign punctuation
-space_char <- !(pause_char / digit / hyphen_char / vowel / consonant / h) .
-digit <- [0123456789] # <LEAF2>
+space_char <- !(pause_char / digit / hyphen_char / [a-zA-Z]) .
+digit <- [0-9] # <LEAF2>
 EOF <- !.
