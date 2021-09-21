@@ -511,11 +511,11 @@ suo:
 za:
   family: "ZI"
   long: "(Ec) is named [predicate-(E)]."
-  short: "named"
+  short: "[named]"
 ze:
   family: "ZI"
   long: "Use the same instance and variables of the following unit instead of a new one."
-  short: "same"
+  short: "[same]"
 zi:
   family: "ZI"
   long: |
@@ -526,19 +526,32 @@ zi:
 zo:
   family: "ZI"
   long: "(Ec) is something referred to by [predicate-E]."
-  short: "deref"
+  short: "[deref]"
 zoi:
   family: "ZI"
   long: "(Ec) is a reference/symbol refering to [predicate]."
-  short: "ref"
+  short: "[ref]"
+zu:
+  family: "ZI"
+  long: |
+    Transform an (A0)/[A0] place into an [A1] place, which is provided the content of the (E) place.  
+    Notice that [A1] is now a switching place (unless overwritten by a SE placed before {zu}).
+
+    While a SE before {zu} can still override the chaining behavior, a SE after {zu} allow to
+    select which places to use for the transformation.
+
+    For 2-vowels SE variants "sXY", X select the entity place, while Y select the proposition place.
+    Not using a SE thus is equivalent to an implicit {sea}.
+
+    For 1-vowel SE variants "sY", it is equivalent to "SeY". Since it doesn't make sense to use the
+    same places for both sides, {se} is nonsensical.
+
+    The selected proposition place is made into a switching place (unless overwritten by a SE placed before {zu}).
+  short: "[P0 to P1]"
 pa:
   family: "PA"
   long: "Starts an assertive sentence, that can be believed or disbelieved, and is either true or false."
   short: "[assertion]"
-pae:
-  family: "PA"
-  long: "Starts an vocative. Defines the listener as the (E) place of this scope."
-  short: "[vocative]"
 pao:
   family: "PA"
   long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
@@ -547,6 +560,18 @@ pau:
   family: "PA"
   long: "Starts a directive sentence, that is requested, wished or ordered to be true."
   short: "[directive]"
+pahi:
+  family: "PA"
+  long: "Starts an vocative. Defines the listener as the (Ec) place of this scope."
+  short: "[vocative]"
+pahe:
+  family: "PA"
+  long: |
+    Import another text represented by the (Ec) place of this scope.
+    Imports allows to make texts defining non-standard vocabulary about a subject,
+    so that it can be used anytime someone wants to talk about this subject.
+    Such subjects are advanced physics, chemistry or maths for example.
+  short: "[import]"
 pai:
   family: "PAI"
   long: "Ends an predicate scope."
@@ -1959,6 +1984,14 @@ buiur:
   family: "R"
   long: "(Ed) is meat from animal/source [Ad]."
   short: "meat"
+dren:
+  family: "R"
+  long: "(Ec) buys [Ac] for price/in exchange for (Oc) (where success is implied)."
+  short: "buys"
+dran:
+  family: "R"
+  long: "(Ec) offers/intends to sell [Ac] for price/in exchange for (Oc) (where success is not implied)."
+  short: "offers"
 
 # Compounds (2):
 e tsen ban:
@@ -2304,6 +2337,11 @@ e cmo bena:
   family: "C2"
   long: (Ed) heals/recovers/returns to health.
   short: "heals"
+e kini bju:
+  family: "C2"
+  long: (Ed) is a textbook/course teaching about subject [Ad].
+  short: "textbook"
+  definition: "po ekinibju ke ka pi ke bju gla kini via seru ka"
 
 a cen po bu:
   family: "C3"
