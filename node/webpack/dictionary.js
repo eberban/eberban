@@ -43,7 +43,7 @@ function html_word_entry(word, entry) {
 
 
 	if (['R', 'C2', 'C3'].includes(entry.family)) {
-		if (entry.long.match(/\[((A)(\d|c|d|n|s(\d|_)?)?)\]/g)) {
+		if (entry.long.match(/\[(A(-[A-Z](\d|[a-zA-Z_])?)?)\]/g)) {
 			output += `<span class="btn btn-mini btn-danger dictionary-ea">sea</span> `;
 		} else {
 			output += `<span class="btn btn-mini btn-success dictionary-e">se</span> `;
@@ -63,8 +63,8 @@ function html_word_entry(word, entry) {
 	paragraphs.forEach((p) => {
 		p = escapeHTML(p);
 		p = p.replace(/  (\r\n|\r|\n)/g, '<br />');
-		p = p.replace(/\(((E|A|O|U)(\d|c|d|n|s(\d|_)?)?)\)/g, '<span class="label label-success place">$&</span>');
-		p = p.replace(/\[((E|A|O|U)(\d|c|d|n|s(\d|_)?)?)\]/g, '<span class="label label-important place">$&</span>');
+		p = p.replace(/\(((E|A|O|U)(-[A-Z](\d|[a-zA-Z_])?)?)\)/g, '<span class="label label-success place">$&</span>');
+		p = p.replace(/\[((E|A|O|U)(-[A-Z](\d|[a-zA-Z_])?)?)\]/g, '<span class="label label-important place">$&</span>');
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');

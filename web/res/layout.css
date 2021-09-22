@@ -226,3 +226,8 @@ li.implicit {
 	font-family: "Courier New", Courier, monospace;
 	border: 1px solid black;
 }
+
+.place {
+	padding: 2px;
+	font-family: "Courier New", Courier, monospace;
+}
