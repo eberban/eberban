@@ -1,10 +1,6 @@
 # eberban word list (en)
 ---
 # Specials :
-_cardinal:
-  long: "(Ec) is (a group of) [number] things satisfying [A1]."
-_number:
-  long: "(En) is the (abstract) number [number] times [An] (default: 1)."
 0:
   family: "TI"
   long: "Digit 0"
@@ -670,12 +666,27 @@ buhu:
   short: "[erased]"
 be:
   family: "BE"
-  long: "Ends string/number/borrowing."
+  long: |
+    Number and borrowing (ellidable terminator).
+
+    Abstract number terminator. The preceding number have definition  :
+    (En) is the (abstract) number [number] times [An] (default: 1).
   short: ""
   tags: [terminator, elidable, number]
 bei:
   family: "BE"
-  long: "Transform a cardinal number into an ordinal : (Ec) is the [number]th member of sequence [As]."
+  long: |
+    Cardinal number terminator. The preceding number have definition :  
+    (Ec) is (a group of) [number] things satisfying [A1].  
+    The number must be a natural number (non zero positive integer).
+  short: "quantity"
+  tags: [terminator, number, list]
+beu:
+  family: "BE"
+  long: |
+    Ordinal number terminator. The preceding number have definition :  
+    (Ec) is the [number]th member of sequence [As].  
+    The number must be a natural number (non zero positive integer).
   short: "-th"
   tags: [terminator, number, list]
 bi:
