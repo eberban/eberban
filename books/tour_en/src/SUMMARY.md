@@ -4,7 +4,7 @@
   - [Morphology](chapters/1-1.md)
   - [Phonology](chapters/1-2.md)
 - [Grammar]()
-  - [Proposition and predicates](chapters/2-1.md)
+  - [Propositions and predicates](chapters/2-1.md)
   - [Explicit switches](chapters/2-2.md)
   - [Predicate places](chapters/2-3.md)
   - [Discourse predicates](chapters/2-4.md)
