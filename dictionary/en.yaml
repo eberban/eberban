@@ -1269,7 +1269,7 @@ speu:
   short: "ordering rule"
 fir:
   family: "R"
-  long: "(Ed) is a color of [Ad]."
+  long: "(Ec) is a (abstract) color of [Ad]."
   short: "color"
   tags: [color]
 cion:
@@ -1729,7 +1729,7 @@ kcaro:
   family: "R"
   long: "(Ed) is an table."
   short: "table"
-guro:
+sta:
   family: "R"
   long: "(Ed) is a country/territory."
   short: "country"
@@ -2024,7 +2024,7 @@ e ufranse ban:
   long: "(Ed) is the french language."
   short: "french language"
   tags: [cultural]
-e ufranse guro:
+e ufranse sta:
   family: "C2"
   long: "(Ed) is France."
   short: "France"
@@ -2039,7 +2039,7 @@ e unihon ban:
   long: "(Ed) is the japanese language."
   short: "japanese language"
   tags: [cultural]
-e unihon guro:
+e unihon sta:
   family: "C2"
   long: "(Ed) is Japan."
   short: "Japan"
@@ -2049,7 +2049,7 @@ e udjonguo ban:
   long: "(Ed) is chinese language."
   short: "chinese language"
   tags: [cultural]
-e udjonguo guro:
+e udjonguo sta:
   family: "C2"
   long: "(Ed) is China."
   short: "China"
@@ -2059,12 +2059,12 @@ e udoitce ban:
   long: "(Ed) is german language."
   short: "german language"
   tags: [cultural]
-e udoitce guro:
+e udoitce sta:
   family: "C2"
   long: "(Ed) is Germany."
   short: "Germany"
   tags: [cultural]
-e umiser guro:
+e umiser sta:
   family: "C2"
   long: "(Ed) is Egypt."
   short: "Egypt"
@@ -2074,7 +2074,7 @@ e uhangu ban:
   long: "(Ed) is korean language."
   short: "korean language"
   tags: [cultural]
-e uhangu guro:
+e uhangu sta:
   family: "C2"
   long: "(Ed) is South Korea."
   short: "South Korea"
@@ -2084,7 +2084,7 @@ e utcoson ban:
   long: "(Ed) is korean language."
   short: "korean language"
   tags: [cultural]
-e utcoson guro:
+e utcoson sta:
   family: "C2"
   long: "(Ed) is North Korea."
   short: "North Korea"
