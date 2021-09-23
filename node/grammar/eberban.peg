@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.44.2
+# eberban PEG grammar - v0.45
 # =============================
 
 # GRAMMAR
@@ -15,9 +15,9 @@ paragraph_unit_1 <- definition / sentence
 
 arguments_list <- (KI_clause / GI_clause)* PI_clause
 
-definition <- PO_clause defined scope POI_clause_elidible
+definition <- PO_clause defined scope
 defined <- GI_clause / freeform_variable / predicate_compound / predicate_root
-sentence <- PA_clause_elidible scope PAI_clause_elidible
+sentence <- PA_clause_elidible scope
 
 # scope
 scope <- arguments_list? scope_1
@@ -97,12 +97,10 @@ KI_clause  <- spaces? KI                   # individual variables
 MI_clause  <- spaces? MI                   # discourse predicates
                                            #
 PA_clause  <- spaces? PA  free*            # sentence starter
-PAI_clause <- spaces? PAI free*            # sentence terminator
 PE_clause  <- spaces? PE  free*            # predicate scope starter
 PEI_clause <- spaces? PEI                  # predicate scope elidible terminator
 PI_clause  <- spaces? PI                   # arguments sequence terminator
 PO_clause  <- spaces? PO  free*            # definition starter
-POI_clause <- spaces? POI free*            # definition terminator
 PU_clause  <- spaces? PU  free*            # paragraph marker
                                            #
 TI_clause  <- spaces? TI                   # numbers/digits
@@ -116,9 +114,7 @@ CU_clause  <- spaces? CU                   # paragraph unit eraser
 
 BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
-PAI_clause_elidible <- PAI_clause?
 PEI_clause_elidible <- PEI_clause?
-POI_clause_elidible <- POI_clause?
 VEI_clause_elidible <- VEI_clause?
 
 # PARTICLE FAMILIES
@@ -142,13 +138,11 @@ FE    <- &particle                   (f hieaou)         &post_word
 GI    <- &particle                   (g hieaou)         &post_word
 KI    <- &particle                   (k hieaou)         &post_word
 MI    <- &particle                   (m hieaou)         &post_word
-PA    <- &particle !(PAI &post_word) (p &a hieaou)      &post_word
-PAI   <- &particle                   (p a i)            &post_word
+PA    <- &particle                   (p &a hieaou)      &post_word
 PE    <- &particle                   (p e)              &post_word
 PEI   <- &particle                   (p e i)            &post_word
 PI    <- &particle                   (p &i hieaou)      &post_word
-PO    <- &particle !(POI &post_word) (p &o hieaou)      &post_word
-POI   <- &particle                   (p o i)            &post_word
+PO    <- &particle                   (p &o hieaou)      &post_word
 PU    <- &particle                   (p &u hieaou)      &post_word
 SE    <- &particle                   (s hieaou)         &post_word
 TI    <- &particle                   (t hieaou) / digit &post_word

@@ -510,8 +510,14 @@ za:
   short: "[named]"
 ze:
   family: "ZI"
-  long: "Use the same instance and variables of the following unit instead of a new one."
-  short: "[same]"
+  long: "Use the latest instance and variables of the predicate word instead of creating new ones."
+  short: "[reuse]"
+zei:
+  family: "ZI"
+  long: |
+    Use the latest instance and variables of a compound containing this word
+    instead of creating new ones.
+  short: "[reuse compound]"
 zi:
   family: "ZI"
   long: |
@@ -548,7 +554,7 @@ pa:
   family: "PA"
   long: "Starts an assertive sentence, that can be believed or disbelieved, and is either true or false."
   short: "[assertion]"
-pao:
+pai:
   family: "PA"
   long: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
   short: "[declaration]"
@@ -556,11 +562,11 @@ pau:
   family: "PA"
   long: "Starts a directive sentence, that is requested, wished or ordered to be true."
   short: "[directive]"
-pahi:
+paho:
   family: "PA"
   long: "Starts an vocative. Defines the listener as the (E-Xc) place of this scope."
   short: "[vocative]"
-pahe:
+pahu:
   family: "PA"
   long: |
     Import another text represented by the (E-Xc) place of this scope.
@@ -568,11 +574,6 @@ pahe:
     so that it can be used anytime someone wants to talk about this subject.
     Such subjects are advanced physics, chemistry or maths for example.
   short: "[import]"
-pai:
-  family: "PAI"
-  long: "Ends an predicate scope."
-  short: ""
-  tags: [terminator, elidable]
 pe:
   family: "PE"
   long: "Inline scope starter."
@@ -594,15 +595,10 @@ po:
   family: "PO"
   long: "Start a predicate definition."
   short: "[definition]"
-poa:
+poi:
   family: "PO"
   long: "Start a question definition, the arguments being the unknown informations."
   short: "[question]"
-poi:
-  family: "POI"
-  long: "Ends a predicate definition."
-  short: ""
-  tags: [terminator, elidable]
 pu:
   family: "PU"
   long: "Marks a new paragraph/section/change of subject."
