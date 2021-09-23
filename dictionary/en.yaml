@@ -186,22 +186,22 @@ tiu:
   long: "Digit ↋/B (11)"
   short: "B"
   tags: [digit, number]
-teie:
+tiei:
   family: "TI"
   long: "Digit C (12)"
   short: "C"
   tags: [digit, number]
-teia:
+tiai:
   family: "TI"
   long: "Digit D (13)"
   short: "D"
   tags: [digit, number]
-teio:
+tioi:
   family: "TI"
   long: "Digit E (14)"
   short: "E"
   tags: [digit, number]
-teiu:
+tiui:
   family: "TI"
   long: "Digit F (15)"
   short: "F"
@@ -211,65 +211,30 @@ ti:
   long: "Decimal separator"
   short: "."
   tags: [separator, number]
-tiha:
-  family: "TI"
-  long: "<base . number> separator"
-  short: "base"
-  tags: [separator, number]
-tihe:
-  family: "TI"
-  long: "<precise . approximation> separator"
-  short: "approx"
-  tags: [separator, number]
 tihi:
   family: "TI"
   long: "<precise . repeating part> separator"
   short: "repeating"
+  tags: [separator, number]
+tihe:
+  family: "TI"
+  long: "<number . magnitude> separator"
+  short: "magnitude"
+  tags: [separator, number]
+tiha:
+  family: "TI"
+  long: "<precise . approximation> separator"
+  short: "approx"
   tags: [separator, number]
 tiho:
   family: "TI"
   long: "<numerator . denominator> separator"
   short: "fraction"
   tags: [separator, number]
-tahe:
+tihu:
   family: "TI"
-  long: "10^3 separator (kilo)"
-  short: "10^3"
-  tags: [separator, number]
-taha:
-  family: "TI"
-  long: "10^6 separator (mega)"
-  short: "10^6"
-  tags: [separator, number]
-taho:
-  family: "TI"
-  long: "10^9 separator (giga)"
-  short: "10^9"
-  tags: [separator, number]
-tahu:
-  family: "TI"
-  long: "10^12 separator (tera)"
-  short: "10^12"
-  tags: [separator, number]
-tahei:
-  family: "TI"
-  long: "10^15 separator (peta)"
-  short: "10^15"
-  tags: [separator, number]
-tahai:
-  family: "TI"
-  long: "10^18 separator (exa)"
-  short: "10^18"
-  tags: [separator, number]
-tahoi:
-  family: "TI"
-  long: "10^21 separator (zetta)"
-  short: "10^21"
-  tags: [separator, number]
-tahui:
-  family: "TI"
-  long: "10^24 separator (yotta)"
-  short: "10^24"
+  long: "<base . number> separator"
+  short: "base"
   tags: [separator, number]
 tea:
   family: "TI"
@@ -681,7 +646,7 @@ beu:
   family: "BE"
   long: |
     Ordinal number terminator. The preceding number have definition :  
-    (E-Xc) is the [number]th member of sequence [As].  
+    (E-Xc) is the [number]th member of sequence [A-SX].  
     The number must be a natural number (non zero positive integer).
   short: "-th"
   tags: [terminator, number, list]
@@ -1909,7 +1874,7 @@ zgi:
   long: |
     (E-Nn) is the duration expressed by number [A-Nn].
 
-    [A-Nn] uses number vector notation to quickly express durations or dates.  
+    [A-Nn] uses number vector notation to quickly express durations.  
     - {tehe} : seconds ({vola})  
     - {teha} : minutes ({jero})  
     - {teho} : hours ({sura})  
