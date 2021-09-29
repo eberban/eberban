@@ -1535,10 +1535,6 @@ jiro:
   family: "R"
   long: "(E-Xd) shares [A-Xd] with (O-Xd)."
   short: "shares"
-mare:
-  family: "R"
-  long: "(E-Xd) is legal, allowed by authority (A-Xd)."
-  short: "allowed"
 sier:
   family: "R"
   long: "(E-Xd) is the Internet."
