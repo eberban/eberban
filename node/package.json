@@ -6,7 +6,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mia-entropy/eberban"
+    "url": "https://github.com/eberban/eberban"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

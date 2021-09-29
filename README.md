@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://mia-entropy.github.io/eberban/">
+  <a href="https://eberban.github.io/eberban/">
     <img src="./images/eberban_hex.svg" width="30%" />
   </a>
 </div>
@@ -29,5 +29,5 @@ If you would like to get involved, please also consider joining our
 
 [Lojban]: https://mw.lojban.org/papri/Lojban
 [constructed language]: https://en.wikipedia.org/wiki/Constructed_language
-[GitHub pages]: https://mia-entropy.github.io/eberban/
+[GitHub pages]: https://eberban.github.io/eberban/
 [Discord server]: https://discord.com/invite/KKB79RwWUc
