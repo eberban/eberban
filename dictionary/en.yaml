@@ -550,12 +550,12 @@ pei:
   tags: [terminator, elidable]
 pi:
   family: "PI"
-  long: "Ends the sequence of arguments."
-  short: "[args end]"
+  long: "Ends the sequence of arguments, and mark the scope as <E> default chaining."
+  short: "[args-E]"
 pia:
   family: "PI"
-  long: "Ends the sequence of arguments, and mark the scope as <EA> default predicate."
-  short: "[args end EA]"
+  long: "Ends the sequence of arguments, and mark the scope as <EA> default chaining."
+  short: "[args-EA]"
 po:
   family: "PO"
   long: "Start a predicate definition."
@@ -1131,10 +1131,29 @@ saur:
   long: "(E-Nn) is 1 candela times [A-Nn] (default: 1)."
   short: "candela"
   tags: [unit]
-sti:
+dji:
   family: "R"
   long: "(E-Nn) is the inverse (1/x) of [A-Nn] (default: 1)."
   short: "inverse"
+  tags: [math]
+dje:
+  family: "R"
+  long: |
+    (E-Nn) is the sum of all numbers in sequence [A-Sn].  
+    Sum of an empty sequence is 0.
+  short: "sum"
+  tags: [math]
+dja:
+  family: "R"
+  long: |
+    (E-Nn) is the product of all numbers in sequence [A-Sn].  
+    Product of an empty sequence is 1.
+  short: "product"
+  tags: [math]
+djo:
+  family: "R"
+  long: "(E-Nn) is [A-Nn] to the power of (O-Nn) (default: 2)."
+  short: "exponentiation"
   tags: [math]
 ber:
   family: "R"

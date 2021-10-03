@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.45
+# eberban PEG grammar - v0.45.2
 # =============================
 
 # GRAMMAR
@@ -16,7 +16,7 @@ paragraph_unit_1 <- definition / sentence
 arguments_list <- (KI_clause / GI_clause)* PI_clause
 
 definition <- PO_clause defined scope
-defined <- GI_clause / freeform_variable / predicate_compound / predicate_root
+defined <- GI_clause / spaces? freeform_variable / predicate_compound / predicate_root
 sentence <- PA_clause_elidible scope
 
 # scope

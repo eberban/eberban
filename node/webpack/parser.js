@@ -353,7 +353,7 @@ function constructBoxesOutput(parse, depth) {
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
-		} else if (['KE', 'GE', 'borrowing', "freeform variable"].includes(parse.type)) {
+		} else if (['KI', 'GI', 'borrowing', "freeform variable"].includes(parse.type)) {
 			output += '';
 		} else {
 			output += '...';

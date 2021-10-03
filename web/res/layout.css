@@ -97,6 +97,13 @@ li.implicit {
 	background: #eeeeee;
 }
 
+:not(.box-paragraph-unit) .box.box-note {
+	display: block;
+	border: 1px black solid;
+	margin: 2px;
+	padding: 0px;
+}
+
 .box.box-sequential {
 	background: white;
 }
@@ -218,13 +225,14 @@ li.implicit {
 .foreign-quote-content {
 	white-space: pre-wrap;
 	font-family: "Courier New", Courier, monospace;
+	text-align: left;
 }
 
 .foreign-quote-content .tip {
-/* .foreign-quote div:nth-last-of-type(2) .tip { */
 	white-space: pre-wrap;
 	font-family: "Courier New", Courier, monospace;
-	border: 1px solid black;
+	text-align: left;
+	background-color: #ffffff60;
 }
 
 .place {
