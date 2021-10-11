@@ -53,11 +53,11 @@ mo:
   short: "you"
 mio:
   family: "MI"
-  long: "(E-Xd) is I/a speaker/author or you, a listener."
+  long: "Every member of (E-Xc) is either I/a speaker/author; or you, a listener."
   short: "inclusive we"
 mie:
   family: "MI"
-  long: "(E-Xd) is I/a speaker/author or someone, neither a speaker or listener."
+  long: "Every member of (E-Xc) is either I/a speaker/author; or someone that is not a listener."
   short: "exclusive we"
 ma:
   family: "MI"
@@ -1007,8 +1007,8 @@ zaor:
   short: "agrees"
 van:
   family: "R"
-  long: "(E-Xd) goes to [A-Xd] from (O-Xd)."
-  short: "goes"
+  long: "(E-Xd) moves/goes to [A-Xd] from (O-Xd)."
+  short: "moves"
 vanu:
   family: "R"
   long: "(E-Xd) is a path to [A-Xd] from (O-Xd)."
@@ -1597,27 +1597,49 @@ flua:
   short: "sound"
 fana:
   family: "R"
-  long: "(E-Xd) is a parent of [A-Xd]."
-  short: "parent"
+  long: "(E-Xd) is a social parent of [A-Xd]. (E) raises [A]."
+  short: "social parent"
+  tags: [kinship, family]
+vele:
+  family: "R"
+  long: |
+    (E-Xd) is a biological parent of [A-Xd].
+    (E) contributes to the genetic makeup of [A].
+    Reverse for child.
+  short: "biological parent"
   tags: [kinship, family]
 kana:
   family: "R"
   long: "(E-Xd) is a sibling/brother/sister of [A-Xd]."
   short: "sibling"
   tags: [kinship, family]
+kene:
+  family: "R"
+  long: |
+    (E-Xd) is a nibling/nephew/nice of [A-Xd].
+    Reverse for uncle/aunt.
+  short: "nibling"
+  tags: [kinship, family]
 mana:
   family: "R"
   long: |
-    (E-Xd) is a mother of [A-Xd].
+    (E-Xd) is a (social) mother of [A-Xd].
     Equivalent to {zve fana}.
   short: "mother"
   tags: [kinship, family]
 pana:
   family: "R"
   long: |
-    (E-Xd) is a father of [A-Xd].
+    (E-Xd) is a (social) father of [A-Xd].
     Equivalent to {kla fana}.
   short: "father"
+  tags: [kinship, family]
+jnehu:
+  family: "R"
+  long: |
+    (E-Xd) takes cares of [A-Xd].
+    (E-Xd) ensures that the needs of [A-Xd] are fulfulled.    
+  short: "takes care"
   tags: [kinship, family]
 dzana:
   family: "R"
@@ -1926,6 +1948,34 @@ dran:
   family: "R"
   long: "(E-Xc) offers/intends to sell [A-Xc] for price/in exchange for (O-Xc) (where success is not implied)."
   short: "offers"
+pubde:
+  family: "R"
+  long: "(E-Xd) is soil/dirt/pebbles/silt/clay (soil of all types)."
+  short: "soil"
+baluo:
+  family: "R"
+  long: "(E-Xd) is a stone/rock/boulder (unified unbroken mass)."
+  short: "stone"
+boliu:
+  family: "R"
+  long: "(E-Xd) is dry land (not watery, can be stepped on). [antonyms: {suier}, {fivmu}]"
+  short: "dry land"
+suier:
+  family: "R"
+  long: "(E-Xd) is a sea/ocean/lake (relatively large non-flowing body of water)."
+  short: "sea"
+fivmu:
+  family: "R"
+  long: "(E-Xd) is a river/stream/brook (relatively large flowing body of water)."
+  short: "river"
+saelo:
+  family: "R"
+  long: "(E-Xd) is air/breathable atmosphere/gas at correct pressure for A-Xd (default: humans)."
+  short: "air"
+soeon:
+  family: "R"
+  long: "(E-Xd) is is the sky (high troposphere and above)."
+  short: "sky"
 
 # Compounds (2):
 e tsen ban:
@@ -2276,6 +2326,18 @@ e kini bju:
   long: (E-Xd) is a textbook/course teaching about subject [A-Xd].
   short: "textbook"
   definition: "po ekinibju ke ka pi ke bju gla kini via seru ka"
+e jeno caun:
+  family: "C2"
+  long: |
+    (E-Xd) is an aquatic animal (both salt and freshwater, amphibians included)
+    (can survive for long periods in water).
+  short: "aquatic animal"
+e boliu caun:
+  family: "C2"
+  long: |
+    (E-Xd) is a terrestrial animal (birds included)
+    (can survive long periods on land).
+  short: "terrestrial animal"
 
 a cen po bu:
   family: "C3"
