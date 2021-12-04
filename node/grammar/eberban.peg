@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.45.2
+# eberban PEG grammar - v0.46
 # =============================
 
 # GRAMMAR
@@ -23,7 +23,7 @@ sentence <- PA_clause_elidible scope
 scope <- arguments_list? scope_1
 
 scope_1 <- scope_sequence / scope_2
-scope_sequence <- scope_sequence_item (BU_clause scope_sequence_item)+
+scope_sequence <- (scope_sequence_item BU_clause)+ scope_sequence_item?
 scope_sequence_item <- scope_2
 
 scope_2 <- chaining
@@ -31,7 +31,7 @@ scope_2 <- chaining
 # chaining and explicit switches
 chaining <- (chaining_neg / chaining_unit)+
 chaining_neg <- BI_clause chaining
-chaining_unit <- predicate ve_scope?
+chaining_unit <- predicate ve_scope*
 ve_scope <- ve_scope_first ve_scope_next* VEI_clause_elidible
 ve_scope_first <- BI_clause? VE_clause scope 
 ve_scope_next <- BI_clause? FE_clause scope
@@ -93,8 +93,8 @@ FE_clause  <- spaces? FE  override? free*  # next explicit switch
 VEI_clause <- spaces? VEI                  # VE-scope terminator
                                            #
 GI_clause  <- spaces? GI                   # predicate variables
-KI_clause  <- spaces? KI                   # individual variables
-MI_clause  <- spaces? MI                   # discourse predicates
+KI_clause  <- spaces? KI                   # symbol variables
+MI_clause  <- spaces? MI                   # particle predicates
                                            #
 PA_clause  <- spaces? PA  free*            # sentence starter
 PE_clause  <- spaces? PE  free*            # predicate scope starter
@@ -145,7 +145,7 @@ PI    <- &particle                   (p &i hieaou)      &post_word
 PO    <- &particle                   (p &o hieaou)      &post_word
 PU    <- &particle                   (p &u hieaou)      &post_word
 SE    <- &particle                   (s hieaou)         &post_word
-TI    <- &particle                   (t hieaou) / digit &post_word
+TI    <- &particle                   (t hieaou / digit) &post_word
 VE    <- &particle !(VEI &post_word) (v hieaou)         &post_word
 VEI   <- &particle                   (v e i)            &post_word
 ZI    <- &particle                   (z hieaou)         &post_word
