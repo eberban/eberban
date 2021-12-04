@@ -236,6 +236,50 @@ li.implicit {
 }
 
 .place {
-	padding: 2px;
+	padding: 1px 0px;
+	margin-left: 2px;
+	margin-right: 2px;
 	font-family: "Courier New", Courier, monospace;
+}
+
+.place a {
+	color: white;
+}
+
+.place .hidden {
+	color: #00000000;
+	text-shadow: none;
+}
+
+.dictionary-entry details {
+	background-color: #77777733;
+	padding: 10px;
+	padding-bottom: 1px;
+	margin-bottom: 7px;
+	border-radius: 5px;
+}
+
+.dictionary-entry summary {
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.dictionary-entry summary:hover {
+	cursor: pointer;
+}
+
+.dictionary-entry .word-anchor {
+	font-size: 50%;
+	margin-right: 1ch;
+	margin-bottom: 2px;
+}
+
+.dictionary-entry .word-anchor .icon-search {
+	vertical-align: baseline;
+}
+
+#search-stats {
+	margin-bottom: 10px;
+	font-style: italic;
+	font-size: 80%;
 }

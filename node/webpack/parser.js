@@ -86,6 +86,16 @@ function escapeHtml(str) {
 export function parse() {
 	var textToParse = $('#input_textarea').val();
 	$('#result-row').slideDown();
+
+	if(textToParse.length == 0) {
+		$('#parse-result-raw').html("");
+		$('#parse-result-tree').html("");
+		$('#parse-result-simplified').html("");
+		$('#parse-result-boxes').html("");
+		$('#parse-result-glossing').html("");
+		return;
+	}
+
 	try {
 		var start = new Date().getTime();
 		textToParse = ' ' + textToParse; // add initial space to help parser
@@ -205,7 +215,7 @@ function constructParseTreeOutput(parse, depth) {
 				// a literal
 				output += ' <b>[' + parse[1] + ']</b>';
 				if (dictionary[parse[1]]) {
-					output += ' <span class="translation">' + dictionary[parse[1]].short + '</span>';
+					output += ' <span class="translation">' + dictionary[parse[1]].gloss + '</span>';
 				}
 				return output;
 			}
@@ -265,7 +275,7 @@ function constructSimplifiedTreeOutput(parse, depth) {
 			output += ' <b>[' + parse.word + ']</b>';
 		}
 		if (dictionary[parse.word]) {
-			output += ' <span class="translation">' + dictionary[parse.word].short + '</span>';
+			output += ' <span class="translation">' + dictionary[parse.word].gloss + '</span>';
 		}
 	} else {
 		// we have a non-terminal
@@ -341,15 +351,15 @@ function constructBoxesOutput(parse, depth) {
 			return output;
 		}
 
-		if (dictionary[parse.word] && dictionary[parse.word].long) {
-			output += '<div class="tiptext">' + escapeHtml(dictionary[parse.word].long) + '</div>';
+		if (dictionary[parse.word] && dictionary[parse.word].short) {
+			output += '<div class="tiptext">' + escapeHtml(dictionary[parse.word].short) + '</div>';
 		}
 
 		output += '</div>&nbsp;<br>&nbsp;' + parse.type + '&nbsp;<br>';
-		// escapeHtml(words[text[j]].long)
+		// escapeHtml(words[text[j]].short)
 
 		if (dictionary[parse.word]) {
-			let short = dictionary[parse.word].short;
+			let short = dictionary[parse.word].gloss;
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';
 			}
@@ -408,10 +418,10 @@ function constructBoxesOutput(parse, depth) {
 					output += '<br><b>' + compound + '</b>';
 
 					if (dictionary[compound]) {
-						output += ' = <div class="tip translation">' + dictionary[compound].short;
+						output += ' = <div class="tip translation">' + dictionary[compound].gloss;
 
-						if (dictionary[compound].long) {
-							output += '<div class="tiptext">' + escapeHtml(dictionary[compound].long) + '</div>';
+						if (dictionary[compound].short) {
+							output += '<div class="tiptext">' + escapeHtml(dictionary[compound].short) + '</div>';
 						}
 
 						output += '&nbsp;</div>';
@@ -629,7 +639,7 @@ function showGlossing(text, $element) {
 			if (!definitions[word]) {
 				definitions[word] = [
 					dictionary[word].family,
-					dictionary[word].long ? escapeHtml(dictionary[word].long) : dictionary[word].short
+					dictionary[word].short ? escapeHtml(dictionary[word].short) : dictionary[word].gloss
 				];
 			}
 		}

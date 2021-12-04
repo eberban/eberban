@@ -1,14 +1,29 @@
+// const generators = {
+// 	A: () => pick_random([ generate_CVCV(1, 0), generate_CCVCV(1, -1) ]),
+// 	B: () => pick_random([ generate_CVCV(1, 1), generate_CVCV(2, 0), generate_CCVCV(1, 0), generate_CCVCV(2, -1) ]),
+// 	C: () =>
+// 		pick_random([
+// 			generate_CVCV(1, 2),
+// 			generate_CVCV(2, 1),
+// 			generate_CVCV(3, 0),
+// 			generate_CCVCV(1, 1),
+// 			generate_CCVCV(2, 0)
+// 		]),
+// 	D: () =>
+// 		pick_random([
+// 			// bias towards CVCCV :p
+// 			generate_CVCCV(1, 1),
+// 			generate_CVCCV(1, 1),
+// 			generate_CVCCV(1, 1),
+// 			generate_CVhVC(),
+// 			generate_CCVhV()
+// 		])
+// };
+
 const generators = {
-	A: () => pick_random([ generate_CVCV(1, 0), generate_CCVCV(1, -1) ]),
-	B: () => pick_random([ generate_CVCV(1, 1), generate_CVCV(2, 0), generate_CCVCV(1, 0), generate_CCVCV(2, -1) ]),
-	C: () =>
-		pick_random([
-			generate_CVCV(1, 2),
-			generate_CVCV(2, 1),
-			generate_CVCV(3, 0),
-			generate_CCVCV(1, 1),
-			generate_CCVCV(2, 0)
-		]),
+	A: () => generate_CCVCV(1, -1),
+	B: () => pick_random([ generate_CVCV(1, 1), generate_CCVCV(2, -1) ]),
+	C: () => pick_random([ generate_CVCV(1, 2), generate_CVCV(2, 1), generate_CCVCV(1, 1) ]),
 	D: () =>
 		pick_random([
 			// bias towards CVCCV :p
@@ -17,7 +32,10 @@ const generators = {
 			generate_CVCCV(1, 1),
 			generate_CVhVC(),
 			generate_CCVhV()
-		])
+		]),
+	An: () => generate_CVCV(1, 0),
+	Bn: () => pick_random([ generate_CCVCV(1, 0), generate_CVCV(2, 0) ]),
+	Cn: () => pick_random([ generate_CVCV(3, 0), generate_CCVCV(2, 0) ]),
 };
 
 function rand(upper) {

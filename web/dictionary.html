@@ -18,7 +18,7 @@
 		<h1>eberban dictionary <small id="words-count"></small></h1>
 
 		<form class="row">
-			<span id="search-reset" class="btn span2">Clear search</span>
+			<a href="#" id="search-reset" class="btn span2">Clear search</a>
 			<input type="text"
 				placeholder="Search eberban words, words in definitions, @family and #tags ..."
 				class="span9 input-medium"
@@ -38,35 +38,25 @@
 
 	$('#words-count').html(`(${word_count.particles} particles, ${word_count.roots} roots, ${word_count.compounds} compounds)`);
 
+	var useUrl = true;
+
 	function update() {
+		if (useUrl) {
+			// Load search from URL.
+			let possibleSearch = Array.from(window.location.href.matchAll(/\.html#(.*)/g));
+			if (possibleSearch[0] != undefined) {
+				$('#search').val(decodeURI(possibleSearch[0][1]));
+			}
+
+			useUrl = false;
+		}		
+
 		let search = $('#search').val();
-		let filters = search.split(' ');
+		// Update URL.
+		window.history.replaceState({}, "", `#${encodeURI(search)}`)
+
+		let filters = search.split(',');
 		$('#dictionary').html(bundle.html_dictionary(filters));
-
-		$('.dictionary-tag').click((event) => {
-			$('#search').val(`#${event.currentTarget.innerHTML}`);
-			update();
-		});
-
-		$('.dictionary-family').click((event) => {
-			$('#search').val(`@${event.currentTarget.innerHTML}`);
-			update();
-		});
-
-		$('.dictionary-word-link').click((event) => {
-			$('#search').val(`${event.currentTarget.innerHTML}`);
-			update();
-		});
-
-		$('.dictionary-ea').click((event) => {
-			$('#search').val(`[A`);
-			update();
-		});
-
-		$('.dictionary-e').click((event) => {
-			$('#search').val(`(A`);
-			update();
-		});
 
 		window.scrollTo(0, 0);
 	}
@@ -77,10 +67,12 @@
 		update();
 	});	
 
-	$('#search-reset').click((e) => {
-		$('#search').val('');
+	window.onhashchange = () => {
+		useUrl = true;
 		update();
-	});	
+	};
+
+
 </script>
 
 </html>
