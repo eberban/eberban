@@ -499,10 +499,10 @@ pa:
   family: "PA"
   short: "Starts an assertive sentence, that can be believed or disbelieved, and is either true or false."
   gloss: "[assertion]"
-pai:
-  family: "PA"
-  short: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
-  gloss: "[declaration]"
+# pai:
+#   family: "PA"
+#   short: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
+#   gloss: "[declaration]"
 pae:
   family: "PA"
   short: |
@@ -533,8 +533,12 @@ pei:
   tags: [terminator, elidable]
 pi:
   family: "PI"
-  short: "Ends the sequence of arguments."
-  gloss: "[end args]"
+  short: "Enable axiomatic predicate."
+  gloss: "[axiom on]"
+piu:
+  family: "PI"
+  short: "Disable axiomatic predicate."
+  gloss: "[axiom off]"
 po:
   family: "PO"
   short: "Start a predicate definition."
@@ -547,51 +551,36 @@ pu:
   family: "PU"
   short: "Marks a new paragraph/section/change of subject."
   gloss: "[paragraph]"
-da:
+di:
   family: "DA"
-  short: "Emphasis indicator : the attached word is especially emphasized."
-  gloss: "[emphasis]"
-daha:
+  short: |
+    Attention focus: the listener should be extra attentive to the following word.
+    Maybe it would be especially prone to confusion?
+  gloss: "[attention focus]"
+die:
   family: "DA"
-  short: "Nonce-word indicator : the attached word (usually a compound) may be non-standard."
-  gloss: "[non-standard]"
-dahe:
+  short: |
+    Contrastive focus: It's that thing and not something else that was expected.
+  gloss: "[contrastive focus]"
+dia:
   family: "DA"
-  short: "Attached word is a metadata tag / hashtag."
-  gloss: "[metadata]"
-dae:
-  family: "DA"
-  short: "However/but/in contrast."
-  gloss: "[however]"
-dai:
-  family: "DA"
-  short: "Similarly."
-  gloss: "[similarly]"
-dao:
-  family: "DA"
-  short: "Additionally."
-  gloss: "[additionally]"
-dau:
-  family: "DA"
-  short: "Uniquely/only/solely."
-  gloss: "[uniquely]"
+  short: |
+    Newsworthiness focus: Marks the part of the sentence containing the most
+    important new information, such as the answer of a question.
+  gloss: "[newsworthiness focus]"
 de:
   family: "DE"
   gloss: ""
   short: "Attach a single predicate that acts as an interjection."
-di:
-  family: "DI"
-  gloss: "[subscript]"
-  short: "Attaches a subscript number/string."
-du:
-  family: "DU"
-  gloss: ""
-  short: "Override particule meaning with provided predicate."
-do:
+dei:
+  family: "DE"
+  short: "Attached word is a metadata tag / hashtag."
+  gloss: "[metadata]"
+da:
   family: "DO"
   gloss: "("
   short: "Starts parenthetical note."
-doi:
+dai:
   family: "DOI"
   gloss: ")"
   tags: [terminator]
@@ -610,7 +599,7 @@ be:
   tags: [terminator, elidable, number]
   transitive: true
   short: |
-    Number and borrowing (ellidable terminator).
+    Number, borrowing and arguments list terminator.
 
     Abstract number terminator. The preceding number have definition  :
     [E:tce* gen] is the number [number] times [E:tce* gen] (default: 1).

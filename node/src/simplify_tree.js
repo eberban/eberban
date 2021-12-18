@@ -10,6 +10,7 @@ const important_types = [
 	[ 'paragraph_unit_erased', 'erased' ],
 	[ 'definition', 'definition' ],
 	[ 'sentence', 'sentence' ],
+	[ 'axiom', 'axiom' ],
 
 	// scope	
 	[ 'scope', 'scope' ],

@@ -7,17 +7,18 @@ text <- (free_interjection / free_parenthetical)* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&PU_clause paragraph)*
-paragraph <- PU_clause? paragraph_unit (&(PA_clause / PO_clause) paragraph_unit)*
+paragraph <- PU_clause? paragraph_unit (&(PA_clause / PO_clause / PI_clause) paragraph_unit)*
 
 paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
 paragraph_unit_erased <- paragraph_unit_1 CU_clause
-paragraph_unit_1 <- definition / sentence
+paragraph_unit_1 <- definition / axiom / sentence
 
-arguments_list <- (KI_clause / GI_clause)* PI_clause
+arguments_list <- (KI_clause / GI_clause)* BE_clause
+defined <- GI_clause / free_prefix* spaces? freeform_variable / predicate_compound / predicate_root
 
 definition <- PO_clause defined scope
-defined <- GI_clause / spaces? freeform_variable / predicate_compound / predicate_root
 sentence <- PA_clause_elidible scope
+axiom <- PI_clause defined
 
 # scope
 scope <- arguments_list? scope_1
@@ -37,14 +38,14 @@ ve_scope_first <- BI_clause? VE_clause scope
 ve_scope_next <- BI_clause? FE_clause scope
 
 # predicate unit
-predicate <- predicate_1 free*
+predicate <- predicate_1 free_suffix*
 predicate_1 <- (SE_clause !SE_clause / ZI_clause)* predicate_2
 predicate_2 <- BA_clause / MI_clause / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
 
-predicate_root <- spaces? root
-predicate_number <- spaces? number
-predicate_compound <- spaces? compound
-predicate_borrowing <- borrowing_group
+predicate_root <- free_prefix* spaces? root
+predicate_number <- free_prefix* spaces? number
+predicate_compound <- free_prefix* spaces? compound
+predicate_borrowing <- free_prefix* borrowing_group
 predicate_scope <- PE_clause scope PEI_clause_elidible
 
 # quotes
@@ -61,56 +62,53 @@ number <- TI_clause+ BE_clause_elidible
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
 # variables
-predicate_variable <- BO_clause? (KI_clause / GI_clause / spaces? freeform_variable)
+predicate_variable <- BO_clause? (KI_clause / GI_clause / free_prefix* spaces? freeform_variable)
 
 # free affixes
-override <- DU_clause predicate_1 # avoid nested free
+free_prefix <- free_metadata
+free_metadata <- DI_clause
 
-free <- free_metadata / free_parenthetical / free_subscript / free_interjection
-free_metadata <- DA_clause
-free_subscript <- DI_clause number
-free_parenthetical <- DO_clause text DOI_clause
-free_interjection <- DE_clause predicate_1 # avoid nested free
+free_suffix <- free_parenthetical / free_interjection
+free_interjection <- DE_clause predicate_1 # avoid nested free suffix
+free_parenthetical <- DA_clause text DAI_clause
 
 # PARTICLES CLAUSES
-BA_clause  <- spaces? BA                   # inline argument
-BE_clause  <- spaces? BE                   # miscellaneous terminator
-BI_clause  <- spaces? BI  free*            # wide-scope negation
-BO_clause  <- spaces? BO                   # variable assignement
-BU_clause  <- spaces? BU                   # sequence separator
-                                           #
-DA_clause  <- spaces? DA                   # free metadata
-DE_clause  <- spaces? DE                   # free interjection
-DI_clause  <- spaces? DI                   # free subscript
-DO_clause  <- spaces? DO                   # free parenthetical starter
-DOI_clause <- spaces? DOI                  # free parenthetical terminator
-DU_clause  <- spaces? DU                   # free particle override
-                                           #
-SE_clause  <- spaces? SE  override?        # chaining override
-ZI_clause  <- spaces? ZI  override?        # predicate transformation
-VE_clause  <- spaces? VE  override? free*  # explicit switch + VE-scope
-FE_clause  <- spaces? FE  override? free*  # next explicit switch
-VEI_clause <- spaces? VEI                  # VE-scope terminator
-                                           #
-GI_clause  <- spaces? GI                   # predicate variables
-KI_clause  <- spaces? KI                   # symbol variables
-MI_clause  <- spaces? MI                   # particle predicates
-                                           #
-PA_clause  <- spaces? PA  free*            # sentence starter
-PE_clause  <- spaces? PE  free*            # predicate scope starter
-PEI_clause <- spaces? PEI                  # predicate scope elidible terminator
-PI_clause  <- spaces? PI                   # arguments sequence terminator
-PO_clause  <- spaces? PO  free*            # definition starter
-PU_clause  <- spaces? PU  free*            # paragraph marker
-                                           #
-TI_clause  <- spaces? TI                   # numbers/digits
-                                           #
-CA_clause  <- spaces? CA                   # grammatical quote starter
-CAI_clause <- spaces? CAI                  # grammatical quote terminator
-CE_clause  <- spaces? CE                   # one word quote
-CO_clause  <- spaces? CO                   # foreign quote
-                                           #
-CU_clause  <- spaces? CU                   # paragraph unit eraser
+BI_clause  <- free_prefix* spaces? BI  free_suffix*     # wide-scope negation
+BE_clause  <-              spaces? BE                   # miscellaneous terminator
+BA_clause  <- free_prefix* spaces? BA                   # inline argument
+BO_clause  <- free_prefix* spaces? BO                   # variable assignement
+BU_clause  <- free_prefix* spaces? BU                   # sequence separator
+                                                        #
+DI_clause  <-              spaces? DI                   # free metadata
+DE_clause  <-              spaces? DE                   # free interjection
+DA_clause  <-              spaces? DA                   # free parenthetical starter
+DAI_clause <-              spaces? DAI                  # free parenthetical terminator
+                                                        #
+SE_clause  <- free_prefix* spaces? SE                   # chaining override
+ZI_clause  <- free_prefix* spaces? ZI                   # predicate transformation
+VE_clause  <- free_prefix* spaces? VE free_suffix*      # explicit switch + VE-scope
+FE_clause  <- free_prefix* spaces? FE free_suffix*      # next explicit switch
+VEI_clause <-              spaces? VEI                  # VE-scope terminator
+                                                        #
+GI_clause  <- free_prefix* spaces? GI                   # predicate variables
+KI_clause  <- free_prefix* spaces? KI                   # symbol variables
+MI_clause  <- free_prefix* spaces? MI                   # particle predicates
+                                                        #
+PI_clause  <-              spaces? PI                   # axiom toggle
+PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
+PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
+PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
+PO_clause  <- free_prefix* spaces? PO  free_suffix*     # definition starter
+PU_clause  <- free_prefix* spaces? PU  free_suffix*     # paragraph marker
+                                                        #
+TI_clause  <-              spaces? TI                   # numbers/digits
+                                                        #
+CA_clause  <- free_prefix* spaces? CA                   # grammatical quote starter
+CAI_clause <- free_prefix* spaces? CAI                  # grammatical quote terminator
+CE_clause  <- free_prefix* spaces? CE                   # one word quote
+CO_clause  <- free_prefix* spaces? CO                   # foreign quote
+                                                        #
+CU_clause  <-              spaces? CU                   # paragraph unit eraser
 
 BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
@@ -118,30 +116,28 @@ PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
 
 # PARTICLE FAMILIES
-BA    <- &particle                   (b a)              &post_word
-BE    <- &particle                   (b &e hieaou)      &post_word
 BI    <- &particle                   (b i)              &post_word
+BE    <- &particle                   (b &e hieaou)      &post_word
+BA    <- &particle                   (b a)              &post_word
 BO    <- &particle                   (b o)              &post_word
 BU    <- &particle                   (b &u hieaou)      &post_word
+CE    <- &particle                   (c &e hieaou)      &post_word
 CA    <- &particle !(CAI &post_word) (c &a hieaou)      &post_word
 CAI   <- &particle                   (c a i)            &post_word
-CE    <- &particle                   (c &e hieaou)      &post_word
 CO    <- &particle                   (c &o hieaou)      &post_word
 CU    <- &particle                   (c u)              &post_word
-DA    <- &particle                   (d &a hieaou)      &post_word
+DI    <- &particle                   (d &i hieaou)      &post_word
 DE    <- &particle                   (d &e hieaou)      &post_word
-DI    <- &particle                   (d i)              &post_word
-DO    <- &particle                   (d o)              &post_word
-DOI   <- &particle                   (d o i)            &post_word
-DU    <- &particle                   (d u)              &post_word
+DA    <- &particle                   (d a)              &post_word
+DAI   <- &particle                   (d a i)            &post_word
 FE    <- &particle                   (f hieaou)         &post_word
 GI    <- &particle                   (g hieaou)         &post_word
 KI    <- &particle                   (k hieaou)         &post_word
 MI    <- &particle                   (m hieaou)         &post_word
-PA    <- &particle                   (p &a hieaou)      &post_word
+PI    <- &particle                   (p &i hieaou)      &post_word
 PE    <- &particle                   (p e)              &post_word
 PEI   <- &particle                   (p e i)            &post_word
-PI    <- &particle                   (p &i hieaou)      &post_word
+PA    <- &particle                   (p &a hieaou)      &post_word
 PO    <- &particle                   (p &o hieaou)      &post_word
 PU    <- &particle                   (p &u hieaou)      &post_word
 SE    <- &particle                   (s hieaou)         &post_word
@@ -149,7 +145,6 @@ TI    <- &particle                   (t hieaou / digit) &post_word
 VE    <- &particle !(VEI &post_word) (v hieaou)         &post_word
 VEI   <- &particle                   (v e i)            &post_word
 ZI    <- &particle                   (z hieaou)         &post_word
-
 
 # MORPHOLOGY
 # - Forein text quoting
@@ -159,9 +154,9 @@ foreign_quote_close <- native_word
 
 # - Compounds
 compound <- (compound_2 / compound_3 / compound_n)
-compound_2 <- e compound_word compound_word
-compound_3 <- a compound_word compound_word compound_word
-compound_n <- o (!compound_n_end compound_word)+ compound_n_end
+compound_2 <- e i? compound_word compound_word
+compound_3 <- a i? compound_word compound_word compound_word
+compound_n <- o i? (!compound_n_end compound_word)+ compound_n_end
 compound_n_end <- spaces o spaces
 compound_word <- spaces? (borrowing / native_word)
 

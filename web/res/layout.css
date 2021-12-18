@@ -89,20 +89,20 @@ li.implicit {
 
 .box.box-arguments {
 	background: var(--color-pink);
-	border: 1px black solid;
+	/* border: 1px black solid; */
 	border-top: 0px;
 }
 
-.box.box-note {
+.box.box-note, .box.box-metadata {
 	background: #eeeeee;
 }
 
-:not(.box-paragraph-unit) .box.box-note {
+/* :not(.box-paragraph-unit) .box.box-note {
 	display: block;
 	border: 1px black solid;
 	margin: 2px;
 	padding: 0px;
-}
+} */
 
 .box.box-sequential {
 	background: white;

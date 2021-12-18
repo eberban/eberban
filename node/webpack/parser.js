@@ -9,6 +9,7 @@ const hideTitleList = [
 	'paragraph',
 	'paragraph unit',
 	'sentence',
+	'axiom',
 	'definition',
 	'scope',
 	'sequence item',
@@ -38,6 +39,7 @@ const boxClassForTypeMap = new Map([
 	[ 'erased', 'erased' ],
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
+	[ 'axiom', 'box box-sentence' ],
 	[ 'arguments', 'box box-arguments' ],
 	[ 'defined predicate', 'box box-arguments' ],
 
@@ -61,11 +63,9 @@ const boxClassForTypeMap = new Map([
 	[ 'foreign quote content', 'box box-not-shown foreign-quote-content'],
 
 	// free
-	[ 'metadata', 'box box-note' ],
+	[ 'metadata', 'box box-metadata' ],
 	[ 'interjection', 'box box-note' ],
-	[ 'subscript', 'box box-note' ],
 	[ 'parenthetical', 'box box-note' ],
-	[ 'override', 'box box-note' ],
 ]);
 
 function boxClassForType(parse) {
@@ -673,6 +673,11 @@ function sortMapByKey(map) {
 function extractCanonicalCompound(text, startIndex, length) {
 	let offset = 0;
 	let compound = '';
+
+	if (text[startIndex] == 'i') {
+		compound += 'i';
+		offset++;
+	}
 
 	while (length != 0) {
 		let item = text[startIndex + offset];
