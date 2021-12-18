@@ -63,11 +63,15 @@ mo:
   gloss: "you"
 mio:
   family: "MI"
-  short: "Every member of [E:tce* man] is either I/a speaker/author; or you, a listener."
+  short: |
+    Every member of [E:tco* man] is either I/a speaker/author; or you, a listener; and
+    contains at least one of each.
   gloss: "inclusive we"
 mie:
   family: "MI"
-  short: "Every member of [E:tce* man] is either I/a speaker/author; or someone that is not a listener."
+  short: |
+    Every member of [E:tco* man] is either I/a speaker/author; or someone that is not a listener;
+    and contains at least one of each.
   gloss: "exclusive we"
 me:
   family: "MI"
@@ -82,7 +86,7 @@ ma:
     Simplest non-predicate type. All more complex non-predicate types are
     symbols that must additionally satisfy some properties.
 
-    There are an infinity amount of symbol which have no intrinsic meaning.
+    There are an infinite amount of symbol which have no intrinsic meaning.
     Instead we can spawn some and declare that they are connected in some way
     using definitions.
 mai:
@@ -1791,6 +1795,17 @@ cnue:
   family: "R"
   short: "[E:tce* dje] is a piece/portion/part of [A:tce dje]."
   gloss: "portion"
+duna:
+  family: "R"
+  short: "[E:tce dje] gives [A:tce* dje] to [O:tce dje]."
+  gloss: "gives"
+  notes: |
+    [E] no longer has legal or incidental ownership over [A].
+    Now, [O] has legal or incidental ownership over [A].
+    To specify whether it's legal or incidental, use
+    (TODO: Add words for legal/incidental ownership)
+
+    [E] does not accept payment or expect reciprocation from [O].
 
 # Compounds (2):
 e tsae ban:
@@ -1912,4 +1927,9 @@ e kini bun:
   family: "C2"
   short: "[E:tce* ma] is a course teaching about subject [A:tce* ma]."
   gloss: "course"
-  definition: "po ekinibun ke ka pi ke bju gla kini via seru ka"
+  definition: "po ekinibun ke ka pi ke bun gla kini via seru ka"
+
+a cen po bu:
+  family: "C3"
+  gloss: "dictionary"
+  short: "[E:tce* ma] is a dictionary."
