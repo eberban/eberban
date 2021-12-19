@@ -62,7 +62,7 @@ number <- TI_clause+ BE_clause_elidible
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
 # variables
-predicate_variable <- BO_clause? (KI_clause / GI_clause / free_prefix* spaces? freeform_variable)
+predicate_variable <- BO_clause? (KI_clause / defined)
 
 # free affixes
 free_prefix <- free_metadata
