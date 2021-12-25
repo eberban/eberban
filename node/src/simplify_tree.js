@@ -23,7 +23,6 @@ const important_types = [
 	[ 've_scope_first', 'explicit switch' ],
 	[ 've_scope_next', 'explicit switch' ],
 	[ 'arguments_list', 'arguments' ],
-	[ 'defined', 'defined predicate'],
 
 	// predicates
 	[ 'predicate', 'predicate' ],

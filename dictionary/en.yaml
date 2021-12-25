@@ -81,7 +81,7 @@ ma:
   family: "MI"
   gloss: symbol
   short: "[E:ma] is a symbol."
-  definition: 𝜆c 𝜆e ⊤
+  definition: 𝜆c 𝜆e ⊤ is-symbol(e)
   notes: |
     Simplest non-predicate type. All more complex non-predicate types are
     symbols that must additionally satisfy some properties.
@@ -89,11 +89,13 @@ ma:
     There are an infinite amount of symbol which have no intrinsic meaning.
     Instead we can spawn some and declare that they are connected in some way
     using definitions.
+
+    Can also be used alone for tautology (always true).
 mai:
   family: "MI"
   gloss: "exists"
   short: "[E:a] exists."
-  definition: 𝜆c 𝜆1 ⊤
+  definition: 𝜆c 𝜆e ⊤
   notes:
     Binding the [E] place multiple time allows to express equality/equivalence.
 
@@ -102,12 +104,12 @@ mae:
   family: "MI"
   gloss: "forall"
   short: "[E:(a)] is true for any argument (of the correct type)."
-  definition: 𝜆c 𝜆E ∀1 E(c,1)
+  definition: 𝜆c 𝜆E ∀x E(c,x)
 mao:
   family: "MI"
   gloss: "predicate-subset"
   short: "Every tuple of arguments that satisfy predicate [E:a] also satisfy [A:a]."
-  definition: 𝜆c 𝜆E ∀1 ∀2 ... E(c,1,2,...) ⇒ A(c,1,2,...)
+  definition: 𝜆c 𝜆E 𝜆A ∀x ∀y ... E(c,x,y,...) ⇒ A(c,x,y,...)
   notes: |
     [E] can be used to represent tuples or arguments that satisfy [A].
     This can be used to express indirect questions, with [A] being a predicate
@@ -119,6 +121,14 @@ mu:
   short: "[E:a] is not bound outside of the scope introducing this argument."
   definition: TODO
   notes: Allows to define default values.
+mui:
+  family: "MI"
+  gloss: "undefined"
+  short: "True if [E:()] is not undefined."
+  definition: TODO
+  notes: |
+    All predicates return a trivalent truth value which is either true, false
+    or undefined. 
 mue:
   family: "MI"
   gloss: "context-extract"
@@ -285,99 +295,156 @@ cu:
     Erase the currently sentence/defintion.
     Used when a mistake is made to redo the sentence/definition."
   gloss: "[erased]"
-fe:
-  family: "FE"
-  short: "Switch to the E place of the predicate before the current VE-scope."
-  gloss: "switch-E"
-fa:
-  family: "FE"
-  short: "Switch to the A place of the predicate before the current VE-scope."
-  gloss: "switch-A"
-fo:
-  family: "FE"
-  short: "Switch to the O place of the predicate before the current VE-scope."
-  gloss: "switch-O"
-fu:
-  family: "FE"
-  short: "Switch to the U place of the predicate before the current VE-scope."
-  gloss: "switch-U"
-fie:
-  family: "FE"
-  short: |
-    Switch to a reference of the E place of the predicate before the current VE-scope.
-    This reference is an individual representing the content of the place.
-  gloss: "switch-E-ref"
-fia:
-  family: "FE"
-  short: |
-    Switch to a reference of the A place of the predicate before the current VE-scope.
-    This reference is an individual representing the content of the place.
-  gloss: "switch-A-ref"
-fio:
-  family: "FE"
-  short: |
-    Switch to a reference of the O place of the predicate before the current VE-scope.
-    This reference is an individual representing the content of the place.
-  gloss: "switch-O-ref"
-fiu:
-  family: "FE"
-  short: |
-    Switch to a reference of the U place of the predicate before the current VE-scope.
-    This reference is an individual representing the content of the place.
-  gloss: "switch-U-ref"
-fua:
-  family: "FE"
-  short: "Switch to the same place as the previous FE/VE."
-  gloss: "switch-same"
-fue:
-  family: "FE"
-  short: "Switch to the next place relative to the previous FE/VE."
-  gloss: "switch-next"
+
+vi:
+  family: "VE"
+  gloss: "〈 AND"
+  short: "State the following 0-ary VE-scope, unrelated to any place."
+  notes: |
+    Allow to quickly state multiple multiple propositions without having to rely
+    on connective predicates. In fact, connective predicates are defined using
+    {vi}/{fi}.
 ve:
   family: "VE"
-  short: "Switch to the E place of the predicate word before it, and start a VE-scope."
-  gloss: "〈 switch-E"
+  gloss: "〈 share-E"
+  short: "The E place of the suffixed predicate is shared with the following VE-scope."
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate E place.
 va:
   family: "VE"
-  short: "Switch to the A place of the predicate word before it, and start a VE-scope."
-  gloss: "〈 switch-A"
+  gloss: "〈 share-A"
+  short: "The A place of the suffixed predicate is shared with the following VE-scope."
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate A place.
 vo:
   family: "VE"
-  short: "Switch to the O place of the predicate word before it, and start a VE-scope."
-  gloss: "〈 switch-O"
+  gloss: "〈 share-E"
+  short: "The O place of the suffixed predicate is shared with the following VE-scope."
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate O place.
 vu:
   family: "VE"
-  short: "Switch to the U place of the predicate word before it, and start a VE-scope."
-  gloss: "〈 switch-U"
+  gloss: "〈 share-E"
+  short: "The U place of the suffixed predicate is shared with the following VE-scope."
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate U place.
 vie:
   family: "VE"
-  short: |
-    Switch to a reference of the E place of the predicate word before it, and start a VE-scope.  
-    This reference is an individual representing the content of the place.
-  gloss: "〈 switch-E-ref"
+  gloss: "〈 equiv-E"
+  short: "The E place of the suffixed predicate is equivalent to the following VE-scope."
+  notes: |
+    The following VE-scope have the same type as the E place and is equivalent.
+    Non-sensical if not a predicate place.
 via:
   family: "VE"
-  short: |
-    Switch to a reference of the A place of the predicate word before it, and start a VE-scope.  
-    This reference is an individual representing the content of the place.
-  gloss: "〈 switch-A-ref"
+  gloss: "〈 equiv-A"
+  short: "The A place of the suffixed predicate is equivalent to the following VE-scope."
+  notes: |
+    The following VE-scope have the same type as the A place and is equivalent.
+    Non-sensical if not a predicate place.
 vio:
   family: "VE"
-  short: |
-    Switch to a reference of the O place of the predicate word before it, and start a VE-scope.  
-    This reference is an individual representing the content of the place.
-  gloss: "〈 switch-O-ref"
+  gloss: "〈 equiv-E"
+  short: "The O place of the suffixed predicate is equivalent to the following VE-scope."
+  notes: |
+    The following VE-scope have the same type as the O place and is equivalent.
+    Non-sensical if not a predicate place.
 viu:
   family: "VE"
-  short: |
-    Switch to a reference of the U place of the predicate word before it, and start a VE-scope.  
-    This reference is an individual representing the content of the place.
-  gloss: "〈 switch-U-ref"
+  gloss: "〈 equiv-E"
+  short: "The U place of the suffixed predicate is equivalent to the following VE-scope."
+  notes: |
+    The following VE-scope have the same type as the U place and is equivalent.
+    Non-sensical if not a predicate place.
 vei:
   family: "VEI"
-  short: "Close the current VE-scope."
   gloss: "〉"
+  short: "Close the current VE-scope."
   tags: [terminator, elidable]
+fi:
+  family: "FE"
+  gloss: "| AND"
+  short: "State the following 0-ary VE-scope, unrelated to any place."
+  notes: |
+    Allow to quickly state multiple multiple propositions without having to rely
+    on connective predicates. In fact, connective predicates are defined using
+    {vi}/{fi}.
+fe:
+  family: "FE"
+  gloss: "| share-E"
+  short: |
+    The E place of the predicate suffixed with latest non-closed VE is shared
+    with the following VE-scope.
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate E place.
+fa:
+  family: "FE"
+  gloss: "| share-A"
+  short: |
+    The A place of the predicate suffixed with latest non-closed VE is shared
+    with the following VE-scope.
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate A place.
+fo:
+  family: "FE"
+  gloss: "| share-O"
+  short: |
+    The O place of the predicate suffixed with latest non-closed VE is shared
+    with the following VE-scope.
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate O place.
+fu:
+  family: "FE"
+  gloss: "| share-U"
+  short: |
+    The U place of the predicate suffixed with latest non-closed VE is shared
+    with the following VE-scope.
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate O place.
+fie:
+  family: "FE"
+  gloss: "| equiv-E"
+  short: |
+    The E place of the predicate suffixed with latest non-closed VE is equivalent
+    to the following VE-scope.
+  notes: |
+    The following VE-scope have the same type as the E place and is equivalent.
+    Non-sensical if not a predicate place.
+fia:
+  family: "FE"
+  gloss: "| equiv-A"
+  short: |
+    The A place of the predicate suffixed with latest non-closed VE is equivalent
+    to the following VE-scope.
+  notes: |
+    The following VE-scope have the same type as the A place and is equivalent.
+    Non-sensical if not a predicate place.
+fio:
+  family: "FE"
+  gloss: "| equiv-O"
+  short: |
+    The O place of the predicate suffixed with latest non-closed VE is equivalent
+    to the following VE-scope.
+  notes: |
+    The following VE-scope have the same type as the O place and is equivalent.
+    Non-sensical if not a predicate place.
+fiu:
+  family: "FE"
+  gloss: "| equiv-U"
+  short: |
+    The U place of the predicate suffixed with latest non-closed VE is equivalent
+    to the following VE-scope.
+  notes: |
+    The following VE-scope have the same type as the U place and is equivalent.
+    Non-sensical if not a predicate place.
 se:
   family: "SE"
   short: "Bind E place and disable switching."
@@ -727,15 +794,15 @@ zohin:
 
 tci:
   family: "R"
-  gloss: set
+  gloss: set member
   tags: [struct, set]
-  short: "[E:ma] is a (possibly empty) set of things that individualy satisfy [A:(a)]."
+  short: "[E:a] is a member of set [A:tcui a]."
 
 tce:
   family: "R"
   gloss: set-1+
   tags: [struct, set]
-  short: "[E:tci a] is a (non-empty) set of some things that individualy satisfy [A:(tca a)]."
+  short: "[E:tcei a] is a (non-empty) set of some things that individualy satisfy [A:(tca a)]."
   notes: |
     Each member is provided to [A] wrapped in a singleton set to make any predicate
     having set places usable directly.
@@ -753,7 +820,7 @@ tcei:
   family: "R"
   gloss: set-raw-1+
   tags: [struct, set]
-  short: "[E:tci a] is a (non-empty) set of some things that individualy satisfy [A:(A)]."
+  short: "[E:tcui a] is a (non-empty) set of some things that individualy satisfy [A:(a)]."
   notes: |
     Each member is provided to [A] without being wrapped in a singleton set.
 
@@ -764,17 +831,17 @@ tca:
   family: "R"
   gloss: set-1
   tags: [struct, set]
-  short: "[E:tci a] is a set containing exactly one member, and satisfy [A:(tci a)]."
+  short: "[E:tcai a] is a set containing exactly one member, and satisfy [A:(tcai a)]."
 tcai:
   family: "R"
   gloss: set-raw-1
   tags: [struct, set]
-  short: "[E:tca a] is a set containing exactly one member which satisfy [A:(a)]."
+  short: "[E:tcui a] is a set containing exactly one member which satisfy [A:(a)]."
 tco:
   family: "R"
   gloss: set-2+
   tags: [struct, set]
-  short: "[E:tce a] is a set of at least 2 things that individualy satisfy [A:(tca a)]."
+  short: "[E:tcoi a] is a set of at least 2 things that individualy satisfy [A:(tcai a)]."
   notes: |
     Each member is provided to [A] wrapped in a singleton set to make any predicate
     having set places usable directly.
@@ -788,7 +855,7 @@ tcoi:
   family: "R"
   gloss: set-raw-2+
   tags: [struct, set]
-  short: "[E:tce a] is a set of at least 2 things that individualy satisfy [A:(a)]."
+  short: "[E:tcui a] is a set of at least 2 things that individualy satisfy [A:(a)]."
   notes: |
     Each member is provided to [A] without being wrapped in a singleton set.
 
@@ -799,7 +866,7 @@ tcu:
   family: "R"
   gloss: set-all
   tags: [struct, set]
-  short: "[E:tce a] is the set of all things that individualy satisfy [A:(tca a)]."
+  short: "[E:tcui a] is the set of all things that individualy satisfy [A:(tcai a)]."
   notes: |
     Each member is provided to [A] wrapped in a singleton set to make any predicate
     having set places usable directly.
@@ -810,7 +877,7 @@ tcui:
   family: "R"
   gloss: set-raw-all
   tags: [struct, set]
-  short: "[E:tce a] is the set of all things that individualy satisfy [A:(a)]."
+  short: "[E:ma] is the set of all things that individualy satisfy [A:(a)]."
   notes: |
     Each member is provided to [A] without being wrapped in a singleton set.
 
