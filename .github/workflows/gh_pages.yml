@@ -42,10 +42,6 @@ jobs:
           version: latest
           use-tool-cache: true
 
-      - name: Build reference book
-        run: |
-          ~/.cargo/bin/mdbook build books/reference_en
-
       - name: Build tour book
         run: |
           ~/.cargo/bin/mdbook build books/tour_en
