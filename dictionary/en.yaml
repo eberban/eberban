@@ -754,12 +754,12 @@ kidvo:
                 va ke vei
               go
     
-zoblo:
+zbolo:
   family: "R"
   gloss: "imply"
   short: "[E:()] implies that [A:()] is true."
   definition: |
-    po zoblo ge ga pi
+    po zbolo ge ga pi
       cner
         va bi ge vei
       ga
@@ -772,7 +772,7 @@ zohin:
     po zohin ge ga pi
       mae ve ke pi
         mae ve ka pi
-          zoblo
+          zbolo
             ve mai
               ve pi ke ge
               fe pi ka ge
@@ -952,7 +952,7 @@ gin:
   #     fe pi bo igini
   #     fe pi bo ki ma igin
   #     fe pi mae
-  #       ve ke pi zoblo
+  #       ve ke pi zbolo
   #         ve ke igin
   #         fa zohin
   #           ve igin
@@ -960,7 +960,7 @@ gin:
   #         vei
   #       vei
   #     fe pi mae
-  #       ve ke pi zoblo
+  #       ve ke pi zbolo
   #         ve ke igin bi ki
   #         fa zohin
   #           ve igin
@@ -968,7 +968,7 @@ gin:
   #         vei
   #       vei
   #     fe pi mae
-  #       ve ke pi zoblo
+  #       ve ke pi zbolo
   #         ve ke igin bi ki
   #         fa ki kidvo
   #           va ke

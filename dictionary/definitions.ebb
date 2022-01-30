@@ -30,8 +30,8 @@ po e kidvo mai be
           ka
 pi e kidvo mai
 
-# zoblo: [E:()] implies that [A:()] is true.
-po zoblo ge ga be
+# zbolo: [E:()] implies that [A:()] is true.
+po zbolo ge ga be
   cner
     via bi ge vei
   ga
@@ -57,7 +57,7 @@ po tcei ke gia be
   ma
     vi tci ke
     fi mae
-      vie ki be zoblo
+      vie ki be zbolo
         vie ki tci ke
         fia gia ki
 
