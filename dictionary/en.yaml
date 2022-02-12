@@ -511,8 +511,21 @@ suo:
   gloss: "<UO>"
 za:
   family: "ZI"
-  short: "[E:tce a] is named [predicate-(E)]."
+  short: "[E:tce a] is named after the E place of the following predicate."
   gloss: "[named]"
+  notes: |
+    Another place can be selected by adding a SE particle between {za} and the
+    predicate.
+zai:
+  family: "ZI"
+  short: "[E:ma] is the symbol representing the E place of the following predicate."
+  gloss: "[name]"
+  note: |
+    Another place can be selected by adding a SE particle between {zai} and the
+    predicate. Using {zai} before a specific predicate will always yield the
+    same unique symbol.
+
+    It is mainly used to create identifiers used as map keys (see {kce}).
 ze:
   family: "ZI"
   short: "Use the latest instance and variables of the predicate word instead of creating new ones."
@@ -899,34 +912,78 @@ kci:
   family: "R"
   gloss: map
   tags: [struct, map]
-  short: "[E:ma] represents a key-value map for which all values satisfy property [A:(a)]."
+  short: "[E:ma] represents a key-value map for which all values (if any) satisfy property [A:(a)]."
 kce:
   family: "R"
   gloss: map-entry
   tags: [struct, map]
-  short: "[E:kci a] represents a key-value map for which key [E:ma] is mapped to value [O:a]."
+  short: "[E:kci a] represents a key-value map for which key [A:ma] is mapped to value [O:a]."
   note: |
-    The empty map ({kcun}) is the only map that doesn't satisfy {kce} for any
+    The empty map ({kcen}) is the only map that doesn't satisfy {kce} for any
     possible key and value.
-kca:
-  family: "R"
-  gloss: map-diff
-  tags: [struct, map]
-  short: |
-    [E:kci a] and [A:kci a] represents key-value maps which only differ
-    for key [O:ma]."
-kco:
-  family: "R"
-  gloss: map-values
-  tags: [struct, sequence]
-  short: |
-    [E:tcei a] represents the set of all the values in map [E:kci a], 
-    discarding the keys and duplicate values.
-kcur:
+kcen:
   family: "R"
   gloss: map-empty
   tags: [struct, map]
-  short: "[E:kci] represents an empty key-value map."
+  short: "[E:kci a] represents an empty key-value map."
+
+kca:
+  family: "R"
+  gloss: map-transform
+  tags: [struct, map]
+  short: |
+    [E:kci a] represents a map that can be optained by applying the list of
+    transformations [O:blu ()] to map [A:kci A].
+  notes: |
+    Each proposition of [O] will be evaluated with a context optained from the
+    current context with keys [@zai ekcate:kci a] and [@zai ekcata:kci a]
+    replaced like so:
+    - In the first proposition [@zai ekcate](x) is true only if x = [E].
+    - For all other propositions [@zai ekcate] is equal to the previous
+      proposition [@zai ekcata].
+    - In the last proposition [@zai ekcata](x) is true only if x = [A].
+
+    Predicates {kcan}, {kco} and {kcu} interact with [@zai ekcate] and
+    [@zai ekcata] to provide ergonomic transformations.
+
+kcan:
+  family: "R"
+  gloss: map-transform-delete
+  tags: [struct, map]
+  short: |
+    Map transformation: [@zai ekcata: kci a] can be obtained by removing entry
+    with key [E:ma] from [@zai ekcate: kci a] (if any). If there is no such entry
+    then they are equal.
+  notes: |
+    See {kca} for usage.
+kco:
+  family: "R"
+  gloss: map-transform-insert
+  tags: [struct, map]
+  short: |
+    Map transformation: [@zai ekcata: kci a] can obtained by inserting entry
+    [E:ma] with value [A:a] in [@zai ekcate: kci a] (discarding any previous
+    value with that key if any).
+  notes: |
+    See {kca} for usage.
+kcu:
+  family: "R"
+  gloss: map-transform-map
+  tags: [struct, map]
+  short: |
+    Map transformation: [@zai ekcata: kci a] is obtained by inserting entry
+    [E:ma] with its value satisfy relation [A:(a,a)] with the value for this
+    same entry in [@zai ekcate: kci a]. [@zai ekcate] must have an entry [E:ma].
+  notes: |
+    See {kca} for usage.
+
+# kco:
+#   family: "R"
+#   gloss: map-values
+#   tags: [struct, sequence]
+#   short: |
+#     [E:tcei a] represents the set of all the values in map [E:kci a], 
+#     discarding the keys and duplicate values.
 
 blu:
   family: "R"

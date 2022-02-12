@@ -158,8 +158,15 @@ function renderParagraphs(text) {
 			out = out + `</span>`
 			return out;
 		});
-		// p = p.replace(/\(((E|A|O|U)(-[A-Z](\d|[a-zA-Z_])?)?)\)/g, '<span class="label label-success place">$&</span>');
-		// p = p.replace(/\[((E|A|O|U)(-[A-Z](\d|[a-zA-Z_])?)?)\]/g, '<span class="label label-important place">$&</span>');
+		p = p.replace(/\[(@.*?(:.*?)?)\]/g, (match, p1) => {
+			let out = `<span class="label place">`;
+			out += `<span class="hidden">[</span>`;
+			out = out +  p1.replace(/([a-zA-Z']{2,})/g, (match) => `{${match}}`);
+			out += `<span class="hidden">]</span>`;
+			out = out + `</span>`
+			return out;
+		});
+		
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';
 			let list = p1.split(' ');
