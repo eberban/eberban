@@ -632,18 +632,18 @@ pu:
   short: "Marks a new paragraph/section/change of subject."
   gloss: "[paragraph]"
 di:
-  family: "DA"
+  family: "DI"
   short: |
     Attention focus: the listener should be extra attentive to the following word.
     Maybe it would be especially prone to confusion?
   gloss: "[attention focus]"
 die:
-  family: "DA"
+  family: "DI"
   short: |
     Contrastive focus: It's that thing and not something else that was expected.
   gloss: "[contrastive focus]"
 dia:
-  family: "DA"
+  family: "DI"
   short: |
     Newsworthiness focus: Marks the part of the sentence containing the most
     important new information, such as the answer of a question.
@@ -657,11 +657,11 @@ dei:
   short: "Attached word is a metadata tag / hashtag."
   gloss: "[metadata]"
 da:
-  family: "DO"
+  family: "DA"
   gloss: "("
   short: "Starts parenthetical note."
 dai:
-  family: "DOI"
+  family: "DAI"
   gloss: ")"
   tags: [terminator]
   short: "Ends parenthetical note."
