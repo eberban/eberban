@@ -1179,17 +1179,17 @@ den:
 
     See {del} notes for explanations of what entities are.
 
-sin:
+sen:
   family: "R"
   gloss: "update-present"
   tags: [time]
   short: |
     Update the present to a world in a future of the current present.
-    [E:kcin] is the current context with [@zai sin] a future of current [@zai sin].
+    [E:kcin] is the current context with [@zai sen] a future of current [@zai sen].
   notes: |
     Designed to work with {pae}.
 
-sen:
+sin:
   family: "R"
   gloss: "past"
   tags: [time]
@@ -1200,7 +1200,7 @@ sen:
     all worlds that are in the past of at least one world of current [@zai den]
     but which are not part of [@zai den] themselves.
 
-seni:
+sini:
   family: "R"
   gloss: "past (sticky)"
   tags: [time]
@@ -1219,7 +1219,7 @@ san:
     [E:()] is true in the present.
   notes: |
     [E] is evaluated with the a modified context where [@zai den] is a set
-    containing only [@zai sin] (present).
+    containing only [@zai sen] (present).
 
 sani:
   family: "R"
@@ -1227,11 +1227,11 @@ sani:
   tags: [time]
   short: |
     [E:kcin] is the current context with [@zai den] being a set containing only
-    [@zai sin] (present).
+    [@zai sen] (present).
   notes: |
     Designed to work with {pae}.
 
-son:
+sun:
   family: "R"
   gloss: "future"
   tags: [time]
@@ -1242,7 +1242,7 @@ son:
     all worlds that are in the future of at least one world of current [@zai den]
     but which are not part of [@zai den] themselves.
 
-soni:
+suni:
   family: "R"
   gloss: "future (sticky)"
   tags: [time]
@@ -1904,7 +1904,7 @@ melu:
   family: "R"
   short: "[E:tce* den] (default: water) is raining."
   gloss: "rain"
-seni:
+znir:
   family: "R"
   gloss: "obligated"
   short: |
@@ -1912,7 +1912,7 @@ seni:
     
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
-sene:
+zner:
   family: "R"
   gloss: "encouraged"
   short: |
@@ -1920,7 +1920,7 @@ sene:
     [E] is a virtuous/upstanding behavior.
     
     Examples: charity, volunteer work, being polite
-sena:
+znar:
   family: "R"
   gloss: "tolerated"
   short: |
@@ -1929,7 +1929,7 @@ sena:
     
     Examples: basically most actions are {sena}, there are so many examples
     -- the act of breathing is sena
-seno:
+znor:
   family: "R"
   gloss: "discouraged"
   short: |
@@ -1937,7 +1937,7 @@ seno:
     
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
-senu:
+znur:
   family: "R"
   gloss: "forbidden"
   short: |
