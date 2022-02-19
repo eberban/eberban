@@ -977,14 +977,6 @@ kcu:
   notes: |
     See {kca} for usage.
 
-# kco:
-#   family: "R"
-#   gloss: map-values
-#   tags: [struct, sequence]
-#   short: |
-#     [E:tcei a] represents the set of all the values in map [E:kci a], 
-#     discarding the keys and duplicate values.
-
 blu:
   family: "R"
   gloss: seq
@@ -1145,43 +1137,138 @@ mona:
     Operate on sets of numbers. True only if all members of [E] are less than all
     members of [A].
 
-dji:
+din:
   family: "R"
-  gloss: "world-point"
-  tags: [spacetime]
-  short: "[E:tce* man] is a spacetime point in world/universe [A:tca man]."
+  gloss: "world"
+  tags: [world]
+  short: "[E:tce* man] is a world."
   notes: |
-    Points [E] of the same universe [A] form a metric space : a notion of
-    distance is defined between them.
+    A world represent a possible state of the universe at a specific point in
+    time. Time passing is represented as new worlds that are in the future of
+    each other, and their is a world for every possible outcome, allowing to
+    speak about possibility or necessity.
 
-    2 points from different universe don't have a notion of distance defined.
-dje:
+dini:
+  family: "R"
+  gloss: "world-future"
+  tags: [world]
+  short: "[E:tce* din] is a future of [A:tce* din]."
+
+del:
+  family: "R"
+  gloss: "entity-contextless"
+  tags: [world]
+  short: "[E:tca man] is an entity existing in worlds [A:tce din]."
+  notes: |
+    "Entity" is a very broad term to represent something that exists in some
+    worlds (possible states of the universe), such as individuals, physical
+    objects or events, and which can interact with the worlds they are part of.
+
+    This predicate allow to speak about entities regardless of the current
+    context, an instead express all worlds [A] in which [E] exists.
+    If you want to speak about entities within the current context,
+    see {den}.
+  
+den:
   family: "R"
   gloss: "entity"
-  tags: [spacetime]
-  short: "[E:tca man] is an entity occupying spacetime volume [A:tce dji]."
+  tags: [world]
+  short: "[E:tce* del] is an entity existing in the current context."
   notes: |
-    "Entity" is a very broad term to represent something that occupies
-    some volume in spacetime. It can be a physical object or an event.
-    Multiple distinct entities can occupy the same spacetime volume.
+    True if the entity exists in a set of worlds that intersect with [@zai den].
 
-    Predicates having {dje} places usually deal with meaning that can change
-    over time and space.
+    See {del} notes for explanations of what entities are.
+
+sin:
+  family: "R"
+  gloss: "update-present"
+  tags: [time]
+  short: |
+    Update the present to a world in a future of the current present.
+    [E:kcin] is the current context with [@zai sin] a future of current [@zai sin].
+  notes: |
+    Designed to work with {pae}.
+
+sen:
+  family: "R"
+  gloss: "past"
+  tags: [time]
+  short: |
+    It was the case that [E:()].
+  notes: |
+    [E] is evaluated with the a modified context where [@zai den] is the set of
+    all worlds that are in the past of at least one world of current [@zai den]
+    but which are not part of [@zai den] themselves.
+
+seni:
+  family: "R"
+  gloss: "past (sticky)"
+  tags: [time]
+  short: |
+    [E:kcin] is the current context with [@zai den] being the set of
+    all worlds that are in the past of at least one world of current [@zai den]
+    but which are not part of [@zai den] themselves.
+  notes: |
+    Designed to work with {pae}.
+
+san:
+  family: "R"
+  gloss: "present"
+  tags: [time]
+  short: |
+    [E:()] is true in the present.
+  notes: |
+    [E] is evaluated with the a modified context where [@zai den] is a set
+    containing only [@zai sin] (present).
+
+sani:
+  family: "R"
+  gloss: "present (sticky)"
+  tags: [time]
+  short: |
+    [E:kcin] is the current context with [@zai den] being a set containing only
+    [@zai sin] (present).
+  notes: |
+    Designed to work with {pae}.
+
+son:
+  family: "R"
+  gloss: "future"
+  tags: [time]
+  short: |
+    It will be the case that [E:()].
+  notes: |
+    [E] is evaluated with the a modified context where [@zai den] the set of
+    all worlds that are in the future of at least one world of current [@zai den]
+    but which are not part of [@zai den] themselves.
+
+soni:
+  family: "R"
+  gloss: "future (sticky)"
+  tags: [time]
+  short: |
+    [E:kcin] is the current context with [@zai den] being the set of
+    all worlds that are in the future of at least one world of current [@zai den]
+    but which are not part of [@zai den] themselves.
+  notes: |
+    Designed to work with {pae}.
 
 mini:
   family: "R"
   gloss: "speakers vocative"
   tags: [context]
-  short: "[E:kcin] is a new context based on the current one but with speakers
-    [A:tce man]."
+  short: |
+    Update who is the current speaker to [A:tce man].
+    [E:kcin] is the current context with [@zai mi] = [A].
   notes: |
     Designed to work with {pae}.
 moni:
   family: "R"
   gloss: "listeners vocative"
   tags: [context]
-  short: "[E:kcin] is a new context based on the current one but with listeners
-    [A:tce man]."
+  short: |
+    Update who is the current listener to [A:tce man].
+    [E:kcin] is the current context with [@zai mo] = [A].
   notes: |
     Designed to work with {pae}.
   examples:
@@ -1195,37 +1282,37 @@ moni:
 fule:
   family: "R"
   gloss: "knows"
-  short: "[E:tce* dje] knows fact [A:()] from source [O:tce man]."
+  short: "[E:tce* den] knows fact [A:()] from source [O:tce man]."
 dona:
   family: "R"
   gloss: "likes"
   tags: [emotion]
-  short: "[E:tce* dje] likes [A:tce* man]."
+  short: "[E:tce* den] likes [A:tce* man]."
 jveo:
   family: "R"
   gloss: "friend"
   tags: [emotion]
-  short: "[E:tce* dje] is a friend of [A:tce* dje]."
+  short: "[E:tce* den] is a friend of [A:tce* den]."
 kli:
   family: "R"
   gloss: "thanks"
   tags: [emotion]
-  short: "[E:tce* dje] thanks/is thankful to [A:tce* man] about [O:()] being true."
+  short: "[E:tce* den] thanks/is thankful to [A:tce* man] about [O:()] being true."
 kre:
   family: "R"
   gloss: "helps"
   short: |
-    [E:tce dje] helps [A:tce ma] to satisfy property [O:(tce ma)].  
+    [E:tce den] helps [A:tce ma] to satisfy property [O:(tce ma)].  
     [A] is the one satisfying [O], and [E] doesn't need to satisfy [O].
 vahul:
   family: "R"
   gloss: "milk"
-  short: "[E:tce* dje] is milk."
+  short: "[E:tce* den] is milk."
 mian:
   family: "R"
   gloss: "cat"
   tags: [animal]
-  short: "[E:tce* dje] is a cat/felid/member of family Felidae."
+  short: "[E:tce* den] is a cat/felid/member of family Felidae."
 gla:
   family: "R"
   gloss: "tool"
@@ -1233,71 +1320,71 @@ gla:
 kali:
   family: "R"
   gloss: "drinks"
-  short: "[E:tce* dje] drinks [E:tce* dje]."
+  short: "[E:tce* den] drinks [E:tce* den]."
 buri:
   family: "R"
   gloss: "eats"
-  short: "[E:tce* dje] eats [A:tce* dje]."
+  short: "[E:tce* den] eats [A:tce* den]."
 zin:
   family: "R"
   gloss: "woman"
-  short: "[E:tce* dje] is a girl/woman/female (gender)."
+  short: "[E:tce* den] is a girl/woman/female (gender)."
 zun:
   family: "R"
   gloss: "man"
-  short: "[E:tce* dje] is a boy/man/male (gender)."
+  short: "[E:tce* den] is a boy/man/male (gender)."
 tsae:
   family: "R"
   gloss: "creates"
-  short: "[E:tce dje] invents/creates/authors [A:tce* ma]."
+  short: "[E:tce den] invents/creates/authors [A:tce* ma]."
 zuna:
   family: "R"
   gloss: "inspired"
-  short: "[E:tce* dje] is inspired by [A:tce* ma]. [A] is a source of inspiration for [A]."
+  short: "[E:tce* den] is inspired by [A:tce* ma]. [A] is a source of inspiration for [A]."
 zvia:
   family: "R"
   gloss: "purpose"
-  short: "[E:tce dje] has goal/purpose/aims to satisfy [A:(tce dje)]."
+  short: "[E:tce den] has goal/purpose/aims to satisfy [A:(tce den)]."
 skal:
   family: "R"
   gloss: "computer"
-  short: "[E:tce* dje] is a computer."
+  short: "[E:tce* den] is a computer."
 sni:
   family: "R"
   gloss: "greets"
-  short: "[E:tce* dje] says hello to/greets [A:tce* dje]."
+  short: "[E:tce* den] says hello to/greets [A:tce* den]."
 sne:
   family: "R"
   gloss: "goodbye"
-  short: "[E:tce* dje] says goodbye to [A:tce* dje]."
+  short: "[E:tce* den] says goodbye to [A:tce* den]."
 sna:
   family: "R"
   gloss: "welcomes"
-  short: "[E:tce* dje] welcomes [A:tce* dje] to place [O:tce* dje]."
+  short: "[E:tce* den] welcomes [A:tce* den] to place [O:tce* den]."
 spi:
   family: "R"
   gloss: "says"
-  short: "[E:tce dje] says [A:tce* skan] to [O:tce* ma]."
+  short: "[E:tce den] says [A:tce* skan] to [O:tce* ma]."
 spua:
   family: "R"
   gloss: "home"
-  short: "[E:tce* dje] is a home/house/nest for [A:tce* dje]."
+  short: "[E:tce* den] is a home/house/nest for [A:tce* den]."
 zaro:
   family: "R"
   gloss: "agrees"
-  short: "[E:tce* dje] agrees with [A:tce* dje] that [O:()] is true."
+  short: "[E:tce* den] agrees with [A:tce* den] that [O:()] is true."
 vani:
   family: "R"
   gloss: "moves"
-  short: "[E:tce* dje] moves/goes to [A:tce* dje] from [O:tce* dje]."
+  short: "[E:tce* den] moves/goes to [A:tce* den] from [O:tce* den]."
 gza:
   family: "R"
   gloss: "agentive cause"
-  short: "[E:tce* dje] is an agentive cause of [A:()] being true."
+  short: "[E:tce* den] is an agentive cause of [A:()] being true."
 kini:
   family: "R"
   gloss: "learns"
-  short: "[E:tce* dje] learns/studies fact [A:()]."
+  short: "[E:tce* den] learns/studies fact [A:()]."
 seru:
   family: "R"
   gloss: "about"
@@ -1305,7 +1392,7 @@ seru:
 snai:
   family: "R"
   gloss: "works"
-  short: "[E:tce dje] labors/works by satisfying property [A:(tce dje)]."
+  short: "[E:tce den] labors/works by satisfying property [A:(tce den)]."
 ber:
   family: "R"
   gloss: "eberbanic"
@@ -1313,24 +1400,24 @@ ber:
 pre:
   family: "R"
   gloss: "person"
-  short: "[E:tce* dje] is a person."
+  short: "[E:tce* den] is a person."
 pra:
   family: "R"
   gloss: "loves"
   tags: [emotion]
-  short: "[E:tce* dje] loves [A:tce* man]."
+  short: "[E:tce* den] loves [A:tce* man]."
 vire:
   family: "R"
   gloss: "visits"
-  short: "[E:tce* dje] visits [E:tce* dje]."
+  short: "[E:tce* den] visits [E:tce* den]."
 peol:
   family: "R"
   gloss: "city"
-  short: "[E:tce* dje] is a town/city."
+  short: "[E:tce* den] is a town/city."
 zdiu:
   family: "R"
   short: |
-    [E:tce man] is amusing/entertaining to [E:tce* dje] (default: speaker)
+    [E:tce man] is amusing/entertaining to [E:tce* den] (default: speaker)
     in property [O:(tce ma)].
   gloss: "amusing"
 fir:
@@ -1342,7 +1429,7 @@ firu:
   family: "R"
   gloss: "color"
   tags: [color]
-  short: "[E:tce* fir] is a color of [A:tce dje]."
+  short: "[E:tce* fir] is a color of [A:tce den]."
 sare:
   family: "R"
   gloss: "mutual"
@@ -1350,49 +1437,49 @@ sare:
 gli:
   family: "R"
   gloss: "happy"
-  short: "[E:tce* dje] is happy about [A:()] being true."
+  short: "[E:tce* den] is happy about [A:()] being true."
 siro:
   family: "R"
   gloss: "translation"
   short: "[E:tce* skar] (source) has translation [A:tce* skar] (result)."
 tcuin:
   family: "R"
-  short: "[E:tce* dje] is a tree."
+  short: "[E:tce* den] is a tree."
   gloss: "tree"
 jnaor:
   family: "R"
   gloss: "wild"
-  short: "[E:tce* dje] is wild/untamed."
+  short: "[E:tce* den] is wild/untamed."
 jine:
   family: "R"
   gloss: "want"
-  short: "[E:tce* dje] desires/wants/wishes [A:()]."
+  short: "[E:tce* den] desires/wants/wishes [A:()]."
 fuher:
   family: "R"
   gloss: "fly"
-  short: "[E:tce* dje] flies [in air/space]."
+  short: "[E:tce* den] flies [in air/space]."
 folin:
   family: "R"
   gloss: "airplane"
-  short: "[E:tce* dje] is an airplane."
+  short: "[E:tce* den] is an airplane."
 jleo:
   family: "R"
   gloss: "motivated"
-  short: "[E:tce* dje] is motivated to make [A:()] true by [O:tce* man] (motivation)."
+  short: "[E:tce* den] is motivated to make [A:()] true by [O:tce* man] (motivation)."
   notes: |
     TODO: Define what a motivation is. someone else? propositions?
 zuan:
   family: "R"
   gloss: "walks"
-  short: "[E:tce* dje] walks."
+  short: "[E:tce* den] walks."
 vune:
   family: "R"
   gloss: "enjoyable"
-  short: "[E:tce* man] is enjoyable/great/nice for [A:tce* dje]."
+  short: "[E:tce* man] is enjoyable/great/nice for [A:tce* den]."
 jvin:
   family: "R"
   gloss: "dances"
-  short: "[E:tce* dje] dances."
+  short: "[E:tce* den] dances."
 blan:
   family: "R"
   short: "[E:tce* man] is beautiful."
@@ -1402,7 +1489,7 @@ blan:
 pcien:
   family: "R"
   gloss: "bread"
-  short: "[E:tce* dje] is bread."
+  short: "[E:tce* den] is bread."
 ban:
   family: "R"
   short: "[E:tce* man] is a language."
@@ -1413,19 +1500,19 @@ banu:
   gloss: "language"
 vli:
   family: "R"
-  short: "[E:tce* skar] is written/inscribed on display/storage medium [A:tce* dje]."
+  short: "[E:tce* skar] is written/inscribed on display/storage medium [A:tce* den]."
   gloss: "written"
 soane:
   family: "R"
   gloss: "stolen"
-  short: "[E:tce* dje] is stolen from [A:tce* dje]."
+  short: "[E:tce* den] is stolen from [A:tce* den]."
   notes: |
     Use with {gza} to express who/what steals (E-Xd).
 tri:
   family: "R"
   gloss: "attemps"
   short: |
-    [E:tce* dje] tries/attemps to do/bring about [A:()].
+    [E:tce* den] tries/attemps to do/bring about [A:()].
     Success is neither implied or disimplied.
 tuli:
   family: "R"
@@ -1434,7 +1521,7 @@ tuli:
 miun:
   family: "R"
   gloss: "sleeps"
-  short: "[E:tce* dje] sleeps."
+  short: "[E:tce* den] sleeps."
 juni:
   family: "R"
   gloss: "good"
@@ -1450,17 +1537,17 @@ junu:
 kunu:
   family: "R"
   gloss: "feels"
-  short: "[E:tce* dje] feels sentiment/emotion/sensation [A:tce* man]."
+  short: "[E:tce* den] feels sentiment/emotion/sensation [A:tce* man]."
   notes: |
     TODO: Define sentiment/emotion/sensation.
 viru:
   family: "R"
   gloss: "sees"
-  short: "[E:tce* dje] sees [A:tce* dje]."
+  short: "[E:tce* den] sees [A:tce* den]."
 pure:
   family: "R"
   gloss: "hears"
-  short: "[E:tce* dje] hears/listen to [A:tce* man]."
+  short: "[E:tce* den] hears/listen to [A:tce* man]."
 cen:
   family: "R"
   gloss: "word"
@@ -1470,68 +1557,68 @@ cen:
 vain:
   family: "R"
   gloss: "alive"
-  short: "[E:tce* dje] is alive."
+  short: "[E:tce* den] is alive."
 vaun:
   family: "R"
   gloss: "dead"
-  short: "[E:tce* dje] is dead."
+  short: "[E:tce* den] is dead."
 cfin:
   family: "R"
   gloss: "solid"
   tags: [matter]
-  short: "[E:tce* dje] is a solid [state of matter]."
+  short: "[E:tce* den] is a solid [state of matter]."
 cfen:
   family: "R"
   gloss: "liquid"
   tags: [matter]
-  short: "[E:tce* dje] is a liquid [state of matter]."
+  short: "[E:tce* den] is a liquid [state of matter]."
 cfan:
   family: "R"
   gloss: "gas"
   tags: [matter]
-  short: "[E:tce* dje] is a gas [state of matter]."
+  short: "[E:tce* den] is a gas [state of matter]."
 jeon:
   family: "R"
   gloss: "water"
   tags: [matter]
-  short: "[E:tce* dje] is water."
+  short: "[E:tce* den] is water."
 gour:
   family: "R"
   gloss: "dog"
   tags: [animal]
-  short: "[E:tce* dje] is a dog."
+  short: "[E:tce* den] is a dog."
 kanan:
   family: "R"
   gloss: "wolf"
   tags: [animal]
-  short: "[E:tce* dje] is a wolf."
+  short: "[E:tce* den] is a wolf."
 kroan:
   family: "R"
   gloss: "frog"
   tags: [animal]
-  short: "[E:tce* dje] is a frog."
+  short: "[E:tce* den] is a frog."
 toril:
   family: "R"
   gloss: "bird"
   tags: [animal]
-  short: "[E:tce* dje] is a bird."
+  short: "[E:tce* den] is a bird."
 cein:
   family: "R"
   gloss: "room"
-  short: "[E:tce* dje] is a room."
+  short: "[E:tce* den] is a room."
 caun:
   family: "R"
   gloss: "animal"
   tags: [animal]
-  short: "[E:tce* dje] is an animal."
+  short: "[E:tce* den] is an animal."
 flur:
   family: "R"
   gloss: "plant"
-  short: "[E:tce* dje] is a plant."
+  short: "[E:tce* den] is a plant."
 jveno:
   family: "R"
   gloss: "friendly"
-  short: "[E:tce* dje] is kind/behaves friendly towards [A:tce* man]."
+  short: "[E:tce* den] is kind/behaves friendly towards [A:tce* man]."
 slari:
   family: "R"
   gloss: "rule"
@@ -1539,21 +1626,21 @@ slari:
 zire:
   family: "R"
   gloss: "respects"
-  short: "[E:tce* dje] respects [A:tce* man]."
+  short: "[E:tce* den] respects [A:tce* man]."
 zvoe:
   family: "R"
   gloss: "content"
-  short: "[E:tce* skar] is a content, something that is to be expressed though medium [A:tce* dje]."
+  short: "[E:tce* skar] is a content, something that is to be expressed though medium [A:tce* den]."
   notes: |
     TODO: Duplicate of {skar}?
 zbui:
   family: "R"
   gloss: "copulates"
-  short: "[E:tce* dje] have sex/sexual intercourse/copulates/mates with [A:tce* dje]."
+  short: "[E:tce* den] have sex/sexual intercourse/copulates/mates with [A:tce* den]."
 jiro:
   family: "R"
   gloss: "shares"
-  short: "[E:tce* dje] shares [A:tce* man] with [O:tce* dje]."
+  short: "[E:tce* den] shares [A:tce* man] with [O:tce* den]."
 sier:
   family: "R"
   gloss: "internet"
@@ -1561,15 +1648,15 @@ sier:
 stini:
   family: "R"
   gloss: "rigid"
-  short: "[E:tce* dje] is rigid/not bendable."
+  short: "[E:tce* den] is rigid/not bendable."
 merue:
   family: "R"
   gloss: "organism"
-  short: "[E:tce* dje] is an organism / form of life."
+  short: "[E:tce* den] is an organism / form of life."
 slane:
   family: "R"
   gloss: "tied"
-  short: "[E:tce* dje] is tied/pinned to [A:tce* dje]."
+  short: "[E:tce* den] is tied/pinned to [A:tce* den]."
 skien:
   family: "R"
   gloss: "program"
@@ -1581,7 +1668,7 @@ zari:
 zeni:
   family: "R"
   gloss: "provided"
-  short: "[E:tce* dje] [supply/commodity] is provided to [A:tce* dje]."
+  short: "[E:tce* den] [supply/commodity] is provided to [A:tce* den]."
   notes: |
     Use with {gza} to express who/what provides [E].
 curo:
@@ -1593,7 +1680,7 @@ curo:
 tsiu:
   family: "R"
   gloss: "finds"
-  short: "[E:tce* dje] finds/discovers [A:tce* man]."
+  short: "[E:tce* den] finds/discovers [A:tce* man]."
 bun:
   family: "R"
   gloss: "text"
@@ -1601,19 +1688,19 @@ bun:
 bino:
   family: "R"
   gloss: "sick"
-  short: "[E:tce* dje] is ill/sick from disease [A:tce* man]."
+  short: "[E:tce* den] is ill/sick from disease [A:tce* man]."
 saul:
   family: "R"
   gloss: "light"
-  short: "[E:tce* dje] is light [energy]."
+  short: "[E:tce* den] is light [energy]."
 cmiri:
   family: "R"
   gloss: "emits"
-  short: "[E:tce* dje] emits/produce [A:tce* dje]."
+  short: "[E:tce* den] emits/produce [A:tce* den]."
 cmiru:
   family: "R"
   gloss: "receives"
-  short: "[E:tce* dje] receives/absorbs [A:tce* dje]."
+  short: "[E:tce* den] receives/absorbs [A:tce* den]."
 flun:
   family: "R"
   gloss: "sound"
@@ -1622,52 +1709,52 @@ fana:
   family: "R"
   gloss: "social parent"
   tags: [kinship, family]
-  short: "[E:tce* dje] is a social parent of [A:tce* dje] (child). [E] raises [A]."
+  short: "[E:tce* den] is a social parent of [A:tce* den] (child). [E] raises [A]."
 vele:
   family: "R"
   gloss: "genetic parent"
   tags: [kinship, family]
   short: |
-    [E:tce* dje] is a genetic direct parent of [A:tce* dje].
+    [E:tce* den] is a genetic direct parent of [A:tce* den].
     [E] directly contributes to the genetic makeup of [A].
 kana:
   family: "R"
   gloss: "sibling"
   tags: [kinship, family]
-  short: "[E:tce* dje] is a sibling/brother/sister of [A:tce* dje]."
+  short: "[E:tce* den] is a sibling/brother/sister of [A:tce* den]."
 kene:
   family: "R"
   gloss: "nibling"
   tags: [kinship, family]
-  short: "[E:tce* dje] is a nibling/nephew/nice of [A:tce* dje] (uncle/aunt)."
+  short: "[E:tce* den] is a nibling/nephew/nice of [A:tce* den] (uncle/aunt)."
 mana:
   family: "R"
   gloss: "mother"
   tags: [kinship, family]
-  short: "[E:tce* dje] is a (social) mother of [A:tce* dje]."
+  short: "[E:tce* den] is a (social) mother of [A:tce* den]."
   notes: Equivalent to {zin fana}.
 pana:
   family: "R"
   gloss: "father"
   tags: [kinship, family]
-  short: "[E:tce* dje] is a (social) father of [A:tce* dje]."
+  short: "[E:tce* den] is a (social) father of [A:tce* den]."
   notes: Equivalent to {zun fana}.
 jnehu:
   family: "R"
   gloss: "takes care"
   tags: [kinship, family]
   short: |
-    [E:tce* dje] takes cares of [A:tce* dje].
+    [E:tce* den] takes cares of [A:tce* den].
     [E] ensures that the needs of [A] are fulfulled.
 dzana:
   family: "R"
   gloss: "married"
   tags: [kinship, family]
-  short: "[E:tce* dje] is married to [A:tce* dje]."
+  short: "[E:tce* den] is married to [A:tce* den]."
 kineo:
   family: "R"
   gloss: "touches"
-  short: "[E:tce* dje] touches [A:tce* dje]."
+  short: "[E:tce* den] touches [A:tce* den]."
 varin:
   family: "R"
   gloss: "strange"
@@ -1682,34 +1769,34 @@ zvaor:
 teran:
   family: "R"
   gloss: "planet"
-  short: "[E:tce* dje] is a planet."
+  short: "[E:tce* den] is a planet."
 soran:
   family: "R"
   gloss: "star"
-  short: "[E:tce* dje] is a star."
+  short: "[E:tce* den] is a star."
 zilan:
   family: "R"
   gloss: "moon"
-  short: "[E:tce* dje] is a major natural satellite/moon."
+  short: "[E:tce* den] is a major natural satellite/moon."
 kari:
   family: "R"
   gloss: "axiom"
-  short: "[E:tce* dje] has axiomatic belief that [A:()] is true."
+  short: "[E:tce* den] has axiomatic belief that [A:()] is true."
   notes: |
     [A] is an axiom, is presupposed to be true and it's truth value is never
     put into doupt.
 meon:
   family: "R"
   gloss: "apple"
-  short: "[E:tce* dje] is an apple."
+  short: "[E:tce* den] is an apple."
 kcaor:
   family: "R"
   gloss: "table"
-  short: "[E:tce* dje] is a table."
+  short: "[E:tce* den] is a table."
 stan:
   family: "R"
   gloss: "country"
-  short: "[E:tce* dje] is a country/territory."
+  short: "[E:tce* den] is a country/territory."
 drair:
   family: "R"
   gloss: "god"
@@ -1717,50 +1804,50 @@ drair:
 kroin:
   family: "R"
   gloss: "leg"
-  short: "[E:tce* dje] is a leg."
+  short: "[E:tce* den] is a leg."
 kani:
   family: "R"
   gloss: "infers from senses"
-  short: "[E:tce* dje] infers from their current sensorial experience that [A:()] is the case."
+  short: "[E:tce* den] infers from their current sensorial experience that [A:()] is the case."
 mara:
   family: "R"
   gloss: "remembers"
-  short: "[E:tce* dje] remembers the past experience of perceiving that [A:()] was the case."
+  short: "[E:tce* den] remembers the past experience of perceiving that [A:()] was the case."
 zule:
   family: "R"
   gloss: "hearsay"
-  short: "[E:tce* dje] has got second-hand information or hearsay according to which [A:()] is the case."
+  short: "[E:tce* den] has got second-hand information or hearsay according to which [A:()] is the case."
 muni:
   family: "R"
-  short: "[E:tce* dje] intuits that [A:()] is the case."
+  short: "[E:tce* den] intuits that [A:()] is the case."
   gloss: "intuits"
 sana:
   family: "R"
   gloss: "cultural knowledge"
-  short: "[E:tce* dje] has cultural knowledge, collective wisdom according to which [A:()] is the case."
+  short: "[E:tce* den] has cultural knowledge, collective wisdom according to which [A:()] is the case."
 valo:
   family: "R"
   gloss: "infers from multiple sources"
-  short: "[E:tce* dje] infers (from several sources of information) that [A:()] is the case."
+  short: "[E:tce* den] infers (from several sources of information) that [A:()] is the case."
 bale:
   family: "R"
   gloss: "standing"
-  short: "[E:tce* dje] is standing on [A:tce* dje]."
+  short: "[E:tce* den] is standing on [A:tce* den]."
 ctua:
   family: "R"
   gloss: "sit"
-  short: "[E:tce* dje] is sitting on [A:tce* dje]."
+  short: "[E:tce* den] is sitting on [A:tce* den]."
 proi:
   family: "R"
   gloss: "lying down"
-  short: "[E:tce* dje] is lying down on [A:tce* dje]."
+  short: "[E:tce* den] is lying down on [A:tce* den]."
 gavgin:
   family: "R"
   gloss: "crystal"
-  short: "[E:tce* dje] is a crystal/gem/mineral with orderly atomic structure [A:tca man]."
+  short: "[E:tce* den] is a crystal/gem/mineral with orderly atomic structure [A:tca man]."
 jalan:
   family: "R"
-  short: "[E:tce* dje] is awake."
+  short: "[E:tce* den] is awake."
   gloss: "awake"
 celia:
   family: "R"
@@ -1771,15 +1858,15 @@ celia:
 filu:
   family: "R"
   gloss: "gives birth"
-  short: "[E:tce* dje] gives birth to/begets [A:tce* dje]."
+  short: "[E:tce* den] gives birth to/begets [A:tce* den]."
 sahar:
   family: "R"
   gloss: "flower"
-  short: "[E:tce* dje] is a flower."
+  short: "[E:tce* den] is a flower."
 kena:
   family: "R"
   gloss: "holds"
-  short: "[E:tce* dje] holds/grasps [A:tce* dje]."
+  short: "[E:tce* den] holds/grasps [A:tce* den]."
 clo:
   family: "R"
   gloss: "purpose"
@@ -1787,15 +1874,15 @@ clo:
 jara:
   family: "R"
   gloss: "paid work"
-  short: "[E:tce dje] has satisfying property [A:(tce dje)] as one of their jobs/occupations (paid work)."
+  short: "[E:tce den] has satisfying property [A:(tce den)] as one of their jobs/occupations (paid work)."
 zera:
   family: "R"
-  short: "[E:tce dje] has satisfying property [A:(tce dje)] as a personality trait."
+  short: "[E:tce den] has satisfying property [A:(tce den)] as a personality trait."
   gloss: "personality trait"
 blae:
   family: "R"
   gloss: "owned"
-  short: "[E:tce* man] is owned by [E:tce dje]."
+  short: "[E:tce* man] is owned by [E:tce den]."
 tsu:
   family: "R"
   gloss: "cardinality"
@@ -1803,25 +1890,25 @@ tsu:
 dzui:
   family: "R"
   gloss: "able"
-  short: "[E:tce dje] is able to satisfy property [A:(tce dje)]."
+  short: "[E:tce den] is able to satisfy property [A:(tce den)]."
 
 benal:
   family: "R"
   gloss: "healthy"
-  short: "[E:tce* dje] is healthy/fit/well/in good health."
+  short: "[E:tce* den] is healthy/fit/well/in good health."
 jogmal:
   family: "R"
   gloss: "wound"
-  short: "[E:tce* dje] is a wound."
+  short: "[E:tce* den] is a wound."
 melu:
   family: "R"
-  short: "[E:tce* dje] (default: water) is raining."
+  short: "[E:tce* den] (default: water) is raining."
   gloss: "rain"
 seni:
   family: "R"
   gloss: "obligated"
   short: |
-    [E:()] is obligated to be performed under authority [A:tce* dje]. [E] is a duty.
+    [E:()] is obligated to be performed under authority [A:tce* den]. [E] is a duty.
     
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
@@ -1829,7 +1916,7 @@ sene:
   family: "R"
   gloss: "encouraged"
   short: |
-    [E:()] is encouraged to be performed under authority [A:tce* dje]. 
+    [E:()] is encouraged to be performed under authority [A:tce* den]. 
     [E] is a virtuous/upstanding behavior.
     
     Examples: charity, volunteer work, being polite
@@ -1837,7 +1924,7 @@ sena:
   family: "R"
   gloss: "tolerated"
   short: |
-    [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* dje].
+    [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* den].
     [E] is tolerated.  
     
     Examples: basically most actions are {sena}, there are so many examples
@@ -1846,7 +1933,7 @@ seno:
   family: "R"
   gloss: "discouraged"
   short: |
-    [E:()] is discouraged to be performed under authority [A:tce* dje]; [E] is reprehensible.
+    [E:()] is discouraged to be performed under authority [A:tce* den]; [E] is reprehensible.
     
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
@@ -1854,7 +1941,7 @@ senu:
   family: "R"
   gloss: "forbidden"
   short: |
-    [E:()] is forbidden to be done by authority [A:tce* dje].
+    [E:()] is forbidden to be done by authority [A:tce* den].
     
     Examples: for many religions speaking badly of their deity is forbidden,
     crimes which are prosecuted, cheating on your partner in a monogamous relationship
@@ -1862,55 +1949,55 @@ molai:
   family: "R"
   gloss: "reward/punishment"
   short: |
-    [E:tce dje] is made to satisfy [A:(tce dje)] as a reward/punishment.  
+    [E:tce den] is made to satisfy [A:(tce den)] as a reward/punishment.  
     (E) is awarded/punished, with result that they satisfy [A].
 krehu:
   family: "R"
   gloss: "meat"
-  short: "[E:tce* dje] is meat from animal/source [A:tce* dje]."
+  short: "[E:tce* den] is meat from animal/source [A:tce* den]."
 drie:
   family: "R"
   gloss: "buys"
-  short: "[E:tce dje] buys [A:tce dje] for price/in exchange for [O:tce dje] (where success is implied)."
+  short: "[E:tce den] buys [A:tce den] for price/in exchange for [O:tce den] (where success is implied)."
 dria:
   family: "R"
   gloss: "offers"
-  short: "[E:tce dje] offers/intends to sell [A:tce dje] for price/in exchange for [O:tce dje] (where success is not implied)."
+  short: "[E:tce den] offers/intends to sell [A:tce den] for price/in exchange for [O:tce den] (where success is not implied)."
 pubdel:
   family: "R"
   gloss: "soil"
-  short: "[E:tce* dje] is soil/dirt/pebbles/silt/clay (soil of all types)."
+  short: "[E:tce* den] is soil/dirt/pebbles/silt/clay (soil of all types)."
 baluor:
   family: "R"
   gloss: "stone"
-  short: "[E:tce* dje] is a stone/rock/boulder (unified unbroken mass)."
+  short: "[E:tce* den] is a stone/rock/boulder (unified unbroken mass)."
 boiur:
   family: "R"
   gloss: "dry land"
-  short: "[E:tce* dje] is dry land (not watery, can be stepped on). [antonyms: {suier}, {gzeon}]"
+  short: "[E:tce* den] is dry land (not watery, can be stepped on). [antonyms: {suier}, {gzeon}]"
 suier:
   family: "R"
   gloss: "sea"
-  short: "[E:tce* dje] is a sea/ocean/lake (relatively large non-flowing body of water)."
+  short: "[E:tce* den] is a sea/ocean/lake (relatively large non-flowing body of water)."
 gzeon:
   family: "R"
   gloss: "river"
-  short: "[E:tce* dje] is a river/stream/brook (relatively large flowing body of water)."
+  short: "[E:tce* den] is a river/stream/brook (relatively large flowing body of water)."
 saelo:
   family: "R"
   gloss: "air"
-  short: "[E:tce* dje] is air/breathable atmosphere/gas at correct pressure for [A:tce* dje] (default: humans)."
+  short: "[E:tce* den] is air/breathable atmosphere/gas at correct pressure for [A:tce* den] (default: humans)."
 soeon:
   family: "R"
   gloss: "sky"
-  short: "[E:tce* dje] is is the sky (high troposphere and above)."
+  short: "[E:tce* den] is is the sky (high troposphere and above)."
 cnue:
   family: "R"
-  short: "[E:tce* dje] is a piece/portion/part of [A:tce dje]."
+  short: "[E:tce* den] is a piece/portion/part of [A:tce den]."
   gloss: "portion"
 duna:
   family: "R"
-  short: "[E:tce dje] gives [A:tce* dje] to [O:tce dje]."
+  short: "[E:tce den] gives [A:tce* den] to [O:tce den]."
   gloss: "gives"
   notes: |
     [E] no longer has legal or incidental ownership over [A].
@@ -2008,12 +2095,12 @@ e utcoson stan:
 e kre vire:
   family: "C2"
   gloss: "guided visit"
-  short: "[E:tce* dje] visits [A:tce* dje] with guide [O:tce* dje]."
+  short: "[E:tce* den] visits [A:tce* den] with guide [O:tce* den]."
 e spi toril:
   family: "C2"
   gloss: "parrot"
   tags: [animal]
-  short: "[E:tce* dje] is a parrot."
+  short: "[E:tce* den] is a parrot."
 e pu zoi:
   family: "C2"
   gloss: "paragraph"
@@ -2027,15 +2114,15 @@ e bino cnue:
 e spur teran:
   family: "C2"
   gloss: "home planet"
-  short: "[E:tca dje] is the home planet of species [A:tce* ma] (default: humans)."
+  short: "[E:tca den] is the home planet of species [A:tce* ma] (default: humans)."
 e spur soran:
   family: "C2"
   gloss: "home star"
-  short: "[E:tca dje] is the home star of species [A:tce* ma] (default: humans)."
+  short: "[E:tca den] is the home star of species [A:tce* ma] (default: humans)."
 e jveno kena:
   family: "C2"
   gloss: "hugs"
-  short: "[E:tce* dje] hugs [A:tce* dje]."
+  short: "[E:tce* den] hugs [A:tce* den]."
 e kini bun:
   family: "C2"
   short: "[E:tce* ma] is a course teaching about subject [A:tce* ma]."
