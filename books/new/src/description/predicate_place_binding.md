@@ -20,22 +20,25 @@ particle), however it is not possible to provide an argument list.
 
 The following sentences are all equivalent :
 
-- `tcu [ve buri meon] [fia ke be ke mian]`
+- `tcu [via ke be ke mian] [fe buri meon] `
+- `tcu [via mian] [fe buri meon]`
 - `tcu [ve buri meon] [fia mian]`
-- `meon sae buri tcu via mian`
+- `meon sae buri tcu [via mian]`
 - `meon sae buri tcu mian`
 
 Which means "All cats are eating an apple".
 
-> __GI__ particles all start with _g-_ and can be chosen arbitrarily.
-> All __GI__ member starting with __gi-__ have transitive while all others are
-> intransitive.
-> __KI__ particles all start with _k-_ and can be chosen arbitrarily, and all
-> have the same behavior `[E] is the argument X`.
+> In this exemple nothing is said about if all cats are eating the same
+> apple(s). Some cats may share the same apple or all cats could eat distinct
+> apples.
+
+> __GI__ particles all start with _g-_ and can be chosen arbitrarily. All __GI__
+> member starting with __gi-__ have transitive while all others are
+> intransitive. __KI__ particles all start with _k-_ and can be chosen
+> arbitrarily, and all have the same behavior `[E] is the argument X`.
 
 > When binding an atom/generic place it is also possible to use the argument
-> list grammar, which corresponds the to atom satisfying the defined (1-ary)
-> property.
-
-> In this exemple nothing is said about if all cats are eating the same apple(s).
-> Some cats may share the same apple or all cats could eat distinct apples.
+> list grammar (after __ve/va/vo/vu__ and __FE__ equivalents), which corresponds
+> the to atom satisfying the defined (1-ary) property. This is particularly
+> useful in more complex sentences in which predicates cannot be ordered
+> correctly to just use chaining.
