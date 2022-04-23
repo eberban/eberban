@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://eberban.github.io/eberban/">
-    <img src="./images/eberban_hex.svg" width="30%" />
+    <img src="./images/eberban-alpha.png" width="30%" />
   </a>
 </div>
 
