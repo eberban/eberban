@@ -81,7 +81,7 @@ ma:
   family: "MI"
   gloss: symbol
   short: "[E:ma] is a symbol."
-  definition: 𝜆c 𝜆e ⊤ is-symbol(e)
+  definition: 𝜆c 𝜆e is-symbol(e)
   notes: |
     Simplest non-predicate type. All more complex non-predicate types are
     symbols that must additionally satisfy some properties.
@@ -296,7 +296,7 @@ cu:
     Used when a mistake is made to redo the sentence/definition."
   gloss: "[erased]"
 
-vi:
+vai:
   family: "VE"
   gloss: "〈 AND"
   short: "State the following 0-ary VE-scope, unrelated to any place."
@@ -304,6 +304,13 @@ vi:
     Allow to quickly state multiple multiple propositions without having to rely
     on connective predicates. In fact, connective predicates are defined using
     {vi}/{fi}.
+vi:
+  family: "VE"
+  gloss: "〈 share-last"
+  short: "The last place of the suffixed predicate is shared with the following VE-scope."
+  notes: |
+    The following VE-scope is a property over the variable used in the suffixed
+    predicate last place.
 ve:
   family: "VE"
   gloss: "〈 share-E"
@@ -519,7 +526,7 @@ za:
 zai:
   family: "ZI"
   short: "[E:ma] is the symbol representing the E place of the following predicate."
-  gloss: "[name]"
+  gloss: "[literal]"
   note: |
     Another place can be selected by adding a SE particle between {zai} and the
     predicate. Using {zai} before a specific predicate will always yield the
@@ -589,6 +596,15 @@ pae:
     Starts a context switching sentence, such that [E:ma] will be the context
     provided to any following sentences.
   gloss: "[context change]"
+pao:
+  family: "PA"
+  short: |
+    Register a context-switching sentence, that will be applied automatically
+    between each sentences as if it was used with {pae}.
+  gloss: "[register context change]"
+  notes: |
+    By default I is responsible to update the "present" and the "current sentence"
+    symbol in the context.
 pau:
   family: "PA"
   short: "Starts a directive sentence, that is requested, wished or ordered to be true."
@@ -627,6 +643,10 @@ poi:
   family: "PO"
   short: "Start a question definition, the arguments being the unknown informations."
   gloss: "[question]"
+poe:
+  family: "PO"
+  short: "Start a predicate definition which captures the current context."
+  gloss: "[capturing definition]"
 pu:
   family: "PU"
   short: "Marks a new paragraph/section/change of subject."
@@ -898,7 +918,7 @@ tcui:
     nested sets.
 
 man:
-  family: "MI"
+  family: "R"
   gloss: symbol set
   short: "[E:tcei* ma] is a symbol."
 
@@ -982,7 +1002,7 @@ blu:
   gloss: seq
   tags: [struct, sequence]
   short: |
-    [E:kci a] represents an (ordered) sequence of values satisfying property [E:(a)].
+    [E:kci a] represents an (ordered) sequence of values satisfying property [A:(a)].
   notes: |
     Is defined from maps ({kci}), with the additional requirement that the
     keys must be consecutive ordinals starting for zeroth.
