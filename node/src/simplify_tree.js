@@ -19,9 +19,9 @@ const important_types = [
 	[ 'chaining', 'chaining' ],
 	[ 'chaining_neg', 'chaining negation' ],
 	[ 'chaining_unit', 'chaining unit' ],
-	[ 've_scope', 'VE-scope' ],
-	[ 've_scope_first', 'explicit switch' ],
-	[ 've_scope_next', 'explicit switch' ],
+	[ 'vi_scope', 'VI-scope' ],
+	[ 'vi_scope_first', 'explicit switch' ],
+	[ 'vi_scope_next', 'explicit switch' ],
 	[ 'arguments_list', 'arguments' ],
 
 	// predicates

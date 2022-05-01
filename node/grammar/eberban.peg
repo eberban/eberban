@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.46.1
+# eberban PEG grammar - v0.47
 # =============================
 
 # GRAMMAR
@@ -6,8 +6,8 @@
 text <- (free_interjection / free_parenthetical)* paragraphs? spaces? EOF?
 
 # text structure
-paragraphs <- paragraph (&PU_clause paragraph)*
-paragraph <- PU_clause? paragraph_unit (&(PA_clause / PO_clause / PI_clause) paragraph_unit)*
+paragraphs <- paragraph (&DU_clause paragraph)*
+paragraph <- DU_clause? paragraph_unit (&(PA_clause / PO_clause / PI_clause) paragraph_unit)*
 
 paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
 paragraph_unit_erased <- paragraph_unit_1 CU_clause
@@ -83,6 +83,7 @@ DI_clause  <-              spaces? DI                   # free metadata
 DE_clause  <-              spaces? DE                   # free interjection
 DA_clause  <-              spaces? DA                   # free parenthetical starter
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
+DU_clause  <- free_prefix* spaces? DU  free_suffix*     # paragraph marker
                                                         #
 SI_clause  <- free_prefix* spaces? SI                   # chaining modification
 ZI_clause  <- free_prefix* spaces? ZI                   # predicate transformation
@@ -91,7 +92,7 @@ FI_clause  <- free_prefix* spaces? FI free_suffix*      # next explicit switch
 VEI_clause <-              spaces? VEI                  # VI-scope terminator
                                                         #
 GI_clause  <- free_prefix* spaces? GI                   # predicate variables
-KI_clause  <- free_prefix* spaces? KI                   # symbol variables
+KI_clause  <- free_prefix* spaces? KI                   # symbol/generic variables
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
 PI_clause  <-              spaces? PI                   # axiom toggle
@@ -99,7 +100,7 @@ PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starte
 PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
 PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
 PO_clause  <- free_prefix* spaces? PO  free_suffix*     # definition starter
-PU_clause  <- free_prefix* spaces? PU  free_suffix*     # paragraph marker
+
                                                         #
 TI_clause  <-              spaces? TI                   # numbers/digits
                                                         #
@@ -130,6 +131,7 @@ DI    <- &particle                   (d &i hieaou)      &post_word
 DE    <- &particle                   (d &e hieaou)      &post_word
 DA    <- &particle                   (d a)              &post_word
 DAI   <- &particle                   (d a i)            &post_word
+DU    <- &particle                   (d &u hieaou)      &post_word
 FI    <- &particle                   (f hieaou)         &post_word
 GI    <- &particle                   (g hieaou)         &post_word
 KI    <- &particle                   (k hieaou)         &post_word
@@ -139,7 +141,6 @@ PE    <- &particle                   (p e)              &post_word
 PEI   <- &particle                   (p e i)            &post_word
 PA    <- &particle                   (p &a hieaou)      &post_word
 PO    <- &particle                   (p &o hieaou)      &post_word
-PU    <- &particle                   (p &u hieaou)      &post_word
 SI    <- &particle                   (s hieaou)         &post_word
 TI    <- &particle                   (t hieaou / digit) &post_word
 VI    <- &particle !(VEI &post_word) (v hieaou)         &post_word

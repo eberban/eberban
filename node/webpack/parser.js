@@ -16,7 +16,7 @@ const hideTitleList = [
 	'predicate',
 	'chaining unit',
 	'chaining negation',
-	'VE-scope',
+	'VI-scope',
 	'borrowing group',
 	'erased'
 ];
@@ -48,7 +48,7 @@ const boxClassForTypeMap = new Map([
 	[ 'sequence item', 'box box-scope-highlight' ],
 	[ 'chaining unit', 'box box-chaining-unit' ],
 	[ 'chaining negation', 'box box-chaining-neg' ],
-	[ 'VE-scope', 'box box-va-scope' ],
+	[ 'VI-scope', 'box box-vi-scope' ],
 
 	// units
 	[ 'predicate', 'box box-predicate' ],
