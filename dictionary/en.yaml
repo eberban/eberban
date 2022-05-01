@@ -297,223 +297,231 @@ cu:
   gloss: "[erased]"
 
 vai:
-  family: "VE"
+  family: "VI"
   gloss: "〈 AND"
-  short: "State the following 0-ary VE-scope, unrelated to any place."
+  short: "State the following 0-ary VI-scope, unrelated to any place."
   notes: |
     Allow to quickly state multiple multiple propositions without having to rely
     on connective predicates. In fact, connective predicates are defined using
-    {vi}/{fi}.
+    {vai}/{fai}.
 vi:
-  family: "VE"
+  family: "VI"
   gloss: "〈 share-last"
-  short: "The last place of the suffixed predicate is shared with the following VE-scope."
+  short: "The last place of the suffixed predicate is shared with the following VI-scope."
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate last place.
 ve:
-  family: "VE"
+  family: "VI"
   gloss: "〈 share-E"
-  short: "The E place of the suffixed predicate is shared with the following VE-scope."
+  short: "The E place of the suffixed predicate is shared with the following VI-scope."
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate E place.
 va:
-  family: "VE"
+  family: "VI"
   gloss: "〈 share-A"
-  short: "The A place of the suffixed predicate is shared with the following VE-scope."
+  short: "The A place of the suffixed predicate is shared with the following VI-scope."
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate A place.
 vo:
-  family: "VE"
+  family: "VI"
   gloss: "〈 share-E"
-  short: "The O place of the suffixed predicate is shared with the following VE-scope."
+  short: "The O place of the suffixed predicate is shared with the following VI-scope."
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate O place.
 vu:
-  family: "VE"
+  family: "VI"
   gloss: "〈 share-E"
-  short: "The U place of the suffixed predicate is shared with the following VE-scope."
+  short: "The U place of the suffixed predicate is shared with the following VI-scope."
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate U place.
 vie:
-  family: "VE"
+  family: "VI"
   gloss: "〈 equiv-E"
-  short: "The E place of the suffixed predicate is equivalent to the following VE-scope."
+  short: "The E place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
-    The following VE-scope have the same type as the E place and is equivalent.
+    The following VI-scope have the same type as the E place and is equivalent.
     Non-sensical if not a predicate place.
 via:
-  family: "VE"
+  family: "VI"
   gloss: "〈 equiv-A"
-  short: "The A place of the suffixed predicate is equivalent to the following VE-scope."
+  short: "The A place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
-    The following VE-scope have the same type as the A place and is equivalent.
+    The following VI-scope have the same type as the A place and is equivalent.
     Non-sensical if not a predicate place.
 vio:
-  family: "VE"
+  family: "VI"
   gloss: "〈 equiv-E"
-  short: "The O place of the suffixed predicate is equivalent to the following VE-scope."
+  short: "The O place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
-    The following VE-scope have the same type as the O place and is equivalent.
+    The following VI-scope have the same type as the O place and is equivalent.
     Non-sensical if not a predicate place.
 viu:
-  family: "VE"
+  family: "VI"
   gloss: "〈 equiv-E"
-  short: "The U place of the suffixed predicate is equivalent to the following VE-scope."
+  short: "The U place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
-    The following VE-scope have the same type as the U place and is equivalent.
+    The following VI-scope have the same type as the U place and is equivalent.
     Non-sensical if not a predicate place.
 vei:
   family: "VEI"
   gloss: "〉"
-  short: "Close the current VE-scope."
+  short: "Close the current VI-scope."
   tags: [terminator, elidable]
+
 fi:
-  family: "FE"
-  gloss: "| AND"
-  short: "State the following 0-ary VE-scope, unrelated to any place."
+  family: "FI"
+  gloss: "| share-last"
+  short: "The last place of the suffixed predicate is shared with the following VI-scope."
   notes: |
-    Allow to quickly state multiple multiple propositions without having to rely
-    on connective predicates. In fact, connective predicates are defined using
-    {vi}/{fi}.
+    The following VI-scope is a property over the variable used in the suffixed
+    predicate last place.
 fe:
-  family: "FE"
+  family: "FI"
   gloss: "| share-E"
   short: |
     The E place of the predicate suffixed with latest non-closed VE is shared
-    with the following VE-scope.
+    with the following VI-scope.
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate E place.
 fa:
-  family: "FE"
+  family: "FI"
   gloss: "| share-A"
   short: |
     The A place of the predicate suffixed with latest non-closed VE is shared
-    with the following VE-scope.
+    with the following VI-scope.
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate A place.
 fo:
-  family: "FE"
+  family: "FI"
   gloss: "| share-O"
   short: |
     The O place of the predicate suffixed with latest non-closed VE is shared
-    with the following VE-scope.
+    with the following VI-scope.
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate O place.
 fu:
-  family: "FE"
+  family: "FI"
   gloss: "| share-U"
   short: |
     The U place of the predicate suffixed with latest non-closed VE is shared
-    with the following VE-scope.
+    with the following VI-scope.
   notes: |
-    The following VE-scope is a property over the variable used in the suffixed
+    The following VI-scope is a property over the variable used in the suffixed
     predicate O place.
 fie:
-  family: "FE"
+  family: "FI"
   gloss: "| equiv-E"
   short: |
     The E place of the predicate suffixed with latest non-closed VE is equivalent
-    to the following VE-scope.
+    to the following VI-scope.
   notes: |
-    The following VE-scope have the same type as the E place and is equivalent.
+    The following VI-scope have the same type as the E place and is equivalent.
     Non-sensical if not a predicate place.
 fia:
-  family: "FE"
+  family: "FI"
   gloss: "| equiv-A"
   short: |
     The A place of the predicate suffixed with latest non-closed VE is equivalent
-    to the following VE-scope.
+    to the following VI-scope.
   notes: |
-    The following VE-scope have the same type as the A place and is equivalent.
+    The following VI-scope have the same type as the A place and is equivalent.
     Non-sensical if not a predicate place.
 fio:
-  family: "FE"
+  family: "FI"
   gloss: "| equiv-O"
   short: |
     The O place of the predicate suffixed with latest non-closed VE is equivalent
-    to the following VE-scope.
+    to the following VI-scope.
   notes: |
-    The following VE-scope have the same type as the O place and is equivalent.
+    The following VI-scope have the same type as the O place and is equivalent.
     Non-sensical if not a predicate place.
 fiu:
-  family: "FE"
+  family: "FI"
   gloss: "| equiv-U"
   short: |
     The U place of the predicate suffixed with latest non-closed VE is equivalent
-    to the following VE-scope.
+    to the following VI-scope.
   notes: |
-    The following VE-scope have the same type as the U place and is equivalent.
+    The following VI-scope have the same type as the U place and is equivalent.
     Non-sensical if not a predicate place.
+fai:
+  family: "FI"
+  gloss: "| AND"
+  short: "State the following 0-ary VI-scope, unrelated to any place."
+  notes: |
+    Allow to quickly state multiple multiple propositions without having to rely
+    on connective predicates. In fact, connective predicates are defined using
+    {vai}/{fai}.
 se:
-  family: "SE"
+  family: "SI"
   short: "Bind E place and disable switching."
   gloss: "<EE>"
 sa:
-  family: "SE"
+  family: "SI"
   short: Bind A place and disable switching.
   gloss: "<AA>"
 so:
-  family: "SE"
+  family: "SI"
   short: "Bind O place and disable switching."
   gloss: "<OO>"
 su:
-  family: "SE"
+  family: "SI"
   short: "Bind U place and disable switching."
   gloss: "<II>"
 sea:
-  family: "SE"
+  family: "SI"
   short: "Bind E place then switch to the A place."
   gloss: "<EA>"
 seo:
-  family: "SE"
+  family: "SI"
   short: "Bind E place then switch to the O place."
   gloss: "<EO>"
 seu:
-  family: "SE"
+  family: "SI"
   short: "Bind E place then switch to the U place."
   gloss: "<EU>"
 sae:
-  family: "SE"
+  family: "SI"
   short: "Bind A place then switch to the E place."
   gloss: "<AE>"
 sao:
-  family: "SE"
+  family: "SI"
   short: "Bind A place then switch to the O place."
   gloss: "<AO>"
 sau:
-  family: "SE"
+  family: "SI"
   short: "Bind A place then switch to the U place."
   gloss: "<AU>"
 soe:
-  family: "SE"
+  family: "SI"
   short: "Bind O place then switch to the E place."
   gloss: "<OE>"
 soa:
-  family: "SE"
+  family: "SI"
   short: "Bind O place then switch to the A place."
   gloss: "<OA>"
 sou:
-  family: "SE"
+  family: "SI"
   short: "Bind O place then switch to the U place."
   gloss: "<OU>"
 sue:
-  family: "SE"
+  family: "SI"
   short: "Bind U place then switch to the E place."
   gloss: "<UE>"
 sua:
-  family: "SE"
+  family: "SI"
   short: "Bind U place then switch to the A place."
   gloss: "<UA>"
 suo:
-  family: "SE"
+  family: "SI"
   short: "Bind U place then switch to the O place."
   gloss: "<UO>"
 za:

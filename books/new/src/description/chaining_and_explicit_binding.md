@@ -58,7 +58,7 @@ I eat an apple.
 
 ## Explicit binding
 
-If those places are not the ones we want, we can use particles in family __VE__
+If those places are not the ones we want, we can use particles in family __VI__
 (all particles starting with _v-_) to chose which place of the predicate on
 their left should be used.
 
@@ -73,7 +73,7 @@ I eat something and am a cat.
 ```
 
 If we want to bind again _buri_ (same place or another one) we can use particles
-in family __FE__ (all particles starting with _f-_) :
+in family __FI__ (all particles starting with _f-_) :
 
 ```gloss
 mi buri ve mian fa meon
@@ -90,19 +90,19 @@ I am a cat and eat an apple.
 > even *mian mi buri meon* (the order of consecutive intransitive predicates is
 > irrelevant).
 > 
-> VE/FE is often needed to use predicates with O and U places.
+> VI/FI is often needed to use predicates with O and U places.
 >
-> __vei__ can be used instead of a __FE__ to bind the normal chained place. It
-> also closes the scope started by a __VE__, which is important when multiple
-> __VE__ are nested.
+> __vei__ can be used instead of a __FI__ to bind the normal chained place. It
+> also closes the scope started by a __VI__, which is important when multiple
+> __VI__ are nested as it allows to use __FI__ to refer to an outer __VI__.
 
 ## Chaining modification
 
-Particles of family __SE__ (all particles starting with _s-_) allow to locally
+Particles of family __SI__ (all particles starting with _s-_) allow to locally
 modify the chaining rules defined above. Particles __se, sa, so, su__ binds
 their respective vowel place with the predicate before and after.
 
-For __SE__ members with two vowels like __sea, sao, ...__, the first vowel
+For __SI__ members with two vowels like __sea, sao, ...__, the first vowel
 specify the place for the predicate before, and the second vowel for the
 predicate after.
 
@@ -118,4 +118,4 @@ I eat what is eaten by a cat.
 ```
 
 > When you're only interested by binding 2 places which don't follow the
-> default chaining behavior, it is simpler to use __SE__ than __VE/FE__.
+> default chaining behavior, it is simpler to use __SI__ than __VI/FI__.
