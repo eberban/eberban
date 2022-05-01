@@ -150,7 +150,7 @@ function renderParagraphs(text) {
 	paragraphs.forEach((p) => {
 		p = escapeHTML(p);
 		p = p.replace(/(  |\\)(\r\n|\r|\n)/g, '<br />');
-		p = p.replace(/\[((E|A|O|U)(:.*?)?)\]/g, (match, p1) => {
+		p = p.replace(/\[(.*?(:.*?)?)\]/g, (match, p1) => {
 			let out = `<span class="label label-info place">`;
 			out += `<span class="hidden">[</span>`;
 			out = out +  p1.replace(/([a-zA-Z']{2,})/g, (match) => `{${match}}`);
@@ -166,6 +166,15 @@ function renderParagraphs(text) {
 			out = out + `</span>`
 			return out;
 		});
+
+		// __x__
+		p = p.replace(/(?<!\\)(?:\\{2})*__((?:[^\\_]|\\.)+)__/g, '<strong>$1</strong>');
+
+		// _x_
+		p = p.replace(/(?<!\\)(?:\\{2})*_((?:[^\\_]|\\.)+)_/g, '<em>$1</em>');
+
+		// cursive
+		p = p.replace(/\$\((.+?)\)/g, '<span class="cursive">$1</span>');
 		
 		p = p.replace(/\{([a-zA-Z'. ]+)\}/g, (match, p1) => {
 			let out = '<em>';

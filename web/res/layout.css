@@ -117,7 +117,7 @@ li.implicit {
 	border-top: 0px;
 }
 
-.box.box-va-scope {
+.box.box-vi-scope {
 	background: var(--color-pink);
 }
 
@@ -282,4 +282,10 @@ li.implicit {
 	margin-bottom: 10px;
 	font-style: italic;
 	font-size: 80%;
+}
+
+.cursive {
+    font-family: freeserif, "times new roman", serif;
+    font-style: italic;
+    font-size: 125%;
 }
