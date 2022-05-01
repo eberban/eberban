@@ -37,6 +37,9 @@ Which means "All cats are eating an apple".
 > intransitive. __KI__ particles all start with _k-_ and can be chosen
 > arbitrarily, and all have the same behavior `[E] is the argument X`.
 
+> __GI/KI__ can also be assigned outside of argument lists by prefixing them
+> with __bo__.
+
 > When binding an atom/generic place it is also possible to use the argument
 > list grammar (after __ve/va/vo/vu__ and __FI__ equivalents), which corresponds
 > the to atom satisfying the defined (1-ary) property. This is particularly

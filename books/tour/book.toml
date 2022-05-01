@@ -3,7 +3,7 @@ authors = ["mia entropy"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Description of Eberban"
+title = "A tour of Eberban"
 
 [output.html]
 mathjax-support = true

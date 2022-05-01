@@ -45,7 +45,7 @@ a medial pair can appear only between 2 _vowels_, but not at the end.
 The following chart shows __initial pairs__ in blue, __medial pairs__ in red, and
 invalid pairs in gray :
 
-![Chart of valid initial and medial pairs](morphology/chart-pairs.png)
+![Chart of valid initial and medial pairs](chart-pairs.png)
 
 ### Borrowings
 

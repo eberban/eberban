@@ -95,6 +95,12 @@ I am a cat and eat an apple.
 > __vei__ can be used instead of a __FI__ to bind the normal chained place. It
 > also closes the scope started by a __VI__, which is important when multiple
 > __VI__ are nested as it allows to use __FI__ to refer to an outer __VI__.
+>
+> __vi/fi__ binds the last place of a predicate. It is useful as many predicate
+> expose by convention an __event__ as their last place.
+>
+> __vai/fai__ binds no place at all, and is useful to express that 2 sentences
+> are true together even if they don't share any variables.
 
 ## Chaining modification
 

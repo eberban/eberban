@@ -141,8 +141,8 @@ mue:
 mua:
   family: "MI"
   gloss: "context-apply"
-  short: True if [E:()] is true when evaluated with context [A:ma].
-  definition: 𝜆c 𝜆E 𝜆a E(a)
+  short: True if context [E:ma] makes [A:()] true.
+  definition: 𝜆c 𝜆e 𝜆A A(e)
   transitive: true
   notes: |
     Evaluate a proposition with a provided context instead of the implicit
@@ -655,10 +655,6 @@ poe:
   family: "PO"
   short: "Start a predicate definition which captures the current context."
   gloss: "[capturing definition]"
-pu:
-  family: "PU"
-  short: "Marks a new paragraph/section/change of subject."
-  gloss: "[paragraph]"
 di:
   family: "DI"
   short: |
@@ -693,6 +689,10 @@ dai:
   gloss: ")"
   tags: [terminator]
   short: "Ends parenthetical note."
+du:
+  family: "DU"
+  short: "Marks a new paragraph/section/change of subject."
+  gloss: "[paragraph]"
 bu:
   family: "BU"
   gloss: "[sequence]"
@@ -932,9 +932,11 @@ man:
 
 kcin:
   family: "R"
-  gloss: context
-  tags: [struct, map, context]
-  short: "[E:kci (ma)] is a context."
+  gloss: entity-property map
+  tags: [struct, map]
+  short: "[E:kci (ma)] is map with values being properties of entities."
+  notes: |
+    This kind of maps are used a lot, mainly for contexts and events.
 
 kci:
   family: "R"
@@ -1167,119 +1169,183 @@ mona:
 
 din:
   family: "R"
-  gloss: "world"
-  tags: [world]
-  short: "[E:tce* man] is a world."
+  gloss: "node (digraph)"
+  tags: [digraph]
+  short: "[E:tce* man] is a digraph node."
   notes: |
-    A world represent a possible state of the universe at a specific point in
-    time. Time passing is represented as new worlds that are in the future of
-    each other, and their is a world for every possible outcome, allowing to
-    speak about possibility or necessity.
+    Digraphs are used to represent transitions between states represented by
+    nodes. These nodes are connected by directed edges (arcs) which represents
+    transitions from one state to another. (see {dini})
+
+    One concrete usage of digraphs is the concept of time, where each node
+    represents a possible state of the universe, and arcs represents a possible
+    transition to a future state according to the laws of physics. However this
+    digraph have an infinite number of nodes, and it is better to think it
+    term of a node being accessible from another one if there exist a path
+    of arcs from one to the other. (see {dinu})
 
 dini:
   family: "R"
-  gloss: "world-future"
+  gloss: "arc (digraph)"
   tags: [world]
-  short: "[E:tce* din] is a future of [A:tce* din]."
-
-del:
-  family: "R"
-  gloss: "entity-contextless"
-  tags: [world]
-  short: "[E:tca man] is an entity existing in worlds [A:tce din]."
+  short: "There exist an arc from node [E:tce* din] to node [A:tce* din]."
   notes: |
-    "Entity" is a very broad term to represent something that exists in some
-    worlds (possible states of the universe), such as individuals, physical
-    objects or events, and which can interact with the worlds they are part of.
+    All nodes in [E] have an arc with all nodes in [A].
 
-    This predicate allow to speak about entities regardless of the current
-    context, an instead express all worlds [A] in which [E] exists.
-    If you want to speak about entities within the current context,
-    see {den}.
-  
+dinu:
+  family: "R"
+  gloss: "path (digraph)"
+  tags: [world]
+  short: "There exist an path from node [E:tce* din] to node [A:tce* din]."
+  notes: |
+    Transitive version of {dini}.
+
+deni:
+  family: "R"
+  gloss: "physical"
+  tags: [world, "context-independent"]
+  short: "[E:tce* man] is a physical entity which occupies [A:tce dan] in state [O:din]."
+  notes: |
+
 den:
   family: "R"
-  gloss: "entity"
+  gloss: "physical"
   tags: [world]
-  short: "[E:tce* del] is an entity existing in the current context."
+  short: "[E:tce* man] is a physical entity."
   notes: |
-    True if the entity exists in a set of worlds that intersect with [@zai den].
+    Context dependent version of {deni}.
+    Context contains [@zai den: deni], which is an entity representing some volume
+    in space-time. Members of [E] must occupies a volume $(x) in some state $(s)
+    such that it intersect with a volume $(y) in this state $(s).
 
-    See {del} notes for explanations of what entities are.
-
-sen:
+dan:
   family: "R"
-  gloss: "update-present"
-  tags: [time]
-  short: |
-    Update the present to a world in a future of the current present.
-    [E:kcin] is the current context with [@zai sen] a future of current [@zai sen].
-  notes: |
-    Designed to work with {pae}.
+  gloss: "space point"
+  tags: [space]
+  short: "[E:tce* man] is a point in space."
 
+dun:
+  family: "R"
+  gloss: "digraph interval"
+  tags: [time]
+  short: "[E:tce din] is a digraph interval."
+  notes: |
+    Contains an starting and ending node and all nodes on one possible path.
+    All nodes must be on the same path, and starting and ending nodes having
+    multiple possible paths will have the same amount of different intervals.  
+
+zvi:
+  family: "R"
+  gloss: "event interval contains context interval"
+  tags: [time]
+  short: "[E:tce* kcin] is an event which occurs within the context interval."
+  notes: |
+    For each member $(x) of [E], [$(x)@zai dun] is contained in [@zai dun].
+
+zve:
+  family: "R"
+  gloss: "occurence"
+  tags: []
+  short: "[E:tce* man] is an occurence of [A:()]."
+  notes: |
+    - [E@zai ce za] = zai zve (name = "occurence")
+    - [E@zai dun: dun] is the smallest possible interval that makes [A] true
+    when used as [@zai dun].
+
+mun:
+  family: "R"
+  gloss: "ctx transf helper"
+  tags: [context]
+  short: |
+    [E:kcin] is the context in which the proposition argument of [A:(())] is
+    evaluated with.
+  notes: |
+    [A] is expected to evaluate its proposition argument with a modified
+    context, which is stated to be [E]. Can be used with {pae} to make a
+    context change "sticky"/permanent/to apply on following sentences.
+  definition: |
+    po mun ke ga be
+      ga vie mue ke
+
+# sen:
+#   family: "R"
+#   gloss: "update-present"
+#   tags: [time]
+#   short: |
+#     Context transformation ({pae}): Pick a new "present" that is accessible from
+#     /in the future of the current "present".
+
+#     - [E:kcin @zai sen] = a state accessible from [@zai sen]
+#   notes: |
+#     [@zai sen] is a state acting as an origin representing the "present" that is
+#     used for tenses such as {san}. While speaking [@zai sen] don't change when
+#     time actually flows when the sentences are uttered. {sen} thus allow to
+#     set [E @zai sen] to this new "present", which is in the future of the
+#     previous "present" [@zai sen].
+ 
 sin:
   family: "R"
   gloss: "past"
-  tags: [time]
+  tags: [time, context]
   short: |
-    It was the case that [E:()].
+    Beforehand, [E:()].
   notes: |
-    [E] is evaluated with the a modified context where [@zai den] is the set of
-    all worlds that are in the past of at least one world of current [@zai den]
-    but which are not part of [@zai den] themselves.
+    - [E @zai den] = set of all worlds that are:
+      - in the past of at least one state in [@zai den]
+      - not part of [@zai den] themselves.
 
-sini:
-  family: "R"
-  gloss: "past (sticky)"
-  tags: [time]
-  short: |
-    [E:kcin] is the current context with [@zai den] being the set of
-    all worlds that are in the past of at least one world of current [@zai den]
-    but which are not part of [@zai den] themselves.
-  notes: |
-    Designed to work with {pae}.
+# sini:
+#   family: "R"
+#   gloss: "past (sticky)"
+#   tags: [time]
+#   short: |
+#     Context transformation ({pae}): Update the context states as the past of the
+#     current context states.
+#   notes: |
+#     - [E:kcin @zai den] = set of all worlds that are:
+#       - in the past of at least one state in [@zai den]
+#       - not part of [@zai den] themselves.
 
 san:
   family: "R"
   gloss: "present"
-  tags: [time]
+  tags: [time, context]
   short: |
-    [E:()] is true in the present.
+    It is presently the case that [E:()].
   notes: |
-    [E] is evaluated with the a modified context where [@zai den] is a set
-    containing only [@zai sen] (present).
+    - [E @zai den] = [@zai sen] (present origin).
 
-sani:
-  family: "R"
-  gloss: "present (sticky)"
-  tags: [time]
-  short: |
-    [E:kcin] is the current context with [@zai den] being a set containing only
-    [@zai sen] (present).
-  notes: |
-    Designed to work with {pae}.
+# sani:
+#   family: "R"
+#   gloss: "present (sticky)"
+#   tags: [time]
+#   short: |
+#     [E:kcin] is the current context with [@zai den] being a set containing only
+#     [@zai sen] (present).
+#   notes: |
+#     Designed to work with {pae}.
 
 sun:
   family: "R"
   gloss: "future"
-  tags: [time]
+  tags: [time, context]
   short: |
-    It will be the case that [E:()].
+    Thereafter, [E:()].
   notes: |
     [E] is evaluated with the a modified context where [@zai den] the set of
     all worlds that are in the future of at least one world of current [@zai den]
     but which are not part of [@zai den] themselves.
 
-suni:
-  family: "R"
-  gloss: "future (sticky)"
-  tags: [time]
-  short: |
-    [E:kcin] is the current context with [@zai den] being the set of
-    all worlds that are in the future of at least one world of current [@zai den]
-    but which are not part of [@zai den] themselves.
-  notes: |
-    Designed to work with {pae}.
+# suni:
+#   family: "R"
+#   gloss: "future (sticky)"
+#   tags: [time]
+#   short: |
+#     [E:kcin] is the current context with [@zai den] being the set of
+#     all worlds that are in the future of at least one world of current [@zai den]
+#     but which are not part of [@zai den] themselves.
+#   notes: |
+#     Designed to work with {pae}.
 
 mini:
   family: "R"
