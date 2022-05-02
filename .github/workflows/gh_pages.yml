@@ -44,11 +44,7 @@ jobs:
 
       - name: Build tour book
         run: |
-          ~/.cargo/bin/mdbook build books/tour_en
-
-      - name: Build new book
-        run: |
-          ~/.cargo/bin/mdbook build books/new
+          ~/.cargo/bin/mdbook build books/tour
         
       - name: Install NPM dependencies
         run: |
