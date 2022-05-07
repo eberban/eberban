@@ -51,7 +51,7 @@ mi buri meon
 
 mi buri meon
 
-{$(x) is me} {$(x) eats $(y)} {$(y) is an apple}
+{E:$(x) is me} {E:$(x) eats A:$(y)} {A:$(y) is an apple}
 
 I eat an apple.
 ```
@@ -67,7 +67,7 @@ mi buri ve mian
 
 mi buri ve mian
 
-{$(x) is me} {$(x) eats $(y)} {bind eats-E/$(x)} {$(x) is a cat}
+{E:$(x) is me} {E:$(x) eats A:$(y)} {bind eats:E:$(x)} {E:$(x) is a cat}
 
 I eat something and am a cat.
 ```
@@ -80,8 +80,8 @@ mi buri ve mian fa meon
 
 mi buri ve mian fa meon
 
-{$(x) is me} {$(x) eats $(y)} {bind eats-E/$(x)} {$(x) is a cat}
-{bind eats-A/$(y)} {$(y) is an apple}
+{E:$(x) is me} {E:$(x) eats A:$(y)} {bind eats:E:$(x)} {E:$(x) is a cat}
+{bind eats:A:$(y)} {E:$(y) is an apple}
 
 I am a cat and eat an apple.
 ```
@@ -117,8 +117,8 @@ mi buri sae buri mian
 
 mi buri sae buri mian
 
-{$(x) is me} {$(x) eats $(y)} {A/$(y) <> E/$(z)} {$(z) eats $(y)}
-{$(z) is a cat}
+{E:$(x) is me} {E:$(x) eats A:$(y)} {A>E chaining} {E:$(z) eats A:$(y)}
+{E:$(z) is a cat}
 
 I eat what is eaten by a cat.
 ```

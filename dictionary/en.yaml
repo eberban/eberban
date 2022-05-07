@@ -1721,12 +1721,6 @@ zire:
   family: "R"
   gloss: "respects"
   short: "[E:tce* den] respects [A:tce* man]."
-zvoe:
-  family: "R"
-  gloss: "content"
-  short: "[E:tce* skar] is a content, something that is to be expressed though medium [A:tce* den]."
-  notes: |
-    TODO: Duplicate of {skar}?
 zbui:
   family: "R"
   gloss: "copulates"
@@ -2100,6 +2094,10 @@ duna:
     (TODO: Add words for legal/incidental ownership)
 
     [E] does not accept payment or expect reciprocation from [O].
+skar:
+  family: "R"
+  short: "[E:tce* man] is a string of data (quote)."
+  gloss: "quote"
 
 # Compounds (2):
 e tsae ban:
@@ -2110,82 +2108,82 @@ e ber ban:
   family: "C2"
   gloss: "eberban"
   tags: [cultural]
-  short: "[E:tce* ban] is the eberban language."
+  short: "[E:tca ban] is the eberban language."
 e ujbo ban:
   family: "C2"
   gloss: "lojban"
   tags: [cultural]
-  short: "[E:tce* ban] is the lojban language."
+  short: "[E:tca ban] is the lojban language."
 e ufranse ban:
   family: "C2"
   gloss: "french language"
   tags: [cultural]
-  short: "[E:tce* ban] is the french language."
+  short: "[E:tca ban] is the french language."
 e ufranse stan:
   family: "C2"
   gloss: "France"
   tags: [cultural]
-  short: "[E:tce* stan] is France."
+  short: "[E:tca stan] is France."
 e uinglici ban:
   family: "C2"
   gloss: "english language"
   tags: [cultural]
-  short: "[E:tce* ban] is the english language."
+  short: "[E:tca ban] is the english language."
 e unihon ban:
   family: "C2"
   gloss: "japanese language"
   tags: [cultural]
-  short: "[E:tce* ban] is the japanese language."
+  short: "[E:tca ban] is the japanese language."
 e unihon stan:
   family: "C2"
   gloss: "Japan"
   tags: [cultural]
-  short: "[E:tce* stan] is Japan."
+  short: "[E:tca stan] is Japan."
 e udjonguo ban:
   family: "C2"
   gloss: "chinese language"
   tags: [cultural]
-  short: "[E:tce* ban] is chinese language."
+  short: "[E:tca ban] is chinese language."
 e udjonguo stan:
   family: "C2"
   gloss: "China"
   tags: [cultural]
-  short: "[E:tce* stan] is China."
+  short: "[E:tca stan] is China."
 e udoitce ban:
   family: "C2"
   gloss: "german language"
   tags: [cultural]
-  short: "[E:tce* ban] is german language."
+  short: "[E:tca ban] is german language."
 e udoitce stan:
   family: "C2"
   gloss: "Germany"
   tags: [cultural]
-  short: "[E:tce* stan] is Germany."
+  short: "[E:tca stan] is Germany."
 e umiser stan:
   family: "C2"
   gloss: "Egypt"
   tags: [cultural]
-  short: "[E:tce* stan] is Egypt."
+  short: "[E:tca stan] is Egypt."
 e uhangu ban:
   family: "C2"
   gloss: "south korean language"
   tags: [cultural]
-  short: "[E:tce* ban] is south korean language."
+  short: "[E:tca ban] is south korean language."
 e uhangu stan:
   family: "C2"
   gloss: "South Korea"
   tags: [cultural]
-  short: "[E:tce* stan] is South Korea."
+  short: "[E:tca stan] is South Korea."
 e utcoson ban:
   family: "C2"
   gloss: "north korean language"
   tags: [cultural]
-  short: "[E:tce* ban] is north korean language."
+  short: "[E:tca ban] is north korean language."
 e utcoson stan:
   family: "C2"
   gloss: "North Korea"
   tags: [cultural]
-  short: "[E:tce* stan] is North Korea."
+  short: "[E:tca stan] is North Korea."
 e kre vire:
   family: "C2"
   gloss: "guided visit"
@@ -2205,11 +2203,11 @@ e bino cnue:
   family: "C2"
   gloss: "symptom"
   short: "[E:tce* ma] [ill/sickness] is characterized by symptom [A:tce* ma]."
-e spur teran:
+e spua teran:
   family: "C2"
   gloss: "home planet"
   short: "[E:tca den] is the home planet of species [A:tce* ma] (default: humans)."
-e spur soran:
+e spua soran:
   family: "C2"
   gloss: "home star"
   short: "[E:tca den] is the home star of species [A:tce* ma] (default: humans)."
