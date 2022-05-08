@@ -5,15 +5,21 @@ v, t, d, s, z, c, j, g, k__), 5 vowels (__i, e, a, o, u__) and finally the
 letter __h__, for a total of 22 letters. Among the consonants, __n__, __r__ and
 __l__ are designated as (alveolar) __sonorants__, and play an important role in
 Eberban's morphology. The same letter appearing multiple times in a row is
-considered identical to the letter not being repeated.
+considered identical to the letter not being repeated, but can informally be
+used in written media to convey length of sounds in speech.
 
 Words are usually written separated by spaces, however this is not mandatory.
 While removing spaces, however, it might be required to add the word boundary
 marker symbol __'__ in some places. More than one marker in a row is not
-allowed.
-
-Letters are chained one after the other without spaces to form __words__ which
+allowed. Letters are chained one after the other without spaces to form __words__ which
 are divided into multiple categories based on their structure.
+
+Eberban text is usually written all lowercase (outside of foreign text quotes),
+but uppercase can informally be used in written media to convey volume (such as
+yelling). Outside of __'__ no punctuation symbol is used, and any other
+character is considered a space, but informally punctuation from other languages
+can be used (for exemple by writing `"` around quotes, or ending sentences with
+`.`).
 
 ## Word types
 
