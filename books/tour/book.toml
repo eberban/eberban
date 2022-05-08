@@ -16,8 +16,8 @@ additional-js = [
     "res/leipzig_apply.js",
 ]
 
-[output.linkcheck]
-warning-policy = "error"
+# [output.linkcheck]
+# warning-policy = "error"
 
 [preprocessor.regex-replacer]
 command="mdbook-regex-replacer"
