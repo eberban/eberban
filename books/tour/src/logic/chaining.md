@@ -110,4 +110,4 @@ right-grouping order (`A (B (C D))`).
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) likes all all cats.
+> $(e) likes all cats.
