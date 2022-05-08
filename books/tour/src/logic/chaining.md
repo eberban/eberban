@@ -80,14 +80,15 @@ performed.
 > _gli mian_
 >
 > \\[ \begin{align}
-> \text{gli}(c,e,A) &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\
-> \text{mian}(c,e)  &= \text{[$e$ is a cat]} \\\\
-> P1(c)             &= \exists e. \text{mian}(c,e) \\\\
-> P2(c,e,A)         &= gli(c,e,A) \wedge A \Leftrightarrow P1
+> \text{gli}(c,e,A)   &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\
+> \text{mian}(c,e)    &= \text{[$e$ is a cat]} \\\\
+> \text{mian}_1(c)    &= \exists e. \text{mian}(c,e) \\\\
+> \text{gli}_1(c,e,A) &= gli(c,e,A) \wedge A \Leftrightarrow \text{mian}_1
 > \end{align} \\]
 >
 > Given $(c), $(e), $(A):\
-> $(e) is happy about $(A) being true, and $(A) is equivalent to $(P1).\
+> $(e) is happy about $(A) being true, and $(A) is equivalent to
+> \\(\text{mian}_1\\).\
 > $(e) is happy that there exist a cat.
 
 ## Longer chains
