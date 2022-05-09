@@ -26,16 +26,16 @@ place is used.
 If the chaining argument is an __atom__ argument, then the variable filling this
 argument also fills the __E__ argument of the right predicate.
 
-> __mian mi__
+> __mian blan__
 >
 > \\[ \begin{align}
-> \text{mian}(c,e) &= \text{[$e$ is a cat]} \\\\
-> \text{mi}(c,e)   &= \text{[$e$ is a speaker]} \\\\
-> \text{mi}_1(c,e) &= \text{mian}(c,e) \wedge \text{mi}(c,e)
+> \text{mian}(c,e)   &= \text{[$e$ is a cat]} \\\\
+> \text{blan}(c,e)   &= \text{[$e$ is beautiful]} \\\\
+> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{blan}(c,\color{cyan}{e})
 > \end{align} \\]
 > 
 > Given $(c),$(e):\
-> $(e) is a cat and a speaker.
+> $(e) is a cat and is beautiful.
 
 If the right predicate have more than one explicit argument then it is wrapped
 in a predicate having only one explicit argument, and every other arguments are
@@ -49,7 +49,7 @@ verbosity in simple cases.
 > \\[ \begin{align}
 > \text{mian}(c,e)   &= \text{[$e$ is a cat]} \\\\
 > \text{buri}(c,e,a) &= \text{[$e$ eats $a$]} \\\\
-> \text{buri}_1(c,e) &= \exists a. \text{buri}(c,e,a) \\\\
+> \color{cyan}{\text{buri}_1(c,e)} &= \color{cyan}{\exists a. \text{buri}(c,e,a)} \\\\
 > \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{buri}_1(c,e)
 > \end{align} \\]
 > 
@@ -69,7 +69,7 @@ performed.
 > \\[ \begin{align}
 > \text{tce}(c,e,A)   &= \text{[$e$ is a set of things that satisfies $A$ (1-ary)]} \\\\
 > \text{mian}(c,e)    &= \text{[$e$ is a cat]} \\\\
-> \text{tce}_1(c,e,A) &= tce(c,e,A) \wedge A \Leftrightarrow mian
+> \text{tce}_1(c,e,A) &= tce(c,e,A) \color{cyan}{\wedge A \Leftrightarrow \text{mian}}
 > \end{align} \\]
 >
 > Given $(c), $(e), $(A):\
@@ -103,7 +103,7 @@ right-grouping order (`A (B (C D))`).
 > \text{dona}(c,e,a)   &= \text{[$e$ likes $a$]} \\\\
 > \text{tcu}(c,e,A)    &= \text{[$e$ is the set of all things that satisfy $A$ (1-ary)]} \\\\
 > \text{mian}(c,e)     &= \text{[$e$ is a cat]} \\\\
-> \text{tcu}_1(c,e,A)  &= \text{tcu}(c,e,A) \wedge A \Leftrightarrow mian \\\\
+> \text{tcu}_1(c,e,A)  &= \text{tcu}(c,e,A) \wedge A \Leftrightarrow \text{mian} \\\\
 > \text{tcu}_2(c,e)    &= \exists A. \text{tcu}_1(c,e,A) \\\\
 > \text{dona}_1(c,e,a) &= \text{dona}(c,e,a) \wedge \text{tcu}_2(c,a) \\\\
 > \text{dona}_2(c,e)   &= \exists a. \text{dona}_1(c,e,a) \\\\
