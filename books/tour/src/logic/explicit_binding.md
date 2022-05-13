@@ -42,7 +42,7 @@ which is not what we want.
 > last argument is commonly used for __events__, and it is easier to recognize
 > this particle than having to remember the number of arguments of a predicate
 > to know which vowel corresponds to the last. For simplicity event arguments
-> are omitted 
+> will be omitted unless they are the focus of the explanation.
 
 ## Arguments list
 
