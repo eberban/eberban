@@ -2,13 +2,13 @@
 # Chaining
 
 When 2 predicates are strung one after the other they form a new predicate,
-which have the same arguments as the left predicate. The __context argument__ is
+which has the same arguments as the left predicate. The __context argument__ is
 automatically shared between left and right predicates.
 
-Every predicate have a default __chaining behavior__ which dictates how 2
-predicates are connected together. If the left predicate have __intransitive
+Every predicate has a default __chaining behavior__ which dictates how 2
+predicates are connected together. If the left predicate has __intransitive
 behavior__ then its __E__ place will interact with the right predicate.
-Otherwise if the left predicate have __transitive behavior__ then the __A__
+Otherwise if the left predicate has __transitive behavior__ then the __A__
 place is used.
 
 > For __root words__, they have __transitive behavior__ if they end with a
@@ -31,13 +31,14 @@ argument also fills the __E__ argument of the right predicate.
 > \\[ \begin{align}
 > \text{mian}(c,e)   &= \text{[$e$ is a cat]} \\\\
 > \text{blan}(c,e)   &= \text{[$e$ is beautiful]} \\\\
-> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{blan}(c,\color{cyan}{e})
+> \\ \\\\
+> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{blan}(c,\color{magenta}{e})
 > \end{align} \\]
 > 
 > Given $(c),$(e):\
 > $(e) is a cat and is beautiful.
 
-If the right predicate have more than one explicit argument then it is wrapped
+If the right predicate has more than one explicit argument then it is wrapped
 in a predicate having only one explicit argument, and every other arguments are
 filled with __existential variables__. The process of wrapping the predicate and
 creating __existential variables__ to have the correct arity is called the
@@ -49,7 +50,8 @@ verbosity in simple cases.
 > \\[ \begin{align}
 > \text{mian}(c,e)   &= \text{[$e$ is a cat]} \\\\
 > \text{buri}(c,e,a) &= \text{[$e$ eats $a$]} \\\\
-> \color{cyan}{\text{buri}_1(c,e)} &= \color{cyan}{\exists a. \text{buri}(c,e,a)} \\\\
+> \\ \\\\
+> \color{magenta}{\text{buri}_1(c,e)} &= \color{magenta}{\exists a. \text{buri}(c,e,a)} \\\\
 > \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{buri}_1(c,e)
 > \end{align} \\]
 > 
@@ -64,12 +66,13 @@ is used to satisfy the argument. If the __predicate argument__ and right
 predicate don't match in arity then the __arity mismatch resolution__ is
 performed.
 
-> _tce mian_
+> __tce mian__
 >
 > \\[ \begin{align}
 > \text{tce}(c,e,A)   &= \text{[$e$ is a set of things that satisfies $A$ (1-ary)]} \\\\
 > \text{mian}(c,e)    &= \text{[$e$ is a cat]} \\\\
-> \text{tce}_1(c,e,A) &= tce(c,e,A) \color{cyan}{\wedge A \Leftrightarrow \text{mian}}
+> \\ \\\\
+> \text{tce}_1(c,e,A) &= tce(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{mian}}
 > \end{align} \\]
 >
 > Given $(c), $(e), $(A):\
@@ -77,11 +80,12 @@ performed.
 > _mian_.\
 > $(e) is a set/group of cats.
 
-> _gli mian_
+> __gli mian__
 >
 > \\[ \begin{align}
 > \text{gli}(c,e,A)   &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\
 > \text{mian}(c,e)    &= \text{[$e$ is a cat]} \\\\
+> \\ \\\\
 > \text{mian}_1(c)    &= \exists e. \text{mian}(c,e) \\\\
 > \text{gli}_1(c,e,A) &= gli(c,e,A) \wedge A \Leftrightarrow \text{mian}_1
 > \end{align} \\]
@@ -96,13 +100,14 @@ performed.
 When more than 2 predicates are strung one after the other they are chained in
 right-grouping order (`A (B (C D))`).
 
-> _mi dona tcu mian_
+> __mi dona tcu mian__
 >
 > \\[ \begin{align}
 > \text{mi}(c,e)       &= \text{[$e$ is a speaker]} \\\\
 > \text{dona}(c,e,a)   &= \text{[$e$ likes $a$]} \\\\
 > \text{tcu}(c,e,A)    &= \text{[$e$ is the set of all things that satisfy $A$ (1-ary)]} \\\\
 > \text{mian}(c,e)     &= \text{[$e$ is a cat]} \\\\
+> \\ \\\\
 > \text{tcu}_1(c,e,A)  &= \text{tcu}(c,e,A) \wedge A \Leftrightarrow \text{mian} \\\\
 > \text{tcu}_2(c,e)    &= \exists A. \text{tcu}_1(c,e,A) \\\\
 > \text{dona}_1(c,e,a) &= \text{dona}(c,e,a) \wedge \text{tcu}_2(c,a) \\\\
