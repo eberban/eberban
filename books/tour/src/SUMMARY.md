@@ -6,7 +6,7 @@
   - [Phonology](morphonology/phonology.md)
 - [Logic framework](logic/intro.md)
   - [Chaining](logic/chaining.md)
-  - [Explicit binding (VI/FI/SI)]()
+  - [Explicit binding](logic/explicit_binding.md)
   - [Sentences (p-)]()
   - [Logical primitives (MI)]()
 - [Additional grammar]()

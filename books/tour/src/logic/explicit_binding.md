@@ -1,0 +1,172 @@
+# Explicit binding
+
+## Left atom place selection
+
+When the speaker wants to interact with an argument that normal chaining doesn't
+select (due to transitivity, or to interact with O or U arguments), it is
+possible to attach additional bindings using the __VI__ family of particles
+after a predicate, followed by another (chain of) predicate(s), which is closed
+by the __vei__ particle to return to the previously seen chaining behavior.
+
+> __vei__ is the only member of family __VEI__, and not a member of __VI__.
+
+__ve, va, vo, vu__ allow binding atom (or generic) arguments :
+
+> __mi duna [vo mo vei] meon__
+>
+> \\[ \begin{align}
+> \text{mi}(c,e)         &= \text{[$e$ is a speaker]} \\\\
+> \text{duna}(c,e,a,o)   &= \text{[$e$ gives $a$ to $o$]} \\\\
+> \text{mo}(c,e)         &= \text{[$e$ is a listener]} \\\\
+> \text{meon}(c,e)       &= \text{[$e$ is an apple]} \\\\
+> \\ \\\\
+> \text{duna}_1(c,e,a,o) &= \text{duna}(c,e,a,p) \color{magenta}{\wedge \text{mo}(c,o)} \wedge \text{meon}(c,a) \\\\
+> \text{duna}_2(c,e)     &= \exists a \exists o. \text{duna}_1(c,e,a,o) \\\\
+> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}_2(c,e) \\\\
+> \end{align} \\]
+> 
+> Given $(c), $(e):\
+> $(e) gives to you an apple.
+
+To bind more than one argument of the same predicate we have to use the __FI__
+family, which interact with the same predicate as the last non-closed __VI__.
+The __FI__ family follows the same pattern of vowels as __VI__.
+The above sentence can thus be rewritten as `duna [ve mi, fo mo vei] meon` or
+even as `duna [ve mi, fo mo, fa meon vei]`.
+
+In the last version it is possible to omit the final __vei__. It is however not
+possible to do so in the previous exemples as we would get the chain `mo meon`
+which is not what we want.
+
+> The particle __vi/fi__ allow to bind the last argument of a predicate. The
+> last argument is commonly used for __events__, and it is easier to recognize
+> this particle than having to remember the number of arguments of a predicate
+> to know which vowel corresponds to the last. For simplicity event arguments
+> are omitted 
+
+## Arguments list
+
+Between __VI/FI__ and the inner predicate an __arguments list__ can be provided
+by having 0 or more __KI/GI__ terminated with __be__, in which case the bindings
+will occur with those arguments instead of the arguments of the predicate after
+__be__.
+
+__KI__ (all particles starting with _k-_) represent an atom or generic argument
+$(x) and have meaning \\(ki(c,e) = \[\text{$e$ is variable $x$}\]\\).
+
+__GI__ (all particles starting with _g-_) however represents a predicate whose
+arity and type will be infered from its usage in the sentence. All __GI__
+starting with __gi-__ have __intransitive behavior__, while the others starting
+with __ge/ga/go/gu-__ have __transitive behavior__.
+
+> __mi dona [va ke be: mian buri ke]__
+> 
+> \\[ \begin{align}
+> \text{mi}(c,e)         &= \text{[$e$ is a speaker]} \\\\
+> \text{dona}(c,e,a)     &= \text{[$e$ likes $a$]} \\\\
+> \text{mian}(c,e)       &= \text{[$e$ is a cat]} \\\\
+> \text{buri}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
+> \\ \\\\
+> \text{buri}_1(c,e,a)   &= \text{buri}(c,e,a) \wedge \color{magenta}{\text{ke}^1(c,e)} \\\\
+> \text{buri}_2(c,e)     &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{buri}_2(c,e) \\\\
+> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}^1(c,e)} \wedge \text{mian}_1(c,e) \\\\
+> \text{dona}_1(c,e,a)   &= \text{dona}(c,e,a) \wedge \text{va}_1(c,a) \\\\
+> \text{dona}_2(c,e)     &= \exists a. \text{dona}_1(c,e,a) \\\\
+> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{dona}_2(c,e) \\\\
+> \end{align} \\]
+>
+> Given $(c), $(e):\
+> $(e) is a speaker which likes [something eaten by a cat].
+
+## Right place and chaining selection
+
+When it is only needed to bind one or 2 places of a predicate, using __VI/FI__
+and arguments lists is quickly verbose. For that reason, predicates can be
+prefixed with particles of familly __SI__ (all particles starting with _s-_),
+which overrides the chaining behavior.
+
+__se, sa, so, su__ select the place corresponding to its vowel both for the
+argument bound with a predicate on its right, and for which single argument is
+exposed in the combined predicate.
+
+> __mian se buri blan__
+>
+> \\[ \begin{align}
+> \text{mian}(c,e)                     &= \text{[$e$ is a cat]} \\\\
+> \text{buri}(c,e,a)                   &= \text{[$e$ eats $a$]} \\\\
+> \text{blan}(c,e)                     &= \text{[$e$ is beautiful]} \\\\
+> \\ \\\\
+> \text{buri}_1(c,e,a)                 &= \text{buri}(c,e,a) \wedge \text{blan}(c,\color{magenta}{e}) \\\\
+> \text{buri}_2(c,\color{magenta}{e})  &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \text{mian}_1(c,e)                   &= \text{mian}(c,e) \wedge \text{buri}_2(c,e) \\\\
+> \end{align} \\]
+>
+> Given $(c), $(e):\
+> $(e) is is cat that eats something, and $(e) is beautiful.
+
+__SI__ particles with 2 vowels allow to select both individually.
+
+> __meon sae buri mian__
+>
+> \\[ \begin{align}
+> \text{meon}(c,e)                    &= \text{[$e$ is an apple]} \\\\
+> \text{buri}(c,e,a)                  &= \text{[$e$ eats $a$]} \\\\
+> \text{mian}(c,e)                    &= \text{[$e$ is a cat]} \\\\
+> \\ \\\\
+> \text{buri}_1(c,e,a)                &= \text{buri}(c,e,a) \wedge \text{mian}(c,\color{magenta}{e}) \\\\
+> \text{buri}_2(c,\color{magenta}{a}) &= \exists e. \text{buri}_1(c,e,a) \\\\
+> \text{meon}_1(c,e)                  &= \text{meon}(c,e) \wedge \text{buri}_2(c,e) \\\\
+> \end{align} \\]
+>
+> Given $(c), $(e):\
+> $(e) is an apple which is eaten by a cat.
+
+## Left predicate place selection
+
+Using __ve, va, vo, vu__ on a predicate argument will not provide its
+definition but instead share it like an atom argument with the following
+predicate. The bound place must have the same predicate argument type however.
+To provide a definition of the predicate argument the particles __vie, via, vio,
+viu__ (and __FI__ equivalents) must be used.
+
+If we take the example `tce mian` from the previous chapter it is equivalent to
+`tce vie mian`. Sharing with __ve, va, ...__ can be used like so:
+
+> __mi fule [va sae tuli mo]__
+> 
+> \\[ \begin{align}
+> \text{mi}(c,e)                    &= \text{[$e$ is a speaker]} \\\\
+> \text{fule}(c,e,A)                &= \text{[$e$ knows that $A$ (0-ary) is true]} \\\\
+> \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
+> \text{mo}(c,e)                    &= \text{[$e$ is a listener]} \\\\
+> \\ \\\\
+> \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}(c,e) \\\\
+> \text{tuli}_2(c,A)                &= \exists e. \text{tuli}_1(c,e,A) \\\\
+> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge \text{tuli}_2(c,A)} \\\\
+> \text{fule}_2(c,e)                &= \exists A. \text{fule}_1(c,e,A) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}_2(c,e) \\\\
+> \end{align} \\]
+> 
+> Given $(c), $(e):\
+> $(e) is a speaker which knowns some truth which is needed by a listener.
+
+While using __via__ it has a different meaning :
+
+> __mi fule [via sae tuli mo]__
+> 
+> \\[ \begin{align}
+> \text{mi}(c,e)                    &= \text{[$e$ is a speaker]} \\\\
+> \text{fule}(c,e,A)                &= \text{[$e$ knows that $A$ (0-ary) is true]} \\\\
+> \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
+> \text{mo}(c,e)                    &= \text{[$e$ is a listener]} \\\\
+> \\ \\\\
+> \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}(c,e) \\\\
+> \text{tuli}_2(c)                  &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
+> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}_2} \\\\
+> \text{fule}_2(c,e)                &= \exists A. \text{fule}_1(c,e,A) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}_2(c,e) \\\\
+> \end{align} \\]
+> 
+> Given $(c), $(e):\
+> $(e) is a speaker which knowns that [Some truth is needed by a listener] is true.
