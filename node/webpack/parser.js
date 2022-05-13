@@ -18,7 +18,8 @@ const hideTitleList = [
 	'chaining negation',
 	'VI-scope',
 	'borrowing group',
-	'erased'
+	'erased',
+	'default'
 ];
 
 const hideFamily = [
@@ -37,6 +38,7 @@ const boxClassForTypeMap = new Map([
 	[ 'paragraph', 'box box-paragraph' ],
 	[ 'paragraph unit', 'box box-paragraph-unit' ],
 	[ 'erased', 'erased' ],
+	[ 'default', 'box box-sentence' ],
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
 	[ 'axiom', 'box box-sentence' ],

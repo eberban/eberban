@@ -115,12 +115,6 @@ mao:
     This can be used to express indirect questions, with [A] being a predicate
     acting as a question and [E] representing the indirect
     question/answer to the question.
-mu:
-  family: "MI"
-  gloss: "not-bound"
-  short: "[E:a] is not bound outside of the scope introducing this argument."
-  definition: TODO
-  notes: Allows to define default values.
 mui:
   family: "MI"
   gloss: "undefined"
@@ -558,18 +552,42 @@ zi:
     There exist e, a,... such that unit(e, a, ...) is false.
   gloss: "non-"
   tags: [negation]
-zo:
+zie:
   family: "ZI"
-  short: "[E:ma] is something referred to by [predicate-E]."
-  gloss: "[deref]"
-  notes: |
-    TODO: Old import of lojban "la'e". Is it still relevant in eberban?
-zoi:
+  short: |
+    Satisfy the default bound of the E place of [predicate] (set with {pie}).
+  gloss: "[default-E]"
+  tags: [default]
+zia:
   family: "ZI"
-  short: "[E:ma] is a reference/symbol refering to [predicate]."
-  gloss: "[ref]"
-  notes: |
-    TODO: Old import of lojban "lu'e". Is it still relevant in eberban?
+  short: |
+    Satisfy the default bound of the A place of [predicate] (set with {pia}).
+  gloss: "[default-A]"
+  tags: [default]
+zio:
+  family: "ZI"
+  short: |
+    Satisfy the default bound of the O place of [predicate] (set with {pio}).
+  gloss: "[default-O]"
+  tags: [default]
+ziu:
+  family: "ZI"
+  short: |
+    Satisfy the default bound of the U place of [predicate] (set with {piu}).
+  gloss: "[default-U]"
+  tags: [default]
+# zo:
+#   family: "ZI"
+#   short: "[E:ma] is something referred to by [predicate-E]."
+#   gloss: "[deref]"
+#   notes: |
+#     TODO: Old import of lojban "la'e". Is it still relevant in eberban?
+# zoi:
+#   family: "ZI"
+#   short: "[E:ma] is a reference/symbol refering to [predicate]."
+#   gloss: "[ref]"
+#   notes: |
+#     TODO: Old import of lojban "lu'e". Is it still relevant in eberban?
 zu:
   family: "ZI"
   short: |
@@ -590,6 +608,30 @@ zu:
     The selected proposition place will be the one being transitioned to in
     chaining (unless overwritten by a SE placed before {zu}).
   gloss: "[() to (a)]"
+pie:
+  family: "PI"
+  short: |
+    Set the default constraint for the E place of the following predicate word.
+  gloss: "[set E default]"
+  tags: [default]
+pia:
+  family: "PI"
+  short: |
+    Set the default constraint for the A place of the following predicate word.
+  gloss: "[set A default]"
+  tags: [default]
+pio:
+  family: "PI"
+  short: |
+    Set the default constraint for the O place of the following predicate word.
+  gloss: "[set O default]"
+  tags: [default]
+piu:
+  family: "PI"
+  short: |
+    Set the default constraint for the U place of the following predicate word.
+  gloss: "[set U default]"
+  tags: [default]
 pa:
   family: "PA"
   short: "Starts an assertive sentence, that can be believed or disbelieved, and is either true or false."
@@ -635,12 +677,12 @@ pei:
   short: "Inline scope elidible terminator."
   gloss: "]"
   tags: [terminator, elidable]
-pi:
-  family: "PI"
+pu:
+  family: "PU"
   short: "Enable axiomatic predicate."
   gloss: "[axiom on]"
-piu:
-  family: "PI"
+pui:
+  family: "PU"
   short: "Disable axiomatic predicate."
   gloss: "[axiom off]"
 po:

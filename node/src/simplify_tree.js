@@ -11,6 +11,7 @@ const important_types = [
 	[ 'definition', 'definition' ],
 	[ 'sentence', 'sentence' ],
 	[ 'axiom', 'axiom' ],
+	[ 'default', 'default' ],
 
 	// scope	
 	[ 'scope', 'scope' ],

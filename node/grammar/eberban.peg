@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.47
+# eberban PEG grammar - v0.48
 # =============================
 
 # GRAMMAR
@@ -7,18 +7,20 @@ text <- (free_interjection / free_parenthetical)* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&DU_clause paragraph)*
-paragraph <- DU_clause? paragraph_unit (&(PA_clause / PO_clause / PI_clause) paragraph_unit)*
+paragraph <- DU_clause? paragraph_unit (&paragraph_unit_starter paragraph_unit)*
 
+paragraph_unit_starter <- PI_clause / PA_clause / PO_clause / PU_clause
 paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
 paragraph_unit_erased <- paragraph_unit_1 CU_clause
-paragraph_unit_1 <- definition / axiom / sentence
+paragraph_unit_1 <- default / definition / axiom / sentence
 
 arguments_list <- (KI_clause / GI_clause)* BE_clause
 defined <- GI_clause / free_prefix* spaces? freeform_variable / predicate_compound / predicate_root
 
+default <- PI_clause defined scope
 definition <- PO_clause defined scope
 sentence <- PA_clause_elidible scope
-axiom <- PI_clause defined
+axiom <- PU_clause defined
 
 # scope
 scope <- arguments_list? scope_1
@@ -95,11 +97,12 @@ GI_clause  <- free_prefix* spaces? GI                   # predicate variables
 KI_clause  <- free_prefix* spaces? KI                   # symbol/generic variables
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
-PI_clause  <-              spaces? PI                   # axiom toggle
+PI_clause  <-              spaces? PI                   # default argument bound setter
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
 PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
 PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
 PO_clause  <- free_prefix* spaces? PO  free_suffix*     # definition starter
+PU_clause  <-              spaces? PU                   # axiom toggle
 
                                                         #
 TI_clause  <-              spaces? TI                   # numbers/digits
@@ -141,6 +144,7 @@ PE    <- &particle                   (p e)              &post_word
 PEI   <- &particle                   (p e i)            &post_word
 PA    <- &particle                   (p &a hieaou)      &post_word
 PO    <- &particle                   (p &o hieaou)      &post_word
+PU    <- &particle                   (p &u hieaou)      &post_word
 SI    <- &particle                   (s hieaou)         &post_word
 TI    <- &particle                   (t hieaou / digit) &post_word
 VI    <- &particle !(VEI &post_word) (v hieaou)         &post_word
