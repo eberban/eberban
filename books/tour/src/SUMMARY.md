@@ -7,7 +7,7 @@
 - [Logic framework](logic/intro.md)
   - [Chaining](logic/chaining.md)
   - [Explicit binding](logic/explicit_binding.md)
-  - [Sentences (p-)]()
+  - [Sentences (p-)](logic/sentences.md)
   - [Logical primitives (MI)]()
 - [Additional grammar]()
   - [Discourse predicates (MI)]()

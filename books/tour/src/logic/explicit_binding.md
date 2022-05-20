@@ -170,3 +170,15 @@ While using __via__ it has a different meaning :
 > 
 > Given $(c), $(e):\
 > $(e) is a speaker which knowns that [Some truth is needed by a listener] is true.
+
+## Brackets
+
+__pe__ and __pei__ are like spoken brackets that wraps a predicate or chain of
+predicate to define a new one, and have higher priority than chaining : `A B pe
+C D pei E F` will be chained in order `A (B ([C D] (E F)))` instead of `A (B (C
+(D (E F))))`. __pe__ can also be followed by an argument list to define the
+arguments of this new predicate.
+
+Using __VI/FI/SI__ is often prefered and more simple than using __pe__ and
+__pei__, but in some cases it is not possible. Those cases will be presented in
+later chapters.
