@@ -8,7 +8,7 @@ with __p-__, grouped into the following families :
 - __PO__ (_po-_) and __PI__ (_pi-_): The particle is followed by a __defined__
   predicate word, __KI/GI__ variable or freeform variable (word starting with
   _i-); then followed by a definition as a predicate or chain of predicates.
-- __PU__ (_pu-): The particle is followed only by a sigle predicate word,
+- __PU__ (_pu-_): The particle is followed only by a sigle predicate word,
   __KI/GI__ variable or freeform variable.
 
 In all caes the predicate or chain of predicates can be prefixed by an
@@ -56,3 +56,7 @@ __poi__ allow to ask a question by defining a predicate to be used by the
 listener. Defining a 0-ary predicate asks the listener to say if it is false
 or not (by using it with or without a negation), while higher arities asks the
 listener to provide arguments that makes the predicate true.
+
+## PI
+
+Members of family __PI__ will be explained in a dedicated chapter.
