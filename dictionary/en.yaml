@@ -117,8 +117,8 @@ mao:
     question/answer to the question.
 mui:
   family: "MI"
-  gloss: "undefined"
-  short: "True if [E:()] is not undefined."
+  gloss: "unknown"
+  short: "True if [E:()] have an unknown truth value."
   definition: TODO
   notes: |
     All predicates return a trivalent truth value which is either true, false
