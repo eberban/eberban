@@ -1,4 +1,4 @@
-# Logical primitives (MI)
+# Logical primitives
 
 Particles of family __MI__ (all particles starting with _m-_) acts as predicate
 words, and some of them are defined directly in logical notation with the goal

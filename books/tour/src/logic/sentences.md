@@ -1,4 +1,4 @@
-# Sentences (p-)
+# Sentences
 
 Eberban has multiple kind of sentences, which all begins with particles starting
 with __p-__, grouped into the following families :
@@ -19,6 +19,12 @@ __argument list__ if necessary.
 __pa__ allows the speaker to make an assertion. It is followed by a wrapped
 0-ary predicate, thus creating existential variables for all arguments of
 the predicate.
+
+If the first sentence of a text is an assertion than the initial __pa__
+can be omitted.
+
+> Until now we gave translations for chaining only. From now on we'll consider
+> above omition and exemples as complete sentences.
 
 ## Context update (pae)
 

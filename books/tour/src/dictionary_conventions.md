@@ -47,6 +47,9 @@ by at least one.
 This allows to be vague by default, which can be made more precise by adding
 more words.
 
+> For simplicity translations will be written with singular unless it is
+> important to make the distinction.
+
 ## Map arguments and context
 
 Another kind of data structure used in eberban is a __map__ or __dictionary__,

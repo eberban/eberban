@@ -20,9 +20,13 @@ __ve, va, vo, vu__ allow binding atom (or generic) arguments :
 > \text{mo}(c,e)         &= \text{[$e$ is a listener]} \\\\
 > \text{meon}(c,e)       &= \text{[$e$ is an apple]} \\\\
 > \\ \\\\
-> \text{duna}_1(c,e,a,o) &= \text{duna}(c,e,a,p) \color{magenta}{\wedge \text{mo}(c,o)} \wedge \text{meon}(c,a) \\\\
-> \text{duna}_2(c,e)     &= \exists a \exists o. \text{duna}_1(c,e,a,o) \\\\
-> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}_2(c,e) \\\\
+> \text{mo}_1(c,e)       &= \text{mo}(c,e) \\\\
+> \text{meon}_1(c,e)     &= \text{meon}(c,e) \\\\
+> \\ \\\\
+> \text{duna}_1(c,e,a,o) &= \text{duna}(c,e,a,p) \color{magenta}{\wedge \text{mo}_1(c,o)} \wedge \text{meon}_1(c,a) \\\\
+> \text{duna}^w_1(c,e)   &= \exists a \exists o. \text{duna}_1(c,e,a,o) \\\\
+> \\ \\\\
+> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}^w_1(c,e) \\\\
 > \end{align} \\]
 > 
 > Given $(c), $(e):\
@@ -62,18 +66,20 @@ with __ge/ga/go/gu-__ have __transitive behavior__.
 > __mi dona [va ke be: mian buri ke]__
 > 
 > \\[ \begin{align}
-> \text{mi}(c,e)         &= \text{[$e$ is a speaker]} \\\\
-> \text{dona}(c,e,a)     &= \text{[$e$ likes $a$]} \\\\
 > \text{mian}(c,e)       &= \text{[$e$ is a cat]} \\\\
 > \text{buri}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)   &= \text{buri}(c,e,a) \wedge \color{magenta}{\text{ke}^1(c,e)} \\\\
-> \text{buri}_2(c,e)     &= \exists a. \text{buri}_1(c,e,a) \\\\
-> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{buri}_2(c,e) \\\\
-> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}^1(c,e)} \wedge \text{mian}_1(c,e) \\\\
+> \text{buri}_1(c,e,a)   &= \text{buri}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,e)} \\\\
+> \text{buri}^w_1(c,e)   &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \\ \\\\
+> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \\ \\\\
+> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}_1(c,e) \\\\
+> \\ \\\\
 > \text{dona}_1(c,e,a)   &= \text{dona}(c,e,a) \wedge \text{va}_1(c,a) \\\\
-> \text{dona}_2(c,e)     &= \exists a. \text{dona}_1(c,e,a) \\\\
-> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{dona}_2(c,e) \\\\
+> \text{dona}^w_1(c,e)   &= \exists a. \text{dona}_1(c,e,a) \\\\
+> \\ \\\\
+> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -93,13 +99,14 @@ exposed in the combined predicate.
 > __mian se buri blan__
 >
 > \\[ \begin{align}
-> \text{mian}(c,e)                     &= \text{[$e$ is a cat]} \\\\
-> \text{buri}(c,e,a)                   &= \text{[$e$ eats $a$]} \\\\
-> \text{blan}(c,e)                     &= \text{[$e$ is beautiful]} \\\\
+> \text{blan}(c,e)                       &= \text{[$e$ is beautiful]} \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                 &= \text{buri}(c,e,a) \wedge \text{blan}(c,\color{magenta}{e}) \\\\
-> \text{buri}_2(c,\color{magenta}{e})  &= \exists a. \text{buri}_1(c,e,a) \\\\
-> \text{mian}_1(c,e)                   &= \text{mian}(c,e) \wedge \text{buri}_2(c,e) \\\\
+> \text{blan}_1(c,e)                     &= \text{blan}(c,e) \\\\
+> \\ \\\\
+> \text{buri}_1(c,e,a)                   &= \text{buri}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\\\
+> \text{buri}^w_1(c,\color{magenta}{e})  &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \\ \\\\
+> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -110,13 +117,12 @@ __SI__ particles with 2 vowels allow to select both individually.
 > __meon sae buri mian__
 >
 > \\[ \begin{align}
-> \text{meon}(c,e)                    &= \text{[$e$ is an apple]} \\\\
-> \text{buri}(c,e,a)                  &= \text{[$e$ eats $a$]} \\\\
-> \text{mian}(c,e)                    &= \text{[$e$ is a cat]} \\\\
+> \text{mian}_1(c,e)                    &= \text{mian}(c,e) \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                &= \text{buri}(c,e,a) \wedge \text{mian}(c,\color{magenta}{e}) \\\\
-> \text{buri}_2(c,\color{magenta}{a}) &= \exists e. \text{buri}_1(c,e,a) \\\\
-> \text{meon}_1(c,e)                  &= \text{meon}(c,e) \wedge \text{buri}_2(c,e) \\\\
+> \text{buri}_1(c,e,a)                  &= \text{buri}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\\\
+> \text{buri}^w_1(c,\color{magenta}{a}) &= \exists e. \text{buri}_1(c,e,a) \\\\
+> \\ \\\\
+> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -136,16 +142,19 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > __mi fule [va sae tuli mo]__
 > 
 > \\[ \begin{align}
-> \text{mi}(c,e)                    &= \text{[$e$ is a speaker]} \\\\
 > \text{fule}(c,e,A)                &= \text{[$e$ knows that $A$ (0-ary) is true]} \\\\
 > \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
 > \text{mo}(c,e)                    &= \text{[$e$ is a listener]} \\\\
 > \\ \\\\
-> \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}(c,e) \\\\
-> \text{tuli}_2(c,A)                &= \exists e. \text{tuli}_1(c,e,A) \\\\
-> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge \text{tuli}_2(c,A)} \\\\
-> \text{fule}_2(c,e)                &= \exists A. \text{fule}_1(c,e,A) \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}_2(c,e) \\\\
+> \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
+> \\ \\\\
+> \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
+> \text{tuli}^w_1(c,A)              &= \exists e. \text{tuli}_1(c,e,A) \\\\
+> \\ \\\\
+> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\\\
+> \text{fule}^w_1(c,e)              &= \exists A. \text{fule}_1(c,e,A) \\\\
+> \\ \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
 > \end{align} \\]
 > 
 > Given $(c), $(e):\
@@ -156,16 +165,15 @@ While using __via__ it has a different meaning :
 > __mi fule [via sae tuli mo]__
 > 
 > \\[ \begin{align}
-> \text{mi}(c,e)                    &= \text{[$e$ is a speaker]} \\\\
-> \text{fule}(c,e,A)                &= \text{[$e$ knows that $A$ (0-ary) is true]} \\\\
-> \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
-> \text{mo}(c,e)                    &= \text{[$e$ is a listener]} \\\\
+> \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
 > \\ \\\\
-> \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}(c,e) \\\\
-> \text{tuli}_2(c)                  &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
-> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}_2} \\\\
-> \text{fule}_2(c,e)                &= \exists A. \text{fule}_1(c,e,A) \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}_2(c,e) \\\\
+> \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
+> \text{tuli}^w_1(c)                &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
+> \\ \\\\
+> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
+> \text{fule}^w_1(c,e)              &= \exists A. \text{fule}_1(c,e,A) \\\\
+> \\ \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
 > \end{align} \\]
 > 
 > Given $(c), $(e):\
