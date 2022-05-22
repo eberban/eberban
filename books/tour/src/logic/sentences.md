@@ -11,7 +11,7 @@ with __p-__, grouped into the following families :
 - __PU__ (_pu-_): The particle is followed only by a sigle predicate word,
   __KI/GI__ variable or freeform variable.
 
-In all caes the predicate or chain of predicates can be prefixed by an
+In all cases the predicate or chain of predicates can be prefixed by an
 __argument list__ if necessary.
 
 ## Assertion (pa)
