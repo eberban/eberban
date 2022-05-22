@@ -145,121 +145,160 @@ ba:
   family: "BA"
   short: "Inline argument marker."
   gloss: "[inline arg]"
-te:
+ji:
+  family: "JI"
+  gloss: "abstract number"
+  tags: [terminator, number]
+  transitive: true
+  short: |
+    Abstract number terminator. The preceding number have definition:\
+    [E:tce gen] is the number [number] times [A:tce gen] (default: 1).
+jie:
+  family: "JI"
+  gloss: "cardinal"
+  tags: [terminator, number, set]
+  transitive: true
+  short: |
+    Cardinal number terminator. The preceding number have definition:\
+    [E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].\
+    The number must be a natural number (non zero positive integer).
+jia:
+  family: "JI"
+  gloss: "raw ardinal"
+  tags: [terminator, number, set]
+  transitive: true
+  short: |
+    Raw cardinal number terminator. The preceding number have definition:\
+    [E:tce* a] is (a group of) [number] things satisfying [A:(a)].\
+    The number must be a natural number (non zero positive integer).
+jiu:
+  family: "JI"
+  gloss: "-th"
+  tags: [terminator, number, list]
+  transitive: true
+  short: |
+    Ordinal number terminator. The preceding number have definition:\
+    [E:tca a] is the [number]th member of sequence [A:blu a].\
+    The number must be a natural number (non zero positive integer).
+ju:
+  family: "JU"
+  gloss: "base"
+  tags: [number, separator]
+  short: Base separator. Base is defined using the last allowed digit.
+jo:
+  family: "JU"
+  gloss: "."
+  tags: [number, separator]
+  short: |
+    Fractional part separator. Separate the integer part from the excess beyond
+    the integer part.
+joi:
+  family: "JU"
+  gloss: ". (negative)"
+  tags: [number, separator]
+  short: |
+    Negative fractional part separator. Separate the integer part from the excess beyond
+    the integer part, and indicates that the number is negative.
+ja:
+  family: "JA"
+  gloss: "repeating"
+  tags: [number, separator]
+  short: |
+    Repeating part separator. Inside a fractional part starts a string of
+    digits that repeat infinitely.
+je:
+  family: "JE"
+  gloss: "magnitude"
+  tags: [number, separator]
+  short: |
+    Magnitude part separator. Number is multiplied by base^magnitude.
+jei:
+  family: "JE"
+  gloss: "magnitude (negative)"
+  tags: [number, separator]
+  short: |
+    Negative magnitude part separator. Number is multiplied by base^(-magnitude).
+ti:
   family: "TI"
   short: "Digit 0"
   gloss: "0"
   tags: [digit, number]
-ta:
+te:
   family: "TI"
   short: "Digit 1"
   gloss: "1"
   tags: [digit, number]
-to:
+ta:
   family: "TI"
   short: "Digit 2"
   gloss: "2"
   tags: [digit, number]
-tu:
+to:
   family: "TI"
   short: "Digit 3"
   gloss: "3"
   tags: [digit, number]
-tei:
+tu:
   family: "TI"
   short: "Digit 4"
   gloss: "4"
   tags: [digit, number]
-tai:
+tia:
   family: "TI"
   short: "Digit 5"
   gloss: "5"
   tags: [digit, number]
-toi:
+tie:
   family: "TI"
   short: "Digit 6"
   gloss: "6"
   tags: [digit, number]
-tui:
+tio:
   family: "TI"
   short: "Digit 7"
   gloss: "7"
   tags: [digit, number]
-tie:
+tiu:
   family: "TI"
   short: "Digit 8"
   gloss: "8"
   tags: [digit, number]
-tia:
+tei:
   family: "TI"
   short: "Digit 9"
   gloss: "9"
   tags: [digit, number]
-tio:
-  family: "TI"
-  short: "Digit ↊/A (10)"
-  gloss: "A"
-  tags: [digit, number]
-tiu:
-  family: "TI"
-  short: "Digit ↋/B (11)"
-  gloss: "B"
-  tags: [digit, number]
-tiei:
-  family: "TI"
-  short: "Digit C (12)"
-  gloss: "C"
-  tags: [digit, number]
-tiai:
-  family: "TI"
-  short: "Digit D (13)"
-  gloss: "D"
-  tags: [digit, number]
-tioi:
-  family: "TI"
-  short: "Digit E (14)"
-  gloss: "E"
-  tags: [digit, number]
-tiui:
-  family: "TI"
-  short: "Digit F (15)"
-  gloss: "F"
-  tags: [digit, number]
-ti:
-  family: "TI"
-  short: "Decimal separator"
-  gloss: "."
-  tags: [separator, number]
-tihi:
-  family: "TI"
-  short: "<precise . repeating part> separator"
-  gloss: "repeating"
-  tags: [separator, number]
-tihe:
-  family: "TI"
-  short: "<number . magnitude> separator"
-  gloss: "magnitude"
-  tags: [separator, number]
-tiha:
-  family: "TI"
-  short: "<precise . approximation> separator"
-  gloss: "approx"
-  tags: [separator, number]
-tiho:
-  family: "TI"
-  short: "<numerator . denominator> separator"
-  gloss: "fraction"
-  tags: [separator, number]
-tihu:
-  family: "TI"
-  short: "<base . number> separator"
-  gloss: "base"
-  tags: [separator, number]
 tea:
   family: "TI"
-  short: "negative sign"
-  gloss: "-"
-  tags: [number]
+  short: "Digit A"
+  gloss: "A"
+  tags: [digit, number]
+teo:
+  family: "TI"
+  short: "Digit B"
+  gloss: "B"
+  tags: [digit, number]
+teu:
+  family: "TI"
+  short: "Digit C"
+  gloss: "C"
+  tags: [digit, number]
+tai:
+  family: "TI"
+  short: "Digit D"
+  gloss: "D"
+  tags: [digit, number]
+tae:
+  family: "TI"
+  short: "Digit E"
+  gloss: "E"
+  tags: [digit, number]
+tao:
+  family: "TI"
+  short: "Digit F"
+  gloss: "F"
+  tags: [digit, number]
+
 ca:
   family: "CA"
   short: "Starts grammatically correct eberban quote. [E:tca skan] is text [quote]."
@@ -746,39 +785,8 @@ buhu:
 be:
   family: "BE"
   gloss: ""
-  tags: [terminator, elidable, number]
-  transitive: true
-  short: |
-    Number, borrowing and arguments list terminator.
-
-    Abstract number terminator. The preceding number have definition  :
-    [E:tce* gen] is the number [number] times [E:tce* gen] (default: 1).
-bei:
-  family: "BE"
-  gloss: "cardinal"
-  tags: [terminator, number, set]
-  transitive: true
-  short: |
-    Cardinal number terminator. The preceding number have definition :  
-    [E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].  
-    The number must be a natural number (non zero positive integer).
-behi:
-  family: "BE"
-  gloss: "cardinal raw"
-  tags: [terminator, number, set]
-  transitive: true
-  short: |
-    Cardinal number terminator. The preceding number have definition :  
-    [E:tce* a] is (a group of) [number] things satisfying [A:(a)].  
-    The number must be a natural number (non zero positive integer).
-beu:
-  family: "BE"
-  gloss: "-th"
-  tags: [terminator, number, list]
-  short: |
-    Ordinal number terminator. The preceding number have definition :  
-    [E:tca a] is the [number]th member of sequence [A:blu a].  
-    The number must be a natural number (non zero positive integer).
+  tags: [terminator, elidable]
+  short: Borrowing and arguments list terminator.
 bi:
   family: "BI"
   gloss: "not"

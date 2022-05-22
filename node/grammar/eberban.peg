@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.48
+# eberban PEG grammar - v0.49
 # =============================
 
 # GRAMMAR
@@ -9,15 +9,14 @@ text <- (free_interjection / free_parenthetical)* paragraphs? spaces? EOF?
 paragraphs <- paragraph (&DU_clause paragraph)*
 paragraph <- DU_clause? paragraph_unit (&paragraph_unit_starter paragraph_unit)*
 
-paragraph_unit_starter <- PI_clause / PA_clause / PO_clause / PU_clause
+paragraph_unit_starter <- PA_clause / PO_clause / PU_clause
 paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
 paragraph_unit_erased <- paragraph_unit_1 CU_clause
-paragraph_unit_1 <- default / definition / axiom / sentence
+paragraph_unit_1 <- definition / axiom / sentence
 
 arguments_list <- (KI_clause / GI_clause)* BE_clause
 defined <- GI_clause / free_prefix* spaces? freeform_variable / predicate_compound / predicate_root
 
-default <- PI_clause defined scope
 definition <- PO_clause defined scope
 sentence <- PA_clause_elidible scope
 axiom <- PU_clause defined
@@ -58,7 +57,14 @@ foreign_quote <- CO_clause spaces? foreign_quote_open space_char foreign_quote_c
 foreign_quote_content <- (!(pause_char foreign_quote_close) .)*
 
 # numbers
-number <- TI_clause+ BE_clause_elidible
+number <- number_base? (number_1 number_fractional? / number_1? number_fractional) number_magnitude? JI_clause_elidible?
+number_1 <- TI_clause+
+number_base <- TI_clause JU_clause
+number_fractional <- JO_clause number_1? number_repeat? !number_fractional_constraint
+# Having a fractional part prevents to use anything but "ji"
+number_fractional_constraint <- number_magnitude? spaces? j i (h / ieaou)
+number_repeat <- JA_clause number_1
+number_magnitude <- JE_clause number_1
 
 # borrowings
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
@@ -97,15 +103,19 @@ GI_clause  <- free_prefix* spaces? GI                   # predicate variables
 KI_clause  <- free_prefix* spaces? KI                   # symbol/generic variables
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
-PI_clause  <-              spaces? PI                   # default argument bound setter
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
 PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
 PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
 PO_clause  <- free_prefix* spaces? PO  free_suffix*     # definition starter
 PU_clause  <-              spaces? PU                   # axiom toggle
-
                                                         #
-TI_clause  <-              spaces? TI                   # numbers/digits
+TI_clause  <-              spaces? TI                   # digits
+                                                        #
+JI_clause  <-              spaces? JI                   # number terminator
+JE_clause  <-              spaces? JE                   # number magnitude separator
+JA_clause  <-              spaces? JA                   # number repeating part separator
+JO_clause  <-              spaces? JO                   # number decimal separator
+JU_clause  <-              spaces? JU                   # number base separator
                                                         #
 CA_clause  <- free_prefix* spaces? CA                   # grammatical quote starter
 CAI_clause <- free_prefix* spaces? CAI                  # grammatical quote terminator
@@ -118,6 +128,7 @@ BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
 PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
+JI_clause_elidible  <- JI_clause?
 
 # PARTICLE FAMILIES
 BI    <- &particle                   (b i)              &post_word
@@ -137,6 +148,11 @@ DAI   <- &particle                   (d a i)            &post_word
 DU    <- &particle                   (d &u hieaou)      &post_word
 FI    <- &particle                   (f hieaou)         &post_word
 GI    <- &particle                   (g hieaou)         &post_word
+JI    <- &particle                   (j &i hieaou)      &post_word
+JE    <- &particle                   (j &e hieaou)      &post_word
+JA    <- &particle                   (j &a hieaou)      &post_word
+JO    <- &particle                   (j &o hieaou)      &post_word
+JU    <- &particle                   (j &u hieaou)      &post_word
 KI    <- &particle                   (k hieaou)         &post_word
 MI    <- &particle                   (m hieaou)         &post_word
 PI    <- &particle                   (p &i hieaou)      &post_word
