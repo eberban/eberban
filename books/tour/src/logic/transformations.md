@@ -77,20 +77,21 @@ equal to the onces the instance had.
 > pa mi dona ze mian__
 >
 > \\[ \begin{align}
-> \text{mian}(c,e)                    &= \text{[$e$ is a cat]} \\\\
-> \text{dona}(c,e,a)                  &= \text{[$e$ likes $a$]} \\\\
+> \text{mian}(c,e)                         &= \text{[$e$ is a cat]} \\\\
+> \text{dona}(c,e,a)                       &= \text{[$e$ likes $a$]} \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                &= \text{buri}(c,e,a) \\\\
-> \text{buri}^w_1(c,e)                &= \exists a. \text{buri}(c,e,a) \\\\
+> \text{buri}_1(c,e,a)                     &= \text{buri}(c,e,a) \\\\
+> \text{buri}^w_1(c,e)                     &= \exists a. \text{buri}_1(c,e,a) \\\\
 > \\ \\\\
-> \color{magenta}{\text{mian}_1(c,e)} &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
-> \text{mian}^w_1(c)                  &= \exists e. \text{mian}_1(c,e) \\\\
+> \color{magenta}{\text{mian}_1(c,e_1)}    &= \text{mian}(c,e_1) \wedge \text{buri}^w_1(c,e_1) \\\\
+> \text{mian}^w_1(c)                       &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
-> \text{dona}_1(c,e,a)                &= \text{dona}(c,e,a) \wedge \color{magenta}{\text{mian}_1(c,e)} \\\\
-> \text{dona}^w_1(c,e)                &= \exists a. \text{dona}_1(c,e,a) \\\\
+> \color{magenta}{\text{ze-mian}_1(c,e)}   &= \color{magenta}{e = e_1} \\\\
+> \text{dona}_1(c,e_2,a_2)                 &= \text{dona}(c,e_2,a_2) \wedge \color{magenta}{\text{ze-mian}_1(c,a)} \\\\
+> \text{dona}^w_1(c,e)                     &= \exists a. \text{dona}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                    &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
-> \text{mi}^w_1(c)                    &= \exists e. \text{mi}_1(c,e) \\\\
+> \text{mi}_1(c,e)                         &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
+> \text{mi}^w_1(c)                         &= \exists e. \text{mi}_1(c,e) \\\\
 > \end{align} \\]
 >
 > Assertion given $(c): A cat eats something.\
@@ -102,6 +103,39 @@ predicate word to refer the latest compound containing this word.
 
 > `ze eberban` will refer to the latest `eberban` instance, while `zei ban` will
 > refer to the latest compound containing `ban`, for exemple `eberban`.
+
+Which is the __latest instance__ is determined by word order in the text, and
+using a predicate defined using this word doesn't make it the __latest__ again.
+Thus in
+
+_po gia mian blan pa __mian__ buri pa gia dona ze mian_,
+
+_ze mian_ refers to the __mian__ in bold in the __pa__ sentence, and not the
+__mian__ in __gia__'s definition.
+
+However if the last instance of the word is indeed in a definition (or in some
+predicate that can be used multiple times), then __ze__ refer to the last time
+it has been used. Thus in
+
+_po gia __mian__ blan pa gia dona ze mian_,
+
+_ze mian_ refers to the __mian__ inside __gia__'s definition, which is last
+used in the __pa__ sentence. The text can thus be translated as
+"A beautiful cat which likes itself".
+
+With some predicates such as sets (__tcu__ and other __tc-__ initials) the
+order in which the predicate is used is not defined. In this case __ze__ refers
+arbitrarily to one of them (which hypotetically would be the "last one"). Thus
+in
+
+_pa meon sae buri tce __mian__ pa mi dona ze mian_
+
+can be translated as "An apple is eaten by some cats. I like one of those
+cats." It is however prefered to not refer to such unordered instance, and
+instead refer to a clearly ordered word such as __tce__, for which we can speak
+about one of its members with __tci__ (is a member of) :
+
+_pa meon sae buri __tce__ mian pa mi dona tci ze tce_
 
 ## Other
 
