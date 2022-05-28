@@ -3,52 +3,52 @@
 # Support for raw digits :
 0:
   family: "TI"
-  gloss: "te"
+  gloss: "ti"
   tags: [number, digit]
   short: "Digit 0"
 1:
   family: "TI"
-  gloss: "ta"
+  gloss: "te"
   tags: [number, digit]
   short: "Digit 1"
 2:
   family: "TI"
-  gloss: "to"
+  gloss: "ta"
   tags: [number, digit]
   short: "Digit 2"
 3:
   family: "TI"
-  gloss: "tu"
+  gloss: "to"
   tags: [number, digit]
   short: "Digit 3"
 4:
   family: "TI"
-  gloss: "tei"
+  gloss: "tu"
   tags: [number, digit]
   short: "Digit 4"
 5:
-  family: "TI"
+  family: "ie"
   gloss: "tai"
   tags: [number, digit]
   short: "Digit 5"
 6:
   family: "TI"
-  gloss: "toi"
+  gloss: "tia"
   tags: [number, digit]
   short: "Digit 6"
 7:
   family: "TI"
-  gloss: "tui"
+  gloss: "tio"
   tags: [number, digit]
   short: "Digit 7"
 8:
   family: "TI"
-  gloss: "tie"
+  gloss: "tiu"
   tags: [number, digit]
   short: "Digit 8"
 9:
   family: "TI"
-  gloss: "tia"
+  gloss: "tei"
   tags: [number, digit]
   short: "Digit 9"
 
@@ -591,25 +591,25 @@ zi:
     There exist e, a,... such that unit(e, a, ...) is false.
   gloss: "non-"
   tags: [negation]
-zie:
+zoie:
   family: "ZI"
   short: |
     Satisfy the default bound of the E place of [predicate] (set with {pie}).
   gloss: "[default-E]"
   tags: [default]
-zia:
+zoia:
   family: "ZI"
   short: |
     Satisfy the default bound of the A place of [predicate] (set with {pia}).
   gloss: "[default-A]"
   tags: [default]
-zio:
+zoio:
   family: "ZI"
   short: |
     Satisfy the default bound of the O place of [predicate] (set with {pio}).
   gloss: "[default-O]"
   tags: [default]
-ziu:
+zoiu:
   family: "ZI"
   short: |
     Satisfy the default bound of the U place of [predicate] (set with {piu}).
@@ -647,26 +647,26 @@ zu:
     The selected proposition place will be the one being transitioned to in
     chaining (unless overwritten by a SE placed before {zu}).
   gloss: "[() to (a)]"
-pie:
-  family: "PI"
+poie:
+  family: "PO"
   short: |
     Set the default constraint for the E place of the following predicate word.
   gloss: "[set E default]"
   tags: [default]
-pia:
-  family: "PI"
+poia:
+  family: "PO"
   short: |
     Set the default constraint for the A place of the following predicate word.
   gloss: "[set A default]"
   tags: [default]
-pio:
-  family: "PI"
+poio:
+  family: "PO"
   short: |
     Set the default constraint for the O place of the following predicate word.
   gloss: "[set O default]"
   tags: [default]
-piu:
-  family: "PI"
+poiu:
+  family: "PO"
   short: |
     Set the default constraint for the U place of the following predicate word.
   gloss: "[set U default]"
@@ -872,18 +872,13 @@ zohin:
               vei
             fa bi ka ga
 
-# tcin:
-#   family: "R"
-#   gloss: set
-#   tags: [struct, set]
-#   short: "[E:ma] is a set."
-# tci:
-#   family: "R"
-#   gloss: subset
-#   tags: [struct, set]
-#   short: "[E:tcin] is a subset of [A:tcin]."
-
 tci:
+  family: "R"
+  gloss: set member
+  tags: [struct, set]
+  short: "[E:tca a] is a member of set [A:tcu a]."
+
+tcihi:
   family: "R"
   gloss: set member
   tags: [struct, set]
