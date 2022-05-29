@@ -747,7 +747,7 @@ dia:
   family: "DI"
   short: |
     Newsworthiness focus: Marks the part of the sentence containing the most
-    important new information, such as the answer of a question.
+    important new information.
   gloss: "[newsworthiness focus]"
 de:
   family: "DE"

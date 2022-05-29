@@ -1,0 +1,16 @@
+# Eberban from scratch
+
+One of the long term goal of Eberban is to have its vocabulary entirely defined
+in Eberban itself, and not realy on external or _opaque_ predicates.
+
+To achieve such goal Eberban is designed following those 4 steps:
+
+1. __Core grammar:__ subset of the complete grammar that is enough to define
+   important concepts. It doesn't include some of the "syntaxic sugar" grammar
+   that requires concepts from step 2.
+2. __Core vocabulary:__ vocabulary defined using only the __core grammar__. It
+   defines many useful concepts such as sets, maps, lists, numbers and tenses.
+3. __Extended grammar:__ complete Eberban grammar which uses concepts defined
+   in step 2.
+4. __Extended vocabulary:__ vocabulary that can use the __extended grammar__,
+   and makes what can be considered the "official" dictionary.

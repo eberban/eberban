@@ -22,3 +22,5 @@ lower precedence than chaining.
 >
 > This sentence is nonsence as __bli__ expects a __A__ list argument but is
 > provided a name directly.
+
+> __pe ... pei__ are particularily useful to make nested lists.

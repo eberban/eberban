@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.49
+# eberban PEG grammar - v0.49.1
 # =============================
 
 # GRAMMAR
@@ -70,7 +70,7 @@ number_magnitude <- JE_clause number_1
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
 # variables
-predicate_variable <- BO_clause? (KI_clause / defined)
+predicate_variable <- free_prefix* BO_clause? (KI_clause / defined)
 
 # free affixes
 free_prefix <- free_metadata
@@ -91,7 +91,7 @@ DI_clause  <-              spaces? DI                   # free metadata
 DE_clause  <-              spaces? DE                   # free interjection
 DA_clause  <-              spaces? DA                   # free parenthetical starter
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
-DU_clause  <- free_prefix* spaces? DU  free_suffix*     # paragraph marker
+DU_clause  <-              spaces? DU                   # paragraph marker
                                                         #
 SI_clause  <- free_prefix* spaces? SI                   # chaining modification
 ZI_clause  <- free_prefix* spaces? ZI                   # predicate transformation
@@ -99,8 +99,8 @@ VI_clause  <- free_prefix* spaces? VI free_suffix*      # explicit switch + VI-s
 FI_clause  <- free_prefix* spaces? FI free_suffix*      # next explicit switch
 VEI_clause <-              spaces? VEI                  # VI-scope terminator
                                                         #
-GI_clause  <- free_prefix* spaces? GI                   # predicate variables
-KI_clause  <- free_prefix* spaces? KI                   # symbol/generic variables
+GI_clause  <-              spaces? GI                   # predicate variables
+KI_clause  <-              spaces? KI                   # symbol/generic variables
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
