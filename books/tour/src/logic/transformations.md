@@ -137,6 +137,14 @@ about one of its members with __tci__ (is a member of) :
 
 _pa meon sae buri __tce__ mian pa mi dona tci ze tce_
 
+> A related concept is __forethought references__, which consist of using a
+> assignable variable __KI/GI__ prefixed with __bo__, which creates a new
+> variable that can be referenced by the same __KI/GI__ without __bo__, like
+> __ze__ followed by a predicate word allows to reference the latest instance of
+> this predicate word. __KI__ used like can be used similarely to pronouns
+> in other languages. __bo GI__ is a bit more complex to use but is necessary
+> to define some concepts of Eberban's vocabulary.
+
 ## Other
 
 __zu__ allow to transform a predicate having a __A__ 0-ary predicate place
@@ -152,4 +160,3 @@ while in the second example it is necessarily the same. Aside from this
 slight difference both examples are here the same length and thus might
 seem a bit overkill, but it is more usefull if the thing being repeated is
 longer than one syllable.
-
