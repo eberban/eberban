@@ -17,7 +17,7 @@
   - [Borrowings (u-)](grammar/borrowings.md)
   - [Compounds](grammar/compounds.md)
   - [Quotes (c-)](grammar/quotes.md)
-  - [Lists (BU)]()
+  - [Lists (BU)](grammar/lists.md)
   - [Numbers](grammar/numbers.md)
   - [Annotations (d-)]()
 - [Important concepts]()

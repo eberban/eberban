@@ -1061,6 +1061,13 @@ blu:
     The particle {bu} allows to easily create sequences. Thus, many predicates
     have sequence places for convenience, even if the order don't matter.
 
+bli:
+  family: "R"
+  gloss: seq
+  tags: [struct, set, sequence]
+  short: |
+    [E:tce a] is a set containing all elements in sequence [A:blu a] (duplicates removed).
+
 gin:
   family: "R"
   gloss: number-natural
