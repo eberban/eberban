@@ -13,8 +13,8 @@ po cnar ge ga be
 # cner: True if [E:()] or [A:()] (or both) is true.
 po cner ge ga be
   bi ma
-    vi bi ge
-    fi bi ga
+    vai bi ge
+    fai bi ga
 
 # kidvo: [E:a] and [A:a] satisfy relation [O:(a,a)] transitively.
 po e kidvo mai be

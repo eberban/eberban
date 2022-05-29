@@ -2,7 +2,7 @@
 
 <img src="symbols.svg" style="width: 100%" />
 
-> Text on the left is `mi ve kali vahul fe buri pcien`, which translates to
+> Text on the right is `mi ve kali vahul fe buri pcien`, which translates to
 > _I drink milk and eat bread_.
 
 The linear writing system is based on a central line called the __stem__ on

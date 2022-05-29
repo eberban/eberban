@@ -21,17 +21,17 @@
      bordercolor="#373737"
      borderopacity="0"
      inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="1"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="3.8198844"
-     inkscape:cx="43.849495"
+     inkscape:cx="43.980389"
      inkscape:cy="92.672962"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="684"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
@@ -119,7 +119,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Text">
+     inkscape:label="Text"
+     style="display:none">
     <path
        style="fill:none;fill-opacity:1;stroke:#2e0045;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 7.6794921,20 37.99038,37.499999"
