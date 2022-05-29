@@ -13,7 +13,7 @@
   - [Default arguments](logic/default.md)
 - [Dictionary conventions](dictionary_conventions.md)
 - [Additional grammar]()
-  - [Discourse predicates (MI)]()
+  - [Discourse predicates (MI)](grammar/discourse.md)
   - [Borrowings (u-)](grammar/borrowings.md)
   - [Compounds](grammar/compounds.md)
   - [Quotes (c-)](grammar/quotes.md)

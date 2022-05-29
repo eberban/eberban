@@ -70,13 +70,9 @@ mio:
 mie:
   family: "MI"
   short: |
-    Every member of [E:tco* man] is either I/a speaker/author; or someone that is not a listener;
+    Every member of [E:tco* man] is either I/a speaker/author; or something that is not a listener;
     and contains at least one of each.
   gloss: "exclusive we"
-me:
-  family: "MI"
-  short: "[E:tce* man] is someone, neither a speaker or listener."
-  gloss: "other"
 ma:
   family: "MI"
   gloss: symbol
