@@ -594,25 +594,25 @@ zi:
 zoie:
   family: "ZI"
   short: |
-    Satisfy the default bound of the E place of [predicate] (set with {pie}).
+    Satisfy the default bound of the E place of [predicate] (set with {poie}).
   gloss: "[default-E]"
   tags: [default]
 zoia:
   family: "ZI"
   short: |
-    Satisfy the default bound of the A place of [predicate] (set with {pia}).
+    Satisfy the default bound of the A place of [predicate] (set with {poia}).
   gloss: "[default-A]"
   tags: [default]
 zoio:
   family: "ZI"
   short: |
-    Satisfy the default bound of the O place of [predicate] (set with {pio}).
+    Satisfy the default bound of the O place of [predicate] (set with {poio}).
   gloss: "[default-O]"
   tags: [default]
 zoiu:
   family: "ZI"
   short: |
-    Satisfy the default bound of the U place of [predicate] (set with {piu}).
+    Satisfy the default bound of the U place of [predicate] (set with {poiu}).
   gloss: "[default-U]"
   tags: [default]
 # zo:
@@ -1553,11 +1553,11 @@ peol:
   family: "R"
   gloss: "city"
   short: "[E:tce* den] is a town/city."
-zdiu:
+zdir:
   family: "R"
   short: |
-    [E:tce man] is amusing/entertaining to [E:tce* den] (default: speaker)
-    in property [O:(tce ma)].
+    [E:tce man] is amusing/entertaining/fun according to [A:tce* den] (default: speaker)
+    in property [O:(tce man)].
   gloss: "amusing"
 fir:
   family: "R"
@@ -2033,7 +2033,7 @@ jogmal:
   family: "R"
   gloss: "wound"
   short: "[E:tce* den] is a wound."
-melu:
+meul:
   family: "R"
   short: "[E:tce* den] (default: water) is raining."
   gloss: "rain"
@@ -2119,7 +2119,7 @@ gzeon:
 saelo:
   family: "R"
   gloss: "air"
-  short: "[E:tce* den] is air/breathable atmosphere/gas at correct pressure for [A:tce* den] (default: humans)."
+  short: "[E:tce* den] is air/breathable atmosphere/gas at correct pressure for [A:tce* den] (default: {flan}/humans)."
 soeon:
   family: "R"
   gloss: "sky"
@@ -2143,6 +2143,10 @@ skar:
   family: "R"
   short: "[E:tce* man] is a string of data (quote)."
   gloss: "quote"
+flan:
+  family: "R"
+  short: "[E:tce* man] is a human being."
+  gloss: "human"
 
 # Compounds (2):
 e tsae ban:
@@ -2241,32 +2245,32 @@ e spi toril:
 e pu zoi:
   family: "C2"
   gloss: "paragraph"
-  short: "[E:tce* ma] is a paragraph."
+  short: "[E:tce* man] is a paragraph."
   notes: |
     TODO: See {cei} notes.
 e bino cnue:
   family: "C2"
   gloss: "symptom"
-  short: "[E:tce* ma] [ill/sickness] is characterized by symptom [A:tce* ma]."
+  short: "[E:tce* man] [ill/sickness] is characterized by symptom [A:tce* man]."
 e spua teran:
   family: "C2"
   gloss: "home planet"
-  short: "[E:tca den] is the home planet of species [A:tce* ma] (default: humans)."
+  short: "[E:tca den] is the home planet of species [A:tce* man] (default: {flan}/humans)."
 e spua soran:
   family: "C2"
   gloss: "home star"
-  short: "[E:tca den] is the home star of species [A:tce* ma] (default: humans)."
+  short: "[E:tca den] is the home star of species [A:tce* man] (default: {flan}/humans)."
 e jveno kena:
   family: "C2"
   gloss: "hugs"
   short: "[E:tce* den] hugs [A:tce* den]."
 e kini bun:
   family: "C2"
-  short: "[E:tce* ma] is a course teaching about subject [A:tce* ma]."
+  short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
   definition: "po ekinibun ke ka pi ke bun gla kini via seru ka"
 
 a cen po bu:
   family: "C3"
   gloss: "dictionary"
-  short: "[E:tce* ma] is a dictionary."
+  short: "[E:tce* man] is a dictionary."

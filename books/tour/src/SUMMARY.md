@@ -10,7 +10,7 @@
   - [Sentences](logic/sentences.md)
   - [Logical primitives](logic/primitives.md)
   - [Predicate transformations](logic/transformations.md)
-  - [Default arguments]()
+  - [Default arguments](logic/default.md)
 - [Dictionary conventions](dictionary_conventions.md)
 - [Additional grammar]()
   - [Discourse predicates (MI)]()
