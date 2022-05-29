@@ -3,14 +3,16 @@
 ## Notation
 
 In the dictionary words meaning are given in english with arguments being
-represented by vowels in brackets `[]`. The first time the vowel is used it
-is followed by an annotation about its type and constraints.
+represented by vowels in brackets `[]`. The first time the vowel is used it is
+followed by an annotation about its type and constraints.
 
 Parenthesis `()` represents predicate arguments, where each argument constraint
 is listen in between, separate by commas.
 
 Otherwise the vowel can be followed by one or many eberban words, in which can
-the place is constrained to satisfy the expressed property.
+the place is constrained to satisfy the expressed property. Single letters like
+`a` can be used to represent __generic types__. In a definition the same letter
+used in multiple places means the arguments share the same type.
 
 > Exemples of definitions:
 >
