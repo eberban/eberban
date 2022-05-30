@@ -29,7 +29,7 @@
   - [Linear writing system](writing/linear.md)
   - [Planar writing system]()
 - [Eberban from scratch](from_scratch/intro.md)
-  - [Core grammar]()
+  - [Core grammar](from_scratch/core_grammar.md)
   - [Core vocabulary]()
   - [Extended grammar]()
   - [Extended vocabulary]()

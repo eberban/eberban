@@ -85,6 +85,10 @@ with __ge/ga/go/gu-__ have __transitive behavior__.
 > Given $(c), $(e):\
 > $(e) is a speaker which likes [something eaten by a cat].
 
+If an argument in the list is used only once it can be replaced with __ba__,
+which adds an argument at the end of the list and use it directly. The above
+example can thus be shortened as _mi dona [va be mian buri __ba__]_.
+
 ## Right place and chaining selection
 
 When it is only needed to bind one or 2 places of a predicate, using __VI/FI__
