@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.49.1
+# eberban PEG grammar - v0.49.2
 # =============================
 
 # GRAMMAR
@@ -57,7 +57,7 @@ foreign_quote <- CO_clause spaces? foreign_quote_open space_char foreign_quote_c
 foreign_quote_content <- (!(pause_char foreign_quote_close) .)*
 
 # numbers
-number <- number_base? (number_1 number_fractional? / number_1? number_fractional) number_magnitude? JI_clause_elidible?
+number <- number_base? (number_1 number_fractional? / number_1? number_fractional) number_magnitude? JI_clause?
 number_1 <- TI_clause+
 number_base <- TI_clause JU_clause
 number_fractional <- JO_clause number_1? number_repeat? !number_fractional_constraint
@@ -128,7 +128,6 @@ BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
 PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
-JI_clause_elidible  <- JI_clause?
 
 # PARTICLE FAMILIES
 BI    <- &particle                   (b i)              &post_word

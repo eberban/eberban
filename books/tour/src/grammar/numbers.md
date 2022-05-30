@@ -2,7 +2,7 @@
 
 Numbers are important to communicate and serve many purposes. Eberban numbers
 are expressed as a chain of __TI__ particles (any particles starting with _t-_),
-which can optionaly contain separators and a terminator starting with _d-_ to
+which can optionaly contain separators and a terminator starting with _j-_ to
 make more advanced numbers.
 
 ## Digits
@@ -72,20 +72,20 @@ Numbers follow the following syntax:
 
 Numbers have various usages which require different definitions and arguments.
 The wanted definition can be selected by ending the number with a particle of
-family __JI__ (__ji__ is infered if omitted). __ji__ is mandatory between
-consecutive numbers to tell them apart. Particles other than __ji__ must be
+family __JI__ (__jie__ is infered if omitted). __jie__ is mandatory between
+consecutive numbers to tell them apart. Particles other than __jie__ must be
 non-zero positive integer (no fractional part).
 
-- __ji__: `[E:tce gen] is the number [number] times [A:tce gen] (default: 1 unitless).`\
+- __ji__: `[E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].`\
+  Speaks a set of expressed cardinality.
+- __jia__: `[E:tce* a] is (a group of) [number] things satisfying [A:(a)].`\
+  Same but use the raw property various of sets definitions.
+- __jiu__: `[E:tca a] is the [number]th member of sequence [A:blu a].`\
+  Speaks about an element in an ordered list.
+- __jie__: `[E:tce gen] is the number [number] times [A:tce gen] (default: 1 unitless).`\
   `gen` is the word for a number, and both arguments are sets of numbers. Those
   sets allows to handle many numbers (ranges, approximations, or even
   arbitrarily constructed ones), and math operations are also defined using sets
   to distributivly operate on each value of the set. The __A__ argument allows
   to multiply this number with another number such as unit numbers ("1 meter",
   "1 kilogram", etc). The __A__ arguments defaults to __1 unitless__.
-- __jie__: `[E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].`\
-  Speaks a set of expressed cardinality.
-- __jia__: `[E:tce* a] is (a group of) [number] things satisfying [A:(a)].`\
-  Same but use the raw property various of sets definitions.
-- __jiu__: `[E:tca a] is the [number]th member of sequence [A:blu a].`\
-  Speaks about an element in an ordered list.

@@ -141,15 +141,8 @@ ba:
   family: "BA"
   short: "Inline argument marker."
   gloss: "[inline arg]"
+
 ji:
-  family: "JI"
-  gloss: "abstract number"
-  tags: [terminator, number]
-  transitive: true
-  short: |
-    Abstract number terminator. The preceding number have definition:\
-    [E:tce gen] is the number [number] times [A:tce gen] (default: 1).
-jie:
   family: "JI"
   gloss: "cardinal"
   tags: [terminator, number, set]
@@ -158,6 +151,14 @@ jie:
     Cardinal number terminator. The preceding number have definition:\
     [E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].\
     The number must be a natural number (non zero positive integer).
+jie:
+  family: "JI"
+  gloss: "abstract number"
+  tags: [terminator, number]
+  transitive: true
+  short: |
+    Abstract number terminator. The preceding number have definition:\
+    [E:tce gen] is the number [number] times [A:tce gen] (default: 1).
 jia:
   family: "JI"
   gloss: "raw ardinal"
@@ -177,19 +178,19 @@ jiu:
     [E:tca a] is the [number]th member of sequence [A:blu a].\
     The number must be a natural number (non zero positive integer).
 ju:
-  family: "JU"
+  family: "JO"
   gloss: "base"
   tags: [number, separator]
   short: Base separator. Base is defined using the last allowed digit.
 jo:
-  family: "JU"
+  family: "JO"
   gloss: "."
   tags: [number, separator]
   short: |
     Fractional part separator. Separate the integer part from the excess beyond
     the integer part.
 joi:
-  family: "JU"
+  family: "JO"
   gloss: ". (negative)"
   tags: [number, separator]
   short: |
@@ -327,7 +328,7 @@ cu:
 
 vai:
   family: "VI"
-  gloss: "〈 AND"
+  gloss: "and["
   short: "State the following 0-ary VI-scope, unrelated to any place."
   notes: |
     Allow to quickly state multiple multiple propositions without having to rely
@@ -335,83 +336,83 @@ vai:
     {vai}/{fai}.
 vi:
   family: "VI"
-  gloss: "〈 share-last"
+  gloss: "last["
   short: "The last place of the suffixed predicate is shared with the following VI-scope."
   notes: |
     The following VI-scope is a property over the variable used in the suffixed
     predicate last place.
 ve:
   family: "VI"
-  gloss: "〈 share-E"
+  gloss: "E["
   short: "The E place of the suffixed predicate is shared with the following VI-scope."
   notes: |
     The following VI-scope is a property over the variable used in the suffixed
     predicate E place.
 va:
   family: "VI"
-  gloss: "〈 share-A"
+  gloss: "A["
   short: "The A place of the suffixed predicate is shared with the following VI-scope."
   notes: |
     The following VI-scope is a property over the variable used in the suffixed
     predicate A place.
 vo:
   family: "VI"
-  gloss: "〈 share-E"
+  gloss: "O["
   short: "The O place of the suffixed predicate is shared with the following VI-scope."
   notes: |
     The following VI-scope is a property over the variable used in the suffixed
     predicate O place.
 vu:
   family: "VI"
-  gloss: "〈 share-E"
+  gloss: "U["
   short: "The U place of the suffixed predicate is shared with the following VI-scope."
   notes: |
     The following VI-scope is a property over the variable used in the suffixed
     predicate U place.
 vie:
   family: "VI"
-  gloss: "〈 equiv-E"
+  gloss: "E=["
   short: "The E place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
     The following VI-scope have the same type as the E place and is equivalent.
     Non-sensical if not a predicate place.
 via:
   family: "VI"
-  gloss: "〈 equiv-A"
+  gloss: "A=["
   short: "The A place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
     The following VI-scope have the same type as the A place and is equivalent.
     Non-sensical if not a predicate place.
 vio:
   family: "VI"
-  gloss: "〈 equiv-E"
+  gloss: "O=["
   short: "The O place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
     The following VI-scope have the same type as the O place and is equivalent.
     Non-sensical if not a predicate place.
 viu:
   family: "VI"
-  gloss: "〈 equiv-E"
+  gloss: "I=["
   short: "The U place of the suffixed predicate is equivalent to the following VI-scope."
   notes: |
     The following VI-scope have the same type as the U place and is equivalent.
     Non-sensical if not a predicate place.
 vei:
   family: "VEI"
-  gloss: "〉"
+  gloss: "]"
   short: "Close the current VI-scope."
   tags: [terminator, elidable]
 
 fi:
   family: "FI"
-  gloss: "| share-last"
+  gloss: "]last["
   short: "The last place of the suffixed predicate is shared with the following VI-scope."
   notes: |
     The following VI-scope is a property over the variable used in the suffixed
     predicate last place.
 fe:
   family: "FI"
-  gloss: "| share-E"
+  gloss: "]E["
   short: |
     The E place of the predicate suffixed with latest non-closed VE is shared
     with the following VI-scope.
@@ -420,7 +421,7 @@ fe:
     predicate E place.
 fa:
   family: "FI"
-  gloss: "| share-A"
+  gloss: "]A["
   short: |
     The A place of the predicate suffixed with latest non-closed VE is shared
     with the following VI-scope.
@@ -429,7 +430,7 @@ fa:
     predicate A place.
 fo:
   family: "FI"
-  gloss: "| share-O"
+  gloss: "]O["
   short: |
     The O place of the predicate suffixed with latest non-closed VE is shared
     with the following VI-scope.
@@ -438,7 +439,7 @@ fo:
     predicate O place.
 fu:
   family: "FI"
-  gloss: "| share-U"
+  gloss: "]U["
   short: |
     The U place of the predicate suffixed with latest non-closed VE is shared
     with the following VI-scope.
@@ -447,7 +448,7 @@ fu:
     predicate O place.
 fie:
   family: "FI"
-  gloss: "| equiv-E"
+  gloss: "]E=["
   short: |
     The E place of the predicate suffixed with latest non-closed VE is equivalent
     to the following VI-scope.
@@ -456,7 +457,7 @@ fie:
     Non-sensical if not a predicate place.
 fia:
   family: "FI"
-  gloss: "| equiv-A"
+  gloss: "]A=["
   short: |
     The A place of the predicate suffixed with latest non-closed VE is equivalent
     to the following VI-scope.
@@ -465,7 +466,7 @@ fia:
     Non-sensical if not a predicate place.
 fio:
   family: "FI"
-  gloss: "| equiv-O"
+  gloss: "]O=["
   short: |
     The O place of the predicate suffixed with latest non-closed VE is equivalent
     to the following VI-scope.
@@ -474,7 +475,7 @@ fio:
     Non-sensical if not a predicate place.
 fiu:
   family: "FI"
-  gloss: "| equiv-U"
+  gloss: "]U=["
   short: |
     The U place of the predicate suffixed with latest non-closed VE is equivalent
     to the following VI-scope.
@@ -483,7 +484,7 @@ fiu:
     Non-sensical if not a predicate place.
 fai:
   family: "FI"
-  gloss: "| AND"
+  gloss: "]and["
   short: "State the following 0-ary VI-scope, unrelated to any place."
   notes: |
     Allow to quickly state multiple multiple propositions without having to rely
@@ -2150,6 +2151,24 @@ flan:
   family: "R"
   short: "[E:tce* man] is a human being."
   gloss: "human"
+fuli:
+  family: "R"
+  short: "[E:tce gen] is the sum of numbers in list [A:blu tce gen]."
+  gloss: "sum"
+koro:
+  family: "R"
+  short: |
+    [E:(tce gen,tce gen)] is a predicate of the form: [E:tce gen] is [number]
+    times [A:tce gen] (default: 1).
+  gloss: "number pred"
+  notes: |
+    Allows to check a predicate behaves like a number made from TI (+ jie), or
+    other number predicates of the same form. Can be used to define math
+    equations with the unknown being such a predicate, allowing to chain multiple
+    the unknown for multiplication.
+
+    Example: {poi ga \[ge be\] fuli \[vai koro ge\] \[fa te bu, ta ge bu, to ge ge\] \[fe ti\]}\
+    Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
 
 # Compounds (2):
 e tsae ban:
