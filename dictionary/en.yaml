@@ -795,79 +795,53 @@ bo:
   short: "Create a new variable and discard previous value if any."
 
 ## Derived roots:
-cnar:
+vari:
   family: "R"
   gloss: "and"
   short: True if both [E:()] and [A:()] are true.
   definition: |
-    po cnar ge ga pi
-      ma
-        ve pi ge
-        fe pi ga
+    po vari ge ga be
+    ge vai ga
 
-cner:
+vare:
   family: "R"
   gloss: "or"
   short: True if [E:()] or [A:()] (or both) is true.
   definition: |
-    po cner ge ga pi
-      bi cnar
-        va bi ge vei
-      bi ga
+    po vare ge ga be
+    bi vari vie bi ge fia bi ga
 
 kidvo:
   family: "R"
   gloss: "transitive relation"
   short: "[E:a] and [A:a] satisfy relation [O:(a,a)] transitively."
   definition: |
-    pai 
-      mai
-        ve bo kidvo
-        fe ke ka go pi
-          cner
-            va go
-              ve ke
-              fa ka
-              vei
-            vei
-          bo ki
-            va pi
-              cnar
-                va go
-                  ve ke
-                  fa ki
-                  vei
-                vei
-              ki kidvo 
-                va ke vei
-              go
+    po kidvo ke ka go be
+    vare via ke go ka vei
+    bo ki vai ke go ki
+    fai ki kidvo vio go vei ka
     
-zbolo:
+varu:
   family: "R"
   gloss: "imply"
   short: "[E:()] implies that [A:()] is true."
   definition: |
-    po zbolo ge ga pi
-      cner
-        va bi ge vei
-      ga
+    po varu ge ga be
+    vari via bi ge fia ga
 
-zohin:
+zoni:
   family: "R"
   gloss: "the only"
-  short: Among the things that satisfy [E:(a)] only one satisfy [A:(a)].
+  short: Among the things that satisfy [E:(a)] only [O:a] satisfy [A:(a)].
   definition: |
-    po zohin ge ga pi
-      mae ve ke pi
-        mae ve ka pi
-          zbolo
-            ve mai
-              ve pi ke ge
-              fe pi ka ge
-              fe pi bi ke ka
-              fe pi ke ga
-              vei
-            fa bi ka ga
+    po zoni ge ga ko be
+    ma vai ko ge
+    fai ko ga
+    fai mae ve ki be
+    varu ve ma
+    [vai bi ki ko
+    fai ki go vei]
+    fa bi ki ga
 
 tci:
   family: "R"
@@ -1080,23 +1054,23 @@ gin:
   #     fe pi bo igini
   #     fe pi bo ki ma igin
   #     fe pi mae
-  #       ve ke pi zbolo
+  #       ve ke pi varu
   #         ve ke igin
-  #         fa zohin
+  #         fa zoni
   #           ve igin
   #           fa igini ke
   #         vei
   #       vei
   #     fe pi mae
-  #       ve ke pi zbolo
+  #       ve ke pi varu
   #         ve ke igin bi ki
-  #         fa zohin
+  #         fa zoni
   #           ve igin
   #           fa sae igini ke
   #         vei
   #       vei
   #     fe pi mae
-  #       ve ke pi zbolo
+  #       ve ke pi varu
   #         ve ke igin bi ki
   #         fa ki kidvo
   #           va ke
