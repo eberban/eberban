@@ -11,12 +11,16 @@ predicates for the OR and AND logic gates of 2 propositions.
 > po vari ge ga be
 > ge vai ga
 > ```
+>
+> It is however very common to use the pattern `ma vai ... fai ...` as it
+> shorter to use and support an arbitrary amount of propositions by
+> adding more `fai`.
 
 > vare: True if `[E:()]` or `[A:()]` or both is true.
 > 
 > ```
 > po vare ge ga be
-> bi vari vie bi ge fia bi ga
+> bi ma vai bi ge fai bi ga
 > ```
 
 Then another useful tool is logical implication (if ... then ...). If
@@ -28,7 +32,7 @@ all) to only when E is true.
 > 
 > ```
 > po varu ge ga be
-> vari via bi ge fia ga
+> ma vai bi ge fai ga
 > ```
 
 A more advanced but useful predicate is about 2 things E and A satisfying a

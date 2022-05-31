@@ -809,7 +809,7 @@ vare:
   short: True if [E:()] or [A:()] (or both) is true.
   definition: |
     po vare ge ga be
-    bi vari vie bi ge fia bi ga
+    bi ma vai bi ge fai bi ga
 
 kidvo:
   family: "R"
@@ -827,7 +827,7 @@ varu:
   short: "[E:()] implies that [A:()] is true."
   definition: |
     po varu ge ga be
-    vari via bi ge fia ga
+    ma vai bi ge fai ga
 
 zoni:
   family: "R"
