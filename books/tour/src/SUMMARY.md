@@ -32,7 +32,7 @@
   - [Core grammar](from_scratch/core_grammar.md)
   - [Core vocabulary]()
     - [Few simple predicates](from_scratch/core_vocabulary/simple.md)
-    - [Sets]()
+    - [Sets](from_scratch/core_vocabulary/sets.md)
     - [Maps]()
     - [Natural numbers]()
     - [Integer numbers]()

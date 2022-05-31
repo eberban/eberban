@@ -848,12 +848,27 @@ tci:
   gloss: set member
   tags: [struct, set]
   short: "[E:tca a] is a member of set [A:tcu a]."
+  definition: |
+    po tci ke ka be
+    ke tca tcie ka
 
-tcihi:
+tcie:
   family: "R"
-  gloss: set member
+  gloss: set-raw member
   tags: [struct, set]
   short: "[E:a] is a member of set [A:tcui a]."
+  definition: See {tcui}
+
+tcia:
+  family: "R"
+  gloss: subset
+  tags: [struct, set]
+  short: "[E:tcui a] is a subset of [A:tcui a]."
+  definition: |
+    po tcia ke ka be
+    mae ve ki be
+    varu vie ki tcie ke
+    fie ki tcie ka
 
 tce:
   family: "R"
@@ -873,6 +888,9 @@ tce:
     not necessarily the case with collective behavior. As this distinction
     is important for the meaning of such predicates, distributive are marked
     as {tce}*.
+  definition: |
+    po tce ke gia be
+    ke tcei via be ba tcie tca gia
 tcei:
   family: "R"
   gloss: set-raw-1+
@@ -883,17 +901,30 @@ tcei:
 
     See {tce} for the wrapped variant, which is recommended unless you're handling
     nested sets.
+  definition: |
+    po tcie ke gia be
+    ke tcia tcui gia
 
 tca:
   family: "R"
   gloss: set-1
   tags: [struct, set]
   short: "[E:tcai a] is a set containing exactly one member, and satisfy [A:(tcai a)]."
+  definition: |
+    po tca ke gia be
+    ke se tcai gia
 tcai:
   family: "R"
   gloss: set-raw-1
   tags: [struct, set]
   short: "[E:tcui a] is a set containing exactly one member which satisfy [A:(a)]."
+  definition: |
+    po tcia ke gia be
+    ma vai ke tcei gia
+    fai bi ma
+    vai bo ka tcie ke
+    fai bo ko bi ka
+    fai ko tcie ke
 tco:
   family: "R"
   gloss: set-2+
@@ -908,6 +939,9 @@ tco:
 
     This 2+ members predicate is useful in cases where dealing with singletons is
     nonsensical, such as when talking about mutuality.
+  definition: |
+    po tco ke gia be
+    ke tcoi via be ba tcie tca gia
 tcoi:
   family: "R"
   gloss: set-raw-2+
@@ -918,29 +952,51 @@ tcoi:
 
     See {tco} for the wrapped variant, which is recommended unless you're handling
     nested sets.
+  definition: |
+    po tcia ke gia be
+    ma vai ke tcei gia
+    fai bo ka tcie ke
+    fai bo ko bi ka
+    fai ko tcie ke
 
 tcu:
   family: "R"
   gloss: set-all
   tags: [struct, set]
-  short: "[E:tcui a] is the set of all things that individualy satisfy [A:(tcai a)]."
+  short: "[E:tcui a] is the (non-empty) set of all things that individualy satisfy [A:(tca a)]."
   notes: |
     Each member is provided to [A] wrapped in a singleton set to make any predicate
     having set places usable directly.
 
     See {tcui} for the unwrapped variant, which is mainly required to deal with
     nested sets.
+  definition: |
+    po tcu ke gia be
+    ke tcui via be ba tcie tca gia
 tcui:
   family: "R"
   gloss: set-raw-all
   tags: [struct, set]
-  short: "[E:ma] is the set of all things that individualy satisfy [A:(a)]."
+  short: "[E:ma] is the (non-empty) set of all things that individualy satisfy [A:(a)]."
   notes: |
     Each member is provided to [A] without being wrapped in a singleton set.
 
     See {tcu} for the wrapped variant, which is recommended unless you're handling
     nested sets.
-
+  definition: |
+    po e tcui pi be
+    ma vai bo tcui
+    fai bo tcie
+    fai mae ve gi be
+    varu vie gi mai
+    fai mae ve ki be
+    varu vie ki ma
+    fie ki mua
+    ma vai bo ke tcui gi
+    fai mae ve ka be
+    mai vie ka tcie ke
+    fie ka gi
+    pi e tcui pi
 man:
   family: "R"
   gloss: symbol set

@@ -2,7 +2,7 @@
 
 
 As a first step, we can define a few useful predicates using the core grammar
-that while reduce the verbosity of other defitions. For exemple we can define
+that will reduce the verbosity of other definitions. For exemple we can define
 predicates for the OR and AND logic gates of 2 propositions.
 
 > vari: True if both `[E:()]` and `[A:()]` are true.
