@@ -2,12 +2,12 @@
 
 | Letter | IPA                               | Description                       |
 | ------ | --------------------------------- | --------------------------------- |
-| h      | \[h\]                             | an unvoiced glottal aspirant      |
-| n      | \[n\], \[ŋ\]                      | a voiced dental or velar nasal    |
+| h      | \[h\]                             | a glottal aspirant                |
+| n      | \[n\], \[ŋ\]                      | a dental or velar nasal           |
 | r      | \[r\], \[ɹ\], \[ɾ\], \[ʀ\], \[ʁ\] | a rhotic sound                    |
-| l      | \[l\]                             | a voiced lateral approximant      |
+| l      | \[l\]                             | a lateral approximant             |
 | &nbsp; |                                   |                                   |
-| m      | \[m\]                             | a voiced bilabial nasal           |
+| m      | \[m\]                             | a bilabial nasal                  |
 | p      | \[p\]                             | an unvoiced bilabial stop         |
 | b      | \[b\]                             | a voiced bilabial stop            |
 | f      | \[f\]                             | an unvoiced labiodental fricative |
