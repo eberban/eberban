@@ -6,8 +6,8 @@ thus would lead to multiple words for the same concepts, and might not be
 practical for predicates made with some grammar rules such as numbers. Also,
 those common arguments might be specific to some text or speech.
 
-To address the above, Eberban allows to manage __default arguments__, which
-are properties that some arguments must satisfy __only when there are no
+To address the above, Eberban allows the management of __default arguments__,
+which are properties that some arguments must satisfy __only when there are no
 explicit bounds on them__.
 
 Let's take as exemple the predicate __espuateran__, which means

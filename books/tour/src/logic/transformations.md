@@ -58,8 +58,10 @@ predicates in the chain or explicit bindings.
 ## Names
 
 Prefixing a 1-ary predicate with __za__ transforms it into a name:
-\\([\text{$e$ is named with property $P$}]\\). __SI__ can be added between
+\\([\text{$e$ is named with property $P$} by $a$]\\). __SI__ can be added between
 __za__ and the predicate to select which argument is used for the property.
+__za__ is intransitive as it is most of the time not needed to define who named
+$e$ like that.
 
 To speak about the name itself __zai__ must be used itself:
 \\([\text{$e$ is the name corresponding to property $P$}]\\).
