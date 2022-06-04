@@ -48,4 +48,5 @@ Pairs can be used with left atom component specific to a concept A to make
 it distinct from object related to concept B that would share the same kind
 of objects. Without the left atom used as an identifier some things related
 to concept A might also be considered valid things of concept B while it might
-not be wanted. We'll see an exemple of this in the next chapter.
+not be wanted. Identifiers are often made using __zai__ which will be defined
+in the next chapter, and are defined themselves using pairs.
