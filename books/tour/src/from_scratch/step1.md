@@ -13,9 +13,9 @@ The core grammar contains the following particles:
   vocabulary is allowed inside __DA ... DAI__ to allow comments on the design
   choices in Eberban.
 - __SI__: chaining selection
-- __zi__, __ze__, __zei__, __zu__, __zoie__, __zoia__, __zoio__ and __zoiu__.
-  Other __za__ is not included as the concept of a name is more complex and
-  require other predicates to be defined first.
+- __zi__, __ze__, __zei__, __zu__, __zoie__, __zoia__, __zoio__ and __zoiu__ as
+  they are related to the logical framework. __za__ and __zai__ are related to
+  names which require some predicates to define.
 - __VI__, __FI__ and __VEI__ for explicit bindings
 - __GI__ and __KI__ for variables
 - __ma__, __mai__, __mae__, __mao__, __mui__, __mue__ and __mua__, as they are

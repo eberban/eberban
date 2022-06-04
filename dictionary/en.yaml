@@ -1525,15 +1525,15 @@ skal:
 sni:
   family: "R"
   gloss: "greets"
-  short: "[E:tce* den] says hello to/greets [A:tce* den]."
+  short: "[E:tce* den] (default: speaker) says hello to/greets [A:tce* den] (default: listener)."
 sne:
   family: "R"
   gloss: "goodbye"
-  short: "[E:tce* den] says goodbye to [A:tce* den]."
+  short: "[E:tce* den] (default: speaker) says goodbye to [A:tce* den] (default: listener)."
 sna:
   family: "R"
   gloss: "welcomes"
-  short: "[E:tce* den] welcomes [A:tce* den] to place [O:tce* den]."
+  short: "[E:tce* den] (default: speaker) welcomes [A:tce* den] (default: listener) to place [O:tce* den]."
 spi:
   family: "R"
   gloss: "says"
@@ -2199,6 +2199,21 @@ koro:
 
     Example: {poi ga \[ge be\] fuli \[vai koro ge\] \[fa te bu, ta ge bu, to ge ge\] \[fe ti\]}\
     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
+kin:
+  family: "R"
+  short: "[E:ma] is a pair made of left component [A:a] and right component [O:o]."
+  gloss: "pair"
+  definition: |
+    po e kin pi be
+    ma vai bo kin
+    fai mae ve ka be
+    mae ve ko be
+    ma vai ki be
+    ki ma kin va ka fo ko vai
+    fai bi ma
+    ve bi kie
+    fe kin va ka fo ko
+    pi e kin pi
 
 # Compounds (2):
 e tsae ban:
