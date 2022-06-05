@@ -22,9 +22,9 @@ The core grammar contains the following particles:
   wrapper around the underlying logic. Discourse predicates are not included as
   we need to be able to model the discourse itself.
 - __PE__ and __PEI__ as spoken brackets.
-- __pae__ and __pao__ to manipulate the context. __pa__ is not included as it is
-  related to the discourse, and is an assertion about what the speaker thinks is
-  true.
+- __pae__ and __pahe__ to manipulate the context, and __pahi__ to register a
+  sentence wrapper. __pa__ itself is not included as it is related to the
+  discourse, and is an assertion about what the speaker thinks is true.
 - __po__ to define new predicates. __poi__ is not included as it conveys the
   expectation of the speaker for a listener to answer a question.
 - __PU__: axiom toggle, which is the key component allowing to define new

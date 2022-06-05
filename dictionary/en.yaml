@@ -670,8 +670,14 @@ poiu:
   tags: [default]
 pa:
   family: "PA"
-  short: "Starts an assertive sentence, that can be believed or disbelieved, and is either true or false."
-  gloss: "[assertion]"
+  short: "Starts an assertive sentence, that the speaker asserts is true."
+  gloss: "[assert]"
+pahi:
+  family: "PA"
+  short: |
+    Registers a sentence wrapper, such that any sentence [E:()] expressed with
+    {pa} is wrapped by this registered predicate.
+  gloss: "[sentence wrapper]"
 # pai:
 #   family: "PA"
 #   short: "Starts a declarative sentence, that is true only because uttered (used for declarations, announcements, etc)."
@@ -682,19 +688,19 @@ pae:
     Starts a context switching sentence, such that [E:ma] will be the context
     provided to any following sentences.
   gloss: "[context change]"
-pao:
+pahe:
   family: "PA"
   short: |
-    Register a context-switching sentence, that will be applied automatically
+    Registers a context-switching sentence, that will be applied automatically
     between each sentences as if it was used with {pae}.
   gloss: "[register context change]"
   notes: |
     By default I is responsible to update the "present" and the "current sentence"
     symbol in the context.
-pau:
-  family: "PA"
-  short: "Starts a directive sentence, that is requested, wished or ordered to be true."
-  gloss: "[directive]"
+# pau:
+#   family: "PA"
+#   short: "Starts a directive sentence, that is requested, wished or ordered to be true."
+#   gloss: "[directive]"
 pahu:
   family: "PA"
   short: |

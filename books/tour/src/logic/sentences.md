@@ -35,12 +35,18 @@ can thus be constrainted in terms of the current implicit context argument.
 The vocabulary contains many predicates designed to easily be used with __pae__
 to provide many import concepts such as tenses.
 
-## Repeated context update (pao)
+## Repeated context update (pahe)
 
-__pao__ wraps a 1-ary like __pae__, which describe how the context is updated
+__pahe__ wraps a 1-ary like __pae__, which describe how the context is updated
 after each __pa__ sentence ends. It is currently unknown if it will be used
 significatively by casual speakers, but its existence is necessary to implement
 things like the "present" going forward in time after each sentence.
+
+## Sentence wrapper (pahi)
+
+__pahi__ wraps a 1-ary predicate that will take every sentence expressed with
+__pa__ as argument, which is mainly used to configure correctly the context
+for some features to work. Will likely not be used by casual speakers.
 
 ## Definition (po)
 
