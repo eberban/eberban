@@ -1085,25 +1085,108 @@ kcu:
   notes: |
     See {kca} for usage.
 
+blun:
+  family: "R"
+  gloss: list
+  tags: [struct, list]
+  short: "[E:ma] is a list"
+  definition: |
+    po blun ke be
+    vare
+      vie ke zai blun
+      fia ke seo kin blun
+
 blu:
   family: "R"
-  gloss: seq
-  tags: [struct, sequence]
-  short: |
-    [E:kci a] represents an (ordered) sequence of values satisfying property [A:(a)].
-  notes: |
-    Is defined from maps ({kci}), with the additional requirement that the
-    keys must be consecutive ordinals starting for zeroth.
+  gloss: list
+  tags: [struct, list]
+  short: "[E:blun] is a list of things all satisfying [A:(a)]."
+  definition: |
+    po blu ke gi be
+    vare
+      vie ke zai blun
+      fia ma
+        vai ke sea kin gi
+        fai ke seo kin blu gi
 
-    The particle {bu} allows to easily create sequences. Thus, many predicates
-    have sequence places for convenience, even if the order don't matter.
+bla:
+  family: "R"
+  gloss: lfold
+  tags: [struct, list]
+  short: |
+    Left folds list [E:blu a] with initial [A:b] and final [O:b]
+    carries by applying predicate [U:(b,b,a)] in first to last order.
+  definition: |
+    po bla ke ka ko gu be
+    vare
+      vie ke zai blun
+        vai ka ko vei
+      fie ke zi zai blun
+        vai ma
+          vai bo ki
+          fai ka gu va ki fo sae kin ke
+          fai bla
+            ve soe kin ke
+            fa ki
+            fo ko
+            fu gu
+
+blai:
+  family: "R"
+  gloss: rfold
+  tags: [struct, list]
+  short: |
+    Right folds list [E:blu a] with initial [A:b] and final [O:b]
+    carries by applying predicate [U:(b,b,a)] in last to first order.
+  definition: |
+    po blai ke ka ko gu be
+    vare
+      vie ke zai blun
+        vai ka ko vei
+      fie ke zi zai blun
+        vai ma
+          vai bo ki
+          fai ki gu va ko fo sae kin ke
+          fai blai
+            ve soe kin ke
+            fa ka
+            fo ki
+            fu gu
+
+ble:
+  family: "R"
+  gloss: concat
+  tags: [struct, list]
+  short: |
+    [E:blu a] is the concatenation of lists [A:blu a] and [O:blu a].
+  definition: |
+    po ble ke ka ko be
+    so blai
+      ve ka
+      fa ko
+      fiu kie kia kio be
+        kia kin
+          ve kio
+          fa kie
 
 bli:
   family: "R"
-  gloss: seq
-  tags: [struct, set, sequence]
+  gloss: set-from-list
+  tags: [struct, list, set]
   short: |
-    [E:tce a] is a set containing all elements in sequence [A:blu a] (duplicates removed).
+    [E:tce a] is the set containing only all the elements in list [A:blu a].
+  definition: |
+    po ga ke ka be
+    ka bla
+      va ke
+      fiu kie kia kio be
+        kio tcie kie
+    
+    po bli ke ka be
+    ma vai ke ga ka
+      fai bi ma 
+        ve bi ke ga ka
+        fe tcia ke
 
 gin:
   family: "R"
@@ -1962,6 +2045,7 @@ meon:
   family: "R"
   gloss: "apple"
   short: "[E:tce* den] is an apple."
+  tags: [food]
 kcaor:
   family: "R"
   gloss: "table"

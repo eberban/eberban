@@ -22,49 +22,43 @@ is assumed to be true.
 > We first define the proposition of the axiom, which by convention is named
 > with a compound made from one of the defined predicates and the particle for
 > axioms __pi__.
->
 > ```
-> po e tcui pi be ...
+> po e tcui pi be
 > ```
->
 > We then state that predicates __tcui__ and __tcie__ exist:
->
 > ```
-> ma vai bo tcui
-> fai bo tcie ...
+> ma
+>   vai bo tcui
+>   fai bo tcie
 > ```
->
 > Then for every property __gi__ (we express it is a property by providing it
 > one generic argument (mai). However it means that __gi__ must be true for at
 > least one argument. Thus, there will be no concept of an empty set).
->
 > ```
-> fai mae ve gi be
-> varu vie gi mai ...
+>   fai mae
+>     ve gi be varu
+>       vie gi mai
 > ```
->
 > Then for every context __ki__ (which is a atom)
 > ```
-> fai mae ve ki be
-> varu vie ki ma
-> fie ki mua ...
+>       fia mae
+>         ve ki be varu
+>           vie ki ma
+>           fie ki mua
 > ```
->
 > There exist a set __ke__ representing this property (with this context)
->
 > ```
-> ma vai bo ke tcui gi ...
+>             ma
+>               vai bo ke tcui gi
 > ```
->
 > And for all __ka__, __ka__ is a member of set __ke__ if and only if __ka__
 > satisfy __gi__
->
 > ```
-> fai mae ve ka be
-> mai vie ka tcie ke
-> fie ka gi ...
+>               fai mae
+>                 ve ka be mai
+>                   vie ka tcie ke
+>                   fie ka gi
 > ```
->
 > In the current state the proposition claims that such predicates exists, but
 > there is no way to prove it (thus the truth value is unknown). It is now time
 > to use __pi__ to make it __axiomatically true__.

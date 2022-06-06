@@ -35,6 +35,7 @@
     - [Sets](from_scratch/step2/sets.md)
     - [Pairs](from_scratch/step2/pairs.md)
     - [Identifiers](from_scratch/step2/idents.md)
+    - [Lists](from_scratch/step2/lists.md)
     - [Maps]()
     - [Natural numbers]()
     - [Integer numbers]()
