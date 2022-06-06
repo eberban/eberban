@@ -31,9 +31,22 @@ a common property.
 >     fai ke seo kin blu gi
 > ```
 
+From that definition we can now enable the __bu__ list grammar like so
+
+> `<A> bu <B> bu <C>` is equivalent to:
+> ```
+> pe se kin
+>   va <A>
+>   fo kin
+>     va <B>
+>     fo kin
+>       va <C>
+>       fo zai blun
+> pei
+> ```
+
 An important operation on list is called __fold__, which allows to iterate
-over the list an evaluate a predicate with a value carried from the previous
-iteration, and a value carried to the next iteration.
+over the list and evaluate a predicate with a value carried between iterations.
 
 It's arguments are:
 - the list to fold
@@ -121,20 +134,6 @@ Thanks to those predicates we can easily define list concatenation.
 >     kia kin
 >       ve kio
 >       fa kie
-> ```
-
-Now that we have concatenation we can actually enable the __bu__ list grammar,
-with each item separated by __bu__ being wrapped into lists which are then
-concatenated.
-
-> `<A> bu <B> bu <C>` is thus equivalent to:
-> ```
-> pe se ble
->   va <A>
->   fo ble
->     va <B>
->     fo <C>
-> pei
 > ```
 
 Finally, we can allow speakers to quickly define sets using the list grammar
