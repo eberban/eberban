@@ -87,7 +87,7 @@ while the other is right-to-left (last to first).
 >   fie ke zi zai blun
 >     vai ma
 >       vai bo ki
->       fai ka gu va ki fo sae kin ke
+>       fai ka gu va ki fo sae kin ke vei
 >       fai bla
 >         ve soe kin ke
 >         fa ki
@@ -114,7 +114,7 @@ while the other is right-to-left (last to first).
 >   fie ke zi zai blun
 >     vai ma
 >       vai bo ki
->       fai ki gu va ko fo sae kin ke
+>       fai ki gu va ko fo sae kin ke vei
 >       fai blai
 >         ve soe kin ke
 >         fa ka
