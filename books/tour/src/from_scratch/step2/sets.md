@@ -198,3 +198,35 @@ predicates that performs this wrapping.
 It is thus recommanded to mostly use those "wrapped versions" unless accessing
 to the unwrapped members is necessary, which is the case when speaking about
 nested sets (sets of sets). 
+
+## Set operations
+
+We can also define predicates for the set operations __union__, __intersection__
+and __difference__.
+
+> dje: `[E:tce a]` is the union of sets `[A:tce a]` and `[O:tce a]`.
+> ```
+> po dje ke ka ko be
+> ke tcu
+>   va ki be vare
+>     ve ki tci ka
+>     fa ki tci ko
+> ```
+
+> dja: `[E:tce a]` is the intersection of sets `[A:tce a]` and `[O:tce a]`.
+> ```
+> po dje ke ka ko be
+> ke tcu
+>   va ki be vari
+>     ve ki tci ka
+>     fa ki tci ko
+> ```
+
+> djo: `[E:tce a]` is the difference between sets `[A:tce a]` and `[O:tce a]`.
+> ```
+> po dje ke ka ko be
+> ke tcu
+>   va ki be vari
+>     ve ki tci ka
+>     fa bi ki tci ko
+> ```

@@ -1003,6 +1003,41 @@ tcui:
     mai vie ka tcie ke
     fie ka gi
     pi e tcui pi
+
+dje:
+   family: "R"
+   gloss: set-union
+   tags: [struct, set, operator]
+   short: "[E:tce a] is the union of sets [A:tce a] and [O:tce a]."
+   definition: |
+      po dje ke ka ko be
+      ke tcu
+        va ki be vare
+          ve ki tci ka
+          fa ki tci ko
+dja:
+   family: "R"
+   gloss: set-intersection
+   tags: [struct, set, operator]
+   short: "[E:tce a] is the intersection of sets [A:tce a] and [O:tce a]."
+   definition: |
+      po dje ke ka ko be
+      ke tcu
+        va ki be vari
+          ve ki tci ka
+          fa ki tci ko
+djo:
+   family: "R"
+   gloss: set-diff
+   tags: [struct, set, operator]
+   short: "[E:tce a] is the difference between sets [A:tce a] and [O:tce a]."
+   definition: |
+      po dje ke ka ko be
+      ke tcu
+        va ki be vari
+          ve ki tci ka
+          fa bi ki tci ko
+
 man:
   family: "R"
   gloss: symbol set
@@ -1124,7 +1159,7 @@ bla:
       fie ke zi zai blun
         vai ma
           vai bo ki
-          fai ka gu va ki fo sae kin ke
+          fai ka gu va ki fo sae kin ke vei
           fai bla
             ve soe kin ke
             fa ki
@@ -1146,7 +1181,7 @@ blai:
       fie ke zi zai blun
         vai ma
           vai bo ki
-          fai ki gu va ko fo sae kin ke
+          fai ki gu va ko fo sae kin ke vei
           fai blai
             ve soe kin ke
             fa ka
