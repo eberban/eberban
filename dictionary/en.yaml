@@ -870,6 +870,7 @@ tcia:
   gloss: subset
   tags: [struct, set]
   short: "[E:tcui a] is a subset of [A:tcui a]."
+  notes: Every set is its own subset.
   definition: |
     po tcia ke ka be
     mae ve ki be
@@ -1004,18 +1005,18 @@ tcui:
     fie ka gi
     pi e tcui pi
 
-dje:
+dji:
    family: "R"
    gloss: set-union
    tags: [struct, set, operator]
    short: "[E:tce a] is the union of sets [A:tce a] and [O:tce a]."
    definition: |
-      po dje ke ka ko be
+      po dji ke ka ko be
       ke tcu
         va ki be vare
           ve ki tci ka
           fa ki tci ko
-dja:
+dje:
    family: "R"
    gloss: set-intersection
    tags: [struct, set, operator]
@@ -1026,17 +1027,45 @@ dja:
         va ki be vari
           ve ki tci ka
           fa ki tci ko
-djo:
+dja:
    family: "R"
    gloss: set-diff
    tags: [struct, set, operator]
    short: "[E:tce a] is the difference between sets [A:tce a] and [O:tce a]."
    definition: |
-      po dje ke ka ko be
+      po dja ke ka ko be
       ke tcu
         va ki be vari
           ve ki tci ka
           fa bi ki tci ko
+
+djo:
+   family: "R"
+   gloss: largest-set
+   tags: [struct, set, operator]
+   short: "[E:tce a] is the largest unique set that satisfy [A:(tce a)]."
+   definition: |
+      po djo ke gia be
+      ma
+        vai ke gia
+        fai bi bo ka
+          vai ka bi ke
+          fai ka gia
+          fai ke tcia ka
+
+dju:
+   family: "R"
+   gloss: smallest-set
+   tags: [struct, set, operator]
+   short: "[E:tce a] is the smallest unique set that satisfy [A:(tce a)]."
+   definition: |
+      po dju ke gia be
+      ma
+        vai ke gia
+        fai bi bo ka
+          vai ka bi ke
+          fai ka gia
+          fai ka tcia ke
 
 man:
   family: "R"

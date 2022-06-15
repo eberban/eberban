@@ -204,16 +204,16 @@ nested sets (sets of sets).
 We can also define predicates for the set operations __union__, __intersection__
 and __difference__.
 
-> dje: `[E:tce a]` is the union of sets `[A:tce a]` and `[O:tce a]`.
+> dji: `[E:tce a]` is the union of sets `[A:tce a]` and `[O:tce a]`.
 > ```
-> po dje ke ka ko be
+> po dji ke ka ko be
 > ke tcu
 >   va ki be vare
 >     ve ki tci ka
 >     fa ki tci ko
 > ```
 
-> dja: `[E:tce a]` is the intersection of sets `[A:tce a]` and `[O:tce a]`.
+> dje: `[E:tce a]` is the intersection of sets `[A:tce a]` and `[O:tce a]`.
 > ```
 > po dje ke ka ko be
 > ke tcu
@@ -222,11 +222,39 @@ and __difference__.
 >     fa ki tci ko
 > ```
 
-> djo: `[E:tce a]` is the difference between sets `[A:tce a]` and `[O:tce a]`.
+> dja: `[E:tce a]` is the difference between sets `[A:tce a]` and `[O:tce a]`.
 > ```
-> po dje ke ka ko be
+> po dja ke ka ko be
 > ke tcu
 >   va ki be vari
 >     ve ki tci ka
 >     fa bi ki tci ko
+> ```
+
+Another common concept is the largest unique set that satisfy some property.
+There doesn't exist another that that contains it and also satisfy the
+property.
+
+> djo: `[E:tce a]` is the largest unique set that satisfy `[A:(tce a)]`.
+> ```
+> po djo ke gia be
+> ma
+>   vai ke gia
+>   fai bi bo ka
+>     vai ka bi ke
+>     fai ka gia
+>     fai ke tcia ka
+> ```
+
+Same with the smallest unique set:
+
+> dju: `[E:tce a]` is the smallest unique set that satisfy `[A:(tce a)]`.
+> ```
+> po dju ke gia be
+> ma
+>   vai ke gia
+>   fai bi bo ka
+>     vai ka bi ke
+>     fai ka gia
+>     fai ka tcia ke
 > ```
