@@ -1073,42 +1073,31 @@ man:
   short: "[E:tcei* ma] is a symbol."
 
 kcin:
-  family: "R"
-  gloss: entity-property map
+  family: R
   tags: [struct, map]
-  short: "[E:kci (ma)] is map with values being properties of entities."
-  notes: |
-    This kind of maps are used a lot, mainly for contexts and events.
-
-kci:
-  family: "R"
   gloss: map
+  short: "[E:ma] is a map."
+kcir:
+  family: R
   tags: [struct, map]
-  short: "[E:ma] represents a key-value map for which all values (if any) satisfy property [A:(a)]."
-kce:
-  family: "R"
-  gloss: map-entry
-  tags: [struct, map]
-  short: "[E:kci a] represents a key-value map for which key [A:ma] is mapped to value [O:a]."
-  note: |
-    The empty map ({kcen}) is the only map that doesn't satisfy {kce} for any
-    possible key and value.
-kcen:
-  family: "R"
-  gloss: map-empty
-  tags: [struct, map]
-  short: "[E:kci a] represents an empty key-value map."
+  gloss: empty-map
+  short: "[E:ma] is an empty map."
 
+kce: 
+  family: R
+  tags: [struct, map]
+  gloss: map-entry
+  short: "[E:a] is a the value in map [A:kcin] for key [O:ma]."
 kca:
   family: "R"
   gloss: map-transform
   tags: [struct, map]
   short: |
-    [E:kci a] represents a map that can be optained by applying the list of
-    transformations [O:blu ()] to map [A:kci A].
+    [E:kcin] represents a map that can be optained by applying the list of
+    transformations [O:blu ()] to map [A:kcin].
   notes: |
     Each proposition of [O] will be evaluated with a context optained from the
-    current context with keys [@zai ekcate:kci a] and [@zai ekcata:kci a]
+    current context with keys [@zai ekcate:kci] and [@zai ekcata:kci]
     replaced like so:
     - In the first proposition [@zai ekcate](x) is true only if x = [E].
     - For all other propositions [@zai ekcate] is equal to the previous
