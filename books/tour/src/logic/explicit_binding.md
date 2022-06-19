@@ -30,7 +30,7 @@ __ve, va, vo, vu__ allow binding atom (or generic) arguments :
 > \end{align} \\]
 > 
 > Given $(c), $(e):\
-> $(e) gives to you an apple.
+> $(e) is a speaker which gives an apple to a listener.
 
 To bind more than one argument of the same predicate we have to use the __FI__
 family, which interact with the same predicate as the last non-closed __VI__.
@@ -41,12 +41,6 @@ even as `duna [ve mi, fo mo, fa meon vei]`.
 In the last version it is possible to omit the final __vei__. It is however not
 possible to do so in the previous exemples as we would get the chain `mo meon`
 which is not what we want.
-
-> The particle __vi/fi__ allow to bind the last argument of a predicate. The
-> last argument is commonly used for __events__, and it is easier to recognize
-> this particle than having to remember the number of arguments of a predicate
-> to know which vowel corresponds to the last. For simplicity event arguments
-> will be omitted unless they are the focus of the explanation.
 
 ## Arguments list
 
