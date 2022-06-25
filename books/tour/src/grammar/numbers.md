@@ -77,9 +77,14 @@ consecutive numbers to tell them apart. Particles other than __jie__ must be
 non-zero positive integer (no fractional part).
 
 - __ji__: `[E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].`\
-  Speaks a set of expressed cardinality.
+  Speaks about a set of expressed cardinality.
 - __jia__: `[E:tce* a] is (a group of) [number] things satisfying [A:(a)].`\
-  Same but use the raw property various of sets definitions.
+  Same but use the raw property variant of sets definitions.
+- __jio__: `[E:tcu a] is (a group of) the only [number] things satisfying [A:(tca a)].`\
+  Those are the only things that satisfy the property. There doesn't exist
+  something that is not in the set but satisfy A.
+- __jioa__: `[E:tcu a] is (a group of) the only [number] things satisfying [A:(a)].`\
+  Same but use the raw property variant of sets definitions.
 - __jiu__: `[E:tca a] is the [number]th member of sequence [A:blu a].`\
   Speaks about an element in an ordered list.
 - __jie__: `[E:tce gen] is the number [number] times [A:tce gen] (default: 1 unitless).`\

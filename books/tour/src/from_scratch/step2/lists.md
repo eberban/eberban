@@ -4,18 +4,23 @@ Lists are data structures that contains items in a __specific order__. They
 are defined internally with linked lists, as a pair of an item and a list of
 the following items (or a sentinel value for an empty list).
 
+> blur: `[E:ma]` is the empty list
+> ```
+> po blur zai blun
+> ```
+
 > blun: `[E:ma]` is a list.
 > ```
 > po blun ke be
 > ```
-> __ke__ is either an empty list (represented by `zai blun`)
+> __ke__ is either the empty list
 > ```
 > vare
->   vie ke zai blun
+>   vie ke blur
 > ```
 > Or a pair whose right component is a list.
 > ```
->   fia ke seo kin blun     
+>   fia ke seo kin blun
 > ```
 
 Most of the time we'll deal with list of things of the same type and satisfying

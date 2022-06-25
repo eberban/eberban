@@ -62,7 +62,7 @@ Finally we set the empty map as the context parameter for future sentences.
 > pae kcil
 > ```
 
-We can make a variance of _kce_ to directly access a value stored in the
+We can make a variant of _kce_ to directly access a value stored in the
 context.
 
 > kcei: `[E:a]` is the value in the context map for key `[A:ma]`.
@@ -215,3 +215,18 @@ We can then write predicates that uses this pair instead of taking arguments.
 > - Key _zai te_ inserted with some atom as value
 > - Key _zai ta_ transformed such that the old value is a subset of the new
 >   value
+
+Since we use maps for context it is fairly common to evaluate a proposition
+with a modified context. We can make a predicate make that easier.
+
+> kcar: Transformations `[E:blu ()]` are applied on the context before it is
+> used to evaluate `[A:()]`.
+> ```
+> po kcar ke gia be
+> mue
+>   ve ki be mua
+>     va gia
+>     fe kca
+>       va ki
+>       fo ke
+> ```

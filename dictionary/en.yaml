@@ -328,7 +328,7 @@ cu:
 
 vai:
   family: "VI"
-  gloss: "and["
+  gloss: "&["
   short: "State the following 0-ary VI-scope, unrelated to any place."
   notes: |
     Allow to quickly state multiple multiple propositions without having to rely
@@ -484,7 +484,7 @@ fiu:
     Non-sensical if not a predicate place.
 fai:
   family: "FI"
-  gloss: "]and["
+  gloss: "]&["
   short: "State the following 0-ary VI-scope, unrelated to any place."
   notes: |
     Allow to quickly state multiple multiple propositions without having to rely
@@ -829,11 +829,22 @@ kidvo:
     
 varu:
   family: "R"
-  gloss: "imply"
-  short: "[E:()] implies that [A:()] is true."
+  gloss: "if-then-else"
+  short: |
+    If [E:()] is then [A:()] (default: true) is true, otherwise [O:()]
+    (default: true) is true.
   definition: |
     po varu ge ga be
-    ma vai bi ge fai ga
+    vare
+      va vari
+        ve ge
+        fa ga
+        vei
+      fe vari
+        ve bi ge
+        fa go
+    poia varu mai
+    poio varu mai
 
 zoni:
   family: "R"

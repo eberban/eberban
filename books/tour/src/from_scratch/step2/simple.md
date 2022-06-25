@@ -21,17 +21,23 @@ predicates for the OR and AND logic gates of 2 propositions.
 >   fai bi ga
 > ```
 
-Then another useful tool is logical implication (if ... then ...). If
-proposition E is true then A must also be true. If E is false then logical
-implication is true. This operator is useful to restrict universal claims (for
-all) to only when E is true.
+Another useful tool is conditional claim (if ... then ... else ...), with
+default arguments to make it work as logical implication.
 
-> varu: `[E:()]` implies that `[A:()]` is true.
+> varu: If `[E:()]` is then `[A:()]` (default: true) is true, otherwise
+> `[O:()]` (default: true) is true.
 > ```
 > po varu ge ga be
-> ma
->   vai bi ge
->   fai ga
+> vare
+>   va vari
+>     ve ge
+>     fa ga
+>     vei
+>   fe vari
+>     ve bi ge
+>     fa go
+> poia varu mai
+> poio varu mai
 > ```
 
 A more advanced but useful predicate is about 2 things E and A satisfying a
@@ -62,7 +68,7 @@ infinity of things. It is defined recursively.
 >       fio go
 > ```
 
-Another useful concept is uniqueness which is often used to define chains.
+<!-- Another useful concept is uniqueness which is often used to define chains.
 
 > zoni: Among the things that satisfy `[E:(a)]` only `[O:a]` satisfy `[A:(a)]`.
 >
@@ -92,4 +98,4 @@ Another useful concept is uniqueness which is often used to define chains.
 > Then __ki__ doesn't satisfy __ga__
 > ```
 >         fa bi ki ga
-> ```
+> ``` -->
