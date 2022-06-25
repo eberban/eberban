@@ -40,6 +40,6 @@
     - [Natural numbers]()
     - [Integer numbers]()
     - [Real numbers]()
-    - [Tense system]()
+    - [Time](from_scratch/step2/time.md)
     - [Letters and words]()
   - [Extended vocabulary]()
