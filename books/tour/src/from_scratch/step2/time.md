@@ -1,27 +1,33 @@
 # Time
 
-> __DRAFT__: This chapter is being worked on and is not finished, and the
-> vocabulary and design will likely change in the future.
+> __DRAFT__: Time-related concepts and vocabulary are __work in progress__ and
+> might change in the future.
 
 Design a tense system that is easy to use at high level, but that is defined in
 Eberban at low level is a major chalenge, and is the reason for the existence of
 some parts of the grammar (even if those parts are more general purposed and
 don't depend on the tense system).
 
-## Model of time
+## Representing time
 
-First, we want to model the passage of time and the differents states in which
-the universe are alongside it. We also want a model that allows us to deal with
-multiple possible futures or even parallel or fictional universes.
+First, we want to represent time and the differents states in which the universe
+are alongside it. We also want a model that allows us to deal with multiple
+possible futures or even parallel or fictional universes.
 
 To do that we'll first define a __node__ in a __directed graph__ (also called
 __digraph__), with (directed) __arcs__ representing a transition from a node to
-another. We'll define a node as a pair of an identifier (`zai din`) and set of
-nodes that this node have arcs towards. Note that while sets can't be empty, we
-want to support nodes with no arcs, which is done by using a sentinel value
-instead of the set (`zai din` again).
+another. Nodes can represent __time instants__, and arcs can represents which
+possible state of the universe is immediately following this one. 
 
-> din: `[E:ma]` is a digraph node.
+> Even if nodes and digraphs can be used for more general purposes, we'll use
+> time related terminology to keep things easier to follow.
+
+We'll define a node as a pair of an identifier (`zai din`) and set of nodes that
+this node have arcs towards. Note that while sets can't be empty, we want to
+support nodes with no arcs, which is done by using a sentinel value instead of
+the set (`zai din` again). 
+
+> din: `[E:ma]` is an instant (digraph node).
 >
 > ```
 > po din ke be
@@ -33,7 +39,7 @@ instead of the set (`zai din` again).
 > ```
 
 We can then define predicates to more easily speak about arcs and paths
-(transitive arcs).
+(transitive arcs). We'll also call paths __time spans__.
 
 > dini: There exist an arc from node `[E:din]` to node `[A:din]`.
 >
@@ -71,8 +77,8 @@ We can then define predicates to more easily speak about arcs and paths
 
 To represent the flow of time with the concept of "present", we store in the
 context a node, and between sentences we update it (thanks to __pahe__) by
-taking a node such that there exist a path between the old and the next one
-(the new present is in the future of the old one).
+taking a node such that there exist a path between the old and the next one (the
+new present is in the future of the old one).
 
 > sin: `[E:()]` is evaluated with a more recent present.
 > ```
@@ -112,29 +118,28 @@ it can easily be composed with other future transformations)
 
 ## Events
 
-Many predicates represents something that happens in some interval of time,
-which is a represented using a path. To allow them to be composable, they
-interact with the context and state that the path in key `zai zva` is part
-of their own path, which can also be seen as their own path being a
-concatenation of a prefix path, `zai zva` path and a suffix path where the
-prefix and suffix paths can be empty. The predicate `zva` can be used to
-setup such entry in the context and find a (local) biggest common path.
+Many predicates represents something that happens in some time span. To make
+them composable, they interact with the context, and states that time span in
+key `zai zva` is part of their time span, which can also be seen as their own
+path being a concatenation of a prefix span, `zai zva` span and a suffix span
+where the prefix and suffix can be empty. The predicate `zva` can be used to
+setup such entry in the context (and make it the longest possible).
 
-> The provided proposition will be evaluated with a path _x_ such that there
-> doesn't exist another path _y_ containing _x_ that also make the proposition
+> The provided proposition will be evaluated with a span _x_ such that there
+> doesn't exist another span _y_ containing _x_ that also make the proposition
 > true. They might however be multiple possible _x_ that don't contain each
 > other.
 
-> zva: `[E:blu din] is a time interval shared by all events of [A:()].`
-> We define a first predicate to evaluate A with a time interval in the
-> context
+> zva: `[E:blu din] is a time interval shared by all events of [A:()].` We
+> define a first predicate to evaluate A with a span in the context
 > ```
 > po izva ke gia be
 > kcar
 >   va gia
 >   fe zai zva kco ke bu
 > ```
-> Then we really define `zva` by ensuring the time interval is the largest.
+> Then we really define `zva` by ensuring this span cannot be made longer by
+> concatenation.
 > ```
 > po zva ke gia be
 > ma
@@ -148,10 +153,10 @@ setup such entry in the context and find a (local) biggest common path.
 >     pei fe izva gia
 > ```
 
-A predicate modeling an event can then use the following predicate to state
-that the context path is contained into the provided path.
+A predicate modeling an event can then use the following predicate to state that
+the context span is contained into the provided span.
 
-> zvan: `[E:blu din]` is contained in the context path.
+> zvan: Time span `[E:blu din]` is contained in the context time span.
 > ```
 > po zvan
 > ble
@@ -159,16 +164,16 @@ that the context path is contained into the provided path.
 >     va kcei zei zva
 > ```
 
-## Anchored path
+## Focus span
 
-We can now setup sentences to speak about some _anchored_ path that is in focus.
+We can now setup sentences to speak about some time span we focus on.
 
-We'll first define the predicate to anchor a path in the context. This anchor
-takes the form of a property, such that it can use dynamically the context.
-One reason to allow that is to allow to anchor the __present__, which will
-change after each sentence.
+We'll first define the predicate to set a _focus span_ in the context. It takes
+the form of a property, such that it can use dynamically the context. One reason
+to allow that is to allow _focus span_ to be the __present__, which will change
+after each sentence.
 
-> zvo: `[E:()]` is evaluated with anchor path `[A:(blu din)]`.
+> zvo: `[E:()]` is evaluated with focus span `[A:(blu din)]`.
 > ```
 > po zvo gie gia be
 > kcar
@@ -179,10 +184,10 @@ change after each sentence.
 >     fia be ba blu din
 > ```
 
-We make a predicate to retreive an anchor path since it being handled with
-a property makes it a bit tricky to use.
+We make a predicate to retreive an anchor path since it being handled with a
+property makes it a bit tricky to use.
 
-> zvor: `[E:blu din]` is an anchor path.
+> zvor: `[E:blu din]` is a focus span.
 > ```
 > po zvor ke be
 > mai
@@ -191,39 +196,39 @@ a property makes it a bit tricky to use.
 >   fai ke gia
 > ```
 
-We can then define a path containing only the current present.
+We can then define a span containing only the current present.
 
-> sir: `[E:blu din]` is the path containing only the current present.
+> sir: `[E:blu din]` is the time span containing only the current present.
 > ```
 > po sir ke be
 > kcei zai sin bu
 > ```
 
-And set this as the first anchored path:
+And set this as the first focus span:
 
 > ```
 > pae pane zvo sir
 > ```
 
-Now that we have an anchored path in the context, we can make a sentence wrapper
-(to be used with __pahi__) that evaluate this sentence as containing events that
-overlaps with the anchored path.
+Now that we have a focus span in the context, we can make a sentence wrapper (to
+be used with __pahi__) that evaluate this sentence with __zva__ and which the
+focus span satisfying __zvan__.
 
-> eipahizvo: `[E:()]` is evaluated with a time interval that is shared between
-> all the events in `[E]` and the anchor path (zvor).
+> eipahizvo: `[E:()]` is evaluated with a time span that is shared between the
+> time span of all events in `[E]` and the focus span (zvor).
 > ```
 > po eipahizvo gie be
 > ```
-> There exist a time interval such that
+> There exist a time span such that
 > ```
 > zva
 >   vie ma
 > ```
-> It is shared by all events of _gia_
+> It is shared between the spans of all events of _gia_
 > ```
 >     vai gia
 > ```
-> And is also shared with the anchor path
+> And is also shared with the focus span
 > ```
 >     fai zvan zvor
 > ```
@@ -240,11 +245,12 @@ wrappers).
 Our sentence now properly support dealing with events. If we consider _mian_,
 _meon_ and _buri_ to be defined in terms of events with _zvan_, then the
 sentence __pa mian buri meon__ is true only if there exist a cat and an apple
-such that there exist a path that is common to all the events paths and the
-anchor path.
+such that there exist a span that is common in all the events spans and the
+focus span.
 
-![Diagram showing the paths involved in the sentence "pa mian buri meon"](time/present.jpg)
+![Diagram showing the spans involved in the sentence "pa mian buri
+meon"](time/present.jpg)
 
-> Here since the anchor path contain a single instant being the present it
+> Here since the focus span contains a single instant being the present it
 > should be represented with no width. However it shows what to expect from
-> larger anchor path.
+> larger focus spans.
