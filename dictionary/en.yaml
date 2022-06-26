@@ -1466,23 +1466,23 @@ dun:
     All nodes must be on the same path, and starting and ending nodes having
     multiple possible paths will have the same amount of different intervals.  
 
-zvi:
-  family: "R"
-  gloss: "event interval contains context interval"
-  tags: [time]
-  short: "[E:tce* kcin] is an event which occurs within the context interval."
-  notes: |
-    For each member $(x) of [E], [$(x)@zai dun] is contained in [@zai dun].
+# zvi:
+#   family: "R"
+#   gloss: "event interval contains context interval"
+#   tags: [time]
+#   short: "[E:tce* kcin] is an event which occurs within the context interval."
+#   notes: |
+#     For each member $(x) of [E], [$(x)@zai dun] is contained in [@zai dun].
 
-zve:
-  family: "R"
-  gloss: "occurence"
-  tags: []
-  short: "[E:tce* man] is an occurence of [A:()]."
-  notes: |
-    - [E@zai ce za] = zai zve (name = "occurence")
-    - [E@zai dun: dun] is the smallest possible interval that makes [A] true
-    when used as [@zai dun].
+# zve:
+#   family: "R"
+#   gloss: "occurence"
+#   tags: []
+#   short: "[E:tce* ma] is an occurence of [A:()]."
+#   # notes: |
+#   #   - [E@zai ce za] = zai zve (name = "occurence")
+#   #   - [E@zai dun: dun] is the smallest possible interval that makes [A] true
+#   #   when used as [@zai dun].
 
 mun:
   family: "R"

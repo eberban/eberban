@@ -74,7 +74,7 @@ context a node, and between sentences we update it (thanks to __pahe__) by
 taking a node such that there exist a path between the old and the next one
 (the new present is in the future of the old one).
 
-> sin: `[E:()]` is evaluated a more recent present.
+> sin: `[E:()]` is evaluated with a more recent present.
 > ```
 > po sin gie be
 > kcar
@@ -85,7 +85,8 @@ taking a node such that there exist a path between the old and the next one
 We'll define a predicate to help using predicates like __sin__ (with a single
 proposition argument) with __pae__ and __pahe__.
 
-> pane: `[E:ma]` is the context exposed to a predicate when evaluated by `[A:(())]`.
+> pane: `[E:ma]` is the context exposed to a predicate when it evaluated by
+> `[A:(())]`.
 > ```
 > po pane ke gia be
 > gia
@@ -101,10 +102,12 @@ We can pick a first present node.
 >     fe zai sin kco din
 > ```
 
-And setup the automatic present update.
+And setup the automatic present update. (we also assign it to _epahegi_ so that
+it can easily be composed with other future transformations)
 
 > ```
-> pahe pane sin
+> po epahegi pane sin 
+> pahe epahegi
 > ```
 
 ## Events
@@ -156,6 +159,92 @@ that the context path is contained into the provided path.
 >     va kcei zei zva
 > ```
 
-# Tenses
+## Anchored path
 
-> TODO
+We can now setup sentences to speak about some _anchored_ path that is in focus.
+
+We'll first define the predicate to anchor a path in the context. This anchor
+takes the form of a property, such that it can use dynamically the context.
+One reason to allow that is to allow to anchor the __present__, which will
+change after each sentence.
+
+> zvo: `[E:()]` is evaluated with anchor path `[A:(blu din)]`.
+> ```
+> po zvo gie gia be
+> kcar
+>   va gie
+>   fe zai zvo kco gia bu
+>   fai mao
+>     ve gia
+>     fia be ba blu din
+> ```
+
+We make a predicate to retreive an anchor path since it being handled with
+a property makes it a bit tricky to use.
+
+> zvor: `[E:blu din]` is an anchor path.
+> ```
+> po zvor ke be
+> mai
+>   ve bo gia
+>   fe kcei zai zvo
+>   fai ke gia
+> ```
+
+We can then define a path containing only the current present.
+
+> sir: `[E:blu din]` is the path containing only the current present.
+> ```
+> po sir ke be
+> kcei zai sin bu
+> ```
+
+And set this as the first anchored path:
+
+> ```
+> pae pane zvo sir
+> ```
+
+Now that we have an anchored path in the context, we can make a sentence wrapper
+(to be used with __pahi__) that evaluate this sentence as containing events that
+overlaps with the anchored path.
+
+> eipahizvo: `[E:()]` is evaluated with a time interval that is shared between
+> all the events in `[E]` and the anchor path (zvor).
+> ```
+> po eipahizvo gie be
+> ```
+> There exist a time interval such that
+> ```
+> zva
+>   vie ma
+> ```
+> It is shared by all events of _gia_
+> ```
+>     vai gia
+> ```
+> And is also shared with the anchor path
+> ```
+>     fai zvan zvor
+> ```
+
+We can now register it as the sentence wrapper using __pahi__ (we also assign it
+to _epahigi_ so that it can easily be composed with other future sentence
+wrappers).
+
+> ```
+> po epahigi eipahizvo
+> pahi epahigi
+> ```
+
+Our sentence now properly support dealing with events. If we consider _mian_,
+_meon_ and _buri_ to be defined in terms of events with _zvan_, then the
+sentence __pa mian buri meon__ is true only if there exist a cat and an apple
+such that there exist a path that is common to all the events paths and the
+anchor path.
+
+![Diagram showing the paths involved in the sentence "pa mian buri meon"](time/present.jpg)
+
+> Here since the anchor path contain a single instant being the present it
+> should be represented with no width. However it shows what to expect from
+> larger anchor path.
