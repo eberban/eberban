@@ -80,12 +80,12 @@ context a node, and between sentences we update it (thanks to __pahe__) by
 taking a node such that there exist a path between the old and the next one (the
 new present is in the future of the old one).
 
-> sin: `[E:()]` is evaluated with a more recent present.
+> den: `[E:()]` is evaluated with a more recent present.
 > ```
-> po sin gie be
+> po den gie be
 > kcar
 >   va gia
->   fe zai sin kcu dinu
+>   fe zai den kcu dinu
 > ```
 
 We'll define a predicate to help using predicates like __sin__ (with a single
@@ -105,24 +105,33 @@ We can pick a first present node.
 > pae pane
 >   va gi be kcar
 >     va gia
->     fe zai sin kco din
+>     fe zai den kco din
 > ```
 
 And setup the automatic present update. (we also assign it to _epahegi_ so that
 it can easily be composed with other future transformations)
 
 > ```
-> po epahegi pane sin 
+> po epahegi pane den 
 > pahe epahegi
+> ```
+
+We also make a predicate for the time span containing only the present, as it
+will be useful later.
+
+> del: `[E:blu din]` is the present time span
+> ```
+> po del ke be
+> ke ve kcei zai den bu
 > ```
 
 ## Events
 
 Many predicates represents something that happens in some time span. To make
 them composable, they interact with the context, and states that time span in
-key `zai zva` is part of their time span, which can also be seen as their own
-path being a concatenation of a prefix span, `zai zva` span and a suffix span
-where the prefix and suffix can be empty. The predicate `zva` can be used to
+key `zai zvi` is part of their time span, which can also be seen as their own
+path being a concatenation of a prefix span, `zai zvi` span and a suffix span
+where the prefix and suffix can be empty. The predicate `zvi` can be used to
 setup such entry in the context (and make it the longest possible).
 
 > The provided proposition will be evaluated with a span _x_ such that there
@@ -130,127 +139,199 @@ setup such entry in the context (and make it the longest possible).
 > true. They might however be multiple possible _x_ that don't contain each
 > other.
 
-> zva: `[E:blu din] is a time interval shared by all events of [A:()].` We
+> zvi: `[E:blu din] is a time interval shared by all events of [A:()].` We
 > define a first predicate to evaluate A with a span in the context
 > ```
-> po izva ke gia be
+> po izvi ke gia be
 > kcar
 >   va gia
->   fe zai zva kco ke bu
+>   fe zai zvi kco ke bu
 > ```
-> Then we really define `zva` by ensuring this span cannot be made longer by
+> Then we really define `zvi` by ensuring this span cannot be made longer by
 > concatenation.
 > ```
-> po zva ke gia be
+> po zvi ke gia be
 > ma
->   vai ke izva gia
+>   vai ke izvi gia
 >   fai bi ma
 >     ve pe ble
 >       va zi blur
 >       fo ble
 >         va ke
 >         fo zi blur
->     pei fe izva gia
+>     pei fe izvi gia
 > ```
 
 A predicate modeling an event can then use the following predicate to state that
 the context span is contained into the provided span.
 
-> zvan: Time span `[E:blu din]` is contained in the context time span.
+> zvin: Time span `[E:blu din]` contains context time span.
 > ```
-> po zvan
-> ble
->   vo ble
->     va kcei zei zva
+> po zvin
+> sa bla ve kcei zei zvi
 > ```
 
-## Focus span
+In some cases it can be useful to refer to the context time span itself.
 
-We can now setup sentences to speak about some time span we focus on.
-
-We'll first define the predicate to set a _focus span_ in the context. It takes
-the form of a property, such that it can use dynamically the context. One reason
-to allow that is to allow _focus span_ to be the __present__, which will change
-after each sentence.
-
-> zvo: `[E:()]` is evaluated with focus span `[A:(blu din)]`.
+> zvil: `[E:blu din]` is the context time span.
 > ```
-> po zvo gie gia be
+> po zvil
+> kcei zei zvi
+> ```
+> 
+
+## Tenses
+
+Since our model of time allows multiple possible futures of a same instant, we
+must distinguish between time span relations that are __possible__ and
+__necessary__. A relation is __possible__ if there exist a time line in which
+the relation holds. A relation is __necessary__ if in all time lines the
+relation hold. To make the tense composable with the context time span, they
+express a relation between the context time span and the time span of the
+provided proposition.
+
+Let's first start with a simple one: the proposition time span is met by the
+context time span, which means that the last instant of the proposition time
+span is the first instant of the context time span.
+
+> siul: It is possible that `[E:()]` is met by the context time span.
+> ```
+> po siul gie be
+> ma
+> ```
+> _ke_ is a time span of events in _gie_
+> ```
+>   vai bo ke zvi gie
+> ```
+> _ki_ is the first instant of time span _ke_
+> ```
+>   fai pe ke ble
+>     va bo ki bu
+>   pei
+> ```
+> _ki_ is the last instant of the context time span
+> ```
+>   fai zvil ble
+>     vo ki bu
+> ```
+
+To make the __necessary__ variant we need to check that for all time spans _x_
+that contains the context time span, either:
+- _x_ contains the proposition time span
+- _x_ is contained in a larger time span that itself contains the proposition
+  time span
+
+> This second case allows to handle the time spans that would be "to short" to
+> contain the proposition time span which will be "further away".
+
+> zvan: For all time span _x_ that contains the context time span, either:
+> - `[E:(blu din)]` evaluated with _x_ is true
+> - `[E]` is true if evaluated with a time span containing _x_
+> ```
+> po zvan gie be
+> ```
+> For all time span _ki_ that contains the context time span
+> ```
+> mae
+>   vie ki be varu
+>     vie ki sae bla zvil
+> ```
+> It it either a time span that makes _gie_ true
+> ```
+>     fia vare
+>       vie gie ki
+> ```
+> Or this time span is contained in a larger time span _ke_ that makes _gie_
+> true
+> ```
+>       fia ma
+>         vai bo ke sae bla ki
+>         fai gie ke
+> ```
+
+Thanks to this predicate we're able to define:
+
+> siun: It is necessary that `[E:()]` is met by the context time span.
+> ```
+> po siun gie be
+> zvan
+>   vie ki be siul
+>     vie gie
+> ```
+> _ki_, which is provided by _zvan_, must contains the context span
+> ```
+>       vai ki sae bla zvil
+> ```
+
+Similarily, we can define many similar predicates :
+
+- __sel/sen__: E is before C (context span)
+- __sal/san__: E starts C  (they share the same start instant)
+- __sol/son__: E contains C
+- __siel/sien__: E meets C (end instant of C = first instant of E)
+- __sial/sian__: E finishes C (they share the same end instant)
+- __siol/sion__: E contained by C (there is no difference between both variants)
+- __sil/sin__: E overlaps with C
+
+> Their definition is omited here but is similar to the ones of __siul/siun__.
+
+Aside from those relations with the context span, we can make a tense predicate
+related to the present instant instead of the context time span.
+
+> dan: `[E:()]` presently occurs.
+> ```
+> po dan gie be
+> bla
+>   ve kcei zai den bu
+>   fa zvi gie
+> ```
+
+## Sentence wrapper
+
+Now that we have tenses that interact with the context time span, we need to
+actually setup this time span for all sentences. For that we allow to register
+in the context a property describing one or multiple __initial time spans__.
+> zve: `[E:kcin]` is the context after inserting the initial time spans `[A:(blu
+> din)]`.
+> ```
+> po zve ke gia be
 > kcar
->   va gie
->   fe zai zvo kco gia bu
->   fai mao
->     ve gia
->     fia be ba blu din
+>   via mue ke
+>   fe zai zve kco gia bu
 > ```
 
-We make a predicate to retreive an anchor path since it being handled with a
-property makes it a bit tricky to use.
-
-> zvor: `[E:blu din]` is a focus span.
-> ```
-> po zvor ke be
-> mai
->   ve bo gia
->   fe kcei zai zvo
->   fai ke gia
-> ```
-
-We can then define a span containing only the current present.
-
-> sir: `[E:blu din]` is the time span containing only the current present.
-> ```
-> po sir ke be
-> kcei zai sin bu
-> ```
-
-And set this as the first focus span:
+Then at the start of each sentence, we can use _zvi_ with a time span that
+satisfy this registered property. (we also assign it to _epahigi_ so that it can
+easily be composed with other future sentence wrappers).
 
 > ```
-> pae pane zvo sir
-> ```
-
-Now that we have a focus span in the context, we can make a sentence wrapper (to
-be used with __pahi__) that evaluate this sentence with __zva__ and which the
-focus span satisfying __zvan__.
-
-> eipahizvo: `[E:()]` is evaluated with a time span that is shared between the
-> time span of all events in `[E]` and the focus span (zvor).
-> ```
-> po eipahizvo gie be
-> ```
-> There exist a time span such that
-> ```
-> zva
->   vie ma
-> ```
-> It is shared between the spans of all events of _gia_
-> ```
->     vai gia
-> ```
-> And is also shared with the focus span
-> ```
->     fai zvan zvor
-> ```
-
-We can now register it as the sentence wrapper using __pahi__ (we also assign it
-to _epahigi_ so that it can easily be composed with other future sentence
-wrappers).
-
-> ```
-> po epahigi eipahizvo
+> po eipahizve gie be
+> zvi
+>   via gie
+>     vai pe bo gi
+>       ve kcei zai zve
+>     pei
+>     fai zvin gi
+>
+> po epahigi eipahizve
 > pahi epahigi
 > ```
 
-Our sentence now properly support dealing with events. If we consider _mian_,
-_meon_ and _buri_ to be defined in terms of events with _zvan_, then the
-sentence __pa mian buri meon__ is true only if there exist a cat and an apple
-such that there exist a span that is common in all the events spans and the
-focus span.
+By default we'll set that to being any time span
 
-![Diagram showing the spans involved in the sentence "pa mian buri
-meon"](time/present.jpg)
+> ```
+> pae zve mai
+> ```
 
-> Here since the focus span contains a single instant being the present it
-> should be represented with no width. However it shows what to expect from
-> larger focus spans.
+> But it could be set to be the present (and since we register a property it
+> will each time interact with the context and thus deal with the current
+> present)
+> 
+> ```
+> pae zve del
+> ```
+
+----
+
+> A later chapter will introduce measurement of durations, which will greatly
+> increase what can be done with tenses.

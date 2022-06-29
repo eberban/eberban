@@ -141,6 +141,16 @@ Thanks to those predicates we can easily define list concatenation.
 >       fa kie
 > ```
 
+And even inclusion.
+
+> bla: `[E:blu a]` is included/contained in `[A:blu a]`.
+> ```
+> po bla ke ka be
+> ka ble
+>   vo ble
+>     fa ke
+> ```
+
 Finally, we can allow speakers to quickly define sets using the list grammar
 with the following predicate.
 
