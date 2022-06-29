@@ -307,7 +307,7 @@ easily be composed with other future sentence wrappers).
 > ```
 > po eipahizve gie be
 > zvi
->   via gie
+>   via zvin zvi gie
 >     vai pe bo gi
 >       ve kcei zai zve
 >     pei
