@@ -191,8 +191,8 @@ express a relation between the context time span and the time span of the
 provided proposition.
 
 Let's first start with a simple one: the proposition time span is met by the
-context time span, which means that the last instant of the proposition time
-span is the first instant of the context time span.
+context time span, which means that the last instant of the context time
+span is the first instant of the proposition time span.
 
 > siul: It is possible that `[E:()]` is met by the context time span.
 > ```
@@ -268,7 +268,8 @@ Similarily, we can define many similar predicates :
 - __sel/sen__: E is before C (context span)
 - __sal/san__: E starts C  (they share the same start instant)
 - __sol/son__: E contains C
-- __siel/sien__: E meets C (end instant of C = first instant of E)
+- __sul/sun__: E is after C
+- __siel/sien__: E meets C (end instant of E = first instant of C)
 - __sial/sian__: E finishes C (they share the same end instant)
 - __siol/sion__: E contained by C (there is no difference between both variants)
 - __sil/sin__: E overlaps with C
@@ -317,18 +318,19 @@ easily be composed with other future sentence wrappers).
 > pahi epahigi
 > ```
 
-By default we'll set that to being any time span
+By default we'll set it to the present (since it's a property it can use the
+context to always correspond to the current present instant)
 
-> ```
-> pae zve mai
-> ```
-
-> But it could be set to be the present (and since we register a property it
-> will each time interact with the context and thus deal with the current
-> present)
-> 
 > ```
 > pae zve del
+> ```
+
+> It could also be set such that it can be any time span, which can be useful
+> to express a reference event in some alternate or fictional universe, and
+> then set this event time span as the initial time span.
+> 
+> ```
+> pae zve mai
 > ```
 
 ----
