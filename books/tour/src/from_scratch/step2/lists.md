@@ -4,7 +4,7 @@ Lists are data structures that contains items in a __specific order__. They
 are defined internally with linked lists, as a pair of an item and a list of
 the following items (or a sentinel value for an empty list).
 
-> blur: `[E:ma]` is the empty list
+> blur: `[E:ma]` is the empty list.
 > ```
 > po blur zai blun
 > ```

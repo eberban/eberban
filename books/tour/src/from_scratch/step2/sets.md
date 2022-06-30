@@ -98,7 +98,7 @@ to define vocabulary.
 > tcei: `[E:tcui a]` is a (non-empty) set of some things that individualy satisfy `[A:(a)]`.
 >
 > ```
-> po tcie ke gia be ...
+> po tcie ke gia be
 > ```
 >
 > __ke__ is a subset of the set of all things that satisfy __gia__
@@ -110,42 +110,44 @@ to define vocabulary.
 > tcai: `[E:tcui a]` is a set containing exactly one member which satisfy `[A:(a)]`.
 >
 > ```
-> po tcia ke gia be ...
+> po tcia ke gia be
 > ```
 >
 > __ke__ is a subset of the set of all things that satisfy __gia__
 >
 > ```
-> ma vi ke tcei gia ...
+> ma
+>   vi ke tcei gia
 > ```
 > 
 > And it false that there exist 2 distinct things that are members of __ke__ 
 > 
 > ```
-> fi bi ma
-> vi bo ka tcie ke
-> fi bo ko bi ka
-> fi ko tcie ke
+>   fi bi ma
+>     vi bo ka tcie ke
+>     fi bo ko bi ka
+>     fi ko tcie ke
 > ```
 
 > tcoi: `[E:tcui a]` is a set of at least 2 things that individualy satisfy `[A:(a)]`.
 >
 > ```
-> po tcia ke gia be ...
+> po tcia ke gia be
 > ```
 >
 > __ke__ is a subset of the set of all things that satisfy __gia__
 >
 > ```
-> ma vi ke tcei gia ...
+> ma
+>   vi ke tcei gia
 > ```
 > 
 > And there exist (at least) 2 distinct things that are members of __ke__ 
 > 
 > ```
-> fi bo ka tcie ke
-> fi bo ko bi ka
-> fi ko tcie ke
+>   fi bo ka tcie ke
+>   fi bo ko bi ka
+>   fi ko tcie ke
 > ```
 
 ## Improved composability
@@ -166,27 +168,30 @@ predicates that performs this wrapping.
 > tcu: `[E:tcui a]` is the (non-empty) set of all things that individualy satisfy `[A:(tca a)]`.
 >
 > ```
-> po tcu ke gia be ...
+> po tcu ke gia be
 > ```
 >
 > __ke__ is the set of all things that are the only member a set satisfying __gia__.
 >
 > ```
-> ke tcui via be ba tcie tca gia
+> ke tcui
+>   via be ba tcie tca gia
 > ```
 
 > tce: `[E:tcei a]` is a (non-empty) set of some things that individualy satisfy `[A:(tca a)]`.
 >
 > ```
 > po tce ke gia be
-> ke tcei via be ba tcie tca gia
+> ke tcei
+>   via be ba tcie tca gia
 > ```
 
 > tco: `[E:tcoi a]` is a set of at least 2 things that individualy satisfy `[A:(tca a)]`.
 >
 > ```
 > po tco ke gia be
-> ke tcoi via be ba tcie tca gia
+> ke tcoi
+>   via be ba tcie tca gia
 > ```
 
 > tci: `[E:tca a]` is a member of set `[A:tce a]`.
@@ -236,7 +241,7 @@ Another common concept is the largest unique set that satisfy some property.
 There doesn't exist another that that contains it and also satisfy the
 property.
 
-> djo: `[E:tce a]` is the largest unique set that satisfy `[A:(tce a)]`.
+> djo: `[E:tce a]` is the locally largest set that satisfy `[A:(tce a)]`.
 > ```
 > po djo ke gia be
 > ma
@@ -249,7 +254,7 @@ property.
 
 Same with the smallest unique set:
 
-> dju: `[E:tce a]` is the smallest unique set that satisfy `[A:(tce a)]`.
+> dju: `[E:tce a]` is the locally smallest set that satisfy `[A:(tce a)]`.
 > ```
 > po dju ke gia be
 > ma

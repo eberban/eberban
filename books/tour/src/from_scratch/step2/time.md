@@ -49,7 +49,7 @@ We can then define predicates to more easily speak about arcs and paths
 >   vo sae tci ka din
 > ```
 
-> dinu: There exist an path `[O:blu din]` from node `[E:din]` to node `[A:din]`.
+> dinu: There exist an path/span `[O:blu din]` from node `[E:din]` to node `[A:din]`.
 >
 > ```
 > po dinu ke ka ko be
@@ -119,7 +119,7 @@ it can easily be composed with other future transformations)
 We also make a predicate for the time span containing only the present, as it
 will be useful later.
 
-> del: `[E:blu din]` is the present time span
+> del: `[E:dinu]` is the present time span.
 > ```
 > po del ke be
 > ke ve kcei zai den bu
@@ -139,8 +139,8 @@ setup such entry in the context (and make it the longest possible).
 > true. They might however be multiple possible _x_ that don't contain each
 > other.
 
-> zvi: `[E:blu din] is a time interval shared by all events of [A:()].` We
-> define a first predicate to evaluate A with a span in the context
+> zvi: `[E:dinu]` is a time span shared by all events of `[A:()]`.\
+> We define a first predicate to evaluate A with a span in the context
 > ```
 > po izvi ke gia be
 > kcar
@@ -165,7 +165,7 @@ setup such entry in the context (and make it the longest possible).
 A predicate modeling an event can then use the following predicate to state that
 the context span is contained into the provided span.
 
-> zvin: Time span `[E:blu din]` contains context time span.
+> zvin: Time span `[E:dinu]` contains context time span.
 > ```
 > po zvin
 > sa bla ve kcei zei zvi
@@ -173,7 +173,7 @@ the context span is contained into the provided span.
 
 In some cases it can be useful to refer to the context time span itself.
 
-> zvil: `[E:blu din]` is the context time span.
+> zvil: `[E:dinu]` is the context time span.
 > ```
 > po zvil
 > kcei zei zvi
@@ -225,7 +225,7 @@ that contains the context time span, either:
 > contain the proposition time span which will be "further away".
 
 > zvan: For all time span _x_ that contains the context time span, either:
-> - `[E:(blu din)]` evaluated with _x_ is true
+> - `[E:(dinu)]` evaluated with _x_ is true
 > - `[E]` is true if evaluated with a time span containing _x_
 > ```
 > po zvan gie be
