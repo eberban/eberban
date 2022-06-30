@@ -7,18 +7,18 @@ predicates for the OR and AND logic gates of 2 propositions.
 > vari: True if both `[E:()]` and `[A:()]` are true.
 > ```
 > po vari ge ga be
-> ge vai ga
+> ge vi ga
 > ```
-> It is however very common to use the pattern `ma vai ... fai ...` as it
+> It is however very common to use the pattern `ma vi ... fi ...` as it
 > shorter to use and support an arbitrary amount of propositions by
-> adding more `fai`.
+> adding more `fi`.
 
 > vare: True if `[E:()]` or `[A:()]` or both is true.
 > ```
 > po vare ge ga be
 > bi ma
->   vai bi ge
->   fai bi ga
+>   vi bi ge
+>   fi bi ga
 > ```
 
 Another useful tool is conditional claim (if ... then ... else ...), with
@@ -58,12 +58,12 @@ infinity of things. It is defined recursively.
 > Or there exist a _ki_ such that _ke_ and _ki_ satisfy _go_
 > ```
 >   fia bo ki
->     vai ke go ki
+>     vi ke go ki
 > ```
 > With _ki_ and _ka_ satisfying __transitively__ _go_ (either directly or again
 > transitively)
 > ```
->     fai ki kidvo
+>     fi ki kidvo
 >       via ka
 >       fio go
 > ```
@@ -78,12 +78,12 @@ infinity of things. It is defined recursively.
 > __ko__ satisfy both __ge__ and __ga__
 > ```
 > ma
->   vai ko ge
->   fai ko ga
+>   vi ko ge
+>   fi ko ga
 > ```
 > And for any __ki__
 > ```
->   fai mae
+>   fi mae
 >     ve ki be
 > ```
 > If the following points are true:
@@ -92,8 +92,8 @@ infinity of things. It is defined recursively.
 > ```
 >       varu
 >         ve ma
->           vai bi ki ko
->           fai ki go vei
+>           vi bi ki ko
+>           fi ki go vei
 > ```
 > Then __ki__ doesn't satisfy __ga__
 > ```

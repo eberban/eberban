@@ -23,19 +23,19 @@ new concepts by storing information in the map with a new dedicated key.
 > Or a pair with a left identifier
 > ```
 >   fia ma
->     vai ke sea kin zai kcin
+>     vi ke sea kin zai kcin
 > ```
 > And as right part a set of pairs with left parts (keys) being symbols
 > ```
->     fai ke seo kin tcei sea kin ma
+>     fi ke seo kin tcei sea kin ma
 > ```
 > And it is false that there are multiple entries with the same key
 > ```
->     fai bi ma
->       vai bo ka tcie soe kin ke
->       fai bo ko tcie soe kin ke
->       fai ka bi ko
->       fai ka sea kin sae kin ko
+>     fi bi ma
+>       vi bo ka tcie soe kin ke
+>       fi bo ko tcie soe kin ke
+>       fi ka bi ko
+>       fi ka sea kin sae kin ko
 > ```
 
 > kcil: `[E:kcin]` is the empty map.
@@ -92,8 +92,8 @@ modification.
 > ```
 > ke kcin seo kin djo
 >   via ke be ma
->     vai ke tcai soe kin ka
->     fai bi ke sae tci sae kin ko
+>     vi ke tcai soe kin ka
+>     fi bi ke sae tci sae kin ko
 > ```
 
 > kcoi: `[E:kcin]` is obtained from `[A:kcin]` by inserting an entry with key

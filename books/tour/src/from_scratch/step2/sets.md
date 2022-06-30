@@ -28,14 +28,14 @@ is assumed to be true.
 > We then state that predicates __tcui__ and __tcie__ exist:
 > ```
 > ma
->   vai bo tcui
->   fai bo tcie
+>   vi bo tcui
+>   fi bo tcie
 > ```
 > Then for every property __gi__ (we express it is a property by providing it
 > one generic argument (mai). However it means that __gi__ must be true for at
 > least one argument. Thus, there will be no concept of an empty set).
 > ```
->   fai mae
+>   fi mae
 >     ve gi be varu
 >       vie gi mai
 > ```
@@ -49,12 +49,12 @@ is assumed to be true.
 > There exist a set __ke__ representing this property (with this context)
 > ```
 >             ma
->               vai bo ke tcui gi
+>               vi bo ke tcui gi
 > ```
 > And for all __ka__, __ka__ is a member of set __ke__ if and only if __ka__
 > satisfy __gi__
 > ```
->               fai mae
+>               fi mae
 >                 ve ka be mai
 >                   vie ka tcie ke
 >                   fie ka gi
@@ -75,20 +75,21 @@ of those sets. From those we can define a predicate for subsets.
 > tcia: `[E:tcui a]` is a subset of `[A:tcui a]`.
 >
 > ```
-> po tcia ke ka be ...
+> po tcia ke ka be
 > ```
 >
 > All members of __ke__
 >
 > ```
-> mae ve ki be
-> varu vie ki tcie ke ...
+> mae
+>   ve ki be varu 
+>     vie ki tcie ke
 > ```
 >
 > Also are members of __ka__
 >
 > ```
-> fie ki tcie ka
+>     fia ki tcie ka
 > ```
 
 We can also define predicates for various kinds of subsets which can be useful
@@ -115,16 +116,16 @@ to define vocabulary.
 > __ke__ is a subset of the set of all things that satisfy __gia__
 >
 > ```
-> ma vai ke tcei gia ...
+> ma vi ke tcei gia ...
 > ```
 > 
 > And it false that there exist 2 distinct things that are members of __ke__ 
 > 
 > ```
-> fai bi ma
-> vai bo ka tcie ke
-> fai bo ko bi ka
-> fai ko tcie ke
+> fi bi ma
+> vi bo ka tcie ke
+> fi bo ko bi ka
+> fi ko tcie ke
 > ```
 
 > tcoi: `[E:tcui a]` is a set of at least 2 things that individualy satisfy `[A:(a)]`.
@@ -136,15 +137,15 @@ to define vocabulary.
 > __ke__ is a subset of the set of all things that satisfy __gia__
 >
 > ```
-> ma vai ke tcei gia ...
+> ma vi ke tcei gia ...
 > ```
 > 
 > And there exist (at least) 2 distinct things that are members of __ke__ 
 > 
 > ```
-> fai bo ka tcie ke
-> fai bo ko bi ka
-> fai ko tcie ke
+> fi bo ka tcie ke
+> fi bo ko bi ka
+> fi ko tcie ke
 > ```
 
 ## Improved composability
@@ -239,11 +240,11 @@ property.
 > ```
 > po djo ke gia be
 > ma
->   vai ke gia
->   fai bi bo ka
->     vai ka bi ke
->     fai ka gia
->     fai ke tcia ka
+>   vi ke gia
+>   fi bi bo ka
+>     vi ka bi ke
+>     fi ka gia
+>     fi ke tcia ka
 > ```
 
 Same with the smallest unique set:
@@ -252,9 +253,9 @@ Same with the smallest unique set:
 > ```
 > po dju ke gia be
 > ma
->   vai ke gia
->   fai bi bo ka
->     vai ka bi ke
->     fai ka gia
->     fai ka tcia ke
+>   vi ke gia
+>   fi bi bo ka
+>     vi ka bi ke
+>     fi ka gia
+>     fi ka tcia ke
 > ```

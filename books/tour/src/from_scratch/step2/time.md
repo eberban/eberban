@@ -152,8 +152,8 @@ setup such entry in the context (and make it the longest possible).
 > ```
 > po zvi ke gia be
 > ma
->   vai ke izvi gia
->   fai bi ma
+>   vi ke izvi gia
+>   fi bi ma
 >     ve pe ble
 >       va zi blur
 >       fo ble
@@ -194,24 +194,24 @@ Let's first start with a simple one: the proposition time span is met by the
 context time span, which means that the last instant of the context time
 span is the first instant of the proposition time span.
 
-> siul: It is possible that `[E:()]` is met by the context time span.
+> sul: It is possible that `[E:()]` is met by the context time span.
 > ```
-> po siul gie be
+> po sul gie be
 > ma
 > ```
 > _ke_ is a time span of events in _gie_
 > ```
->   vai bo ke zvi gie
+>   vi bo ke zvi gie
 > ```
 > _ki_ is the first instant of time span _ke_
 > ```
->   fai pe ke ble
+>   fi pe ke ble
 >     va bo ki bu
 >   pei
 > ```
 > _ki_ is the last instant of the context time span
 > ```
->   fai zvil ble
+>   fi zvil ble
 >     vo ki bu
 > ```
 
@@ -245,36 +245,38 @@ that contains the context time span, either:
 > true
 > ```
 >       fia ma
->         vai bo ke sae bla ki
->         fai gie ke
+>         vi bo ke sae bla ki
+>         fi gie ke
 > ```
 
 Thanks to this predicate we're able to define:
 
-> siun: It is necessary that `[E:()]` is met by the context time span.
+> sun: It is necessary that `[E:()]` is met by the context time span.
 > ```
-> po siun gie be
+> po sun gie be
 > zvan
->   vie ki be siul
+>   vie ki be sul
 >     vie gie
 > ```
 > _ki_, which is provided by _zvan_, must contains the context span
 > ```
->       vai ki sae bla zvil
+>       vi ki sae bla zvil
 > ```
 
-Similarily, we can define many similar predicates :
+We can define all the following predicates (with C denoting the context time
+span) :
 
-- __sel/sen__: E is before C (context span)
+- __sel/sen__: E meets C (end instant of E = first instant of C)
 - __sal/san__: E starts C  (they share the same start instant)
-- __sol/son__: E contains C
-- __sul/sun__: E is after C
-- __siel/sien__: E meets C (end instant of E = first instant of C)
-- __sial/sian__: E finishes C (they share the same end instant)
+- __sol/son__: E finishes C (they share the same end instant)
+- __sul/sun__: E is met by C (end instant of C = first instant of E)
+- __siel/sien__: E is before C
+- __sial/sian__: E contains C
 - __siol/sion__: E contained by C (there is no difference between both variants)
+- __siul/siun__: E is after C
 - __sil/sin__: E overlaps with C
 
-> Their definition is omited here but is similar to the ones of __siul/siun__.
+> Their definition is omited here but is similar to the ones of __sul/sun__.
 
 Aside from those relations with the context span, we can make a tense predicate
 related to the present instant instead of the context time span.
@@ -309,10 +311,10 @@ easily be composed with other future sentence wrappers).
 > po eipahizve gie be
 > zvi
 >   via zvin zvi gie
->     vai pe bo gi
+>     vi pe bo gi
 >       ve kcei zai zve
 >     pei
->     fai zvin gi
+>     fi zvin gi
 >
 > po epahigi eipahizve
 > pahi epahigi

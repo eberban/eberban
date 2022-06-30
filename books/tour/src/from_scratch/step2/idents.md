@@ -16,19 +16,19 @@ the concept of identifiers, and the right component is the property.
 > identifier)
 > 
 > ```
-> ma vai ke kin va ezaipe ezaipe ...
+> ma vi ke kin va ezaipe ezaipe ...
 > ```
 > 
 > And with right component __gi__.
 > 
 > ```
-> fo gi vai ...
+> fo gi vi ...
 > ```
 >
 > __gi__ being a property (even if it false for all possible arguments)
 > 
 > ```
-> fai vare
+> fi vare
 > vie gi mai
 > fie bi gi mai
 > ```

@@ -32,8 +32,8 @@ a common property.
 > vare
 >   vie ke zai blun
 >   fia ma
->     vai ke sea kin gi
->     fai ke seo kin blu gi
+>     vi ke sea kin gi
+>     fi ke seo kin blu gi
 > ```
 
 From that definition we can now enable the __bu__ list grammar like so
@@ -83,17 +83,17 @@ while the other is right-to-left (last to first).
 > ```
 > vare
 >   vie ke zai blun
->     vai ka ko vei
+>     vi ka ko vei
 > ```
 > Or __ke__ is not an empty list with element __x__, in which case there exist
 > a __ki__ such that __gu(ka,ki,x)__ and __ki__ is the initial value of a left
 > fold on the rest of the list.
 > ```
 >   fie ke zi zai blun
->     vai ma
->       vai bo ki
->       fai ka gu va ki fo sae kin ke vei
->       fai bla
+>     vi ma
+>       vi bo ki
+>       fi ka gu va ki fo sae kin ke vei
+>       fi bla
 >         ve soe kin ke
 >         fa ki
 >         fo ko
@@ -110,17 +110,17 @@ while the other is right-to-left (last to first).
 > ```
 > vare
 >   vie ke zai blun
->     vai ka ko vei
+>     vi ka ko vei
 > ```
 > Or __ke__ is not an empty list with element __x__, in which case there exist
 > a __ki__ such that __gu(ki,ko,x)__ and __ki__ is the final value of a right
 > fold on the rest of the list.
 > ```
 >   fie ke zi zai blun
->     vai ma
->       vai bo ki
->       fai ki gu va ko fo sae kin ke vei
->       fai blai
+>     vi ma
+>       vi bo ki
+>       fi ki gu va ko fo sae kin ke vei
+>       fi blai
 >         ve soe kin ke
 >         fa ka
 >         fo ki
@@ -170,8 +170,8 @@ with the following predicate.
 > them plus additional members that are not in the list).
 > ```
 > po bli ke ka be
-> ma vai ke ga ka
->   fai bi ma 
+> ma vi ke ga ka
+>   fi bi ma 
 >     ve bi ke ga ka
 >     fe tcia ke   
 > ```

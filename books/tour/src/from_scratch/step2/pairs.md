@@ -10,28 +10,28 @@ components.
 >
 > ```
 > po e kin pi be
-> ma vai bo kin ...
+> ma vi bo kin ...
 > ```
 >
 > For every left and right components __ka__ and __ko__
 >
 > ```
-> fai mae ve ka be
+> fi mae ve ka be
 > mae ve ko be ...
 > ```
 >
 > There exist an atom __ki__ which is a pair of __ka__ and __ko__.
 >
 > ```
-> ma vai ki be
-> ki ma kin va ka fo ko vai ...
+> ma vi ki be
+> ki ma kin va ka fo ko vi ...
 > ```
 >
 > And it is false that there exist a different atom than __ki__ which is also a
 > pair of __ka__ and __ko__ (thus there is a unique symbol for each pair)
 >
 > ```
-> fai bi ma
+> fi bi ma
 > ve bi kie
 > fe kin va ka fo ko ...
 > ```
