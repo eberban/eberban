@@ -64,38 +64,6 @@ infinity of things. It is defined recursively.
 > transitively)
 > ```
 >     fi ki kidvo
->       via ka
+>       va ka
 >       fio go
 > ```
-
-<!-- Another useful concept is uniqueness which is often used to define chains.
-
-> zoni: Among the things that satisfy `[E:(a)]` only `[O:a]` satisfy `[A:(a)]`.
->
-> ```
-> po zoni ge ga ko be
-> ```
-> __ko__ satisfy both __ge__ and __ga__
-> ```
-> ma
->   vi ko ge
->   fi ko ga
-> ```
-> And for any __ki__
-> ```
->   fi mae
->     ve ki be
-> ```
-> If the following points are true:
-> - __ki__ and __ko__ are different
-> - __ki__ satisfy __ge__
-> ```
->       varu
->         ve ma
->           vi bi ki ko
->           fi ki go vei
-> ```
-> Then __ki__ doesn't satisfy __ga__
-> ```
->         fa bi ki ga
-> ``` -->

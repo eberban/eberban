@@ -905,7 +905,7 @@ kidvo:
       fia bo ki
         vi ke go ki
         fi ki kidvo
-          via ka
+          va ka
           fio go
 tcui:
   family: "R"
@@ -1160,7 +1160,7 @@ blai:
 bli:
   family: "R"
   gloss: "list-set"
-  tags: [list]
+  tags: [list, set]
   short: |
     [E:tce a] is the set containing only all the elements in list [A:blu a].
 kcin:
