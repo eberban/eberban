@@ -11,7 +11,7 @@ components.
 > ```
 > po e kin pi be
 > ma
->   vi bo kin
+>   vi boi kin
 > ```
 >
 > For every left and right components __ka__ and __ko__

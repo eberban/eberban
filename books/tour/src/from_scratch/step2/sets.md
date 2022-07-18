@@ -28,8 +28,8 @@ is assumed to be true.
 > We then state that predicates __tcui__ and __tcie__ exist:
 > ```
 > ma
->   vi bo tcui
->   fi bo tcie
+>   vi boi tcui
+>   fi boi tcie
 > ```
 > Then for every property __gi__ (we express it is a property by providing it
 > one generic argument (mai). However it means that __gi__ must be true for at

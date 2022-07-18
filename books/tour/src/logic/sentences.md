@@ -6,7 +6,7 @@ with __p-__, grouped into the following families :
 - __PA__ (all starting with _pa-_): The particle is followed by a predicate or
   chain of predicates.
 - __PO__ (_po-_): The particle is followed by a __defined__
-  predicate word, __KI/GI__ variable or freeform variable (word starting with
+  predicate word, __GI__ or freeform variable (word starting with
   _i-); then followed by a definition as a predicate or chain of predicates.
 - __PU__ (_pu-_): The particle is followed only by a sigle predicate word,
   __KI/GI__ variable or freeform variable.

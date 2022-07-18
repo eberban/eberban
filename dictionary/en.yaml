@@ -540,8 +540,25 @@ bi:
   short: "Wide scope negation ranging over existential variables and predicates."
 bo:
   family: "BO"
-  gloss: "#new-var"
-  short: "Create a new variable and discard previous value if any."
+  gloss: "#new-var-atom"
+  short: "Create a new atom predicate variable and discard previous value if any."
+  notes: |
+    Creates a predicate stating the argument is some specific and fixed atom or
+    generic value. The predicate thus have type (a).
+
+    Using it before words other than KI make them behave like KI variables. It
+    can thus be used to define freeform predicate variables (i-) to refer to
+    an atom.
+boi:
+  family: "BO"
+  gloss: "#new-var-pred"
+  short: "Create a new general predicate variable and discard previous value if any."
+  notes: |
+    This predicate can have arbitrary arguments, which will be constrainted by
+    the rest of the sentence.
+
+    When used before KI, have the same meaning as {bo} as all KI are expected
+    to have type (a).
 
 # ----- 
 # Extended grammar particles
@@ -916,8 +933,8 @@ tcui:
   definition: |
     po e tcui pi be
     ma
-      vi bo tcui
-      fi bo tcie
+      vi boi tcui
+      fi boi tcie
       fi mae
         ve gi be varu
           vie gi mai
@@ -1101,7 +1118,7 @@ kin:
   definition: |
     po e kin pi be
     ma
-      vi bo kin
+      vi boi kin
       fi mae
         ve ka be mae 
           ve ko be
@@ -1292,7 +1309,7 @@ zvin:
     Time span [E:dinu] contains context time span.
 zvil:
   family: "R"
-  gloss: "event-apply"
+  gloss: "context-span"
   tags: [time, context]
   short: |
     [E:dinu] is the context time span.
@@ -2300,10 +2317,10 @@ fuli:
   gloss: "sum"
 koro:
   family: "R"
+  gloss: "number pred"
   short: |
     [E:(tce gen,tce gen)] is a predicate of the form: [E:tce gen] is [number]
     times [A:tce gen] (default: 1).
-  gloss: "number pred"
   notes: |
     Allows to check a predicate behaves like a number made from TI (+ jie), or
     other number predicates of the same form. Can be used to define math

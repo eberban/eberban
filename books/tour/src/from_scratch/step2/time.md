@@ -311,7 +311,7 @@ easily be composed with other future sentence wrappers).
 > po eipahizve gie be
 > zvi
 >   via zvin zvi gie
->     vi pe bo gi
+>     vi pe boi gi
 >       ve kcei zai zve
 >     pei
 >     fi zvin gi
