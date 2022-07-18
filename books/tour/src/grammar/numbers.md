@@ -87,8 +87,8 @@ non-zero positive integer (no fractional part).
   Same but use the raw property variant of sets definitions.
 - __jiu__: `[E:tca a] is the [number]th member of sequence [A:blu a].`\
   Speaks about an element in an ordered list.
-- __jie__: `[E:tce gen] is the number [number] times [A:tce gen] (default: 1 unitless).`\
-  `gen` is the word for a number, and both arguments are sets of numbers. Those
+- __jie__: `[E:tce gan] is the number [number] times [A:tce gan] (default: 1 unitless).`\
+  `gan` is the word for a number, and both arguments are sets of numbers. Those
   sets allows to handle many numbers (ranges, approximations, or even
   arbitrarily constructed ones), and math operations are also defined using sets
   to distributivly operate on each value of the set. The __A__ argument allows

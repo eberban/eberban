@@ -5,51 +5,61 @@
 # -----
 
 0:
+  id: xLFTdVdomw
   family: "TI"
   gloss: "ti"
   tags: [number, digit, informal]
   short: "Digit 0"
 1:
+  id: hexrLBhznS
   family: "TI"
   gloss: "te"
   tags: [number, digit, informal]
   short: "Digit 1"
 2:
+  id: VHdoIU4y7B
   family: "TI"
   gloss: "ta"
   tags: [number, digit, informal]
   short: "Digit 2"
 3:
+  id: Ht2VPAlcXN
   family: "TI"
   gloss: "to"
   tags: [number, digit, informal]
   short: "Digit 3"
 4:
+  id: v6Z63BfMFc
   family: "TI"
   gloss: "tu"
   tags: [number, digit, informal]
   short: "Digit 4"
 5:
+  id: jXGtHvv20z
   family: "TI"
   gloss: "tie"
   tags: [number, digit, informal]
   short: "Digit 5"
 6:
+  id: clPqJeyF1B
   family: "TI"
   gloss: "tia"
   tags: [number, digit, informal]
   short: "Digit 6"
 7:
+  id: nfTVZWftEr
   family: "TI"
   gloss: "tio"
   tags: [number, digit, informal]
   short: "Digit 7"
 8:
+  id: fm5zMy6i6S
   family: "TI"
   gloss: "tiu"
   tags: [number, digit, informal]
   short: "Digit 8"
 9:
+  id: xfKrzESgC0
   family: "TI"
   gloss: "tei"
   tags: [number, digit, informal]
@@ -60,6 +70,7 @@
 # -----
 
 ma:
+  id: uiWiM2580Z
   family: "MI"
   gloss: atom
   tags: [core]
@@ -75,6 +86,7 @@ ma:
 
     Can also be used alone for tautology (always true).
 mai:
+  id: uWjXG46v4H
   family: "MI"
   gloss: "exists"
   tags: [core]
@@ -85,12 +97,14 @@ mai:
 
     Can also be used alone for tautology (always true).
 mae:
+  id: cVf5Umqddb
   family: "MI"
   gloss: "forall"
   tags: [core]
   short: "[E:(a)] is true for any argument (of the correct type)."
   definition: 𝜆c 𝜆E ∀x E(c,x)
 mao:
+  id: qzpxwEepHx
   family: "MI"
   gloss: "nary-imply"
   tags: [core]
@@ -102,6 +116,7 @@ mao:
     acting as a question and [E] representing the indirect
     question/answer to the question.
 mui:
+  id: yfTgRZjtiw
   family: "MI"
   gloss: "unknown"
   tags: [core]
@@ -111,6 +126,7 @@ mui:
     All predicates return a trivalent truth value which is either true, false
     or undefined. 
 mue:
+  id: aSDzuMONEX
   family: "MI"
   gloss: "context-extract"
   tags: [core]
@@ -121,6 +137,7 @@ mue:
     Exposes the context, an implicit/hidden argument to every predicate, as
     an explicit parameter. Allows to handle the context like any other argument.
 mua:
+  id: T98PUeGDx0
   family: "MI"
   gloss: "context-apply"
   tags: [core]
@@ -131,21 +148,25 @@ mua:
     Evaluate a proposition with a provided context instead of the implicit
     forwarded context.
 ba:
+  id: V47tIl8M74
   family: "BA"
   gloss: "#inline-arg"
   tags: [core]
   short: "Inline argument marker."
 vei:
+  id: dGX3RZQK2s
   family: "VEI"
   gloss: "]"
   tags: [core, terminator, elidable]
   short: "Close the latest unclosed VI/FI."
 vi:
+  id: F29Bns2aeI
   family: "VI"
   gloss: "&["
   tags: [core]
   short: "State the following 0-ary predicate chain, unrelated to any place."
 ve:
+  id: jBhDi1yp6a
   family: "VI"
   gloss: "E["
   tags: [core]
@@ -156,6 +177,7 @@ ve:
     The following predicate chain is a property over the variable used in the
     suffixed predicate E place.
 va:
+  id: ZFLv7YegaL
   family: "VI"
   gloss: "A["
   tags: [core]
@@ -166,6 +188,7 @@ va:
     The following predicate chain is a property over the variable used in the
     suffixed predicate A place.
 vo:
+  id: IwKNBmWWuW
   family: "VI"
   gloss: "O["
   tags: [core]
@@ -176,6 +199,7 @@ vo:
     The following predicate chain is a property over the variable used in the
     suffixed predicate O place.
 vu:
+  id: bfQnY28gid
   family: "VI"
   gloss: "U["
   tags: [core]
@@ -186,6 +210,7 @@ vu:
     The following predicate chain is a property over the variable used in the
     suffixed predicate U place.
 vie:
+  id: f5QPOxyo34
   family: "VI"
   gloss: "E=["
   tags: [core]
@@ -196,6 +221,7 @@ vie:
     The following predicate chain have the same type as the E place and is
     equivalent. The E place must be a predicate place.
 via:
+  id: Yq567wLm2t
   family: "VI"
   gloss: "A=["
   tags: [core]
@@ -206,6 +232,7 @@ via:
     The following predicate chain have the same type as the A place and is
     equivalent. The A place must be a predicate place.
 vio:
+  id: GLcYQFkKOQ
   family: "VI"
   gloss: "O=["
   tags: [core]
@@ -216,6 +243,7 @@ vio:
     The following predicate chain have the same type as the O place and is
     equivalent. The O place must be a predicate place.
 viu:
+  id: ce345k1KE4
   family: "VI"
   gloss: "U=["
   tags: [core]
@@ -226,10 +254,12 @@ viu:
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
 fi:
+  id: Kd9qBtxTq0
   family: "FI"
   gloss: "]&["
   short: "State the following predicate chain, unrelated to any place."
 fe:
+  id: VYrNf5AySv
   family: "FI"
   gloss: "]E["
   tags: [core]
@@ -240,6 +270,7 @@ fe:
     The following predicate chain is a property over the variable used in the
     suffixed predicate E place.
 fa:
+  id: qxGLjpGY5N
   family: "FI"
   gloss: "]A["
   tags: [core]
@@ -250,6 +281,7 @@ fa:
     The following predicate chain is a property over the variable used in the
     suffixed predicate A place.
 fo:
+  id: iOZ2VM2Anw
   family: "FI"
   gloss: "]O["
   tags: [core]
@@ -260,6 +292,7 @@ fo:
     The following predicate chain is a property over the variable used in the
     suffixed predicate O place.
 fu:
+  id: yDLpOAEIyZ
   family: "FI"
   gloss: "]U["
   tags: [core]
@@ -270,6 +303,7 @@ fu:
     The following predicate chain is a property over the variable used in the
     suffixed predicate U place.
 fie:
+  id: YTh6gFtm5I
   family: "FI"
   gloss: "]E=["
   tags: [core]
@@ -280,6 +314,7 @@ fie:
     The following predicate chain have the same type as the E place and is
     equivalent. The E place must be a predicate place.
 fia:
+  id: 0UktFjuHwa
   family: "FI"
   gloss: "]A=["
   tags: [core]
@@ -290,6 +325,7 @@ fia:
     The following predicate chain have the same type as the A place and is
     equivalent. The A place must be a predicate place.
 fio:
+  id: OASXKhx46g
   family: "FI"
   gloss: "]O=["
   tags: [core]
@@ -300,6 +336,7 @@ fio:
     The following predicate chain have the same type as the O place and is
     equivalent. The O place must be a predicate place.
 fiu:
+  id: GGBu5EsdEZ
   family: "FI"
   gloss: "]U=["
   tags: [core]
@@ -310,91 +347,109 @@ fiu:
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
 se:
+  id: qGXN2xhcIt
   family: "SI"
   gloss: "<EE>"
   tags: [core]
   short: "Bind E place and disable chaining."
 sa:
+  id: oRicDBJcuk
   family: "SI"
   gloss: "<AA>"
   tags: [core]
   short: "Bind A place and disable chaining."
 so:
+  id: 1VeOhtFE08
   family: "SI"
   gloss: "<OO>"
   tags: [core]
   short: "Bind O place and disable chaining."
 su:
+  id: KkAo3Xh8Vs
   family: "SI"
   gloss: "<II>"
   tags: [core]
   short: "Bind U place and disable chaining."
 sea:
+  id: XDPcwHenKP
   family: "SI"
   gloss: "<EA>"
   tags: [core]
   short: "Bind E place and chains the A place."
 seo:
+  id: vxHg5A1WzO
   family: "SI"
   gloss: "<EO>"
   tags: [core]
   short: "Bind E place and chains the O place."
 seu:
+  id: z4uGiOjfQH
   family: "SI"
   gloss: "<EU>"
   tags: [core]
   short: "Bind E place and chains the U place."
 sae:
+  id: RNwr8fAmZy
   family: "SI"
   gloss: "<AE>"
   tags: [core]
   short: "Bind A place and chains the E place."
 sao:
+  id: xOApIMItMx
   family: "SI"
   gloss: "<AO>"
   tags: [core]
   short: "Bind A place and chains the O place."
 sau:
+  id: IQjS2euswn
   family: "SI"
   gloss: "<AU>"
   tags: [core]
   short: "Bind A place and chains the U place."
 soe:
+  id: zjE1RsX4UK
   family: "SI"
   gloss: "<OE>"
   tags: [core]
   short: "Bind O place and chains the E place."
 soa:
+  id: ryTHXB2FCE
   family: "SI"
   gloss: "<OA>"
   tags: [core]
   short: "Bind O place and chains the A place."
 sou:
+  id: s7ZuFVuDfl
   family: "SI"
   gloss: "<OU>"
   tags: [core]
   short: "Bind O place and chains the U place."
 sue:
+  id: PYVkNQECpO
   family: "SI"
   gloss: "<UE>"
   tags: [core]
   short: "Bind U place and chains the E place."
 sua:
+  id: tQdbdMjIdP
   family: "SI"
   gloss: "<UA>"
   tags: [core]
   short: "Bind U place and chains the A place."
 suo:
+  id: gEWbWhd3D4
   family: "SI"
   gloss: "<UO>"
   tags: [core]
   short: "Bind U place and chains the O place."
 ze:
+  id: HQ8Iez19Yn
   family: "ZI"
   gloss: "#reuse"
   tags: [core]
   short: "Use the latest instance and variables of the predicate word instead of creating new ones."
 zei:
+  id: SryHo6KCbC
   family: "ZI"
   gloss: "#reuse-compound"
   tags: [core]
@@ -402,6 +457,7 @@ zei:
     Use the latest instance and variables of a compound containing this word
     instead of creating new ones.
 zi:
+  id: Drzw8DIg76
   family: "ZI"
   gloss: "#short-neg"
   tags: [core, negation]
@@ -409,30 +465,35 @@ zi:
     Narrow-scope negation : negates the predicate unit but not the existential variables it creates.
     There exist e, a,... such that unit(e, a, ...) is false.
 zoie:
+  id: uhlXkVWWA7
   family: "ZI"
   gloss: "#get-default-E"
   tags: [core, default]
   short: |
     Satisfy the default bound of the E place of [predicate] (set with {poie}).
 zoia:
+  id: pNLxz4xwKi
   family: "ZI"
   gloss: "#get-default-A"
   tags: [core, default]
   short: |
     Satisfy the default bound of the A place of [predicate] (set with {poia}).
 zoio:
+  id: YpRAl6pDFc
   family: "ZI"
   gloss: "#get-default-O"
   tags: [core, default]
   short: |
     Satisfy the default bound of the O place of [predicate] (set with {poio}).
 zoiu:
+  id: EYLCNa75dU
   family: "ZI"
   gloss: "#get-default-U"
   tags: [core, default]
   short: |
     Satisfy the default bound of the U place of [predicate] (set with {poiu}).
 zu:
+  id: QrPQJlBXO6
   family: "ZI"
   gloss: "#()-to-(a)"
   tags: [core]
@@ -454,40 +515,47 @@ zu:
     The selected proposition place will be the one being transitioned to in
     chaining (unless overwritten by a SE placed before {zu}).
 poie:
+  id: kcJ6pTjgVi
   family: "PO"
   gloss: "#set-default-E"
   tags: [core, default]
   short: |
     Set the default constraint for the E place of the following predicate word.
 poia:
+  id: Tbu1NtUpMq
   family: "PO"
   gloss: "#set-default-A"
   tags: [core, default]
   short: |
     Set the default constraint for the A place of the following predicate word.
 poio:
+  id: HOKId2GZwM
   family: "PO"
   gloss: "#set-default-O"
   tags: [core, default]
   short: |
     Set the default constraint for the O place of the following predicate word.
 poiu:
+  id: 87aCyTzFsN
   family: "PO"
   gloss: "#set-default-U"
   tags: [core, default]
   short: |
     Set the default constraint for the U place of the following predicate word.
 po:
+  id: MKILBShZ7V
   family: "PO"
   gloss: "#def"
   tags: [core]
   short: "Start a predicate definition."
 poe:
+  id: c0kwgMHcwY
   family: "PO"
   gloss: "#def-capture"
   tags: [core]
   short: "Start a predicate definition which captures the current context."
 pahi:
+  id: NXtAU0gQfz
   family: "PA"
   gloss: "#sentence-wrapper"
   tags: [core]
@@ -495,6 +563,7 @@ pahi:
     Registers a sentence wrapper, such that any sentence [E:()] expressed with
     {pa} is wrapped by this registered predicate.
 pae:
+  id: ZkuKMNzDXS
   family: "PA"
   gloss: "#update-context"
   tags: [core, context]
@@ -502,6 +571,7 @@ pae:
     Starts a context switching sentence, such that [E:ma] will be the context
     provided to any following sentences.
 pahe:
+  id: Utl5b5flgT
   family: "PA"
   gloss: "#context-updater"
   tags: [core, context]
@@ -509,36 +579,43 @@ pahe:
     Registers a context-switching sentence, that will be applied automatically
     between each sentences as if it was used with {pae}.
 pe:
+  id: C9nJzIcTfu
   family: "PE"
   gloss: "["
   tags: [core]
   short: "Inline scope starter."
 pei:
+  id: CoU785JHzZ
   family: "PEI"
   gloss: "]"
   tags: [core, terminator, elidable]
   short: "Inline scope elidible terminator."
 pu:
+  id: em8ADAqGG3
   family: "PU"
   gloss: "#axiom-on"
   tags: [core]
   short: "Enable axiomatic predicate."
 pui:
+  id: JloTXMHwG4
   family: "PU"
   gloss: "#axiom-off"
   tags: [core]
   short: "Disable axiomatic predicate."
 be:
+  id: 0HIKwjp7EH
   family: "BE"
   gloss: "#argument-list"
   tags: [core, terminator, elidable]
   short: Borrowing and arguments list terminator.
 bi:
+  id: IqamWz7uHD
   family: "BI"
   gloss: "#wide-neg"
   tags: [core, negation]
   short: "Wide scope negation ranging over existential variables and predicates."
 bo:
+  id: 9ELudEAq4v
   family: "BO"
   gloss: "#new-var-atom"
   short: "Create a new atom predicate variable and discard previous value if any."
@@ -550,6 +627,7 @@ bo:
     can thus be used to define freeform predicate variables (i-) to refer to
     an atom.
 boi:
+  id: AEGuXusum3
   family: "BO"
   gloss: "#new-var-pred"
   short: "Create a new general predicate variable and discard previous value if any."
@@ -565,26 +643,31 @@ boi:
 # -----
 
 mi:
+  id: UNFcUErxGm
   family: "MI"
   short: "[E:tce* man] is I/me/a speaker/author."
   gloss: "me"
 mo:
+  id: zJyTQy23PQ
   family: "MI"
   short: "[E:tce* man] is you, a listener."
   gloss: "you"
 mio:
+  id: ITSqhV9XAO
   family: "MI"
   short: |
     Every member of [E:tco* man] is either I/a speaker/author; or you, a listener; and
     contains at least one of each.
   gloss: "inclusive-we"
 mie:
+  id: 9SWjxu2Mjz
   family: "MI"
   short: |
     Every member of [E:tco* man] is either I/a speaker/author; or something that is not a listener;
     and contains at least one of each.
   gloss: "exclusive-we"
 ji:
+  id: UqB3N5070a
   family: "JI"
   gloss: "#cardinal"
   tags: [terminator, number, set]
@@ -594,14 +677,16 @@ ji:
     [E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].\
     The number must be a natural number (non zero positive integer).
 jie:
+  id: UVvfJ77x9f
   family: "JI"
   gloss: "#abstract-number"
   tags: [terminator, number, elidable]
   transitive: true
   short: |
     Abstract number terminator. The preceding number have definition:\
-    [E:tce gen] is the number [number] times [A:tce gen] (default: 1).
+    [E:tce gan] is the number [number] times [A:tce gan] (default: 1).
 jia:
+  id: DnJ7gSKeG7
   family: "JI"
   gloss: "#raw-cardinal"
   tags: [terminator, number, set]
@@ -611,6 +696,7 @@ jia:
     [E:tce* a] is (a group of) [number] things satisfying [A:(a)].\
     The number must be a natural number (non zero positive integer).
 jio:
+  id: 83Fvb9onN2
   family: "JI"
   gloss: "#universal-cardinal"
   tags: [terminator, number, set]
@@ -620,6 +706,7 @@ jio:
     [E:tce* a] is (a group of) the only [number] things satisfying [A:(tca a)].\
     The number must be a natural number (non zero positive integer).
 jioa:
+  id: HvmxrbwGXX
   family: "JI"
   gloss: "#raw-universal-cardinal"
   tags: [terminator, number, set]
@@ -629,6 +716,7 @@ jioa:
     [E:tce* a] is (a group of) the only [number] things satisfying [A:(a)].\
     The number must be a natural number (non zero positive integer).
 jiu:
+  id: XtLEs9edL2
   family: "JI"
   gloss: "#ordinal"
   tags: [terminator, number, list]
@@ -638,11 +726,13 @@ jiu:
     [E:tca a] is the [number]th member of sequence [A:blu a].\
     The number must be a natural number (non zero positive integer).
 ju:
+  id: PASttlpZRH
   family: "JO"
   gloss: "#base"
   tags: [number, separator]
   short: Base separator. Base is defined using the last allowed digit.
 jo:
+  id: 1hqmjyuznZ
   family: "JO"
   gloss: "#frac-sep"
   tags: [number, separator]
@@ -650,6 +740,7 @@ jo:
     Fractional part separator. Separate the integer part from the excess beyond
     the integer part.
 joi:
+  id: hOP8n6mGoA
   family: "JO"
   gloss: "#frac-sep-neg"
   tags: [number, separator]
@@ -657,6 +748,7 @@ joi:
     Negative fractional part separator. Separate the integer part from the excess beyond
     the integer part, and indicates that the number is negative.
 ja:
+  id: ASCKk59AUO
   family: "JA"
   gloss: "#repeating"
   tags: [number, separator]
@@ -664,127 +756,152 @@ ja:
     Repeating part separator. Inside a fractional part starts a string of
     digits that repeat infinitely.
 je:
+  id: lXVV3SHd2H
   family: "JE"
   gloss: "#magnitude"
   tags: [number, separator]
   short: |
     Magnitude part separator. Number is multiplied by base^magnitude.
 jei:
+  id: FkGaAL9Xfc
   family: "JE"
   gloss: "#magnitude-neg"
   tags: [number, separator]
   short: |
     Negative magnitude part separator. Number is multiplied by base^(-magnitude).
 ti:
+  id: IVcpySQF4j
   family: "TI"
   short: "Digit 0"
   gloss: "0"
   tags: [digit, number]
 te:
+  id: 2OoBZn2l6h
   family: "TI"
   short: "Digit 1"
   gloss: "1"
   tags: [digit, number]
 ta:
+  id: ByL153sCbe
   family: "TI"
   short: "Digit 2"
   gloss: "2"
   tags: [digit, number]
 to:
+  id: aHFRLDPv68
   family: "TI"
   short: "Digit 3"
   gloss: "3"
   tags: [digit, number]
 tu:
+  id: P7EYoSrgaE
   family: "TI"
   short: "Digit 4"
   gloss: "4"
   tags: [digit, number]
 tia:
+  id: hWNpPC9GHM
   family: "TI"
   short: "Digit 5"
   gloss: "5"
   tags: [digit, number]
 tie:
+  id: MgRQxsLqVE
   family: "TI"
   short: "Digit 6"
   gloss: "6"
   tags: [digit, number]
 tio:
+  id: 1MQGhJRVry
   family: "TI"
   short: "Digit 7"
   gloss: "7"
   tags: [digit, number]
 tiu:
+  id: GhcbnIjZCv
   family: "TI"
   short: "Digit 8"
   gloss: "8"
   tags: [digit, number]
 tei:
+  id: shcFPCezRg
   family: "TI"
   short: "Digit 9"
   gloss: "9"
   tags: [digit, number]
 tea:
+  id: WDe3JzGicF
   family: "TI"
   short: "Digit A"
   gloss: "A"
   tags: [digit, number]
 teo:
+  id: 7ik9nhAqhB
   family: "TI"
   short: "Digit B"
   gloss: "B"
   tags: [digit, number]
 teu:
+  id: FykHc8yfXl
   family: "TI"
   short: "Digit C"
   gloss: "C"
   tags: [digit, number]
 tai:
+  id: xqNiKWdrX3
   family: "TI"
   short: "Digit D"
   gloss: "D"
   tags: [digit, number]
 tae:
+  id: tCduJaBqlx
   family: "TI"
   short: "Digit E"
   gloss: "E"
   tags: [digit, number]
 tao:
+  id: rVTqoQuG7A
   family: "TI"
   short: "Digit F"
   gloss: "F"
   tags: [digit, number]
 ca:
+  id: qgITj7lmtu
   family: "CA"
   short: "Starts grammatically correct eberban quote. [E:tca skan] is text [quote]."
   gloss: "#quote-start"
 cai:
+  id: m2tK0ZmVgH
   family: "CAI"
   short: "Ends grammatically correct eberban quote."
   gloss: "#quote-end"
   tags: [terminator]
 ce:
+  id: Qd380ClFxd
   family: "CE"
   short: "Quote next word. [E:tca skan] is word [word]."
   gloss: "#word-quote"
 cei:
+  id: AcAUojxxSK
   family: "CE"
   short: "[E:tca man] is the family of word [word]."
   gloss: "#family-quote"
   nodes: |
     TODO: Add predicates to manipulate language concepts.
 co:
+  id: Upxio5nKc0
   family: "CO"
   short: "[E:tca skan] is a quote of an arbitrary string of space separated \"words\"."
   gloss: "#foreign-quote"
 cu:
+  id: SPjmtJH1al
   family: "CU"
   gloss: "#erase"
   short: |
     Erase the currently sentence/defintion.
     Used when a mistake is made to redo the sentence/definition."
 za:
+  id: 4hIwGkYAQe
   family: "ZI"
   gloss: "#named"
   short: "[E:tce a] is named after the E place of the following predicate."
@@ -792,6 +909,7 @@ za:
     Another place can be selected by adding a SE particle between {za} and the
     predicate.
 zai:
+  id: BZmSFmnIYb
   family: "ZI"
   gloss: "#ident"
   short: "[E:ma] is the symbol representing the E place of the following predicate."
@@ -802,10 +920,12 @@ zai:
 
     It is mainly used to create identifiers used as map keys (see {kce}).
 pa:
+  id: aWzbv8iu8C
   family: "PA"
   gloss: "#assert"
   short: "Starts an assertive sentence, that the speaker asserts is true."
 pahu:
+  id: X6Uy2h6Mvl
   family: "PA"
   gloss: "#import"
   short: |
@@ -815,53 +935,64 @@ pahu:
     Such subjects are advanced physics, chemistry or maths for example.
   notes: "TODO: Define how the represented text is resolved."
 poi:
+  id: icI1WrUI6G
   family: "PO"
   gloss: "#question"
   short: "Start a question definition, the arguments being the unknown informations."
 di:
+  id: My7IrG3SVn
   family: "DI"
   gloss: "#attention-focus"
   short: |
     Attention focus: the listener should be extra attentive to the following word.
     Maybe it would be especially prone to confusion?
 die:
+  id: QoTeRL6gxK
   family: "DI"
   gloss: "#contrastive-focus"
   short: |
     Contrastive focus: It's that thing and not something else that was expected.
 dia:
+  id: SAFkCE8BIy
   family: "DI"
   gloss: "#newsworthiness focus"
   short: |
     Newsworthiness focus: Marks the part of the sentence containing the most
     important new information.
 de:
+  id: NP9l6evBTH
   family: "DE"
   gloss: "#interjection"
   short: "Attach a single predicate that acts as an interjection."
 dei:
+  id: fBxzQmrLEB
   family: "DE"
   gloss: "#metadata"
   short: "Attached word is a metadata tag / hashtag."
 da:
+  id: 1US2czWmre
   family: "DA"
   gloss: "("
   short: "Starts parenthetical note."
 dai:
+  id: cie8DRYOiS
   family: "DAI"
   gloss: ")"
   tags: [terminator]
   short: "Ends parenthetical note."
 du:
+  id: jJo3ibjQoy
   family: "DU"
   gloss: "#paragraph"
   short: "Marks a new paragraph/section/change of subject."
 bu:
+  id: PYZVhbNTb5
   family: "BU"
   gloss: "#list-separator"
   tags: [list]
   short: "List separator."
 buhu:
+  id: IqUyCzidl4
   family: "BU"
   gloss: "#list-erased"
   tags: [list]
@@ -872,6 +1003,7 @@ buhu:
 # -----
 
 vari:
+  id: FFdTxzMfBD
   family: "R"
   gloss: "and"
   tags: [connective]
@@ -882,6 +1014,7 @@ vari:
     po vari ge ga be
     ge vi ga
 vare:
+  id: ySH546Fklz
   family: "R"
   gloss: "or"
   tags: [connective]
@@ -892,6 +1025,7 @@ vare:
       vi bi ge
       fi bi ga
 varu:
+  id: ECzHMRmkqd
   family: "R"
   gloss: "if"
   tags: [connective]
@@ -911,6 +1045,7 @@ varu:
     poia varu mai
     poio varu mai
 kidvo:
+  id: 3sqq5pyzms
   family: "R"
   gloss: "transitive-rel"
   short: |
@@ -925,6 +1060,7 @@ kidvo:
           va ka
           fio go
 tcui:
+  id: G3quw0kqYl
   family: "R"
   gloss: "set-all-raw"
   tags: [set, axiom]
@@ -950,6 +1086,7 @@ tcui:
                     fie ka gi
     pi e tcui pi
 tcie:
+  id: RCpKbWYCM6
   family: "R"
   gloss: "set-member-raw"
   tags: [set, axiom]
@@ -957,6 +1094,7 @@ tcie:
     [E:a] is a member of set [A:tcui a].
   definition: See definition of tcui.
 tcia:
+  id: P8Mdb3rcQW
   family: "R"
   gloss: "subset"
   tags: [set]
@@ -969,6 +1107,7 @@ tcia:
         vie ki tcie ke
         fia ki tcie ka
 tcei:
+  id: PwFCkQJpdu
   family: "R"
   gloss: "set-some-raw"
   tags: [set]
@@ -978,6 +1117,7 @@ tcei:
     po tcie ke gia be
     ke tcia tcui gia
 tcai:
+  id: xEmhvHqIom
   family: "R"
   gloss: "set-one-raw"
   tags: [set]
@@ -992,6 +1132,7 @@ tcai:
         fi bo ko bi ka
         fi ko tcie ke
 tcoi:
+  id: ZLgjmfOqTb
   family: "R"
   gloss: "set-many-raw"
   tags: [set]
@@ -1005,6 +1146,7 @@ tcoi:
       fi bo ko bi ka
       fi ko tcie ke  
 tca:
+  id: 8W1JWFFZUr
   family: "R"
   gloss: "set-one"
   tags: [set]
@@ -1014,6 +1156,7 @@ tca:
     po tca ke gia be
     ke se tcai gia
 tcu:
+  id: pvhOOr5xEb
   family: "R"
   gloss: "set-all"
   tags: [set]
@@ -1024,6 +1167,7 @@ tcu:
     ke tcui
       via be ba tcie tca gia
 tce:
+  id: TqLNLqXzSN
   family: "R"
   gloss: "set-some"
   tags: [set]
@@ -1034,6 +1178,7 @@ tce:
     ke tcei
       via be ba tcie tca gia
 tco:
+  id: SJMnh7XXPc
   family: "R"
   gloss: "set-many"
   tags: [set]
@@ -1044,6 +1189,7 @@ tco:
     ke tcoi
       via be ba tcie tca gia
 tci:
+  id: Fnw0vvX5iI
   family: "R"
   gloss: "set-member"
   tags: [set]
@@ -1052,6 +1198,7 @@ tci:
     po tci ke ka be
     ke tca tcie ka
 dji:
+  id: ryX470PN2X
   family: "R"
   gloss: "set-union"
   tags: [set]
@@ -1063,6 +1210,7 @@ dji:
         ve ki tci ka
         fa ki tci ko
 dje:
+  id: 2yen5K9Sgq
   family: "R"
   gloss: "set-intersection"
   tags: [set]
@@ -1074,6 +1222,7 @@ dje:
         ve ki tci ka
         fa ki tci ko
 dja:
+  id: fna9X09it8
   family: "R"
   gloss: "set-diff"
   tags: [set]
@@ -1085,6 +1234,7 @@ dja:
         ve ki tci ka
         fa bi ki tci ko
 djo:
+  id: ZKZU7UyHIt
   family: "R"
   gloss: "set-local-max"
   tags: [set]
@@ -1098,6 +1248,7 @@ djo:
         fi ka gia
         fi ke tcia ka
 dju:
+  id: Jw7zEwcWOS
   family: "R"
   gloss: "set-local-min"
   tags: [set]
@@ -1111,6 +1262,7 @@ dju:
         fi ka gia
         fi ka tcia ke
 kin:
+  id: HypKA57WfP
   family: "R"
   gloss: "par"
   short: |
@@ -1133,6 +1285,7 @@ kin:
                  fo ko
     pi e kin pi
 e zai pe:
+  id: HGqSGBLy3t
   family: "C2"
   gloss: "ident"
   short: |
@@ -1147,12 +1300,14 @@ e zai pe:
           vie gi mai
           fie bi gi mai
 blur:
+  id: nRo51pM4q2
   family: "R"
   gloss: "empty-list"
   tags: [list]
   short: |
     [E:ma] is the empty list.
 blu:
+  id: 4tUAiV3x0B
   family: "R"
   gloss: "list"
   tags: [list]
@@ -1161,6 +1316,7 @@ blu:
   notes: |
     {bu} is syntaxic sugar to make lists.
 bla:
+  id: 6OXeLXxWxD
   family: "R"
   gloss: "list-lfold"
   tags: [list]
@@ -1168,43 +1324,57 @@ bla:
     Left folds list [E:blu a] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,a)] in first to last order.
 blai:
+  id: ZBLKtnj4An
   family: "R"
   gloss: "list-rfold"
   tags: [list]
   short: |
     Right folds list [E:blu a] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,a)] in last to first order.
+blo:
+  id: Zp415DP0q0
+  family: "R"
+  gloss: "list-set-raw"
+  tags: [list, set]
+  short: |
+    [E:tce a] is the set containing only all the elements in list [A:blu a].
 bli:
+  id: t4oC9rX6i4
   family: "R"
   gloss: "list-set"
   tags: [list, set]
   short: |
     [E:tce a] is the set containing only all the elements in list [A:blu a].
 kcin:
+  id: wuklqBDxyK
   family: "R"
   gloss: "map"
   tags: [map]
   short: |
     [E:ma] is a map.
 kcil:
+  id: 4WxxLVhj9Q
   family: "R"
   gloss: "empty-map"
   tags: [map]
   short: |
     [E:kcin] is the empty map.
 kce:
+  id: ynV5inTH7z
   family: "R"
   gloss: "map-entry"
   tags: [map]
   short: |
     [E:a] is the value in map [A:kcin] for key [O:ma].
 kcei:
+  id: wvEAOvOSBk
   family: "R"
   gloss: "context-map-entry"
   tags: [map, context]
   short: |
     [E:a] is the value in the context map for key [A:ma].
 kcani:
+  id: PL5AgVbNwB
   family: "R"
   gloss: "map-remove"
   tags: [map]
@@ -1212,6 +1382,7 @@ kcani:
     [E:kcin] is obtained from [A:kcin] by removing the entry with key [O:ma].
     If [A] don't have entry with key [O] then [E] = [A].
 kcoi:
+  id: F3la0vNq2j
   family: "R"
   gloss: "map-insert"
   tags: [map]
@@ -1220,6 +1391,7 @@ kcoi:
     value [U:ma]. If [A] have an entry with key [O] then it is removed to insert
     the entry with key [O] and value [U].
 kcui:
+  id: DoLBaT4P3o
   family: "R"
   gloss: "map-update"
   tags: [map]
@@ -1228,6 +1400,7 @@ kcui:
     key [O:ma] using relation [U:(a,a)]. It implies that [A] must have an entry
     with key [O].
 kca:
+  id: onzG415aVk
   family: "R"
   gloss: "map-list-wrapper"
   tags: [map, list]
@@ -1235,18 +1408,21 @@ kca:
     [E:kcin] represents a map that can be optained from [A:kcin] by applying the
     list of transformations [O:blu ()].
 kcan:
+  id: EoGkr6Aqeg
   family: "R"
   gloss: "map-list-remove"
   tags: [map, list]
   short: |
     {kca} operation: remove entry with key [E:ma].
 kco:
+  id: oBhTXXK03b
   family: "R"
   gloss: "map-list-insert"
   tags: [map, list]
   short: |
     {kca} operation: insert entry with key [E:ma] and value [A:a].
 kcu:
+  id: oyk8ho9C8a
   family: "R"
   gloss: "map-list-update"
   tags: [map, list]
@@ -1254,66 +1430,77 @@ kcu:
     {kca} operation: transform entry with key [E:ma] with value relation
     (old,new) [A:(a,a)].
 kcar:
+  id: UqfVqmic1a
   family: "R"
   gloss: "context-map-list-wrapper"
   tags: [map, list, context]
   short: |
     Transformations [E:blu ()] are applied on the context before it is used to evaluate [A:()].
 din:
+  id: nIBP9gyGAU
   family: "R"
   gloss: "instant"
   tags: [time]
   short: |
     [E:ma] is an instant (digraph node).
 dini:
+  id: 3Qex7KHUq6
   family: "R"
   gloss: "time-arc"
   tags: [time]
   short: |
     [E:ma] is an instant (digraph node).
 dinu:
+  id: y7ADB2kwfZ
   family: "R"
   gloss: "time-span"
   tags: [time]
   short: |
     There exist an path/span [O:blu din] from node [E:din] to node [A:din].
 den:
+  id: dC8ilrq3MF
   family: "R"
   gloss: "update-present"
   tags: [time]
   short: |
     [E:()] is evaluated with a more recent present.
 pane:
+  id: VimWO5sOyJ
   family: "R"
   gloss: "inner-context"
   tags: [context]
   short: |
     [E:ma] is the context exposed to a predicate when it evaluated by [A:(())].
 del:
+  id: UMuUamPNQb
   family: "R"
   gloss: "present-span"
   tags: [time]
   short: |
     [E:dinu] is the present time span.
 zvi:
+  id: uULYQJXb0P
   family: "R"
   gloss: "event-span"
   tags: [time]
   short: |
     [E:dinu] is a time span shared by all events of [A:()].
 zvin:
+  id: aXofYgrpPP
   family: "R"
   gloss: "event-apply"
   tags: [time]
   short: |
     Time span [E:dinu] contains context time span.
 zvil:
+  id: Gnr18x6OhK
   family: "R"
   gloss: "context-span"
   tags: [time, context]
   short: |
     [E:dinu] is the context time span.
 zvan:
+  id: Dv3jdkkPCp
   family: "R"
   gloss: "necessary-helper"
   tags: [time]
@@ -1322,78 +1509,91 @@ zvan:
     - [E:(dinu)] evaluated with x is true
     - [E] is true if evaluated with a time span containing x
 sel:
+  id: VqAjm3Pj2j
   family: "R"
   gloss: "possible-meets"
   tags: [time]
   short: |
     It is possible that [E:()] meets the context time span.
 sen:
+  id: BUdfWlwobc
   family: "R"
   gloss: "necessary-meets"
   tags: [time]
   short: |
     It is necessary that [E:()] meets the context time span.
 sal:
+  id: BwjGs2aFh9
   family: "R"
   gloss: "possible-starts"
   tags: [time]
   short: |
     It is possible that [E:()] starts the context time span.
 san:
+  id: G2NiGDhluP
   family: "R"
   gloss: "necessary-starts"
   tags: [time]
   short: |
     It is necessary that [E:()] starts the context time span.
 sol:
+  id: zJxJLLLlAh
   family: "R"
   gloss: "possible-finishes"
   tags: [time]
   short: |
     It is possible that [E:()] finishes the context time span.
 son:
+  id: LV8No7Q8p9
   family: "R"
   gloss: "necessary-finishes"
   tags: [time]
   short: |
     It is necessary that [E:()] finishes the context time span.
 sul:
+  id: AXTM6ugdmG
   family: "R"
   gloss: "possible-met-by"
   tags: [time]
   short: |
     It is possible that [E:()] is met by the context time span.
 sun:
+  id: zZDdSvsOkx
   family: "R"
   gloss: "necessary-met-by"
   tags: [time]
   short: |
     It is necessary that [E:()] is met by the context time span.
 siel:
+  id: lutdquie7v
   family: "R"
   gloss: "possible-before"
   tags: [time]
   short: |
     It is possible that [E:()] is before the context time span.
 sien:
+  id: L4IdMHYHTm
   family: "R"
   gloss: "necessary-before"
   tags: [time]
   short: |
     It is necessary that [E:()] is before the context time span.
 sial:
+  id: kv6DCgd35e
   family: "R"
   gloss: "possible-contains"
   tags: [time]
   short: |
     It is possible that [E:()] contains the context time span.
 sian:
+  id: 4pwuTFYqUS
   family: "R"
   gloss: "necessary-contains"
   tags: [time]
   short: |
     It is necessary that [E:()] contains the context time span.
 siol:
+  id: Q3D47Lpfvg
   family: "R"
   gloss: "possible-is-contained"
   tags: [time]
@@ -1404,6 +1604,7 @@ siol:
     then there is only one possible timeline. Thus it is both possible and
     necessary.
 sion:
+  id: NKyo9Z7x2w
   family: "R"
   gloss: "necessary-is-contained"
   tags: [time]
@@ -1414,42 +1615,49 @@ sion:
     then there is only one possible timeline. Thus it is both possible and
     necessary.
 siul:
+  id: ChYjdknLH3
   family: "R"
   gloss: "possible-after"
   tags: [time]
   short: |
     It is possible that [E:()] is after the context time span.
 siun:
+  id: dOT0W2JlN9
   family: "R"
   gloss: "necessary-after"
   tags: [time]
   short: |
     It is necessary that [E:()] is after the context time span.
 sil:
+  id: Ggonkf8B9I
   family: "R"
   gloss: "possible-overlaps"
   tags: [time]
   short: |
     It is possible that [E:()] overlaps with the context time span.
 sin:
+  id: 2NShmLKxd0
   family: "R"
   gloss: "necessary-overlaps"
   tags: [time]
   short: |
     It is necessary that [E:()] overlaps with the context time span.
 dan:
+  id: fKqgnv2HI2
   family: "R"
   gloss: "occurs-presently"
   tags: [time]
   short: |
     [E:()] presently occurs.
 don:
+  id: 0c5T0LKFlg
   family: "R"
   gloss: "occurs-anytime"
   tags: [time]
   short: |
     [E:()] occurs at some time (no constraint).
 doni:
+  id: QfxUSO4EIJ
   family: "R"
   gloss: "occurs-time-span"
   tags: [time]
@@ -1461,6 +1669,7 @@ doni:
 # -----
 
 pen:
+  id: RjAmI7df3U
   family: "R"
   gloss: physical
   tags: [space]
@@ -1468,33 +1677,52 @@ pen:
     [E:tca man] is a physical entity which occupies volume [A:tce man] at
     instant [O:dini].
 pan:
+  id: WHi7bmeZOY
   family: "R"
   gloss: context-physical
   tags: [space, context]
   short: |
     [E:tca man] is a physical entity which intersects with the context volume.
 gin:
+  id: 4UxUHDKbeZ
   family: "R"
   gloss: number-natural
   tags: [math, number]
   short: "[E:tce* man] is a natural number."
 gini:
+  id: WxXMVR9ZX2
   family: "R"
   gloss: succ
   tags: [partial, math, number]
   short: "[E:tca ma] is the successor of [A:tca ma]."
 ginin:
+  id: W8GH1nGGCN
   family: "R"
   gloss: zero
   tags: [math, number]
   short: "[E:tca gin] is zero."
 gen:
+  id: SYw83vo8HB
   family: "R"
   gloss: number-real
   tags: [math, number]
   short: "[E:tce* man] is a real number."
+gan:
+  id: Fwg6wBEotx
+  family: "R"
+  gloss: number-unit
+  tags: [math, number]
+  short: "[E:tce* man] is a real number with unit [A:ma]."
+  notes: |
+    [E] can be expressed by the product of a real (unit-less) number ({gen})
+    multiplied by unit-based number ({gan}) [A].
+
+    {gan} numbers can freely be multiplied together with their units being
+    multiplied together too. However it is not possible to add 2 {gan} numbers
+    that don't have the same unit. 
 
 skan:
+  id: 4u8H1CWf6P
   family: "R"
   gloss: string
   tags: [struct, string]
@@ -1506,507 +1734,618 @@ skan:
     can be speakable, embeded file, etc).
 
 cna:
+  id: MlqKHowtl0
   family: "R"
   gloss: "AND-S"
   tags: [sequence, connective]
   short: "This proposition is true if all symbols in sequence [E:blu ma] satisfies property [A:(ma)]."
 cne:
+  id: vAL5mSURqC
   family: "R"
   gloss: "OR-S"
   tags: [sequence, connective]
   short: "This proposition is true if at least one symbol in sequence [E:blu ma] satisfies property [A:(ma)]."
 cni:
+  id: nax6Hot9QU
   family: "R"
   gloss: "XOR-S"
   tags: [sequence, connective]
   short: "This proposition is true if exactly [E:gin] (default: 1) symbols in sequence [E:blu ma] satisfies property [A:(ma)]."
 cena:
+  id: qsIvBORAPS
   family: "R"
   gloss: "AND-P0"
   tags: [sequence, connective]
   short: "This proposition is true if all propositions in sequence [E:blu ()] are true."
 cene:
+  id: d9fzFK4r83
   family: "R"
   gloss: "OR-P0"
   tags: [sequence, connective]
   short: "This proposition is true if at least one proposition in sequence [E:blu ()] is true."
 ceni:
+  id: f5t4czvNAc
   family: "R"
   gloss: "XOR-P0"
   tags: [sequence, connective]
   short: "This proposition is true if exactly [E:gin] (default: 1) proposition(s) in sequence [E:blu ()] is true."
 cana:
+  id: ovZZFAjdLW
   family: "R"
   gloss: "AND-P1"
   tags: [sequence, connective]
   short: "This proposition is true if [E:ma] satisfies all properties in sequence [A:blu (ma)]."
 cane:
+  id: 6KsleoTKnL
   family: "R"
   gloss: "OR-P1"
   tags: [sequence, connective]
   short: "This proposition is true if [E:ma] satisfies at least one property in sequence [A:blu (ma)]."
 cani:
+  id: KoG0CgVvzA
   family: "R"
   gloss: "XOR-P1"
   tags: [sequence, connective]
   short: "This proposition is true if [E:ma] satisfies exactly [O:gin] (default: 1) proposition(s) in sequence [A:blu (ma)]."
 cona:
+  id: 4AAmCWbbMI
   family: "R"
   gloss: "AND-P2"
   tags: [sequence, connective]
   short: "This proposition is true if [E:ma] and [A:ma] satisfies all relations in sequence [O:blu (ma,ma)]."
 cone:
+  id: y8TEg1W87d
   family: "R"
   gloss: "OR-P2"
   tags: [sequence, connective]
   short: "This proposition is true if [E:ma] and [A:ma] satisfies at least one relation in sequence [O:blu (ma,ma)]."
 coni:
+  id: 6XyrpofOBy
   family: "R"
   gloss: "XOR-P2"
   tags: [sequence, connective]
   short: "This proposition is true if [E:ma] and [A:ma] satisfies exactly [U:gin] (default: 1) relation(s) in sequence [O:blu (ma,ma)]."
 mone:
+  id: QT6yEW5Oof
   family: "R"
   gloss: "<"
   tags: [maths, ordering]
-  short: "[E:tce* gen] is less than [A:tce* gen]."
+  short: "[E:tce* gan] is less than [A:tce* gan]."
   notes: |
     Operate on sets of numbers. True only if all members of [E] are less than all
     members of [A].
 mona:
+  id: ENnPP99PjL
   family: "R"
   gloss: ">"
   tags: [maths, ordering]
-  short: "[E:tce* gen] is greater than [A:tce* gen]."
+  short: "[E:tce* gan] is greater than [A:tce* gan]."
   notes: |
     Operate on sets of numbers. True only if all members of [E] are less than all
     members of [A].
 fule:
+  id: 86gUwrqJob
   family: "R"
   gloss: "knows"
   short: "[E:tce* pan] knows fact [A:()] from source [O:tce man]."
 dona:
+  id: iFFa5O0qnw
   family: "R"
   gloss: "likes"
   tags: [emotion]
   short: "[E:tce* pan] likes [A:tce* man]."
 jveo:
+  id: 4lHxmSpAt4
   family: "R"
   gloss: "friend"
   tags: [emotion]
   short: "[E:tce* pan] is a friend of [A:tce* pan]."
 kli:
+  id: wSIHLY4N1c
   family: "R"
   gloss: "thanks"
   tags: [emotion]
   short: "[E:tce* pan] thanks/is thankful to [A:tce* man] about [O:()] being true."
 kre:
+  id: WB1Zm07d82
   family: "R"
   gloss: "helps"
   short: |
     [E:tce pan] helps [A:tce ma] to satisfy property [O:(tce ma)].  
     [A] is the one satisfying [O], and [E] doesn't need to satisfy [O].
 vahul:
+  id: SvNdl4HkMC
   family: "R"
   gloss: "milk"
   short: "[E:tce* pan] is milk."
 mian:
+  id: vGEqtEAo1c
   family: "R"
   gloss: "cat"
   tags: [animal]
   short: "[E:tce* pan] is a cat/felid/member of family Felidae."
 gla:
+  id: kmyCFJjNV4
   family: "R"
   gloss: "tool"
   short: "[E:tce* ma] [tool] is used to make [A:()] [purpose] true."
 kali:
+  id: EGsQs45rsj
   family: "R"
   gloss: "drinks"
   short: "[E:tce* pan] drinks [E:tce* pan]."
 buri:
+  id: Fp326p16Jr
   family: "R"
   gloss: "eats"
   short: "[E:tce* pan] eats [A:tce* pan]."
 zin:
+  id: JcT2wcSUqa
   family: "R"
   gloss: "woman"
   short: "[E:tce* pan] is a girl/woman/female (gender)."
 zun:
+  id: FdjU08ghm9
   family: "R"
   gloss: "man"
   short: "[E:tce* pan] is a boy/man/male (gender)."
 tsae:
+  id: 4w27TtY2ds
   family: "R"
   gloss: "creates"
   short: "[E:tce pan] invents/creates/authors [A:tce* ma]."
 zuna:
+  id: yhzWpeNGy5
   family: "R"
   gloss: "inspired"
   short: "[E:tce* pan] is inspired by [A:tce* ma]. [A] is a source of inspiration for [A]."
 zvia:
+  id: PCBYHPj1jy
   family: "R"
   gloss: "purpose"
   short: "[E:tce pan] has goal/purpose/aims to satisfy [A:(tce pan)]."
 skal:
+  id: FX1mnfjS7I
   family: "R"
   gloss: "computer"
   short: "[E:tce* pan] is a computer."
 sni:
+  id: Nj03wVtsbv
   family: "R"
   gloss: "greets"
   short: "[E:tce* pan] (default: speaker) says hello to/greets [A:tce* pan] (default: listener)."
 sne:
+  id: KNHMUSsoxm
   family: "R"
   gloss: "goodbye"
   short: "[E:tce* pan] (default: speaker) says goodbye to [A:tce* pan] (default: listener)."
 sna:
+  id: BlZBlPa7fO
   family: "R"
   gloss: "welcomes"
   short: "[E:tce* pan] (default: speaker) welcomes [A:tce* pan] (default: listener) to place [O:tce* pan]."
 spi:
+  id: wlkwneqcYU
   family: "R"
   gloss: "says"
   short: "[E:tce pan] says [A:tce* skan] to [O:tce* ma]."
 spua:
+  id: QWnwYmRsCy
   family: "R"
   gloss: "home"
   short: "[E:tce* pan] is a home/house/nest for [A:tce* pan]."
 zaro:
+  id: RzmCeyzcGR
   family: "R"
   gloss: "agrees"
   short: "[E:tce* pan] agrees with [A:tce* pan] that [O:()] is true."
 vani:
+  id: mEUQG48faW
   family: "R"
   gloss: "moves"
   short: "[E:tce* pan] moves/goes to [A:tce* pan] from [O:tce* pan]."
 gza:
+  id: 3qi3tVPeGs
   family: "R"
   gloss: "agentive cause"
   short: "[E:tce* pan] is an agentive cause of [A:()] being true."
 kini:
+  id: mAcAeGnaMS
   family: "R"
   gloss: "learns"
   short: "[E:tce* pan] learns/studies fact [A:()]."
 seru:
+  id: 5fvGWZwvR1
   family: "R"
   gloss: "about"
   short: "[E:tce* man] is about subject [A:tce* man]."
 snai:
+  id: q0VX1IdoEj
   family: "R"
   gloss: "works"
   short: "[E:tce pan] labors/works by satisfying property [A:(tce pan)]."
 ber:
+  id: VZ1H8CCnMh
   family: "R"
   gloss: "eberbanic"
   short: "[E:tce* man] reflects this language (eberban)."
 pre:
+  id: nZLS6Wh1l5
   family: "R"
   gloss: "person"
   short: "[E:tce* pan] is a person."
 pra:
+  id: ScJlBqKhJ0
   family: "R"
   gloss: "loves"
   tags: [emotion]
   short: "[E:tce* pan] loves [A:tce* man]."
 vire:
+  id: WII5ktrkfq
   family: "R"
   gloss: "visits"
   short: "[E:tce* pan] visits [E:tce* pan]."
 peol:
+  id: Zw3Nafu6XR
   family: "R"
   gloss: "city"
   short: "[E:tce* pan] is a town/city."
 zdir:
+  id: nQrMFWPnrs
   family: "R"
   short: |
     [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: speaker)
     in property [O:(tce man)].
   gloss: "amusing"
 fir:
+  id: a7E6flMCNA
   family: "R"
   gloss: "color"
   tags: [color]
   short: "[E:tce* man] is a color."
 firu:
+  id: Ua0hkCZF04
   family: "R"
   gloss: "color"
   tags: [color]
   short: "[E:tce* fir] is a color of [A:tce pan]."
 sare:
+  id: hO1az3MCL2
   family: "R"
   gloss: "mutual"
   short: "[E:tco man] is a group where every pair of members mutualy satisfy relation [A:(tca man, tca man)]."
 gli:
+  id: r7WBdwQGM0
   family: "R"
   gloss: "happy"
   short: "[E:tce* pan] is happy about [A:()] being true."
 siro:
+  id: xGbQOobjVR
   family: "R"
   gloss: "translation"
   short: "[E:tce* skar] (source) has translation [A:tce* skar] (result)."
 tcuin:
+  id: W85kMShRmV
   family: "R"
   short: "[E:tce* pan] is a tree."
   gloss: "tree"
 jnaor:
+  id: 7i380kaAVf
   family: "R"
   gloss: "wild"
   short: "[E:tce* pan] is wild/untamed."
 jine:
+  id: IslEImaJzc
   family: "R"
   gloss: "want"
   short: "[E:tce* pan] desires/wants/wishes [A:()]."
 fuher:
+  id: OdAIzkIBAQ
   family: "R"
   gloss: "fly"
   short: "[E:tce* pan] flies [in air/space]."
 folin:
+  id: UeQbCavBvQ
   family: "R"
   gloss: "airplane"
   short: "[E:tce* pan] is an airplane."
 jleo:
+  id: L2Gx6yAUc8
   family: "R"
   gloss: "motivated"
   short: "[E:tce* pan] is motivated to make [A:()] true by [O:tce* man] (motivation)."
   notes: |
     TODO: Define what a motivation is. someone else? propositions?
 zuan:
+  id: bAyIlNplg2
   family: "R"
   gloss: "walks"
   short: "[E:tce* pan] walks."
 vune:
+  id: X2X2xEyE5x
   family: "R"
   gloss: "enjoyable"
   short: "[E:tce* man] is enjoyable/great/nice for [A:tce* pan]."
 jvin:
+  id: OOyVgLzn7l
   family: "R"
   gloss: "dances"
   short: "[E:tce* pan] dances."
 blan:
+  id: 7QNi8HUXUw
   family: "R"
   short: "[E:tce* man] is beautiful."
   gloss: "beautiful"
   notes: |
     TODO: According to which standard/observer ?
 pcien:
+  id: 0uUJkOTag5
   family: "R"
   gloss: "bread"
   short: "[E:tce* pan] is bread."
 ban:
+  id: pwmXUtEKTW
   family: "R"
   short: "[E:tce* man] is a language."
   gloss: "language"
 banu:
+  id: CVBGY6PdJN
   family: "R"
   short: "[E:tce* skar] is expressed in language [A:tce* ban]."
   gloss: "language"
 vli:
+  id: wlBcGGayj6
   family: "R"
   short: "[E:tce* skar] is written/inscribed on display/storage medium [A:tce* pan]."
   gloss: "written"
 soane:
+  id: RMpKifSf0C
   family: "R"
   gloss: "stolen"
   short: "[E:tce* pan] is stolen from [A:tce* pan]."
   notes: |
     Use with {gza} to express who/what steals (E-Xd).
 tri:
+  id: dzRpfteVT6
   family: "R"
   gloss: "attemps"
   short: |
     [E:tce* pan] tries/attemps to do/bring about [A:()].
     Success is neither implied or disimplied.
 tuli:
+  id: ylA5j5NzDA
   family: "R"
   gloss: "needs"
   short: "[E:tce* man] requires/needs [A:()] to being true. [A] is a necessity for [E]."
 miun:
+  id: mu4oShPUCP
   family: "R"
   gloss: "sleeps"
   short: "[E:tce* pan] sleeps."
 juni:
+  id: fKB8OGaEWe
   family: "R"
   gloss: "good"
   short: "[E:tce* man] is good."
   notes: |
     TODO: According to which standard/observer ?
 junu:
+  id: sKE4U4gwYX
   family: "R"
   gloss: "bad"
   short: "[E:tce* man] is bad."
   notes: |
     TODO: According to which standard/observer ?
 kunu:
+  id: 6rUNpjLjp0
   family: "R"
   gloss: "feels"
   short: "[E:tce* pan] feels sentiment/emotion/sensation [A:tce* man]."
   notes: |
     TODO: Define sentiment/emotion/sensation.
 viru:
+  id: r9JOfkaOWc
   family: "R"
   gloss: "sees"
   short: "[E:tce* pan] sees [A:tce* pan]."
 pure:
+  id: Uj342f9oAw
   family: "R"
   gloss: "hears"
   short: "[E:tce* pan] hears/listen to [A:tce* man]."
 cen:
+  id: oqK7Vz0ubT
   family: "R"
   gloss: "word"
   short: "[E:tce* man] is a word."
   notes: |
     TODO: See {cei} notes.
 vain:
+  id: nDeDgzIYtG
   family: "R"
   gloss: "alive"
   short: "[E:tce* pan] is alive."
 vaun:
+  id: 647ZwUcGF3
   family: "R"
   gloss: "dead"
   short: "[E:tce* pan] is dead."
 cfin:
+  id: r3ghqJWt6v
   family: "R"
   gloss: "solid"
   tags: [matter]
   short: "[E:tce* pan] is a solid [state of matter]."
 cfen:
+  id: 6rKo2Uu7VA
   family: "R"
   gloss: "liquid"
   tags: [matter]
   short: "[E:tce* pan] is a liquid [state of matter]."
 cfan:
+  id: mFalhp75EO
   family: "R"
   gloss: "gas"
   tags: [matter]
   short: "[E:tce* pan] is a gas [state of matter]."
 jeon:
+  id: XzlLYv1Sx1
   family: "R"
   gloss: "water"
   tags: [matter]
   short: "[E:tce* pan] is water."
 gour:
+  id: IlFtg4btMC
   family: "R"
   gloss: "dog"
   tags: [animal]
   short: "[E:tce* pan] is a dog."
 kanan:
+  id: EDMWC8ujNr
   family: "R"
   gloss: "wolf"
   tags: [animal]
   short: "[E:tce* pan] is a wolf."
 kroan:
+  id: 3OJSOCUQrE
   family: "R"
   gloss: "frog"
   tags: [animal]
   short: "[E:tce* pan] is a frog."
 toril:
+  id: QSEVjdaUr5
   family: "R"
   gloss: "bird"
   tags: [animal]
   short: "[E:tce* pan] is a bird."
 cein:
+  id: Ju1aijNtrb
   family: "R"
   gloss: "room"
   short: "[E:tce* pan] is a room."
 caun:
+  id: kAr7h43dRl
   family: "R"
   gloss: "animal"
   tags: [animal]
   short: "[E:tce* pan] is an animal."
 flur:
+  id: hP3x2jerUn
   family: "R"
   gloss: "plant"
   short: "[E:tce* pan] is a plant."
 jveno:
+  id: 5z3fg2p8rj
   family: "R"
   gloss: "friendly"
   short: "[E:tce* pan] is kind/behaves friendly towards [A:tce* man]."
 slari:
+  id: DULprQX3Y8
   family: "R"
   gloss: "rule"
   short: "[E:tce* man] is a rule/law prescribing/mandating/requiring [A:()]."
 zire:
+  id: CsB8qaMCqg
   family: "R"
   gloss: "respects"
   short: "[E:tce* pan] respects [A:tce* man]."
 zbui:
+  id: Fn8NaChGm7
   family: "R"
   gloss: "copulates"
   short: "[E:tce* pan] have sex/sexual intercourse/copulates/mates with [A:tce* pan]."
 jiro:
+  id: QpTDOAahae
   family: "R"
   gloss: "shares"
   short: "[E:tce* pan] shares [A:tce* man] with [O:tce* pan]."
 sier:
+  id: WYuLrjPHcd
   family: "R"
   gloss: "internet"
   short: "[E:tca man] is the Internet."
 stini:
+  id: LF05KqsaiU
   family: "R"
   gloss: "rigid"
   short: "[E:tce* pan] is rigid/not bendable."
 merue:
+  id: C84ADmq4Vz
   family: "R"
   gloss: "organism"
   short: "[E:tce* pan] is an organism / form of life."
 slane:
+  id: tORlVZGLzH
   family: "R"
   gloss: "tied"
   short: "[E:tce* pan] is tied/pinned to [A:tce* pan]."
 skien:
+  id: gpQertoUzZ
   family: "R"
   gloss: "program"
   short: "[E:tce* man] is a computer program."
 zari:
+  id: Y9CpAqTWG7
   family: "R"
   gloss: "recipe"
   short: "[E:tce* man] is a recipe, algorithm, procedure to achieve result [A:tce* man]."
 zeni:
+  id: YUeSRKiajK
   family: "R"
   gloss: "provided"
   short: "[E:tce* pan] [supply/commodity] is provided to [A:tce* pan]."
   notes: |
     Use with {gza} to express who/what provides [E].
 curo:
+  id: 6FkzTdM4xL
   family: "R"
   gloss: "grammar"
   short: "[E:tca man] is the grammar of [A:tca man]."
   notes: |
     TODO: See {cei} notes.
 tsiu:
+  id: OoWOy3auEp
   family: "R"
   gloss: "finds"
   short: "[E:tce* pan] finds/discovers [A:tce* man]."
 bun:
+  id: ERNf6oH1ZG
   family: "R"
   gloss: "text"
   short: "[A:tce* man] is a text."
 bino:
+  id: 83SkLgoRVt
   family: "R"
   gloss: "sick"
   short: "[E:tce* pan] is ill/sick from disease [A:tce* man]."
 saul:
+  id: 7hsf409FLE
   family: "R"
   gloss: "light"
   short: "[E:tce* pan] is light [energy]."
 cmiri:
+  id: A0Ngc6Glp1
   family: "R"
   gloss: "emits"
   short: "[E:tce* pan] emits/produce [A:tce* pan]."
 cmiru:
+  id: StnIKXM23l
   family: "R"
   gloss: "receives"
   short: "[E:tce* pan] receives/absorbs [A:tce* pan]."
 flun:
+  id: uU6CakExUR
   family: "R"
   gloss: "sound"
   short: "[A:tce* man] is a sound."
 fana:
+  id: YdAfwz0dPC
   family: "R"
   gloss: "social parent"
   tags: [kinship, family]
   short: "[E:tce* pan] is a social parent of [A:tce* pan] (child). [E] raises [A]."
 vele:
+  id: QEXVxnyXRj
   family: "R"
   gloss: "genetic parent"
   tags: [kinship, family]
@@ -2014,28 +2353,33 @@ vele:
     [E:tce* pan] is a genetic direct parent of [A:tce* pan].
     [E] directly contributes to the genetic makeup of [A].
 kana:
+  id: XRPtHmvQZq
   family: "R"
   gloss: "sibling"
   tags: [kinship, family]
   short: "[E:tce* pan] is a sibling/brother/sister of [A:tce* pan]."
 kene:
+  id: dkMrgJgRiV
   family: "R"
   gloss: "nibling"
   tags: [kinship, family]
   short: "[E:tce* pan] is a nibling/nephew/nice of [A:tce* pan] (uncle/aunt)."
 mana:
+  id: lA6bQYSk7n
   family: "R"
   gloss: "mother"
   tags: [kinship, family]
   short: "[E:tce* pan] is a (social) mother of [A:tce* pan]."
   notes: Equivalent to {zin fana}.
 pana:
+  id: kFxORUfmMW
   family: "R"
   gloss: "father"
   tags: [kinship, family]
   short: "[E:tce* pan] is a (social) father of [A:tce* pan]."
   notes: Equivalent to {zun fana}.
 jnehu:
+  id: DMqfP5rPQ1
   family: "R"
   gloss: "takes care"
   tags: [kinship, family]
@@ -2043,15 +2387,18 @@ jnehu:
     [E:tce* pan] takes cares of [A:tce* pan].
     [E] ensures that the needs of [A] are fulfulled.
 dzana:
+  id: xm9TSE7CCt
   family: "R"
   gloss: "married"
   tags: [kinship, family]
   short: "[E:tce* pan] is married to [A:tce* pan]."
 kineo:
+  id: 96lVpzzKoM
   family: "R"
   gloss: "touches"
   short: "[E:tce* pan] touches [A:tce* pan]."
 varin:
+  id: JGEWShmmt3
   family: "R"
   gloss: "strange"
   short: "[E:tce* man] is strange/weird."
@@ -2059,22 +2406,27 @@ varin:
     TODO: According to who? Since it seems subjective, could it use a
     subjective "actor" in the context?
 zvaor:
+  id: lSnJ8JJKMu
   family: "R"
   gloss: "accident"
   short: "[E:()] is an accident/unintentional."
 teran:
+  id: I24b50Cv0L
   family: "R"
   gloss: "planet"
   short: "[E:tce* pan] is a planet."
 soran:
+  id: H9J1gG2cwz
   family: "R"
   gloss: "star"
   short: "[E:tce* pan] is a star."
 zilan:
+  id: YfcJ6sJbSS
   family: "R"
   gloss: "moon"
   short: "[E:tce* pan] is a major natural satellite/moon."
 kari:
+  id: W0Aqh2UWHk
   family: "R"
   gloss: "axiom"
   short: "[E:tce* pan] has axiomatic belief that [A:()] is true."
@@ -2082,126 +2434,156 @@ kari:
     [A] is an axiom, is presupposed to be true and it's truth value is never
     put into doupt.
 meon:
+  id: YM0O9Kvaix
   family: "R"
   gloss: "apple"
   short: "[E:tce* pan] is an apple."
   tags: [food]
 kcaor:
+  id: xsvrcY3WoF
   family: "R"
   gloss: "table"
   short: "[E:tce* pan] is a table."
 stan:
+  id: Bc0E4pcZ9H
   family: "R"
   gloss: "country"
   short: "[E:tce* pan] is a country/territory."
 drair:
+  id: UuwuFIyz1v
   family: "R"
   gloss: "god"
   short: "[E:tce* man] is a god."
 kroin:
+  id: BiiaXHDWtB
   family: "R"
   gloss: "leg"
   short: "[E:tce* pan] is a leg."
 kani:
+  id: pUq4yi3RrF
   family: "R"
   gloss: "infers from senses"
   short: "[E:tce* pan] infers from their current sensorial experience that [A:()] is the case."
 mara:
+  id: WDUghdRR2i
   family: "R"
   gloss: "remembers"
   short: "[E:tce* pan] remembers the past experience of perceiving that [A:()] was the case."
 zule:
+  id: xq83JvZD55
   family: "R"
   gloss: "hearsay"
   short: "[E:tce* pan] has got second-hand information or hearsay according to which [A:()] is the case."
 muni:
+  id: wL8bGxuACJ
   family: "R"
   short: "[E:tce* pan] intuits that [A:()] is the case."
   gloss: "intuits"
 sana:
+  id: ettIfc4JMJ
   family: "R"
   gloss: "cultural knowledge"
   short: "[E:tce* pan] has cultural knowledge, collective wisdom according to which [A:()] is the case."
 valo:
+  id: w14BPLMcqv
   family: "R"
   gloss: "infers from multiple sources"
   short: "[E:tce* pan] infers (from several sources of information) that [A:()] is the case."
 bale:
+  id: kTG311prdC
   family: "R"
   gloss: "standing"
   short: "[E:tce* pan] is standing on [A:tce* pan]."
 ctua:
+  id: LZWen9akg1
   family: "R"
   gloss: "sit"
   short: "[E:tce* pan] is sitting on [A:tce* pan]."
 proi:
+  id: P6Vxsz77G5
   family: "R"
   gloss: "lying down"
   short: "[E:tce* pan] is lying down on [A:tce* pan]."
 gavgin:
+  id: CloBthv9y6
   family: "R"
   gloss: "crystal"
   short: "[E:tce* pan] is a crystal/gem/mineral with orderly atomic structure [A:tca man]."
 jalan:
+  id: ODewD63czr
   family: "R"
   short: "[E:tce* pan] is awake."
   gloss: "awake"
 celia:
+  id: FdSj3yNB15
   family: "R"
   gloss: "science"
   short: "[E:tca man] is the science/study/body of knowledge about topic [A:tce* man]."
   notes: |
     TODO: Define what a topic is.
 filu:
+  id: 1DEYt0qtEi
   family: "R"
   gloss: "gives birth"
   short: "[E:tce* pan] gives birth to/begets [A:tce* pan]."
 sahar:
+  id: 5f1Kx0ktX8
   family: "R"
   gloss: "flower"
   short: "[E:tce* pan] is a flower."
 kena:
+  id: Q9fYY1QN9D
   family: "R"
   gloss: "holds"
   short: "[E:tce* pan] holds/grasps [A:tce* pan]."
 clo:
+  id: pfzTomMryN
   family: "R"
   gloss: "purpose"
   short: "[E:tce man] have purpose to satisfy property [A:(tce man)]."
 jara:
+  id: WwIH32fwvC
   family: "R"
   gloss: "paid work"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as one of their jobs/occupations (paid work)."
 zera:
+  id: Od2vvlZDN2
   family: "R"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as a personality trait."
   gloss: "personality trait"
 blae:
+  id: xR7qUK0nzy
   family: "R"
   gloss: "owned"
   short: "[E:tce* man] is owned by [E:tce pan]."
 tsu:
+  id: PmbpuI1Xxn
   family: "R"
   gloss: "cardinality"
   short: "[E:tca gin] is the cardinality/number of elements of [A:tce a]."
 dzui:
+  id: ZWVJ8ibMcC
   family: "R"
   gloss: "able"
   short: "[E:tce pan] is able to satisfy property [A:(tce pan)]."
 
 benal:
+  id: cVVWmrotG2
   family: "R"
   gloss: "healthy"
   short: "[E:tce* pan] is healthy/fit/well/in good health."
 jogmal:
+  id: zC08TmqEuM
   family: "R"
   gloss: "wound"
   short: "[E:tce* pan] is a wound."
 meul:
+  id: AfKL3D764n
   family: "R"
   short: "[E:tce* pan] (default: water) is raining."
   gloss: "rain"
 znir:
+  id: bbmAOQi9R0
   family: "R"
   gloss: "obligated"
   short: |
@@ -2210,6 +2592,7 @@ znir:
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
 zner:
+  id: kaTsvpQhMR
   family: "R"
   gloss: "encouraged"
   short: |
@@ -2218,6 +2601,7 @@ zner:
     
     Examples: charity, volunteer work, being polite
 znar:
+  id: JUrAMNwMEy
   family: "R"
   gloss: "tolerated"
   short: |
@@ -2227,6 +2611,7 @@ znar:
     Examples: basically most actions are {sena}, there are so many examples
     -- the act of breathing is sena
 znor:
+  id: 2uiJ97w56c
   family: "R"
   gloss: "discouraged"
   short: |
@@ -2235,6 +2620,7 @@ znor:
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
 znur:
+  id: WtC0SBwIWj
   family: "R"
   gloss: "forbidden"
   short: |
@@ -2243,56 +2629,69 @@ znur:
     Examples: for many religions speaking badly of their deity is forbidden,
     crimes which are prosecuted, cheating on your partner in a monogamous relationship
 molai:
+  id: tD2LG6FAki
   family: "R"
   gloss: "reward/punishment"
   short: |
     [E:tce pan] is made to satisfy [A:(tce pan)] as a reward/punishment.  
     (E) is awarded/punished, with result that they satisfy [A].
 krehu:
+  id: gIUwXgDLvl
   family: "R"
   gloss: "meat"
   short: "[E:tce* pan] is meat from animal/source [A:tce* pan]."
 drie:
+  id: 034abxCQAu
   family: "R"
   gloss: "buys"
   short: "[E:tce pan] buys [A:tce pan] for price/in exchange for [O:tce pan] (where success is implied)."
 dria:
+  id: f6Na2jopyJ
   family: "R"
   gloss: "offers"
   short: "[E:tce pan] offers/intends to sell [A:tce pan] for price/in exchange for [O:tce pan] (where success is not implied)."
 pubdel:
+  id: FalmVa70zj
   family: "R"
   gloss: "soil"
   short: "[E:tce* pan] is soil/dirt/pebbles/silt/clay (soil of all types)."
 baluor:
+  id: wN6YzmYE8r
   family: "R"
   gloss: "stone"
   short: "[E:tce* pan] is a stone/rock/boulder (unified unbroken mass)."
 boiur:
+  id: TtvO8lgOX4
   family: "R"
   gloss: "dry land"
   short: "[E:tce* pan] is dry land (not watery, can be stepped on). [antonyms: {suier}, {gzeon}]"
 suier:
+  id: Wl3QAPtjZV
   family: "R"
   gloss: "sea"
   short: "[E:tce* pan] is a sea/ocean/lake (relatively large non-flowing body of water)."
 gzeon:
+  id: bvEJLt10si
   family: "R"
   gloss: "river"
   short: "[E:tce* pan] is a river/stream/brook (relatively large flowing body of water)."
 saelo:
+  id: 84wqipBPCE
   family: "R"
   gloss: "air"
   short: "[E:tce* pan] is air/breathable atmosphere/gas at correct pressure for [A:tce* pan] (default: {flan}/humans)."
 soeon:
+  id: ATOJlgas61
   family: "R"
   gloss: "sky"
   short: "[E:tce* pan] is is the sky (high troposphere and above)."
 cnue:
+  id: Kx3wALXiid
   family: "R"
   short: "[E:tce* pan] is a piece/portion/part of [A:tce pan]."
   gloss: "portion"
 duna:
+  id: pcq9ZoejUv
   family: "R"
   short: "[E:tce pan] gives [A:tce* pan] to [O:tce pan]."
   gloss: "gives"
@@ -2304,23 +2703,27 @@ duna:
 
     [E] does not accept payment or expect reciprocation from [O].
 skar:
+  id: VdlcQmqKoi
   family: "R"
   short: "[E:tce* man] is a string of data (quote)."
   gloss: "quote"
 flan:
+  id: cjj2u7H6ir
   family: "R"
   short: "[E:tce* man] is a human being."
   gloss: "human"
 fuli:
+  id: r8EZP2roOx
   family: "R"
-  short: "[E:tce gen] is the sum of numbers in list [A:blu tce gen]."
+  short: "[E:tce gan] is the sum of numbers in list [A:blu tce gan]."
   gloss: "sum"
 koro:
+  id: iOPhFsUXGP
   family: "R"
   gloss: "number pred"
   short: |
-    [E:(tce gen,tce gen)] is a predicate of the form: [E:tce gen] is [number]
-    times [A:tce gen] (default: 1).
+    [E:(tce gan,tce gan)] is a predicate of the form: [E:tce gan] is [number]
+    times [A:tce gan] (default: 1).
   notes: |
     Allows to check a predicate behaves like a number made from TI (+ jie), or
     other number predicates of the same form. Can be used to define math
@@ -2330,131 +2733,233 @@ koro:
     Example: {poi ga \[ge be\] fuli \[vi koro ge\] \[fa te bu, ta ge bu, to ge ge\] \[fe ti\]}\
     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
 
+
+
+bire:
+  id: PEuG1Pbvxf
+  family: "R"
+  gloss: "year"
+  short: "[E:tce gan] is 1 year times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+  notes: |
+    Since years don't all have the same duration (leap years and leap seconds),
+    and we're not speaking about a specific year in a calendar, [E] is a subset
+    of all possible durations of a year.
+
+    TODO: Define which kind of year? Calendar year? Which calendar?
+gare:
+  id: q5yr0tA93I
+  family: "R"
+  gloss: "month"
+  short: "[E:tce gan] is 1 month times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+  notes: |
+    Since months don't all have the same duration (leap years and leap seconds),
+    and we're not speaking about a specific month in a calendar, [E] is a subset
+    of all possible durations of a month.
+
+    TODO: Define which kind of month? Calendar month? Which calendar?
+kora:
+  id: CCFnHkIitg
+  family: "R"
+  gloss: "week"
+  short: "[E:tce gan] is 1 week (7 days) times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+  notes: |
+    Since weeks don't all have the same duration (leap seconds),
+    and we're not speaking about a specific week in a calendar, [E] is a subset
+    of all possible durations of a week.
+dena:
+  id: CfJH1V5inn
+  family: "R"
+  gloss: "day"
+  short: "[E:tce gan] is 1 day times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+  notes: |
+    Since days don't all have the same duration (leap seconds),
+    and we're not speaking about a specific week in a calendar, [E] is a subset
+    of all possible durations of a day.
+sura:
+  id: 7JDOJJj4Lv
+  family: "R"
+  gloss: "hour"
+  short: "[E:tce gan] is 1 hour times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+jero:
+  id: HxbYmE2TNH
+  family: "R"
+  gloss: "minute"
+  short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+vola:
+  id: mhRLCmuWvK
+  family: "R"
+  gloss: "second"
+  short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
+  tags: [time, unit]
+
+# jgere:
+#   id: Gi4jvUSXpM
+#   family: "R"
+#   gloss: "big"
+#   short: "[E:tce* pan] are big among all things that satisfy [A:(tca pan)]."
+#   notes: |
+#     It must be possible to know the size of each thing (TODO: have a predicate
+#     for that). 
+#     Each thing in E have more than a standard deviation from the average size
+#     of A.
+
 # -----
 # Compounds
 # -----
 e tsae ban:
+  id: Wf13QTgRwK
   family: "C2"
   gloss: "conlang"
   short: "[E:tce* ban] is a constructed language/conlang."
 e ber ban:
+  id: L3HOpxLJDm
   family: "C2"
   gloss: "eberban"
   tags: [cultural]
   short: "[E:tca ban] is the eberban language."
 e ujbo ban:
+  id: NgDsSrWkz9
   family: "C2"
   gloss: "lojban"
   tags: [cultural]
   short: "[E:tca ban] is the lojban language."
 e ufranse ban:
+  id: prQgtxzvj7
   family: "C2"
   gloss: "french language"
   tags: [cultural]
   short: "[E:tca ban] is the french language."
 e ufranse stan:
+  id: qL0K4ZdKcV
   family: "C2"
   gloss: "France"
   tags: [cultural]
   short: "[E:tca stan] is France."
 e uinglici ban:
+  id: fUNyADa7WL
   family: "C2"
   gloss: "english language"
   tags: [cultural]
   short: "[E:tca ban] is the english language."
 e unihon ban:
+  id: 1x7rQmd7o9
   family: "C2"
   gloss: "japanese language"
   tags: [cultural]
   short: "[E:tca ban] is the japanese language."
 e unihon stan:
+  id: mpd6XpvqNK
   family: "C2"
   gloss: "Japan"
   tags: [cultural]
   short: "[E:tca stan] is Japan."
 e udjonguo ban:
+  id: 6B3K4qZH5T
   family: "C2"
   gloss: "chinese language"
   tags: [cultural]
   short: "[E:tca ban] is chinese language."
 e udjonguo stan:
+  id: UMJWjOI13H
   family: "C2"
   gloss: "China"
   tags: [cultural]
   short: "[E:tca stan] is China."
 e udoitce ban:
+  id: Ro6uQ1IHPZ
   family: "C2"
   gloss: "german language"
   tags: [cultural]
   short: "[E:tca ban] is german language."
 e udoitce stan:
+  id: WrjRG2GVAv
   family: "C2"
   gloss: "Germany"
   tags: [cultural]
   short: "[E:tca stan] is Germany."
 e umiser stan:
+  id: vRBsUrc6EV
   family: "C2"
   gloss: "Egypt"
   tags: [cultural]
   short: "[E:tca stan] is Egypt."
 e uhangu ban:
+  id: HsClm6vDB3
   family: "C2"
   gloss: "south korean language"
   tags: [cultural]
   short: "[E:tca ban] is south korean language."
 e uhangu stan:
+  id: J5QGrZG33D
   family: "C2"
   gloss: "South Korea"
   tags: [cultural]
   short: "[E:tca stan] is South Korea."
 e utcoson ban:
+  id: XAPwBaT5R8
   family: "C2"
   gloss: "north korean language"
   tags: [cultural]
   short: "[E:tca ban] is north korean language."
 e utcoson stan:
+  id: M9UIA2QVMV
   family: "C2"
   gloss: "North Korea"
   tags: [cultural]
   short: "[E:tca stan] is North Korea."
 e kre vire:
+  id: t1wI0cEj5P
   family: "C2"
   gloss: "guided visit"
   short: "[E:tce* pan] visits [A:tce* pan] with guide [O:tce* pan]."
 e spi toril:
+  id: Z6Av1NqTUf
   family: "C2"
   gloss: "parrot"
   tags: [animal]
   short: "[E:tce* pan] is a parrot."
 e pu zoi:
+  id: sw1LnYrBPE
   family: "C2"
   gloss: "paragraph"
   short: "[E:tce* man] is a paragraph."
   notes: |
     TODO: See {cei} notes.
 e bino cnue:
+  id: o5VXdoaHHM
   family: "C2"
   gloss: "symptom"
   short: "[E:tce* man] [ill/sickness] is characterized by symptom [A:tce* man]."
 e spua teran:
+  id: uMamAeu1nA
   family: "C2"
   gloss: "home planet"
   short: "[E:tca pan] is the home planet of species [A:tce* man] (default: {flan}/humans)."
 e spua soran:
+  id: 732rREGYG8
   family: "C2"
   gloss: "home star"
   short: "[E:tca pan] is the home star of species [A:tce* man] (default: {flan}/humans)."
 e jveno kena:
+  id: WVG2ebwap5
   family: "C2"
   gloss: "hugs"
   short: "[E:tce* pan] hugs [A:tce* pan]."
 e kini bun:
+  id: o9bwKmfWvS
   family: "C2"
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
   definition: "po ekinibun ke ka pi ke bun gla kini via seru ka"
 
 a cen po bu:
+  id: Jpvb7YTJFg
   family: "C3"
   gloss: "dictionary"
   short: "[E:tce* man] is a dictionary."
