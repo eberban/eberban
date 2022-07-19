@@ -2797,6 +2797,128 @@ vola:
   gloss: "second"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
   tags: [time, unit]
+gion:
+  id: l5mUhbsrAR
+  family: "R"
+  gloss: "shirt"
+  short: "[E:tce* pan] is a shirt/top."
+  tags: [clothing, wearable]
+miul:
+  id: bfCpH6JuNA
+  family: "R"
+  gloss: "pants"
+  short: "[E:tce* pan] is a pants/shorts/skirt."
+  tags: [clothing, wearable]
+gial:
+  id: g4vk2d8xbd
+  family: "R"
+  gloss: "undershirt"
+  short: "[E:tce* pan] is an undershirt/bra."
+  tags: [clothing, wearable]
+bior:
+  id: j7Pp7vNyHa
+  family: "R"
+  gloss: "underwear"
+  short: "[E:tce* pan] is an underwear/underpants/panties."
+  tags: [clothing, wearable]
+padgo:
+  id: OYEMdfRbzy
+  family: "R"
+  gloss: "arm"
+  short: "[E:tce* pan] is an arm of [A:tce pan]."
+  tags: [body]
+vauno:
+  id: YPPH5JwRMe
+  family: "R"
+  gloss: "foot"
+  short: "[E:tce* pan] is a foot of [A:tce pan]."
+  tags: [body]
+fairo:
+  id: S4eKZM38rl
+  family: "R"
+  gloss: "hand"
+  short: "[E:tce* pan] is a hand of [A:tce pan]."
+  tags: [body]
+glehul:
+  id: uWMXjGjvH7
+  family: "R"
+  gloss: "genitals"
+  short: "[E:tce* pan] is genitals of [A:tce pan]."
+  tags: [body]
+droni:
+  id: JA9WfwWIfa
+  family: "R"
+  gloss: "head"
+  short: "[E:tce* pan] is a head of [A:tce pan]."
+  tags: [body]
+kiloi:
+  id: iOxA2C03t6
+  family: "R"
+  gloss: "buttocks"
+  short: "[E:tce* pan] is a rear/buttox of [A:tce pan]."
+  tags: [body]
+zvinu:
+  id: skexHz96Gk
+  family: "R"
+  gloss: "mouth"
+  short: "[E:tce* pan] is a mouth of [A:tce pan]."
+  tags: [body]
+plaro:
+  id: oMPUogjgt7
+  family: "R"
+  gloss: "eye"
+  short: "[E:tce* pan] is an eye of [A:tce pan]."
+  tags: [body]
+tcila:
+  id: MQmSzfHjbp
+  family: "R"
+  gloss: "breast"
+  short: "[E:tce* pan] is a breast of [A:tce pan]."
+  tags: [body]
+seriu:
+  id: FPBl9tm4uL
+  family: "R"
+  gloss: "tongue"
+  short: "[E:tce* pan] is a tongue of [A:tce pan]."
+  tags: [body]
+buhur:
+  id: qHoA1AfbkL
+  family: "R"
+  gloss: "nose"
+  short: "[E:tce* pan] is a nose of [A:tce pan]."
+  tags: [body]
+snane:
+  id: HypTrjOzor
+  family: "R"
+  gloss: "ear"
+  short: "[E:tce* pan] is an ear of [A:tce pan]."
+  tags: [body]
+dogmu:
+  id: aIcZmuFvcq
+  family: "R"
+  gloss: "governs"
+  short: "[E:tce pan] governs people [A:tce* pan]."
+glogdu:
+  id: iWjM1mv0Ij
+  family: "R"
+  gloss: "tentacle"
+  short: "[E:tce* pan] is a tentacle of [A:tce pan]"
+  tags: [body]
+tsir:
+  id: ZkRavpgbiT
+  family: "R"
+  gloss: "bed"
+  short: "[E:tce* pan] is a bed."
+gzian:
+  id: JhnC5NVBrz
+  family: "R"
+  gloss: "showers"
+  short: "[E:tce* pan] showers in substance [A:tce pan] (default: water)."
+snoil:
+  id: bovvdGkUCG
+  family: "R"
+  gloss: "monster"
+  short: "[E:tce* pan] is a monster."
 
 # jgere:
 #   id: Gi4jvUSXpM

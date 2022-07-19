@@ -27,20 +27,31 @@ fs.readFile(process.argv[2], 'utf8', function (err,data) {
   var newRandomIds = [];
 
   var result = data.replaceAll(/INSERT_WORD_ID/g, () => {
-    while (true) {
+    let remaining_tries = 10;
+    while (remaining_tries > 0) {
+      remaining_tries--;
       let rand = randomWordId();
 
       // Retry if ID is already present in file
       if (data.includes(rand))
+      {
+        console.log(`Id ${rand} is already used in the dictionary.`)
         continue;
+      }
 
       // Retry if ID was generated previously
-      if (newRandomIds.includes(rand))
+      if (newRandomIds.includes(rand)){
+        console.log(`Id ${rand} was already generated in this run.`)
         continue;
+      }
 
+      console.log(`New Id ${rand} was correctly applied.`)
       newRandomIds.push(rand);
       return rand;
-    }    
+    }   
+    
+    console.log(`Failed to replace marker.`)
+    return "INSERT_WORD_ID";
   });
 
   fs.writeFile(process.argv[2], result, 'utf8', function (err) {
