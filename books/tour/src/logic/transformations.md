@@ -147,18 +147,27 @@ _pa meon sae buri __tce__ mian pa mi dona tci ze tce_
 > in other languages. __bo GI__ is a bit more complex to use but is necessary
 > to define some concepts of Eberban's vocabulary.
 
+# Instanciation
+
+__zu/zui__ allows to instanciate an argument of some predicate, which is
+particularly useful when a predicate is shared using __VI/FI__ or a __KI__
+variable or argument and we want to use it with some arguments. __GI__ variables
+could be replaced with __KI__ variables that are then used in chaining with
+__zu/zui__. __zu__ instanciate the predicate with __transitive__ behavior while
+__zui__ is __intransitive__.
+
 ## Other
 
-__zu__ allow to transform a predicate having a __A__ 0-ary predicate place
-a predicate having a __A__ 1-ary predicate place which is satisfied by the __E__
+__zue__ allow to transform a predicate having a __A__ 0-ary predicate place a
+predicate having a __A__ 1-ary predicate place which is satisfied by the __E__
 argument.
 
-__mi jine mi jvin__ (I want that [I dance]) can thus be replaced by
-__mi zu jine jvin__ (I want to dance).
+__mi jine mi jvin__ (I want that [I dance]) can thus be replaced by __mi zue
+jine jvin__ (I want to dance).
 
 Note that they are not exactly equivalent, as in the first example the 2 __mi__
 might not refer to the same individual(s) (if there are multiple speakers),
-while in the second example it is necessarily the same. Aside from this
-slight difference both examples are here the same length and thus might
-seem a bit overkill, but it is more usefull if the thing being repeated is
-longer than one syllable.
+while in the second example it is necessarily the same. Aside from this slight
+difference both examples are here the same length and thus might seem a bit
+overkill, but it is more usefull if the thing being repeated is longer than one
+syllable.

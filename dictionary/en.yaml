@@ -493,6 +493,41 @@ zoiu:
   short: |
     Satisfy the default bound of the U place of [predicate] (set with {poiu}).
 zu:
+  id: khQauHAdZn
+  family: "ZI"
+  gloss: "#instanciate-transitive"
+  tags: [core]
+  transitive: true
+  short: |
+    Instanciate the E predicate place of the prefixed predicate. Place can be
+    selected by a following SI. This predicate is transitive.
+  notes: |
+    Is necessary to use a predicate stored in a KI variable (which have a
+    [E:(...)] place) with arguments provided with VI/FI. It can however be
+    used more broadly, for exemple with predicates that "transforms" a
+    predicate into another one.
+
+    Using a transitive GI variable can be seen as if it was some KI variable
+    which was then instanciated with {zu KI}.
+zui:
+  id: 34z5PiSIBI
+  family: "ZI"
+  gloss: "#instanciate-intransitive"
+  tags: [core]
+  transitive: true
+  short: |
+    Instanciate the E predicate place of the prefixed predicate. Place can be
+    selected by a following SI. This predicate is intransitive.
+  notes: |
+    Is necessary to use a predicate stored in a KI variable (which have a
+    [E:(...)] place) with arguments provided with VI/FI. It can however be
+    used more broadly, for exemple with predicates that "transforms" a
+    predicate into another one.
+
+    Using an instransitive GI variable can be seen as if it was some KI variable
+    which was then instanciated with {zui KI}.
+
+zue:
   id: QrPQJlBXO6
   family: "ZI"
   gloss: "#()-to-(a)"
@@ -502,8 +537,8 @@ zu:
     content of the [E:a] place.  
     The resulting predicate is transitive.
 
-    While a SE before {zu} can still override the chaining behavior, a SE after
-    {zu} allow to select which places to use for the transformation.
+    While a SE before {i} can still override the chaining behavior, a SE after
+    {zue} allow to select which places to use for the transformation.
 
     For 2-vowels SE variants "sXY", X select the entity place, while Y select
     the proposition place. Not using a SE thus is equivalent to an implicit
@@ -513,7 +548,7 @@ zu:
     make sense to use the same places for both sides, {se} is nonsensical.
 
     The selected proposition place will be the one being transitioned to in
-    chaining (unless overwritten by a SE placed before {zu}).
+    chaining (unless overwritten by a SE placed before {zue}).
 poie:
   id: kcJ6pTjgVi
   family: "PO"
@@ -2919,6 +2954,14 @@ snoil:
   family: "R"
   gloss: "monster"
   short: "[E:tce* pan] is a monster."
+zmino:
+  id: ZbbqOhy82q
+  family: "R"
+  gloss: "picture"
+  short: "[E:tce* pan] is a picture depicting [A:()]."
+  notes: |
+    [A] occurs at the instant the picture was taken, as is constrainted in space
+    as the volume captured by the field of view of the camera.
 
 # jgere:
 #   id: Gi4jvUSXpM
