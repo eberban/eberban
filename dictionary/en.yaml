@@ -1880,7 +1880,9 @@ kli:
   family: "R"
   gloss: "thanks"
   tags: [emotion]
-  short: "[E:tce* pan] thanks/is thankful to [A:tce* man] about [O:()] being true."
+  short: |
+    [E:tce* pan] (default: speaker) thanks/is thankful to [A:tce* man]
+    (defaults: listener) about [O:()] being true.
 kre:
   id: WB1Zm07d82
   family: "R"
