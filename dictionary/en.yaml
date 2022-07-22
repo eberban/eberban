@@ -2834,6 +2834,90 @@ vola:
   gloss: "second"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
   tags: [time, unit]
+mual:
+  id: W93Rd5hDRD
+  family: "R"
+  gloss: "meter"
+  short: "[E:tce gan] is 1 meter times [A:tce gan] (default: 1)."
+  tags: [space, unit]
+gulo:
+  id: vbit1n0jcF
+  family: "R"
+  gloss: "kilogram"
+  short: "[E:tce gan] is 1 kilogram times [A:tce gan] (default: 1)."
+  tags: [unit]
+pere:
+  id: VYZKrgaSIB
+  family: "R"
+  gloss: "ampere"
+  short: "[E:tce gan] is 1 ampere times [A:tce gan] (default: 1)."
+  tags: [unit]
+keli:
+  id: atA2lrtLvb
+  family: "R"
+  gloss: "kelvin"
+  short: "[E:tce gan] is 1 kelvin times [A:tce gan] (default: 1)."
+  tags: [unit]
+kelu:
+  id: P6Q0cb2CLd
+  family: "R"
+  gloss: "degree-celcius"
+  short: "[E:tce gan] is 1 degree Celcius times [A:tce gan] (default: 1)."
+  tags: [unit]
+saur:
+  id: QxK4kuEZqG
+  family: "R"
+  gloss: "candela"
+  short: "[E:tce gan] is 1 candela times [A:tce gan] (default: 1)."
+  tags: [unit]
+jmi:
+  id: UlX09KRBl9
+  family: "R"
+  gloss: "inverse"
+  short: "[E:tce gan] is the inverse (1/x) of [A:tce gan] (default: 1)."
+  tags: [math, unit]
+  notes: |
+    Thanks to the transitivity of all unit predicates and numbers, it is easy to
+    speak about quantities with negative power units.
+
+    4 km/h = {to je to jie mual jmi vola}
+
+    When dealing with multiple negative powers, it is best to group them after
+    a single {jmi}.
+
+    6.674e-11 m3.kg-1.s-2
+    = 6.674e-11 m3/(kg.s2)
+    = {tia jo tia tio tu jei teo jie mual mual mual jmi gulo vola vola}
+zgie:
+  id: EqjVbOE0uH
+  family: "R"
+  gloss: "length"
+  short: "[E:tce pan] has length [A:tce gan] (length)."
+fniu:
+  id: jLUTG6ODZ4
+  family: "R"
+  gloss: "height"
+  short: "[E:tce pan] has height [A:tce gan] (length)."
+cpea:
+  id: xpEo5Pokc2
+  family: "R"
+  gloss: "area"
+  short: "[E:tce pan] has area [A:tce gan] (length)."
+jvao:
+  id: DKkrzMgB8V
+  family: "R"
+  gloss: "volume"
+  short: "[E:tce pan] has volume [A:tce gan] (length)."
+ckia:
+  id: vobGX4ucOa
+  family: "R"
+  gloss: "speed"
+  short: "[E:tce pan] has instantaneous speed [A:tce gan] (length/time)."
+fsau:
+  id: VrsQHhV0zp
+  family: "R"
+  gloss: "wear"
+  short: "[E:tce* pan] wears [A:tce* pan]."
 gion:
   id: l5mUhbsrAR
   family: "R"
@@ -2964,7 +3048,13 @@ zmino:
   notes: |
     [A] occurs at the instant the picture was taken, as is constrainted in space
     as the volume captured by the field of view of the camera.
-
+jalo:
+  id: 6nAQO0PjY0
+  family: "R"
+  gloss: "with-each-other"
+  short: "[E:tce man] satisfy relation [A:(tca man,tca man)] with each other."
+  notes: |
+    Each member of [E] satisfy relation with [A] with every other member of [E].
 # jgere:
 #   id: Gi4jvUSXpM
 #   family: "R"

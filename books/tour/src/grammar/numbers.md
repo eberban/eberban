@@ -51,7 +51,7 @@ Numbers follow the following syntax:
 4. If there is a fractional part it can be followed by __ja__ and a _repeated
    part_ which is also a string of at least one digit __TI__. The number have
    those digits repeated indefinitely.
-5. Regardly of the precense of a fractional part, the number can then contain
+5. Regardless of the precense of a fractional part, the number can then contain
    __je__ followed by a _magnitude_, which is a string of at least one digit
    __TI__. The value expressed is the previous part multiplied by
    \\(\text{base}^{\text{magnitude}}\\). __jei__ can be used instead to express
