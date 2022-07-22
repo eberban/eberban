@@ -2080,7 +2080,7 @@ fuher:
   id: OdAIzkIBAQ
   family: "R"
   gloss: "fly"
-  short: "[E:tce* pan] flies [in air/space]."
+  short: "[E:tce* pan] flies (in air/space)."
 folin:
   id: UeQbCavBvQ
   family: "R"
@@ -2212,19 +2212,19 @@ cfin:
   family: "R"
   gloss: "solid"
   tags: [matter]
-  short: "[E:tce* pan] is a solid [state of matter]."
+  short: "[E:tce* pan] is a solid (state of matter)."
 cfen:
   id: 6rKo2Uu7VA
   family: "R"
   gloss: "liquid"
   tags: [matter]
-  short: "[E:tce* pan] is a liquid [state of matter]."
+  short: "[E:tce* pan] is a liquid (state of matter)."
 cfan:
   id: mFalhp75EO
   family: "R"
   gloss: "gas"
   tags: [matter]
-  short: "[E:tce* pan] is a gas [state of matter]."
+  short: "[E:tce* pan] is a gas (state of matter)."
 jeon:
   id: XzlLYv1Sx1
   family: "R"
@@ -2701,7 +2701,8 @@ boiur:
   id: TtvO8lgOX4
   family: "R"
   gloss: "dry land"
-  short: "[E:tce* pan] is dry land (not watery, can be stepped on). [antonyms: {suier}, {gzeon}]"
+  short: "[E:tce* pan] is dry land (not watery, can be stepped on)."
+  notes: "antonyms: {suier}, {gzeon}"
 suier:
   id: Wl3QAPtjZV
   family: "R"
