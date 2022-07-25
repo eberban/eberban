@@ -1540,7 +1540,7 @@ zvan:
   gloss: "necessary-helper"
   tags: [time]
   short: |
-    For all time span x that contains the context time span, either:
+    For all time span x that contains time span [A:dinu] (default: context time span), either:
     - [E:(dinu)] evaluated with x is true
     - [E] is true if evaluated with a time span containing x
 sel:
@@ -1549,93 +1549,93 @@ sel:
   gloss: "possible-meets"
   tags: [time]
   short: |
-    It is possible that [E:()] meets the context time span.
+    It is possible that [E:()] meets time span [A:dinu] (default: context time span).
 sen:
   id: BUdfWlwobc
   family: "R"
   gloss: "necessary-meets"
   tags: [time]
   short: |
-    It is necessary that [E:()] meets the context time span.
+    It is necessary that [E:()] meets time span [A:dinu] (default: context time span).
 sal:
   id: BwjGs2aFh9
   family: "R"
   gloss: "possible-starts"
   tags: [time]
   short: |
-    It is possible that [E:()] starts the context time span.
+    It is possible that [E:()] starts time span [A:dinu] (default: context time span).
 san:
   id: G2NiGDhluP
   family: "R"
   gloss: "necessary-starts"
   tags: [time]
   short: |
-    It is necessary that [E:()] starts the context time span.
+    It is necessary that [E:()] starts time span [A:dinu] (default: context time span).
 sol:
   id: zJxJLLLlAh
   family: "R"
   gloss: "possible-finishes"
   tags: [time]
   short: |
-    It is possible that [E:()] finishes the context time span.
+    It is possible that [E:()] finishes time span [A:dinu] (default: context time span).
 son:
   id: LV8No7Q8p9
   family: "R"
   gloss: "necessary-finishes"
   tags: [time]
   short: |
-    It is necessary that [E:()] finishes the context time span.
+    It is necessary that [E:()] finishes time span [A:dinu] (default: context time span).
 sul:
   id: AXTM6ugdmG
   family: "R"
   gloss: "possible-met-by"
   tags: [time]
   short: |
-    It is possible that [E:()] is met by the context time span.
+    It is possible that [E:()] is met by time span [A:dinu] (default: context time span).
 sun:
   id: zZDdSvsOkx
   family: "R"
   gloss: "necessary-met-by"
   tags: [time]
   short: |
-    It is necessary that [E:()] is met by the context time span.
+    It is necessary that [E:()] is met by time span [A:dinu] (default: context time span).
 siel:
   id: lutdquie7v
   family: "R"
   gloss: "possible-before"
   tags: [time]
   short: |
-    It is possible that [E:()] is before the context time span.
+    It is possible that [E:()] is before time span [A:dinu] (default: context time span).
 sien:
   id: L4IdMHYHTm
   family: "R"
   gloss: "necessary-before"
   tags: [time]
   short: |
-    It is necessary that [E:()] is before the context time span.
+    It is necessary that [E:()] is before time span [A:dinu] (default: context time span).
 sial:
   id: kv6DCgd35e
   family: "R"
   gloss: "possible-contains"
   tags: [time]
   short: |
-    It is possible that [E:()] contains the context time span.
+    It is possible that [E:()] contains time span [A:dinu] (default: context time span).
 sian:
   id: 4pwuTFYqUS
   family: "R"
   gloss: "necessary-contains"
   tags: [time]
   short: |
-    It is necessary that [E:()] contains the context time span.
+    It is necessary that [E:()] contains time span [A:dinu] (default: context time span).
 siol:
   id: Q3D47Lpfvg
   family: "R"
   gloss: "possible-is-contained"
   tags: [time]
   short: |
-    It is possible that [E:()] is contained by the context time span.
+    It is possible that [E:()] is contained by time span [A:dinu] (default: context time span).
   notes: |
-    Is equivalent to {siol}, as since E is contained in the context span
+    Is equivalent to {sion}, as since E is contained in the context span
     then there is only one possible timeline. Thus it is both possible and
     necessary.
 sion:
@@ -1644,7 +1644,7 @@ sion:
   gloss: "necessary-is-contained"
   tags: [time]
   short: |
-    It is necessary that [E:()] is contained by the context time span.
+    It is necessary that [E:()] is contained by time span [A:dinu] (default: context time span).
   notes: |
     Is equivalent to {siol}, as since E is contained in the context span
     then there is only one possible timeline. Thus it is both possible and
@@ -1655,28 +1655,28 @@ siul:
   gloss: "possible-after"
   tags: [time]
   short: |
-    It is possible that [E:()] is after the context time span.
+    It is possible that [E:()] is after time span [A:dinu] (default: context time span).
 siun:
   id: dOT0W2JlN9
   family: "R"
   gloss: "necessary-after"
   tags: [time]
   short: |
-    It is necessary that [E:()] is after the context time span.
+    It is necessary that [E:()] is after time span [A:dinu] (default: context time span).
 sil:
   id: Ggonkf8B9I
   family: "R"
   gloss: "possible-overlaps"
   tags: [time]
   short: |
-    It is possible that [E:()] overlaps with the context time span.
+    It is possible that [E:()] overlaps with time span [A:dinu] (default: context time span).
 sin:
   id: 2NShmLKxd0
   family: "R"
   gloss: "necessary-overlaps"
   tags: [time]
   short: |
-    It is necessary that [E:()] overlaps with the context time span.
+    It is necessary that [E:()] overlaps with time span [A:dinu] (default: context time span).
 dan:
   id: fKqgnv2HI2
   family: "R"

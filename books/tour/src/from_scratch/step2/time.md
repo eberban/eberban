@@ -194,9 +194,10 @@ Let's first start with a simple one: the proposition time span is met by the
 context time span, which means that the last instant of the context time
 span is the first instant of the proposition time span.
 
-> sul: It is possible that `[E:()]` is met by the context time span.
+> sul: It is possible that `[E:()]` is met by time span `[A:dinu]`
+> (default: context time span).
 > ```
-> po sul gie be
+> po sul gie ka be
 > ma
 > ```
 > _ke_ is a time span of events in _gie_
@@ -209,14 +210,16 @@ span is the first instant of the proposition time span.
 >     va bo ki bu
 >   pei
 > ```
-> _ki_ is the last instant of the context time span
+> _ki_ is the last instant of _ka_
 > ```
->   fi zvil ble
+>   fi ka ble
 >     vo ki bu
+>
+> poia sul zvil
 > ```
 
 To make the __necessary__ variant we need to check that for all time spans _x_
-that contains the context time span, either:
+that contains the provided time span (often the context time span), either:
 - _x_ contains the proposition time span
 - _x_ is contained in a larger time span that itself contains the proposition
   time span
@@ -224,17 +227,17 @@ that contains the context time span, either:
 > This second case allows to handle the time spans that would be "to short" to
 > contain the proposition time span which will be "further away".
 
-> zvan: For all time span _x_ that contains the context time span, either:
+> zvan: For all time span _x_ that contains the time span `[A:dinu]`, either:
 > - `[E:(dinu)]` evaluated with _x_ is true
 > - `[E]` is true if evaluated with a time span containing _x_
 > ```
-> po zvan gie be
+> po zvan gie ka be
 > ```
-> For all time span _ki_ that contains the context time span
+> For all time span _ki_ that contains _ka_
 > ```
 > mae
 >   vie ki be varu
->     vie ki sae bla zvil
+>     vie ki sae bla ka
 > ```
 > It it either a time span that makes _gie_ true
 > ```
@@ -251,10 +254,12 @@ that contains the context time span, either:
 
 Thanks to this predicate we're able to define:
 
-> sun: It is necessary that `[E:()]` is met by the context time span.
+> sun: It is necessary that `[E:()]` is met by time span `[A:dinu]`
+> (default: context time span).
 > ```
-> po sun gie be
+> po sun gie ka be
 > zvan
+>   fa ka
 >   vie ki be sul
 >     vie gie
 > ```
@@ -263,18 +268,18 @@ Thanks to this predicate we're able to define:
 >       vi ki sae bla zvil
 > ```
 
-We can define all the following predicates (with C denoting the context time
-span) :
+We can define all the following predicates (with A always defaulting to the
+context time span) :
 
-- __sel/sen__: E meets C (end instant of E = first instant of C)
-- __sal/san__: E starts C  (they share the same start instant)
-- __sol/son__: E finishes C (they share the same end instant)
-- __sul/sun__: E is met by C (end instant of C = first instant of E)
-- __siel/sien__: E is before C
-- __sial/sian__: E contains C
-- __siol/sion__: E contained by C (there is no difference between both variants)
-- __siul/siun__: E is after C
-- __sil/sin__: E overlaps with C
+- __sel/sen__: E meets A (end instant of E = first instant of A)
+- __sal/san__: E starts A  (they share the same start instant)
+- __sol/son__: E finishes A (they share the same end instant)
+- __sul/sun__: E is met by A (end instant of A = first instant of E)
+- __siel/sien__: E is before A
+- __sial/sian__: E contains A
+- __siol/sion__: E contained by A (there is no difference between both variants)
+- __siul/siun__: E is after A
+- __sil/sin__: E overlaps with A
 
 > Their definition is omited here but is similar to the ones of __sul/sun__.
 
