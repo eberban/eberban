@@ -1992,10 +1992,26 @@ kini:
   gloss: "learns"
   short: "[E:tce* pan] learns/studies fact [A:()]."
 seru:
-  id: 5fvGWZwvR1
+  id: 0pI0SOS7QT
   family: "R"
   gloss: "about"
-  short: "[E:tce* man] is about subject [A:tce* man]."
+  short: "[E:()] is about subject [A:tce* man]."
+  notes: |
+    Predicates inside [E] can register subjects using {serun}.
+serun:
+  id: dXlAM79kMa
+  family: "R"
+  gloss: "register-subject"
+  short: "Register subject [E:tce* man] in the context."
+  tags: [context]
+  notes: |
+    Goes in pair with {seru}. If context contains an entry with key {zai serun},
+    this predicate states that [E] is a subset of the value of this entry. If
+    the context don't contain such entry then nothing is stated.
+
+    Wrapping {seru} will setup this entry in the context it provides to its E
+    place and find a "smallest" set that makes E true, and check that its A
+    place is a subset of it.
 snai:
   id: q0VX1IdoEj
   family: "R"
