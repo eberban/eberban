@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.49.3
+# eberban PEG grammar - v0.50
 # =============================
 
 # GRAMMAR
@@ -183,7 +183,7 @@ compound_word <- spaces? (borrowing / native_word)
 # - Free-form words
 freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
-freeform_content <- (initial_pair / consonant / h)? hieaou (consonant_cluster hieaou)* sonorant?
+freeform_content <- (initial_pair / consonant / h)? hieaou (consonant_cluster hieaou)* consonant?
 freeform_end <- (pause_char / space_char / EOF)
 
 # - Native words
