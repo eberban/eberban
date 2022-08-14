@@ -96,6 +96,7 @@ function html_word_entry(word, entry) {
 		});
 	}
 
+	output += `<small><a href="#${entry.id}">${entry.id}</a></small> `;
 	output += `</h3>`;
 
 	output += renderParagraphs(entry.short);
@@ -259,14 +260,15 @@ export function html_dictionary(filters) {
 					return;
 				}
 			} else {
-				if (word == filter) {
+				if (word == filter || dictionary[word].id == filter) {
 					exact_match = true;
 				} else if (
 					!(
 						word.includes(filter) ||
 						dictionary[word].without_spaces.includes(filter) ||
 						dictionary[word].gloss.toLowerCase().includes(filter) ||
-						dictionary[word].short.toLowerCase().includes(filter)
+						dictionary[word].short.toLowerCase().includes(filter) ||
+						dictionary[word].id.toLowerCase().includes(filter)
 					)
 				) {
 					return;
