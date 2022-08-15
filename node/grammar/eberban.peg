@@ -183,7 +183,8 @@ compound_word <- spaces? (borrowing / native_word)
 # - Free-form words
 freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
-freeform_content <- (initial_pair / consonant / h)? hieaou (consonant_cluster hieaou)* consonant?
+freeform_content <- freeform_initial? hieaou (consonant_cluster hieaou)* consonant?
+freeform_initial <- consonant_cluster / medial_pair / initial_pair / consonant / h
 freeform_end <- (pause_char / space_char / EOF)
 
 # - Native words
