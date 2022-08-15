@@ -57,9 +57,8 @@ invalid pairs in gray :
 
 __Borrowings__ allow importing foreign words or names. They are prefixed by the
 vowel __u__, and have more relaxed rules about consonants than native eberban
-words.
-
-Consonant clusters in borrowings must obey the following rules :
+words. Mainly, they can contain consonant triplets which must obey the following
+rules: 
 
  - Consonant pairs must either be _initial pairs_, _medial pairs_ or
    _sonorant_ + _consonant_.
@@ -68,7 +67,12 @@ Consonant clusters in borrowings must obey the following rules :
  - Alternatively, consonant triplets can be a _sonorant_ followed by an _initial
    pair_.
 
-Borrowings must end with a _vowel_, or a _vowel_ followed bt a single _sonorant_.
+After the __u__  prefix the borrowing can start by a vowel, a single
+consonant, a initial or medial consonant pair, a consonant triplet or __h__
+If this first letter is an __u__ it must be prefixed with a __'__ to separate it
+from the the prefix.
+
+Borrowings must end with a _vowel_, or a _vowel_ followed by a single _consonant_.
 In written media, borrowings must be followed by either spaces or a word boundary
 marker, which is realized in speech by pausing after the borrowing to properly
 separate it from the following word.

@@ -17,9 +17,17 @@ multiple parts. To prevent 2 borrowings to fusing into one predicate, you can
 separate them with the particle __be__ (__be__ can optionally appear after
 every borrowing group but is only necessary when separating multiple groups).
 
-Its meaning is `[tce* man] is a [borrowed word]`. Having a generic place
-structure makes comprehension easier for a listener or reader who might not
-be familiar with the borrowed word.
+Its meaning is not defined in eberban, and its truth value is always undefined.
+It can be used to import foreign words that interlocutors will collectively
+understand, but using non-borrowings is always prefered if possible.
+Borrowings can have any number of places, and since it is not defined in eberban
+each place is considered to be generic place (no type inference can be
+performed). Chaining will always consider it is a generic/atom place (like bound
+with ve/va/...), and vie/via/... must be used for predicate equivalence
+bindings.
+
+Like roots and compounds, borrowings are transitive if they end with a vowel,
+while they are intransitive if they end with a consonant (not only sonorants).
 
 Borrowing can be used to import proper nouns by prefixing them with particle
 __za__, which gives it the meaning `[tce* man] is named [borrowed word]` (a

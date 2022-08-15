@@ -183,8 +183,8 @@ compound_word <- spaces? (borrowing / native_word)
 # - Free-form words
 freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
-freeform_content <- freeform_initial? hieaou (consonant_cluster hieaou)* consonant?
-freeform_initial <- consonant_cluster / medial_pair / initial_pair / consonant / h
+freeform_content <- freeform_initial? hieaou (consonant_triplet hieaou)* consonant?
+freeform_initial <- consonant_triplet / medial_pair / initial_pair / consonant / h
 freeform_end <- (pause_char / space_char / EOF)
 
 # - Native words
@@ -202,9 +202,9 @@ root_3 <- initial_pair hieaou ((medial_pair / hyphen sonorant) hieaou)* sonorant
 hieaou <- ieaou (hyphen h ieaou)*
 ieaou <- vowel (hyphen vowel)*
 
-consonant_cluster <- (consonant_cluster_1 / consonant_cluster_2) !consonant
-consonant_cluster_1 <- &medial_pair !sonorant consonant hyphen initial_pair
-consonant_cluster_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant consonant) / sonorant hyphen 
+consonant_triplet <- (consonant_triplet_1 / consonant_triplet_2) !consonant
+consonant_triplet_1 <- &medial_pair !sonorant consonant hyphen initial_pair
+consonant_triplet_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant consonant) / sonorant hyphen 
 
 medial_pair <- !initial medial_patterns
 medial_patterns <- (medial_n / medial_fv / medial_plosive)

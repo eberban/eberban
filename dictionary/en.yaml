@@ -1745,16 +1745,12 @@ gen:
 gan:
   id: fwg6wbeotx
   family: "R"
-  gloss: number-unit
+  gloss: number
   tags: [math, number]
-  short: "[E:tce* man] is a real number with unit [A:ma]."
+  short: "[E:tce* man] is a general purpose number."
   notes: |
-    [E] can be expressed by the product of a real (unit-less) number ({gen})
-    multiplied by unit-based number ({gan}) [A].
-
-    {gan} numbers can freely be multiplied together with their units being
-    multiplied together too. However it is not possible to add 2 {gan} numbers
-    that don't have the same unit. 
+    {gan} numbers are an extension field of {gen} (real numbers) that supports
+    units like length, mass, etc.
 
 skan:
   id: 4u8h1cwf6p
@@ -2769,8 +2765,15 @@ flan:
 fuli:
   id: r8ezp2roox
   family: "R"
-  short: "[E:tce gan] is the sum of numbers in list [A:blu tce gan]."
   gloss: "sum"
+  tags: ["maths"]
+  short: "[E:tce gan] is the sum of numbers in list [A:blu tce gan]."
+fulu:
+  id: pd94naqm1w
+  family: "R"
+  gloss: "product"
+  tags: ["maths"]
+  short: "[E:tce gan] is the product of numbers in list [A:blu tce gan]."
 koro:
   id: iophfsuxgp
   family: "R"
@@ -2786,8 +2789,6 @@ koro:
 
     Example: {poi ga \[ge be\] fuli \[vi koro ge\] \[fa te bu, ta ge bu, to ge ge\] \[fe ti\]}\
     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
-
-
 
 bire:
   id: peug1pbvxf
@@ -3108,6 +3109,8 @@ jeni:
   notes: |
     As [A] and [O] are sets it is the union made from all members of [A] with
     all members of [O].
+
+
 # jgere:
 #   id: gi4jvusxpm
 #   family: "R"
