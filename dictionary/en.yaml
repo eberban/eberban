@@ -78,13 +78,14 @@ ma:
   definition: 𝜆c 𝜆e is-atom(e)
   notes: |
     Simplest non-predicate type. All more complex non-predicate types are
-    symbols that must additionally satisfy some properties.
+    atoms that must additionally satisfy some properties.
 
-    There are an infinite amount of symbol which have no intrinsic meaning.
-    Instead we can spawn some and declare that they are connected in some way
-    using definitions.
+    There are an infinite amount of atoms which have no intrinsic meaning.
+    Instead we can declare that they are connected in some way using
+    definitions.
 
-    Can also be used alone for tautology (always true).
+    Can also be used alone for tautology (always true), since there exist at
+    least one atom.
 mai:
   id: uwjxg46v4h
   family: "MI"
@@ -947,11 +948,11 @@ zai:
   id: bzmsfmniyb
   family: "ZI"
   gloss: "#ident"
-  short: "[E:ma] is the symbol representing the E place of the following predicate."
+  short: "[E:ma] is the atom representing the E place of the following predicate."
   note: |
     Another place can be selected by adding a SE particle between {zai} and the
     predicate. Using {zai} before a specific predicate will always yield the
-    same unique symbol.
+    same unique atom.
 
     It is mainly used to create identifiers used as map keys (see {kce}).
 pa:
@@ -1372,14 +1373,14 @@ blo:
   gloss: "list-set-raw"
   tags: [list, set]
   short: |
-    [E:tce a] is the set containing only all the elements in list [A:blu a].
+    [E:tce a] is the set of all the elements in list [A:blu a].
 bli:
   id: t4oc9rx6i4
   family: "R"
   gloss: "list-set"
   tags: [list, set]
   short: |
-    [E:tce a] is the set containing only all the elements in list [A:blu a].
+    [E:tce a] is the union of all sets in list [A:blu tce a].
 kcin:
   id: wuklqbdxyk
   family: "R"
@@ -1769,19 +1770,19 @@ cna:
   family: "R"
   gloss: "AND-S"
   tags: [sequence, connective]
-  short: "This proposition is true if all symbols in sequence [E:blu ma] satisfies property [A:(ma)]."
+  short: "This proposition is true if all atoms in sequence [E:blu ma] satisfies property [A:(ma)]."
 cne:
   id: val5msurqc
   family: "R"
   gloss: "OR-S"
   tags: [sequence, connective]
-  short: "This proposition is true if at least one symbol in sequence [E:blu ma] satisfies property [A:(ma)]."
+  short: "This proposition is true if at least one atoms in sequence [E:blu ma] satisfies property [A:(ma)]."
 cni:
   id: nax6hot9qu
   family: "R"
   gloss: "XOR-S"
   tags: [sequence, connective]
-  short: "This proposition is true if exactly [E:gin] (default: 1) symbols in sequence [E:blu ma] satisfies property [A:(ma)]."
+  short: "This proposition is true if exactly [E:gin] (default: 1) atoms in sequence [E:blu ma] satisfies property [A:(ma)]."
 cena:
   id: qsivboraps
   family: "R"
@@ -3109,7 +3110,11 @@ jeni:
   notes: |
     As [A] and [O] are sets it is the union made from all members of [A] with
     all members of [O].
-
+pafkei:
+  id: ymuvroa9iu
+  family: "R"
+  gloss: "potato"
+  short: "[E:tce man] is a potato."
 
 # jgere:
 #   id: gi4jvusxpm
@@ -3226,6 +3231,12 @@ e utcoson stan:
   gloss: "North Korea"
   tags: [cultural]
   short: "[E:tca stan] is North Korea."
+e utoan ban:
+  id: c8xqa37om4
+  family: "C2"
+  gloss: "Toaq language"
+  tags: [cultural]
+  short: "[E:tca ban] is the Toaq language."
 e kre vire:
   id: t1wi0cej5p
   family: "C2"

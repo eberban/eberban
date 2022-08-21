@@ -27,8 +27,10 @@ The core grammar contains the following particles:
   discourse, and is an assertion about what the speaker thinks is true.
 - __po__ to define new predicates. __poi__ is not included as it conveys the
   expectation of the speaker for a listener to answer a question.
+  __poie__, __poia__, __poio__ and __poiu__ are also included to define defaults
+  which is part of the logical framework.
 - __PU__: axiom toggle, which is the key component allowing to define new
   concepts in the language.
 
-Other particles are not allowed are will be syntaxic sugar on top of the __core
+Other particles are not allowed and will be syntaxic sugar on top of the __core
 grammar__ and __core vocabulary__.

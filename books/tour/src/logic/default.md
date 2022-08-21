@@ -61,7 +61,7 @@ Here is an example with all default bindings added:
 > \text{mi}^w_1(c)              &= \exists e. \text{mi}_1(c,e) \\\\
 > \end{align} \\]
 >
-> I like the home planet of humans/Earth (until humans start to leave on other planets).
+> I like the home planet of humans (Earth, until humans start to live on other planets).
 
 Manually binding the argument will prevent the default bind to be added:
 
@@ -85,7 +85,7 @@ Manually binding the argument will prevent the default bind to be added:
 > \text{mi}^w_1(c)              &= \exists e. \text{mi}_1(c,e) \\\\
 > \end{align} \\]
 >
-> I like the home planet of cats (still Earth, unless we find cats other planets?).
+> I like the home planet of cats (still Earth, unless we find or bring cats on other planets).
 
 > Other chapters will omit default binds unless they are important to reduce
 > verbosity.

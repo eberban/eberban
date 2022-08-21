@@ -2,8 +2,7 @@
 # Chaining
 
 When 2 predicates are strung one after the other they form a new predicate,
-which has the same arguments as the left predicate. The __context argument__ is
-automatically shared between left and right predicates.
+which has the same arguments as the left predicate.
 
 Every predicate has a default __chaining behavior__ which dictates how 2
 predicates are connected together. If the left predicate has __intransitive
@@ -24,7 +23,8 @@ place is used.
 ## Atom argument chaining
 
 If the chaining argument is an __atom__ argument, then the variable filling this
-argument also fills the __E__ argument of the right predicate.
+argument also fills the __E__ argument of the right predicate. The
+__context argument__ is automatically shared between left and right predicates.
 
 > __mian blan__
 >
@@ -65,9 +65,12 @@ verbosity in simple cases.
 ## Predicate argument chaining
 
 If the chaining argument is a __predicate argument__, then the right predicate
-is used to satisfy the argument. If the __predicate argument__ and right
-predicate don't match in arity then the __arity mismatch resolution__ is
-performed.
+is stated to be equivalent to the predicate represented by the argument. If the
+__predicate argument__ and right predicate don't match in arity then the
+__arity mismatch resolution__ is performed. The right predicate is not stated
+as is, and will be _instanciated_ by the left predicate (according to its
+definition). The left predicate will be able to _instanciated_ multiple times
+and with any (correctly typed) arguments, including the _context argument_.
 
 > __tce mian__
 >
@@ -97,7 +100,7 @@ performed.
 >
 > Given $(c), $(e), $(A):\
 > $(e) is happy about $(A) being true, and $(A) is equivalent to
-> \\(\text{mian}_1\\).\
+> \\(\text{mian}^w_1\\).\
 > $(e) is happy that there exist a cat.
 
 ## Longer chains

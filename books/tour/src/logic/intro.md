@@ -20,7 +20,7 @@ predicates without verbosity for speakers to implement things such as tenses.
 
 Other arguments are represented using the vowels __e, a, o, u__ in this order.
 They are used in definitions but also in some families of particles related to
-argument selection. They are called __explicit arguments__ (to exlude the
+argument selection. They are called __explicit arguments__ (to exclude the
 _implicit_ context argument), and we call __arity__ (N-ary) the number of
 __explicit arguments__.
 
