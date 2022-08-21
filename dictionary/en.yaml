@@ -3119,46 +3119,55 @@ zmi:
   id: cmeot2jbo9
   family: "R"
   gloss: "color"
+  tags: ["color"]
   short: "[E:tce man] is a color of [A:tce pan] perceived by [O:tce pan] (default: speaker)."
 zmen:
   id: d0l3cp2pwk
   family: "R"
   gloss: "white"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as white/light by [A:tce pan] (default: speaker)."
 zman:
   id: qxdacbj9pt
   family: "R"
   gloss: "red"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as red by [A:tce pan] (default: speaker)."
 zmon:
   id: 8tl5qke633
   family: "R"
   gloss: "green"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as green by [A:tce pan] (default: speaker)."
 zmun:
   id: aqb12hf0h5
   family: "R"
   gloss: "blue"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as blue by [A:tce pan] (default: speaker)."
 zmer:
   id: tfeeujlwxv
   family: "R"
   gloss: "black"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as black/dark by [A:tce pan] (default: speaker)."
 zmar:
   id: v0880nf0fg
   family: "R"
   gloss: "cyan"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as cyan by [A:tce pan] (default: speaker)."
 zmor:
   id: v46cs9fs33
   family: "R"
   gloss: "magenta"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as magenta by [A:tce pan] (default: speaker)."
 zmur:
   id: 4p1ty9pgoi
   family: "R"
   gloss: "yellow"
+  tags: ["color"]
   short: "[E:tce pan] is perceived as yellow by [A:tce pan] (default: speaker)."
 
 # jgere:
