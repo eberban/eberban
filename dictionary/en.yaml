@@ -2047,18 +2047,6 @@ zdir:
     [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: speaker)
     in property [O:(tce man)].
   gloss: "amusing"
-fir:
-  id: a7e6flmcna
-  family: "R"
-  gloss: "color"
-  tags: [color]
-  short: "[E:tce* man] is a color."
-firu:
-  id: ua0hkczf04
-  family: "R"
-  gloss: "color"
-  tags: [color]
-  short: "[E:tce* fir] is a color of [A:tce pan]."
 sare:
   id: ho1az3mcl2
   family: "R"
