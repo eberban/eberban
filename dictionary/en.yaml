@@ -151,9 +151,21 @@ mua:
 ba:
   id: v47til8m74
   family: "BA"
-  gloss: "#inline-arg"
+  gloss: "#inline-arg-generic"
   tags: [core]
-  short: "Inline argument marker."
+  short: "Inline atom/generic argument marker."
+bai:
+  id: vnuzs4uzpz
+  family: "BA"
+  gloss: "#inline-arg-transitive"
+  tags: [core]
+  short: "Inline transitive predicate argument marker."
+bae:
+  id: c8bgs5yx9k
+  family: "BA"
+  gloss: "#inline-arg-intransitive"
+  tags: [core]
+  short: "Inline intransitive predicate argument marker."
 vei:
   id: dgx3rzqk2s
   family: "VEI"
@@ -699,8 +711,8 @@ mie:
   id: 9swjxu2mjz
   family: "MI"
   short: |
-    Every member of [E:tco* man] is either I/a speaker/author; or something that is not a listener;
-    and contains at least one of each.
+    Every member of [E:tco* man] is either I/a speaker/author; or something that
+    is neither a speaker or listener; and contains at least one of each.
   gloss: "exclusive-we"
 ji:
   id: uqb3n5070a
@@ -2047,11 +2059,6 @@ zdir:
     [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: speaker)
     in property [O:(tce man)].
   gloss: "amusing"
-sare:
-  id: ho1az3mcl2
-  family: "R"
-  gloss: "mutual"
-  short: "[E:tco man] is a group where every pair of members mutualy satisfy relation [A:(tca man, tca man)]."
 gli:
   id: r7wbdwqgm0
   family: "R"
@@ -2077,6 +2084,11 @@ jine:
   family: "R"
   gloss: "want"
   short: "[E:tce* pan] desires/wants/wishes [A:()]."
+jali:
+  id: ch2b852dq7
+  family: "R"
+  gloss: "intends"
+  short: "[E:tce pan] intends to satisfy [A:(tce pan)]."
 fuher:
   id: odaizkibaq
   family: "R"
@@ -2471,6 +2483,11 @@ kari:
   notes: |
     [A] is an axiom, is presupposed to be true and it's truth value is never
     put into doupt.
+kiru:
+  id: kxo9ztaycl
+  family: "R"
+  gloss: "thinks"
+  short: "[E:tce* pan] thinks that [A:()] is true."
 meon:
   id: ym0o9kvaix
   family: "R"
@@ -3157,6 +3174,32 @@ zmur:
   gloss: "yellow"
   tags: ["color"]
   short: "[E:tce pan] is perceived as yellow by [A:tce pan] (default: speaker)."
+cekme:
+  id: rn07g95kw6
+  family: "R"
+  gloss: "differs"
+  tags: ["color"]
+  short: |
+    [E:tce a] differs in what they individually satisfy relation [A:(tca a, b)]
+    with.
+  notes: |
+    [E] individually satisfy relation [A] with something (independant of each
+    other), but don't all individually satisfy relation [A] with the same thing.
+  definition: |
+    po cekme ke ga be
+    ke
+      ve tce ga
+      bi fi ki be ke tce ga ki
+tceo:
+  id: 1ekbkw2s33
+  family: "R"
+  gloss: "mutual-1"
+  short: "[E:tco a] is a group where every pair of members mutualy satisfy property [A:(tco a)]."
+tceu:
+  id: ho1az3mcl2
+  family: "R"
+  gloss: "mutual-2"
+  short: "[E:tco a] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca a)]."
 
 # jgere:
 #   id: gi4jvusxpm
