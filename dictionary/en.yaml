@@ -2858,7 +2858,7 @@ vola:
   gloss: "second"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
   tags: [time, unit]
-mual:
+mula:
   id: w93rd5hdrd
   family: "R"
   gloss: "meter"

@@ -10,9 +10,11 @@ functions that takes __arguments__ and returns a __truth value__ which can be
 __true__, __false__ or __unknown/undefined__. They are introduced by __predicate
 words__ or created from other predicates using Eberban grammar.
 
-Arguments are typed, and can be either __predicates__ or non-predicates which
-are called __atoms__. They are filled with variables that are handled implicitly
-by the grammar.
+Arguments are not filled using __predicate words__ directly and there is no
+words that directly represents them. Instead some __particles__ allows to select
+which arguments are going to be used for various operations on __predicates__
+such as connecting them with each other. Arguments are typed, and can either
+represent __predicates__ or non-predicates which are called __atoms__.
 
 The first of those arguments is handled automatically by the grammar and is
 called the __context argument__. It is used to carry information between
