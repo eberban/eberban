@@ -23,7 +23,7 @@ __ve, va, vo, vu__ allow binding atom (or generic) arguments :
 > \text{mo}_1(c,e)       &= \text{mo}(c,e) \\\\
 > \text{meon}_1(c,e)     &= \text{meon}(c,e) \\\\
 > \\ \\\\
-> \text{duna}_1(c,e,a,o) &= \text{duna}(c,e,a,p) \color{magenta}{\wedge \text{mo}_1(c,o)} \wedge \text{meon}_1(c,a) \\\\
+> \text{duna}_1(c,e,a,o) &= \text{duna}(c,e,a,o) \color{magenta}{\wedge \text{mo}_1(c,o)} \wedge \text{meon}_1(c,a) \\\\
 > \text{duna}^w_1(c,e)   &= \exists a \exists o. \text{duna}_1(c,e,a,o) \\\\
 > \\ \\\\
 > \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}^w_1(c,e) \\\\
