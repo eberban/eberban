@@ -714,6 +714,12 @@ mie:
     Every member of [E:tco* man] is either I/a speaker/author; or something that
     is neither a speaker or listener; and contains at least one of each.
   gloss: "exclusive-we"
+me:
+  id: ahgbyzu6xy
+  family: "MI"
+  gloss: "the"
+  short: |
+    [E:ma] is something that the speaker particularily have in mind.
 ji:
   id: uqb3n5070a
   family: "JI"
@@ -2913,30 +2919,35 @@ jmi:
     = 6.674e-11 m3/(kg.s2)
     = {tia jo tia tio tu jei teo jie mual mual mual jmi gulo vola vola}
 zgie:
-  id: eqjvboe0uh
+  id: nneh2x85ud
   family: "R"
-  gloss: "length"
-  short: "[E:tce pan] has length [A:tce gan] (length)."
+  gloss: "width"
+  short: "[E:tce gan] (length) is the width of [A:tce pan]."
 fniu:
-  id: jlutg6odz4
+  id: fb6aza9xej
   family: "R"
   gloss: "height"
-  short: "[E:tce pan] has height [A:tce gan] (length)."
+  short: "[E:tce gan] (length) is the height of [A:tce pan]."
 cpea:
-  id: xpeo5pokc2
+  id: 1p6a8o9nk3
   family: "R"
   gloss: "area"
-  short: "[E:tce pan] has area [A:tce gan] (length)."
+  short: "[E:tce gan] (length^2) is the area of [A:tce pan]."
 jvao:
-  id: dkkrzmgb8v
+  id: nd9g9s8u4q
   family: "R"
   gloss: "volume"
-  short: "[E:tce pan] has volume [A:tce gan] (length)."
+  short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
 ckia:
-  id: vobgx4ucoa
+  id: ldcalrk1ii
   family: "R"
   gloss: "speed"
-  short: "[E:tce pan] has instantaneous speed [A:tce gan] (length/time)."
+  short: "[E:tce gan] (length/time) is the instantaneous speed of [A:tce pan]."
+cnei:
+  id: b0ey5as5c6
+  family: "R"
+  gloss: "age"
+  short: "[E:tce gan] (time) is the age of [A:tce pan]."
 fsau:
   id: vrsqhhv0zp
   family: "R"
@@ -3201,17 +3212,55 @@ tceu:
   gloss: "mutual-2"
   short: "[E:tco a] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca a)]."
 
-# jgere:
-#   id: gi4jvusxpm
-#   family: "R"
-#   gloss: "big"
-#   short: "[E:tce* pan] are big among all things that satisfy [A:(tca pan)]."
-#   notes: |
-#     It must be possible to know the size of each thing (TODO: have a predicate
-#     for that). 
-#     Each thing in E have more than a standard deviation from the average size
-#     of A.
-
+jene:
+  id: gi4jvusxpm
+  family: "R"
+  gloss: "big"
+  short: |
+    [E:tce* a] are big among all things that satisfy measuring relation [A:(tce gan,tca pan)], with
+    standard deviation [O:tca gan] (default: 1).
+  notes: |
+    Each thing in [E] have more than [O] standard deviation(s) from the average size
+    of [A].
+jere:
+  id: ik7qjuwuxm
+  family: "R"
+  gloss: "small"
+  short: |
+    [E:tce* a] are small among all things that satisfy measuring relation [A:(tce gan,tca a)], with
+    standard deviation [O:tca gan] (default: 1).
+  notes: |
+    Each thing in [E] have less than [O] standard deviation(s) from the average size
+    of [A].
+jini:
+  id: 7y4m7u346i
+  family: "R"
+  gloss: "increasing-order"
+  short: |
+    [E:blu a] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca a)].
+jiri:
+  id: 2ivqr4ouem
+  family: "R"
+  gloss: "decreasing-order"
+  short: |
+    [E:blu a] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca a)].
+buran:
+  id: ndf5i6skum
+  family: "R"
+  gloss: "bunny"
+  tags: ["animal"]
+  short: "[E:tce* pan] is a bunny/rabbit."
+bjaor:
+  id: o8g2lhe4rd
+  family: "R"
+  gloss: "elephant"
+  tags: ["animal"]
+  short: "[E:tce* pan] is an elephant."
+coriu:
+  id: zas8minuik
+  family: "R"
+  gloss: "owns"
+  short: "[E:tce pan] possesses/owns/has [A:tce* man]."
 # -----
 # Compounds
 # -----
