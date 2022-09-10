@@ -1385,6 +1385,13 @@ blai:
   short: |
     Right folds list [E:blu a] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,a)] in last to first order.
+ble:
+  id: ghp1rirgb6
+  family: "R"
+  gloss: "list-concat"
+  tags: [list]
+  short: |
+    [E:blu a] is the concatenation of lists [A:blu a] and [O:blu a].
 blo:
   id: zp415dp0q0
   family: "R"
@@ -1737,6 +1744,20 @@ pan:
   tags: [space, context]
   short: |
     [E:tca man] is a physical entity which intersects with the context volume.
+peni:
+  id: 7n2eqikobr
+  family: "R"
+  gloss: set-context-physical
+  tags: [space]
+  short: |
+    [E:tca pen] is used at the context volume to evaluate [A:()].
+penu:
+  id: 5gzy2gu5a6
+  family: "R"
+  gloss: volume-overlap
+  tags: [space]
+  short: |
+    The volume of [E:tca pen] intersects with the volume of [A:tce pen].
 gin:
   id: 4uxuhdkbez
   family: "R"
@@ -2943,6 +2964,16 @@ ckia:
   family: "R"
   gloss: "speed"
   short: "[E:tce gan] (length/time) is the instantaneous speed of [A:tce pan]."
+djio:
+  id: r4euhq3iku
+  family: "R"
+  gloss: "set-cardinality"
+  short: "[E:tce gan] (unitless) is the cardinality/number of members of [A:tce a]."
+gzia:
+  id: uz7xkm5k7x
+  family: "R"
+  gloss: "population"
+  short: "[E:tce gan] (unitless) is the population/number of inhabitants of [A:tce pan]."
 cnei:
   id: b0ey5as5c6
   family: "R"
