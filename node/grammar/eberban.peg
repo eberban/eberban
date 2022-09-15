@@ -107,7 +107,7 @@ VEI_clause <-              spaces? VEI                  # VI-scope terminator
                                                         #
 GI_clause  <-              spaces? GI                   # predicate variables
 KI_clause  <-              spaces? KI                   # symbol/generic variables
-MI_clause  <- free_prefix* spaces? MI                   # particle_word predicates
+MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
 PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
