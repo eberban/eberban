@@ -948,7 +948,7 @@ co:
   short: "[E:tca skan] is a quote of an arbitrary string."
   gloss: "#foreign-quote"
 coi:
-  id: INSERT_WORD_ID
+  id: j6cqu8p0dd
   family: "COI"
   short: "[E:tca skan] is a quote of an arbitrary string which is skipped by the speaker/author."
   gloss: "#skipped-foreign-quote"
@@ -3298,7 +3298,7 @@ coriu:
   gloss: "owned-by"
   short: "[E:tce* man] is possessed/owned by [A:tce man]."
 sifpa:
-  id: INSERT_WORD_ID
+  id: 5kgq6jl1at
   family: "R"
   gloss: "asserts"
   short: "[E:tce pan] asserts that [A:()] is true."
@@ -3306,7 +3306,7 @@ sifpa:
     {pa X} can be modeled as being syntaxic sugar for {po P be mi sifpa X pu P}.
     P is an unnamable predicate used solely for this purpose.
 sifpoi:
-  id: INSERT_WORD_ID
+  id: b0c73ecend
   family: "R"
   gloss: "asks"
   short: "[E:tce pan] asks question represented by predicate [A:a] to addressee [O:tce man]."
