@@ -1,4 +1,4 @@
-# Predicate transformations
+# Predicate transformations (ZI)
 
 Particles of __ZI__ family (all particles starting with _z-_) allows to
 transform the immediatly following predicate, before chaining or explicit

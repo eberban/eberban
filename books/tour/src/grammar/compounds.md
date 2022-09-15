@@ -34,9 +34,9 @@ the initial vowel is followed by an __i__.
 > - ber : `[E:tce* man] reflects this language (eberban).`
 > - ban : `[E:tce* man] is a language.`
 
-> __e uinglici ban :__ `[E:tca ban] is the english language.`
+> __e uinglic ban :__ `[E:tca ban] is the english language.`
 > 
-> - uinglici : borrowing of "english".
+> - uinglic : borrowing of "english".
 > - ban : `[E:tce* man] is a language.`
 
 > __a cen po bu :__ `[E:tce* ma] is a dictionary.`

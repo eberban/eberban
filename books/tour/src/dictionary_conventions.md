@@ -52,7 +52,7 @@ more words.
 > For simplicity translations will be written with singular unless it is
 > important to make the distinction.
 
-## Map arguments and context
+<!-- ## Map arguments and context
 
 Another kind of data structure used in eberban is a __map__ or __dictionary__,
 which consist of a set of __keys__ each assiocated with a __value__. This allow
@@ -65,4 +65,4 @@ vowel argument is map and the definition is refering to an entry of such map.
 If there are no vowel before, it refers to an entry of the context argument.
 
 Exemples will be given in later chapters when explaining concepts using contexts
-or maps.
+or maps. -->

@@ -10,6 +10,7 @@ function remove_spaces(tree) {
     }
     return tree;
 }
+
 /*
  * EXAMPLE OF PARSE TREE PRUNING PROCEDURE
  * 
@@ -66,9 +67,18 @@ function join_expr(n) {
 
 /* Checks whether the argument node is a target for pruning. */
 function is_target_node(n) {
-    return (among(n[0], ["particle", "root", "borrowing", "freeform_variable"])
-            || is_family(n[0]));
+    return (among(n[0], SPECIAL_FAMILIES) || is_family(n[0]));
 }
+
+const SPECIAL_FAMILIES = [
+    "particle_form",
+    "root_form",
+    "borrowing",
+    "freeform_variable",
+    "foreign_quote_content",
+    "foreign_quote_open",
+    "foreign_quote_close",
+];
 
 function among(v, s) {
     var i = 0;
@@ -102,3 +112,4 @@ module.exports.is_family = is_family;
 module.exports.is_string = is_string;
 module.exports.is_array = is_array;
 module.exports.is_number = is_number;
+module.exports.SPECIAL_FAMILIES = SPECIAL_FAMILIES;

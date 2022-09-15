@@ -21,8 +21,8 @@ const important_types = [
 	[ 'chaining_neg', 'chaining negation' ],
 	[ 'chaining_unit', 'chaining unit' ],
 	[ 'vi_scope', 'VI-scope' ],
-	[ 'vi_scope_first', 'explicit switch' ],
-	[ 'vi_scope_next', 'explicit switch' ],
+	[ 'vi_scope_first', 'explicit bind' ],
+	[ 'vi_scope_next', 'explicit bind' ],
 	[ 'arguments_list', 'arguments' ],
 
 	// predicates
@@ -36,6 +36,8 @@ const important_types = [
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
 	[ 'foreign_quote_content', 'foreign quote content' ],
+	[ 'foreign_quote_open', 'foreign quote delimiter' ],
+	[ 'foreign_quote_close', 'foreign quote delimiter' ],
 	[ 'unit_number', 'number' ],
 	[ 'predicate_scope', 'predicate scope' ],
 
@@ -44,7 +46,10 @@ const important_types = [
 	[ 'free_interjection', 'interjection' ],
 	[ 'free_parenthetical', 'parenthetical' ],
 	[ 'free_subscript', 'subscript' ],
-	[ 'override', 'override' ],
+
+	// morphology
+	[ 'particle_form', 'particle' ],
+	[ 'root_form', 'root' ]
 ];
 
 // List of simplifying functions.

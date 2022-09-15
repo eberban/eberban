@@ -1,4 +1,4 @@
-# Numbers
+# Numbers (TI/j-)
 
 Numbers are important to communicate and serve many purposes. Eberban numbers
 are expressed as a chain of __TI__ particles (any particles starting with _t-_),

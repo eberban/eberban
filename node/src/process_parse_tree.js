@@ -54,7 +54,7 @@
 
 if (typeof alert !== 'function') alert = console.log; // For Node.js
 
-const { is_array, is_family, is_string, is_number } = require('./util');
+const { is_array, is_family, is_string, is_number, SPECIAL_FAMILIES } = require('./util');
 
 /*
  * Main function.
@@ -156,7 +156,6 @@ function newer_postprocessor(
 	};
 
 	if (!with_trimming) name_substitution_map = {};
-	var special_selmaho = [ 'particle', 'root', 'borrowing', 'freeform_variable', 'foreign_quote_content' ];
 	/** Building a node_action_for() function from the selected options **/
 	if (with_morphology)
 		var is_flattening_target = function(tree) {
@@ -164,7 +163,7 @@ function newer_postprocessor(
 		};
 	else
 		var is_flattening_target = function(tree) {
-			var targets = special_selmaho;
+			var targets = SPECIAL_FAMILIES;
 			return among(tree[0], targets) || is_family(tree[0]);
 		};
 	var is_branch_removal_target = function(tree) {
@@ -172,7 +171,7 @@ function newer_postprocessor(
 		return !with_terminators && is_family(tree[0]) && tree.length == 1;
 	};
 	var whitelist = [];
-	if (with_selmaho) whitelist = whitelist.concat(special_selmaho);
+	if (with_selmaho) whitelist = whitelist.concat(SPECIAL_FAMILIES);
 	// if (with_nodes_labels)
 	//     whitelist = whitelist.concat(["prenex", "sentence", "selbri", "sumti"]);
 	var is_node_trimming_target = function(tree) {

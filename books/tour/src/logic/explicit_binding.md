@@ -1,4 +1,4 @@
-# Explicit binding
+# Explicit binding (VI/FI/SI)
 
 ## Left atom place selection
 

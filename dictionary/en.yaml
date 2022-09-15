@@ -945,8 +945,13 @@ cei:
 co:
   id: upxio5nkc0
   family: "CO"
-  short: "[E:tca skan] is a quote of an arbitrary string of space separated \"words\"."
+  short: "[E:tca skan] is a quote of an arbitrary string."
   gloss: "#foreign-quote"
+coi:
+  id: INSERT_WORD_ID
+  family: "COI"
+  short: "[E:tca skan] is a quote of an arbitrary string which is skipped by the speaker/author."
+  gloss: "#skipped-foreign-quote"
 cu:
   id: spjmtjh1al
   family: "CU"
@@ -3292,6 +3297,24 @@ coriu:
   family: "R"
   gloss: "owned-by"
   short: "[E:tce* man] is possessed/owned by [A:tce man]."
+sifpa:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "asserts"
+  short: "[E:tce pan] asserts that [A:()] is true."
+  notes: |
+    {pa X} can be modeled as being syntaxic sugar for {po P be mi sifpa X pu P}.
+    P is an unnamable predicate used solely for this purpose.
+sifpoi:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "asks"
+  short: "[E:tce pan] asks question represented by predicate [A:a] to addressee [O:tce man]."
+  notes: |
+    {poi X (be) Y} can be modeled as being syntaxic sugar for
+    {poe X be Y po P be mi sifpoi X pu P}. is an unnamable predicate used solely
+    for this purpose.
+
 # -----
 # Compounds
 # -----
@@ -3324,7 +3347,7 @@ e ufranse stan:
   gloss: "France"
   tags: [cultural]
   short: "[E:tca stan] is France."
-e uinglici ban:
+e uinglic ban:
   id: funyada7wl
   family: "C2"
   gloss: "english language"

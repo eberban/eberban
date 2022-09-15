@@ -30,6 +30,7 @@ const hideFamily = [
 	'u',
 	'freeform_content',
 	'foreign quote content',
+	'foreign quote delimiter',
 ]
 
 // List of types with their associated CSS classes.

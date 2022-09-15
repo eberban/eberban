@@ -1,4 +1,4 @@
-# Sentences
+# Sentences (p-)
 
 Eberban has multiple kind of sentences, which all begins with particles starting
 with __p-__, grouped into the following families :
