@@ -1,8 +1,8 @@
 # Predicate transformations (ZI)
 
-Particles of __ZI__ family (all particles starting with _z-_) allows to
-transform the immediatly following predicate, before chaining or explicit
-bindings is performed.
+Particles of the__ZI__ family (all particles starting with _z-_) allow
+transforming the immediatly following predicate, before chaining or explicit
+bindings are performed.
 
 > To use a __ZI__ on more than one predicate word it should be wrapped in
 > brackets __pe ... pei__, which itself will be prefixed with __ZI__.

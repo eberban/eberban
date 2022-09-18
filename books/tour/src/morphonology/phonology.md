@@ -29,7 +29,7 @@
 
 The word boundary marker __'__ is usually realized as a pause. However before a
 vowel-initial word (borrowings, freeform variables and compounds) it can be
-realized as a glotal stop \[ʔ\] instead.
+realized as a glottal stop \[ʔ\] instead.
 
 Consecutive vowels are separated by hiatuses, but glides like \[j\] and \[w\]
 are allowed respectively alongside or instead of \[i\] and \[u\].

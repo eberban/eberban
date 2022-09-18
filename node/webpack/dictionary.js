@@ -1,13 +1,12 @@
 let { dictionary_en: dictionary, compare_words } = require('../src/dictionary');
 
-const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'a', 'e', 'i', 'o', 'u' ];
+const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'i', 'e', 'a', 'o', 'u' ];
 
 const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words);
 
 const tags_style = {
 	"transitive": "btn-info",
-	"partial": "btn-danger",
-	"semantic prime": "btn-success",
+	"core": "btn-success",
 };
 
 words_sorted.forEach((word) => {

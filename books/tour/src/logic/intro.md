@@ -5,10 +5,10 @@ pretty close to expressions in such logic while being targeted for human speech.
 
 [Higher-order Logic (HOL)]: https://en.wikipedia.org/wiki/Higher-order_logic
 
-Eberban grammar allow the speaker to manipulate __predicates__. They are a
-functions that takes __arguments__ and returns a __truth value__ which can be
-__true__, __false__ or __unknown/undefined__. They are introduced by __predicate
-words__ or created from other predicates using Eberban grammar.
+Eberban grammar allow the speaker to manipulate __predicates__. They are
+functions that take __arguments__ as inputs and outputs a __truth value__ which
+can be __true__, __false__ or __unknown/undefined__. They are introduced by
+__predicate words__ or created from other predicates using Eberban grammar.
 
 Arguments are not filled using __predicate words__ directly and there is no
 words that directly represents them. Instead some __particles__ allows to select
