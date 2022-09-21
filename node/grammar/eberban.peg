@@ -66,9 +66,9 @@ foreign_quote_close <- native_word # performs &post_word check
 number <- number_base? (number_1 number_fractional? / number_1? number_fractional) number_magnitude? JI_clause?
 number_1 <- TI_clause+
 number_base <- TI_clause JU_clause
-number_fractional <- JO_clause number_1? number_repeat? !number_fractional_constraint
-# Having a fractional part prevents to use anything but "ji"
-number_fractional_constraint <- number_magnitude? spaces? j i (h / ieaou)
+number_fractional <- JO_clause number_1? number_repeat? &number_fractional_constraint
+# Having a fractional part prevents to use anything but math mode (jie or ellided)
+number_fractional_constraint <- number_magnitude? spaces? !(!(j i e &post_word) JI) 
 number_repeat <- JA_clause number_1
 number_magnitude <- JE_clause number_1
 
