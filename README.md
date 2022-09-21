@@ -1,11 +1,4 @@
-<div align="center">
-  <a href="https://eberban.github.io/eberban/">
-    <img src="./images/eberban-alpha.png" width="30%" />
-  </a>
-</div>
-
-eberban
-=========
+# eberban
 
 __Eberban__ is a [logical] [constructed language] aimed to satisfy the
 following goals :
