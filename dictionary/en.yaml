@@ -483,28 +483,28 @@ zoie:
   gloss: "#get-default-E"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the E place of [predicate] (set with {poie}).
+    Satisfy the default bound of the E place of \[predicate\] (set with {poie}).
 zoia:
   id: pnlxz4xwki
   family: "ZI"
   gloss: "#get-default-A"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the A place of [predicate] (set with {poia}).
+    Satisfy the default bound of the A place of \[predicate\] (set with {poia}).
 zoio:
   id: ypral6pdfc
   family: "ZI"
   gloss: "#get-default-O"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the O place of [predicate] (set with {poio}).
+    Satisfy the default bound of the O place of \[predicate\] (set with {poio}).
 zoiu:
   id: eylcna75du
   family: "ZI"
   gloss: "#get-default-U"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the U place of [predicate] (set with {poiu}).
+    Satisfy the default bound of the U place of \[predicate\] (set with {poiu}).
 zu:
   id: khqauhadzn
   family: "ZI"
@@ -602,6 +602,19 @@ poe:
   gloss: "#def-capture"
   tags: [core]
   short: "Start a predicate definition which captures the current context."
+pou:
+  id: 7uffxtuqg2
+  family: "PO"
+  gloss: "#def-axiom"
+  tags: [core]
+  short: |
+    Start a predicate definition, which will immediatly considered as axiom by
+    the speaker.
+    Can be used as a performative, a sentence that performs an act by the fact
+    of being uttered. An interlocutor might accept this axioms with {pu} or just
+    ignore it, while the speaker can revert it using {pui}.
+  notes: |
+    {pou ga ...} is equivalent to {po ga ... pu ga}
 pahi:
   id: nxtau0gqfz
   family: "PA"
@@ -983,21 +996,35 @@ pa:
   family: "PA"
   gloss: "#assert"
   short: "Starts an assertive sentence, that the speaker asserts is true."
+  notes: |
+    {pa !X} is syntaxic sugar for {poe ezepa !X pou !P be mi sifpa ezepa}, with
+    _X_ being the asserted proposition, and _P_ an unnamable predicate used
+    solely to make an axiom. Since by uttering a {pa} sentence the speaker
+    indeed asserts ({sifpa}) the proposition, it is not possible to reject this
+    axiom.
+
+    {ezepa} thus allows to refer to the latest assertion.
 pahu:
   id: x6uy2h6mvl
   family: "PA"
   gloss: "#import"
   short: |
     Import another text represented by the [E:tce* skan] place of this scope.
-    Imports allows to make texts defining non-standard vocabulary about a subject,
-    so that it can be used anytime someone wants to talk about this subject.
-    Such subjects are advanced physics, chemistry or maths for example.
+    Imports allows to make texts defining non-standard vocabulary about a
+    subject, so that it can be used anytime someone wants to talk about this
+    subject. Such subjects are advanced physics, chemistry or maths for example.
   notes: "TODO: Define how the represented text is resolved."
 poi:
   id: ici1wrui6g
   family: "PO"
   gloss: "#question"
   short: "Start a question definition, the arguments being the unknown informations."
+  notes: |
+    {poi !P !X} is syntaxic sugar for {po !P !X pou !R be mi sifpoi via !P fo
+    mo}, _P_ being the defined predicate word, _X_ the definition, and _R_ an
+    unnamable predicate used solely to make an axiom. Since by uttering a {poi}
+    sentence the speaker indeed ask a question ({sifpoi}), it is not possible to
+    reject this axiom.
 di:
   id: my7irg3svn
   family: "DI"
@@ -3303,7 +3330,7 @@ sifpa:
   gloss: "asserts"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
-    {pa X} can be modeled as being syntaxic sugar for {po P be mi sifpa X pu P}.
+    {pa X} can be modeled as being syntaxic sugar for {poe ezepa po P be mi sifpa X pu P}.
     P is an unnamable predicate used solely for this purpose.
 sifpoi:
   id: b0c73ecend
@@ -3469,6 +3496,11 @@ e kini bun:
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
   definition: "po ekinibun ke ka pi ke bun gla kini via seru ka"
+e ze pa:
+  id: mfyipbixdd
+  family: "C2"
+  short: "Repeats the previous assertion. See {pa} notes."
+  gloss: "latest-assertion"
 
 a cen po bu:
   id: jpvb7ytjfg

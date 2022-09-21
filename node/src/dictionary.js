@@ -8,8 +8,6 @@ for (i = 0; i < alphabet.length; i++) {
     symbol_indices[alphabet[i]] = i;
 }
 
-console.log({symbol_indices});
-
 function compare_words(x, y) {
     if (x == y) {
         return 0;

@@ -155,10 +155,11 @@ function renderParagraphs(text) {
 		p = p.replace(/\\\(/g, '&#40;');
 		p = p.replace(/\\\)/g, '&#41;');
 		p = p.replace(/(  |\\)(\r\n|\r|\n)/g, '<br />');
+		p = p.replace(/(\r\n|\r|\n)/g, '');
 		p = p.replace(/\[(.*?(:.*?)?)\]/g, (match, p1) => {
 			let out = `<span class="label label-info place">`;
 			out += `<span class="hidden">[</span>`;
-			out = out +  p1.replace(/([a-zA-Z']{2,})/g, (match) => `{${match}}`);
+			out = out +  p1.replace(/([a-zA-Z']{2,})/g, (match) => `${addDictionaryLinks(match)}`);
 			out += `<span class="hidden">]</span>`;
 			out = out + `</span>`
 			return out;
@@ -166,7 +167,7 @@ function renderParagraphs(text) {
 		p = p.replace(/\[(@.*?(:.*?)?)\]/g, (match, p1) => {
 			let out = `<span class="label place">`;
 			out += `<span class="hidden">[</span>`;
-			out = out +  p1.replace(/([a-zA-Z']{2,})/g, (match) => `{${match}}`);
+			out = out +  p1.replace(/([a-zA-Z']{2,})/g, (match) => `${addDictionaryLinks(match)}`);
 			out += `<span class="hidden">]</span>`;
 			out = out + `</span>`
 			return out;
@@ -182,15 +183,9 @@ function renderParagraphs(text) {
 		p = p.replace(/\$\((.+?)\)/g, '<span class="cursive">$1</span>');
 		
 		p = p.replace(/\{(.*?)\}/g, (match, p1) => {
-			let out = '<em>';
-			let list = p1.split(' ');
-
-			out += list.map((word) => {
-				let res = word.replace(/(.*?)([A-Za-z']+)(.*?)/g, '$1<a href="#$2">$2</a>$3')
-				return res;
-			}).join(' ');	
-
-			out += '</em>';
+			let out = '<span class="ebb-quote">';
+			out += addDictionaryLinks(p1);
+			out += '</span>';
 
 			return out;
 		});
@@ -199,6 +194,25 @@ function renderParagraphs(text) {
 	});
 
 	return output;
+}
+
+const addDictionaryLinks = (text) => {
+	let list = text.split(' ');
+	let out = "";
+
+	out += list.map((word) => {
+		let res;
+
+		if (word.startsWith("!")) {
+			res = word.slice(1)
+		} else {
+			res = word.replace(/(.*?)([A-Za-z']+)(.*?)/g, '$1<a href="#$2">$2</a>$3')
+		}
+		
+		return res;
+	}).join(' ');	
+
+	return out;
 }
 
 function escapeHTML(str) {

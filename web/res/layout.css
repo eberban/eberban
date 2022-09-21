@@ -289,3 +289,9 @@ li.implicit {
     font-style: italic;
     font-size: 125%;
 }
+
+.ebb-quote {
+	background-color: #006eff30;
+	border-radius: 10px;
+	padding: 0px 5px;
+}
