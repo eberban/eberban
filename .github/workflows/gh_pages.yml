@@ -43,9 +43,9 @@ jobs:
           version: latest
           use-tool-cache: true
 
-      - name: Build tour book
+      - name: Build refgram book
         run: |
-          mdbook build books/tour
+          mdbook build books/refgram
         
       - name: Install NPM dependencies
         run: |
