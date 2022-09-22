@@ -3341,6 +3341,12 @@ sifpoi:
     {poi X (be) Y} can be modeled as being syntaxic sugar for
     {poe X be Y po P be mi sifpoi X pu P}. is an unnamable predicate used solely
     for this purpose.
+djie:
+  id: 56lqin725a
+  family: "R"
+  gloss: "set-overlaps"
+  tags: [set]
+  short: "[E:tce a] and [A:tce a] overlap (they have a non-empty intersection)."
 
 # -----
 # Compounds
