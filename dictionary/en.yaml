@@ -3184,11 +3184,15 @@ jeni:
   gloss: "range"
   tags: [number]
   short: |
-    [E:tce gan] are all numbers in the range from [A:tce gan] - [O:tce gan]
-    to [A] + [O].
+    [E:tce gan] are all numbers in the range from [O:tce gan] (default: 0) -
+    [A:tce gan] to [O] + [A].
   notes: |
-    As [A] and [O] are sets it is the union made from all members of [A] with
-    all members of [O].
+    If used at the end of a chain of number or unit predicates (such as {mula}
+    and numbers made with {jie}), the multiplicative aspect of this chain can
+    be used to give a range proportional to the expressed number.
+
+    {te ti mula jeni te} = 10 ± 10 (10 * 1)\
+    {ta ti mula jeni jo to} = 20 ± 6 (20 * 0.3)\
 pafkei:
   id: ymuvroa9iu
   family: "R"
