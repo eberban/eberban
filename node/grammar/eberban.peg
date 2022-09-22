@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.51
+# eberban PEG grammar - v0.52
 # =============================
 
 # GRAMMAR
@@ -14,7 +14,7 @@ paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
 paragraph_unit_erased <- paragraph_unit_1 CU_clause
 paragraph_unit_1 <- definition / axiom / sentence
 
-arguments_list <- (KI_clause / GI_clause)* BE_clause
+arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
 defined <- GI_clause / free_prefix* spaces? freeform_variable / predicate_compound / predicate_root
 
 definition <- PO_clause defined scope

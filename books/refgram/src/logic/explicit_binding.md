@@ -45,8 +45,8 @@ which is not what we want.
 ## Arguments list
 
 Between __VI/FI__ and the inner predicate an __arguments list__ can be provided
-by having 0 or more __KI/GI__ terminated with __be__, in which case the bindings
-will occur with those arguments instead of the arguments of the predicate after
+by having 0 or more __KI/GI/BA__ terminated with __be__, in which case the
+bindings will occur with those arguments instead of the arguments of the predicate after
 __be__.
 
 __KI__ (all particles starting with _k-_) represent an atom or generic argument
@@ -56,6 +56,9 @@ __GI__ (all particles starting with _g-_) however represents a predicate whose
 arity and type will be infered from its usage in the sentence. All __GI__
 starting with __gi-__ have __intransitive behavior__, while the others starting
 with __ge/ga/go/gu-__ have __transitive behavior__.
+
+Any __BA__ used in the argument list allow skipping this argument if it is not
+used in the inner predicate. Which __BA__ member is used doesn't matter.
 
 > __mi dona [va ke be: mian buri ke]__
 > 
@@ -79,9 +82,13 @@ with __ge/ga/go/gu-__ have __transitive behavior__.
 > Given $(c), $(e):\
 > $(e) is a speaker which likes [something eaten by a cat].
 
-If an argument in the list is used only once it can be replaced with __ba__,
-which adds an argument at the end of the list and use it directly. The above
-example can thus be shortened as _mi dona [va be mian buri __ba__]_.
+__BA__ can also be used outside of the argument list, which adds an argument at
+the end of the list and use it directly. __ba__ declares an atom/generic
+argument (like a KI), __bai__ a transitivite predicate argument (like a
+gi-initial GI), and __bae__ an intransitive predicate argument (like a non
+gi-initial GI).
+
+The above example can thus be shortened as _mi dona [va be mian buri __ba__]_.
 
 ## Right place and chaining selection
 

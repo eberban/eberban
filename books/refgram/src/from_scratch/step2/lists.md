@@ -154,7 +154,7 @@ And even inclusion.
 Finally, we can allow speakers to quickly define sets using the list grammar
 with the following predicate.
 
-> bli: `[E:tce a]` is the set containing only all the elements in list `[A:blu a]`.
+> blo: `[E:tce a]` is the set of all the elements in list `[A:blu a]`.
 >
 > We first define a predicate ensuring that __ke__ is a set containing alls
 > elements in list __ka__.
@@ -169,11 +169,23 @@ with the following predicate.
 > containing all elements in list __ka__ (so it can't be any set that contains
 > them plus additional members that are not in the list).
 > ```
-> po bli ke ka be
+> po blo ke ka be
 > ma vi ke ga ka
 >   fi bi ma 
 >     ve bi ke ga ka
 >     fe tcia ke   
+> ```
+
+As the vocabulary is designed around set arguments, it is also useful to
+express the set which is the union of a list of sets.
+
+> bli: `[E:tce a]` is the union of all sets in list `[A:blu tce a]`.
+>
+> ```
+> po bli ke ka be
+> ke dju
+>   via ki be ka bla
+>     viu ba ba ko be ko tcia ki
 > ```
 
 > Example of usage (with full grammar and vocabulary):\
