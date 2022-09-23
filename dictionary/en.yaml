@@ -3184,7 +3184,7 @@ jeni:
   gloss: "range"
   tags: [number]
   short: |
-    [E:tce gan] are all numbers in the range from [O:tce gan] (default: 0) -
+    [E:tce gan] are all numbers in the range from [O:tce gan] (default: 1) -
     [A:tce gan] to [O] + [A].
   notes: |
     If used at the end of a chain of number or unit predicates (such as {mula}
