@@ -1324,7 +1324,7 @@ djo:
   family: "R"
   gloss: "set-local-max"
   tags: [set]
-  short: "[E:tce a] is the locally largest set that satisfy [A:(tce a)]."
+  short: "[E:tce a] is a locally largest set that satisfy [A:(tce a)]."
   definition: |
     po djo ke gia be
     ma
@@ -1338,7 +1338,7 @@ dju:
   family: "R"
   gloss: "set-local-min"
   tags: [set]
-  short: "[E:tce a] is the locally smallest set that satisfy [A:(tce a)]."
+  short: "[E:tce a] is a locally smallest set that satisfy [A:(tce a)]."
   definition: |
     po djo ke gia be
     ma
