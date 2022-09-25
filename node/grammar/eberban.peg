@@ -1,9 +1,9 @@
-# eberban PEG grammar - v0.52
+# eberban PEG grammar - v0.52.1
 # =============================
 
 # GRAMMAR
 # main text rule
-text <- (free_interjection / free_parenthetical)* paragraphs? spaces? EOF?
+text <- (free_suffix)* paragraphs? spaces? EOF?
 
 # text structure
 paragraphs <- paragraph (&DU_clause paragraph)*
@@ -97,7 +97,7 @@ DI_clause  <-              spaces? DI                   # free metadata
 DE_clause  <-              spaces? DE                   # free interjection
 DA_clause  <-              spaces? DA                   # free parenthetical starter
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
-DU_clause  <-              spaces? DU                   # paragraph marker
+DU_clause  <- free_suffix* spaces? DU free_suffix*      # paragraph marker
                                                         #
 SI_clause  <- free_prefix* spaces? SI                   # chaining modification
 ZI_clause  <- free_prefix* spaces? ZI                   # predicate transformation
