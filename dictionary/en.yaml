@@ -1152,25 +1152,6 @@ tcui:
   tags: [set, axiom]
   short: |
     [E:ma] is the (non-empty) set of all things that individualy satisfy [A:(a)].
-  definition: |
-    po e tcui pi be
-    ma
-      vi boi tcui
-      fi boi tcie
-      fi mae
-        ve gi be varu
-          vie gi mai
-          fia mae
-            ve ki be varu
-              vie ki ma
-              fie ki mua
-                ma
-                vi bo ke tcui gi
-                fi mae
-                  ve ka be mai
-                    vie ka tcie ke
-                    fie ka gi
-    pi e tcui pi
 tcie:
   id: rcpkbwycm6
   family: "R"
@@ -1178,7 +1159,6 @@ tcie:
   tags: [set, axiom]
   short: |
     [E:a] is a member of set [A:tcui a].
-  definition: See definition of tcui.
 tcia:
   id: p8mdb3rcqw
   family: "R"

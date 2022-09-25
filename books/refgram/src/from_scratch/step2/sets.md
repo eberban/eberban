@@ -7,63 +7,42 @@ It associates every property (along with the context it is evaluated with) with
 a unique atom representing it and all arguments that makes the property true (the
 members of the set). The core predicates modeling this are:
 
-- tcui: `[E:ma]` is the (non-empty) set of all things that individualy satisfy
-  `[A:(a)]`.
-- tcie: `[E:a]` is a member of set `[A:tcui a]`.
+<spoiler>
 
-## Axiom
+__tcui:__ `[E:ma]` is the (non-empty) set of all things that individualy satisfy
+`[A:(a)]`.
+---
+```
+po tcui ke ka be
+```
 
-Defining sets using only __po__ is however not possible, as __tcui__ and
-__tcie__ depends on each other to be defined. Instead we need to define a
-proposition stating that thoses predicates exists and satisfy the constraints of
-sets and membership, and use __pu__ to make this proposition an __axiom__, which
-is assumed to be true. We'll use the shorthand __pou__ to both define the
-predicate and make it an axiom.
+We represent the set using a pair containing the property.
+
+```
+ke kin
+  ve zai tcui
+  fa ka
+```
+
+And there must exist something that satisfy the predicate represented by __ka__.
+
+```
+  fi ma zu ka
+```
+
+</spoiler>
 
 <spoiler>
 
-Axiomatic definition of __tcui__ and __tcie__
+__tcie:__ `[E:a]` is a member of set `[A:tcui a]`.
 ---
-We define the proposition of the axiom, which by convention is named
-with a compound made from one of the defined predicates and the particle for
-axioms __pu__.
 ```
-pou e tcui pu be
-```
-We then state that predicates __tcui__ and __tcie__ exist:
-```
+po tcie ke ka be
 ma
-  vi boi tcui
-  fi boi tcie
+  ve sae tcui ka
+  fe ke zu ba
 ```
-Then for every property __gi__ (we express it is a property by providing it
-one generic argument (mai). However it means that __gi__ must be true for at
-least one argument. Thus, there will be no concept of an empty set).
-```
-  fi mae
-    ve gi be varu
-      vie gi mai
-```
-Then for every context __ki__ (which is a atom)
-```
-      fia mae
-        ve ki be varu
-          vie ki ma
-          fie ki mua
-```
-There exist a set __ke__ representing this property (with this context)
-```
-            ma
-              vi bo ke tcui gi
-```
-And for all __ka__, __ka__ is a member of set __ke__ if and only if __ka__
-satisfy __gi__
-```
-              fi mae
-                ve ka be mai
-                  vie ka tcie ke
-                  fie ka gi
-```
+
 </spoiler>
 
 ## Subsets
