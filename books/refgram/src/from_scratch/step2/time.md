@@ -17,7 +17,7 @@ possible futures or even parallel or fictional universes.
 To do that we'll first define a __node__ in a __directed graph__ (also called
 __digraph__), with (directed) __arcs__ representing a transition from a node to
 another. Nodes can represent __time instants__, and arcs can represents which
-possible state of the universe is immediately following this one. 
+possible state of the universe is immediately following this one.
 
 > Even if nodes and digraphs can be used for more general purposes, we'll use
 > time related terminology to keep things easier to follow.
@@ -25,53 +25,62 @@ possible state of the universe is immediately following this one.
 We'll define a node as a pair of an identifier (`zai din`) and set of nodes that
 this node have arcs towards. Note that while sets can't be empty, we want to
 support nodes with no arcs, which is done by using a sentinel value instead of
-the set (`zai din` again). 
+the set (`zai din` again).
 
-> din: `[E:ma]` is an instant (digraph node).
->
-> ```
-> po din ke be
-> ke kin
->   va zai din
->   fo vare
->     ve zai din
->     fa tce din
-> ```
+<spoiler>
+
+__din:__ `[E:ma]` is an instant (digraph node).
+---
+```
+po din ke be
+ke kin
+  va zai din
+  fo vare
+    ve zai din
+    fa tce din
+```
+</spoiler>
 
 We can then define predicates to more easily speak about arcs and paths
 (transitive arcs). We'll also call paths __time spans__.
 
-> dini: There exist an arc from node `[E:din]` to node `[A:din]`.
->
-> ```
-> po dini ke ka be
-> ke din kin
->   vo sae tci ka din
-> ```
+<spoiler>
 
-> dinu: There exist an path/span `[O:blu din]` from node `[E:din]` to node `[A:din]`.
->
-> ```
-> po dinu ke ka ko be
-> ```
-> We exclude the final node since we don't want to speak about an arc from it to
-> another one (since its the last one).
-> ```
-> ko ble
->   vo ka bu
-> ```
-> The rest of the list contains nodes such that each node have an arc towards
-> the next node in the list, or the final node for the penultimate node in the
-> list.
-> ```
->   fa bla
->     va ke
->     fo ka
-> ```
-> The item is the input carry and have an arc towards the output carry.
-> ```
->     fu kie kia kio be kie kio dini kia
-> ```
+__dini:__ There exist an arc from node `[E:din]` to node `[A:din]`.
+---
+```
+po dini ke ka be
+ke din kin
+  vo sae tci ka din
+```
+</spoiler>
+
+<spoiler>
+
+__dinu:__ There exist an path/span `[O:blu din]` from node `[E:din]` to node `[A:din]`.
+---
+```
+po dinu ke ka ko be
+```
+We exclude the final node since we don't want to speak about an arc from it to
+another one (since its the last one).
+```
+ko ble
+  vo ka bu
+```
+The rest of the list contains nodes such that each node have an arc towards
+the next node in the list, or the final node for the penultimate node in the
+list.
+```
+  fa bla
+    va ke
+    fo ka
+```
+The item is the input carry and have an arc towards the output carry.
+```
+    fu kie kia kio be kie kio dini kia
+```
+</spoiler>
 
 ## Present
 
@@ -80,50 +89,62 @@ context a node, and between sentences we update it (thanks to __pahe__) by
 taking a node such that there exist a path between the old and the next one (the
 new present is in the future of the old one).
 
-> den: `[E:()]` is evaluated with a more recent present.
-> ```
-> po den gie be
-> kcar
->   va gia
->   fe zai den kcu dinu
-> ```
+<spoiler>
+
+__den:__ `[E:()]` is evaluated with a more recent present.
+---
+```
+po den gie be
+kcar
+  va gia
+  fe zai den kcu dinu
+```
+</spoiler>
 
 We'll define a predicate to help using predicates like __sin__ (with a single
 proposition argument) with __pae__ and __pahe__.
 
-> pane: `[E:ma]` is the context exposed to a predicate when it evaluated by
-> `[A:(())]`.
-> ```
-> po pane ke gia be
-> gia
->   via be mue ke
-> ```
+<spoiler>
+
+__pane:__ `[E:ma]` is the context exposed to a predicate when it evaluated by
+`[A:(())]`.
+---
+```
+po pane ke gia be
+gia
+  via be mue ke
+```
+</spoiler>
 
 We can pick a first present node.
 
-> ```
-> pae pane
->   va gi be kcar
->     va gia
->     fe zai den kco din
-> ```
+```
+pae pane
+  va gi be kcar
+    va gia
+    fe zai den kco din
+```
 
 And setup the automatic present update. (we also assign it to _epahegi_ so that
 it can easily be composed with other future transformations)
 
-> ```
-> po epahegi pane den 
-> pahe epahegi
-> ```
+```
+po epahegi pane den
+pahe epahegi
+```
 
 We also make a predicate for the time span containing only the present, as it
 will be useful later.
 
-> del: `[E:dinu]` is the present time span.
-> ```
-> po del ke be
-> ke ve kcei zai den bu
-> ```
+<spoiler>
+
+__del:__ `[E:dinu]` is the present time span.
+---
+```
+po del ke be
+ke ve kcei zai den bu
+```
+</spoiler>
 
 ## Events
 
@@ -139,46 +160,57 @@ setup such entry in the context (and make it the longest possible).
 > true. They might however be multiple possible _x_ that don't contain each
 > other.
 
-> zvi: `[E:dinu]` is a time span shared by all events of `[A:()]`.\
-> We define a first predicate to evaluate A with a span in the context
-> ```
-> po izvi ke gia be
-> kcar
->   va gia
->   fe zai zvi kco ke bu
-> ```
-> Then we really define `zvi` by ensuring this span cannot be made longer by
-> concatenation.
-> ```
-> po zvi ke gia be
-> ma
->   vi ke izvi gia
->   fi bi ma
->     ve pe ble
->       va zi blur
->       fo ble
->         va ke
->         fo zi blur
->     pei fe izvi gia
-> ```
+<spoiler>
+
+__zvi:__ `[E:dinu]` is a time span shared by all events of `[A:()]`.
+---
+We define a first predicate to evaluate A with a span in the context.
+```
+po izvi ke gia be
+kcar
+  va gia
+  fe zai zvi kco ke bu
+```
+Then we really define `zvi` by ensuring this span cannot be made longer by
+concatenation.
+```
+po zvi ke gia be
+ma
+  vi ke izvi gia
+  fi bi ma
+    ve pe ble
+      va zi blur
+      fo ble
+        va ke
+        fo zi blur
+    pei fe izvi gia
+```
+</spoiler>
 
 A predicate modeling an event can then use the following predicate to state that
 the context span is contained into the provided span.
 
-> zvin: Time span `[E:dinu]` contains context time span.
-> ```
-> po zvin
-> sa bla ve kcei zei zvi
-> ```
+<spoiler>
+
+__zvin:__ Time span `[E:dinu]` contains context time span.
+---
+```
+po zvin
+sa bla ve kcei zei zvi
+```
+</spoiler>
 
 In some cases it can be useful to refer to the context time span itself.
 
-> zvil: `[E:dinu]` is the context time span.
-> ```
-> po zvil
-> kcei zei zvi
-> ```
-> 
+<spoiler>
+
+__zvil:__ `[E:dinu]` is the context time span.
+---
+```
+po zvil
+kcei zei zvi
+```
+</spoiler>
 
 ## Tenses
 
@@ -194,29 +226,33 @@ Let's first start with a simple one: the proposition time span is met by the
 context time span, which means that the last instant of the context time
 span is the first instant of the proposition time span.
 
-> sul: It is possible that `[E:()]` is met by time span `[A:dinu]`
-> (default: context time span).
-> ```
-> po sul gie ka be
-> ma
-> ```
-> _ke_ is a time span of events in _gie_
-> ```
->   vi bo ke zvi gie
-> ```
-> _ki_ is the first instant of time span _ke_
-> ```
->   fi pe ke ble
->     va bo ki bu
->   pei
-> ```
-> _ki_ is the last instant of _ka_
-> ```
->   fi ka ble
->     vo ki bu
->
-> poia sul zvil
-> ```
+<spoiler>
+
+__sul:__ It is possible that `[E:()]` is met by time span `[A:dinu]`
+(default: context time span).
+---
+```
+po sul gie ka be
+ma
+```
+_ke_ is a time span of events in _gie_
+```
+  vi bo ke zvi gie
+```
+_ki_ is the first instant of time span _ke_
+```
+  fi pe ke ble
+    va bo ki bu
+  pei
+```
+_ki_ is the last instant of _ka_
+```
+  fi ka ble
+    vo ki bu
+
+poia sul zvil
+```
+</spoiler>
 
 To make the __necessary__ variant we need to check that for all time spans _x_
 that contains the provided time span (often the context time span), either:
@@ -227,46 +263,54 @@ that contains the provided time span (often the context time span), either:
 > This second case allows to handle the time spans that would be "to short" to
 > contain the proposition time span which will be "further away".
 
-> zvan: For all time span _x_ that contains the time span `[A:dinu]`, either:
-> - `[E:(dinu)]` evaluated with _x_ is true
-> - `[E]` is true if evaluated with a time span containing _x_
-> ```
-> po zvan gie ka be
-> ```
-> For all time span _ki_ that contains _ka_
-> ```
-> mae
->   vie ki be varu
->     vie ki sae bla ka
-> ```
-> It it either a time span that makes _gie_ true
-> ```
->     fia vare
->       vie gie ki
-> ```
-> Or this time span is contained in a larger time span _ke_ that makes _gie_
-> true
-> ```
->       fia ma
->         vi bo ke sae bla ki
->         fi gie ke
-> ```
+<spoiler>
+
+__zvan:__ For all time span _x_ that contains the time span `[A:dinu]`, either:
+- `[E:(dinu)]` evaluated with _x_ is true
+- `[E]` is true if evaluated with a time span containing _x_
+---
+```
+po zvan gie ka be
+```
+For all time span _ki_ that contains _ka_
+```
+mae
+  vie ki be varu
+    vie ki sae bla ka
+```
+It it either a time span that makes _gie_ true
+```
+    fia vare
+      vie gie ki
+```
+Or this time span is contained in a larger time span _ke_ that makes _gie_
+true
+```
+      fia ma
+        vi bo ke sae bla ki
+        fi gie ke
+```
+</spoiler>
 
 Thanks to this predicate we're able to define:
 
-> sun: It is necessary that `[E:()]` is met by time span `[A:dinu]`
-> (default: context time span).
-> ```
-> po sun gie ka be
-> zvan
->   fa ka
->   vie ki be sul
->     vie gie
-> ```
-> _ki_, which is provided by _zvan_, must contains the context span
-> ```
->       vi ki sae bla zvil
-> ```
+<spoiler>
+
+__sun:__ It is necessary that `[E:()]` is met by time span `[A:dinu]`
+(default: context time span).
+---
+```
+po sun gie ka be
+zvan
+  fa ka
+  vie ki be sul
+    vie gie
+```
+_ki_, which is provided by _zvan_, must contains the context span
+```
+      vi ki sae bla zvil
+```
+</spoiler>
 
 We can define all the following predicates (with A always defaulting to the
 context time span) :
@@ -286,53 +330,62 @@ context time span) :
 Aside from those relations with the context span, we can make a tense predicate
 related to the present instant instead of the context time span.
 
-> dan: `[E:()]` presently occurs.
-> ```
-> po dan gie be
-> bla
->   ve kcei zai den bu
->   fa zvi gie
-> ```
+<spoiler>
+
+__dan:__ `[E:()]` presently occurs.
+---
+```
+po dan gie be
+bla
+  ve kcei zai den bu
+  fa zvi gie
+```
+</spoiler>
 
 ## Sentence wrapper
 
 Now that we have tenses that interact with the context time span, we need to
 actually setup this time span for all sentences. For that we allow to register
 in the context a property describing one or multiple __initial time spans__.
-> zve: `[E:kcin]` is the context after inserting the initial time spans `[A:(blu
-> din)]`.
-> ```
-> po zve ke gia be
-> kcar
->   via mue ke
->   fe zai zve kco gia bu
-> ```
+
+<spoiler>
+
+zve: `[E:kcin]` is the context after inserting the initial time spans `[A:(blu
+din)]`.
+---
+```
+po zve ke gia be
+kcar
+  via mue ke
+  fe zai zve kco gia bu
+```
+</spoiler>
 
 Then at the start of each sentence, we can use _zvi_ with a time span that
 satisfy this registered property. (we also assign it to _epahigi_ so that it can
 easily be composed with other future sentence wrappers).
 
-> ```
-> po eipahizve gie be
-> zvi
->   via zvin zvi gie
->     zvin zu pe kcei zai zve
->
-> po epahigi eipahizve
-> pahi epahigi
-> ```
+```
+po eipahizve gie be
+zvi
+  via zvin zvi gie
+    zvin zu pe kcei zai zve
+
+po epahigi eipahizve
+pahi epahigi
+```
 
 By default we'll set it to the present (since it's a property it can use the
 context to always correspond to the current present instant)
 
-> ```
-> pae zve del
-> ```
+```
+pae zve del
+```
 
 > It could also be set such that it can be any time span, which can be useful
 > to express a reference event in some alternate or fictional universe, and
 > then set this event time span as the initial time span.
-> 
+>
 > ```
 > pae zve mai
 > ```
