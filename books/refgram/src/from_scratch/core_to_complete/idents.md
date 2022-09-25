@@ -7,7 +7,7 @@ the concept of identifiers, and the right component is the property.
 
 <spoiler>
 
-__ezaige:__ `[E:ma]` is an identifier/name made from property `[A:(a)]`. 
+__[ezaige]:__ `[E:ma]` is an identifier/name made from property `[A:(a)]`. 
 ---
 ``` 
 po ezaige ke gi be 
@@ -33,4 +33,4 @@ __gi__ being a property (even if it false for all possible arguments)
 ``` 
 </spoiler>
 
-__zai__ can now be used following 
+[ezaige]: ../sugar/zai.md 
