@@ -7,7 +7,7 @@ predicates for the OR and AND logic gates of 2 propositions.
 <spoiler>
 
 
-__vari__: True if both `[E:()]` and `[A:()]` are true. 
+__vari:__ True if both `[E:()]` and `[A:()]` are true. 
 ---
 ```
 po vari ge ga be 
@@ -18,7 +18,7 @@ ge vi ga
 <spoiler>
 
 
-__vare__: True if `[E:()]` or `[A:()]` or both is true.
+__vare:__ True if `[E:()]` or `[A:()]` or both is true.
 ---
 ```
 po vare ge ga be
@@ -39,7 +39,7 @@ default arguments to make it work as logical implication.
 
 <spoiler>
 
-__varu__: If `[E:()]` is then `[A:()]` (default: true) is true, otherwise
+__varu:__ If `[E:()]` is then `[A:()]` (default: true) is true, otherwise
 `[O:()]` (default: true) is true. 
 ---
 ```
@@ -65,7 +65,7 @@ infinity of things. It is defined recursively.
 
 <spoiler>
 
-__kidvo__: `[E:a]` and `[A:a]` satisfy relation `[O:(a,a)]` transitively.
+__kidvo:__ `[E:a]` and `[A:a]` satisfy relation `[O:(a,a)]` transitively.
 ---
 ```
 po kidvo ke ka go be

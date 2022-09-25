@@ -6,7 +6,13 @@ src = "src"
 title = "Eberban Reference Grammar"
 
 [output.html]
+default-theme = "rust"
 mathjax-support = true
+git-repository-url = "https://github.com/eberban/eberban"
+git-repository-icon = "fa-github"
+curly-quotes = true
+site-url = "https://eberban.github.io/eberban/books/refgram/book/"
+
 additional-css = [
     "res/leipzig.min.css",
     "res/style.css",
@@ -15,9 +21,6 @@ additional-js = [
     "res/leipzig.min.js",
     "res/leipzig_apply.js",
 ]
-
-# [output.linkcheck]
-# warning-policy = "error"
 
 [preprocessor.regex-replacer]
 command="mdbook-regex-replacer"
