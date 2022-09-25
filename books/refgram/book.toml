@@ -25,3 +25,7 @@ command="mdbook-regex-replacer"
 [[preprocessor.regex-replacer.items]]
 regex="```gloss\n(?P<content>(?s:.)*?)\n```"
 rep="<div data-gloss>\n\n${content}\n</div>"
+
+[[preprocessor.regex-replacer.items]]
+regex="<spoiler>\n(?P<title>(?s:.)*?)\n-{2,}\n(?P<content>(?s:.)*?)\n</spoiler>"
+rep="<details><summary>\n\n${title}\n</summary><div>\n\n${content}\n</div></details>"

@@ -20,3 +20,29 @@
     font-style: italic;
     font-size: 125%;
 }
+
+details {
+    margin: 20px 0;
+    padding: 0 20px;
+	background-color: var(--table-alternate-bg);
+    border: .1em solid var(--quote-border);
+}
+
+details summary {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+details[open] summary {
+    border-bottom: .1em solid var(--quote-border);
+}
+
+details summary > :first-child {
+    margin-top: 0;
+    padding-top: 0;
+    display: contents;
+}
+
+details summary:hover {
+	cursor: pointer;
+}
