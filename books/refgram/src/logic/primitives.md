@@ -11,7 +11,7 @@ to express logical primitives that the grammar itself don't cover.
 \text{mao}(c,E,A)   &= \forall x_0 \dots \forall x_n. \\ E(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\\\
 \text{mui}(c,E)     &= \text{is-unknown}(E) \\\\
 \text{mue}(c,E)     &= E(c,c) \\\\
-\text{mua}(c,E,a)   &= E(a) \\\\
+\text{mua}(c,e,A)   &= A(e) \\\\
 \end{align} \\]
 
 __ma__ wraps the primitive concept of its argument being an atom.
@@ -51,8 +51,8 @@ __AND__ (\\(\wedge\\)) operator :
 
 __mue__ and __mua__ allows to interact with the usually hidden context argument.
 __mue__ accepts a 1-ary predicate that is true when provided the context as an
-__explicit argument__, while __mua__ takes a proposition $(E) and an atom $(a)
-such that $(E) is true when $(a) is provided as the hidden context argument.
+__explicit argument__, while __mua__ takes a proposition $(A) and an atom $(e)
+such that $(A) is true when $(e) is provided as the hidden context argument.
 Those 2 predicate words are what allows the context argument to be really
 useful: the grammar forwards automatically the context parameter for the
 speaker, which can then be used by predicates.
