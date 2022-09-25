@@ -1478,8 +1478,8 @@ kca:
   gloss: "map-list-wrapper"
   tags: [map, list]
   short: |
-    [E:kcin] represents a map that can be optained from [A:kcin] by applying the
-    list of transformations [O:blu ()].
+    [E:kcin] represents a map that can be optained from [O:kcin] (default: empty
+    map {kcil}) by applying the list of transformations [A:blu ()].
 kcan:
   id: eogkr6aqeg
   family: "R"
