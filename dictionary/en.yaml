@@ -1292,7 +1292,9 @@ dja:
   family: "R"
   gloss: "set-diff"
   tags: [set]
-  short: "[E:tce a] is the difference between sets [A:tce a] and [O:tce a]."
+  short: |
+    [E:tce a] is the set of all things that are in [A:tce a] and not
+    in [O:tce a].
   definition: |
     po dja ke ka ko be
     ke tcu
