@@ -155,7 +155,7 @@ function renderParagraphs(text) {
 		p = p.replace(/\\\(/g, '&#40;');
 		p = p.replace(/\\\)/g, '&#41;');
 		p = p.replace(/(  |\\)(\r\n|\r|\n)/g, '<br />');
-		p = p.replace(/(\r\n|\r|\n)/g, '');
+		p = p.replace(/(\r\n|\r|\n)/g, ' ');
 		p = p.replace(/\[(.*?(:.*?)?)\]/g, (match, p1) => {
 			let out = `<span class="label label-info place">`;
 			out += `<span class="hidden">[</span>`;
