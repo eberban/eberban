@@ -1,4 +1,4 @@
-# Compounds
+# Compounds (e-/a-/o-)
 
 Providing a root for every concept would be extremely impractical and isn't
 great for memorization. Complex concepts are often built upon multiple more

@@ -3,23 +3,23 @@
 __ca__ (__CA__ family) allow quoting any grammatical eberban text, and is
 terminated by __cai__ (__CAI__). The text can itself contain inner __ca__ quotes
 as __cai__ will match its opening __ca__. The quote acts as a predicate with
-meaning `[tca man] is text [text].`
+meaning `[E:tca man] is text [text].`
 
 __ce__ (__CE__) allows quoting a single eberban word (particle, root, borrowing,
-compound), ignoring its grammar. It has the definition `[tca man] is word
+compound), ignoring its grammar. It has the definition `[E:tca man] is word
 [word].`
 
 __cei__ will instead express the family of the word.
 
-- __ce fe__ : `[tca man] is the word "fe".`
-- __cei fe__ : `[tca man] is word family FE.`
-- __ce spi__: `[tca man] is the word "spi".`
-- __cei spi__: `[tca man] is the concept of a root word.`
+- __ce fe__ : `[E:tca man] is the word "fe".`
+- __cei fe__ : `[E:tca man] is word family FE.`
+- __ce spi__: `[E:tca man] is the word "spi".`
+- __cei spi__: `[E:tca man] is the concept of a root word.`
 
 __co__ (__CO__) allows quoting anything such as foreign text, ungrammatical
 eberban text or even arbitrary data. __co__ is followed by a single arbitrary
 root or particle, which has the role of a delimiter (it is not necessary for it
-to be an existing particle or root, only a valid form), followed by a word
+to be an existing particle or root, only a valid form), followed by a __word
 boundary marker__. Any following characters (including spaces) are considered
 part of the quoted text. The quote ends when this word appears again prefixed by
 a __word boundary marker__. The delimiter word prefixed by a word boundary
@@ -27,7 +27,7 @@ marker must __NOT__ appear in the text, either written with same letters or
 pronounced the same way, as it will be considered to be the end of the quote,
 and remaining part will leak out of the quote.
 
-This whole block acts as a predicate with the definition `[tca man] is foreign
+This whole block acts as a predicate with the definition `[E:tca man] is foreign
 text/arbitrary data with content: [content].`
 
 As the content may be unreadable for the speaker, they can use the single word

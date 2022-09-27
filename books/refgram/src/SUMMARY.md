@@ -15,7 +15,7 @@
 - [Additional grammar]()
   - [Discourse predicates (MI)](grammar/discourse.md)
   - [Borrowings (u-)](grammar/borrowings.md)
-  - [Compounds](grammar/compounds.md)
+  - [Compounds (e-/a-/o-)](grammar/compounds.md)
   - [Quotes (c-)](grammar/quotes.md)
   - [Lists (BU)](grammar/lists.md)
   - [Numbers (TI/j-)](grammar/numbers.md)
