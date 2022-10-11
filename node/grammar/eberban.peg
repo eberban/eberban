@@ -214,7 +214,7 @@ consonant_triplet_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant 
 medial_pair <- !initial medial_patterns
 medial_patterns <- (medial_n / medial_fv / medial_plosive)
 medial_n <- liquid hyphen n / n hyphen liquid
-medial_fv <- (f / v) hyphen (plosive / sibilant / m)
+medial_fv <- (f / v) hyphen (plosive / m)
 medial_plosive <- plosive hyphen (f / v / plosive / m)
 
 # initial pairs cannot contain an hyphen
