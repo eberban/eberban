@@ -121,11 +121,8 @@ mui:
   family: "MI"
   gloss: "unknown"
   tags: [core]
-  short: "True if [E:()] have an unknown truth value."
-  definition: 𝜆c 𝜆E is-unknown(E)
-  notes: |
-    All predicates return a trivalent truth value which is either true, false
-    or undefined. 
+  short: "Always have unknown truth value."
+  definition: 𝜆c unknown
 mue:
   id: asdzumonex
   family: "MI"

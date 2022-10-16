@@ -43,3 +43,6 @@ The core grammar contains the following particles:
   which is part of the logical framework.
 - __PU__: axiom toggle, which is the key component allowing to define new
   concepts in the language.
+
+All definable predicate words (root, compounds, i-variables) have by default
+an unknown truth value (mui).

@@ -9,7 +9,7 @@ to express logical primitives that the grammar itself don't cover.
 \text{mai}(c,e)     &= \top \\\\
 \text{mae}(c,E)     &= \forall x. \\ E(c,x) \\\\
 \text{mao}(c,E,A)   &= \forall x_0 \dots \forall x_n. \\ E(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\\\
-\text{mui}(c,E)     &= \text{is-unknown}(E) \\\\
+\text{mui}(c)       &= \text{unknown} \\\\
 \text{mue}(c,E)     &= E(c,c) \\\\
 \text{mua}(c,e,A)   &= A(e) \\\\
 \end{align} \\]
@@ -37,17 +37,7 @@ definitions, or to express that a predicate $(E) represents multiple
 combinaisons of values that make $(A) true, that answers a question represented
 by $(A).
 
-__mui__ allows to interact directly with the trivalent truth values of Eberban
-logic, and is only true if the provided predicate $(E) is neither true or false.
-It is not possible to define this predicate from logical operators as they
-are defined with trivalent truth tables. Here is the truth table of the
-__AND__ (\\(\wedge\\)) operator :
-
-| \\(A \wedge B\\) | \\(B = F\\) | \\(B = U\\) | \\(B = T\\) |
-|:----------------:|:-----------:|:-----------:|:-----------:|
-| \\(A = F\\)      | \\(F\\)     | \\(F\\)     | \\(F\\)     |
-| \\(A = U\\)      | \\(F\\)     | \\(U\\)     | \\(U\\)     |
-| \\(A = T\\)      | \\(F\\)     | \\(U\\)     | \\(T\\)     |
+__mui__ always have __unknown__ truth value.
 
 __mue__ and __mua__ allows to interact with the usually hidden context argument.
 __mue__ accepts a 1-ary predicate that is true when provided the context as an
