@@ -1,4 +1,0 @@
-python3 sort_words.py < words.yaml > words2.yaml
-
-Alternatively: cat words.yaml | ./tools/sort_words.py | tee words.yaml
-Or just: ./tools/sort_words.sh
