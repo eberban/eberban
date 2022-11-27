@@ -356,6 +356,38 @@ fiu:
   notes: |
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
+feu:
+  id: xfm9dl3n9d
+  family: "FI"
+  gloss: "]same["
+  tags: [core]
+  short: |
+    The same place as the latest VI/FI, of the predicate suffixed with latest
+    non-closed VI, is shared with the following predicate chain.
+fau:
+  id: 7fyf7dhb24
+  family: "FI"
+  gloss: "]next["
+  tags: [core]
+  short: |
+    The next place as the latest VI/FI, of the predicate suffixed with latest
+    non-closed VI, is shared with the following predicate chain.
+fei:
+  id: 0ed0lr14i6
+  family: "FI"
+  gloss: "]same=["
+  tags: [core]
+  short: |
+    The same place as the latest VI/FI, of the predicate suffixed with latest
+    non-closed VI, is equivalent to the following predicate chain.
+fai:
+  id: v92a3mw2kl
+  family: "FI"
+  gloss: "]next=["
+  tags: [core]
+  short: |
+    The next place as the latest VI/FI, of the predicate suffixed with latest
+    non-closed VI, is equivalent to with the following predicate chain.
 se:
   id: qgxn2xhcit
   family: "SI"
