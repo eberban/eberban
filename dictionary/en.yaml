@@ -3372,7 +3372,11 @@ bzael:
 
     Words like {kiru} (think) use {ebzaelmue} internally, while subjective words
     like {blan} are by default according to the opiner {bzael}.
-
+zoal:
+  id: ob1f25nx3q
+  family: "R"
+  gloss: "new"
+  short: "[E:tce* man] is new according to [A:tce man] (default: {bzael})."
 
 # -----
 # Compounds
