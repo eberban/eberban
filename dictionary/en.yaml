@@ -576,7 +576,7 @@ zue:
   tags: [core]
   short: |
     Transform an [A:()] place into an [A:(a)] place, which is provided the
-    content of the [E:a] place.  
+    content of the [E:a] place.\
     The resulting predicate is transitive.
 
     While a SE before {i} can still override the chaining behavior, a SE after
@@ -728,7 +728,7 @@ boi:
     When used before KI, have the same meaning as {bo} as all KI are expected
     to have type (a).
 
-# ----- 
+# -----
 # Extended grammar particles
 # -----
 
@@ -1198,7 +1198,7 @@ tcia:
   definition: |
     po tcia ke ka be
     mae
-      ve ki be varu 
+      ve ki be varu
         vie ki tcie ke
         fia ki tcie ka
 tcei:
@@ -1239,7 +1239,7 @@ tcoi:
       vi ke tcei gia
       fi bo ka tcie ke
       fi bo ko bi ka
-      fi ko tcie ke  
+      fi ko tcie ke
 tca:
   id: 8w1jwffzur
   family: "R"
@@ -1369,10 +1369,10 @@ kin:
     ma
       vi boi kin
       fi mae
-        ve ka be mae 
+        ve ka be mae
           ve ko be
           ma
-           vi ki be ki ma kin 
+           vi ki be ki ma kin
              va ka
              fo ko
              fi bi ma
@@ -1390,7 +1390,7 @@ e zai pe:
   definition: |
     po ezaipe ke gi be
     ma
-      vi ke kin 
+      vi ke kin
         va ezaipe ezaipe
         fo gi vi
         fi vare
@@ -1967,7 +1967,7 @@ kre:
   family: "R"
   gloss: "helps"
   short: |
-    [E:tce pan] helps [A:tce ma] to satisfy property [O:(tce ma)].  
+    [E:tce pan] helps [A:tce ma] to satisfy property [O:(tce ma)].\
     [A] is the one satisfying [O], and [E] doesn't need to satisfy [O].
 vahul:
   id: svndl4hkmc
@@ -2680,7 +2680,7 @@ blae:
   id: xr7quk0nzy
   family: "R"
   gloss: "owned"
-  short: "[E:tce* man] is owned by [E:tce pan]."
+  short: "[E:tce* man] is owned by [A:tce pan]."
 tsu:
   id: pmbpui1xxn
   family: "R"
@@ -2713,7 +2713,7 @@ znir:
   gloss: "obligated"
   short: |
     [E:()] is obligated to be performed under authority [A:tce* pan]. [E] is a duty.
-    
+
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
 zner:
@@ -2721,9 +2721,9 @@ zner:
   family: "R"
   gloss: "encouraged"
   short: |
-    [E:()] is encouraged to be performed under authority [A:tce* pan]. 
+    [E:()] is encouraged to be performed under authority [A:tce* pan].\
     [E] is a virtuous/upstanding behavior.
-    
+
     Examples: charity, volunteer work, being polite
 znar:
   id: juramnwmey
@@ -2731,8 +2731,8 @@ znar:
   gloss: "tolerated"
   short: |
     [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* pan].
-    [E] is tolerated.  
-    
+    [E] is tolerated.
+
     Examples: basically most actions are {sena}, there are so many examples
     -- the act of breathing is sena
 znor:
@@ -2741,7 +2741,7 @@ znor:
   gloss: "discouraged"
   short: |
     [E:()] is discouraged to be performed under authority [A:tce* pan]; [E] is reprehensible.
-    
+
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
 znur:
@@ -2750,7 +2750,7 @@ znur:
   gloss: "forbidden"
   short: |
     [E:()] is forbidden to be done by authority [A:tce* pan].
-    
+
     Examples: for many religions speaking badly of their deity is forbidden,
     crimes which are prosecuted, cheating on your partner in a monogamous relationship
 molai:
@@ -2758,7 +2758,7 @@ molai:
   family: "R"
   gloss: "reward/punishment"
   short: |
-    [E:tce pan] is made to satisfy [A:(tce pan)] as a reward/punishment.  
+    [E:tce pan] is made to satisfy [A:(tce pan)] as a reward/punishment.
     (E) is awarded/punished, with result that they satisfy [A].
 krehu:
   id: giuwxgdlvl
