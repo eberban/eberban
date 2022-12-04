@@ -2185,7 +2185,7 @@ vune:
   id: x2x2xeye5x
   family: "R"
   gloss: "enjoyable"
-  short: "[E:tce* man] is enjoyable/great/nice for [A:tce* pan]."
+  short: "[E:tce* man] is enjoyable/great/nice for [A:tce* pan] (default: {bzael})."
 jvin:
   id: ooyvglzn7l
   family: "R"
@@ -2194,10 +2194,8 @@ jvin:
 blan:
   id: 7qni8huxuw
   family: "R"
-  short: "[E:tce* man] is beautiful."
+  short: "[E:tce* man] is beautiful according to [A:tce man] (default: {bzael})."
   gloss: "beautiful"
-  notes: |
-    TODO: According to which standard/observer ?
 pcien:
   id: 0uujkotag5
   family: "R"
@@ -3362,6 +3360,19 @@ djie:
   gloss: "set-overlaps"
   tags: [set]
   short: "[E:tce a] and [A:tce a] overlap (they have a non-empty intersection)."
+bzael:
+  id: eczagf3v06
+  family: "R"
+  gloss: "opiner"
+  short: "[E:tce man] is an opiner in the current context."
+  long: |
+    Words expressing subjective optinions are stated from the point of view of
+    an opiner. The opiner is stored in the context, and can be changed using
+    {ebzaelmue}.
+
+    Words like {kiru} (think) use {ebzaelmue} internally, while subjective words
+    like {blan} are by default according to the opiner {bzael}.
+
 
 # -----
 # Compounds
@@ -3522,6 +3533,12 @@ e ze pa:
   family: "C2"
   short: "Repeats the previous assertion. See {pa} notes."
   gloss: "latest-assertion"
+e bzael mue:
+  id: hshwh0yqhx
+  family: "C2"
+  gloss: "set-opiner"
+  short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
+  long: See {bzael} for explanations.
 
 a cen po bu:
   id: jpvb7ytjfg
