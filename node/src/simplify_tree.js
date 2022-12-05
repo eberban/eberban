@@ -13,7 +13,7 @@ const important_types = [
 	[ 'axiom', 'axiom' ],
 	[ 'default', 'default' ],
 
-	// scope	
+	// scope
 	[ 'scope', 'scope' ],
 	[ 'scope_sequence', 'sequence' ],
 	[ 'scope_sequence_item', 'sequence item' ],
@@ -27,6 +27,7 @@ const important_types = [
 
 	// predicates
 	[ 'predicate', 'predicate' ],
+	[ 'predicate_namespaced', 'imported predicate' ],
 	[ 'compound', 'compound' ],
 	[ 'borrowing_group', 'borrowing group' ],
 	[ 'borrowing', 'borrowing' ],
@@ -88,7 +89,7 @@ for (let type of important_types) {
 
 /**
  * This file contains functions that simplify the parse tree returned by camxes.js.
- * 
+ *
  * The original parse tree has the following structure:
  * [
  *   "...",   // the type
@@ -96,7 +97,7 @@ for (let type of important_types) {
  * ]
  * Here, the first element of every array indicates the type of the object parsed, and the
  * next objects are the children of the element.
- * 
+ *
  * The simplified parse tree has quite another structure:
  * [
  *   {

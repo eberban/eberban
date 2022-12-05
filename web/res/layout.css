@@ -145,6 +145,11 @@ li.implicit {
 	background: var(--color-purple);
 }
 
+.box.box-namespaced {
+	border: 1px black dashed;
+	border-top: 0px;
+}
+
 .box.box-scope {
 	background: #ffffff;
 	border-top: 0px;

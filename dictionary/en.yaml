@@ -964,7 +964,7 @@ tao:
 ca:
   id: qgitj7lmtu
   family: "CA"
-  short: "Starts grammatically correct eberban quote. [E:tca skan] is text [quote]."
+  short: "Starts grammatically correct eberban quote. [E:tca ecaskan] is text [quote]."
   gloss: "#quote-start"
 cai:
   id: m2tk0zmvgh
@@ -975,7 +975,7 @@ cai:
 ce:
   id: qd380clfxd
   family: "CE"
-  short: "Quote next word. [E:tca skan] is word [word]."
+  short: "Quote next word. [E:tca man] is word [word]."
   gloss: "#word-quote"
 cei:
   id: acauojxxsk
@@ -1033,16 +1033,6 @@ pa:
     axiom.
 
     {ezepa} thus allows to refer to the latest assertion.
-pahu:
-  id: x6uy2h6mvl
-  family: "PA"
-  gloss: "#import"
-  short: |
-    Import another text represented by the [E:tce* skan] place of this scope.
-    Imports allows to make texts defining non-standard vocabulary about a
-    subject, so that it can be used anytime someone wants to talk about this
-    subject. Such subjects are advanced physics, chemistry or maths for example.
-  notes: "TODO: Define how the represented text is resolved."
 poi:
   id: ici1wrui6g
   family: "PO"
@@ -1099,7 +1089,23 @@ du:
   id: jjo3ibjqoy
   family: "DU"
   gloss: "#paragraph"
-  short: "Marks a new paragraph/section/change of subject."
+  short: "Starts paragraph/section/change of subject."
+  notes: |
+    When used in a text imported with {pohi}, the predicates in this paragraph
+    will be available in the namespace made by {pohi}. To make them private and
+    not available in the namespace, use {dui}.
+dui:
+  id: 19kponvnpj
+  family: "DU"
+  gloss: "#private"
+  short: |
+    Starts a private section, whose predicates will not be available when
+    imported into another text with {pohi}.
+  notes: |
+    Predicates are usable like normal in this text, however another text
+    importing this text with {pohi} will not have access to them.
+
+    To make predicates public and available in the namespace, use {du}.
 bu:
   id: pyzvhbntb5
   family: "BU"
@@ -1112,7 +1118,27 @@ buhu:
   gloss: "#list-erased"
   tags: [list]
   short: "Erase the current list item."
+pi:
+  id: ldy5ka8k6p
+  family: "PI"
+  gloss: "::"
+  short: |
+    Predicate namespace separator. Predicates imported from another text with
+    {pohi} are accessible inside the namespace named after the word used
+    after {pohi}.
+pohi:
+  id: j7cwz23nkd
+  family: "PO"
+  gloss: "#import"
+  short: |
+    Imports predicates defined in Eberban text [E:tca ecaskan] under the name
+    namespace named after the predicate immediatly after {pohi}.
+  notes: |
+    Namespace definitions and predicate definitions are independent, and
+    defining a namespace using {pohi} will not override the same-name predicate
+    defined by other PO particles.
 
+    Namespaces can be nested if the imported text also uses {pohi}.
 # -----
 # Defined predicate words (in order of book)
 # -----
@@ -1842,7 +1868,7 @@ skan:
   tags: [struct, string]
   short: "[E:tce* man] is a string of data."
   notes: |
-    TODO: Improve definition and add oither predicates to interact with it.
+    TODO: Improve definition and add other predicates to interact with it.
 
     It's goal is to be able to manipulate both native and foreign quotes (which
     can be speakable, embeded file, etc).
@@ -3543,6 +3569,20 @@ e bzael mue:
   gloss: "set-opiner"
   short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
   notes: See {bzael} for explanations.
+e ca skan:
+  id: 2vi80y570m
+  family: "C2"
+  gloss: "eberban-quote"
+  short: "[E:tce skan] is a grammatically valid Eberban quote."
+  notes: Can be constructed using {ca}.
+e skal skan:
+  id: vmbujokvfo
+  family: "C2"
+  gloss: "computer-data"
+  short: "[E:tca skan] is the computer data located at [E:tce skan]."
+  notes: |
+    [E] should be a unique identifier representing how and where the content
+    can be fetched.
 
 a cen po bu:
   id: jpvb7ytjfg

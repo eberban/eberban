@@ -3,7 +3,9 @@
 __ca__ (__CA__ family) allow quoting any grammatical eberban text, and is
 terminated by __cai__ (__CAI__). The text can itself contain inner __ca__ quotes
 as __cai__ will match its opening __ca__. The quote acts as a predicate with
-meaning `[E:tca man] is text [text].`
+meaning `[E:tca ecaskan] is text [text].` (__ecaskan__ being the predicate word
+for a grammatically correct Eberban quote, while __skan__ is the word for
+a quote or string of arbitrary data).
 
 __ce__ (__CE__) allows quoting a single eberban word (particle, root, borrowing,
 compound), ignoring its grammar. It has the definition `[E:tca man] is word
@@ -27,7 +29,7 @@ marker must __NOT__ appear in the text, either written with same letters or
 pronounced the same way, as it will be considered to be the end of the quote,
 and remaining part will leak out of the quote.
 
-This whole block acts as a predicate with the definition `[E:tca man] is foreign
+This whole block acts as a predicate with the definition `[E:tca skan] is foreign
 text/arbitrary data with content: [content].`
 
 As the content may be unreadable for the speaker, they can use the single word

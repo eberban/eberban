@@ -54,6 +54,7 @@ const boxClassForTypeMap = new Map([
 	[ 'VI-scope', 'box box-vi-scope' ],
 
 	// units
+	[ 'imported predicate', 'box box-namespaced' ],
 	[ 'predicate', 'box box-predicate' ],
 	[ 'quote', 'box box-predicate' ],
 	[ 'word quote', 'box box-predicate' ],
@@ -335,7 +336,7 @@ function constructBoxesOutput(parse, depth) {
 
 	if (parse.word) {
 		output += '<div class="box box-terminal';
-		
+
 		if (parse.css_classes != undefined) {
 			output += ` ${parse.css_classes}`;
 		}
@@ -343,7 +344,7 @@ function constructBoxesOutput(parse, depth) {
 		if (parse.type == 'foreign quote content') {
 			output += " foreign-quote-content";
 		}
-		
+
 		output += '">';
 
 		// we have a terminal
@@ -690,7 +691,7 @@ function extractCanonicalCompound(text, startIndex, length) {
 			compound += ' o';
 			break;
 		}
-		
+
 		if (item == 'u') {
 			compound += ' ' + item + text[startIndex + offset + 1];
 			offset++;

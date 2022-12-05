@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.52.1
+# eberban PEG grammar - v0.53
 # =============================
 
 # GRAMMAR
@@ -15,11 +15,10 @@ paragraph_unit_erased <- paragraph_unit_1 CU_clause
 paragraph_unit_1 <- definition / axiom / sentence
 
 arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
-defined <- GI_clause / free_prefix* spaces? freeform_variable / predicate_compound / predicate_root
 
-definition <- PO_clause defined scope
+definition <- PO_clause definable_predicate scope
 sentence <- PA_clause_elidible scope
-axiom <- PU_clause defined
+axiom <- PU_clause definable_predicate
 
 # scope
 scope <- arguments_list? scope_1
@@ -35,14 +34,22 @@ chaining <- (chaining_neg / chaining_unit)+
 chaining_neg <- BI_clause chaining
 chaining_unit <- predicate vi_scope*
 vi_scope <- vi_scope_first vi_scope_next* VEI_clause_elidible
-vi_scope_first <- BI_clause? VI_clause scope 
+vi_scope_first <- BI_clause? VI_clause scope
 vi_scope_next <- BI_clause? FI_clause scope
 
 # predicate unit
 predicate <- predicate_1 free_suffix*
 predicate_1 <- (SI_clause !SI_clause / ZI_clause)* predicate_2
-predicate_2 <- BA_clause / MI_clause / predicate_quote / predicate_variable / predicate_scope / predicate_borrowing / predicate_root / predicate_number / predicate_compound
+predicate_2 <- BA_clause / MI_clause / predicate_quote / predicate_scope / predicate_borrowing / predicate_number / predicate_namespaceable / predicate_inline_assignment
 
+predicate_namespaceable <- predicate_namespaced / definable_predicate
+predicate_namespaced <- (definable_predicate PI_clause)+ definable_predicate
+predicate_inline_assignment <- predicate_variable
+
+predicate_variable <- free_prefix* (KI_clause / definable_predicate)
+definable_predicate <- GI_clause / predicate_freeform_variable / predicate_compound / predicate_root
+
+predicate_freeform_variable <- free_prefix* spaces? freeform_variable
 predicate_root <- free_prefix* spaces? root_word
 predicate_number <- free_prefix* spaces? number
 predicate_compound <- free_prefix* spaces? compound
@@ -59,7 +66,7 @@ foreign_quote_1 <- CO_clause spaces? foreign_quote_open pause_char foreign_quote
 
 foreign_quote_content <- (!(single_pause_char foreign_quote_close) .)*
 foreign_quote_open <- native_form # doesn't perform &post_word check
-foreign_quote_word <- (!single_pause_char .)+ 
+foreign_quote_word <- (!single_pause_char .)+
 foreign_quote_close <- native_word # performs &post_word check
 
 # numbers
@@ -68,7 +75,7 @@ number_1 <- TI_clause+
 number_base <- TI_clause JU_clause
 number_fractional <- JO_clause number_1? number_repeat? &number_fractional_constraint
 # Having a fractional part prevents to use anything but math mode (jie or ellided)
-number_fractional_constraint <- number_magnitude? spaces? !(!(j i e &post_word) JI) 
+number_fractional_constraint <- number_magnitude? spaces? !(!(j i e &post_word) JI)
 number_repeat <- JA_clause number_1
 number_magnitude <- JE_clause number_1
 
@@ -76,7 +83,6 @@ number_magnitude <- JE_clause number_1
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
 # variables
-predicate_variable <- free_prefix* BO_clause? (KI_clause / defined)
 
 # free affixes
 free_prefix <- free_metadata
@@ -109,6 +115,7 @@ GI_clause  <-              spaces? GI                   # predicate variables
 KI_clause  <-              spaces? KI                   # symbol/generic variables
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
+PI_clause  <-              spaces? PI                   # namespace separator
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
 PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
 PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
@@ -209,7 +216,7 @@ ieaou <- vowel (hyphen vowel)*
 
 consonant_triplet <- (consonant_triplet_1 / consonant_triplet_2) !consonant
 consonant_triplet_1 <- &medial_pair !sonorant consonant hyphen initial_pair
-consonant_triplet_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant consonant) / sonorant hyphen 
+consonant_triplet_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant consonant) / sonorant hyphen
 
 medial_pair <- !initial medial_patterns
 medial_patterns <- (medial_n / medial_fv / medial_plosive)
@@ -227,7 +234,7 @@ plosive <- t / d / k / g / p / b
 sibilant <- c / s / j / z
 sonorant <- n / r / l
 
-consonant <- (voiced / unvoiced / liquid / nasal) 
+consonant <- (voiced / unvoiced / liquid / nasal)
 nasal <- m / n
 liquid <- l / r
 voiced <- b / d / g / v / z / j
