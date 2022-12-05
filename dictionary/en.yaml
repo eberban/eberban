@@ -3365,7 +3365,7 @@ bzael:
   family: "R"
   gloss: "opiner"
   short: "[E:tce man] is an opiner in the current context."
-  long: |
+  notes: |
     Words expressing subjective optinions are stated from the point of view of
     an opiner. The opiner is stored in the context, and can be changed using
     {ebzaelmue}.
@@ -3542,7 +3542,7 @@ e bzael mue:
   family: "C2"
   gloss: "set-opiner"
   short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
-  long: See {bzael} for explanations.
+  notes: See {bzael} for explanations.
 
 a cen po bu:
   id: jpvb7ytjfg

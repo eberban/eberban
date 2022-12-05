@@ -16,11 +16,11 @@ many _quirks_ that made it either hard to learn for me or annoying to use.
 
 One thing I liked about Lojban was its phonology and orthography, which I reused
 for Eberban while changing a few details that I didn't liked. I liked a lot that
-a symbol as a one-to-one mapping with a range of accepted sounds, which simplify
-spelling and avoid homophones (_dear_/_deer_ in English). Most letters were easy
-for me to utter (my native language is French and I also speak English), however
-the consonant __x__ (IPA: [x]) was hard to utter, especialy in clusters with
-__r__ and __l__. In thus got rid of it in Eberban.
+ a symbol as a one-to-one mapping with a range of accepted sounds, which
+simplifies spelling and avoids homophones (_dear_/_deer_ in English). Most
+letters were easy for me to utter (my native language is French and I also speak
+English), however the consonant __x__ (IPA: [x]) was hard to utter, especialy in
+clusters with __r__ and __l__. In thus got rid of it in Eberban.
 
 Regarding the vowels I found the letter __y__ (IPA: [ə]) to cause some issues.
 In Lojban some consonant clusters are difficult to utter, and it is allowed to
@@ -162,9 +162,9 @@ of mine] to [a home of yours]").
 
 ### Logic framework and context parameter
 
-Eberban aims to encode Higher-Order Logic statements. Each verb can be seen
-as a function such that for every possible combinaison of inputs, it returns
-a trivalent truth value: either True, False or Unknown. A long term goal for
+Eberban aims to encode Higher-Order Logic statements. Each verb can be seen as a
+function such that for every possible combinaison of inputs, it returns a
+trivalent truth value: either True, False or Unknown. A long term goal for
 Eberban is to have an interpreter such that given some facts (irrefutable
 truths, also called axioms) and a proposition, the interpreter could state if
 the proposition is __provably__ true, false, or unable to prove.
@@ -176,8 +176,8 @@ arguments and it can have no side effet. However this make a problem arise: how
 to express sentences like "In the future: [You dance]". How "dance" is able to
 know the time if its only parameter is "you"? One solution could be to have an
 additional parameter for the time, but that would require to explicitly provide
-the time to every verb that depends on it, and would require to have a place
-for many other concepts; which are both not ergonomic.
+the time to every verb that depends on it, and would require to have a place for
+many other concepts; which are both not ergonomic.
 
 The strategy choosen for Eberban is to have an hidden parameter called the
 __context parameter__ which is automatically managed by the language. Each verb
@@ -192,6 +192,6 @@ context changes that will be applied between each sentences.
 
 The context parameter is a powerful tool that can be used to implement many
 concept that "just work" in other languages like tenses, and to design ergonomic
-vocabulary that use the context parameter to "carry information around" to
+vocabulary that uses the context parameter to "carry information around" to
 reduce verbosity.
 
