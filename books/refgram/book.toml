@@ -30,5 +30,5 @@ regex="```gloss(\r\n|\r|\n)(?P<content>(?s:.)*?)(\r\n|\r|\n)```"
 rep="<div data-gloss>\n\n${content}\n</div>"
 
 [[preprocessor.regex-replacer.items]]
-regex="<spoiler>(\r\n|\r|\n)(\r\n|\r|\n)(?P<title>(?s:.)*?)(\r\n|\r|\n)-{2,}(\r\n|\r|\n)(?P<content>(?s:.)*?)(\r\n|\r|\n)</spoiler>"
+regex="<spoiler>(\r\n|\r|\n)(?P<title>(?s:.)*?)(\r\n|\r|\n)-{2,}(\r\n|\r|\n)(?P<content>(?s:.)*?)(\r\n|\r|\n)</spoiler>"
 rep="<details><summary>\n\n${title}\n</summary><div>\n\n${content}\n</div></details>"
