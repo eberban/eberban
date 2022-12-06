@@ -23,7 +23,7 @@ ma
 
 And with right component __gi__. 
 ``` 
-    fo gi vi 
+    fo gi
 ``` 
 __gi__ being a property (even if it false for all possible arguments)
 ``` 

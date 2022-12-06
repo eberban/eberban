@@ -43,15 +43,15 @@ __varu:__ If `[E:()]` is then `[A:()]` (default: true) is true, otherwise
 `[O:()]` (default: true) is true. 
 ---
 ```
-po varu ge ga be
+po varu ge ga go be
 vare
-  va vari
-    ve ge
-    fa ga
+  via vari
+    vie ge
+    fia ga
     vei
-  fe vari
-    ve bi ge
-    fa go
+  fie vari
+    vie bi ge
+    fia go
 poia varu mai
 poio varu mai
 ```

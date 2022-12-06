@@ -11,7 +11,7 @@ components.
 __kin:__ `[E:ma]` is a pair made of left component `[A:a]` and right component `[O:o]`. 
 ---
 ``` 
-pou e kin pi be 
+pou e kin pu be 
 ma 
   vi boi kin 
 ```
