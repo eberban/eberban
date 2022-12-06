@@ -3418,6 +3418,12 @@ e ber ban:
   gloss: "eberban"
   tags: [cultural]
   short: "[E:tca ban] is the eberban language."
+e uaotearoa stan:
+  id: 0hmp09luqa
+  familly: "C2"
+  gloss: "Aotearoa (New Zealand)"
+  tags: [cultural]
+  short: "[E:tca stan] is Aotearoa (New Zealand)."
 e ujbo ban:
   id: ngdssrwkz9
   family: "C2"
@@ -3496,6 +3502,12 @@ e uhangu stan:
   gloss: "South Korea"
   tags: [cultural]
   short: "[E:tca stan] is South Korea."
+e umaori ban:
+  id: 5pkk20qhjt
+  family: "C2"
+  gloss: "māori language"
+  tags: [cultural]
+  short: "[E:tca ban] is the māori language (New Zealand)."
 e utcoson ban:
   id: xapwbat5r8
   family: "C2"
