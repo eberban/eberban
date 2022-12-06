@@ -55,6 +55,22 @@ vare
 poia varu mai
 poio varu mai
 ```
+Alternatively, the GI variables can be replaced with KI. This replaces the `vi-`
+particles with regular `ve/fe...etc` particles. This is because the arguments of
+varu are already predicates.
+```
+po varu ke ka ko be
+vare
+  va vari
+    ve ke
+    fa ka
+    vei
+  fe vari
+    ve bi ke
+    fa ko
+poia varu mai
+poio varu mai
+```
 </spoiler>
 
 A more advanced but useful predicate is about 2 things E and A satisfying a
