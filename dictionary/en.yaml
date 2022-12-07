@@ -895,14 +895,14 @@ tu:
   short: "Digit 4"
   gloss: "4"
   tags: [digit, number]
-tia:
-  id: hwnppc9ghm
+tie:
+  id: mgrqxslqve
   family: "TI"
   short: "Digit 5"
   gloss: "5"
   tags: [digit, number]
-tie:
-  id: mgrqxslqve
+tia:
+  id: hwnppc9ghm
   family: "TI"
   short: "Digit 6"
   gloss: "6"
