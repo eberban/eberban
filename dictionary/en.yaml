@@ -80,7 +80,7 @@ ma:
     Simplest non-predicate type. All more complex non-predicate types are
     atoms that must additionally satisfy some properties.
 
-    There are an infinite amount of atoms which have no intrinsic meaning.
+    There are an infinite number of atoms which have no intrinsic meaning.
     Instead we can declare that they are connected in some way using
     definitions.
 
@@ -121,7 +121,7 @@ mui:
   family: "MI"
   gloss: "unknown"
   tags: [core]
-  short: "Always have unknown truth value."
+  short: "Is the unknown truth value."
   definition: 𝜆c unknown
 mue:
   id: asdzumonex
@@ -2040,7 +2040,7 @@ zuna:
   id: yhzwpengy5
   family: "R"
   gloss: "inspired"
-  short: "[E:tce* pan] is inspired by [A:tce* ma]. [A] is a source of inspiration for [A]."
+  short: "[E:tce* pan] is inspired by [A:tce* ma]. [A] is a source of inspiration for [E]."
 zvia:
   id: pcbyhpj1jy
   family: "R"

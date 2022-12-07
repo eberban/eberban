@@ -1,8 +1,8 @@
 # Default arguments
 
 Some predicates are often used with the same arguments. While it can be
-possible to define new predicates that wraps them and provide this argument,
-thus would lead to multiple words for the same concepts, and might not be
+possible to define new predicates that wrap them and provide this argument,
+this would lead to multiple words for the same concepts, and might not be
 practical for predicates made with some grammar rules such as numbers. Also,
 those common arguments might be specific to some text or speech.
 
@@ -10,7 +10,7 @@ To address the above, Eberban allows the management of __default arguments__,
 which are properties that some arguments must satisfy __only when there are no
 explicit bounds on them__.
 
-Let's take as exemple the predicate __espuateran__, which means
+Let's take as an example the predicate __espuateran__, which means
 
 \\[\text{espuateran}(c,e,a) = [\text{$e$ is the home planet of species $a$}]\\]
 
@@ -18,28 +18,30 @@ We could want that __A__ are humans by default so that we don't have to always
 specify it is the home planet of humans/Earth nor have to define another
 separate predicate.
 
-To do that, we can use the __poie/poia/poio/poiu__ serie in __PO__ to define
-what is this default property: `poia espuateran flan` defines that by default
-the __A__ place of __espuateran__ satisfy the property __flan__ (being a human).
-The __E__ place don't have a default bind, which can be seen as having the
-default bind of satisfying __mai__ (exists).
+To do that, we can use the __poie/poia/poio/poiu__ series in __PO__ to define
+this default property. `poia espuateran flan` defines that by default
+the __A__ place of __espuateran__ satisfies the property __flan__ 
+(being a human). The __E__ place doesn't have a default bind, which can be seen as
+having the default bind of satisfying __mai__ (exists).
 
 > `poia espuateran mai` can thus be used to "remove" the default human bind.
 
-This default property can be used with the __zoie/zoia/zoio/zoiu__ serie
+This default property can be used with the __zoie/zoia/zoio/zoiu__ series
 in __ZI__: `zoia espuateran` is thus equivalent to `flan` in this case.
 
-Any argument that is not re-exported as an argument of the wrapping predicate and
-not bound with chaining or explicit binding automatically have the default bound.
+Any argument that is not re-exported as an argument of the wrapping predicate
+and not bound with chaining or explicit binding automatically has the default
+bound.
 
-If an argument is re-exported by the wrapping predicate, the default bound is
-not used, however the wrapped predicate inherits of it (as if __poie/etc__ was
+If an argument is re-exported by the wrapping predicate, then the default bound
+is instead inherited by the wrapped predicate (as if __poie/etc__ was
 used on them too). This also applies with __PO__ definitions, such as if we
-define a predicate with `po ga espuateran` then the __A__ argument of __ga__
+define the predicate `po ga espuateran` then the __A__ argument of __ga__
 also defaults to _flan_, and _ga_ can be used in place of _espuateran_.
 
 > Note that after defining _ga_, changing a default bind on _espuateran_ will
-> not modify the one of _ga_. `poia ga ...` will thus be required instead.
+> not modify the corresponding bind of _ga_. `poia ga ...` will thus be required
+> instead.
 
 Here is an example with all default bindings added: 
 

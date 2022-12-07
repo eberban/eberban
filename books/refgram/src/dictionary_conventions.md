@@ -2,19 +2,21 @@
 
 ## Notation
 
-In the dictionary words meaning are given in english with arguments being
-represented by vowels in brackets `[]`. The first time the vowel is used it is
-followed by an annotation about its type and constraints.
+The dictionary makes the distinction between meaning and definition.
 
-Parenthesis `()` represents predicate arguments, where each argument constraint
-is listen in between, separate by commas.
+### Meaning
 
-Otherwise the vowel can be followed by one or many eberban words, in which can
-the place is constrained to satisfy the expressed property. Single letters like
-`a` can be used to represent __generic types__. In a definition the same letter
-used in multiple places means the arguments share the same type.
+The meaning of each word is written in English with arguments
+being represented by vowels in brackets `[]`.
 
-> Exemples of definitions:
+The first time the vowel is used it is followed by one or more Eberban words.
+These words denote the vowel's type and constraints. Single letters like `a` can
+be used to represent an argument's generic type.
+
+Parentheses `()` represent predicate arguments (as opposed to atom arguments),
+where each argument constraint is listed in between, separated by commas.
+
+> Exemples of meanings:
 >
 > - `mi: [E:tce* man] is I/me/a speaker/author.`
 > - `buri: [E:tce* den] eats [A:tce* den].`
@@ -23,17 +25,23 @@ used in multiple places means the arguments share the same type.
 > - `mue: True if property [E:(ma)] is true with the context provided as argument.`
 > - `mua: True if context [E:ma] makes [A:()] true.`
 
+### Definition
+
+The definition of each word is written in Eberban. In a definition, the same
+letter used in multiple places means the arguments share
+the same type.
+
 ## Set arguments
 
-Many predicates expects their arguments to be __sets__, which is expressed in
+Many predicates expect their arguments to be __sets__, which is expressed in
 Eberban by the roots starting with _tc-_. __tce__ in particular states that it
-is a non-empty set. In definitions a star `*` is added next to it when the
-predicate use this set in a __distributive__ way, which means that the predicate
+is a non-empty set. In definitions, a star `*` is added next to it when the
+predicate uses this set in a __distributive__ way, which means that the predicate
 is also true if we provide a subset. Otherwise it is said to be __collective__,
-and a set satisfying the predicate don't necessarily imply that a subset of
-it will also satisfying the predicate.
+and a set satisfying the predicate doesn't necessarily imply that a subset of
+it will also satisfy the predicate.
 
-Having mainly set arguments like so means that unless specified the amount of
+Having mainly set arguments like so means that, unless specified, the number of
 members of the set is left vague. Thus, the sentence _mi buri meon_ could
 equally mean the following :
 
@@ -42,14 +50,14 @@ equally mean the following :
 - __I__ eat __multiple apples__.
 - __We__ eat __multiple apples__.
 
-It also doesn't specify which one the apples everyone is eating: __buri__ is
+It also doesn't specify _which_ apples everyone is eating: __buri__ is
 satisfied if everyone eats at least one of the apples, and every apple is eaten
 by at least one.
 
-This allows to be vague by default, which can be made more precise by adding
-more words.
+This allows the speaker to be vague by default. This can be made more precise by
+adding more words.
 
-> For simplicity translations will be written with singular unless it is
+> For simplicity, translations will be written in singular unless it is
 > important to make the distinction.
 
 <!-- ## Map arguments and context

@@ -1,7 +1,7 @@
 # Morphology
 
 The morphology of Eberban is composed of 16 consonants (__n, r, l, m, p, b, f,
-v, t, d, s, z, c, j, g, k__), 5 vowels (__i, e, a, o, u__) and finally the
+v, t, d, s, z, c, j, g, k__), five vowels (__i, e, a, o, u__) and finally the
 letter __h__, for a total of 22 letters. Among the consonants, __n__, __r__ and
 __l__ are designated as (alveolar) __sonorants__, and play an important role in
 Eberban's morphology. The alphabetical order is `hnlrmpbfvtdszcjkgieaou`.
@@ -19,7 +19,7 @@ Eberban text is usually written all lowercase (outside of foreign text quotes),
 but uppercase can informally be used in written media to convey volume (such as
 yelling). Outside of __'__ no punctuation symbol is used, and any other
 character is considered a space, but informally punctuation from other languages
-can be used (for exemple by writing `"` around quotes, or ending sentences with
+can be used (for example by writing `"` around quotes, or ending sentences with
 `.`).
 
 ## Word types
@@ -33,7 +33,7 @@ having identical grammar but different meanings. Those families are usually
 designated using a particle in capital letters (like __MI__ or __VEI__), which
 is by convention the first particle in this family in alphabetical order.
 
-All other words are __predicate words__ and express intrinsic meanings such as
+All other words are __predicate words__ and express intrinsic meanings, such as
 "cat", "language" or "teach". They are grouped into the following categories :
 
 ### Roots
@@ -48,8 +48,8 @@ would be hard or too long to convey otherwise. They can either :
   any number of _sonorants_ or _medial consonant pairs_ (even none), like
   __bju__, __cpena__ or __djin__.
 
-A _sonorant_ can appear only between 2 _vowels_ or at the end of the root, while
-a medial pair can appear only between 2 _vowels_, but not at the end.
+A _sonorant_ can appear only between two _vowels_ or at the end of the root, while
+a medial pair can appear only between two _vowels_, but not at the end.
 
 The following chart shows __initial pairs__ in light blue, __medial pairs__ in
 pink, and invalid pairs in dark gray (with a short explanation for why they are
@@ -59,10 +59,10 @@ invalid):
 
 ### Borrowings
 
-__Borrowings__ allow importing foreign words or names. They are prefixed by the
-vowel __u__, and have more relaxed rules about consonants than native eberban
-words. Mainly, they can contain consonant triplets which must obey the following
-rules: 
+__Borrowings__ allow importing of foreign words or names. They are prefixed by 
+the vowel __u__, and have more relaxed rules about consonants than native 
+Eberban words. Mainly, they can contain consonant triplets which must obey the 
+following rules: 
 
  - Consonant pairs must either be _initial pairs_, _medial pairs_ or _sonorant_
    + _consonant_.
@@ -73,7 +73,7 @@ rules:
 
 After the __u__  prefix the borrowing can start by a vowel, a single consonant,
 a initial or medial consonant pair, a consonant triplet or __h__ If this first
-letter is an __u__ it must be prefixed with a __'__ to separate it from the the
+letter is a __u__ it must be prefixed with a __'__ to separate it from the the
 prefix.
 
 Borrowings must end with a _vowel_, or a _vowel_ followed by a single
@@ -86,14 +86,15 @@ boundary marker, and realized orally as either a pause or a glottal stop.
 
 ### Freeform variables
 
-__Freeform variables__ allow defining predicates with a custom name. They follow
-the same morphology as _borrowings_ but use the __i__ prefix instead of __u__.
+__Freeform variables__ allow the defining of predicates with a custom name. They
+follow the same morphology as _borrowings_ but use the __i__ prefix instead of
+__u__.
 
 ### Compounds
 
-__Compounds__ allow making new words from multiple other kind of words. They
-start by either __e__, __a__ or __o__ and follow the same rule as the __u__ of
-borrowings. Their structure will be detailed later in this book.
+__Compounds__ allow the making of new words from multiple other kind of words.
+They start with either __e__, __a__ or __o__ and follow the same rule as the
+__u__ of borrowings. Their structure will be detailed later in this book.
 
 ### Example
 
@@ -111,8 +112,8 @@ Compound : _eberban_
 Outside of borrowings and assignable names, encountering a _non-sonorant
 consonant_ or a word boundary marker means it is the start of a new word; unless
 it the first letter of a _medial consonant pair_ which cannot be misunderstood
-for the start of a new word. Word boundary markers or spaces allow to prevent
-them from "merging" into adjacent words.
+for the start of a new word. Word boundary markers or spaces prevent words from
+"merging" into adjacent words.
 
 These simple rules prevent any ambiguity of word boundaries, which is called a
 __Self-Segregating Morphology__.
