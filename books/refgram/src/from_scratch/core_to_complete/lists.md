@@ -102,7 +102,7 @@ carries by applying predicate `[U:(b,b,a)]` in first to last order.
 po bla ke ka ko gu be
 ```
 Either __ke__ is an empty list, in which can the initial and final carry
-values are the same. 
+values are the same.
 ```
 vare
   vie ke zai blun
@@ -133,7 +133,7 @@ carries by applying predicate `[U:(b,b,a)]` in last to first order.
 po blai ke ka ko gu be
 ```
 Either __ke__ is an empty list, in which can the initial and final carry
-values are the same. 
+values are the same.
 ```
 vare
   vie ke zai blun
@@ -161,10 +161,12 @@ Thanks to those predicates we can easily define list concatenation.
 
 <spoiler>
 
-__ble:__ `[E:blu a]` is the concatenation of lists `[A:blu a]` and `[O:blu a]`.
+__ble:__ `[E:blu a]` is the concatenation of all lists in list `[A:blu blu a]` in order.
 ---
+We define a first predicate __ge__ with meaning:
+`[E:blu a]` is the concatenation of lists `[A:blu a]` and `[O:blu a]`.
 ```
-po ble ke ka ko be
+po ge ke ka ko be
 so blai
   ve ka
   fa ko
@@ -172,6 +174,18 @@ so blai
     kia kin
       ve kio
       fa kie
+```
+
+We then define __ble__ using the above predicate:
+```
+po ble ke ka be
+ka bla
+  va ke
+  fo blur
+  fu kie kia kio be
+    kie ge
+      va kio
+      fo kia
 ```
 </spoiler>
 
@@ -194,27 +208,27 @@ with the following predicate.
 
 <spoiler>
 
-__blo:__ `[E:tce a]` is the set of all the elements in list `[A:blu a]`. 
+__blo:__ `[E:tce a]` is the set of all the elements in list `[A:blu a]`.
 ---
-We first define a predicate ensuring that __ke__ is a set containing alls 
-elements in list __ka__. 
-``` 
-po ga ke ka be 
-ka bla 
-  va ke 
-  fiu kie kia kio be 
-    kio tcie kie 
-``` 
-Then we use it to define __bli__ such that __ke__ is the __smallest__ set 
-containing all elements in list __ka__ (so it can't be any set that contains 
-them plus additional members that are not in the list). 
-``` 
-po blo ke ka be 
-ma vi ke ga ka 
-  fi bi ma  
-    ve bi ke ga ka 
-    fe tcia ke    
-``` 
+We first define a predicate ensuring that __ke__ is a set containing alls
+elements in list __ka__.
+```
+po ga ke ka be
+ka bla
+  va ke
+  fiu kie kia kio be
+    kio tcie kie
+```
+Then we use it to define __bli__ such that __ke__ is the __smallest__ set
+containing all elements in list __ka__ (so it can't be any set that contains
+them plus additional members that are not in the list).
+```
+po blo ke ka be
+ma vi ke ga ka
+  fi bi ma
+    ve bi ke ga ka
+    fe tcia ke
+```
 </spoiler>
 
 As the vocabulary is designed around set arguments, it is also useful to
@@ -222,14 +236,14 @@ express the set which is the union of a list of sets.
 
 <spoiler>
 
-__bli:__ `[E:tce a]` is the union of all sets in list `[A:blu tce a]`. 
+__bli:__ `[E:tce a]` is the union of all sets in list `[A:blu tce a]`.
 ---
-``` 
-po bli ke ka be 
-ke dju 
-  via ki be ka bla 
-    viu ba ba ko be ko tcia ki 
-``` 
+```
+po bli ke ka be
+ke dju
+  via ki be ka bla
+    viu ba ba ko be ko tcia ki
+```
 </spoiler>
 
 > Example of usage (with full grammar and vocabulary):\

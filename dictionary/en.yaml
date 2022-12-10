@@ -1460,7 +1460,7 @@ ble:
   gloss: "list-concat"
   tags: [list]
   short: |
-    [E:blu a] is the concatenation of lists [A:blu a] and [O:blu a].
+    [E:blu a] is the concatenation of all lists in list [A:blu blu a].
 blo:
   id: zp415dp0q0
   family: "R"
@@ -3403,6 +3403,13 @@ zoal:
   family: "R"
   gloss: "new"
   short: "[E:tce* man] is new according to [A:tce man] (default: {bzael})."
+zgoa:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "size"
+  short: "[E:tca gin] is the cardinality/size of [A:ma]."
+  notes: |
+    Provides the length of various structures, such as sets and lists.
 
 # -----
 # Compounds
