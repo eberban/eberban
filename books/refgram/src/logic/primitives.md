@@ -38,7 +38,7 @@ definitions, or to express that a predicate $(E) represents multiple
 combinations of values that make $(A) true, that answers a question represented
 by $(A).
 
-__mui__ is the __unknown__ truth value.
+__mui__ always returns the __unknown__ truth value.
 
 __mue__ and __mua__ allows the speaker to interact with the usually hidden
 context argument. __mue__ accepts a 1-ary predicate that is true when provided
