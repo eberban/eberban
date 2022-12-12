@@ -13,6 +13,8 @@ The first time the vowel is used it is followed by one or more Eberban words.
 These words denote the vowel's type and constraints. Single letters like `a` can
 be used to represent an argument's generic type.
 
+The same letter used in multiple places means the arguments share the same type.
+
 Parentheses `()` represent predicate arguments (as opposed to atom arguments),
 where each argument constraint is listed in between, separated by commas.
 
@@ -27,9 +29,8 @@ where each argument constraint is listed in between, separated by commas.
 
 ### Definition
 
-The definition of each word is written in Eberban. In a definition, the same
-letter used in multiple places means the arguments share
-the same type.
+The definition of each word is written in Eberban. Defenitions either have an
+argument list or re-export the places of the left-most predicate in the chain.
 
 ## Set arguments
 
