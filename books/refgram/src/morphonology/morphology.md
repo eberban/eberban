@@ -4,7 +4,7 @@ The morphology of Eberban is composed of 16 consonants (__n, r, l, m, p, b, f,
 v, t, d, s, z, c, j, g, k__), 5 vowels (__i, e, a, o, u__) and finally the
 letter __h__, for a total of 22 letters. Among the consonants, __n__, __r__ and
 __l__ are designated as (alveolar) __sonorants__, and play an important role in
-Eberban's morphology. The alphabetical order is `hnlrmpbfvtdszcjkgieaou`.
+Eberban's morphology. The alphabetical order is `hnrlmpbfvtdszcjkgieaou`.
 The same letter appearing multiple times in a row is considered identical to the
 letter not being repeated, but can informally be used in written media to convey
 length of sounds in speech.
@@ -62,7 +62,7 @@ invalid):
 __Borrowings__ allow importing foreign words or names. They are prefixed by the
 vowel __u__, and have more relaxed rules about consonants than native eberban
 words. Mainly, they can contain consonant triplets which must obey the following
-rules: 
+rules:
 
  - Consonant pairs must either be _initial pairs_, _medial pairs_ or _sonorant_
    + _consonant_.
@@ -97,13 +97,13 @@ borrowings. Their structure will be detailed later in this book.
 
 ### Example
 
-With spaces : _pa za umia tsen eberban_  
+With spaces : _pa za umia tsen eberban_\
 Without spaces : _paza'umia'tsen'eberban_
 
-Particles : _pa_, _za_  
-Borrowing : _umia_  
-Freeform variable: _ibar_  
-Root : _tsen_  
+Particles : _pa_, _za_\
+Borrowing : _umia_\
+Freeform variable: _ibar_\
+Root : _tsen_\
 Compound : _eberban_
 
 ### Reasoning

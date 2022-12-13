@@ -1,6 +1,6 @@
 module.exports.dictionary_en = require('../../dictionary/en.yaml');
 
-const alphabet = 'hnlrmpbfvtdszcjkgieaou';
+const alphabet = 'hnrlmpbfvtdszcjkgieaou';
 
 let symbol_indices = {};
 
@@ -15,7 +15,7 @@ function compare_words(x, y) {
 
     for(i = 0; i < x.length; i++) {
         if (i >= y.length) {
-            return 1; // y is shorter and 
+            return 1; // y is shorter and
         }
 
         let sx = symbol_indices[x[i]];
