@@ -144,30 +144,6 @@ PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
 
 # PARTICLE FAMILIES
-BI    <- &particle_word                   (b &i hieaou)      &post_word
-BE    <- &particle_word                   (b &e hieaou)      &post_word
-BA    <- &particle_word                   (b &a hieaou)      &post_word
-BO    <- &particle_word                   (b &o hieaou)      &post_word
-BU    <- &particle_word                   (b &u hieaou)      &post_word
-CE    <- &particle_word                   (c &e hieaou)      &post_word
-CA    <- &particle_word !(CAI &post_word) (c &a hieaou)      &post_word
-CAI   <- &particle_word                   (c a i)            &post_word
-CO    <- &particle_word !(COI &post_word) (c &o hieaou)      &post_word
-COI   <- &particle_word                   (c o i)            &post_word
-CU    <- &particle_word                   (c &u hieaou)      &post_word
-DI    <- &particle_word                   (d &i hieaou)      &post_word
-DE    <- &particle_word                   (d &e hieaou)      &post_word
-DA    <- &particle_word !(DAI &post_word) (d &a hieaou)      &post_word
-DAI   <- &particle_word                   (d a i)            &post_word
-DU    <- &particle_word                   (d &u hieaou)      &post_word
-FI    <- &particle_word                   (f hieaou)         &post_word
-GI    <- &particle_word                   (g hieaou)         &post_word
-JI    <- &particle_word                   (j &i hieaou)      &post_word
-JE    <- &particle_word                   (j &e hieaou)      &post_word
-JA    <- &particle_word                   (j &a hieaou)      &post_word
-JO    <- &particle_word                   (j &o hieaou)      &post_word
-JU    <- &particle_word                   (j &u hieaou)      &post_word
-KI    <- &particle_word                   (k hieaou)         &post_word
 MI    <- &particle_word                   (m hieaou)         &post_word
 PI    <- &particle_word                   (p &i hieaou)      &post_word
 PE    <- &particle_word                   (p &e hieaou)      &post_word
@@ -175,12 +151,35 @@ PEI   <- &particle_word                   (p e i)            &post_word
 PA    <- &particle_word                   (p &a hieaou)      &post_word
 PO    <- &particle_word                   (p &o hieaou)      &post_word
 PU    <- &particle_word                   (p &u hieaou)      &post_word
-SI    <- &particle_word                   (s hieaou)         &post_word
-TI    <- &particle_word                   (t hieaou / digit) &post_word
+BI    <- &particle_word                   (b &i hieaou)      &post_word
+BE    <- &particle_word                   (b &e hieaou)      &post_word
+BA    <- &particle_word                   (b &a hieaou)      &post_word
+BO    <- &particle_word                   (b &o hieaou)      &post_word
+BU    <- &particle_word                   (b &u hieaou)      &post_word
+FI    <- &particle_word                   (f hieaou)         &post_word
 VI    <- &particle_word !(VEI &post_word) (v hieaou)         &post_word
 VEI   <- &particle_word                   (v e i)            &post_word
+TI    <- &particle_word                   (t hieaou / digit) &post_word
+DI    <- &particle_word                   (d &i hieaou)      &post_word
+DE    <- &particle_word                   (d &e hieaou)      &post_word
+DA    <- &particle_word !(DAI &post_word) (d &a hieaou)      &post_word
+DAI   <- &particle_word                   (d a i)            &post_word
+DU    <- &particle_word                   (d &u hieaou)      &post_word
+SI    <- &particle_word                   (s hieaou)         &post_word
 ZI    <- &particle_word                   (z hieaou)         &post_word
-
+CE    <- &particle_word                   (c &e hieaou)      &post_word
+CA    <- &particle_word !(CAI &post_word) (c &a hieaou)      &post_word
+CAI   <- &particle_word                   (c a i)            &post_word
+CO    <- &particle_word !(COI &post_word) (c &o hieaou)      &post_word
+COI   <- &particle_word                   (c o i)            &post_word
+CU    <- &particle_word                   (c &u hieaou)      &post_word
+JI    <- &particle_word                   (j &i hieaou)      &post_word
+JE    <- &particle_word                   (j &e hieaou)      &post_word
+JA    <- &particle_word                   (j &a hieaou)      &post_word
+JO    <- &particle_word                   (j &o hieaou)      &post_word
+JU    <- &particle_word                   (j &u hieaou)      &post_word
+KI    <- &particle_word                   (k hieaou)         &post_word
+GI    <- &particle_word                   (g hieaou)         &post_word
 
 # - Compounds
 compound <- (compound_2 / compound_3 / compound_n)
