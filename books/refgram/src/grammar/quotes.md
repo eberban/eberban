@@ -7,16 +7,49 @@ meaning `[E:tca ecaskan] is text [text].` (__ecaskan__ being the predicate word
 for a grammatically correct Eberban quote, while __skan__ is the word for
 a quote or string of arbitrary data).
 
-__ce__ (__CE__) allows quoting a single eberban word (particle, root, borrowing,
+----
+
+__ce__ (__CE__) and __cei__ (__CEI__) allow respectively to start and end a
+spelling quote that is composed of units representing single characters. Those
+units take the form of a single consonant (including sonorants), an initial
+consonant pair or nothing, followed by a serie of vowels and h. Since spelling
+is usually used in noisy environements to clarify how words are written, units
+representing Eberban characters include some redundancy to help recognition.
+
+| Letter | Unit | | Letter | Unit | | Letter | Unit | | Letter | Unit |
+|:------:|:----:|-|:------:|:----:|-|:------:|:----:|-|:------:|:----:|
+|   P    |  pi  | |   B    |  bu  | |   F    |  fi  | |   V    |  vu  |
+|   T    |  ti  | |   D    |  du  | |   S    |  si  | |   Z    |  zu  |
+|   C    |  ci  | |   J    |  ju  | |   K    |  ki  | |   G    |  gu  |
+|   M    |  mi  | |   N    |  nu  | |   R    |  ri  | |   L    |  lu  |
+|   H    |  ihi | |   '    |  uhu | |   I    |  i   | |   E    |  e   |
+|   A    |  a   | |   O    |  o   | |   U    |  u   | |        |      |
+
+Spaces between them is optional, however if there is no space before a unit
+starting with a vowel then a pause (') must be inserted.
+
+Units starting with an initial consonant pair are reserved to encode foreign
+characters in the future.
+
+Examples:
+
+- `za ce u nu i ci e fi cei` = named UNICEF
+- `buri de ce bu u ri i cei` = buri (spelled BURI)
+
+----
+
+__ci__ (__CI__) allows quoting a single eberban word (particle, root, borrowing,
 compound), ignoring its grammar. It has the definition `[E:tca man] is word
 [word].`
 
-__cei__ will instead express the family of the word.
+__cie__ will instead express the family of the word.
 
-- __ce fe__ : `[E:tca man] is the word "fe".`
-- __cei fe__ : `[E:tca man] is word family FE.`
-- __ce spi__: `[E:tca man] is the word "spi".`
-- __cei spi__: `[E:tca man] is the concept of a root word.`
+- __ci fe__ : `[E:tca man] is the word "fe".`
+- __cie fe__ : `[E:tca man] is word family FE.`
+- __ci spi__: `[E:tca man] is the word "spi".`
+- __cie spi__: `[E:tca man] is the concept of a root word.`
+
+----
 
 __co__ (__CO__) allows quoting anything such as foreign text, ungrammatical
 eberban text or even arbitrary data. __co__ is followed by a single arbitrary

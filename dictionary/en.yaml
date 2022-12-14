@@ -972,18 +972,28 @@ cai:
   short: "Ends grammatically correct eberban quote."
   gloss: "#quote-end"
   tags: [terminator]
-ce:
+ci:
   id: qd380clfxd
-  family: "CE"
+  family: "CI"
   short: "Quote next word. [E:tca man] is word [word]."
   gloss: "#word-quote"
-cei:
+cie:
   id: acauojxxsk
-  family: "CE"
+  family: "CI"
   short: "[E:tca man] is the family of word [word]."
   gloss: "#family-quote"
   nodes: |
     TODO: Add predicates to manipulate language concepts.
+ce:
+  id: INSERT_WORD_ID
+  family: "CE"
+  short: "[E:tca skan] is a character by character/spelling quote."
+  gloss: "#spelling-start"
+cei:
+  id: INSERT_WORD_ID
+  family: "CEI"
+  short: "Character by character/spelling quote terminator"
+  gloss: "#spelling-end"
 co:
   id: upxio5nkc0
   family: "CO"
