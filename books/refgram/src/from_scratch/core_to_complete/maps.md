@@ -13,20 +13,20 @@ new concepts by storing information in the map with a new dedicated key.
 
 <spoiler>
 
-__kcin:__ `[E:ma]` is a map.
+__kagvin:__ `[E:ma]` is a map.
 ---
 ```
-po kcin ke be
+po kagvin ke be
 ```
-__ke__ is either an empty map (represented by `zai kcin`)
+__ke__ is either an empty map (represented by `zai kagvin`)
 ```
 vare
-  vie ke zai kcin
+  vie ke zai kagvin
 ```
 Or a pair with a left identifier
 ```
   fia ma
-    vi ke sea kin zai kcin
+    vi ke sea kin zai kagvin
 ```
 And as right part a set of pairs with left parts (keys) being symbols
 ```
@@ -44,10 +44,10 @@ And it is false that there are multiple entries with the same key
 
 <spoiler>
 
-__kcil:__ `[E:kcin]` is the empty map.
+__kagvil:__ `[E:kagvin]` is the empty map.
 ---
 ```
-po kcil zai kcin
+po kagvil zai kagvin
 ```
 </spoiler>
 
@@ -55,12 +55,12 @@ We can then interact more directly with entries using the following:
 
 <spoiler>
 
-__kce:__ `[E:a]` is the value in map `[A:kcin]` for key `[O:ma]`.
+__kagve:__ `[E:a]` is the value in map `[A:kagvin]` for key `[O:ma]`.
 ---
 ```
-po kce ke ka ko be
+po kagve ke ka ko be
 tcie
-  va soe kin ka kcin
+  va soe kin ka kagvin
   fe kin
     ve ko
     fa ke
@@ -70,19 +70,19 @@ tcie
 Finally we set the empty map as the context parameter for future sentences.
 
 ```
-pae kcil
+pae kagvil
 ```
 
-We can make a variant of _kce_ to directly access a value stored in the
+We can make a variant of _kagve_ to directly access a value stored in the
 context.
 
 <spoiler>
 
-__kcei:__ `[E:a]` is the value in the context map for key `[A:ma]`.
+__kagvei:__ `[E:a]` is the value in the context map for key `[A:ma]`.
 ---
 ```
-po kcei ke ka be
-mue vie ki be ke kce
+po kagvei ke ka be
+mue vie ki be ke kagve
   va ki
   fo ka
 ```
@@ -99,16 +99,16 @@ modification.
 
 <spoiler>
 
-__kcani:__ `[E:kcin]` is obtained from `[A:kcin]` by removing the entry with key
+__kagvani:__ `[E:kagvin]` is obtained from `[A:kagvin]` by removing the entry with key
 `[O:ma]`. If `[A]` don't have entry with key `[O]` then `[E]` = `[A]`.
 ---
 ```
-po kcani ke ka ko be
+po kagvani ke ka ko be
 ```
 The set of entries of _ke_ is the largest subset of the set of entries of _ka_
 that doesn't contain an entry with key _ko_.
 ```
-ke kcin seo kin djo
+ke kagvin seo kin djo
   via ke be ma
     vi ke tcai soe kin ka
     fi bi ke sae tci sae kin ko
@@ -117,19 +117,19 @@ ke kcin seo kin djo
 
 <spoiler>
 
-__kcoi:__ `[E:kcin]` is obtained from `[A:kcin]` by inserting an entry with key
+__kagvoi:__ `[E:kagvin]` is obtained from `[A:kagvin]` by inserting an entry with key
 `[O:ma]` and value `[U:ma]`. If `[A]` have an entry with key `[O]` then it is
 removed to insert the entry with key `[O]` and value `[U]`.
 ---
 ```
-po kcoi ke ka ko ku be
+po kagvoi ke ka ko ku be
 ```
 Given _x_ the map obtained from _ka_ by removing an entry with key _ko_, The
 set of entries of _ke_ is the smallest superset of _x_ such as _ke_ have as
 member an entry with key _ko_ and value _ku_.
 ```
-ke kcin seo kin dju
-  via ke be kcoi
+ke kagvin seo kin dju
+  via ke be kagvoi
     va ka
     fo ko
     fe seo kin tcai ke sae tci kin
@@ -140,16 +140,16 @@ ke kcin seo kin dju
 
 <spoiler>
 
-__kcui:__ `[E:kcin]` is obtained from `[A:kcin]` by transforming the value of
+__kagvui:__ `[E:kagvin]` is obtained from `[A:kagvin]` by transforming the value of
 entry with key `[O:ma]` using relation `[U:(a,a)]`. It implies that `[A]` must
 have an entry with key `[O]`.
 ---
 ```
-po kcui ke ka ko gu be
-ke kcoi
+po kagvui ke ka ko gu be
+ke kagvoi
   va ka
   fo ko
-  fu gu kce
+  fu gu kagve
     va ka
     fo ko
 ```
@@ -160,7 +160,7 @@ ke kcoi
 The above predicates are pretty verbose to use, especially if multiple
 operations must be performed in a row. For that reason we're going to define
 more ergonomic versions that manage the transformed map using the context. The
-predicate `kca` will take as arguments the input and output maps and __a list of
+predicate `kagva` will take as arguments the input and output maps and __a list of
 0-ary predicates__. This list will be folded and evaluated with a modified
 context containing the input and output map (at each step of the iteration),
 which will be used by predicates taking the other parameters explicitly (key and
@@ -168,11 +168,11 @@ value, no need to take input and output as they are retreived from the context).
 
 <spoiler>
 
-__kca:__ `[E:kcin]` represents a map that can be obtained from `[O:kcin]`
+__kagva:__ `[E:kagvin]` represents a map that can be obtained from `[O:kagvin]`
 (default: empty map) by applying the list of transformations `[A:blu ()]`.
 ---
 ```
-po kca ke ka ko be
+po kagva ke ka ko be
 ```
 We fold the list _ko_ with input _ke_, output _ka_ and predicate
 _(kie,kia,gia)_, _kie_ and _kia_ being the input/intermediary/output maps and
@@ -188,20 +188,20 @@ We take the current context _ki_
     mue vie ki be
 ```
 And evaluate _gia_ (the proposition in the list) with a context that is
-obtained from _ki_ by inserting the pair _(kie,kia)_ at key _zai kca_.
+obtained from _ki_ by inserting the pair _(kie,kia)_ at key _zai kagva_.
 ```
       mua
         va gia
-        fe kcoi
+        fe kagvoi
           va ki
-          fo zai kca
+          fo zai kagva
           fu kin
             va kie
             fo kia
 ```
 We finally set the default O argument, which simplify creating from empty maps.
 ```
-poio kca kcil
+poio kagva kagvil
 ```
 </spoiler>
 
@@ -209,39 +209,39 @@ We can then write predicates that uses this pair instead of taking arguments.
 
 <spoiler>
 
-__kcan:__ Remove entry with key `[E:ma]`.
+__kagvan:__ Remove entry with key `[E:ma]`.
 ---
 ```
-po kcan ke be
-ke so kcani
-  va sae kin kcei zai kca
-  fe soe kin kcei zai kca
+po kagvan ke be
+ke so kagvani
+  va sae kin kagvei zai kagva
+  fe soe kin kagvei zai kagva
 ```
 </spoiler>
 
 <spoiler>
 
-__kco:__ Insert entry with key `[E:ma]` and value `[A:a]`.
+__kagvo:__ Insert entry with key `[E:ma]` and value `[A:a]`.
 ---
 ```
-po kco ke ka be
-ke so kcoi
-  va sae kin kcei zai kca
-  fe soe kin kcei zai kca
+po kagvo ke ka be
+ke so kagvoi
+  va sae kin kagvei zai kagva
+  fe soe kin kagvei zai kagva
   fo ka
 ```
 </spoiler>
 
 <spoiler>
 
-__kcu:__ Transform entry with key `[E:ma]` with value relation (old,new)
+__kagvu:__ Transform entry with key `[E:ma]` with value relation (old,new)
 `[A:(a,a)]`.
 ---
 ```
-po kcu ke ga be
-ke so kcui
-  va sae kin kcei zai kca
-  fe soe kin kcei zai kca
+po kagvu ke ga be
+ke so kagvui
+  va sae kin kagvei zai kagva
+  fe soe kin kagvei zai kagva
   fo ga
 ```
 </spoiler>
@@ -249,11 +249,11 @@ ke so kcui
 With these predicates we can write stuff like:
 ```
 po ga ke ka be
-ke kca
+ke kagva
   vo ka
-  fa zai ti kcan
-  bu zai te kco ma
-  bu zai ta kcu tcia
+  fa zai ti kagvan
+  bu zai te kagvo ma
+  bu zai ta kagvu tcia
 ```
 
 _ka_ is thus _ke_ with:
@@ -267,15 +267,15 @@ with a modified context. We can make a predicate make that easier.
 
 <spoiler>
 
-__kcar:__ Transformations `[E:blu ()]` are applied on the context before it is
+__kagvar:__ Transformations `[E:blu ()]` are applied on the context before it is
 used to evaluate `[A:()]`.
 ---
 ```
-po kcar ke gia be
+po kagvar ke gia be
 mue
   ve ki be mua
     va gia
-    fe kca
+    fe kagva
       va ki
       fo ke
 ```

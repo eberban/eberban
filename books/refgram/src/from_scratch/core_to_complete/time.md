@@ -95,9 +95,9 @@ __den:__ `[E:()]` is evaluated with a more recent present.
 ---
 ```
 po den gie be
-kcar
+kagvar
   va gia
-  fe zai den kcu dinu
+  fe zai den kagvu dinu
 ```
 </spoiler>
 
@@ -120,9 +120,9 @@ We can pick a first present node.
 
 ```
 pae pane
-  va gi be kcar
+  va gi be kagvar
     va gia
-    fe zai den kco din
+    fe zai den kagvo din
 ```
 
 And setup the automatic present update. (we also assign it to _epahegi_ so that
@@ -142,7 +142,7 @@ __del:__ `[E:dinu]` is the present time span.
 ---
 ```
 po del ke be
-ke ve kcei zai den bu
+ke ve kagvei zai den bu
 ```
 </spoiler>
 
@@ -167,9 +167,9 @@ __zvi:__ `[E:dinu]` is a time span shared by all events of `[A:()]`.
 We define a first predicate to evaluate A with a span in the context.
 ```
 po izvi ke gia be
-kcar
+kagvar
   va gia
-  fe zai zvi kco ke bu
+  fe zai zvi kagvo ke bu
 ```
 Then we really define `zvi` by ensuring this span cannot be made longer by
 concatenation.
@@ -196,7 +196,7 @@ __zvin:__ Time span `[E:dinu]` contains context time span.
 ---
 ```
 po zvin
-sa bla ve kcei zei zvi
+sa bla ve kagvei zei zvi
 ```
 </spoiler>
 
@@ -208,7 +208,7 @@ __zvil:__ `[E:dinu]` is the context time span.
 ---
 ```
 po zvil
-kcei zei zvi
+kagvei zei zvi
 ```
 </spoiler>
 
@@ -337,7 +337,7 @@ __dan:__ `[E:()]` presently occurs.
 ```
 po dan gie be
 bla
-  ve kcei zai den bu
+  ve kagvei zai den bu
   fa zvi gie
 ```
 </spoiler>
@@ -350,14 +350,14 @@ in the context a property describing one or multiple __initial time spans__.
 
 <spoiler>
 
-zve: `[E:kcin]` is the context after inserting the initial time spans `[A:(blu
+zve: `[E:kagvin]` is the context after inserting the initial time spans `[A:(blu
 din)]`.
 ---
 ```
 po zve ke gia be
-kcar
+kagvar
   via mue ke
-  fe zai zve kco gia bu
+  fe zai zve kagvo gia bu
 ```
 </spoiler>
 
@@ -369,7 +369,7 @@ easily be composed with other future sentence wrappers).
 po eipahizve gie be
 zvi
   via zvin zvi gie
-    zvin zu pe kcei zai zve
+    zvin zu pe kagvei zai zve
 
 po epahigi eipahizve
 pahi epahigi
