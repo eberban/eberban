@@ -15,7 +15,7 @@ be used to represent an argument's generic type.
 
 The same letter used in multiple places means the arguments share the same type.
 
-Parentheses `()` represent predicate arguments (as opposed to atom arguments),
+Parentheses `()` represent predicate arguments (as opposed to atom or generic arguments),
 where each argument constraint is listed in between, separated by commas.
 
 > Exemples of meanings:
