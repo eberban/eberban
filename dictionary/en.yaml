@@ -1545,7 +1545,7 @@ kca:
   gloss: "map-list-wrapper"
   tags: [map, list]
   short: |
-    [E:kcin] represents a map that can be optained from [O:kcin] (default: empty
+    [E:kcin] represents a map that can be obtained from [O:kcin] (default: empty
     map {kcil}) by applying the list of transformations [A:blu ()].
 kcan:
   id: eogkr6aqeg
@@ -2767,8 +2767,8 @@ znar:
     [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* pan].
     [E] is tolerated.
 
-    Examples: basically most actions are {sena}, there are so many examples
-    -- the act of breathing is sena
+    Examples: basically most actions are {znar}, there are so many examples
+    -- the act of breathing is znar
 znor:
   id: 2uij97w56c
   family: "R"

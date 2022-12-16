@@ -168,7 +168,7 @@ value, no need to take input and output as they are retreived from the context).
 
 <spoiler>
 
-__kca:__ `[E:kcin]` represents a map that can be optained from `[O:kcin]`
+__kca:__ `[E:kcin]` represents a map that can be obtained from `[O:kcin]`
 (default: empty map) by applying the list of transformations `[A:blu ()]`.
 ---
 ```
