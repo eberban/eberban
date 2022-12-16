@@ -106,7 +106,7 @@ predicate word to refer the latest compound containing this word.
 > `ze eberban` will refer to the latest `eberban` instance, while `zei ban` will
 > refer to the latest compound containing `ban`, for exemple `eberban`.
 
-This is the __latest instance__ is determined by word order in the text, and
+Which one is the __latest instance__ is determined by word order in the text, and
 using a predicate defined using this word doesn't make it the __latest__ again.
 Thus in
 
