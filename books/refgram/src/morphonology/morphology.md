@@ -59,10 +59,10 @@ invalid):
 
 ### Borrowings
 
-__Borrowings__ allow importing of foreign words or names. They are prefixed by 
-the vowel __u__, and have more relaxed rules about consonants than native 
-Eberban words. Mainly, they can contain consonant triplets which must obey the 
-following rules: 
+__Borrowings__ allow importing foreign words or names. They are prefixed by the
+vowel __u__, and have more relaxed rules about consonants than native Eberban
+words. Mainly, they can contain consonant triplets which must obey the following
+rules:
 
  - Consonant pairs must either be _initial pairs_, _medial pairs_ or _sonorant_
    + _consonant_.
@@ -98,13 +98,13 @@ __u__ of borrowings. Their structure will be detailed later in this book.
 
 ### Example
 
-With spaces : _pa za umia tsen eberban_  
+With spaces : _pa za umia tsen eberban_\
 Without spaces : _paza'umia'tsen'eberban_
 
-Particles : _pa_, _za_  
-Borrowing : _umia_  
-Freeform variable: _ibar_  
-Root : _tsen_  
+Particles : _pa_, _za_\
+Borrowing : _umia_\
+Freeform variable: _ibar_\
+Root : _tsen_\
 Compound : _eberban_
 
 ### Reasoning

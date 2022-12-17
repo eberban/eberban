@@ -972,18 +972,28 @@ cai:
   short: "Ends grammatically correct eberban quote."
   gloss: "#quote-end"
   tags: [terminator]
-ce:
+ci:
   id: qd380clfxd
-  family: "CE"
+  family: "CI"
   short: "Quote next word. [E:tca man] is word [word]."
   gloss: "#word-quote"
-cei:
+cie:
   id: acauojxxsk
-  family: "CE"
+  family: "CI"
   short: "[E:tca man] is the family of word [word]."
   gloss: "#family-quote"
   nodes: |
     TODO: Add predicates to manipulate language concepts.
+ce:
+  id: INSERT_WORD_ID
+  family: "CE"
+  short: "[E:tca skan] is a character by character/spelling quote."
+  gloss: "#spelling-start"
+cei:
+  id: INSERT_WORD_ID
+  family: "CEI"
+  short: "Character by character/spelling quote terminator"
+  gloss: "#spelling-end"
 co:
   id: upxio5nkc0
   family: "CO"
@@ -1019,7 +1029,7 @@ zai:
     predicate. Using {zai} before a specific predicate will always yield the
     same unique atom.
 
-    It is mainly used to create identifiers used as map keys (see {kce}).
+    It is mainly used to create identifiers used as map keys (see {kagve}).
 pa:
   id: awzbv8iu8c
   family: "PA"
@@ -1176,13 +1186,13 @@ varu:
   definition: |
     po varu ge ga be
     vare
-      va vari
-        ve ge
-        fa ga
+      via vari
+        vie ge
+        fia ga
         vei
-      fe vari
-        ve bi ge
-        fa go
+      fie vari
+        vie bi ge
+        fia go
     poia varu mai
     poio varu mai
 kidvo:
@@ -1475,91 +1485,91 @@ bli:
   tags: [list, set]
   short: |
     [E:tce a] is the union of all sets in list [A:blu tce a].
-kcin:
+kagvin:
   id: wuklqbdxyk
   family: "R"
   gloss: "map"
   tags: [map]
   short: |
     [E:ma] is a map.
-kcil:
+kagvil:
   id: 4wxxlvhj9q
   family: "R"
   gloss: "empty-map"
   tags: [map]
   short: |
-    [E:kcin] is the empty map.
-kce:
+    [E:kagvin] is the empty map.
+kagve:
   id: ynv5inth7z
   family: "R"
   gloss: "map-entry"
   tags: [map]
   short: |
-    [E:a] is the value in map [A:kcin] for key [O:ma].
-kcei:
+    [E:a] is the value in map [A:kagvin] for key [O:ma].
+kagvei:
   id: wveaovosbk
   family: "R"
   gloss: "context-map-entry"
   tags: [map, context]
   short: |
     [E:a] is the value in the context map for key [A:ma].
-kcani:
+kagvani:
   id: pl5agvbnwb
   family: "R"
   gloss: "map-remove"
   tags: [map]
   short: |
-    [E:kcin] is obtained from [A:kcin] by removing the entry with key [O:ma].
+    [E:kagvin] is obtained from [A:kagvin] by removing the entry with key [O:ma].
     If [A] don't have entry with key [O] then [E] = [A].
-kcoi:
+kagvoi:
   id: f3la0vnq2j
   family: "R"
   gloss: "map-insert"
   tags: [map]
   short: |
-    [E:kcin] is obtained from [A:kcin] by inserting an entry with key [O:ma] and
+    [E:kagvin] is obtained from [A:kagvin] by inserting an entry with key [O:ma] and
     value [U:ma]. If [A] have an entry with key [O] then it is removed to insert
     the entry with key [O] and value [U].
-kcui:
+kagvui:
   id: dolbat4p3o
   family: "R"
   gloss: "map-update"
   tags: [map]
   short: |
-    [E:kcin] is obtained from [A:kcin] by transforming the value of entry with
+    [E:kagvin] is obtained from [A:kagvin] by transforming the value of entry with
     key [O:ma] using relation [U:(a,a)]. It implies that [A] must have an entry
     with key [O].
-kca:
+kagva:
   id: onzg415avk
   family: "R"
   gloss: "map-list-wrapper"
   tags: [map, list]
   short: |
-    [E:kcin] represents a map that can be optained from [O:kcin] (default: empty
-    map {kcil}) by applying the list of transformations [A:blu ()].
-kcan:
+    [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: empty
+    map {kagvil}) by applying the list of transformations [A:blu ()].
+kagvan:
   id: eogkr6aqeg
   family: "R"
   gloss: "map-list-remove"
   tags: [map, list]
   short: |
-    {kca} operation: remove entry with key [E:ma].
-kco:
+    {kagva} operation: remove entry with key [E:ma].
+kagvo:
   id: obhtxxk03b
   family: "R"
   gloss: "map-list-insert"
   tags: [map, list]
   short: |
-    {kca} operation: insert entry with key [E:ma] and value [A:a].
-kcu:
+    {kagva} operation: insert entry with key [E:ma] and value [A:a].
+kagvu:
   id: oyk8ho9c8a
   family: "R"
   gloss: "map-list-update"
   tags: [map, list]
   short: |
-    {kca} operation: transform entry with key [E:ma] with value relation
+    {kagva} operation: transform entry with key [E:ma] with value relation
     (old,new) [A:(a,a)].
-kcar:
+kagvar:
   id: uqfvqmic1a
   family: "R"
   gloss: "context-map-list-wrapper"
@@ -2757,8 +2767,8 @@ znar:
     [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* pan].
     [E] is tolerated.
 
-    Examples: basically most actions are {sena}, there are so many examples
-    -- the act of breathing is sena
+    Examples: basically most actions are {znar}, there are so many examples
+    -- the act of breathing is znar
 znor:
   id: 2uij97w56c
   family: "R"

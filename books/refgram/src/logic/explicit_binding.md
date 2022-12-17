@@ -28,7 +28,7 @@ __ve, va, vo, vu__ allow the binding of atom (or generic) arguments :
 > \\ \\\\
 > \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}^w_1(c,e) \\\\
 > \end{align} \\]
-> 
+>
 > Given $(c), $(e):\
 > $(e) is a speaker who gives an apple to a listener.
 
@@ -61,7 +61,7 @@ Any __BA__ used in the argument list allow skipping this argument if it is not
 used in the inner predicate. Which __BA__ member is used doesn't matter.
 
 > __mi dona [va ke be: mian buri ke]__
-> 
+>
 > \\[ \begin{align}
 > \text{mian}(c,e)       &= \text{[$e$ is a cat]} \\\\
 > \text{buri}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
@@ -142,10 +142,10 @@ To provide a definition of the predicate argument the particles __vie, via, vio,
 viu__ (and __FI__ equivalents) must be used.
 
 If we take the example `tce mian` from the previous chapter it is equivalent to
-`tce vie mian`. Sharing with __ve, va, ...__ can be used like so:
+`tce via mian`. Sharing with __ve, va, ...__ can be used like so:
 
 > __mi fule [va sae tuli mo]__
-> 
+>
 > \\[ \begin{align}
 > \text{fule}(c,e,A)                &= \text{[$e$ knows that $A$ (0-ary) is true]} \\\\
 > \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
@@ -161,14 +161,14 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > \\ \\\\
 > \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
 > \end{align} \\]
-> 
+>
 > Given $(c), $(e):\
 > $(e) is a speaker who knows some truth which is needed by a listener.
 
 While using __via__, it has a different meaning :
 
 > __mi fule [via sae tuli mo]__
-> 
+>
 > \\[ \begin{align}
 > \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
 > \\ \\\\
@@ -180,7 +180,7 @@ While using __via__, it has a different meaning :
 > \\ \\\\
 > \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
 > \end{align} \\]
-> 
+>
 > Given $(c), $(e):\
 > $(e) is a speaker who knows that [some truth is needed by a listener] is true.
 

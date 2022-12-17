@@ -19,7 +19,7 @@ const hideTitleList = [
 	'VI-scope',
 	'borrowing group',
 	'erased',
-	'default'
+	'default',
 ];
 
 const hideFamily = [
@@ -31,7 +31,14 @@ const hideFamily = [
 	'freeform_content',
 	'foreign quote content',
 	'foreign quote delimiter',
-]
+	'spelling unit',
+];
+
+
+const hideDefinition = [
+	'ce',
+	'cei',
+];
 
 // List of types with their associated CSS classes.
 const boxClassForTypeMap = new Map([
@@ -65,6 +72,7 @@ const boxClassForTypeMap = new Map([
 	[ 'subscope', 'box box-subscope' ],
 	[ 'borrowing group', 'box box-borrowing' ],
 	[ 'foreign quote content', 'box box-not-shown foreign-quote-content'],
+	[ 'spelling', 'box box-borrowing' ],
 
 	// free
 	[ 'metadata', 'box box-metadata' ],
@@ -362,7 +370,9 @@ function constructBoxesOutput(parse, depth) {
 		output += '</div>&nbsp;<br>&nbsp;' + parse.type + '&nbsp;<br>';
 		// escapeHtml(words[text[j]].short)
 
-		if (dictionary[parse.word]) {
+		if (hideDefinition.includes(parse.word)) {
+			// do nothing
+		} else if (dictionary[parse.word]) {
 			let short = dictionary[parse.word].gloss;
 			if (short) {
 				output += '<span class="translation">&nbsp;' + escapeHtml(short) + '&nbsp;</span>';

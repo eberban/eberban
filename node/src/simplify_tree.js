@@ -47,6 +47,8 @@ const important_types = [
 	[ 'free_interjection', 'interjection' ],
 	[ 'free_parenthetical', 'parenthetical' ],
 	[ 'free_subscript', 'subscript' ],
+	[ 'spelling_quote', 'spelling' ],
+	[ 'spelling_quote_unit_2', 'spelling unit' ],
 
 	// morphology
 	[ 'particle_form', 'particle' ],

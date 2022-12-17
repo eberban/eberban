@@ -13,14 +13,14 @@ function remove_spaces(tree) {
 
 /*
  * EXAMPLE OF PARSE TREE PRUNING PROCEDURE
- * 
+ *
  * remove_morphology(parse_tree)
- * 
+ *
  * This function takes a parse tree, and joins the expressions of the following
  * nodes:
  * "cmevla", "gismu_2", "lujvo", "fuhivla", "spaces"
  * as well as any selmaho node (e.g. "KOhA").
- * 
+ *
  */
 
 function remove_morphology(pt) {
@@ -78,6 +78,7 @@ const SPECIAL_FAMILIES = [
     "foreign_quote_content",
     "foreign_quote_open",
     "foreign_quote_close",
+    "spelling_quote_unit_2",
 ];
 
 function among(v, s) {
