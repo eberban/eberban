@@ -2,12 +2,12 @@
 
 The morphology of Eberban is composed of 16 consonants (__n, r, l, m, p, b, f,
 v, t, d, s, z, c, j, g, k__), five vowels (__i, e, a, o, u__) and finally the
-letter __h__, for a total of 22 letters. Among the consonants, __n__, __r__ and
-__l__ are designated as (alveolar) __sonorants__, and play an important role in
-Eberban's morphology. The alphabetical order is `hnlrmpbfvtdszcjkgieaou`.
-The same letter appearing multiple times in a row is considered identical to the
-letter not being repeated, but can informally be used in written media to convey
-length of sounds in speech.
+letters __h__ and __'__, for a total of 23 letters. Among the consonants, __n__,
+__r__ and __l__ are designated as (alveolar) __sonorants__, and play an
+important role in Eberban's morphology. The alphabetical order is
+`hnrlmpbfvtdszcjkgieaou'`. The same letter appearing multiple times in a row is
+considered identical to the letter not being repeated, but can informally be
+used in written media to convey length of sounds in speech.
 
 Words are usually written separated by spaces, however this is not mandatory.
 While removing spaces, however, it might be required to add the __word boundary
@@ -86,13 +86,13 @@ boundary marker, and realized orally as either a pause or a glottal stop.
 
 ### Freeform variables
 
-__Freeform variables__ allow the defining of predicates with a custom name. They
+__Freeform variables__ allow defining predicates with a custom name. They
 follow the same morphology as _borrowings_ but use the __i__ prefix instead of
 __u__.
 
 ### Compounds
 
-__Compounds__ allow the making of new words from multiple other kind of words.
+__Compounds__ allow making new words from multiple other kind of words.
 They start with either __e__, __a__ or __o__ and follow the same rule as the
 __u__ of borrowings. Their structure will be detailed later in this book.
 

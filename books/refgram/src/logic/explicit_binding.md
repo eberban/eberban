@@ -93,9 +93,9 @@ The above example can thus be shortened as _mi dona [va be mian buri __ba__]_.
 ## Right place and chaining selection
 
 When it is only needed to bind one or two places of a predicate, using __VI/FI__
-and argument lists quickly becomes verbose. For that reason, predicates can be
-prefixed with particles of family __SI__ (all particles starting with _s-_),
-which override the chaining behavior.
+and multiple lists of multiple arguments quickly becomes verbose. For that
+reason, predicates can be prefixed with particles of family __SI__ (all
+particles starting with _s-_), which override the chaining behavior.
 
 __se, sa, so, su__ select the place corresponding to its vowel both for the
 argument bound with a predicate on its right, and for the single argument that

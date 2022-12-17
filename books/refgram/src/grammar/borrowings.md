@@ -1,6 +1,6 @@
 # Borrowings (u-)
 
-Borrowings allow the importing of words from other languages which would be
+Borrowings allow importing words from other languages which would be
 difficult or even impossible to translate using root words, such as proper
 names, names of species, and some cultural concepts Eberban avoids including
 in its roots to be more culturally neutral.

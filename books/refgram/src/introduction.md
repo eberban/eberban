@@ -3,10 +3,10 @@
 __Eberban__ is a [logical] [constructed language] aimed to satisfy the
 following goals :
 
-- __being simple :__ the Eberban grammar allows the manipulation of predicates
-  with particles in a way that is close to the [higher-order logic] it
-  translates into, while abstracting away the verbosity of explicitly
-  providing variables as arguments of predicates.
+- __being simple :__ the Eberban grammar allows manipulating predicates with
+  particles in a way that is close to the [higher-order logic] it translates
+  into, while abstracting away the verbosity of explicitly providing variables
+  as arguments of predicates.
 - __being regular :__ valid sentences are syntactically unambiguous. Most
   grammar rules rely on particles which are organised into families, each
   starting with a unique prefix. Many additional patterns are shared between
