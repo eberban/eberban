@@ -10,7 +10,7 @@ by the __vei__ particle to return to the previously seen chaining behavior.
 
 > __vei__ is the only member of family __VEI__, and not a member of __VI__.
 
-__ve, va, vo, vu__ allow the binding of atom (or generic) arguments :
+__ve, va, vo, vu__ allow binding atom (or generic) arguments :
 
 > __mi duna [vo mo vei] meon__
 >
