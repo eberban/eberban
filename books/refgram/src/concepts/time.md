@@ -1,7 +1,7 @@
 # Time
 
 > More complete (and complex) explanations can be found in [the chapter
-> defining such concepts](../from_scratch/step2/time.md).
+> defining such concepts](../from_scratch/core_to_complete/time.md).
 
 ## What is the time system?
 
