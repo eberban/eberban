@@ -5,7 +5,11 @@
 
 ## What is the time system?
 
-Time is represented using a graph of instants. It supports multiple possible futures and pasts, parallel and fictional universes. The implicit context argument with some predicates allow to handle time-related stuff behind the scene. Events are defined using __time spans__, which are all instants between a start and end instant, and usually can't be cut into multiple parts. 
+Time is represented using a graph of instants. It supports multiple possible
+futures and pasts, parallel and fictional universes. The implicit context
+argument with some predicates allows handling time-related stuff behind the
+scene. Events are defined using __time spans__, which are all instants between
+a start and end instant, and usually can't be cut into multiple parts. 
 
 ## What is the default tense of a sentence?
 
@@ -25,29 +29,32 @@ update-context set-initial-span present-span
 
 (For the following explanations we'll consider it is the present)
 
-## How a simple sentence work?
+## How does a simple sentence work?
 ```
 mian buri meon
 cat  eat  apple
 ```
 
-This sentence is only true if there is an overlap between those 3 events:
+This sentence is only true if there is an overlap between the following three
+events:
+
 - a cat X exists
 - an apple Y exists
 - X eats Y
 
-This overlapping time span must itself overlap with the initial time span (present)
+This overlapping time span must itself overlap with the initial time span
+(present).
 
 ## Possible / Necessary?
-Tenses used in sentence each have 2 variants: possible and necessary.
+Tenses have two variants: possible and necessary.
 
-Possible means that there exist at least 1 time line in which the event occurs.
+Possible means that there exists at least one timeline in which the event occurs.
 
-Necessary means that it must occurs in all timelines.
+Necessary means that it must occur in all timelines.
 
 ## How to use tenses in a sentence?
 Tense predicates express that some proposition occurs in relation with the
-outer sentence __overlapping span__ (the time span that is part of the time
+outer sentence AKA __overlapping span__ (the time span that is part of the time
 span of all events), that we'll write as C for "context".
 
 The tenses are:
@@ -57,12 +64,13 @@ The tenses are:
 - __sul/sun__: E is met by C (end instant of C = first instant of E)
 - __siel/sien__: E is before C
 - __sial/sian__: E contains C
-- __siol/sion__: E contained by C (there is no difference between both variants)
+- __siol/sion__: E is contained by C (there is no difference between both
+variants)
 - __siul/siun__: E is after C
 - __sil/sin__: E overlaps with C
 
-The ones ending with __-l__ are the __possible__ variants, while __-n__ are the
-__necessary__ variants.
+The ones ending with __-l__ are the __possible__ variants, while those ending
+with __-n__ are the __necessary__ variants.
 
 ```
 mi sni   mo  vi sul             mo  sni   mi
@@ -87,13 +95,13 @@ Which can be drawn as:
 ## Detached time spans
 
 - __zvi:__ `[E:dinu]` is a time span shared by all events of `[A:()]`.
-- __zvin:__ Time span `[E:dinu]` contains context time span.
+- __zvin:__ Time span `[E:dinu]` contains the context time span.
 - __zvil:__ `[E:dinu]` is the context time span.
 
 The predicate __zvi__ is one of the building blocks of the time system, and
-allows to talk about the time span that is shared/common between all time spans
+allows talking about the time span that is shared/common between all time spans
 of a proposition. This time span is itself __NOT__ stated to be part of an outer
 shared/common time span.
 
 Stating that a time span is part of the shared time span is done with __zvin__,
-while __zvil__ allows to access this shared time span.
+while __zvil__ allows accessing this shared time span.

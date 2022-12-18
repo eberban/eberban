@@ -1,9 +1,9 @@
 # Annotations (d-)
 
-Annotations are additional grammar that doesn't modify the logical meaning
-of the text, and simply add notes or metadata. Those annotations are also
-called "free" prefixes and suffixes as they can be added freely before and
-after many elements of the grammar.
+Annotations are additional grammar that don't modify the logical meaning of the
+text, and simply add notes or metadata. These annotations are also called "free"
+prefixes and suffixes as they can be added freely before and after many elements
+of the grammar.
 
 ## Paragraph marker DU
 
@@ -36,7 +36,7 @@ could be compared to emojis or lojban's attitudinals, like `de gli` (love/❤️
 
 __dei__ uses this predicate as a metadata tag or _#hashtag_.
 
-## Free parenthetical DA...DAI (suffix)
+## Free parenthetical da...dai (suffix)
 
-__DA__ allow to start a parenthetical note which is ended by __DAI__.
-This note can be any valid eberban text.
+__da__ allows starting a parenthetical note which is ended by __dai__. This note
+can be any valid eberban text.
