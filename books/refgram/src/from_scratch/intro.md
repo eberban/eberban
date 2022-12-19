@@ -8,6 +8,9 @@ To achieve such a goal, Eberban is designed to the following principles:
 - A subset of the complete Eberban grammar is called the __core grammar__, and
   provides only a basic logic framework on which can be built the rest of the
   language.
+- New grammar is made from predicates using this core grammar. This is known as
+  syntactic sugar and its brevity and design makes it more ergonomic for speech.
+  New grammar can only use non-core grammar if there are no cyclic dependencies.
 - Grammar defined by core grammar predicates is known as __syntactic sugar__.
   Non-core grammar may be used in definitions only if there are no cyclic
   dependencies.

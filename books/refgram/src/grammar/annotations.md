@@ -36,7 +36,8 @@ could be compared to emojis or lojban's attitudinals, like `de gli` (love/❤️
 
 __dei__ uses this predicate as a metadata tag or _#hashtag_.
 
-## Free parenthetical da...dai (suffix)
+## Free parenthetical DA...DAI (suffix)
 
-__da__ allows starting a parenthetical note which is ended by __dai__. This note
-can be any valid eberban text.
+The families __DA__ and __DAI__ have single members __da__ and __dai__
+respectively. __DA__ allows starting a parenthetical note which is ended by
+__DAI__. This note can be any valid eberban text.

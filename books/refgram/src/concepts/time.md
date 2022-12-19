@@ -53,8 +53,8 @@ Possible means that there exists at least one timeline in which the event occurs
 Necessary means that it must occur in all timelines.
 
 ## How to use tenses in a sentence?
-Tense predicates express that some proposition occurs in relation with the
-outer sentence AKA __overlapping span__ (the time span that is part of the time
+Tense predicates express that some proposition occurs in relation with the the
+outer sentence's __overlapping span__ (the time span that is part of the time
 span of all events), that we'll write as C for "context".
 
 The tenses are:
