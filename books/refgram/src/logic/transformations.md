@@ -139,13 +139,11 @@ about one of its members with __tci__ (is a member of) :
 
 _pa meon sae buri __tce__ mian pa mi dona tci ze tce_
 
-> A related concept is __forethought reference__. A __KI/GI__ variable is first
-> assigned by prefixing with __bo__ before being used in reference.
->
-> The usage of __KI__ and __GI__ defined in this way is distinct. Such __KI__
-> variables can be used similarly to pronouns in other languages. Such __GI__
-> variables are more complex to use, but are necessary to define some concepts
-> of Eberban's vocabulary.
+> A related concept is __forethought reference__ using __KI/GI__ variables. A
+> __KI/GI__ variable is first assigned by prefixing with __bo__ before being
+> used in reference. Such __KI__ variables can be used similarly to pronouns in
+> other languages. Such __GI__ variables are more complex to use, but are
+> necessary to define some concepts of Eberban's vocabulary.
 
 # Instantiation
 

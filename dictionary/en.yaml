@@ -121,7 +121,7 @@ mui:
   family: "MI"
   gloss: "unknown"
   tags: [core]
-  short: "Always returns the "unknown" truth value."
+  short: "Always returns the \"unknown\" truth value."
   definition: 𝜆c unknown
 mue:
   id: asdzumonex

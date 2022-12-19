@@ -3,10 +3,11 @@
 ## Left atom place selection
 
 When the speaker wants to interact with an argument that normal chaining doesn't
-select (due to transitivity, or to interacting with O or U arguments), it is
-possible to attach additional bindings using the __VI__ family of particles
-after a predicate, followed by another (chain of) predicate(s), which is closed
-by the __vei__ particle to return to the previously seen chaining behavior.
+select (due to transitivity, or because they want to interact with O or U
+arguments), it is possible to attach additional bindings using the __VI__ family
+of particles after a predicate, followed by another (chain of) predicate(s),
+which is closed by the __vei__ particle to return to the previously seen
+chaining behavior.
 
 > __vei__ is the only member of family __VEI__, and not a member of __VI__.
 

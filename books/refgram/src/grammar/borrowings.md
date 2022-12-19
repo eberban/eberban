@@ -21,9 +21,9 @@ A borrowing's meaning is not defined in Eberban, and its truth value is always
 undefined. It can be used to import foreign words that interlocutors will 
 collectively understand, but using non-borrowings is always preferred if
 possible. Borrowings can have any number of arguments, and since it is not
-defined in Eberban, each of them is considered to be a generic atom. No type
-inference can be informed, therefore, `vie/via/...` must be used for predicate
-equivalence bindings.
+defined in Eberban, each of them is considered to be generic. No type inference
+can be informed, therefore, `vie/via/...` must be used for predicate equivalence
+bindings.
 
 Like roots and compounds, borrowings are transitive if they end with a vowel,
 while they are intransitive if they end with a consonant (not only sonorants).
