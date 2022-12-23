@@ -1,0 +1,34 @@
+[book]
+authors = ["mia entropy"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Eberban Reference Grammar (V2)"
+
+[output.html]
+default-theme = "rust"
+mathjax-support = true
+git-repository-url = "https://github.com/eberban/eberban"
+git-repository-icon = "fa-github"
+curly-quotes = true
+site-url = "https://eberban.github.io/eberban/books/refgram2/book/"
+
+additional-css = [
+    "res/leipzig.min.css",
+    "res/style.css",
+]
+additional-js = [
+    "res/leipzig.min.js",
+    "res/leipzig_apply.js",
+]
+
+[preprocessor.regex-replacer]
+command="mdbook-regex-replacer"
+
+[[preprocessor.regex-replacer.items]]
+regex="```gloss(\r\n|\r|\n)(?P<content>(?s:.)*?)(\r\n|\r|\n)```"
+rep="<div data-gloss>\n\n${content}\n</div>"
+
+[[preprocessor.regex-replacer.items]]
+regex="<spoiler>(\r\n|\r|\n)(?P<title>(?s:.)*?)(\r\n|\r|\n)-{2,}(\r\n|\r|\n)(?P<content>(?s:.)*?)(\r\n|\r|\n)</spoiler>"
+rep="<details><summary>\n\n${title}\n</summary><div>\n\n${content}\n</div></details>"

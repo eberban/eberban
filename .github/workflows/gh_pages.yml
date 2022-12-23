@@ -27,7 +27,7 @@ jobs:
           mkdir bins
           curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.18/mdbook-v0.4.18-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=./bins
           echo `pwd`/bins >> $GITHUB_PATH
-          
+
       - name: Install mdbook-linkcheck
         run: |
           cd ./bins
@@ -46,7 +46,11 @@ jobs:
       - name: Build refgram book
         run: |
           mdbook build books/refgram
-        
+
+      - name: Build refgram book 2
+        run: |
+          mdbook build books/refgram2
+
       - name: Install NPM dependencies
         run: |
           cd node
