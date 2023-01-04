@@ -3,10 +3,11 @@
 ## Left atom place selection
 
 When the speaker wants to interact with an argument that normal chaining doesn't
-select (due to transitivity, or to interact with O or U arguments), it is
-possible to attach additional bindings using the __VI__ family of particles
-after a predicate, followed by another (chain of) predicate(s), which is closed
-by the __vei__ particle to return to the previously seen chaining behavior.
+select (due to transitivity, or because they want to interact with O or U
+arguments), it is possible to attach additional bindings using the __VI__ family
+of particles after a predicate, followed by another (chain of) predicate(s),
+which is closed by the __vei__ particle to return to the previously seen
+chaining behavior.
 
 > __vei__ is the only member of family __VEI__, and not a member of __VI__.
 
@@ -30,30 +31,30 @@ __ve, va, vo, vu__ allow binding atom (or generic) arguments :
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker which gives an apple to a listener.
+> $(e) is a speaker who gives an apple to a listener.
 
 To bind more than one argument of the same predicate we have to use the __FI__
-family, which interact with the same predicate as the last non-closed __VI__.
+family, which interacts with the same predicate as the last non-closed __VI__.
 The __FI__ family follows the same pattern of vowels as __VI__.
 The above sentence can thus be rewritten as `duna [ve mi, fo mo vei] meon` or
 even as `duna [ve mi, fo mo, fa meon vei]`.
 
-In the last version it is possible to omit the final __vei__. It is however not
-possible to do so in the previous exemples as we would get the chain `mo meon`
-which is not what we want.
+In the last version it is possible to omit the final __vei__. It is, however,
+not possible to do so in the previous exemples as we would get the chain
+`mo meon` which is not what we want.
 
 ## Arguments list
 
 Between __VI/FI__ and the inner predicate an __arguments list__ can be provided
-by having 0 or more __KI/GI/BA__ terminated with __be__, in which case the
-bindings will occur with those arguments instead of the arguments of the predicate after
-__be__.
+by having zero or more __KI/GI/BA__ terminated with __be__, in which case the
+bindings will occur with those arguments instead of the arguments of the
+predicate after __be__.
 
 __KI__ (all particles starting with _k-_) represent an atom or generic argument
 $(x) and have meaning \\(ki(c,e) = \[\text{$e$ is variable $x$}\]\\).
 
-__GI__ (all particles starting with _g-_) however represents a predicate whose
-arity and type will be infered from its usage in the sentence. All __GI__
+__GI__ (all particles starting with _g-_), however, represents a predicate whose
+arity and type will be inferred from its usage in the sentence. All __GI__
 starting with __gi-__ have __intransitive behavior__, while the others starting
 with __ge/ga/go/gu-__ have __transitive behavior__.
 
@@ -80,10 +81,10 @@ used in the inner predicate. Which __BA__ member is used doesn't matter.
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker which likes [something eaten by a cat].
+> $(e) is a speaker who likes [something eaten by a cat].
 
 __BA__ can also be used outside of the argument list, which adds an argument at
-the end of the list and use it directly. __ba__ declares an atom/generic
+the end of the list and uses it directly. __ba__ declares an atom/generic
 argument (like a KI), __bai__ a transitivite predicate argument (like a
 gi-initial GI), and __bae__ an intransitive predicate argument (like a non
 gi-initial GI).
@@ -92,14 +93,14 @@ The above example can thus be shortened as _mi dona [va be mian buri __ba__]_.
 
 ## Right place and chaining selection
 
-When it is only needed to bind one or 2 places of a predicate, using __VI/FI__
-and arguments lists is quickly verbose. For that reason, predicates can be
-prefixed with particles of familly __SI__ (all particles starting with _s-_),
-which overrides the chaining behavior.
+When it is only needed to bind one or two places of a predicate, using __VI/FI__
+and multiple lists of multiple arguments quickly becomes verbose. For that
+reason, predicates can be prefixed with particles of family __SI__ (all
+particles starting with _s-_), which override the chaining behavior.
 
 __se, sa, so, su__ select the place corresponding to its vowel both for the
-argument bound with a predicate on its right, and for which single argument is
-exposed in the combined predicate.
+argument bound with a predicate on its right, and for the single argument that
+is exposed in the combined predicate.
 
 > __mian se buri blan__
 >
@@ -115,9 +116,9 @@ exposed in the combined predicate.
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is is cat that eats something, and $(e) is beautiful.
+> $(e) is a cat that eats something, and $(e) is beautiful.
 
-__SI__ particles with 2 vowels allow to select both individually.
+__SI__ particles with two vowels allow to select both individually.
 
 > __meon sae buri mian__
 >
@@ -163,9 +164,9 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker which knowns some truth which is needed by a listener.
+> $(e) is a speaker who knows some truth which is needed by a listener.
 
-While using __via__ it has a different meaning :
+While using __via__, it has a different meaning :
 
 > __mi fule [via sae tuli mo]__
 >
@@ -182,16 +183,16 @@ While using __via__ it has a different meaning :
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker which knowns that [Some truth is needed by a listener] is true.
+> $(e) is a speaker who knows that [some truth is needed by a listener] is true.
 
 ## Brackets
 
-__pe__ and __pei__ are like spoken brackets that wraps a predicate or chain of
-predicate to define a new one, and have higher priority than chaining : `A B pe
+__pe__ and __pei__ are like spoken brackets that wrap a predicate or chain of
+predicates to define a new one, and have higher priority than chaining : `A B pe
 C D pei E F` will be chained in order `A (B ([C D] (E F)))` instead of `A (B (C
 (D (E F))))`. __pe__ can also be followed by an argument list to define the
 arguments of this new predicate.
 
-Using __VI/FI/SI__ is often prefered and more simple than using __pe__ and
+Using __VI/FI/SI__ is often preferred and more simple than using __pe__ and
 __pei__, but in some cases it is not possible. Those cases will be presented in
 later chapters.

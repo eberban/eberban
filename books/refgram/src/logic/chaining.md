@@ -1,13 +1,13 @@
 
 # Chaining
 
-When 2 predicates are strung one after the other they form a new predicate,
+When two predicates are strung one after the other they form a new predicate,
 which has the same arguments as the left predicate.
 
-Every predicate has a default __chaining behavior__ which dictates how 2
+Every predicate has a default __chaining behavior__ which dictates how two
 predicates are connected together. If the left predicate has __intransitive
-behavior__ then its __E__ place will interact with the right predicate.
-Otherwise if the left predicate has __transitive behavior__ then the __A__
+behavior__, then its __E__ place will interact with the right predicate.
+Otherwise if the left predicate has __transitive behavior__, then the __A__
 place is used.
 
 > For __root words__, they have __transitive behavior__ if they end with a
@@ -40,12 +40,12 @@ __context argument__ is automatically shared between left and right predicates.
 > Given $(c),$(e):\
 > $(e) is a cat and is beautiful.
 
-If the right predicate has more than one explicit argument then it is wrapped
-in a predicate having only one explicit argument, and every other arguments are
+If the right predicate has more than one explicit argument, then it is wrapped
+in a predicate having only one explicit argument and every other argument is
 filled with __existential variables__. The process of wrapping the predicate and
-creating __existential variables__ to have the correct arity is called the
-__arity mismatch resolution__, and is a key aspect of Eberban grammar to reduce
-verbosity in simple cases.
+creating __existential variables__ to have the correct arity is called
+__arity mismatch resolution__ and it is a key aspect of Eberban grammar to 
+reduce verbosity in simple cases.
 
 > __mian buri__
 >
@@ -59,17 +59,17 @@ verbosity in simple cases.
 > \end{align} \\]
 > 
 > Given $(c),$(e):\
-> $(e) is a cat and there exist an $(a) such that $(e) eats $(a).\
+> $(e) is a cat and there exists an $(a) such that $(e) eats $(a).\
 > $(e) is a cat that eats something.
 
 ## Predicate argument chaining
 
 If the chaining argument is a __predicate argument__, then the right predicate
 is stated to be equivalent to the predicate represented by the argument. If the
-__predicate argument__ and right predicate don't match in arity then the
+__predicate argument__ and right predicate don't match in arity, then the
 __arity mismatch resolution__ is performed. The right predicate is not stated
-as is, and will be _instanciated_ by the left predicate (according to its
-definition). The left predicate will be able to _instanciated_ multiple times
+as is, and will be _instantiated_ by the left predicate (according to its
+definition). The left predicate is able to be _instantiated_ multiple times
 and with any (correctly typed) arguments, including the _context argument_.
 
 > __tce mian__
@@ -105,7 +105,7 @@ and with any (correctly typed) arguments, including the _context argument_.
 
 ## Longer chains
 
-When more than 2 predicates are strung one after the other they are chained in
+When more than two predicates are strung one after the other they are chained in
 right-grouping order (`A (B (C D))`).
 
 > __mi dona tcu mian__
@@ -127,4 +127,4 @@ right-grouping order (`A (B (C D))`).
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker that likes all cats.
+> $(e) is a speaker who likes all cats.
