@@ -108,20 +108,20 @@ li.implicit {
 	background: white;
 }
 
-.box.box-chaining-unit {
+.box.box-chain-step {
 	background: var(--color-purple);
 }
 
-.box.box-chaining-neg {
+.box.box-chain-step-neg {
 	border: 1px red dashed;
 	border-top: 0px;
 }
 
-.box.box-vi-scope {
+.box.box-explicit-bind-group {
 	background: var(--color-pink);
 }
 
-.box.box-predicate {
+.box.box-chain-unit {
 	background: var(--color-blue);
 }
 
@@ -150,12 +150,12 @@ li.implicit {
 	border-top: 0px;
 }
 
-.box.box-scope {
+.box.box-chain {
 	background: #ffffff;
 	border-top: 0px;
 }
 
-.box.box-scope-highlight {
+.box.box-list-item {
 	border: 1px black dashed;
 	border-top: 0px;
 }
