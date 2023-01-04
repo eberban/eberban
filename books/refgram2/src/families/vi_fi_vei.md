@@ -65,19 +65,12 @@ Using __vie__ will translate to the following expression:
 The predicate unit \\(U\\) is wrapped inside proposition that satisfies the provided
 predicate chain \\(C\\).
 
-Wrapping can be represented using the following predicate:
-
-
-\\[
-W_{\text{vea}} = [\lambda c \lambda C \lambda U: C(c,[\lambda c_P: U(c_P)])]
-\\]
-
 "\\(U\\) vea \\(C_1\\)" this gives the following expression:
 
 \\[
 [
   \lambda c \lambda e \lambda a \ldots:
-  \color{magenta}{W_{\text{vea}}(c,C_1,
+  \color{magenta}{C_1(c,
   [\lambda c_1: }U(\color{magenta}{c_1},e,a,\ldots)\color{magenta}{]
 )}]
 \\]
@@ -88,9 +81,9 @@ of "\\(U\\) vea \\(C_1\\) fea \\(C_2\\)" will yield the following expression:
 \\[
 [
   \lambda c \lambda e \lambda a \ldots:
-  \color{magenta}{W_{\text{vea}}(c,C_1,
+  \color{magenta}{C_1(c,
   [\lambda c_1:}
-  \color{cyan}{W_{\text{vea}}(c_1,C_2,
+  \color{cyan}{C_2(c_1,
   [\lambda c_2: }U(\color{cyan}{c_2},e,a,\ldots)\color{cyan}{]
   )}
   \color{magenta}{])}]
@@ -102,17 +95,8 @@ will yield the following expression:
 \\[
 [
   \lambda c \lambda e \lambda a \ldots:
-  \color{magenta}{W_{\text{vea}}(c,C_1,
+  \color{magenta}{C_1(c,
   [\lambda c_1: }U(\color{magenta}{c_1},e,a,\ldots)
   \color{cyan}{\wedge E(c_1,e)}
   \color{magenta}{])}]
 \\]
-
-<!-- \\[
-[\lambda c \lambda e \lambda a \ldots:
-\color{cyan}{\exists P_2 \exists x_2. C_2(c,P_2,x_2)
-\wedge P_2 \Leftrightarrow [\lambda c_2:} \\\\
-\color{magenta}{\exists P_1 \exists x_1. C_1(\color{cyan}{c_2},P_1,x_1)
-\wedge P_1 \Leftrightarrow [\lambda c_1: }U(\color{magenta}{c_1},e,a,\ldots)]]]
-\\] -->
-
