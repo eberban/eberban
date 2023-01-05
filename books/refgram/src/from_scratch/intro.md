@@ -11,8 +11,7 @@ To achieve such a goal, Eberban is designed to the following principles:
 - New grammar is made from predicates using this core grammar. This is known as
   syntactic sugar and its brevity and design makes it more ergonomic for speech.
   New grammar can only use non-core grammar if there are no cyclic dependencies.
-- Grammar defined by core grammar predicates is known as __syntactic sugar__.
-  Non-core grammar may be used in definitions only if there are no cyclic
+- Non-core grammar may be used in definitions only if there are no cyclic
   dependencies.
 - Once the complete grammar is defined, more vocabulary can be added.
 
