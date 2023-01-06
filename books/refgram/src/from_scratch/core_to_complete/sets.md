@@ -1,6 +1,6 @@
 # Sets
 
-Sets are one of the main building blocks of the vocabulary, and a powerful tool
+Sets are one of the main building blocks of the vocabulary and a powerful tool
 to define other concepts.
 
 It associates every property (along with the context it is evaluated with) with
@@ -9,7 +9,7 @@ members of the set). The core predicates modeling this are:
 
 <spoiler>
 
-__tcui:__ `[E:ma]` is the (non-empty) set of all things that individualy satisfy
+__tcui:__ `[E:ma]` is the (non-empty) set of all things that individually satisfy
 `[A:(a)]`.
 ---
 ```
@@ -24,7 +24,8 @@ ke kin
   fa ka
 ```
 
-And there must exist something that satisfy the predicate represented by __ka__.
+And there must exist something that satisfies the predicate represented by
+__ka__.
 
 ```
   fi ma zu ka
@@ -47,8 +48,8 @@ ma
 
 ## Subsets
 
-We are now able to make sets from properties, and to speak about the members
-of those sets. From those we can define a predicate for subsets.
+We are now able to make sets from properties and speak about the members of
+these sets. Here we can define a predicate for subsets.
 
 <spoiler>
 __tcia:__ `[E:tcui a]` is a subset of `[A:tcui a]`.
@@ -66,7 +67,7 @@ mae
     vie ki tcie ke  
 ```  
  
-Also are members of __ka__  
+Are also members of __ka__  
  
 ```  
     fia ki tcie ka  
@@ -78,7 +79,7 @@ to define vocabulary.
 
 <spoiler>
 
-__tcei:__ `[E:tcui a]` is a (non-empty) set of some things that individualy satisfy `[A:(a)]`.
+__tcei:__ `[E:tcui a]` is a (non-empty) set of some things that individually satisfy `[A:(a)]`.
 ---
 ```
 po tcie ke gia be 
@@ -93,7 +94,7 @@ ke tcia tcui gia
 
 <spoiler>
 
-__tcai:__ `[E:tcui a]` is a set containing exactly one member which satisfy `[A:(a)]`.
+__tcai:__ `[E:tcui a]` is a set containing exactly one member which satisfies `[A:(a)]`.
 ---
 ```
 po tcia ke gia be 
@@ -106,7 +107,7 @@ ma
   vi ke tcei gia 
 ``` 
  
-And it false that there exist 2 distinct things that are members of __ke__  
+And it is false that there exists two distinct things that are members of __ke__  
  
 ``` 
   fi bi ma 
@@ -118,7 +119,7 @@ And it false that there exist 2 distinct things that are members of __ke__
 
 <spoiler>
 
-__tcoi:__ `[E:tcui a]` is a set of at least 2 things that individualy satisfy `[A:(a)]`.
+__tcoi:__ `[E:tcui a]` is a set of at least two things that individually satisfy `[A:(a)]`.
 ---
 ```
 po tcia ke gia be 
@@ -131,7 +132,7 @@ ma
   vi ke tcei gia 
 ``` 
  
-And there exist (at least) 2 distinct things that are members of __ke__  
+And there exists at least two distinct things that are members of __ke__  
  
 ``` 
   fi bo ka tcie ke 
@@ -142,15 +143,15 @@ And there exist (at least) 2 distinct things that are members of __ke__
 
 ## Improved composability
 
-Most of the vocabulary use set arguments to handle distributive and collective
-behavior. However the above predicates use a property over a generic argument
-instead of a set, meaning that set-based predicates cannot be used in it
-without wrapping this argument into a set. We'll thus define a serie of
-predicates that performs this wrapping automatically.
+Most of the vocabulary uses set arguments to handle distributive and collective
+behavior. However, the above predicates use a property over a generic argument
+instead of a set, meaning that set-based predicates cannot be used as arguments
+unless they are wrapped into sets. We'll thus define a series of predicates that
+performs this wrapping automatically.
 
 <spoiler>
 
-__tca:__ `[E:tcai a]` is a set containing exactly one member, and satisfy `[A:(tcai a)]`.
+__tca:__ `[E:tcai a]` is a set containing exactly one member and satisfies `[A:(tcai a)]`.
 ---
 ```
 po tca ke gia be
@@ -160,13 +161,13 @@ ke se tcai gia
 
 <spoiler>
 
-__tcu:__ `[E:tcui a]` is the (non-empty) set of all things that individualy satisfy `[A:(tca a)]`.
+__tcu:__ `[E:tcui a]` is the (non-empty) set of all things that individually satisfy `[A:(tca a)]`.
 ---
 ```
 po tcu ke gia be 
 ``` 
 
-__ke__ is the set of all things that are the only member a set satisfying __gia__. 
+__ke__ is the set of all things that are the only member of a set satisfying __gia__. 
 
 ``` 
 ke tcui 
@@ -176,7 +177,7 @@ ke tcui
 
 <spoiler>
 
-__tce:__ `[E:tcei a]` is a (non-empty) set of some things that individualy satisfy `[A:(tca a)]`.
+__tce:__ `[E:tcei a]` is a (non-empty) set of some things that individually satisfy `[A:(tca a)]`.
 ---
 ```
 po tce ke gia be
@@ -187,7 +188,7 @@ ke tcei
 
 <spoiler>
 
-__tco:__ `[E:tcoi a]` is a set of at least 2 things that individualy satisfy `[A:(tca a)]`. 
+__tco:__ `[E:tcoi a]` is a set of at least two things that individually satisfy `[A:(tca a)]`. 
 ---
 ``` 
 po tco ke gia be 
@@ -206,19 +207,19 @@ ke tca tcie ka
 ``` 
 </spoiler>
 
-It is thus recommanded to mostly use those "wrapped versions" unless accessing
-to the unwrapped members is necessary, which is the case when speaking about
-nested sets (sets of sets). 
+It is thus recommended to mostly use these "wrapped versions" unless accessing
+the unwrapped members is necessary, which is the case when speaking about nested
+sets (sets of sets). 
 
 ## Locally largest/smallest
 
 A very useful concept to define more complex vocabulary is that of a set that
-satisfy some property such that there exist no superset that also satisfy the
-property.
+satisfies some property such that there exists no superset that also satisfies
+said property.
 
 <spoiler>
 
-__djo:__ `[E:tce a]` is a locally largest set that satisfy `[A:(tce a)]`.
+__djo:__ `[E:tce a]` is the locally largest set that satisfies `[A:(tce a)]`.
 ---
 ```
 po djo ke gia be
@@ -231,11 +232,11 @@ ma
 ```
 </spoiler>
 
-We can define a similar word such that there exist no subset.
+We can define a similar word such that there exists no subset.
 
 <spoiler>
 
-__dju:__ `[E:tce a]` is a locally smallest set that satisfy `[A:(tce a)]`.
+__dju:__ `[E:tce a]` is the locally smallest set that satisfies `[A:(tce a)]`.
 ---
 ```
 po dju ke gia be

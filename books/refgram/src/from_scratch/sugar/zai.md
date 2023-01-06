@@ -8,7 +8,7 @@ The following predicate must be defined:
 zai <predicate>
 ```
 
-is then considered equivalent to
+This is considered equivalent to
 
 ```
 pe se ezaige via <predicate> pei

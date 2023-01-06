@@ -1,30 +1,30 @@
 # Time
 
-> __DRAFT__: Time-related concepts and vocabulary are __work in progress__ and
+> __DRAFT__: Time-related concepts and vocabulary are a __work in progress__ and
 > might change in the future.
 
-Design a tense system that is easy to use at high level, but that is defined in
-Eberban at low level is a major chalenge, and is the reason for the existence of
-some parts of the grammar (even if those parts are more general purposed and
+Design a tense system that is easy to use at a high level but defined in
+Eberban at a low level is a major challenge, and is the reason for the existence
+of some parts of the grammar (even if those parts are more general-purpose and
 don't depend on the tense system).
 
 ## Representing time
 
-First, we want to represent time and the differents states in which the universe
+First, we want to represent time and the different states in which the universe
 are alongside it. We also want a model that allows us to deal with multiple
 possible futures or even parallel or fictional universes.
 
 To do that we'll first define a __node__ in a __directed graph__ (also called
 __digraph__), with (directed) __arcs__ representing a transition from a node to
-another. Nodes can represent __time instants__, and arcs can represents which
+another. Nodes will represent __time instants__, and arcs will represent which
 possible state of the universe is immediately following this one.
 
 > Even if nodes and digraphs can be used for more general purposes, we'll use
-> time related terminology to keep things easier to follow.
+> time-related terminology to keep things easier to follow.
 
 We'll define a node as a pair of an identifier (`zai din`) and set of nodes that
-this node have arcs towards. Note that while sets can't be empty, we want to
-support nodes with no arcs, which is done by using a sentinel value instead of
+this node haa arcs towards. Note that while sets can't be empty, we want to
+support nodes with no arcs. This is done by using a sentinel value instead of
 the set (`zai din` again).
 
 <spoiler>
@@ -46,7 +46,7 @@ We can then define predicates to more easily speak about arcs and paths
 
 <spoiler>
 
-__dini:__ There exist an arc from node `[E:din]` to node `[A:din]`.
+__dini:__ There exists an arc from node `[E:din]` to node `[A:din]`.
 ---
 ```
 po dini ke ka be
@@ -57,18 +57,18 @@ ke din kin
 
 <spoiler>
 
-__dinu:__ There exist an path/span `[O:blu din]` from node `[E:din]` to node `[A:din]`.
+__dinu:__ There exists a path/span `[O:blu din]` from node `[E:din]` to node `[A:din]`.
 ---
 ```
 po dinu ke ka ko be
 ```
-We exclude the final node since we don't want to speak about an arc from it to
-another one (since its the last one).
+We exclude the final node since we don't want to speak about an arc from itself
+to another one (since said arc is the last one).
 ```
 ko ble
   vo ka bu
 ```
-The rest of the list contains nodes such that each node have an arc towards
+The rest of the list contains nodes such that each node has an arc towards
 the next node in the list, or the final node for the penultimate node in the
 list.
 ```
@@ -76,7 +76,7 @@ list.
     va ke
     fo ka
 ```
-The item is the input carry and have an arc towards the output carry.
+The item is the input carry and has an arc towards the output carry.
 ```
     fu kie kia kio be kie kio dini kia
 ```
@@ -86,7 +86,7 @@ The item is the input carry and have an arc towards the output carry.
 
 To represent the flow of time with the concept of "present", we store in the
 context a node, and between sentences we update it (thanks to __pahe__) by
-taking a node such that there exist a path between the old and the next one (the
+taking a node such that there exists a path between the old and the new one (the
 new present is in the future of the old one).
 
 <spoiler>
@@ -125,7 +125,7 @@ pae pane
     fe zai den kagvo din
 ```
 
-And setup the automatic present update. (we also assign it to _epahegi_ so that
+And set up the automatic present update. (we also assign it to _epahegi_ so that
 it can easily be composed with other future transformations)
 
 ```
@@ -148,16 +148,16 @@ ke ve kagvei zai den bu
 
 ## Events
 
-Many predicates represents something that happens in some time span. To make
-them composable, they interact with the context, and states that time span in
-key `zai zvi` is part of their time span, which can also be seen as their own
+Many predicates represent something that happens in some time span. To make
+them composable, they interact with the context, and state that the time span in
+the key `zai zvi` is part of their time span. This can also be seen as their own
 path being a concatenation of a prefix span, `zai zvi` span and a suffix span
 where the prefix and suffix can be empty. The predicate `zvi` can be used to
 setup such entry in the context (and make it the longest possible).
 
 > The provided proposition will be evaluated with a span _x_ such that there
 > doesn't exist another span _y_ containing _x_ that also make the proposition
-> true. They might however be multiple possible _x_ that don't contain each
+> true. There might, however, be multiple possible _x_'s that don't contain each
 > other.
 
 <spoiler>
@@ -188,7 +188,7 @@ ma
 </spoiler>
 
 A predicate modeling an event can then use the following predicate to state that
-the context span is contained into the provided span.
+the context span is contained in the provided span.
 
 <spoiler>
 
@@ -211,14 +211,14 @@ po zvil
 kagvei zei zvi
 ```
 </spoiler>
-
+TODOTODOTODO
 ## Tenses
 
-Since our model of time allows multiple possible futures of a same instant, we
+Since our model of time allows multiple possible futures of an instant, we
 must distinguish between time span relations that are __possible__ and
-__necessary__. A relation is __possible__ if there exist a time line in which
+__necessary__. A relation is __possible__ if there exists a time line in which
 the relation holds. A relation is __necessary__ if in all time lines the
-relation hold. To make the tense composable with the context time span, they
+relation holds. To make the tense composable with the context time span, they
 express a relation between the context time span and the time span of the
 provided proposition.
 
@@ -260,19 +260,19 @@ that contains the provided time span (often the context time span), either:
 - _x_ is contained in a larger time span that itself contains the proposition
   time span
 
-> This second case allows to handle the time spans that would be "to short" to
+> This second case allows handling the time spans that would be "too short" to
 > contain the proposition time span which will be "further away".
 
 <spoiler>
 
-__zvan:__ For all time span _x_ that contains the time span `[A:dinu]`, either:
+__zvan:__ For all time spans _x_ that contain the time span `[A:dinu]`, either:
 - `[E:(dinu)]` evaluated with _x_ is true
 - `[E]` is true if evaluated with a time span containing _x_
 ---
 ```
 po zvan gie ka be
 ```
-For all time span _ki_ that contains _ka_
+For all time spans _ki_ that contain _ka_
 ```
 mae
   vie ki be varu
@@ -306,7 +306,7 @@ zvan
   vie ki be sul
     vie gie
 ```
-_ki_, which is provided by _zvan_, must contains the context span
+_ki_, which is provided by _zvan_, must contain the context span
 ```
       vi ki sae bla zvil
 ```
@@ -325,9 +325,9 @@ context time span) :
 - __siul/siun__: E is after A
 - __sil/sin__: E overlaps with A
 
-> Their definition is omited here but is similar to the ones of __sul/sun__.
+> Their definition is omitted here but is similar to the ones of __sul/sun__.
 
-Aside from those relations with the context span, we can make a tense predicate
+Aside from these relations with the context span, we can make a tense predicate
 related to the present instant instead of the context time span.
 
 <spoiler>
@@ -345,7 +345,7 @@ bla
 ## Sentence wrapper
 
 Now that we have tenses that interact with the context time span, we need to
-actually setup this time span for all sentences. For that we allow to register
+actually set up this time span for all sentences. For that, we allow registering
 in the context a property describing one or multiple __initial time spans__.
 
 <spoiler>
@@ -362,7 +362,7 @@ kagvar
 </spoiler>
 
 Then at the start of each sentence, we can use _zvi_ with a time span that
-satisfy this registered property. (we also assign it to _epahigi_ so that it can
+satisfies this registered property (we also assign it to _epahigi_ so that it can
 easily be composed with other future sentence wrappers).
 
 ```
@@ -392,5 +392,5 @@ pae zve del
 
 ----
 
-> A later chapter will introduce measurement of durations, which will greatly
-> increase what can be done with tenses.
+> A later chapter will introduce the measurement of durations, which will
+> greatly increase what can be done with tenses.
