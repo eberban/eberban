@@ -4,7 +4,7 @@
 | ------ | --------------------------------- | --------------------------------- |
 | h      | \[h\]                             | a glottal aspirant                |
 | n      | \[n\], \[ŋ\]                      | a dental or velar nasal           |
-| r      | \[r\], \[ɹ\], \[ɾ\], \[ʀ\], \[ʁ\] | a rhotic sound                    |
+| r      | \[ɣ\] \[ʁ\] (\[r\], \[ʀ\])        | a velar or uvular fricative (alveolar or uvular trills are also accepted) |
 | l      | \[l\]                             | a lateral approximant             |
 | &nbsp; |                                   |                                   |
 | m      | \[m\]                             | a bilabial nasal                  |
@@ -42,5 +42,5 @@ the speaker has trouble uttering the pair as-is. It has no written equivalent.
 
 ## Example
 
-Sentence : _pa za umia tsae eberban_  
+Sentence : _pa za umia tsae eberban_
 Pronounciation : \[pa za ʔumi.a tsa.e ʔeberban\]
