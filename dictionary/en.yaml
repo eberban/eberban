@@ -1964,7 +1964,7 @@ mone:
   notes: |
     Operate on sets of numbers. True only if all members of [E] are less than all
     members of [A].
-mona:
+mole:
   id: ennpp99pjl
   family: "R"
   gloss: ">"
@@ -3218,11 +3218,6 @@ zolen:
     Wrapping with {zole} will setup this entry in the context it provides to its
     O place and find a "smallest" set that makes O true, and check that its A
     place is a subset of it.
-melu:
-  id: xpiycy1t59
-  family: "R"
-  gloss: "rain"
-  short: "[E:tce man] rains."
 jeni:
   id: cmjmwddxde
   family: "R"
