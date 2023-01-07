@@ -1596,7 +1596,7 @@ dinu:
   gloss: "time-span"
   tags: [time]
   short: |
-    There exist an path/span [O:blu din] from node [E:din] to node [A:din].
+    There exists a path/span [O:blu din] from node [E:din] to node [A:din].
 den:
   id: dc8ilrq3mf
   family: "R"
@@ -1631,7 +1631,7 @@ zvin:
   gloss: "event-apply"
   tags: [time]
   short: |
-    Time span [E:dinu] contains context time span.
+    Time span [E:dinu] contains the context time span.
 zvil:
   id: gnr18x6ohk
   family: "R"
