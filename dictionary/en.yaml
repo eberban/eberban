@@ -263,6 +263,36 @@ viu:
   notes: |
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
+vue:
+  id: lcc8xfl31g
+  family: "VI"
+  gloss: "wrapE["
+  tags: [core]
+  short: |
+    The suffixed predicate must now satisfy the E place of the following
+    predicate chain, and is no longer evaluated directly.
+  notes: |
+    Since the following predicate chain is the one responsible for evaluating
+    the suffixed predicate, it can be evaluated with a context modified by the
+    predicate chain.
+
+    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
+    the former.
+vua:
+  id: imdwlhyulp
+  family: "VI"
+  gloss: "wrapA["
+  tags: [core]
+  short: |
+    The suffixed predicate must now satisfy the A place of the following
+    predicate chain, and is no longer evaluated directly.
+  notes: |
+    Since the following predicate chain is the one responsible for evaluating
+    the suffixed predicate, it can be evaluated with a context modified by the
+    predicate chain.
+
+    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
+    the former.
 fi:
   id: kd9qbtxtq0
   family: "FI"
@@ -388,6 +418,36 @@ fai:
   short: |
     The next place as the latest VI/FI, of the predicate suffixed with latest
     non-closed VI, is equivalent to with the following predicate chain.
+fue:
+  id: k17fsfpub1
+  family: "FI"
+  gloss: "]wrapE["
+  tags: [core]
+  short: |
+    The suffixed predicate must now satisfy the E place of the following
+    predicate chain, and is no longer evaluated directly.
+  notes: |
+    Since the following predicate chain is the one responsible for evaluating
+    the suffixed predicate, it can be evaluated with a context modified by the
+    predicate chain.
+
+    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
+    the former.
+fua:
+  id: 21hk7mrr1z
+  family: "FI"
+  gloss: "]wrapE["
+  tags: [core]
+  short: |
+    The suffixed predicate must now satisfy the A place of the following
+    predicate chain, and is no longer evaluated directly.
+  notes: |
+    Since the following predicate chain is the one responsible for evaluating
+    the suffixed predicate, it can be evaluated with a context modified by the
+    predicate chain.
+
+    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
+    the former.
 se:
   id: qgxn2xhcit
   family: "SI"
@@ -985,12 +1045,12 @@ cie:
   nodes: |
     TODO: Add predicates to manipulate language concepts.
 ce:
-  id: INSERT_WORD_ID
+  id: yjvjupth2t
   family: "CE"
   short: "[E:tca skan] is a character by character/spelling quote."
   gloss: "#spelling-start"
 cei:
-  id: INSERT_WORD_ID
+  id: r0ndrlj4ft
   family: "CEI"
   short: "Character by character/spelling quote terminator"
   gloss: "#spelling-end"
@@ -3410,7 +3470,7 @@ zoal:
   gloss: "new"
   short: "[E:tce* man] is new according to [A:tce man] (default: {bzael})."
 zgoa:
-  id: INSERT_WORD_ID
+  id: s1oc7xvo0q
   family: "R"
   gloss: "size"
   short: "[E:tca gin] is the cardinality/size of [A:ma]."
