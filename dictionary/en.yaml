@@ -2306,7 +2306,8 @@ pure:
   id: uj342f9oaw
   family: "R"
   gloss: "hears"
-  short: "[E:tce* pan] hears/listen to [A:tce* man]."
+  short: "[E:tce* pan] hears [A:tce* man]."
+  notes: For listening see {etripure}.
 cen:
   id: oqk7vz0ubt
   family: "R"
@@ -3607,6 +3608,12 @@ e skal skan:
   notes: |
     [E] should be a unique identifier representing how and where the content
     can be fetched.
+e tri pure:
+  id: vmbujokvfo
+  family: "C2"
+  gloss: "listens"
+  short: "[E:tce* pan] listens to [A:tce* man]."
+  notes: "[E] tries to hear [A]."
 
 a cen po bu:
   id: jpvb7ytjfg
