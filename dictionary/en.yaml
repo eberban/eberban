@@ -2776,11 +2776,6 @@ blae:
   family: "R"
   gloss: "owned"
   short: "[E:tce* man] is owned by [A:tce pan]."
-tsu:
-  id: pmbpui1xxn
-  family: "R"
-  gloss: "cardinality"
-  short: "[E:tca gin] is the cardinality/number of elements of [A:tce a]."
 dzui:
   id: zwvj8ibmcc
   family: "R"
@@ -3102,11 +3097,6 @@ ckia:
   family: "R"
   gloss: "speed"
   short: "[E:tce gan] (length/time) is the instantaneous speed of [A:tce pan]."
-djio:
-  id: r4euhq3iku
-  family: "R"
-  gloss: "set-cardinality"
-  short: "[E:tce gan] (unitless) is the cardinality/number of members of [A:tce a]."
 gzia:
   id: uz7xkm5k7x
   family: "R"
@@ -3469,10 +3459,10 @@ zoal:
   family: "R"
   gloss: "new"
   short: "[E:tce* man] is new according to [A:tce man] (default: {bzael})."
-zgoa:
+djio:
   id: s1oc7xvo0q
   family: "R"
-  gloss: "size"
+  gloss: "cardinality"
   short: "[E:tca gin] is the cardinality/size of [A:ma]."
   notes: |
     Provides the length of various structures, such as sets and lists.
