@@ -1209,6 +1209,7 @@ pohi:
     defined by other PO particles.
 
     Namespaces can be nested if the imported text also uses {pohi}.
+
 # -----
 # Defined predicate words (in order of book)
 # -----
@@ -3136,77 +3137,83 @@ bior:
   gloss: "underwear"
   short: "[E:tce* pan] is an underwear/underpants/panties."
   tags: [clothing, wearable]
-padgo:
+pagon:
   id: oyemdfrbzy
   family: "R"
   gloss: "arm"
-  short: "[E:tce* pan] is an arm of [A:tce pan]."
+  short: "[E:tce* pan] is an arm."
   tags: [body]
-vauno:
+zuanan:
   id: ypph5jwrme
   family: "R"
   gloss: "foot"
-  short: "[E:tce* pan] is a foot of [A:tce pan]."
+  short: "[E:tce* pan] is a foot."
   tags: [body]
-fairo:
+kenan:
   id: s4ekzm38rl
   family: "R"
   gloss: "hand"
-  short: "[E:tce* pan] is a hand of [A:tce pan]."
+  short: "[E:tce* pan] is a hand."
   tags: [body]
 glehul:
   id: uwmxjgjvh7
   family: "R"
   gloss: "genitals"
-  short: "[E:tce* pan] is genitals of [A:tce pan]."
+  short: "[E:tce* pan] are genitals."
   tags: [body]
-droni:
+kirun:
   id: ja9wfwwifa
   family: "R"
   gloss: "head"
-  short: "[E:tce* pan] is a head of [A:tce pan]."
+  short: "[E:tce* pan] is a head."
   tags: [body]
-kiloi:
+ctuan:
   id: ioxa2c03t6
   family: "R"
   gloss: "buttocks"
-  short: "[E:tce* pan] is a rear/buttox of [A:tce pan]."
+  short: "[E:tce* pan] is a rear/buttock."
   tags: [body]
-zvinu:
+burin:
   id: skexhz96gk
   family: "R"
   gloss: "mouth"
-  short: "[E:tce* pan] is a mouth of [A:tce pan]."
+  short: "[E:tce* pan] is a mouth."
   tags: [body]
-plaro:
+virun:
   id: ompuogjgt7
   family: "R"
   gloss: "eye"
-  short: "[E:tce* pan] is an eye of [A:tce pan]."
+  short: "[E:tce* pan] is an eye."
   tags: [body]
-tcila:
+tcil:
   id: mqmszfhjbp
   family: "R"
   gloss: "breast"
-  short: "[E:tce* pan] is a breast of [A:tce pan]."
+  short: "[E:tce* pan] is a breast."
   tags: [body]
-seriu:
+serin:
   id: fpbl9tm4ul
   family: "R"
   gloss: "tongue"
-  short: "[E:tce* pan] is a tongue of [A:tce pan]."
+  short: "[E:tce* pan] is a tongue."
   tags: [body]
-buhur:
+fanin:
   id: qhoa1afbkl
   family: "R"
   gloss: "nose"
-  short: "[E:tce* pan] is a nose of [A:tce pan]."
+  short: "[E:tce* pan] is a nose."
   tags: [body]
-snane:
+puren:
   id: hyptrjozor
   family: "R"
   gloss: "ear"
-  short: "[E:tce* pan] is an ear of [A:tce pan]."
+  short: "[E:tce* pan] is an ear."
+  tags: [body]
+zailun:
+  id: 06rcemltv3
+  family: "R"
+  gloss: "neck"
+  short: "[E:tce* pan] is a neck."
   tags: [body]
 dogmu:
   id: aiczmufvcq
@@ -3466,10 +3473,26 @@ djio:
   short: "[E:tca gin] is the cardinality/size of [A:ma]."
   notes: |
     Provides the length of various structures, such as sets and lists.
+fani:
+  id: fyc3rf8rf7
+  family: "R"
+  gloss: "smells"
+  short: "[E:tce* pan] smells (perceives smell of) [A:tce* pan]."
+seri:
+  id: hflpzqe80s
+  family: "R"
+  gloss: "smells"
+  short: "[E:tce* pan] feels the taste of [A:tce* pan]."
+zailu:
+  id: ma7fvqdibi
+  family: "R"
+  gloss: "rotates"
+  short: "[E:tce* pan] rotates, spins, turns around axis [A:tce* pan]."
 
 # -----
 # Compounds
 # -----
+
 e tsae ban:
   id: wf13qtgrwk
   family: "C2"
@@ -3664,7 +3687,6 @@ e tri pure:
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
   notes: "[E] tries to hear [A]."
-
 a cen po bu:
   id: jpvb7ytjfg
   family: "C3"
