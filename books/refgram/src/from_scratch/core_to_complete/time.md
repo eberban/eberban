@@ -23,7 +23,7 @@ possible state of the universe is immediately following this one.
 > time-related terminology to keep things easier to follow.
 
 We'll define a node as a pair of an identifier (`zai din`) and set of nodes that
-this node haa arcs towards. Note that while sets can't be empty, we want to
+this node has arcs towards. Note that while sets can't be empty, we want to
 support nodes with no arcs. This is done by using a sentinel value instead of
 the set (`zai din` again).
 
@@ -211,7 +211,6 @@ po zvil
 kagvei zei zvi
 ```
 </spoiler>
-TODOTODOTODO
 ## Tenses
 
 Since our model of time allows multiple possible futures of an instant, we

@@ -145,9 +145,9 @@ And there exists at least two distinct things that are members of __ke__
 
 Most of the vocabulary uses set arguments to handle distributive and collective
 behavior. However, the above predicates use a property over a generic argument
-instead of a set, meaning that set-based predicates cannot be used as arguments
-unless they are wrapped into sets. We'll thus define a series of predicates that
-performs this wrapping automatically.
+instead of a set. To be used by the rest of the vocabulary, they must be
+wrapped into sets. We'll thus define a series of predicates that performs this
+wrapping automatically.
 
 <spoiler>
 

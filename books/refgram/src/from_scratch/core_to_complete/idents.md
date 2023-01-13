@@ -1,10 +1,10 @@
 # Identifiers
 
-Identifiers are the names themselves. Each of them corresponds to an atom
-prefixed by the particle __zai__. Since each name also corresponds to a
-property, we can define this concept using a pair. In this pair, the left
-component is an atom representing the concept of identifiers and the right
-component is the property.
+Identifiers are the names themselves. Each of them has its own atom which can be
+referenced by `zai <pred>`. Since each name also corresponds to a property, we
+can define this concept using a pair. In this pair, the left component is an
+atom representing the concept of identifiers and the right component is the
+property.
 
 <spoiler>
 

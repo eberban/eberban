@@ -267,7 +267,7 @@ _ka_ is thus _ke_ with:
   value
 
 Since we use maps for context it is fairly common to evaluate a proposition
-with a modified context. We can make a predicate mkae this easier.
+with a modified context. We can make a predicate that makes this easier.
 
 <spoiler>
 

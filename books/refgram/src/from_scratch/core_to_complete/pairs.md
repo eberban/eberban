@@ -4,8 +4,8 @@ An important building block is the ability to construct more complex objects
 from simple ones. For this reason, we define the concept of a pair, which is an
 atom that is associated with a left and right component.
 
-Anything in Eberban is a component. We'll use an axiom to state that there
-exists a unique atom for every possible pair of left and right components.
+Anything in Eberban can go inside a component. We'll use an axiom to state that
+there exists a unique atom for every possible pair of left and right components.
 
 <spoiler>
 
