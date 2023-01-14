@@ -3137,7 +3137,7 @@ bior:
   gloss: "underwear"
   short: "[E:tce* pan] is an underwear/underpants/panties."
   tags: [clothing, wearable]
-pagon:
+padgon:
   id: oyemdfrbzy
   family: "R"
   gloss: "arm"
