@@ -2246,16 +2246,31 @@ jnaor:
   family: "R"
   gloss: "wild"
   short: "[E:tce* pan] is wild/untamed."
-jine:
+kitmu:
   id: isleimajzc
   family: "R"
+  gloss: "hope"
+  short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case."
+ketmu:
+  id: vfis6lzbve
+  family: "R"
+  gloss: "intentionless hope"
+  short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case, but thinks that they are powerless to make it true by themself."
+katmu:
+  id: iezve23kex
+  family: "R"
   gloss: "want"
-  short: "[E:tce* pan] desires/wants/wishes [A:()]."
-jali:
+  short: "[E:tce pan] desires/wishes/wants that [A:()] be the case; [E:tce pan] would seize the opportunity to make [A:()] true."
+kotmu:
   id: ch2b852dq7
   family: "R"
-  gloss: "intends"
-  short: "[E:tce pan] intends to satisfy [A:(tce pan)]."
+  gloss: "intend"
+  short: "[E:tce pan] intends/plans to make [A:()] true, having reasonable confidence in their ability to do so."
+kutmu:
+  id: 0g7kesm6nq
+  family: "R"
+  gloss: "pray"
+  short: "[E:tce pan] makes prayer [A:()], hoping that, somehow, this thought would influence reailty in the desired way, possibly throught the help of supernatural beings or forces."
 fuher:
   id: odaizkibaq
   family: "R"
