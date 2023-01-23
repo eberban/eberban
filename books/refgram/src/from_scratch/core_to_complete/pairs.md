@@ -2,10 +2,9 @@
 
 An important building block is the ability to construct more complex objects
 from simple ones. For this reason, we define the concept of a pair, which is an
-atom that is associated with a left and right component.
+atom that is associated with a left and right component. Anything (atom, predicate) can be the left or right component of a pair.
 
-Anything in Eberban can go inside a component. We'll use an axiom to state that
-there exists a unique atom for every possible pair of left and right components.
+We'll use an axiom to state that there exists a unique atom for every possible pair of left and right components.
 
 <spoiler>
 
