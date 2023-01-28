@@ -3,7 +3,7 @@
 __Eberban__ is a [logical] [constructed language] aimed to satisfy the
 following goals :
 
-- __being simple :__ the Eberban grammar allows to manipulate predicates with
+- __being simple :__ the Eberban grammar allows manipulating predicates with
   particles in a way that is close to the [higher-order logic] it
   translates into, while abstracting away the verbosity of explicitely
   providing variables as arguments of predicates.
@@ -13,8 +13,8 @@ following goals :
   predicate words to help learning groups of related words.
 - __being expressive :__ the grammar and core vocabulary focus on providing a
   simple framework, on top of which can be built abstractions, complex concepts
-  and tools. Since those are built in Eberban itself, users can create their own
-  tools and abstractions to express entirely new concepts.
+  and tools. Since those are built into Eberban itself, users can create their
+  own tools and abstractions to express entirely new concepts.
 
 __Eberban__ take inspirations from [Lojban] and other logical languages, but try
 novel approaches to satisfy the above goals.
