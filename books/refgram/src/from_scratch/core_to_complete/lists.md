@@ -1,8 +1,10 @@
 # Lists
 
 Lists are data structures that contains items in a __specific order__. They
-are defined internally with linked lists, as a pair of an item and a list of
-the following items (or a sentinel value for an empty list).
+are defined internally as linked lists via nested pairs.
+
+A list is either the empty list or a pair with an item of said list as the left
+component and another list as the right component.
 
 <spoiler>
 
@@ -31,7 +33,7 @@ Or a pair whose right component is a list.
 ```
 </spoiler>
 
-Most of the time we'll deal with list of things of the same type and satisfying
+Most of the time we'll deal with lists of things of the same type and satisfying
 a common property.
 
 <spoiler>
@@ -70,8 +72,8 @@ pei
 
 ## Fold
 
-An important operation on list is called __fold__, which allows to iterate
-over the list and evaluate a predicate with a value carried between iterations.
+An important operation on lists is called __fold__. This allows iterating over
+the list to evaluate a predicate with a value carried between iterations.
 
 It's arguments are:
 - the list to fold
@@ -82,16 +84,15 @@ It's arguments are:
   - the output carry value
   - the element of the list
 
-The provided predicate is applied for each element, with the output
-carry for an element being the input carry for the next element.
-For the first item the input is the initial carry, and for the last
-item the output is the final carry.
+The provided predicate is applied to each element, with the output carry for an
+element being the input carry for the next element. For the first item the input
+is the initial carry, and for the last item the output is the final carry.
 
-> Since the predicate will be applied with each value of list it adds the
+> Since the predicate will be applied to each value of the list, it adds the
 > constraint that all the elements of the list have the same type.
 
-There are 2 variants of __fold__, one which is left-to-right (first to last)
-while the other is right-to-left (last to first).
+There are two variants of __fold__, left-to-right (first to last) and
+right-to-left (last to first).
 
 <spoiler>
 
@@ -101,16 +102,16 @@ carries by applying predicate `[U:(b,b,a)]` in first to last order.
 ```
 po bla ke ka ko gu be
 ```
-Either __ke__ is an empty list, in which can the initial and final carry
-values are the same.
+Either __ke__ is an empty list, in which case the initial and final carry values
+are the same.
 ```
 vare
   vie ke zai blun
     vi ka ko vei
 ```
-Or __ke__ is not an empty list with element __x__, in which case there exist
-a __ki__ such that __gu(ka,ki,x)__ and __ki__ is the initial value of a left
-fold on the rest of the list.
+Or __ke__ is a list with element __x__, and there exists a __ki__ such that
+__gu(ka,ki,x)__ and __ki__ is the initial value of a left fold on the rest of
+the list.
 ```
   fie ke zi zai blun
     vi ma
@@ -132,16 +133,16 @@ carries by applying predicate `[U:(b,b,a)]` in last to first order.
 ```
 po blai ke ka ko gu be
 ```
-Either __ke__ is an empty list, in which can the initial and final carry
-values are the same.
+Either __ke__ is an empty list, in which case the initial and final carry values
+are the same.
 ```
 vare
   vie ke zai blun
     vi ka ko vei
 ```
-Or __ke__ is not an empty list with element __x__, in which case there exist
-a __ki__ such that __gu(ki,ko,x)__ and __ki__ is the final value of a right
-fold on the rest of the list.
+Or __ke__ is a list with element __x__, and there exists a __ki__ such that
+__gu(ki,ko,x)__ and __ki__ is the final value of a right fold on the rest of the
+list.
 ```
   fie ke zi zai blun
     vi ma
@@ -157,13 +158,13 @@ fold on the rest of the list.
 
 ## Various list operations
 
-Thanks to those predicates we can easily define list concatenation.
+Thanks to these predicates we can easily define list concatenation.
 
 <spoiler>
 
 __ble:__ `[E:blu a]` is the concatenation of all lists in list `[A:blu blu a]` in order.
 ---
-We define a first predicate __ge__ with meaning:
+We first define predicate __ge__ with meaning:
 `[E:blu a]` is the concatenation of lists `[A:blu a]` and `[O:blu a]`.
 ```
 po ge ke ka ko be

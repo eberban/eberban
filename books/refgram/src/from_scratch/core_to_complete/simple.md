@@ -1,8 +1,8 @@
 # Few simple predicates
 
 As a first step, we can define a few useful predicates using the core grammar
-that will reduce the verbosity of other definitions. For exemple we can define
-predicates for the OR and AND logic gates of 2 propositions.
+that will reduce the verbosity of other definitions. For example, we can define
+predicates for the OR and AND logic gates that each take two propositions.
 
 <spoiler>
 
@@ -29,17 +29,17 @@ bi ma
 </spoiler>
 
 > It is very common to use the pattern `ma vi ... fi ...` instead of __vari__ as
-> it shorter to use and support an arbitrary amount of propositions by adding
-> more `fi`. This predicate can still be useful with a predicate having a
+> it is shorter to use and supports an arbitrary number of propositions by
+> adding more `fi`. __vari__ can still be useful with a predicate that has a
 > relation place. 
 
-Another useful tool is conditional claim (if ... then ... else ...), with
+Another useful tool is the conditional claim (if ... then ... else ...) with
 default arguments to make it work as logical implication.
 
 
 <spoiler>
 
-__varu:__ If `[E:()]` is then `[A:()]` (default: true) is true, otherwise
+__varu:__ If `[E:()]` is true then `[A:()]` (default: true) is true, otherwise
 `[O:()]` (default: true) is true. 
 ---
 ```
@@ -57,11 +57,11 @@ poio varu mai
 ```
 </spoiler>
 
-A more advanced but useful predicate is about 2 things E and A satisfying a
-relation O transitively: either they satisfy the relation directly or there
-exist a chain of things that satisfy the relation to go from E to A. It is used
-when there are many of those things in a chain, and also works for a (countable)
-infinity of things. It is defined recursively.
+A more advanced but useful predicate is the transitive relation. Either E and A
+satisfy the relation O _directly_ or there exists a chain of relations that
+connect E to A. Transitive relation is used when there is a chain of many
+relations, it can even handle a countable infinity of chained relations! It is
+defined recursively.
 
 <spoiler>
 

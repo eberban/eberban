@@ -1,9 +1,10 @@
 # Identifiers
 
-Identifiers are the names themselves, and corresponds the atom predicated by
-the particle __zai__. Since names corresponds to a property, we can define
-them like to using pairs, where the left component is an atom representing
-the concept of identifiers, and the right component is the property.
+Identifiers are the names themselves. Each of them has its own atom which can be
+referenced by `zai <pred>`. Since each name also corresponds to a property, we
+can define this concept using a pair. In this pair, the left component is an
+atom representing the concept of identifiers and the right component is the
+property.
 
 <spoiler>
 
@@ -13,7 +14,7 @@ __[ezaige]:__ `[E:ma]` is an identifier/name made from property `[A:(a)]`.
 po ezaige ke gi be 
 ``` 
 __ke__ is a pair with the left component being the identifier made from 
-property __ezaige__ (it's common to define a predicate using itself for the 
+property __ezaige__ (it's common to define a predicate using itself as the 
 identifier) 
 ``` 
 ma 
@@ -25,7 +26,7 @@ And with right component __gi__.
 ``` 
     fo gi
 ``` 
-__gi__ being a property (even if it false for all possible arguments)
+__gi__ being a property (even if it's false for all possible arguments)
 ``` 
     fi vare 
       vie gi mai 

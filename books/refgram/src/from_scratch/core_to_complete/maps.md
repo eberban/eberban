@@ -1,15 +1,18 @@
 # Maps
 
-__Maps__ (also called __dictionaries__) are another important data structure
-that contains 0 to many __entries__ composed of a __key__ and a __value__, with
-the additional constraint that there cannot be 2 different entries with the same
-key.
+There are many cases where lots of information must be aggregated into a single
+and easily accessible thing. Data structures defined thus far aren't ideal:
+pairs become verbose when deeply nested, and lists require associating values to
+indices that cannot be skipped. So we use maps.
 
-Maps are usefull in many cases where many informations must be aggregated into a
-single thing and easily accessible (pairs are verbose to use when deeply nested,
-and lists requires to associate values to indexes which cannot be skipped). Maps
-are an obvious choice for context parameters, as they allow to easily implement
-new concepts by storing information in the map with a new dedicated key.
+__Maps__ (also called __dictionaries__) are another important data structure
+that contain zero to many __entries__ composed of a __key__ and a __value__,
+with the additional constraint that there cannot be two different entries with
+the same key.
+
+Maps are also an obvious choice for context parameters as they allow easily
+implementing new concepts by storing information in the map with a new dedicated
+key.
 
 <spoiler>
 
@@ -23,12 +26,13 @@ __ke__ is either an empty map (represented by `zai kagvin`)
 vare
   vie ke zai kagvin
 ```
-Or a pair with a left identifier
+Or a pair with an identifier on the left
 ```
   fia ma
     vi ke sea kin zai kagvin
 ```
-And as right part a set of pairs with left parts (keys) being symbols
+And on the right a set of entries (defined as pairs), of which each has a key on
+the left
 ```
     fi ke seo kin tcei sea kin ma
 ```
@@ -100,7 +104,7 @@ modification.
 <spoiler>
 
 __kagvani:__ `[E:kagvin]` is obtained from `[A:kagvin]` by removing the entry with key
-`[O:ma]`. If `[A]` don't have entry with key `[O]` then `[E]` = `[A]`.
+`[O:ma]`. If `[A]` doesn't have entry with key `[O]` then `[E]` = `[A]`.
 ---
 ```
 po kagvani ke ka ko be
@@ -117,16 +121,16 @@ ke kagvin seo kin djo
 
 <spoiler>
 
-__kagvoi:__ `[E:kagvin]` is obtained from `[A:kagvin]` by inserting an entry with key
-`[O:ma]` and value `[U:ma]`. If `[A]` have an entry with key `[O]` then it is
-removed to insert the entry with key `[O]` and value `[U]`.
+__kagvoi:__ `[E:kagvin]` is obtained from `[A:kagvin]` by inserting an entry
+with key `[O:ma]` and value `[U:ma]`. If `[A]` has an entry with key `[O]` then
+it is removed to insert the entry with key `[O]` and value `[U]`.
 ---
 ```
 po kagvoi ke ka ko ku be
 ```
-Given _x_ the map obtained from _ka_ by removing an entry with key _ko_, The
-set of entries of _ke_ is the smallest superset of _x_ such as _ke_ have as
-member an entry with key _ko_ and value _ku_.
+Given _x_ the map obtained from _ka_ by removing an entry with key _ko_, the
+set of entries of _ke_ is the smallest superset of _x_ such that _ke_ has an
+entry with key _ko_ and value _ku_ as a member.
 ```
 ke kagvin seo kin dju
   via ke be kagvoi
@@ -140,9 +144,9 @@ ke kagvin seo kin dju
 
 <spoiler>
 
-__kagvui:__ `[E:kagvin]` is obtained from `[A:kagvin]` by transforming the value of
-entry with key `[O:ma]` using relation `[U:(a,a)]`. It implies that `[A]` must
-have an entry with key `[O]`.
+__kagvui:__ `[E:kagvin]` is obtained from `[A:kagvin]` by transforming the value
+of the entry with key `[O:ma]` using relation `[U:(a,a)]`. It implies that `[A]`
+must have an entry with key `[O]`.
 ---
 ```
 po kagvui ke ka ko gu be
@@ -158,10 +162,10 @@ ke kagvoi
 ## Ergonomic map operations
 
 The above predicates are pretty verbose to use, especially if multiple
-operations must be performed in a row. For that reason we're going to define
+operations must be performed in a row. For this reason, we're going to define
 more ergonomic versions that manage the transformed map using the context. The
-predicate `kagva` will take as arguments the input and output maps and __a list of
-0-ary predicates__. This list will be folded and evaluated with a modified
+predicate `kagva` will take as arguments an input and an output map and __a list
+of 0-ary predicates__. This list will be folded and evaluated with a modified
 context containing the input and output map (at each step of the iteration),
 which will be used by predicates taking the other parameters explicitly (key and
 value, no need to take input and output as they are retreived from the context).
@@ -175,8 +179,8 @@ __kagva:__ `[E:kagvin]` represents a map that can be obtained from `[O:kagvin]`
 po kagva ke ka ko be
 ```
 We fold the list _ko_ with input _ke_, output _ka_ and predicate
-_(kie,kia,gia)_, _kie_ and _kia_ being the input/intermediary/output maps and
-_gia_ being one of the proposition in the list (they are folded in order).
+_(kie,kia,gia)_, with _kie_ and _kia_ being the input/intermediary/output maps
+and _gia_ being one of the propositions in the list (they are folded in order).
 ```
 ka bla
   va ke
@@ -199,13 +203,13 @@ obtained from _ki_ by inserting the pair _(kie,kia)_ at key _zai kagva_.
             va kie
             fo kia
 ```
-We finally set the default O argument, which simplify creating from empty maps.
+We finally set the default O argument, which simplifies creating from empty maps.
 ```
 poio kagva kagvil
 ```
 </spoiler>
 
-We can then write predicates that uses this pair instead of taking arguments.
+We can then write predicates that use this pair instead of taking arguments.
 
 <spoiler>
 
@@ -258,12 +262,12 @@ ke kagva
 
 _ka_ is thus _ke_ with:
 - Key _zai ti_ removed
-- Key _zai te_ inserted with some atom as value
+- Key _zai te_ inserted with some atom as its value
 - Key _zai ta_ transformed such that the old value is a subset of the new
   value
 
 Since we use maps for context it is fairly common to evaluate a proposition
-with a modified context. We can make a predicate make that easier.
+with a modified context. We can make a predicate that makes this easier.
 
 <spoiler>
 
