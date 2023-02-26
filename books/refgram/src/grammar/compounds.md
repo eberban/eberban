@@ -17,19 +17,19 @@ can be inserted between any of the parts of the compound.
 If the first word starts with a vowel (a borrowing) then the pause before this
 vowel is optional.
 
-Compounds have
-__unique and fixed meanings which are defined in the dictionary__, and while the
-definition of each one can be arbitrary, they usually provide arguments taken
-from their individual components. Usually, the most important word is the
-rightmost one, and additional words are added to the left to help narrow down
-the meaning, yielding greater precision.
+Compounds have __unique and fixed meanings which are defined in the
+dictionary__, and while the definition of each one can be arbitrary, they
+usually provide arguments taken from their individual components. Usually, the
+most important word is the rightmost one, and additional words are added to the
+left to help narrow down the meaning, yielding greater precision.
 
 It is common to lexicalize a borrowing by making a compound with it. Cultural
 concepts are borrowed with endonyms, sounding similar to the original word.
 
-A compound follows the same __chaining behavior__ as its last/rightmost
-component. If we want to define a compound with the opposite chaining behavior,
-then the initial vowel should be followed by an __i__.
+A compound have the same __transitivity__ as its last/rightmost component. If we
+want to define a compound with the opposite transitivity, then the initial
+__e/a/o__ should be followed by an __i__. If the last component is a particle
+that cannot be used as a predicate, it is considered to be intransitive.
 
 > __e ber ban :__ `[tca man] is the eberban language.`
 > 
