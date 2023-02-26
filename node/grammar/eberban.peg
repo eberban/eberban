@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.54
+# eberban PEG grammar - v0.55
 # =============================
 
 # GRAMMAR
@@ -16,48 +16,44 @@ paragraph_unit_1 <- definition / axiom / sentence
 
 arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
 
-definition <- PO_clause definable_predicate scope
-sentence <- PA_clause_elidible scope
-axiom <- PU_clause definable_predicate
+definition <- PO_clause unit_definable_2 inner_definition
+sentence <- PA_clause_elidible inner_definition
+axiom <- PU_clause unit_definable_2
 
-# scope
-scope <- arguments_list? scope_1
+# chaining
+inner_definition <- arguments_list? chain_or_list
 
-scope_1 <- scope_sequence / scope_2
-scope_sequence <- (scope_sequence_item BU_clause)+ scope_sequence_item?
-scope_sequence_item <- scope_2
+chain_or_list <- list / chain
+list <- (list_item BU_clause)+ list_item?
+list_item <- chain
 
-scope_2 <- chaining
+chain <- (chain_step_negation / chain_step)+
+chain_step_negation <- BI_clause chain
 
-# chaining and explicit switches
-chaining <- (chaining_neg / chaining_unit)+
-chaining_neg <- BI_clause chaining
-chaining_unit <- predicate vi_scope*
-vi_scope <- vi_scope_first vi_scope_next* VEI_clause_elidible
-vi_scope_first <- BI_clause? VI_clause scope
-vi_scope_next <- BI_clause? FI_clause scope
+chain_step <- chain_unit explicit_bind_group*
+explicit_bind_group <- explicit_bind_first explicit_bind_additional* VEI_clause_elidible
+explicit_bind_first <- BI_clause? VI_clause inner_definition
+explicit_bind_additional <- BI_clause? FI_clause inner_definition
 
-# predicate unit
-predicate <- predicate_1 free_suffix*
-predicate_1 <- (SI_clause !SI_clause / ZI_clause)* predicate_2
-predicate_2 <- BA_clause / MI_clause / predicate_quote / predicate_scope / predicate_borrowing / predicate_number / predicate_namespaceable / predicate_inline_assignment
+chain_unit <- chain_unit_1 free_suffix*
+chain_unit_1 <- (SI_clause !SI_clause / ZI_clause)* chain_unit_2
+chain_unit_2 <- BA_clause / MI_clause / unit_quote / unit_scoped / unit_borrowing / unit_number / unit_inline_assignement / unit_definable
 
-predicate_namespaceable <- predicate_namespaced / definable_predicate
-predicate_namespaced <- (definable_predicate PI_clause)+ definable_predicate
-predicate_inline_assignment <- predicate_variable
+unit_definable <- unit_definable_namespaced / unit_definable_2
+unit_definable_namespaced <- !BO_clause (unit_definable_2 PI_clause)+ !BO_clause unit_definable_2
+unit_inline_assignement <- free_prefix* BO_clause? (KI_clause / unit_definable_2)
 
-predicate_variable <- free_prefix* (KI_clause / definable_predicate)
-definable_predicate <- GI_clause / predicate_freeform_variable / predicate_compound / predicate_root
+unit_definable_2 <- GI_clause / unit_freeform_variable / unit_compound / unit_root
 
-predicate_freeform_variable <- free_prefix* spaces? freeform_variable
-predicate_root <- free_prefix* spaces? root_word
-predicate_number <- free_prefix* spaces? number
-predicate_compound <- free_prefix* spaces? compound
-predicate_borrowing <- free_prefix* borrowing_group
-predicate_scope <- PE_clause scope PEI_clause_elidible
+unit_freeform_variable <- free_prefix* spaces? freeform_variable
+unit_root <- free_prefix* spaces? root_word
+unit_number <- free_prefix* spaces? number
+unit_compound <- free_prefix* spaces? compound
+unit_borrowing <- free_prefix* borrowing_group
+unit_scoped <- PE_clause inner_definition PEI_clause_elidible
 
 # quotes
-predicate_quote <- grammatical_quote / one_word_quote / foreign_quote / spelling_quote
+unit_quote <- grammatical_quote / one_word_quote / foreign_quote / spelling_quote
 grammatical_quote <- CA_clause text CAI_clause
 one_word_quote <- CI_clause spaces? (native_word / compound / borrowing)
 
@@ -86,14 +82,12 @@ number_magnitude <- JE_clause number_1
 # borrowings
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
-# variables
-
 # free affixes
 free_prefix <- free_metadata
 free_metadata <- DI_clause
 
 free_suffix <- free_parenthetical / free_interjection
-free_interjection <- DE_clause predicate_1 # avoid nested free suffix
+free_interjection <- DE_clause chain_unit_1 # avoid nested free suffix
 free_parenthetical <- DA_clause text DAI_clause
 
 # PARTICLES CLAUSES
@@ -109,8 +103,8 @@ DA_clause  <-              spaces? DA                   # free parenthetical sta
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
 DU_clause  <- free_suffix* spaces? DU free_suffix*      # paragraph marker
                                                         #
-SI_clause  <- free_prefix* spaces? SI                   # chaining modification
-ZI_clause  <- free_prefix* spaces? ZI                   # predicate transformation
+SI_clause  <- free_prefix* spaces? SI                   # chain place selection
+ZI_clause  <- free_prefix* spaces? ZI                   # chain unit core transformation
 VI_clause  <- free_prefix* spaces? VI free_suffix*      # explicit bind + VI-scope
 FI_clause  <- free_prefix* spaces? FI free_suffix*      # next explicit bind
 VEI_clause <-              spaces? VEI                  # VI-scope terminator
@@ -120,8 +114,8 @@ KI_clause  <-              spaces? KI                   # symbol/generic variabl
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
 PI_clause  <-              spaces? PI                   # namespace separator
-PE_clause  <- free_prefix* spaces? PE  free_suffix*     # predicate scope starter
-PEI_clause <-              spaces? PEI                  # predicate scope elidible terminator
+PE_clause  <- free_prefix* spaces? PE  free_suffix*     # scoped unit starter
+PEI_clause <-              spaces? PEI                  # scope unit elidible terminator
 PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
 PO_clause  <- free_prefix* spaces? PO  free_suffix*     # definition starter
 PU_clause  <-              spaces? PU                   # axiom toggle

@@ -14,20 +14,20 @@ const important_types = [
 	[ 'default', 'default' ],
 
 	// scope
-	[ 'scope', 'scope' ],
-	[ 'scope_sequence', 'sequence' ],
-	[ 'scope_sequence_item', 'sequence item' ],
-	[ 'chaining', 'chaining' ],
-	[ 'chaining_neg', 'chaining negation' ],
-	[ 'chaining_unit', 'chaining unit' ],
-	[ 'vi_scope', 'VI-scope' ],
-	[ 'vi_scope_first', 'explicit bind' ],
-	[ 'vi_scope_next', 'explicit bind' ],
+	[ 'inner_definition', 'inner definition' ],
+	[ 'list', 'list' ],
+	[ 'list_item', 'list item' ],
+	[ 'chain', 'chain' ],
+	[ 'chain_step_negation', 'chain step negation' ],
+	[ 'chain_step', 'chain step' ],
+	[ 'explicit_bind_group', 'explicit bind group' ],
+	[ 'explicit_bind_first', 'explicit bind' ],
+	[ 'explicit_bind_additional', 'explicit bind' ],
 	[ 'arguments_list', 'arguments' ],
 
 	// predicates
-	[ 'predicate', 'predicate' ],
-	[ 'predicate_namespaced', 'imported predicate' ],
+	[ 'chain_unit', 'chain unit' ],
+	[ 'unit_definable_namespaced', 'imported predicate' ],
 	[ 'compound', 'compound' ],
 	[ 'borrowing_group', 'borrowing group' ],
 	[ 'borrowing', 'borrowing' ],
@@ -40,7 +40,7 @@ const important_types = [
 	[ 'foreign_quote_open', 'foreign quote delimiter' ],
 	[ 'foreign_quote_close', 'foreign quote delimiter' ],
 	[ 'unit_number', 'number' ],
-	[ 'predicate_scope', 'predicate scope' ],
+	[ 'unit_scoped', 'scoped unit' ],
 
 	// free
 	[ 'free_metadata', 'metadata' ],
