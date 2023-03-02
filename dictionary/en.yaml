@@ -3660,6 +3660,11 @@ e spua soran:
   family: "C2"
   gloss: "home star"
   short: "[E:tca pan] is the home star of species [A:tce* man] (default: {flan}/humans)."
+e siun vaun:
+  id: n7xvmqqkza
+  family: "C2"
+  gloss: "mortal"
+  short: "[E:tce* man] is mortal/fated to die."
 e jveno kena:
   id: wvg2ebwap5
   family: "C2"
