@@ -10,24 +10,24 @@ To address the above, Eberban allows the management of __default arguments__,
 which are properties that some arguments must satisfy __only when there are no
 explicit bounds on them__.
 
-Let's take as an example the predicate __espuateran__, which means
+Let's take as an example the predicate __espuackuil__, which means
 
-\\[\text{espuateran}(c,e,a) = [\text{$e$ is the home planet of species $a$}]\\]
+\\[\text{espuackuil}(c,e,a) = [\text{$e$ is the home stellar body of species $a$}]\\]
 
 We could want that __A__ are humans by default so that we don't have to always
 specify it is the home planet of humans/Earth nor have to define another
 separate predicate.
 
 To do that, we can use the __poie/poia/poio/poiu__ series in __PO__ to define
-this default property. `poia espuateran flan` defines that by default
-the __A__ place of __espuateran__ satisfies the property __flan__ 
+this default property. `poia espuackuil flan` defines that by default
+the __A__ place of __espuackuil__ satisfies the property __flan__ 
 (being a human). The __E__ place doesn't have a default bind, which can be seen as
 having the default bind of satisfying __mai__ (exists).
 
-> `poia espuateran mai` can thus be used to "remove" the default human bind.
+> `poia espuackuil mai` can thus be used to "remove" the default human bind.
 
 This default property can be used with the __zoie/zoia/zoio/zoiu__ series
-in __ZI__: `zoia espuateran` is thus equivalent to `flan` in this case.
+in __ZI__: `zoia espuackuil` is thus equivalent to `flan` in this case.
 
 Any argument that is not re-exported as an argument of the wrapping predicate
 and not bound with chaining or explicit binding automatically has the default
@@ -36,26 +36,26 @@ bound.
 If an argument is re-exported by the wrapping predicate, then the default bound
 is instead inherited by the wrapped predicate (as if __poie/etc__ was
 used on them too). This also applies with __PO__ definitions, such as if we
-define the predicate `po ga espuateran` then the __A__ argument of __ga__
-also defaults to _flan_, and _ga_ can be used in place of _espuateran_.
+define the predicate `po ga espuackuil` then the __A__ argument of __ga__
+also defaults to _flan_, and _ga_ can be used in place of _espuackuil_.
 
-> Note that after defining _ga_, changing a default bind on _espuateran_ will
+> Note that after defining _ga_, changing a default bind on _espuackuil_ will
 > not modify the corresponding bind of _ga_. `poia ga ...` will thus be required
 > instead.
 
 Here is an example with all default bindings added: 
 
-> __mi dona espuateran__
+> __mi dona espuackuil__
 >
 > \\[ \begin{align}
 > \text{mi}(c,e)                &= \text{[$e$ is a speaker]} \\\\
 > \text{dona}(c,e,a)            &= \text{[$e$ likes $a$]} \\\\
 > \\ \\\\
-> \text{espuateran}_1(c,e,a)    &= \text{espuateran}(c,e,a) \\\\
-> \text{zoia-espuateran}_1(c,e) &= \text{zoia-espuateran}(c,e) \\\\
-> \text{espuateran}^w_1(c,e)    &= \exists a. \text{espuateran}_1(c,e,a) \color{magenta}{\wedge \text{zoia-espuateran}_1(c,a)} \\\\
+> \text{espuackuil}_1(c,e,a)    &= \text{espuackuil}(c,e,a) \\\\
+> \text{zoia-espuackuil}_1(c,e) &= \text{zoia-espuackuil}(c,e) \\\\
+> \text{espuackuil}^w_1(c,e)    &= \exists a. \text{espuackuil}_1(c,e,a) \color{magenta}{\wedge \text{zoia-espuackuil}_1(c,a)} \\\\
 > \\ \\\\
-> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuateran}^w_1(c,e) \\\\
+> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuackuil}^w_1(c,e) \\\\
 > \text{zoia-dona}_1(c,e)       &= \text{zoia-dona}(c,e) \\\\
 > \text{dona}^w_1(c,e)          &= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\\\
 > \\ \\\\
@@ -67,7 +67,7 @@ Here is an example with all default bindings added:
 
 Manually binding the argument will prevent the default bind to be added:
 
-> __mi dona espuateran va mian__
+> __mi dona espuackuil va mian__
 >
 > \\[ \begin{align}
 > \text{mi}(c,e)                &= \text{[$e$ is a speaker]} \\\\
@@ -76,10 +76,10 @@ Manually binding the argument will prevent the default bind to be added:
 > \\ \\\\
 > \text{mian}_1(c,e)            &= \text{mian}(c,e) \\\\
 > \\ \\\\
-> \text{espuateran}_1(c,e,a)    &= \text{espuateran}(c,e,a) \color{magenta}{\wedge \text{mian}_1(c,e)}\\\\
-> \text{espuateran}^w_1(c,e)    &= \exists a. \text{espuateran}_1(c,e,a) \\\\
+> \text{espuackuil}_1(c,e,a)    &= \text{espuackuil}(c,e,a) \color{magenta}{\wedge \text{mian}_1(c,e)}\\\\
+> \text{espuackuil}^w_1(c,e)    &= \exists a. \text{espuackuil}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuateran}^w_1(c,e) \\\\
+> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuackuil}^w_1(c,e) \\\\
 > \text{zoia-dona}_1(c,e)       &= \text{zoia-dona}(c,e) \\\\
 > \text{dona}^w_1(c,e)          &= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\\\
 > \\ \\\\
