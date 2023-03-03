@@ -2641,17 +2641,23 @@ zvaor:
   family: "R"
   gloss: "accident"
   short: "[E:()] is an accident/unintentional."
-teran:
-  id: i24b50cv0l
+ckuil:
+  id: fcl0t79yc5
   family: "R"
-  gloss: "planet"
-  short: "[E:tce* pan] is a planet."
-soran:
+  gloss: "stellar body"
+  short: "[E:tce* pan] is a stellar body."
+  notes: "Stars, planets, moons, asteroid etc are stellar bodies."
+ckuel:
   id: h9j1gg2cwz
   family: "R"
   gloss: "star"
   short: "[E:tce* pan] is a star."
-zilan:
+ckual:
+  id: i24b50cv0l
+  family: "R"
+  gloss: "planet"
+  short: "[E:tce* pan] is a planet."
+ckuol:
   id: yfcj6sjbss
   family: "R"
   gloss: "moon"
@@ -3650,12 +3656,12 @@ e bino cnue:
   family: "C2"
   gloss: "symptom"
   short: "[E:tce* man] [ill/sickness] is characterized by symptom [A:tce* man]."
-e spua teran:
+e spua ckuil:
   id: umamaeu1na
   family: "C2"
-  gloss: "home planet"
-  short: "[E:tca pan] is the home planet of species [A:tce* man] (default: {flan}/humans)."
-e spua soran:
+  gloss: "home stellar body"
+  short: "[E:tca pan] is the home stellar body of species [A:tce* man] (default: {flan}/humans)."
+e spua ckuel:
   id: 732rregyg8
   family: "C2"
   gloss: "home star"
