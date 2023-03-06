@@ -1024,7 +1024,7 @@ tao:
 ca:
   id: qgitj7lmtu
   family: "CA"
-  short: "Starts grammatically correct eberban quote. [E:tca ecaskan] is text [quote]."
+  short: "Starts grammatically correct eberban quote. [E:tca ecama] is text [quote]."
   gloss: "#quote-start"
 cai:
   id: m2tk0zmvgh
@@ -1035,20 +1035,25 @@ cai:
 ci:
   id: qd380clfxd
   family: "CI"
-  short: "Quote next word. [E:tca man] is word [word]."
+  short: "Quote next word. [E:tca man] is [word]."
   gloss: "#word-quote"
 cie:
   id: acauojxxsk
   family: "CI"
-  short: "[E:tca man] is the family of word [word]."
+  short: "[E:tca man] is the family of [word]."
   gloss: "#family-quote"
   nodes: |
     TODO: Add predicates to manipulate language concepts.
 ce:
   id: yjvjupth2t
   family: "CE"
-  short: "[E:tca skan] is a character by character/spelling quote."
+  short: "[E:blu ecema] is the string/list of letters encoded by [quote]."
   gloss: "#spelling-start"
+ceu:
+  id: zsud61ou1j
+  family: "CE"
+  short: "[E:blu eceuma] is the string of sounds encoded by [quote]."
+  gloss: "#utterance-spelling-start"
 cei:
   id: r0ndrlj4ft
   family: "CEI"
@@ -1057,12 +1062,12 @@ cei:
 co:
   id: upxio5nkc0
   family: "CO"
-  short: "[E:tca skan] is a quote of an arbitrary string."
+  short: "[E:blu ecoma] is a quote of an arbitrary string."
   gloss: "#foreign-quote"
 coi:
   id: j6cqu8p0dd
   family: "COI"
-  short: "[E:tca skan] is a quote of an arbitrary string which is skipped by the speaker/author."
+  short: "[E:tca ecoma] is a quote of an arbitrary string which is skipped by the speaker/author."
   gloss: "#skipped-foreign-quote"
 cu:
   id: spjmtjh1al
@@ -1201,7 +1206,7 @@ pohi:
   family: "PO"
   gloss: "#import"
   short: |
-    Imports predicates defined in Eberban text [E:tca ecaskan] under the name
+    Imports predicates defined in Eberban text [E:tca ecama] under the name
     namespace named after the predicate immediatly after {pohi}.
   notes: |
     Namespace definitions and predicate definitions are independent, and
@@ -1931,19 +1936,6 @@ gan:
   notes: |
     {gan} numbers are an extension field of {gen} (real numbers) that supports
     units like length, mass, etc.
-
-skan:
-  id: 4u8h1cwf6p
-  family: "R"
-  gloss: string
-  tags: [struct, string]
-  short: "[E:tce* man] is a string of data."
-  notes: |
-    TODO: Improve definition and add other predicates to interact with it.
-
-    It's goal is to be able to manipulate both native and foreign quotes (which
-    can be speakable, embeded file, etc).
-
 cna:
   id: mlqkhowtl0
   family: "R"
@@ -2141,7 +2133,7 @@ spi:
   id: wlkwneqcyu
   family: "R"
   gloss: "says"
-  short: "[E:tce pan] says [A:tce* skan] to [O:tce* ma]."
+  short: "[E:tce pan] says [A:tce* ecama] to [O:tce* ma]."
 spua:
   id: qwnwymrscy
   family: "R"
@@ -2384,13 +2376,6 @@ pure:
   gloss: "hears"
   short: "[E:tce* pan] hears [A:tce* man]."
   notes: For listening see {etripure}.
-cen:
-  id: oqk7vz0ubt
-  family: "R"
-  gloss: "word"
-  short: "[E:tce* man] is a word."
-  notes: |
-    TODO: See {cei} notes.
 vain:
   id: ndedgziytg
   family: "R"
@@ -3693,28 +3678,58 @@ e bzael mue:
   gloss: "set-opiner"
   short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
   notes: See {bzael} for explanations.
-e ca skan:
+e ca ma:
   id: 2vi80y570m
   family: "C2"
   gloss: "eberban-quote"
-  short: "[E:tce skan] is a grammatically valid Eberban quote."
+  short: "[E:tce* man] is a grammatically valid Eberban quote."
   notes: Can be constructed using {ca}.
-e skal skan:
-  id: vmbujokvfo
-  family: "C2"
-  gloss: "computer-data"
-  short: "[E:tca skan] is the computer data located at [E:tce skan]."
-  notes: |
-    [E] should be a unique identifier representing how and where the content
-    can be fetched.
 e tri pure:
   id: vmbujokvfo
   family: "C2"
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
   notes: "[E] tries to hear [A]."
-a cen po bu:
+e ci ma:
+  id: oqk7vz0ubt
+  family: "C2"
+  gloss: "word"
+  short: "[E:tce* man] is a word."
+e ce ma:
+  id: 1w44wy894g
+  family: "C2"
+  gloss: "letter"
+  short: "[E:tce* man] is a letter/grapheme."
+e ceu ma:
+  id: 2s1nee0bdi
+  family: "C2"
+  gloss: "sound"
+  short: "[E:tce* man] is a sound/phoneme."
+e co ma:
+  id: 4u8h1cwf6p
+  family: "C2"
+  gloss: "string of data"
+  short: "[E:tce* man] is a string of data."
+ei ce bu:
+  id: 000sw1j82d
+  family: "C2"
+  gloss: "spelled"
+  short: "[E:tca man] is spelled as [A: blu ecema]"
+ei ceu bu:
+  id: b0pxo862df
+  family: "C2"
+  gloss: "uttered"
+  short: "[E:tca man] is uttered as [A: blu eceuma]"
+a ce po bu:
   id: jpvb7ytjfg
   family: "C3"
   gloss: "dictionary"
   short: "[E:tce* man] is a dictionary."
+a skal co ma:
+  id: vmbujokvfo
+  family: "C3"
+  gloss: "computer-data"
+  short: "[E:tca ecoma] is the computer data located at [E:tce ecoma]."
+  notes: |
+    [E] should be a unique identifier representing how and where the content
+    can be fetched.
