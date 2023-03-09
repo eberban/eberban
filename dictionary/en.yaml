@@ -1035,7 +1035,7 @@ cai:
 ci:
   id: qd380clfxd
   family: "CI"
-  short: "Quote next word. [E:tca man] is [word]."
+  short: "Quote next word. [E:tca ecima] is the word [word]."
   gloss: "#word-quote"
 cie:
   id: acauojxxsk
@@ -1062,7 +1062,7 @@ cei:
 co:
   id: upxio5nkc0
   family: "CO"
-  short: "[E:blu ecoma] is a quote of an arbitrary string."
+  short: "[E:tca ecoma] is a quote of an arbitrary string."
   gloss: "#foreign-quote"
 coi:
   id: j6cqu8p0dd
@@ -2133,7 +2133,7 @@ spi:
   id: wlkwneqcyu
   family: "R"
   gloss: "says"
-  short: "[E:tce pan] says [A:tce* ecama] to [O:tce* ma]."
+  short: "[E:tce pan] says [A:tce* man] to [O:tce* ma]."
 spua:
   id: qwnwymrscy
   family: "R"
