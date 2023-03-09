@@ -86,7 +86,7 @@ __kagvei:__ `[E:a]` is the value in the context map for key `[A:ma]`.
 ---
 ```
 po kagvei ke ka be
-mue vie ki be ke kagve
+mue ve ki be ke kagve
   va ki
   fo ka
 ```
@@ -189,7 +189,7 @@ ka bla
 ```
 We take the current context _ki_
 ```
-    mue vie ki be
+    mue ve ki be
 ```
 And evaluate _gia_ (the proposition in the list) with a context that is
 obtained from _ki_ by inserting the pair _(kie,kia)_ at key _zai kagva_.

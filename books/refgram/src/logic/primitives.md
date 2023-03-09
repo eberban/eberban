@@ -10,7 +10,7 @@ to express logical primitives that the grammar itself don't cover.
 \text{mae}(c,E)     &= \forall x. \\ E(c,x) \\\\
 \text{mao}(c,E,A)   &= \forall x_0 \dots \forall x_n. \\ E(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\\\
 \text{mui}(c)       &= \text{unknown} \\\\
-\text{mue}(c,E)     &= E(c,c) \\\\
+\text{mue}(c,e)     &= c = e \\\\
 \text{mua}(c,e,A)   &= A(e) \\\\
 \end{align} \\]
 
@@ -24,7 +24,7 @@ more is useful.
 __mae__ (intransitive) simply wraps __universal quantification__ \\(\forall\\), and allows the
 speaker to express something that is true for all possible values. Note that it
 is then possible to use logical implication
-(\\(P \Rightarrow G\\) / \\((\neg P) \wedge Q\\)) to only speak about a subset 
+(\\(P \Rightarrow G\\) / \\((\neg P) \wedge Q\\)) to only speak about a subset
 of values (the ones satisfying \\(P\\)).
 
 __mao__ (intransitive) allows the speaker to express the concept that $(E) is a subset of $(A),

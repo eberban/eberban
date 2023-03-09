@@ -24,7 +24,6 @@ where each argument constraint is listed in between, separated by commas.
 > - `buri: [E:tce* den] eats [A:tce* den].`
 > - `meon: [E:tce* den] is an apple.`
 > - `[E:tcei a] is a (non-empty) set of some things that individualy satisfy [A:(tca a)].`
-> - `mue: True if property [E:(ma)] is true with the context provided as argument.`
 > - `mua: True if context [E:ma] makes [A:()] true.`
 
 ### Definition

@@ -129,8 +129,8 @@ mue:
   gloss: "context-extract"
   tags: [core]
   short: |
-    True if property [E:(ma)] is true with the context provided as argument.
-  definition: 𝜆c 𝜆E E(c,c)
+    [E:ma] is the current context.
+  definition: 𝜆c 𝜆e c=e
   notes: |
     Exposes the context, an implicit/hidden argument to every predicate, as
     an explicit parameter. Allows to handle the context like any other argument.
