@@ -1533,7 +1533,14 @@ blai:
 ble:
   id: ghp1rirgb6
   family: "R"
-  gloss: "list-concat"
+  gloss: "list-concat-2"
+  tags: [list]
+  short: |
+    [E:blu a] is the concatenation of lists [A:blu a] and [O:blu a].
+blei:
+  id: bqqk6gqk0k
+  family: "R"
+  gloss: "list-concat-many"
   tags: [list]
   short: |
     [E:blu a] is the concatenation of all lists in list [A:blu blu a].
