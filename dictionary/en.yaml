@@ -2230,6 +2230,11 @@ gli:
   family: "R"
   gloss: "happy"
   short: "[E:tce* pan] is happy about [A:()] being true."
+muli:
+  id: vtqvmmg5g7
+  family: "R"
+  gloss: "confused"
+  short: "[E:tce* pan] finds it difficult to understand how [A:()] is true."
 siro:
   id: xgbqoobjvr
   family: "R"
