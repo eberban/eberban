@@ -1060,7 +1060,7 @@ cei:
   short: "Character by character/spelling quote terminator"
   gloss: "#spelling-end"
 co:
-  id: upxio5nkc0
+  id: vdlcqmqkoi
   family: "CO"
   short: "[E:tca ecoma] is a quote of an arbitrary string."
   gloss: "#foreign-quote"
@@ -2239,7 +2239,7 @@ siro:
   id: xgbqoobjvr
   family: "R"
   gloss: "translation"
-  short: "[E:tce* skar] (source) has translation [A:tce* skar] (result)."
+  short: "[E:tce* ecoma] (source) has translation [A:tce* ecoma] (result)."
 tcuin:
   id: w85kmshrmv
   family: "R"
@@ -2325,12 +2325,12 @@ ban:
 banu:
   id: cvbgy6pdjn
   family: "R"
-  short: "[E:tce* skar] is expressed in language [A:tce* ban]."
+  short: "[E:tce* ecoma] is expressed in language [A:tce* ban]."
   gloss: "language"
 vli:
   id: wlbcggayj6
   family: "R"
-  short: "[E:tce* skar] is written/inscribed on display/storage medium [A:tce* pan]."
+  short: "[E:tce* ecoma] is written/inscribed on display/storage medium [A:tce* pan]."
   gloss: "written"
 soane:
   id: rmpkifsf0c
@@ -2937,11 +2937,6 @@ duna:
     (TODO: Add words for legal/incidental ownership)
 
     [E] does not accept payment or expect reciprocation from [O].
-skar:
-  id: vdlcqmqkoi
-  family: "R"
-  short: "[E:tce* man] is a string of data (quote)."
-  gloss: "quote"
 flan:
   id: cjj2u7h6ir
   family: "R"
