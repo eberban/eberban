@@ -3446,7 +3446,7 @@ coriu:
   id: zas8minuik
   family: "R"
   gloss: "owned-by"
-  short: "[E:tce* man] is possessed/owned by [A:tce man]."
+  short: "[E:tce* man] is possessed/owned by [A:tce man] under authority [O:tce* pan] (default: authority)."
 sifpa:
   id: 5kgq6jl1at
   family: "R"
