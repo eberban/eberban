@@ -36,7 +36,7 @@ __context argument__ is automatically shared between left and right predicates.
 > \\ \\\\
 > \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{blan}_1(c,\color{magenta}{e})
 > \end{align} \\]
-> 
+>
 > Given $(c),$(e):\
 > $(e) is a cat and is beautiful.
 
@@ -44,7 +44,7 @@ If the right predicate has more than one explicit argument, then it is wrapped
 in a predicate having only one explicit argument and every other argument is
 filled with __existential variables__. The process of wrapping the predicate and
 creating __existential variables__ to have the correct arity is called
-__arity mismatch resolution__ and it is a key aspect of Eberban grammar to 
+__arity mismatch resolution__ and it is a key aspect of Eberban grammar to
 reduce verbosity in simple cases.
 
 > __mian buri__
@@ -57,7 +57,7 @@ reduce verbosity in simple cases.
 > \\ \\\\
 > \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e)
 > \end{align} \\]
-> 
+>
 > Given $(c),$(e):\
 > $(e) is a cat and there exists an $(a) such that $(e) eats $(a).\
 > $(e) is a cat that eats something.
@@ -67,10 +67,10 @@ reduce verbosity in simple cases.
 If the chaining argument is a __predicate argument__, then the right predicate
 is stated to be equivalent to the predicate represented by the argument. If the
 __predicate argument__ and right predicate don't match in arity, then the
-__arity mismatch resolution__ is performed. The right predicate is not stated
-as is, and will be _instantiated_ by the left predicate (according to its
-definition). The left predicate is able to be _instantiated_ multiple times
-and with any (correctly typed) arguments, including the _context argument_.
+__arity mismatch resolution__ is performed. The right predicate is not stated as
+is, and will be _instantiated_ by the left predicate (according to its
+definition). The right predicate is able to be _instantiated_ multiple times and
+with any (correctly typed) arguments, and with a different _context argument_.
 
 > __tce mian__
 >
