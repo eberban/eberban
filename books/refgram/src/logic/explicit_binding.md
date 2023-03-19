@@ -118,7 +118,9 @@ is exposed in the combined predicate.
 > Given $(c), $(e):\
 > $(e) is a cat that eats something, and $(e) is beautiful.
 
-__SI__ particles with two vowels allow to select both individually.
+__SI__ particles with two vowels allow to select both, the two vowels representing
+the two exposed place, and the second vowel corresponding to the slot bound with
+a predicate on its right.
 
 > __meon sae buri mian__
 >
@@ -133,6 +135,25 @@ __SI__ particles with two vowels allow to select both individually.
 >
 > Given $(c), $(e):\
 > $(e) is an apple which is eaten by a cat.
+
+__SI__ particles follow a more general pattern to support more slots and usages:
+
+- __s__ followed by __e/a/o/u__, optionally separated by __h__, list the slots
+  exposed in the combined predicate. __h__ is only necessary when exposing the
+  same slot twice in a row, but is also accepted for different vowels in which
+  can it is synonymous with its h-less variant (__sea__ = __seha__, __sehe__
+  don't have an equivalent without __h__).
+- the word can be ended with an __i__ followed by another __vowel__, which
+  selects tbe slot bound with a predicate on its right. If this end is not
+  present then the last vowel of the list before is used. (__seheaio__ exposes
+  places __E,E,A__ and bind place __O__ to the predicate on its right).
+- if the word ends with an __i__ not followed by another vowel or h, the
+  predicate on its right will be bound to no place and instead will be bound to
+  a new existential variable (like with __vi__, __seai A B__ is this equivalent
+  to __sea A vi B vei__).
+- __si__ exposes and bind no places.
+- an __i__ followed by a __h__ or multiple vowels is not valid. There can also
+  not be multiple __i__.
 
 ## Left predicate place selection
 
