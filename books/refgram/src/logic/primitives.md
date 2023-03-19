@@ -20,12 +20,6 @@ However to be used $(e) must exist (at some point an existential variable must
 be created), and for some definitions expressing this existence and nothing
 more is useful.
 
-__mae__ (intransitive) simply wraps __universal quantification__ \\(\forall\\), and allows the
-speaker to express something that is true for all possible values. Note that it
-is then possible to use logical implication
-(\\(P \Rightarrow G\\) / \\((\neg P) \wedge Q\\)) to only speak about a subset
-of values (the ones satisfying \\(P\\)).
-
 __mao__ (intransitive) allows the speaker to express the concept that $(E) is a subset of $(A),
 in the sense that any list of arguments that satisfy $(E) also satisfy $(A). It
 is useful as it doesn't require the language itself to support a variable number
