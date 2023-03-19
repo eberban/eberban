@@ -3471,6 +3471,11 @@ zoal:
   family: "R"
   gloss: "new"
   short: "[E:tce* man] is new according to [A:tce man] (default: {bzael})."
+ctuhi:
+  id: nqzh6pl3w0
+  family: "R"
+  gloss: "silly"
+  short: "[E:tce* man] is silly according to [A:tce* pan] (default: {bzael})."
 djio:
   id: s1oc7xvo0q
   family: "R"
