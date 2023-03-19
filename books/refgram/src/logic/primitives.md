@@ -7,8 +7,7 @@ to express logical primitives that the grammar itself don't cover.
 \\[ \begin{align}
 \text{ma}(c,e)      &= \text{is-atom}(e) \\\\
 \text{mai}(c,e)     &= \top \\\\
-\text{mae}(c,E)     &= \forall x. \\ E(c,x) \\\\
-\text{mao}(c,E,A)   &= \forall x_0 \dots \forall x_n. \\ E(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\\\
+\text{mao}(c,E,A)   &= \forall x_0 \dots \forall x_n. \\ A(c,x_0,\dots,x_n) \Rightarrow E(c,x_0,\dots,x_n) \\\\
 \text{mui}(c)       &= \text{unknown} \\\\
 \text{mue}(c,e)     &= c = e \\\\
 \text{mua}(c,e,A)   &= A(e) \\\\

@@ -273,7 +273,7 @@ po zvan gie ka be
 ```
 For all time spans _ki_ that contain _ka_
 ```
-mae
+mao
   vie ki be varu
     vie ki sae bla ka
 ```

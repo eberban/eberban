@@ -55,23 +55,23 @@ these sets. Here we can define a predicate for subsets.
 __tcia:__ `[E:tcui a]` is a subset of `[A:tcui a]`.
 
 ---
-```  
-po tcia ke ka be  
-```  
- 
-All members of __ke__  
- 
-```  
-mae  
-  ve ki be varu   
-    vie ki tcie ke  
-```  
- 
-Are also members of __ka__  
- 
-```  
-    fia ki tcie ka  
-```  
+```
+po tcia ke ka be
+```
+
+All members of __ke__
+
+```
+mao
+  vie ki be varu
+    vie ki tcie ke
+```
+
+Are also members of __ka__
+
+```
+    fia ki tcie ka
+```
 </spoiler>
 
 We can also define predicates for various kinds of subsets which can be useful
@@ -82,14 +82,14 @@ to define vocabulary.
 __tcei:__ `[E:tcui a]` is a (non-empty) set of some things that individually satisfy `[A:(a)]`.
 ---
 ```
-po tcie ke gia be 
-``` 
+po tcie ke gia be
+```
 
-__ke__ is a subset of the set of all things that satisfy __gia__ 
+__ke__ is a subset of the set of all things that satisfy __gia__
 
-``` 
-ke tcia tcui gia 
-``` 
+```
+ke tcia tcui gia
+```
 </spoiler>
 
 <spoiler>
@@ -97,24 +97,24 @@ ke tcia tcui gia
 __tcai:__ `[E:tcui a]` is a set containing exactly one member which satisfies `[A:(a)]`.
 ---
 ```
-po tcia ke gia be 
-``` 
+po tcai ke gia be
+```
 
-__ke__ is a subset of the set of all things that satisfy __gia__ 
+__ke__ is a subset of the set of all things that satisfy __gia__
 
-``` 
-ma 
-  vi ke tcei gia 
-``` 
- 
-And it is false that there exists two distinct things that are members of __ke__  
- 
-``` 
-  fi bi ma 
-    vi bo ka tcie ke 
-    fi bo ko bi ka 
-    fi ko tcie ke 
-``` 
+```
+ma
+  vi ke tcei gia
+```
+
+And it is false that there exists two distinct things that are members of __ke__
+
+```
+  fi bi ma
+    vi bo ka tcie ke
+    fi bo ko bi ka
+    fi ko tcie ke
+```
 </spoiler>
 
 <spoiler>
@@ -122,23 +122,23 @@ And it is false that there exists two distinct things that are members of __ke__
 __tcoi:__ `[E:tcui a]` is a set of at least two things that individually satisfy `[A:(a)]`.
 ---
 ```
-po tcia ke gia be 
-``` 
+po tcia ke gia be
+```
 
-__ke__ is a subset of the set of all things that satisfy __gia__ 
+__ke__ is a subset of the set of all things that satisfy __gia__
 
-``` 
-ma 
-  vi ke tcei gia 
-``` 
- 
-And there exists at least two distinct things that are members of __ke__  
- 
-``` 
-  fi bo ka tcie ke 
-  fi bo ko bi ka 
-  fi ko tcie ke 
-``` 
+```
+ma
+  vi ke tcei gia
+```
+
+And there exists at least two distinct things that are members of __ke__
+
+```
+  fi bo ka tcie ke
+  fi bo ko bi ka
+  fi ko tcie ke
+```
 </spoiler>
 
 ## Improved composability
@@ -164,15 +164,15 @@ ke se tcai gia
 __tcu:__ `[E:tcui a]` is the (non-empty) set of all things that individually satisfy `[A:(tca a)]`.
 ---
 ```
-po tcu ke gia be 
-``` 
+po tcu ke gia be
+```
 
-__ke__ is the set of all things that are the only member of a set satisfying __gia__. 
+__ke__ is the set of all things that are the only member of a set satisfying __gia__.
 
-``` 
-ke tcui 
-  via be ba tcie tca gia 
-``` 
+```
+ke tcui
+  via be ba tcie tca gia
+```
 </spoiler>
 
 <spoiler>
@@ -188,28 +188,28 @@ ke tcei
 
 <spoiler>
 
-__tco:__ `[E:tcoi a]` is a set of at least two things that individually satisfy `[A:(tca a)]`. 
+__tco:__ `[E:tcoi a]` is a set of at least two things that individually satisfy `[A:(tca a)]`.
 ---
-``` 
-po tco ke gia be 
-ke tcoi 
-  via be ba tcie tca gia 
-``` 
+```
+po tco ke gia be
+ke tcoi
+  via be ba tcie tca gia
+```
 </spoiler>
 
 <spoiler>
 
-__tci:__ `[E:tca a]` is a member of set `[A:tce a]`. 
+__tci:__ `[E:tca a]` is a member of set `[A:tce a]`.
 ---
-``` 
-po tci ke ka be 
-ke tca tcie ka 
-``` 
+```
+po tci ke ka be
+ke tca tcie ka
+```
 </spoiler>
 
 It is thus recommended to mostly use these "wrapped versions" unless accessing
 the unwrapped members is necessary, which is the case when speaking about nested
-sets (sets of sets). 
+sets (sets of sets).
 
 ## Locally largest/smallest
 

@@ -97,25 +97,17 @@ mai:
     Binding the [E] place multiple time allows to express equality/equivalence.
 
     Can also be used alone for tautology (always true).
-mae:
-  id: cvf5umqddb
-  family: "MI"
-  gloss: "forall"
-  tags: [core]
-  short: "[E:(p)] is true for any argument (of the correct type)."
-  definition: 𝜆c 𝜆E ∀x E(c,x)
 mao:
   id: qzpxweephx
   family: "MI"
   gloss: "nary-imply"
   tags: [core]
-  short: "Every tuple of arguments that satisfy predicate [E:p] also satisfy [A:p]."
-  definition: 𝜆c 𝜆E 𝜆A ∀x ∀y ... E(c,x,y,...) ⇒ A(c,x,y,...)
+  short: "All arguments satisfy predicate [E:p] if they satisfy predicate [A:p] (default: always true)."
+  definition: 𝜆c 𝜆E 𝜆A ∀x ∀y ... A(c,x,y,...) ⇒ E(c,x,y,...)
   notes: |
-    [E] can be used to represent tuples or arguments that satisfy [A].
-    This can be used to express indirect questions, with [A] being a predicate
-    acting as a question and [E] representing the indirect
-    question/answer to the question.
+    With default [A] it corresponds to universal quantification of all arguments of [E].\
+    𝜆c 𝜆E ∀x ∀y ... E(c,x,y,...)
+
 mui:
   id: yftgrzjtiw
   family: "MI"
@@ -1299,7 +1291,7 @@ tcia:
     [E:tcui p] is a subset of [A:tcui p].
   definition: |
     po tcia ke ka be
-    mae
+    mao
       ve ki be varu
         vie ki tcie ke
         fia ki tcie ka

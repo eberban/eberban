@@ -8,12 +8,12 @@ We'll use an axiom to state that there exists a unique atom for every possible p
 
 <spoiler>
 
-__kin:__ `[E:ma]` is a pair made of left component `[A:a]` and right component `[O:o]`. 
+__kin:__ `[E:ma]` is a pair made of left component `[A:a]` and right component `[O:o]`.
 ---
-``` 
-pou e kin pu be 
-ma 
-  vi boi kin 
+```
+pou e kin pu be
+ma
+  vi boi kin
 ```
 
 __kin__ doesn't care about the context
@@ -22,38 +22,36 @@ __kin__ doesn't care about the context
   fi ke ka ko be varu
     vie ke kin
       va ka fo ko vei
-    fia mae mua ke kin
+    fia mao seia mua ke kin
       va ka fo ko vei
     vei
 ```
 
-For every left and right components __ka__ and __ko__ 
+For every left and right components __ka__ and __ko__
 
-``` 
-  fi mae 
-    ve ka be mae  
-      ve ko be 
-``` 
+```
+  fi mao vie ka ko be
+```
 
-There exists an atom __ki__ which is a pair of __ka__ and __ko__. 
+There exists an atom __ki__ which is a pair of __ka__ and __ko__.
 
-``` 
-      ma 
-       vi ki be ki ma kin  
-         va ka 
-         fo ko 
-``` 
+```
+    ma
+      vi ki be ki ma kin
+        va ka
+        fo ko
+```
 
-And it is false that there exists a different atom than __ki__ which is also a 
-pair of __ka__ and __ko__ (thus, there is a unique symbol for each pair) 
+And it is false that there exists a different atom than __ki__ which is also a
+pair of __ka__ and __ko__ (thus, there is a unique symbol for each pair)
 
-``` 
-         fi bi ma 
-           ve bi ki 
-           fe kin 
-             va ka 
-             fo ko 
-``` 
+```
+         fi bi ma
+           ve bi ki
+           fe kin
+             va ka
+             fo ko
+```
 </spoiler>
 
 By convention, we prefer nesting pairs only in the right component.
