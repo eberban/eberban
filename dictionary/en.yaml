@@ -2432,6 +2432,12 @@ kroan:
   gloss: "frog"
   tags: [animal]
   short: "[E:tce* pan] is a frog."
+spoul:
+  id: v0bop7yzj1
+  family: "R"
+  gloss: "testudine"
+  tags: [animal]
+  short: "[E:tce* pan] is a turtle/tortoise/testudine/member of order Testudines"
 toril:
   id: qsevjdaur5
   family: "R"
@@ -3508,6 +3514,12 @@ e tsae ban:
   family: "C2"
   gloss: "conlang"
   short: "[E:tce* ban] is a constructed language/conlang."
+e boiur spoul:
+  id: krykgk8hic
+  family: "C2"
+  gloss: "tortoise"
+  tags: [animal]
+  short: "[E:tce* pan] is a tortoise"
 e ber ban:
   id: l3hopxljdm
   family: "C2"
