@@ -1258,7 +1258,7 @@ kidvo:
   family: "R"
   gloss: "transitive-rel"
   short: |
-    [E:p] and [A:p] satisfy relation [O:(a,p)] transitively.
+    [E:p] and [A:p] satisfy relation [O:(p,p)] transitively.
   definition: |
     po kidvo ke ka go be
     vare
@@ -3498,6 +3498,11 @@ zailu:
   family: "R"
   gloss: "rotates"
   short: "[E:tce* pan] rotates, spins, turns around axis [A:tce* pan]."
+zol:
+  id: agk3nnes4a
+  family: "R"
+  gloss: "metaphor"
+  short: "[E:()] is a metaphor."
 
 # -----
 # Compounds
