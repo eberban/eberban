@@ -2495,7 +2495,7 @@ stini:
   family: "R"
   gloss: "rigid"
   short: "[E:tce* pan] is rigid/not bendable."
-merue:
+merun:
   id: c84admq4vz
   family: "R"
   gloss: "organism"
@@ -3302,7 +3302,7 @@ jeni:
 
     {te ti mula jeni te} = 10 ± 10 (10 * 1)\
     {ta ti mula jeni jo to} = 20 ± 6 (20 * 0.3)\
-pafkei:
+pafken:
   id: ymuvroa9iu
   family: "R"
   gloss: "potato"
