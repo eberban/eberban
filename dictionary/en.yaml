@@ -2324,11 +2324,16 @@ banu:
   family: "R"
   short: "[E:tce* ecoma] is expressed in language [A:tce* ban]."
   gloss: "language"
-vli:
+zigmo:
   id: wlbcggayj6
   family: "R"
-  short: "[E:tce* ecoma] is written/inscribed on display/storage medium [A:tce* pan]."
+  short: "[E:tce* pan] is an inscription of text [A:tce* ecoma]."
   gloss: "written"
+tukfa:
+  id: a83mxj4jhm
+  family: "R"
+  short: "[E:tce* pan] is displayed on medium [A:tce* pan]."
+  gloss: "medium"
 soane:
   id: rmpkifsf0c
   family: "R"
