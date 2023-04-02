@@ -1344,6 +1344,11 @@ tca:
   definition: |
     po tca ke gia be
     ke se tcai gia
+tcan:
+  id: vmenrgkg75
+  familiy: "R"
+  gloss: "pointed to"
+  short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)"
 tcu:
   id: pvhoor5xeb
   family: "R"
