@@ -2840,47 +2840,63 @@ znir:
   family: "R"
   gloss: "obligated"
   short: |
-    [E:()] is obligated to be performed under authority [A:tce* pan]. [E] is a duty.
+    [A:()] is obligated to be performed; [A:()] is a duty.
 
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
+  notes: |
+    The unexposed place [E:tce* klura] (authority) is received from context. Use
+    {ekluramue} explicitly to set the new authority.
 zner:
   id: katsvpqhmr
   family: "R"
   gloss: "encouraged"
   short: |
-    [E:()] is encouraged to be performed under authority [A:tce* pan].\
-    [E] is a virtuous/upstanding behavior.
+    [A:()] is encouraged to be performed; [A:()] is virtuous/upstanding
+    behavior.
 
     Examples: charity, volunteer work, being polite
+  notes: |
+    The unexposed place [E:tce* klura] (authority) is received from context. Use
+    {ekluramue} explicitly to set the new authority.
 znar:
   id: juramnwmey
   family: "R"
   gloss: "tolerated"
   short: |
-    [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* pan].
-    [E] is tolerated.
+    [A:()] is neither encouraged nor discouraged (i.e., permitted). [A:()] is
+    tolerated.
 
     Examples: basically most actions are {znar}, there are so many examples
     -- the act of breathing is znar
+  notes: |
+    The unexposed place [E:tce* klura] (authority) is received from context. Use
+    {ekluramue} explicitly to set the new authority.
 znor:
   id: 2uij97w56c
   family: "R"
   gloss: "discouraged"
   short: |
-    [E:()] is discouraged to be performed under authority [A:tce* pan]; [E] is reprehensible.
+    [A:()] is discouraged to be performed; [A:()] is reprehensible.
 
     Examples: lying (not under oath), crimes with are technically illegal but
-    not prosecuted, laughing at a funeral, breaking certain religious laws
+    not prosecuted, laughing at a funeral, breaking certain religious laws.
+  notes: |
+    The unexposed place [E:tce* klura] (authority) is received from context. Use
+    {ekluramue} explicitly to set the new authority.
 znur:
   id: wtc0sbwiwj
   family: "R"
   gloss: "forbidden"
   short: |
-    [E:()] is forbidden to be done by authority [A:tce* pan].
+    [A:()] is forbidden.
 
     Examples: for many religions speaking badly of their deity is forbidden,
-    crimes which are prosecuted, cheating on your partner in a monogamous relationship
+    crimes which are prosecuted, cheating on your partner in a monogamous
+    relationship.
+  notes: |
+    The unexposed place [E:tce* klura] (authority) is received from context. Use
+    {ekluramue} explicitly to set the new authority.
 molai:
   id: td2lg6faki
   family: "R"
