@@ -2040,7 +2040,7 @@ dona:
   family: "R"
   gloss: "likes"
   tags: [emotion]
-  short: "[E:tce* pan] likes [A:tce* man]."
+  short: "[E:tce* pan] likes that [A:()] is true."
 jveo:
   id: 4lhxmspat4
   family: "R"
