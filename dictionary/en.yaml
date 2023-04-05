@@ -2824,6 +2824,17 @@ meul:
   family: "R"
   short: "[E:tce* pan] (default: water) is raining."
   gloss: "rain"
+klura:
+  id: s3or3s3yc2
+  family: "R"
+  short: "[E:tce man] is an authority in the current context."
+  gloss: "authority"
+  notes: |
+    Some words express ideas enforced by authority. The authority is stored in
+    the context, and can be changed using {ekluramue}.
+
+    Words like {znir,zner,...} use {ekluramue} internally, others like {coriu}
+    are by default according to authority {klura}.
 znir:
   id: bbmaoqi9r0
   family: "R"
@@ -3446,7 +3457,7 @@ coriu:
   id: zas8minuik
   family: "R"
   gloss: "owned-by"
-  short: "[E:tce* man] is possessed/owned by [A:tce man] under authority [O:tce* pan] (default: authority)."
+  short: "[E:tce* man] is possessed/owned by [A:tce man] under authority [O:tce* pan] (default: {klura})."
 sifpa:
   id: 5kgq6jl1at
   family: "R"
@@ -3709,6 +3720,12 @@ e bzael mue:
   gloss: "set-opiner"
   short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
   notes: See {bzael} for explanations.
+e klura mue:
+  id: INSERT_WORD_ID
+  family: "C2"
+  gloss: "set-authority"
+  short: "Under authority [E:tce man], [A:()] is true."
+  notes: See {klura} for explanations.
 e ca ma:
   id: 2vi80y570m
   family: "C2"
