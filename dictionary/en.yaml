@@ -2298,7 +2298,7 @@ vune:
   id: x2x2xeye5x
   family: "R"
   gloss: "enjoyable"
-  short: "[E:tce* man] is enjoyable/great/nice for [A:tce* pan] (default: {bzael})."
+  short: "[E:()] is enjoyable/great/nice for [A:tce* pan] (default: {bzael})."
 jvin:
   id: ooyvglzn7l
   family: "R"
