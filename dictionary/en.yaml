@@ -445,97 +445,97 @@ se:
   family: "SI"
   gloss: "<EE>"
   tags: [core]
-  short: "Bind E place and disable chaining."
+  short: "Expose E place, and chain to E."
 sa:
   id: oricdbjcuk
   family: "SI"
   gloss: "<AA>"
   tags: [core]
-  short: "Bind A place and disable chaining."
+  short: "Expose A place, and chain to A."
 so:
   id: 1veohtfe08
   family: "SI"
   gloss: "<OO>"
   tags: [core]
-  short: "Bind O place and disable chaining."
+  short: "Expose O place, and chain to O."
 su:
   id: kkao3xh8vs
   family: "SI"
   gloss: "<II>"
   tags: [core]
-  short: "Bind U place and disable chaining."
+  short: "Expose U place, and chain to U."
 sea:
   id: xdpcwhenkp
   family: "SI"
   gloss: "<EA>"
   tags: [core]
-  short: "Bind E place and chains the A place."
+  short: "Expose places E and A, then chain to A."
 seo:
   id: vxhg5a1wzo
   family: "SI"
   gloss: "<EO>"
   tags: [core]
-  short: "Bind E place and chains the O place."
+  short: "Expose places E and O, then chain to O."
 seu:
   id: z4ugiojfqh
   family: "SI"
   gloss: "<EU>"
   tags: [core]
-  short: "Bind E place and chains the U place."
+  short: "Expose places E and U, then chain to U."
 sae:
   id: rnwr8famzy
   family: "SI"
   gloss: "<AE>"
   tags: [core]
-  short: "Bind A place and chains the E place."
+  short: "Expose places A and E, then chain to E."
 sao:
   id: xoapimitmx
   family: "SI"
   gloss: "<AO>"
   tags: [core]
-  short: "Bind A place and chains the O place."
+  short: "Expose places A and O, then chain to O."
 sau:
   id: iqjs2euswn
   family: "SI"
   gloss: "<AU>"
   tags: [core]
-  short: "Bind A place and chains the U place."
+  short: "Expose places A and U, then chain to U."
 soe:
   id: zje1rsx4uk
   family: "SI"
   gloss: "<OE>"
   tags: [core]
-  short: "Bind O place and chains the E place."
+  short: "Expose places O and E, then chain to E."
 soa:
   id: rythxb2fce
   family: "SI"
   gloss: "<OA>"
   tags: [core]
-  short: "Bind O place and chains the A place."
+  short: "Expose places O and A, then chain to A."
 sou:
   id: s7zufvudfl
   family: "SI"
   gloss: "<OU>"
   tags: [core]
-  short: "Bind O place and chains the U place."
+  short: "Expose places O and U, then chain to U."
 sue:
   id: pyvknqecpo
   family: "SI"
   gloss: "<UE>"
   tags: [core]
-  short: "Bind U place and chains the E place."
+  short: "Expose places U and E, then chain to E."
 sua:
   id: tqdbdmjidp
   family: "SI"
   gloss: "<UA>"
   tags: [core]
-  short: "Bind U place and chains the A place."
+  short: "Expose places U and A, then chain to A"
 suo:
   id: gewbwhd3d4
   family: "SI"
   gloss: "<UO>"
   tags: [core]
-  short: "Bind U place and chains the O place."
+  short: "Expose places A and O, then chain to O."
 ze:
   id: hq8iez19yn
   family: "ZI"
