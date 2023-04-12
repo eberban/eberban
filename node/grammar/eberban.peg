@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.55
+# eberban PEG grammar - v0.56
 # =============================
 
 # GRAMMAR
@@ -194,8 +194,8 @@ compound_word <- spaces? (borrowing / native_word)
 # - Free-form words
 freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
-freeform_content <- freeform_initial? hieaou (consonant_triplet hieaou)* consonant?
-freeform_initial <- consonant_triplet / medial_pair / initial_pair / consonant / h
+freeform_content <- freeform_consonants? hieaou (freeform_consonants hieaou)* consonant?
+freeform_consonants <- consonant_triplet / medial_pair / hyphen (initial_pair / consonant)
 freeform_end <- (single_pause_char / space_char / EOF)
 
 # - Native words
@@ -207,17 +207,19 @@ particle_form <- !sonorant consonant hieaou !medial_pair
 
 root_word <- root_form &post_word
 root_form <- !sonorant (root_form_1 / root_form_2 / root_form_3)
-root_form_1 <- consonant hieaou ((medial_pair / hyphen sonorant) hieaou)+ sonorant?
+root_form_1 <- consonant hieaou ((medial_or_triplet / hyphen sonorant) hieaou)+ sonorant?
 root_form_2 <- consonant hieaou sonorant
-root_form_3 <- initial_pair hieaou ((medial_pair / hyphen sonorant) hieaou)* sonorant?
+root_form_3 <- initial_pair hieaou ((medial_or_triplet / hyphen sonorant) hieaou)* sonorant?
 
 # - Legal clusters
 hieaou <- ieaou (hyphen h ieaou)*
 ieaou <- vowel (hyphen vowel)*
 
+medial_or_triplet <- !sonorant consonant_triplet / medial_pair
+
 consonant_triplet <- (consonant_triplet_1 / consonant_triplet_2) !consonant
 consonant_triplet_1 <- &medial_pair !sonorant consonant hyphen initial_pair
-consonant_triplet_2 <- medial_pair / sonorant? hyphen (initial_pair / !sonorant consonant) / sonorant hyphen
+consonant_triplet_2 <- sonorant hyphen initial_pair
 
 medial_pair <- !initial medial_patterns
 medial_patterns <- (medial_n / medial_fv / medial_plosive)
