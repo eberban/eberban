@@ -2413,6 +2413,12 @@ cfan:
   gloss: "gas"
   tags: [matter]
   short: "[E:tce* pan] is a gas (state of matter)."
+tian:
+  id: s54akd0jsx
+  family: "R"
+  gloss: "food"
+  tags: [matter]
+  short: "[E:tce* pan] is food."
 jeon:
   id: xzllyv1sx1
   family: "R"
