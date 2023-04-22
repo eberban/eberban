@@ -138,22 +138,17 @@ a predicate on its right.
 
 __SI__ particles follow a more general pattern to support more slots and usages:
 
-- __s__ followed by __e/a/o/u__, optionally separated by __h__, list the slots
-  exposed in the combined predicate. __h__ is only necessary when exposing the
-  same slot twice in a row, but is also accepted for different vowels in which
-  can it is synonymous with its h-less variant (__sea__ = __seha__, __sehe__
-  don't have an equivalent without __h__).
+- __s__ followed by one or many __e/a/o/u__ lists the slots exposed in the
+  combined predicate.
 - the word can be ended with an __i__ followed by another __vowel__, which
-  selects tbe slot bound with a predicate on its right. If this end is not
-  present then the last vowel of the list before is used. (__seheaio__ exposes
-  places __E,E,A__ and bind place __O__ to the predicate on its right).
-- if the word ends with an __i__ not followed by another vowel or h, the
-  predicate on its right will be bound to no place and instead will be bound to
-  a new existential variable (like with __vi__, __seai A B__ is this equivalent
-  to __sea A vi B vei__).
-- __si__ exposes and bind no places.
-- an __i__ followed by a __h__ or multiple vowels is not valid. There can also
-  not be multiple __i__.
+  selects tbe slot bound with a predicate on its right. If there is not __i__
+  then the last vowel of the list before is used. (__seaio__ exposes places
+  __E,A__ and bind place __O__ to the predicate on its right).
+- if the word ends with an __i__ not followed by another vowel, the normal
+  transitivity place will be bound.
+- __si__ exposes no places.
+- an __i__ followed by multiple vowels is invalid. There can also not be
+  multiple __i__.
 
 ## Left predicate place selection
 
