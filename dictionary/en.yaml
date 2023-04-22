@@ -2073,11 +2073,6 @@ mian:
   gloss: "cat"
   tags: [animal]
   short: "[E:tce* pan] is a cat/felid/member of family Felidae."
-gla:
-  id: kmycfjjnv4
-  family: "R"
-  gloss: "tool"
-  short: "[E:tce* ma] [tool] is used to make [A:()] [purpose] true."
 kali:
   id: egsqs45rsj
   family: "R"
