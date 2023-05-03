@@ -194,10 +194,10 @@ And even inclusion.
 
 <spoiler>
 
-__bla:__ `[E:blu a]` is included/contained in `[A:blu a]`.
+__blea:__ `[E:blu a]` is included/contained in `[A:blu a]`.
 ---
 ```
-po bla ke ka be
+po blea ke ka be
 ka ble
   vo ble
     fa ke

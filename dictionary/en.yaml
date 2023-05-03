@@ -1527,20 +1527,27 @@ blai:
   short: |
     Right folds list [E:blu p] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,p)] in last to first order.
-ble:
+blei:
   id: ghp1rirgb6
   family: "R"
   gloss: "list-concat-2"
   tags: [list]
   short: |
     [E:blu p] is the concatenation of lists [A:blu p] and [O:blu p].
-blei:
+ble:
   id: bqqk6gqk0k
   family: "R"
   gloss: "list-concat-many"
   tags: [list]
   short: |
     [E:blu p] is the concatenation of all lists in list [A:blu blu p].
+blea:
+  id: un9423gr90
+  family: "R"
+  gloss: "list-contain"
+  tags: [list]
+  short: |
+    [E:blu a] is included/contained in [A:blu a].
 blo:
   id: zp415dp0q0
   family: "R"
