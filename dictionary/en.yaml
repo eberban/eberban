@@ -3461,16 +3461,16 @@ sifpa:
   gloss: "asserts"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
-    {pa X} can be modeled as being syntaxic sugar for {poe ezepa po P be mi sifpa X pu P}.
-    P is an unnamable predicate used solely for this purpose.
+    {pa X} can be modeled as being syntaxic sugar for {poe ezepa po !P be mi sifpa !X pu !P}.
+    P is an unnameable predicate used solely for this purpose.
 sifpoi:
   id: b0c73ecend
   family: "R"
   gloss: "asks"
   short: "[E:tce pan] asks question represented by predicate [A:p] to addressee [O:tce man]."
   notes: |
-    {poi X (be) Y} can be modeled as being syntaxic sugar for
-    {poe X be Y po P be mi sifpoi X pu P}. is an unnamable predicate used solely
+    {poi !X (be) !Y} can be modeled as being syntactic sugar for
+    {poe !X be !Y po !P be mi sifpoi !X pu !P}. P is an unnameable predicate used solely
     for this purpose.
 djie:
   id: 56lqin725a
