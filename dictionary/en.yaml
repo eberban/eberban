@@ -3551,7 +3551,7 @@ e ber ban:
   short: "[E:tca ban] is the eberban language."
 e uaotearoa stan:
   id: 0hmp09luqa
-  familly: "C2"
+  family: "C2"
   gloss: "Aotearoa (New Zealand)"
   tags: [cultural]
   short: "[E:tca stan] is Aotearoa (New Zealand)."
