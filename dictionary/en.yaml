@@ -536,6 +536,46 @@ suo:
   gloss: "<UO>"
   tags: [core]
   short: "Expose places A and O, then chain to O."
+si:
+  id: gjqcv0bq15
+  family: "SI"
+  gloss: "I>>"
+  tags: [core]
+  short: |
+    Chain to the transitivity place, and exposes all the places of the predicate
+    bound to it.
+sie:
+  id: r3xo7t14df
+  family: "SI"
+  gloss: "E>>"
+  tags: [core]
+  short: |
+    Chain to the E place, and exposes all the places of the predicate
+    bound to it.
+sia:
+  id: d0l5dow2kn
+  family: "SI"
+  gloss: "A>>"
+  tags: [core]
+  short: |
+    Chain to the A place, and exposes all the places of the predicate
+    bound to it.
+sio:
+  id: imysksrbhz
+  family: "SI"
+  gloss: "O>>"
+  tags: [core]
+  short: |
+    Chain to the O place, and exposes all the places of the predicate
+    bound to it.
+siu:
+  id: fec2vdxbxf
+  family: "SI"
+  gloss: "U>>"
+  tags: [core]
+  short: |
+    Chain to the U place, and exposes all the places of the predicate
+    bound to it.
 ze:
   id: hq8iez19yn
   family: "ZI"
