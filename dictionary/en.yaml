@@ -86,6 +86,11 @@ ma:
 
     Can also be used alone for tautology (always true), since there exist at
     least one atom.
+man:
+  id: r7zw74om6f
+  family: "R"
+  gloss: "atom set"
+  short: "[E:tcei* ma] is a set of one or more atoms."
 mai:
   id: uwjxg46v4h
   family: "MI"
