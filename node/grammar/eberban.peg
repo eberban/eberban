@@ -67,7 +67,7 @@ foreign_quote_close <- native_word # performs &post_word check
 
 spelling_quote <- CE_clause spelling_quote_unit+ CEI_clause
 spelling_quote_unit <- spaces? spelling_quote_unit_2
-spelling_quote_unit_2 <- !CEI (initial_pair / consonant)? hieaou
+spelling_quote_unit_2 <- !CEI (initial_pair / consonant)? vhowels
 
 # numbers
 number <- number_base? (number_1 number_fractional? / number_1? number_fractional) number_magnitude? JI_clause?
@@ -144,44 +144,44 @@ PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
 
 # PARTICLE FAMILIES
-MI    <- &particle_word                   (m hieaou)         &post_word
-PI    <- &particle_word                   (p &i hieaou)      &post_word
-PE    <- &particle_word                   (p &e hieaou)      &post_word
-PEI   <- &particle_word                   (p e i)            &post_word
-PA    <- &particle_word                   (p &a hieaou)      &post_word
-PO    <- &particle_word                   (p &o hieaou)      &post_word
-PU    <- &particle_word                   (p &u hieaou)      &post_word
-BI    <- &particle_word                   (b &i hieaou)      &post_word
-BE    <- &particle_word                   (b &e hieaou)      &post_word
-BA    <- &particle_word                   (b &a hieaou)      &post_word
-BO    <- &particle_word                   (b &o hieaou)      &post_word
-BU    <- &particle_word                   (b &u hieaou)      &post_word
-FI    <- &particle_word                   (f hieaou)         &post_word
-VI    <- &particle_word !(VEI &post_word) (v hieaou)         &post_word
-VEI   <- &particle_word                   (v e i)            &post_word
-TI    <- &particle_word                   (t hieaou / digit) &post_word
-DI    <- &particle_word                   (d &i hieaou)      &post_word
-DE    <- &particle_word                   (d &e hieaou)      &post_word
-DA    <- &particle_word !(DAI &post_word) (d &a hieaou)      &post_word
-DAI   <- &particle_word                   (d a i)            &post_word
-DU    <- &particle_word                   (d &u hieaou)      &post_word
-SI    <- &particle_word                   (s hieaou)         &post_word
-ZI    <- &particle_word                   (z hieaou)         &post_word
-CI    <- &particle_word                   (c &i hieaou)      &post_word
-CE    <- &particle_word !(CEI &post_word) (c &e hieaou)      &post_word
-CEI   <- &particle_word                   (c e i)            &post_word
-CA    <- &particle_word !(CAI &post_word) (c &a hieaou)      &post_word
-CAI   <- &particle_word                   (c a i)            &post_word
-CO    <- &particle_word !(COI &post_word) (c &o hieaou)      &post_word
-COI   <- &particle_word                   (c o i)            &post_word
-CU    <- &particle_word                   (c &u hieaou)      &post_word
-JI    <- &particle_word                   (j &i hieaou)      &post_word
-JE    <- &particle_word                   (j &e hieaou)      &post_word
-JA    <- &particle_word                   (j &a hieaou)      &post_word
-JO    <- &particle_word                   (j &o hieaou)      &post_word
-JU    <- &particle_word                   (j &u hieaou)      &post_word
-KI    <- &particle_word                   (k hieaou)         &post_word
-GI    <- &particle_word                   (g hieaou)         &post_word
+MI    <- &particle_word                   (m vhowels)         &post_word
+PI    <- &particle_word                   (p &i vhowels)      &post_word
+PE    <- &particle_word                   (p &e vhowels)      &post_word
+PEI   <- &particle_word                   (p e i)             &post_word
+PA    <- &particle_word                   (p &a vhowels)      &post_word
+PO    <- &particle_word                   (p &o vhowels)      &post_word
+PU    <- &particle_word                   (p &u vhowels)      &post_word
+BI    <- &particle_word                   (b &i vhowels)      &post_word
+BE    <- &particle_word                   (b &e vhowels)      &post_word
+BA    <- &particle_word                   (b &a vhowels)      &post_word
+BO    <- &particle_word                   (b &o vhowels)      &post_word
+BU    <- &particle_word                   (b &u vhowels)      &post_word
+FI    <- &particle_word                   (f vhowels)         &post_word
+VI    <- &particle_word !(VEI &post_word) (v vhowels)         &post_word
+VEI   <- &particle_word                   (v e i)             &post_word
+TI    <- &particle_word                   (t vhowels / digit) &post_word
+DI    <- &particle_word                   (d &i vhowels)      &post_word
+DE    <- &particle_word                   (d &e vhowels)      &post_word
+DA    <- &particle_word !(DAI &post_word) (d &a vhowels)      &post_word
+DAI   <- &particle_word                   (d a i)             &post_word
+DU    <- &particle_word                   (d &u vhowels)      &post_word
+SI    <- &particle_word                   (s vhowels)         &post_word
+ZI    <- &particle_word                   (z vhowels)         &post_word
+CI    <- &particle_word                   (c &i vhowels)      &post_word
+CE    <- &particle_word !(CEI &post_word) (c &e vhowels)      &post_word
+CEI   <- &particle_word                   (c e i)             &post_word
+CA    <- &particle_word !(CAI &post_word) (c &a vhowels)      &post_word
+CAI   <- &particle_word                   (c a i)             &post_word
+CO    <- &particle_word !(COI &post_word) (c &o vhowels)      &post_word
+COI   <- &particle_word                   (c o i)             &post_word
+CU    <- &particle_word                   (c &u vhowels)      &post_word
+JI    <- &particle_word                   (j &i vhowels)      &post_word
+JE    <- &particle_word                   (j &e vhowels)      &post_word
+JA    <- &particle_word                   (j &a vhowels)      &post_word
+JO    <- &particle_word                   (j &o vhowels)      &post_word
+JU    <- &particle_word                   (j &u vhowels)      &post_word
+KI    <- &particle_word                   (k vhowels)         &post_word
+GI    <- &particle_word                   (g vhowels)         &post_word
 
 # - Compounds
 compound <- (compound_2 / compound_3 / compound_n)
@@ -194,7 +194,7 @@ compound_word <- spaces? (borrowing / native_word)
 # - Free-form words
 freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
-freeform_content <- freeform_consonants? hieaou (freeform_consonants hieaou)* consonant?
+freeform_content <- freeform_consonants? vhowels (freeform_consonants vhowels)* consonant?
 freeform_consonants <- consonant_triplet / medial_pair / hyphen (initial_pair / consonant)
 freeform_end <- (single_pause_char / space_char / EOF)
 
@@ -203,17 +203,17 @@ native_word <- root_word / particle_word
 native_form <- root_form / particle_form
 
 particle_word <- particle_form &post_word
-particle_form <- !sonorant consonant hieaou !medial_pair
+particle_form <- !sonorant consonant vhowels !medial_pair
 
 root_word <- root_form &post_word
 root_form <- !sonorant (root_form_1 / root_form_2 / root_form_3)
-root_form_1 <- consonant hieaou ((medial_or_triplet / hyphen sonorant) hieaou)+ sonorant?
-root_form_2 <- consonant hieaou sonorant
-root_form_3 <- initial_pair hieaou ((medial_or_triplet / hyphen sonorant) hieaou)* sonorant?
+root_form_1 <- consonant vhowels ((medial_or_triplet / hyphen sonorant) vhowels)+ sonorant?
+root_form_2 <- consonant vhowels sonorant
+root_form_3 <- initial_pair vhowels ((medial_or_triplet / hyphen sonorant) vhowels)* sonorant?
 
 # - Legal clusters
-hieaou <- ieaou (hyphen h ieaou)*
-ieaou <- vowel (hyphen vowel)*
+vhowels <- vowels (hyphen h vowels)*
+vowels <- vowel (hyphen vowel)*
 
 medial_or_triplet <- !sonorant consonant_triplet / medial_pair
 
