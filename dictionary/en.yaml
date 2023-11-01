@@ -1520,6 +1520,18 @@ kin:
                  va ka
                  fo ko
     pi e kin pi
+kun:
+  id: gl70en9uug
+  family: "R"
+  gloss: "day"
+  tags: [day]
+  short: "A day (starting and ending at midnight) is occuring."
+jan:
+  id: qjt56xazbb
+  famiy: "R"
+  gloss: "month"
+  tags: [month]
+  short: "A month is occuring."
 e zai pe:
   id: hgqsgbly3t
   family: "C2"
@@ -3789,6 +3801,126 @@ e co ma:
   family: "C2"
   gloss: "string of data"
   short: "[E:tce* man] is a string of data."
+e tio kun:
+  id: k2mw091d8h
+  family: "C2"
+  gloss: "Sunday"
+  tags: [day]
+  short: "It is Sunday."
+e ti kun:
+  id: 8s5ejjs7x4
+  family: "C2"
+  gloss: "Sunday"
+  tags: [day]
+  short: "It is Sunday."
+e te kun:
+  id: gvgo57y1k1
+  family: "C2"
+  gloss: "Monday"
+  tags: [day]
+  short: "It is Monday."
+e ta kun:
+  id: wdnqacd5fb
+  family: "C2"
+  gloss: "Tuesday"
+  tags: [day]
+  short: "It is Tuesday."
+e to kun:
+  id: dut0zinzmi
+  family: "C2"
+  gloss: "Wednesday"
+  tags: [day]
+  short: "It is Wednesday."
+e tu kun:
+  id: maomhd37vd
+  family: "C2"
+  gloss: "Thursday"
+  tags: [day]
+  short: "It is Thursday."
+e tie kun:
+  id: 5pxlkakuie
+  family: "C2"
+  gloss: "Friday"
+  tags: [day]
+  short: "It is Friday."
+e tia kun:
+  id: eyxmjzfra3
+  family: "C2"
+  gloss: "Saturday"
+  tags: [day]
+  short: "It is Saturday."
+e te jan:
+  id: 65la7i57hq
+  family: "C2"
+  gloss: "January"
+  tags: [month]
+  short: "It is January."
+e ta jan:
+  id: fb6nk64zut
+  family: "C2"
+  gloss: "February"
+  tags: [month]
+  short: "It is February."
+e to jan:
+  id: cmn3yu5tbr
+  family: "C2"
+  gloss: "March"
+  tags: [month]
+  short: "It is March."
+e tu jan:
+  id: hlnl4k1tfh
+  family: "C2"
+  gloss: "April"
+  tags: [month]
+  short: "It is April."
+e tie jan:
+  id: 1wx4dnyxl2
+  family: "C2"
+  gloss: "May"
+  tags: [month]
+  short: "It is May."
+e tia jan:
+  id: wzfiy3huwo
+  family: "C2"
+  gloss: "June"
+  tags: [month]
+  short: "It is June."
+e tio jan:
+  id: lcqezx9l5v
+  family: "C2"
+  gloss: "July"
+  tags: [month]
+  short: "It is July."
+e tiu jan:
+  id: oojrwijaf9
+  family: "C2"
+  gloss: "August"
+  tags: [month]
+  short: "It is August."
+e tei jan:
+  id: 9ym4flsxsg
+  family: "C2"
+  gloss: "September"
+  tags: [month]
+  short: "It is September."
+e tea jan:
+  id: blb33kpdbu
+  family: "C2"
+  gloss: "October"
+  tags: [month]
+  short: "It is October."
+e teo jan:
+  id: 761npfg2uq
+  family: "C2"
+  gloss: "November"
+  tags: [month]
+  short: "It is November."
+e teu jan:
+  id: jku0l3kd9b
+  family: "C2"
+  gloss: "December"
+  tags: [month]
+  short: "It is December."
 ei ce bu:
   id: 000sw1j82d
   family: "C2"
