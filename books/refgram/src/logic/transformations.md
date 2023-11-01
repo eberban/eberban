@@ -1,7 +1,7 @@
 # Predicate transformations (ZI)
 
-Particles of the __ZI__ family (all particles starting with _z-_) are used to 
-transform the immediately following predicate, before chaining or explicit 
+Particles of the __ZI__ family (all particles starting with _z-_) are used to
+transform the immediately following predicate, before chaining or explicit
 bindings are performed.
 
 > To use a __ZI__ on more than one predicate word it should be wrapped in
@@ -29,7 +29,7 @@ __zi__ is called the __short scope negation__.
 > \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
 > \text{mi}^w_1(c)     &= \exists e. \text{mi}_1(c,e)
 > \end{align} \\]
-> 
+>
 > Assertion given $(c):\
 > I and an apple exists, but I don't eat it.\
 > Would be false if no apple existed.
@@ -47,7 +47,7 @@ other predicates in the chain or explicit bindings.
 > \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
 > \text{mi}^w_1(c)     &= \exists e. \text{mi}_1(c,e)
 > \end{align} \\]
-> 
+>
 > Assertion given $(c):\
 > I exist and it is false that I eat an apple.\
 > It doesn't imply the existence of an apple.
@@ -58,7 +58,7 @@ other predicates in the chain or explicit bindings.
 ## Names
 
 Prefixing a 1-ary predicate with __za__ transforms it into a name:
-\\([\text{$e$ is named with property $P$} by $a$]\\). __SI__ can be added between
+\\([\text{$e$ is named with property $P$ by $a$}]\\). __SI__ can be added between
 __za__ and the predicate to select which argument is used for the property.
 __za__ is intransitive as it is most of the time not needed to define who named
 $e$ like that.
@@ -156,8 +156,8 @@ __zui__ is __intransitive__.
 
 ## Other
 
-__zue__ allows the speaker to transform a predicate having an __A__ 0-ary 
-predicate place to a predicate having an __A__ 1-ary predicate place which is 
+__zue__ allows the speaker to transform a predicate having an __A__ 0-ary
+predicate place to a predicate having an __A__ 1-ary predicate place which is
 satisfied by the __E__ argument.
 
 __mi jine mi jvin__ (I want that [I dance]) can thus be replaced by __mi zue
