@@ -3030,47 +3030,42 @@ bire:
   id: peug1pbvxf
   family: "R"
   gloss: "year"
-  short: "[E:tce gan] is 1 year times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  short: "[E:tce gan] is 1 year (Gregorian Calandar) times [A:tce gan] (default: 1)."
+  tags: [time, unit, year]
   notes: |
     Since years don't all have the same duration (leap years and leap seconds),
-    and we're not speaking about a specific year in a calendar, [E] is a subset
-    of all possible durations of a year.
-
-    TODO: Define which kind of year? Calendar year? Which calendar?
+    and we're not speaking about a specific year in the Gregorian calendar,
+    [E] is a subset of all possible durations of a year.
 birel:
   id: 8f292ygof9
   family: "R"
   gloss: "year (event)"
-  short: "It is the [E:tce gan]th year."
-  tags: [time, event]
+  short: "It is the [E:tce gan]th year (of Gregorian Calendar)."
+  tags: [time, event, year]
   notes: |
     [E] takes a set of year numbers, and this predicate speaks about a single
     year whose (integer) number is part of [E] (non-integer numbers are ignored).
     2 consecutive year numbers doesn't mean a span of 2 years, but that it is one
     year or the other. If both would be true, it would be multiple events and
     each event speak about a single year.
-
-    TODO: Define which kind of year? Calendar year? Which calendar?
-    Does it take into account timezones based on the location?
 gare:
   id: q5yr0ta93i
   family: "R"
   gloss: "month"
-  short: "[E:tce gan] is 1 month times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  short: "[E:tce gan] is 1 month (Gregorian Calandar) times [A:tce gan] (default: 1)."
+  tags: [time, unit, month]
   notes: |
     Since months don't all have the same duration (leap years and leap seconds),
-    and we're not speaking about a specific month in a calendar, [E] is a subset
-    of all possible durations of a month.
+    and we're not speaking about a specific month in the Gregorian calendar,
+    [E] is a subset of all possible durations of a month.
 
     TODO: Define which kind of month? Calendar month? Which calendar?
 garel:
   id: 5iqzf2hgie
   family: "R"
   gloss: "month (event)"
-  short: "It is the [E:tce gan]th month of the year."
-  tags: [time, event]
+  short: "It is the [E:tce gan]th month of the year (of Gregorian Calendar)."
+  tags: [time, event, month]
   notes: |
     [E] takes a set of month numbers, and this predicate speaks about a single
     month whose (integer) number is part of [E] (non-integer numbers are ignored).
@@ -3078,24 +3073,26 @@ garel:
     month or the other. If both would be true, it would be multiple events and
     each event speak about a single month.
 
-    TODO: Define which kind of year? Calendar year? Which calendar?
-    Does it take into account timezones based on the location?
+    It takes into account timezones based on the current location. If the
+    current location intersects with multiple timezones then it can be 2 months
+    at the same time.
 kora:
   id: ccfnhkiitg
   family: "R"
   gloss: "week"
-  short: "[E:tce gan] is 1 week (7 days) times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  short: "[E:tce gan] is 1 week (from Xday midnight to next Xday midnight, Gregorian Calandar) times [A:tce gan] (default: 1)."
+  tags: [time, unit, week]
   notes: |
     Since weeks don't all have the same duration (leap seconds),
-    and we're not speaking about a specific week in a calendar, [E] is a subset
-    of all possible durations of a week.
+    and we're not speaking about a specific week in the Gregorian calendar,
+    [E] is a subset of all possible durations of a week.
+
 koral:
   id: cqi4n1lpkt
   family: "R"
   gloss: "week (event)"
-  short: "It is the [E:tce gan]th week of the year."
-  tags: [time, event]
+  short: "It is the [E:tce gan]th week of the year (of Gregorian Calendar)."
+  tags: [time, event, week]
   notes: |
     [E] takes a set of week numbers, and this predicate speaks about a single
     week whose (integer) number is part of [E] (non-integer numbers are ignored).
@@ -3103,24 +3100,30 @@ koral:
     week or the other. If both would be true, it would be multiple events and
     each event speak about a single week.
 
-    TODO: Define which kind of year? Calendar year? Which calendar?
-    Does it take into account timezones based on the location?
+    It takes into account timezones based on the current location. If the
+    current location intersects with multiple timezones then it can be 2 weeks
+    at the same time.
+
+    Weeks starts on monday, except the first week of the year which starts on
+    January 1th and the last week which ends on December 31th.
 dena:
   id: cfjh1v5inn
   family: "R"
   gloss: "day (unit)"
   short: "[E:tce gan] is 1 day times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  tags: [time, unit, day]
   notes: |
     Since days don't all have the same duration (leap seconds),
-    and we're not speaking about a specific day in a calendar, [E] is a subset
-    of all possible durations of a day.
+    and we're not speaking about a specific day in the Gregorian calendar,
+    [E] is a subset of all possible durations of a day.
 denal:
   id: lvhzpvgj4z
   family: "R"
   gloss: "day (event)"
-  short: "It is the [E:tce gan]th day of the month (starting and ending at midnight)."
-  tags: [time, event]
+  short: |
+    It is the [E:tce gan]th day (starting and ending at midnight) of the month
+    (of Gregorian Calendar).
+  tags: [time, event, day]
   notes: |
     [E] takes a set of day numbers, and this predicate speaks about a single
     day whose (integer) number is part of [E] (non-integer numbers are ignored).
@@ -3128,20 +3131,25 @@ denal:
     day or the other. If both would be true, it would be multiple events and
     each event speak about a single day.
 
-    TODO: Define which kind of year? Calendar year? Which calendar?
-    Does it take into account timezones based on the location?
+    It takes into account timezones based on the current location. If the
+    current location intersects with multiple timezones then it can be 2 days
+    at the same time.
 sura:
   id: 7jdojjj4lv
   family: "R"
   gloss: "hour (unit)"
   short: "[E:tce gan] is 1 hour times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  tags: [time, unit, hour]
+  notes: |
+    Since hours don't all have the same duration (leap seconds),
+    and we're not speaking about a specific hour in the Gregorian calendar,
+    [E] is a subset of all possible durations of an hour.
 sural:
   id: lvhzpvgj4z
   family: "R"
   gloss: "hour (event)"
   short: "It is the hour [E:tce gan] of the day."
-  tags: [time, event]
+  tags: [time, event, hour]
   notes: |
     [E] takes a set of hour numbers, and this predicate speaks about a single
     hour whose (integer) number is part of [E] (non-integer numbers are ignored).
@@ -3151,20 +3159,21 @@ sural:
 
     Numbers in [E] are in 24 hour format, start at 0 and are expressed modulo 24.
 
-    TODO: Define which kind of day? Does it take into account timezones based
-    on the location?
+    It takes into account timezones based on the current location. If the
+    current location intersects with multiple timezones then it can be many hours
+    at the same time.
 jero:
   id: hxbyme2tnh
   family: "R"
   gloss: "minute (unit)"
   short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  tags: [time, unit, minute]
 jerol:
   id: lvhzpvgj4z
   family: "R"
   gloss: "minute (event)"
   short: "It is the minute [E:tce gan] of the hour."
-  tags: [time, event]
+  tags: [time, event, minute]
   notes: |
     [E] takes a set of minute numbers, and this predicate speaks about a single
     minute whose (integer) number is part of [E] (non-integer numbers are ignored).
@@ -3172,22 +3181,23 @@ jerol:
     minute or the other. If both would be true, it would be multiple events and
     each event speak about a single minute.
 
-    Numbers in [E] are expressed modulo 60.
+    Numbers in [E] are expressed modulo 60 and start at 0.
 
-    TODO: Define which kind of day? Does it take into account timezones based
-    on the location?
+    It takes into account timezones based on the current location. If the
+    current location intersects with multiple timezones then it can be many minutes
+    at the same time.
 vola:
   id: mhrlcmuwvk
   family: "R"
   gloss: "second (unit)"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
-  tags: [time, unit]
+  tags: [time, unit, second]
 jerol:
   id: lvhzpvgj4z
   family: "R"
   gloss: "second (event)"
   short: "It is the second [E:tce gan] of the minute."
-  tags: [time, event]
+  tags: [time, event, second]
   notes: |
     [E] takes a set of second numbers, and this predicate speaks about a single
     second whose (integer) number is part of [E] (non-integer numbers are ignored).
@@ -3195,10 +3205,9 @@ jerol:
     second or the other. If both would be true, it would be multiple events and
     each event speak about a single second.
 
-    Numbers in [E] are expressed modulo 60.
+    Numbers in [E] are expressed modulo 60 and start at 0.
 
-    TODO: Define which kind of day? Does it take into account timezones based
-    on the location?
+    TODO: How to handle leap seconds?
 mula:
   id: w93rd5hdrd
   family: "R"
@@ -3904,121 +3913,121 @@ e ti denal:
   id: 8s5ejjs7x4
   family: "C2"
   gloss: "Sunday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Sunday."
 e te denal:
   id: gvgo57y1k1
   family: "C2"
   gloss: "Monday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Monday."
 e ta denal:
   id: wdnqacd5fb
   family: "C2"
   gloss: "Tuesday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Tuesday."
 e to denal:
   id: dut0zinzmi
   family: "C2"
   gloss: "Wednesday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Wednesday."
 e tu denal:
   id: maomhd37vd
   family: "C2"
   gloss: "Thursday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Thursday."
 e tie denal:
   id: 5pxlkakuie
   family: "C2"
   gloss: "Friday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Friday."
 e tia denal:
   id: eyxmjzfra3
   family: "C2"
   gloss: "Saturday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Saturday."
 e tio denal:
   id: k2mw091d8h
   family: "C2"
   gloss: "Sunday"
-  tags: [day]
+  tags: [time, event, day]
   short: "It is Sunday."
 e te garel:
   id: 65la7i57hq
   family: "C2"
   gloss: "January"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is January."
 e ta garel:
   id: fb6nk64zut
   family: "C2"
   gloss: "February"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is February."
 e to garel:
   id: cmn3yu5tbr
   family: "C2"
   gloss: "March"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is March."
 e tu garel:
   id: hlnl4k1tfh
   family: "C2"
   gloss: "April"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is April."
 e tie garel:
   id: 1wx4dnyxl2
   family: "C2"
   gloss: "May"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is May."
 e tia garel:
   id: wzfiy3huwo
   family: "C2"
   gloss: "June"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is June."
 e tio garel:
   id: lcqezx9l5v
   family: "C2"
   gloss: "July"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is July."
 e tiu garel:
   id: oojrwijaf9
   family: "C2"
   gloss: "August"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is August."
 e tei garel:
   id: 9ym4flsxsg
   family: "C2"
   gloss: "September"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is September."
 e tea garel:
   id: blb33kpdbu
   family: "C2"
   gloss: "October"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is October."
 e teo garel:
   id: 761npfg2uq
   family: "C2"
   gloss: "November"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is November."
 e teu garel:
   id: jku0l3kd9b
   family: "C2"
   gloss: "December"
-  tags: [month]
+  tags: [time, event, month]
   short: "It is December."
 ei ce bu:
   id: 000sw1j82d
