@@ -3197,7 +3197,7 @@ vola:
   gloss: "second (unit)"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
   tags: [time, unit, second]
-jerol:
+volal:
   id: lvhzpvgj4z
   family: "R"
   gloss: "second (event)"
