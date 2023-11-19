@@ -3692,6 +3692,26 @@ zol:
   family: "R"
   gloss: "metaphor"
   short: "[E:()] is a metaphor."
+cluin:
+  id: bnpo8nb1px
+  family: "R"
+  gloss: "spring"
+  short: "It is spring."
+cluen:
+  id: eebgcxilaa
+  family: "R"
+  gloss: "summer"
+  short: "It is summer."
+cluan:
+  id: fdg4wm00j7
+  family: "R"
+  gloss: "autumn"
+  short: "It is autumn/fall."
+cluon:
+  id: dci7ddkc8v
+  family: "R"
+  gloss: "winter"
+  short: "It is winter."
 
 # -----
 # Compounds
