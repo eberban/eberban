@@ -3692,6 +3692,21 @@ zol:
   family: "R"
   gloss: "metaphor"
   short: "[E:()] is a metaphor."
+mliel:
+  id: xuvbg8gnll
+  family: "R"
+  gloss: "cold"
+  short: "[E:tce* pan] (default: the air) feels cold to the touch."
+mlial:
+  id: pne1nwyhy8
+  family: "R"
+  gloss: "warm"
+  short: "[E:tce* pan] (default: the air) feels warm to the touch."
+cpere:
+  id: gant5ud5xq
+  family: "R"
+  gloss: "temperature"
+  short: "[E:tce gan] is the mean temperature of the volume [A:tce* pan]."
 cluin:
   id: bnpo8nb1px
   family: "R"
