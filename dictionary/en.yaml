@@ -3712,6 +3712,36 @@ cluon:
   family: "R"
   gloss: "winter"
   short: "It is winter."
+ciel:
+  id: w1aaav8mis
+  family: "R"
+  gloss: "day"
+  short: "It is day (between locale-sunrise and locale-sunset inclusive)."
+ciul:
+  id: kgzr2vsl1z
+  family: "R"
+  gloss: "night"
+  short: "It is night (between locale-sunset and locale-sunrise exclusive)."
+vzoin:
+  id: gsnd7f1qxn
+  family: "R"
+  gloss: "morning"
+  short: "It is morning (between locale-sunrise and 11:59 inclusive)."
+vzoen:
+  id: dxo7au7y1u
+  family: "R"
+  gloss: "noon"
+  short: "It is noon (precisely 12:00)."
+vzoan:
+  id: csm12utyo8
+  family: "R"
+  gloss: "afternoon"
+  short: "It is after noon (between 12:00 and locale-sunset inclusive)."
+vzoun:
+  id: jl7ojeesj9
+  family: "R"
+  gloss: "evening"
+  short: "It is evening (between sunset and typical locale-time of sleep)."
 
 # -----
 # Compounds
