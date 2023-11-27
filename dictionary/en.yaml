@@ -3742,6 +3742,12 @@ vzoun:
   family: "R"
   gloss: "evening"
   short: "It is evening (between sunset and typical locale-time of sleep)."
+zidma:
+  id: jqzbvtnncw
+  family: "R"
+  gloss: "why"
+  short: "[E:()] is true because of [A:()]"
+
 
 # -----
 # Compounds
