@@ -1,9 +1,10 @@
-# eberban PEG grammar - v0.56
+# eberban PEG grammar - v0.56.1
 # =============================
 
 # GRAMMAR
 # main text rule
-text <- (free_suffix)* paragraphs? spaces? EOF?
+text <- language_flags (free_suffix)* paragraphs? spaces? EOF?
+language_flags <- DO_clause*
 
 # text structure
 paragraphs <- paragraph (&DU_clause paragraph)*
@@ -101,6 +102,7 @@ DI_clause  <-              spaces? DI                   # free metadata
 DE_clause  <-              spaces? DE                   # free interjection
 DA_clause  <-              spaces? DA                   # free parenthetical starter
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
+DO_clause <-               spaces? DO                   # language flags
 DU_clause  <- free_suffix* spaces? DU free_suffix*      # paragraph marker
                                                         #
 SI_clause  <- free_prefix* spaces? SI                   # chain place selection
@@ -164,6 +166,7 @@ DI    <- &particle_word                   (d &i vhowels)      &post_word
 DE    <- &particle_word                   (d &e vhowels)      &post_word
 DA    <- &particle_word !(DAI &post_word) (d &a vhowels)      &post_word
 DAI   <- &particle_word                   (d a i)             &post_word
+DO    <- &particle_word                   (d &o vhowels)      &post_word
 DU    <- &particle_word                   (d &u vhowels)      &post_word
 SI    <- &particle_word                   (s vhowels)         &post_word
 ZI    <- &particle_word                   (z vhowels)         &post_word

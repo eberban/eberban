@@ -1186,6 +1186,13 @@ pohi:
     defined by other PO particles.
 
     Namespaces can be nested if the imported text also uses {pohi}.
+do:
+  id: INSERT_WORD_ID
+  family: "DO"
+  gloss: "#bare"
+  short: Disable the automatic import of the standard dictionnary.
+  notes: |
+    Mainly used to define the standard dictionnary itself.
 
 # -----
 # Defined predicate words (in order of book)
