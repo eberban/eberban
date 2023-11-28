@@ -118,9 +118,9 @@ is exposed in the combined predicate.
 > Given $(c), $(e):\
 > $(e) is a cat that eats something, and $(e) is beautiful.
 
-__SI__ particles with two vowels allow to select both, the two vowels representing
-the two exposed place, and the second vowel corresponding to the slot bound with
-a predicate on its right.
+__SI__ particles with two vowels (except __i__) allow to select both, the two
+vowels representing the two exposed place, and the second vowel corresponding to
+the slot bound with a predicate on its right.
 
 > __meon sae buri mian__
 >
@@ -138,35 +138,18 @@ a predicate on its right.
 
 __SI__ particles follow a more general pattern to support more slots and usages:
 
-- Starting with __e/a/o/u__ :
-  - __s__ followed by one or many __e/a/o/u__ lists the slots exposed in the
-    combined predicate.
-  - the word can be ended with an __i__ followed by another __vowel__, which
-    selects the slot bound with a predicate on its right. (__seaio__ exposes places
-    __E,A__ and bind place __O__ to the predicate on its right) If there is no
-    __i__ then the last vowel of the list before is used. (__seua__ exposes places
-    __E,U,A__ and bind place __A__ to the predicate on its right)
-  - if the word ends with an __i__ not followed by another vowel, the normal
-    transitivity place will be bound. (__saei buri__ exposes places __A,E__ of
-    buri but binds place __A__ to the predicate on its right since __buri__ is
-    transitive.)
-  - an __i__ followed by multiple vowels is invalid. There can also not be
-    multiple __i__.
-- Starting with __i__ :
-  - Makes the predicate "transparent" by re-exposing all the places on its
-    right. This is mostly useful with predicates having a proposition (0-ary)
-    proposition place, such that the predicate before and after can be bound
-    together "across" the predicate with the proposition place. (__za uadam si
-    znur buri meon__ means "Adam eats an apple which is forbidden". Note here
-    that was is forbidden is "(someone) eating an apple", not specifically Adam)
-  - It can be followed by one vowel __e/a/o/u__ which binds their corresponding
-    place to the predicate on its right, which still exposes all the places of
-    it. It is useful when there are multiple predicate places or if the one is
-    not selected by the transitivity rule.
-  - __VI/FI__ used on the predicate prefixed by those __SI__ still bind to this
-    predicate, and thus allow to bind to other of its places. (__mi si katmu ve
-    za ubob fa buri meon__ means "I eat an apple that Bob wants eaten". Note
-    that Bob wants that "(someone) eats an apple", not specifically me)
+- __si__ followed by a single vowel makes the predicate "transparent" by
+  re-exposing all the places of the predicate on its right, which is bound to
+  the slot corresponding to the vowel used. This is mostly useful with predicates
+  having a proposition (0-ary) place, such that the predicates before and after
+  can be bound together "across" the predicate with the proposition place.
+- Otherwise, __SI__ particles are composed of an __s__ followed either by
+  one or many __e/a/o/u__ or a single __i__, which can optionally be followed
+  by __h__ followed by a single __e/a/o/u__. The one or many __e/a/o/u__ lists
+  the slots of the predicate to expose, while a single __i__ exposes none.
+  The __h__ followed by a single __e/a/o/u__ selects the slot bound with a
+  predicate on the right. When absent, the last __e/a/o/u__ is used instead,
+  while with __i__ the transitivity slot is used.
 
 ## Left predicate place selection
 

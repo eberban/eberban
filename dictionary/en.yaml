@@ -486,9 +486,7 @@ si:
   family: "SI"
   gloss: "I>>"
   tags: [core]
-  short: |
-    Chain to the transitivity place, and exposes all the places of the predicate
-    bound to it.
+  short: "Expose non places and chain to the transivity place."
 sie:
   id: r3xo7t14df
   family: "SI"
