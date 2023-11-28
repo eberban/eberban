@@ -1949,7 +1949,7 @@ peni:
   id: 7n2eqikobr
   family: "R"
   gloss: set-context-physical
-  tags: [space]
+  tags: [space, context-modifier]
   short: |
     [E:tca pen] is used at the context volume to evaluate [A:()].
 penu:
@@ -2215,6 +2215,7 @@ seru:
   family: "R"
   gloss: "about"
   short: "[E:()] is about subject [A:tce* man]."
+  tags: [context-modifier]
   notes: |
     Predicates inside [E] can register subjects using {serun}.
 serun:
@@ -3454,6 +3455,7 @@ zole:
   id: gbk8uduqqh
   family: "R"
   gloss: "uses"
+  tags: [context-modifier]
   short: "[E:tce man] uses [A:tce* man] (tool) to satisfy [O:(tce man)]."
   notes: |
     Predicates inside [O] can register tools using {zolen}.
