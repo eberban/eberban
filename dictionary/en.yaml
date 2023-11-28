@@ -260,36 +260,6 @@ viu:
   notes: |
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
-vue:
-  id: lcc8xfl31g
-  family: "VI"
-  gloss: "wrapE["
-  tags: [core]
-  short: |
-    The suffixed predicate must now satisfy the E place of the following
-    predicate chain, and is no longer evaluated directly.
-  notes: |
-    Since the following predicate chain is the one responsible for evaluating
-    the suffixed predicate, it can be evaluated with a context modified by the
-    predicate chain.
-
-    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
-    the former.
-vua:
-  id: imdwlhyulp
-  family: "VI"
-  gloss: "wrapA["
-  tags: [core]
-  short: |
-    The suffixed predicate must now satisfy the A place of the following
-    predicate chain, and is no longer evaluated directly.
-  notes: |
-    Since the following predicate chain is the one responsible for evaluating
-    the suffixed predicate, it can be evaluated with a context modified by the
-    predicate chain.
-
-    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
-    the former.
 fi:
   id: kd9qbtxtq0
   family: "FI"
@@ -415,36 +385,6 @@ fai:
   short: |
     The next place as the latest VI/FI, of the predicate suffixed with latest
     non-closed VI, is equivalent to with the following predicate chain.
-fue:
-  id: k17fsfpub1
-  family: "FI"
-  gloss: "]wrapE["
-  tags: [core]
-  short: |
-    The suffixed predicate must now satisfy the E place of the following
-    predicate chain, and is no longer evaluated directly.
-  notes: |
-    Since the following predicate chain is the one responsible for evaluating
-    the suffixed predicate, it can be evaluated with a context modified by the
-    predicate chain.
-
-    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
-    the former.
-fua:
-  id: 21hk7mrr1z
-  family: "FI"
-  gloss: "]wrapE["
-  tags: [core]
-  short: |
-    The suffixed predicate must now satisfy the A place of the following
-    predicate chain, and is no longer evaluated directly.
-  notes: |
-    Since the following predicate chain is the one responsible for evaluating
-    the suffixed predicate, it can be evaluated with a context modified by the
-    predicate chain.
-
-    If there are multiple {vue/vua/fue/fua} used, the latter is applied inside
-    the former.
 se:
   id: qgxn2xhcit
   family: "SI"
