@@ -1055,21 +1055,18 @@ za:
   id: 4hiwgkyaqe
   family: "ZI"
   gloss: "#named"
-  short: "[E:tce p] is named after the E place of the following predicate."
+  short: "[E:tce p] is named after the E place of the following predicate by [A:tce pan]."
   notes: |
     Another place can be selected by adding a SE particle between {za} and the
     predicate.
 zai:
   id: bzmsfmniyb
   family: "ZI"
-  gloss: "#ident"
-  short: "[E:ma] is the atom representing the E place of the following predicate."
+  gloss: "#name"
+  short: "[E:ma] is the name representing the E place of the following predicate."
   note: |
     Another place can be selected by adding a SE particle between {zai} and the
-    predicate. Using {zai} before a specific predicate will always yield the
-    same unique atom.
-
-    It is mainly used to create identifiers used as map keys (see {kagve}).
+    predicate.
 pa:
   id: awzbv8iu8c
   family: "PA"

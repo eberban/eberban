@@ -66,8 +66,6 @@ $(e) like that.
 To speak about the name itself, __zai__ must be used:
 \\([\text{$e$ is the name corresponding to property $P$}]\\).
 
-> Many things can have the same name, but the name itself is unique.
-
 ## Reference
 
 __ze__ allows the speaker to refer to the latest __non-wrapped__ instance of the
