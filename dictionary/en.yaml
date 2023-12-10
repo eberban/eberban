@@ -3720,7 +3720,11 @@ zidma:
   family: "R"
   gloss: "why"
   short: "[E:()] is true because of [A:()]"
-
+fcaon:
+  id: atpt42rrzm
+  family: "R"
+  gloss: "funny"
+  short: "It is funny that [E:()] is true."
 
 # -----
 # Compounds
