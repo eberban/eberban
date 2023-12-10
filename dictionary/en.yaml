@@ -2158,11 +2158,16 @@ gza:
   family: "R"
   gloss: "agentive cause"
   short: "[E:tce* pan] is an agentive cause of [A:()] being true."
+cmuel:
+  id: k59p1rkb54
+  family: "R"
+  gloss: "school"
+  short: "[E:tce* pan] is a school."
 kini:
   id: macaegnams
   family: "R"
   gloss: "learns"
-  short: "[E:tce* pan] learns/studies fact [A:()]."
+  short: "[E:tce* pan] learns fact [A:()] from [O:tce* pan]."
 seru:
   id: 0pi0sos7qt
   family: "R"
