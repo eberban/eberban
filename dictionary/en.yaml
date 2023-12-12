@@ -2040,6 +2040,21 @@ fule:
   family: "R"
   gloss: "knows"
   short: "[E:tce* pan] knows fact [A:()] from source [O:tce man]."
+vli:
+  id: hiskwb5iw2
+  family: "R"
+  gloss: "proposition name"
+  short: "[E:p] is the proposition [A:()]."
+vle:
+  id: hiskwb5iw2
+  family: "R"
+  gloss: "property name"
+  short: "[E:p] is the property [A:(p)]."
+vla:
+  id: hiskwb5iw2
+  family: "R"
+  gloss: "relation name"
+  short: "[E:p] is the relation [A:(p,q)]."
 dona:
   id: iffa5o0qnw
   family: "R"
