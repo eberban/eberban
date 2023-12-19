@@ -87,6 +87,10 @@ function among(v, s) {
     return false;
 }
 
+function get_random_item(list) {
+    return list[Math.floor(Math.random() * list.length)];
+}
+
 function is_family(v) {
     if (!is_string(v)) return false;
     return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUH])+$/g);
@@ -109,6 +113,7 @@ module.exports.remove_morphology = remove_morphology;
 module.exports.join_expr = join_expr;
 module.exports.is_target_node = is_target_node;
 module.exports.among = among;
+module.exports.get_random_item = get_random_item;
 module.exports.is_family = is_family;
 module.exports.is_string = is_string;
 module.exports.is_array = is_array;
