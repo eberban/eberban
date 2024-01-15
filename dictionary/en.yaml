@@ -1154,17 +1154,35 @@ dui:
 
     To make predicates public and available in the namespace, use {du}.
 bu:
+  id: z05feq6b63
+  family: "BU"
+  gloss: "#atom-set"
+  tags: [enum, set]
+  short: "Atoms/generics set separator."
+bui:
+  id: lhzsdl98sk
+  family: "BU"
+  gloss: "#pred-set"
+  tags: [enum, set]
+  short: "Predicates set separator."
+bue:
   id: pyzvhbntb5
   family: "BU"
-  gloss: "#list-separator"
-  tags: [list]
-  short: "List separator."
+  gloss: "#atom-list"
+  tags: [enum, list]
+  short: "Atoms/generics list separator."
+buei:
+  id: 6ekftp64e3
+  family: "BU"
+  gloss: "#pred-list"
+  tags: [enum, list]
+  short: "Predicates list separator."
 buhu:
   id: iquyczidl4
   family: "BU"
-  gloss: "#list-erased"
-  tags: [list]
-  short: "Erase the current list item."
+  gloss: "#erased"
+  tags: [enum]
+  short: "Erase the current enumeration item."
 pi:
   id: ldy5ka8k6p
   family: "PI"
@@ -1187,7 +1205,7 @@ pohi:
 
     Namespaces can be nested if the imported text also uses {pohi}.
 do:
-  id: INSERT_WORD_ID
+  id: to8ca3apdr
   family: "DO"
   gloss: "#bare"
   short: Disable the automatic import of the standard dictionnary.
@@ -1383,25 +1401,19 @@ dji:
   family: "R"
   gloss: "set-union"
   tags: [set]
-  short: "[E:tce p] is the union of sets [A:tce p] and [O:tce p]."
-  definition: |
-    po dji ke ka ko be
-    ke tcu
-      va ki be vare
-        ve ki tci ka
-        fa ki tci ko
+  short: "[E:tcei p] is the union of sets in set [A:tcei tcei p]."
+djie:
+  id: mn82rh937u
+  family: "R"
+  gloss: "set-choice"
+  tags: [set]
+  short: "[E:tcei p] contains exactly one member of each set in set [A:tcei tcei p]."
 dje:
   id: 2yen5k9sgq
   family: "R"
   gloss: "set-intersection"
   tags: [set]
-  short: "[E:tce p] is the intersection of sets [A:tce p] and [O:tce p]."
-  definition: |
-    po dje ke ka ko be
-    ke tcu
-      va ki be vari
-        ve ki tci ka
-        fa ki tci ko
+  short: "[E:tcei p] is the intersection of sets in set [A:tcei tcei p]."
 dja:
   id: fna9x09it8
   family: "R"
@@ -1497,7 +1509,7 @@ blu:
   short: |
     [E:blun] is a list of things all satisfying [A:(p)].
   notes: |
-    {bu} is syntaxic sugar to make lists.
+    {bue} is syntaxic sugar to make lists.
 bla:
   id: 6oxelxxwxd
   family: "R"
@@ -1542,13 +1554,6 @@ blo:
   tags: [list, set]
   short: |
     [E:tce p] is the set of all the elements in list [A:blu p].
-bli:
-  id: t4oc9rx6i4
-  family: "R"
-  gloss: "list-set"
-  tags: [list, set]
-  short: |
-    [E:tce p] is the union of all sets in list [A:blu tce p].
 kagvin:
   id: wuklqbdxyk
   family: "R"
@@ -2970,7 +2975,7 @@ koro:
     equations with the unknown being such a predicate, allowing to chain multiple
     the unknown for multiplication.
 
-    Example: {poi ga \[ge be\] fuli \[vi koro ge\] \[fa te bu, ta ge bu, to ge ge\] \[fe ti\]}\
+    Example: {poi ga \[ge be\] fuli \[vi koro ge\] \[fa te bue, ta ge bu, to ge ge\] \[fe ti\]}\
     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
 
 bire:
@@ -4047,17 +4052,17 @@ e teu garel:
   gloss: "December"
   tags: [time, event, month]
   short: "It is December."
-ei ce bu:
+ei ce bue:
   id: 000sw1j82d
   family: "C2"
   gloss: "spelled"
   short: "[E:tca man] is spelled as [A: blu ecema]"
-ei ceu bu:
+ei ceu bue:
   id: b0pxo862df
   family: "C2"
   gloss: "uttered"
   short: "[E:tca man] is uttered as [A: blu eceuma]"
-a ce po bu:
+a ce po bue:
   id: jpvb7ytjfg
   family: "C3"
   gloss: "dictionary"
