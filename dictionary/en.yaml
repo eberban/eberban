@@ -3590,7 +3590,7 @@ sifpoi:
     {poi !X (be) !Y} can be modeled as being syntactic sugar for
     {poe !X be !Y po !P be mi sifpoi !X pu !P}. P is an unnameable predicate used solely
     for this purpose.
-djie:
+djia:
   id: 56lqin725a
   family: "R"
   gloss: "set-overlaps"
