@@ -3196,7 +3196,7 @@ kelu:
   gloss: "degree-celcius"
   short: "[E:tce gan] is 1 degree Celcius times [A:tce gan] (default: 1)."
   tags: [unit]
-saur:
+saura:
   id: qxk4kuezqg
   family: "R"
   gloss: "candela"
