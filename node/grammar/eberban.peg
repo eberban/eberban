@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.56.1
+# eberban PEG grammar - v0.57
 # =============================
 
 # GRAMMAR
@@ -11,8 +11,8 @@ paragraphs <- paragraph (&DU_clause paragraph)*
 paragraph <- DU_clause? paragraph_unit (&paragraph_unit_starter paragraph_unit)*
 
 paragraph_unit_starter <- PA_clause / PO_clause / PU_clause
-paragraph_unit <- paragraph_unit_erased / paragraph_unit_1
-paragraph_unit_erased <- paragraph_unit_1 CU_clause
+paragraph_unit <- paragraph_unit_erased* paragraph_unit_1
+paragraph_unit_erased <- paragraph_unit_starter? (!(paragraph_unit_starter / CU_clause) .)* CU_clause
 paragraph_unit_1 <- definition / axiom / sentence
 
 arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
