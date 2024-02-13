@@ -6,12 +6,12 @@ const important_types = [
 	// text
 	[ 'text', 'text' ],
 	[ 'paragraph', 'paragraph' ],
-	[ 'paragraph_unit', 'paragraph unit' ],
-	[ 'paragraph_unit_erased', 'erased' ],
-	[ 'definition', 'definition' ],
 	[ 'sentence', 'sentence' ],
-	[ 'axiom', 'axiom' ],
-	[ 'default', 'default' ],
+	[ 'sentence_erased_1', 'erased' ],
+	[ 'sentence_erased_2', 'erased' ],
+	[ 'pa_sentence', 'PA sentence' ],
+	[ 'po_sentence', 'PO sentence' ],
+	[ 'pu_sentence', 'PU sentence' ],
 
 	// scope
 	[ 'inner_definition', 'inner definition' ],

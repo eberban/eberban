@@ -8,18 +8,24 @@ language_flags <- DO_clause*
 
 # text structure
 paragraphs <- paragraph (&DU_clause paragraph)*
-paragraph <- DU_clause? paragraph_unit (&paragraph_unit_starter paragraph_unit)*
+paragraph <- DU_clause? sentence (&sentence_starter sentence / sentence_erased_2)*
 
-paragraph_unit_starter <- PA_clause / PO_clause / PU_clause
-paragraph_unit <- paragraph_unit_erased* paragraph_unit_1
-paragraph_unit_erased <- paragraph_unit_starter? (!(paragraph_unit_starter / CU_clause) .)* CU_clause
-paragraph_unit_1 <- definition / axiom / sentence
+sentence_starter <- PA_clause / PO_clause / PU_clause
+
+# We want grammatical sentences that can be followed by NA to erase them, which means 
+# sentence_erased_1 must appear first. While we want to erase ungrammatical text with NA, we don't
+# want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
+sentence <- sentence_erased_1 / sentence_1 / sentence_erased_2
+sentence_1 <- po_sentence / pu_sentence / pa_sentence
+
+sentence_erased_1 <- sentence_1 sentence_eraser
+sentence_erased_2 <- sentence_starter? (!(sentence_starter / sentence_eraser) .)* sentence_eraser
 
 arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
 
-definition <- PO_clause unit_definable_2 inner_definition
-sentence <- PA_clause_elidible inner_definition
-axiom <- PU_clause unit_definable_2
+po_sentence <- PO_clause unit_definable_2 inner_definition
+pa_sentence <- PA_clause_elidible inner_definition
+pu_sentence <- PU_clause unit_definable_2
 
 # chaining
 inner_definition <- arguments_list? chain_or_list
@@ -118,9 +124,9 @@ MI_clause  <- free_prefix* spaces? MI                   # particle predicates
 PI_clause  <-              spaces? PI                   # namespace separator
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # scoped unit starter
 PEI_clause <-              spaces? PEI                  # scope unit elidible terminator
-PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence starter
-PO_clause  <- free_prefix* spaces? PO  free_suffix*     # definition starter
-PU_clause  <-              spaces? PU                   # axiom toggle
+PA_clause  <- free_prefix* spaces? PA  free_suffix*     # pa_sentence starter
+PO_clause  <- free_prefix* spaces? PO  free_suffix*     # po_sentence starter
+PU_clause  <-              spaces? PU                   # pu_sentence toggle
                                                         #
 TI_clause  <-              spaces? TI                   # digits
                                                         #
@@ -137,8 +143,6 @@ CA_clause  <- free_prefix* spaces? CA                   # grammatical quote star
 CAI_clause <- free_prefix* spaces? CAI                  # grammatical quote terminator
 CO_clause  <- free_prefix* spaces? CO                   # foreign quote
 COI_clause <- free_prefix* spaces? COI                  # skipped foreign quote
-                                                        #
-CU_clause  <-              spaces? CU                   # paragraph unit eraser
 
 BE_clause_elidible  <- BE_clause?
 PA_clause_elidible  <- PA_clause?
@@ -177,7 +181,6 @@ CA    <- &particle_word !(CAI &post_word) (c &a vhowels)      &post_word
 CAI   <- &particle_word                   (c a i)             &post_word
 CO    <- &particle_word !(COI &post_word) (c &o vhowels)      &post_word
 COI   <- &particle_word                   (c o i)             &post_word
-CU    <- &particle_word                   (c &u vhowels)      &post_word
 JI    <- &particle_word                   (j &i vhowels)      &post_word
 JE    <- &particle_word                   (j &e vhowels)      &post_word
 JA    <- &particle_word                   (j &a vhowels)      &post_word
@@ -199,7 +202,7 @@ freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
 freeform_content <- freeform_consonants? vhowels (freeform_consonants vhowels)* consonant?
 freeform_consonants <- consonant_triplet / medial_pair / hyphen (initial_pair / consonant)
-freeform_end <- (single_pause_char / space_char / EOF)
+freeform_end <- (&sentence_eraser / single_pause_char / space_char / EOF)
 
 # - Native words
 native_word <- root_word / particle_word
@@ -275,9 +278,13 @@ g <- [gG]+ !unvoiced # <LEAF>
 k <- [kK]+ !voiced # <LEAF>
 
 # - Spaces / Pause
-post_word <- (single_pause_char &vowel) / !sonorant &consonant / spaces
-spaces <- space_char+ hesitation? (single_pause_char &vowel)? / single_pause_char &vowel / EOF
+pause_start <- vowel / sonorant
+post_word <- (single_pause_char &pause_start) / !sonorant &consonant / spaces
+spaces <- space_char+ hesitation? (single_pause_char &pause_start)? / single_pause_char &pause_start / EOF
 hesitation <- (n (space_char+ / EOF))+
+
+sentence_eraser <- (spaces NA+)+ spaces
+NA <- n a
 
 # - Special characters
 hyphen <- (hyphen_char [\n\r]*)? # hyphens + line break support

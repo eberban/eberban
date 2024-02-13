@@ -1044,13 +1044,12 @@ coi:
   family: "COI"
   short: "[E:tca ecoma] is a quote of an arbitrary string which is skipped by the speaker/author."
   gloss: "#skipped-foreign-quote"
-cu:
+na:
   id: spjmtjh1al
-  family: "CU"
+  family: "NA"
   gloss: "#erase"
   short: |
-    Erase the currently sentence/defintion.
-    Used when a mistake is made to redo the sentence/definition."
+    Erase from the start of the current sentence. 
 za:
   id: 4hiwgkyaqe
   family: "ZI"
