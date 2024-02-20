@@ -2039,6 +2039,21 @@ fule:
   family: "R"
   gloss: "knows"
   short: "[E:tce* pan] knows fact [A:()] from source [O:tce man]."
+vli:
+  id: hiskwb5iw2
+  family: "R"
+  gloss: "proposition name"
+  short: "[E:p] is the proposition [A:()]."
+vle:
+  id: hiskwb5iw2
+  family: "R"
+  gloss: "property name"
+  short: "[E:p] is the property [A:(p)]."
+vla:
+  id: hiskwb5iw2
+  family: "R"
+  gloss: "relation name"
+  short: "[E:p] is the relation [A:(p,q)]."
 dona:
   id: iffa5o0qnw
   family: "R"
@@ -2157,11 +2172,16 @@ gza:
   family: "R"
   gloss: "agentive cause"
   short: "[E:tce* pan] is an agentive cause of [A:()] being true."
+cmuel:
+  id: k59p1rkb54
+  family: "R"
+  gloss: "school"
+  short: "[E:tce* pan] is a school."
 kini:
   id: macaegnams
   family: "R"
   gloss: "learns"
-  short: "[E:tce* pan] learns/studies fact [A:()]."
+  short: "[E:tce* pan] learns fact [A:()] from [O:tce* pan]."
 seru:
   id: 0pi0sos7qt
   family: "R"
@@ -3714,7 +3734,11 @@ zidma:
   family: "R"
   gloss: "why"
   short: "[E:()] is true because of [A:()]"
-
+fcaon:
+  id: atpt42rrzm
+  family: "R"
+  gloss: "funny"
+  short: "It is funny that [E:()] is true."
 
 # -----
 # Compounds
