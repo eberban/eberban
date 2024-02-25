@@ -1,4 +1,4 @@
-# Explicit binding (VI/FI/SI)
+# Explicit binding (VI/FI/SI/PE/KI/GI/BA)
 
 ## Left atom place selection
 
@@ -35,11 +35,15 @@ __ve, va, vo, vu__ allow binding atom (or generic) arguments :
 
 To bind more than one argument of the same predicate we have to use the __FI__
 family, which interacts with the same predicate as the last non-closed __VI__.
+
 The __FI__ family follows the same pattern of vowels as __VI__.
 The above sentence can thus be rewritten as `duna [ve mi, fo mo vei] meon` or
-even as `duna [ve mi, fo mo, fa meon vei]`.
+even as `duna [ve mi, fo mo, fa meon vei]`. __FI__ have additional members:
+__feu__ to bind the same place as the previous __FI__ or __VI__ in the chain,
+while __fau__ binds the next place (this allows bind places of a predicate
+having more than 4 slots, which should however be rare).
 
-In the last version it is possible to omit the final __vei__. It is, however,
+In the last exemple it is possible to omit the final __vei__. It is, however,
 not possible to do so in the previous exemples as we would get the chain
 `mo meon` which is not what we want.
 
@@ -157,7 +161,9 @@ Using __ve, va, vo, vu__ on a predicate argument will not provide its
 definition but instead share it like an atom argument with the following
 predicate. The bound place must have the same predicate argument type however.
 To provide a definition of the predicate argument the particles __vie, via, vio,
-viu__ (and __FI__ equivalents) must be used.
+viu__ (and __FI__ equivalents) must be used. __FI__ have again additional members:
+__fei__ to bind the same place as the previous __FI__ or __VI__ in the chain,
+while __fai__ binds the next place.
 
 If we take the example `tce mian` from the previous chapter it is equivalent to
 `tce via mian`. Sharing with __ve, va, ...__ can be used like so:

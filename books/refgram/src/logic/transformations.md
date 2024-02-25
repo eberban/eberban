@@ -1,4 +1,4 @@
-# Predicate transformations (ZI)
+# Predicate transformations (ZI/BI)
 
 Particles of the __ZI__ family (all particles starting with _z-_) are used to
 transform the immediately following predicate, before chaining or explicit
@@ -136,6 +136,8 @@ instead refer to a clearly ordered word such as __tce__, for which we can speak
 about one of its members with __tci__ (is a member of) :
 
 _a meon sae buri __tce__ mian a mi dona tci ze tce_
+
+<span id="bo"></span>
 
 > A related concept is __forethought reference__ using __KI/GI__ variables. A
 > __KI/GI__ variable is first assigned by prefixing with __bo__ before being

@@ -10,60 +10,90 @@
   gloss: "ti"
   tags: [number, digit, informal]
   short: "Digit 0"
+  see_also: ["ti"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 1:
   id: hexrlbhzns
   family: "TI"
   gloss: "te"
   tags: [number, digit, informal]
   short: "Digit 1"
+  see_also: ["te"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 2:
   id: vhdoiu4y7b
   family: "TI"
   gloss: "ta"
   tags: [number, digit, informal]
   short: "Digit 2"
+  see_also: ["ta"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 3:
   id: ht2vpalcxn
   family: "TI"
   gloss: "to"
   tags: [number, digit, informal]
   short: "Digit 3"
+  see_also: ["to"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 4:
   id: v6z63bfmfc
   family: "TI"
   gloss: "tu"
   tags: [number, digit, informal]
   short: "Digit 4"
+  see_also: ["tu"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 5:
   id: jxgthvv20z
   family: "TI"
   gloss: "tie"
   tags: [number, digit, informal]
   short: "Digit 5"
+  see_also: ["tie"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 6:
   id: clpqjeyf1b
   family: "TI"
   gloss: "tia"
   tags: [number, digit, informal]
   short: "Digit 6"
+  see_also: ["tia"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 7:
   id: nftvzwfter
   family: "TI"
   gloss: "tio"
   tags: [number, digit, informal]
   short: "Digit 7"
+  see_also: ["tio"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 8:
   id: fm5zmy6i6s
   family: "TI"
   gloss: "tiu"
   tags: [number, digit, informal]
   short: "Digit 8"
+  see_also: ["tiu"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 9:
   id: xfkrzesgc0
   family: "TI"
   gloss: "tei"
   tags: [number, digit, informal]
   short: "Digit 9"
+  see_also: ["tei"]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 
 # -----
 # Core grammar particles
@@ -86,11 +116,15 @@ ma:
 
     Can also be used alone for tautology (always true), since there exist at
     least one atom.
+  see_also: ["man"]
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 man:
   id: r7zw74om6f
   family: "R"
   gloss: "atom set"
   short: "[E:tcei* ma] is a set of one or more atoms."
+  see_also: ["ma"]
 mai:
   id: uwjxg46v4h
   family: "MI"
@@ -102,6 +136,8 @@ mai:
     Binding the [E] place multiple time allows to express equality/equivalence.
 
     Can also be used alone for tautology (always true).
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mao:
   id: qzpxweephx
   family: "MI"
@@ -112,6 +148,8 @@ mao:
   notes: |
     With default [A] it corresponds to universal quantification of all arguments of [E].\
     𝜆c 𝜆E ∀x ∀y ... E(c,x,y,...)
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 
 mui:
   id: yftgrzjtiw
@@ -120,6 +158,8 @@ mui:
   tags: [core]
   short: "Always returns the \"unknown\" truth value."
   definition: 𝜆c unknown
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mue:
   id: asdzumonex
   family: "MI"
@@ -131,6 +171,9 @@ mue:
   notes: |
     Exposes the context, an implicit/hidden argument to every predicate, as
     an explicit parameter. Allows to handle the context like any other argument.
+  see_also: ["mua"]
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mua:
   id: t98puegdx0
   family: "MI"
@@ -142,36 +185,49 @@ mua:
   notes: |
     Evaluate a proposition with a provided context instead of the implicit
     forwarded context.
+  see_also: ["mue"]
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 ba:
   id: v47til8m74
   family: "BA"
   gloss: "#inline-arg-generic"
   tags: [core]
   short: "Inline atom/generic argument marker."
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
 bai:
   id: vnuzs4uzpz
   family: "BA"
   gloss: "#inline-arg-transitive"
   tags: [core]
   short: "Inline transitive predicate argument marker."
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
 bae:
   id: c8bgs5yx9k
   family: "BA"
   gloss: "#inline-arg-intransitive"
   tags: [core]
   short: "Inline intransitive predicate argument marker."
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
 vei:
   id: dgx3rzqk2s
   family: "VEI"
   gloss: "]"
   tags: [core, terminator, elidable]
   short: "Close the latest unclosed VI/FI."
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 vi:
   id: f29bns2aei
   family: "VI"
   gloss: "&["
   tags: [core]
   short: "State the following 0-ary predicate chain, unrelated to any place."
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 ve:
   id: jbhdi1yp6a
   family: "VI"
@@ -183,6 +239,8 @@ ve:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate E place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 va:
   id: zflv7yegal
   family: "VI"
@@ -194,6 +252,8 @@ va:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate A place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 vo:
   id: iwknbmwwuw
   family: "VI"
@@ -205,6 +265,8 @@ vo:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate O place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 vu:
   id: bfqny28gid
   family: "VI"
@@ -216,6 +278,8 @@ vu:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate U place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 vie:
   id: f5qpoxyo34
   family: "VI"
@@ -227,6 +291,8 @@ vie:
   notes: |
     The following predicate chain have the same type as the E place and is
     equivalent. The E place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 via:
   id: yq567wlm2t
   family: "VI"
@@ -238,6 +304,8 @@ via:
   notes: |
     The following predicate chain have the same type as the A place and is
     equivalent. The A place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 vio:
   id: glcyqfkkoq
   family: "VI"
@@ -249,6 +317,8 @@ vio:
   notes: |
     The following predicate chain have the same type as the O place and is
     equivalent. The O place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 viu:
   id: ce345k1ke4
   family: "VI"
@@ -260,11 +330,15 @@ viu:
   notes: |
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 fi:
   id: kd9qbtxtq0
   family: "FI"
   gloss: "]&["
   short: "State the following predicate chain, unrelated to any place."
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fe:
   id: vyrnf5aysv
   family: "FI"
@@ -276,6 +350,8 @@ fe:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate E place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fa:
   id: qxgljpgy5n
   family: "FI"
@@ -287,6 +363,8 @@ fa:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate A place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fo:
   id: ioz2vm2anw
   family: "FI"
@@ -298,6 +376,8 @@ fo:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate O place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fu:
   id: ydlpoaeiyz
   family: "FI"
@@ -309,6 +389,8 @@ fu:
   notes: |
     The following predicate chain is a property over the variable used in the
     suffixed predicate U place.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fie:
   id: yth6gftm5i
   family: "FI"
@@ -320,6 +402,8 @@ fie:
   notes: |
     The following predicate chain have the same type as the E place and is
     equivalent. The E place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 fia:
   id: 0uktfjuhwa
   family: "FI"
@@ -331,6 +415,8 @@ fia:
   notes: |
     The following predicate chain have the same type as the A place and is
     equivalent. The A place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 fio:
   id: oasxkhx46g
   family: "FI"
@@ -342,6 +428,8 @@ fio:
   notes: |
     The following predicate chain have the same type as the O place and is
     equivalent. The O place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 fiu:
   id: ggbu5esdez
   family: "FI"
@@ -353,6 +441,8 @@ fiu:
   notes: |
     The following predicate chain have the same type as the U place and is
     equivalent. The U place must be a predicate place.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 feu:
   id: xfm9dl3n9d
   family: "FI"
@@ -361,6 +451,8 @@ feu:
   short: |
     The same place as the latest VI/FI, of the predicate suffixed with latest
     non-closed VI, is shared with the following predicate chain.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fau:
   id: 7fyf7dhb24
   family: "FI"
@@ -369,6 +461,8 @@ fau:
   short: |
     The next place as the latest VI/FI, of the predicate suffixed with latest
     non-closed VI, is shared with the following predicate chain.
+  links:
+    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
 fei:
   id: 0ed0lr14i6
   family: "FI"
@@ -377,6 +471,8 @@ fei:
   short: |
     The same place as the latest VI/FI, of the predicate suffixed with latest
     non-closed VI, is equivalent to the following predicate chain.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 fai:
   id: v92a3mw2kl
   family: "FI"
@@ -385,108 +481,144 @@ fai:
   short: |
     The next place as the latest VI/FI, of the predicate suffixed with latest
     non-closed VI, is equivalent to with the following predicate chain.
+  links:
+    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 se:
   id: qgxn2xhcit
   family: "SI"
   gloss: "<EE>"
   tags: [core]
   short: "Expose E place, and chain to E."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sa:
   id: oricdbjcuk
   family: "SI"
   gloss: "<AA>"
   tags: [core]
   short: "Expose A place, and chain to A."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 so:
   id: 1veohtfe08
   family: "SI"
   gloss: "<OO>"
   tags: [core]
   short: "Expose O place, and chain to O."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 su:
   id: kkao3xh8vs
   family: "SI"
   gloss: "<II>"
   tags: [core]
   short: "Expose U place, and chain to U."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sea:
   id: xdpcwhenkp
   family: "SI"
   gloss: "<EA>"
   tags: [core]
   short: "Expose places E and A, then chain to A."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 seo:
   id: vxhg5a1wzo
   family: "SI"
   gloss: "<EO>"
   tags: [core]
   short: "Expose places E and O, then chain to O."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 seu:
   id: z4ugiojfqh
   family: "SI"
   gloss: "<EU>"
   tags: [core]
   short: "Expose places E and U, then chain to U."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sae:
   id: rnwr8famzy
   family: "SI"
   gloss: "<AE>"
   tags: [core]
   short: "Expose places A and E, then chain to E."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sao:
   id: xoapimitmx
   family: "SI"
   gloss: "<AO>"
   tags: [core]
   short: "Expose places A and O, then chain to O."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sau:
   id: iqjs2euswn
   family: "SI"
   gloss: "<AU>"
   tags: [core]
   short: "Expose places A and U, then chain to U."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 soe:
   id: zje1rsx4uk
   family: "SI"
   gloss: "<OE>"
   tags: [core]
   short: "Expose places O and E, then chain to E."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 soa:
   id: rythxb2fce
   family: "SI"
   gloss: "<OA>"
   tags: [core]
   short: "Expose places O and A, then chain to A."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sou:
   id: s7zufvudfl
   family: "SI"
   gloss: "<OU>"
   tags: [core]
   short: "Expose places O and U, then chain to U."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sue:
   id: pyvknqecpo
   family: "SI"
   gloss: "<UE>"
   tags: [core]
   short: "Expose places U and E, then chain to E."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sua:
   id: tqdbdmjidp
   family: "SI"
   gloss: "<UA>"
   tags: [core]
   short: "Expose places U and A, then chain to A"
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 suo:
   id: gewbwhd3d4
   family: "SI"
   gloss: "<UO>"
   tags: [core]
   short: "Expose places A and O, then chain to O."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 si:
   id: gjqcv0bq15
   family: "SI"
   gloss: "I>>"
   tags: [core]
   short: "Expose non places and chain to the transivity place."
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sie:
   id: r3xo7t14df
   family: "SI"
@@ -495,6 +627,8 @@ sie:
   short: |
     Chain to the E place, and exposes all the places of the predicate
     bound to it.
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sia:
   id: d0l5dow2kn
   family: "SI"
@@ -503,6 +637,8 @@ sia:
   short: |
     Chain to the A place, and exposes all the places of the predicate
     bound to it.
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sio:
   id: imysksrbhz
   family: "SI"
@@ -511,6 +647,8 @@ sio:
   short: |
     Chain to the O place, and exposes all the places of the predicate
     bound to it.
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 siu:
   id: fec2vdxbxf
   family: "SI"
@@ -519,12 +657,16 @@ siu:
   short: |
     Chain to the U place, and exposes all the places of the predicate
     bound to it.
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 ze:
   id: hq8iez19yn
   family: "ZI"
   gloss: "#reuse"
   tags: [core]
   short: "Use the latest instance and variables of the predicate word instead of creating new ones."
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
 zei:
   id: sryho6kcbc
   family: "ZI"
@@ -533,6 +675,8 @@ zei:
   short: |
     Use the latest instance and variables of a compound containing this word
     instead of creating new ones.
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
 zi:
   id: drzw8dig76
   family: "ZI"
@@ -541,6 +685,8 @@ zi:
   short: |
     Narrow-scope negation : negates the predicate unit but not the existential variables it creates.
     There exist e, a,... such that unit(e, a, ...) is false.
+  links:
+    - ["icon-book", "Predicate transformations (ZI)", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#negations]
 zoie:
   id: uhlxkvwwa7
   family: "ZI"
@@ -548,6 +694,8 @@ zoie:
   tags: [core, default]
   short: |
     Satisfy the default bound of the E place of \[predicate\] (set with {oie}).
+  links:
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zoia:
   id: pnlxz4xwki
   family: "ZI"
@@ -555,6 +703,8 @@ zoia:
   tags: [core, default]
   short: |
     Satisfy the default bound of the A place of \[predicate\] (set with {oia}).
+  links:
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zoio:
   id: ypral6pdfc
   family: "ZI"
@@ -562,6 +712,8 @@ zoio:
   tags: [core, default]
   short: |
     Satisfy the default bound of the O place of \[predicate\] (set with {oio}).
+  links:
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zoiu:
   id: eylcna75du
   family: "ZI"
@@ -569,6 +721,8 @@ zoiu:
   tags: [core, default]
   short: |
     Satisfy the default bound of the U place of \[predicate\] (set with {oiu}).
+  links:
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zu:
   id: khqauhadzn
   family: "ZI"
@@ -586,6 +740,8 @@ zu:
 
     Using a transitive GI variable can be seen as if it was some KI variable
     which was then instanciated with {zu KI}.
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Instantiation", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#instantiation]
 zui:
   id: 34z5pisibi
   family: "ZI"
@@ -603,6 +759,8 @@ zui:
 
     Using an instransitive GI variable can be seen as if it was some KI variable
     which was then instanciated with {zui KI}.
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Instantiation", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#instantiation]
 
 zue:
   id: qrpqjlbxo6
@@ -626,6 +784,8 @@ zue:
 
     The selected proposition place will be the one being transitioned to in
     chaining (unless overwritten by a SE placed before {zue}).
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Other", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#other]
 oie:
   id: kcj6ptjgvi
   family: "O"
@@ -633,6 +793,9 @@ oie:
   tags: [core, default]
   short: |
     Set the default constraint for the E place of the following predicate word.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 oia:
   id: tbu1ntupmq
   family: "O"
@@ -640,6 +803,9 @@ oia:
   tags: [core, default]
   short: |
     Set the default constraint for the A place of the following predicate word.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 oio:
   id: hokid2gzwm
   family: "O"
@@ -647,6 +813,9 @@ oio:
   tags: [core, default]
   short: |
     Set the default constraint for the O place of the following predicate word.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 oiu:
   id: 87acytzfsn
   family: "O"
@@ -654,18 +823,25 @@ oiu:
   tags: [core, default]
   short: |
     Set the default constraint for the U place of the following predicate word.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
+    - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 on:
   id: mkilbshz7v
   family: "O"
   gloss: "#def"
   tags: [core]
   short: "Start a predicate definition."
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 oni:
   id: c0kwgmhcwy
   family: "O"
   gloss: "#def-capture"
   tags: [core]
   short: "Start a predicate definition which captures the current context."
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 ol:
   id: 7uffxtuqg2
   family: "O"
@@ -679,6 +855,8 @@ ol:
     ignore it, while the speaker can revert it using {ni}.
   notes: |
     {ol gi ...} is equivalent to {on gi ... nu gi}
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 ahu:
   id: nxtau0gqfz
   family: "A"
@@ -687,6 +865,8 @@ ahu:
   short: |
     Registers a sentence wrapper, such that any sentence [E:()] expressed with
     {a} is wrapped by this registered predicate.
+  links:
+    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 an:
   id: zkukmnzdxs
   family: "A"
@@ -695,6 +875,8 @@ an:
   short: |
     Starts a context switching sentence, such that [E:ma] will be the context
     provided to any following sentences.
+  links:
+    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 anu:
   id: utl5b5flgt
   family: "A"
@@ -703,66 +885,89 @@ anu:
   short: |
     Registers a context-switching sentence, that will be applied automatically
     between each sentences as if it was used with {an}.
+  links:
+    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 pe:
   id: c9njzictfu
   family: "PE"
   gloss: "["
   tags: [core]
   short: "Inline scope starter."
+  links:
+    - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
 pei:
   id: cou785jhzz
   family: "PEI"
   gloss: "]"
   tags: [core, terminator, elidable]
   short: "Inline scope elidible terminator."
+  links:
+    - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
 nu:
   id: em8adaqgg3
   family: "NI"
   gloss: "#axiom-on"
   tags: [core]
   short: "Enable axiomatic predicate."
+  links:
+    - ["icon-book", "Sentences - NI family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ni-family]
 ni:
   id: jlotxmhwg4
   family: "NI"
   gloss: "#axiom-off"
   tags: [core]
   short: "Disable axiomatic predicate."
+  links:
+    - ["icon-book", "Sentences - NI family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ni-family]
 nohu:
   id: 3xu1e18wct
   family: "NI"
   gloss: "#namespace-axiom-on"
   tags: [core]
   short: "Enable all axioms in given namespace."
+  links:
+    - ["icon-book", "Sentences - NI family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ni-family]
 nohi:
   id: n6zs199o50
   family: "NI"
   gloss: "#namespace-axiom-off"
   tags: [core]
   short: "Disable all axioms in given namespace."
+  links:
+    - ["icon-book", "Sentences - NI family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ni-family]
 no:
   id: fa5t5drbrq
   family: "NI"
   gloss: "#namespace-extract"
   tags: [core]
   short: "Extract predicate from given namespace, making it usable without {pi}."
+  links:
+    - ["icon-book", "Sentences - NI family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ni-family]
 noi:
   id: 6zdmybfdxu
   family: "NI"
   gloss: "#namespace-extract-all"
   tags: [core]
   short: "Extract all predicates from given namespace, making them usable without {pi}."
+  links:
+    - ["icon-book", "Sentences - NI family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ni-family]
 be:
   id: 0hikwjp7eh
   family: "BE"
   gloss: "#argument-list"
   tags: [core, terminator, elidable]
   short: Borrowing and arguments list terminator.
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
+    - ["icon-book", "Borrowings", https://eberban.github.io/eberban/books/refgram/book/grammar/borrowings.html]
 bi:
   id: iqamwz7uhd
   family: "BI"
   gloss: "#wide-neg"
   tags: [core, negation]
   short: "Wide scope negation ranging over existential variables and predicates."
+  links:
+    - ["icon-book", "Predicate transformations - Negations", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations]
 bo:
   id: 9eludeaq4v
   family: "BO"
@@ -775,6 +980,8 @@ bo:
     Using it before words other than KI make them behave like KI variables. It
     can thus be used to define freeform predicate variables (i-) to refer to
     an atom.
+  links:
+    - ["icon-book", "Predicate transformations - Notes on BO", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#bo]
 boi:
   id: aeguxusum3
   family: "BO"
@@ -786,6 +993,8 @@ boi:
 
     When used before KI, have the same meaning as {bo} as all KI are expected
     to have type (a).
+  links:
+    - ["icon-book", "Predicate transformations - Notes on BO", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#bo]
 
 # -----
 # Extended grammar particles
@@ -797,11 +1006,15 @@ mi:
   short: "[E:tce* man] is I/me/the speaker(s)/narrator(s)."
   gloss: "me"
   notes: At least one of the members must be the main speaker/narrator.
+  links:
+    - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mo:
   id: zjytqy23pq
   family: "MI"
   short: "[E:tce* man] is you, a listener."
   gloss: "you"
+  links:
+    - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mio:
   id: itsqhv9xao
   family: "MI"
@@ -809,6 +1022,8 @@ mio:
     Every member of [E:tco* man] is either I/a speaker/author; or you, a listener; and
     contains at least one of each.
   gloss: "inclusive-we"
+  links:
+    - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mie:
   id: 9swjxu2mjz
   family: "MI"
@@ -822,6 +1037,8 @@ me:
   gloss: "the"
   short: |
     [E:ma] is something that the speaker particularily have in mind.
+  links:
+    - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 ji:
   id: uqb3n5070a
   family: "JI"
@@ -832,6 +1049,8 @@ ji:
     Cardinal number terminator. The preceding number have definition:\
     [E:tce* p] is (a group of) [number] things satisfying [A:(tca p)].\
     The number must be a natural number (non zero positive integer).
+  links:
+    - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 jie:
   id: uvvfj77x9f
   family: "JI"
@@ -841,6 +1060,8 @@ jie:
   short: |
     Abstract number terminator. The preceding number have definition:\
     [E:tce gan] is the number [number] times [A:tce gan] (default: 1).
+  links:
+    - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 jia:
   id: dnj7gskeg7
   family: "JI"
@@ -851,6 +1072,8 @@ jia:
     Raw cardinal number terminator. The preceding number have definition:\
     [E:tce* p] is (a group of) [number] things satisfying [A:(p)].\
     The number must be a natural number (non zero positive integer).
+  links:
+    - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 jio:
   id: 83fvb9onn2
   family: "JI"
@@ -861,6 +1084,8 @@ jio:
     Universal cardinal number terminator. The preceding number have definition:\
     [E:tce* p] is (a group of) the only [number] things satisfying [A:(tca p)].\
     The number must be a natural number (non zero positive integer).
+  links:
+    - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 jioa:
   id: hvmxrbwgxx
   family: "JI"
@@ -871,6 +1096,8 @@ jioa:
     Raw universal cardinal number terminator. The preceding number have definition:\
     [E:tce* p] is (a group of) the only [number] things satisfying [A:(p)].\
     The number must be a natural number (non zero positive integer).
+  links:
+    - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 jiu:
   id: xtles9edl2
   family: "JI"
@@ -881,12 +1108,16 @@ jiu:
     Ordinal number terminator. The preceding number have definition:\
     [E:tca p] is the [number]th member of sequence [A:blu p].\
     The number must be a natural number (non zero positive integer).
+  links:
+    - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 ju:
   id: pasttlpzrh
   family: "JO"
   gloss: "#base"
   tags: [number, separator]
   short: Base separator. Base is defined using the last allowed digit.
+  links:
+    - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 jo:
   id: 1hqmjyuznz
   family: "JO"
@@ -895,6 +1126,8 @@ jo:
   short: |
     Fractional part separator. Separate the integer part from the excess beyond
     the integer part.
+  links:
+    - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 joi:
   id: hop8n6mgoa
   family: "JO"
@@ -903,6 +1136,8 @@ joi:
   short: |
     Negative fractional part separator. Separate the integer part from the excess beyond
     the integer part, and indicates that the number is negative.
+  links:
+    - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 ja:
   id: asckk59auo
   family: "JA"
@@ -911,6 +1146,8 @@ ja:
   short: |
     Repeating part separator. Inside a fractional part starts a string of
     digits that repeat infinitely.
+  links:
+    - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 je:
   id: lxvv3shd2h
   family: "JE"
@@ -918,6 +1155,8 @@ je:
   tags: [number, separator]
   short: |
     Magnitude part separator. Number is multiplied by base^magnitude.
+  links:
+    - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 jei:
   id: fkgaal9xfc
   family: "JE"
@@ -925,118 +1164,158 @@ jei:
   tags: [number, separator]
   short: |
     Negative magnitude part separator. Number is multiplied by base^(-magnitude).
+  links:
+    - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 ti:
   id: ivcpysqf4j
   family: "TI"
   short: "Digit 0"
   gloss: "0"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 te:
   id: 2oobzn2l6h
   family: "TI"
   short: "Digit 1"
   gloss: "1"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 ta:
   id: byl153scbe
   family: "TI"
   short: "Digit 2"
   gloss: "2"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 to:
   id: ahfrldpv68
   family: "TI"
   short: "Digit 3"
   gloss: "3"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tu:
   id: p7eyosrgae
   family: "TI"
   short: "Digit 4"
   gloss: "4"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tie:
   id: mgrqxslqve
   family: "TI"
   short: "Digit 5"
   gloss: "5"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tia:
   id: hwnppc9ghm
   family: "TI"
   short: "Digit 6"
   gloss: "6"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tio:
   id: 1mqghjrvry
   family: "TI"
   short: "Digit 7"
   gloss: "7"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tiu:
   id: ghcbnijzcv
   family: "TI"
   short: "Digit 8"
   gloss: "8"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tei:
   id: shcfpcezrg
   family: "TI"
   short: "Digit 9"
   gloss: "9"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tea:
   id: wde3jzgicf
   family: "TI"
   short: "Digit A"
   gloss: "A"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 teo:
   id: 7ik9nhaqhb
   family: "TI"
   short: "Digit B"
   gloss: "B"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 teu:
   id: fykhc8yfxl
   family: "TI"
   short: "Digit C"
   gloss: "C"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tai:
   id: xqnikwdrx3
   family: "TI"
   short: "Digit D"
   gloss: "D"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tae:
   id: tcdujabqlx
   family: "TI"
   short: "Digit E"
   gloss: "E"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tao:
   id: rvtqoqug7a
   family: "TI"
   short: "Digit F"
   gloss: "F"
   tags: [digit, number]
+  links:
+    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 ca:
   id: qgitj7lmtu
   family: "CA"
   short: "Starts grammatically correct eberban quote. [E:tca ecama] is text [quote]."
   gloss: "#quote-start"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 cai:
   id: m2tk0zmvgh
   family: "CAI"
   short: "Ends grammatically correct eberban quote."
   gloss: "#quote-end"
   tags: [terminator]
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 ci:
   id: qd380clfxd
   family: "CI"
   short: "Quote next word. [E:tca ecima] is the word [word]."
   gloss: "#word-quote"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 cie:
   id: acauojxxsk
   family: "CI"
@@ -1044,37 +1323,52 @@ cie:
   gloss: "#family-quote"
   nodes: |
     TODO: Add predicates to manipulate language concepts.
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 ce:
   id: yjvjupth2t
   family: "CE"
   short: "[E:blu ecema] is the string/list of letters encoded by [quote]."
   gloss: "#spelling-start"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 ceu:
   id: zsud61ou1j
   family: "CE"
   short: "[E:blu eceuma] is the string of sounds encoded by [quote]."
   gloss: "#utterance-spelling-start"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 cei:
   id: r0ndrlj4ft
   family: "CEI"
   short: "Character by character/spelling quote terminator"
   gloss: "#spelling-end"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 co:
   id: vdlcqmqkoi
   family: "CO"
   short: "[E:tca ecoma] is a quote of an arbitrary string."
   gloss: "#foreign-quote"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 coi:
   id: j6cqu8p0dd
   family: "COI"
   short: "[E:tca ecoma] is a quote of an arbitrary string which is skipped by the speaker/author."
   gloss: "#skipped-foreign-quote"
+  links:
+    - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 ra:
   id: spjmtjh1al
   family: "RA"
   gloss: "#erase"
   short: |
     Erase from the start of the current sentence. 
+  see_also: ["buhu"]
+  links:
+    - ["icon-book", "Sentences - RA eraser", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ra-eraser]
 za:
   id: 4hiwgkyaqe
   family: "ZI"
@@ -1083,6 +1377,8 @@ za:
   notes: |
     Another place can be selected by adding a SE particle between {za} and the
     predicate.
+  links:
+    - ["icon-book", "Predicate transformations - Names", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#names]
 zai:
   id: bzmsfmniyb
   family: "ZI"
@@ -1091,6 +1387,8 @@ zai:
   note: |
     Another place can be selected by adding a SE particle between {zai} and the
     predicate.
+  links:
+    - ["icon-book", "Predicate transformations - Names", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#names]
 a:
   id: awzbv8iu8c
   family: "A"
@@ -1104,6 +1402,8 @@ a:
     axiom.
 
     {eze'a} thus allows to refer to the latest assertion.
+  links:
+    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 al:
   id: ds8h6j4llp
   family: "A"
@@ -1117,6 +1417,8 @@ al:
     axiom.
 
     {eze'al} thus allows to refer to the latest assertion.
+  links:
+    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 o:
   id: ici1wrui6g
   family: "O"
@@ -1128,6 +1430,8 @@ o:
     unnamable predicate used solely to make an axiom. Since by uttering a {o}
     sentence the speaker indeed ask a question ({eio'ol}), it is not possible to
     reject this axiom.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 di:
   id: my7irg3svn
   family: "DI"
@@ -1135,12 +1439,16 @@ di:
   short: |
     Attention focus: the listener should be extra attentive to the following word.
     Maybe it would be especially prone to confusion?
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 die:
   id: qoterl6gxk
   family: "DI"
   gloss: "#contrastive-focus"
   short: |
     Contrastive focus: It's that thing and not something else that was expected.
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 dia:
   id: safkce8biy
   family: "DI"
@@ -1148,57 +1456,78 @@ dia:
   short: |
     Newsworthiness focus: Marks the part of the sentence containing the most
     important new information.
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 de:
   id: np9l6evbth
   family: "DE"
   gloss: "#interjection"
   short: "Attach a single predicate that acts as an interjection."
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 dei:
   id: fbxzqmrleb
   family: "DE"
   gloss: "#metadata"
   short: "Attached word is a metadata tag / hashtag."
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 da:
   id: 1us2czwmre
   family: "DA"
   gloss: "("
   short: "Starts parenthetical note."
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 dai:
   id: cie8dryois
   family: "DAI"
   gloss: ")"
   tags: [terminator]
   short: "Ends parenthetical note."
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 bu:
   id: z05feq6b63
   family: "BU"
   gloss: "#atom-set"
   tags: [enum, set]
   short: "Atoms/generics set separator."
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 bui:
   id: lhzsdl98sk
   family: "BU"
   gloss: "#pred-set"
   tags: [enum, set]
   short: "Predicates set separator."
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 bue:
   id: pyzvhbntb5
   family: "BU"
   gloss: "#atom-list"
   tags: [enum, list]
   short: "Atoms/generics list separator."
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 buei:
   id: 6ekftp64e3
   family: "BU"
   gloss: "#pred-list"
   tags: [enum, list]
   short: "Predicates list separator."
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 buhu:
   id: iquyczidl4
   family: "BU"
   gloss: "#erased"
   tags: [enum]
   short: "Erase the current enumeration item."
+  see_also: ["ra"]
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 pi:
   id: ldy5ka8k6p
   family: "PI"
@@ -1207,6 +1536,8 @@ pi:
     Predicate namespace separator. Predicates imported from another text with
     {ohi} are accessible inside the namespace named after the word used
     after {ohi}.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 po:
   id: jjo3ibjqoy
   family: "PO"
@@ -1219,6 +1550,8 @@ po:
 
     When used outside of an imported text, definitions of namespaced predicates
     (`on <namespace> pi <pred> ...`) will be automatically extracted by {noi}.
+  links:
+    - ["icon-book", "Sentences - Paragraph marker PO", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#paragraph-marker-po]
 poi:
   id: 19kponvnpj
   family: "PO"
@@ -1234,6 +1567,8 @@ poi:
     When used outside of an imported text, definitions of namespaced predicates
     (`on <namespace> pi <pred> ...`) will NOT be automatically extracted by
     {noi}.
+  links:
+    - ["icon-book", "Sentences - Paragraph marker PO", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#paragraph-marker-po]
 pu:
   id: ldy5ka8k6p
   family: "PU"
@@ -1241,6 +1576,8 @@ pu:
   short: |
     Elidible sentence terminator. Used solely to attach metadata to the sentence
     after the fact, as if it was attached to A/O/NI.
+  links:
+    - ["icon-book", "Sentences - Sentence terminator PU", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#sentence-terminator-pu]
 ohi:
   id: j7cwz23nkd
   family: "O"
@@ -1254,6 +1591,8 @@ ohi:
     defined by other O particles.
 
     Namespaces can be nested if the imported text also uses {ohi}.
+  links:
+    - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 do:
   id: to8ca3apdr
   family: "DO"
@@ -1531,7 +1870,7 @@ kin:
     pi e kin pi
 e zai pe:
   id: hgqsgbly3t
-  family: "C2"
+  family: "C"
   gloss: "ident"
   short: |
     [E:ma] is an identifier/name made from property [A:(p)].
@@ -3756,361 +4095,361 @@ zidma:
 
 e tsae ban:
   id: wf13qtgrwk
-  family: "C2"
+  family: "C"
   gloss: "conlang"
   short: "[E:tce* ban] is a constructed language/conlang."
 e boiur spoul:
   id: krykgk8hic
-  family: "C2"
+  family: "C"
   gloss: "tortoise"
   tags: [animal]
   short: "[E:tce* pan] is a tortoise"
 e ber ban:
   id: l3hopxljdm
-  family: "C2"
+  family: "C"
   gloss: "eberban"
   tags: [cultural]
   short: "[E:tca ban] is the eberban language."
 e uaotearoa stan:
   id: 0hmp09luqa
-  family: "C2"
+  family: "C"
   gloss: "Aotearoa (New Zealand)"
   tags: [cultural]
   short: "[E:tca stan] is Aotearoa (New Zealand)."
 e ujbo ban:
   id: ngdssrwkz9
-  family: "C2"
+  family: "C"
   gloss: "lojban"
   tags: [cultural]
   short: "[E:tca ban] is the lojban language."
 e ufranse ban:
   id: prqgtxzvj7
-  family: "C2"
+  family: "C"
   gloss: "french language"
   tags: [cultural]
   short: "[E:tca ban] is the french language."
 e ufranse stan:
   id: ql0k4zdkcv
-  family: "C2"
+  family: "C"
   gloss: "France"
   tags: [cultural]
   short: "[E:tca stan] is France."
 e uinglic ban:
   id: funyada7wl
-  family: "C2"
+  family: "C"
   gloss: "english language"
   tags: [cultural]
   short: "[E:tca ban] is the english language."
 e unihon ban:
   id: 1x7rqmd7o9
-  family: "C2"
+  family: "C"
   gloss: "japanese language"
   tags: [cultural]
   short: "[E:tca ban] is the japanese language."
 e unihon stan:
   id: mpd6xpvqnk
-  family: "C2"
+  family: "C"
   gloss: "Japan"
   tags: [cultural]
   short: "[E:tca stan] is Japan."
 e udjonguo ban:
   id: 6b3k4qzh5t
-  family: "C2"
+  family: "C"
   gloss: "chinese language"
   tags: [cultural]
   short: "[E:tca ban] is chinese language."
 e udjonguo stan:
   id: umjwjoi13h
-  family: "C2"
+  family: "C"
   gloss: "China"
   tags: [cultural]
   short: "[E:tca stan] is China."
 e udoitce ban:
   id: ro6uq1ihpz
-  family: "C2"
+  family: "C"
   gloss: "german language"
   tags: [cultural]
   short: "[E:tca ban] is german language."
 e udoitce stan:
   id: wrjrg2gvav
-  family: "C2"
+  family: "C"
   gloss: "Germany"
   tags: [cultural]
   short: "[E:tca stan] is Germany."
 e umiser stan:
   id: vrbsurc6ev
-  family: "C2"
+  family: "C"
   gloss: "Egypt"
   tags: [cultural]
   short: "[E:tca stan] is Egypt."
 e uhangu ban:
   id: hsclm6vdb3
-  family: "C2"
+  family: "C"
   gloss: "south korean language"
   tags: [cultural]
   short: "[E:tca ban] is south korean language."
 e uhangu stan:
   id: j5qgrzg33d
-  family: "C2"
+  family: "C"
   gloss: "South Korea"
   tags: [cultural]
   short: "[E:tca stan] is South Korea."
 e umaori ban:
   id: 5pkk20qhjt
-  family: "C2"
+  family: "C"
   gloss: "māori language"
   tags: [cultural]
   short: "[E:tca ban] is the māori language (New Zealand)."
 e utcoson ban:
   id: xapwbat5r8
-  family: "C2"
+  family: "C"
   gloss: "north korean language"
   tags: [cultural]
   short: "[E:tca ban] is north korean language."
 e utcoson stan:
   id: m9uia2qvmv
-  family: "C2"
+  family: "C"
   gloss: "North Korea"
   tags: [cultural]
   short: "[E:tca stan] is North Korea."
 e utoan ban:
   id: c8xqa37om4
-  family: "C2"
+  family: "C"
   gloss: "Toaq language"
   tags: [cultural]
   short: "[E:tca ban] is the Toaq language."
 e kre vire:
   id: t1wi0cej5p
-  family: "C2"
+  family: "C"
   gloss: "guided visit"
   short: "[E:tce* pan] visits [A:tce* pan] with guide [O:tce* pan]."
 e spi toril:
   id: z6av1nqtuf
-  family: "C2"
+  family: "C"
   gloss: "parrot"
   tags: [animal]
   short: "[E:tce* pan] is a parrot."
 e du zoi:
   id: sw1lnyrbpe
-  family: "C2"
+  family: "C"
   gloss: "paragraph"
   short: "[E:tce* man] is a paragraph."
 e bino cnue:
   id: o5vxdoahhm
-  family: "C2"
+  family: "C"
   gloss: "symptom"
   short: "[E:tce* man] [ill/sickness] is characterized by symptom [A:tce* man]."
 e spua ckuil:
   id: umamaeu1na
-  family: "C2"
+  family: "C"
   gloss: "home stellar body (Earth)"
   short: |
     [E:tca pan] is the home stellar body of species [A:tce* man]
     (default: {flan}/humans, thus [E] defaults to Earth).
 e spua ckuel:
   id: 732rregyg8
-  family: "C2"
+  family: "C"
   gloss: "home star (Sun)"
   short: |
     [E:tca pan] is the home star of species [A:tce* man]
     (default: {flan}/humans, thus [E] defaults to the Sun).
 e siun vaun:
   id: n7xvmqqkza
-  family: "C2"
+  family: "C"
   gloss: "mortal"
   short: "[E:tce* man] is mortal/fated to die."
 e jveno kena:
   id: wvg2ebwap5
-  family: "C2"
+  family: "C"
   gloss: "hugs"
   short: "[E:tce* pan] hugs [A:tce* pan]."
 e kini bun:
   id: o9bwkmfwvs
-  family: "C2"
+  family: "C"
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
   definition: "on ekinibun ke ka pi ke bun gla kini via seru ka"
 e ze a:
   id: mfyipbixdd
-  family: "C2"
+  family: "C"
   short: "Repeats the previous assertion. See {a} notes."
   gloss: "latest-assertion"
 e ze al:
   id: s2gdsl21l7
-  family: "C2"
+  family: "C"
   short: "Repeats the previous request. See {al} notes."
   gloss: "latest-request"
 e bzael mue:
   id: hshwh0yqhx
-  family: "C2"
+  family: "C"
   gloss: "set-opiner"
   short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
   notes: See {bzael} for explanations.
 e ca ma:
   id: 2vi80y570m
-  family: "C2"
+  family: "C"
   gloss: "eberban-quote"
   short: "[E:tce* man] is a grammatically valid Eberban quote."
   notes: Can be constructed using {ca}.
 e tri pure:
   id: 9v79ww9nwi
-  family: "C2"
+  family: "C"
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
   notes: "[E] tries to hear [A]."
 e ci ma:
   id: oqk7vz0ubt
-  family: "C2"
+  family: "C"
   gloss: "word"
   short: "[E:tce* man] is a word."
 e ce ma:
   id: 1w44wy894g
-  family: "C2"
+  family: "C"
   gloss: "letter"
   short: "[E:tce* man] is a letter/grapheme."
 e ceu ma:
   id: 2s1nee0bdi
-  family: "C2"
+  family: "C"
   gloss: "sound"
   short: "[E:tce* man] is a sound/phoneme."
 e co ma:
   id: 4u8h1cwf6p
-  family: "C2"
+  family: "C"
   gloss: "string of data"
   short: "[E:tce* man] is a string of data."
 e ti denal:
   id: 8s5ejjs7x4
-  family: "C2"
+  family: "C"
   gloss: "Sunday"
   tags: [time, event, day]
   short: "It is Sunday."
 e te denal:
   id: gvgo57y1k1
-  family: "C2"
+  family: "C"
   gloss: "Monday"
   tags: [time, event, day]
   short: "It is Monday."
 e ta denal:
   id: wdnqacd5fb
-  family: "C2"
+  family: "C"
   gloss: "Tuesday"
   tags: [time, event, day]
   short: "It is Tuesday."
 e to denal:
   id: dut0zinzmi
-  family: "C2"
+  family: "C"
   gloss: "Wednesday"
   tags: [time, event, day]
   short: "It is Wednesday."
 e tu denal:
   id: maomhd37vd
-  family: "C2"
+  family: "C"
   gloss: "Thursday"
   tags: [time, event, day]
   short: "It is Thursday."
 e tie denal:
   id: 5pxlkakuie
-  family: "C2"
+  family: "C"
   gloss: "Friday"
   tags: [time, event, day]
   short: "It is Friday."
 e tia denal:
   id: eyxmjzfra3
-  family: "C2"
+  family: "C"
   gloss: "Saturday"
   tags: [time, event, day]
   short: "It is Saturday."
 e tio denal:
   id: k2mw091d8h
-  family: "C2"
+  family: "C"
   gloss: "Sunday"
   tags: [time, event, day]
   short: "It is Sunday."
 e te garel:
   id: 65la7i57hq
-  family: "C2"
+  family: "C"
   gloss: "January"
   tags: [time, event, month]
   short: "It is January."
 e ta garel:
   id: fb6nk64zut
-  family: "C2"
+  family: "C"
   gloss: "February"
   tags: [time, event, month]
   short: "It is February."
 e to garel:
   id: cmn3yu5tbr
-  family: "C2"
+  family: "C"
   gloss: "March"
   tags: [time, event, month]
   short: "It is March."
 e tu garel:
   id: hlnl4k1tfh
-  family: "C2"
+  family: "C"
   gloss: "April"
   tags: [time, event, month]
   short: "It is April."
 e tie garel:
   id: 1wx4dnyxl2
-  family: "C2"
+  family: "C"
   gloss: "May"
   tags: [time, event, month]
   short: "It is May."
 e tia garel:
   id: wzfiy3huwo
-  family: "C2"
+  family: "C"
   gloss: "June"
   tags: [time, event, month]
   short: "It is June."
 e tio garel:
   id: lcqezx9l5v
-  family: "C2"
+  family: "C"
   gloss: "July"
   tags: [time, event, month]
   short: "It is July."
 e tiu garel:
   id: oojrwijaf9
-  family: "C2"
+  family: "C"
   gloss: "August"
   tags: [time, event, month]
   short: "It is August."
 e tei garel:
   id: 9ym4flsxsg
-  family: "C2"
+  family: "C"
   gloss: "September"
   tags: [time, event, month]
   short: "It is September."
 e tea garel:
   id: blb33kpdbu
-  family: "C2"
+  family: "C"
   gloss: "October"
   tags: [time, event, month]
   short: "It is October."
 e teo garel:
   id: 761npfg2uq
-  family: "C2"
+  family: "C"
   gloss: "November"
   tags: [time, event, month]
   short: "It is November."
 e teu garel:
   id: jku0l3kd9b
-  family: "C2"
+  family: "C"
   gloss: "December"
   tags: [time, event, month]
   short: "It is December."
 ei ce bue:
   id: 000sw1j82d
-  family: "C2"
+  family: "C"
   gloss: "spelled"
   short: "[E:tca man] is spelled as [A: blu ecema]"
 ei ceu bue:
   id: b0pxo862df
-  family: "C2"
+  family: "C"
   gloss: "uttered"
   short: "[E:tca man] is uttered as [A: blu eceuma]"
 ei a ol:
   id: 5kgq6jl1at
-  family: "C2"
+  family: "C"
   gloss: "asserts"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
@@ -4118,7 +4457,7 @@ ei a ol:
     P is an unnameable predicate used solely for this purpose.
 ei al ol:
   id: wg9fbpescm
-  family: "C2"
+  family: "C"
   gloss: "requests"
   short: "[E:tce pan] requests/order that [A:()] is true."
   notes: |
@@ -4126,7 +4465,7 @@ ei al ol:
     P is an unnameable predicate used solely for this purpose.
 ei o ol:
   id: b0c73ecend
-  family: "C2"
+  family: "C"
   gloss: "asks"
   short: "[E:tce pan] asks question represented by predicate [A:p] to addressee [O:tce man]."
   notes: |
@@ -4134,12 +4473,12 @@ ei o ol:
     eio'ol via !P fo mo}. P is an unnameable predicate used solely for this purpose.
 en ol ce bue:
   id: jpvb7ytjfg
-  family: "C3"
+  family: "C"
   gloss: "dictionary"
   short: "[E:tce* man] is a dictionary."
 en skal co ma:
   id: vmbujokvfo
-  family: "C3"
+  family: "C"
   gloss: "computer-data"
   short: "[E:tca ecoma] is the computer data located at [E:tce ecoma]."
   notes: |

@@ -1,6 +1,6 @@
 let { dictionary_en: dictionary, compare_words } = require('../src/dictionary');
 
-const ignored = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_cardinal', '_number', 'i', 'e', 'u' ];
+const ignored = [ '_cardinal', '_number', 'i', 'e', 'u' ];
 
 const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words);
 
@@ -95,10 +95,31 @@ function html_word_entry(word, entry) {
 		});
 	}
 
-	output += `<small><a href="#${entry.id}">${entry.id}</a></small> `;
 	output += `</h3>`;
 
 	output += renderParagraphs(entry.short);
+
+	if (entry.see_also) {
+		output += '<p class="see-also"><strong>See </strong> ';
+		for (i in entry.see_also) {
+			if (i != 0) {
+				output += ", "
+			}
+
+			output += `<a href="#${entry.see_also[i]}">${entry.see_also[i]}</a>`;
+		}
+		output += '</p>';
+	}
+
+	if (entry.links) {
+		output += '<ul class="entry-links">';
+		for (i in entry.links) {
+			output += "<li>";
+			output += `<a href="${entry.links[i][2]}"><i class="${entry.links[i][0]}" aria-hidden="true"></i> ${entry.links[i][1]}</a>`;
+			output += "</li>";
+		}
+		output += "</ul>";
+	}
 
 	if (entry.notes) {
 		output += `<details><summary>Notes :</summary>`;
@@ -111,33 +132,6 @@ function html_word_entry(word, entry) {
 		output += escapeHTML(entry.definition);
 		output += `</pre></details>`;
 	}
-
-	// if (entry.examples) {
-	// 	output += `<details><summary>Examples :</summary>`;
-
-	// 	for (i in entry.examples) {
-	// 		output += `<div class="example">`;
-
-	// 		output += `<div class="example-eberban">`;
-	// 		let example = entry.examples[i][0];
-	// 		console.log(example);
-	// 		example = escapeHTML(example);
-	// 		example = example.replace(/[A-Za-z]+/g, (match) => {
-	// 			return `<a href="#${match}">${match}</a>`
-	// 		});
-	// 		example = example.replace(/(  |\\)(\r\n|\r|\n)/g, '<br />');
-	// 		output += example;			
-	// 		output += `</div>`;
-
-
-	// 		output += `<div class="example-note">`;
-	// 		output += renderParagraphs(entry.examples[i][1]);
-	// 		output += `</div>`;
-
-	// 		output += `</div>`;
-	// 	}
-	// 	output += `</details>`;
-	// }
 
 	output += `</div>`;
 	return output;
@@ -281,7 +275,8 @@ export function html_dictionary(filters) {
 						dictionary[word].without_spaces.includes(filter) ||
 						dictionary[word].gloss.toLowerCase().includes(filter) ||
 						dictionary[word].short.toLowerCase().includes(filter) ||
-						dictionary[word].id.toLowerCase().includes(filter)
+						dictionary[word].id.toLowerCase().includes(filter) ||
+						dictionary[word].notes?.toLowerCase().includes(filter)
 					)
 				) {
 					return;

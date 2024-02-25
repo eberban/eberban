@@ -256,6 +256,10 @@ li.implicit {
 	text-shadow: none;
 }
 
+.dictionary-entry a {
+	min-width: 40px;
+}
+
 .dictionary-entry details {
 	background-color: #77777733;
 	padding: 10px;
@@ -273,13 +277,17 @@ li.implicit {
 	cursor: pointer;
 }
 
+.dictionary-entry h3 small {
+	color: black;
+}
+
 .dictionary-entry .word-anchor {
 	font-size: 50%;
 	margin-right: 1ch;
 	margin-bottom: 2px;
 }
 
-.dictionary-entry .word-anchor .icon-search {
+.dictionary-entry .word-anchor i {
 	vertical-align: baseline;
 }
 
@@ -299,4 +307,12 @@ li.implicit {
 	background-color: #006eff30;
 	border-radius: 10px;
 	padding: 0px 5px;
+	font-style: italic;
+}
+
+.see-also a {
+	background-color: #006eff30;
+	border-radius: 10px;
+	padding: 0px 5px;
+	font-style: italic;
 }
