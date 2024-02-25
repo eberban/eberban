@@ -9,9 +9,9 @@ const important_types = [
 	[ 'sentence', 'sentence' ],
 	[ 'sentence_erased_1', 'erased' ],
 	[ 'sentence_erased_2', 'erased' ],
-	[ 'pa_sentence', 'PA sentence' ],
-	[ 'po_sentence', 'PO sentence' ],
-	[ 'pu_sentence', 'PU sentence' ],
+	[ 'sentence_a', 'A sentence' ],
+	[ 'sentence_o', 'O sentence' ],
+	[ 'sentence_ni', 'NI sentence' ],
 
 	// scope
 	[ 'inner_definition', 'inner definition' ],
