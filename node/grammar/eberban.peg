@@ -23,9 +23,9 @@ sentence_erased_2 <- sentence_starter? (!(sentence_starter / sentence_eraser) .)
 
 arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
 
-sentence_o <- O_clause unit_definable_2 inner_definition
+sentence_o <- O_clause unit_definable inner_definition
 sentence_a <- A_clause_elidible inner_definition
-sentence_ni <- NI_clause unit_definable_2
+sentence_ni <- NI_clause unit_definable
 
 # chaining
 inner_definition <- arguments_list? chain_or_list
@@ -44,11 +44,11 @@ explicit_bind_additional <- BI_clause? FI_clause inner_definition
 
 chain_unit <- chain_unit_1 free_suffix*
 chain_unit_1 <- (SI_clause !SI_clause / ZI_clause)* chain_unit_2
-chain_unit_2 <- BA_clause / MI_clause / unit_quote / unit_scoped / unit_borrowing / unit_number / unit_inline_assignement / unit_definable
+chain_unit_2 <- BA_clause / MI_clause / unit_quote / unit_scoped / unit_borrowing / unit_number / unit_definable / unit_inline_assignement
+unit_inline_assignement <- free_prefix* BO_clause? (KI_clause / unit_definable_2)
 
 unit_definable <- unit_definable_namespaced / unit_definable_2
-unit_definable_namespaced <- !BO_clause (unit_definable_2 PI_clause)+ !BO_clause unit_definable_2
-unit_inline_assignement <- free_prefix* BO_clause? (KI_clause / unit_definable_2)
+unit_definable_namespaced <- (unit_definable_2 PI_clause)+ unit_definable_2
 
 unit_definable_2 <- GI_clause / unit_freeform_variable / unit_compound / unit_root
 
