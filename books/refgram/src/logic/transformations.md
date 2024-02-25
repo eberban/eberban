@@ -74,7 +74,7 @@ this reference predicate (ignoring the implicit context argument) are stated to
 be equal to the ones the instance had.
 
 > __mian buri
-> pa mi dona ze mian__
+> a mi dona ze mian__
 >
 > \\[ \begin{align}
 > \text{mian}(c,e)                         &= \text{[$e$ is a cat]} \\\\
@@ -108,19 +108,19 @@ Which one is the __latest instance__ is determined by word order in the text, an
 using a predicate defined using this word doesn't make it the __latest__ again.
 Thus in
 
-_po gia mian blan pa __mian__ buri pa gia dona ze mian_,
+_on gia mian blan a __mian__ buri a gia dona ze mian_,
 
-_ze mian_ refers to the __mian__ in bold in the __pa__ sentence, and not the
+_ze mian_ refers to the __mian__ in bold in the __a__ sentence, and not the
 __mian__ in __gia__'s definition.
 
 However if the last instance of the word is indeed in a definition (or in some
 predicate that can be used multiple times), then __ze__ refers to the last time
 it has been used. Thus in
 
-_po gia __mian__ blan pa gia dona ze mian_,
+_on gia __mian__ blan a gia dona ze mian_,
 
 _ze mian_ refers to the __mian__ inside __gia__'s definition, which is last
-used in the __pa__ sentence. The text can thus be translated as
+used in the __a__ sentence. The text can thus be translated as
 "A beautiful cat which likes itself".
 
 With some predicates such as sets (__tcu__ and other __tc-__ initials) the
@@ -128,14 +128,14 @@ order in which the predicate is used is not defined. In this case __ze__ refers
 arbitrarily to one of them (which hypotetically would be the "last one"). Thus
 in
 
-_pa meon sae buri tce __mian__ pa mi dona ze mian_
+_a meon sae buri tce __mian__ a mi dona ze mian_
 
 can be translated as "An apple is eaten by some cats. I like one of those
 cats." It is however preferred to not refer to such an unordered instance, and
 instead refer to a clearly ordered word such as __tce__, for which we can speak
 about one of its members with __tci__ (is a member of) :
 
-_pa meon sae buri __tce__ mian pa mi dona tci ze tce_
+_a meon sae buri __tce__ mian a mi dona tci ze tce_
 
 > A related concept is __forethought reference__ using __KI/GI__ variables. A
 > __KI/GI__ variable is first assigned by prefixing with __bo__ before being

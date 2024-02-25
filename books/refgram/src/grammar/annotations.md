@@ -7,7 +7,7 @@ of the grammar.
 
 ## Paragraph marker DU
 
-__DU__ can be placed before __PE/PA/PO/PU__ to mark a change of subject or
+__DU__ can be placed before __/A/O/NI__ to mark a change of subject or
 new paragraph. If __DU__ is not followed by one of them then __pa__ is implied.
 If multiple prefixes in a row are used it must be the first of them.
 

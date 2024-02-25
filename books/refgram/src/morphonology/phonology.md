@@ -42,5 +42,5 @@ the speaker has trouble uttering the pair as-is. It has no written equivalent.
 
 ## Example
 
-Sentence : _pa za umia tsae eberban_
-Pronounciation : \[pa za ʔumi.a tsa.e ʔeberban\]
+Sentence : _aa za umia tsae eberban_
+Pronounciation : \[ʔa za ʔumi.a tsa.e ʔeberban\]

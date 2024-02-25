@@ -1,4 +1,4 @@
-# Enumeration and erasure (BU)
+# Enumeration and short erasure (BU)
 
 __BU__ is a separator that can appear in any place there is a chain, and
 transform it into an enumeration of chains. Depending on which __BU__ is
@@ -8,6 +8,8 @@ words.
 __buhu__ erase the current chain, as if it was not said or written, and is
 usually followed by a new chain. If there is no other __BU__ than __buhu__
 used then this new chain stay as is, and is not transformed in a list or set.
+It can only erase grammatically valid text, otherwise
+[__RA__ must be used](../logic/sentences.md).
 
 For first non __buhu__ __BU__ used determines what this enumeration produces.
 Following non __buhu__ __BU__ don't change what the enumeration produces, and it
@@ -17,8 +19,6 @@ is thus shorter to always use __bu__.
 - __bui__: a set of predicates
 - __bue__: a list of atoms/generics
 - __buei__: a list of predicates
-
-
 
 For __bui__ and __buei__, all predicates will have the same arity as the first
 chain in the enumeration.

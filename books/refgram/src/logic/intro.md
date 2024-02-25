@@ -41,3 +41,6 @@ Here is an exemple of a simple predicate :
 > In future explanations we'll omit the context argument outside of logical
 > notation to be shorter, unless the context argument is the focus of the
 > explanation.
+
+Any __predicate word__ not yet defined in the dictionnary or by the speaker
+return __unknown/undefined__ for any arguments.

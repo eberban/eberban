@@ -1,4 +1,4 @@
-# Compounds (e-/a-/o-)
+# Compounds (e-)
 
 Providing a root for every concept would be extremely impractical and isn't
 great for memorization. Complex concepts are often built upon multiple primitive
@@ -9,13 +9,14 @@ Compounds allow the transformation of any string of valid Eberban words
 __ignores the grammatical rules of the individual words__, its meaning should
 (to a certain extent) be related.
 
-A compound is first prefixed by the letter __e, a, o__, respectively starting a
-compound composed of two, three, or more words. O-compounds stop when a new
-__o__ is encountered (with a space or word boundary marker before it). Spaces
+A compound start with either __e, en, er__, respectively starting a
+compound composed of two, three, or more words. er-compounds stop when a single
+__e__ is encountered (with a space or word boundary marker before it). Spaces
 can be inserted between any of the parts of the compound.
 
-If the first word starts with a vowel (a borrowing) then the pause before this
-vowel is optional.
+If the first word starts with a vowel (a borrowing or __A/O__ particle) then the
+pause before this vowel is optional. __NI__ particles needs to be prefixed by a
+pause or space to not be confused with the __en__ start.
 
 Compounds have __unique and fixed meanings which are defined in the
 dictionary__, and while the definition of each one can be arbitrary, they
@@ -28,7 +29,7 @@ concepts are borrowed with endonyms, sounding similar to the original word.
 
 A compound have the same __transitivity__ as its last/rightmost component. If we
 want to define a compound with the opposite transitivity, then the initial
-__e/a/o__ should be followed by an __i__. If the last component is a particle
+__e/en/er__ should be followed by an __i__. If the last component is a particle
 that cannot be used as a predicate, it is considered to be intransitive.
 
 > __e ber ban :__ `[tca man] is the eberban language.`
@@ -41,8 +42,8 @@ that cannot be used as a predicate, it is considered to be intransitive.
 > - uinglic : borrowing of "english".
 > - ban : `[E:tce* man] is a language.`
 
-> __a cen po bu :__ `[E:tce* ma] is a dictionary.`
+> __en cen on bu :__ `[E:tce* ma] is a dictionary.`
 >
 > - cen : `E:tce* man`
-> - po : Particle starting a definition.
+> - on : Particle starting a definition.
 > - bu : Particle creating lists.
