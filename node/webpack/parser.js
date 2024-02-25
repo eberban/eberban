@@ -23,17 +23,16 @@ const hideTitleList = [
 ];
 
 const hideFamily = [
-	'a',
-	'e',
-	'i',
-	'o',
-	'u',
+	'i', // freeform variable prefix
+	'u', // borrowing prefix
+	'e', // compound prefix
+	'r', // 2-words compound tag
+	'n', // N-words compound tag
 	'freeform_content',
 	'foreign quote content',
 	'foreign quote delimiter',
-	'spelling unit',
+	'spelling unit', // not a usual word
 ];
-
 
 const hideDefinition = [
 	'ce',
@@ -632,11 +631,7 @@ function showGlossing(text, $element) {
 			let compound = '';
 
 			if (word == 'e') {
-				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 2));
-			} else if (word == 'a') {
-				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, 3));
-			} else if (word == 'o') {
-				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1, -1));
+				({ compound, skip_compound } = extractCanonicalCompound(text, j + 1));
 			}
 
 			word += compound;
@@ -647,7 +642,7 @@ function showGlossing(text, $element) {
 		if (word == 'u') {
 			// skip next word which is the borrowing content
 			j++;
-		} else if (word != 'o' && dictionary[word]) {
+		} else if (dictionary[word]) {
 			if (!definitions[word]) {
 				definitions[word] = [
 					dictionary[word].family,
@@ -682,11 +677,22 @@ function sortMapByKey(map) {
 	return sortedMap;
 }
 
-function extractCanonicalCompound(text, startIndex, length) {
+function extractCanonicalCompound(text, startIndex) {
 	let offset = 0;
 	let compound = '';
+	let length = 2;
 
-	if (text[startIndex] == 'i') {
+	if (text[startIndex] == 'n') {
+		compound += 'n';
+		length = 3;
+		offset++;
+	} else if (text[startIndex] == 'r') {
+		compound += 'r';
+		length = -1;
+		offset++;
+	}
+
+	if (text[startIndex + offset] == 'i') {
 		compound += 'i';
 		offset++;
 	}
@@ -694,9 +700,9 @@ function extractCanonicalCompound(text, startIndex, length) {
 	while (length != 0) {
 		let item = text[startIndex + offset];
 
-		// o terminator
-		if (item == 'o') {
-			compound += ' o';
+		// e terminator
+		if (item == 'e') {
+			compound += ' e';
 			break;
 		}
 

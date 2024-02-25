@@ -41,7 +41,7 @@ sentence.
 
 ## O family
 
-- __o__ (question):__o__ allows the speaker to ask a question by defining a predicate to be used by
+- __o__ (question): __o__ allows the speaker to ask a question by defining a predicate to be used by
   the interlocutors. This predicate must then be used in reply.
 
   A 0-ary predicate prompts the listener to assert it is true (a gi), that it is false (a bi/zi gi),

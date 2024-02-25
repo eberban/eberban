@@ -547,28 +547,28 @@ zoie:
   gloss: "#get-default-E"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the E place of \[predicate\] (set with {poie}).
+    Satisfy the default bound of the E place of \[predicate\] (set with {oie}).
 zoia:
   id: pnlxz4xwki
   family: "ZI"
   gloss: "#get-default-A"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the A place of \[predicate\] (set with {poia}).
+    Satisfy the default bound of the A place of \[predicate\] (set with {oia}).
 zoio:
   id: ypral6pdfc
   family: "ZI"
   gloss: "#get-default-O"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the O place of \[predicate\] (set with {poio}).
+    Satisfy the default bound of the O place of \[predicate\] (set with {oio}).
 zoiu:
   id: eylcna75du
   family: "ZI"
   gloss: "#get-default-U"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the U place of \[predicate\] (set with {poiu}).
+    Satisfy the default bound of the U place of \[predicate\] (set with {oiu}).
 zu:
   id: khqauhadzn
   family: "ZI"
@@ -626,83 +626,83 @@ zue:
 
     The selected proposition place will be the one being transitioned to in
     chaining (unless overwritten by a SE placed before {zue}).
-poie:
+oie:
   id: kcj6ptjgvi
-  family: "PO"
+  family: "O"
   gloss: "#set-default-E"
   tags: [core, default]
   short: |
     Set the default constraint for the E place of the following predicate word.
-poia:
+oia:
   id: tbu1ntupmq
-  family: "PO"
+  family: "O"
   gloss: "#set-default-A"
   tags: [core, default]
   short: |
     Set the default constraint for the A place of the following predicate word.
-poio:
+oio:
   id: hokid2gzwm
-  family: "PO"
+  family: "O"
   gloss: "#set-default-O"
   tags: [core, default]
   short: |
     Set the default constraint for the O place of the following predicate word.
-poiu:
+oiu:
   id: 87acytzfsn
-  family: "PO"
+  family: "O"
   gloss: "#set-default-U"
   tags: [core, default]
   short: |
     Set the default constraint for the U place of the following predicate word.
-po:
+on:
   id: mkilbshz7v
-  family: "PO"
+  family: "O"
   gloss: "#def"
   tags: [core]
   short: "Start a predicate definition."
-poe:
+oni:
   id: c0kwgmhcwy
-  family: "PO"
+  family: "O"
   gloss: "#def-capture"
   tags: [core]
   short: "Start a predicate definition which captures the current context."
-pou:
+ol:
   id: 7uffxtuqg2
-  family: "PO"
+  family: "O"
   gloss: "#def-axiom"
   tags: [core]
   short: |
     Start a predicate definition, which will immediatly considered as axiom by
     the speaker.
     Can be used as a performative, a sentence that performs an act by the fact
-    of being uttered. An interlocutor might accept this axioms with {pu} or just
-    ignore it, while the speaker can revert it using {pui}.
+    of being uttered. An interlocutor might accept this axioms with {nu} or just
+    ignore it, while the speaker can revert it using {ni}.
   notes: |
-    {pou ga ...} is equivalent to {po ga ... pu ga}
-pahi:
+    {ol gi ...} is equivalent to {on gi ... nu gi}
+ahu:
   id: nxtau0gqfz
-  family: "PA"
+  family: "A"
   gloss: "#sentence-wrapper"
   tags: [core]
   short: |
     Registers a sentence wrapper, such that any sentence [E:()] expressed with
-    {pa} is wrapped by this registered predicate.
-pae:
+    {a} is wrapped by this registered predicate.
+an:
   id: zkukmnzdxs
-  family: "PA"
+  family: "A"
   gloss: "#update-context"
   tags: [core, context]
   short: |
     Starts a context switching sentence, such that [E:ma] will be the context
     provided to any following sentences.
-pahe:
+anu:
   id: utl5b5flgt
-  family: "PA"
-  gloss: "#context-updater"
+  family: "A"
+  gloss: "#auto-context-updater"
   tags: [core, context]
   short: |
     Registers a context-switching sentence, that will be applied automatically
-    between each sentences as if it was used with {pae}.
+    between each sentences as if it was used with {an}.
 pe:
   id: c9njzictfu
   family: "PE"
@@ -715,18 +715,42 @@ pei:
   gloss: "]"
   tags: [core, terminator, elidable]
   short: "Inline scope elidible terminator."
-pu:
+nu:
   id: em8adaqgg3
-  family: "PU"
+  family: "NI"
   gloss: "#axiom-on"
   tags: [core]
   short: "Enable axiomatic predicate."
-pui:
+ni:
   id: jlotxmhwg4
-  family: "PU"
+  family: "NI"
   gloss: "#axiom-off"
   tags: [core]
   short: "Disable axiomatic predicate."
+nohu:
+  id: 3xu1e18wct
+  family: "NI"
+  gloss: "#namespace-axiom-on"
+  tags: [core]
+  short: "Enable all axioms in given namespace."
+nohi:
+  id: n6zs199o50
+  family: "NI"
+  gloss: "#namespace-axiom-off"
+  tags: [core]
+  short: "Disable all axioms in given namespace."
+no:
+  id: fa5t5drbrq
+  family: "NI"
+  gloss: "#namespace-extract"
+  tags: [core]
+  short: "Extract predicate from given namespace, making it usable without {pi}."
+noi:
+  id: 6zdmybfdxu
+  family: "NI"
+  gloss: "#namespace-extract-all"
+  tags: [core]
+  short: "Extract all predicates from given namespace, making them usable without {pi}."
 be:
   id: 0hikwjp7eh
   family: "BE"
@@ -770,8 +794,9 @@ boi:
 mi:
   id: unfcuerxgm
   family: "MI"
-  short: "[E:tce* man] is I/me/a speaker/author."
+  short: "[E:tce* man] is I/me/the speaker(s)/narrator(s)."
   gloss: "me"
+  notes: At least one of the members must be the main speaker/narrator.
 mo:
   id: zjytqy23pq
   family: "MI"
@@ -1044,9 +1069,9 @@ coi:
   family: "COI"
   short: "[E:tca ecoma] is a quote of an arbitrary string which is skipped by the speaker/author."
   gloss: "#skipped-foreign-quote"
-na:
+ra:
   id: spjmtjh1al
-  family: "NA"
+  family: "RA"
   gloss: "#erase"
   short: |
     Erase from the start of the current sentence. 
@@ -1066,29 +1091,42 @@ zai:
   note: |
     Another place can be selected by adding a SE particle between {zai} and the
     predicate.
-pa:
+a:
   id: awzbv8iu8c
-  family: "PA"
+  family: "A"
   gloss: "#assert"
   short: "Starts an assertive sentence, that the speaker asserts is true."
   notes: |
-    {pa !X} is syntaxic sugar for {poe ezepa !X pou !P be mi sifpa ezepa}, with
+    {a !X} is syntaxic sugar for {oni eze'a !X ol !P be mi eia'ol eze'a}, with
     _X_ being the asserted proposition, and _P_ an unnamable predicate used
-    solely to make an axiom. Since by uttering a {pa} sentence the speaker
-    indeed asserts ({sifpa}) the proposition, it is not possible to reject this
+    solely to make an axiom. Since by uttering a {a} sentence the speaker
+    indeed asserts ({eia'ol}) the proposition, it is not possible to reject this
     axiom.
 
-    {ezepa} thus allows to refer to the latest assertion.
-poi:
+    {eze'a} thus allows to refer to the latest assertion.
+al:
+  id: ds8h6j4llp
+  family: "A"
+  gloss: "#request"
+  short: "Starts an injunctive/order/request sentence, that the speaker requests to be true."
+  notes: |
+    {al !X} is syntaxic sugar for {oni eze'al !X ol !P be mi eial'ol eze'al}, with
+    _X_ being the requested proposition, and _P_ an unnamable predicate used
+    solely to make an axiom. Since by uttering a {a} sentence the speaker
+    indeed requests ({eial'ol}) the proposition, it is not possible to reject this
+    axiom.
+
+    {eze'al} thus allows to refer to the latest assertion.
+o:
   id: ici1wrui6g
-  family: "PO"
+  family: "O"
   gloss: "#question"
   short: "Start a question definition, the arguments being the unknown informations."
   notes: |
-    {poi !P !X} is syntaxic sugar for {po !P !X pou !R be mi sifpoi via !P fo
+    {o !P !X} is syntaxic sugar for {oni !P !X ol !R be mi eio'ol via !P fo
     mo}, _P_ being the defined predicate word, _X_ the definition, and _R_ an
-    unnamable predicate used solely to make an axiom. Since by uttering a {poi}
-    sentence the speaker indeed ask a question ({sifpoi}), it is not possible to
+    unnamable predicate used solely to make an axiom. Since by uttering a {o}
+    sentence the speaker indeed ask a question ({eio'ol}), it is not possible to
     reject this axiom.
 di:
   id: my7irg3svn
@@ -1137,21 +1175,27 @@ du:
   gloss: "#paragraph"
   short: "Starts paragraph/section/change of subject."
   notes: |
-    When used in a text imported with {pohi}, the predicates in this paragraph
-    will be available in the namespace made by {pohi}. To make them private and
+    When used in a text imported with {ohi}, the predicates in this paragraph
+    will be available in the namespace made by {ohi}. To make them private and
     not available in the namespace, use {dui}.
+
+    When used outside of an imported text, definitions of namespaced predicates
+    (`on <namespace> pi <pred> ...`) will be automatically extracted by {noi}.
 dui:
   id: 19kponvnpj
   family: "DU"
   gloss: "#private"
   short: |
     Starts a private section, whose predicates will not be available when
-    imported into another text with {pohi}.
+    imported into another text with {ohi} or not exported with {noi}.
   notes: |
     Predicates are usable like normal in this text, however another text
-    importing this text with {pohi} will not have access to them.
-
-    To make predicates public and available in the namespace, use {du}.
+    importing this text with {ohi} will not have access to them. To make
+    predicates public and available in the namespace, use {du}.
+    
+    When used outside of an imported text, definitions of namespaced predicates
+    (`on <namespace> pi <pred> ...`) will NOT be automatically extracted by
+    {noi}.
 bu:
   id: z05feq6b63
   family: "BU"
@@ -1188,21 +1232,21 @@ pi:
   gloss: "::"
   short: |
     Predicate namespace separator. Predicates imported from another text with
-    {pohi} are accessible inside the namespace named after the word used
-    after {pohi}.
-pohi:
+    {ohi} are accessible inside the namespace named after the word used
+    after {ohi}.
+ohi:
   id: j7cwz23nkd
-  family: "PO"
+  family: "O"
   gloss: "#import"
   short: |
     Imports predicates defined in Eberban text [E:tca ecama] under the name
-    namespace named after the predicate immediatly after {pohi}.
+    namespace named after the predicate immediatly after {ohi}.
   notes: |
     Namespace definitions and predicate definitions are independent, and
-    defining a namespace using {pohi} will not override the same-name predicate
-    defined by other PO particles.
+    defining a namespace using {ohi} will not override the same-name predicate
+    defined by other O particles.
 
-    Namespaces can be nested if the imported text also uses {pohi}.
+    Namespaces can be nested if the imported text also uses {ohi}.
 do:
   id: to8ca3apdr
   family: "DO"
@@ -1224,7 +1268,7 @@ vari:
   notes: |
     It is often simpler to use {vi/fi}.
   definition: |
-    po vari ge ga be
+    on vari ge ga be
     ge vi ga
 vare:
   id: ysh546fklz
@@ -1233,7 +1277,7 @@ vare:
   tags: [connective]
   short: "True if [E:()] or [A:()] or both is true."
   definition: |
-    po vare ge ga be
+    on vare ge ga be
     bi ma
       vi bi ge
       fi bi ga
@@ -1246,7 +1290,7 @@ varu:
     If [E:()] is then [A:()] (default: true) is true, otherwise [O:()]
     (default: true) is true.
   definition: |
-    po varu ge ga be
+    on varu ge ga be
     vare
       via vari
         vie ge
@@ -1255,8 +1299,8 @@ varu:
       fie vari
         vie bi ge
         fia go
-    poia varu mai
-    poio varu mai
+    onia varu mai
+    onio varu mai
 kidvo:
   id: 3sqq5pyzms
   family: "R"
@@ -1264,7 +1308,7 @@ kidvo:
   short: |
     [E:p] and [A:p] satisfy relation [O:(p,p)] transitively.
   definition: |
-    po kidvo ke ka go be
+    on kidvo ke ka go be
     vare
       vie ke go ka
       fia bo ki
@@ -1294,7 +1338,7 @@ tcia:
   short: |
     [E:tcui p] is a subset of [A:tcui p].
   definition: |
-    po tcia ke ka be
+    on tcia ke ka be
     mao
       ve ki be varu
         vie ki tcie ke
@@ -1307,7 +1351,7 @@ tcei:
   short: |
     [E:tcui p] is a (non-empty) set of some things that individualy satisfy [A:(p)].
   definition: |
-    po tcie ke gia be
+    on tcie ke gia be
     ke tcia tcui gia
 tcai:
   id: xemhvhqiom
@@ -1317,7 +1361,7 @@ tcai:
   short: |
     [E:tcui p] is a set containing exactly one member which satisfy [A:(p)].
   definition: |
-    po tcia ke gia be
+    on tcia ke gia be
     ma
       vi ke tcei gia
       fi bi ma
@@ -1332,7 +1376,7 @@ tcoi:
   short: |
     [E:tcei p] is a set of at least 2 things that individualy satisfy [A:(p)].
   definition: |
-    po tcia ke gia be
+    on tcia ke gia be
     ma
       vi ke tcei gia
       fi bo ka tcie ke
@@ -1346,7 +1390,7 @@ tca:
   short: |
     [E:tcai p] is a set containing exactly one member, and satisfy [A:(tcai p)].
   definition: |
-    po tca ke gia be
+    on tca ke gia be
     ke se tcai gia
 tcan:
   id: vmenrgkg75
@@ -1361,7 +1405,7 @@ tcu:
   short: |
     [E:tcui p] is the (non-empty) set of all things that individualy satisfy [A:(tca p)].
   definition: |
-    po tcu ke gia be
+    on tcu ke gia be
     ke tcui
       via be ba tcie tca gia
 tce:
@@ -1372,7 +1416,7 @@ tce:
   short: |
     [E:tcei p] is a (non-empty) set of some things that individualy satisfy [A:(tca p)].
   definition: |
-    po tce ke gia be
+    on tce ke gia be
     ke tcei
       via be ba tcie tca gia
 tco:
@@ -1383,7 +1427,7 @@ tco:
   short: |
     [E:tcoi p] is a set of at least 2 things that individualy satisfy [A:(tca p)].
   definition: |
-    po tco ke gia be
+    on tco ke gia be
     ke tcoi
       via be ba tcie tca gia
 tci:
@@ -1393,7 +1437,7 @@ tci:
   tags: [set]
   short: "[E:tca p] is a member of set [A:tce p]."
   definition: |
-    po tci ke ka be
+    on tci ke ka be
     ke tca tcie ka
 dji:
   id: ryx470pn2x
@@ -1422,7 +1466,7 @@ dja:
     [E:tce p] is the set of all things that are in [A:tce p] and not
     in [O:tce p].
   definition: |
-    po dja ke ka ko be
+    on dja ke ka ko be
     ke tcu
       va ki be vari
         ve ki tci ka
@@ -1434,7 +1478,7 @@ djo:
   tags: [set]
   short: "[E:tce p] is a locally largest set that satisfy [A:(tce p)]."
   definition: |
-    po djo ke gia be
+    on djo ke gia be
     ma
       vi ke gia
       fi bi bo ka
@@ -1448,7 +1492,7 @@ dju:
   tags: [set]
   short: "[E:tce p] is a locally smallest set that satisfy [A:(tce p)]."
   definition: |
-    po djo ke gia be
+    on djo ke gia be
     ma
       vi ke gia
       fi bi bo ka
@@ -1462,7 +1506,7 @@ kin:
   short: |
     [E:ma] is a pair made of left component [A:p] and right component [O:b].
   definition: |
-    po e kin pi be
+    on e kin pi be
     ma
       vi boi kin
       fi mae
@@ -1485,7 +1529,7 @@ e zai pe:
   short: |
     [E:ma] is an identifier/name made from property [A:(p)].
   definition: |
-    po ezaipe ke gi be
+    on ezaipe ke gi be
     ma
       vi ke kin
         va ezaipe ezaipe
@@ -2980,7 +3024,7 @@ koro:
     equations with the unknown being such a predicate, allowing to chain multiple
     the unknown for multiplication.
 
-    Example: {poi ga \[ge be\] fuli \[vi koro ge\] \[fa te bue, ta ge bu, to ge ge\] \[fe ti\]}\
+    Example: {o ga \[ge be\] fuli \[vi koro ge\] \[fa te bue, ta ge bu, to ge ge\] \[fe ti\]}\
     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
 
 bire:
@@ -3508,7 +3552,7 @@ cekme:
     [E] individually satisfy relation [A] with something (independant of each
     other), but don't all individually satisfy relation [A] with the same thing.
   definition: |
-    po cekme ke ga be
+    on cekme ke ga be
     ke
       ve tce ga
       bi fi ki be ke tce ga ki
@@ -3572,23 +3616,6 @@ coriu:
   family: "R"
   gloss: "owned-by"
   short: "[E:tce* man] is possessed/owned by [A:tce man]."
-sifpa:
-  id: 5kgq6jl1at
-  family: "R"
-  gloss: "asserts"
-  short: "[E:tce pan] asserts that [A:()] is true."
-  notes: |
-    {pa X} can be modeled as being syntaxic sugar for {poe ezepa po !P be mi sifpa !X pu !P}.
-    P is an unnameable predicate used solely for this purpose.
-sifpoi:
-  id: b0c73ecend
-  family: "R"
-  gloss: "asks"
-  short: "[E:tce pan] asks question represented by predicate [A:p] to addressee [O:tce man]."
-  notes: |
-    {poi !X (be) !Y} can be modeled as being syntactic sugar for
-    {poe !X be !Y po !P be mi sifpoi !X pu !P}. P is an unnameable predicate used solely
-    for this purpose.
 djia:
   id: 56lqin725a
   family: "R"
@@ -3856,13 +3883,11 @@ e spi toril:
   gloss: "parrot"
   tags: [animal]
   short: "[E:tce* pan] is a parrot."
-e pu zoi:
+e du zoi:
   id: sw1lnyrbpe
   family: "C2"
   gloss: "paragraph"
   short: "[E:tce* man] is a paragraph."
-  notes: |
-    TODO: See {cei} notes.
 e bino cnue:
   id: o5vxdoahhm
   family: "C2"
@@ -3871,13 +3896,17 @@ e bino cnue:
 e spua ckuil:
   id: umamaeu1na
   family: "C2"
-  gloss: "home stellar body"
-  short: "[E:tca pan] is the home stellar body of species [A:tce* man] (default: {flan}/humans)."
+  gloss: "home stellar body (Earth)"
+  short: |
+    [E:tca pan] is the home stellar body of species [A:tce* man]
+    (default: {flan}/humans, thus [E] defaults to Earth).
 e spua ckuel:
   id: 732rregyg8
   family: "C2"
-  gloss: "home star"
-  short: "[E:tca pan] is the home star of species [A:tce* man] (default: {flan}/humans)."
+  gloss: "home star (Sun)"
+  short: |
+    [E:tca pan] is the home star of species [A:tce* man]
+    (default: {flan}/humans, thus [E] defaults to the Sun).
 e siun vaun:
   id: n7xvmqqkza
   family: "C2"
@@ -3893,12 +3922,17 @@ e kini bun:
   family: "C2"
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
-  definition: "po ekinibun ke ka pi ke bun gla kini via seru ka"
-e ze pa:
+  definition: "on ekinibun ke ka pi ke bun gla kini via seru ka"
+e ze a:
   id: mfyipbixdd
   family: "C2"
-  short: "Repeats the previous assertion. See {pa} notes."
+  short: "Repeats the previous assertion. See {a} notes."
   gloss: "latest-assertion"
+e ze al:
+  id: s2gdsl21l7
+  family: "C2"
+  short: "Repeats the previous request. See {al} notes."
+  gloss: "latest-request"
 e bzael mue:
   id: hshwh0yqhx
   family: "C2"
@@ -4067,12 +4101,36 @@ ei ceu bue:
   family: "C2"
   gloss: "uttered"
   short: "[E:tca man] is uttered as [A: blu eceuma]"
-a ce po bue:
+ei a ol:
+  id: 5kgq6jl1at
+  family: "C2"
+  gloss: "asserts"
+  short: "[E:tce pan] asserts that [A:()] is true."
+  notes: |
+    {a !X} can be modeled as being syntaxic sugar for {oni eze'a !X ol !P be mi eia'ol eze'a}.
+    P is an unnameable predicate used solely for this purpose.
+ei al ol:
+  id: wg9fbpescm
+  family: "C2"
+  gloss: "requests"
+  short: "[E:tce pan] requests/order that [A:()] is true."
+  notes: |
+    {AL X} can be modeled as being syntaxic sugar for {oni eze'al !X ol !P be mi eial'ol eze'a}.
+    P is an unnameable predicate used solely for this purpose.
+ei o ol:
+  id: b0c73ecend
+  family: "C2"
+  gloss: "asks"
+  short: "[E:tce pan] asks question represented by predicate [A:p] to addressee [O:tce man]."
+  notes: |
+    {o !X !Y} can be modeled as being syntactic sugar for {oni !P !X ol !R be mi
+    eio'ol via !P fo mo}. P is an unnameable predicate used solely for this purpose.
+en ol ce bue:
   id: jpvb7ytjfg
   family: "C3"
   gloss: "dictionary"
   short: "[E:tce* man] is a dictionary."
-a skal co ma:
+en skal co ma:
   id: vmbujokvfo
   family: "C3"
   gloss: "computer-data"
