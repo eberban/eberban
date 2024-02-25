@@ -45,11 +45,11 @@ words_sorted.forEach((word) => {
 
 export function count_word_types() {
 	let roots = 0;
-	let particles = 0;
+	let particles = -10; // remove entries for graphic digits
 	let compounds = 0;
 
 	words_sorted.forEach((w) => {
-		if (["C2", "C3", "C+"].includes(dictionary[w].family)) compounds++;
+		if (dictionary[w].family == 'C') compounds++;
 		else if (dictionary[w].family == 'R') roots++;
 		else particles++;
 	});
