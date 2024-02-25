@@ -1169,33 +1169,6 @@ dai:
   gloss: ")"
   tags: [terminator]
   short: "Ends parenthetical note."
-du:
-  id: jjo3ibjqoy
-  family: "DU"
-  gloss: "#paragraph"
-  short: "Starts paragraph/section/change of subject."
-  notes: |
-    When used in a text imported with {ohi}, the predicates in this paragraph
-    will be available in the namespace made by {ohi}. To make them private and
-    not available in the namespace, use {dui}.
-
-    When used outside of an imported text, definitions of namespaced predicates
-    (`on <namespace> pi <pred> ...`) will be automatically extracted by {noi}.
-dui:
-  id: 19kponvnpj
-  family: "DU"
-  gloss: "#private"
-  short: |
-    Starts a private section, whose predicates will not be available when
-    imported into another text with {ohi} or not exported with {noi}.
-  notes: |
-    Predicates are usable like normal in this text, however another text
-    importing this text with {ohi} will not have access to them. To make
-    predicates public and available in the namespace, use {du}.
-    
-    When used outside of an imported text, definitions of namespaced predicates
-    (`on <namespace> pi <pred> ...`) will NOT be automatically extracted by
-    {noi}.
 bu:
   id: z05feq6b63
   family: "BU"
@@ -1234,6 +1207,40 @@ pi:
     Predicate namespace separator. Predicates imported from another text with
     {ohi} are accessible inside the namespace named after the word used
     after {ohi}.
+po:
+  id: jjo3ibjqoy
+  family: "PO"
+  gloss: "#paragraph"
+  short: "Starts paragraph/section/change of subject."
+  notes: |
+    When used in a text imported with {ohi}, the predicates in this paragraph
+    will be available in the namespace made by {ohi}. To make them private and
+    not available in the namespace, use {poi}.
+
+    When used outside of an imported text, definitions of namespaced predicates
+    (`on <namespace> pi <pred> ...`) will be automatically extracted by {noi}.
+poi:
+  id: 19kponvnpj
+  family: "PO"
+  gloss: "#private"
+  short: |
+    Starts a private section, whose predicates will not be available when
+    imported into another text with {ohi} or not exported with {noi}.
+  notes: |
+    Predicates are usable like normal in this text, however another text
+    importing this text with {ohi} will not have access to them. To make
+    predicates public and available in the namespace, use {po}.
+    
+    When used outside of an imported text, definitions of namespaced predicates
+    (`on <namespace> pi <pred> ...`) will NOT be automatically extracted by
+    {noi}.
+pu:
+  id: ldy5ka8k6p
+  family: "PU"
+  gloss: "#sentence-end"
+  short: |
+    Elidible sentence terminator. Used solely to attach metadata to the sentence
+    after the fact, as if it was attached to A/O/NI.
 ohi:
   id: j7cwz23nkd
   family: "O"
@@ -1250,7 +1257,7 @@ ohi:
 do:
   id: to8ca3apdr
   family: "DO"
-  gloss: "#bare"
+  gloss: "#no-std"
   short: Disable the automatic import of the standard dictionnary.
   notes: |
     Mainly used to define the standard dictionnary itself.

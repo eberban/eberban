@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.58
+# eberban PEG grammar - v0.58.1
 # =============================
 
 # GRAMMAR
@@ -7,8 +7,8 @@ text <- language_flags (free_suffix)* paragraphs? spaces? EOF?
 language_flags <- DO_clause*
 
 # text structure
-paragraphs <- paragraph (&DU_clause paragraph)*
-paragraph <- DU_clause? sentence (&sentence_starter sentence / sentence_erased_2)*
+paragraphs <- paragraph (&PO_clause paragraph)*
+paragraph <- PO_clause? sentence (&sentence_starter sentence / sentence_erased_2)*
 
 sentence_starter <- A_clause / O_clause / NI_clause
 
@@ -16,7 +16,7 @@ sentence_starter <- A_clause / O_clause / NI_clause
 # sentence_erased_1 must appear first. While we want to erase ungrammatical text with RA, we don't
 # want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 sentence <- sentence_erased_1 / sentence_1 / sentence_erased_2
-sentence_1 <- sentence_o / sentence_ni / sentence_a
+sentence_1 <- (sentence_o / sentence_ni / sentence_a) PU_clause_elidible
 
 sentence_erased_1 <- sentence_1 sentence_eraser
 sentence_erased_2 <- sentence_starter? (!(sentence_starter / sentence_eraser) .)* sentence_eraser
@@ -113,7 +113,6 @@ DE_clause  <-              spaces? DE                   # free interjection
 DA_clause  <-              spaces? DA                   # free parenthetical starter
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
 DO_clause <-               spaces? DO                   # language flags
-DU_clause  <- free_suffix* spaces? DU free_suffix*      # paragraph marker
                                                         #
 SI_clause  <- free_prefix* spaces? SI                   # chain place selection
 ZI_clause  <- free_prefix* spaces? ZI                   # chain unit core transformation
@@ -128,9 +127,8 @@ MI_clause  <- free_prefix* spaces? MI                   # particle predicates
 PI_clause  <-              spaces? PI                   # namespace separator
 PE_clause  <- free_prefix* spaces? PE  free_suffix*     # scoped unit starter
 PEI_clause <-              spaces? PEI                  # scope unit elidible terminator
-# PA_clause  <- free_prefix* spaces? PA  free_suffix*     # sentence_a starter
-# PO_clause  <- free_prefix* spaces? PO  free_suffix*     # sentence_o starter
-# PU_clause  <-              spaces? PU                   # sentence_ni toggle
+PO_clause  <- free_suffix* spaces? PO free_suffix*      # paragraph marker
+PU_clause  <-              spaces? PU free_suffix*      # sentence terminator
                                                         #
 TI_clause  <-              spaces? TI                   # digits
                                                         #
@@ -150,7 +148,7 @@ COI_clause <- free_prefix* spaces? COI                  # skipped foreign quote
 
 A_clause_elidible   <- A_clause?
 BE_clause_elidible  <- BE_clause?
-# PA_clause_elidible  <- PA_clause?
+PU_clause_elidible  <- PU_clause?
 PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
 
@@ -163,9 +161,8 @@ MI    <- &particle_word                   (m vhowels)          &post_word
 PI    <- &particle_word                   (p &i vhowels)       &post_word
 PE    <- &particle_word !(PEI &post_word) (p &e vhowels)       &post_word
 PEI   <- &particle_word                   (p e i)              &post_word
-# PA    <- &particle_word                   (p &a vhowels)       &post_word
-# PO    <- &particle_word                   (p &o vhowels)       &post_word
-# PU    <- &particle_word                   (p &u vhowels)       &post_word
+PO    <- &particle_word                   (p &o vhowels)       &post_word
+PU    <- &particle_word                   (p &u vhowels)       &post_word
 BI    <- &particle_word                   (b &i vhowels)       &post_word
 BE    <- &particle_word                   (b &e vhowels)       &post_word
 BA    <- &particle_word                   (b &a vhowels)       &post_word
@@ -180,7 +177,6 @@ DE    <- &particle_word                   (d &e vhowels)       &post_word
 DA    <- &particle_word !(DAI &post_word) (d &a vhowels)       &post_word
 DAI   <- &particle_word                   (d a i)              &post_word
 DO    <- &particle_word                   (d &o vhowels)       &post_word
-DU    <- &particle_word                   (d &u vhowels)       &post_word
 SI    <- &particle_word                   (s vhowels)          &post_word
 ZI    <- &particle_word                   (z vhowels)          &post_word
 CI    <- &particle_word                   (c &i vhowels)       &post_word

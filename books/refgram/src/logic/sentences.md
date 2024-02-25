@@ -1,10 +1,11 @@
-# Sentences (A/O/NI) and erasure (RA)
+# Sentences (A/O/NI/RA/PO/PU)
 
 Eberban sentences all start with particles in families __A__, __O__ or __NI__, which are
 respectively all particles which start with __a-__, __o-__ and __n-__. They are followed by a
 combination of these elements:
 
-- a __definable word__: a root, compound, __GI__ and i-variable.
+- a __definable word__: a root, compound, __GI__ and i-variable (optionally namespaced, see __ohi__
+  explanation below).
 - an __inner predicate__, which is a __predicate chain__ optionally prefixed by an __argument
   list__.
 
@@ -68,10 +69,10 @@ sentence.
   in natural language.
 
 - __ohi__ (imports): Imports definitions and enabled axioms from eberban quote in slot __E__ under
-  the __namespace__ represented by the "defined predicate" following __ohi__. Predicates in namespaces
-  can be used by prefixing them with the namespace predicate followed by __pi__. If word __ga__ is
-  imported in __namespace__ __gi__ (using `ohi gi <quote defining ga>`), then it can be used with
-  `gi pi ga`.  
+  the __namespace__ represented by the "defined predicate" following __ohi__. Predicates in
+  namespaces can be used by prefixing them with the namespace predicate followed by __PI__ (with
+  single member __pi__) If word __ga__ is imported in __namespace__ __gi__ (using `ohi gi <quote
+  defining ga>`), then it can be used with `gi pi ga`.  
 
 - __oie/oia/oio/oiu__ (set defaults): Set the default binding for a slot of the given predicate. See
   [the chapter on defaults](default.md)
@@ -116,3 +117,24 @@ the foreign quote (even if the text is ungrammatical), so that __ra__ will prope
 sentence regardless of if the sentence was grammatical or not.
 
 To erase only a part of a sentence, use [short erasure "buhu"](../grammar/enum.md).
+
+## Paragraph marker PO
+
+__PO__ can be placed before __A/O/NI__ to mark a change of subject or
+new paragraph. If __PO__ is not followed by one of them then __a__ is implied.
+If multiple prefixes in a row are used it must be the first of them.
+
+__PO__ contains 2 members __po__ and __poi__, which affects definitions involving namespaces:
+- Inside a text imported with __ohi__, __po__ marks the following definitions as __public__, meaning
+  they'll be accessible in the namespace using __PI__. __poi__ on the other end marks the following
+  definitions as __private__, making them inaccessible in the namespace. This allows to hide
+  implementation details.
+- Outside a text imported with __ohi__, predicates defined in a namespace will not be exported
+  by __noi__ if defined in a __poi__ paragraph, while they will be exported if defined in a __po__
+  paragraph. In both cases they are accessible with __PI__.
+
+## Sentence terminator PU
+
+Every sentence can optionally be terminated with __PU__ (with single memeber __pu__). It's sole
+purpose is to [attach annotations](../grammar/annotations.md) on the sentence after the fact, as
+if it was attached on __A/O/NI__.

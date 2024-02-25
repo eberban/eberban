@@ -5,12 +5,6 @@ text, and simply add notes or metadata. These annotations are also called "free"
 prefixes and suffixes as they can be added freely before and after many elements
 of the grammar.
 
-## Paragraph marker DU
-
-__DU__ can be placed before __/A/O/NI__ to mark a change of subject or
-new paragraph. If __DU__ is not followed by one of them then __pa__ is implied.
-If multiple prefixes in a row are used it must be the first of them.
-
 ## Free prefixes DI
 
 __DI__ contains all particles starting with _di-_ and are prefixes to other

@@ -82,5 +82,5 @@ Manually binding the argument will prevent the default bind to be added:
 >
 > I like the home planet of cats (still Earth, unless we find or bring cats on other planets).
 
-> Other chapters will omit default binds unless they are important to reduce
+> Other chapters will omit default binds (unless they are important) to reduce
 > verbosity.
