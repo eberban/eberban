@@ -138,3 +138,23 @@ __PO__ contains 2 members __po__ and __poi__, which affects definitions involvin
 Every sentence can optionally be terminated with __PU__ (with single memeber __pu__). It's sole
 purpose is to [attach annotations](../grammar/annotations.md) on the sentence after the fact, as
 if it was attached on __A/O/NI__.
+
+## Conversations and special namespaces
+
+In a conversion between multiple interlocutors, the following rules applies:
+- the context is carried between the sentences of all interlocutors, in order of utturance
+- a context transformation is applied when changing speaker to update personal pronouns and related
+  concepts (TODO: create word for it and define how it works)
+- definitions made by an interlocutor applies to all. All interlocutors shares the same word
+  meanings in the _root namespace_.
+
+__MI__ is used for special namespaces than can be used but not modified freely by the speakers, and
+allows mitigating problems that can be caused by the above rules (like an interlocutor redefining
+a word another wants to use for its former meaning).
+
+- __mio__ (inclusive we) namespace contains all the words defined in the official dictionnary. It
+  can be used to access a word that has been overwritten by any interlocutor's definition.
+- __mi__ (speaker) namespace contains all the words from __mio__, but is modified by any definitions
+  made by the speaker; and is not modified by definitions made by other interlocutors.
+- __mo__ (interlocutor) namespace contains all the words from __mio__, but is modified by any
+  definitions made by interlocutors; and is not modified by definitions made by the speaker.
