@@ -1682,7 +1682,7 @@ tcia:
   gloss: "subset"
   tags: [set]
   short: |
-    [E:tcui p] is a subset of [A:tcui p].
+    [E:tcei p] is a subset of [A:tcei p]. [A] is a superset of [E].
   definition: |
     on tcia ke ka be
     mao
@@ -2287,7 +2287,7 @@ peni:
   gloss: set-context-physical
   tags: [space]
   short: |
-    [E:tca pen] is used at the context volume to evaluate [A:()].
+    [E:tca pen] is used as the context volume to evaluate [A:()].
 penu:
   id: 5gzy2gu5a6
   family: "R"
@@ -2616,6 +2616,11 @@ gli:
   family: "R"
   gloss: "happy"
   short: "[E:tce* pan] is happy about [A:()] being true."
+glu:
+  id: t6q0c6agab
+  family: "R"
+  gloss: "unhappy"
+  short: "[E:tce* pan] is unhappy/sad about [A:()] being true."
 muli:
   id: vtqvmmg5g7
   family: "R"
@@ -2747,20 +2752,16 @@ miun:
   family: "R"
   gloss: "sleeps"
   short: "[E:tce* pan] sleeps."
-juni:
+juin:
   id: fkb8ogaewe
   family: "R"
   gloss: "good"
-  short: "[E:tce* man] is good."
-  notes: |
-    TODO: According to which standard/observer ?
-junu:
+  short: "[E:tce* man] is good according to [A:tce pan] (default: {bzael})."
+juon:
   id: ske4u4gwyx
   family: "R"
   gloss: "bad"
-  short: "[E:tce* man] is bad."
-  notes: |
-    TODO: According to which standard/observer ?
+  short: "[E:tce* man] is bad according to [A:tce pan] (default: {bzael})."
 kunu:
   id: 6runpjljp0
   family: "R"
@@ -3313,7 +3314,7 @@ gzeon:
   family: "R"
   gloss: "river"
   short: "[E:tce* pan] is a river/stream/brook (relatively large flowing body of water)."
-saelo:
+sanol:
   id: 84wqipbpce
   family: "R"
   gloss: "air"
@@ -4016,7 +4017,7 @@ zol:
   id: agk3nnes4a
   family: "R"
   gloss: "metaphor"
-  short: "[E:()] is a metaphor."
+  short: "[E:()] is a metaphor of [A:()]."
 mliel:
   id: xuvbg8gnll
   family: "R"
@@ -4086,7 +4087,12 @@ zidma:
   id: jqzbvtnncw
   family: "R"
   gloss: "why"
-  short: "[E:()] is true because of [A:()]"
+  short: "[E:()] is true because of [A:()]."
+feltu:
+  id: n6l471ty0l
+  family: "R"
+  gloss: "similar-to"
+  short: "[E:tce ma] looks similar to things satifying [A:(tce ma)]. [E] is [A]-like."
 
 
 # -----

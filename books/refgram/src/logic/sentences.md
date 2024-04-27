@@ -104,7 +104,7 @@ sentence.
 __ra__ is a special word which erase anything said since the start of the current sentence, initial
 __A/O/NI__ included. It must be surrounded by spaces or pauses.
 
-It is able to erase it even if the text is ungrammatical, and while erase anything back to the start
+It is able to erase it even if the text is ungrammatical, and will erase anything back to the start
 of the last sentence where the text was still grammatical (this means that an ungrammatical sentence
 followed by grammatically-looking sentences actually just counts as a single ungrammatical
 sentence).
@@ -135,7 +135,7 @@ __PO__ contains 2 members __po__ and __poi__, which affects definitions involvin
 
 ## Sentence terminator PU
 
-Every sentence can optionally be terminated with __PU__ (with single memeber __pu__). It's sole
+Every sentence can optionally be terminated with __PU__ (with single member __pu__). It's sole
 purpose is to [attach annotations](../grammar/annotations.md) on the sentence after the fact, as
 if it was attached on __A/O/NI__.
 
