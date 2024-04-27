@@ -177,7 +177,7 @@ mue:
 mua:
   id: t98puegdx0
   family: "MI"
-  gloss: "context-apply"
+  gloss: "context-apply:"
   tags: [core]
   short: True if context [E:ma] makes [A:()] true.
   definition: 𝜆c 𝜆e 𝜆A A(e)
@@ -1042,7 +1042,7 @@ me:
 ji:
   id: uqb3n5070a
   family: "JI"
-  gloss: "#cardinal"
+  gloss: "#cardinal:"
   tags: [terminator, number, set]
   transitive: true
   short: |
@@ -1065,7 +1065,7 @@ jie:
 jia:
   id: dnj7gskeg7
   family: "JI"
-  gloss: "#raw-cardinal"
+  gloss: "#raw-cardinal:"
   tags: [terminator, number, set]
   transitive: true
   short: |
@@ -1077,7 +1077,7 @@ jia:
 jio:
   id: 83fvb9onn2
   family: "JI"
-  gloss: "#universal-cardinal"
+  gloss: "#universal-cardinal:"
   tags: [terminator, number, set]
   transitive: true
   short: |
@@ -1089,7 +1089,7 @@ jio:
 jioa:
   id: hvmxrbwgxx
   family: "JI"
-  gloss: "#raw-universal-cardinal"
+  gloss: "#raw-universal-cardinal:"
   tags: [terminator, number, set]
   transitive: true
   short: |
@@ -1608,7 +1608,7 @@ do:
 vari:
   id: ffdtxzmfbd
   family: "R"
-  gloss: "and"
+  gloss: "and:"
   tags: [connective]
   short: "True if both [E:()] and [A:()] are true."
   notes: |
@@ -1619,7 +1619,7 @@ vari:
 vare:
   id: ysh546fklz
   family: "R"
-  gloss: "or"
+  gloss: "or:"
   tags: [connective]
   short: "True if [E:()] or [A:()] or both is true."
   definition: |
@@ -1630,7 +1630,7 @@ vare:
 varu:
   id: eczhmrmkqd
   family: "R"
-  gloss: "if"
+  gloss: "if:"
   tags: [connective]
   short: |
     If [E:()] is then [A:()] (default: true) is true, otherwise [O:()]
@@ -1665,7 +1665,7 @@ kidvo:
 tcui:
   id: g3quw0kqyl
   family: "R"
-  gloss: "set-all-raw"
+  gloss: "set-all-raw:"
   tags: [set, axiom]
   short: |
     [E:ma] is the (non-empty) set of all things that individualy satisfy [A:(p)].
@@ -1683,70 +1683,65 @@ tcia:
   tags: [set]
   short: |
     [E:tcei p] is a subset of [A:tcei p]. [A] is a superset of [E].
-  definition: |
-    on tcia ke ka be
-    mao
-      ve ki be varu
-        vie ki tcie ke
-        fia ki tcie ka
+  # definition: |
+  #   on tcia ke ka be
+  #   mao
+  #     ve ki be varu
+  #       vie ki tcie ke
+  #       fia ki tcie ka
 tcei:
   id: pwfckqjpdu
   family: "R"
-  gloss: "set-some-raw"
+  gloss: "set-some-raw:"
   tags: [set]
   short: |
     [E:tcui p] is a (non-empty) set of some things that individualy satisfy [A:(p)].
-  definition: |
-    on tcie ke gia be
-    ke tcia tcui gia
+  # definition: |
+  #   on tcie ke gia be
+  #   ke tcia tcui gia
 tcai:
   id: xemhvhqiom
   family: "R"
-  gloss: "set-one-raw"
+  gloss: "set-one-raw:"
   tags: [set]
   short: |
     [E:tcui p] is a set containing exactly one member which satisfy [A:(p)].
-  definition: |
-    on tcia ke gia be
-    ma
-      vi ke tcei gia
-      fi bi ma
-        vi bo ka tcie ke
-        fi bo ko bi ka
-        fi ko tcie ke
+  # definition: |
+  #   on tcia ke gia be
+  #   ma
+  #     vi ke tcei gia
+  #     fi bi ma
+  #       vi bo ka tcie ke
+  #       fi bo ko bi ka
+  #       fi ko tcie ke
 tcoi:
   id: zlgjmfoqtb
   family: "R"
-  gloss: "set-many-raw"
+  gloss: "set-many-raw:"
   tags: [set]
   short: |
     [E:tcei p] is a set of at least 2 things that individualy satisfy [A:(p)].
-  definition: |
-    on tcia ke gia be
-    ma
-      vi ke tcei gia
-      fi bo ka tcie ke
-      fi bo ko bi ka
-      fi ko tcie ke
+  # definition: |
+  #   on tcia ke gia be
+  #   ma
+  #     vi ke tcei gia
+  #     fi bo ka tcie ke
+  #     fi bo ko bi ka
+  #     fi ko tcie ke
 tca:
   id: 8w1jwffzur
   family: "R"
-  gloss: "set-one"
+  gloss: "set-one:"
   tags: [set]
   short: |
     [E:tcai p] is a set containing exactly one member, and satisfy [A:(tcai p)].
-  definition: |
-    on tca ke gia be
-    ke se tcai gia
-tcan:
-  id: vmenrgkg75
-  familiy: "R"
-  gloss: "pointed to"
-  short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)"
+  # definition: |
+  #   on tca ke gia be
+  #   ke se tcai gia
 tcu:
   id: pvhoor5xeb
   family: "R"
-  gloss: "set-all"
+  gloss: "set-all:"
   tags: [set]
   short: |
     [E:tcui p] is the (non-empty) set of all things that individualy satisfy [A:(tca p)].
@@ -1757,7 +1752,7 @@ tcu:
 tce:
   id: tqlnlqxzsn
   family: "R"
-  gloss: "set-some"
+  gloss: "set-some:"
   tags: [set]
   short: |
     [E:tcei p] is a (non-empty) set of some things that individualy satisfy [A:(tca p)].
@@ -1768,7 +1763,7 @@ tce:
 tco:
   id: sjmnh7xxpc
   family: "R"
-  gloss: "set-many"
+  gloss: "set-many:"
   tags: [set]
   short: |
     [E:tcoi p] is a set of at least 2 things that individualy satisfy [A:(tca p)].
@@ -1820,7 +1815,7 @@ dja:
 djo:
   id: zkzu7uyhit
   family: "R"
-  gloss: "set-local-max"
+  gloss: "set-local-max:"
   tags: [set]
   short: "[E:tce p] is a locally largest set that satisfy [A:(tce p)]."
   definition: |
@@ -1834,7 +1829,7 @@ djo:
 dju:
   id: jw7zewcwos
   family: "R"
-  gloss: "set-local-min"
+  gloss: "set-local-min:"
   tags: [set]
   short: "[E:tce p] is a locally smallest set that satisfy [A:(tce p)]."
   definition: |
@@ -1868,21 +1863,6 @@ kin:
                  va ka
                  fo ko
     pi e kin pi
-e zai pe:
-  id: hgqsgbly3t
-  family: "C"
-  gloss: "ident"
-  short: |
-    [E:ma] is an identifier/name made from property [A:(p)].
-  definition: |
-    on ezaipe ke gi be
-    ma
-      vi ke kin
-        va ezaipe ezaipe
-        fo gi vi
-        fi vare
-          vie gi mai
-          fie bi gi mai
 blur:
   id: nro51pm4q2
   family: "R"
@@ -1893,7 +1873,7 @@ blur:
 blu:
   id: 4tuaiv3x0b
   family: "R"
-  gloss: "list"
+  gloss: "list:"
   tags: [list]
   short: |
     [E:blun] is a list of things all satisfying [A:(p)].
@@ -2030,7 +2010,7 @@ kagvu:
 kagvar:
   id: uqfvqmic1a
   family: "R"
-  gloss: "context-map-list-wrapper"
+  gloss: "context-map-list-wrapper:"
   tags: [map, list, context]
   short: |
     Transformations [E:blu ()] are applied on the context before it is used to evaluate [A:()].
@@ -2058,14 +2038,14 @@ dinu:
 den:
   id: dc8ilrq3mf
   family: "R"
-  gloss: "update-present"
+  gloss: "update-present:"
   tags: [time]
   short: |
     [E:()] is evaluated with a more recent present.
 pane:
   id: vimwo5soyj
   family: "R"
-  gloss: "inner-context"
+  gloss: "inner-context:"
   tags: [context]
   short: |
     [E:ma] is the context exposed to a predicate when it is evaluated by [A:(())].
@@ -2076,20 +2056,20 @@ del:
   tags: [time]
   short: |
     [E:dinu] is the present time span.
-zvi:
-  id: uulyqjxb0p
-  family: "R"
-  gloss: "event-span"
-  tags: [time]
-  short: |
-    [E:dinu] is a time span shared by all events of [A:()].
-zvin:
-  id: axofygrppp
-  family: "R"
-  gloss: "event-apply"
-  tags: [time]
-  short: |
-    Time span [E:dinu] contains the context time span.
+# zvi:
+#   id: uulyqjxb0p
+#   family: "R"
+#   gloss: "event-span:"
+#   tags: [time]
+#   short: |
+#     [E:dinu] is a time span shared by all events of [A:()].
+# zvin:
+#   id: axofygrppp
+#   family: "R"
+#   gloss: "event-apply"
+#   tags: [time]
+#   short: |
+#     Time span [E:dinu] contains the context time span.
 zvil:
   id: gnr18x6ohk
   family: "R"
@@ -2100,7 +2080,7 @@ zvil:
 zvan:
   id: dv3jdkkpcp
   family: "R"
-  gloss: "necessary-helper"
+  gloss: "necessary-helper:"
   tags: [time]
   short: |
     For all time span x that contains time span [A:dinu] (default: context time span), either:
@@ -2109,91 +2089,91 @@ zvan:
 sel:
   id: vqajm3pj2j
   family: "R"
-  gloss: "possible-meets"
+  gloss: "possible-meets:"
   tags: [time]
   short: |
     It is possible that [E:()] meets time span [A:dinu] (default: context time span).
 sen:
   id: budfwlwobc
   family: "R"
-  gloss: "necessary-meets"
+  gloss: "necessary-meets:"
   tags: [time]
   short: |
     It is necessary that [E:()] meets time span [A:dinu] (default: context time span).
 sal:
   id: bwjgs2afh9
   family: "R"
-  gloss: "possible-starts"
+  gloss: "possible-starts:"
   tags: [time]
   short: |
     It is possible that [E:()] starts time span [A:dinu] (default: context time span).
 san:
   id: g2nigdhlup
   family: "R"
-  gloss: "necessary-starts"
+  gloss: "necessary-starts:"
   tags: [time]
   short: |
     It is necessary that [E:()] starts time span [A:dinu] (default: context time span).
 sol:
   id: zjxjllllah
   family: "R"
-  gloss: "possible-finishes"
+  gloss: "possible-finishes:"
   tags: [time]
   short: |
     It is possible that [E:()] finishes time span [A:dinu] (default: context time span).
 son:
   id: lv8no7q8p9
   family: "R"
-  gloss: "necessary-finishes"
+  gloss: "necessary-finishes:"
   tags: [time]
   short: |
     It is necessary that [E:()] finishes time span [A:dinu] (default: context time span).
 sul:
   id: axtm6ugdmg
   family: "R"
-  gloss: "possible-met-by"
+  gloss: "possible-met-by:"
   tags: [time]
   short: |
     It is possible that [E:()] is met by time span [A:dinu] (default: context time span).
 sun:
   id: zzddsvsokx
   family: "R"
-  gloss: "necessary-met-by"
+  gloss: "necessary-met-by:"
   tags: [time]
   short: |
     It is necessary that [E:()] is met by time span [A:dinu] (default: context time span).
 siel:
   id: lutdquie7v
   family: "R"
-  gloss: "possible-before"
+  gloss: "possible-before:"
   tags: [time]
   short: |
     It is possible that [E:()] is before time span [A:dinu] (default: context time span).
 sien:
   id: l4idmhyhtm
   family: "R"
-  gloss: "necessary-before"
+  gloss: "necessary-before:"
   tags: [time]
   short: |
     It is necessary that [E:()] is before time span [A:dinu] (default: context time span).
 sial:
   id: kv6dcgd35e
   family: "R"
-  gloss: "possible-contains"
+  gloss: "possible-contains:"
   tags: [time]
   short: |
     It is possible that [E:()] contains time span [A:dinu] (default: context time span).
 sian:
   id: 4pwutfyqus
   family: "R"
-  gloss: "necessary-contains"
+  gloss: "necessary-contains:"
   tags: [time]
   short: |
     It is necessary that [E:()] contains time span [A:dinu] (default: context time span).
 siol:
   id: q3d47lpfvg
   family: "R"
-  gloss: "possible-is-contained"
+  gloss: "possible-is-contained:"
   tags: [time]
   short: |
     It is possible that [E:()] is contained by time span [A:dinu] (default: context time span).
@@ -2204,7 +2184,7 @@ siol:
 sion:
   id: nkyo9z7x2w
   family: "R"
-  gloss: "necessary-is-contained"
+  gloss: "necessary-is-contained:"
   tags: [time]
   short: |
     It is necessary that [E:()] is contained by time span [A:dinu] (default: context time span).
@@ -2215,49 +2195,49 @@ sion:
 siul:
   id: chyjdknlh3
   family: "R"
-  gloss: "possible-after"
+  gloss: "possible-after:"
   tags: [time]
   short: |
     It is possible that [E:()] is after time span [A:dinu] (default: context time span).
 siun:
   id: dot0w2jln9
   family: "R"
-  gloss: "necessary-after"
+  gloss: "necessary-after:"
   tags: [time]
   short: |
     It is necessary that [E:()] is after time span [A:dinu] (default: context time span).
 sil:
   id: ggonkf8b9i
   family: "R"
-  gloss: "possible-overlaps"
+  gloss: "possible-overlaps:"
   tags: [time]
   short: |
     It is possible that [E:()] overlaps with time span [A:dinu] (default: context time span).
 sin:
   id: 2nshmlkxd0
   family: "R"
-  gloss: "necessary-overlaps"
+  gloss: "necessary-overlaps:"
   tags: [time]
   short: |
     It is necessary that [E:()] overlaps with time span [A:dinu] (default: context time span).
 dan:
   id: fkqgnv2hi2
   family: "R"
-  gloss: "occurs-presently"
+  gloss: "occurs-presently:"
   tags: [time]
   short: |
     [E:()] presently occurs.
 don:
   id: 0c5t0lkflg
   family: "R"
-  gloss: "occurs-anytime"
+  gloss: "occurs-anytime:"
   tags: [time]
   short: |
     [E:()] occurs at some time (no constraint).
 doni:
   id: qfxuso4eij
   family: "R"
-  gloss: "occurs-time-span"
+  gloss: "occurs-time-span:"
   tags: [time]
   short: |
     [A:()] occurs in a time span that overlaps [E:dinu].
@@ -2331,63 +2311,63 @@ gan:
 tcea:
   id: val5msurqc
   family: "R"
-  gloss: "OR-S"
+  gloss: "OR-S:"
   tags: [set, connective]
   short: "At least one member of [E:tce p] satisfies property [A:(tca p)]"
 tceai:
   id: dhyuzaems9
   family: "R"
-  gloss: "OR-S-raw"
+  gloss: "OR-S-raw:"
   tags: [set, connective]
   short: "At least one member of [E:tcei p] satisfies property [A:(p)]"
 tceo:
   id: nax6hot9qu
   family: "R"
-  gloss: "XOR-S"
+  gloss: "XOR-S:"
   tags: [set, connective]
-  short: "Exactly [E:gin] (default: 1) members of [E:tce p] satisfies property [A:(tca p)]."
+  short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(tca p)]."
 tceoi:
   id: hfwn93xw2o
   family: "R"
-  gloss: "XOR-S-raw"
+  gloss: "XOR-S-raw:"
   tags: [set, connective]
-  short: "Exactly [E:gin] (default: 1) members of [E:tce p] satisfies property [A:(p)]."
+  short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(p)]."
 ven:
   id: qsivboraps
   family: "R"
-  gloss: "AND-P0"
+  gloss: "AND-P0:"
   tags: [set, connective]
   short: "This proposition is true if all propositions in set [E:tcei ()] are true."
 van:
   id: d9fzfk4r83
   family: "R"
-  gloss: "OR-P0"
+  gloss: "OR-P0:"
   tags: [set, connective]
   short: "This proposition is true if at least one proposition in set [E:tcei ()] is true."
 von:
   id: f5t4czvnac
   family: "R"
-  gloss: "XOR-P0"
+  gloss: "XOR-P0:"
   tags: [set, connective]
-  short: "This proposition is true if exactly [E:gin] (default: 1) proposition(s) in set [E:tcei ()] is true."
+  short: "This proposition is true if exactly [A:tce gin] (default: 1) proposition(s) in set [E:tcei ()] is true."
 vene:
   id: ovzzfajdlw
   family: "R"
-  gloss: "AND-P1"
+  gloss: "AND-P1:"
   tags: [set, connective]
   short: "This proposition is true if [E:p] satisfies all properties in set [A:tcei (p)]."
 vane:
   id: 6ksleotknl
   family: "R"
-  gloss: "OR-P1"
+  gloss: "OR-P1":
   tags: [set, connective]
   short: "This proposition is true if [E:p] satisfies at least one property in set [A:tcei (p)]."
 vone:
   id: kog0cgvvza
   family: "R"
-  gloss: "XOR-P1"
+  gloss: "XOR-P1:"
   tags: [set, connective]
-  short: "This proposition is true if [E:a] satisfies exactly [O:gin] (default: 1) proposition(s) in set [A:tcei (p)]."
+  short: "This proposition is true if [E:a] satisfies exactly [O:tce gin] (default: 1) proposition(s) in set [A:tcei (p)]."
 vena:
   id: 4aamcwbbmi
   family: "R"
@@ -2405,7 +2385,7 @@ vona:
   family: "R"
   gloss: "XOR-P2"
   tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:gin] (default: 1) relation(s) in set [O:tcei (p,b)]."
+  short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:tce gin] (default: 1) relation(s) in set [O:tcei (p,b)]."
 mone:
   id: qt6yew5oof
   family: "R"
@@ -2427,7 +2407,7 @@ mole:
 fule:
   id: 86guwrqjob
   family: "R"
-  gloss: "knows"
+  gloss: "knows:"
   short: "[E:tce* pan] knows fact [A:()] from source [O:tce man]."
 dona:
   id: iffa5o0qnw
@@ -2500,7 +2480,7 @@ zuna:
 zvia:
   id: pcbyhpj1jy
   family: "R"
-  gloss: "purpose"
+  gloss: "purpose:"
   short: "[E:tce pan] has goal/purpose/aims to satisfy [A:(tce pan)]."
 skal:
   id: fx1mnfjs7i
@@ -2545,12 +2525,12 @@ vani:
 gza:
   id: 3qi3tvpegs
   family: "R"
-  gloss: "agentive cause"
+  gloss: "agentive cause:"
   short: "[E:tce* pan] is an agentive cause of [A:()] being true."
 kini:
   id: macaegnams
   family: "R"
-  gloss: "learns"
+  gloss: "learns:"
   short: "[E:tce* pan] learns/studies fact [A:()]."
 seru:
   id: 0pi0sos7qt
@@ -2576,7 +2556,7 @@ serun:
 snai:
   id: q0vx1idoej
   family: "R"
-  gloss: "works"
+  gloss: "works:"
   short: "[E:tce pan] labors/works by satisfying property [A:(tce pan)]."
 ber:
   id: vz1h8ccnmh
@@ -2614,17 +2594,17 @@ zdir:
 gli:
   id: r7wbdwqgm0
   family: "R"
-  gloss: "happy"
+  gloss: "happy:"
   short: "[E:tce* pan] is happy about [A:()] being true."
 glu:
   id: t6q0c6agab
   family: "R"
-  gloss: "unhappy"
+  gloss: "unhappy:"
   short: "[E:tce* pan] is unhappy/sad about [A:()] being true."
 muli:
   id: vtqvmmg5g7
   family: "R"
-  gloss: "confused"
+  gloss: "confused:"
   short: "[E:tce* pan] finds it difficult to understand how [A:()] is true."
 siro:
   id: xgbqoobjvr
@@ -2644,27 +2624,27 @@ jnaor:
 kitmu:
   id: isleimajzc
   family: "R"
-  gloss: "hope"
+  gloss: "hopes:"
   short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case."
 ketmu:
   id: vfis6lzbve
   family: "R"
-  gloss: "intentionless hope"
+  gloss: "intentionless hopes:"
   short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case, but thinks that they are powerless to make it true by themself."
 katmu:
   id: iezve23kex
   family: "R"
-  gloss: "want"
+  gloss: "wants:"
   short: "[E:tce pan] desires/wishes/wants that [A:()] be the case; [E:tce pan] would seize the opportunity to make [A:()] true."
 kotmu:
   id: ch2b852dq7
   family: "R"
-  gloss: "intend"
+  gloss: "intends:"
   short: "[E:tce pan] intends/plans to make [A:()] true, having reasonable confidence in their ability to do so."
 kutmu:
   id: 0g7kesm6nq
   family: "R"
-  gloss: "pray"
+  gloss: "prays:"
   short: "[E:tce pan] makes prayer [A:()], hoping that, somehow, this thought would influence reailty in the desired way, possibly throught the help of supernatural beings or forces."
 fuher:
   id: odaizkibaq
@@ -2679,7 +2659,7 @@ folin:
 jleo:
   id: l2gx6yauc8
   family: "R"
-  gloss: "motivated"
+  gloss: "motivated:"
   short: "[E:tce* pan] is motivated to make [A:()] true by [O:tce* man] (motivation)."
   notes: |
     TODO: Define what a motivation is. someone else? propositions?
@@ -2738,14 +2718,14 @@ soane:
 tri:
   id: dzrpftevt6
   family: "R"
-  gloss: "attemps"
+  gloss: "attemps:"
   short: |
     [E:tce* pan] tries/attemps to do/bring about [A:()].
     Success is neither implied or disimplied.
 tuli:
   id: yla5j5nzda
   family: "R"
-  gloss: "needs"
+  gloss: "needs:"
   short: "[E:tce* man] requires/needs [A:()] to being true. [A] is a necessity for [E]."
 miun:
   id: mu4oshpucp
@@ -3066,7 +3046,7 @@ ckuol:
 kari:
   id: w0aqh2uwhk
   family: "R"
-  gloss: "axiom"
+  gloss: "axiomatic-belief:"
   short: "[E:tce* pan] has axiomatic belief that [A:()] is true."
   notes: |
     [A] is an axiom, is presupposed to be true and it's truth value is never
@@ -3074,7 +3054,7 @@ kari:
 kiru:
   id: kxo9ztaycl
   family: "R"
-  gloss: "thinks"
+  gloss: "thinks:"
   short: "[E:tce* pan] thinks that [A:()] is true."
 meon:
   id: ym0o9kvaix
@@ -3105,32 +3085,32 @@ kroin:
 kani:
   id: puq4yi3rrf
   family: "R"
-  gloss: "infers from senses"
+  gloss: "infers from senses:"
   short: "[E:tce* pan] infers from their current sensorial experience that [A:()] is the case."
 mara:
   id: wdughdrr2i
   family: "R"
-  gloss: "remembers"
+  gloss: "remembers:"
   short: "[E:tce* pan] remembers the past experience of perceiving that [A:()] was the case."
 zule:
   id: xq83jvzd55
   family: "R"
-  gloss: "hearsay"
+  gloss: "hearsay:"
   short: "[E:tce* pan] has got second-hand information or hearsay according to which [A:()] is the case."
 muni:
   id: wl8bgxuacj
   family: "R"
+  gloss: "intuits:"
   short: "[E:tce* pan] intuits that [A:()] is the case."
-  gloss: "intuits"
 sana:
   id: ettifc4jmj
   family: "R"
-  gloss: "cultural knowledge"
+  gloss: "cultural knowledge:"
   short: "[E:tce* pan] has cultural knowledge, collective wisdom according to which [A:()] is the case."
 valo:
   id: w14bplmcqv
   family: "R"
-  gloss: "infers from multiple sources"
+  gloss: "infers from multiple sources:"
   short: "[E:tce* pan] infers (from several sources of information) that [A:()] is the case."
 bale:
   id: ktg311prdc
@@ -3182,18 +3162,18 @@ kena:
 clo:
   id: pfztommryn
   family: "R"
-  gloss: "purpose"
+  gloss: "purpose:"
   short: "[E:tce man] have purpose to satisfy property [A:(tce man)]."
 jara:
   id: wwih32fwvc
   family: "R"
-  gloss: "paid work"
+  gloss: "paid work:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as one of their jobs/occupations (paid work)."
 zera:
   id: od2vvlzdn2
   family: "R"
+  gloss: "personality trait:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as a personality trait."
-  gloss: "personality trait"
 blae:
   id: xr7quk0nzy
   family: "R"
@@ -3202,7 +3182,7 @@ blae:
 dzui:
   id: zwvj8ibmcc
   family: "R"
-  gloss: "able"
+  gloss: "able:"
   short: "[E:tce pan] is able to satisfy property [A:(tce pan)]."
 
 benal:
@@ -3223,7 +3203,7 @@ meul:
 znir:
   id: bbmaoqi9r0
   family: "R"
-  gloss: "obligated"
+  gloss: "obligated:"
   short: |
     [E:()] is obligated to be performed under authority [A:tce* pan]. [E] is a duty.
 
@@ -3232,7 +3212,7 @@ znir:
 zner:
   id: katsvpqhmr
   family: "R"
-  gloss: "encouraged"
+  gloss: "encouraged:"
   short: |
     [E:()] is encouraged to be performed under authority [A:tce* pan].\
     [E] is a virtuous/upstanding behavior.
@@ -3241,7 +3221,7 @@ zner:
 znar:
   id: juramnwmey
   family: "R"
-  gloss: "tolerated"
+  gloss: "tolerated:"
   short: |
     [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* pan].
     [E] is tolerated.
@@ -3251,7 +3231,7 @@ znar:
 znor:
   id: 2uij97w56c
   family: "R"
-  gloss: "discouraged"
+  gloss: "discouraged:"
   short: |
     [E:()] is discouraged to be performed under authority [A:tce* pan]; [E] is reprehensible.
 
@@ -3260,7 +3240,7 @@ znor:
 znur:
   id: wtc0sbwiwj
   family: "R"
-  gloss: "forbidden"
+  gloss: "forbidden:"
   short: |
     [E:()] is forbidden to be done by authority [A:tce* pan].
 
@@ -3269,7 +3249,7 @@ znur:
 molai:
   id: td2lg6faki
   family: "R"
-  gloss: "reward/punishment"
+  gloss: "rewarded/punished:"
   short: |
     [E:tce pan] is made to satisfy [A:(tce pan)] as a reward/punishment.
     (E) is awarded/punished, with result that they satisfy [A].
@@ -3358,10 +3338,10 @@ fulu:
   gloss: "product"
   tags: ["maths"]
   short: "[E:tce gan] is the product of numbers in list [A:blu tce gan]."
-koro:
+konor:
   id: iophfsuxgp
   family: "R"
-  gloss: "number pred"
+  gloss: "number pred:"
   short: |
     [E:(tce gan,tce gan)] is a predicate of the form: [E:tce gan] is [number]
     times [A:tce gan] (default: 1).
@@ -3781,7 +3761,7 @@ snoil:
 zmino:
   id: zbbqohy82q
   family: "R"
-  gloss: "picture"
+  gloss: "picture:"
   short: "[E:tce* pan] is a picture depicting [A:()]."
   notes: |
     [A] occurs at the instant the picture was taken, as is constrainted in space
@@ -3789,7 +3769,7 @@ zmino:
 jalo:
   id: 6naqo0pjy0
   family: "R"
-  gloss: "with-each-other"
+  gloss: "with-each-other:"
   short: "[E:tce man] satisfy relation [A:(tca man,tca man)] with each other."
   notes: |
     Each member of [E] satisfy relation with [A] with every other member of [E].
@@ -3890,7 +3870,7 @@ zmur:
 cekme:
   id: rn07g95kw6
   family: "R"
-  gloss: "differs"
+  gloss: "differs:"
   tags: ["color"]
   short: |
     [E:tce p] differs in what they individually satisfy relation [A:(tca a, b)]
@@ -3906,18 +3886,18 @@ cekme:
 tcoe:
   id: 1ekbkw2s33
   family: "R"
-  gloss: "mutual-1"
+  gloss: "mutual-1:"
   short: "[E:tco p] is a group where every pair of members mutualy satisfy property [A:(tco p)]."
 tceu:
   id: ho1az3mcl2
   family: "R"
-  gloss: "mutual-2"
+  gloss: "mutual-2:"
   short: "[E:tco p] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca p)]."
 
 jene:
   id: gi4jvusxpm
   family: "R"
-  gloss: "big"
+  gloss: "big:"
   short: |
     [E:tce* p] are big among all things that satisfy measuring relation [A:(tce gan,tca pan)], with
     standard deviation [O:tca gan] (default: 1).
@@ -3927,7 +3907,7 @@ jene:
 jere:
   id: ik7qjuwuxm
   family: "R"
-  gloss: "small"
+  gloss: "small:"
   short: |
     [E:tce* p] are small among all things that satisfy measuring relation [A:(tce gan,tca p)], with
     standard deviation [O:tca gan] (default: 1).
@@ -3937,13 +3917,13 @@ jere:
 jini:
   id: 7y4m7u346i
   family: "R"
-  gloss: "increasing-order"
+  gloss: "increasing-order:"
   short: |
     [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
 jiri:
   id: 2ivqr4ouem
   family: "R"
-  gloss: "decreasing-order"
+  gloss: "decreasing-order:"
   short: |
     [E:blu p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
 buran:
@@ -4016,7 +3996,7 @@ zailu:
 zol:
   id: agk3nnes4a
   family: "R"
-  gloss: "metaphor"
+  gloss: "metaphor:"
   short: "[E:()] is a metaphor of [A:()]."
 mliel:
   id: xuvbg8gnll
@@ -4086,13 +4066,18 @@ vzoun:
 zidma:
   id: jqzbvtnncw
   family: "R"
-  gloss: "why"
+  gloss: "because:"
   short: "[E:()] is true because of [A:()]."
 feltu:
   id: n6l471ty0l
   family: "R"
-  gloss: "similar-to"
+  gloss: "similar-to:"
   short: "[E:tce ma] looks similar to things satifying [A:(tce ma)]. [E] is [A]-like."
+spel:
+  id: vmenrgkg75
+  familiy: "R"
+  gloss: "pointed to"
+  short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)"
 
 
 # -----
@@ -4288,7 +4273,7 @@ e ze al:
 e bzael mue:
   id: hshwh0yqhx
   family: "C"
-  gloss: "set-opiner"
+  gloss: "set-opiner:"
   short: "[E:tce man] is an opiner that makes the proposition [A:()] true."
   notes: See {bzael} for explanations.
 e ca ma:
@@ -4456,7 +4441,7 @@ ei ceu bue:
 ei a ol:
   id: 5kgq6jl1at
   family: "C"
-  gloss: "asserts"
+  gloss: "asserts:"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
     {a !X} can be modeled as being syntaxic sugar for {oni eze'a !X ol !P be mi eia'ol eze'a}.
@@ -4464,7 +4449,7 @@ ei a ol:
 ei al ol:
   id: wg9fbpescm
   family: "C"
-  gloss: "requests"
+  gloss: "requests:"
   short: "[E:tce pan] requests/order that [A:()] is true."
   notes: |
     {AL X} can be modeled as being syntaxic sugar for {oni eze'al !X ol !P be mi eial'ol eze'a}.

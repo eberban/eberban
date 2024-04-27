@@ -74,3 +74,9 @@ If there are no vowel before, it refers to an entry of the context argument.
 
 Exemples will be given in later chapters when explaining concepts using contexts
 or maps. -->
+
+## Glosses ending with `:`
+
+Glosses should end with `:` is default chaining behavior chains to a predicate
+place, meaning the following chain is "wrapped" in it. This can help learners
+to more quickly understand the structure of a glossed sentence.
