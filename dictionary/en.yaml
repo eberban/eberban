@@ -2359,7 +2359,7 @@ vene:
 vane:
   id: 6ksleotknl
   family: "R"
-  gloss: "OR-P1":
+  gloss: "OR-P1:"
   tags: [set, connective]
   short: "This proposition is true if [E:p] satisfies at least one property in set [A:tcei (p)]."
 vone:
