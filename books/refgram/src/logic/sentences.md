@@ -61,7 +61,7 @@ sentence.
   Note that the definition doesn't use the global context argument, and instead uses the context
   argument provided by the sentence using this predicate.
 
-- __oni__ (capturing definition): Same as __po__ but captures the current global context. The
+- __oni__ (capturing definition): Same as __on__ but captures the current global context. The
   implicit context argument is ignored.
 
 - __ol__ (performative / axiom definition): Shorthand of defining a predicate using __on__ then
@@ -76,6 +76,8 @@ sentence.
 
 - __oie/oia/oio/oiu__ (set defaults): Set the default binding for a slot of the given predicate. See
   [the chapter on defaults](default.md)
+
+[performative]: https://en.wikipedia.org/wiki/Performativity
 
 ## NI family
 
@@ -97,7 +99,6 @@ sentence.
 - __noi__: extract all predicates from given namespace. `noi <namespace>` is equivalent to saying
   `no <namespace> pi <pred>` for all `<pred>` in `<namespace>`.
 
-[performative]: https://en.wikipedia.org/wiki/Performativity
 
 ## RA eraser
 
