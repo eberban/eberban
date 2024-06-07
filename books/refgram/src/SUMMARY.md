@@ -20,13 +20,8 @@
   - [Enumeration and short erasure (BU)](grammar/enum.md)
   - [Numbers (TI/j-)](grammar/numbers.md)
   - [Annotations (d-)](grammar/annotations.md)
-<!--
-- [Important concepts]()
-  - [Data structures]()
-    - [Sets]()
-    - [Maps]()
-  - [Time](concepts/time.md)
--->
+- [Vocabulary design]()
+  - [Spacetime and events](vocabulary/spacetime.md)
 - [Writing systems](writing/intro.md)
   - [Linear writing system](writing/linear.md)
   - [Planar writing system]()

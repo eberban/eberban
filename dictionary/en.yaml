@@ -197,6 +197,14 @@ ba:
   links:
     - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
 bai:
+  id: fwel577l5k
+  family: "BA"
+  gloss: "#sentece-inline-arg-generic"
+  tags: [core]
+  short: "Sentence inline atom/generic argument marker."
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
+bahi:
   id: vnuzs4uzpz
   family: "BA"
   gloss: "#inline-arg-transitive"
@@ -204,12 +212,28 @@ bai:
   short: "Inline transitive predicate argument marker."
   links:
     - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
-bae:
+baihi:
+  id: c1i642artq
+  family: "BA"
+  gloss: "#inline-arg-transitive"
+  tags: [core]
+  short: "Sentence inline transitive predicate argument marker."
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
+bahe:
   id: c8bgs5yx9k
   family: "BA"
   gloss: "#inline-arg-intransitive"
   tags: [core]
   short: "Inline intransitive predicate argument marker."
+  links:
+    - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
+baihe:
+  id: m5yaqq2smv
+  family: "BA"
+  gloss: "#sentence-inline-arg-intransitive"
+  tags: [core]
+  short: "Sentence inline intransitive predicate argument marker."
   links:
     - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
 vei:
@@ -2014,267 +2038,21 @@ kagvar:
   tags: [map, list, context]
   short: |
     Transformations [E:blu ()] are applied on the context before it is used to evaluate [A:()].
-din:
-  id: nibp9gygau
-  family: "R"
-  gloss: "instant"
-  tags: [time]
-  short: |
-    [E:ma] is an instant (digraph node).
-dini:
-  id: 3qex7khuq6
-  family: "R"
-  gloss: "time-arc"
-  tags: [time]
-  short: |
-    [E:ma] is an instant (digraph node).
-dinu:
-  id: y7adb2kwfz
-  family: "R"
-  gloss: "time-span"
-  tags: [time]
-  short: |
-    There exists a path/span [O:blu din] from node [E:din] to node [A:din].
-den:
-  id: dc8ilrq3mf
-  family: "R"
-  gloss: "update-present:"
-  tags: [time]
-  short: |
-    [E:()] is evaluated with a more recent present.
-pane:
-  id: vimwo5soyj
-  family: "R"
-  gloss: "inner-context:"
-  tags: [context]
-  short: |
-    [E:ma] is the context exposed to a predicate when it is evaluated by [A:(())].
-del:
-  id: umuuampnqb
-  family: "R"
-  gloss: "present-span"
-  tags: [time]
-  short: |
-    [E:dinu] is the present time span.
-# zvi:
-#   id: uulyqjxb0p
-#   family: "R"
-#   gloss: "event-span:"
-#   tags: [time]
-#   short: |
-#     [E:dinu] is a time span shared by all events of [A:()].
-# zvin:
-#   id: axofygrppp
-#   family: "R"
-#   gloss: "event-apply"
-#   tags: [time]
-#   short: |
-#     Time span [E:dinu] contains the context time span.
-zvil:
-  id: gnr18x6ohk
-  family: "R"
-  gloss: "context-span"
-  tags: [time, context]
-  short: |
-    [E:dinu] is the context time span.
-zvan:
-  id: dv3jdkkpcp
-  family: "R"
-  gloss: "necessary-helper:"
-  tags: [time]
-  short: |
-    For all time span x that contains time span [A:dinu] (default: context time span), either:
-    - [E:(dinu)] evaluated with x is true
-    - [E] is true if evaluated with a time span containing x
-sel:
-  id: vqajm3pj2j
-  family: "R"
-  gloss: "possible-meets:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] meets time span [A:dinu] (default: context time span).
-sen:
-  id: budfwlwobc
-  family: "R"
-  gloss: "necessary-meets:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] meets time span [A:dinu] (default: context time span).
-sal:
-  id: bwjgs2afh9
-  family: "R"
-  gloss: "possible-starts:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] starts time span [A:dinu] (default: context time span).
-san:
-  id: g2nigdhlup
-  family: "R"
-  gloss: "necessary-starts:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] starts time span [A:dinu] (default: context time span).
-sol:
-  id: zjxjllllah
-  family: "R"
-  gloss: "possible-finishes:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] finishes time span [A:dinu] (default: context time span).
-son:
-  id: lv8no7q8p9
-  family: "R"
-  gloss: "necessary-finishes:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] finishes time span [A:dinu] (default: context time span).
-sul:
-  id: axtm6ugdmg
-  family: "R"
-  gloss: "possible-met-by:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] is met by time span [A:dinu] (default: context time span).
-sun:
-  id: zzddsvsokx
-  family: "R"
-  gloss: "necessary-met-by:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] is met by time span [A:dinu] (default: context time span).
-siel:
-  id: lutdquie7v
-  family: "R"
-  gloss: "possible-before:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] is before time span [A:dinu] (default: context time span).
-sien:
-  id: l4idmhyhtm
-  family: "R"
-  gloss: "necessary-before:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] is before time span [A:dinu] (default: context time span).
-sial:
-  id: kv6dcgd35e
-  family: "R"
-  gloss: "possible-contains:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] contains time span [A:dinu] (default: context time span).
-sian:
-  id: 4pwutfyqus
-  family: "R"
-  gloss: "necessary-contains:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] contains time span [A:dinu] (default: context time span).
-siol:
-  id: q3d47lpfvg
-  family: "R"
-  gloss: "possible-is-contained:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] is contained by time span [A:dinu] (default: context time span).
-  notes: |
-    Is equivalent to {sion}, as since E is contained in the context span
-    then there is only one possible timeline. Thus it is both possible and
-    necessary.
-sion:
-  id: nkyo9z7x2w
-  family: "R"
-  gloss: "necessary-is-contained:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] is contained by time span [A:dinu] (default: context time span).
-  notes: |
-    Is equivalent to {siol}, as since E is contained in the context span
-    then there is only one possible timeline. Thus it is both possible and
-    necessary.
-siul:
-  id: chyjdknlh3
-  family: "R"
-  gloss: "possible-after:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] is after time span [A:dinu] (default: context time span).
-siun:
-  id: dot0w2jln9
-  family: "R"
-  gloss: "necessary-after:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] is after time span [A:dinu] (default: context time span).
-sil:
-  id: ggonkf8b9i
-  family: "R"
-  gloss: "possible-overlaps:"
-  tags: [time]
-  short: |
-    It is possible that [E:()] overlaps with time span [A:dinu] (default: context time span).
-sin:
-  id: 2nshmlkxd0
-  family: "R"
-  gloss: "necessary-overlaps:"
-  tags: [time]
-  short: |
-    It is necessary that [E:()] overlaps with time span [A:dinu] (default: context time span).
-dan:
-  id: fkqgnv2hi2
-  family: "R"
-  gloss: "occurs-presently:"
-  tags: [time]
-  short: |
-    [E:()] presently occurs.
-don:
-  id: 0c5t0lkflg
-  family: "R"
-  gloss: "occurs-anytime:"
-  tags: [time]
-  short: |
-    [E:()] occurs at some time (no constraint).
-doni:
-  id: qfxuso4eij
-  family: "R"
-  gloss: "occurs-time-span:"
-  tags: [time]
-  short: |
-    [A:()] occurs in a time span that overlaps [E:dinu].
 
 # -----
 # Other vocabulary, not yet defined in eberban
 # -----
 
-pen:
-  id: rjami7df3u
-  family: "R"
-  gloss: physical
-  tags: [space]
-  short: |
-    [E:tca man] is a physical entity which occupies volume [A:tce man] at
-    instant [O:dini].
 pan:
   id: whi7bmezoy
   family: "R"
-  gloss: context-physical
+  gloss: physical
   tags: [space, context]
   short: |
-    [E:tca man] is a physical entity which intersects with the context volume.
-peni:
-  id: 7n2eqikobr
-  family: "R"
-  gloss: set-context-physical
-  tags: [space]
-  short: |
-    [E:tca pen] is used as the context volume to evaluate [A:()].
-penu:
-  id: 5gzy2gu5a6
-  family: "R"
-  gloss: volume-overlap
-  tags: [space]
-  short: |
-    The volume of [E:tca pen] intersects with the volume of [A:tce pen].
+    [E:tce man] is a physical entity which occupies space-time volume [A:tce sken].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+
 gin:
   id: 4uxuhdkbez
   family: "R"
@@ -4078,6 +3856,157 @@ spel:
   familiy: "R"
   gloss: "pointed to"
   short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)"
+
+# Time relations
+
+seni:
+  id: 5rdw01axi4
+  family: "R"
+  gloss: "before:"
+  tags: [time, tense]
+  short: "It occurs before [A:()], separated by [O:tce gan] time."
+  notes: |
+    The end of "it" is before the start of [A].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+seli:
+  id: m3p1pma6zf
+  family: "R"
+  gloss: "after:"
+  tags: [time, tense]
+  short: "It occurs after [A:()], separated by [O:tce gan] time."
+  notes: |
+    The start of "it" is after the end of [A].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+sene:
+  id: alzqd00d1g
+  family: "R"
+  gloss: "met-by:"
+  tags: [time, tense]
+  short: "It is met by [A:()]"
+  notes: |
+    The start of "it" is the end of [A].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+sele:
+  id: vmwzur3ypx
+  family: "R"
+  gloss: "meets:"
+  tags: [time, tense]
+  short: "It meets [A:()]"
+  notes: |
+    The end of "it" is the start of [A].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+sena:
+  id: 4wmrgvvaw2
+  family: "R"
+  gloss: "starts:"
+  tags: [time, tense]
+  short: "It starts [A:()]"
+  notes: |
+    The start of "it" is the start of [A].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+sela:
+  id: nsnjvcaglb
+  family: "R"
+  gloss: "finished:"
+  tags: [time, tense]
+  short: "It finishes [A:()]"
+  notes: |
+    The end of "it" is the end of [A].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+seno:
+  id: 64scvsnfn7
+  family: "R"
+  gloss: "contains:"
+  tags: [time, tense]
+  short: "It contains [A:()]"
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+selo:
+  id: 0fj04kshgt
+  family: "R"
+  gloss: "contained-by:"
+  tags: [time, tense]
+  short: "It is contained by [A:()]"
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+sku:
+  id: yktbdu521a
+  family: "R"
+  gloss: "event:"
+  tags: [time, event]
+  short: "[E:tce man] is an event/occurence of [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]    
+skun:
+  id: nt7nm8e1y5
+  family: "R"
+  gloss: "event-occurs"
+  tags: [time, event]
+  short: "[E:tce sku] is occuring."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]    
+skul:
+  id: bv0t2rbt88
+  family: "R"
+  gloss: "contained-time-span"
+  tags: [time, event]
+  short: "[E:tce skan] is a timespan contained in the current common timespan."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]    
+sken:
+  id: palszydy29
+  family: "R"
+  gloss: space-time-volume
+  tags: [space, time]
+  short: |
+    [E:tce* man] is a space-time volume.
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+skan:
+  id: 17akg2234q
+  family: "R"
+  gloss: time-span
+  tags: [time]
+  short: |
+    [E:tce* man] is a timespan.
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+skin:
+  id: tsrx8h6muk
+  family: "R"
+  gloss: set-anchor-present
+  tags: [time, context-updater]
+  short: |
+    [E:ma] is the context with time anchor being the present.
+  notes: |
+    The present is a time-span representing the duration of the utterence of the sentence, and is
+    updated between each sentence to then represent the next sentence duration.
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+sko:
+  id: k22ul24sct
+  family: "R"
+  gloss: set-anchor
+  tags: [time, context-updater]
+  short: |
+    [E:ma] is the context with time anchor being [A:tca skan].
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+skon:
+  id: i2jo0s1e03
+  family: "R"
+  gloss: pick-time-span
+  tags: [time]
+  short: |
+    [E:tca skan] is a timespan contained in the current common timespan.
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 
 
 # -----
