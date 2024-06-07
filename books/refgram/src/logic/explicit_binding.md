@@ -89,9 +89,11 @@ used in the inner predicate. Which __BA__ member is used doesn't matter.
 
 __BA__ can also be used outside of the argument list, which adds an argument at
 the end of the list and uses it directly. __ba__ declares an atom/generic
-argument (like a KI), __bai__ a transitivite predicate argument (like a
-gi-initial GI), and __bae__ an intransitive predicate argument (like a non
-gi-initial GI).
+argument (like a KI), __bahi__ a transitivite predicate argument (like a
+gi-initial GI), and __bahe__ an intransitive predicate argument (like a non
+gi-initial GI). __bai__, __baihi__ and __baihe__ on the other hand always adds
+an argument at the end of the **sentence arguments list**, which is mostly
+useful when asking questions.
 
 The above example can thus be shortened as _mi dona [va be mian buri __ba__]_.
 
