@@ -1389,7 +1389,7 @@ ra:
   family: "RA"
   gloss: "#erase"
   short: |
-    Erase from the start of the current sentence. 
+    Erase from the start of the current sentence.
   see_also: ["buhu"]
   links:
     - ["icon-book", "Sentences - RA eraser", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ra-eraser]
@@ -1587,7 +1587,7 @@ poi:
     Predicates are usable like normal in this text, however another text
     importing this text with {ohi} will not have access to them. To make
     predicates public and available in the namespace, use {po}.
-    
+
     When used outside of an imported text, definitions of namespaced predicates
     (`on <namespace> pi <pred> ...`) will NOT be automatically extracted by
     {noi}.
@@ -2234,7 +2234,7 @@ buri:
   id: fp326p16jr
   family: "R"
   gloss: "eats"
-  short: "[E:tce* pan] eats [A:tce* pan]."
+  short: "[E:tce pan] eats [A:tce pan]."
 zin:
   id: jct2wcsuqa
   family: "R"
@@ -2669,11 +2669,21 @@ slane:
   family: "R"
   gloss: "tied"
   short: "[E:tce* pan] is tied/pinned to [A:tce* pan]."
-skien:
-  id: gpqertouzz
+gloli:
+  id: j31as5z1tr
   family: "R"
-  gloss: "program"
-  short: "[E:tce* man] is a computer program."
+  gloss: "plays"
+  short: "[E:tce pan] plays game [A:tce* pan]."
+spenu:
+  id: mre2klwbx7
+  family: "R"
+  gloss: "look"
+  short: "[E:tce* pan] looks at/watches [A:tce* pan]."
+vihon:
+  id: re4w2vqoju
+  family: "R"
+  gloss: "car"
+  short: "[E:tce* pan] is a car."
 zari:
   id: y9cpaqtwg7
   family: "R"
@@ -2698,7 +2708,12 @@ tsiu:
   family: "R"
   gloss: "finds"
   short: "[E:tce* pan] finds/discovers [A:tce* man]."
-bun:
+tsia:
+  id: jo5uxpp9f9
+  family: "R"
+  gloss: "searches"
+  short: "[E:tce* pan] searches/looks for something that satisfies [A:(p)]."
+buan:
   id: ernf6oh1zg
   family: "R"
   gloss: "text"
@@ -3868,7 +3883,7 @@ seni:
   notes: |
     The end of "it" is before the start of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 seli:
   id: m3p1pma6zf
   family: "R"
@@ -3878,7 +3893,7 @@ seli:
   notes: |
     The start of "it" is after the end of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 sene:
   id: alzqd00d1g
   family: "R"
@@ -3888,7 +3903,7 @@ sene:
   notes: |
     The start of "it" is the end of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 sele:
   id: vmwzur3ypx
   family: "R"
@@ -3898,7 +3913,7 @@ sele:
   notes: |
     The end of "it" is the start of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 sena:
   id: 4wmrgvvaw2
   family: "R"
@@ -3908,7 +3923,7 @@ sena:
   notes: |
     The start of "it" is the start of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 sela:
   id: nsnjvcaglb
   family: "R"
@@ -3918,7 +3933,7 @@ sela:
   notes: |
     The end of "it" is the end of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 seno:
   id: 64scvsnfn7
   family: "R"
@@ -3926,7 +3941,7 @@ seno:
   tags: [time, tense]
   short: "It contains [A:()]"
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 selo:
   id: 0fj04kshgt
   family: "R"
@@ -3934,7 +3949,15 @@ selo:
   tags: [time, tense]
   short: "It is contained by [A:()]"
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]   
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+senu:
+  id: u3q3u80bs7
+  family: "R"
+  gloss: "unconstrained-by:"
+  tags: [time, tense]
+  short: "It is unconstrained by [A:()]"
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 sku:
   id: yktbdu521a
   family: "R"
@@ -3942,7 +3965,7 @@ sku:
   tags: [time, event]
   short: "[E:tce man] is an event/occurence of [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]    
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 skun:
   id: nt7nm8e1y5
   family: "R"
@@ -3950,7 +3973,25 @@ skun:
   tags: [time, event]
   short: "[E:tce sku] is occuring."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]    
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+skuni:
+  id: pmwsbwwa6w
+  family: "R"
+  gloss: "event-start"
+  tags: [time, event]
+  short: "[E:tce gan] is the start time of event [A:tca sku]."
+  notes: |
+    [E] is the time (in seconds) relative to a fixed reference point (which is not important, so we choose UNIX epoch).
+    Mostly useful with {jini}/{jiri} to order events.
+skuri:
+  id: ah0c4muyyx
+  family: "R"
+  gloss: "event-end"
+  tags: [time, event]
+  short: "[E:tce gan] is the end time of event [A:tca sku]."
+  notes: |
+    [E] is the time (in seconds) relative to a fixed reference point (which is not important, so we choose UNIX epoch).
+    Mostly useful with {jini}/{jiri} to order events.
 skul:
   id: bv0t2rbt88
   family: "R"
@@ -3958,7 +3999,13 @@ skul:
   tags: [time, event]
   short: "[E:tce skan] is a timespan contained in the current common timespan."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]    
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+skuli:
+  id: mqfz0l96zc
+  family: "R"
+  gloss: "event-concurrent:"
+  tags: [time, event]
+  short: "[A:()] occurs in the same timespan as event [E:tca sku]."
 sken:
   id: palszydy29
   family: "R"
@@ -4007,6 +4054,12 @@ skon:
     [E:tca skan] is a timespan contained in the current common timespan.
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+stani:
+  id: 038s3l4yp4
+  family: "R"
+  gloss: citizen
+  short: |
+    [E:tce* pan] is a citizen of [A:tce* pan].
 
 
 # -----
@@ -4183,12 +4236,12 @@ e jveno kena:
   family: "C"
   gloss: "hugs"
   short: "[E:tce* pan] hugs [A:tce* pan]."
-e kini bun:
+e kini buan:
   id: o9bwkmfwvs
   family: "C"
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
-  definition: "on ekinibun ke ka pi ke bun gla kini via seru ka"
+  definition: "on ekinibun ke ka pi ke buan gla kini via seru ka"
 e ze a:
   id: mfyipbixdd
   family: "C"
@@ -4404,3 +4457,167 @@ en skal co ma:
   notes: |
     [E] should be a unique identifier representing how and where the content
     can be fetched.
+e sural jerol:
+  id: fhpj03hyww
+  family: "C"
+  gloss: "hour+minute (event)"
+  short: "It is the hour [E:tce gan] and minute [E:tce gan] of the day."
+  notes: |
+    See notes of {sural} and {jerol}. Allows to shortly speak or ask about the
+    current time of the day.
+en jiu seni sku:
+  id: o6taqi388f
+  family: "C"
+  gloss: "before-nth:"
+  tags: [time, tense]
+  short: "[E:tce sku] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the future."
+en jiu seli sku:
+  id: exaqlp8qex
+  family: "C"
+  gloss: "before-nth:"
+  tags: [time, tense]
+  short: "[E:tce sku] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the past."
+e ti seni:
+  id: ey5f5raem9
+  family: "C"
+  gloss: "just-before:"
+  tags: [time, tense]
+  short: "It occurs less than 1 second (excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e ti seli:
+  id: 9egdpvfgwq
+  family: "C"
+  gloss: "just-after:"
+  tags: [time, tense]
+  short: "It occurs less than 1 second (excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e vola seni:
+  id: 10utjcfexx
+  family: "C"
+  gloss: "seconds-before:"
+  tags: [time, tense]
+  short: "It occurs seconds (between 1 second included and 1 minute excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e vola seli:
+  id: n7vb7za2mu
+  family: "C"
+  gloss: "seconds-after:"
+  tags: [time, tense]
+  short: "It occurs seconds (between 1 second included and 1 minute excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e jero seni:
+  id: 4bie8njlb2
+  family: "C"
+  gloss: "minutes-before:"
+  tags: [time, tense]
+  short: "It occurs minutes (between 1 minute included and 1 hour excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e jero seli:
+  id: 0zwjen7xl9
+  family: "C"
+  gloss: "minutes-after:"
+  tags: [time, tense]
+  short: "It occurs minutes (between 1 minute included and 1 hour excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e sura seni:
+  id: p9ghshgmxj
+  family: "C"
+  gloss: "hours-before:"
+  tags: [time, tense]
+  short: "It occurs hours (between 1 hour included and 1 day excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e sura seli:
+  id: 7a95uf6jrp
+  family: "C"
+  gloss: "hours-after:"
+  tags: [time, tense]
+  short: "It occurs hours (between 1 hour included and 1 day excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e dena seni:
+  id: ftmheg89q2
+  family: "C"
+  gloss: "days-before:"
+  tags: [time, tense]
+  short: "It occurs days (between 1 day included and 1 week excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e dena seli:
+  id: 4lbwp00732
+  family: "C"
+  gloss: "days-before:"
+  tags: [time, tense]
+  short: "It occurs days (between 1 day included and 1 week excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e kora seni:
+  id: f1b1jrcuud
+  family: "C"
+  gloss: "weeks-before:"
+  tags: [time, tense]
+  short: "It occurs weeks (between 1 week included and 1 month excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e kora seli:
+  id: m1rwaj12jg
+  family: "C"
+  gloss: "weeks-after:"
+  tags: [time, tense]
+  short: "It occurs weeks (between 1 week included and 1 month excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e gare seni:
+  id: zgllh2qv0q
+  family: "C"
+  gloss: "months-before:"
+  tags: [time, tense]
+  short: "It occurs months (between 1 month included and 1 year excluded) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e gare seli:
+  id: x89ati1htd
+  family: "C"
+  gloss: "months-after:"
+  tags: [time, tense]
+  short: "It occurs months (between 1 month included and 1 year excluded) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e bire seni:
+  id: 4xvmmgdql6
+  family: "C"
+  gloss: "years-before:"
+  tags: [time, tense]
+  short: "It occurs years (more than 1 year included) before [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e bire seli:
+  id: wc4y2k476a
+  family: "C"
+  gloss: "years-after:"
+  tags: [time, tense]
+  short: "It occurs years (more than 1 year included) after [A:()]."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+e skal zari:
+  id: gpqertouzz
+  family: "C"
+  gloss: "program"
+  short: "[E:tce* man] is a computer program."
+ei sa gloli:
+  id: je2by0lctr
+  family: "C"
+  gloss: "game"
+  short: "[E:tce* man] is a game/activity made for entertainement purposes."
+  notes: It may not be actually played right now, while using {gloli} implies that there is a player.
+e buan spenu:
+  id: mf42sda4or
+  family: "C"
+  gloss: "reads"
+  short: "[E:tce* pan] reads [A:tce* pan]."

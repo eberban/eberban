@@ -17,7 +17,9 @@ words_sorted.forEach((word) => {
 	let intransitive = false;
 	let transitive = false;
 
-	if (['R', 'C2', 'C3', 'C+'].includes(entry.family)) {
+	// TODO: Supports compounds, which needs to fetch transitivity of last part,
+	// which can be inverted with compound start ei/eni/eri
+	if (['R'].includes(entry.family)) {
 		if (word.match(/^.*(n|r|l)$/g)) {
 			intransitive = true;
 		} else {

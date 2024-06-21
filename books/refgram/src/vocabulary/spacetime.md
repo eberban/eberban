@@ -53,6 +53,7 @@ use them after another predicate.
 - *sela*: Outer **finishes** inner: end of outer is end of inner
 - *seno*: Outer **contains** inner
 - *selo*: Outer **is contained by** inner
+- *seni*: Outer **is unconstrained by** inner
 
 *seni* (before) and *seni* (after) have an O slot for the duration separating the 2 timespans. As
 giving a precise duration may be difficult or too precise, compounds with time units are made to
@@ -66,7 +67,7 @@ give a vague time scale of such duration :
 - *e kora seni/seli*: few weeks, between 1 week (included) and 1 month (excluded)
 - *e gare seni/seli*: few months, between 1 month (included) and 1 year (excluded)
 - *e bire seni/seli*: more than 1 year (included)
-- 
+
 ## How are events modeled?
 
 An event (*sku*) is modeled as an object containing the following information:
