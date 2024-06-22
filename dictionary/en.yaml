@@ -789,7 +789,7 @@ zui:
 zue:
   id: qrpqjlbxo6
   family: "ZI"
-  gloss: "#()-to-(a)"
+  gloss: "#()-to-(p)"
   tags: [core]
   short: |
     Transform an [A:()] place into an [A:(p)] place, which is provided the
@@ -999,7 +999,7 @@ bo:
   short: "Create a new atom predicate variable and discard previous value if any."
   notes: |
     Creates a predicate stating the argument is some specific and fixed atom or
-    generic value. The predicate thus have type (a).
+    generic value. The predicate thus have type (p).
 
     Using it before words other than KI make them behave like KI variables. It
     can thus be used to define freeform predicate variables (i-) to refer to
@@ -1016,7 +1016,7 @@ boi:
     the rest of the sentence.
 
     When used before KI, have the same meaning as {bo} as all KI are expected
-    to have type (a).
+    to have type (p).
   links:
     - ["icon-book", "Predicate transformations - Notes on BO", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#bo]
 
@@ -2372,10 +2372,20 @@ glu:
   gloss: "unhappy:"
   short: "[E:tce* pan] is unhappy/sad about [A:()] being true."
 muli:
+  id: n4qltpakno
+  family: "R"
+  gloss: "easy:"
+  short: "[E:tce pan] finds it easy to satisfy [A:(tce pan)]."
+mulu:
   id: vtqvmmg5g7
   family: "R"
-  gloss: "confused:"
-  short: "[E:tce* pan] finds it difficult to understand how [A:()] is true."
+  gloss: "difficult:"
+  short: "[E:tce pan] finds it difficult to satisfy [A:(tce pan)]."
+ceno:
+  id: qq61aq9jtw
+  family: "R"
+  gloss: "understands:"
+  short: "[E:tce pan] understands why [A:p] satisfies [O:(p)]."
 siro:
   id: xgbqoobjvr
   family: "R"
@@ -4453,7 +4463,7 @@ ei o ol:
   notes: |
     {o !X !Y} can be modeled as being syntactic sugar for {oni !P !X ol !R be mi
     eio'ol via !P fo mo}. P is an unnameable predicate used solely for this purpose.
-en ol ce bue:
+e on bue:
   id: jpvb7ytjfg
   family: "C"
   gloss: "dictionary"
