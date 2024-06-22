@@ -191,7 +191,7 @@ mua:
 ba:
   id: v47til8m74
   family: "BA"
-  gloss: "#inline-arg-generic"
+  gloss: "#scope-arg-generic"
   tags: [core]
   short: "Inline atom/generic argument marker."
   links:
@@ -199,7 +199,7 @@ ba:
 bai:
   id: fwel577l5k
   family: "BA"
-  gloss: "#sentece-inline-arg-generic"
+  gloss: "#sentence-arg-generic"
   tags: [core]
   short: "Sentence inline atom/generic argument marker."
   links:
@@ -207,7 +207,7 @@ bai:
 bahi:
   id: vnuzs4uzpz
   family: "BA"
-  gloss: "#inline-arg-transitive"
+  gloss: "#scope-arg-transitive"
   tags: [core]
   short: "Inline transitive predicate argument marker."
   links:
@@ -215,7 +215,7 @@ bahi:
 baihi:
   id: c1i642artq
   family: "BA"
-  gloss: "#inline-arg-transitive"
+  gloss: "#sentence-arg-transitive"
   tags: [core]
   short: "Sentence inline transitive predicate argument marker."
   links:
@@ -223,7 +223,7 @@ baihi:
 bahe:
   id: c8bgs5yx9k
   family: "BA"
-  gloss: "#inline-arg-intransitive"
+  gloss: "#scope-arg-intransitive"
   tags: [core]
   short: "Inline intransitive predicate argument marker."
   links:
@@ -231,7 +231,7 @@ bahe:
 baihe:
   id: m5yaqq2smv
   family: "BA"
-  gloss: "#sentence-inline-arg-intransitive"
+  gloss: "#sentence-arg-intransitive"
   tags: [core]
   short: "Sentence inline intransitive predicate argument marker."
   links:
@@ -2186,7 +2186,12 @@ fule:
   id: 86guwrqjob
   family: "R"
   gloss: "knows:"
-  short: "[E:tce* pan] knows fact [A:()] from source [O:tce man]."
+  short: "[E:tce* pan] knows [A:tce* man] from source [O:tce man]."
+ple:
+  id: soaifzyvro
+  family: "R"
+  gloss: "fact:"
+  short: "[E:tca man] is the fact that [A:()] is true."
 dona:
   id: iffa5o0qnw
   family: "R"
@@ -2954,11 +2959,6 @@ zera:
   family: "R"
   gloss: "personality trait:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as a personality trait."
-blae:
-  id: xr7quk0nzy
-  family: "R"
-  gloss: "owned"
-  short: "[E:tce* man] is owned by [A:tce pan]."
 dzui:
   id: zwvj8ibmcc
   family: "R"
@@ -3594,7 +3594,7 @@ jena:
   gloss: "floor-ceil"
   tags: [number]
   short: |
-    [E:tce gan] are all numbers in the range from floor([A:tca gan]) to ceil([A]).
+    [E:tce gan] are all numbers in the range from floor([A:tca gan]) (included) to ceil([A]) (excluded).
   notes: |
     If [A] is an integer then the ceil will be the next integer, for the range [E]
     to have a length of 1.
@@ -4063,6 +4063,12 @@ zear:
   gloss: book
   short: |
     [E:tce* pan] is a book.
+fleon:
+  id: rxknm8lb4u
+  family: "R"
+  gloss: music
+  short: |
+    [E:tce* pan] is a music.
 
 
 # -----
