@@ -4261,6 +4261,97 @@ pselu:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the below direction.
+kcuno:
+  id: 5acshqks6b
+  family: "R"
+  gloss: station
+  tags: [vehicule]
+  short: "[E:tce* pan] is a station for vehicules satisfying property [A:(tce* pan)]."
+  notes: "[A] is a property so that the present presence of a vehicle is not needed."
+tcuan:
+  id: w0u2nzirqc
+  family: "R"
+  gloss: train
+  tags: [vehicule]
+  short: "[E:tce* pan] is a train."
+cehil:
+  id: by9qbcmbfq
+  family: "R"
+  gloss: boat
+  tags: [vehicule]
+  short: "[E:tce* pan] is a boat."
+drion:
+  id: f6ri7fuw7z
+  family: "R"
+  gloss: bicycle
+  tags: [vehicule]
+  short: "[E:tce* pan] is a bicycle."
+sonul:
+  id: 299pus3rzs
+  family: "R"
+  gloss: measuring-device
+  short: "[E:tce* pan] is a measuring device."
+vogbi:
+  id: dzp38nhcw3
+  family: "R"
+  gloss: leader
+  short: "[E:tce* pan] is the leader of [A:tce pan]."
+cnuhe:
+  id: p0g66q8zas
+  family: "R"
+  gloss: generous
+  short: "[E:tce pan] is generous towards [A:tce man]."
+zihir:
+  id: 9ybt1fnuik
+  family: "R"
+  gloss: rich
+  short: "[E:tce pan] is rich."
+zihur:
+  id: f48eqzzqqc
+  family: "R"
+  gloss: poor
+  short: "[E:tce pan] is poor."
+takin:
+  id: 8hson1dier
+  family: "R"
+  gloss: dangerous
+  short: "[E:tce pan] is dangerous for [A:tce pan] (default: {bzael})."
+ksuar:
+  id: n0r4kfjv55
+  family: "R"
+  gloss: interesting
+  short: "[E:tce pan] is interesting according to [A:tce pan] (default: {bzael})."
+miore:
+  id: grako8zxy2
+  family: "R"
+  gloss: shape
+  short: "[E:tce man] is a shape of [A:tce pan]."
+celio:
+  id: unqmr4pgg0
+  family: "R"
+  gloss: secret
+  short: "[E:tce* man] is a secret among [A:tce pan]."
+geon:
+  id: apew64vr0p
+  family: "R"
+  gloss: food
+  short: "[E:tce* man] is edible by/food for [A:tce* pan] (default: species of {bzael})."
+ctol:
+  id: v4j1hdrofu
+  family: "R"
+  gloss: drink
+  short: "[E:tce* man] is potable/drinkable/a drink for [A:tce* pan] (default: species of {bzael})."
+dali:
+  id: 4vrgy9htcp
+  family: "R"
+  gloss: dedicated
+  short: "[E:tce* man] is dedicated to/in use by [A:tce pan]."
+fnala:
+  id: 43dhivbbtp
+  family: "R"
+  gloss: follows
+  short: "[E:tce pan] follows [A:tce pan]."
+
 
 # -----
 # Compounds
@@ -4821,3 +4912,13 @@ e buan spenu:
   family: "C"
   gloss: "reads"
   short: "[E:tce* pan] reads [A:tce* pan]."
+en jerol senul:
+  id: rnerw0268q
+  family: "C"
+  gloss: "clock"
+  short: "[E:tce* pan] is a clock/watch."
+en skan senul:
+  id: dsjjxhug6w
+  family: "C"
+  gloss: "chronometer"
+  short: "[E:tce* pan] is a chronometer."
