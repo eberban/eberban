@@ -4079,6 +4079,184 @@ fleon:
   gloss: music
   short: |
     [E:tce* pan] is a music.
+psulo:
+  id: 7vn4ceujmp
+  family: "R"
+  gloss: center
+  tags: ["space"]
+  short: "[E:tca pan] is the center (average position) of [A:tce pan]."
+psai:
+  id: 5fsi11zwja
+  family: "R"
+  gloss: "inside:"
+  tags: ["space"]
+  short: "[A:()] occurs inside of [E:tce pan]."
+  notes: |
+    The volumes of the entities involved in [A] must intersect with the volume
+    of [E]. They don't need to be fully contained in it, so something can be
+    both inside and outside.
+psau:
+  id: w71x9r0797
+  family: "R"
+  gloss: "outside:"
+  tags: ["space"]
+  short: "[A:()] occurs outside of [E:tce pan]."
+  notes: |
+    The volumes of the entities involved in [A] must intersect with the inverse
+    of the volume of [E]. They don't need to be fully contained in it, so
+    something can be both inside and outside.
+psoa:
+  id: t175fzkni1
+  family: "R"
+  gloss: "cartesian-referential:"
+  tags: ["space"]
+  short: "[A:()] is in the Cartesian coordinates referential of [E:tca pan]."
+  notes: |
+    [E] must be a physical entity with a well identified front and up direction.
+    The average point of all points of the volume of [E] is used as the origin.
+    By default in a text the referential is the speaker.
+psoni:
+  id: 2sthq7nyfa
+  family: "R"
+  gloss: behind
+  tags: ["space"]
+  short: "[E:tce pan] is behind [A:tce pan]."
+  notes: |
+    In the referential defined by {psoa}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the behind/in-front component must be the greatest,
+    and the relative value must be in the behind direction.
+psonu:
+  id: hpcj7idr7s
+  family: "R"
+  gloss: in-front-of
+  tags: ["space"]
+  short: "[E:tce pan] is in front of [A:tce pan]."
+  notes: |
+    In the referential defined by {psoa}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the behind/in-front component must be the greatest,
+    and the relative value must be in the in-front direction.
+psori:
+  id: nmk5qmo7fv
+  family: "R"
+  gloss: to-the-left-of
+  tags: ["space"]
+  short: "[E:tce pan] is to the left of [A:tce pan]."
+  notes: |
+    In the referential defined by {psoa}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the left/right component must be the greatest,
+    and the relative value must be in the left direction.
+psoru:
+  id: 58b63lo9cb
+  family: "R"
+  gloss: to-the-right-of
+  tags: ["space"]
+  short: "[E:tce pan] is to the right of [A:tce pan]."
+  notes: |
+    In the referential defined by {psoa}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the left/right component must be the greatest,
+    and the relative value must be in the right direction.
+psoli:
+  id: 5nrtbh0sv6
+  family: "R"
+  gloss: above
+  tags: ["space"]
+  short: "[E:tce pan] is above [A:tce pan]."
+  notes: |
+    In the referential defined by {psoa}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the above/below component must be the greatest,
+    and the relative value must be in the above direction.
+psolu:
+  id: gnevlw6p4m
+  family: "R"
+  gloss: below
+  tags: ["space"]
+  short: "[E:tce pan] is below [A:tce pan]."
+  notes: |
+    In the referential defined by {psoa}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the above/below component must be the greatest,
+    and the relative value must be in the below direction.
+psea:
+  id: nh5bijnt09
+  family: "R"
+  gloss: "geodetic-referential:"
+  tags: ["space"]
+  short: "[A:()] is in the Geodetic coordinates referential of [E:tca pan]."
+  notes: |
+    [E] must be a physical entity with a well identified north and south pole.
+    The average point of all points of the volume of [E] is used as the origin.
+    By default in a text the referential is closest celestial body from the speaker.
+pseni:
+  id: q3ha2dc3ld
+  family: "R"
+  gloss: to-the-north-of
+  tags: ["space"]
+  short: "[E:tce pan] is to the north of [A:tce pan]."
+  notes: |
+    In the referential defined by {psea}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the latitude component must be the greatest,
+    and the relative value must be in the north direction.
+psenu:
+  id: oddrpzstav
+  family: "R"
+  gloss: to-the-south-of
+  tags: ["space"]
+  short: "[E:tce pan] is to the south of [A:tce pan]."
+  notes: |
+    In the referential defined by {psea}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the latitude component must be the greatest,
+    and the relative value must be in the south direction.
+pseri:
+  id: iduj207sqi
+  family: "R"
+  gloss: to-the-west-of
+  tags: ["space"]
+  short: "[E:tce pan] is to the west of [A:tce pan]."
+  notes: |
+    In the referential defined by {psea}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the longitude component must be the greatest,
+    and the relative value must be in the west direction.
+pseru:
+  id: awjcblokyu
+  family: "R"
+  gloss: to-the-east-of
+  tags: ["space"]
+  short: "[E:tce pan] is to the east of [A:tce pan]."
+  notes: |
+    In the referential defined by {psea}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the longitude component must be the greatest,
+    and the relative value must be in the east direction.
+pseli:
+  id: 9oo7ok5t64
+  family: "R"
+  gloss: altitude-above
+  tags: ["space"]
+  short: "[E:tce pan] is above (in altitude) of [A:tce pan]."
+  notes: |
+    In the referential defined by {psea}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the altitude component must be the greatest,
+    and the relative value must be in the above direction.
+pselu:
+  id: d7dd6iak18
+  family: "R"
+  gloss: altitude-below
+  tags: ["space"]
+  short: "[E:tce pan] is below (in altitude) of [A:tce pan]."
+  notes: |
+    In the referential defined by {psea}, we take the vectors from all points of
+    [E] to all points of [A]. For all those vectors, amongst the absolute values
+    of all its components, the altitude component must be the greatest,
+    and the relative value must be in the below direction.
 
 
 # -----
