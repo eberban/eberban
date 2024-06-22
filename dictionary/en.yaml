@@ -2314,7 +2314,7 @@ kini:
   id: macaegnams
   family: "R"
   gloss: "learns"
-  short: "[E:tce* pan] learns/studies [A:tce* man]."
+  short: "[E:tce* pan] (student) learns/studies [A:tce* man] from [O:tce pan] (teacher)."
   notes: |
     TODO: It is not very clear yet what A is. They are not propositions since you can
     learn false things, and there are probably other issues them being propositions.
@@ -3693,13 +3693,12 @@ tceu:
   family: "R"
   gloss: "mutual-2:"
   short: "[E:tco p] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca p)]."
-
 jene:
   id: gi4jvusxpm
   family: "R"
   gloss: "big:"
   short: |
-    [E:tce* p] are big among all things that satisfy measuring relation [A:(tce gan,tca pan)], with
+    [E:tce* p] are big among all things that satisfy measuring relation [A:(tce gan,tca p)], with
     standard deviation [O:tca gan] (default: 1).
   notes: |
     Each thing in [E] have more than [O] standard deviation(s) from the average size
@@ -4079,6 +4078,11 @@ fleon:
   gloss: music
   short: |
     [E:tce* pan] is a music.
+jnaha:
+  id: svkaim6riw
+  family: "R"
+  gloss: laugh
+  short: "[E:tce* pan] laugh because [A:()] is true."
 psulo:
   id: 7vn4ceujmp
   family: "R"
@@ -4257,7 +4261,6 @@ pselu:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the below direction.
-
 
 # -----
 # Compounds
