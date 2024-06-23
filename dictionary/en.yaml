@@ -4083,6 +4083,12 @@ jnaha:
   family: "R"
   gloss: laugh
   short: "[E:tce* pan] laugh because [A:()] is true."
+psei:
+  id: 4s9x0v0nby
+  family: "R"
+  gloss: distance
+  tags: ["space"]
+  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {psoa})."
 psulo:
   id: 7vn4ceujmp
   family: "R"
@@ -4311,7 +4317,7 @@ zihur:
   family: "R"
   gloss: poor
   short: "[E:tce pan] is poor."
-takin:
+taktin:
   id: 8hson1dier
   family: "R"
   gloss: dangerous
@@ -4351,6 +4357,16 @@ fnala:
   family: "R"
   gloss: follows
   short: "[E:tce pan] follows [A:tce pan]."
+funae:
+  id: p1hilk9iyy
+  family: "R"
+  gloss: suggests
+  short: "[E:tce pan] suggests that [A:()] should be true."
+zotke:
+  id: da729nzb96
+  family: "R"
+  gloss: category
+  short: "[E:tce* man] fits in category/genre [A:tce* man]."
 
 
 # -----
