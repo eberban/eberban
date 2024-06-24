@@ -4342,7 +4342,7 @@ geon:
   family: "R"
   gloss: food
   short: "[E:tce* man] is edible by/food for [A:tce* pan] (default: species of {bzael})."
-ctol:
+kalin:
   id: v4j1hdrofu
   family: "R"
   gloss: drink
@@ -4367,7 +4367,11 @@ zotke:
   family: "R"
   gloss: category
   short: "[E:tce* man] fits in category/genre [A:tce* man]."
-
+mena:
+  id: 3ce1lb3gad
+  family: "R"
+  gloss: ability
+  short: "[E:tce pan] has the ability to satisfy [A:(tce pan)]."
 
 # -----
 # Compounds
