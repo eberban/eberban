@@ -75,8 +75,9 @@ used in the inner predicate. Which __BA__ member is used doesn't matter.
 > \text{buri}^w_1(c,e)   &= \exists a. \text{buri}_1(c,e,a) \\\\
 > \\ \\\\
 > \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \text{mian}^w_1(c)     &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
-> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}_1(c,e) \\\\
+> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}^w_1(c) \\\\
 > \\ \\\\
 > \text{dona}_1(c,e,a)   &= \text{dona}(c,e,a) \wedge \text{va}_1(c,a) \\\\
 > \text{dona}^w_1(c,e)   &= \exists a. \text{dona}_1(c,e,a) \\\\
@@ -173,7 +174,7 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > __mi fule [va sae tuli mo]__
 >
 > \\[ \begin{align}
-> \text{fule}(c,e,A)                &= \text{[$e$ knows that $A$ (0-ary) is true]} \\\\
+> \text{katmu}(c,e,A)               &= \text{[$e$ wants $A$ (0-ary) to be true]} \\\\
 > \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
 > \text{mo}(c,e)                    &= \text{[$e$ is a listener]} \\\\
 > \\ \\\\
@@ -182,14 +183,14 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
 > \text{tuli}^w_1(c,A)              &= \exists e. \text{tuli}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\\\
-> \text{fule}^w_1(c,e)              &= \exists A. \text{fule}_1(c,e,A) \\\\
+> \text{katmu}_1(c,e,A)             &= \text{katmu}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\\\
+> \text{katmu}^w_1(c,e)             &= \exists A. \text{katmu}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmu}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker who knows some truth which is needed by a listener.
+> $(e) is a speaker who wants some proposition (which is needed to be true by a listener) is true.
 
 While using __via__, it has a different meaning :
 
@@ -201,14 +202,14 @@ While using __via__, it has a different meaning :
 > \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
 > \text{tuli}^w_1(c)                &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{fule}_1(c,e,A)              &= \text{fule}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
-> \text{fule}^w_1(c,e)              &= \exists A. \text{fule}_1(c,e,A) \\\\
+> \text{katmu}_1(c,e,A)             &= \text{katmu}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
+> \text{katmu}^w_1(c,e)             &= \exists A. \text{katmu}_1(c,e,A) \\\\
 > \\ \\\\
 > \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
-> $(e) is a speaker who knows that [some truth is needed by a listener] is true.
+> $(e) is a speaker who wants that [some truth is needed by a listener] is true.
 
 ## Brackets
 
