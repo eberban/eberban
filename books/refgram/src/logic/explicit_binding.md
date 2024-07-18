@@ -171,7 +171,7 @@ while __fai__ binds the next place.
 If we take the example `tce mian` from the previous chapter it is equivalent to
 `tce via mian`. Sharing with __ve, va, ...__ can be used like so:
 
-> __mi fule [va sae tuli mo]__
+> __mi katmu [va sae tuli mo]__
 >
 > \\[ \begin{align}
 > \text{katmu}(c,e,A)               &= \text{[$e$ wants $A$ (0-ary) to be true]} \\\\
@@ -194,7 +194,7 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 
 While using __via__, it has a different meaning :
 
-> __mi fule [via sae tuli mo]__
+> __mi katmu [via sae tuli mo]__
 >
 > \\[ \begin{align}
 > \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
@@ -205,7 +205,7 @@ While using __via__, it has a different meaning :
 > \text{katmu}_1(c,e,A)             &= \text{katmu}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
 > \text{katmu}^w_1(c,e)             &= \exists A. \text{katmu}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{fule}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmu}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
