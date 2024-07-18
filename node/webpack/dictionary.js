@@ -62,7 +62,7 @@ export function count_word_types() {
 function html_word_entry(word, entry) {
 	var output = `<div class="dictionary-entry well well-small"><h3>`;
 
-	if (['C2', 'C3', 'C+'].includes(entry.family)) {
+	if (entry.family == 'C') {
 		word.split(' ').forEach((part) => {
 			if (ignored.includes(part[0])) {
 				output += `${part} `;
