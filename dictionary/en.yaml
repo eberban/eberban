@@ -4502,6 +4502,30 @@ e utoan ban:
   gloss: "Toaq language"
   tags: [cultural]
   short: "[E:tca ban] is the Toaq language."
+e upolski ban:
+  id: 52gcuxc8ly
+  family: "C"
+  gloss: "Polish language"
+  tags: [cultural]
+  short: "[E:tca ban] is the Polish language."
+e upolski stan:
+  id: p5jeok3nug
+  family: "C"
+  gloss: "Poland"
+  tags: [cultural]
+  short: "[E:tca ban] is Poland."
+e upona ban:
+  id: ur0huidr0e
+  family: "C"
+  gloss: "Toki Pona language"
+  tags: [cultural]
+  short: "[E:tca ban] is the Toki Pona language."
+e uafrikan ban:
+  id: 5dgm2v0am1
+  family: "C"
+  gloss: "Afrikaans language"
+  tags: [cultural]
+  short: "[E:tca ban] is the Afrikaans language."
 e kre vire:
   id: t1wi0cej5p
   family: "C"
