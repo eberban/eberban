@@ -1,41 +1,26 @@
 # Linear writing system
 
-<img src="symbols.svg" style="width: 100%" />
+<img src="symbols.svg" style="width: 100%; background: white; border: 2px solid black" />
 
-> Text on the right is `mi ve kali vahul fe buri pcien`, which translates to
-> _I drink milk and eat bread_.
+The linear writing system is structured around syllables with a vowel written in
+the center and the consonants or sonorants being written above or below, forming four corners (up left, up right, down left, down right). 
 
-The linear writing system is based on a central line called the __stem__ on
-which vowel symbols are attached, while consonant symbols are added near it.
-Symbols for consonants are organized in pairs of voiced and unvoiced consonants
-which mirror each other relative to the stem.
-
-To write text in this script, begin by writing a dot or circle with a vertical
-line stemming down from it. The dot/circle disambiguates reading direction and
-is also used to write word boundary markers.
-
-Then the letters are written by following these steps:
-
-1. If any, write the consonant symbol on the correct side.
-2. If there is a second consonant, write it under the first consonant on the
-   same side.
-3. Then write the vowel on the other side of the stem. If there is no prior
-   consonant, the side can be arbitrarily chosen.
-4. Finally, if the vowel is followed by a sonorant, write it under to the vowel.
-5. Then:
-   - If the next letter is a consonant, return to step 1.
-   - If the next letter is the initial vowel of the next word, write the
-     dash on the stem and go to step 3.
-   - If the next letter is a vowel in the same word, move forward along the
-     stem and write the next vowel symbol on the __same side__ as the previous
-     vowel.
-   - If the next letter is an h, move forward along the stem and write the next
-     vowel symbol on the __opposite side__ of the previous vowel.
-
-Since the writing system uses symmetry to distinguish letters, it is important
-to know if its support medium is mirrored or not (text written on glass readable
-from both sides, text seen in a mirror, mirrored picture, etc). For this
-purpose, each stem is started with the __chirality symbol__.
-
-The stem can twisted/change direction arbitrarily as long as the curves are
-smooth and there is no self intersection.
+- If a syllable starts with a sonorant (N-initial particles, or multi-syllables words like
+ma-__na__.), it can be written either in the top or bottom left. 
+- If a syllable starts with one or two consonants, they must be placed up or down depending if the
+  first consonant is unvoiced (up) or voiced (down).
+- If a syllable ends with a sonorant and is the last syllable of the word, it must be placed on the
+  right and opposite side of the initial consonant or sonorant. If there is no initial it can be
+  written either up or down.
+- If a syllable ends with a consonant because it is part of a medial pair or triplet, then the first
+  consonant must be placed on the opposite side of the initial consonant of the current syllable,
+  and the following consonants will be written at the start of the next syllable (following syllable
+  start rules). This means that for exemple in `vog-bi`, since initial `v` is written at the bottom
+  left, the `g` must be written at the top right, even though it is voiced and thus is usually
+  written at the bottom. We know it's a `g` and not a `k` thanks to the following `b` which is
+  voiced and thus written at the bottom left. If the syllable doesn't have an initial consonant it
+  is adviced to written the ending consonant on its usual side, however it is not mandatory.
+- This writting system ignores spaces. Use symbol for pause (`'`) when necessary. In borrowings and
+  freeform variables ending with a consonant, it must be written at the start of the pause symbol
+  (avoiding the ambiguity of consonants at the end of syllable which is usually resolved thanks to
+  the following consonant, while there is none here).
