@@ -27,3 +27,33 @@ ma-__na__.), it can be written either in the top or bottom left.
   freeform variables ending with a consonant, it must be written at the start of the pause symbol
   (avoiding the ambiguity of consonants at the end of syllable which is usually resolved thanks to
   the following consonant, while there is none here).
+
+## Computer font
+
+A computer font is [available to
+download](https://eberban.github.io/eberban/font/eberban-Regular.otf).
+
+To write with this font some modifications needs to be made to texts to be rendered properly.
+However it uses the fact that the Eberban grammar doesn't care of case or repeated letters. This
+thus mean that text written with this font is perfectly valid Eberban but may look a bit odd (with
+repeated letters, uppercase and hyphens) when displayed with another font.
+
+The font works by only having vowels, `'` and space moving the cursor forward. Consonants, sonorants
+and `H` are written without moving the cursor and *stacks* above or below the following vowel. They
+are however not automatically moved to the right or the opposite side, and the following
+modifications must be made :
+
+- initial pair: the second consonant (or sonorant) must be doubled to be shifted to the right. `tcu`
+  must thus be written `tccu`.
+- medial pairs and triplets: medial pairs consonants (or sonorants) are split between the end of the
+  a syllable and the start of the next.
+  - If the first letter can be written on the correct side (up/down), an hyphen `-` must be written
+  between them to shirt the first letter in the correct place. `padgon` is thus written `pad-gon`.
+  - If the first letter must be written on the opposite side, it just needs to be written in
+    uppercase. `vogbi` is thus written `voGbi`
+- sonorants: sonorants by default are considered to be at the start of a syllable. In words ending
+  with a sonorant however they should be placed at the end of the syllable. Writing a space after
+  them shift them to the correct place. Sonorants at the start of a medial pair or a triplet in a
+  borrowing also support being followed by an hyphen `-`, as a space would break the word apart.
+- sonorants, M and H: by default they are written above the vowels, but writing them uppercase moves
+  them below.
