@@ -77,14 +77,14 @@ function html_word_entry(word, entry) {
 	}
 
 	output += `<a href="#${word}" class="word-anchor"><i class="icon-search"></i></a>`
-	output += `<small>${entry.gloss}</small> `;
-	output += `<a href="#@${entry.family}" class="btn btn-mini btn-inverse">${entry.family}</a> `;
+
+	if (entry.gloss) {
+		output += `<small>${entry.gloss}</small> `;
+	}
 	
-	// if (intransitive) {
-	// 	output += `<span class="btn btn-mini">intransitive</span> `;
-	// } else if (transitive) {
-	// 	output += `<span class="btn btn-mini btn-info">transitive</span> `;
-	// }
+	if (entry.family) {
+		output += `<a href="#@${entry.family}" class="btn btn-mini btn-inverse">${entry.family}</a> `;
+	}
 
 	if (entry.tags != undefined) {
 		entry.tags.forEach((e) => {
@@ -99,7 +99,9 @@ function html_word_entry(word, entry) {
 
 	output += `</h3>`;
 
-	output += renderParagraphs(entry.short);
+	if (entry.short) {
+		output += renderParagraphs(entry.short);
+	}
 
 	if (entry.see_also) {
 		output += '<p class="see-also"><strong>See </strong> ';
