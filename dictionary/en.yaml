@@ -2262,11 +2262,13 @@ tsae:
   family: "R"
   gloss: "invents"
   short: "[E:tce pan] invents [A:tce* ma]."
+  see_also: [tsau]
 tsau:
   id: l45mnfdjsq
   family: "R"
   gloss: "manufactured"
   short: "[E:tce* pan] is made/created/manufactured/crafted by [A:tce pan]."
+  see_also: [tsae]
 zuna:
   id: yhzwpengy5
   family: "R"
@@ -2287,16 +2289,19 @@ sni:
   family: "R"
   gloss: "greets"
   short: "[E:tce* pan] (default: speaker) says hello to/greets [A:tce* pan] (default: listener)."
+  see_also: [sne, sna]
 sne:
   id: knhmussoxm
   family: "R"
   gloss: "goodbye"
   short: "[E:tce* pan] (default: speaker) says goodbye to [A:tce* pan] (default: listener)."
+  see_also: [sni, sna]
 sna:
   id: blzblpa7fo
   family: "R"
   gloss: "welcomes"
   short: "[E:tce* pan] (default: speaker) welcomes [A:tce* pan] (default: listener) to place [O:tce* pan]."
+  see_also: [sni, sne]
 spi:
   id: wlkwneqcyu
   family: "R"
@@ -5009,140 +5014,202 @@ en skan senul:
 # Spelling
 _spelling:
   pi: 
-    id: INSERT_WORD_ID
+    id: 6ubyu8g17n
     gloss: P
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter P.\
       {ceu}: Sound \[p] (IPA).
   bu: 
-    id: INSERT_WORD_ID
+    id: jv5jdt8brj
     gloss: B
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter B.\
       {ceu}: Sound \[b] (IPA).
   fi: 
-    id: INSERT_WORD_ID
+    id: zhcwp4omtj
     gloss: F
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter F.\
       {ceu}: Sound \[f] (IPA).
   vu: 
-    id: INSERT_WORD_ID
+    id: n4q80wyalg
     gloss: V
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter V.\
       {ceu}: Sound \[v] (IPA).
   ti: 
     id: lrmti46sir
     gloss: T
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter T.\
       {ceu}: Sound \[t] (IPA).
   du: 
-    id: INSERT_WORD_ID
+    id: 9hbytu99i7
     gloss: D
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter D.\
       {ceu}: Sound \[d] (IPA).
   si: 
-    id: INSERT_WORD_ID
+    id: 0iw5lmhhmw
     gloss: S
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter S.\
       {ceu}: Sound \[s] (IPA).
   zu: 
-    id: INSERT_WORD_ID
+    id: wmv5jemupg
     gloss: Z
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter Z.\
       {ceu}: Sound \[z] (IPA).
   ci: 
-    id: INSERT_WORD_ID
+    id: 6l8g98ctrg
     gloss: C
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter C.\
       {ceu}: Sounds \[ʃ] or \[ʂ] (IPA).
   ju: 
-    id: INSERT_WORD_ID
+    id: xmd29mbi8f
     gloss: J
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter J.\
       {ceu}: Sounds \[ʒ] or \[ʐ] (IPA).
   ki: 
-    id: INSERT_WORD_ID
+    id: pg94ncpjyo
     gloss: K
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter K.\
       {ceu}: Sound \[k] (IPA).
   gu: 
-    id: INSERT_WORD_ID
+    id: ozi51vdotq
     gloss: G
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter G.\
       {ceu}: Sound \[ɡ] (IPA).
   mi: 
-    id: INSERT_WORD_ID
+    id: 50m9r74hya
     gloss: M
+    tags: ["native", "consonant"]
     short: |
       {ce}: Letter M.\
       {ceu}: Sound \[m] (IPA).
   nu: 
-    id: INSERT_WORD_ID
+    id: i8v5uyrq3i
     gloss: 'N'
+    tags: ["native", "sonorant"]
     short: |
       {ce}: Letter N.\
       {ceu}: Sounds \[n] or \[ŋ] (IPA).
   ri: 
-    id: INSERT_WORD_ID
+    id: lsc2ddbb49
     gloss: R
+    tags: ["native", "sonorant"]
     short: |
       {ce}: Letter R.\
       {ceu}: Sounds \[ɣ], \[ʁ], \[r] or \[ʀ] (IPA).
   lu: 
-    id: INSERT_WORD_ID
+    id: 578oyb497a
     gloss: L
+    tags: ["native", "sonorant"]
     short: |
       {ce}: Letter L.\
       {ceu}: Sound \[l] (IPA).
   ihi: 
-    id: INSERT_WORD_ID
+    id: p6o6lxpp7l
     gloss: H
+    tags: ["native", "vhowel"]
     short: |
       {ce}: Letter H.\
       {ceu}: Sound \[h] (IPA).
   uhu: 
-    id: INSERT_WORD_ID
-    gloss: "'"
+    id: 2pzry3n25u
+    gloss: "' (pause)"
+    tags: ["native"]
     short: |
       {ce}: Letter '.\
       {ceu}: Sound \[ʔ] (IPA).
   i: 
-    id: INSERT_WORD_ID
+    id: xlut6t956h
     gloss: I
+    tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter I.\
       {ceu}: Sound \[i] (IPA).
   e: 
-    id: INSERT_WORD_ID
+    id: wy1kwyzsu0
     gloss: E
+    tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter E.\
       {ceu}: Sounds \[ɛ] or \[e] (IPA).
   a: 
-    id: INSERT_WORD_ID
+    id: 9hrc3w1lki
     gloss: A
+    tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter A.\
       {ceu}: Sounds \[a] or \[ɑ] (IPA).
   o: 
-    id: INSERT_WORD_ID
+    id: pjj8vofua1
     gloss: O
+    tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter O.\
       {ceu}: Sounds \[o] or \[ɔ] (IPA).
   u: 
-    id: INSERT_WORD_ID
+    id: ktzorp451u
     gloss: U
+    tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter U.\
       {ceu}: Sound \[u] (IPA).
+  sli: 
+    id: tqvgfmmgc3
+    gloss: "\\"
+    tags: ["symbol"]
+    short: |
+      {ce}: \\ (backslash) symbol.
+  sla: 
+    id: iohrkvpgou
+    gloss: "|"
+    tags: ["symbol"]
+    short: |
+      {ce}: | (pipe / vertical bar) symbol.
+  slu: 
+    id: qviusvdptp
+    gloss: "/"
+    tags: ["symbol"]
+    short: |
+      {ce}: / (slash) symbol.
+  gli: 
+    id: nkbk8lcocf
+    gloss: "UPPERCASE:"
+    tags: ["case"]
+    short: |
+      {ce}: Following symbols will be in uppercase.
+    see_also: [gla, glu]
+  gla: 
+    id: qi5p742mh8
+    gloss: "AnyCasE:"
+    tags: ["case"]
+    short: |
+      {ce}: Following symbols don't have a specific case, they can be either lowercase or uppercase.
+    see_also: [gli, glu]
+  glu: 
+    id: v98p688ko2
+    gloss: "lowercase:"
+    tags: ["case"]
+    short: |
+      {ce}: Following symbols will be in lowercase.
+    see_also: [gli, gla]
