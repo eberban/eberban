@@ -1,6 +1,6 @@
-let { dictionary_en: dictionary, compare_words } = require('../src/dictionary');
+let { dictionary_en: dictionary, compare_words, dictionary_en } = require('../src/dictionary');
 
-const ignored = [ '_cardinal', '_number', 'i', 'e', 'u' ];
+const ignored = [ '_spelling', '_cardinal', '_number', 'i', 'e', 'u' ];
 
 const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words);
 
@@ -45,6 +45,28 @@ words_sorted.forEach((word) => {
 	}
 });
 
+const spelling_words_sorted = Object.keys(dictionary_en["_spelling"]).sort(compare_words);
+
+spelling_words_sorted.forEach((word) => {
+	let entry = dictionary_en["_spelling"][word];
+
+	entry.without_spaces = word.replaceAll(' ', '').toLowerCase();
+	entry.family = "S";
+	entry.extra_css_class = "entry-spelling";
+	
+	if (entry.tags == undefined) {
+		entry.tags = [];
+	}
+
+	entry.tags.unshift("spelling");
+
+	if (entry.links == undefined) {
+		entry.links = [];
+	}
+
+	entry.links.push(["icon-book", "Quotes", "https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html"]);
+});
+
 export function count_word_types() {
 	let roots = 0;
 	let particles = -10; // remove entries for graphic digits
@@ -60,7 +82,8 @@ export function count_word_types() {
 }
 
 function html_word_entry(word, entry) {
-	var output = `<div class="dictionary-entry well well-small"><h3>`;
+	let extra_css_class = entry.extra_css_class || "";
+	var output = `<div class="dictionary-entry well well-small ${extra_css_class}"><h3>`;
 
 	if (entry.family == 'C') {
 		word.split(' ').forEach((part) => {
@@ -81,7 +104,7 @@ function html_word_entry(word, entry) {
 	if (entry.gloss) {
 		output += `<small>${entry.gloss}</small> `;
 	}
-	
+
 	if (entry.family) {
 		output += `<a href="#@${entry.family}" class="btn btn-mini btn-inverse">${entry.family}</a> `;
 	}
@@ -219,6 +242,83 @@ function escapeHTML(str) {
 	return p.innerHTML;
 }
 
+function may_insert_entry(results, filters, word, entry) {
+	let exact_match = false;
+
+	for (var filter in filters) {
+		filter = filters[filter].trim().toLowerCase();
+		if (filter.startsWith('#')) {
+			filter = filter.slice(1);
+
+			if (entry.tags == undefined || !entry.tags.includes(filter)) {
+				return;
+			}
+		} else if (filter.startsWith('@')) {
+			if (filter == "@p") {
+				// If this filter is used we want to list all particles.
+				if (["R", "C2", "C3", "C+"].includes(entry.family)) {
+					return;
+				}
+			} else if (entry.family != filter.slice(1).toUpperCase()) {
+				return;
+			}
+		} else if (filter.startsWith('!')) {
+			filter = filter.slice(1);
+
+			if (word == filter) {
+				exact_match = true;
+			} else if (
+				!(
+					word.includes(filter) ||
+					entry.without_spaces.includes(filter)
+				)
+			) {
+				return;
+			}
+		} else if (filter.startsWith('?')) {
+			filter = filter.slice(1);
+			
+			if (
+				!(
+					entry.gloss.toLowerCase().includes(filter) ||
+					entry.short.toLowerCase().includes(filter)
+				)
+			) {
+				return;
+			}
+		} else {
+			if (word == filter || entry.id == filter) {
+				exact_match = true;
+			} else if (
+				!(
+					word.includes(filter) ||
+					entry.without_spaces.includes(filter) ||
+					entry.gloss?.toLowerCase().includes(filter) ||
+					entry.short?.toLowerCase().includes(filter) ||
+					entry.id?.toLowerCase().includes(filter) ||
+					entry.notes?.toLowerCase().includes(filter)
+				)
+			) {
+				return;
+			}
+		}
+	}
+
+	// Cache html output.
+	if (entry.html_output == undefined) {
+		entry.html_output = html_word_entry(word, entry);
+	}
+
+	if (exact_match) {
+		// Exact match => first entry
+		// output = entry.html_output + output;
+		results.unshift(entry.html_output);
+	} else {
+		// output += entry.html_output;
+		results.push(entry.html_output);
+	}
+}
+
 export function html_dictionary(filters) {
 	var output = '';
 
@@ -227,80 +327,13 @@ export function html_dictionary(filters) {
 	Object.keys(words_sorted).forEach((index) => {
 		var word = words_sorted[index];
 
-		let exact_match = false;
+		may_insert_entry(results, filters, word, dictionary[word]);
+	});
 
-		for (var filter in filters) {
-			filter = filters[filter].trim().toLowerCase();
-			if (filter.startsWith('#')) {
-				filter = filter.slice(1);
+	Object.keys(spelling_words_sorted).forEach((index) => {
+		var word = spelling_words_sorted[index];
 
-				if (dictionary[word].tags == undefined || !dictionary[word].tags.includes(filter)) {
-					return;
-				}
-			} else if (filter.startsWith('@')) {
-				if (filter == "@p") {
-					// If this filter is used we want to list all particles.
-					if (["R", "C2", "C3", "C+"].includes(dictionary[word].family)) {
-						return;
-					}
-				} else if (dictionary[word].family != filter.slice(1).toUpperCase()) {
-					return;
-				}
-			} else if (filter.startsWith('!')) {
-				filter = filter.slice(1);
-
-				if (word == filter) {
-					exact_match = true;
-				} else if (
-					!(
-						word.includes(filter) ||
-						dictionary[word].without_spaces.includes(filter)
-					)
-				) {
-					return;
-				}
-			} else if (filter.startsWith('?')) {
-				filter = filter.slice(1);
-				
-				if (
-					!(
-						dictionary[word].gloss.toLowerCase().includes(filter) ||
-						dictionary[word].short.toLowerCase().includes(filter)
-					)
-				) {
-					return;
-				}
-			} else {
-				if (word == filter || dictionary[word].id == filter) {
-					exact_match = true;
-				} else if (
-					!(
-						word.includes(filter) ||
-						dictionary[word].without_spaces.includes(filter) ||
-						dictionary[word].gloss.toLowerCase().includes(filter) ||
-						dictionary[word].short.toLowerCase().includes(filter) ||
-						dictionary[word].id.toLowerCase().includes(filter) ||
-						dictionary[word].notes?.toLowerCase().includes(filter)
-					)
-				) {
-					return;
-				}
-			}
-		}
-
-		// Cache html output.
-		if (dictionary[word].html_output == undefined) {
-			dictionary[word].html_output = html_word_entry(word, dictionary[word]);
-		}
-
-		if (exact_match) {
-			// Exact match => first entry
-			// output = dictionary[word].html_output + output;
-			results.unshift(dictionary[word].html_output);
-		} else {
-			// output += dictionary[word].html_output;
-			results.push(dictionary[word].html_output);
-		}
+		may_insert_entry(results, filters, word, dictionary_en["_spelling"][word]);
 	});
 
 	output += `<div id="search-stats">${results.length} results found.</div>`;
@@ -309,3 +342,4 @@ export function html_dictionary(filters) {
 
 	return output;
 }
+

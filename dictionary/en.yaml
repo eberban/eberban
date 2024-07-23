@@ -1357,6 +1357,8 @@ ce:
   family: "CE"
   short: "[E:blu ecema] is the string/list of letters encoded by [quote]."
   gloss: "#spelling-start"
+  notes: |
+    Search __@S__ to only show spelling units.
   links:
     - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 ceu:
@@ -1364,6 +1366,8 @@ ceu:
   family: "CE"
   short: "[E:blu eceuma] is the string of sounds encoded by [quote]."
   gloss: "#utterance-spelling-start"
+  notes: |
+    Search __@S__ to only show spelling units.
   links:
     - ["icon-book", "Quotes", https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html]
 cei:
@@ -5001,3 +5005,144 @@ en skan senul:
   family: "C"
   gloss: "chronometer"
   short: "[E:tce* pan] is a chronometer."
+
+# Spelling
+_spelling:
+  pi: 
+    id: INSERT_WORD_ID
+    gloss: P
+    short: |
+      {ce}: Letter P.\
+      {ceu}: Sound \[p] (IPA).
+  bu: 
+    id: INSERT_WORD_ID
+    gloss: B
+    short: |
+      {ce}: Letter B.\
+      {ceu}: Sound \[b] (IPA).
+  fi: 
+    id: INSERT_WORD_ID
+    gloss: F
+    short: |
+      {ce}: Letter F.\
+      {ceu}: Sound \[f] (IPA).
+  vu: 
+    id: INSERT_WORD_ID
+    gloss: V
+    short: |
+      {ce}: Letter V.\
+      {ceu}: Sound \[v] (IPA).
+  ti: 
+    id: lrmti46sir
+    gloss: T
+    short: |
+      {ce}: Letter T.\
+      {ceu}: Sound \[t] (IPA).
+  du: 
+    id: INSERT_WORD_ID
+    gloss: D
+    short: |
+      {ce}: Letter D.\
+      {ceu}: Sound \[d] (IPA).
+  si: 
+    id: INSERT_WORD_ID
+    gloss: S
+    short: |
+      {ce}: Letter S.\
+      {ceu}: Sound \[s] (IPA).
+  zu: 
+    id: INSERT_WORD_ID
+    gloss: Z
+    short: |
+      {ce}: Letter Z.\
+      {ceu}: Sound \[z] (IPA).
+  ci: 
+    id: INSERT_WORD_ID
+    gloss: C
+    short: |
+      {ce}: Letter C.\
+      {ceu}: Sounds \[ʃ] or \[ʂ] (IPA).
+  ju: 
+    id: INSERT_WORD_ID
+    gloss: J
+    short: |
+      {ce}: Letter J.\
+      {ceu}: Sounds \[ʒ] or \[ʐ] (IPA).
+  ki: 
+    id: INSERT_WORD_ID
+    gloss: K
+    short: |
+      {ce}: Letter K.\
+      {ceu}: Sound \[k] (IPA).
+  gu: 
+    id: INSERT_WORD_ID
+    gloss: G
+    short: |
+      {ce}: Letter G.\
+      {ceu}: Sound \[ɡ] (IPA).
+  mi: 
+    id: INSERT_WORD_ID
+    gloss: M
+    short: |
+      {ce}: Letter M.\
+      {ceu}: Sound \[m] (IPA).
+  nu: 
+    id: INSERT_WORD_ID
+    gloss: 'N'
+    short: |
+      {ce}: Letter N.\
+      {ceu}: Sounds \[n] or \[ŋ] (IPA).
+  ri: 
+    id: INSERT_WORD_ID
+    gloss: R
+    short: |
+      {ce}: Letter R.\
+      {ceu}: Sounds \[ɣ], \[ʁ], \[r] or \[ʀ] (IPA).
+  lu: 
+    id: INSERT_WORD_ID
+    gloss: L
+    short: |
+      {ce}: Letter L.\
+      {ceu}: Sound \[l] (IPA).
+  ihi: 
+    id: INSERT_WORD_ID
+    gloss: H
+    short: |
+      {ce}: Letter H.\
+      {ceu}: Sound \[h] (IPA).
+  uhu: 
+    id: INSERT_WORD_ID
+    gloss: "'"
+    short: |
+      {ce}: Letter '.\
+      {ceu}: Sound \[ʔ] (IPA).
+  i: 
+    id: INSERT_WORD_ID
+    gloss: I
+    short: |
+      {ce}: Letter I.\
+      {ceu}: Sound \[i] (IPA).
+  e: 
+    id: INSERT_WORD_ID
+    gloss: E
+    short: |
+      {ce}: Letter E.\
+      {ceu}: Sounds \[ɛ] or \[e] (IPA).
+  a: 
+    id: INSERT_WORD_ID
+    gloss: A
+    short: |
+      {ce}: Letter A.\
+      {ceu}: Sounds \[a] or \[ɑ] (IPA).
+  o: 
+    id: INSERT_WORD_ID
+    gloss: O
+    short: |
+      {ce}: Letter O.\
+      {ceu}: Sounds \[o] or \[ɔ] (IPA).
+  u: 
+    id: INSERT_WORD_ID
+    gloss: U
+    short: |
+      {ce}: Letter U.\
+      {ceu}: Sound \[u] (IPA).

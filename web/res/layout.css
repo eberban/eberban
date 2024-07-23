@@ -316,3 +316,7 @@ li.implicit {
 	padding: 0px 5px;
 	font-style: italic;
 }
+
+.entry-spelling {
+	border: 3px solid skyblue;
+}
