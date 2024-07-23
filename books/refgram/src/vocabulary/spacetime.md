@@ -81,7 +81,8 @@ An event (*sku*) is modeled as an object containing the following information:
 *sku* allows to related an event (E slot) with its defining propositon (A slot). It evaluates this
 proposition with its own **inner common timespan**, and doesn't relate it with the **outer common
 timespan**. "I like the event of [you dance]" doesn't means that the "liking" and the "dancing"
-occurs at the same time.
+occurs at the same time. Inside a *sku* or in a sentence, *skul* can be used to refer to the
+current event.
 
 *skun* allows to state that a given event (E slot) is occuring in the **outer common timespan** with
 the exact same set of physical entities it was defined with. "That (dancing) occured before lunch"

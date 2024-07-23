@@ -2253,8 +2253,13 @@ zun:
 tsae:
   id: 4w27tty2ds
   family: "R"
-  gloss: "creates"
-  short: "[E:tce pan] invents/creates/authors [A:tce* ma]."
+  gloss: "invents"
+  short: "[E:tce pan] invents [A:tce* ma]."
+tsau:
+  id: l45mnfdjsq
+  family: "R"
+  gloss: "manufactured"
+  short: "[E:tce* pan] is made/created/manufactured/crafted by [A:tce pan]."
 zuna:
   id: yhzwpengy5
   family: "R"
@@ -3880,6 +3885,15 @@ spel:
 
 # Time relations
 
+sari:
+  id: mva5065f60
+  family: "R"
+  gloss: "between:"
+  tags: [time, tense]
+  short: "[A:()] occurs between the current context event and event [E:tca sku]."
+  notes: |
+    Both events must not overlap. Event described by [A] is met by one event and meets the other.
+    (To speak about an event that occurs between them but don't meet them, use {sari seno}).
 seni:
   id: 5rdw01axi4
   family: "R"
@@ -3978,6 +3992,14 @@ skun:
   gloss: "event-occurs"
   tags: [time, event]
   short: "[E:tce sku] is occuring."
+  links:
+    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+skul:
+  id: nioynp1oyr
+  family: "R"
+  gloss: "current-event"
+  tags: [time, event]
+  short: "[E:tce sku] is the current context event."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 skuni:
