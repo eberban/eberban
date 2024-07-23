@@ -1,8 +1,8 @@
-let { dictionary_en: dictionary, compare_words, dictionary_en } = require('../src/dictionary');
+let { dictionary_en: dictionary, compare_words, compare_words_biased, dictionary_en } = require('../src/dictionary');
 
 const ignored = [ '_spelling', '_cardinal', '_number', 'i', 'e', 'u' ];
 
-const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words);
+const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words_biased);
 
 const tags_style = {
 	"transitive": "btn-info",
@@ -57,8 +57,6 @@ spelling_words_sorted.forEach((word) => {
 	if (entry.tags == undefined) {
 		entry.tags = [];
 	}
-
-	entry.tags.unshift("spelling");
 
 	if (entry.links == undefined) {
 		entry.links = [];
@@ -127,7 +125,7 @@ function html_word_entry(word, entry) {
 	}
 
 	if (entry.see_also) {
-		output += '<p class="see-also"><strong>See </strong> ';
+		output += '<p class="see-also"><strong>See also </strong> ';
 		for (i in entry.see_also) {
 			if (i != 0) {
 				output += ", "
@@ -135,7 +133,7 @@ function html_word_entry(word, entry) {
 
 			output += `<a href="#${entry.see_also[i]}">${entry.see_also[i]}</a>`;
 		}
-		output += '</p>';
+		output += '.</p>';
 	}
 
 	if (entry.links) {

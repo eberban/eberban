@@ -8,20 +8,20 @@ for (i = 0; i < order.length; i++) {
     symbol_indices[order[i]] = i;
 }
 
-function compare_words(x, y) {
-    if (x == y) {
-        return 0;
-    }
-
-    // Give priority to A/O/NI particles so that they don't appear at the end
-    if ('aonr'.includes(x[0]) && !'aonr'.includes(y[0])) {
+function compare_words_biased(x, y) {
+    // Give priority to A/O particles so that they don't appear at the end
+    if ('ao'.includes(x[0]) && !'ao'.includes(y[0])) {
         return -1;
     }
 
-    if (!'aonr'.includes(x[0]) && 'aonr'.includes(y[0])) {
+    if (!'ao'.includes(x[0]) && 'ao'.includes(y[0])) {
         return 1;
     }
 
+    return compare_words(x, y);
+}
+
+function compare_words(x, y) {
     for(i = 0; i < x.length; i++) {
         if (i >= y.length) {
             return 1; // y is shorter
@@ -39,4 +39,5 @@ function compare_words(x, y) {
     }
 }
 
+module.exports.compare_words_biased = compare_words_biased;
 module.exports.compare_words = compare_words;
