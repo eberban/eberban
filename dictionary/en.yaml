@@ -1132,6 +1132,9 @@ jiu:
     Ordinal number terminator. The preceding number have definition:\
     [E:tca p] is the [number]th member of sequence [A:blu p].\
     The number must be a natural number (non zero positive integer).
+  notes: |
+    See {jiuni} for a similar predicate with a place for the number (which allows to ask questions
+    about it) or to speak about the last member of the sequence.
   links:
     - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 ju:
@@ -4394,6 +4397,16 @@ mena:
   family: "R"
   gloss: ability
   short: "[E:tce pan] has the ability to satisfy [A:(tce pan)]."
+jiuni:
+  id: c66rr2j8fm
+  family: "R"
+  gloss: "n-th"
+  tags: [number, list]
+  short: |
+    [E:tca p] is the [O:tca gan]th (default: last) member of sequence [A:blu p].
+  notes: |
+    Alternative to {jiu} with a slot for the number. By using the default bind of [O] it allows
+    to speak about the last member of a sequence, which is not possible to express using {jiu}.
 
 # -----
 # Compounds
