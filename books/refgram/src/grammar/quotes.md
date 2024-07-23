@@ -43,6 +43,8 @@ Examples:
 - `za ce u nu i ci e fi cei` = named UNICEF
 - `buri de ce bu u ri i cei` = buri (spelled BURI)
 
+__ceu__ is another member of __CE__ that spells the sounds of a quote.
+
 ----
 
 __ca__ (__CA__ family) allows quoting any grammatically correct Eberban text,

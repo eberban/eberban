@@ -4023,7 +4023,7 @@ skuri:
   notes: |
     [E] is the time (in seconds) relative to a fixed reference point (which is not important, so we choose UNIX epoch).
     Mostly useful with {jini}/{jiri} to order events.
-skul:
+skaun:
   id: bv0t2rbt88
   family: "R"
   gloss: "contained-time-span"
