@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.59.2
+# eberban PEG grammar - v0.59.3
 # =============================
 
 # GRAMMAR
@@ -172,7 +172,7 @@ BU    <- &particle_word                   (b &u vhowels)       &post_word
 FI    <- &particle_word                   (f vhowels)          &post_word
 VI    <- &particle_word !(VEI &post_word) (v vhowels)          &post_word
 VEI   <- &particle_word                   (v e i)              &post_word
-TI    <- &particle_word                   (t vhowels / digit)  &post_word
+TI    <- &particle_word                   (t vhowels)          &post_word / digit
 DI    <- &particle_word                   (d &i vhowels)       &post_word
 DE    <- &particle_word                   (d &e vhowels)       &post_word
 DA    <- &particle_word !(DAI &post_word) (d &a vhowels)       &post_word
