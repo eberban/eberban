@@ -20,7 +20,7 @@ Eberban text is usually written all lowercase (outside of foreign text quotes), 
 informally be used in written media to convey volume (such as yelling). Outside of __'__ no
 punctuation symbol is used, and any other character is considered a space, but informally
 punctuation from other languages can be used (for example by writing `"` around quotes, or ending
-sentences with `.`).
+sentences with `.`) as long as the proper Eberban grammar is also used.
 
 ## Word types
 

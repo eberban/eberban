@@ -117,17 +117,17 @@ some particles acts like verbs), and there is nothing that looks like a noun.
 Verbs are chained one after the other, and adjacent verbs share a common
 _thing_, like an invisible noun that is managed for you by the language.
 
-|  | mian |  | buri |  | meon |  | zman |
+|  | mian |  | bure |  | meon |  | zman |
 |--|------|--|------|--|------|--|------|
 | There is some X which | is a cat | and which | eats some Y | which | is an apple | and which | is red
 
 Verbs in the chain are grouped in a right-first order to form new verbs. The
-sentence above is grouped in order `mian (buri (meon zman))`, forming the
+sentence above is grouped in order `mian (bure (meon zman))`, forming the
 following intermediary verbs:
 
 - meon zman: is a apple which is red
-- buri meon zman: eats an apple which is red
-- mian buri meon zman: is a cat which eats an apple which is red
+- bure meon zman: eats an apple which is red
+- mian bure meon zman: is a cat which eats an apple which is red
 
 Unlike many natural languages (natlangs), Eberban verbs don't have cases, but
 instead have ordered "places" (also called slots or parameters) for which the
@@ -150,7 +150,7 @@ depends on 2 concepts:
   an atom place, then the atom is shared with the E place of the following chain
   (another place can also be selected using a particle in family __SI__). If the
   place selected is a verb place, then the following chain is stated to be
-  equivalent with verb in this place. ("mi gli [mi jvin]" means "I am happy that
+  equivalent with verb in this place. ("mi gali [mi jvin]" means "I am happy that
   [I dance]")
 
 If one wants to make verbs interact in a different way from the default,

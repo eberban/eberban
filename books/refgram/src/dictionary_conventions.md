@@ -21,14 +21,14 @@ where each argument constraint is listed in between, separated by commas.
 > Exemples of meanings:
 >
 > - `mi: [E:tce* man] is I/me/a speaker/author.`
-> - `buri: [E:tce* den] eats [A:tce* den].`
+> - `bure: [E:tce* den] eats [A:tce* den].`
 > - `meon: [E:tce* den] is an apple.`
 > - `[E:tcei a] is a (non-empty) set of some things that individualy satisfy [A:(tca a)].`
 > - `mua: True if context [E:ma] makes [A:()] true.`
 
 ### Definition
 
-The definition of each word is written in Eberban. Defenitions either have an
+The definition of each word is written in Eberban. Definitions either have an
 argument list or re-export the places of the left-most predicate in the chain.
 
 ## Set arguments
@@ -42,7 +42,7 @@ and a set satisfying the predicate doesn't necessarily imply that a subset of
 it will also satisfy the predicate.
 
 Having mainly set arguments like so means that, unless specified, the number of
-members of the set is left vague. Thus, the sentence _mi buri meon_ could
+members of the set is left vague. Thus, the sentence _mi bure meon_ could
 equally mean the following :
 
 - __I__ eat __one apple__.
@@ -50,7 +50,7 @@ equally mean the following :
 - __I__ eat __multiple apples__.
 - __We__ eat __multiple apples__.
 
-It also doesn't specify _which_ apples everyone is eating: __buri__ is
+It also doesn't specify _which_ apples everyone is eating: __bure__ is
 satisfied if everyone eats at least one of the apples, and every apple is eaten
 by at least one.
 

@@ -123,7 +123,7 @@ man:
   id: r7zw74om6f
   family: "R"
   gloss: "atom set"
-  short: "[E:tcei* ma] is a set of one or more atoms."
+  short: "[E:tcehi* ma] is a set of one or more atoms."
   see_also: ["ma"]
 mai:
   id: uwjxg46v4h
@@ -1636,29 +1636,18 @@ do:
 # Defined predicate words (in order of book)
 # -----
 
-vari:
-  id: ffdtxzmfbd
-  family: "R"
-  gloss: "and:"
-  tags: [connective]
-  short: "True if both [E:()] and [A:()] are true."
-  notes: |
-    It is often simpler to use {vi/fi}.
-  definition: |
-    on vari ge ga be
-    ge vi ga
-vare:
+vle:
   id: ysh546fklz
   family: "R"
   gloss: "or:"
   tags: [connective]
   short: "True if [E:()] or [A:()] or both is true."
   definition: |
-    on vare ge ga be
+    on vle ge ga be
     bi ma
       vi bi ge
       fi bi ga
-varu:
+vlu:
   id: eczhmrmkqd
   family: "R"
   gloss: "if:"
@@ -1667,17 +1656,17 @@ varu:
     If [E:()] is then [A:()] (default: true) is true, otherwise [O:()]
     (default: true) is true.
   definition: |
-    on varu ge ga be
-    vare
-      via vari
-        vie ge
-        fia ga
+    on vlu ge ga be
+    vle
+      via mai
+        vi ge
+        fi ga
         vei
-      fie vari
-        vie bi ge
-        fia go
-    onia varu mai
-    onio varu mai
+      fie mai
+        vi bi ge
+        fi go
+    onia vlu mai
+    onio vlu mai
 kidvo:
   id: 3sqq5pyzms
   family: "R"
@@ -1686,150 +1675,150 @@ kidvo:
     [E:p] and [A:p] satisfy relation [O:(p,p)] transitively.
   definition: |
     on kidvo ke ka go be
-    vare
+    vle
       vie ke go ka
       fia bo ki
         vi ke go ki
         fi ki kidvo
           va ka
           fio go
-tcui:
+tcuhi:
   id: g3quw0kqyl
   family: "R"
   gloss: "set-all-raw:"
   tags: [set, axiom]
   short: |
     [E:ma] is the (non-empty) set of all things that individualy satisfy [A:(p)].
-tcie:
+tcihe:
   id: rcpkbwycm6
   family: "R"
   gloss: "set-member-raw"
   tags: [set, axiom]
   short: |
-    [E:p] is a member of set [A:tcui p].
+    [E:p] is a member of set [A:tcuhi p].
 tcia:
   id: p8mdb3rcqw
   family: "R"
   gloss: "subset"
   tags: [set]
   short: |
-    [E:tcei p] is a subset of [A:tcei p]. [A] is a superset of [E].
+    [E:tcehi p] is a subset of [A:tcehi p]. [A] is a superset of [E].
   # definition: |
   #   on tcia ke ka be
   #   mao
-  #     ve ki be varu
-  #       vie ki tcie ke
-  #       fia ki tcie ka
-tcei:
+  #     ve ki be vlu
+  #       vie ki tcihe ke
+  #       fia ki tcihe ka
+tcehi:
   id: pwfckqjpdu
   family: "R"
   gloss: "set-some-raw:"
   tags: [set]
   short: |
-    [E:tcui p] is a (non-empty) set of some things that individualy satisfy [A:(p)].
+    [E:tcuhi p] is a (non-empty) set of some things that individualy satisfy [A:(p)].
   # definition: |
-  #   on tcie ke gia be
-  #   ke tcia tcui gia
-tcai:
+  #   on tcihe ke gia be
+  #   ke tcia tcuhi gia
+tcahi:
   id: xemhvhqiom
   family: "R"
   gloss: "set-one-raw:"
   tags: [set]
   short: |
-    [E:tcui p] is a set containing exactly one member which satisfy [A:(p)].
+    [E:tcuhi p] is a set containing exactly one member which satisfy [A:(p)].
   # definition: |
   #   on tcia ke gia be
   #   ma
-  #     vi ke tcei gia
+  #     vi ke tcehi gia
   #     fi bi ma
-  #       vi bo ka tcie ke
+  #       vi bo ka tcihe ke
   #       fi bo ko bi ka
-  #       fi ko tcie ke
-tcoi:
+  #       fi ko tcihe ke
+tcohi:
   id: zlgjmfoqtb
   family: "R"
   gloss: "set-many-raw:"
   tags: [set]
   short: |
-    [E:tcei p] is a set of at least 2 things that individualy satisfy [A:(p)].
+    [E:tcehi p] is a set of at least 2 things that individualy satisfy [A:(p)].
   # definition: |
   #   on tcia ke gia be
   #   ma
-  #     vi ke tcei gia
-  #     fi bo ka tcie ke
+  #     vi ke tcehi gia
+  #     fi bo ka tcihe ke
   #     fi bo ko bi ka
-  #     fi ko tcie ke
+  #     fi ko tcihe ke
 tca:
   id: 8w1jwffzur
   family: "R"
   gloss: "set-one:"
   tags: [set]
   short: |
-    [E:tcai p] is a set containing exactly one member, and satisfy [A:(tcai p)].
+    [E:tcahi p] is a set containing exactly one member, and satisfy [A:(tcahi p)].
   # definition: |
   #   on tca ke gia be
-  #   ke se tcai gia
+  #   ke se tcahi gia
 tcu:
   id: pvhoor5xeb
   family: "R"
   gloss: "set-all:"
   tags: [set]
   short: |
-    [E:tcui p] is the (non-empty) set of all things that individualy satisfy [A:(tca p)].
+    [E:tcuhi p] is the (non-empty) set of all things that individualy satisfy [A:(tca p)].
   definition: |
     on tcu ke gia be
-    ke tcui
-      via be ba tcie tca gia
+    ke tcuhi
+      via be ba tcihe tca gia
 tce:
   id: tqlnlqxzsn
   family: "R"
   gloss: "set-some:"
   tags: [set]
   short: |
-    [E:tcei p] is a (non-empty) set of some things that individualy satisfy [A:(tca p)].
+    [E:tcehi p] is a (non-empty) set of some things that individualy satisfy [A:(tca p)].
   definition: |
     on tce ke gia be
-    ke tcei
-      via be ba tcie tca gia
+    ke tcehi
+      via be ba tcihe tca gia
 tco:
   id: sjmnh7xxpc
   family: "R"
   gloss: "set-many:"
   tags: [set]
   short: |
-    [E:tcoi p] is a set of at least 2 things that individualy satisfy [A:(tca p)].
+    [E:tcohi p] is a set of at least 2 things that individualy satisfy [A:(tca p)].
   definition: |
     on tco ke gia be
-    ke tcoi
-      via be ba tcie tca gia
-tci:
+    ke tcohi
+      via be ba tcihe tca gia
+tcie:
   id: fnw0vvx5ii
   family: "R"
   gloss: "set-member"
   tags: [set]
   short: "[E:tca p] is a member of set [A:tce p]."
   definition: |
-    on tci ke ka be
-    ke tca tcie ka
-dji:
+    on tcie ke ka be
+    ke tca tcihe ka
+tcuhe:
   id: ryx470pn2x
   family: "R"
   gloss: "set-union"
   tags: [set]
-  short: "[E:tcei p] is the union of sets in set [A:tcei tcei p]."
-djie:
+  short: "[E:tcehi p] is the union of sets in set [A:tcehi tcehi p]."
+tcahe:
   id: mn82rh937u
   family: "R"
   gloss: "set-choice"
   tags: [set]
-  short: "[E:tcei p] contains exactly one member of each set in set [A:tcei tcei p]."
-dje:
+  short: "[E:tcehi p] contains exactly one member of each set in set [A:tcehi tcehi p]."
+tcuha:
   id: 2yen5k9sgq
   family: "R"
   gloss: "set-intersection"
   tags: [set]
-  short: "[E:tcei p] is the intersection of sets in set [A:tcei tcei p]."
-dja:
+  short: "[E:tcehi p] is the intersection of sets in set [A:tcehi tcehi p]."
+tcuho:
   id: fna9x09it8
   family: "R"
   gloss: "set-diff"
@@ -1840,10 +1829,10 @@ dja:
   definition: |
     on dja ke ka ko be
     ke tcu
-      va ki be vari
-        ve ki tci ka
-        fa bi ki tci ko
-djo:
+      va ki be mai
+        vi ki tcie ka
+        fi bi ki tcie ko
+tcihi:
   id: zkzu7uyhit
   family: "R"
   gloss: "set-local-max:"
@@ -1857,7 +1846,7 @@ djo:
         vi ka bi ke
         fi ka gia
         fi ke tcia ka
-dju:
+tcihu:
   id: jw7zewcwos
   family: "R"
   gloss: "set-local-min:"
@@ -1910,7 +1899,7 @@ blu:
     [E:blun] is a list of things all satisfying [A:(p)].
   notes: |
     {bue} is syntaxic sugar to make lists.
-bla:
+bluni:
   id: 6oxelxxwxd
   family: "R"
   gloss: "list-lfold"
@@ -1918,7 +1907,7 @@ bla:
   short: |
     Left folds list [E:blu p] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,p)] in first to last order.
-blai:
+blunu:
   id: zblktnj4an
   family: "R"
   gloss: "list-rfold"
@@ -1926,14 +1915,14 @@ blai:
   short: |
     Right folds list [E:blu p] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,p)] in last to first order.
-blei:
+bluhe:
   id: ghp1rirgb6
   family: "R"
   gloss: "list-concat-2"
   tags: [list]
   short: |
     [E:blu p] is the concatenation of lists [A:blu p] and [O:blu p].
-ble:
+blue:
   id: bqqk6gqk0k
   family: "R"
   gloss: "list-concat-many"
@@ -1947,7 +1936,7 @@ blea:
   tags: [list]
   short: |
     [E:blu a] is included/contained in [A:blu a].
-blo:
+bleu:
   id: zp415dp0q0
   family: "R"
   gloss: "list-set-raw"
@@ -1975,40 +1964,40 @@ kagve:
   tags: [map]
   short: |
     [E:p] is the value in map [A:kagvin] for key [O:ma].
-kagvei:
+kagvehe:
   id: wveaovosbk
   family: "R"
   gloss: "context-map-entry"
   tags: [map, context]
   short: |
     [E:p] is the value in the context map for key [A:ma].
-kagvani:
-  id: pl5agvbnwb
-  family: "R"
-  gloss: "map-remove"
-  tags: [map]
-  short: |
-    [E:kagvin] is obtained from [A:kagvin] by removing the entry with key [O:ma].
-    If [A] don't have entry with key [O] then [E] = [A].
-kagvoi:
-  id: f3la0vnq2j
-  family: "R"
-  gloss: "map-insert"
-  tags: [map]
-  short: |
-    [E:kagvin] is obtained from [A:kagvin] by inserting an entry with key [O:ma] and
-    value [U:ma]. If [A] have an entry with key [O] then it is removed to insert
-    the entry with key [O] and value [U].
-kagvui:
-  id: dolbat4p3o
-  family: "R"
-  gloss: "map-update"
-  tags: [map]
-  short: |
-    [E:kagvin] is obtained from [A:kagvin] by transforming the value of entry with
-    key [O:ma] using relation [U:(a,p)]. It implies that [A] must have an entry
-    with key [O].
-kagva:
+# kagvani:
+#   id: pl5agvbnwb
+#   family: "R"
+#   gloss: "map-remove"
+#   tags: [map]
+#   short: |
+#     [E:kagvin] is obtained from [A:kagvin] by removing the entry with key [O:ma].
+#     If [A] don't have entry with key [O] then [E] = [A].
+# kagvoi:
+#   id: f3la0vnq2j
+#   family: "R"
+#   gloss: "map-insert"
+#   tags: [map]
+#   short: |
+#     [E:kagvin] is obtained from [A:kagvin] by inserting an entry with key [O:ma] and
+#     value [U:ma]. If [A] have an entry with key [O] then it is removed to insert
+#     the entry with key [O] and value [U].
+# kagvui:
+#   id: dolbat4p3o
+#   family: "R"
+#   gloss: "map-update"
+#   tags: [map]
+#   short: |
+#     [E:kagvin] is obtained from [A:kagvin] by transforming the value of entry with
+#     key [O:ma] using relation [U:(a,p)]. It implies that [A] must have an entry
+#     with key [O].
+kagvi:
   id: onzg415avk
   family: "R"
   gloss: "map-list-wrapper"
@@ -2016,29 +2005,29 @@ kagva:
   short: |
     [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: empty
     map {kagvil}) by applying the list of transformations [A:blu ()].
-kagvan:
+kagvien:
   id: eogkr6aqeg
   family: "R"
   gloss: "map-list-remove"
   tags: [map, list]
   short: |
-    {kagva} operation: remove entry with key [E:ma].
-kagvo:
+    {kagvi} operation: remove entry with key [E:ma].
+kagvie:
   id: obhtxxk03b
   family: "R"
   gloss: "map-list-insert"
   tags: [map, list]
   short: |
-    {kagva} operation: insert entry with key [E:ma] and value [A:p].
-kagvu:
+    {kagvi} operation: insert entry with key [E:ma] and value [A:p].
+kagvini:
   id: oyk8ho9c8a
   family: "R"
   gloss: "map-list-update"
   tags: [map, list]
   short: |
-    {kagva} operation: transform entry with key [E:ma] with value relation
+    {kagvi} operation: transform entry with key [E:ma] with value relation
     (old,new) [A:(p,p)].
-kagvar:
+kagvihi:
   id: uqfvqmic1a
   family: "R"
   gloss: "context-map-list-wrapper:"
@@ -2066,13 +2055,13 @@ gin:
   gloss: number-natural
   tags: [math, number]
   short: "[E:tce* man] is a natural number."
-gini:
+gine:
   id: wxxmvr9zx2
   family: "R"
   gloss: succ
   tags: [partial, math, number]
   short: "[E:tca ma] is the successor of [A:tca ma]."
-ginin:
+ginen:
   id: w8gh1nggcn
   family: "R"
   gloss: zero
@@ -2093,84 +2082,89 @@ gan:
   notes: |
     {gan} numbers are an extension field of {gen} (real numbers) that supports
     units like length, mass, etc.
-tcea:
-  id: val5msurqc
-  family: "R"
-  gloss: "OR-S:"
-  tags: [set, connective]
-  short: "At least one member of [E:tce p] satisfies property [A:(tca p)]"
-tceai:
-  id: dhyuzaems9
-  family: "R"
-  gloss: "OR-S-raw:"
-  tags: [set, connective]
-  short: "At least one member of [E:tcei p] satisfies property [A:(p)]"
-tceo:
-  id: nax6hot9qu
-  family: "R"
-  gloss: "XOR-S:"
-  tags: [set, connective]
-  short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(tca p)]."
-tceoi:
-  id: hfwn93xw2o
-  family: "R"
-  gloss: "XOR-S-raw:"
-  tags: [set, connective]
-  short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(p)]."
+
+
+## Can be expressed with tcia + other tc- words
+
+# tcea:
+#   id: val5msurqc
+#   family: "R"
+#   gloss: "OR-S:"
+#   tags: [set, connective]
+#   short: "At least one member of [E:tce p] satisfies property [A:(tca p)]"
+# tceai:
+#   id: dhyuzaems9
+#   family: "R"
+#   gloss: "OR-S-raw:"
+#   tags: [set, connective]
+#   short: "At least one member of [E:tcehi p] satisfies property [A:(p)]"
+# tceo:
+#   id: nax6hot9qu
+#   family: "R"
+#   gloss: "XOR-S:"
+#   tags: [set, connective]
+#   short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(tca p)]."
+# tceoi:
+#   id: hfwn93xw2o
+#   family: "R"
+#   gloss: "XOR-S-raw:"
+#   tags: [set, connective]
+#   short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(p)]."
+
 ven:
   id: qsivboraps
   family: "R"
   gloss: "AND-P0:"
   tags: [set, connective]
-  short: "This proposition is true if all propositions in set [E:tcei ()] are true."
+  short: "This proposition is true if all propositions in set [E:tcehi ()] are true."
 van:
   id: d9fzfk4r83
   family: "R"
   gloss: "OR-P0:"
   tags: [set, connective]
-  short: "This proposition is true if at least one proposition in set [E:tcei ()] is true."
+  short: "This proposition is true if at least one proposition in set [E:tcehi ()] is true."
 von:
   id: f5t4czvnac
   family: "R"
   gloss: "XOR-P0:"
   tags: [set, connective]
-  short: "This proposition is true if exactly [A:tce gin] (default: 1) proposition(s) in set [E:tcei ()] is true."
+  short: "This proposition is true if exactly [A:tce gin] (default: 1) proposition(s) in set [E:tcehi ()] is true."
 vene:
   id: ovzzfajdlw
   family: "R"
   gloss: "AND-P1:"
   tags: [set, connective]
-  short: "This proposition is true if [E:p] satisfies all properties in set [A:tcei (p)]."
+  short: "This proposition is true if [E:p] satisfies all properties in set [A:tcehi (p)]."
 vane:
   id: 6ksleotknl
   family: "R"
   gloss: "OR-P1:"
   tags: [set, connective]
-  short: "This proposition is true if [E:p] satisfies at least one property in set [A:tcei (p)]."
+  short: "This proposition is true if [E:p] satisfies at least one property in set [A:tcehi (p)]."
 vone:
   id: kog0cgvvza
   family: "R"
   gloss: "XOR-P1:"
   tags: [set, connective]
-  short: "This proposition is true if [E:a] satisfies exactly [O:tce gin] (default: 1) proposition(s) in set [A:tcei (p)]."
+  short: "This proposition is true if [E:a] satisfies exactly [O:tce gin] (default: 1) proposition(s) in set [A:tcehi (p)]."
 vena:
   id: 4aamcwbbmi
   family: "R"
   gloss: "AND-P2"
   tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies all relations in set [O:tcei (p,b)]."
+  short: "This proposition is true if [E:p] and [A:b] satisfies all relations in set [O:tcehi (p,b)]."
 vana:
   id: y8teg1w87d
   family: "R"
   gloss: "OR-P2"
   tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies at least one relation in set [O:tcei (p,b)]."
+  short: "This proposition is true if [E:p] and [A:b] satisfies at least one relation in set [O:tcehi (p,b)]."
 vona:
   id: 6xyrpofoby
   family: "R"
   gloss: "XOR-P2"
   tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:tce gin] (default: 1) relation(s) in set [O:tcei (p,b)]."
+  short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:tce gin] (default: 1) relation(s) in set [O:tcehi (p,b)]."
 mone:
   id: qt6yew5oof
   family: "R"
@@ -2211,7 +2205,7 @@ jveo:
   gloss: "friend"
   tags: [emotion]
   short: "[E:tce* pan] is a friend of [A:tce* pan]."
-kli:
+kelo:
   id: wsihly4n1c
   family: "R"
   gloss: "thanks"
@@ -2219,7 +2213,7 @@ kli:
   short: |
     [E:tce* pan] (default: speaker) thanks/is thankful to [A:tce* man]
     (defaults: listener) about [O:()] being true.
-kre:
+kere:
   id: wb1zm07d82
   family: "R"
   gloss: "helps"
@@ -2237,12 +2231,12 @@ mian:
   gloss: "cat"
   tags: [animal]
   short: "[E:tce* pan] is a cat/felid/member of family Felidae."
-kali:
+kala:
   id: egsqs45rsj
   family: "R"
   gloss: "drinks"
   short: "[E:tce* pan] drinks [E:tce* pan]."
-buri:
+bure:
   id: fp326p16jr
   family: "R"
   gloss: "eats"
@@ -2274,7 +2268,7 @@ zuna:
   family: "R"
   gloss: "inspired"
   short: "[E:tce* pan] is inspired by [A:tce* ma]. [A] is a source of inspiration for [E]."
-zvia:
+zvai:
   id: pcbyhpj1jy
   family: "R"
   gloss: "purpose:"
@@ -2284,25 +2278,25 @@ skal:
   family: "R"
   gloss: "computer"
   short: "[E:tce* pan] is a computer."
-sni:
+sune:
   id: nj03wvtsbv
   family: "R"
   gloss: "greets"
   short: "[E:tce* pan] (default: speaker) says hello to/greets [A:tce* pan] (default: listener)."
-  see_also: [sne, sna]
-sne:
-  id: knhmussoxm
-  family: "R"
-  gloss: "goodbye"
-  short: "[E:tce* pan] (default: speaker) says goodbye to [A:tce* pan] (default: listener)."
-  see_also: [sni, sna]
-sna:
+  see_also: [suna, sunu]
+suna:
   id: blzblpa7fo
   family: "R"
   gloss: "welcomes"
   short: "[E:tce* pan] (default: speaker) welcomes [A:tce* pan] (default: listener) to place [O:tce* pan]."
-  see_also: [sni, sne]
-spi:
+  see_also: [sune, sunu]
+sunu:
+  id: knhmussoxm
+  family: "R"
+  gloss: "goodbye"
+  short: "[E:tce* pan] (default: speaker) says goodbye to [A:tce* pan] (default: listener)."
+  see_also: [sune, suna]
+spie:
   id: wlkwneqcyu
   family: "R"
   gloss: "says"
@@ -2317,17 +2311,17 @@ zaro:
   family: "R"
   gloss: "agrees"
   short: "[E:tce* pan] agrees with [A:tce* pan] that [O:()] is true."
-vani:
+vania:
   id: meuqg48faw
   family: "R"
   gloss: "moves"
   short: "[E:tce* pan] moves/goes to [A:tce* pan] from [O:tce* pan]."
-gza:
+gzi:
   id: 3qi3tvpegs
   family: "R"
   gloss: "agentive cause:"
   short: "[E:tce* pan] is an agentive cause of [A:()] being true."
-kini:
+kine:
   id: macaegnams
   family: "R"
   gloss: "learns"
@@ -2378,12 +2372,12 @@ zdir:
     [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: speaker)
     in property [O:(tce man)].
   gloss: "amusing"
-gli:
+gali:
   id: r7wbdwqgm0
   family: "R"
   gloss: "happy:"
   short: "[E:tce* pan] is happy about [A:()] being true."
-glu:
+gari:
   id: t6q0c6agab
   family: "R"
   gloss: "unhappy:"
@@ -2393,7 +2387,7 @@ muli:
   family: "R"
   gloss: "easy:"
   short: "[E:tce pan] finds it easy to satisfy [A:(tce pan)]."
-mulu:
+muri:
   id: vtqvmmg5g7
   family: "R"
   gloss: "difficult:"
@@ -2418,27 +2412,27 @@ jnaor:
   family: "R"
   gloss: "wild"
   short: "[E:tce* pan] is wild/untamed."
-kitmu:
+kitmi:
   id: isleimajzc
   family: "R"
   gloss: "hopes:"
   short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case."
-ketmu:
+ketmi:
   id: vfis6lzbve
   family: "R"
   gloss: "intentionless hopes:"
   short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case, but thinks that they are powerless to make it true by themself."
-katmu:
+katmi:
   id: iezve23kex
   family: "R"
   gloss: "wants:"
   short: "[E:tce pan] desires/wishes/wants that [A:()] be the case; [E:tce pan] would seize the opportunity to make [A:()] true."
-kotmu:
+kotmi:
   id: ch2b852dq7
   family: "R"
   gloss: "intends:"
   short: "[E:tce pan] intends/plans to make [A:()] true, having reasonable confidence in their ability to do so."
-kutmu:
+kutmi:
   id: 0g7kesm6nq
   family: "R"
   gloss: "prays:"
@@ -2453,7 +2447,7 @@ folin:
   family: "R"
   gloss: "airplane"
   short: "[E:tce* pan] is an airplane."
-jleo:
+jlei:
   id: l2gx6yauc8
   family: "R"
   gloss: "motivated:"
@@ -2512,7 +2506,7 @@ soane:
   short: "[E:tce* pan] is stolen from [A:tce* pan]."
   notes: |
     Use with {gza} to express who/what steals (E-Xd).
-tri:
+tari:
   id: dzrpftevt6
   family: "R"
   gloss: "attemps:"
@@ -2703,12 +2697,12 @@ vihon:
   family: "R"
   gloss: "car"
   short: "[E:tce* pan] is a car."
-zari:
+zaria:
   id: y9cpaqtwg7
   family: "R"
   gloss: "recipe"
   short: "[E:tce* man] is a recipe, algorithm, procedure to achieve result [A:tce* man]."
-zeni:
+zenio:
   id: yuesrkiajk
   family: "R"
   gloss: "provided"
@@ -2727,7 +2721,7 @@ tsiu:
   family: "R"
   gloss: "finds"
   short: "[E:tce* pan] finds/discovers [A:tce* man]."
-tsia:
+tsui:
   id: jo5uxpp9f9
   family: "R"
   gloss: "searches"
@@ -2863,7 +2857,7 @@ kari:
   notes: |
     [A] is an axiom, is presupposed to be true and it's truth value is never
     put into doupt.
-kiru:
+kuri:
   id: kxo9ztaycl
   family: "R"
   gloss: "thinks:"
@@ -2894,36 +2888,36 @@ kroin:
   family: "R"
   gloss: "leg"
   short: "[E:tce* pan] is a leg."
-kani:
-  id: puq4yi3rrf
-  family: "R"
-  gloss: "infers from senses:"
-  short: "[E:tce* pan] infers from their current sensorial experience that [A:()] is the case."
-mara:
+marai:
   id: wdughdrr2i
   family: "R"
   gloss: "remembers:"
   short: "[E:tce* pan] remembers the past experience of perceiving that [A:()] was the case."
-zule:
-  id: xq83jvzd55
-  family: "R"
-  gloss: "hearsay:"
-  short: "[E:tce* pan] has got second-hand information or hearsay according to which [A:()] is the case."
-muni:
+munai:
   id: wl8bgxuacj
   family: "R"
   gloss: "intuits:"
   short: "[E:tce* pan] intuits that [A:()] is the case."
-sana:
+munui:
   id: ettifc4jmj
   family: "R"
   gloss: "cultural knowledge:"
   short: "[E:tce* pan] has cultural knowledge, collective wisdom according to which [A:()] is the case."
-valo:
+valai:
+  id: puq4yi3rrf
+  family: "R"
+  gloss: "infers from senses:"
+  short: "[E:tce* pan] infers from their current sensorial experience that [A:()] is the case."
+valoi:
   id: w14bplmcqv
   family: "R"
   gloss: "infers from multiple sources:"
   short: "[E:tce* pan] infers (from several sources of information) that [A:()] is the case."
+munoi:
+  id: xq83jvzd55
+  family: "R"
+  gloss: "hearsay:"
+  short: "[E:tce* pan] has got second-hand information or hearsay according to which [A:()] is the case."
 bale:
   id: ktg311prdc
   family: "R"
@@ -2971,17 +2965,17 @@ kena:
   family: "R"
   gloss: "holds"
   short: "[E:tce* pan] holds/grasps [A:tce* pan]."
-clo:
+caloi:
   id: pfztommryn
   family: "R"
   gloss: "purpose:"
   short: "[E:tce man] have purpose to satisfy property [A:(tce man)]."
-jara:
+jarai:
   id: wwih32fwvc
   family: "R"
   gloss: "paid work:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as one of their jobs/occupations (paid work)."
-zera:
+zerai:
   id: od2vvlzdn2
   family: "R"
   gloss: "personality trait:"
@@ -3007,49 +3001,49 @@ meul:
   family: "R"
   short: "[E:tce* pan] (default: water) is raining."
   gloss: "rain"
-znir:
+zniri:
   id: bbmaoqi9r0
   family: "R"
   gloss: "obligated:"
   short: |
-    [E:()] is obligated to be performed under authority [A:tce* pan]. [E] is a duty.
+    [A:()] is obligated to be performed under authority [E:tce* pan]. [A] is a duty.
 
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
-zner:
+zneri:
   id: katsvpqhmr
   family: "R"
   gloss: "encouraged:"
   short: |
-    [E:()] is encouraged to be performed under authority [A:tce* pan].\
-    [E] is a virtuous/upstanding behavior.
+    [A:()] is encouraged to be performed under authority [E:tce* pan].\
+    [A] is a virtuous/upstanding behavior.
 
     Examples: charity, volunteer work, being polite
-znar:
+znari:
   id: juramnwmey
   family: "R"
   gloss: "tolerated:"
   short: |
-    [E:()] is neither encouraged nor discouraged (i.e. permitted) by authority [A:tce* pan].
-    [E] is tolerated.
+    [A:()] is neither encouraged nor discouraged (i.e. permitted) by authority [E:tce* pan].
+    [A] is tolerated.
 
-    Examples: basically most actions are {znar}, there are so many examples
-    -- the act of breathing is znar
-znor:
+    Examples: basically most actions are {znari}, there are so many examples
+    -- the act of breathing is {znari}
+znori:
   id: 2uij97w56c
   family: "R"
   gloss: "discouraged:"
   short: |
-    [E:()] is discouraged to be performed under authority [A:tce* pan]; [E] is reprehensible.
+    [A:()] is discouraged to be performed under authority [E:tce* pan]; [A] is reprehensible.
 
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
-znur:
+znuri:
   id: wtc0sbwiwj
   family: "R"
   gloss: "forbidden:"
   short: |
-    [E:()] is forbidden to be done by authority [A:tce* pan].
+    [A:()] is forbidden to be done by authority [E:tce* pan].
 
     Examples: for many religions speaking badly of their deity is forbidden,
     crimes which are prosecuted, cheating on your partner in a monogamous relationship
@@ -3059,7 +3053,7 @@ molai:
   gloss: "rewarded/punished:"
   short: |
     [E:tce pan] is made to satisfy [A:(tce pan)] as a reward/punishment.
-    (E) is awarded/punished, with result that they satisfy [A].
+    [E] is awarded/punished, with result that they satisfy [A].
 krehu:
   id: giuwxgdlvl
   family: "R"
@@ -3133,33 +3127,33 @@ flan:
   family: "R"
   short: "[E:tce* man] is a human being."
   gloss: "human"
-fuli:
+fulie:
   id: r8ezp2roox
   family: "R"
   gloss: "sum"
   tags: ["maths"]
   short: "[E:tce gan] is the sum of numbers in list [A:blu tce gan]."
-fulu:
+fuliu:
   id: pd94naqm1w
   family: "R"
   gloss: "product"
   tags: ["maths"]
   short: "[E:tce gan] is the product of numbers in list [A:blu tce gan]."
-konor:
-  id: iophfsuxgp
-  family: "R"
-  gloss: "number pred:"
-  short: |
-    [E:(tce gan,tce gan)] is a predicate of the form: [E:tce gan] is [number]
-    times [A:tce gan] (default: 1).
-  notes: |
-    Allows to check a predicate behaves like a number made from TI (+ jie), or
-    other number predicates of the same form. Can be used to define math
-    equations with the unknown being such a predicate, allowing to chain multiple
-    the unknown for multiplication.
+# konor:
+#   id: iophfsuxgp
+#   family: "R"
+#   gloss: "number pred:"
+#   short: |
+#     [E:(tce gan,tce gan)] is a predicate of the form: [E:tce gan] is [number]
+#     times [A:tce gan] (default: 1).
+#   notes: |
+#     Allows to check a predicate behaves like a number made from TI (+ jie), or
+#     other number predicates of the same form. Can be used to define math
+#     equations with the unknown being such a predicate, allowing to chain multiple
+#     the unknown for multiplication.
 
-    Example: {o ga \[ge be\] fuli \[vi koro ge\] \[fa te bue, ta ge bu, to ge ge\] \[fe ti\]}\
-    Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
+#     Example: {o ga \[ge be\] fuli \[vi koro ge\] \[fa te bue, ta ge bu, to ge ge\] \[fe ti\]}\
+#     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
 
 bire:
   id: peug1pbvxf
@@ -3361,7 +3355,7 @@ pere:
   gloss: "ampere"
   short: "[E:tce gan] is 1 ampere times [A:tce gan] (default: 1)."
   tags: [unit]
-keli:
+kele:
   id: ata2lrtlvb
   family: "R"
   gloss: "kelvin"
@@ -3379,7 +3373,7 @@ saura:
   gloss: "candela"
   short: "[E:tce gan] is 1 candela times [A:tce gan] (default: 1)."
   tags: [unit]
-jmi:
+jume:
   id: ulx09krbl9
   family: "R"
   gloss: "inverse"
@@ -3389,14 +3383,14 @@ jmi:
     Thanks to the transitivity of all unit predicates and numbers, it is easy to
     speak about quantities with negative power units.
 
-    4 km/h = {to je to jie mual jmi vola}
+    4 km/h = {to je to jie mual jume vola}
 
     When dealing with multiple negative powers, it is best to group them after
-    a single {jmi}.
+    a single {jume}.
 
     6.674e-11 m3.kg-1.s-2
     = 6.674e-11 m3/(kg.s2)
-    = {tia jo tia tio tu jei teo jie mual mual mual jmi gulo vola vola}
+    = {tia jo tia tio tu jei teo jie mual mual mual jume gulo vola vola}
 zgie:
   id: nneh2x85ud
   family: "R"
@@ -3427,7 +3421,7 @@ gzia:
   family: "R"
   gloss: "population"
   short: "[E:tce gan] (unitless) is the population/number of inhabitants of [A:tce pan]."
-cnei:
+cnie:
   id: b0ey5as5c6
   family: "R"
   gloss: "age"
@@ -3497,7 +3491,7 @@ ctuan:
   gloss: "buttocks"
   short: "[E:tce* pan] is a rear/buttock."
   tags: [body]
-burin:
+buren:
   id: skexhz96gk
   family: "R"
   gloss: "mouth"
@@ -3565,7 +3559,7 @@ snoil:
   family: "R"
   gloss: "monster"
   short: "[E:tce* pan] is a monster."
-zmino:
+zmoni:
   id: zbbqohy82q
   family: "R"
   gloss: "picture:"
@@ -3573,7 +3567,7 @@ zmino:
   notes: |
     [A] occurs at the instant the picture was taken, as is constrainted in space
     as the volume captured by the field of view of the camera.
-jalo:
+jaloi:
   id: 6naqo0pjy0
   family: "R"
   gloss: "with-each-other:"
@@ -3600,7 +3594,7 @@ zolen:
     Wrapping with {zole} will setup this entry in the context it provides to its
     O place and find a "smallest" set that makes O true, and check that its A
     place is a subset of it.
-jeni:
+jine:
   id: cmjmwddxde
   family: "R"
   gloss: "range"
@@ -3613,9 +3607,9 @@ jeni:
     and numbers made with {jie}), the multiplicative aspect of this chain can
     be used to give a range proportional to the expressed number.
 
-    {te ti mula jeni te} = 10 ± 10 (10 * 1)\
-    {ta ti mula jeni jo to} = 20 ± 6 (20 * 0.3)\
-jena:
+    {te ti mula jine te} = 10 ± 10 (10 * 1)\
+    {ta ti mula jine jo to} = 20 ± 6 (20 * 0.3)\
+jino:
   id: twcf0jan6n
   family: "R"
   gloss: "floor-ceil"
@@ -3630,7 +3624,7 @@ pafken:
   family: "R"
   gloss: "potato"
   short: "[E:tce pan] is a potato."
-zmi:
+zino:
   id: cmeot2jbo9
   family: "R"
   gloss: "color"
@@ -3684,7 +3678,7 @@ zmur:
   gloss: "yellow"
   tags: ["color"]
   short: "[E:tce pan] is perceived as yellow by [A:tce pan] (default: speaker)."
-cekme:
+cekmi:
   id: rn07g95kw6
   family: "R"
   gloss: "differs:"
@@ -3696,21 +3690,21 @@ cekme:
     [E] individually satisfy relation [A] with something (independant of each
     other), but don't all individually satisfy relation [A] with the same thing.
   definition: |
-    on cekme ke ga be
+    on cekmi ke ga be
     ke
       ve tce ga
       bi fi ki be ke tce ga ki
-tcoe:
+tconi:
   id: 1ekbkw2s33
   family: "R"
   gloss: "mutual-1:"
   short: "[E:tco p] is a group where every pair of members mutualy satisfy property [A:(tco p)]."
-tceu:
+tcori:
   id: ho1az3mcl2
   family: "R"
   gloss: "mutual-2:"
   short: "[E:tco p] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca p)]."
-jene:
+jeni:
   id: gi4jvusxpm
   family: "R"
   gloss: "big:"
@@ -3720,7 +3714,7 @@ jene:
   notes: |
     Each thing in [E] have more than [O] standard deviation(s) from the average size
     of [A].
-jere:
+jeri:
   id: ik7qjuwuxm
   family: "R"
   gloss: "small:"
@@ -3775,7 +3769,7 @@ bzael:
     an opiner. The opiner is stored in the context, and can be changed using
     {ebzaelmue}.
 
-    Words like {kiru} (think) use {ebzaelmue} internally, while subjective words
+    Words like {kuri} (think) use {ebzaelmue} internally, while subjective words
     like {blan} are by default according to the opiner {bzael}.
 zoal:
   id: ob1f25nx3q
@@ -3794,12 +3788,12 @@ djio:
   short: "[E:tca gin] is the cardinality/size of [A:ma]."
   notes: |
     Provides the length of various structures, such as sets and lists.
-fani:
+fania:
   id: fyc3rf8rf7
   family: "R"
   gloss: "smells"
   short: "[E:tce* pan] smells (perceives smell of) [A:tce* pan]."
-seri:
+serie:
   id: hflpzqe80s
   family: "R"
   gloss: "smells"
@@ -3809,11 +3803,11 @@ zailu:
   family: "R"
   gloss: "rotates"
   short: "[E:tce* pan] rotates, spins, turns around axis [A:tce* pan]."
-zol:
+zoli:
   id: agk3nnes4a
   family: "R"
   gloss: "metaphor:"
-  short: "[E:()] is a metaphor of [A:()]."
+  short: "[E:p] metaphoricaly satisfy property [A:(p)]."
 mliel:
   id: xuvbg8gnll
   family: "R"
@@ -3884,7 +3878,7 @@ zidma:
   family: "R"
   gloss: "because:"
   short: "[E:()] is true because of [A:()]."
-feltu:
+felti:
   id: n6l471ty0l
   family: "R"
   gloss: "similar-to:"
@@ -3902,11 +3896,11 @@ sari:
   family: "R"
   gloss: "between:"
   tags: [time, tense]
-  short: "[A:()] occurs between the current context event and event [E:tca sku]."
+  short: "[A:()] occurs between the current context event and event [E:tca ski]."
   notes: |
     Both events must not overlap. Event described by [A] is met by one event and meets the other.
     (To speak about an event that occurs between them but don't meet them, use {sari seno}).
-seni:
+srini:
   id: 5rdw01axi4
   family: "R"
   gloss: "before:"
@@ -3916,7 +3910,7 @@ seni:
     The end of "it" is before the start of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-seli:
+srili:
   id: m3p1pma6zf
   family: "R"
   gloss: "after:"
@@ -3926,7 +3920,7 @@ seli:
     The start of "it" is after the end of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sene:
+sreni:
   id: alzqd00d1g
   family: "R"
   gloss: "met-by:"
@@ -3936,7 +3930,7 @@ sene:
     The start of "it" is the end of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sele:
+sreli:
   id: vmwzur3ypx
   family: "R"
   gloss: "meets:"
@@ -3946,7 +3940,7 @@ sele:
     The end of "it" is the start of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sena:
+srani:
   id: 4wmrgvvaw2
   family: "R"
   gloss: "starts:"
@@ -3956,7 +3950,7 @@ sena:
     The start of "it" is the start of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sela:
+srali:
   id: nsnjvcaglb
   family: "R"
   gloss: "finished:"
@@ -3966,7 +3960,7 @@ sela:
     The end of "it" is the end of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-seno:
+sroni:
   id: 64scvsnfn7
   family: "R"
   gloss: "contains:"
@@ -3974,7 +3968,7 @@ seno:
   short: "It contains [A:()]"
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-selo:
+sroli:
   id: 0fj04kshgt
   family: "R"
   gloss: "contained-by:"
@@ -3982,7 +3976,7 @@ selo:
   short: "It is contained by [A:()]"
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-senu:
+sruni:
   id: u3q3u80bs7
   family: "R"
   gloss: "unconstrained-by:"
@@ -3990,7 +3984,7 @@ senu:
   short: "It is unconstrained by [A:()]"
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sku:
+ski:
   id: yktbdu521a
   family: "R"
   gloss: "event:"
@@ -3998,12 +3992,12 @@ sku:
   short: "[E:tce man] is an event/occurence of [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-skun:
+skin:
   id: nt7nm8e1y5
   family: "R"
   gloss: "event-occurs"
   tags: [time, event]
-  short: "[E:tce sku] is occuring."
+  short: "[E:tce ski] is occuring."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
 skul:
@@ -4011,24 +4005,24 @@ skul:
   family: "R"
   gloss: "current-event"
   tags: [time, event]
-  short: "[E:tce sku] is the current context event."
+  short: "[E:tce ski] is the current context event."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-skuni:
+skinu:
   id: pmwsbwwa6w
   family: "R"
   gloss: "event-start"
   tags: [time, event]
-  short: "[E:tce gan] is the start time of event [A:tca sku]."
+  short: "[E:tce gan] is the start time of event [A:tca ski]."
   notes: |
     [E] is the time (in seconds) relative to a fixed reference point (which is not important, so we choose UNIX epoch).
     Mostly useful with {jini}/{jiri} to order events.
-skuri:
+skiru:
   id: ah0c4muyyx
   family: "R"
   gloss: "event-end"
   tags: [time, event]
-  short: "[E:tce gan] is the end time of event [A:tca sku]."
+  short: "[E:tce gan] is the end time of event [A:tca ski]."
   notes: |
     [E] is the time (in seconds) relative to a fixed reference point (which is not important, so we choose UNIX epoch).
     Mostly useful with {jini}/{jiri} to order events.
@@ -4045,7 +4039,7 @@ skuli:
   family: "R"
   gloss: "event-concurrent:"
   tags: [time, event]
-  short: "[A:()] occurs in the same timespan as event [E:tca sku]."
+  short: "[A:()] occurs in the same timespan as event [E:tca ski]."
 sken:
   id: palszydy29
   family: "R"
@@ -4064,7 +4058,7 @@ skan:
     [E:tce* man] is a timespan.
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-skin:
+skun:
   id: tsrx8h6muk
   family: "R"
   gloss: set-anchor-present
@@ -4094,7 +4088,7 @@ skon:
     [E:tca skan] is a timespan contained in the current common timespan.
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-stani:
+stane:
   id: 038s3l4yp4
   family: "R"
   gloss: citizen
@@ -4112,24 +4106,24 @@ fleon:
   gloss: music
   short: |
     [E:tce* pan] is a music.
-jnaha:
+jnihi:
   id: svkaim6riw
   family: "R"
   gloss: laugh
   short: "[E:tce* pan] laugh because [A:()] is true."
-psei:
+pseo:
   id: 4s9x0v0nby
   family: "R"
   gloss: distance
   tags: ["space"]
-  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {psoa})."
+  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {psoi})."
 psulo:
   id: 7vn4ceujmp
   family: "R"
   gloss: center
   tags: ["space"]
   short: "[E:tca pan] is the center (average position) of [A:tce pan]."
-psai:
+psao:
   id: 5fsi11zwja
   family: "R"
   gloss: "inside:"
@@ -4149,7 +4143,7 @@ psau:
     The volumes of the entities involved in [A] must intersect with the inverse
     of the volume of [E]. They don't need to be fully contained in it, so
     something can be both inside and outside.
-psoa:
+psoi:
   id: t175fzkni1
   family: "R"
   gloss: "cartesian-referential:"
@@ -4159,14 +4153,14 @@ psoa:
     [E] must be a physical entity with a well identified front and up direction.
     The average point of all points of the volume of [E] is used as the origin.
     By default in a text the referential is the speaker.
-psoni:
+psone:
   id: 2sthq7nyfa
   family: "R"
   gloss: behind
   tags: ["space"]
   short: "[E:tce pan] is behind [A:tce pan]."
   notes: |
-    In the referential defined by {psoa}, we take the vectors from all points of
+    In the referential defined by {psoi}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the behind direction.
@@ -4177,18 +4171,18 @@ psonu:
   tags: ["space"]
   short: "[E:tce pan] is in front of [A:tce pan]."
   notes: |
-    In the referential defined by {psoa}, we take the vectors from all points of
+    In the referential defined by {psoi}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the in-front direction.
-psori:
+psore:
   id: nmk5qmo7fv
   family: "R"
   gloss: to-the-left-of
   tags: ["space"]
   short: "[E:tce pan] is to the left of [A:tce pan]."
   notes: |
-    In the referential defined by {psoa}, we take the vectors from all points of
+    In the referential defined by {psoi}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the left direction.
@@ -4199,18 +4193,18 @@ psoru:
   tags: ["space"]
   short: "[E:tce pan] is to the right of [A:tce pan]."
   notes: |
-    In the referential defined by {psoa}, we take the vectors from all points of
+    In the referential defined by {psoi}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the right direction.
-psoli:
+psole:
   id: 5nrtbh0sv6
   family: "R"
   gloss: above
   tags: ["space"]
   short: "[E:tce pan] is above [A:tce pan]."
   notes: |
-    In the referential defined by {psoa}, we take the vectors from all points of
+    In the referential defined by {psoi}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the above direction.
@@ -4221,11 +4215,11 @@ psolu:
   tags: ["space"]
   short: "[E:tce pan] is below [A:tce pan]."
   notes: |
-    In the referential defined by {psoa}, we take the vectors from all points of
+    In the referential defined by {psoi}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the below direction.
-psea:
+psei:
   id: nh5bijnt09
   family: "R"
   gloss: "geodetic-referential:"
@@ -4235,14 +4229,14 @@ psea:
     [E] must be a physical entity with a well identified north and south pole.
     The average point of all points of the volume of [E] is used as the origin.
     By default in a text the referential is closest celestial body from the speaker.
-pseni:
+psene:
   id: q3ha2dc3ld
   family: "R"
   gloss: to-the-north-of
   tags: ["space"]
   short: "[E:tce pan] is to the north of [A:tce pan]."
   notes: |
-    In the referential defined by {psea}, we take the vectors from all points of
+    In the referential defined by {psei}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the north direction.
@@ -4253,18 +4247,18 @@ psenu:
   tags: ["space"]
   short: "[E:tce pan] is to the south of [A:tce pan]."
   notes: |
-    In the referential defined by {psea}, we take the vectors from all points of
+    In the referential defined by {psei}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the south direction.
-pseri:
+psere:
   id: iduj207sqi
   family: "R"
   gloss: to-the-west-of
   tags: ["space"]
   short: "[E:tce pan] is to the west of [A:tce pan]."
   notes: |
-    In the referential defined by {psea}, we take the vectors from all points of
+    In the referential defined by {psei}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the west direction.
@@ -4275,18 +4269,18 @@ pseru:
   tags: ["space"]
   short: "[E:tce pan] is to the east of [A:tce pan]."
   notes: |
-    In the referential defined by {psea}, we take the vectors from all points of
+    In the referential defined by {psei}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the east direction.
-pseli:
+psele:
   id: 9oo7ok5t64
   family: "R"
   gloss: altitude-above
   tags: ["space"]
   short: "[E:tce pan] is above (in altitude) of [A:tce pan]."
   notes: |
-    In the referential defined by {psea}, we take the vectors from all points of
+    In the referential defined by {psei}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the above direction.
@@ -4297,11 +4291,11 @@ pselu:
   tags: ["space"]
   short: "[E:tce pan] is below (in altitude) of [A:tce pan]."
   notes: |
-    In the referential defined by {psea}, we take the vectors from all points of
+    In the referential defined by {psei}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the below direction.
-kcuno:
+kcuni:
   id: 5acshqks6b
   family: "R"
   gloss: station
@@ -4381,7 +4375,7 @@ kalin:
   family: "R"
   gloss: drink
   short: "[E:tce* man] is potable/drinkable/a drink for [A:tce* pan] (default: species of {bzael})."
-dali:
+daliu:
   id: 4vrgy9htcp
   family: "R"
   gloss: dedicated
@@ -4401,12 +4395,12 @@ zotke:
   family: "R"
   gloss: category
   short: "[E:tce* man] fits in category/genre [A:tce* man]."
-mena:
+menai:
   id: 3ce1lb3gad
   family: "R"
   gloss: ability
   short: "[E:tce pan] has the ability to satisfy [A:(tce pan)]."
-jiuni:
+jiune:
   id: c66rr2j8fm
   family: "R"
   gloss: "n-th"
@@ -4605,22 +4599,23 @@ e spua ckuel:
   short: |
     [E:tca pan] is the home star of species [A:tce* man]
     (default: {flan}/humans, thus [E] defaults to the Sun).
-e siun vaun:
-  id: n7xvmqqkza
-  family: "C"
-  gloss: "mortal"
-  short: "[E:tce* man] is mortal/fated to die."
+## TODO: Add back once possible/necessary is added back
+# e siun vaun:
+#   id: n7xvmqqkza
+#   family: "C"
+#   gloss: "mortal"
+#   short: "[E:tce* man] is mortal/fated to die."
 e jveno kena:
   id: wvg2ebwap5
   family: "C"
   gloss: "hugs"
   short: "[E:tce* pan] hugs [A:tce* pan]."
-e kini buan:
+e kine buan:
   id: o9bwkmfwvs
   family: "C"
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
-  definition: "on ekinibun ke ka pi ke buan gla kini via seru ka"
+  definition: "on ekinibun ke ka pi ke buan gla kine via seru ka"
 e ze a:
   id: mfyipbixdd
   family: "C"
@@ -4643,7 +4638,7 @@ e ca ma:
   gloss: "eberban-quote"
   short: "[E:tce* man] is a grammatically valid Eberban quote."
   notes: Can be constructed using {ca}.
-e tri pure:
+e tari pure:
   id: 9v79ww9nwi
   family: "C"
   gloss: "listens"
@@ -4789,17 +4784,17 @@ e teu garel:
   gloss: "December"
   tags: [time, event, month]
   short: "It is December."
-ei ce bue:
+en ce bue sa:
   id: 000sw1j82d
   family: "C"
   gloss: "spelled"
   short: "[E:tca man] is spelled as [A: blu ecema]"
-ei ceu bue:
+en ceu bue sa:
   id: b0pxo862df
   family: "C"
   gloss: "uttered"
   short: "[E:tca man] is uttered as [A: blu eceuma]"
-ei a ol:
+en a ol sai:
   id: 5kgq6jl1at
   family: "C"
   gloss: "asserts:"
@@ -4807,7 +4802,7 @@ ei a ol:
   notes: |
     {a !X} can be modeled as being syntaxic sugar for {oni eze'a !X ol !P be mi eia'ol eze'a}.
     P is an unnameable predicate used solely for this purpose.
-ei al ol:
+en al ol sai:
   id: wg9fbpescm
   family: "C"
   gloss: "requests:"
@@ -4815,7 +4810,7 @@ ei al ol:
   notes: |
     {AL X} can be modeled as being syntaxic sugar for {oni eze'al !X ol !P be mi eial'ol eze'a}.
     P is an unnameable predicate used solely for this purpose.
-ei o ol:
+en o ol sai:
   id: b0c73ecend
   family: "C"
   gloss: "asks"
@@ -4844,19 +4839,19 @@ e sural jerol:
   notes: |
     See notes of {sural} and {jerol}. Allows to shortly speak or ask about the
     current time of the day.
-en jiu seni sku:
+en jiu srini ski:
   id: o6taqi388f
   family: "C"
   gloss: "before-nth:"
   tags: [time, tense]
-  short: "[E:tce sku] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the future."
-en jiu seli sku:
+  short: "[E:tce ski] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the future."
+en jiu srili ski:
   id: exaqlp8qex
   family: "C"
   gloss: "before-nth:"
   tags: [time, tense]
-  short: "[E:tce sku] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the past."
-e ti seni:
+  short: "[E:tce ski] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the past."
+e ti srini:
   id: ey5f5raem9
   family: "C"
   gloss: "just-before:"
@@ -4864,7 +4859,7 @@ e ti seni:
   short: "It occurs less than 1 second (excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e ti seli:
+e ti srili:
   id: 9egdpvfgwq
   family: "C"
   gloss: "just-after:"
@@ -4872,7 +4867,7 @@ e ti seli:
   short: "It occurs less than 1 second (excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e vola seni:
+e vola srini:
   id: 10utjcfexx
   family: "C"
   gloss: "seconds-before:"
@@ -4880,7 +4875,7 @@ e vola seni:
   short: "It occurs seconds (between 1 second included and 1 minute excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e vola seli:
+e vola srili:
   id: n7vb7za2mu
   family: "C"
   gloss: "seconds-after:"
@@ -4888,7 +4883,7 @@ e vola seli:
   short: "It occurs seconds (between 1 second included and 1 minute excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e jero seni:
+e jero srini:
   id: 4bie8njlb2
   family: "C"
   gloss: "minutes-before:"
@@ -4896,7 +4891,7 @@ e jero seni:
   short: "It occurs minutes (between 1 minute included and 1 hour excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e jero seli:
+e jero srili:
   id: 0zwjen7xl9
   family: "C"
   gloss: "minutes-after:"
@@ -4904,7 +4899,7 @@ e jero seli:
   short: "It occurs minutes (between 1 minute included and 1 hour excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e sura seni:
+e sura srini:
   id: p9ghshgmxj
   family: "C"
   gloss: "hours-before:"
@@ -4912,7 +4907,7 @@ e sura seni:
   short: "It occurs hours (between 1 hour included and 1 day excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e sura seli:
+e sura srili:
   id: 7a95uf6jrp
   family: "C"
   gloss: "hours-after:"
@@ -4920,7 +4915,7 @@ e sura seli:
   short: "It occurs hours (between 1 hour included and 1 day excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e dena seni:
+e dena srini:
   id: ftmheg89q2
   family: "C"
   gloss: "days-before:"
@@ -4928,7 +4923,7 @@ e dena seni:
   short: "It occurs days (between 1 day included and 1 week excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e dena seli:
+e dena srili:
   id: 4lbwp00732
   family: "C"
   gloss: "days-before:"
@@ -4936,7 +4931,7 @@ e dena seli:
   short: "It occurs days (between 1 day included and 1 week excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e kora seni:
+e kora srini:
   id: f1b1jrcuud
   family: "C"
   gloss: "weeks-before:"
@@ -4944,7 +4939,7 @@ e kora seni:
   short: "It occurs weeks (between 1 week included and 1 month excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e kora seli:
+e kora srili:
   id: m1rwaj12jg
   family: "C"
   gloss: "weeks-after:"
@@ -4952,7 +4947,7 @@ e kora seli:
   short: "It occurs weeks (between 1 week included and 1 month excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e gare seni:
+e gare srini:
   id: zgllh2qv0q
   family: "C"
   gloss: "months-before:"
@@ -4960,7 +4955,7 @@ e gare seni:
   short: "It occurs months (between 1 month included and 1 year excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e gare seli:
+e gare srili:
   id: x89ati1htd
   family: "C"
   gloss: "months-after:"
@@ -4968,7 +4963,7 @@ e gare seli:
   short: "It occurs months (between 1 month included and 1 year excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e bire seni:
+e bire srini:
   id: 4xvmmgdql6
   family: "C"
   gloss: "years-before:"
@@ -4976,7 +4971,7 @@ e bire seni:
   short: "It occurs years (more than 1 year included) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e bire seli:
+e bire srili:
   id: wc4y2k476a
   family: "C"
   gloss: "years-after:"
@@ -4984,12 +4979,12 @@ e bire seli:
   short: "It occurs years (more than 1 year included) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e skal zari:
-  id: gpqertouzz
-  family: "C"
-  gloss: "program"
-  short: "[E:tce* man] is a computer program."
-ei sa gloli:
+# e skal zari:
+#   id: gpqertouzz
+#   family: "C"
+#   gloss: "program"
+#   short: "[E:tce* man] is a computer program."
+en sa gloli se:
   id: je2by0lctr
   family: "C"
   gloss: "game"
@@ -5000,12 +4995,12 @@ e buan spenu:
   family: "C"
   gloss: "reads"
   short: "[E:tce* pan] reads [A:tce* pan]."
-en jerol senul:
+e jerol senul:
   id: rnerw0268q
   family: "C"
   gloss: "clock"
   short: "[E:tce* pan] is a clock/watch."
-en skan senul:
+e skan senul:
   id: dsjjxhug6w
   family: "C"
   gloss: "chronometer"

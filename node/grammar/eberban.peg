@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.59.3
+# eberban PEG grammar - v0.60
 # =============================
 
 # GRAMMAR
@@ -197,9 +197,9 @@ GI    <- &particle_word                   (g vhowels)          &post_word
 
 # - Compounds
 compound <- (compound_n / compound_3 / compound_2)
-compound_2 <- e !(n / r) i? compound_word compound_word
-compound_3 <- e n i? compound_word compound_word compound_word
-compound_n <- e r i? (!compound_n_end compound_word)+ compound_n_end
+compound_2 <- e !(n / r) compound_word compound_word
+compound_3 <- e n compound_word compound_word compound_word
+compound_n <- e r (!compound_n_end compound_word)+ compound_n_end
 compound_n_end <- spaces e spaces
 compound_word <- spaces? (borrowing / native_word)
 

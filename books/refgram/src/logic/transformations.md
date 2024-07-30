@@ -14,19 +14,19 @@ it doesn't negate any existential variables created when performing __arity
 mismatch resolution__, other predicates in the chain, or explicit bindings.
 __zi__ is called the __short scope negation__.
 
-> __mi zi buri meon__
+> __mi zi bure meon__
 >
 > \\[ \begin{align}
 > \text{mi}(c,e)       &= \text{[$e$ is a speaker]} \\\\
-> \text{buri}(c,e,a)   &= \text{[$e$ eats $a$]} \\\\
+> \text{bure}(c,e,a)   &= \text{[$e$ eats $a$]} \\\\
 > \text{meon}(c,e)     &= \text{[$e$ is an apple]} \\\\
 > \\ \\\\
 > \text{meon}_1(c,e)   &= \text{meon}(c,e) \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a) &= \color{magenta}{(\neg \text{buri}(c,e,a))} \wedge \text{meon}_1(c,e) \\\\
-> \text{buri}^w_1(c,e) &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \text{bure}_1(c,e,a) &= \color{magenta}{(\neg \text{bure}(c,e,a))} \wedge \text{meon}_1(c,e) \\\\
+> \text{bure}^w_1(c,e) &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
 > \text{mi}^w_1(c)     &= \exists e. \text{mi}_1(c,e)
 > \end{align} \\]
 >
@@ -38,13 +38,13 @@ There also exists a __long scope negation__ with particle __bi__, which also
 negates existential variables introduced by the arity mismatch resultion and
 other predicates in the chain or explicit bindings.
 
-> __mi bi buri meon__
+> __mi bi bure meon__
 >
 > \\[ \begin{align}
-> \text{buri}_1(c,e,a) &= \text{buri}(c,e,a) \wedge \text{meon}(c,e) \\\\
-> \text{buri}^w_1(c,e) &= \color{magenta}{\neg (\exists a. \text{buri}_1(c,e,a))} \\\\
+> \text{bure}_1(c,e,a) &= \text{bure}(c,e,a) \wedge \text{meon}(c,e) \\\\
+> \text{bure}^w_1(c,e) &= \color{magenta}{\neg (\exists a. \text{bure}_1(c,e,a))} \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
 > \text{mi}^w_1(c)     &= \exists e. \text{mi}_1(c,e)
 > \end{align} \\]
 >
@@ -73,17 +73,17 @@ prefixed predicate instead of creating a new instance. Arguments provided to
 this reference predicate (ignoring the implicit context argument) are stated to
 be equal to the ones the instance had.
 
-> __mian buri
+> __mian bure
 > a mi dona ze mian__
 >
 > \\[ \begin{align}
 > \text{mian}(c,e)                         &= \text{[$e$ is a cat]} \\\\
 > \text{dona}(c,e,a)                       &= \text{[$e$ likes $a$]} \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                     &= \text{buri}(c,e,a) \\\\
-> \text{buri}^w_1(c,e)                     &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \text{bure}_1(c,e,a)                     &= \text{bure}(c,e,a) \\\\
+> \text{bure}^w_1(c,e)                     &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \color{magenta}{\text{mian}_1(c,e_1)}    &= \text{mian}(c,e_1) \wedge \text{buri}^w_1(c,e_1) \\\\
+> \color{magenta}{\text{mian}_1(c,e_1)}    &= \text{mian}(c,e_1) \wedge \text{bure}^w_1(c,e_1) \\\\
 > \text{mian}^w_1(c)                       &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
 > \color{magenta}{\text{ze-mian}_1(c,e)}   &= \color{magenta}{e = e_1} \\\\
@@ -108,7 +108,7 @@ Which one is the __latest instance__ is determined by word order in the text, an
 using a predicate defined using this word doesn't make it the __latest__ again.
 Thus in
 
-_on gia mian blan a __mian__ buri a gia dona ze mian_,
+_on gia mian blan a __mian__ bure a gia dona ze mian_,
 
 _ze mian_ refers to the __mian__ in bold in the __a__ sentence, and not the
 __mian__ in __gia__'s definition.
@@ -128,14 +128,14 @@ order in which the predicate is used is not defined. In this case __ze__ refers
 arbitrarily to one of them (which hypotetically would be the "last one"). Thus
 in
 
-_a meon sae buri tce __mian__ a mi dona ze mian_
+_a meon sae bure tce __mian__ a mi dona ze mian_
 
 can be translated as "An apple is eaten by some cats. I like one of those
 cats." It is however preferred to not refer to such an unordered instance, and
 instead refer to a clearly ordered word such as __tce__, for which we can speak
 about one of its members with __tci__ (is a member of) :
 
-_a meon sae buri __tce__ mian a mi dona tci ze tce_
+_a meon sae bure __tce__ mian a mi dona tci ze tce_
 
 <span id="bo"></span>
 

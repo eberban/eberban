@@ -27,10 +27,14 @@ left to help narrow down the meaning, yielding greater precision.
 It is common to lexicalize a borrowing by making a compound with it. Cultural
 concepts are borrowed with endonyms, sounding similar to the original word.
 
-A compound have the same __transitivity__ as its last/rightmost component. If we
-want to define a compound with the opposite transitivity, then the initial
-__e/en/er__ should be followed by an __i__. If the last component is a particle
-that cannot be used as a predicate, it is considered to be intransitive.
+A compound have the same __transitivity__ as its last/rightmost component
+(transitive/intransitive + if that place is bounded with sharing/equivalence).
+If the compound transitivity should differ from that component, an extra word
+is added in the compound among the followings:
+- __se__: intransitive sharing
+- __sei__: intransitive equivalence
+- __sa__: transitive sharing
+- __sai__: transitive equivalence
 
 > __e ber ban :__ `[tca man] is the eberban language.`
 > 
@@ -42,8 +46,9 @@ that cannot be used as a predicate, it is considered to be intransitive.
 > - uinglic : borrowing of "english".
 > - ban : `[E:tce* man] is a language.`
 
-> __en cen on bu :__ `[E:tce* ma] is a dictionary.`
+> __en sa gloli se :__ `[E:tce* man] is a game.`
 >
-> - cen : `E:tce* man`
-> - on : Particle starting a definition.
-> - bu : Particle creating lists.
+> - sa: Select A place (we want to speak only about the game itself)
+> - gloli : `[E:tce pan] plays game [A:tce* pan].`
+> - se: gloli is transitive while we want intransitive, `se` is thus added at
+>   the end.

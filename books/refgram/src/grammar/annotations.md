@@ -26,7 +26,7 @@ they are wrapped in __pe ... pei__.
 
 __de__ uses this predicate as an interjection. Using a borrowing can be used
 to make onomatopoeia, like `de uahaha` for laughter. Using a predicate word
-could be compared to emojis or lojban's attitudinals, like `de gli` (love/❤️).
+could be compared to emojis or lojban's attitudinals, like `de gali` (love/❤️).
 
 __dei__ uses this predicate as a metadata tag or _#hashtag_.
 

@@ -60,21 +60,22 @@ $(x) and have meaning \\(ki(c,e) = \[\text{$e$ is variable $x$}\]\\).
 __GI__ (all particles starting with _g-_), however, represents a predicate whose
 arity and type will be inferred from its usage in the sentence. All __GI__
 starting with __gi-__ have __intransitive behavior__, while the others starting
-with __ge/ga/go/gu-__ have __transitive behavior__.
+with __ge/ga/go/gu-__ have __transitive behavior__. In both cases chaining to
+the transitivity place is done by sharing.
 
 Any __BA__ used in the argument list allow skipping this argument if it is not
 used in the inner predicate. Which __BA__ member is used doesn't matter.
 
-> __mi dona [va ke be: mian buri ke]__
+> __mi dona [va ke be: mian bure ke]__
 >
 > \\[ \begin{align}
 > \text{mian}(c,e)       &= \text{[$e$ is a cat]} \\\\
-> \text{buri}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
+> \text{bure}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)   &= \text{buri}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,e)} \\\\
-> \text{buri}^w_1(c,e)   &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \text{bure}_1(c,e,a)   &= \text{bure}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,e)} \\\\
+> \text{bure}^w_1(c,e)   &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
 > \text{mian}^w_1(c)     &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
 > \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}^w_1(c) \\\\
@@ -96,7 +97,7 @@ gi-initial GI). __bai__, __baihi__ and __baihe__ on the other hand always adds
 an argument at the end of the **sentence arguments list**, which is mostly
 useful when asking questions.
 
-The above example can thus be shortened as _mi dona [va be mian buri __ba__]_.
+The above example can thus be shortened as _mi dona [va be mian bure __ba__]_.
 
 ## Right place and chaining selection
 
@@ -107,19 +108,20 @@ particles starting with _s-_), which override the chaining behavior.
 
 __se, sa, so, su__ select the place corresponding to its vowel both for the
 argument bound with a predicate on its right, and for the single argument that
-is exposed in the combined predicate.
+is exposed in the combined predicate. The right place is bound by sharing, while
+adding a final __-i__ makes it bound by equivalence.
 
-> __mian se buri blan__
+> __mian se bure blan__
 >
 > \\[ \begin{align}
 > \text{blan}(c,e)                       &= \text{[$e$ is beautiful]} \\\\
 > \\ \\\\
 > \text{blan}_1(c,e)                     &= \text{blan}(c,e) \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                   &= \text{buri}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\\\
-> \text{buri}^w_1(c,\color{magenta}{e})  &= \exists a. \text{buri}_1(c,e,a) \\\\
+> \text{bure}_1(c,e,a)                   &= \text{bure}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\\\
+> \text{bure}^w_1(c,\color{magenta}{e})  &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -127,17 +129,18 @@ is exposed in the combined predicate.
 
 __SI__ particles with two vowels (except __i__) allow to select both, the two
 vowels representing the two exposed place, and the second vowel corresponding to
-the slot bound with a predicate on its right.
+the slot bound with a predicate on its right. As with single vowel the right place
+is bound by sharing, while adding a final __-i__ makes it bound by equivalence.
 
-> __meon sae buri mian__
+> __meon sae bure mian__
 >
 > \\[ \begin{align}
 > \text{mian}_1(c,e)                    &= \text{mian}(c,e) \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                  &= \text{buri}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\\\
-> \text{buri}^w_1(c,\color{magenta}{a}) &= \exists e. \text{buri}_1(c,e,a) \\\\
+> \text{bure}_1(c,e,a)                  &= \text{bure}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\\\
+> \text{bure}^w_1(c,\color{magenta}{a}) &= \exists e. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{buri}^w_1(c,e) \\\\
+> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -155,8 +158,14 @@ __SI__ particles follow a more general pattern to support more slots and usages:
   by __h__ followed by a single __e/a/o/u__. The one or many __e/a/o/u__ lists
   the slots of the predicate to expose, while a single __i__ exposes none.
   The __h__ followed by a single __e/a/o/u__ selects the slot bound with a
-  predicate on the right. When absent, the last __e/a/o/u__ is used instead,
-  while with __i__ the transitivity slot is used.
+  predicate on the right. When absent, the last __e/a/o/u__ is used instead.
+  Final __-i__ encodes if the place is bound with sharing or equivalence.
+
+> Exemples :
+> - sia: Transparent A
+> - sea: Expose E and A, chain to A with sharing
+> - seho: Expose E only, chain to O with sharing
+> - saeoi: Expose A, E and O (in this order), chain to O with equivalence.
 
 ## Left predicate place selection
 
@@ -171,10 +180,10 @@ while __fai__ binds the next place.
 If we take the example `tce mian` from the previous chapter it is equivalent to
 `tce via mian`. Sharing with __ve, va, ...__ can be used like so:
 
-> __mi katmu [va sae tuli mo]__
+> __mi katmi [va sae tuli mo]__
 >
 > \\[ \begin{align}
-> \text{katmu}(c,e,A)               &= \text{[$e$ wants $A$ (0-ary) to be true]} \\\\
+> \text{katmi}(c,e,A)               &= \text{[$e$ wants $A$ (0-ary) to be true]} \\\\
 > \text{tuli}(c,e,A)                &= \text{[$e$ needs $A$ (0-ary) to be true]} \\\\
 > \text{mo}(c,e)                    &= \text{[$e$ is a listener]} \\\\
 > \\ \\\\
@@ -183,10 +192,10 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
 > \text{tuli}^w_1(c,A)              &= \exists e. \text{tuli}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{katmu}_1(c,e,A)             &= \text{katmu}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\\\
-> \text{katmu}^w_1(c,e)             &= \exists A. \text{katmu}_1(c,e,A) \\\\
+> \text{katmi}_1(c,e,A)             &= \text{katmi}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\\\
+> \text{katmi}^w_1(c,e)             &= \exists A. \text{katmi}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmu}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmi}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -194,7 +203,7 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 
 While using __via__, it has a different meaning :
 
-> __mi katmu [via sae tuli mo]__
+> __mi katmi [via sae tuli mo]__
 >
 > \\[ \begin{align}
 > \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
@@ -202,10 +211,10 @@ While using __via__, it has a different meaning :
 > \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
 > \text{tuli}^w_1(c)                &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{katmu}_1(c,e,A)             &= \text{katmu}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
-> \text{katmu}^w_1(c,e)             &= \exists A. \text{katmu}_1(c,e,A) \\\\
+> \text{katmi}_1(c,e,A)             &= \text{katmi}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
+> \text{katmi}^w_1(c,e)             &= \exists A. \text{katmi}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmu}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmi}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\

@@ -14,6 +14,17 @@ place is used.
 > __vowel__, while they have __intransitive behavior__ if they end with __n, r
 > or l__.
 >
+> This place can expect either an atom/generic, or a predicate. As this can
+> greatly impact the structure of sentences, this is encoded in __root words__
+> with the following rules:
+> - if the root is a form __CCV__, the A place is a predicate place.
+> - if the root ends with an __-i__, the A place is a predicate place.
+> - otherwise the place is an atom/generic place.
+> - an intransitive root cannot have a E predicate place. If a predicate have a
+>   single predicate place, it'll be transitive with a single A predicate place.
+>   A predicate with many predicate places can have a E predicate place but it
+>   must be transitive.
+>
 > Particles acting as predicates have different rules which will be explained
 > later.
 >
@@ -47,15 +58,15 @@ creating __existential variables__ to have the correct arity is called
 __arity mismatch resolution__ and it is a key aspect of Eberban grammar to
 reduce verbosity in simple cases.
 
-> __mian buri__
+> __mian bure__
 >
 > \\[ \begin{align}
-> \text{buri}(c,e,a)                    &= \text{[$e$ eats $a$]} \\\\
+> \text{bure}(c,e,a)                    &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
-> \text{buri}_1(c,e,a)                  &= \text{buri}(c,e,a) \\\\
-> \color{magenta}{\text{buri}^w_1(c,e)} &= \color{magenta}{\exists a. \text{buri}_1(c,e,a)} \\\\
+> \text{bure}_1(c,e,a)                  &= \text{bure}(c,e,a) \\\\
+> \color{magenta}{\text{bure}^w_1(c,e)} &= \color{magenta}{\exists a. \text{bure}_1(c,e,a)} \\\\
 > \\ \\\\
-> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{buri}^w_1(c,e)
+> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e)
 > \end{align} \\]
 >
 > Given $(c),$(e):\
@@ -90,12 +101,12 @@ with any (correctly typed) arguments, and with a different _context argument_.
 > __gli mian__
 >
 > \\[ \begin{align}
-> \text{gli}(c,e,A)   &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\
+> \text{gali}(c,e,A)   &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\
 > \\ \\\\
 > \text{mian}_1(c,e)  &= \text{mian}(c,e) \\\\
 > \text{mian}^w_1(c)  &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
-> \text{gli}_1(c,e,A) &= gli(c,e,A) \wedge A \Leftrightarrow \text{mian}^w_1
+> \text{gali}_1(c,e,A) &= gali(c,e,A) \wedge A \Leftrightarrow \text{mian}^w_1
 > \end{align} \\]
 >
 > Given $(c), $(e), $(A):\
