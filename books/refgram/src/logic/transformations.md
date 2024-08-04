@@ -160,8 +160,8 @@ __zue__ allows the speaker to transform a predicate having an __A__ 0-ary
 predicate place to a predicate having an __A__ 1-ary predicate place which is
 satisfied by the __E__ argument.
 
-__mi jine mi jvin__ (I want that [I dance]) can thus be replaced by __mi zue
-jine jvin__ (I want to dance).
+__mi katmi mi jvin__ (I want that [I dance]) can thus be replaced by __mi zue
+katmi jvin__ (I want to dance).
 
 Note that they are not exactly equivalent, as in the first example the two
 __mi__ might not refer to the same individual(s)

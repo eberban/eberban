@@ -72,7 +72,7 @@ used in the inner predicate. Which __BA__ member is used doesn't matter.
 > \text{mian}(c,e)       &= \text{[$e$ is a cat]} \\\\
 > \text{bure}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
-> \text{bure}_1(c,e,a)   &= \text{bure}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,e)} \\\\
+> \text{bure}_1(c,e,a)   &= \text{bure}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,a)} \\\\
 > \text{bure}^w_1(c,e)   &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
 > \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e) \\\\

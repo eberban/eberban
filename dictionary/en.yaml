@@ -2416,17 +2416,17 @@ kitmi:
   id: isleimajzc
   family: "R"
   gloss: "hopes:"
-  short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case."
+  short: "[E:tce pan] hopes that [A:()] is the case; [E] would be happy to know that [A] is the case."
 ketmi:
   id: vfis6lzbve
   family: "R"
   gloss: "intentionless hopes:"
-  short: "[E:tce pan] hopes that [A:()] is the case; [E:tce pan] would be happy to know that [A:()] is the case, but thinks that they are powerless to make it true by themself."
+  short: "[E:tce pan] hopes that [A:()] is the case; [E] would be happy to know that [A] is the case, but thinks that they are powerless to make it true by themself."
 katmi:
   id: iezve23kex
   family: "R"
   gloss: "wants:"
-  short: "[E:tce pan] desires/wishes/wants that [A:()] be the case; [E:tce pan] would seize the opportunity to make [A:()] true."
+  short: "[E:tce pan] desires/wishes/wants that [A:()] be the case; [E] would seize the opportunity to make [A] true."
 kotmi:
   id: ch2b852dq7
   family: "R"
@@ -3767,9 +3767,9 @@ bzael:
   notes: |
     Words expressing subjective optinions are stated from the point of view of
     an opiner. The opiner is stored in the context, and can be changed using
-    {ebzaelmue}.
+    {enbzaelmuesai}.
 
-    Words like {kuri} (think) use {ebzaelmue} internally, while subjective words
+    Words like {kuri} (think) use {enbzaelmuesai} internally, while subjective words
     like {blan} are by default according to the opiner {bzael}.
 zoal:
   id: ob1f25nx3q
@@ -3873,7 +3873,7 @@ vzoun:
   family: "R"
   gloss: "evening"
   short: "It is evening (between sunset and typical locale-time of sleep)."
-zidma:
+zidmi:
   id: jqzbvtnncw
   family: "R"
   gloss: "because:"
@@ -4133,7 +4133,7 @@ psao:
     The volumes of the entities involved in [A] must intersect with the volume
     of [E]. They don't need to be fully contained in it, so something can be
     both inside and outside.
-psau:
+psai:
   id: w71x9r0797
   family: "R"
   gloss: "outside:"
@@ -4143,7 +4143,7 @@ psau:
     The volumes of the entities involved in [A] must intersect with the inverse
     of the volume of [E]. They don't need to be fully contained in it, so
     something can be both inside and outside.
-psoi:
+psui:
   id: t175fzkni1
   family: "R"
   gloss: "cartesian-referential:"
@@ -4385,7 +4385,7 @@ fnala:
   family: "R"
   gloss: follows
   short: "[E:tce pan] follows [A:tce pan]."
-funae:
+funai:
   id: p1hilk9iyy
   family: "R"
   gloss: suggests
@@ -4626,7 +4626,7 @@ e ze al:
   family: "C"
   short: "Repeats the previous request. See {al} notes."
   gloss: "latest-request"
-e bzael mue:
+en bzael mue sai:
   id: hshwh0yqhx
   family: "C"
   gloss: "set-opiner:"
