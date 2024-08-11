@@ -1519,6 +1519,14 @@ dai:
   links:
     - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 bu:
+  id: gelwsldtsb
+  family: "BU"
+  gloss: "#set-members"
+  tags: [enum, set]
+  short: "Makes a set from one member from each listed sets."
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+bue:
   id: z05feq6b63
   family: "BU"
   gloss: "#atom-set"
@@ -1526,7 +1534,7 @@ bu:
   short: "Atoms/generics set separator."
   links:
     - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-bui:
+buhe:
   id: lhzsdl98sk
   family: "BU"
   gloss: "#pred-set"
@@ -1534,7 +1542,7 @@ bui:
   short: "Predicates set separator."
   links:
     - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-bue:
+bua:
   id: pyzvhbntb5
   family: "BU"
   gloss: "#atom-list"
@@ -1542,7 +1550,7 @@ bue:
   short: "Atoms/generics list separator."
   links:
     - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-buei:
+buha:
   id: 6ekftp64e3
   family: "BU"
   gloss: "#pred-list"
@@ -2505,7 +2513,7 @@ soane:
   gloss: "stolen"
   short: "[E:tce* pan] is stolen from [A:tce* pan]."
   notes: |
-    Use with {gza} to express who/what steals (E-Xd).
+    Use with {gzi} to express who/what steals (E-Xd).
 tari:
   id: dzrpftevt6
   family: "R"
@@ -2708,7 +2716,7 @@ zenio:
   gloss: "provided"
   short: "[E:tce* pan] [supply/commodity] is provided to [A:tce* pan]."
   notes: |
-    Use with {gza} to express who/what provides [E].
+    Use with {gzi} to express who/what provides [E].
 curo:
   id: 6fkztdm4xl
   family: "R"
@@ -4128,7 +4136,7 @@ psao:
   family: "R"
   gloss: "inside:"
   tags: ["space"]
-  short: "[A:()] occurs inside of [E:tce pan]."
+  short: "Inside of [E:tce pan], [A:()] occurs."
   notes: |
     The volumes of the entities involved in [A] must intersect with the volume
     of [E]. They don't need to be fully contained in it, so something can be
@@ -4138,7 +4146,7 @@ psai:
   family: "R"
   gloss: "outside:"
   tags: ["space"]
-  short: "[A:()] occurs outside of [E:tce pan]."
+  short: "Outside of [E:tce pan], [A:()] occurs."
   notes: |
     The volumes of the entities involved in [A] must intersect with the inverse
     of the volume of [E]. They don't need to be fully contained in it, so
@@ -4569,7 +4577,7 @@ e kre vire:
   family: "C"
   gloss: "guided visit"
   short: "[E:tce* pan] visits [A:tce* pan] with guide [O:tce* pan]."
-e spi toril:
+e spie toril:
   id: z6av1nqtuf
   family: "C"
   gloss: "parrot"
@@ -5169,6 +5177,28 @@ _spelling:
     short: |
       {ce}: Letter U.\
       {ceu}: Sound \[u] (IPA).
+  ua: 
+    id: j0mrfltg17
+    gloss: W
+    short: |
+      {ce}: Letter W.\
+      {ceu}: Sound \[w] (IPA).
+  ia: 
+    id: n6wfjkf24c
+    gloss: "Y"
+    short: |
+      {ce}: Letter Y.\
+      {ceu}: Sound \[j] (IPA).
+  ksi: 
+    id: jrrvnf5981
+    gloss: "X"
+    short: |
+      {ce}: Letter X.
+  kiu: 
+    id: kth1uawml4
+    gloss: "Q"
+    short: |
+      {ce}: Letter Q.
   sli: 
     id: tqvgfmmgc3
     gloss: "\\"

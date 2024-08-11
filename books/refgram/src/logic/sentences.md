@@ -114,7 +114,7 @@ However one must be careful with [foreign quotes](../grammar/quotes.md). If the 
 until now, a __ra__ appearing inside the foreign quote will be quoted and will not erase the
 sentence. However if the sentence was ungrammatical, then __ra__ will erase the sentence even if it
 looks like it is inside a foreign quote. To avoid this issue, it is recommended to properlly close
-the foreign quote (even if the text is ungrammatical), so that __ra__ will properly erase the
+the foreign quote (as if the text was grammatical), so that __ra__ will properly erase the
 sentence regardless of if the sentence was grammatical or not.
 
 To erase only a part of a sentence, use [short erasure "buhu"](../grammar/enum.md).
