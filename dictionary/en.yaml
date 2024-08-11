@@ -3717,8 +3717,9 @@ jeni:
   family: "R"
   gloss: "big:"
   short: |
-    [E:tce* p] are big among all things that satisfy measuring relation [A:(tce gan,tca p)], with
-    standard deviation [O:tca gan] (default: 1).
+    [E:tce* p] are big among all things satisfy property [O:(tca p)] (default: always true)
+    (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
+    A), with standard deviation [O:tca gan] (default: 1).
   notes: |
     Each thing in [E] have more than [O] standard deviation(s) from the average size
     of [A].
@@ -3727,8 +3728,9 @@ jeri:
   family: "R"
   gloss: "small:"
   short: |
-    [E:tce* p] are small among all things that satisfy measuring relation [A:(tce gan,tca p)], with
-    standard deviation [O:tca gan] (default: 1).
+    [E:tce* p] are small among all things satisfy property [O:(tca p)] (default: always true)
+    (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
+    A), with standard deviation [O:tca gan] (default: 1).
   notes: |
     Each thing in [E] have less than [O] standard deviation(s) from the average size
     of [A].
@@ -4831,19 +4833,19 @@ e on bue:
   family: "C"
   gloss: "dictionary"
   short: "[E:tce* man] is a dictionary."
-en skal co ma:
+en skal co sa:
   id: vmbujokvfo
   family: "C"
   gloss: "computer-data"
-  short: "[E:tca ecoma] is the computer data located at [E:tce ecoma]."
+  short: "[E:tca ecoma] is the computer data located at [A:tce ecoma]."
   notes: |
-    [E] should be a unique identifier representing how and where the content
+    [A] should be a unique identifier representing how and where the content
     can be fetched.
 e sural jerol:
   id: fhpj03hyww
   family: "C"
   gloss: "hour+minute (event)"
-  short: "It is the hour [E:tce gan] and minute [E:tce gan] of the day."
+  short: "It is the hour [E:tce gan] and minute [A:tce gan] of the day."
   notes: |
     See notes of {sural} and {jerol}. Allows to shortly speak or ask about the
     current time of the day.
@@ -5217,6 +5219,12 @@ _spelling:
     tags: ["symbol"]
     short: |
       {ce}: / (slash) symbol.
+  sto: 
+    id: INSERT_WORD_ID
+    gloss: "?"
+    tags: ["symbol"]
+    short: |
+      {ce}: ? (question mark) symbol.
   gli: 
     id: nkbk8lcocf
     gloss: "UPPERCASE:"
