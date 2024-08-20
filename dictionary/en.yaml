@@ -1524,6 +1524,8 @@ bu:
   gloss: "#set-members"
   tags: [enum, set]
   short: "Makes a set from one member from each listed sets."
+  notes: |
+    Each member is distinct, the cardinality of the set equals the number of listed items.
   links:
     - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 bue:

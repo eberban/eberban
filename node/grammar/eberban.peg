@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.60
+# eberban PEG grammar - v0.61
 # =============================
 
 # GRAMMAR
@@ -31,8 +31,10 @@ sentence_ni <- NI_clause unit_used_definable
 inner_definition <- arguments_list? chain_or_list
 
 chain_or_list <- list / chain
-list <- (list_item BU_clause)+ list_item?
+list <- compact_list / (list_item BU_clause !BU_clause)+ list_item?
 list_item <- chain
+compact_list <- BU_clause BU_clause compact_list_item+ !BU_clause
+compact_list_item <- BI_clause? chain_step
 
 chain <- (chain_step_negation / chain_step)+
 chain_step_negation <- BI_clause chain
