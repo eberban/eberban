@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.61
+# eberban PEG grammar - v0.61.1
 # =============================
 
 # GRAMMAR
@@ -80,7 +80,7 @@ spelling_quote_unit <- spaces? spelling_quote_unit_2
 spelling_quote_unit_2 <- !CEI (initial_pair / consonant)? vhowels
 
 # numbers
-number <- number_base? (number_1 number_fractional? / number_1? number_fractional) number_magnitude? JI_clause?
+number <- number_base? (number_magnitude / (number_1 number_fractional? / number_1? number_fractional) number_magnitude?) JI_clause?
 number_1 <- TI_clause+
 number_base <- TI_clause JU_clause
 number_fractional <- JO_clause number_1? number_repeat? &number_fractional_constraint

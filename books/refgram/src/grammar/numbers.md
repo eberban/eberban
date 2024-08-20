@@ -35,27 +35,27 @@ __teo__ is thus __B/11__, while __teo ti__ is not allowed in base ten.
 
 ## Number syntax
 
-Numbers follow the following syntax:
+Numbers follow the following syntax with some parts being optional:
 
-(_base_ __ju__)? _integer-part_ (__jo__ _fractional-part_ (__ja__ _repeated-part_)?)? (__je__ _magnitude_)?
+_base_ __ju__ _integer-part_ __jo__ _fractional-part_ __ja__ _repeated-part_ __je__ _magnitude_
 
 1. Optionaly the _base_ of the number can be expressed by a single __TI__
    followed by __ju__. This __TI__ is the last digit of the base used, thus
    __tei ju__ is base ten, __teo ju__ is base twelve, and __tao ju__ is
-   hexadecimal.
+   hexadecimal. If absent it defaults to base ten (__tei ju__), unless the default
+   base is overwritten in the context (TODO: Add word to set such default base).
 2. The _integer part_ of the number, as a string of zero or more digits __TI__.
-   If there are zero digits then a fractional part is mandatory.
+   If there are zero digits then a fractional part is mandatory, unless __je__ is used.
 3. This integer part can then optionally be followed by __jo__ and a _fractional
-   part_ which is also a string of zero or more digits __TI__. __joi__ can be
-   used instead to also make the number negative.
-4. If there is a fractional part, it can be followed by __ja__ and a _repeated
-   part_ which is also a string of at least one digit __TI__. The number has
-   these digits repeated indefinitely.
-5. Regardless of the presence of a fractional part, the number can then contain
-   __je__ followed by a _magnitude_, which is a string of at least one digit
-   __TI__. The value expressed is the previous part multiplied by
-   \\(\text{base}^{\text{magnitude}}\\). __jei__ can be used instead to express
-   a negative magnitude.
+   part_ which is also a string of zero or more digits __TI__. __joi__ can be used instead to also
+   make the number negative.
+4. If there is a fractional part, it can be followed by __ja__ and a _repeated part_ which is also a
+   string of at least one digit __TI__. The number has these digits repeated indefinitely.
+5. Regardless of the presence of a fractional part or integer part, the number can then contain
+   __je__ followed by a _magnitude_, which is a string of at least one digit __TI__. The value
+   expressed is the previous part multiplied by \\(\text{base}^{\text{magnitude}}\\). __jei__ can be
+   used instead to express a negative magnitude. If only the magnitude is present then the integer
+   part is considered to be equal __1__.
 
 > Examples :
 >
