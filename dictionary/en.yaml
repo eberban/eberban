@@ -3607,11 +3607,11 @@ zolen:
 jine:
   id: cmjmwddxde
   family: "R"
-  gloss: "range"
+  gloss: "centered-range"
   tags: [number]
   short: |
     [E:tce gan] are all numbers in the range from [O:tce gan] (default: 1) -
-    [A:tce gan] to [O] + [A].
+    [A:tce gan] (default: 1) to [O] + [A].
   notes: |
     If used at the end of a chain of number or unit predicates (such as {mula}
     and numbers made with {jie}), the multiplicative aspect of this chain can
@@ -3619,6 +3619,13 @@ jine:
 
     {te ti mula jine te} = 10 ± 10 (10 * 1)\
     {ta ti mula jine jo to} = 20 ± 6 (20 * 0.3)\
+jina:
+  id: blyloql45h
+  family: "R"
+  gloss: "interval-range"
+  tags: [number]
+  short: |
+    [E:tce gan] are all numbers in the range from [A:tce gan] to [O:tce gan].
 jino:
   id: twcf0jan6n
   family: "R"
