@@ -2357,7 +2357,7 @@ per:
   family: "R"
   gloss: "person"
   short: "[E:tce* pan] is a person."
-pra:
+prae:
   id: scjlbqkhj0
   family: "R"
   gloss: "loves"
@@ -3712,7 +3712,7 @@ tcori:
   family: "R"
   gloss: "mutual-2:"
   short: "[E:tco p] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca p)]."
-jeni:
+jnu:
   id: gi4jvusxpm
   family: "R"
   gloss: "big:"
@@ -3723,7 +3723,7 @@ jeni:
   notes: |
     Each thing in [E] have more than [O] standard deviation(s) from the average size
     of [A].
-jeri:
+jni:
   id: ik7qjuwuxm
   family: "R"
   gloss: "small:"
@@ -3734,13 +3734,13 @@ jeri:
   notes: |
     Each thing in [E] have less than [O] standard deviation(s) from the average size
     of [A].
-jini:
+jnuhi:
   id: 7y4m7u346i
   family: "R"
   gloss: "increasing-order:"
   short: |
     [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
-jiri:
+jnihi:
   id: 2ivqr4ouem
   family: "R"
   gloss: "decreasing-order:"
@@ -3910,7 +3910,7 @@ sari:
   notes: |
     Both events must not overlap. Event described by [A] is met by one event and meets the other.
     (To speak about an event that occurs between them but don't meet them, use {sari seno}).
-srini:
+sre:
   id: 5rdw01axi4
   family: "R"
   gloss: "before:"
@@ -3920,7 +3920,7 @@ srini:
     The end of "it" is before the start of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-srili:
+sru:
   id: m3p1pma6zf
   family: "R"
   gloss: "after:"
@@ -3930,27 +3930,7 @@ srili:
     The start of "it" is after the end of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sreni:
-  id: alzqd00d1g
-  family: "R"
-  gloss: "met-by:"
-  tags: [time, tense]
-  short: "It is met by [A:()]"
-  notes: |
-    The start of "it" is the end of [A].
-  links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sreli:
-  id: vmwzur3ypx
-  family: "R"
-  gloss: "meets:"
-  tags: [time, tense]
-  short: "It meets [A:()]"
-  notes: |
-    The end of "it" is the start of [A].
-  links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-srani:
+sra:
   id: 4wmrgvvaw2
   family: "R"
   gloss: "starts:"
@@ -3960,7 +3940,7 @@ srani:
     The start of "it" is the start of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-srali:
+sro:
   id: nsnjvcaglb
   family: "R"
   gloss: "finished:"
@@ -3970,7 +3950,7 @@ srali:
     The end of "it" is the end of [A].
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sroni:
+srui:
   id: 64scvsnfn7
   family: "R"
   gloss: "contains:"
@@ -3978,7 +3958,7 @@ sroni:
   short: "It contains [A:()]"
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sroli:
+srei:
   id: 0fj04kshgt
   family: "R"
   gloss: "contained-by:"
@@ -3986,7 +3966,7 @@ sroli:
   short: "It is contained by [A:()]"
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sruni:
+sri:
   id: u3q3u80bs7
   family: "R"
   gloss: "unconstrained-by:"
@@ -4116,7 +4096,7 @@ fleon:
   gloss: music
   short: |
     [E:tce* pan] is a music.
-jnihi:
+jnaha:
   id: svkaim6riw
   family: "R"
   gloss: laugh
@@ -4133,7 +4113,7 @@ psulo:
   gloss: center
   tags: ["space"]
   short: "[E:tca pan] is the center (average position) of [A:tce pan]."
-psao:
+pani:
   id: 5fsi11zwja
   family: "R"
   gloss: "inside:"
@@ -4143,7 +4123,7 @@ psao:
     The volumes of the entities involved in [A] must intersect with the volume
     of [E]. They don't need to be fully contained in it, so something can be
     both inside and outside.
-psai:
+pali:
   id: w71x9r0797
   family: "R"
   gloss: "outside:"
@@ -4153,7 +4133,7 @@ psai:
     The volumes of the entities involved in [A] must intersect with the inverse
     of the volume of [E]. They don't need to be fully contained in it, so
     something can be both inside and outside.
-psui:
+peni:
   id: t175fzkni1
   family: "R"
   gloss: "cartesian-referential:"
@@ -4163,7 +4143,7 @@ psui:
     [E] must be a physical entity with a well identified front and up direction.
     The average point of all points of the volume of [E] is used as the origin.
     By default in a text the referential is the speaker.
-psone:
+penu:
   id: 2sthq7nyfa
   family: "R"
   gloss: behind
@@ -4174,7 +4154,7 @@ psone:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the behind direction.
-psonu:
+pena:
   id: hpcj7idr7s
   family: "R"
   gloss: in-front-of
@@ -4185,7 +4165,7 @@ psonu:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the in-front direction.
-psore:
+peno:
   id: nmk5qmo7fv
   family: "R"
   gloss: to-the-left-of
@@ -4196,7 +4176,7 @@ psore:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the left direction.
-psoru:
+pene:
   id: 58b63lo9cb
   family: "R"
   gloss: to-the-right-of
@@ -4207,7 +4187,7 @@ psoru:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the right direction.
-psole:
+peniu:
   id: 5nrtbh0sv6
   family: "R"
   gloss: above
@@ -4218,7 +4198,7 @@ psole:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the above direction.
-psolu:
+penie:
   id: gnevlw6p4m
   family: "R"
   gloss: below
@@ -4229,7 +4209,7 @@ psolu:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the below direction.
-psei:
+pini:
   id: nh5bijnt09
   family: "R"
   gloss: "geodetic-referential:"
@@ -4239,7 +4219,7 @@ psei:
     [E] must be a physical entity with a well identified north and south pole.
     The average point of all points of the volume of [E] is used as the origin.
     By default in a text the referential is closest celestial body from the speaker.
-psene:
+pina:
   id: q3ha2dc3ld
   family: "R"
   gloss: to-the-north-of
@@ -4250,7 +4230,7 @@ psene:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the north direction.
-psenu:
+pinu:
   id: oddrpzstav
   family: "R"
   gloss: to-the-south-of
@@ -4261,7 +4241,7 @@ psenu:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the south direction.
-psere:
+pino:
   id: iduj207sqi
   family: "R"
   gloss: to-the-west-of
@@ -4272,7 +4252,7 @@ psere:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the west direction.
-pseru:
+pine:
   id: awjcblokyu
   family: "R"
   gloss: to-the-east-of
@@ -4283,7 +4263,7 @@ pseru:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the east direction.
-psele:
+piniu:
   id: 9oo7ok5t64
   family: "R"
   gloss: altitude-above
@@ -4294,7 +4274,7 @@ psele:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the above direction.
-pselu:
+pinie:
   id: d7dd6iak18
   family: "R"
   gloss: altitude-below
@@ -4380,7 +4360,7 @@ geon:
   family: "R"
   gloss: food
   short: "[E:tce* man] is edible by/food for [A:tce* pan] (default: species of {bzael})."
-kalin:
+kalan:
   id: v4j1hdrofu
   family: "R"
   gloss: drink
@@ -4849,19 +4829,19 @@ e sural jerol:
   notes: |
     See notes of {sural} and {jerol}. Allows to shortly speak or ask about the
     current time of the day.
-en jiu srini ski:
+en jiu sre ski:
   id: o6taqi388f
   family: "C"
   gloss: "before-nth:"
   tags: [time, tense]
   short: "[E:tce ski] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the future."
-en jiu srili ski:
+en jiu sru ski:
   id: exaqlp8qex
   family: "C"
   gloss: "before-nth:"
   tags: [time, tense]
   short: "[E:tce ski] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the past."
-e ti srini:
+e ti sre:
   id: ey5f5raem9
   family: "C"
   gloss: "just-before:"
@@ -4869,7 +4849,7 @@ e ti srini:
   short: "It occurs less than 1 second (excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e ti srili:
+e ti sru:
   id: 9egdpvfgwq
   family: "C"
   gloss: "just-after:"
@@ -4877,7 +4857,7 @@ e ti srili:
   short: "It occurs less than 1 second (excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e vola srini:
+e vola sre:
   id: 10utjcfexx
   family: "C"
   gloss: "seconds-before:"
@@ -4885,7 +4865,7 @@ e vola srini:
   short: "It occurs seconds (between 1 second included and 1 minute excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e vola srili:
+e vola sru:
   id: n7vb7za2mu
   family: "C"
   gloss: "seconds-after:"
@@ -4893,7 +4873,7 @@ e vola srili:
   short: "It occurs seconds (between 1 second included and 1 minute excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e jero srini:
+e jero sre:
   id: 4bie8njlb2
   family: "C"
   gloss: "minutes-before:"
@@ -4901,7 +4881,7 @@ e jero srini:
   short: "It occurs minutes (between 1 minute included and 1 hour excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e jero srili:
+e jero sru:
   id: 0zwjen7xl9
   family: "C"
   gloss: "minutes-after:"
@@ -4909,7 +4889,7 @@ e jero srili:
   short: "It occurs minutes (between 1 minute included and 1 hour excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e sura srini:
+e sura sre:
   id: p9ghshgmxj
   family: "C"
   gloss: "hours-before:"
@@ -4917,7 +4897,7 @@ e sura srini:
   short: "It occurs hours (between 1 hour included and 1 day excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e sura srili:
+e sura sru:
   id: 7a95uf6jrp
   family: "C"
   gloss: "hours-after:"
@@ -4925,7 +4905,7 @@ e sura srili:
   short: "It occurs hours (between 1 hour included and 1 day excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e dena srini:
+e dena sre:
   id: ftmheg89q2
   family: "C"
   gloss: "days-before:"
@@ -4933,7 +4913,7 @@ e dena srini:
   short: "It occurs days (between 1 day included and 1 week excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e dena srili:
+e dena sru:
   id: 4lbwp00732
   family: "C"
   gloss: "days-before:"
@@ -4941,7 +4921,7 @@ e dena srili:
   short: "It occurs days (between 1 day included and 1 week excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e kora srini:
+e kora sre:
   id: f1b1jrcuud
   family: "C"
   gloss: "weeks-before:"
@@ -4949,7 +4929,7 @@ e kora srini:
   short: "It occurs weeks (between 1 week included and 1 month excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e kora srili:
+e kora sru:
   id: m1rwaj12jg
   family: "C"
   gloss: "weeks-after:"
@@ -4957,7 +4937,7 @@ e kora srili:
   short: "It occurs weeks (between 1 week included and 1 month excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e gare srini:
+e gare sre:
   id: zgllh2qv0q
   family: "C"
   gloss: "months-before:"
@@ -4965,7 +4945,7 @@ e gare srini:
   short: "It occurs months (between 1 month included and 1 year excluded) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e gare srili:
+e gare sru:
   id: x89ati1htd
   family: "C"
   gloss: "months-after:"
@@ -4973,7 +4953,7 @@ e gare srili:
   short: "It occurs months (between 1 month included and 1 year excluded) after [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e bire srini:
+e bire sre:
   id: 4xvmmgdql6
   family: "C"
   gloss: "years-before:"
@@ -4981,7 +4961,7 @@ e bire srini:
   short: "It occurs years (more than 1 year included) before [A:()]."
   links:
     - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-e bire srili:
+e bire sru:
   id: wc4y2k476a
   family: "C"
   gloss: "years-after:"
@@ -5220,7 +5200,7 @@ _spelling:
     short: |
       {ce}: / (slash) symbol.
   sto: 
-    id: INSERT_WORD_ID
+    id: p4tco6zn5q
     gloss: "?"
     tags: ["symbol"]
     short: |

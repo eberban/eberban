@@ -21,6 +21,7 @@
   - [Numbers (TI/j-)](grammar/numbers.md)
   - [Annotations (d-)](grammar/annotations.md)
 - [Vocabulary design]()
+  - [Guidelines](vocabulary/guidelines.md)
   - [Spacetime and events](vocabulary/spacetime.md)
 - [Writing systems](writing/intro.md)
   - [Linear writing system](writing/linear.md)

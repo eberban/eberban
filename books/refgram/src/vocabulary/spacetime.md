@@ -45,28 +45,26 @@ with a dedicated **common timespan**, and relates the **outer common timespan** 
 common timespan**. The predicates are transitive and ignore their E slot, which allows to directly
 use them after another predicate.
 
-- *srini*: Outer **is before** inner: end of outer is before the start of inner
-- *srili*: Outer **is after** inner: start of outer is after the end of inner
-- *sreni*: Outer **is met by** inner: start of outer is the end of inner
-- *sreli*: Outer **meets** inner: end of outer is the start of inner
-- *srani*: Outer **starts** inner: start of outer is start of inner
-- *srali*: Outer **finishes** inner: end of outer is end of inner
-- *sroni*: Outer **contains** inner
-- *sroli*: Outer **is contained by** inner
-- *sruni*: Outer **is unconstrained by** inner
+- *sre*: Outer **is before** inner: end of outer is before the start of inner
+- *sra*: Outer **starts** inner: start of outer is start of inner
+- *sro*: Outer **finishes** inner: end of outer is end of inner
+- *sru*: Outer **is after** inner: start of outer is after the end of inner
+- *srui*: Outer **contains** inner
+- *srei*: Outer **is contained by** inner
+- *sri*: Outer **is unconstrained by** inner
 
-*srini* (before) and *srili* (after) have an O slot for the duration separating the 2 timespans. As
+*sre* (before) and *sru* (after) have an O slot for the duration separating the 2 timespans. As
 giving a precise duration may be difficult or too precise, compounds with time units are made to
 give a vague time scale of such duration :
 
-- *e ti srini/srili*: very short time for common speech, less than 1 second (excluded)
-- *e vola srini/srili*: few seconds, between 1 second (included) and 1 minute (excluded)
-- *e jero srini/srili*: few minutes, between 1 minute (included) and 1 hour (excluded)
-- *e sura srini/srili*: few hours, between 1 hour (included) and 1 day (excluded)
-- *e dena srini/srili*: few days, between 1 day (included) and 1 week (excluded)
-- *e kora srini/srili*: few weeks, between 1 week (included) and 1 month (excluded)
-- *e gare srini/srili*: few months, between 1 month (included) and 1 year (excluded)
-- *e bire srini/srili*: more than 1 year (included)
+- *e ti sre/sru*: very short time for common speech, less than 1 second (excluded)
+- *e vola sre/sru*: few seconds, between 1 second (included) and 1 minute (excluded)
+- *e jero sre/sru*: few minutes, between 1 minute (included) and 1 hour (excluded)
+- *e sura sre/sru*: few hours, between 1 hour (included) and 1 day (excluded)
+- *e dena sre/sru*: few days, between 1 day (included) and 1 week (excluded)
+- *e kora sre/sru*: few weeks, between 1 week (included) and 1 month (excluded)
+- *e gare sre/sru*: few months, between 1 month (included) and 1 year (excluded)
+- *e bire sre/sru*: more than 1 year (included)
 
 ## How are events modeled?
 

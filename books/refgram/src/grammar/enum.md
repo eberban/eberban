@@ -21,11 +21,6 @@ is thus shorter to always use __bu__.
 - __bua__: a list of atoms/generics
 - __buha__: a list of predicates
 
-- __bu__: a set of atoms/generics
-- __bui__: a set of predicates
-- __bue__: a list of atoms/generics
-- __buei__: a list of predicates
-
 For __buhe__ and __buha__, all predicates will have the same arity and arguments as the first
 chain in the enumeration.
 
