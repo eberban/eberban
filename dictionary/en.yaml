@@ -5038,7 +5038,7 @@ e uiuro sfia:
   gloss: "EUR"
   tags: [currency]
   short: "[E:tce gan] is 1 euro (EUR) times [A:tce gan] (default: 1)."
-e uhusdolar sfia:
+e uhuzdolar sfia:
   id: 9uzfmtxv63
   family: "C"
   gloss: "USD"
@@ -5068,6 +5068,12 @@ e uaudolar sfia:
   gloss: "AUD"
   tags: [currency]
   short: "[E:tce gan] is 1 australian dollar (AUD) times [A:tce gan] (default: 1)."
+e ubitkoin sfia:
+  id: fljiscc9x2
+  family: "C"
+  gloss: "BTC"
+  tags: [currency]
+  short: "[E:tce gan] is 1 bitcoin (BTC) times [A:tce gan] (default: 1)."
 
 # Spelling
 _spelling:
