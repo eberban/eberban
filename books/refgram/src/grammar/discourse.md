@@ -16,5 +16,8 @@ __mie__ (intransitive) on the other hand refers to a set of individuals which in
 main speakers and which can include anything that __is not__ the listener. It can be seen as an
 __exclusive we__.
 
+__moe__ (intransitive) refers to a set of individuals which includes neither speakers bor listeners.
+It can be seen as __third person pronoun__.
+
 __me__ (intransitive) is something that the speaker(s) particulary have in mind. Corresponds loosely
 to *the* or *this* in English.

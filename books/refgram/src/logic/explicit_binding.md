@@ -231,3 +231,13 @@ arguments of this new predicate.
 Using __VI/FI/SI__ is often preferred and more simple than using __pe__ and
 __pei__, but in some cases it is not possible. Those cases will be presented in
 later chapters.
+
+## Multi-places VI
+
+__VI__ family extends to particle having multiple __EAOU__ vowels, each optionaly
+preceeded by a __I__. Each non-final __EAOU__ will bind a single predicate from
+the following chain, while the last vowel binds the rest.
+
+- *mi dona vao: mo, meon*: I give you an apple.
+- *mi kelo vaio: za ubob, sae coriu vihon*: I'm thanksfull to Bob that I own a car.
+- *drie veao: mi, meon, e uiuro sfia jo ta*: I buy apple(s) for 0.2 EUR (total).

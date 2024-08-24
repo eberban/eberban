@@ -1039,6 +1039,13 @@ mo:
   gloss: "you"
   links:
     - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
+moe:
+  id: sdk5i13m5g
+  family: "MI"
+  short: "[E:tce* man] are neither speakers nor listeners"
+  gloss: "3rd-person"
+  links:
+    - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mio:
   id: itsqhv9xao
   family: "MI"
@@ -3906,7 +3913,13 @@ spel:
   id: vmenrgkg75
   familiy: "R"
   gloss: "pointed to"
-  short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)"
+  short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)."
+sfia:
+  id: sgr7bp1msz
+  familiy: "R"
+  gloss: "currency"
+  tags: [currency]
+  short: "[E:tce gan] is 1 unit of currency represented by ISO-4217 code [A:blu ecema] times [O:tce gan] (default: 1)."
 
 # Time relations
 
@@ -5004,6 +5017,57 @@ e skan senul:
   family: "C"
   gloss: "chronometer"
   short: "[E:tce* pan] is a chronometer."
+e mi me:
+  id: vq36s4o59o
+  family: "C"
+  gloss: "this"
+  short: "[E:tce* pan] is this, something specific the speaker have in mind which is near the speaker."
+e mo me:
+  id: yv0djrrsio
+  family: "C"
+  gloss: "this"
+  short: "[E:tce* pan] is that, something specific the speaker have in mind which is near the listener."
+e moe me:
+  id: ffh43wbw7b
+  family: "C"
+  gloss: "that younder"
+  short: "[E:tce* pan] is that younder, something specific the speaker have in mind which is neither near the speaker or the listener."
+e uiuro sfia:
+  id: q15u6virsz
+  family: "C"
+  gloss: "EUR"
+  tags: [currency]
+  short: "[E:tce gan] is 1 euro (EUR) times [A:tce gan] (default: 1)."
+e uhusdolar sfia:
+  id: 9uzfmtxv63
+  family: "C"
+  gloss: "USD"
+  tags: [currency]
+  short: "[E:tce gan] is 1 US dollar (USD) times [A:tce gan] (default: 1)."
+e uien sfia:
+  id: hi161hj19u
+  family: "C"
+  gloss: "JPY"
+  tags: [currency]
+  short: "[E:tce gan] is 1 japanese yen (JPY) times [A:tce gan] (default: 1)."
+e usterlin sfia:
+  id: qp8jmenoxz
+  family: "C"
+  gloss: "GBP"
+  tags: [currency]
+  short: "[E:tce gan] is 1 pound sterling (GBP) times [A:tce gan] (default: 1)."
+e uiuan sfia:
+  id: k9rr7y024a
+  family: "C"
+  gloss: "CNY/RMB"
+  tags: [currency]
+  short: "[E:tce gan] is 1 chinese yuan (CNY/RMB) times [A:tce gan] (default: 1)."
+e uaudolar sfia:
+  id: 1mub34ta75
+  family: "C"
+  gloss: "AUD"
+  tags: [currency]
+  short: "[E:tce gan] is 1 australian dollar (AUD) times [A:tce gan] (default: 1)."
 
 # Spelling
 _spelling:
