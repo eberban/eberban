@@ -2064,7 +2064,7 @@ pan:
   short: |
     [E:tce man] is a physical entity which occupies space-time volume [A:tce sken].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 
 gin:
   id: 4uxuhdkbez
@@ -2072,6 +2072,12 @@ gin:
   gloss: number-natural
   tags: [math, number]
   short: "[E:tce* man] is a natural number."
+gien:
+  id: fh4n33nk11
+  family: "R"
+  gloss: number-interger
+  tags: [math, number]
+  short: "[E:tce* man] is an integer number."
 gine:
   id: wxxmvr9zx2
   family: "R"
@@ -2182,7 +2188,7 @@ vona:
   gloss: "XOR-P2"
   tags: [set, connective]
   short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:tce gin] (default: 1) relation(s) in set [O:tcehi (p,b)]."
-mone:
+mine:
   id: qt6yew5oof
   family: "R"
   gloss: "<"
@@ -2191,7 +2197,7 @@ mone:
   notes: |
     Operate on sets of numbers. True only if all members of [E] are less than all
     members of [A].
-mole:
+mune:
   id: ennpp99pjl
   family: "R"
   gloss: ">"
@@ -3182,18 +3188,14 @@ bire:
     Since years don't all have the same duration (leap years and leap seconds),
     and we're not speaking about a specific year in the Gregorian calendar,
     [E] is a subset of all possible durations of a year.
-birel:
+birie:
   id: 8f292ygof9
   family: "R"
   gloss: "year (event)"
-  short: "It is the [E:tce gan]th year (of Gregorian Calendar)."
+  short: "[E:tce ski] is the year [A:tce gien] of [O:tce ski] (default: Gregorian Calendar)."
   tags: [time, event, year]
-  notes: |
-    [E] takes a set of year numbers, and this predicate speaks about a single
-    year whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive year numbers doesn't mean a span of 2 years, but that it is one
-    year or the other. If both would be true, it would be multiple events and
-    each event speak about a single year.
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 gare:
   id: q5yr0ta93i
   family: "R"
@@ -3204,24 +3206,14 @@ gare:
     Since months don't all have the same duration (leap years and leap seconds),
     and we're not speaking about a specific month in the Gregorian calendar,
     [E] is a subset of all possible durations of a month.
-
-    TODO: Define which kind of month? Calendar month? Which calendar?
-garel:
+garie:
   id: 5iqzf2hgie
   family: "R"
   gloss: "month (event)"
-  short: "It is the [E:tce gan]th month of the year (of Gregorian Calendar)."
+  short: "[E:tce ski] is the month [A:tce gien] of [O:tce ski] (default: {birie})."
   tags: [time, event, month]
-  notes: |
-    [E] takes a set of month numbers, and this predicate speaks about a single
-    month whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive month numbers doesn't mean a span of 2 months, but that it is one
-    month or the other. If both would be true, it would be multiple events and
-    each event speak about a single month.
-
-    It takes into account timezones based on the current location. If the
-    current location intersects with multiple timezones then it can be 2 months
-    at the same time.
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 kora:
   id: ccfnhkiitg
   family: "R"
@@ -3232,26 +3224,14 @@ kora:
     Since weeks don't all have the same duration (leap seconds),
     and we're not speaking about a specific week in the Gregorian calendar,
     [E] is a subset of all possible durations of a week.
-
-koral:
+koria:
   id: cqi4n1lpkt
   family: "R"
   gloss: "week (event)"
-  short: "It is the [E:tce gan]th week of the year (of Gregorian Calendar)."
-  tags: [time, event, week]
-  notes: |
-    [E] takes a set of week numbers, and this predicate speaks about a single
-    week whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive week numbers doesn't mean a span of 2 weeks, but that it is one
-    week or the other. If both would be true, it would be multiple events and
-    each event speak about a single week.
-
-    It takes into account timezones based on the current location. If the
-    current location intersects with multiple timezones then it can be 2 weeks
-    at the same time.
-
-    Weeks starts on monday, except the first week of the year which starts on
-    January 1th and the last week which ends on December 31th.
+  short: "[E:tce ski] is the week [A:tce gan] of [O:tce ski] (default: {birie})."
+  tags: [time, event, week]  
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 dena:
   id: cfjh1v5inn
   family: "R"
@@ -3262,24 +3242,14 @@ dena:
     Since days don't all have the same duration (leap seconds),
     and we're not speaking about a specific day in the Gregorian calendar,
     [E] is a subset of all possible durations of a day.
-denal:
+denia:
   id: lvhzpvgj4z
   family: "R"
   gloss: "day (event)"
-  short: |
-    It is the [E:tce gan]th day (starting and ending at midnight) of the month
-    (of Gregorian Calendar).
+  short: "[E:tce ski] is the day [A:tce gien] of [O:tce ski] (default: {garie})."
   tags: [time, event, day]
-  notes: |
-    [E] takes a set of day numbers, and this predicate speaks about a single
-    day whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive day numbers doesn't mean a span of 2 days, but that it is one
-    day or the other. If both would be true, it would be multiple events and
-    each event speak about a single day.
-
-    It takes into account timezones based on the current location. If the
-    current location intersects with multiple timezones then it can be 2 days
-    at the same time.
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 sura:
   id: 7jdojjj4lv
   family: "R"
@@ -3290,70 +3260,42 @@ sura:
     Since hours don't all have the same duration (leap seconds),
     and we're not speaking about a specific hour in the Gregorian calendar,
     [E] is a subset of all possible durations of an hour.
-sural:
+suria:
   id: lvhzpvgj4z
   family: "R"
   gloss: "hour (event)"
-  short: "It is the hour [E:tce gan] of the day."
+  short: "[E:tce ski] is the hour [A:tce gien] of [O:tce ski] (default: {denia})."
   tags: [time, event, hour]
-  notes: |
-    [E] takes a set of hour numbers, and this predicate speaks about a single
-    hour whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive hour numbers doesn't mean a span of 2 hours, but that it is one
-    hour or the other. If both would be true, it would be multiple events and
-    each event speak about a single hour.
-
-    Numbers in [E] are in 24 hour format, start at 0 and are expressed modulo 24.
-
-    It takes into account timezones based on the current location. If the
-    current location intersects with multiple timezones then it can be many hours
-    at the same time.
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 jero:
   id: hxbyme2tnh
   family: "R"
   gloss: "minute (unit)"
   short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
   tags: [time, unit, minute]
-jerol:
+jerio:
   id: lvhzpvgj4z
   family: "R"
   gloss: "minute (event)"
-  short: "It is the minute [E:tce gan] of the hour."
+  short: "[E:tce ski] is the minute [A:tce gien] of [O:tce ski] (default: {suria})"
   tags: [time, event, minute]
-  notes: |
-    [E] takes a set of minute numbers, and this predicate speaks about a single
-    minute whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive minute numbers doesn't mean a span of 2 minutes, but that it is one
-    minute or the other. If both would be true, it would be multiple events and
-    each event speak about a single minute.
-
-    Numbers in [E] are expressed modulo 60 and start at 0.
-
-    It takes into account timezones based on the current location. If the
-    current location intersects with multiple timezones then it can be many minutes
-    at the same time.
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 vola:
   id: mhrlcmuwvk
   family: "R"
   gloss: "second (unit)"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
   tags: [time, unit, second]
-volal:
+volia:
   id: lvhzpvgj4z
   family: "R"
   gloss: "second (event)"
-  short: "It is the second [E:tce gan] of the minute."
+  short: "[E:tce ski] is the second [A:tce gien] of [O:tce ski] (default: {jerio})"
   tags: [time, event, second]
-  notes: |
-    [E] takes a set of second numbers, and this predicate speaks about a single
-    second whose (integer) number is part of [E] (non-integer numbers are ignored).
-    2 consecutive minute numbers doesn't mean a span of 2 seconds, but that it is one
-    second or the other. If both would be true, it would be multiple events and
-    each event speak about a single second.
-
-    Numbers in [E] are expressed modulo 60 and start at 0.
-
-    TODO: How to handle leap seconds?
+  links:
+    - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 mula:
   id: w93rd5hdrd
   family: "R"
@@ -3390,7 +3332,7 @@ saura:
   gloss: "candela"
   short: "[E:tce gan] is 1 candela times [A:tce gan] (default: 1)."
   tags: [unit]
-jume:
+june:
   id: ulx09krbl9
   family: "R"
   gloss: "inverse"
@@ -4051,7 +3993,7 @@ sre:
   notes: |
     The end of "it" is before the start of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sru:
   id: m3p1pma6zf
   family: "R"
@@ -4061,7 +4003,7 @@ sru:
   notes: |
     The start of "it" is after the end of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sra:
   id: 4wmrgvvaw2
   family: "R"
@@ -4071,7 +4013,7 @@ sra:
   notes: |
     The start of "it" is the start of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sro:
   id: nsnjvcaglb
   family: "R"
@@ -4081,7 +4023,7 @@ sro:
   notes: |
     The end of "it" is the end of [A].
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srui:
   id: 64scvsnfn7
   family: "R"
@@ -4089,7 +4031,7 @@ srui:
   tags: [time, tense]
   short: "It contains [A:()]"
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srei:
   id: 0fj04kshgt
   family: "R"
@@ -4097,7 +4039,7 @@ srei:
   tags: [time, tense]
   short: "It is contained by [A:()]"
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sri:
   id: u3q3u80bs7
   family: "R"
@@ -4105,7 +4047,7 @@ sri:
   tags: [time, tense]
   short: "It is unconstrained by [A:()]"
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 ski:
   id: yktbdu521a
   family: "R"
@@ -4113,7 +4055,7 @@ ski:
   tags: [time, event]
   short: "[E:tce man] is an event/occurence of [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skin:
   id: nt7nm8e1y5
   family: "R"
@@ -4121,7 +4063,7 @@ skin:
   tags: [time, event]
   short: "[E:tce ski] is occuring."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skul:
   id: nioynp1oyr
   family: "R"
@@ -4129,7 +4071,7 @@ skul:
   tags: [time, event]
   short: "[E:tce ski] is the current context event."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skinu:
   id: pmwsbwwa6w
   family: "R"
@@ -4148,14 +4090,14 @@ skiru:
   notes: |
     [E] is the time (in seconds) relative to a fixed reference point (which is not important, so we choose UNIX epoch).
     Mostly useful with {jini}/{jiri} to order events.
-skaun:
-  id: bv0t2rbt88
-  family: "R"
-  gloss: "contained-time-span"
-  tags: [time, event]
-  short: "[E:tce skan] is a timespan contained in the current common timespan."
-  links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+# skaun:
+#   id: bv0t2rbt88
+#   family: "R"
+#   gloss: "contained-time-span"
+#   tags: [time, event]
+#   short: "[E:tce skan] is a timespan contained in the current common timespan."
+#   links:
+#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skuli:
   id: mqfz0l96zc
   family: "R"
@@ -4170,7 +4112,7 @@ sken:
   short: |
     [E:tce* man] is a space-time volume.
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skan:
   id: 17akg2234q
   family: "R"
@@ -4179,28 +4121,37 @@ skan:
   short: |
     [E:tce* man] is a timespan.
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skun:
-  id: tsrx8h6muk
+  id: u6sn4vyfzh
   family: "R"
-  gloss: set-anchor-present
+  gloss: present
   tags: [time, context-updater]
   short: |
-    [E:ma] is the context with time anchor being the present.
-  notes: |
-    The present is a time-span representing the duration of the utterence of the sentence, and is
-    updated between each sentence to then represent the next sentence duration.
+    [E:tca ski] is the present.
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
-sko:
-  id: k22ul24sct
-  family: "R"
-  gloss: set-anchor
-  tags: [time, context-updater]
-  short: |
-    [E:ma] is the context with time anchor being [A:tca skan].
-  links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+# skun:
+#   id: tsrx8h6muk
+#   family: "R"
+#   gloss: set-anchor-present
+#   tags: [time, context-updater]
+#   short: |
+#     [E:ma] is the context with time anchor being the present.
+#   notes: |
+#     The present is a time-span representing the duration of the utterence of the sentence, and is
+#     updated between each sentence to then represent the next sentence duration.
+#   links:
+#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+# sko:
+#   id: k22ul24sct
+#   family: "R"
+#   gloss: set-anchor
+#   tags: [time, context-updater]
+#   short: |
+#     [A:tca skan] is the current context time anchor.
+#   links:
+#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skon:
   id: i2jo0s1e03
   family: "R"
@@ -4209,7 +4160,7 @@ skon:
   short: |
     [E:tca skan] is a timespan contained in the current common timespan.
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 stane:
   id: 038s3l4yp4
   family: "R"
@@ -4532,6 +4483,16 @@ jiune:
   notes: |
     Alternative to {jiu} with a slot for the number. By using the default bind of [O] it allows
     to speak about the last member of a sequence, which is not possible to express using {jiu}.
+dzei:
+  id: a5sx15j283
+  family: "R"
+  gloss: "habit:"
+  short: |
+    For the last [U:tce gan] (default: 100) occurences of [A:()] being true, it overlaps with an
+    occurence of [O:()] being true [E:tce gan]% (between 0 and 1) of the time.
+  notes: |
+    If [A] occured less than than [E] times in the past, then only the number of occurences are
+    considered.
 
 # -----
 # Compounds
@@ -4786,126 +4747,48 @@ e co ma:
   family: "C"
   gloss: "string of data"
   short: "[E:tce* man] is a string of data."
-e ti denal:
-  id: 8s5ejjs7x4
-  family: "C"
-  gloss: "Sunday"
-  tags: [time, event, day]
-  short: "It is Sunday."
-e te denal:
+e ti denia:
   id: gvgo57y1k1
   family: "C"
   gloss: "Monday"
   tags: [time, event, day]
-  short: "It is Monday."
-e ta denal:
+  short: "[E:tce ski] is a Monday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+e te denia:
   id: wdnqacd5fb
   family: "C"
   gloss: "Tuesday"
   tags: [time, event, day]
-  short: "It is Tuesday."
-e to denal:
+  short: "[E:tce ski] is a Thuesday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+e ta denia:
   id: dut0zinzmi
   family: "C"
   gloss: "Wednesday"
   tags: [time, event, day]
-  short: "It is Wednesday."
-e tu denal:
+  short: "[E:tce ski] is a Wednesday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+e to denia:
   id: maomhd37vd
   family: "C"
   gloss: "Thursday"
   tags: [time, event, day]
-  short: "It is Thursday."
-e tie denal:
+  short: "[E:tce ski] is a Thursday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+e tu denia:
   id: 5pxlkakuie
   family: "C"
   gloss: "Friday"
   tags: [time, event, day]
-  short: "It is Friday."
-e tia denal:
+  short: "[E:tce ski] is a Friday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+e tie denia:
   id: eyxmjzfra3
   family: "C"
   gloss: "Saturday"
   tags: [time, event, day]
-  short: "It is Saturday."
-e tio denal:
+  short: "[E:tce ski] is a Saturday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+e tia denia:
   id: k2mw091d8h
   family: "C"
   gloss: "Sunday"
   tags: [time, event, day]
-  short: "It is Sunday."
-e te garel:
-  id: 65la7i57hq
-  family: "C"
-  gloss: "January"
-  tags: [time, event, month]
-  short: "It is January."
-e ta garel:
-  id: fb6nk64zut
-  family: "C"
-  gloss: "February"
-  tags: [time, event, month]
-  short: "It is February."
-e to garel:
-  id: cmn3yu5tbr
-  family: "C"
-  gloss: "March"
-  tags: [time, event, month]
-  short: "It is March."
-e tu garel:
-  id: hlnl4k1tfh
-  family: "C"
-  gloss: "April"
-  tags: [time, event, month]
-  short: "It is April."
-e tie garel:
-  id: 1wx4dnyxl2
-  family: "C"
-  gloss: "May"
-  tags: [time, event, month]
-  short: "It is May."
-e tia garel:
-  id: wzfiy3huwo
-  family: "C"
-  gloss: "June"
-  tags: [time, event, month]
-  short: "It is June."
-e tio garel:
-  id: lcqezx9l5v
-  family: "C"
-  gloss: "July"
-  tags: [time, event, month]
-  short: "It is July."
-e tiu garel:
-  id: oojrwijaf9
-  family: "C"
-  gloss: "August"
-  tags: [time, event, month]
-  short: "It is August."
-e tei garel:
-  id: 9ym4flsxsg
-  family: "C"
-  gloss: "September"
-  tags: [time, event, month]
-  short: "It is September."
-e tea garel:
-  id: blb33kpdbu
-  family: "C"
-  gloss: "October"
-  tags: [time, event, month]
-  short: "It is October."
-e teo garel:
-  id: 761npfg2uq
-  family: "C"
-  gloss: "November"
-  tags: [time, event, month]
-  short: "It is November."
-e teu garel:
-  id: jku0l3kd9b
-  family: "C"
-  gloss: "December"
-  tags: [time, event, month]
-  short: "It is December."
+  short: "[E:tce ski] is a Sunday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
 en ce bue sa:
   id: 000sw1j82d
   family: "C"
@@ -4953,14 +4836,6 @@ en skal co sa:
   notes: |
     [A] should be a unique identifier representing how and where the content
     can be fetched.
-e sural jerol:
-  id: fhpj03hyww
-  family: "C"
-  gloss: "hour+minute (event)"
-  short: "It is the hour [E:tce gan] and minute [A:tce gan] of the day."
-  notes: |
-    See notes of {sural} and {jerol}. Allows to shortly speak or ask about the
-    current time of the day.
 en jiu sre ski:
   id: o6taqi388f
   family: "C"
@@ -4980,7 +4855,7 @@ e ti sre:
   tags: [time, tense]
   short: "It occurs less than 1 second (excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e ti sru:
   id: 9egdpvfgwq
   family: "C"
@@ -4988,7 +4863,7 @@ e ti sru:
   tags: [time, tense]
   short: "It occurs less than 1 second (excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e vola sre:
   id: 10utjcfexx
   family: "C"
@@ -4996,7 +4871,7 @@ e vola sre:
   tags: [time, tense]
   short: "It occurs seconds (between 1 second included and 1 minute excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e vola sru:
   id: n7vb7za2mu
   family: "C"
@@ -5004,7 +4879,7 @@ e vola sru:
   tags: [time, tense]
   short: "It occurs seconds (between 1 second included and 1 minute excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e jero sre:
   id: 4bie8njlb2
   family: "C"
@@ -5012,7 +4887,7 @@ e jero sre:
   tags: [time, tense]
   short: "It occurs minutes (between 1 minute included and 1 hour excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e jero sru:
   id: 0zwjen7xl9
   family: "C"
@@ -5020,7 +4895,7 @@ e jero sru:
   tags: [time, tense]
   short: "It occurs minutes (between 1 minute included and 1 hour excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e sura sre:
   id: p9ghshgmxj
   family: "C"
@@ -5028,7 +4903,7 @@ e sura sre:
   tags: [time, tense]
   short: "It occurs hours (between 1 hour included and 1 day excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e sura sru:
   id: 7a95uf6jrp
   family: "C"
@@ -5036,7 +4911,7 @@ e sura sru:
   tags: [time, tense]
   short: "It occurs hours (between 1 hour included and 1 day excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e dena sre:
   id: ftmheg89q2
   family: "C"
@@ -5044,7 +4919,7 @@ e dena sre:
   tags: [time, tense]
   short: "It occurs days (between 1 day included and 1 week excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e dena sru:
   id: 4lbwp00732
   family: "C"
@@ -5052,7 +4927,7 @@ e dena sru:
   tags: [time, tense]
   short: "It occurs days (between 1 day included and 1 week excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e kora sre:
   id: f1b1jrcuud
   family: "C"
@@ -5060,7 +4935,7 @@ e kora sre:
   tags: [time, tense]
   short: "It occurs weeks (between 1 week included and 1 month excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e kora sru:
   id: m1rwaj12jg
   family: "C"
@@ -5068,7 +4943,7 @@ e kora sru:
   tags: [time, tense]
   short: "It occurs weeks (between 1 week included and 1 month excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e gare sre:
   id: zgllh2qv0q
   family: "C"
@@ -5076,7 +4951,7 @@ e gare sre:
   tags: [time, tense]
   short: "It occurs months (between 1 month included and 1 year excluded) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e gare sru:
   id: x89ati1htd
   family: "C"
@@ -5084,7 +4959,7 @@ e gare sru:
   tags: [time, tense]
   short: "It occurs months (between 1 month included and 1 year excluded) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e bire sre:
   id: 4xvmmgdql6
   family: "C"
@@ -5092,7 +4967,7 @@ e bire sre:
   tags: [time, tense]
   short: "It occurs years (more than 1 year included) before [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e bire sru:
   id: wc4y2k476a
   family: "C"
@@ -5100,7 +4975,7 @@ e bire sru:
   tags: [time, tense]
   short: "It occurs years (more than 1 year included) after [A:()]."
   links:
-    - ["icon-book", "Spacetime and events", https://eberban.github.io/eberban/books/refgram/book/vocabulary/spacetime.html]
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 # e skal zari:
 #   id: gpqertouzz
 #   family: "C"
@@ -5184,6 +5059,33 @@ e ubitkoin sfia:
   gloss: "BTC"
   tags: [currency]
   short: "[E:tce gan] is 1 bitcoin (BTC) times [A:tce gan] (default: 1)."
+e mune dzei:
+  id: qzvvawa21k
+  family: "C"
+  gloss: "usually:"
+  short: |
+    For the last [U:tce gan] (default: 100) occurences of [A:()] being true, it overlaps with an
+    occurence of [O:()] being true at least [E:tce gan]% (between 0 and 1, default: 0.75) of the time.
+  notes: |
+    If [A] occured less than than [E] times in the past, then only the number of occurences are
+    considered.
+e mine dzei:
+  id: t43uk5ejj2
+  family: "C"
+  gloss: "rarely:"
+  short: |
+    For the last [U:tce gan] (default: 100) occurences of [A:()] being true, it overlaps with an
+    occurence of [O:()] being true at most [E:tce gan]% (between 0 and 1, default: 0.25) of the time.
+  notes: |
+    If [A] occured less than than [E] times in the past, then only the number of occurences are
+    considered.
+e gien tcia:
+  id: 57282n39r3
+  family: "R"
+  gloss: "integer-subset"
+  tags: [set]
+  short: |
+    [E:tce gien] is the subset of all intergers (unitless) in [A:tce gan].
 
 # Spelling
 _spelling:

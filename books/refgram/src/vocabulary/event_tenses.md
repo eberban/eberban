@@ -1,4 +1,4 @@
-# Spacetime and events
+# Event and tenses
 
 ## What is the general design of Eberban's time system?
 
@@ -31,12 +31,12 @@ eating an apple. The existence of the cat, you, the apple and the action of eati
 The time anchor is a timespan that is automatically stated to be contained by the **sentence
 common timespan**.
 
-- *an skin* : sets the time anchor to the present, which represents the duration of the utterence of
+<!-- - *an skin* : sets the time anchor to the present, which represents the duration of the utterence of
   the current sentence. It changes between each sentence to represent the next sentence duration.
   This is the default time anchor at the start of a text or discussion.
-- *an sko X*: sets the time anchor to timespan X, which can easily be obtained using *skon*. This
+- *an e an sko X*: sets the time anchor to timespan X, which can easily be obtained using *skon*. This
   allow to pick a timespan in some event, and then  later sentences will express events related to
-  that timespan instead of the present.
+  that timespan instead of the present. -->
 
 ## Time relations
 
