@@ -3188,11 +3188,11 @@ bire:
     Since years don't all have the same duration (leap years and leap seconds),
     and we're not speaking about a specific year in the Gregorian calendar,
     [E] is a subset of all possible durations of a year.
-birie:
+birei:
   id: 8f292ygof9
   family: "R"
   gloss: "year (event)"
-  short: "[E:tce ski] is the year [A:tce gien] of [O:tce ski] (default: Gregorian Calendar)."
+  short: "Now is the year [E:tce gien] of [A:tce ski] (default: Gregorian Calendar)."
   tags: [time, event, year]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3206,11 +3206,11 @@ gare:
     Since months don't all have the same duration (leap years and leap seconds),
     and we're not speaking about a specific month in the Gregorian calendar,
     [E] is a subset of all possible durations of a month.
-garie:
+garei:
   id: 5iqzf2hgie
   family: "R"
   gloss: "month (event)"
-  short: "[E:tce ski] is the month [A:tce gien] of [O:tce ski] (default: {birie})."
+  short: "Now is the month [E:tce gien] of [A:tce ski] (default: {birei})."
   tags: [time, event, month]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3224,11 +3224,11 @@ kora:
     Since weeks don't all have the same duration (leap seconds),
     and we're not speaking about a specific week in the Gregorian calendar,
     [E] is a subset of all possible durations of a week.
-koria:
+korai:
   id: cqi4n1lpkt
   family: "R"
   gloss: "week (event)"
-  short: "[E:tce ski] is the week [A:tce gan] of [O:tce ski] (default: {birie})."
+  short: "Now is the week [A:tce gan] of [O:tce ski] (default: {birei})."
   tags: [time, event, week]  
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3242,11 +3242,11 @@ dena:
     Since days don't all have the same duration (leap seconds),
     and we're not speaking about a specific day in the Gregorian calendar,
     [E] is a subset of all possible durations of a day.
-denia:
+denai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "day (event)"
-  short: "[E:tce ski] is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+  short: "Now is the day [E:tce gien] of [A:tce ski] (default: {garei})."
   tags: [time, event, day]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3260,11 +3260,11 @@ sura:
     Since hours don't all have the same duration (leap seconds),
     and we're not speaking about a specific hour in the Gregorian calendar,
     [E] is a subset of all possible durations of an hour.
-suria:
+surai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "hour (event)"
-  short: "[E:tce ski] is the hour [A:tce gien] of [O:tce ski] (default: {denia})."
+  short: "Now is the hour [E:tce gien] of [A:tce ski] (default: {denai})."
   tags: [time, event, hour]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3274,11 +3274,11 @@ jero:
   gloss: "minute (unit)"
   short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
   tags: [time, unit, minute]
-jerio:
+jeroi:
   id: lvhzpvgj4z
   family: "R"
   gloss: "minute (event)"
-  short: "[E:tce ski] is the minute [A:tce gien] of [O:tce ski] (default: {suria})"
+  short: "Now is the minute [E:tce gien] of [A:tce ski] (default: {surai})"
   tags: [time, event, minute]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3288,11 +3288,11 @@ vola:
   gloss: "second (unit)"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
   tags: [time, unit, second]
-volia:
+volai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "second (event)"
-  short: "[E:tce ski] is the second [A:tce gien] of [O:tce ski] (default: {jerio})"
+  short: "Now is the second [E:tce gien] of [A:tce ski] (default: {jeroi})"
   tags: [time, event, second]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3559,15 +3559,7 @@ jine:
   gloss: "centered-range"
   tags: [number]
   short: |
-    [E:tce gan] are all numbers in the range from [O:tce gan] (default: 1) -
-    [A:tce gan] (default: 1) to [O] + [A].
-  notes: |
-    If used at the end of a chain of number or unit predicates (such as {mula}
-    and numbers made with {jie}), the multiplicative aspect of this chain can
-    be used to give a range proportional to the expressed number.
-
-    {te ti mula jine te} = 10 ± 10 (10 * 1)\
-    {ta ti mula jine jo to} = 20 ± 6 (20 * 0.3)\
+    [E:tce gan] are all numbers in the range [A:tce gan] ± [O:tce gan] (default: 1).
 jina:
   id: blyloql45h
   family: "R"
@@ -4747,48 +4739,48 @@ e co ma:
   family: "C"
   gloss: "string of data"
   short: "[E:tce* man] is a string of data."
-e ti denia:
+e ti denai:
   id: gvgo57y1k1
   family: "C"
   gloss: "Monday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Monday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
-e te denia:
+  short: "Now is a Monday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+e te denai:
   id: wdnqacd5fb
   family: "C"
   gloss: "Tuesday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Thuesday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
-e ta denia:
+  short: "Now is a Thuesday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+e ta denai:
   id: dut0zinzmi
   family: "C"
   gloss: "Wednesday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Wednesday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
-e to denia:
+  short: "Now is a Wednesday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+e to denai:
   id: maomhd37vd
   family: "C"
   gloss: "Thursday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Thursday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
-e tu denia:
+  short: "Now is a Thursday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+e tu denai:
   id: 5pxlkakuie
   family: "C"
   gloss: "Friday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Friday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
-e tie denia:
+  short: "Now is a Friday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+e tie denai:
   id: eyxmjzfra3
   family: "C"
   gloss: "Saturday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Saturday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
-e tia denia:
+  short: "Now is a Saturday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+e tia denai:
   id: k2mw091d8h
   family: "C"
   gloss: "Sunday"
   tags: [time, event, day]
-  short: "[E:tce ski] is a Sunday, which is the day [A:tce gien] of [O:tce ski] (default: {garie})."
+  short: "Now is a Sunday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
 en ce bue sa:
   id: 000sw1j82d
   family: "C"
