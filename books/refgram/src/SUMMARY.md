@@ -23,6 +23,7 @@
 - [Vocabulary design]()
   - [Guidelines](vocabulary/guidelines.md)
   - [Spacetime and events](vocabulary/spacetime.md)
+  - [Colors](vocabulary/colors.md)
 - [Writing systems](writing/intro.md)
   - [Linear writing system](writing/linear.md)
   - [Planar writing system]()

@@ -3653,55 +3653,165 @@ zino:
   family: "R"
   gloss: "color"
   tags: ["color"]
-  short: "[E:tce man] is a color of [A:tce pan] perceived by [O:tce pan] (default: speaker)."
-zmen:
+  short: "[E:tce zino] is a color of [A:tce pan] perceived by [O:tce pan] (default: {bzael})."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmir:
   id: d0l3cp2pwk
   family: "R"
   gloss: "white"
   tags: ["color"]
-  short: "[E:tce pan] is perceived as white/light by [A:tce pan] (default: speaker)."
-zman:
+  short: "[E:tce zino] is color white."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmire:
+  id: ad4rvdw2zl
+  family: "R"
+  gloss: "lighter"
+  tags: ["color"]
+  short: "[E:tce zino] is a lighter (less HSV-saturation) shade of [A:tce zino]."
+  notes: |
+    TODO: By how much?
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmur:
+  id: tfeeujlwxv
+  family: "R"
+  gloss: "darker"
+  tags: ["color"]
+  short: "[E:tce zino] is color black."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmure:
+  id: 4e113ltt58
+  family: "R"
+  gloss: "darker"
+  tags: ["color"]
+  short: "[E:tce zino] is a darker (less HSV-value) shade of [A:tce zino]."
+  notes: |
+    TODO: By how much?
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmer:
   id: qxdacbj9pt
+  family: "R"
+  gloss: "red-ish"
+  tags: ["color"]
+  short: "[E:tce zino] is color red-ish."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmar:
+  id: 8tl5qke633
+  family: "R"
+  gloss: "green-ish"
+  tags: ["color"]
+  short: "[E:tce zino] is color green-ish."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmor:
+  id: aqb12hf0h5
+  family: "R"
+  gloss: "blue-ish"
+  tags: ["color"]
+  short: "[E:tce zino] is color blue-ish."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmeher:
+  id: dab5wa7knk
   family: "R"
   gloss: "red"
   tags: ["color"]
-  short: "[E:tce pan] is perceived as red by [A:tce pan] (default: speaker)."
-zmon:
-  id: 8tl5qke633
+  short: "[E:tce zino] is color red."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmahar:
+  id: 3za1drxike
   family: "R"
-  gloss: "green"
+  gloss: "lime green"
   tags: ["color"]
-  short: "[E:tce pan] is perceived as green by [A:tce pan] (default: speaker)."
-zmun:
-  id: aqb12hf0h5
+  short: "[E:tce zino] is color lime green."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmohor:
+  id: m1bbuv2bkp
   family: "R"
   gloss: "blue"
   tags: ["color"]
-  short: "[E:tce pan] is perceived as blue by [A:tce pan] (default: speaker)."
-zmer:
-  id: tfeeujlwxv
-  family: "R"
-  gloss: "black"
-  tags: ["color"]
-  short: "[E:tce pan] is perceived as black/dark by [A:tce pan] (default: speaker)."
-zmar:
-  id: v0880nf0fg
-  family: "R"
-  gloss: "cyan"
-  tags: ["color"]
-  short: "[E:tce pan] is perceived as cyan by [A:tce pan] (default: speaker)."
-zmor:
-  id: v46cs9fs33
-  family: "R"
-  gloss: "magenta"
-  tags: ["color"]
-  short: "[E:tce pan] is perceived as magenta by [A:tce pan] (default: speaker)."
-zmur:
+  short: "[E:tce zino] is color blue."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmear:
   id: 4p1ty9pgoi
   family: "R"
   gloss: "yellow"
   tags: ["color"]
-  short: "[E:tce pan] is perceived as yellow by [A:tce pan] (default: speaker)."
+  short: "[E:tce zino] is color yellow."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmaor:
+  id: v0880nf0fg
+  family: "R"
+  gloss: "cyan"
+  tags: ["color"]
+  short: "[E:tce zino] is color cyan."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmeor:
+  id: v46cs9fs33
+  family: "R"
+  gloss: "magenta"
+  tags: ["color"]
+  short: "[E:tce zino] is color magenta."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmeaer:
+  id: vebh9m3k5f
+  family: "R"
+  gloss: "orange"
+  tags: ["color"]
+  short: "[E:tce zino] is color orange."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmaear:
+  id: 16k054sa4h
+  family: "R"
+  gloss: "chartreuse (green)"
+  tags: ["color"]
+  short: "[E:tce zino] is color chartreuse (green)."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmaoar:
+  id: dfw5luy241
+  family: "R"
+  gloss: "spring green"
+  tags: ["color"]
+  short: "[E:tce zino] is color spring green."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmoaor:
+  id: p2xvyctf5x
+  family: "R"
+  gloss: "azure"
+  tags: ["color"]
+  short: "[E:tce zino] is color azure."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmoeor:
+  id: 95n4o1eyit
+  family: "R"
+  gloss: "violet"
+  tags: ["color"]
+  short: "[E:tce zino] is color violet."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
+zmeoer:
+  id: zzferj56lq
+  family: "R"
+  gloss: "rose"
+  tags: ["color"]
+  short: "[E:tce zino] is color rose."
+  links:
+    - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 cekmi:
   id: rn07g95kw6
   family: "R"
