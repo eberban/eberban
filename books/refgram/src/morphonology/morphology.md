@@ -70,7 +70,7 @@ consonant triplets which must obey the following rules:
  - Alternatively, consonant triplets can be a _sonorant_ followed by an _initial pair_.
 
 After the __u__  prefix the borrowing can start by a vowel, a single consonant, a initial or medial
-consonant pair, a consonant triplet or __h__ If this first letter is a __u__ it must be prefixed
+consonant pair, a consonant triplet or __h__. If this first letter is a __u__ it must be prefixed
 with a __'__ to separate it from the the prefix.
 
 Borrowings must end with a _vowel_, or a _vowel_ followed by a single _consonant_ (not only

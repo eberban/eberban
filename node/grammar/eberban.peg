@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.61.1
+# eberban PEG grammar - v0.61.2
 # =============================
 
 # GRAMMAR
@@ -206,9 +206,9 @@ compound_n_end <- spaces e spaces
 compound_word <- spaces? (borrowing / native_word)
 
 # - Free-form words
-freeform_variable <- i (spaces &i / hyphen !i) freeform_content freeform_end
-borrowing <- u (spaces &u / hyphen !u) freeform_content freeform_end
-freeform_content <- freeform_consonants? vhowels (freeform_consonants vhowels)* consonant?
+freeform_variable <- i (spaces / hyphen !i) freeform_content freeform_end
+borrowing <- u (spaces / hyphen !u) freeform_content freeform_end
+freeform_content <- (freeform_consonants / h)? vhowels (freeform_consonants vhowels)* consonant?
 freeform_consonants <- consonant_triplet / medial_pair / ((sonorant / m) hyphen consonant) / hyphen (initial_pair / consonant)
 freeform_end <- (&sentence_eraser / single_pause_char / space_char / EOF)
 
@@ -288,7 +288,7 @@ g <- [gG]+ !unvoiced # <LEAF>
 k <- [kK]+ !voiced # <LEAF>
 
 # - Spaces / Pause
-pause_start <- vowel / sonorant
+pause_start <- vowel / sonorant / h
 post_word <- (single_pause_char &pause_start) / !sonorant &consonant / spaces
 spaces <- space_char+ hesitation? (single_pause_char &pause_start)? / single_pause_char &pause_start / EOF
 hesitation <- (n (space_char+ / EOF))+

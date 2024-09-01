@@ -73,8 +73,7 @@ function is_target_node(n) {
 const SPECIAL_FAMILIES = [
     "particle_form",
     "root_form",
-    "borrowing",
-    "freeform_variable",
+    "freeform_content",
     "foreign_quote_content",
     "foreign_quote_open",
     "foreign_quote_close",

@@ -35,7 +35,6 @@ const important_types = [
 	[ 'borrowing_group', 'borrowing group' ],
 	[ 'borrowing', 'borrowing' ],
 	[ 'freeform_variable', 'freeform variable'],
-	[ 'freeform_content', 'freeform' ],
 	[ 'grammatical_quote', 'quote' ],
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],

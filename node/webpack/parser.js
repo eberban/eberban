@@ -67,6 +67,8 @@ const boxClassForTypeMap = new Map([
 	[ 'number', 'box box-number' ],
 	[ 'letters', 'box box-letters' ],
 	[ 'subscope', 'box box-subscope' ],
+	[ 'borrowing', 'box' ],
+	[ 'freeform variable', 'box' ],
 	[ 'borrowing group', 'box box-borrowing' ],
 	[ 'foreign quote content', 'box box-not-shown foreign-quote-content'],
 	[ 'spelling', 'box box-borrowing' ],
