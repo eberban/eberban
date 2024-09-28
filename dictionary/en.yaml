@@ -3192,7 +3192,7 @@ birei:
   id: 8f292ygof9
   family: "R"
   gloss: "year (event)"
-  short: "Now is the year [E:tce gien] of [A:tce ski] (default: Gregorian Calendar)."
+  short: "Now is the year [E:tce gien] of [A:()] (default: Gregorian Calendar)."
   tags: [time, event, year]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3210,7 +3210,7 @@ garei:
   id: 5iqzf2hgie
   family: "R"
   gloss: "month (event)"
-  short: "Now is the month [E:tce gien] of [A:tce ski] (default: {birei})."
+  short: "Now is the month [E:tce gien] of [A:()] (default: {birei})."
   tags: [time, event, month]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3246,7 +3246,7 @@ denai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "day (event)"
-  short: "Now is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is the day [E:tce gien] of [A:()] (default: {garei})."
   tags: [time, event, day]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3264,7 +3264,7 @@ surai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "hour (event)"
-  short: "Now is the hour [E:tce gien] of [A:tce ski] (default: {denai})."
+  short: "Now is the hour [E:tce gien] of [A:()] (default: {denai})."
   tags: [time, event, hour]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3278,7 +3278,7 @@ jeroi:
   id: lvhzpvgj4z
   family: "R"
   gloss: "minute (event)"
-  short: "Now is the minute [E:tce gien] of [A:tce ski] (default: {surai})"
+  short: "Now is the minute [E:tce gien] of [A:()] (default: {surai})"
   tags: [time, event, minute]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3292,7 +3292,7 @@ volai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "second (event)"
-  short: "Now is the second [E:tce gien] of [A:tce ski] (default: {jeroi})"
+  short: "Now is the second [E:tce gien] of [A:()] (default: {jeroi})"
   tags: [time, event, second]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -4744,43 +4744,43 @@ e ti denai:
   family: "C"
   gloss: "Monday"
   tags: [time, event, day]
-  short: "Now is a Monday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Monday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 e te denai:
   id: wdnqacd5fb
   family: "C"
   gloss: "Tuesday"
   tags: [time, event, day]
-  short: "Now is a Thuesday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Thuesday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 e ta denai:
   id: dut0zinzmi
   family: "C"
   gloss: "Wednesday"
   tags: [time, event, day]
-  short: "Now is a Wednesday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Wednesday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 e to denai:
   id: maomhd37vd
   family: "C"
   gloss: "Thursday"
   tags: [time, event, day]
-  short: "Now is a Thursday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Thursday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 e tu denai:
   id: 5pxlkakuie
   family: "C"
   gloss: "Friday"
   tags: [time, event, day]
-  short: "Now is a Friday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Friday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 e tie denai:
   id: eyxmjzfra3
   family: "C"
   gloss: "Saturday"
   tags: [time, event, day]
-  short: "Now is a Saturday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Saturday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 e tia denai:
   id: k2mw091d8h
   family: "C"
   gloss: "Sunday"
   tags: [time, event, day]
-  short: "Now is a Sunday, which is the day [E:tce gien] of [A:tce ski] (default: {garei})."
+  short: "Now is a Sunday, which is the day [E:tce gien] of [A:()] (default: {garei})."
 en ce bue sa:
   id: 000sw1j82d
   family: "C"
