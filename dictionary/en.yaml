@@ -1411,20 +1411,23 @@ za:
   id: 4hiwgkyaqe
   family: "ZI"
   gloss: "#named"
+  tags: [intransitive]
   short: "[E:tce p] is named after the E place of the following predicate by [A:tce pan]."
   notes: |
     Another place can be selected by adding a SE particle between {za} and the
     predicate.
+  see_also: [zai, ezaiman]
   links:
     - ["icon-book", "Predicate transformations - Names", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#names]
 zai:
   id: bzmsfmniyb
   family: "ZI"
   gloss: "#name"
-  short: "[E:ma] is the name representing the E place of the following predicate."
+  short: "[E:tca ezaiman] is the name representing the E place of the following predicate."
   note: |
     Another place can be selected by adding a SE particle between {zai} and the
     predicate.
+  see_also: [za, ezaiman]
   links:
     - ["icon-book", "Predicate transformations - Names", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#names]
 a:
@@ -2763,7 +2766,7 @@ saul:
   id: 7hsf409fle
   family: "R"
   gloss: "light"
-  short: "[E:tce* pan] is light [energy]."
+  short: "[E:tce* pan] is light (energy)."
 cmiri:
   id: a0ngc6glp1
   family: "R"
@@ -3355,36 +3358,49 @@ zgie:
   family: "R"
   gloss: "width"
   short: "[E:tce gan] (length) is the width of [A:tce pan]."
+  tags: ["measurement"]
 fniu:
   id: fb6aza9xej
   family: "R"
   gloss: "height"
   short: "[E:tce gan] (length) is the height of [A:tce pan]."
+  tags: ["measurement"]
 cpea:
   id: 1p6a8o9nk3
   family: "R"
   gloss: "area"
   short: "[E:tce gan] (length^2) is the area of [A:tce pan]."
+  tags: ["measurement"]
 jvao:
   id: nd9g9s8u4q
   family: "R"
   gloss: "volume"
   short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
+  tags: ["measurement"]
 ckia:
   id: ldcalrk1ii
   family: "R"
   gloss: "speed"
   short: "[E:tce gan] (length/time) is the instantaneous speed of [A:tce pan]."
+  tags: ["measurement"]
 gzia:
   id: uz7xkm5k7x
   family: "R"
   gloss: "population"
   short: "[E:tce gan] (unitless) is the population/number of inhabitants of [A:tce pan]."
+  tags: ["measurement"]
 cnie:
   id: b0ey5as5c6
   family: "R"
   gloss: "age"
   short: "[E:tce gan] (time) is the age of [A:tce pan]."
+  tags: ["measurement"]
+minui:
+  id: 69ycoe83s6
+  family: "R"
+  gloss: "sound volume"
+  short: "[E:tce gan] is the sound volume produced by [A:()], perceived by [O:tce pan] (default: {bzael})."
+  tags: ["measurement"]
 fsau:
   id: vrsqhhv0zp
   family: "R"
@@ -3795,17 +3811,25 @@ jni:
     Each thing in [E] have less than [O] standard deviation(s) from the average size
     of [A].
 jnuhi:
-  id: 7y4m7u346i
+  id: yw2t4sv9sb
   family: "R"
-  gloss: "increasing-order:"
+  gloss: "increasingly:"
   short: |
-    [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
+    [E:tce pan] is increasingly satisfying property [A:(tce gan,tce pan)] over time.
+  notes: |
+    Starts and stops when it is decreasing. It doesn't stop when it reach a plateau and
+    then increase again, which means at a plateau between increase and decrease it is increasing and decreasing
+    at the same time.
 jnihi:
-  id: 2ivqr4ouem
+  id: dysqdtql0v
   family: "R"
-  gloss: "decreasing-order:"
-  short: |
-    [E:blu p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
+  gloss: "decreasingly:"
+   short: |
+    [E:tce pan] is decreasingly satisfying property [A:(tce gan,tce pan)] over time.
+  notes: |
+    Starts and stops when it is increasing. It doesn't stop when it reach a plateau and
+    then decrease again, which means at a plateau between increase and decrease it is increasing and decreasing
+    at the same time.
 buran:
   id: ndf5i6skum
   family: "R"
@@ -4061,7 +4085,7 @@ skul:
   family: "R"
   gloss: "current-event"
   tags: [time, event]
-  short: "[E:tce ski] is the current context event."
+  short: "[E:tca ski] is the current context event."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skinu:
@@ -4485,6 +4509,44 @@ dzei:
   notes: |
     If [A] occured less than than [E] times in the past, then only the number of occurences are
     considered.
+zguhi:
+  id: 4alugho403
+  family: "R"
+  gloss: "juice:"
+  short: |
+    [E:tce pan] is juice made from thing that satisfies [A:(tce pan)].
+  notes: |
+    [A] is not an entity but a property since the thing being made into juice no longer exists.
+taoru:
+  id: 9hsax9mv0q
+  family: "R"
+  gloss: "egg"
+  short: |
+    [E:tce pan] is an egg layed by [A:tce pan].
+kelon:
+  id: kneckch5o6
+  family: "R"
+  gloss: "box"
+  short: |
+    [E:tce pan] is a box.
+  notes: |
+    A rigid typically rectangular container with or without a cover. Its volume is not only the walls
+    but the volume between them.
+pekmu:
+  id: esc4oa97rr
+  family: "R"
+  gloss: "wall"
+  short: |
+    [E:tce pan] is a wall/floor/ceiling of room/container [A:tce pan].
+  notes: |
+    A wall can be curved and stops at junctions with other walls where there is a marked
+    discontinuity.
+ganol:
+  id: hakbao1f1r
+  family: "R"
+  gloss: "chicken"
+  short: |
+    [E:tce* pan] is a chicken.
 
 # -----
 # Compounds
@@ -5078,6 +5140,27 @@ e gien tcia:
   tags: [set]
   short: |
     [E:tce gien] is the subset of all intergers (unitless) in [A:tce gan].
+e zai man:
+  id: 5regih2sfj
+  family: "R"
+  gloss: "name"
+  tags: [set]
+  short: |
+    [E:tce man] is a name of [A:tce man] given by [O:tce pan].
+  see_also: [za, zai]
+e blu jnuhi:
+  id: 7y4m7u346i
+  family: "C"
+  gloss: "increasing-order:"
+  short: |
+    [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
+e blu jnihi:
+  id: 2ivqr4ouem
+  family: "C"
+  gloss: "decreasing-order:"
+  short: |
+    [E:blu p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
+
 
 # Spelling
 _spelling:
