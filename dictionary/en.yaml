@@ -1135,13 +1135,17 @@ jiu:
   gloss: "#ordinal"
   tags: [terminator, number, list]
   transitive: true
+  see_also: [jiune, blua]
   short: |
     Ordinal number terminator. The preceding number have definition:\
     [E:tca p] is the [number]th member of sequence [A:blu p].\
-    The number must be a natural number (non zero positive integer).
+    Indexing is done using zero-based numbering, such as the first member is the 0th.
+    The number must be a (possibly 0) positive integer.
   notes: |
-    See {jiuni} for a similar predicate with a place for the number (which allows to ask questions
-    about it) or to speak about the last member of the sequence.
+    See {jiune} for a similar predicate with a place for the number (which allows to ask questions
+    about it).
+
+    To speak about the last member, use {blua} to reverse the order of the list.
   links:
     - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 ju:
@@ -1949,6 +1953,13 @@ blue:
   tags: [list]
   short: |
     [E:blu p] is the concatenation of all lists in list [A:blu blu p].
+blua:
+  id: 2wwxz8b8gr
+  family: "R"
+  gloss: "list-reverse"
+  tags: [list]
+  short: |
+    [E:blu p] is list [A:blu p] in reverse order.
 blea:
   id: un9423gr90
   family: "R"
@@ -4495,10 +4506,8 @@ jiune:
   gloss: "n-th"
   tags: [number, list]
   short: |
-    [E:tca p] is the [O:tca gan]th (default: last) member of sequence [A:blu p].
-  notes: |
-    Alternative to {jiu} with a slot for the number. By using the default bind of [O] it allows
-    to speak about the last member of a sequence, which is not possible to express using {jiu}.
+    [E:tca p] is the [O:tca gan]th member of sequence [A:blu p].
+  see_also: [jiu]
 dzei:
   id: a5sx15j283
   family: "R"

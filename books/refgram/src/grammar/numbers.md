@@ -73,8 +73,8 @@ _base_ __ju__ _integer-part_ __jo__ _fractional-part_ __ja__ _repeated-part_ __j
 Numbers have various usages which require different definitions and arguments.
 The desired definition can be selected by ending the number with a particle of
 family __JI__ (__jie__ is inferred if omitted). __jie__ is mandatory between
-consecutive numbers to tell them apart. Particles other than __jie__ must be
-non-zero positive integer (no fractional part).
+consecutive numbers to tell them apart. Particles other than __jie__ must follow
+positive integer (no fractional part).
 
 - __ji__: `[E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].`\
   Speaks about a set of expressed cardinality.
@@ -86,7 +86,8 @@ non-zero positive integer (no fractional part).
 - __jioa__: `[E:tcu a] is (a group of) the only [number] things satisfying [A:(a)].`\
   Same but uses the raw property variant of set definitions.
 - __jiu__: `[E:tca a] is the [number]th member of sequence [A:blu a].`\
-  Speaks about an element in an ordered list.
+  Speaks about an element in an ordered list. Index follows zero-based numbering, such that
+  the first element is the 0th.
 - __jie__: `[E:tce gan] is the number [number] times [A:tce gan] (default: 1 unitless).`\
   `gan` is the word for a number, and both arguments are sets of numbers. These
   sets allow handling many numbers (ranges, approximations, or even arbitrarily
