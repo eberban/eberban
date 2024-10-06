@@ -20,8 +20,9 @@ place is used.
 > - if the root is a form __CCV__, the A place is a predicate place.
 > - if the root ends with an __-i__, the A place is a predicate place.
 > - otherwise the place is an atom/generic place.
-> - an intransitive root cannot have a E predicate place. If a predicate have a
->   single predicate place, it'll be transitive with a single A predicate place.
+> - an intransitive root shouldn't have a E predicate place, as it will be chained
+>   to as if it was an atom/generic place. If a predicate have a
+>   single predicate place, it should be transitive with a single A predicate place.
 >   A predicate with many predicate places can have a E predicate place but it
 >   must be transitive.
 >

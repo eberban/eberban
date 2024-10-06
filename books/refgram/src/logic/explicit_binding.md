@@ -59,9 +59,10 @@ $(x) and have meaning \\(ki(c,e) = \[\text{$e$ is variable $x$}\]\\).
 
 __GI__ (all particles starting with _g-_), however, represents a predicate whose
 arity and type will be inferred from its usage in the sentence. All __GI__
-starting with __gi-__ have __intransitive behavior__, while the others starting
-with __ge/ga/go/gu-__ have __transitive behavior__. In both cases chaining to
-the transitivity place is done by sharing.
+starting with __gi-__ have __intransitive sharing behavior__, while the others starting
+with __ge/ga/go/gu-__ have __transitive behavior__. For transitive __GI__,
+chaining to a __GI__ ending with __-i__ will be done __by equivalence__, otherwise
+by __sharing__ (like the final __-i__ rule for roots).
 
 Any __BA__ used in the argument list allow skipping this argument if it is not
 used in the inner predicate. Which __BA__ member is used doesn't matter.
