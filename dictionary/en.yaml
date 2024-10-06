@@ -4899,18 +4899,28 @@ en skal co sa:
   notes: |
     [A] should be a unique identifier representing how and where the content
     can be fetched.
-en jiu sre ski:
+e blu ski:
+  id: f24mp2j8zu
+  family: "C"
+  gloss: "occurence-list:"
+  tags: [time]
+  short: "[E:blu ski] is the list of occurences of [A:()] (in the past and the future), orderer by chronologically increasing starting time."
+en sre blu ski:
   id: o6taqi388f
   family: "C"
-  gloss: "before-nth:"
+  gloss: "future-occurencies:"
   tags: [time, tense]
-  short: "[E:tce ski] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the future."
-en jiu sru ski:
+  short: "[E:blu ski] is the list of future occurences of [A:()], orderer by chronologically increasing starting time."
+  notes: |
+    The first element of the list is the closest event from the present/reference time.
+en sru blu ski:
   id: exaqlp8qex
   family: "C"
-  gloss: "before-nth:"
+  gloss: "past-occurencies:"
   tags: [time, tense]
-  short: "[E:tce ski] is the [O:tce gan]th (default: 1) event/occurence of [A:()] it the past."
+  short: "[E:blu ski] is the list of past occurences of [A:()], orderer by chronologically decreasing starting time."
+  notes: |
+    The first element of the list is the closest event from the present/reference time.
 e ti sre:
   id: ey5f5raem9
   family: "C"
