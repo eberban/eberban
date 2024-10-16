@@ -2521,11 +2521,6 @@ ban:
   family: "R"
   short: "[E:tce* man] is a language."
   gloss: "language"
-banu:
-  id: cvbgy6pdjn
-  family: "R"
-  short: "[E:tce* ecoma] is expressed in language [A:tce* ban]."
-  gloss: "language"
 zigmo:
   id: wlbcggayj6
   family: "R"
@@ -2719,11 +2714,12 @@ slane:
   family: "R"
   gloss: "tied"
   short: "[E:tce* pan] is tied/pinned to [A:tce* pan]."
-gloli:
-  id: j31as5z1tr
+glon:
+  id: je2by0lctr
   family: "R"
-  gloss: "plays"
-  short: "[E:tce pan] plays game [A:tce* pan]."
+  gloss: "game"
+  short: "[E:tce* man] is a game/activity made for entertainement purposes."
+  notes: It may not be actually played right now, while using {eglonsa} implies that there is a player.
 spenu:
   id: mre2klwbx7
   family: "R"
@@ -4188,12 +4184,6 @@ skon:
     [E:tca skan] is a timespan contained in the current common timespan.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-stane:
-  id: 038s3l4yp4
-  family: "R"
-  gloss: citizen
-  short: |
-    [E:tce* pan] is a citizen of [A:tce* pan].
 zear:
   id: llu33swjlk
   family: "R"
@@ -4556,6 +4546,12 @@ ganol:
   gloss: "chicken"
   short: |
     [E:tce* pan] is a chicken.
+tcero:
+  id: kgx9ydzmch
+  family: "R"
+  gloss: "set-mapping"
+  short: |
+    Members of [E:tce p] can be mapped to members of [A:tce p] using relation [O:(tca p,tca p)].
 
 # -----
 # Compounds
@@ -5054,23 +5050,23 @@ e bire sru:
 #   family: "C"
 #   gloss: "program"
 #   short: "[E:tce* man] is a computer program."
-en sa gloli se:
-  id: je2by0lctr
+
+e glon sa:
+  id: j31as5z1tr
   family: "C"
-  gloss: "game"
-  short: "[E:tce* man] is a game/activity made for entertainement purposes."
-  notes: It may not be actually played right now, while using {gloli} implies that there is a player.
+  gloss: "plays"
+  short: "[E:tce pan] plays game [A:tce* pan]."
 e buan spenu:
   id: mf42sda4or
   family: "C"
   gloss: "reads"
   short: "[E:tce* pan] reads [A:tce* pan]."
-e jerol senul:
+e jero sonul:
   id: rnerw0268q
   family: "C"
   gloss: "clock"
   short: "[E:tce* pan] is a clock/watch."
-e skan senul:
+e skan sonul:
   id: dsjjxhug6w
   family: "C"
   gloss: "chronometer"
@@ -5096,7 +5092,7 @@ e uiuro sfia:
   gloss: "EUR"
   tags: [currency]
   short: "[E:tce gan] is 1 euro (EUR) times [A:tce gan] (default: 1)."
-e uhuzdolar sfia:
+e u'uzdolar sfia:
   id: 9uzfmtxv63
   family: "C"
   gloss: "USD"
@@ -5179,6 +5175,17 @@ e blu jnihi:
   gloss: "decreasing-order:"
   short: |
     [E:blu p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
+e ban sa:
+  id: cvbgy6pdjn
+  family: "C"
+  short: "[E:tce* ecoma] is expressed in language [A:tce* ban]."
+  gloss: "language"
+e stan sa:
+  id: 038s3l4yp4
+  family: "C"
+  gloss: citizen
+  short: |
+    [E:tce* pan] is a citizen of [A:tce* pan].
 
 
 # Spelling

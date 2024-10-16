@@ -77,9 +77,9 @@ however to provide a description in Eberban to help comprehension for all
 speakers, listeners or readers.
 
 ```gloss
-eberban sae banu [ca mi dona eberban cai] siro [co zao'I like eberban'zao] banu euinglic'ban
+eberban sae ebansa [ca mi dona eberban cai] siro [co zao'I like eberban'zao] ebansa euinglic'ban
 
-eberban sae banu {ca mi dona eberban cai} siro {co zao'I like eberban'zao} banu euinglic'ban
+eberban sae ebansa {ca mi dona eberban cai} siro {co zao'I like eberban'zao} ebansa euinglic'ban
 
 {E:$(x) is the Eberban language} {chain A>E} {E:$(y) is expressed in language A:$(x)}
 {E:$(y) is text "I like Eberban" (in Eberban)} {E:$(y) has translation A:$(z)}

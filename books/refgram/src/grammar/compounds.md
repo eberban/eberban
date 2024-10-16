@@ -32,7 +32,6 @@ A compound have the same __transitivity__ as its last/rightmost component
 If the compound transitivity should differ from that component, an extra word
 is added in the compound among the followings:
 - __se__: intransitive sharing
-- __sei__: intransitive equivalence
 - __sa__: transitive sharing
 - __sai__: transitive equivalence
 
@@ -46,9 +45,7 @@ is added in the compound among the followings:
 > - uinglic : borrowing of "english".
 > - ban : `[E:tce* man] is a language.`
 
-> __en sa gloli se :__ `[E:tce* man] is a game.`
+> __e glon sa :__ `[E:tce pan] plays game [A:tce* pan].`
 >
-> - sa: Select A place (we want to speak only about the game itself)
-> - gloli : `[E:tce pan] plays game [A:tce* pan].`
-> - se: gloli is transitive while we want intransitive, `se` is thus added at
->   the end.
+> - glon : `[E:tce* man] is a game.`
+> - sa: We're making a transitivite version of glon.
