@@ -142,12 +142,12 @@ mao:
   id: qzpxweephx
   family: "MI"
   gloss: "nary-imply"
-  tags: [core]
-  short: "All arguments satisfy predicate [E:p] if they satisfy predicate [A:p] (default: always true)."
-  definition: 𝜆c 𝜆E 𝜆A ∀x ∀y ... A(c,x,y,...) ⇒ E(c,x,y,...)
+  tags: [core, transitive]
+  short: "All arguments satisfy predicate [A:p] if they satisfy predicate [O:p] (default: always true)."
+  definition: 𝜆c 𝜆e 𝜆A 𝜆O ∀x ∀y ... O(c,x,y,...) ⇒ A(c,x,y,...)
   notes: |
-    With default [A] it corresponds to universal quantification of all arguments of [E].\
-    𝜆c 𝜆E ∀x ∀y ... E(c,x,y,...)
+    With default [O] it corresponds to universal quantification of all arguments of [A].\
+    𝜆c 𝜆e 𝜆A ∀x ∀y ... A(c,x,y,...)
   links:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 

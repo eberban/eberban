@@ -7,7 +7,7 @@ to express logical primitives that the grammar itself don't cover.
 \\[ \begin{align}
 \text{ma}(c,e)      &= \text{is-atom}(e) \\\\
 \text{mai}(c,e)     &= \top \\\\
-\text{mao}(c,E,A)   &= \forall x_0 \dots \forall x_n. \\ A(c,x_0,\dots,x_n) \Rightarrow E(c,x_0,\dots,x_n) \\\\
+\text{mao}(c,e,A,O)   &= \forall x_0 \dots \forall x_n. \\ O(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\\\
 \text{mui}(c)       &= \text{unknown} \\\\
 \text{mue}(c,e)     &= c = e \\\\
 \text{mua}(c,e,A)   &= A(e) \\\\
@@ -20,16 +20,16 @@ However to be used $(e) must exist (at some point an existential variable must
 be created), and for some definitions expressing this existence and nothing
 more is useful.
 
-__mao__ (intransitive) allows the speaker to express the concept that $(E) is a subset of $(A),
-in the sense that any list of arguments that satisfy $(E) also satisfy $(A). It
+__mao__ (transitive) allows the speaker to express the concept that $(A) is a subset of $(O),
+in the sense that any list of arguments that satisfy $(A) also satisfy $(O). It
 is useful as it doesn't require the language itself to support a variable number
-of arguments. Instead both $(E) and $(A) are just considered predicates of
-possibly unknown arity and only the implication is relevant. $(E) and $(A)
+of arguments. Instead both $(A) and $(O) are just considered predicates of
+possibly unknown arity and only the implication is relevant. $(A) and $(O)
 can be of different arities, in which __arity mismatch resolution__ can
 be used to give them identical arity. This word can be useful for some
-definitions, or to express that a predicate $(E) represents multiple
-combinations of values that make $(A) true, that answers a question represented
-by $(A).
+definitions, or to express that a predicate $(A) represents multiple
+combinations of values that make $(O) true, that answers a question represented
+by $(O). $(E) slot is skipped to make it easier to use in sentences.
 
 __mui__ (intransitive) always returns the __unknown__ truth value.
 
