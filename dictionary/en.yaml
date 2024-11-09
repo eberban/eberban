@@ -4552,6 +4552,18 @@ tcero:
   gloss: "set-mapping"
   short: |
     Members of [E:tce p] can be mapped to members of [A:tce p] using relation [O:(tca p,tca p)].
+flir:
+  id: 3i3k6yr8jo
+  family: "R"
+  gloss: "face"
+  short: |
+    [E:tce* pan] is a face (body part).
+sibdin:
+  id: a9blqu7rgx
+  family: "R"
+  gloss: "toilet"
+  short: |
+    [E:tce* pan] is a toilet.
 
 # -----
 # Compounds
@@ -5186,6 +5198,24 @@ e stan sa:
   gloss: citizen
   short: |
     [E:tce* pan] is a citizen of [A:tce* pan].
+e me gi:
+  id: b9jvmkt3og
+  family: "C"
+  gloss: "(elliptical)"
+  short: |
+    An intransitive elliptical predicate the speaker has in mind.
+e me ge:
+  id: 5pvigdcc8w
+  family: "C"
+  gloss: "(elliptical)"
+  short: |
+    A transitive sharing elliptical predicate the speaker has in mind.
+e me gei:
+  id: n2i7r6eiwc
+  family: "C"
+  gloss: "(elliptical)"
+  short: |
+    A transitive equivalence elliptical predicate the speaker has in mind.
 
 
 # Spelling
