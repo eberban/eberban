@@ -911,22 +911,6 @@ anu:
     between each sentences as if it was used with {an}.
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
-pe:
-  id: c9njzictfu
-  family: "PE"
-  gloss: "["
-  tags: [core]
-  short: "Inline scope starter."
-  links:
-    - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
-pei:
-  id: cou785jhzz
-  family: "PEI"
-  gloss: "]"
-  tags: [core, terminator, elidable]
-  short: "Inline scope elidible terminator."
-  links:
-    - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
 nu:
   id: em8adaqgg3
   family: "NI"
@@ -1477,6 +1461,20 @@ o:
     reject this axiom.
   links:
     - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
+du:
+  id: skpy3pwmn3
+  family: "DU"
+  gloss: "#chain"
+  short: The tagged annotation refers to the annotated predicate, its binds and chaining.
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
+duo:
+  id: vxcswwqx5u
+  family: "DU"
+  gloss: "#sentence"
+  short: The tagged annotation refers to the entire sentence.
+  links:
+    - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 di:
   id: my7irg3svn
   family: "DI"
@@ -1533,56 +1531,78 @@ dai:
   links:
     - ["icon-book", "Annotations", https://eberban.github.io/eberban/books/refgram/book/grammar/annotations.html]
 bu:
-  id: gelwsldtsb
+  id: 42rwh0ztk6
   family: "BU"
-  gloss: "#set-members"
+  gloss: ","
+  tags: [enum]
+  short: "Separator between enumeration items."
+  links:
+    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+pe:
+  id: c9njzictfu
+  family: "PE"
+  gloss: "["
+  tags: [core]
+  short: "Inline scope starter."
+  notes: |
+    Since it is a member of PE, {BU} can be used inside it. Each item is a predicate and all are
+    stated to be true (AND operator). They share the same slots.
+
+    {mi pe bure bu dona pei meon} = I \[eat and like\] an apple.
+  links:
+    - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+pehe:
+  id: gelwsldtsb
+  family: "PE"
+  gloss: "#set-members["
   tags: [enum, set]
   short: "Makes a set from one member from each listed sets."
   notes: |
     Each member is distinct, the cardinality of the set equals the number of listed items.
   links:
-    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-bue:
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+pea:
   id: z05feq6b63
-  family: "BU"
-  gloss: "#atom-set"
+  family: "PE"
+  gloss: "#atom-set["
   tags: [enum, set]
   short: "Atoms/generics set separator."
   links:
-    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-buhe:
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+peha:
   id: lhzsdl98sk
-  family: "BU"
-  gloss: "#pred-set"
+  family: "PE"
+  gloss: "#pred-set["
   tags: [enum, set]
   short: "Predicates set separator."
   links:
-    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-bua:
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+peo:
   id: pyzvhbntb5
-  family: "BU"
-  gloss: "#atom-list"
+  family: "PE"
+  gloss: "#atom-list["
   tags: [enum, list]
   short: "Atoms/generics list separator."
   links:
-    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-buha:
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+peho:
   id: 6ekftp64e3
-  family: "BU"
-  gloss: "#pred-list"
+  family: "PE"
+  gloss: "#pred-list["
   tags: [enum, list]
   short: "Predicates list separator."
   links:
-    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-buhu:
-  id: iquyczidl4
-  family: "BU"
-  gloss: "#erased"
-  tags: [enum]
-  short: "Erase the current enumeration item."
-  see_also: ["ra"]
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+pei:
+  id: cou785jhzz
+  family: "PEI"
+  gloss: "}"
+  tags: [core, terminator, elidible]
+  short: "Inline scope/enum elidible terminator."
   links:
-    - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+    - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
+    - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
 pi:
   id: ldy5ka8k6p
   family: "PI"
@@ -1625,14 +1645,17 @@ poi:
   links:
     - ["icon-book", "Sentences - Paragraph marker PO", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#paragraph-marker-po]
 pu:
-  id: ldy5ka8k6p
+  id: wvdkovz6eg
   family: "PU"
-  gloss: "#sentence-end"
+  gloss: "#adverb:"
   short: |
-    Elidible sentence terminator. Used solely to attach metadata to the sentence
-    after the fact, as if it was attached to A/O/NI.
+    The following predicate P1 wraps in its [A] slot the next predicate P2. The resulting predicate
+    exposes the slots of P2.
+  notes: |
+    P1 slot can be selected using a SI: it will use the second slot expressed by that SI (the new
+    [A] slot).
   links:
-    - ["icon-book", "Sentences - Sentence terminator PU", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#sentence-terminator-pu]
+    - ["icon-book", "Adverbs", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 ohi:
   id: j7cwz23nkd
   family: "O"
@@ -3979,7 +4002,7 @@ zidmi:
   family: "R"
   gloss: "because:"
   short: "[E:()] is true because of [A:()]."
-felti:
+fekti:
   id: n6l471ty0l
   family: "R"
   gloss: "similar-to:"
@@ -4551,7 +4574,7 @@ tcero:
   family: "R"
   gloss: "set-mapping"
   short: |
-    Members of [E:tce p] can be mapped to members of [A:tce p] using relation [O:(tca p,tca p)].
+    Members of [E:tce p] can be mapped one by one to members of [A:tce p] using relation [O:(tca p,tca p)].
 flir:
   id: 3i3k6yr8jo
   family: "R"
@@ -5216,6 +5239,11 @@ e me gei:
   gloss: "(elliptical)"
   short: |
     A transitive equivalence elliptical predicate the speaker has in mind.
+e blan pu:
+  id: b14thh7qux
+  family: "C"
+  short: "[A:()] occurs beautifully according to [E:tce man] (default: {bzael})."
+  gloss: "beautifully:"
 
 
 # Spelling

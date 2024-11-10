@@ -12,7 +12,7 @@ const hideTitleList = [
 	'axiom',
 	'definition',
 	'chain',
-	'sequence item',
+	'adverb',
 	'chain step',
 	'chain step negation',
 	'explicit bind group',
@@ -20,6 +20,9 @@ const hideTitleList = [
 	'borrowing group',
 	'erased',
 	'default',
+	'enum',
+	'enum item',
+	'compact enum item',
 ];
 
 const hideFamily = [
@@ -54,7 +57,6 @@ const boxClassForTypeMap = new Map([
 
 	// scope
 	[ 'chain', 'box box-chain' ],
-	[ 'list item', 'box box-list-item' ],
 	[ 'chain step', 'box box-chain-step' ],
 	[ 'chain step negation', 'box box-chain-step-neg' ],
 	[ 'explicit bind group', 'box box-explicit-bind-group' ],
@@ -62,11 +64,13 @@ const boxClassForTypeMap = new Map([
 	// units
 	[ 'imported predicate', 'box box-namespaced' ],
 	[ 'chain unit', 'box box-chain-unit' ],
+	[ 'adverb', 'box box-chain-unit-adverb' ],
 	[ 'foreign quote', 'box box-borrowing foreign-quote' ],
 	[ 'compound', 'box box-compound' ],
 	[ 'number', 'box box-number' ],
 	[ 'letters', 'box box-letters' ],
-	[ 'subscope', 'box box-subscope' ],
+	[ 'enum', 'box' ],
+	[ 'compact enum item', 'box box-list-item' ],
 	[ 'borrowing', 'box' ],
 	[ 'freeform variable', 'box' ],
 	[ 'borrowing group', 'box box-borrowing' ],

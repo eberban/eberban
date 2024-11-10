@@ -5,6 +5,14 @@ text, and simply add notes or metadata. These annotations are also called "free"
 prefixes and suffixes as they can be added freely before and after many elements
 of the grammar.
 
+## Free scope
+
+By default annotations are somewhat related only to the word they are attached
+to. However the scope can be changed by prefixing the annotation with __DU__:
+
+- __du__: Annotation refers to the annotated predicate, its explicit bindings and its following chaining.
+- __duo__: Annotation refers to the entire sentence.
+
 ## Free prefixes DI
 
 __DI__ contains all particles starting with _di-_ and are prefixes to other

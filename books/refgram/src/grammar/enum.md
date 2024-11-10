@@ -1,40 +1,30 @@
-# Enumeration and short erasure (BU)
+# Enumeration (PE/BU)
 
-__BU__ is a separator that can appear in any place there is a chain, and
-transform it into an enumeration of chains. Depending on which __BU__ is
-used this enumeration is used to create a set, list, or to erase previous
-words.
+We've seen before particles __pe__ and __pei__ that are like spoken brackets. __pe__ is part of
+family __PE__ which provide a more general feature called an _enumeration_. It allows to list zero
+to many _items_ which are used differently depending on which __PE__ is used. Items separation is
+done using __bu__ (only member of __BU__) in 2 possible mays:
 
-__buhu__ erase the current chain, as if it was not said or written, and is
-usually followed by a new chain. If there is no other __BU__ than __buhu__
-used then this new chain stay as is, and is not transformed in a list or set.
-It can only erase grammatically valid text, otherwise
-[__RA__ must be used](../logic/sentences.md).
+- separator: __PE__ is followed by multiple chains, each separated by __bu__.
+- prefix: __PE__ is immediatly followed by __bu__. Then each item is a single predicate, and items
+  are not separated by __bu__.
 
-For first non __buhu__ __BU__ used determines what this enumeration produces.
-Following non __buhu__ __BU__ don't change what the enumeration produces, and it
-is thus shorter to always use __bu__.
+__PE__ family contains the following members:
 
-- __bu__: a set made of one member from each listed sets
-- __bue__: a set of atoms/generics
-- __buhe__: a set of predicates
-- __bua__: a list of atoms/generics
-- __buha__: a list of predicates
+- __pe__: Simply exposes the slots of the items. If there are multiple items, it perform an AND
+  operator between them.
+  > Exemple: `mi [pe [bure] bu [dona] pei] meon` = I [eat and like] an apple.
+- __pehe__: Makes a set from one member of each listed sets.
+  > Exemple: `mio [pehe bu [za ualis] [za ubob] (pei)]` = We are Alice and Bob.
+- __pea__: Makes a set such that a generic/atom that satisfy each item is a member of the set.
+  > Exemple: `[pea [tcu mian] bu [meon] (pei)]` = A set of {the set of all cats, a set of apples}.
+- __peha__: Makes a set of predicates.
+  > Exemple: `me vone [peha bu [mian] [meon] (pei)]` = This is [a cat OR an apple].
+- __peo__: Makes a list such that a generic/atom that satisfy each item is  amember of the list (in
+  order).
+  > Exemple: `[peo bu [mian] [meon] pei] blua [peo [meon] bu [mian] (pei)]` = List [a cat, an apple]
+  > is list [an apple, a cat] in reverse order.
+- __peho__: Makes a list of predicates.
+  > No exemple as usages of predicates lists as they are mostly used by words with complex meanings.
 
-For __buhe__ and __buha__, all predicates will have the same arity and arguments as the first
-chain in the enumeration.
-
-A final __BU__ can appear without being followed by a new chain, which is useful
-to create a list/set with only one member. If all chains have been erased with
-__buhu__, then it produces an "always true" predicate.
-
-> __mi seo spi [va [za ualis] bu ~~[za ubob] buhu~~ [za utcarli]]__
->
-> I speak (say something) to Alice ~~and Bob~~ and Charlie.
-
-Note that __VI/FI/PE__ is often required to use __BU__, as __BU__ has
-lower precedence than chaining.
-
-> __[mi seo spi za ualis] bu [za utcarli]__
-
-> __pe ... pei__ are particularly useful to make nested sets/lists.
+An empty set doesn't exist, but the empty list does. `peo/pehu bu pei` makes such empty list.

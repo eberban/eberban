@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.61.2
+# eberban PEG grammar - v0.62
 # =============================
 
 # GRAMMAR
@@ -16,7 +16,7 @@ sentence_starter <- A_clause / O_clause / NI_clause
 # sentence_erased_1 must appear first. While we want to erase ungrammatical text with RA, we don't
 # want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 sentence <- sentence_erased_1 / sentence_1 / sentence_erased_2
-sentence_1 <- (sentence_o / sentence_ni / sentence_a) PU_clause_elidible
+sentence_1 <- (sentence_o / sentence_ni / sentence_a)
 
 sentence_erased_1 <- sentence_1 sentence_eraser
 sentence_erased_2 <- sentence_starter? (!(sentence_starter / sentence_eraser) .)* sentence_eraser
@@ -28,13 +28,7 @@ sentence_a <- A_clause_elidible inner_definition
 sentence_ni <- NI_clause unit_used_definable
 
 # chaining
-inner_definition <- arguments_list? chain_or_list
-
-chain_or_list <- list / chain
-list <- compact_list / (list_item BU_clause !BU_clause)+ list_item?
-list_item <- chain
-compact_list <- BU_clause BU_clause compact_list_item+ !BU_clause
-compact_list_item <- BI_clause? chain_step
+inner_definition <- arguments_list? chain
 
 chain <- (chain_step_negation / chain_step)+
 chain_step_negation <- BI_clause chain
@@ -45,8 +39,9 @@ explicit_bind_first <- BI_clause? VI_clause inner_definition
 explicit_bind_additional <- BI_clause? FI_clause inner_definition
 
 chain_unit <- chain_unit_1 free_suffix*
-chain_unit_1 <- (SI_clause !SI_clause / ZI_clause)* chain_unit_2
-chain_unit_2 <- unit_used_definable / unit_inline_assignement / KI_clause / BA_clause / MI_clause / unit_quote / unit_scoped / unit_borrowing / unit_number
+chain_unit_1 <- chain_unit_adverb* (SI_clause !SI_clause / ZI_clause)* chain_unit_2
+chain_unit_adverb <- PU_clause !PU_clause chain_step
+chain_unit_2 <- unit_used_definable / unit_inline_assignement / KI_clause / BA_clause / MI_clause / unit_quote / unit_enum / unit_borrowing / unit_number
 unit_inline_assignement <- free_prefix* BO_clause (KI_clause / unit_definable)
 
 unit_definable <- !MI_clause unit_used_definable
@@ -60,7 +55,6 @@ unit_root <- free_prefix* spaces? root_word
 unit_number <- free_prefix* spaces? number
 unit_compound <- free_prefix* spaces? compound
 unit_borrowing <- free_prefix* borrowing_group
-unit_scoped <- PE_clause inner_definition PEI_clause_elidible
 
 # quotes
 unit_quote <- grammatical_quote / one_word_quote / foreign_quote / spelling_quote
@@ -79,6 +73,13 @@ spelling_quote <- CE_clause spelling_quote_unit+ CEI_clause
 spelling_quote_unit <- spaces? spelling_quote_unit_2
 spelling_quote_unit_2 <- !CEI (initial_pair / consonant)? vhowels
 
+# enum
+unit_enum <- PE_clause (unit_enum_compact / unit_enum_full)? PEI_clause_elidible
+unit_enum_compact <- BU_clause unit_enum_compact_item+ !BU_clause
+unit_enum_compact_item <- BI_clause? chain_step
+unit_enum_full <- arguments_list? unit_enum_full_item (BU_clause unit_enum_full_item)*
+unit_enum_full_item <- chain
+
 # numbers
 number <- number_base? (number_magnitude / (number_1 number_fractional? / number_1? number_fractional) number_magnitude?) JI_clause?
 number_1 <- TI_clause+
@@ -93,12 +94,14 @@ number_magnitude <- JE_clause number_1
 borrowing_group <- (spaces? borrowing)+ BE_clause_elidible
 
 # free affixes
+free_scope <- DU_clause
+
 free_prefix <- free_metadata
-free_metadata <- DI_clause
+free_metadata <- free_scope? DI_clause
 
 free_suffix <- free_parenthetical / free_interjection
-free_interjection <- DE_clause chain_unit_1 # avoid nested free suffix
-free_parenthetical <- DA_clause text DAI_clause
+free_interjection <- free_scope? DE_clause chain_unit_1 # avoid nested free suffix
+free_parenthetical <- free_scope? DA_clause text DAI_clause
 
 # PARTICLES CLAUSES
 A_clause   <- free_prefix* spaces? A   free_suffix*     # A sentence starter
@@ -109,13 +112,14 @@ BI_clause  <- free_prefix* spaces? BI  free_suffix*     # wide-scope negation
 BE_clause  <-              spaces? BE                   # miscellaneous terminator
 BA_clause  <- free_prefix* spaces? BA                   # inline argument
 BO_clause  <- free_prefix* spaces? BO                   # variable assignement
-BU_clause  <- free_prefix* spaces? BU                   # sequence separator
+BU_clause  <- free_prefix* spaces? BU                   # enum separator
                                                         #
 DI_clause  <-              spaces? DI                   # free metadata
 DE_clause  <-              spaces? DE                   # free interjection
 DA_clause  <-              spaces? DA                   # free parenthetical starter
 DAI_clause <-              spaces? DAI                  # free parenthetical terminator
 DO_clause <-               spaces? DO                   # language flags
+DU_clause <-               spaces? DU                   # metadata scope
                                                         #
 SI_clause  <- free_prefix* spaces? SI                   # chain place selection
 ZI_clause  <- free_prefix* spaces? ZI                   # chain unit core transformation
@@ -128,10 +132,11 @@ KI_clause  <-              spaces? KI                   # symbol/generic variabl
 MI_clause  <- free_prefix* spaces? MI                   # particle predicates
                                                         #
 PI_clause  <-              spaces? PI                   # namespace separator
-PE_clause  <- free_prefix* spaces? PE  free_suffix*     # scoped unit starter
-PEI_clause <-              spaces? PEI                  # scope unit elidible terminator
-PO_clause  <- free_suffix* spaces? PO free_suffix*      # paragraph marker
-PU_clause  <-              spaces? PU free_suffix*      # sentence terminator
+PE_clause  <- free_prefix* spaces? PE  free_suffix*     # scoped unit/enum starter
+PEI_clause <-              spaces? PEI                  # scoped unit/enum elidible terminator
+PA_clause  <-              spaces? PA                   # RESERVED: echo-resumptive
+PO_clause  <- free_prefix* spaces? PO free_suffix*      # paragraph marker
+PU_clause  <-              spaces? PU                   # adverb
                                                         #
 TI_clause  <-              spaces? TI                   # digits
                                                         #
@@ -151,7 +156,6 @@ COI_clause <- free_prefix* spaces? COI                  # skipped foreign quote
 
 A_clause_elidible   <- A_clause?
 BE_clause_elidible  <- BE_clause?
-PU_clause_elidible  <- PU_clause?
 PEI_clause_elidible <- PEI_clause?
 VEI_clause_elidible <- VEI_clause?
 
@@ -164,6 +168,7 @@ MI    <- &particle_word                   (m vhowels)          &post_word
 PI    <- &particle_word                   (p &i vhowels)       &post_word
 PE    <- &particle_word !(PEI &post_word) (p &e vhowels)       &post_word
 PEI   <- &particle_word                   (p e i)              &post_word
+PA    <- &particle_word                   (p &a vhowels)       &post_word
 PO    <- &particle_word                   (p &o vhowels)       &post_word
 PU    <- &particle_word                   (p &u vhowels)       &post_word
 BI    <- &particle_word                   (b &i vhowels)       &post_word
@@ -180,6 +185,7 @@ DE    <- &particle_word                   (d &e vhowels)       &post_word
 DA    <- &particle_word !(DAI &post_word) (d &a vhowels)       &post_word
 DAI   <- &particle_word                   (d a i)              &post_word
 DO    <- &particle_word                   (d &o vhowels)       &post_word
+DU    <- &particle_word                   (d &u vhowels)       &post_word
 SI    <- &particle_word                   (s vhowels)          &post_word
 ZI    <- &particle_word                   (z vhowels)          &post_word
 CI    <- &particle_word                   (c &i vhowels)       &post_word

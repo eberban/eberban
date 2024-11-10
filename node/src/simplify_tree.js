@@ -15,11 +15,9 @@ const important_types = [
 
 	// scope
 	[ 'inner_definition', 'inner definition' ],
-	[ 'list', 'list' ],
-	[ 'list_item', 'list item' ],
-	[ 'compact_list', 'list' ],
-	[ 'compact_list_second_bu', 'compact list second bu' ],
-	[ 'compact_list_item', 'list item' ],
+	[ 'unit_enum', 'enum'],
+	[ 'unit_enum_compact_item', 'compact enum item'],
+	[ 'unit_enum_full_item', 'enum item'],
 	[ 'chain', 'chain' ],
 	[ 'chain_step_negation', 'chain step negation' ],
 	[ 'chain_step', 'chain step' ],
@@ -30,6 +28,7 @@ const important_types = [
 
 	// predicates
 	[ 'chain_unit', 'chain unit' ],
+	[ 'chain_unit_adverb', 'adverb' ],
 	[ 'unit_definable_namespaced', 'imported predicate' ],
 	[ 'compound', 'compound' ],
 	[ 'borrowing_group', 'borrowing group' ],

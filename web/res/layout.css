@@ -125,6 +125,10 @@ li.implicit {
 	background: var(--color-blue);
 }
 
+.box.box-chain-unit-adverb {
+	background: var(--color-pink);
+}
+
 .box.box-set {
 	background: var(--color-purple);
 }
