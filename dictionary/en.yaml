@@ -3806,6 +3806,7 @@ jnu:
   id: gi4jvusxpm
   family: "R"
   gloss: "big:"
+  tags: [intensity]
   short: |
     [E:tce* p] are big among all things satisfy property [O:(tca p)] (default: always true)
     (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
@@ -3813,10 +3814,14 @@ jnu:
   notes: |
     Each thing in [E] have more than [O] standard deviation(s) from the average size
     of [A].
+
+    In intensity mode ({sta}), all values are rescaled such that the average is now 0 and [O] standard
+    deviations is now 1. This allows to use {ste}/{sto} instead of binding the [O] slot with a number.
 jni:
   id: ik7qjuwuxm
   family: "R"
   gloss: "small:"
+  tags: [intensity]
   short: |
     [E:tce* p] are small among all things satisfy property [O:(tca p)] (default: always true)
     (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
@@ -3824,6 +3829,9 @@ jni:
   notes: |
     Each thing in [E] have less than [O] standard deviation(s) from the average size
     of [A].
+
+    In intensity mode ({sta}), all values are rescaled such that the average is now 0 and [O] standard
+    deviations is now 1. This allows to use {ste}/{sto} instead of binding the [O] slot with a number.
 jnuhi:
   id: yw2t4sv9sb
   family: "R"
