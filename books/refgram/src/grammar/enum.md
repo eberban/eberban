@@ -1,9 +1,9 @@
 # Enumeration (PE/BU)
 
 We've seen before particles __pe__ and __pei__ that are like spoken brackets. __pe__ is part of
-family __PE__ which provide a more general feature called an _enumeration_. It allows to list zero
-to many _items_ which are used differently depending on which __PE__ is used. Items separation is
-done using __bu__ (only member of __BU__) in 2 possible mays:
+family __PE__ which provide a more general feature called an _enumeration_. It allows to list
+_items_ which are used differently depending on which __PE__ is used. Items separation is done using
+__bu__ (only member of __BU__) in 2 possible mays:
 
 - separator: __PE__ is followed by multiple chains, each separated by __bu__.
 - prefix: __PE__ is immediatly followed by __bu__. Then each item is a single predicate, and items
@@ -27,4 +27,5 @@ __PE__ family contains the following members:
 - __pehu__: Makes a list of predicates.
   > No exemple as usages of predicates lists as they are mostly used by words with complex meanings.
 
-An empty set doesn't exist, but the empty list does. `peo/pehu bu pei` makes such empty list.
+An empty enum can be made with `PE bu PEI`. However Eberban doesn't consider the empty set exists,
+while the empty list does. When used with __pe__, it makes an always true predicate.

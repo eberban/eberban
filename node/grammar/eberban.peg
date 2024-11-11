@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.62.1
+# eberban PEG grammar - v0.62.2
 # =============================
 
 # GRAMMAR
@@ -80,8 +80,8 @@ spelling_quote_unit <- spaces? spelling_quote_unit_2
 spelling_quote_unit_2 <- !CEI (initial_pair / consonant)? vhowels
 
 # enum
-unit_enum <- PE_clause (unit_enum_compact / unit_enum_full)? PEI_clause_elidible
-unit_enum_compact <- BU_clause unit_enum_compact_item+ !BU_clause
+unit_enum <- PE_clause (unit_enum_compact / unit_enum_full) PEI_clause_elidible
+unit_enum_compact <- BU_clause unit_enum_compact_item* !BU_clause
 unit_enum_compact_item <- BI_clause? chain_step
 unit_enum_full <- arguments_list? unit_enum_full_item (BU_clause unit_enum_full_item)*
 unit_enum_full_item <- chain
