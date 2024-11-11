@@ -1552,7 +1552,7 @@ pe:
   links:
     - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-pehe:
+pea:
   id: gelwsldtsb
   family: "PE"
   gloss: "#set-members["
@@ -1562,7 +1562,7 @@ pehe:
     Each member is distinct, the cardinality of the set equals the number of listed items.
   links:
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-pea:
+peo:
   id: z05feq6b63
   family: "PE"
   gloss: "#atom-set["
@@ -1570,7 +1570,7 @@ pea:
   short: "Atoms/generics set separator."
   links:
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-peha:
+peho:
   id: lhzsdl98sk
   family: "PE"
   gloss: "#pred-set["
@@ -1578,7 +1578,7 @@ peha:
   short: "Predicates set separator."
   links:
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-peo:
+peu:
   id: pyzvhbntb5
   family: "PE"
   gloss: "#atom-list["
@@ -1586,7 +1586,7 @@ peo:
   short: "Atoms/generics list separator."
   links:
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
-peho:
+pehu:
   id: 6ekftp64e3
   family: "PE"
   gloss: "#pred-list["
@@ -3195,22 +3195,6 @@ fuliu:
   gloss: "product"
   tags: ["maths"]
   short: "[E:tce gan] is the product of numbers in list [A:blu tce gan]."
-# konor:
-#   id: iophfsuxgp
-#   family: "R"
-#   gloss: "number pred:"
-#   short: |
-#     [E:(tce gan,tce gan)] is a predicate of the form: [E:tce gan] is [number]
-#     times [A:tce gan] (default: 1).
-#   notes: |
-#     Allows to check a predicate behaves like a number made from TI (+ jie), or
-#     other number predicates of the same form. Can be used to define math
-#     equations with the unknown being such a predicate, allowing to chain multiple
-#     the unknown for multiplication.
-
-#     Example: {o ga \[ge be\] fuli \[vi koro ge\] \[fa te bue, ta ge bu, to ge ge\] \[fe ti\]}\
-#     Question "ga": What is some number x such that 1 + 2x + 3x² = 0 ?
-
 bire:
   id: peug1pbvxf
   family: "R"

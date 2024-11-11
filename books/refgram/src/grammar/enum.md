@@ -14,17 +14,17 @@ __PE__ family contains the following members:
 - __pe__: Simply exposes the slots of the items. If there are multiple items, it perform an AND
   operator between them.
   > Exemple: `mi [pe [bure] bu [dona] pei] meon` = I [eat and like] an apple.
-- __pehe__: Makes a set from one member of each listed sets.
+- __pea__: Makes a set from one member of each listed sets.
   > Exemple: `mio [pehe bu [za ualis] [za ubob] (pei)]` = We are Alice and Bob.
-- __pea__: Makes a set such that a generic/atom that satisfy each item is a member of the set.
+- __peo__: Makes a set such that a generic/atom that satisfy each item is a member of the set.
   > Exemple: `[pea [tcu mian] bu [meon] (pei)]` = A set of {the set of all cats, a set of apples}.
-- __peha__: Makes a set of predicates.
+- __peho__: Makes a set of predicates.
   > Exemple: `me vone [peha bu [mian] [meon] (pei)]` = This is [a cat OR an apple].
-- __peo__: Makes a list such that a generic/atom that satisfy each item is  amember of the list (in
+- __peu__: Makes a list such that a generic/atom that satisfy each item is  amember of the list (in
   order).
   > Exemple: `[peo bu [mian] [meon] pei] blua [peo [meon] bu [mian] (pei)]` = List [a cat, an apple]
   > is list [an apple, a cat] in reverse order.
-- __peho__: Makes a list of predicates.
+- __pehu__: Makes a list of predicates.
   > No exemple as usages of predicates lists as they are mostly used by words with complex meanings.
 
 An empty set doesn't exist, but the empty list does. `peo/pehu bu pei` makes such empty list.
