@@ -1,4 +1,4 @@
-# Sentences (A/O/NI/RA/PO/PU)
+# Sentences (A/O/NI/RA/RI/PO)
 
 Eberban sentences all start with particles in families __A__, __O__ or __NI__, which are
 respectively all particles which start with __a-__, __o-__ and __n-__. They are followed by a
@@ -100,7 +100,7 @@ sentence.
   `no <namespace> pi <pred>` for all `<pred>` in `<namespace>`.
 
 
-## RA eraser
+## RA and RI erasers
 
 __ra__ is a special word which erase anything said since the start of the current sentence, initial
 __A/O/NI__ included. It must be surrounded by spaces or pauses.
@@ -117,7 +117,16 @@ looks like it is inside a foreign quote. To avoid this issue, it is recommended 
 the foreign quote (as if the text was grammatical), so that __ra__ will properly erase the
 sentence regardless of if the sentence was grammatical or not.
 
-To erase only a part of a sentence, use [short erasure "buhu"](../grammar/enum.md).
+> **Exemple :** *a sune ~~a not eberban text ra~~ a sunu*
+
+To erase only a part of a sentence, __RI__ can be used to erase the content of the current chain (it
+must still be grammatical). If used inside a scope like __VI/PE/..__ and more needs to be erased,
+the chain must be made valid again (by adding a dummy __ma__ for exemple), the scope needs to be
+closed (with __VEI/PEI/..__), and then __RI__ can be used again.
+
+__VI/PE/..__ can thus also be used as a marker when you think you may make a mistake.
+
+> **Exemple :** *a mi pe ~~buri meon ri~~ bure meon*
 
 ## Paragraph marker PO
 
@@ -133,12 +142,6 @@ __PO__ contains 2 members __po__ and __poi__, which affects definitions involvin
 - Outside a text imported with __ohi__, predicates defined in a namespace will not be exported
   by __noi__ if defined in a __poi__ paragraph, while they will be exported if defined in a __po__
   paragraph. In both cases they are accessible with __PI__.
-
-## Sentence terminator PU
-
-Every sentence can optionally be terminated with __PU__ (with single member __pu__). It's sole
-purpose is to [attach annotations](../grammar/annotations.md) on the sentence after the fact, as
-if it was attached on __A/O/NI__.
 
 ## Conversations and special namespaces
 

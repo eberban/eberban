@@ -19,6 +19,7 @@ const important_types = [
 	[ 'unit_enum_compact_item', 'compact enum item'],
 	[ 'unit_enum_full_item', 'enum item'],
 	[ 'chain', 'chain' ],
+	[ 'chain_erased', 'erased' ],
 	[ 'chain_step_negation', 'chain step negation' ],
 	[ 'chain_step', 'chain step' ],
 	[ 'explicit_bind_group', 'explicit bind group' ],

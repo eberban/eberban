@@ -7,7 +7,7 @@
 - [Logic framework](logic/intro.md)
   - [Chaining](logic/chaining.md)
   - [Explicit binding (VI/FI/SI/PE/KI/GI/BA)](logic/explicit_binding.md)
-  - [Sentences (A/O/NI/RA/PO/PU)](logic/sentences.md)
+  - [Sentences (A/O/NI/RA/RI/PO)](logic/sentences.md)
   - [Logical primitives (MI)](logic/primitives.md)
   - [Predicate transformations (ZI/BI)](logic/transformations.md)
   - [Default arguments](logic/default.md)

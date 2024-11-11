@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.62
+# eberban PEG grammar - v0.62.1
 # =============================
 
 # GRAMMAR
@@ -16,10 +16,14 @@ sentence_starter <- A_clause / O_clause / NI_clause
 # sentence_erased_1 must appear first. While we want to erase ungrammatical text with RA, we don't
 # want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 sentence <- sentence_erased_1 / sentence_1 / sentence_erased_2
-sentence_1 <- (sentence_o / sentence_ni / sentence_a)
+sentence_1 <- (sentence_o / sentence_ni / sentence_a) &post_sentence
+# Ensure sentence ends because a new sentence/paragraph start or EOF is reached, instead of just
+# failing to parse more. Necessary to make sentence_erased_2 work properly, as an invalid sentence
+# starting valid would otherwise split into 2 sentences.
+post_sentence <- spaces? (sentence_starter / PO_clause / EOF)
 
 sentence_erased_1 <- sentence_1 sentence_eraser
-sentence_erased_2 <- sentence_starter? (!(sentence_starter / sentence_eraser) .)* sentence_eraser
+sentence_erased_2 <- sentence_starter? (!sentence_eraser .)* sentence_eraser
 
 arguments_list <- (KI_clause / GI_clause / BA_clause)* BE_clause
 
@@ -30,7 +34,9 @@ sentence_ni <- NI_clause unit_used_definable
 # chaining
 inner_definition <- arguments_list? chain
 
-chain <- (chain_step_negation / chain_step)+
+chain <- (chain_erased+ (chain_1 / EOF)) / chain_1
+chain_erased <- chain_1 chain_eraser
+chain_1 <- (chain_step_negation / chain_step)+
 chain_step_negation <- BI_clause chain
 
 chain_step <- chain_unit explicit_bind_group*
@@ -301,6 +307,8 @@ hesitation <- (n (space_char+ / EOF))+
 
 sentence_eraser <- (spaces RA+)+ spaces
 RA <- r a
+chain_eraser <- spaces RI spaces
+RI <- r i
 
 # - Special characters
 hyphen <- (hyphen_char [\n\r]*)? # hyphens + line break support

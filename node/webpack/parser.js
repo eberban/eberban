@@ -47,7 +47,7 @@ const boxClassForTypeMap = new Map([
 	// text
 	[ 'paragraph', 'box box-paragraph' ],
 	[ 'paragraph unit', 'box box-paragraph-unit' ],
-	[ 'erased', 'erased' ],
+	[ 'erased', 'box erased' ],
 	[ 'default', 'box box-sentence' ],
 	[ 'sentence', 'box box-sentence' ],
 	[ 'definition', 'box box-sentence' ],
