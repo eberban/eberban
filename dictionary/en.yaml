@@ -4587,6 +4587,52 @@ sibdin:
   gloss: "toilet"
   short: |
     [E:tce* pan] is a toilet.
+sta:
+  id: mw5tvl8xaj
+  family: "R"
+  gloss: "intensity:"
+  tags: [intensity]
+  short: "[E:tce gan] is the intensity of [A:()]."
+  notes: |
+    Evaluates [A] in intensity mode, which allows to measure the intensity of some concepts.
+
+    In normal mode, intensity-aware predicates evaluates to true if the intensity is above a minimum
+    threashold of 1. In intensity mode, this threashold is absent and thus they may evaluate to true
+    for lower values, which is compensated by having access to that intensity directly. We can thus
+    customize the filter with another word to express new meanings: very, not much, negative
+    intensity (like vs dislake), etc.
+
+    If there are multiple intensity aware predicates, their intensity are averaged.
+sto:
+  id: j179w2ippe
+  family: "R"
+  gloss: "very:"
+  tags: [intensity]
+  short: "[A:()] is very intense."
+  notes: |
+    Divides the intensity ({sta}) of [A] by 2, and state it must be greater than 1. This means the
+    intensity of [A] must be greater than 2. Is itself intensity-aware, so multiple {ste} can be
+    chained together with {pu}, or {sti} can be used to negate the intensity.
+ste:
+  id: gbapurac5a
+  family: "R"
+  gloss: "lightly:"
+  tags: [intensity]
+  short: "[A:()] is lightly intense."
+  notes: |
+    Multiplies the intensity ({sta}) of [A] by 2, and state it must be greater than 1. This means
+    the intensity of [A] must be greater than 0.5. Is itself intensity-aware, so multiple {ste} can
+    be chained together with {pu}, or {sti} can be used to negate the intensity.
+sti:
+  id: cn9z8uo60i
+  family: "R"
+  gloss: "anti:"
+  tags: [intensity]
+  short: "[A:()] is negative with normal intensity."
+  notes: |
+    Multiplies the intensity ({sta}) of [A] by -1, and state it must be greater than 1. This means
+    the intensity of [A] must be less than -1. Is itself intensity-aware, so can be combined with
+    {ste} and {sto} to increase or decrease the threashold.
 
 # -----
 # Compounds
