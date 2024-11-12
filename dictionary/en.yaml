@@ -356,6 +356,25 @@ viu:
     equivalent. The U place must be a predicate place.
   links:
     - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
+voi:
+  id: wvdkovz6eg
+  family: "VI"
+  gloss: "adv["
+  short: Starts adverbial/prepositional clause.
+  notes: |
+    Followed by a single predicate P, and any following predicates (if any) form chain C.
+
+    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
+    bindings of that predicate are evaluated outside of that [A] slot. 
+    
+    Chain C will be bound to the [E] slot of P.
+    
+    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
+    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
+    is bound to C, while second exposed slot wraps the attached to predicate.
+  see_also: [foi]
+  links:
+    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 fi:
   id: kd9qbtxtq0
   family: "FI"
@@ -507,6 +526,25 @@ fai:
     non-closed VI, is equivalent to with the following predicate chain.
   links:
     - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
+foi:
+  id: INSERT_WORD_ID
+  family: "VI"
+  gloss: "]adv["
+  short: Starts adverbial/prepositional clause.
+  notes: |
+    Followed by a single predicate P, and any following predicates (if any) form chain C.
+
+    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
+    bindings of that predicate are evaluated outside of that [A] slot. 
+    
+    Chain C will be bound to the [E] slot of P.
+    
+    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
+    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
+    is bound to C, while second exposed slot wraps the attached to predicate.
+  see_also: [voi]
+  links:
+    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 se:
   id: qgxn2xhcit
   family: "SI"
@@ -1644,18 +1682,6 @@ poi:
     {noi}.
   links:
     - ["icon-book", "Sentences - Paragraph marker PO", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#paragraph-marker-po]
-pu:
-  id: wvdkovz6eg
-  family: "PU"
-  gloss: "#adverb:"
-  short: |
-    The following predicate P1 wraps in its [A] slot the next predicate P2. The resulting predicate
-    exposes the slots of P2.
-  notes: |
-    P1 slot can be selected using a SI: it will use the second slot expressed by that SI (the new
-    [A] slot).
-  links:
-    - ["icon-book", "Adverbs", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 ohi:
   id: j7cwz23nkd
   family: "O"
@@ -3826,7 +3852,7 @@ jni:
     [E:tce* p] are small among all things satisfy property [O:(tca p)] (default: always true)
     (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
     A), with standard deviation [O:tca gan] (default: 1).
-  notes: |
+  notes: | 
     Each thing in [E] have less than [O] standard deviation(s) from the average size
     of [A].
 
@@ -4604,7 +4630,7 @@ sto:
   notes: |
     Divides the intensity ({sta}) of [A] by 2, and state it must be greater than 1. This means the
     intensity of [A] must be greater than 2. Is itself intensity-aware, so multiple {ste} can be
-    chained together with {pu}, or {sti} can be used to negate the intensity.
+    chained together with {voi/foi}, or {sti} can be used to negate the intensity.
 ste:
   id: gbapurac5a
   family: "R"
@@ -4614,7 +4640,7 @@ ste:
   notes: |
     Multiplies the intensity ({sta}) of [A] by 2, and state it must be greater than 1. This means
     the intensity of [A] must be greater than 0.5. Is itself intensity-aware, so multiple {ste} can
-    be chained together with {pu}, or {sti} can be used to negate the intensity.
+    be chained together with {voi/foi}, or {sti} can be used to negate the intensity.
 sti:
   id: cn9z8uo60i
   family: "R"
@@ -5277,12 +5303,11 @@ e me gei:
   gloss: "(elliptical)"
   short: |
     A transitive equivalence elliptical predicate the speaker has in mind.
-e blan pu:
+e blan sai:
   id: b14thh7qux
   family: "C"
   short: "[A:()] occurs beautifully according to [E:tce man] (default: {bzael})."
   gloss: "beautifully:"
-
 
 # Spelling
 _spelling:

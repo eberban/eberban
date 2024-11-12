@@ -18,7 +18,7 @@
   - [Compounds (e-)](grammar/compounds.md)
   - [Quotes (c-)](grammar/quotes.md)
   - [Enumeration (PE/BU)](grammar/enum.md)
-  - [Adverbs (PU)](grammar/adverbs.md)
+  - [Adverbs and prepositions (voi/foi)](grammar/adverbs.md)
   - [Numbers (TI/j-)](grammar/numbers.md)
   - [Annotations (d-)](grammar/annotations.md)
 - [Vocabulary design]()

@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.62.2
+# eberban PEG grammar - v0.62.3
 # =============================
 
 # GRAMMAR
@@ -45,8 +45,7 @@ explicit_bind_first <- BI_clause? VI_clause inner_definition
 explicit_bind_additional <- BI_clause? FI_clause inner_definition
 
 chain_unit <- chain_unit_1 free_suffix*
-chain_unit_1 <- chain_unit_adverb* (SI_clause !SI_clause / ZI_clause)* chain_unit_2
-chain_unit_adverb <- PU_clause !PU_clause chain_step
+chain_unit_1 <- (SI_clause !SI_clause / ZI_clause)* chain_unit_2
 chain_unit_2 <- unit_used_definable / unit_inline_assignement / KI_clause / BA_clause / MI_clause / unit_quote / unit_enum / unit_borrowing / unit_number
 unit_inline_assignement <- free_prefix* BO_clause (KI_clause / unit_definable)
 
