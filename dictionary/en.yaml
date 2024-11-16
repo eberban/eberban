@@ -4068,7 +4068,7 @@ sre:
   family: "R"
   gloss: "before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs before [A:()], separated by [O:tce gan] time."
+  short: "[A:()] occurs before [E:tca ski] (default: current context event), separated by [O:tce gan] time."
   notes: |
     The end of "it" is before the start of [A].
   links:
@@ -4078,7 +4078,7 @@ sru:
   family: "R"
   gloss: "after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs after [A:()], separated by [O:tce gan] time."
+  short: "[A:()] occurs after [E:tca ski] (default: current context event), separated by [O:tce gan] time."
   notes: |
     The start of "it" is after the end of [A].
   links:
@@ -4088,7 +4088,7 @@ sra:
   family: "R"
   gloss: "starts:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) starts [A:()]"
+  short: "[A:()] starts [E:tca ski] (default: current context event)."
   notes: |
     The start of "it" is the start of [A].
   links:
@@ -4100,7 +4100,7 @@ sro:
   tags: [time, tense]
   short: "It finishes [A:()]"
   notes: |
-    The end of [E:tca ski] (default: current context event) is the end of [A].
+    The end of [A:()] is the end of [E:tca ski] (default: current context event).
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srui:
@@ -4108,7 +4108,7 @@ srui:
   family: "R"
   gloss: "contains:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) contains [A:()]"
+  short: "[A:()] contains [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srei:
@@ -4116,7 +4116,7 @@ srei:
   family: "R"
   gloss: "contained-by:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) is contained by [A:()]"
+  short: "[A:()] is contained by [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srai:
@@ -4124,7 +4124,7 @@ srai:
   family: "R"
   gloss: "intersects-with:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) intersects with [A:()]"
+  short: "[A:()] intersects with [E:tca ski] (default: current context event)"
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sri:
@@ -5044,7 +5044,7 @@ e ti sre:
   family: "C"
   gloss: "just-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs less than 1 second (excluded) before [A:()]."
+  short: "[A:()] occurs less than 1 second (excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e ti sru:
@@ -5052,7 +5052,7 @@ e ti sru:
   family: "C"
   gloss: "just-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs less than 1 second (excluded) after [A:()]."
+  short: "[A:()] occurs less than 1 second (excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e vola sre:
@@ -5060,7 +5060,7 @@ e vola sre:
   family: "C"
   gloss: "seconds-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs seconds (between 1 second included and 1 minute excluded) before [A:()]."
+  short: "[A:()] occurs seconds (between 1 second included and 1 minute excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e vola sru:
@@ -5068,7 +5068,7 @@ e vola sru:
   family: "C"
   gloss: "seconds-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs seconds (between 1 second included and 1 minute excluded) after [A:()]."
+  short: "[A:()] occurs seconds (between 1 second included and 1 minute excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e jero sre:
@@ -5076,7 +5076,7 @@ e jero sre:
   family: "C"
   gloss: "minutes-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs minutes (between 1 minute included and 1 hour excluded) before [A:()]."
+  short: "[A:()] occurs minutes (between 1 minute included and 1 hour excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e jero sru:
@@ -5084,7 +5084,7 @@ e jero sru:
   family: "C"
   gloss: "minutes-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs minutes (between 1 minute included and 1 hour excluded) after [A:()]."
+  short: "[A:()] occurs minutes (between 1 minute included and 1 hour excluded) after[E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e sura sre:
@@ -5092,7 +5092,7 @@ e sura sre:
   family: "C"
   gloss: "hours-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs hours (between 1 hour included and 1 day excluded) before [A:()]."
+  short: "[A:()] occurs hours (between 1 hour included and 1 day excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e sura sru:
@@ -5100,7 +5100,7 @@ e sura sru:
   family: "C"
   gloss: "hours-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs hours (between 1 hour included and 1 day excluded) after [A:()]."
+  short: "[A:()] occurs hours (between 1 hour included and 1 day excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e dena sre:
@@ -5108,7 +5108,7 @@ e dena sre:
   family: "C"
   gloss: "days-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs days (between 1 day included and 1 week excluded) before [A:()]."
+  short: "[A:()] occurs days (between 1 day included and 1 week excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e dena sru:
@@ -5116,7 +5116,7 @@ e dena sru:
   family: "C"
   gloss: "days-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs days (between 1 day included and 1 week excluded) after [A:()]."
+  short: "[A:()] occurs days (between 1 day included and 1 week excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e kora sre:
@@ -5124,7 +5124,7 @@ e kora sre:
   family: "C"
   gloss: "weeks-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs weeks (between 1 week included and 1 month excluded) before [A:()]."
+  short: "[A:()] occurs weeks (between 1 week included and 1 month excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e kora sru:
@@ -5132,7 +5132,7 @@ e kora sru:
   family: "C"
   gloss: "weeks-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs weeks (between 1 week included and 1 month excluded) after [A:()]."
+  short: "[A:()] occurs weeks (between 1 week included and 1 month excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e gare sre:
@@ -5140,7 +5140,7 @@ e gare sre:
   family: "C"
   gloss: "months-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs months (between 1 month included and 1 year excluded) before [A:()]."
+  short: "[A:()] occurs months (between 1 month included and 1 year excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e gare sru:
@@ -5148,7 +5148,7 @@ e gare sru:
   family: "C"
   gloss: "months-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs months (between 1 month included and 1 year excluded) after [A:()]."
+  short: "[A:()] occurs months (between 1 month included and 1 year excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e bire sre:
@@ -5156,7 +5156,7 @@ e bire sre:
   family: "C"
   gloss: "years-before:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs years (more than 1 year included) before [A:()]."
+  short: "[A:()] occurs years (more than 1 year included) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e bire sru:
@@ -5164,7 +5164,7 @@ e bire sru:
   family: "C"
   gloss: "years-after:"
   tags: [time, tense]
-  short: "[E:tca ski] (default: current context event) occurs years (more than 1 year included) after [A:()]."
+  short: "[A:()] occurs years (more than 1 year included) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 # e skal zari:

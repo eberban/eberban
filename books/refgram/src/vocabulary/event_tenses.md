@@ -43,14 +43,14 @@ common timespan**.
 Time relations relates an **inner proposition** (it's A slot) with a reference event (E slot), which by
 default is the **outer proposition** current event.
 
-- *sre*: E **is before** A: end of E is before the start of A
-- *sra*: E **starts** A: start of E is start of A
-- *sro*: E **finishes** A: end of E is end of A
-- *sru*: E **is after** A: start of E is after the end of A
-- *srui*: E **contains** A
-- *srei*: E **is contained by** A
-- *srai*: E **intersects with** A
-- *sri*: E **is unconstrained by** A
+- *sre*: A **is before** E: end of A is before the start of E
+- *sra*: A **starts** E: start of A is start of E
+- *sro*: A **finishes** E: end of A is end of E
+- *sru*: A **is after** E: start of A is after the end of E
+- *srui*: A **contains** E
+- *srei*: A **is contained by** E
+- *srai*: A **intersects with** E
+- *sri*: A **is unconstrained by** E
 
 *sre* (before) and *sru* (after) have an O slot for the duration separating the 2 timespans. As
 giving a precise duration may be difficult or too precise, compounds with time units are made to
