@@ -40,18 +40,17 @@ common timespan**.
 
 ## Time relations
 
-Time relations are embeded in an **outer proposition** and wraps an **inner proposition** (A slot)
-with a dedicated **common timespan**, and relates the **outer common timespan** with the **inner
-common timespan**. The predicates are transitive and ignore their E slot, which allows to directly
-use them after another predicate.
+Time relations relates an **inner proposition** (it's A slot) with a reference event (E slot), which by
+default is the **outer proposition** current event.
 
-- *sre*: Outer **is before** inner: end of outer is before the start of inner
-- *sra*: Outer **starts** inner: start of outer is start of inner
-- *sro*: Outer **finishes** inner: end of outer is end of inner
-- *sru*: Outer **is after** inner: start of outer is after the end of inner
-- *srui*: Outer **contains** inner
-- *srei*: Outer **is contained by** inner
-- *sri*: Outer **is unconstrained by** inner
+- *sre*: E **is before** A: end of E is before the start of A
+- *sra*: E **starts** A: start of E is start of A
+- *sro*: E **finishes** A: end of E is end of A
+- *sru*: E **is after** A: start of E is after the end of A
+- *srui*: E **contains** A
+- *srei*: E **is contained by** A
+- *srai*: E **intersects with** A
+- *sri*: E **is unconstrained by** A
 
 *sre* (before) and *sru* (after) have an O slot for the duration separating the 2 timespans. As
 giving a precise duration may be difficult or too precise, compounds with time units are made to
@@ -77,8 +76,7 @@ An event (*ski*) is modeled as an object containing the following information:
 ## Event words
 
 *ski* allows to related an event (E slot) with its defining propositon (A slot). It evaluates this
-proposition with its own **inner common timespan**, and doesn't relate it with the **outer common
-timespan**. "I like the event of [you dance]" doesn't means that the "liking" and the "dancing"
+proposition with its own **inner common timespan**, and doesn't relate it with another event. "I like the event of [you dance]" doesn't means that the "liking" and the "dancing"
 occurs at the same time. Inside a *ski* or in a sentence, *skul* can be used to refer to the
 current event.
 
