@@ -734,7 +734,7 @@ zei:
   family: "ZI"
   gloss: "#anaph-compound"
   tags: [core]
-  short: "Refer to the variables satisfying the latest instance of a compound containing this predicate word.""
+  short: "Refer to the variables satisfying the latest instance of a compound containing this predicate word."
   links:
     - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
 zeu:
