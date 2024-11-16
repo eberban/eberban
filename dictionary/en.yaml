@@ -4643,6 +4643,7 @@ flir:
   gloss: "face"
   short: |
     [E:tce* pan] is a face (body part).
+  tags: [body]
 sibdin:
   id: a9blqu7rgx
   family: "R"
@@ -4695,6 +4696,13 @@ sti:
     Multiplies the intensity ({sta}) of [A] by -1, and state it must be greater than 1. This means
     the intensity of [A] must be less than -1. Is itself intensity-aware, so can be combined with
     {ste} and {sto} to increase or decrease the threashold.
+klao:
+  id: cbchzguehy
+  family: "R"
+  gloss: "chain-rel"
+  short: |
+    [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
+    member of [A] satisfies [O] with the following member.
 
 # -----
 # Compounds
