@@ -3485,29 +3485,53 @@ bior:
   gloss: "underwear"
   short: "[E:tce* pan] is an underwear/underpants/panties."
   tags: [clothing, wearable]
-padgon:
+toro:
+  id: rdsie2ychy
+  family: "R"
+  gloss: "joint"
+  short: "[E:tce pan] is a joint between [A:tco pan], [A] are connected together by [E]."
+  tags: [body]
+ceor:
+  id: o7ryd10lwu
+  family: "R"
+  gloss: "organ"
+  short: "[E:tce* pan] is an organ."
+  tags: [body]
+treun:
+  id: g4mtuykzjn
+  family: "R"
+  gloss: "trunk"
+  short: "[E:tce pan] is a trunk (central part of the body)."
+  tags: [body]
+zlier:
   id: oyemdfrbzy
   family: "R"
   gloss: "arm"
   short: "[E:tce* pan] is an arm."
   tags: [body]
-zuanan:
-  id: ypph5jwrme
+zlior:
+  id: r2j7n1mftn
   family: "R"
-  gloss: "foot"
-  short: "[E:tce* pan] is a foot."
+  gloss: "leg"
+  short: "[E:tce* pan] is a leg."
   tags: [body]
-kenan:
+kenen:
   id: s4ekzm38rl
   family: "R"
   gloss: "hand"
   short: "[E:tce* pan] is a hand."
   tags: [body]
-glehul:
-  id: uwmxjgjvh7
+kenon:
+  id: ypph5jwrme
   family: "R"
-  gloss: "genitals"
-  short: "[E:tce* pan] are genitals."
+  gloss: "foot"
+  short: "[E:tce* pan] is a foot."
+  tags: [body]
+zinul:
+  id: ue37g3p56o
+  family: "R"
+  gloss: "finger"
+  short: "[E:tce pan] is a finger"
   tags: [body]
 kirun:
   id: ja9wfwwifa
@@ -3515,7 +3539,13 @@ kirun:
   gloss: "head"
   short: "[E:tce* pan] is a head."
   tags: [body]
-ctuan:
+glaen:
+  id: uwmxjgjvh7
+  family: "R"
+  gloss: "genitals"
+  short: "[E:tce* pan] are genitals."
+  tags: [body]
+glaon:
   id: ioxa2c03t6
   family: "R"
   gloss: "buttocks"
@@ -3533,7 +3563,7 @@ virun:
   gloss: "eye"
   short: "[E:tce* pan] is an eye."
   tags: [body]
-tcil:
+gnoil:
   id: mqmszfhjbp
   family: "R"
   gloss: "breast"
@@ -3557,22 +3587,34 @@ puren:
   gloss: "ear"
   short: "[E:tce* pan] is an ear."
   tags: [body]
-zailun:
-  id: 06rcemltv3
+panal:
+  id: i1gedyvymh
   family: "R"
-  gloss: "neck"
-  short: "[E:tce* pan] is a neck."
+  gloss: "skin"
+  short: "[E:tce* pan] is skin."
+  tags: [body]
+cilun:
+  id: q1gdgaz05x
+  family: "R"
+  gloss: "bone"
+  short: "[E:tce* pan] is a bone."
+  tags: [body]
+zekta:
+  id: j0bdfwp4lb
+  family: "R"
+  gloss: "pain"
+  short: "[E:tce pan] feels pain which seems located in [A:tce pan]."
   tags: [body]
 dogmu:
   id: aiczmufvcq
   family: "R"
   gloss: "governs"
   short: "[E:tce pan] governs people [A:tce* pan]."
-glogdu:
+gogdul:
   id: iwjm1mv0ij
   family: "R"
   gloss: "tentacle"
-  short: "[E:tce* pan] is a tentacle of [A:tce pan]"
+  short: "[E:tce* pan] is a tentacle."
   tags: [body]
 tsir:
   id: zkravpgbit
@@ -5084,7 +5126,7 @@ e jero sru:
   family: "C"
   gloss: "minutes-after:"
   tags: [time, tense]
-  short: "[A:()] occurs minutes (between 1 minute included and 1 hour excluded) after[E:tca ski] (default: current context event)."
+  short: "[A:()] occurs minutes (between 1 minute included and 1 hour excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e sura sre:
@@ -5336,6 +5378,51 @@ e ski kagve:
   family: "C"
   short: "[E:tca ski] is the \"current event\" contained in context [A:c]."
   gloss: "event@context"
+e toro zlier:
+  id: j8hqhxb3ij
+  family: "C"
+  short: "[E:tce* pan] is an elbow."
+  gloss: "elbow"
+e toro zlior:
+  id: 90bxf8eqsg
+  family: "C"
+  short: "[E:tce* pan] is a knee."
+  gloss: "knee"
+e zlier kenen:
+  id: pnn6qjo0p8
+  family: "C"
+  short: "[E:tce* pan] is a wrist."
+  gloss: "wrist"
+e zlior kenon:
+  id: axlpdctp7v
+  family: "C"
+  short: "[E:tce* pan] is a ankle."
+  gloss: "ankle"
+e treun zlier:
+  id: dx28ywfi3h
+  family: "C"
+  short: "[E:tce* pan] is a shoulder."
+  gloss: "shoulder"
+e treun kirun:
+  id: 06rcemltv3
+  family: "C"
+  short: "[E:tce* pan] is a neck."
+  gloss: "neck"
+e treun zlior:
+  id: 70o68q45ps
+  family: "C"
+  short: "[E:tce* pan] is a hip."
+  gloss: "hip"
+e zinul jiu:
+  id: wbul6chj24
+  family: "C"
+  short: "[A:tce* pan] is the [E:tce gan]th finger of a hand/foot."
+  notes: |
+    [E] is 0-indexed.
+
+    When looking at the upper side of the hand/foot, the fingers are ordered from back-interior to front to back-exterior.
+    If a finger is considered to be the in the middle of the back then it is considered the first.
+  gloss: "nth-finger"
 
 # Spelling
 _spelling:
