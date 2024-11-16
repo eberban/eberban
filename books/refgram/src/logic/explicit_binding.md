@@ -67,16 +67,16 @@ by __sharing__ (like the final __-i__ rule for roots).
 Any __BA__ used in the argument list allow skipping this argument if it is not
 used in the inner predicate. Which __BA__ member is used doesn't matter.
 
-> __mi dona [va ke be: mian bure ke]__
+> __mi dona [va ke be: mian etiansa ke]__
 >
 > \\[ \begin{align}
 > \text{mian}(c,e)       &= \text{[$e$ is a cat]} \\\\
-> \text{bure}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
+> \text{etiansa}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
-> \text{bure}_1(c,e,a)   &= \text{bure}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,a)} \\\\
-> \text{bure}^w_1(c,e)   &= \exists a. \text{bure}_1(c,e,a) \\\\
+> \text{etiansa}_1(c,e,a)   &= \text{etiansa}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,a)} \\\\
+> \text{etiansa}^w_1(c,e)   &= \exists a. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
+> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
 > \text{mian}^w_1(c)     &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
 > \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}^w_1(c) \\\\
@@ -98,7 +98,7 @@ gi-initial GI). __bai__, __baihi__ and __baihe__ on the other hand always adds
 an argument at the end of the **sentence arguments list**, which is mostly
 useful when asking questions.
 
-The above example can thus be shortened as _mi dona [va be mian bure __ba__]_.
+The above example can thus be shortened as _mi dona [va be mian etiansa __ba__]_.
 
 ## Right place and chaining selection
 
@@ -112,17 +112,17 @@ argument bound with a predicate on its right, and for the single argument that
 is exposed in the combined predicate. The right place is bound by sharing, while
 adding a final __-i__ makes it bound by equivalence.
 
-> __mian se bure blan__
+> __mian se etiansa blan__
 >
 > \\[ \begin{align}
 > \text{blan}(c,e)                       &= \text{[$e$ is beautiful]} \\\\
 > \\ \\\\
 > \text{blan}_1(c,e)                     &= \text{blan}(c,e) \\\\
 > \\ \\\\
-> \text{bure}_1(c,e,a)                   &= \text{bure}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\\\
-> \text{bure}^w_1(c,\color{magenta}{e})  &= \exists a. \text{bure}_1(c,e,a) \\\\
+> \text{etiansa}_1(c,e,a)                   &= \text{etiansa}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\\\
+> \text{etiansa}^w_1(c,\color{magenta}{e})  &= \exists a. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
+> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -133,15 +133,15 @@ vowels representing the two exposed place, and the second vowel corresponding to
 the slot bound with a predicate on its right. As with single vowel the right place
 is bound by sharing, while adding a final __-i__ makes it bound by equivalence.
 
-> __meon sae bure mian__
+> __meon sae etiansa mian__
 >
 > \\[ \begin{align}
 > \text{mian}_1(c,e)                    &= \text{mian}(c,e) \\\\
 > \\ \\\\
-> \text{bure}_1(c,e,a)                  &= \text{bure}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\\\
-> \text{bure}^w_1(c,\color{magenta}{a}) &= \exists e. \text{bure}_1(c,e,a) \\\\
+> \text{etiansa}_1(c,e,a)                  &= \text{etiansa}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\\\
+> \text{etiansa}^w_1(c,\color{magenta}{a}) &= \exists e. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
+> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\

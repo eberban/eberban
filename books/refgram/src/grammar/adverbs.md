@@ -12,8 +12,8 @@ affected by that context modification.
 For exemple, with `sra` meaning `[A:()] will occur`, usage with and without __voi__ differs in
 meaning:
 
-- `mi bure voi sra fa meon` = I will eat an apple (which exists now)
-- `mi sra bure meon` = I will eat an apple (which will exist)
+- `mi etiansa voi sra fa meon` = I will eat an apple (which exists now)
+- `mi sra etiansa meon` = I will eat an apple (which will exist)
 
 
 Any predicates present after the single predicate P1 form a chain C which will be bound to the E
@@ -22,7 +22,7 @@ slot of P1. This allows to have preposition-like clauses.
 For exemple, with `pani` meaning `Inside of [E:tce pan], [A:()] occurs` and `sru` meaning `[A:()]
 occured`:
 
-- `mi bure voi pani spua fa meon sae duna voi sru fa mo`: I eat in the house an apple that you gave
+- `mi etiansa voi pani spua fa meon sae duna voi sru fa mo`: I eat in the house an apple that you gave
   me (you're not necessarily in the house)
-- `spua pani mi bure meon sae duna voi sru fa mo`: In the house: I eat an apple that you gave me
+- `spua pani mi etiansa meon sae duna voi sru fa mo`: In the house: I eat an apple that you gave me
   (you were in the house and that's where you gave the apple to me)

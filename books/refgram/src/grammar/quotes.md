@@ -40,8 +40,8 @@ characters in the future.
 
 Examples:
 
-- `za ce u nu i ci e fi cei` = named UNICEF
-- `bure de ce bu u ri e cei` = bure (spelled BURE)
+- `za ce bu o bu cei` = named B-O-B
+- `tian de ce ti i a nu cei` = tian (spelled T-I-A-N)
 
 __ceu__ is another member of __CE__ that spells the sounds of a quote.
 

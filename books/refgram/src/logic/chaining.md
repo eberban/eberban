@@ -62,12 +62,12 @@ reduce verbosity in simple cases.
 > __mian bure__
 >
 > \\[ \begin{align}
-> \text{bure}(c,e,a)                    &= \text{[$e$ eats $a$]} \\\\
+> \text{etiansa}(c,e,a)                    &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
-> \text{bure}_1(c,e,a)                  &= \text{bure}(c,e,a) \\\\
-> \color{magenta}{\text{bure}^w_1(c,e)} &= \color{magenta}{\exists a. \text{bure}_1(c,e,a)} \\\\
+> \text{etiansa}_1(c,e,a)                  &= \text{etiansa}(c,e,a) \\\\
+> \color{magenta}{\text{etiansa}^w_1(c,e)} &= \color{magenta}{\exists a. \text{etiansa}_1(c,e,a)} \\\\
 > \\ \\\\
-> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{bure}^w_1(c,e)
+> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e)
 > \end{align} \\]
 >
 > Given $(c),$(e):\

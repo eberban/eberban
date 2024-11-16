@@ -126,7 +126,7 @@ closed (with __VEI/PEI/..__), and then __RI__ can be used again.
 
 __VI/PE/..__ can thus also be used as a marker when you think you may make a mistake.
 
-> **Exemple :** *a mi pe ~~buri meon ri~~ bure meon*
+> **Exemple :** *a mi pe ~~buri meon ri~~ etiansa meon*
 
 ## Paragraph marker PO
 

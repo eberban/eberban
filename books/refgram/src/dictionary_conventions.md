@@ -21,7 +21,7 @@ where each argument constraint is listed in between, separated by commas.
 > Exemples of meanings:
 >
 > - `mi: [E:tce* man] is I/me/a speaker/author.`
-> - `bure: [E:tce* den] eats [A:tce* den].`
+> - `etiansa: [E:tce* den] eats [A:tce* den].`
 > - `meon: [E:tce* den] is an apple.`
 > - `[E:tcei a] is a (non-empty) set of some things that individualy satisfy [A:(tca a)].`
 > - `mua: True if context [E:ma] makes [A:()] true.`
@@ -42,7 +42,7 @@ and a set satisfying the predicate doesn't necessarily imply that a subset of
 it will also satisfy the predicate.
 
 Having mainly set arguments like so means that, unless specified, the number of
-members of the set is left vague. Thus, the sentence _mi bure meon_ could
+members of the set is left vague. Thus, the sentence _mi etiansa meon_ could
 equally mean the following :
 
 - __I__ eat __one apple__.

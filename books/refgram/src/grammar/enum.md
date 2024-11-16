@@ -13,7 +13,7 @@ __PE__ family contains the following members:
 
 - __pe__: Simply exposes the slots of the items. If there are multiple items, it perform an AND
   operator between them.
-  > Exemple: `mi [pe [bure] bu [dona] pei] meon` = I [eat and like] an apple.
+  > Exemple: `mi [pe [etiansa] bu [dona] pei] meon` = I [eat and like] an apple.
 - __pea__: Makes a set from one member of each listed sets.
   > Exemple: `mio [pehe bu [za ualis] [za ubob] (pei)]` = We are Alice and Bob.
 - __peo__: Makes a set such that a generic/atom that satisfy each item is a member of the set.

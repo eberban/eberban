@@ -1601,7 +1601,7 @@ pe:
     Since it is a member of PE, {BU} can be used inside it. Each item is a predicate and all are
     stated to be true (AND operator). They share the same slots.
 
-    {mi pe bure bu dona pei meon} = I \[eat and like\] an apple.
+    {mi pe etiansa bu dona pei meon} = I \[eat and like\] an apple.
   links:
     - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
@@ -2332,16 +2332,6 @@ mian:
   gloss: "cat"
   tags: [animal]
   short: "[E:tce* pan] is a cat/felid/member of family Felidae."
-kala:
-  id: egsqs45rsj
-  family: "R"
-  gloss: "drinks"
-  short: "[E:tce* pan] drinks [E:tce* pan]."
-bure:
-  id: fp326p16jr
-  family: "R"
-  gloss: "eats"
-  short: "[E:tce pan] eats [A:tce pan]."
 zin:
   id: jct2wcsuqa
   family: "R"
@@ -2675,12 +2665,6 @@ cfan:
   gloss: "gas"
   tags: [matter]
   short: "[E:tce* pan] is a gas (state of matter)."
-tian:
-  id: s54akd0jsx
-  family: "R"
-  gloss: "food"
-  tags: [matter]
-  short: "[E:tce* pan] is food."
 jeon:
   id: xzllyv1sx1
   family: "R"
@@ -2980,11 +2964,6 @@ drair:
   family: "R"
   gloss: "god"
   short: "[E:tce* man] is a god."
-kroin:
-  id: biiaxhdwtb
-  family: "R"
-  gloss: "leg"
-  short: "[E:tce* pan] is a leg."
 marai:
   id: wdughdrr2i
   family: "R"
@@ -4561,7 +4540,7 @@ celio:
   family: "R"
   gloss: secret
   short: "[E:tce* man] is a secret among [A:tce pan]."
-geon:
+tian:
   id: apew64vr0p
   family: "R"
   gloss: food
@@ -5423,6 +5402,17 @@ e zinul jiu:
     When looking at the upper side of the hand/foot, the fingers are ordered from back-interior to front to back-exterior.
     If a finger is considered to be the in the middle of the back then it is considered the first.
   gloss: "nth-finger"
+e tian sa:
+  id: fp326p16jr
+  family: "C"
+  gloss: "eats"
+  short: "[E:tce pan] eats [A:tce pan]."
+e kalan sa:
+  id: egsqs45rsj
+  family: "C"
+  gloss: "drinks"
+  short: "[E:tce* pan] drinks [E:tce* pan]."
+
 
 # Spelling
 _spelling:

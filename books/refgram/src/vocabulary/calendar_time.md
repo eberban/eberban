@@ -73,5 +73,5 @@ __denai__ with this additional constraint that __E__ is the particular day of th
 > *a se ti e tia denai se tiu garei*\
 > Now is a Sunday, the day 0 of month 8 (September 1st)
 
-> *a mi drie meon sri se te denai skun srui mi bure ze meon*\
+> *a mi drie meon sri se te denai skun srui mi etiansa ze meon*\
 > I buy an apple, and tomorrow I will eat it.
