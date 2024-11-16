@@ -5411,8 +5411,55 @@ e kalan sa:
   id: egsqs45rsj
   family: "C"
   gloss: "drinks"
-  short: "[E:tce* pan] drinks [E:tce* pan]."
-
+  short: "[E:tce* pan] drinks [A:tce* pan]."
+e pani penu:
+  id: 5l5ploryal
+  family: "C"
+  gloss: "back-part"
+  short: "[E:tce* pan] is in the back part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified front-back direction and
+    established middle-point (usually the center of mass).
+e pani pena:
+  id: qf0g5dw7fq
+  family: "C"
+  gloss: "front-part"
+  short: "[E:tce* pan] is in the front part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified front-back direction and
+    established middle-point (usually the center of mass).
+e pani peno:
+  id: i8zmc7teu4
+  family: "C"
+  gloss: "left-part"
+  short: "[E:tce* pan] is in the left part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified left-right direction and
+    established middle-point (usually the center of mass).
+e pani pene:
+  id: 1h0a4yvlln
+  family: "C"
+  gloss: "right-part"
+  short: "[E:tce* pan] is in the right part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified left-right direction and
+    established middle-point (usually the center of mass).
+e pani peniu:
+  id: glg7ptsf4i
+  family: "C"
+  gloss: "top-part"
+  short: "[E:tce* pan] is in the top part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified top-bottom direction and
+    established middle-point (usually the center of mass).
+e pani penie:
+  id: i2p4fkz8u5
+  family: "C"
+  gloss: "bottom-part"
+  short: "[E:tce* pan] is in the bottom part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified top-bottom direction and
+    established middle-point (usually the center of mass).
 
 # Spelling
 _spelling:
