@@ -66,12 +66,12 @@ $(e) like that.
 To speak about the name itself, __zai__ must be used:
 \\([\text{$e$ is the name corresponding to property $P$}]\\).
 
-## Reference
+## Anaphora
 
 __ze__ allows the speaker to refer to the latest __non-wrapped__ instance of the
 prefixed predicate instead of creating a new instance. Arguments provided to
 this reference predicate (ignoring the implicit context argument) are stated to
-be equal to the ones the instance had.
+match ones the instance had.
 
 > __mian bure
 > a mi dona ze mian__
@@ -123,19 +123,15 @@ _ze mian_ refers to the __mian__ inside __gia__'s definition, which is last
 used in the __a__ sentence. The text can thus be translated as
 "A beautiful cat which likes itself".
 
-With some predicates such as sets (__tcu__ and other __tc-__ initials) the
-order in which the predicate is used is not defined. In this case __ze__ refers
-arbitrarily to one of them (which hypotetically would be the "last one"). Thus
-in
+__zeu__ allows to refer to the __context variable__ used to evaluate the
+__last instance__ of the predicate word, while __zeiu__ does the same to refer
+to the latest compound containing this word.
 
-_a meon sae bure tce __mian__ a mi dona ze mian_
+> TODO: Formalize how anaphora behaves when the last instance was evaluated
+> multiple times with different values. This is related to [donkey anaphora] and
+> is far from trivial to solve.
 
-can be translated as "An apple is eaten by some cats. I like one of those
-cats." It is however preferred to not refer to such an unordered instance, and
-instead refer to a clearly ordered word such as __tce__, for which we can speak
-about one of its members with __tci__ (is a member of) :
-
-_a meon sae bure __tce__ mian a mi dona tci ze tce_
+[donkey anaphora]: https://en.wikipedia.org/wiki/Donkey_sentence
 
 <span id="bo"></span>
 

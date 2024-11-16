@@ -527,7 +527,7 @@ fai:
   links:
     - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 foi:
-  id: INSERT_WORD_ID
+  id: 0rc4mfpym6
   family: "VI"
   gloss: "]adv["
   short: Starts adverbial/prepositional clause.
@@ -724,21 +724,36 @@ siu:
 ze:
   id: hq8iez19yn
   family: "ZI"
-  gloss: "#reuse"
+  gloss: "#anaph"
   tags: [core]
-  short: "Use the latest instance and variables of the predicate word instead of creating new ones."
+  short: "Refer to the variables satisfying the latest instance of this predicate word."
   links:
     - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
 zei:
   id: sryho6kcbc
   family: "ZI"
-  gloss: "#reuse-compound"
+  gloss: "#anaph-compound"
   tags: [core]
-  short: |
-    Use the latest instance and variables of a compound containing this word
-    instead of creating new ones.
+  short: "Refer to the variables satisfying the latest instance of a compound containing this predicate word.""
   links:
     - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
+zeu:
+  id: tmcv2t25bc
+  family: "ZI"
+  gloss: "#anaph-context"
+  tags: [core]
+  short: "Refer to the context of the latest instance of this predicate word."
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
+zeiu:
+  id: 9lkoyhbcef
+  family: "ZI"
+  gloss: "#anaph-compound-context"
+  tags: [core]
+  short: "Refer to the context of the latest instance of a compound containing this predicate word."
+  links:
+    - ["icon-book", "Predicate transformations (ZI) - Reference", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html#reference]
+
 zi:
   id: drzw8dig76
   family: "ZI"
