@@ -1995,7 +1995,7 @@ blu:
   short: |
     [E:blun] is a list of things all satisfying [A:(p)].
   notes: |
-    {bue} is syntaxic sugar to make lists.
+    {peu} is syntaxic sugar to make lists.
 bluni:
   id: 6oxelxxwxd
   family: "R"
@@ -2183,6 +2183,9 @@ gen:
   gloss: number-real
   tags: [math, number]
   short: "[E:tce* man] is a real number."
+  notes: |
+    Can be used at the end of a math unit chain to speak about an unspecified amount in that unit,
+    while preventing to be multiplied by a unit-carrying number that would change the unit.
 gan:
   id: fwg6wbeotx
   family: "R"
@@ -3927,6 +3930,12 @@ bjaor:
   gloss: "elephant"
   tags: ["animal"]
   short: "[E:tce* pan] is an elephant."
+graulin:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "dragon"
+  tags: ["animal", "mythical"]
+  short: "[E:tce* pan] is a dragon."
 coriu:
   id: zas8minuik
   family: "R"
@@ -5000,12 +5009,12 @@ e tia denai:
   gloss: "Sunday"
   tags: [time, event, day]
   short: "Now is a Sunday, which is the day [E:tce gien] of [A:()] (default: {garei})."
-en ce bue sa:
+en ce peu sa:
   id: 000sw1j82d
   family: "C"
   gloss: "spelled"
   short: "[E:tca man] is spelled as [A: blu ecema]"
-en ceu bue sa:
+en ceu peu sa:
   id: b0pxo862df
   family: "C"
   gloss: "uttered"
@@ -5034,7 +5043,7 @@ en o ol sai:
   notes: |
     {o !X !Y} can be modeled as being syntactic sugar for {oni !P !X ol !R be mi
     eio'ol via !P fo mo}. P is an unnameable predicate used solely for this purpose.
-e on bue:
+e on peu:
   id: jpvb7ytjfg
   family: "C"
   gloss: "dictionary"
