@@ -846,9 +846,8 @@ zue:
   tags: [core]
   short: |
     Transform an [A:()] place into an [A:(p)] place, which is provided the
-    content of the [E:p] place.\
-    The resulting predicate is transitive.
-
+    content of the [E:p] place. The resulting predicate is transitive.
+  notes: |
     While a SE before {i} can still override the chaining behavior, a SE after
     {zue} allow to select which places to use for the transformation.
 
@@ -1442,12 +1441,22 @@ coi:
 ra:
   id: spjmtjh1al
   family: "RA"
-  gloss: "#erase"
+  gloss: "#erase-sentence"
+  tags: [erase]
   short: |
-    Erase from the start of the current sentence.
-  see_also: ["buhu"]
+    Erase from the start of the current sentence, including non grammatical content.
   links:
-    - ["icon-book", "Sentences - RA eraser", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ra-eraser]
+    - ["icon-book", "Sentences - RA and RI erasers", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ra-and-ri-erasers]
+ri:
+  id: eulm6uksj9
+  family: "RI"
+  gloss: "#erase-chain"
+  tags: [erase]
+  short: |
+    Erase from the start of the current chain.
+  links:
+    - ["icon-book", "Sentences - RA and RI erasers", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ra-and-ri-erasers]
+
 za:
   id: 4hiwgkyaqe
   family: "ZI"
@@ -3061,7 +3070,6 @@ dzui:
   family: "R"
   gloss: "able:"
   short: "[E:tce pan] is able to satisfy property [A:(tce pan)]."
-
 benal:
   id: cvvwmrotg2
   family: "R"
@@ -3083,7 +3091,7 @@ zniri:
   gloss: "obligated:"
   short: |
     [A:()] is obligated to be performed under authority [E:tce* pan]. [A] is a duty.
-
+  notes: |
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
 zneri:
@@ -3093,7 +3101,7 @@ zneri:
   short: |
     [A:()] is encouraged to be performed under authority [E:tce* pan].\
     [A] is a virtuous/upstanding behavior.
-
+  notes: |
     Examples: charity, volunteer work, being polite
 znari:
   id: juramnwmey
@@ -3102,7 +3110,7 @@ znari:
   short: |
     [A:()] is neither encouraged nor discouraged (i.e. permitted) by authority [E:tce* pan].
     [A] is tolerated.
-
+  notes: |
     Examples: basically most actions are {znari}, there are so many examples
     -- the act of breathing is {znari}
 znori:
@@ -3111,7 +3119,7 @@ znori:
   gloss: "discouraged:"
   short: |
     [A:()] is discouraged to be performed under authority [E:tce* pan]; [A] is reprehensible.
-
+  notes: |
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
 znuri:
@@ -3120,7 +3128,7 @@ znuri:
   gloss: "forbidden:"
   short: |
     [A:()] is forbidden to be done by authority [E:tce* pan].
-
+  notes: |
     Examples: for many religions speaking badly of their deity is forbidden,
     crimes which are prosecuted, cheating on your partner in a monogamous relationship
 molai:
@@ -3625,26 +3633,19 @@ jaloi:
   short: "[E:tce man] satisfy relation [A:(tca man,tca man)] with each other."
   notes: |
     Each member of [E] satisfy relation with [A] with every other member of [E].
-zole:
+zoli:
   id: gbk8uduqqh
   family: "R"
-  gloss: "uses"
-  short: "[E:tce man] uses [A:tce* man] (tool) to satisfy [O:(tce man)]."
+  gloss: "with-tool:"
+  short: "[A:()] is realised using tool [E:tce* man]."
   notes: |
-    Predicates inside [O] can register tools using {zolen}.
-zolen:
+    [E] is a subset of all tools involved in [A]. To speak about all the tools
+    involved, see {etcuzoli}.
+zolin:
   id: enzha5idyj
   family: "R"
   gloss: "register-tool"
   short: "Register tool [E:tce* man] in the context."
-  notes: |
-    Goes in pair with {zole}. If context contains an entry with key {zai zolen},
-    this predicate states that [E] is a subset of the value of this entry. If
-    the context don't contain such entry then nothing is stated.
-
-    Wrapping with {zole} will setup this entry in the context it provides to its
-    O place and find a "smallest" set that makes O true, and check that its A
-    place is a subset of it.
 jine:
   id: cmjmwddxde
   family: "R"
@@ -3981,7 +3982,7 @@ zailu:
   family: "R"
   gloss: "rotates"
   short: "[E:tce* pan] rotates, spins, turns around axis [A:tce* pan]."
-zoli:
+soli:
   id: agk3nnes4a
   family: "R"
   gloss: "metaphor:"
@@ -4063,12 +4064,12 @@ fekti:
   short: "[E:tce ma] looks similar to things satifying [A:(tce ma)]. [E] is [A]-like."
 spel:
   id: vmenrgkg75
-  familiy: "R"
+  family: "R"
   gloss: "pointed to"
   short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)."
 sfia:
   id: sgr7bp1msz
-  familiy: "R"
+  family: "R"
   gloss: "currency"
   tags: [currency]
   short: "[E:tce gan] is 1 unit of currency represented by ISO-4217 code [A:blu ecema] times [O:tce gan] (default: 1)."
@@ -5468,6 +5469,11 @@ e pani penie:
   notes: |
     [A] must be something that have clearly identified top-bottom direction and
     established middle-point (usually the center of mass).
+e tcu zoli:
+  id: idx3jnwsgj
+  family: "C"
+  gloss: "with-all-tools:"
+  short: "[A:()] is realised using all tools [E:tce man]."
 
 # Spelling
 _spelling:
