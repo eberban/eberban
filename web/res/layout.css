@@ -266,10 +266,6 @@ li.implicit {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.dictionary-entry[open] {
-	border-bottom: 3px solid gray;
-}
-
 .dictionary-entry > summary {
 	display: flex;
   	padding: 10px 15px;
@@ -278,7 +274,6 @@ li.implicit {
 }
 
 .dictionary-entry:not([open]) > summary {
-	border-bottom: 3px solid gray;
 	cursor: zoom-in;
 }
 
