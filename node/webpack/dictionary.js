@@ -80,84 +80,89 @@ export function count_word_types() {
 
 function html_word_entry(word, entry) {
 	let extra_css_class = entry.extra_css_class || "";
-	var output = `<div class="dictionary-entry well well-small ${extra_css_class}"><h3>`;
+	let entry_css_classes = `dictionary-entry ${extra_css_class}`;
 
+	let family_button = `<a href="#@${entry.family}" class="family">${entry.family}</a>`;
+
+	let word_display = word;
 	if (entry.family == 'C') {
+		word_display = "";
 		word.split(' ').forEach((part) => {
 			if (ignored.includes(part[0])) {
-				output += `${part} `;
+				word_display += `${part} `;
 			} else {
-				output += `<a href="#${part}">${part}</a> `;
+				word_display += `<a href="#${part}">${part}</a> `;
 			}
 		});
-
-		output += ' ';
-	} else {
-		output += `${word} `;
+		word_display += " ";
 	}
 
-	output += `<a href="#${word}" class="word-anchor"><i class="icon-search"></i></a>`
-
-	if (entry.gloss) {
-		output += `<small>${entry.gloss}</small> `;
+	let short_display = renderParagraphs(entry.short);
+	let notes_display = "";
+	if (entry.notes) {
+		notes_display = `<strong>Notes: </strong>${renderParagraphs(entry.notes)}`
 	}
 
-	if (entry.family) {
-		output += `<a href="#@${entry.family}" class="btn btn-mini btn-inverse">${entry.family}</a> `;
+	let links = "";
+	if (entry.links) {
+		links += '<strong>Links :</strong><ul class="entry-links">';
+		for (i in entry.links) {
+			links += "<li>";
+			links += `<a href="${entry.links[i][2]}"><i class="${entry.links[i][0]}" aria-hidden="true"></i> ${entry.links[i][1]}</a>`;
+			links += "</li>";
+		}
+		links += "</ul>";
 	}
 
-	if (entry.tags != undefined) {
+	let tags = "";
+	if (entry.tags) {
+		tags = "<div><strong>Tags : </strong>";
 		entry.tags.forEach((e) => {
 			let style = "";
 			let tag_style = tags_style[e];
 			if (tag_style)
 				style = ` ${tag_style}`;
 
-			output += `<a href="##${e}" class="btn btn-mini${style}">${e}</a> `;
+			tags += `<a href="##${e}" class="btn btn-mini${style}">${e}</a> `;
 		});
+		tags += "</div>";
 	}
 
-	output += `</h3>`;
-
-	if (entry.short) {
-		output += renderParagraphs(entry.short);
+	let definition = "";
+	if (entry.definition) {
+		definition += `<details><summary><strong>Definition :</strong></summary><pre>`;
+		definition += escapeHTML(entry.definition);
+		definition += `</pre></details>`;
 	}
 
+	let see_also = "";
 	if (entry.see_also) {
-		output += '<p class="see-also"><strong>See also </strong> ';
+		see_also += '<p class="see-also"><strong>See also :</strong> ';
 		for (i in entry.see_also) {
 			if (i != 0) {
-				output += ", "
+				see_also += ", "
 			}
 
-			output += `<a href="#${entry.see_also[i]}">${entry.see_also[i]}</a>`;
+			see_also += `<a href="#${entry.see_also[i]}">${entry.see_also[i]}</a>`;
 		}
-		output += '.</p>';
+		see_also += '.</p>';
 	}
 
-	if (entry.links) {
-		output += '<ul class="entry-links">';
-		for (i in entry.links) {
-			output += "<li>";
-			output += `<a href="${entry.links[i][2]}"><i class="${entry.links[i][0]}" aria-hidden="true"></i> ${entry.links[i][1]}</a>`;
-			output += "</li>";
-		}
-		output += "</ul>";
-	}
+	let output = `<details class="${entry_css_classes}">
+		<summary>
+			<span class="word">${word_display}</span>
+			${family_button}			
+			<span class="short">${short_display}</span>
+		</summary>
+		<div class="dictionary-details">
+			${notes_display}
+			${see_also}
+			${tags}
+			${links}
+			${definition}
+		</div>
+	</details>`;
 
-	if (entry.notes) {
-		output += `<details><summary>Notes :</summary>`;
-		output += renderParagraphs(entry.notes);
-		output += `</details>`;
-	}
-
-	if (entry.definition) {
-		output += `<details><summary>Definition :</summary><pre>`;
-		output += escapeHTML(entry.definition);
-		output += `</pre></details>`;
-	}
-
-	output += `</div>`;
 	return output;
 }
 

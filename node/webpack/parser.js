@@ -398,16 +398,6 @@ function constructBoxesOutput(parse, depth) {
 
 		output += '">';
 
-		// handle erased scope sequence elements
-		if (parse.type === 'sequence')  {
-			for (var child in parse.children) {
-				if (parse.children[child].word == 'buhu') {
-					parse.children[child].css_classes = 'erased';
-					parse.children[child-1].css_classes = 'erased';
-				}
-			}
-		}
-
 		for (var child in parse.children) {
 			output += constructBoxesOutput(parse.children[child], depth + 1);
 		}
