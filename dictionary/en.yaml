@@ -360,19 +360,38 @@ voi:
   id: wvdkovz6eg
   family: "VI"
   gloss: "adv["
-  short: Starts adverbial/prepositional clause.
+  short: Starts adverbial/sharing-bound prepositional clause.
   notes: |
     Followed by a single predicate P, and any following predicates (if any) form chain C.
 
     P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
     bindings of that predicate are evaluated outside of that [A] slot. 
     
-    Chain C will be bound to the [E] slot of P.
+    Chain C will be sharing-bound to the [E] slot of P.
     
     This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
     Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
     is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [foi]
+  see_also: [foi, vioi, fioi]
+  links:
+    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
+vioi:
+  id: wezusxq6te
+  family: "VI"
+  gloss: "adv=["
+  short: Starts adverbial/equivalence-bound prepositional clause.
+  notes: |
+    Followed by a single predicate P, and any following predicates (if any) form chain C.
+
+    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
+    bindings of that predicate are evaluated outside of that [A] slot. 
+    
+    Chain C will be equivalence-bound to the [E] slot of P.
+    
+    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
+    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
+    is bound to C, while second exposed slot wraps the attached to predicate.
+  see_also: [foi, voi, fioi]
   links:
     - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 fi:
@@ -528,21 +547,40 @@ fai:
     - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 foi:
   id: 0rc4mfpym6
-  family: "VI"
+  family: "FI"
   gloss: "]adv["
-  short: Starts adverbial/prepositional clause.
+  short: Starts adverbial/sharing-bound prepositional clause.
   notes: |
     Followed by a single predicate P, and any following predicates (if any) form chain C.
 
     P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
     bindings of that predicate are evaluated outside of that [A] slot. 
     
-    Chain C will be bound to the [E] slot of P.
+    Chain C will be sharing-bound to the [E] slot of P.
     
     This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
     Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
     is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [voi]
+  see_also: [voi, vioi, fioi]
+  links:
+    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
+fioi:
+  id: trurybdtxi
+  family: "FI"
+  gloss: "]adv=["
+  short: Starts adverbial/equivalence-bound prepositional clause.
+  notes: |
+    Followed by a single predicate P, and any following predicates (if any) form chain C.
+
+    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
+    bindings of that predicate are evaluated outside of that [A] slot. 
+    
+    Chain C will be equivalence-bound to the [E] slot of P.
+    
+    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
+    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
+    is bound to C, while second exposed slot wraps the attached to predicate.
+  see_also: [voi, vioi, foi]
   links:
     - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 se:
