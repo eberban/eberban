@@ -3091,11 +3091,6 @@ kena:
   family: "R"
   gloss: "holds"
   short: "[E:tce* pan] holds/grasps [A:tce* pan]."
-caloi:
-  id: pfztommryn
-  family: "R"
-  gloss: "purpose:"
-  short: "[E:tce man] have purpose to satisfy property [A:(tce man)]."
 jarai:
   id: wwih32fwvc
   family: "R"
@@ -3468,7 +3463,7 @@ jvao:
   short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
   tags: ["measurement"]
 jogme:
-  id: INSERT_WORD_ID
+  id: gpn685u76q
   family: "R"
   gloss: "mass"
   short: "[E:tce gan] (mass) is the mass of [A:tce pan]."
@@ -3982,7 +3977,7 @@ bjaor:
   tags: ["animal"]
   short: "[E:tce* pan] is an elephant."
 graulin:
-  id: INSERT_WORD_ID
+  id: 7386lgkl9w
   family: "R"
   gloss: "dragon"
   tags: ["animal", "mythical"]
@@ -4212,11 +4207,45 @@ srai:
 sri:
   id: u3q3u80bs7
   family: "R"
-  gloss: "unconstrained-by:"
+  gloss: "unconstrained:"
   tags: [time, tense]
-  short: "[A:()] occurs at some point (unrelated to other events)"
+  short: "[A:()] occurs at some point unrelated with [E:tca ski] (default: current context event)."
+  notes: |
+    [A] must still be reachable from [E], it cannot occur in an unrelated timeline.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+sni:
+  id: wx9gxr4xrp
+  family: "R"
+  gloss: "possible:"
+  tags: [time, tense, modal]
+  short: "It is possible that [A:()] occurs."
+  links:
+    - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
+snu:
+  id: 16f4flzhb2
+  family: "R"
+  gloss: "necessary:"
+  tags: [time, tense, modal]
+  short: "It is necessary that [A:()] occurs."
+  links:
+    - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
+sna:
+  id: m14pml81zw
+  family: "R"
+  gloss: "counterfactual:"
+  tags: [time, tense]
+  short: "[A:()] would be true if [E:()] was true."
+  notes: |
+    - both [E] and [A] are false in the current timeline\
+    - at any instant I in the past of the current timeline, if [E] occurs in the future of I, then
+      [A] necessarily occurs too.\
+    - as [A] is evaluated in the current timeline with some common timespan T , it is evaluated in
+      the other timelines with a timespan T2 such that T and T2 have the same duration, and their
+      distance with I is the same.
+  links:
+    - ["icon-book", "Event and tenses - Counterfactual conditionals", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#counterfactual-conditionals]
+
 ski:
   id: yktbdu521a
   family: "R"
@@ -4768,43 +4797,43 @@ klao:
     [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
     member of [A] satisfies [O] with the following member.
 celuar:
-  id: INSERT_WORD_ID
+  id: f1la1jggsk
   family: "R"
   gloss: "mushroom"
   short: "[E:tce* pan] is a mushroom."
   tags: [food]
 teonin:
-  id: INSERT_WORD_ID
+  id: 4jd51cfja3
   family: "R"
   gloss: "rice"
   short: "[E:tce* pan] is rice."
   tags: [food]
 jgelin:
-  id: INSERT_WORD_ID
+  id: lsj67h3xv7
   family: "R"
   gloss: "olive"
   short: "[E:tce* pan] is an olive."
   tags: [food, fruit, plant]
 merean:
-  id: INSERT_WORD_ID
+  id: 2g3k5ais88
   family: "R"
   gloss: "onion"
   short: "[E:tce* pan] is an onion."
   tags: [food, plant]
 meloan:
-  id: INSERT_WORD_ID
+  id: cyprcdsw9l
   family: "R"
   gloss: "garlic head"
   short: "[E:tce* pan] is a garlic head."
   tags: [food, plant]
 cpunu:
-  id: INSERT_WORD_ID
+  id: 7ps3utese2
   family: "R"
   gloss: "fruit"
   short: "[E:tce pan] is a fruit of [A:tce pan]."
   tags: [fruit, plant]
 joeloi:
-  id: INSERT_WORD_ID
+  id: 971azktj9b
   family: "R"
   gloss: "oil"
   short: "[E:tce* pan] is oil made from something that satisfies [A:(tce pan)]."
@@ -4813,10 +4842,10 @@ joeloi:
     [A] is not an entity but a property since the thing being made into oil no longer exists. 
   tags: [food]
 gatfi:
-  id: INSERT_WORD_ID
+  id: 9wocwv8xz1
   family: "R"
   gloss: "receipe:"
-  short: "[E:tce pan] can be made/manufactured/obtained using receipe [A:(tce pan)]."
+  short: "[E:tce pan] is made/manufactured/obtained using receipe [A:(tce pan)]."
 
 # -----
 # Compounds
@@ -5588,18 +5617,18 @@ e tcu zoli:
   gloss: "with-all-tools:"
   short: "[A:()] is realised using all tools [E:tce man]."
 e tian tsau:
-  id: INSERT_WORD_ID
+  id: qdwr2zidwf
   family: "C"
   gloss: "cooking"
   short: "[E:tce* pan] is cooked (food crafting) by [A:tce pan]."
 e cfen mula:
-  id: INSERT_WORD_ID
+  id: 2rf720dxu3
   family: "C"
   gloss: "litre"
   short: "[E:tce gan] is 1 litre (10^-3 m3) times [A:tce gan] (default: 1)."
   tags: [space, unit]
 e cnue meloan:
-  id: INSERT_WORD_ID
+  id: 9fc31ltwy9
   family: "R"
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."

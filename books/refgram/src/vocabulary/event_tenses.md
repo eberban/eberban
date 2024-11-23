@@ -3,45 +3,47 @@
 ## What is the general design of Eberban's time system?
 
 Time is represented using a graph of instants. It supports multiple possible futures and pasts,
-parallel and fictional universes, with one timeline being considered the real timeline, the events
-that actually occured and will occur. The implicit context argument with some predicates allows
-handling time-related stuff behind the scene. Physical entities (*pan*) are associated with the
-space-time volume (*skan*) they occupy.
+parallel and fictional universes. The context variable caries time-related information to time-aware
+predicates that handles time for you behind the scene.
+
+Physical entities (*pan*) are associated with the space-time volume (*skan*) they occupy, as the
+spatial volume they occupy at each instant they exist (possibly along multiple timelines).
+
+<img src="timelines.svg" style="width: 100%;"/>
 
 ## Common timespan
 
-Each use of *pan* interacts with a time interval stored in the context called the **common
-timespan**. Each *pan* states that the physical entity exists during the **common timespan** (but
-may exist outside of it), and words describing an action like *etiansa* (eat) states that the **common
-timespan** is contained during the timespan of the action. The **common timespan** is thus the
-intersection of all the time spans of all involved physical entities and actions.
+Each use of *pan* interacts with a time interval (formed by a start and end instant, and a specific
+path connecting them) stored in the context called the **common timespan**. Each *pan* states that
+the physical entity exists during the **common timespan** (it may exist outside of it), and words
+describing an action like *etiansa* (eat) states that the **common timespan** is contained during
+the timespan of the action. The **common timespan** is thus the intersection of all the time spans
+of all involved physical entities and actions.
 
 This **common timespan** is placed in the context by *ski* and time relations words, which constrain
 it to be maximal (given some timespan *x*, there doesn't exist another timespan *y* that contains
 *x* which makes the proposition true; this timespan *y* is not contained by one or many timespans of
 involved physical entities or actions).
 
-This design allows to easily express events involving many entities an actions. The sentence "In
+This design allows to easily express events involving many entities and actions. The sentence "In
 this room there is an cat, and you eating an apple" expresses the presence of the cat while you're
 eating an apple. The existence of the cat, you, the apple and the action of eating all contains the
-**common timespan**.
+**common timespan** (and they can unfold outside of it).
 
 ## Time anchor
 
-The time anchor is a timespan that is automatically stated to be contained by the **sentence
-common timespan**.
+The time anchor is a timespan that is automatically stated to be contained by the **sentence common
+timespan**, and which is usually the **present**.
 
-<!-- - *an skin* : sets the time anchor to the present, which represents the duration of the utterence of
-  the current sentence. It changes between each sentence to represent the next sentence duration.
-  This is the default time anchor at the start of a text or discussion.
-- *an e an sko X*: sets the time anchor to timespan X, which can easily be obtained using *skon*. This
-  allow to pick a timespan in some event, and then  later sentences will express events related to
-  that timespan instead of the present. -->
+> TODO:
+> - Allow changing the time anchor, for exemple to tell a story in a fictional universe
+> - Allow changing how this time anchor changes between sentences, which allows to make the present
+>   "move forwards in time" between sentences.
 
 ## Time relations
 
-Time relations relates an **inner proposition** (it's A slot) with a reference event (E slot), which by
-default is the **outer proposition** current event.
+Time relations relates an **inner proposition** (it's A slot) with a reference event (E slot), which
+by default is the **outer proposition** current event.
 
 - *sre*: A **is before** E: end of A is before the start of E
 - *sra*: A **starts** E: start of A is start of E
@@ -50,7 +52,7 @@ default is the **outer proposition** current event.
 - *srui*: A **contains** E
 - *srei*: A **is contained by** E
 - *srai*: A **intersects with** E
-- *sri*: A **is unconstrained by** E
+- *sri*: A **is unconstrained by** E (but still reachable from E).
 
 *sre* (before) and *sru* (after) have an O slot for the duration separating the 2 timespans. As
 giving a precise duration may be difficult or too precise, compounds with time units are made to
@@ -76,17 +78,37 @@ An event (*ski*) is modeled as an object containing the following information:
 ## Event words
 
 *ski* allows to related an event (E slot) with its defining propositon (A slot). It evaluates this
-proposition with its own **inner common timespan**, and doesn't relate it with another event. "I like the event of [you dance]" doesn't means that the "liking" and the "dancing"
-occurs at the same time. Inside a *ski* or in a sentence, *skul* can be used to refer to the
-current event.
+proposition with its own **inner common timespan**, and doesn't relate it with another event. "I
+like the event of [you dance]" doesn't means that the "liking" and the "dancing" occurs at the same
+time. Inside a *ski* or in a sentence, *skul* can be used to refer to the current event.
 
 *skun* allows to state that a given event (E slot) is occuring in the **outer common timespan** with
 the exact same set of physical entities it was defined with. "That (dancing) occured before lunch"
 speaks about the same event (the one where you dance and that I liked).
 
-## Modal logic: possible and necessary
+## Modal logic
 
-TODO
+Something is **necessary** if it occurs in all timelines containing the
+**common timespan**, while something is **possible** if it occurs in at least
+one timeline. Sentences states that their content is necessary, but it can
+be expressed explicitly using:
+
+- *sni*: A is possible
+- *snu*: A is necessary
+  
+## Counterfactual conditionals
+
+[Counterfactual conditionals] can be expressed using *sna* which have meaning
+"A would be true if E was true." It implies that: 
+
+- both E and A are false in the current timeline
+- at any instant I in the past of the current timeline, if E occurs in the future of I, then
+  A necessarily occurs too.
+- as A is evaluated in the current timeline with some common timespan T , it is evaluated in
+  the other timelines with a timespan T2 such that T and T2 have the same duration, and their
+  distance with I is the same.  
+
+[Counterfactual conditionals]: https://en.wikipedia.org/wiki/Counterfactual_conditional
 
 ## Space relations
 
