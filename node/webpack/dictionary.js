@@ -13,6 +13,13 @@ words_sorted.forEach((word) => {
 	let entry = dictionary[word];
 	entry.without_spaces = word.replaceAll(' ', '').toLowerCase();
 
+	if (entry.family == 'C') {
+		let split = word.split(' ');
+		if (split[1] && split[1].startsWith('u')) {
+			entry.tags.unshift("borrow");
+		}
+	}
+
 	// Detect transitive words.
 	let intransitive = false;
 	let transitive = false;
@@ -148,6 +155,13 @@ function html_word_entry(word, entry) {
 		see_also += '.</p>';
 	}
 
+	let permalink = `<p data-tooltip="Link with a unique ID that will remain the same even if the Eberban
+	word changes">
+	<strong>
+	<a href=#${entry.id}>Permalink</a>
+	</strong>
+	</p>`;
+
 	let output = `<details class="${entry_css_classes}">
 		<summary>
 			<span class="word">${word_display}</span>
@@ -160,6 +174,7 @@ function html_word_entry(word, entry) {
 			${tags}
 			${links}
 			${definition}
+			${permalink}
 		</div>
 	</details>`;
 
