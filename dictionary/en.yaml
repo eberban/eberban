@@ -4846,6 +4846,11 @@ gatfi:
   family: "R"
   gloss: "receipe:"
   short: "[E:tce pan] is made/manufactured/obtained using receipe [A:(tce pan)]."
+cmuel:
+  id: 8q50y3hb3c
+  family: "R"
+  gloss: "building"
+  short: "[E:tce* pan] is a building."
 
 # -----
 # Compounds
@@ -5633,6 +5638,11 @@ e cnue meloan:
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."
   tags: [food, plant]
+e kine cmuel:
+  id: wlqy92kdaz
+  family: "C"
+  gloss: "school"
+  short: "[E:tce* pan] is a school/educational building."
 
 # Spelling
 _spelling:
