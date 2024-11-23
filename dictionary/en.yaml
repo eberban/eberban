@@ -2107,8 +2107,8 @@ kagvi:
   gloss: "map-list-wrapper"
   tags: [map, list]
   short: |
-    [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: empty
-    map {kagvil}) by applying the list of transformations [A:blu ()].
+    [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: context)
+    by applying the list of transformations [A:blu ()].
 kagvien:
   id: eogkr6aqeg
   family: "R"
@@ -3398,13 +3398,20 @@ june:
     6.674e-11 m3.kg-1.s-2
     = 6.674e-11 m3/(kg.s2)
     = {tia jo tia tio tu jei teo jie mual mual mual jume gulo vola vola}
+
 zgie:
   id: nneh2x85ud
   family: "R"
   gloss: "width"
   short: "[E:tce gan] (length) is the width of [A:tce pan]."
   tags: ["measurement"]
-fniu:
+zgia:
+  id: nneh2x85ud
+  family: "R"
+  gloss: "width"
+  short: "[E:tce gan] (length) is the length of [A:tce pan]."
+  tags: ["measurement"]
+zgio:
   id: fb6aza9xej
   family: "R"
   gloss: "height"
@@ -3421,6 +3428,12 @@ jvao:
   family: "R"
   gloss: "volume"
   short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
+  tags: ["measurement"]
+jogme:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "mass"
+  short: "[E:tce gan] (mass) is the mass of [A:tce pan]."
   tags: ["measurement"]
 ckia:
   id: ldcalrk1ii
@@ -3955,9 +3968,9 @@ bzael:
   notes: |
     Words expressing subjective optinions are stated from the point of view of
     an opiner. The opiner is stored in the context, and can be changed using
-    {enbzaelmuesai}.
+    {ebzaelmua}.
 
-    Words like {kuri} (think) use {enbzaelmuesai} internally, while subjective words
+    Words like {kuri} (think) use {ebzaelmua} internally, while subjective words
     like {blan} are by default according to the opiner {bzael}.
 zoal:
   id: ob1f25nx3q
@@ -4535,6 +4548,9 @@ taktin:
   family: "R"
   gloss: dangerous
   short: "[E:tce pan] is dangerous for [A:tce pan] (default: {bzael})."
+  notes: |
+    [E] pose a danger for [A], and [A] is not necessarily who thinks it is dangerous for [A].
+    Use {kuri} to state who thinks its dangerous.
 ksuar:
   id: n0r4kfjv55
   family: "R"
@@ -4713,6 +4729,56 @@ klao:
   short: |
     [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
     member of [A] satisfies [O] with the following member.
+celuar:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "mushroom"
+  short: "[E:tce* pan] is a mushroom."
+  tags: [food]
+teonin:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "rice"
+  short: "[E:tce* pan] is rice."
+  tags: [food]
+jgelin:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "olive"
+  short: "[E:tce* pan] is an olive."
+  tags: [food, fruit, plant]
+merean:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "onion"
+  short: "[E:tce* pan] is an onion."
+  tags: [food, plant]
+meloan:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "garlic head"
+  short: "[E:tce* pan] is a garlic head."
+  tags: [food, plant]
+cpunu:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "fruit"
+  short: "[E:tce pan] is a fruit of [A:tce pan]."
+  tags: [fruit, plant]
+joeloi:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "oil"
+  short: "[E:tce* pan] is oil made from something that satisfies [A:(tce pan)]."
+  notes: |
+    [E] is a liquid at room temperature and doesn't mix with water.\
+    [A] is not an entity but a property since the thing being made into oil no longer exists. 
+  tags: [food]
+gatfi:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "receipe:"
+  short: "[E:tce pan] can be made/manufactured/obtained using receipe [A:(tce pan)]."
 
 # -----
 # Compounds
@@ -4929,7 +4995,7 @@ e ze al:
   family: "C"
   short: "Repeats the previous request. See {al} notes."
   gloss: "latest-request"
-en bzael mue sai:
+e bzael mua:
   id: hshwh0yqhx
   family: "C"
   gloss: "set-opiner:"
@@ -5483,6 +5549,23 @@ e tcu zoli:
   family: "C"
   gloss: "with-all-tools:"
   short: "[A:()] is realised using all tools [E:tce man]."
+e tian tsau:
+  id: INSERT_WORD_ID
+  family: "C"
+  gloss: "cooking"
+  short: "[E:tce* pan] is cooked (food crafting) by [A:tce pan]."
+e cfen mula:
+  id: INSERT_WORD_ID
+  family: "C"
+  gloss: "litre"
+  short: "[E:tce gan] is 1 litre (10^-3 m3) times [A:tce gan] (default: 1)."
+  tags: [space, unit]
+e cnue meloan:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "garlic clove"
+  short: "[E:tce* pan] is a garlic clove."
+  tags: [food, plant]
 
 # Spelling
 _spelling:
