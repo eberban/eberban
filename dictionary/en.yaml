@@ -2418,7 +2418,7 @@ skal:
   id: fx1mnfjs7i
   family: "R"
   gloss: "computer"
-  short: "[E:tce* pan] is a computer."
+  short: "[E:tce* pan] is a computer (in general, includes smartphones, game consoles, etc)."
 sune:
   id: nj03wvtsbv
   family: "R"
@@ -2718,6 +2718,12 @@ cfan:
   gloss: "gas"
   tags: [matter]
   short: "[E:tce* pan] is a gas (state of matter)."
+cfean:
+  id: g8ff14fir3
+  family: "R"
+  gloss: "fuild"
+  tags: [matter]
+  short: "[E:tce* pan] is a fuild (state of matter, gas or liquid)."
 jeon:
   id: xzllyv1sx1
   family: "R"
@@ -3106,6 +3112,11 @@ zerai:
   family: "R"
   gloss: "personality trait:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as a personality trait."
+dzai:
+  id: ewii2lwhb7
+  family: "R"
+  gloss: "skilled:"
+  short: "[E:tce pan] is skilled at satisfy property [A:(tce pan)]."
 dzui:
   id: zwvj8ibmcc
   family: "R"
@@ -4256,6 +4267,16 @@ sna:
       distance with I is the same.
   links:
     - ["icon-book", "Event and tenses - Counterfactual conditionals", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#counterfactual-conditionals]
+sunai:
+  id: 1qs74axcu1
+  family: "R"
+  gloss: "parallel-universe:"
+  tags: [time, tense]
+  short: "[A:()] occurs in a parallel or fictional universe."
+  notes: |
+    Instant of this parallel or fictional universe are not accessible from any instant of the current universe.
+  links:
+    - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
 
 ski:
   id: yktbdu521a
@@ -4331,36 +4352,25 @@ skan:
     [E:tce* man] is a timespan.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-skun:
+sufkun:
   id: u6sn4vyfzh
   family: "R"
   gloss: present
-  tags: [time, context-updater]
-  short: |
-    [E:tca ski] is the present.
+  tags: [time]
+  short: "[E:tca ski] is the present."
+  notes: |
+    The present is automatically updated between sentences to "move forward".
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-# skun:
-#   id: tsrx8h6muk
-#   family: "R"
-#   gloss: set-anchor-present
-#   tags: [time, context-updater]
-#   short: |
-#     [E:ma] is the context with time anchor being the present.
-#   notes: |
-#     The present is a time-span representing the duration of the utterence of the sentence, and is
-#     updated between each sentence to then represent the next sentence duration.
-#   links:
-#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-# sko:
-#   id: k22ul24sct
-#   family: "R"
-#   gloss: set-anchor
-#   tags: [time, context-updater]
-#   short: |
-#     [A:tca skan] is the current context time anchor.
-#   links:
-#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+skun:
+  id: xq7ino6s9j
+  family: "R"
+  gloss: time-anchor
+  tags: [time, context]
+  short: "[E:tca ski] is the current sentence time anchor."
+  notes: Time anchor can be changed using {enanskunsai}.
+  links:
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skon:
   id: i2jo0s1e03
   family: "R"
@@ -4904,6 +4914,11 @@ kalu:
     there are multiple things being divided, [E] members can come from any of those things (hense why
     you should use {tcihi} instead of {tcu}, as with {tcu} you would say that each part are individually
     divided from multiple things, which is not the case).
+filiel:
+  id: gdpsn5c3de
+  family: "R"
+  gloss: "pocket"
+  short: "[E:tce* pan] is a pocket."
 
 # -----
 # Compounds
@@ -5397,17 +5412,28 @@ e bire sru:
   short: "[A:()] occurs years (more than 1 year included) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-# e skal zari:
-#   id: gpqertouzz
-#   family: "C"
-#   gloss: "program"
-#   short: "[E:tce* man] is a computer program."
-
+en skal gatfi sa:
+  id: gpqertouzz
+  family: "C"
+  gloss: "program"
+  short: "[E:tce* man] is a computer program."
 e glon sa:
   id: j31as5z1tr
   family: "C"
   gloss: "plays"
   short: "[E:tce pan] plays game [A:tce* pan]."
+  notes: Implies that there is a player [E].
+e skal glon:
+  id: dyp4u0gi58
+  family: "C"
+  gloss: "video game"
+  short: "[E:tce pan] is a video game."
+  notes: "[E] is not necessarily a game played on a computer, but can also be on game consoles or phone."
+e filiel skal:
+  id: tmtoheohak
+  family: "C"
+  gloss: "smartphone"
+  short: "[E:tce pan] is a smartphone."
 e buan spenu:
   id: mf42sda4or
   family: "C"
@@ -5727,6 +5753,18 @@ e cpuan kalu:
   notes: |
     See {kalu} explanations.
 
+    [E] are cut following close-to-parallel planes. Slices [E] have their up-down direction matching
+    the tangent of their cutting plane, such that height corresponds to thickness.
+en an skun sai:
+  id: d6ahqqz2b3
+  family: "C"
+  gloss: "set-time-anchor:"
+  tags: ["time", "context"]
+  short: "[E:p] is the current context with time anchor being changed to [A:(tca ski)]."
+  notes: |
+    [A] is a property so that the time anchor can change between sentences by depending on other context
+    information, like {sufkun} (present) which makes the present move "forward in time" between sentences.
+ 
 # Spelling
 _spelling:
   pi: 

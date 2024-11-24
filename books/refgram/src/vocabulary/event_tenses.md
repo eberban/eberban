@@ -35,10 +35,11 @@ eating an apple. The existence of the cat, you, the apple and the action of eati
 The time anchor is a timespan that is automatically stated to be contained by the **sentence common
 timespan**, and which is usually the **present**.
 
-> TODO:
-> - Allow changing the time anchor, for exemple to tell a story in a fictional universe
-> - Allow changing how this time anchor changes between sentences, which allows to make the present
->   "move forwards in time" between sentences.
+The current time anchor can be refered to using *skun*, and *en an skun sai* can be used in a *an*
+sentence to change the time anchor for future sentences.
+
+The real world present can be refered to using *sufkun*, which is updated between each sentence to
+"move forward in time".
 
 ## Time relations
 
