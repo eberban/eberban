@@ -2446,7 +2446,10 @@ spua:
   id: qwnwymrscy
   family: "R"
   gloss: "home"
-  short: "[E:tce* pan] is a home/house/nest for [A:tce* pan]."
+  short: "[E:tce* pan] is a home/dwelling for [A:tce* pan]."
+  notes: |
+    Can qualify the building {espuacmuel} or a larger space containing it
+    (region/state/country/planet/etc).
 zaro:
   id: rzmceyzcgr
   family: "R"
@@ -2857,6 +2860,8 @@ tsui:
   family: "R"
   gloss: "searches"
   short: "[E:tce* pan] searches/looks for something that satisfies [A:(p)]."
+  notes: |
+    This doesn't imply that something satisfying [A] really exists.
 buan:
   id: ernf6oh1zg
   family: "R"
@@ -3432,36 +3437,42 @@ june:
     = 6.674e-11 m3/(kg.s2)
     = {tia jo tia tio tu jei teo jie mual mual mual jume gulo vola vola}
 
-zgie:
+cpie:
   id: nneh2x85ud
   family: "R"
-  gloss: "width"
-  short: "[E:tce gan] (length) is the width of [A:tce pan]."
+  gloss: "length"
+  short: "[E:tce gan] (length) is the length of segment [A:tce pan]."
   tags: ["measurement"]
-zgia:
-  id: nneh2x85ud
-  family: "R"
-  gloss: "width"
-  short: "[E:tce gan] (length) is the length of [A:tce pan]."
-  tags: ["measurement"]
-zgio:
-  id: fb6aza9xej
-  family: "R"
-  gloss: "height"
-  short: "[E:tce gan] (length) is the height of [A:tce pan]."
-  tags: ["measurement"]
-cpea:
+cpia:
   id: 1p6a8o9nk3
   family: "R"
   gloss: "area"
-  short: "[E:tce gan] (length^2) is the area of [A:tce pan]."
+  short: "[E:tce gan] (length^2) is the area of surface [A:tce pan]."
   tags: ["measurement"]
-jvao:
+cpio:
   id: nd9g9s8u4q
   family: "R"
   gloss: "volume"
   short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
   tags: ["measurement"]
+cpuin:
+  id: afnwxto0ke
+  family: "R"
+  gloss: "point"
+  short: "[E:tce pan] is a (0d) point."
+  tags: ["geometry"]
+cpuen:
+  id: wo4n0r54ks
+  family: "R"
+  gloss: "line"
+  short: "[E:tce pan] is a (1d) line."
+  tags: ["geometry"]
+cpuan:
+  id: i9d94cz5n6
+  family: "R"
+  gloss: "plane"
+  short: "[E:tce pan] is a (2d) plane."
+  tags: ["geometry"]
 jogme:
   id: gpn685u76q
   family: "R"
@@ -4147,7 +4158,7 @@ sre:
   tags: [time, tense]
   short: "[A:()] occurs before [E:tca ski] (default: current context event), separated by [O:tce gan] time."
   notes: |
-    The end of "it" is before the start of [A].
+    The end of [A] is before the start of [E]. [A] is in the past of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sru:
@@ -4157,7 +4168,7 @@ sru:
   tags: [time, tense]
   short: "[A:()] occurs after [E:tca ski] (default: current context event), separated by [O:tce gan] time."
   notes: |
-    The start of "it" is after the end of [A].
+    The start of [A] is after the end of [E]. [A] is in the future of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sra:
@@ -4167,17 +4178,17 @@ sra:
   tags: [time, tense]
   short: "[A:()] starts [E:tca ski] (default: current context event)."
   notes: |
-    The start of "it" is the start of [A].
+    The start of [A] is the start of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sro:
   id: nsnjvcaglb
   family: "R"
-  gloss: "finished:"
+  gloss: "finishes:"
   tags: [time, tense]
-  short: "It finishes [A:()]"
+  short: "[A:()] finishes [E:tca ski] (default: current context event)."
   notes: |
-    The end of [A:()] is the end of [E:tca ski] (default: current context event).
+    The end of [E] is the end of [A].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srui:
@@ -4381,7 +4392,7 @@ pseo:
   family: "R"
   gloss: distance
   tags: ["space"]
-  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {psoi})."
+  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {peni})."
 psulo:
   id: 7vn4ceujmp
   family: "R"
@@ -4425,7 +4436,7 @@ penu:
   tags: ["space"]
   short: "[E:tce pan] is behind [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the behind direction.
@@ -4436,7 +4447,7 @@ pena:
   tags: ["space"]
   short: "[E:tce pan] is in front of [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the in-front direction.
@@ -4447,7 +4458,7 @@ peno:
   tags: ["space"]
   short: "[E:tce pan] is to the left of [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the left direction.
@@ -4458,7 +4469,7 @@ pene:
   tags: ["space"]
   short: "[E:tce pan] is to the right of [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the right direction.
@@ -4469,7 +4480,7 @@ peniu:
   tags: ["space"]
   short: "[E:tce pan] is above [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the above direction.
@@ -4480,10 +4491,37 @@ penie:
   tags: ["space"]
   short: "[E:tce pan] is below [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the below direction.
+pnuen:
+  id: uqly4vvvgx
+  family: "R"
+  gloss: vertical
+  tags: ["space"]
+  short: "[E:tce pan] is oriented vertically."
+  notes: |
+    In the referential defined by {peni}.
+    TODO: Specify margin of error.
+pneon:
+  id: b0ic7nzxd8
+  family: "R"
+  gloss: left-right
+  tags: ["space"]
+  short: "[E:tce pan] is oriented in the left-right direction."
+  notes: |
+    In the referential defined by {peni}.
+    TODO: Specify margin of error.
+pnaun:
+  id: 526611yo25
+  family: "R"
+  gloss: front-back
+  tags: ["space"]
+  short: "[E:tce pan] is oriented in the front-back direction."
+  notes: |
+    In the referential defined by {peni}.
+    TODO: Specify margin of error.
 pini:
   id: nh5bijnt09
   family: "R"
@@ -4501,7 +4539,7 @@ pina:
   tags: ["space"]
   short: "[E:tce pan] is to the north of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the north direction.
@@ -4512,7 +4550,7 @@ pinu:
   tags: ["space"]
   short: "[E:tce pan] is to the south of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the south direction.
@@ -4523,7 +4561,7 @@ pino:
   tags: ["space"]
   short: "[E:tce pan] is to the west of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the west direction.
@@ -4534,7 +4572,7 @@ pine:
   tags: ["space"]
   short: "[E:tce pan] is to the east of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the east direction.
@@ -4545,7 +4583,7 @@ piniu:
   tags: ["space"]
   short: "[E:tce pan] is above (in altitude) of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the above direction.
@@ -4556,7 +4594,7 @@ pinie:
   tags: ["space"]
   short: "[E:tce pan] is below (in altitude) of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the below direction.
@@ -4851,6 +4889,21 @@ cmuel:
   family: "R"
   gloss: "building"
   short: "[E:tce* pan] is a building."
+kalu:
+  id: j2zcgd5mek
+  family: "R"
+  gloss: "divided-from"
+  tags: ["transformation"]
+  short: "[E:tce pan] are things that were divided from [A:(tce pan)]."
+  notes: |
+    As [A] is being divided into [E], [A] cease to exist and [E] starts to exist, either at the same
+    time or at different times. {kalu} starts when all members of [E] exists. [A] is stated to
+    occur before {kalu} starts.
+    
+    [E] can be a subset of all parts divided from [A], to speak about all the parts, use {tcihi}. If
+    there are multiple things being divided, [E] members can come from any of those things (hense why
+    you should use {tcihi} instead of {tcu}, as with {tcu} you would say that each part are individually
+    divided from multiple things, which is not the case).
 
 # -----
 # Compounds
@@ -5643,6 +5696,36 @@ e kine cmuel:
   family: "C"
   gloss: "school"
   short: "[E:tce* pan] is a school/educational building."
+e spua cmuel:
+  id: wlqy92kdaz
+  family: "C"
+  gloss: "residential building"
+  short: "[E:tce* pan] is a house/residential building."
+e pnuen cpie:
+  id: fb6aza9xej
+  family: "C"
+  gloss: "height"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
+e pneon cpie:
+  id: ie3rzd0ac7
+  family: "C"
+  gloss: "width"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
+e pnaun cpie:
+  id: vxeydlyrp7
+  family: "C"
+  gloss: "depth"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the depth (front-back length) of [A:tce pan]."
+e cpuan kalu:
+  id: upob68pr52
+  family: "C"
+  gloss: "slice"
+  short: "[E:tce pan] are slices that were sliced from [A:(tce pan)]."
+  notes: |
+    See {kalu} explanations.
 
 # Spelling
 _spelling:
