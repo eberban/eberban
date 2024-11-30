@@ -2419,6 +2419,11 @@ skal:
   family: "R"
   gloss: "computer"
   short: "[E:tce* pan] is a computer (in general, includes smartphones, game consoles, etc)."
+skol:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "software"
+  short: "[E:tce* pan] is a computer software/program."
 sune:
   id: nj03wvtsbv
   family: "R"
@@ -4893,7 +4898,9 @@ gatfi:
   id: 9wocwv8xz1
   family: "R"
   gloss: "receipe:"
-  short: "[E:tce pan] is made/manufactured/obtained using receipe [A:(tce pan)]."
+  short: "[E:tce pan] is a receipe realized by satisfying [A:(tce pan)]."
+  notes: |
+    Everything that satisfies [A] is a result of applying the receipe.
 cmuel:
   id: 8q50y3hb3c
   family: "R"
@@ -5253,7 +5260,10 @@ e on peu:
   id: jpvb7ytjfg
   family: "C"
   gloss: "dictionary"
-  short: "[E:tce* man] is a dictionary."
+  short: "[E:tce* pan] is a dictionary."
+  notes: |
+    Can be either a physical artifact or an abstract dictionary representing all the words of
+    a language at some point in time.
 en skal co sa:
   id: vmbujokvfo
   family: "C"
@@ -5412,18 +5422,13 @@ e bire sru:
   short: "[A:()] occurs years (more than 1 year included) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-en skal gatfi sa:
-  id: gpqertouzz
-  family: "C"
-  gloss: "program"
-  short: "[E:tce* man] is a computer program."
 e glon sa:
   id: j31as5z1tr
   family: "C"
   gloss: "plays"
   short: "[E:tce pan] plays game [A:tce* pan]."
   notes: Implies that there is a player [E].
-e skal glon:
+e glon skol:
   id: dyp4u0gi58
   family: "C"
   gloss: "video game"
@@ -5888,11 +5893,11 @@ _spelling:
       {ceu}: Sound \[h] (IPA).
   uhu: 
     id: 2pzry3n25u
-    gloss: "' (pause)"
+    gloss: "(space)"
     tags: ["native"]
     short: |
-      {ce}: Letter '.\
-      {ceu}: Sound \[ʔ] (IPA).
+      {ce}: Space character.\
+      {ceu}: Sound \[ʔ] (IPA) or pause.
   i: 
     id: xlut6t956h
     gloss: I
