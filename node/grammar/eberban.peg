@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.62.3
+# eberban PEG grammar - v0.63
 # =============================
 
 # GRAMMAR
@@ -67,11 +67,13 @@ grammatical_quote <- CA_clause text CAI_clause
 one_word_quote <- CI_clause spaces? (native_word / compound / borrowing)
 
 foreign_quote <- COI_clause / foreign_quote_1
-foreign_quote_1 <- CO_clause spaces? foreign_quote_open pause_char foreign_quote_content single_pause_char foreign_quote_close
+foreign_quote_1 <- CO_clause (!quotation_mark_start space_char)* (foreign_quote_simple / foreign_quote_escaped)
+foreign_quote_simple <- quotation_mark_start foreign_quote_simple_content quotation_mark_end
+foreign_quote_simple_content <- (!quotation_mark_end .)*
 
-foreign_quote_content <- (!(single_pause_char foreign_quote_close) .)*
+foreign_quote_escaped <- foreign_quote_open quotation_mark_start foreign_quote_content quotation_mark_end foreign_quote_close
+foreign_quote_content <- (!(quotation_mark_end foreign_quote_close) .)*
 foreign_quote_open <- native_form # doesn't perform &post_word check
-foreign_quote_word <- (!single_pause_char .)+
 foreign_quote_close <- native_word # performs &post_word check
 
 spelling_quote <- CE_clause spelling_quote_unit+ CEI_clause
@@ -221,7 +223,7 @@ freeform_variable <- i (spaces / hyphen !i) freeform_content freeform_end
 borrowing <- u (spaces / hyphen !u) freeform_content freeform_end
 freeform_content <- (freeform_consonants / h)? vhowels (freeform_consonants vhowels)* consonant?
 freeform_consonants <- consonant_triplet / medial_pair / ((sonorant / m) hyphen consonant) / hyphen (initial_pair / consonant)
-freeform_end <- (&sentence_eraser / single_pause_char / space_char / EOF)
+freeform_end <- (&sentence_eraser / space_char / EOF)
 
 # - Native words
 native_word <- root_word / particle_word
@@ -299,9 +301,8 @@ g <- [gG]+ !unvoiced # <LEAF>
 k <- [kK]+ !voiced # <LEAF>
 
 # - Spaces / Pause
-pause_start <- vowel / sonorant / h
-post_word <- (single_pause_char &pause_start) / !sonorant &consonant / spaces
-spaces <- space_char+ hesitation? (single_pause_char &pause_start)? / single_pause_char &pause_start / EOF
+post_word <- !sonorant &consonant / spaces
+spaces <- space_char+ hesitation? / EOF
 hesitation <- (n (space_char+ / EOF))+
 
 sentence_eraser <- (spaces RA+)+ spaces
@@ -312,8 +313,8 @@ RI <- r i
 # - Special characters
 hyphen <- (hyphen_char [\n\r]*)? # hyphens + line break support
 hyphen_char <- [\u2010\u2014\u002D]
-single_pause_char <- pause_char !pause_char
-pause_char <- (['’`])
-space_char <- !(single_pause_char / digit / hyphen_char / [a-zA-Z]) .
+space_char <- !(digit / hyphen_char / [a-zA-Z]) .
+quotation_mark_start <- [\[]
+quotation_mark_end <- [\]]
 digit <- [0-9] # <LEAF2>
 EOF <- !.

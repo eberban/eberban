@@ -1,26 +1,27 @@
 # Morphology
 
 The morphology of Eberban is composed of 16 consonants (__n, r, l, m, p, b, f, v, t, d, s, z, c, j,
-g, k__), five vowels (__i, e, a, o, u__) and finally the letters __h__ and __'__, for a total of 23
-letters. Among the consonants, __n__, __r__ and __l__ are designated as (alveolar) __sonorants__,
-and play an important role in Eberban's morphology.The alphabetical order is
-`hnrlmpbfvtdszcjkgieaou'`. The same letter appearing multiple times in a row is considered identical
-to the letter not being repeated, but can informally be used in written media to convey length of
-sounds in speech.
+g, k__), five vowels (__i, e, a, o, u__) the letter __h__, the hyphen __-__ and the quotation marks
+__[__ and __]__, for a total of 24 symbols. Among the consonants, __n__, __r__ and __l__ are
+designated as (alveolar) __sonorants__, and play an important role in Eberban's morphology. The
+alphabetical order is `hnrlmpbfvtdszcjkgieaou`. The same letter appearing multiple times in a row is
+considered identical to the letter not being repeated, but can informally be used in written media
+to convey length of sounds in speech. Any other character is considered a space, and quotation marks
+are also considered a space outside of foreign quotes syntax (explained later).
 
 Strings of multiple vowels and __h__ appear a lot in Eberban's morphology, and thus are coined
 __vhowels__ in this book. Note that in __vhowels__, __h__ can only appear between two vowels.
 
-Words are usually written separated by spaces, however this is not mandatory. While removing spaces,
-however, it might be required to add the __word boundary marker__ symbol __'__ in some places. More
-than one marker in a row is not allowed. Letters are chained one after the other without spaces to
-form __words__ which are divided into multiple categories based on their structure.
+Words are usually written separated by spaces, however this is not mandatory. Spaces are only
+mandatory before words starting with a __vowel__ or a __sonorant__.
 
 Eberban text is usually written all lowercase (outside of foreign text quotes), but uppercase can
-informally be used in written media to convey volume (such as yelling). Outside of __'__ no
-punctuation symbol is used, and any other character is considered a space, but informally
-punctuation from other languages can be used (for example by writing `"` around quotes, or ending
-sentences with `.`) as long as the proper Eberban grammar is also used.
+informally be used in written media to convey volume (such as yelling). No punctuation symbol is
+used but informally punctuation from other languages can be used as long as the proper Eberban
+grammar is also used. `.` is commonly used to visually join two words that must have space between
+them, while one or many `.` surrounded by spaces usually convey a longer pause in speach. Hyphen can
+be used at syllable boundary to make them stand-out without breaking the word in two, and also allows
+a word to continue on the next line.
 
 ## Word types
 
@@ -74,12 +75,11 @@ consonant pair, a consonant triplet or __h__. If this first letter is a __u__ it
 with a __'__ to separate it from the the prefix.
 
 Borrowings must end with a _vowel_, or a _vowel_ followed by a single _consonant_ (not only
-_sonorants_). In written media, borrowings must be followed by either spaces or a word boundary
-marker, which is realized in speech by pausing after the borrowing to properly separate it from the
-following word.
+_sonorants_). In written media, borrowings must be followed by space(s), which is realized in speech
+by pausing after the borrowing to properly separate it from the following word.
 
-Similarly, the initial __u__ must be either preceded by spaces or a word boundary marker, and
-realized orally as either a pause or a glottal stop.
+Similarly, the initial __u__ must be preceded by space(s), and realized orally as either a pause or
+a glottal stop.
 
 ### Freeform variables
 
@@ -105,10 +105,10 @@ Compounds : _eberban_
 
 ### Reasoning
 
-Outside of borrowings and assignable names, encountering a _non-sonorant consonant_ or a word
-boundary marker means it is the start of a new word; unless it the first letter of a _medial
-consonant pair_ which cannot be misunderstood for the start of a new word. Word boundary markers or
-spaces prevent words from "merging" into adjacent words.
+Outside of borrowings and assignable names, encountering a _non-sonorant consonant_ or a pause means
+it is the end of a word; unless it the first letter of a _medial consonant pair_ which cannot be
+misunderstood for the start of a new word. Spaces prevent words starting with a _vowel_ or
+_sonorant_ to "merge" into the previous words.
 
 These simple rules prevent any ambiguity of word boundaries, which is called a __Self-Segregating
 Morphology__.

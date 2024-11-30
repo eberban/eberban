@@ -406,22 +406,17 @@ function constructBoxesOutput(parse, depth) {
 			if (!hideTitleList.includes(parse.type)) {
 				if (parse.type === 'compound') {
 					let compound_text = [];
-					let compound = '';
 
 					for (var child in parse.children) {
-						if (parse.children[child].word) {
+						if (parse.children[child].type == "borrowing") {
+							compound_text.push("u" + parse.children[child].children[1].word);
+						} else if (parse.children[child].word) {
 							compound_text.push(parse.children[child].word);
 						}
 					}
 
-					if (compound_text[0] == 'e') {
-						compound = 'e' + extractCanonicalCompound(compound_text, 1, 2).compound;
-					} else if (compound_text[0] == 'a') {
-						compound += 'a' + extractCanonicalCompound(compound_text, 1, 3).compound;
-					} else if (compound_text[0] == 'o') {
-						compound += 'o' + extractCanonicalCompound(compound_text, 1, -1).compound;
-					}
-
+					let compound = 'e' + extractCanonicalCompound(compound_text, 1).compound;
+					
 					output += '<br><b>' + compound + '</b>';
 
 					if (dictionary[compound]) {
@@ -685,11 +680,6 @@ function extractCanonicalCompound(text, startIndex) {
 	} else if (text[startIndex] == 'r') {
 		compound += 'r';
 		length = -1;
-		offset++;
-	}
-
-	if (text[startIndex + offset] == 'i') {
-		compound += 'i';
 		offset++;
 	}
 
