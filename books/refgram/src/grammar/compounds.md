@@ -9,8 +9,8 @@ borrowings) into a single unit. While a compound __ignores the grammatical rules
 words__, its meaning should (to a certain extent) be related.
 
 A compound start with either __e, en, er__, respectively starting a compound composed of two, three,
-or more words. er-compounds stop when a single __e__ is encountered (with a space or word boundary
-marker before it). Spaces can be inserted between any of the parts of the compound.
+or more words. er-compounds stop when a single __e__ is encountered (with a space before it). Spaces
+can be inserted between any parts of the compound.
 
 If the first word starts with a vowel (a borrowing or __A/O__ particle) then the pause before this
 vowel is optional. __NI__ particles needs to be prefixed by a pause or space to not be confused with

@@ -360,19 +360,38 @@ voi:
   id: wvdkovz6eg
   family: "VI"
   gloss: "adv["
-  short: Starts adverbial/prepositional clause.
+  short: Starts adverbial/sharing-bound prepositional clause.
   notes: |
     Followed by a single predicate P, and any following predicates (if any) form chain C.
 
     P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
     bindings of that predicate are evaluated outside of that [A] slot. 
     
-    Chain C will be bound to the [E] slot of P.
+    Chain C will be sharing-bound to the [E] slot of P.
     
     This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
     Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
     is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [foi]
+  see_also: [foi, vioi, fioi]
+  links:
+    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
+vioi:
+  id: wezusxq6te
+  family: "VI"
+  gloss: "adv=["
+  short: Starts adverbial/equivalence-bound prepositional clause.
+  notes: |
+    Followed by a single predicate P, and any following predicates (if any) form chain C.
+
+    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
+    bindings of that predicate are evaluated outside of that [A] slot. 
+    
+    Chain C will be equivalence-bound to the [E] slot of P.
+    
+    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
+    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
+    is bound to C, while second exposed slot wraps the attached to predicate.
+  see_also: [foi, voi, fioi]
   links:
     - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 fi:
@@ -528,21 +547,40 @@ fai:
     - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 foi:
   id: 0rc4mfpym6
-  family: "VI"
+  family: "FI"
   gloss: "]adv["
-  short: Starts adverbial/prepositional clause.
+  short: Starts adverbial/sharing-bound prepositional clause.
   notes: |
     Followed by a single predicate P, and any following predicates (if any) form chain C.
 
     P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
     bindings of that predicate are evaluated outside of that [A] slot. 
     
-    Chain C will be bound to the [E] slot of P.
+    Chain C will be sharing-bound to the [E] slot of P.
     
     This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
     Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
     is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [voi]
+  see_also: [voi, vioi, fioi]
+  links:
+    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
+fioi:
+  id: trurybdtxi
+  family: "FI"
+  gloss: "]adv=["
+  short: Starts adverbial/equivalence-bound prepositional clause.
+  notes: |
+    Followed by a single predicate P, and any following predicates (if any) form chain C.
+
+    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
+    bindings of that predicate are evaluated outside of that [A] slot. 
+    
+    Chain C will be equivalence-bound to the [E] slot of P.
+    
+    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
+    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
+    is bound to C, while second exposed slot wraps the attached to predicate.
+  see_also: [voi, vioi, foi]
   links:
     - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
 se:
@@ -2107,8 +2145,8 @@ kagvi:
   gloss: "map-list-wrapper"
   tags: [map, list]
   short: |
-    [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: empty
-    map {kagvil}) by applying the list of transformations [A:blu ()].
+    [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: context)
+    by applying the list of transformations [A:blu ()].
 kagvien:
   id: eogkr6aqeg
   family: "R"
@@ -2380,7 +2418,12 @@ skal:
   id: fx1mnfjs7i
   family: "R"
   gloss: "computer"
-  short: "[E:tce* pan] is a computer."
+  short: "[E:tce* pan] is a computer (in general, includes smartphones, game consoles, etc)."
+skol:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "software"
+  short: "[E:tce* pan] is a computer software/program."
 sune:
   id: nj03wvtsbv
   family: "R"
@@ -2408,7 +2451,10 @@ spua:
   id: qwnwymrscy
   family: "R"
   gloss: "home"
-  short: "[E:tce* pan] is a home/house/nest for [A:tce* pan]."
+  short: "[E:tce* pan] is a home/dwelling for [A:tce* pan]."
+  notes: |
+    Can qualify the building {espuacmuel} or a larger space containing it
+    (region/state/country/planet/etc).
 zaro:
   id: rzmceyzcgr
   family: "R"
@@ -2677,6 +2723,12 @@ cfan:
   gloss: "gas"
   tags: [matter]
   short: "[E:tce* pan] is a gas (state of matter)."
+cfean:
+  id: g8ff14fir3
+  family: "R"
+  gloss: "fuild"
+  tags: [matter]
+  short: "[E:tce* pan] is a fuild (state of matter, gas or liquid)."
 jeon:
   id: xzllyv1sx1
   family: "R"
@@ -2819,6 +2871,8 @@ tsui:
   family: "R"
   gloss: "searches"
   short: "[E:tce* pan] searches/looks for something that satisfies [A:(p)]."
+  notes: |
+    This doesn't imply that something satisfying [A] really exists.
 buan:
   id: ernf6oh1zg
   family: "R"
@@ -2908,7 +2962,7 @@ kineo:
   family: "R"
   gloss: "touches"
   short: "[E:tce* pan] touches [A:tce* pan]."
-varin:
+zgehal:
   id: jgewshmmt3
   family: "R"
   gloss: "strange"
@@ -3053,11 +3107,6 @@ kena:
   family: "R"
   gloss: "holds"
   short: "[E:tce* pan] holds/grasps [A:tce* pan]."
-caloi:
-  id: pfztommryn
-  family: "R"
-  gloss: "purpose:"
-  short: "[E:tce man] have purpose to satisfy property [A:(tce man)]."
 jarai:
   id: wwih32fwvc
   family: "R"
@@ -3068,6 +3117,11 @@ zerai:
   family: "R"
   gloss: "personality trait:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as a personality trait."
+dzai:
+  id: ewii2lwhb7
+  family: "R"
+  gloss: "skilled:"
+  short: "[E:tce pan] is skilled at satisfy property [A:(tce pan)]."
 dzui:
   id: zwvj8ibmcc
   family: "R"
@@ -3398,29 +3452,48 @@ june:
     6.674e-11 m3.kg-1.s-2
     = 6.674e-11 m3/(kg.s2)
     = {tia jo tia tio tu jei teo jie mual mual mual jume gulo vola vola}
-zgie:
+
+cpie:
   id: nneh2x85ud
   family: "R"
-  gloss: "width"
-  short: "[E:tce gan] (length) is the width of [A:tce pan]."
+  gloss: "length"
+  short: "[E:tce gan] (length) is the length of segment [A:tce pan]."
   tags: ["measurement"]
-fniu:
-  id: fb6aza9xej
-  family: "R"
-  gloss: "height"
-  short: "[E:tce gan] (length) is the height of [A:tce pan]."
-  tags: ["measurement"]
-cpea:
+cpia:
   id: 1p6a8o9nk3
   family: "R"
   gloss: "area"
-  short: "[E:tce gan] (length^2) is the area of [A:tce pan]."
+  short: "[E:tce gan] (length^2) is the area of surface [A:tce pan]."
   tags: ["measurement"]
-jvao:
+cpio:
   id: nd9g9s8u4q
   family: "R"
   gloss: "volume"
   short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
+  tags: ["measurement"]
+cpuin:
+  id: afnwxto0ke
+  family: "R"
+  gloss: "point"
+  short: "[E:tce pan] is a (0d) point."
+  tags: ["geometry"]
+cpuen:
+  id: wo4n0r54ks
+  family: "R"
+  gloss: "line"
+  short: "[E:tce pan] is a (1d) line."
+  tags: ["geometry"]
+cpuan:
+  id: i9d94cz5n6
+  family: "R"
+  gloss: "plane"
+  short: "[E:tce pan] is a (2d) plane."
+  tags: ["geometry"]
+jogme:
+  id: gpn685u76q
+  family: "R"
+  gloss: "mass"
+  short: "[E:tce gan] (mass) is the mass of [A:tce pan]."
   tags: ["measurement"]
 ckia:
   id: ldcalrk1ii
@@ -3931,7 +4004,7 @@ bjaor:
   tags: ["animal"]
   short: "[E:tce* pan] is an elephant."
 graulin:
-  id: gns2tibmdo
+  id: 7386lgkl9w
   family: "R"
   gloss: "dragon"
   tags: ["animal", "mythical"]
@@ -3955,9 +4028,9 @@ bzael:
   notes: |
     Words expressing subjective optinions are stated from the point of view of
     an opiner. The opiner is stored in the context, and can be changed using
-    {enbzaelmuesai}.
+    {ebzaelmua}.
 
-    Words like {kuri} (think) use {enbzaelmuesai} internally, while subjective words
+    Words like {kuri} (think) use {ebzaelmua} internally, while subjective words
     like {blan} are by default according to the opiner {bzael}.
 zoal:
   id: ob1f25nx3q
@@ -4101,7 +4174,7 @@ sre:
   tags: [time, tense]
   short: "[A:()] occurs before [E:tca ski] (default: current context event), separated by [O:tce gan] time."
   notes: |
-    The end of "it" is before the start of [A].
+    The end of [A] is before the start of [E]. [A] is in the past of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sru:
@@ -4111,7 +4184,7 @@ sru:
   tags: [time, tense]
   short: "[A:()] occurs after [E:tca ski] (default: current context event), separated by [O:tce gan] time."
   notes: |
-    The start of "it" is after the end of [A].
+    The start of [A] is after the end of [E]. [A] is in the future of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sra:
@@ -4121,17 +4194,17 @@ sra:
   tags: [time, tense]
   short: "[A:()] starts [E:tca ski] (default: current context event)."
   notes: |
-    The start of "it" is the start of [A].
+    The start of [A] is the start of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sro:
   id: nsnjvcaglb
   family: "R"
-  gloss: "finished:"
+  gloss: "finishes:"
   tags: [time, tense]
-  short: "It finishes [A:()]"
+  short: "[A:()] finishes [E:tca ski] (default: current context event)."
   notes: |
-    The end of [A:()] is the end of [E:tca ski] (default: current context event).
+    The end of [E] is the end of [A].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srui:
@@ -4161,11 +4234,55 @@ srai:
 sri:
   id: u3q3u80bs7
   family: "R"
-  gloss: "unconstrained-by:"
+  gloss: "unconstrained:"
   tags: [time, tense]
-  short: "[A:()] occurs at some point (unrelated to other events)"
+  short: "[A:()] occurs at some point unrelated with [E:tca ski] (default: current context event)."
+  notes: |
+    [A] must still be reachable from [E], it cannot occur in an unrelated timeline.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+sni:
+  id: wx9gxr4xrp
+  family: "R"
+  gloss: "possible:"
+  tags: [time, tense, modal]
+  short: "It is possible that [A:()] occurs."
+  links:
+    - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
+snu:
+  id: 16f4flzhb2
+  family: "R"
+  gloss: "necessary:"
+  tags: [time, tense, modal]
+  short: "It is necessary that [A:()] occurs."
+  links:
+    - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
+sna:
+  id: m14pml81zw
+  family: "R"
+  gloss: "counterfactual:"
+  tags: [time, tense]
+  short: "[A:()] would be true if [E:()] was true."
+  notes: |
+    - both [E] and [A] are false in the current timeline\
+    - at any instant I in the past of the current timeline, if [E] occurs in the future of I, then
+      [A] necessarily occurs too.\
+    - as [A] is evaluated in the current timeline with some common timespan T , it is evaluated in
+      the other timelines with a timespan T2 such that T and T2 have the same duration, and their
+      distance with I is the same.
+  links:
+    - ["icon-book", "Event and tenses - Counterfactual conditionals", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#counterfactual-conditionals]
+sunai:
+  id: 1qs74axcu1
+  family: "R"
+  gloss: "parallel-universe:"
+  tags: [time, tense]
+  short: "[A:()] occurs in a parallel or fictional universe."
+  notes: |
+    Instant of this parallel or fictional universe are not accessible from any instant of the current universe.
+  links:
+    - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
+
 ski:
   id: yktbdu521a
   family: "R"
@@ -4240,36 +4357,25 @@ skan:
     [E:tce* man] is a timespan.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-skun:
+sufkun:
   id: u6sn4vyfzh
   family: "R"
   gloss: present
-  tags: [time, context-updater]
-  short: |
-    [E:tca ski] is the present.
+  tags: [time]
+  short: "[E:tca ski] is the present."
+  notes: |
+    The present is automatically updated between sentences to "move forward".
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-# skun:
-#   id: tsrx8h6muk
-#   family: "R"
-#   gloss: set-anchor-present
-#   tags: [time, context-updater]
-#   short: |
-#     [E:ma] is the context with time anchor being the present.
-#   notes: |
-#     The present is a time-span representing the duration of the utterence of the sentence, and is
-#     updated between each sentence to then represent the next sentence duration.
-#   links:
-#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-# sko:
-#   id: k22ul24sct
-#   family: "R"
-#   gloss: set-anchor
-#   tags: [time, context-updater]
-#   short: |
-#     [A:tca skan] is the current context time anchor.
-#   links:
-#     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+skun:
+  id: xq7ino6s9j
+  family: "R"
+  gloss: time-anchor
+  tags: [time, context]
+  short: "[E:tca ski] is the current sentence time anchor."
+  notes: Time anchor can be changed using {enanskunsai}.
+  links:
+    - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skon:
   id: i2jo0s1e03
   family: "R"
@@ -4301,7 +4407,7 @@ pseo:
   family: "R"
   gloss: distance
   tags: ["space"]
-  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {psoi})."
+  short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {peni})."
 psulo:
   id: 7vn4ceujmp
   family: "R"
@@ -4345,7 +4451,7 @@ penu:
   tags: ["space"]
   short: "[E:tce pan] is behind [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the behind direction.
@@ -4356,7 +4462,7 @@ pena:
   tags: ["space"]
   short: "[E:tce pan] is in front of [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the behind/in-front component must be the greatest,
     and the relative value must be in the in-front direction.
@@ -4367,7 +4473,7 @@ peno:
   tags: ["space"]
   short: "[E:tce pan] is to the left of [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the left direction.
@@ -4378,7 +4484,7 @@ pene:
   tags: ["space"]
   short: "[E:tce pan] is to the right of [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the left/right component must be the greatest,
     and the relative value must be in the right direction.
@@ -4389,7 +4495,7 @@ peniu:
   tags: ["space"]
   short: "[E:tce pan] is above [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the above direction.
@@ -4400,10 +4506,37 @@ penie:
   tags: ["space"]
   short: "[E:tce pan] is below [A:tce pan]."
   notes: |
-    In the referential defined by {psoi}, we take the vectors from all points of
+    In the referential defined by {peni}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the below direction.
+pnuen:
+  id: uqly4vvvgx
+  family: "R"
+  gloss: vertical
+  tags: ["space"]
+  short: "[E:tce pan] is oriented vertically."
+  notes: |
+    In the referential defined by {peni}.
+    TODO: Specify margin of error.
+pneon:
+  id: b0ic7nzxd8
+  family: "R"
+  gloss: left-right
+  tags: ["space"]
+  short: "[E:tce pan] is oriented in the left-right direction."
+  notes: |
+    In the referential defined by {peni}.
+    TODO: Specify margin of error.
+pnaun:
+  id: 526611yo25
+  family: "R"
+  gloss: front-back
+  tags: ["space"]
+  short: "[E:tce pan] is oriented in the front-back direction."
+  notes: |
+    In the referential defined by {peni}.
+    TODO: Specify margin of error.
 pini:
   id: nh5bijnt09
   family: "R"
@@ -4421,7 +4554,7 @@ pina:
   tags: ["space"]
   short: "[E:tce pan] is to the north of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the north direction.
@@ -4432,7 +4565,7 @@ pinu:
   tags: ["space"]
   short: "[E:tce pan] is to the south of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the latitude component must be the greatest,
     and the relative value must be in the south direction.
@@ -4443,7 +4576,7 @@ pino:
   tags: ["space"]
   short: "[E:tce pan] is to the west of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the west direction.
@@ -4454,7 +4587,7 @@ pine:
   tags: ["space"]
   short: "[E:tce pan] is to the east of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the longitude component must be the greatest,
     and the relative value must be in the east direction.
@@ -4465,7 +4598,7 @@ piniu:
   tags: ["space"]
   short: "[E:tce pan] is above (in altitude) of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the above direction.
@@ -4476,7 +4609,7 @@ pinie:
   tags: ["space"]
   short: "[E:tce pan] is below (in altitude) of [A:tce pan]."
   notes: |
-    In the referential defined by {psei}, we take the vectors from all points of
+    In the referential defined by {pini}, we take the vectors from all points of
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the altitude component must be the greatest,
     and the relative value must be in the below direction.
@@ -4535,6 +4668,9 @@ taktin:
   family: "R"
   gloss: dangerous
   short: "[E:tce pan] is dangerous for [A:tce pan] (default: {bzael})."
+  notes: |
+    [E] pose a danger for [A], and [A] is not necessarily who thinks it is dangerous for [A].
+    Use {kuri} to state who thinks its dangerous.
 ksuar:
   id: n0r4kfjv55
   family: "R"
@@ -4713,6 +4849,83 @@ klao:
   short: |
     [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
     member of [A] satisfies [O] with the following member.    
+celuar:
+  id: f1la1jggsk
+  family: "R"
+  gloss: "mushroom"
+  short: "[E:tce* pan] is a mushroom."
+  tags: [food]
+teonin:
+  id: 4jd51cfja3
+  family: "R"
+  gloss: "rice"
+  short: "[E:tce* pan] is rice."
+  tags: [food]
+jgelin:
+  id: lsj67h3xv7
+  family: "R"
+  gloss: "olive"
+  short: "[E:tce* pan] is an olive."
+  tags: [food, fruit, plant]
+merean:
+  id: 2g3k5ais88
+  family: "R"
+  gloss: "onion"
+  short: "[E:tce* pan] is an onion."
+  tags: [food, plant]
+meloan:
+  id: cyprcdsw9l
+  family: "R"
+  gloss: "garlic head"
+  short: "[E:tce* pan] is a garlic head."
+  tags: [food, plant]
+cpunu:
+  id: 7ps3utese2
+  family: "R"
+  gloss: "fruit"
+  short: "[E:tce pan] is a fruit of [A:tce pan]."
+  tags: [fruit, plant]
+joeloi:
+  id: 971azktj9b
+  family: "R"
+  gloss: "oil"
+  short: "[E:tce* pan] is oil made from something that satisfies [A:(tce pan)]."
+  notes: |
+    [E] is a liquid at room temperature and doesn't mix with water.\
+    [A] is not an entity but a property since the thing being made into oil no longer exists. 
+  tags: [food]
+gatfi:
+  id: 9wocwv8xz1
+  family: "R"
+  gloss: "receipe:"
+  short: "[E:tce pan] is a receipe realized by satisfying [A:(tce pan)]."
+  notes: |
+    Everything that satisfies [A] is a result of applying the receipe.
+cmuel:
+  id: 8q50y3hb3c
+  family: "R"
+  gloss: "building"
+  short: "[E:tce* pan] is a building."
+kalu:
+  id: j2zcgd5mek
+  family: "R"
+  gloss: "divided-from"
+  tags: ["transformation"]
+  short: "[E:tce pan] are things that were divided from [A:(tce pan)]."
+  notes: |
+    As [A] is being divided into [E], [A] cease to exist and [E] starts to exist, either at the same
+    time or at different times. {kalu} starts when all members of [E] exists. [A] is stated to
+    occur before {kalu} starts.
+    
+    [E] can be a subset of all parts divided from [A], to speak about all the parts, use {tcihi}. If
+    there are multiple things being divided, [E] members can come from any of those things (hense why
+    you should use {tcihi} instead of {tcu}, as with {tcu} you would say that each part are individually
+    divided from multiple things, which is not the case).
+filiel:
+  id: gdpsn5c3de
+  family: "R"
+  gloss: "pocket"
+  short: "[E:tce* pan] is a pocket."
 trai:
   id: INSERT_WORD_ID
   family: "R"
@@ -5048,7 +5261,7 @@ e ze al:
   family: "C"
   short: "Repeats the previous request. See {al} notes."
   gloss: "latest-request"
-en bzael mue sai:
+e bzael mua:
   id: hshwh0yqhx
   family: "C"
   gloss: "set-opiner:"
@@ -5166,7 +5379,10 @@ e on peu:
   id: jpvb7ytjfg
   family: "C"
   gloss: "dictionary"
-  short: "[E:tce* man] is a dictionary."
+  short: "[E:tce* pan] is a dictionary."
+  notes: |
+    Can be either a physical artifact or an abstract dictionary representing all the words of
+    a language at some point in time.
 en skal co sa:
   id: vmbujokvfo
   family: "C"
@@ -5325,17 +5541,23 @@ e bire sru:
   short: "[A:()] occurs years (more than 1 year included) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-# e skal zari:
-#   id: gpqertouzz
-#   family: "C"
-#   gloss: "program"
-#   short: "[E:tce* man] is a computer program."
-
 e glon sa:
   id: j31as5z1tr
   family: "C"
   gloss: "plays"
   short: "[E:tce pan] plays game [A:tce* pan]."
+  notes: Implies that there is a player [E].
+e glon skol:
+  id: dyp4u0gi58
+  family: "C"
+  gloss: "video game"
+  short: "[E:tce pan] is a video game."
+  notes: "[E] is not necessarily a game played on a computer, but can also be on game consoles or phone."
+e filiel skal:
+  id: tmtoheohak
+  family: "C"
+  gloss: "smartphone"
+  short: "[E:tce pan] is a smartphone."
 e buan spenu:
   id: mf42sda4or
   family: "C"
@@ -5602,7 +5824,71 @@ e tcu zoli:
   family: "C"
   gloss: "with-all-tools:"
   short: "[A:()] is realised using all tools [E:tce man]."
+e tian tsau:
+  id: qdwr2zidwf
+  family: "C"
+  gloss: "cooking"
+  short: "[E:tce* pan] is cooked (food crafting) by [A:tce pan]."
+e cfen mula:
+  id: 2rf720dxu3
+  family: "C"
+  gloss: "litre"
+  short: "[E:tce gan] is 1 litre (10^-3 m3) times [A:tce gan] (default: 1)."
+  tags: [space, unit]
+e cnue meloan:
+  id: 9fc31ltwy9
+  family: "R"
+  gloss: "garlic clove"
+  short: "[E:tce* pan] is a garlic clove."
+  tags: [food, plant]
+e kine cmuel:
+  id: wlqy92kdaz
+  family: "C"
+  gloss: "school"
+  short: "[E:tce* pan] is a school/educational building."
+e spua cmuel:
+  id: wlqy92kdaz
+  family: "C"
+  gloss: "residential building"
+  short: "[E:tce* pan] is a house/residential building."
+e pnuen cpie:
+  id: fb6aza9xej
+  family: "C"
+  gloss: "height"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
+e pneon cpie:
+  id: ie3rzd0ac7
+  family: "C"
+  gloss: "width"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
+e pnaun cpie:
+  id: vxeydlyrp7
+  family: "C"
+  gloss: "depth"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the depth (front-back length) of [A:tce pan]."
+e cpuan kalu:
+  id: upob68pr52
+  family: "C"
+  gloss: "slice"
+  short: "[E:tce pan] are slices that were sliced from [A:(tce pan)]."
+  notes: |
+    See {kalu} explanations.
 
+    [E] are cut following close-to-parallel planes. Slices [E] have their up-down direction matching
+    the tangent of their cutting plane, such that height corresponds to thickness.
+en an skun sai:
+  id: d6ahqqz2b3
+  family: "C"
+  gloss: "set-time-anchor:"
+  tags: ["time", "context"]
+  short: "[E:p] is the current context with time anchor being changed to [A:(tca ski)]."
+  notes: |
+    [A] is a property so that the time anchor can change between sentences by depending on other context
+    information, like {sufkun} (present) which makes the present move "forward in time" between sentences.
+ 
 # Spelling
 _spelling:
   pi: 
@@ -5726,11 +6012,11 @@ _spelling:
       {ceu}: Sound \[h] (IPA).
   uhu: 
     id: 2pzry3n25u
-    gloss: "' (pause)"
+    gloss: "(space)"
     tags: ["native"]
     short: |
-      {ce}: Letter '.\
-      {ceu}: Sound \[ʔ] (IPA).
+      {ce}: Space character.\
+      {ceu}: Sound \[ʔ] (IPA) or pause.
   i: 
     id: xlut6t956h
     gloss: I

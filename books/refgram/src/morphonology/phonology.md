@@ -27,9 +27,8 @@
 | o      | \[o\], \[ɔ\]                      | a back mid vowel                  |
 | u      | \[u\]                             | a back close vowel                |
 
-The word boundary marker __'__ is usually realized as a pause. However before a
-vowel-initial word (borrowings, freeform variables and compounds) it can be
-realized as a glottal stop \[ʔ\] instead.
+At the start of a __vowel__ or __sonorant__ initial word, it is mandatory to
+make a pause or utter a glottal stop \[ʔ\].
 
 Consecutive vowels are separated by hiatuses, but glides like \[j\] and \[w\]
 are allowed respectively alongside or instead of \[i\] and \[u\].
@@ -39,6 +38,9 @@ one or more of the letter __n__ surrounded by spaces, which is realized as \[n̩
 
 In speech, the schwa sound \[ə\] can be used in between consonants of a pair if
 the speaker has trouble uttering the pair as-is. It has no written equivalent.
+
+Quotation marks __[__ and __]__, when used for foreign quotes grammar, are both realized
+as a palatal click (\[ǂ\]) which distingly marks the start and end of a quote.
 
 ## Example
 

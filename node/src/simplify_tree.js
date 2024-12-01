@@ -39,6 +39,7 @@ const important_types = [
 	[ 'one_word_quote', 'word quote' ],
 	[ 'foreign_quote', 'foreign quote' ],
 	[ 'foreign_quote_content', 'foreign quote content' ],
+	[ 'foreign_quote_simple_content', 'foreign quote content' ],
 	[ 'foreign_quote_open', 'foreign quote delimiter' ],
 	[ 'foreign_quote_close', 'foreign quote delimiter' ],
 	[ 'unit_number', 'number' ],
@@ -71,6 +72,19 @@ for (let replace of important_types) {
 }
 
 simplifyFunctions['foreign_quote_content'] = function(parse) {
+	let text = '';
+
+	parse.slice(1).forEach(x => {
+		text += x[0];
+	})
+
+	return {
+		type: 'foreign quote content',
+		word: text,
+	}
+}
+
+simplifyFunctions['foreign_quote_simple_content'] = function(parse) {
 	let text = '';
 
 	parse.slice(1).forEach(x => {

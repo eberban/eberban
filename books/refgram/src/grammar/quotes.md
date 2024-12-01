@@ -56,16 +56,18 @@ quote or string of arbitrary data).
 
 ----
 
-__co__ (__CO__) allows quoting anything such as foreign text, grammatically
-incorrect Eberban text, or even arbitrary data. __co__ is followed by a single
-arbitrary root or particle, which has the role of a delimiter (it is not
-necessary for it to be an existing particle or root, only a valid form),
-followed by a __word boundary marker__. Any following characters (including
-spaces) are considered part of the quoted text. The quote ends when this word
-appears again prefixed by a __word boundary marker__. The delimiter word
-prefixed by a word boundary marker must __NOT__ appear in the text, either
-written with same letters or pronounced the same way, as it will be considered
-to be the end of the quote, and the remaining part will leak out of the quote.
+__co__ (__CO__) allows quoting anything such as foreign text, grammatically incorrect Eberban text,
+or even arbitrary data. __co__ has two quotation modes :
+- if immediately followed by a __[__ (which can be prefixed by spaces), then it quotes foreign text
+  until __]__ is reached. Thus this cannot quote text that contains __]__. 
+- otherwise it is followed by a single arbitrary root or particle, which has the role of a delimiter
+(it is not necessary for it to be an existing particle or root, only a valid form), followed by
+__[__. Any following characters (including spaces) are considered part of the quoted text, while in
+speech following pause is also considered part of the quote. The quote ends when this word appears
+again prefixed by __]__. The delimiter word prefixed by a __]__ must __NOT__ appear in the text,
+either written with same letters or pronounced the same way (reminder that __]__ is uttered as a
+palatal click), as it will be considered to be the end of the quote, and the remaining part will
+leak out of the quote.
 
 This whole block acts as a predicate with the definition `[E:tca skan] is
 foreign text/arbitrary data with content: [content].`
@@ -77,9 +79,9 @@ however to provide a description in Eberban to help comprehension for all
 speakers, listeners or readers.
 
 ```gloss
-eberban sae ebansa [ca mi dona eberban cai] siro [co zao'I like eberban'zao] ebansa euinglic'ban
+eberban sae ebansa ca mi dona eberban cai siro co [I like eberban] ebansa euinglic'ban
 
-eberban sae ebansa {ca mi dona eberban cai} siro {co zao'I like eberban'zao} ebansa euinglic'ban
+eberban sae ebansa {ca mi dona eberban cai} siro {co [I like eberban]} ebansa euinglic'ban
 
 {E:$(x) is the Eberban language} {chain A>E} {E:$(y) is expressed in language A:$(x)}
 {E:$(y) is text "I like Eberban" (in Eberban)} {E:$(y) has translation A:$(z)}

@@ -15,8 +15,7 @@ meaning:
 - `mi etiansa voi sra fa meon` = I will eat an apple (which exists now)
 - `mi sra etiansa meon` = I will eat an apple (which will exist)
 
-
-Any predicates present after the single predicate P1 form a chain C which will be bound to the E
+Any predicates present after the single predicate P1 form a chain C which will be sharing-bound to the E
 slot of P1. This allows to have preposition-like clauses.
 
 For exemple, with `pani` meaning `Inside of [E:tce pan], [A:()] occurs` and `sru` meaning `[A:()]
@@ -26,3 +25,5 @@ occured`:
   me (you're not necessarily in the house)
 - `spua pani mi etiansa meon sae duna voi sru fa mo`: In the house: I eat an apple that you gave me
   (you were in the house and that's where you gave the apple to me)
+
+To instead perform equivalence binding (if E is a predicate slot), __vioi/fioi__ can be used.
