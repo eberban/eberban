@@ -4713,30 +4713,6 @@ klao:
   short: |
     [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
     member of [A] satisfies [O] with the following member.    
-sfie:
-  id: x47yzwp0ud
-  family: "R"
-  gloss: "admiration"
-  tags: [emotion]
-  short: "[E:tce* pan] admires [A:()] being true."
-broi:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: "adoration"
-  tags: [emotion]
-  short: "[E:tce* pan] adores [A:()] being true."
-zmeri:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: "aesthetic appreciation"
-  tags: [emotion]
-  short: "[E:tce* pan] aesthetically appreciates [A:()] being true."
-ckiu:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: "amusement"
-  tags: [emotion]
-  short: "[E:tce* pan] is amused by [A:()] being true."
 trai:
   id: INSERT_WORD_ID
   family: "R"
@@ -4760,18 +4736,17 @@ kouli:
   family: "R"
   gloss: "awkward"
   tags: [emotion]
-  short: "[E:tce* pan] is awkward about [A:()] being true."
+  short: "[E:tce* pan] feels awkward about [A:()] being true."
 jdai:
   id: INSERT_WORD_ID
   family: "R"
   gloss: "bored"
   tags: [emotion]
-  short: "[E:tce* pan] bored with [A:()] being true."
+  short: "[E:tce* pan] is bored with [A:()] being true."
 ksai:
   id: INSERT_WORD_ID
   family: "R"
   gloss: "calm"
-  tags: [emotion]
   short: "[E:tce* pan] is calm about [A:()] being true."
 mreli:
   id: INSERT_WORD_ID
@@ -4779,12 +4754,20 @@ mreli:
   gloss: "confusion"
   tags: [emotion]
   short: "[E:tce* pan] is confused about [A:()] being true."
-kudbi:
+geri:
   id: INSERT_WORD_ID
   family: "R"
-  gloss: "craving"
+  gloss: "crave"
   tags: [emotion]
-  short: "[E:tce* pan] craves ::[A:()] being true."
+  short: "[E:tce* pan] craves [A:()] being true."
+e tian geri:
+  family: "C"
+  gloss: "crave food"
+  short: "[E:tce* pan] craves food satisfying property [A:(tce pan)]."
+e tian katmi:
+  family: "C"
+  gloss: "hungry"
+  short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]."
 gjoi:
   id: INSERT_WORD_ID
   family: "R"
@@ -4797,48 +4780,40 @@ krei:
   gloss: "sympathy"
   tags: [emotion]
   short: "[E:tce* pan] sympathises with [A:()] being true."
-sali:
+e bzael krei:
   id: INSERT_WORD_ID
-  family: "R"
-  gloss: "trance"
+  family: "C"
+  gloss: "empathy"
   tags: [emotion]
-  short: "[E:tce* pan] is entranced by [A:()] being true."
-podmi:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: "excited"
-  tags: [emotion]
-  short: "[E:tce* pan] is excited about [A:()] being true."
+  short: "[E:tce* pan] empathises for [A:()] being true."
 geri:
   id: INSERT_WORD_ID
   family: "R"
   gloss: "fear"
   tags: [emotion]
   short: "[E:tce* pan] is afraid about [A:()] being true."
-zadvi:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: "horror"
-  tags: [emotion]
-  short: "[E:tce* pan] is horrified by [A:()] being true."
 prui:
   id: INSERT_WORD_ID
   family: "R"
   gloss: "interest"
-  tags: [emotion]
   short: "[E:tce* pan] is interested in [A:()] being true."
 dole:
   id: INSERT_WORD_ID
   family: "R"
-  gloss: "romantic partner"
+  gloss: "romantic"
   tags: [emotion]
-  short: "[E:tce* pan] is a romantic partner of [A:tce pan]."
+  short: "[E:tce pan] feels romantic about [A:()] being true."
 fsuo:
   id: INSERT_WORD_ID
   family: "R"
+  gloss: "sexual"
+  short: "[E:tce pan] is sexual."
+e fsuo katmi:
+  id: INSERT_WORD_ID
+  family: "C"
   gloss: "sexual desire"
   tags: [emotion]
-  short: "[E:tce* pan] sexually desires [A:tce pan]."
+  short: "[E:tce* pan] sexually desires that [A:()] be the case."
 vriai:
   id: INSERT_WORD_ID
   family: "R"
@@ -4850,43 +4825,13 @@ plui:
   family: "R"
   gloss: "relief"
   tags: [emotion]
-  short: "[E:tce* pan] is relieved by [A:()] being true from [O:]."
-:
+  short: "[E:tce* pan] is relieved by [A:()] being true from [O:()] being true."
+jbini:
   id: INSERT_WORD_ID
   family: "R"
-  gloss: ""
+  gloss: "surprise"
   tags: [emotion]
-  short: "[E:tce* pan] [A:()] being true."
-:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: ""
-  tags: [emotion]
-  short: "[E:tce* pan] [A:()] being true."
-:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: ""
-  tags: [emotion]
-  short: "[E:tce* pan] [A:()] being true."
-:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: ""
-  tags: [emotion]
-  short: "[E:tce* pan] [A:()] being true."
-:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: ""
-  tags: [emotion]
-  short: "[E:tce* pan] [A:()] being true."
-:
-  id: INSERT_WORD_ID
-  family: "R"
-  gloss: ""
-  tags: [emotion]
-  short: "[E:tce* pan] [A:()] being true."
+  short: "[E:tce* pan] is surprised by [A:()] being true."
 
 # -----
 # Compounds
