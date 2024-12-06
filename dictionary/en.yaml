@@ -2420,7 +2420,7 @@ skal:
   gloss: "computer"
   short: "[E:tce* pan] is a computer (in general, includes smartphones, game consoles, etc)."
 skol:
-  id: INSERT_WORD_ID
+  id: 0py164bdbd
   family: "R"
   gloss: "software"
   short: "[E:tce* pan] is a computer software/program."
@@ -4848,7 +4848,7 @@ klao:
   gloss: "chain-rel"
   short: |
     [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
-    member of [A] satisfies [O] with the following member.
+    member of [A] satisfies [O] with the following member.    
 celuar:
   id: f1la1jggsk
   family: "R"
@@ -4926,6 +4926,105 @@ filiel:
   family: "R"
   gloss: "pocket"
   short: "[E:tce* pan] is a pocket."
+trai:
+  id: 6vrbrkb4i6
+  family: "R"
+  gloss: "anger"
+  tags: [emotion]
+  short: "[E:tce* pan] is angry about [A:()] being true (default: bzael)."
+kori:
+  id: vlw8psnhxu
+  family: "R"
+  gloss: "anxiety"
+  tags: [emotion]
+  short: "[E:tce* pan] is anxious about [A:()] being true (default: bzael)."
+tcai:
+  id: lg39c0rlpd
+  family: "R"
+  gloss: "awe"
+  tags: [emotion]
+  short: "[E:tce* pan] in awe of [A:()] being true (default: bzael)."
+kouli:
+  id: rynt2kga99
+  family: "R"
+  gloss: "awkward"
+  tags: [emotion]
+  short: "[E:tce* pan] feels awkward about [A:()] being true (default: bzael)."
+jdai:
+  id: ildysddhvi
+  family: "R"
+  gloss: "bored"
+  tags: [emotion]
+  short: "[E:tce* pan] is bored with [A:()] being true (default: bzael)."
+ksai:
+  id: sz89t72vcd
+  family: "R"
+  gloss: "calm"
+  short: "[E:tce* pan] feels calm about [A:()] being true (default: bzael)."
+mreli:
+  id: wtncyvxjx4
+  family: "R"
+  gloss: "confusion"
+  tags: [emotion]
+  short: "[E:tce* pan] is confused about [A:()] being true (default: bzael)."
+geri:
+  id: s2oebo53cd
+  family: "R"
+  gloss: "crave"
+  tags: [emotion]
+  short: "[E:tce* pan] craves [A:()] being true (default: bzael)."
+gjoi:
+  id: 5mrg0diog3
+  family: "R"
+  gloss: "disgust"
+  tags: [emotion]
+  short: "[E:tce* pan] is disgusted by [A:()] being true (default: bzael)."
+krei:
+  id: 2ru9d94qgg
+  family: "R"
+  gloss: "sympathy"
+  tags: [emotion]
+  short: "[E:tce* pan] sympathises with [A:()] being true (default: bzael)."
+geri:
+  id: 540jap6p3s
+  family: "R"
+  gloss: "fear"
+  tags: [emotion]
+  short: "[E:tce* pan] is afraid about [A:()] being true (default: bzael)."
+prui:
+  id: ysvvowy2y6
+  family: "R"
+  gloss: "interest"
+  short: "[E:tce* pan] is interested in [A:()] being true (default: bzael)."
+dole:
+  id: 9bee8fm3j5
+  family: "R"
+  gloss: "romantic"
+  tags: [emotion]
+  short: "[E:tce pan] feels romantic about [A:()] being true (default: bzael)."
+fsuo:
+  id: q7fefcwdki
+  family: "R"
+  gloss: "sexual"
+  short: "[E:tce pan] feels sexual about [A:()] being true (default: bzael)."
+vriai:
+  id: ganixoaec2
+  family: "R"
+  gloss: "nostalgia"
+  tags: [emotion]
+  short: "[E:tce* pan] is nostalgic about [A:()] being true (default: bzael)."
+plui:
+  id: c2pm9lkdn5
+  family: "R"
+  gloss: "relief"
+  tags: [emotion]
+  short: "[E:tce* pan] feels relieved from [A:()] being true (default: bzael) by [O:()] being true (default: bzael)."
+jbini:
+  id: mnqotqp5sn
+  family: "R"
+  gloss: "surprise"
+  tags: [emotion]
+  short: "[E:tce* pan] is surprised by [A:()] being true (default: bzael)."
 
 # -----
 # Compounds
@@ -5769,7 +5868,23 @@ en an skun sai:
   notes: |
     [A] is a property so that the time anchor can change between sentences by depending on other context
     information, like {sufkun} (present) which makes the present move "forward in time" between sentences.
- 
+e tian katmi:
+  family: "C"
+  gloss: "hungry"
+  short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]." 
+e bzael krei:
+  id: 9ghhob4dpk
+  family: "C"
+  gloss: "empathy"
+  tags: [emotion]
+  short: "[E:tce* pan] empathises for [A:()] being true."
+e fsuo katmi:
+  id: e4do0r7a33
+  family: "C"
+  gloss: "sexual desire"
+  tags: [emotion]
+  short: "[E:tce* pan] sexually desires that [A:()] be the case."
+
 # Spelling
 _spelling:
   pi: 
