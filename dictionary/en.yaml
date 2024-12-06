@@ -4931,100 +4931,100 @@ trai:
   family: "R"
   gloss: "anger"
   tags: [emotion]
-  short: "[E:tce* pan] is angry about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is angry about [A:()] being true."
 kori:
   id: vlw8psnhxu
   family: "R"
   gloss: "anxiety"
   tags: [emotion]
-  short: "[E:tce* pan] is anxious about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is anxious about [A:()] being true."
 tcai:
   id: lg39c0rlpd
   family: "R"
   gloss: "awe"
   tags: [emotion]
-  short: "[E:tce* pan] in awe of [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) in awe of [A:()] being true."
 kouli:
   id: rynt2kga99
   family: "R"
   gloss: "awkward"
   tags: [emotion]
-  short: "[E:tce* pan] feels awkward about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) feels awkward about [A:()] being true."
 jdai:
   id: ildysddhvi
   family: "R"
   gloss: "bored"
   tags: [emotion]
-  short: "[E:tce* pan] is bored with [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is bored with [A:()] being true."
 ksai:
   id: sz89t72vcd
   family: "R"
   gloss: "calm"
-  short: "[E:tce* pan] feels calm about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) feels calm about [A:()] being true."
 mreli:
   id: wtncyvxjx4
   family: "R"
   gloss: "confusion"
   tags: [emotion]
-  short: "[E:tce* pan] is confused about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is confused about [A:()] being true."
 geri:
   id: s2oebo53cd
   family: "R"
   gloss: "crave"
   tags: [emotion]
-  short: "[E:tce* pan] craves [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) craves [A:()] being true."
 gjoi:
   id: 5mrg0diog3
   family: "R"
   gloss: "disgust"
   tags: [emotion]
-  short: "[E:tce* pan] is disgusted by [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is disgusted by [A:()] being true."
 krei:
   id: 2ru9d94qgg
   family: "R"
   gloss: "sympathy"
   tags: [emotion]
-  short: "[E:tce* pan] sympathises with [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) sympathises with [A:()] being true."
 geri:
   id: 540jap6p3s
   family: "R"
   gloss: "fear"
   tags: [emotion]
-  short: "[E:tce* pan] is afraid about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is afraid about [A:()] being true."
 prui:
   id: ysvvowy2y6
   family: "R"
   gloss: "interest"
-  short: "[E:tce* pan] is interested in [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is interested in [A:()] being true."
 dole:
   id: 9bee8fm3j5
   family: "R"
   gloss: "romantic"
   tags: [emotion]
-  short: "[E:tce pan] feels romantic about [A:()] being true (default: bzael)."
+  short: "[E:tce pan] (default: bzael) feels romantic about [A:()] being true."
 fsuo:
   id: q7fefcwdki
   family: "R"
   gloss: "sexual"
-  short: "[E:tce pan] feels sexual about [A:()] being true (default: bzael)."
+  short: "[E:tce pan] (default: bzael) feels sexual about [A:()] being true."
 vriai:
   id: ganixoaec2
   family: "R"
   gloss: "nostalgia"
   tags: [emotion]
-  short: "[E:tce* pan] is nostalgic about [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is nostalgic about [A:()] being true."
 plui:
   id: c2pm9lkdn5
   family: "R"
   gloss: "relief"
   tags: [emotion]
-  short: "[E:tce* pan] feels relieved from [A:()] being true (default: bzael) by [O:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) feels relieved from [A:()] being true by [O:()] being true."
 jbini:
   id: mnqotqp5sn
   family: "R"
   gloss: "surprise"
   tags: [emotion]
-  short: "[E:tce* pan] is surprised by [A:()] being true (default: bzael)."
+  short: "[E:tce* pan] (default: bzael) is surprised by [A:()] being true."
 
 # -----
 # Compounds
@@ -5877,13 +5877,13 @@ e bzael krei:
   family: "C"
   gloss: "empathy"
   tags: [emotion]
-  short: "[E:tce* pan] empathises for [A:()] being true."
+  short: "[E:tce* pan] (default: bzael) empathises for [A:()] being true."
 e fsuo katmi:
   id: e4do0r7a33
   family: "C"
   gloss: "sexual desire"
   tags: [emotion]
-  short: "[E:tce* pan] sexually desires that [A:()] be the case."
+  short: "[E:tce* pan] (default: bzael) sexually desires that [A:()] be the case."
 
 # Spelling
 _spelling:
