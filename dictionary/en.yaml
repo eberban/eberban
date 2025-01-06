@@ -5025,6 +5025,19 @@ jbini:
   gloss: "surprise"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is surprised by [A:()] being true."
+vini:
+  id: 95ce2as51c
+  family: "R"
+  gloss: "equiv"
+  short: "[E:p] is equivalent to [A:p]."
+zipfi:
+  id: u7kf297mm0
+  family: "R"
+  gloss: "celebration"
+  short: "[E:tce pan] celebrates event described by [A:()]."
+  notes: |
+    [E] thinks that [A] is currently occuring, but that may not be the case. Even
+    if [A] is not the case, [E] are still celebrating.
 
 # -----
 # Compounds
@@ -5264,6 +5277,11 @@ e ci ma:
   family: "C"
   gloss: "word"
   short: "[E:tce* man] is a word."
+e ci vini:
+  id: 9ravc9ou95
+  family: "C"
+  gloss: "word-meaning"
+  short: "[E:tce* man] (quote or word) have meaning equivalent to [A:p]."
 e ce ma:
   id: 1w44wy894g
   family: "C"
@@ -5884,6 +5902,19 @@ e fsuo katmi:
   gloss: "sexual desire"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) sexually desires that [A:()] be the case."
+e birei denai:
+  id: xzpesschjb
+  family: "C"
+  gloss: "anniversary"
+  tags: [time]
+  short: "Now is an (day) anniversary of [A:()]."
+  notes: |
+    This event correspond to full day(s). If [A] occured on the N-th day of a year,
+    then any following N-day of a year will be an anniversary of [A].
+
+    If [A] spanned over multiple days, then the anniversary will too span over multiple
+    days. If you want a 1 day anniversary for a multi-day event, speak about its
+    start {sra} or end {sro}.
 
 # Spelling
 _spelling:
