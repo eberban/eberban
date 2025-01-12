@@ -49,6 +49,8 @@ words_sorted.forEach((word) => {
 	} else if (transitive) {
 		entry.tags.unshift("transitive");
 	}
+
+	entry.html_output = html_word_entry(word, entry);
 });
 
 const spelling_words_sorted = Object.keys(dictionary_en["_spelling"]).sort(compare_words);
@@ -69,6 +71,8 @@ spelling_words_sorted.forEach((word) => {
 	}
 
 	entry.links.push(["icon-book", "Quotes", "https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html"]);
+
+	entry.html_output = html_word_entry(word, entry);
 });
 
 export function count_word_types() {
@@ -211,15 +215,7 @@ function renderParagraphs(text) {
 			return out;
 		});
 
-		// __x__
-		p = p.replace(/(?<!\\)(?:\\{2})*__((?:[^\\_]|\\.)+)__/g, '<strong>$1</strong>');
-
-		// _x_
-		p = p.replace(/(?<!\\)(?:\\{2})*_((?:[^\\_]|\\.)+)_/g, '<em>$1</em>');
-
-		// cursive
-		p = p.replace(/\$\((.+?)\)/g, '<span class="cursive">$1</span>');
-		
+		// Eberban quotes with links.
 		p = p.replace(/\{(.*?)\}/g, (match, p1) => {
 			let out = '<span class="ebb-quote">';
 			out += addDictionaryLinks(p1);
@@ -228,29 +224,28 @@ function renderParagraphs(text) {
 			return out;
 		});
 
+		// __x__
+		p = p.replace(/(?<!\\)(?:\\{2})*__((?:[^\\_]|\\.)+)__/g, '<strong>$1</strong>');
+
+		// _x_
+		p = p.replace(/(?<!\\)(?:\\{2})*_((?:[^\\_]|\\.)+)_/g, '<em>$1</em>');
+
+		// cursive
+		p = p.replace(/\$\((.+?)\)/g, '<span class="cursive">$1</span>');
+
+		
+
 		output += `<p>${p}</p>`;
 	});
 
 	return output;
 }
 
-const addDictionaryLinks = (text) => {
-	let list = text.split(' ');
-	let out = "";
+function addDictionaryLinks(text) {
+	text = text.replaceAll(/&lt;(.+?)&gt;|(?<!!)([A-Za-z_]+)/g, '<a href="#$1$2">$1$2</a>');
+	text = text.replaceAll('!', '');
 
-	out += list.map((word) => {
-		let res;
-
-		if (word.startsWith("!")) {
-			res = word.slice(1)
-		} else {
-			res = word.replace(/(.*?)([A-Za-z']+)(.*?)/g, '$1<a href="#$2">$2</a>$3')
-		}
-		
-		return res;
-	}).join(' ');	
-
-	return out;
+	return text;
 }
 
 function escapeHTML(str) {
@@ -319,11 +314,6 @@ function may_insert_entry(results, filters, word, entry) {
 				return;
 			}
 		}
-	}
-
-	// Cache html output.
-	if (entry.html_output == undefined) {
-		entry.html_output = html_word_entry(word, entry);
 	}
 
 	if (exact_match) {

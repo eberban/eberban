@@ -1524,13 +1524,13 @@ a:
   gloss: "#assert"
   short: "Starts an assertive sentence, that the speaker asserts is true."
   notes: |
-    {a !X} is syntaxic sugar for {oni eze'a !X ol !P be mi eia'ol eze'a}, with
+    {a !X} is syntaxic sugar for {oni <e ze a> !X ol !P be mi <e a ol sai> <e ze a>}, with
     _X_ being the asserted proposition, and _P_ an unnamable predicate used
     solely to make an axiom. Since by uttering a {a} sentence the speaker
-    indeed asserts ({eia'ol}) the proposition, it is not possible to reject this
+    indeed asserts ({<e a ol sai>}) the proposition, it is not possible to reject this
     axiom.
 
-    {eze'a} thus allows to refer to the latest assertion.
+    {<e ze a>} thus allows to refer to the latest assertion.
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 al:
@@ -1539,13 +1539,13 @@ al:
   gloss: "#request"
   short: "Starts an injunctive/order/request sentence, that the speaker requests to be true."
   notes: |
-    {al !X} is syntaxic sugar for {oni eze'al !X ol !P be mi eial'ol eze'al}, with
+    {al !X} is syntaxic sugar for {oni <e ze al> !X ol !P be mi <e al ol sai> <e ze al>}, with
     _X_ being the requested proposition, and _P_ an unnamable predicate used
     solely to make an axiom. Since by uttering a {a} sentence the speaker
-    indeed requests ({eial'ol}) the proposition, it is not possible to reject this
+    indeed requests ({<e al ol sai>}) the proposition, it is not possible to reject this
     axiom.
 
-    {eze'al} thus allows to refer to the latest assertion.
+    {<e ze al>} thus allows to refer to the latest assertion.
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 o:
@@ -1557,7 +1557,7 @@ o:
     {o !P !X} is syntaxic sugar for {oni !P !X ol !R be mi eio'ol via !P fo
     mo}, _P_ being the defined predicate word, _X_ the definition, and _R_ an
     unnamable predicate used solely to make an axiom. Since by uttering a {o}
-    sentence the speaker indeed ask a question ({eio'ol}), it is not possible to
+    sentence the speaker indeed ask a question ({<e o ol sai>}), it is not possible to
     reject this axiom.
   links:
     - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
@@ -4373,7 +4373,7 @@ skun:
   gloss: time-anchor
   tags: [time, context]
   short: "[E:tca ski] is the current sentence time anchor."
-  notes: Time anchor can be changed using {enanskunsai}.
+  notes: Time anchor can be changed using {<en an skun sai>}.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skon:
@@ -5372,7 +5372,7 @@ en a ol sai:
   gloss: "asserts:"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
-    {a !X} can be modeled as being syntaxic sugar for {oni eze'a !X ol !P be mi eia'ol eze'a}.
+    {a !X} can be modeled as being syntaxic sugar for {oni <e ze a> !X ol !P be mi <en a ol sai> <e ze a>}.
     P is an unnameable predicate used solely for this purpose.
 en al ol sai:
   id: wg9fbpescm
@@ -5380,7 +5380,7 @@ en al ol sai:
   gloss: "requests:"
   short: "[E:tce pan] requests/order that [A:()] is true."
   notes: |
-    {AL X} can be modeled as being syntaxic sugar for {oni eze'al !X ol !P be mi eial'ol eze'a}.
+    {al X} can be modeled as being syntaxic sugar for {oni <e ze al> !X ol !P be mi <en al ol sai> <e ze a>}.
     P is an unnameable predicate used solely for this purpose.
 en o ol sai:
   id: b0c73ecend
