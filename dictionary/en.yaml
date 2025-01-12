@@ -3294,7 +3294,7 @@ birei:
   id: 8f292ygof9
   family: "R"
   gloss: "year (event)"
-  short: "Now is the year [E:tce gien] of [A:()] (default: Gregorian Calendar)."
+  short: "Now is the year [E:tce gien] (default: 0) of [A:()] (default: Gregorian Calendar)."
   tags: [time, event, year]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3312,7 +3312,7 @@ garei:
   id: 5iqzf2hgie
   family: "R"
   gloss: "month (event)"
-  short: "Now is the month [E:tce gien] of [A:()] (default: {birei})."
+  short: "Now is the month [E:tce gien] (default: 0) of [A:()] (default: {birei})."
   tags: [time, event, month]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3330,7 +3330,7 @@ korai:
   id: cqi4n1lpkt
   family: "R"
   gloss: "week (event)"
-  short: "Now is the week [A:tce gan] of [O:tce ski] (default: {birei})."
+  short: "Now is the week [A:tce gan] (default: 0) of [O:tce ski] (default: {birei})."
   tags: [time, event, week]  
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -3348,7 +3348,7 @@ denai:
   id: lvhzpvgj4z
   family: "R"
   gloss: "day (event)"
-  short: "Now is the day [E:tce gien] of [A:()] (default: {garei})."
+  short: "Now is the day [E:tce gien] (default: 0) of [A:()] (default: {garei})."
   tags: [time, event, day]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
@@ -4241,6 +4241,21 @@ sri:
     [A] must still be reachable from [E], it cannot occur in an unrelated timeline.
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
+skeri:
+  id: a3y1d3y93p
+  family: "R"
+  gloss: "tenses-AND:"
+  tags: [time, tense]
+  short: "[A:()] describes an event that satisfy all tense relations in set [E:tce (_, ())]."
+  notes: |
+    This predicate ensure that the same event satisfy all tense relations. It allows to combine multiple tense relations
+    that are hard to combine otherwise.
+
+    The E slot of the tense relations will not be bound, and thus default bounds can take effect.
+
+    Exemple:
+    {a peho bu birei sru pei skeri mi vania <e unihon stan>}
+    This year I'll go to Japan.
 sni:
   id: wx9gxr4xrp
   family: "R"

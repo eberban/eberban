@@ -20,7 +20,7 @@ __PE__ family contains the following members:
   > Exemple: `[pea [tcu mian] bu [meon] (pei)]` = A set of {the set of all cats, a set of apples}.
 - __peho__: Makes a set of predicates.
   > Exemple: `me vone [peha bu [mian] [meon] (pei)]` = This is [a cat OR an apple].
-- __peu__: Makes a list such that a generic/atom that satisfy each item is  amember of the list (in
+- __peu__: Makes a list such that a generic/atom that satisfy each item is a member of the list (in
   order).
   > Exemple: `[peo bu [mian] [meon] pei] blua [peo [meon] bu [mian] (pei)]` = List [a cat, an apple]
   > is list [an apple, a cat] in reverse order.

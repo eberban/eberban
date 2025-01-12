@@ -51,14 +51,16 @@ Aside from this alignment detail, the following words works the same way as __su
 which means the first day of the week/month/year is day 0, and the first month of the year is month
 0. You should thus be careful when translating a date from and to Eberban.
 
-- __birei__: Now is year __E__ of __A__ (default: Gregorian Calendar). Year 1 is 1 AD, but year 0
+- __birei__: Now is year __E__ (default: 0) of __A__ (default: Gregorian Calendar). Year 1 is 1 AD, but year 0
   is 1 BC and year -1 is 2 BC. This matches [Astronomical year numbering].
-- __garei__: Now is month __E__ of __A__ (default: year/__birei__).
-- __korai__: Now is week __E__ of __A__ (default: year/__birei__). Weeks starts on Monday and end
+- __garei__: Now is month __E__ (default: 0) of __A__ (default: year/__birei__).
+- __korai__: Now is week __E__ (default: 0) of __A__ (default: year/__birei__). Weeks starts on Monday and end
   on Sunday.
-- __denai__: Now is the day __E__ of __A__ (default: month/__garei__).
+- __denai__: Now is the day __E__ (default: 0) of __A__ (default: month/__garei__).
 
 [Astronomical year numbering]: https://en.wikipedia.org/wiki/Astronomical_year_numbering
+
+__E__ defaulting to 0 allows to quickly express "the same day/week/month/year as (the start of) X".
 
 Compounds of form *e TI denai* are defined for each day of the week, and have the same meaning as
 __denai__ with this additional constraint that __E__ is the particular day of the week.

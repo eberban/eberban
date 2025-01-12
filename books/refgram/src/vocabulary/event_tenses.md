@@ -83,9 +83,9 @@ proposition with its own **inner common timespan**, and doesn't relate it with a
 like the event of [you dance]" doesn't means that the "liking" and the "dancing" occurs at the same
 time. Inside a *ski* or in a sentence, *skul* can be used to refer to the current event.
 
-*skun* allows to state that a given event (E slot) is occuring in the **outer common timespan** with
+<!-- *skun* allows to state that a given event (E slot) is occuring in the **outer common timespan** with
 the exact same set of physical entities it was defined with. "That (dancing) occured before lunch"
-speaks about the same event (the one where you dance and that I liked).
+speaks about the same event (the one where you dance and that I liked). -->
 
 ## Modal logic
 
