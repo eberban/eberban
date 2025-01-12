@@ -3121,7 +3121,7 @@ dzai:
   id: ewii2lwhb7
   family: "R"
   gloss: "skilled:"
-  short: "[E:tce pan] is skilled at satisfy property [A:(tce pan)]."
+  short: "[E:tce pan] is skilled/an expert at satisfy property [A:(tce pan)]."
 dzui:
   id: zwvj8ibmcc
   family: "R"
@@ -3954,7 +3954,7 @@ jnu:
     Each thing in [E] have more than [O] standard deviation(s) from the average size
     of [A].
 
-    In intensity mode ({sta}), all values are rescaled such that the average is now 0 and [O] standard
+    In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding the [O] slot with a number.
 jni:
   id: ik7qjuwuxm
@@ -3969,7 +3969,7 @@ jni:
     Each thing in [E] have less than [O] standard deviation(s) from the average size
     of [A].
 
-    In intensity mode ({sta}), all values are rescaled such that the average is now 0 and [O] standard
+    In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding the [O] slot with a number.
 jnuhi:
   id: yw2t4sv9sb
@@ -4796,7 +4796,7 @@ sibdin:
   gloss: "toilet"
   short: |
     [E:tce* pan] is a toilet.
-sta:
+stu:
   id: mw5tvl8xaj
   family: "R"
   gloss: "intensity:"
@@ -4809,19 +4809,9 @@ sta:
     threashold of 1. In intensity mode, this threashold is absent and thus they may evaluate to true
     for lower values, which is compensated by having access to that intensity directly. We can thus
     customize the filter with another word to express new meanings: very, not much, negative
-    intensity (like vs dislake), etc.
+    intensity (like vs dislike), etc.
 
-    If there are multiple intensity aware predicates, their intensity are averaged.
-sto:
-  id: j179w2ippe
-  family: "R"
-  gloss: "very:"
-  tags: [intensity]
-  short: "[A:()] is very intense."
-  notes: |
-    Divides the intensity ({sta}) of [A] by 2, and state it must be greater than 1. This means the
-    intensity of [A] must be greater than 2. Is itself intensity-aware, so multiple {ste} can be
-    chained together with {voi/foi}, or {sti} can be used to negate the intensity.
+    TODO: What happen if there are multiple intensity aware predicates?
 ste:
   id: gbapurac5a
   family: "R"
@@ -4829,9 +4819,35 @@ ste:
   tags: [intensity]
   short: "[A:()] is lightly intense."
   notes: |
-    Multiplies the intensity ({sta}) of [A] by 2, and state it must be greater than 1. This means
-    the intensity of [A] must be greater than 0.5. Is itself intensity-aware, so multiple {ste} can
+    Multiplies the intensity ({stu}) of [A] by 2, and state it must be between 0 and 1 excluded. This means
+    the intensity of [A] must be between 0 and 0.5. Is itself intensity-aware, so multiple {ste} can
     be chained together with {voi/foi}, or {sti} can be used to negate the intensity.
+
+    Due to the condition described above, if {ste ste X} is true then {ste X} is also true; "lightly X"
+    contains "lightly lightly X". Too express "lightly" without containing "lightly lightly", use
+    {sta ste X}.
+sta: 
+  id: 9pcea8l4be
+  family: "R"
+  gloss: "moderately:"
+  tags: [intensity]
+  short: "[A:()] is moderately intense."
+  notes: |
+    State that the intensity ({stu}) of [A] is between 0.5 and 1.5 excluded.
+sto:
+  id: j179w2ippe
+  family: "R"
+  gloss: "very:"
+  tags: [intensity]
+  short: "[A:()] is very intense."
+  notes: |
+    Divides the intensity ({stu}) of [A] by 2, and state it must be greater than 1. This means the
+    intensity of [A] must be greater than 2. Is itself intensity-aware, so multiple {ste} can be
+    chained together with {voi/foi}, or {sti} can be used to negate the intensity.
+
+    Due to the condition described above, if {sto sto X} is true then {sto X} is also true; "very X"
+    contains "very very X". Too express "very" without containing "very very", use
+    {sta sto X}.
 sti:
   id: cn9z8uo60i
   family: "R"
@@ -4839,9 +4855,10 @@ sti:
   tags: [intensity]
   short: "[A:()] is negative with normal intensity."
   notes: |
-    Multiplies the intensity ({sta}) of [A] by -1, and state it must be greater than 1. This means
+    Multiplies the intensity ({stu}) of [A] by -1, and state it must be greater than 1. This means
     the intensity of [A] must be less than -1. Is itself intensity-aware, so can be combined with
-    {ste} and {sto} to increase or decrease the threashold.
+    {ste} and {sto} to increase or decrease the threashold. It should be said last/right-most in the
+    intensity chain to properly use the conditions of the other intensity words.
 klao:
   id: cbchzguehy
   family: "R"
