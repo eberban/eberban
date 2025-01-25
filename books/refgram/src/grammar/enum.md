@@ -15,14 +15,14 @@ __PE__ family contains the following members:
   operator between them.
   > Exemple: `mi [pe [etiansa] bu [dona] pei] meon` = I [eat and like] an apple.
 - __pea__: Makes a set from one member of each listed sets.
-  > Exemple: `mio [pehe bu [za ualis] [za ubob] (pei)]` = We are Alice and Bob.
+  > Exemple: `mio [pea bu [za ualis] [za ubob] (pei)]` = We are Alice and Bob.
 - __peo__: Makes a set such that a generic/atom that satisfy each item is a member of the set.
-  > Exemple: `[pea [tcu mian] bu [meon] (pei)]` = A set of {the set of all cats, a set of apples}.
+  > Exemple: `[peo [tcu mian] bu [meon] (pei)]` = A set of {the set of all cats, a set of apples}.
 - __peho__: Makes a set of predicates.
-  > Exemple: `me vone [peha bu [mian] [meon] (pei)]` = This is [a cat OR an apple].
+  > Exemple: `me vone [peho bu [mian] [meon] (pei)]` = This is [a cat OR an apple].
 - __peu__: Makes a list such that a generic/atom that satisfy each item is a member of the list (in
   order).
-  > Exemple: `[peo bu [mian] [meon] pei] blua [peo [meon] bu [mian] (pei)]` = List [a cat, an apple]
+  > Exemple: `[peu bu [mian] [meon] pei] blua [peu [meon] bu [mian] (pei)]` = List [a cat, an apple]
   > is list [an apple, a cat] in reverse order.
 - __pehu__: Makes a list of predicates.
   > No exemple as usages of predicates lists as they are mostly used by words with complex meanings.
