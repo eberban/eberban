@@ -169,8 +169,8 @@ function html_word_entry(word, entry) {
 	let output = `<details class="${entry_css_classes}">
 		<summary>
 			<span class="word">${word_display}</span>
-			${family_button}			
-			<span class="short">${short_display}</span>
+			${family_button}
+			<span class="short"><i>${entry.gloss}</i>${short_display}</span>
 		</summary>
 		<div class="dictionary-details">
 			${notes_display}
