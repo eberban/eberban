@@ -1,4 +1,4 @@
-# eberban PEG grammar - v0.63
+# eberban PEG grammar - v0.63.1
 # =============================
 
 # GRAMMAR
@@ -17,10 +17,10 @@ sentence_starter <- A_clause / O_clause / NI_clause
 # want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 sentence <- sentence_erased_1 / sentence_1 / sentence_erased_2
 sentence_1 <- (sentence_o / sentence_ni / sentence_a) &post_sentence
-# Ensure sentence ends because a new sentence/paragraph start or EOF is reached, instead of just
-# failing to parse more. Necessary to make sentence_erased_2 work properly, as an invalid sentence
-# starting valid would otherwise split into 2 sentences.
-post_sentence <- spaces? (sentence_starter / PO_clause / EOF)
+# Ensure sentence ends because a new sentence/paragraph start or end of quote/text is reached,
+# instead of just failing to parse more. Necessary to make sentence_erased_2 work properly, as an
+# invalid sentence starting valid would otherwise split into 2 sentences.
+post_sentence <- spaces? (sentence_starter / PO_clause / CAI_clause / EOF)
 
 sentence_erased_1 <- sentence_1 sentence_eraser
 sentence_erased_2 <- sentence_starter? (!sentence_eraser .)* sentence_eraser
