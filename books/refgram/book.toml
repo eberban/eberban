@@ -20,6 +20,7 @@ additional-css = [
 additional-js = [
     "res/leipzig.min.js",
     "res/leipzig_apply.js",
+    "res/audiobtn.js"
 ]
 
 [preprocessor.regex-replacer]

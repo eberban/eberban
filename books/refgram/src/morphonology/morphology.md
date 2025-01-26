@@ -94,15 +94,15 @@ detailed [later in this book](../grammar/compounds.md).
 
 ### Example
 
-With spaces : _a za ualis zue gali tsen eberban_\
-With mandatory spaces only : _aza.ualis.zuegalitsen.eberban_\
-Meaning: Alice is happy to learn Eberban.
+With spaces : _a za ualis zue gali spie ebansa eberban_\
+With mandatory spaces only : _aza.ualis.zuegalispie.ebansa.eberban_\
+Meaning: Alice is happy to speak in Eberban.
 
 Particles : _a_, _za_, _zue_\
 Borrowing : _ualis_\
 Freeform variable: _ibar_ (not present in exemple)\
-Root : _gali_, _tsen_\
-Compounds : _eberban_
+Root : _gali_, _spie_\
+Compounds : _ebansa_, _eberban_
 
 ### Reasoning
 

@@ -1,36 +1,37 @@
 # Phonology
 
-| Letter | IPA                               | Description                       |
-| ------ | --------------------------------- | --------------------------------- |
-| h      | \[h\]                             | a glottal aspirant                |
-| n      | \[n\], \[ŋ\]                      | a dental or velar nasal           |
-| r      | \[ɣ\] \[ʁ\] (\[r\], \[ʀ\])        | a velar or uvular fricative (alveolar or uvular trills are also accepted) |
-| l      | \[l\]                             | a lateral approximant             |
+| Letter | IPA                               | Description                       | Audio
+| ------ | --------------------------------- | --------------------------------- | ------
+| h      | \[h\]                             | a glottal aspirant                | <audiobtn>01_h</audiobtn>
+| n      | \[n\], \[ŋ\]                      | a dental or velar nasal           | <audiobtn>02_n</audiobtn>
+| r      | \[ɣ\] \[ʁ\] (\[r\], \[ʀ\])        | a velar or uvular fricative (alveolar or uvular trills are also accepted) | <audiobtn>03_r</audiobtn> <audiobtn>03_r_french</audiobtn> <audiobtn>03_r_spanish</audiobtn>
+| l      | \[l\]                             | a lateral approximant             | <audiobtn>04_l</audiobtn>
 | &nbsp; |                                   |                                   |
-| m      | \[m\]                             | a bilabial nasal                  |
-| p      | \[p\]                             | an unvoiced bilabial stop         |
-| b      | \[b\]                             | a voiced bilabial stop            |
-| f      | \[f\]                             | an unvoiced labiodental fricative |
-| v      | \[v\]                             | a voiced labiodental fricative    |
-| t      | \[t\]                             | an unvoiced dental/alveolar stop  |
-| d      | \[d\]                             | a voiced dental/alveolar stop     |
-| s      | \[s\]                             | an unvoiced alveolar sibilant     |
-| z      | \[z\]                             | a voiced alveolar sibilant        |
-| c      | \[ʃ\], \[ʂ\]                      | an unvoiced coronal sibilant      |
-| j      | \[ʒ\], \[ʐ\]                      | a voiced coronal sibilant         |
-| k      | \[k\]                             | an unvoiced velar stop            |
-| g      | \[ɡ\]                             | a voiced velar stop               |
+| m      | \[m\]                             | a bilabial nasal                  | <audiobtn>05_m</audiobtn>
+| p      | \[p\]                             | an unvoiced bilabial stop         | <audiobtn>06_p</audiobtn>
+| b      | \[b\]                             | a voiced bilabial stop            | <audiobtn>07_b</audiobtn>
+| f      | \[f\]                             | an unvoiced labiodental fricative | <audiobtn>08_f</audiobtn>
+| v      | \[v\]                             | a voiced labiodental fricative    | <audiobtn>09_v</audiobtn>
+| t      | \[t\]                             | an unvoiced dental/alveolar stop  | <audiobtn>10_t</audiobtn>
+| d      | \[d\]                             | a voiced dental/alveolar stop     | <audiobtn>11_d</audiobtn>
+| s      | \[s\]                             | an unvoiced alveolar sibilant     | <audiobtn>12_s</audiobtn>
+| z      | \[z\]                             | a voiced alveolar sibilant        | <audiobtn>13_z</audiobtn>
+| c      | \[ʃ\], \[ʂ\]                      | an unvoiced coronal sibilant      | <audiobtn>14_c</audiobtn>
+| j      | \[ʒ\], \[ʐ\]                      | a voiced coronal sibilant         | <audiobtn>15_j</audiobtn>
+| k      | \[k\]                             | an unvoiced velar stop            | <audiobtn>16_k</audiobtn>
+| g      | \[ɡ\]                             | a voiced velar stop               | <audiobtn>17_g</audiobtn>
 | &nbsp; |                                   |                                   |
-| i      | \[i\]                             | a front close vowel               |
-| e      | \[ɛ\], \[e\]                      | a front mid vowel                 |
-| a      | \[a\], \[ɑ\]                      | an open vowel                     |
-| o      | \[o\], \[ɔ\]                      | a back mid vowel                  |
-| u      | \[u\]                             | a back close vowel                |
+| i      | \[i\]                             | a front close vowel               | <audiobtn>18_i</audiobtn>
+| e      | \[ɛ\], \[e\]                      | a front mid vowel                 | <audiobtn>19_e</audiobtn>
+| a      | \[a\], \[ɑ\]                      | an open vowel                     | <audiobtn>20_a</audiobtn>
+| o      | \[o\], \[ɔ\]                      | a back mid vowel                  | <audiobtn>21_o</audiobtn>
+| u      | \[u\]                             | a back close vowel                | <audiobtn>22_u</audiobtn>
 
 At the start of a __vowel__ or __sonorant__ initial word, it is mandatory to
-make a pause or utter a glottal stop \[ʔ\].
+make a pause or utter a glottal stop \[ʔ\] <audiobtn>23_stop</audiobtn>.
 
-Consecutive vowels are separated by hiatuses, but glides like \[j\] and \[w\]
+Consecutive vowels are separated by hiatuses, but glides like
+\[j\] <audiobtn>glide_y</audiobtn> and \[w\] <audiobtn>glide_w</audiobtn>
 are allowed respectively alongside or instead of \[i\] and \[u\].
 
 Where spaces are allowed, a speaker or writter can express hesitation by using
@@ -44,5 +45,7 @@ as a palatal click (\[ǂ\]) which distingly marks the start and end of a quote.
 
 ## Example
 
-Sentence : _aa za umia tsae eberban_
-Pronounciation : \[ʔa za ʔumi.a tsa.e ʔeberban\]
+Sentence : _a za ualis zue gali spie nnnn ebansa eberban_\
+Pronounciation : \[ʔa za ʔualis zue ɡali spie .. ŋː .. ʔebansa ʔeberban\]
+
+> Big thanks to *zuna* for the recordings!
