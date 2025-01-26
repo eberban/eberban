@@ -2,7 +2,7 @@
 
 The morphology of Eberban is composed of 16 consonants (__n, r, l, m, p, b, f, v, t, d, s, z, c, j,
 g, k__), five vowels (__i, e, a, o, u__) the letter __h__, the hyphen __-__ and the quotation marks
-__[__ and __]__, for a total of 24 symbols. Among the consonants, __n__, __r__ and __l__ are
+__[__ and __]__, for a total of 25 symbols. Among the consonants, __n__, __r__ and __l__ are
 designated as (alveolar) __sonorants__, and play an important role in Eberban's morphology. The
 alphabetical order is `hnrlmpbfvtdszcjkgieaou`. The same letter appearing multiple times in a row is
 considered identical to the letter not being repeated, but can informally be used in written media
@@ -94,13 +94,14 @@ detailed [later in this book](../grammar/compounds.md).
 
 ### Example
 
-With spaces : _a za umia tsen eberban_\
-Without spaces : _aza'umia'tsen'eberban_
+With spaces : _a za ualis zue gali tsen eberban_\
+With mandatory spaces only : _aza.ualis.zuegalitsen.eberban_\
+Meaning: Alice is happy to learn Eberban.
 
-Particles : _a_, _za_\
-Borrowing : _umia_\
-Freeform variable: _ibar_\
-Root : _tsen_\
+Particles : _a_, _za_, _zue_\
+Borrowing : _ualis_\
+Freeform variable: _ibar_ (not present in exemple)\
+Root : _gali_, _tsen_\
 Compounds : _eberban_
 
 ### Reasoning
