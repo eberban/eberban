@@ -1,105 +1,101 @@
-<!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>eberban</title>
-	<link type="text/css" href="./web/res/layout.css" rel="stylesheet">
 	<link rel="icon" type="image/png" sizes="200x200" href="./images/icon.png">
-	<link href="./web/res/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="./web/res/index.css">
 </head>
-
 <body>
-	<div class="container">
-		<div style="text-align: center;">
-			<img src="./images/eberban-alpha.png" width="30%" style="margin:
-			20px"></object>
-		</div>
-
-		<p><b>Eberban</b> is a <a
-		href="https://en.wikipedia.org/wiki/Engineered_language#Logical_languages">logical</a>
-			<a
-			href="https://en.wikipedia.org/wiki/Constructed_language">constructed
-			language</a> aimed to satisfy the following goals :
-		</p>
-
-		<ul>
-			<li><b>being simple:</b> the Eberban grammar allows manipulating
-			predicates with particles in a way that is close to the <a
-			href="https://en.wikipedia.org/wiki/Higher-order_logic">higher-order
-			logic</a> it translates into, while abstracting away the verbosity
-			of explicitly providing variables as arguments of predicates.</li>
-			<li><b>being regular:</b> valid sentences are syntactically
-			unambiguous. Most grammar rules rely on particles which are
-			organised into families, each starting with a unique prefix. Many
-			additional patterns are shared between particles and predicate words
-			to help with learning groups of related words.</li>
-			<li><b>being expressive:</b> the grammar and core vocabulary focus
-			on providing a simple framework, on top of which can be built
-			abstractions, complex concepts and tools. Since those are built into
-			Eberban itself, users can create their own tools and abstractions to
-			express entirely new concepts.</li>
-		</ul>
-
-		<p>
-			<b>Eberban</b> takes inspiration from <a
-			href="https://mw.lojban.org/papri/Lojban">Lojban</a>
-			and other logical languages, but tries novel approaches to satisfy
-			the above goals.
-		</p>
-
-		<div class="row">
-			<div class="span6">
-				<h3>Parsers</h3>
-
-				<a href="./web/parser_box_glosser.html" class="btn btn-block
-				btn-large">
-					Visual Parser (Boxes & Glosser)
-				</a>
-				<a href="./web/parser_text_dynamic.html" class="btn btn-block
-				btn-large">
-					Textual Parser (Show elided terminators)
-				</a>
-			</div>
-
-			<div class="span6">
-				<h3>Tools</h3>
-
-				<a href="./web/dictionary.html" class="btn btn-block btn-large">
-					Dictionary
-				</a>
-
-				<a href="./web/root_generator.html" class="btn btn-block
-				btn-large">
-					Root generator
-				</a>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="span6">
-				<h3>Learning resources</h3>
-
-				<a href="./books/refgram/book/index.html" class="btn
-				btn-block btn-large">
-					Eberban Reference Grammar (WIP)
-				</a>
-			</div>
-
-			<div class="span6">
-				<h3>Get involved</h3>
-
-				<a href="https://discord.gg/KKB79RwWUc" class="btn btn-block
-				btn-large">
-					Discord server
-				</a>
-				<a href="https://github.com/eberban/eberban" class="btn
-				btn-block btn-large">
-					GitHub repository
-				</a>
-			</div>
-		</div>
+	<div class="wrapper">
+		<header class="text-center">
+			<img id="logo" src="./images/eberban-alpha.png">
+			<h1>Eberban</h1>
+		</header>
+		<main>
+			<section>
+				<p class="md-text-center">
+					<strong>Eberban</strong> is a
+					<a href="https://en.wikipedia.org/wiki/Engineered_language#Logical_languages">logical</a>
+					<a href="https://en.wikipedia.org/wiki/Constructed_language">constructed&nbsp;language</a>
+					aimed to satisfy the following goals:
+				</p>
+				<ul class="flex">
+					<li>
+						<h2 class="text-center">being simple</h2>
+						<p>
+							The Eberban grammar allows manipulating predicates
+							with particles in a way that is close to the
+							<a class="no-word-break" href="https://en.wikipedia.org/wiki/Higher-order_logic">higher-order&nbsp;logic</a>
+							it translates into, while abstracting away the
+							verbosity of explicitly providing variables as
+							arguments of predicates.
+						</p>
+					</li>
+					<li>
+						<h2 class="text-center">being regular</h2>
+						<p>
+							Valid sentences are syntactically unambiguous. Most grammar
+							rules rely on particles which are organised into families, each
+							starting with a unique prefix. Many additional patterns are
+							shared between particles and predicate words to help with
+							learning groups of related words.
+						</p>
+					</li>
+					<li>
+						<h2 class="text-center">being expressive</h2>
+						<p>
+							The grammar and core vocabulary focus on providing a simple
+							framework, on top of which can be built abstractions, complex
+							concepts and tools. Since those are built into Eberban itself,
+							users can create their own tools and abstractions to express
+							entirely new concepts.
+						</p>
+					</li>
+				</ul>
+				<p class="md-text-center">
+					<strong>Eberban</strong> takes inspiration from 
+					<a href="https://mw.lojban.org/papri/Lojban">Lojban</a>
+					and other logical languages, but tries novel approaches to
+					satisfy the above goals.
+				</p>
+			</section>
+			<section class="grid">
+					<div>
+						<h3 class="text-center">Parsers</h3>
+						<button>
+							<a href="./web/parser_box_glosser.html">Visual Parser (Boxes & Glosser)</a>
+						</button>
+						<button>
+							<a href="./web/parser_text_dynamic.html">Textual Parser (Show elided terminators)</a>
+						</button>
+					</div>
+					<div>
+						<h3 class="text-center">Tools</h3>
+						<button>
+							<a href="./web/dictionary.html">Dictionary</a>
+						</button>
+						<button>
+							<a href="./web/root_generator.html">Root generator</a>
+						</button>
+					</div>
+					<div>
+						<h3 class="text-center">Learning resources</h3>
+						<button>
+							<a href="./books/refgram/book/index.html">Eberban Reference Grammar (WIP)</a>
+						</button>
+					</div>
+					<div>
+						<h3 class="text-center">Get involved</h3>
+						<button>
+							<a href="https://discord.gg/KKB79RwWUc">Discord server</a>
+						</button>
+						<button>
+							<a href="https://github.com/eberban/eberban">GitHub repository</a>
+						</button>
+					</div>
+			</section>
+		</main>
 	</div>
 </body>
-
 </html>
