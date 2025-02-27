@@ -16,7 +16,7 @@ jobs:
 
       - name: Cache Rust binaries
         id: cache-rust
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.cargo/bin/*
           # This key must be changed every time a new Rust binary is added.
