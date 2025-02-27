@@ -203,6 +203,7 @@ CA    <- &particle_word !(CAI &post_word) (c &a vhowels)       &post_word
 CAI   <- &particle_word                   (c a i)              &post_word
 CO    <- &particle_word !(COI &post_word) (c &o vhowels)       &post_word
 COI   <- &particle_word                   (c o i)              &post_word
+CU    <- &particle_word                   (c &u vhowels)       &post_word
 JI    <- &particle_word                   (j &i vhowels)       &post_word
 JE    <- &particle_word                   (j &e vhowels)       &post_word
 JA    <- &particle_word                   (j &a vhowels)       &post_word
