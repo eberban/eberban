@@ -47,12 +47,17 @@ __Roots__ are the building blocks of the language and express meanings that woul
 long to convey otherwise. They can either:
 
 - start with a single _non-sonorant consonant_ followed by a mix of _vhowels_ and at least one
-  _sonorant_ or _medial consonant pair_, like __ban__, __mana__, __cuina__ or __marne__.
+  _sonorant_, _medial consonant pair_ or _consonant triplet_, like __ban__, __mana__, __cuina__ or
+  __marne__.
 - start with a valid _initial consonant pair_ followed by a mix of _vhowels_ and any number of
-  _sonorants_ or _medial consonant pairs_ (even none), like __bju__, __cpena__ or __djin__.
+  _sonorants_, _medial consonant pairs_  or _consonant triplet_ (even none), like __bju__, __cpena__
+  or __djin__.
 
-A _sonorant_ can appear only between two _vowels_ or at the end of the root, while a medial pair can
-appear only between two _vowels_, but not at the end.
+A _consonant triplet_ is a string of 3 consonants C1C2C3 such that C1C2 is a medial pair __and__
+C2C3 is an initial pair.
+
+A _sonorant_ can appear only between two _vowels_ or at the end of the root, while a medial pair or
+consonant triplet can appear only between two _vowels_, but not at the end.
 
 The following chart shows __initial pairs__ in light blue, __medial pairs__ in pink, and invalid
 pairs in dark gray (with a short explanation for why they are invalid):
@@ -62,13 +67,13 @@ pairs in dark gray (with a short explanation for why they are invalid):
 ### Borrowings
 
 __Borrowings__ allow importing foreign words or names. They are prefixed by the vowel __u__, and
-have more relaxed rules about consonants than native Eberban words. Mainly, they can contain
-consonant triplets which must obey the following rules:
+have more relaxed rules about consonants than native Eberban words: 
 
- - Consonant pairs must either be _initial pairs_, _medial pairs_ or _sonorant_
-   + _consonant_.
- - Consonant triplets C1C2C3 are valid if C1C2 is a medial pair __and__ C2C3 is an initial pair.
- - Alternatively, consonant triplets can be a _sonorant_ followed by an _initial pair_.
+ - _Initial pairs_ can also appear in the middle of the word.
+ - _Medial pairs_ can also appear initially as they can be easily uttered after borrowing prefix
+   __u__
+ - _Sonorant_ + _consonant_ also counts as a consonant pair and doesn't break into 2 words.
+ - _Sonorant_ + _initial pair_ also counts as a consonant triplet and doesn't break into 2 words.
 
 After the __u__  prefix the borrowing can start by a vowel, a single consonant, a initial or medial
 consonant pair, a consonant triplet or __h__. If this first letter is a __u__ it must be prefixed
@@ -83,8 +88,9 @@ a glottal stop.
 
 ### Freeform variables
 
-__Freeform variables__ allow defining predicates with a custom name. They follow the same morphology
-as _borrowings_ but use the __i__ prefix instead of __u__.
+__Freeform variables__ allow speakers to define their own predicates with less morphological
+restrictions than with roots or dedicated particles. They follow the same morphology as _borrowings_
+but use the __i__ prefix instead of __u__.
 
 ### Compounds
 
