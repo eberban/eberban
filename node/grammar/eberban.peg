@@ -143,7 +143,7 @@ PE_clause  <- free_prefix* spaces? PE  free_suffix*     # scoped unit/enum start
 PEI_clause <-              spaces? PEI                  # scoped unit/enum elidible terminator
 PA_clause  <-              spaces? PA                   # RESERVED: echo-resumptive
 PO_clause  <- free_prefix* spaces? PO free_suffix*      # paragraph marker
-PU_clause  <-              spaces? PU                   # adverb
+PU_clause  <-              spaces? PU                   # UNUSED
                                                         #
 TI_clause  <-              spaces? TI                   # digits
                                                         #
@@ -160,6 +160,7 @@ CA_clause  <- free_prefix* spaces? CA                   # grammatical quote star
 CAI_clause <- free_prefix* spaces? CAI                  # grammatical quote terminator
 CO_clause  <- free_prefix* spaces? CO                   # foreign quote
 COI_clause <- free_prefix* spaces? COI                  # skipped foreign quote
+CU_clause  <-              spaces? CU                   # UNUSED
 
 A_clause_elidible   <- A_clause?
 BE_clause_elidible  <- BE_clause?
