@@ -1,4 +1,49 @@
-function remove_spaces(tree) {
+function among(v, s) {
+    var i = 0;
+    while (i < s.length) if (s[i++] == v) return true;
+    return false;
+}
+
+export function get_random_item(list) {
+    return list[Math.floor(Math.random() * list.length)];
+}
+
+export function is_array(v) {
+    return Object.prototype.toString.call(v) === '[object Array]';
+}
+
+export function is_family(v) {
+    if (!is_string(v)) return false;
+    return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUH])+$/g);
+}
+
+export function is_number(v) {
+	return Object.prototype.toString.call(v) === '[object Number]';
+}
+
+export function is_string(v) {
+    return Object.prototype.toString.call(v) === '[object String]';
+}
+
+/* Checks whether the argument node is a target for pruning. */
+function is_target_node(n) {
+    return (among(n[0], SPECIAL_FAMILIES) || is_family(n[0]));
+}
+
+/* This function returns the string resulting from the recursive concatenation of
+ * all the leaf elements of the parse tree argument (except node names). */
+function join_expr(n) {
+    if (n.length < 1) return "";
+    var s = "";
+    var i = is_array(n[0]) ? 0 : 1;
+    while (i < n.length) {
+        s += is_string(n[i]) ? n[i] : join_expr(n[i]);
+        i++;
+    }
+    return s;
+}
+
+export function remove_spaces(tree) {
     if (tree.length > 0 && among(tree[0], ["spaces", "initial_spaces"])) return null;
     var i = 0;
     while (i < tree.length) {
@@ -23,7 +68,7 @@ function remove_spaces(tree) {
  *
  */
 
-function remove_morphology(pt) {
+export function remove_morphology(pt) {
     if (pt.length < 1) return [];
     var i;
     /* Sometimes nodes have no label and have instead an array as their first
@@ -52,25 +97,7 @@ function remove_morphology(pt) {
     return pt;
 }
 
-/* This function returns the string resulting from the recursive concatenation of
- * all the leaf elements of the parse tree argument (except node names). */
-function join_expr(n) {
-    if (n.length < 1) return "";
-    var s = "";
-    var i = is_array(n[0]) ? 0 : 1;
-    while (i < n.length) {
-        s += is_string(n[i]) ? n[i] : join_expr(n[i]);
-        i++;
-    }
-    return s;
-}
-
-/* Checks whether the argument node is a target for pruning. */
-function is_target_node(n) {
-    return (among(n[0], SPECIAL_FAMILIES) || is_family(n[0]));
-}
-
-const SPECIAL_FAMILIES = [
+export const SPECIAL_FAMILIES = [
     "particle_form",
     "root_form",
     "freeform_content",
@@ -79,42 +106,3 @@ const SPECIAL_FAMILIES = [
     "foreign_quote_close",
     "spelling_quote_unit_2",
 ];
-
-function among(v, s) {
-    var i = 0;
-    while (i < s.length) if (s[i++] == v) return true;
-    return false;
-}
-
-function get_random_item(list) {
-    return list[Math.floor(Math.random() * list.length)];
-}
-
-function is_family(v) {
-    if (!is_string(v)) return false;
-    return 0 == v.search(/^[BCDFGJKLMNPRSTVXZ]?([AEIOUH])+$/g);
-}
-
-function is_string(v) {
-    return Object.prototype.toString.call(v) === '[object String]';
-}
-
-function is_array(v) {
-    return Object.prototype.toString.call(v) === '[object Array]';
-}
-
-function is_number(v) {
-	return Object.prototype.toString.call(v) === '[object Number]';
-}
-
-module.exports.remove_spaces = remove_spaces;
-module.exports.remove_morphology = remove_morphology;
-module.exports.join_expr = join_expr;
-module.exports.is_target_node = is_target_node;
-module.exports.among = among;
-module.exports.get_random_item = get_random_item;
-module.exports.is_family = is_family;
-module.exports.is_string = is_string;
-module.exports.is_array = is_array;
-module.exports.is_number = is_number;
-module.exports.SPECIAL_FAMILIES = SPECIAL_FAMILIES;

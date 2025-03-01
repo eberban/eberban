@@ -1,4 +1,5 @@
-let { dictionary_en: dictionary, compare_words, compare_words_biased, dictionary_en } = require('../src/dictionary');
+import dictionary from "../../../dictionary/en.yaml";
+import { compare_words, compare_words_biased  } from "./compare_words";
 
 const ignored = [ '_spelling', '_cardinal', '_number', 'i', 'e', 'u' ];
 
@@ -53,10 +54,10 @@ words_sorted.forEach((word) => {
 	entry.html_output = html_word_entry(word, entry);
 });
 
-const spelling_words_sorted = Object.keys(dictionary_en["_spelling"]).sort(compare_words);
+const spelling_words_sorted = Object.keys(dictionary["_spelling"]).sort(compare_words);
 
 spelling_words_sorted.forEach((word) => {
-	let entry = dictionary_en["_spelling"][word];
+	let entry = dictionary["_spelling"][word];
 
 	entry.without_spaces = word.replaceAll(' ', '').toLowerCase();
 	entry.family = "S";
@@ -117,7 +118,7 @@ function html_word_entry(word, entry) {
 	let links = "";
 	if (entry.links) {
 		links += '<strong>Links :</strong><ul class="entry-links">';
-		for (i in entry.links) {
+		for (let i in entry.links) {
 			links += "<li>";
 			links += `<a href="${entry.links[i][2]}"><i class="${entry.links[i][0]}" aria-hidden="true"></i> ${entry.links[i][1]}</a>`;
 			links += "</li>";
@@ -149,7 +150,7 @@ function html_word_entry(word, entry) {
 	let see_also = "";
 	if (entry.see_also) {
 		see_also += '<p class="see-also"><strong>See also :</strong> ';
-		for (i in entry.see_also) {
+		for (let i in entry.see_also) {
 			if (i != 0) {
 				see_also += ", "
 			}
@@ -340,7 +341,7 @@ export function html_dictionary(filters) {
 	Object.keys(spelling_words_sorted).forEach((index) => {
 		var word = spelling_words_sorted[index];
 
-		may_insert_entry(results, filters, word, dictionary_en["_spelling"][word]);
+		may_insert_entry(results, filters, word, dictionary["_spelling"][word]);
 	});
 
 	output += `<div id="search-stats">${results.length} results found.</div>`;

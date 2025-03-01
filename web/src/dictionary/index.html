@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript">window["_gaUserPrefs"] = { ioo: function () { return true; } }</script>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 	<title>eberban dictionary</title>
-	<link rel="icon" type="image/png" sizes="200x200" href="../images/icon.png">
-	<link href="./res/bootstrap-legacy.css" rel="stylesheet">
-	<link type="text/css" href="./res/layout-legacy.css" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="200x200" href="/icon.png">
+	<link href="../legacy/bootstrap-legacy.css" rel="stylesheet">
+	<link type="text/css" href="../legacy/layout-legacy.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="./res/bootstrap-legacy.js"></script>
-	<script src="./res/wp_dictionary.js"></script>
+	<script src="../legacy/bootstrap-legacy.js"></script>
 </head>
 
 <body>
@@ -68,8 +66,10 @@
 
 </body>
 
-<script>
-	let word_count = bundle.count_word_types();
+<script type="module">
+    import { count_word_types, html_dictionary } from "./dictionary";
+
+	let word_count = count_word_types();
 	$('#particles-count').html(word_count.particles);
 	$('#roots-count').html(word_count.roots);
 	$('#compounds-count').html(word_count.compounds);
@@ -92,7 +92,7 @@
 		window.history.replaceState({}, "", `#${encodeURI(search)}`)
 
 		let filters = search.split(',');
-		$('#dictionary').html(bundle.html_dictionary(filters));
+		$('#dictionary').html(html_dictionary(filters));
 
 		window.scrollTo(0, 0);
 	}

@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Cache Rust binaries
         id: cache-rust
@@ -47,22 +47,23 @@ jobs:
         run: |
           mdbook build books/refgram
         
-      - name: Install NPM dependencies
+      - name: Install NPM dependencies for the website
         run: |
-          cd node
+          cd web
           npm install
           cd ..
 
-      - name: Build JS bundles
+      - name: Build the website
         run: |
-          cd node
-          npm run build
+          cd web
+          npm run build-to-deploy
           cd ..
 
       - name: Commit changes to gh-pages
         run: |
           rm -f .gitignore
-          echo "node_modules" > .gitignore
+          rm -f dictionary/package.json
+          rm -rf web/
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
           git checkout -b tmp/gh-pages

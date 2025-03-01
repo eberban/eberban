@@ -1,5 +1,5 @@
-const { dictionary_en: dictionary } = require('../src/dictionary');
-const { 
+import dictionary from "../../../dictionary/en.yaml";
+import { 
     get_random_three_letter_intransitive_root,
     get_random_four_letter_intransitive_root,
     get_random_five_letter_intransitive_root,
@@ -8,8 +8,7 @@ const {
     get_random_four_letter_transitive_root,
     get_random_five_letter_transitive_root,
     get_random_six_letter_transitive_root,
-} = require('../src/root_generation/index');
-export default dictionary;
+}  from "./random_root";
 
 function* generate_roots(root_fn) {
     let counter = 0;

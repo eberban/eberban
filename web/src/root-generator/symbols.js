@@ -1,4 +1,4 @@
-const { get_random_item } = require('../util');
+import { get_random_item } from "../scripts/utils";
 
 
 /*
