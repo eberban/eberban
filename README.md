@@ -42,7 +42,11 @@ If you would like to get involved, please also consider joining our
 
 ### How to update a book
 
-Ensure you have [Rust] installed on your machine.
+Books are made using [`mdbook`] and a few extensions which are written in [Rust].
+
+[`mdbook`]: https://lib.rs/crates/mdbook
+
+First, ensure you have [Rust] installed on your machine.
 
 [Rust]: https://www.rust-lang.org/tools/install
 
@@ -59,8 +63,6 @@ The dev server is now running. Copy the localhost address and paste it into your
 browser to see your local copy of the website.
 
 The dev server will update this local website after every change you make.
-
-[`mdbook`]: https://lib.rs/crates/mdbook
 
 ### How to add a new word to the dictionary
 
