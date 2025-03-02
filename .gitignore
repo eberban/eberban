@@ -1,9 +1,9 @@
-node_modules
+# Books.
 books/*/book
 
-# Only keep source PEG file.
-node/grammar/eberban.js
-node/grammar/eberban.pegjs
-
-# Bundles are generated with webpack.
-web/res/wp_*
+# Web.
+web/dist
+web/node_modules
+## Only keep source PEG file.
+web/src/grammar/eberban.js
+web/src/grammar/eberban.pegjs

@@ -1,9 +1,9 @@
-export const { camxes } = require('../grammar/eberban');
-const { remove_morphology, remove_spaces } = require('../src/util');
-const { simplifyTree } = require('../src/simplify_tree');
-export const { postprocessing } = require('../src/process_parse_tree');
+import { camxes } from '../../grammar/eberban';
+export { postprocessing } from './process_parse_tree';
 
-const { dictionary_en: dictionary } = require('../src/dictionary');
+import { remove_morphology, remove_spaces } from '../utils';
+import { simplifyTree } from './simplify_tree';
+import dictionary from '../../../../dictionary/en.yaml';
 
 const hideTitleList = [
 	'paragraph',

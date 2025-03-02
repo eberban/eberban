@@ -1,0 +1,34 @@
+{
+  "name": "eberban",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "eberban language main library",
+  "author": "mia entropy",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eberban/eberban"
+  },
+  "scripts": {
+    "task-peg_to_pegjs": "node ./src/scripts/peg/peg_to_pegjs.cjs ./src/grammar/eberban.peg",
+    "task-pegjs_to_js": "node ./src/scripts/peg/pegjs_to_js.cjs ./src/grammar/eberban.pegjs",
+    "task-vite-build": "vite build src --outDir ../dist --emptyOutDir",
+    "task-vite-build-to-deploy": "vite build src --outDir ../..",
+    "dev": "vite src",
+    "peg-dev": "run-s task-peg_to_pegjs task-pegjs_to_js dev",
+    "build": "run-s task-peg_to_pegjs task-pegjs_to_js task-vite-build",
+    "build-to-deploy": "run-s task-peg_to_pegjs task-pegjs_to_js task-vite-build-to-deploy",
+    "preview": "vite preview src --outDir ../dist"
+  },
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  },
+  "devDependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.1.1",
+    "npm-run-all": "^4.1.5",
+    "vite": "^6.1.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  }
+}

@@ -38,48 +38,60 @@ If you would like to get involved, please also consider joining our
 
 -----
 
-## How to update the parser and dictionary
+## How tos
 
-To build the dictionary and parser locally, you must have NodeJS and NPM
-[installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-Open a terminal in the `node` folder and run once the following command:
-
-```
-npm i
-```
-
-After every change in the `node` folder or in the dictionary, run the following command to build:
-
-```
-npm run build
-```
-
-To open the web pages in your browser you need to run an HTTP server in the
-root folder, for exemple using [`miniserve`]. You can then
-browse the local web site at http://127.0.0.1:8080/index.html .
-
-To add a new word in the dictionary, you must edit `dictionary/en.yaml` and
-create a new entry for your word. You should set the `id` field to
-`INSERT_WORD_ID`, and then run the command `npm run ids` in the `node` folder so
-that `INSERT_WORD_ID` is automatically replaced with a random unique ID.
-
-[`miniserve`]: https://lib.rs/crates/miniserve
-
-## How to update a book
+### How to update a book
 
 Books are made using [`mdbook`] and a few extensions which are written in [Rust].
-First [install Rust] then run the following commands to install the required
-binaries:
-
-```
-cargo install mdbook
-cargo install mdbook-linkcheck
-cargo install mdbook-regex-replacer
-```
-
-You can then open a terminal in the book folder (in which `book.toml` is
-located) and run `mdbook serve`. This will run a web server that will reflect
-changes that you make in the .md files.
 
 [`mdbook`]: https://lib.rs/crates/mdbook
-[install Rust]: https://www.rust-lang.org/tools/install
+
+First, ensure you have [Rust] installed on your machine.
+
+[Rust]: https://www.rust-lang.org/tools/install
+
+1. Install the dependencies
+  ```
+  cargo install mdbook
+  cargo install mdbook-linkcheck
+  cargo install mdbook-regex-replacer
+  ```
+2. Open a terminal and navigate one of the books folders (e.g., `books/refgram`).
+3. Run `mdbook serve`.
+
+The dev server is now running. Copy the localhost address and paste it into your
+browser to see your local copy of the website.
+
+The dev server will update this local website after every change you make.
+
+### How to add a new word to the dictionary
+
+Ensure you have [Node.js and npm] installed on your machine.
+
+1. Edit the dictionary YAML file (`dictionary/en.yaml`) and create a new entry for your word.
+2. Set the `id` field to `INSERT_WORD_ID`.
+3. Open a terminal and navigate to the dictionary folder (the one that contains `en.yaml`).
+4. Run `npm run ids` (`INSERT_WORD_ID` has now been replaced with a random unique ID).
+
+### How to update the website
+
+Ensure you have [Node.js and npm] installed on your machine.
+
+1. Open a terminal and navigate to the web folder.
+2. Run `npm i`.
+3. Run the dev server.
+   - If you've made and/or are making changes to `web/src/grammar/eberban.peg`,
+     run `npm run peg-dev`. You will need to re-run this after each change made.
+   - Otherwise, run `npm run dev`.
+
+The dev server is now running. Copy the localhost address and paste it into your
+browser to see your local copy of the website.
+
+The dev server will update this local website after every change
+(except for the `eberban.peg`) you make.
+
+> [!TIP]
+> You can locally check that the website builds properly by running
+> `npm run build` and then `npm run preview` to view the locally built website.
+
+[Node.js and npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm

@@ -23,7 +23,7 @@ SOFTWARE.
 
                    ---------------------------------------
 
-The files “node/scripts/{build_peg.js | peg_to_pegjs.js}” are copyright (c)
+The files “node/scripts/peg/{peg_to_pegjs.js | pegjs_to_peg.js}” are copyright (c)
 2013, 2014 Masato Hagiwara and licensed as follow:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

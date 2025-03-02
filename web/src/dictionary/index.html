@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript">window["_gaUserPrefs"] = { ioo: function () { return true; } }</script>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 	<title>eberban dictionary</title>
-	<link rel="icon" type="image/png" sizes="200x200" href="../images/icon.png">
-	<link href="./res/bootstrap-legacy.css" rel="stylesheet">
-	<link type="text/css" href="./res/layout-legacy.css" rel="stylesheet">
+	<link rel="icon" type="image/png" sizes="200x200" href="/icon.png">
+	<link href="../legacy/bootstrap-legacy.css" rel="stylesheet">
+	<link type="text/css" href="../legacy/layout-legacy.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="./res/bootstrap-legacy.js"></script>
-	<script src="./res/wp_dictionary.js"></script>
+	<script src="../legacy/bootstrap-legacy.js"></script>
 </head>
 
 <body>
@@ -68,47 +66,41 @@
 
 </body>
 
-<script>
-	let word_count = bundle.count_word_types();
-	$('#particles-count').html(word_count.particles);
-	$('#roots-count').html(word_count.roots);
-	$('#compounds-count').html(word_count.compounds);
+<script type="module">
+    import { count_word_types, html_dictionary } from "./dictionary";
 
-	var useUrl = true;
+	const word_count = count_word_types();
+	document.getElementById("particles-count").innerHTML = word_count.particles;
+	document.getElementById("roots-count").innerHTML = word_count.roots;
+	document.getElementById("compounds-count").innerHTML = word_count.compounds;
 
-	function update() {
-		if (useUrl) {
-			// Load search from URL.
-			let possibleSearch = Array.from(window.location.href.matchAll(/\.html#(.*)/g));
-			if (possibleSearch[0] != undefined) {
-				$('#search').val(decodeURI(possibleSearch[0][1]));
-			}
+	const searchBar = document.getElementById("search");
 
-			useUrl = false;
-		}
-
-		let search = $('#search').val();
-		// Update URL.
-		window.history.replaceState({}, "", `#${encodeURI(search)}`)
-
-		let filters = search.split(',');
-		$('#dictionary').html(bundle.html_dictionary(filters));
-
+	function search(query) {
+		const filters = query.split(",");
+		document.getElementById("dictionary").innerHTML = html_dictionary(filters);
 		window.scrollTo(0, 0);
 	}
 
-	update();
+	const searchFromUrl = (e) => {
+		// decodeURI does stuff like "%20" -> " ".
+		// substring(1) gets rid of initial "#".
+		const urlQuery = decodeURI(location.hash.substring(1));
+		search(urlQuery);
+		// This does not trigger the searchBar's onkeyup event.
+		searchBar.value = urlQuery;
+	}
+	const searchFromSearchBar = (e) => {
+		const searchBarQuery = searchBar.value;
+		search(searchBarQuery);
+		// This changes the hash without triggering onhashchange.
+		history.replaceState({}, "", "#" + searchBarQuery);
+	}
 
-	$('#search').bind("keyup", (e) => {
-		update();
-	});
+	searchFromUrl();
 
-	window.onhashchange = () => {
-		useUrl = true;
-		update();
-	};
-
-
+	onhashchange = searchFromUrl;
+	searchBar.addEventListener("keyup", searchFromSearchBar);
 </script>
 
 </html>

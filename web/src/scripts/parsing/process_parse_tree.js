@@ -54,7 +54,7 @@
 
 if (typeof alert !== 'function') alert = console.log; // For Node.js
 
-const { is_array, is_family, is_string, is_number, SPECIAL_FAMILIES } = require('./util');
+import { is_array, is_family, is_string, is_number, SPECIAL_FAMILIES } from '../utils';
 
 /*
  * Main function.
@@ -403,7 +403,6 @@ function str_replace(str, pos, len, sub) {
 	} else return str;
 }
 
-module.exports.postprocessing = camxes_postprocessing;
-module.exports.postprocess = camxes_postprocessing; // Alias
-module.exports.process_parse_tree = process_parse_tree;
-module.exports.prettify_brackets = prettify_brackets;
+export { camxes_postprocessing as postprocessing };
+export { camxes_postprocessing as postprocess }; // Alias
+export { process_parse_tree, prettify_brackets };

@@ -1,5 +1,5 @@
-const { get_random_item } = require('../util');
-const { convert_sequence_to_root, SYMBOLS: S } = require('./symbols');
+import { get_random_item }  from "../scripts/utils";
+import { convert_sequence_to_root, SYMBOLS as S } from "./symbols";
 
 
 /* ENTRY */

@@ -1,4 +1,4 @@
-const { camxes } = require('../grammar/eberban');
+import { camxes } from "../grammar/eberban.js";
 
 const single = [ 'b', 'c', 'd', 'f', 'g', 'j', 'k', 'm', 'p', 's', 't', 'v', 'z', 'n', 'l', 'r' ];
 const sonorants = [ 'n', 'l', 'r' ];

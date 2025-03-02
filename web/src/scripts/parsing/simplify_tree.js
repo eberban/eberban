@@ -1,4 +1,4 @@
-const { is_string } = require('./util');
+import { is_string } from '../utils';
 
 // List of important types in eberban that we want to show up in the simplified
 // tree.
@@ -134,7 +134,7 @@ for (let type of important_types) {
 /**
  * Simplifies the given parse tree. Returns an array.
  */
-function simplifyTree(parse) {
+export function simplifyTree(parse) {
 	// if it is a terminal, just return that
 	if (parse.length == 2 && is_string(parse[0]) && is_string(parse[1])) {
 		let type = parse[0];
@@ -180,5 +180,3 @@ function simplifyArrayOfTrees(parse) {
 
 	return result;
 }
-
-module.exports.simplifyTree = simplifyTree;
