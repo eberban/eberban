@@ -29,11 +29,10 @@ recognition.
 |   T    |  ti  | |   D    |  du  | |   S    |  si  | |   Z    |  zu  |
 |   C    |  ci  | |   J    |  ju  | |   K    |  ki  | |   G    |  gu  |
 |   M    |  mi  | |   N    |  nu  | |   R    |  ri  | |   L    |  lu  |
-|   H    |  ihi | |   '    |  uhu | |   I    |  i   | |   E    |  e   |
+|   H    |  ihi | |(space) |  uhu | |   I    |  i   | |   E    |  e   |
 |   A    |  a   | |   O    |  o   | |   U    |  u   | |        |      |
 
-Spaces between them is optional, however if there is no space before a unit
-starting with a vowel then a pause (') must be inserted.
+Spaces between them is optional unless before a unit starting with a vowel.
 
 Units starting with an initial consonant pair are reserved to encode foreign
 characters in the future.
