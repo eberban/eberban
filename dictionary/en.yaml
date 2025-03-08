@@ -4706,6 +4706,11 @@ tian:
   family: "R"
   gloss: food
   short: "[E:tce* man] is edible by/food for [A:tce* pan] (default: species of {bzael})."
+gnuri:
+  id: uhiinytsff
+  family: "R"
+  gloss: food
+  short: "[E:tce* man] is made to have flavor of things satisfying [A:(tce* man)]."
 kalan:
   id: v4j1hdrofu
   family: "R"
