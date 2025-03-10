@@ -1,4 +1,4 @@
-import { get_random_item } from "../scripts/utils";
+import { get_random_item } from "../../scripts/utils";
 
 
 /*
