@@ -41,18 +41,33 @@ class Root_Lists {
         if (store.has("root-lists")) {
             this.#root_lists = store.get("root-lists", (key, value) => {
                 if (key === "fn") {
-                    // JSON neither serialises nor parses functions.
-                    // So, we look it up by name when we parse the root lists
-                    // again.
+                    /*
+                       JSON neither serialises nor parses functions.
+                       So, we look it up by name when we parse the root lists
+                       again. We provide the function names explicitly in the
+                       returned lookup object so that
+                       it works in the build when the function names are mangled.
+
+                       When building, Vite uses esbuild to minify JS files. 
+                       By default, this mangles the function names in the build,
+                       turning them into short unique names.
+
+                       esbuild does not provide the option to preserve a select
+                       few function names, but terser (which Vite supports) does.
+
+                       We've decided to keep using esbuild as Vite claims it's
+                       20x ~ 40x faster and we're prioritising a fast developer
+                       experience. https://vite.dev/config/build-options#build-minify
+                    */
                     return ({
-                        get_random_three_letter_intransitive_root,
-                        get_random_three_letter_transitive_root,
-                        get_random_four_letter_intransitive_root,
-                        get_random_four_letter_transitive_root,
-                        get_random_five_letter_intransitive_root,
-                        get_random_five_letter_transitive_root,
-                        get_random_six_letter_intransitive_root,
-                        get_random_six_letter_transitive_root,
+                        [get_random_three_letter_intransitive_root.name]: get_random_three_letter_intransitive_root,
+                        [get_random_three_letter_transitive_root.name]: get_random_three_letter_transitive_root,
+                        [get_random_four_letter_intransitive_root.name]: get_random_four_letter_intransitive_root,
+                        [get_random_four_letter_transitive_root.name]: get_random_four_letter_transitive_root,
+                        [get_random_five_letter_intransitive_root.name]: get_random_five_letter_intransitive_root,
+                        [get_random_five_letter_transitive_root.name]: get_random_five_letter_transitive_root,
+                        [get_random_six_letter_intransitive_root.name]: get_random_six_letter_intransitive_root,
+                        [get_random_six_letter_transitive_root.name]: get_random_six_letter_transitive_root,
                     })[value];
                 }
                 return value;
