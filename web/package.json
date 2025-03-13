@@ -21,7 +21,8 @@
     "preview": "vite preview src --outDir ../dist"
   },
   "dependencies": {
-    "pegjs": "^0.10.0"
+    "pegjs": "^0.10.0",
+    "store2": "^2.14.4"
   },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.1",
