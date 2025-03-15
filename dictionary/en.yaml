@@ -2518,7 +2518,7 @@ zdir:
   id: nqrmfwpnrs
   family: "R"
   short: |
-    [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: speaker)
+    [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: {bzael})
     in property [O:(tce man)].
   gloss: "amusing"
 gali:
@@ -2734,7 +2734,9 @@ jeon:
   family: "R"
   gloss: "water"
   tags: [matter]
-  short: "[E:tce* pan] is water."
+  short: "[E:tce* pan] is water (in any state)."
+  notes: |
+    To speak about liquid water, add {cfen}.
 gour:
   id: ilftg4btmc
   family: "R"
@@ -2779,6 +2781,7 @@ caun:
 flur:
   id: hp3x2jerun
   family: "R"
+  tags: [plant]
   gloss: "plant"
   short: "[E:tce* pan] is a plant."
 jveno:
@@ -2960,8 +2963,11 @@ dzana:
 kineo:
   id: 96lvpzzkom
   family: "R"
-  gloss: "touches"
-  short: "[E:tce* pan] touches [A:tce* pan]."
+  gloss: "contact"
+  short: "[E:tce* pan] makes physical contact with [A:tce* pan]."
+  notes: |
+    [E] may not be agentive and can be an inanimate object. Use {gzi} to add
+    agency.
 zgehal:
   id: jgewshmmt3
   family: "R"
@@ -3100,8 +3106,9 @@ filu:
 sahar:
   id: 5f1kx0ktx8
   family: "R"
-  gloss: "flower"
-  short: "[E:tce* pan] is a flower."
+  tags: [plant]
+  gloss: "blossom"
+  short: "[E:tce* pan] is a blossom/flower (reproductive structure of a flowering plant {esaharflur})."
 kena:
   id: q9fyy1qn9d
   family: "R"
@@ -3702,13 +3709,6 @@ zmoni:
   notes: |
     [A] occurs at the instant the picture was taken, as is constrainted in space
     as the volume captured by the field of view of the camera.
-jaloi:
-  id: 6naqo0pjy0
-  family: "R"
-  gloss: "with-each-other:"
-  short: "[E:tce man] satisfy relation [A:(tca man,tca man)] with each other."
-  notes: |
-    Each member of [E] satisfy relation with [A] with every other member of [E].
 zoli:
   id: gbk8uduqqh
   family: "R"
@@ -3721,7 +3721,7 @@ zolin:
   id: enzha5idyj
   family: "R"
   gloss: "register-tool"
-  short: "Register tool [E:tce* man] in the context."
+  short: "Register tool [E:tce* man] in the context. Constraint for {zoli}."
 jine:
   id: cmjmwddxde
   family: "R"
@@ -3935,42 +3935,60 @@ tconi:
   id: 1ekbkw2s33
   family: "R"
   gloss: "mutual-1:"
-  short: "[E:tco p] is a group where every pair of members mutualy satisfy property [A:(tco p)]."
+  short: "All pairs subset of [E:tco p] have property [A:(tco p)]."
 tcori:
   id: ho1az3mcl2
   family: "R"
   gloss: "mutual-2:"
-  short: "[E:tco p] is a group where every pair of members mutualy satisfy relation [A:(tca a, tca p)]."
+  short: "All pairs subset of [E:tco p] have their members mutually satisfy relation [A:(tca a, tca p)]."
 jnu:
   id: gi4jvusxpm
   family: "R"
   gloss: "big:"
   tags: [intensity]
   short: |
-    [E:tce* p] are big among all things satisfy property [O:(tca p)] (default: always true)
-    (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
-    A), with standard deviation [O:tca gan] (default: 1).
+    [E:tce* p] are big compared to all things satisfy property [O:(tca p)] (default: always true)
+    ([E] doesn't necessarily satisfy [O]) and measuring relation [A:(tce gan,tca p)] ([E] must satisfy
+    [A]), with standard deviation [U:tca gan] (default: 1).
   notes: |
-    Each thing in [E] have more than [O] standard deviation(s) from the average size
-    of [A].
+    Measuring relation [A] allows to choose how the things are measured, but can also be used to
+    filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
+    filter.
+
+    {me jnu epnuencpie tcuin} = It's a tall tree. (measurement is "height of a tree", so things that are
+    not trees are excluded from the comparaison)
+
+    If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
+    property to [A] and don't filter in [O].
+
+    {me bjaor jnu via epnuencpie fio kroan} = The elephant is tall compared to frogs.  
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
-    deviations is now 1. This allows to use {ste}/{sto} instead of binding the [O] slot with a number.
+    deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
 jni:
   id: ik7qjuwuxm
   family: "R"
   gloss: "small:"
   tags: [intensity]
   short: |
-    [E:tce* p] are small among all things satisfy property [O:(tca p)] (default: always true)
-    (E doesn't necessarily satisfy [A]) using measuring relation [A:(tce gan,tca p)] (E must satisfy
-    A), with standard deviation [O:tca gan] (default: 1).
+    [E:tce* p] are small compared to all things satisfy property [O:(tca p)] (default: always true)
+    ([E] doesn't necessarily satisfy [O]) and measuring relation [A:(tce gan,tca p)] ([E] must satisfy
+    [A]), with standard deviation [U:tca gan] (default: 1).
   notes: | 
-    Each thing in [E] have less than [O] standard deviation(s) from the average size
-    of [A].
+    Measuring relation [A] allows to choose how the things are measured, but can also be used to
+    filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
+    filter.
+
+    {me jnu epnuencpie tcuin} = It's a small tree. (measurement is "height of a tree", so things that are
+    not trees are excluded from the comparaison)
+
+    If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
+    property to [A] and don't filter in [O].
+
+    {me kroan jni via epnuencpie fio bjaor} = The frog is small compared to elephants.  
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
-    deviations is now 1. This allows to use {ste}/{sto} instead of binding the [O] slot with a number.
+    deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
 jnuhi:
   id: yw2t4sv9sb
   family: "R"
@@ -5687,7 +5705,7 @@ e mine dzei:
     considered.
 e gien tcia:
   id: 57282n39r3
-  family: "R"
+  family: "C"
   gloss: "integer-subset"
   tags: [set]
   short: |
@@ -5872,7 +5890,7 @@ e cfen mula:
   tags: [space, unit]
 e cnue meloan:
   id: 9fc31ltwy9
-  family: "R"
+  family: "C"
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."
   tags: [food, plant]
@@ -5952,6 +5970,12 @@ e birei denai:
     If [A] spanned over multiple days, then the anniversary will too span over multiple
     days. If you want a 1 day anniversary for a multi-day event, speak about its
     start {sra} or end {sro}.
+e sahar flur:
+  id: og9kw8xlsk
+  family: "C"
+  tags: [plant]
+  gloss: "flowering-plant"
+  short: "[E:tce* pan] is a flowering plant."
 
 # Spelling
 _spelling:
