@@ -1284,6 +1284,7 @@ ti:
   short: "Digit 0"
   gloss: "0"
   tags: [digit, number]
+  see_also: [tci]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 te:
@@ -1292,6 +1293,7 @@ te:
   short: "Digit 1"
   gloss: "1"
   tags: [digit, number]
+  see_also: [tce]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 ta:
@@ -1300,6 +1302,7 @@ ta:
   short: "Digit 2"
   gloss: "2"
   tags: [digit, number]
+  see_also: [tca]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 to:
@@ -1316,6 +1319,7 @@ tu:
   short: "Digit 4"
   gloss: "4"
   tags: [digit, number]
+  see_also: [tcu]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tie:
@@ -1324,6 +1328,7 @@ tie:
   short: "Digit 5"
   gloss: "5"
   tags: [digit, number]
+  see_also: [tcie]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tia:
@@ -1332,6 +1337,7 @@ tia:
   short: "Digit 6"
   gloss: "6"
   tags: [digit, number]
+  see_also: [tcia]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tio:
@@ -1340,6 +1346,7 @@ tio:
   short: "Digit 7"
   gloss: "7"
   tags: [digit, number]
+  see_also: [tcio]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tiu:
@@ -1348,6 +1355,7 @@ tiu:
   short: "Digit 8"
   gloss: "8"
   tags: [digit, number]
+  see_also: [tciu]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tei:
@@ -1356,6 +1364,7 @@ tei:
   short: "Digit 9"
   gloss: "9"
   tags: [digit, number]
+  see_also: [tcei]
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 tea:
@@ -6157,6 +6166,66 @@ _spelling:
     gloss: "Q"
     short: |
       {ce}: Letter Q.
+  tci: 
+    id: ub6c89oivk
+    gloss: "0"
+    short: |
+      {ce}: Digit 0.
+    see_also: [ti]
+  tce: 
+    id: l0kpstv3sj
+    gloss: "1"
+    short: |
+      {ce}: Digit 1.
+    see_also: [te]
+  tca: 
+    id: co8ssocu11
+    gloss: "2"
+    short: |
+      {ce}: Digit 2.
+    see_also: [ta]
+  tco: 
+    id: bwrzr596bs
+    gloss: "3"
+    short: |
+      {ce}: Digit 3.
+    see_also: [to]
+  tcu: 
+    id: uuxcf0vgq1
+    gloss: "4"
+    short: |
+      {ce}: Digit 4.
+    see_also: [tu]
+  tcie: 
+    id: hjgm2tl9e1
+    gloss: "5"
+    short: |
+      {ce}: Digit 5.
+    see_also: [tie]
+  tcia: 
+    id: pz0uykkkig
+    gloss: "6"
+    short: |
+      {ce}: Digit 6.
+    see_also: [tia]
+  tcio: 
+    id: 071fz7amky
+    gloss: "7"
+    short: |
+      {ce}: Digit 7.
+    see_also: [tio]
+  tciu: 
+    id: 77uy8ynd6y
+    gloss: "8"
+    short: |
+      {ce}: Digit 8.
+    see_also: [tiu]
+  tcei: 
+    id: xwad05h9xx
+    gloss: "9"
+    short: |
+      {ce}: Digit 9.
+    see_also: [tei]
   sli: 
     id: tqvgfmmgc3
     gloss: "\\"

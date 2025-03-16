@@ -34,12 +34,12 @@ recognition.
 
 Spaces between them is optional unless before a unit starting with a vowel.
 
-Units starting with an initial consonant pair are reserved to encode foreign
-characters in the future.
+[Digits](numbers.md) can be spelled by following the same pattern as __TI__ but
+by replacing _t_ with _tc_: tci, tce, tca, ...
 
 Examples:
 
-- `za ce bu o bu cei` = named B-O-B
+- `za ce bu o bu tco cei` = named B-O-B-3
 - `tian de ce ti i a nu cei` = tian (spelled T-I-A-N)
 
 __ceu__ is another member of __CE__ that spells the sounds of a quote.
