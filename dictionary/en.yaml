@@ -4754,11 +4754,6 @@ zotke:
   family: "R"
   gloss: category
   short: "[E:tce* man] fits in category/genre [A:tce* man]."
-menai:
-  id: 3ce1lb3gad
-  family: "R"
-  gloss: ability
-  short: "[E:tce pan] has the ability to satisfy [A:(tce pan)]."
 jiune:
   id: c66rr2j8fm
   family: "R"
@@ -4782,15 +4777,15 @@ zguhi:
   family: "R"
   gloss: "juice:"
   short: |
-    [E:tce pan] is juice made from thing that satisfies [A:(tce pan)].
+    [E:tce pan] is juice made from something that satisfied [A:(tce pan)].
   notes: |
-    [A] is not an entity but a property since the thing being made into juice no longer exists.
-taoru:
+    [A] is not an entity but a property since the thing being made into juice may no longer exists.
+cahil:
   id: 9hsax9mv0q
   family: "R"
   gloss: "egg"
   short: |
-    [E:tce pan] is an egg layed by [A:tce pan].
+    [E:tce pan] is an egg.
 kelon:
   id: kneckch5o6
   family: "R"
