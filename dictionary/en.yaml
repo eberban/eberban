@@ -4769,7 +4769,7 @@ jiune:
   gloss: "n-th"
   tags: [number, list]
   short: |
-    [E:tca p] is the [O:tca gan]th member of sequence [A:blu p].
+    [E:tca p] is the [O:tca gan]th (starts counting at 0) member of sequence [A:blu p].
   see_also: [jiu]
 dzei:
   id: a5sx15j283
@@ -5331,16 +5331,18 @@ e tari pure:
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
   notes: "[E] tries to hear [A]."
-e ci ma:
+e ban ci:
   id: oqk7vz0ubt
   family: "C"
   gloss: "word"
-  short: "[E:tce* man] is a word."
+  short: "[E:tce* man] is a word in language [A:tce* man] (default: eberban)."
 e ci vini:
   id: 9ravc9ou95
   family: "C"
   gloss: "word-meaning"
-  short: "[E:tce* man] (quote or word) have meaning equivalent to [A:p]."
+  short: "[E:tce* man] (quote or word) have a meaning equivalent to [A:p] in language [O: tce* man] (default: eberban)."
+  notes: |
+    [A] is a possible meaning of [E].
 e ce ma:
   id: 1w44wy894g
   family: "C"
