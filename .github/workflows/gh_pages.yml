@@ -1,15 +1,20 @@
-name: Deploy GitHub Pages
+name: Build & Preview/Deploy
 
 on:
   push:
     branches: [master]
-
+  
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [master]
+  
   workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+concurrency: preview-${{ github.ref }}
 
+jobs:
+  build-and-preview-or-deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -59,14 +64,22 @@ jobs:
           npm run build-to-deploy
           cd ..
 
-      - name: Commit changes to gh-pages
+      - name: Remove extraneous files
         run: |
           rm -f .gitignore
           rm -f dictionary/package.json
           rm -rf web/
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-          git checkout -b tmp/gh-pages
-          git add -A
-          git commit -m "Update GitHub pages"
-          git push origin tmp/gh-pages:gh-pages --force
+  
+      - name: Deploy preview
+        if: ${{ github.event.pull_request.base.ref == 'master' }}
+        uses: rossjrw/pr-preview-action@v1
+
+      - name: Deploy
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          commit-message: Update GitHub pages
+          folder: .
+          branch: gh-pages
+          clean: false
+          force: false
