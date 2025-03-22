@@ -101,6 +101,7 @@
 
 ma:
   id: uiwim2580z
+  predilex_id: minewa
   family: "MI"
   gloss: atom
   tags: [core]
@@ -127,6 +128,7 @@ man:
   see_also: ["ma"]
 mai:
   id: uwjxg46v4h
+  predilex_id: gisiwu
   family: "MI"
   gloss: "exists"
   tags: [core]
@@ -140,6 +142,7 @@ mai:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mao:
   id: qzpxweephx
+  predilex_id: kavuqo
   family: "MI"
   gloss: "nary-imply"
   tags: [core, transitive]
@@ -153,6 +156,7 @@ mao:
 
 mui:
   id: yftgrzjtiw
+  predilex_id: zalego
   family: "MI"
   gloss: "unknown"
   tags: [core]
@@ -162,6 +166,7 @@ mui:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mue:
   id: asdzumonex
+  predilex_id: miruwa
   family: "MI"
   gloss: "context-extract"
   tags: [core]
@@ -176,6 +181,7 @@ mue:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mua:
   id: t98puegdx0
+  predilex_id: ditosi
   family: "MI"
   gloss: "context-apply:"
   tags: [core]
@@ -794,6 +800,7 @@ zeiu:
 
 zi:
   id: drzw8dig76
+  predilex_id: maruhe
   family: "ZI"
   gloss: "#short-neg"
   tags: [core, negation]
@@ -1060,6 +1067,7 @@ be:
     - ["icon-book", "Borrowings", https://eberban.github.io/eberban/books/refgram/book/grammar/borrowings.html]
 bi:
   id: iqamwz7uhd
+  predilex_id: maruhe
   family: "BI"
   gloss: "#wide-neg"
   tags: [core, negation]
@@ -1100,6 +1108,7 @@ boi:
 
 mi:
   id: unfcuerxgm
+  predilex_id: lukayu
   family: "MI"
   short: "[E:tce* man] is I/me/the speaker(s)/narrator(s)."
   gloss: "me"
@@ -1108,6 +1117,7 @@ mi:
     - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mo:
   id: zjytqy23pq
+  predilex_id: yilawu
   family: "MI"
   short: "[E:tce* man] is you, a listener."
   gloss: "you"
@@ -1122,6 +1132,7 @@ moe:
     - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mio:
   id: itsqhv9xao
+  predilex_id: teleyo
   family: "MI"
   short: |
     Every member of [E:tco* man] is either I/a speaker/author; or you, a listener; and
@@ -1131,6 +1142,7 @@ mio:
     - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 mie:
   id: 9swjxu2mjz
+  predilex_id: qumuse
   family: "MI"
   short: |
     Every member of [E:tco* man] is either I/a speaker/author; or something that
@@ -1138,6 +1150,7 @@ mie:
   gloss: "exclusive-we"
 me:
   id: ahgbyzu6xy
+  predilex_id: hubena
   family: "MI"
   gloss: "the"
   short: |
@@ -1146,6 +1159,7 @@ me:
     - ["icon-book", "Discourse predicates", https://eberban.github.io/eberban/books/refgram/book/grammar/discourse.html]
 ji:
   id: uqb3n5070a
+  predilex_id: leqeya{E,A,X}
   family: "JI"
   gloss: "#cardinal:"
   tags: [terminator, number, set]
@@ -1205,6 +1219,7 @@ jioa:
     - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 jiu:
   id: xtles9edl2
+  predilex_id: siluhu{A,E,X}
   family: "JI"
   gloss: "#ordinal"
   tags: [terminator, number, list]
@@ -1506,6 +1521,7 @@ ri:
 
 za:
   id: 4hiwgkyaqe
+  predilex_id: gavuyu
   family: "ZI"
   gloss: "#named"
   tags: [intransitive]
@@ -1782,6 +1798,7 @@ do:
 
 vle:
   id: ysh546fklz
+  predilex_id: zarowi
   family: "R"
   gloss: "or:"
   tags: [connective]
@@ -1793,6 +1810,7 @@ vle:
       fi bi ga
 vlu:
   id: eczhmrmkqd
+  predilex_id: berogo
   family: "R"
   gloss: "if:"
   tags: [connective]
@@ -1828,6 +1846,7 @@ kidvo:
           fio go
 tcuhi:
   id: g3quw0kqyl
+  predilex_id: talipe
   family: "R"
   gloss: "set-all-raw:"
   tags: [set, axiom]
@@ -1835,6 +1854,7 @@ tcuhi:
     [E:ma] is the (non-empty) set of all things that individualy satisfy [A:(p)].
 tcihe:
   id: rcpkbwycm6
+  predilex_id: viqeyu
   family: "R"
   gloss: "set-member-raw"
   tags: [set, axiom]
@@ -1842,6 +1862,7 @@ tcihe:
     [E:p] is a member of set [A:tcuhi p].
 tcia:
   id: p8mdb3rcqw
+  predilex_id: vapebu{A,E}
   family: "R"
   gloss: "subset"
   tags: [set]
@@ -1855,6 +1876,7 @@ tcia:
   #       fia ki tcihe ka
 tcehi:
   id: pwfckqjpdu
+  predilex_id: puvaba
   family: "R"
   gloss: "set-some-raw:"
   tags: [set]
@@ -1865,6 +1887,7 @@ tcehi:
   #   ke tcia tcuhi gia
 tcahi:
   id: xemhvhqiom
+  predilex_id: huseli
   family: "R"
   gloss: "set-one-raw:"
   tags: [set]
@@ -1880,6 +1903,7 @@ tcahi:
   #       fi ko tcihe ke
 tcohi:
   id: zlgjmfoqtb
+  predilex_id: darojo
   family: "R"
   gloss: "set-many-raw:"
   tags: [set]
@@ -1894,6 +1918,7 @@ tcohi:
   #     fi ko tcihe ke
 tca:
   id: 8w1jwffzur
+  predilex_id: yovilu
   family: "R"
   gloss: "set-one:"
   tags: [set]
@@ -1904,6 +1929,7 @@ tca:
   #   ke se tcahi gia
 tcu:
   id: pvhoor5xeb
+  predilex_id: hepusa
   family: "R"
   gloss: "set-all:"
   tags: [set]
@@ -1915,6 +1941,7 @@ tcu:
       via be ba tcihe tca gia
 tce:
   id: tqlnlqxzsn
+  predilex_id: fahovo
   family: "R"
   gloss: "set-some:"
   tags: [set]
@@ -1926,6 +1953,7 @@ tce:
       via be ba tcihe tca gia
 tco:
   id: sjmnh7xxpc
+  predilex_id: zuqefe
   family: "R"
   gloss: "set-many:"
   tags: [set]
@@ -1946,24 +1974,28 @@ tcie:
     ke tca tcihe ka
 tcuhe:
   id: ryx470pn2x
+  predilex_id: vitaya
   family: "R"
   gloss: "set-union"
   tags: [set]
   short: "[E:tcehi p] is the union of sets in set [A:tcehi tcehi p]."
 tcahe:
   id: mn82rh937u
+  predilex_id: fupare
   family: "R"
   gloss: "set-choice"
   tags: [set]
   short: "[E:tcehi p] contains exactly one member of each set in set [A:tcehi tcehi p]."
 tcuha:
   id: 2yen5k9sgq
+  predilex_id: gevufu
   family: "R"
   gloss: "set-intersection"
   tags: [set]
   short: "[E:tcehi p] is the intersection of sets in set [A:tcehi tcehi p]."
 tcuho:
   id: fna9x09it8
+  predilex_id: yatofu
   family: "R"
   gloss: "set-diff"
   tags: [set]
@@ -2006,6 +2038,7 @@ tcihu:
         fi ka tcia ke
 kin:
   id: hypka57wfp
+  predilex_id: sigufi
   family: "R"
   gloss: "par"
   short: |
@@ -2029,6 +2062,7 @@ kin:
     pi e kin pi
 blur:
   id: nro51pm4q2
+  predilex_id: bazetu
   family: "R"
   gloss: "empty-list"
   tags: [list]
@@ -2036,6 +2070,7 @@ blur:
     [E:ma] is the empty list.
 blu:
   id: 4tuaiv3x0b
+  predilex_id: cutago
   family: "R"
   gloss: "list:"
   tags: [list]
@@ -2045,6 +2080,7 @@ blu:
     {peu} is syntaxic sugar to make lists.
 bluni:
   id: 6oxelxxwxd
+  predilex_id: fuwiyi{O,A,E,U}
   family: "R"
   gloss: "list-lfold"
   tags: [list]
@@ -2053,6 +2089,7 @@ bluni:
     applying predicate [U:(b,b,p)] in first to last order.
 blunu:
   id: zblktnj4an
+  predilex_id: fubuca{O,A,E,U}
   family: "R"
   gloss: "list-rfold"
   tags: [list]
@@ -2068,6 +2105,7 @@ bluhe:
     [E:blu p] is the concatenation of lists [A:blu p] and [O:blu p].
 blue:
   id: bqqk6gqk0k
+  predilex_id: tujoco
   family: "R"
   gloss: "list-concat-many"
   tags: [list]
@@ -2075,6 +2113,7 @@ blue:
     [E:blu p] is the concatenation of all lists in list [A:blu blu p].
 blua:
   id: 2wwxz8b8gr
+  predilex_id: mogoju
   family: "R"
   gloss: "list-reverse"
   tags: [list]
@@ -2082,6 +2121,7 @@ blua:
     [E:blu p] is list [A:blu p] in reverse order.
 blea:
   id: un9423gr90
+  predilex_id: sehiva
   family: "R"
   gloss: "list-contain"
   tags: [list]
@@ -2089,6 +2129,7 @@ blea:
     [E:blu a] is included/contained in [A:blu a].
 bleu:
   id: zp415dp0q0
+  predilex_id: yilodi{A,E}
   family: "R"
   gloss: "list-set-raw"
   tags: [list, set]
@@ -2096,6 +2137,7 @@ bleu:
     [E:tce p] is the set of all the elements in list [A:blu p].
 kagvin:
   id: wuklqbdxyk
+  predilex_id: yeqigo
   family: "R"
   gloss: "map"
   tags: [map]
@@ -2103,6 +2145,7 @@ kagvin:
     [E:ma] is a map.
 kagvil:
   id: 4wxxlvhj9q
+  predilex_id: minovu
   family: "R"
   gloss: "empty-map"
   tags: [map]
@@ -2110,6 +2153,7 @@ kagvil:
     [E:kagvin] is the empty map.
 kagve:
   id: ynv5inth7z
+  predilex_id: nuduya{A,O,E}
   family: "R"
   gloss: "map-entry"
   tags: [map]
@@ -2117,6 +2161,7 @@ kagve:
     [E:p] is the value in map [A:kagvin] for key [O:ma].
 kagvehe:
   id: wveaovosbk
+  predilex_id: wukiga{A,E}
   family: "R"
   gloss: "context-map-entry"
   tags: [map, context]
@@ -2192,6 +2237,7 @@ kagvihi:
 
 pan:
   id: whi7bmezoy
+  predilex_id: qahama
   family: "R"
   gloss: physical
   tags: [space, context]
@@ -2202,30 +2248,35 @@ pan:
 
 gin:
   id: 4uxuhdkbez
+  predilex_id: niyuna
   family: "R"
   gloss: number-natural
   tags: [math, number]
   short: "[E:tce* man] is a natural number."
 gien:
   id: fh4n33nk11
+  predilex_id: nuvapa
   family: "R"
   gloss: number-interger
   tags: [math, number]
   short: "[E:tce* man] is an integer number."
 gine:
   id: wxxmvr9zx2
+  predilex_id: mafeyo
   family: "R"
   gloss: succ
   tags: [partial, math, number]
   short: "[E:tca ma] is the successor of [A:tca ma]."
 ginen:
   id: w8gh1nggcn
+  predilex_id: sejobe
   family: "R"
   gloss: zero
   tags: [math, number]
   short: "[E:tca gin] is zero."
 gen:
   id: syw83vo8hb
+  predilex_id: biqoka
   family: "R"
   gloss: number-real
   tags: [math, number]
@@ -2279,12 +2330,14 @@ ven:
   short: "This proposition is true if all propositions in set [E:tcehi ()] are true."
 van:
   id: d9fzfk4r83
+  predilex_id: jecudi
   family: "R"
   gloss: "OR-P0:"
   tags: [set, connective]
   short: "This proposition is true if at least one proposition in set [E:tcehi ()] is true."
 von:
   id: f5t4czvnac
+  predilex_id: tacono
   family: "R"
   gloss: "XOR-P0:"
   tags: [set, connective]
@@ -2327,6 +2380,7 @@ vona:
   short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:tce gin] (default: 1) relation(s) in set [O:tcehi (p,b)]."
 mine:
   id: qt6yew5oof
+  predilex_id: zovahi{A,E}
   family: "R"
   gloss: "<"
   tags: [maths, ordering]
@@ -2336,6 +2390,7 @@ mine:
     members of [A].
 mune:
   id: ennpp99pjl
+  predilex_id: zovahi
   family: "R"
   gloss: ">"
   tags: [maths, ordering]
@@ -2345,6 +2400,7 @@ mune:
     members of [A].
 fule:
   id: 86guwrqjob
+  predilex_id: qipifi{E,A}
   family: "R"
   gloss: "knows:"
   short: "[E:tce* pan] knows [A:tce* man] from source [O:tce man]."
@@ -2355,18 +2411,21 @@ ple:
   short: "[E:tca man] is the fact that [A:()] is true."
 dona:
   id: iffa5o0qnw
+  predilex_id: payito
   family: "R"
   gloss: "likes"
   tags: [emotion]
   short: "[E:tce* pan] likes [A:tce* man]."
 jveo:
   id: 4lhxmspat4
+  predilex_id: ciruge
   family: "R"
   gloss: "friend"
   tags: [emotion]
   short: "[E:tce* pan] is a friend of [A:tce* pan]."
 kelo:
   id: wsihly4n1c
+  predilex_id: heyimu
   family: "R"
   gloss: "thanks"
   tags: [emotion]
@@ -2375,6 +2434,7 @@ kelo:
     (defaults: listener) about [O:()] being true.
 kere:
   id: wb1zm07d82
+  predilex_id: juhebi
   family: "R"
   gloss: "helps"
   short: |
@@ -2382,82 +2442,97 @@ kere:
     [A] is the one satisfying [O], and [E] doesn't need to satisfy [O].
 vahul:
   id: svndl4hkmc
+  predilex_id: lumica
   family: "R"
   gloss: "milk"
   short: "[E:tce* pan] is milk."
 mian:
   id: vgeqteao1c
+  predilex_id: nifuki
   family: "R"
   gloss: "cat"
   tags: [animal]
   short: "[E:tce* pan] is a cat/felid/member of family Felidae."
 zin:
   id: jct2wcsuqa
+  predilex_id: nugopo
   family: "R"
   gloss: "woman"
   short: "[E:tce* pan] is a girl/woman/female (gender)."
 zun:
   id: fdju08ghm9
+  predilex_id: weboyo
   family: "R"
   gloss: "man"
   short: "[E:tce* pan] is a boy/man/male (gender)."
 tsae:
   id: 4w27tty2ds
+  predilex_id: memoku
   family: "R"
   gloss: "invents"
   short: "[E:tce pan] invents [A:tce* ma]."
   see_also: [tsau]
 tsau:
   id: l45mnfdjsq
+  predilex_id: safize{A,E}
   family: "R"
   gloss: "manufactured"
   short: "[E:tce* pan] is made/created/manufactured/crafted by [A:tce pan]."
   see_also: [tsae]
 zuna:
   id: yhzwpengy5
+  predilex_id: vakevu
   family: "R"
   gloss: "inspired"
   short: "[E:tce* pan] is inspired by [A:tce* ma]. [A] is a source of inspiration for [E]."
 zvai:
   id: pcbyhpj1jy
+  predilex_id: mulana
   family: "R"
   gloss: "purpose:"
   short: "[E:tce pan] has goal/purpose/aims to satisfy [A:(tce pan)]."
 skal:
   id: fx1mnfjs7i
+  predilex_id: futeyu
   family: "R"
   gloss: "computer"
   short: "[E:tce* pan] is a computer (in general, includes smartphones, game consoles, etc)."
 skol:
   id: 0py164bdbd
+  predilex_id: zakelo
   family: "R"
   gloss: "software"
   short: "[E:tce* pan] is a computer software/program."
 sune:
   id: nj03wvtsbv
+  predilex_id: kenoyi
   family: "R"
   gloss: "greets"
   short: "[E:tce* pan] (default: speaker) says hello to/greets [A:tce* pan] (default: listener)."
   see_also: [suna, sunu]
 suna:
   id: blzblpa7fo
+  predilex_id: nilupe
   family: "R"
   gloss: "welcomes"
   short: "[E:tce* pan] (default: speaker) welcomes [A:tce* pan] (default: listener) to place [O:tce* pan]."
   see_also: [sune, sunu]
 sunu:
   id: knhmussoxm
+  predilex_id: kojoma
   family: "R"
   gloss: "goodbye"
   short: "[E:tce* pan] (default: speaker) says goodbye to [A:tce* pan] (default: listener)."
   see_also: [sune, suna]
 spie:
   id: wlkwneqcyu
+  predilex_id: wasaki
   family: "R"
   gloss: "says"
   short: "[E:tce pan] says [A:tce* man] to [O:tce* ma]."
 spua:
   id: qwnwymrscy
+  predilex_id: virume
   family: "R"
   gloss: "home"
   short: "[E:tce* pan] is a home/dwelling for [A:tce* pan]."
@@ -2466,16 +2541,19 @@ spua:
     (region/state/country/planet/etc).
 zaro:
   id: rzmceyzcgr
+  predilex_id: cofife
   family: "R"
   gloss: "agrees"
   short: "[E:tce* pan] agrees with [A:tce* pan] that [O:()] is true."
 vania:
   id: meuqg48faw
+  predilex_id: jogavu{E,O,A}
   family: "R"
   gloss: "moves"
   short: "[E:tce* pan] moves/goes to [A:tce* pan] from [O:tce* pan]."
 gzi:
   id: 3qi3tvpegs
+  predilex_id: gunaco
   family: "R"
   gloss: "agentive cause:"
   short: "[E:tce* pan] is an agentive cause of [A:()] being true."
@@ -2494,37 +2572,44 @@ seru:
   short: "[E:tce* man] is about subject [A:tce* man]."
 snai:
   id: q0vx1idoej
+  predilex_id: rabure
   family: "R"
   gloss: "works:"
   short: "[E:tce pan] labors/works by satisfying property [A:(tce pan)]."
 ber:
   id: vz1h8ccnmh
+  predilex_id: liwoqi
   family: "R"
   gloss: "eberbanic"
   short: "[E:tce* man] is Eberbanic/reflects Eberban culture."
 per:
   id: nzls6wh1l5
+  predilex_id: jagoce
   family: "R"
   gloss: "person"
   short: "[E:tce* pan] is a person."
 prae:
   id: scjlbqkhj0
+  predilex_id: motuwa
   family: "R"
   gloss: "loves"
   tags: [emotion]
   short: "[E:tce* pan] loves [A:tce* man]."
 vire:
   id: wii5ktrkfq
+  predilex_id: wacuda
   family: "R"
   gloss: "visits"
   short: "[E:tce* pan] visits [E:tce* pan]."
 peol:
   id: zw3nafu6xr
+  predilex_id: wocaja
   family: "R"
   gloss: "city"
   short: "[E:tce* pan] is a town/city."
 zdir:
   id: nqrmfwpnrs
+  predilex_id: canuwa{A,E}
   family: "R"
   short: |
     [E:tce man] is amusing/entertaining/fun according to [A:tce* pan] (default: {bzael})
@@ -2532,21 +2617,25 @@ zdir:
   gloss: "amusing"
 gali:
   id: r7wbdwqgm0
+  predilex_id: liweva
   family: "R"
   gloss: "happy:"
   short: "[E:tce* pan] is happy about [A:()] being true."
 gari:
   id: t6q0c6agab
+  predilex_id: jojiso
   family: "R"
   gloss: "unhappy:"
   short: "[E:tce* pan] is unhappy/sad about [A:()] being true."
 muli:
   id: n4qltpakno
+  predilex_id: fuyozi
   family: "R"
   gloss: "easy:"
   short: "[E:tce pan] finds it easy to satisfy [A:(tce pan)]."
 muri:
   id: vtqvmmg5g7
+  predilex_id: lenihu
   family: "R"
   gloss: "difficult:"
   short: "[E:tce pan] finds it difficult to satisfy [A:(tce pan)]."
@@ -2562,51 +2651,61 @@ siro:
   short: "[E:tce* ecoma] (source) has translation [A:tce* ecoma] (result)."
 tcuin:
   id: w85kmshrmv
+  predilex_id: tiliva
   family: "R"
   short: "[E:tce* pan] is a tree."
   gloss: "tree"
 jnaor:
   id: 7i380kaavf
+  predilex_id: wudana
   family: "R"
   gloss: "wild"
   short: "[E:tce* pan] is wild/untamed."
 kitmi:
   id: isleimajzc
+  predilex_id: fugidu
   family: "R"
   gloss: "hopes:"
   short: "[E:tce pan] hopes that [A:()] is the case; [E] would be happy to know that [A] is the case."
 ketmi:
   id: vfis6lzbve
+  predilex_id: lusene
   family: "R"
   gloss: "intentionless hopes:"
   short: "[E:tce pan] hopes that [A:()] is the case; [E] would be happy to know that [A] is the case, but thinks that they are powerless to make it true by themself."
 katmi:
   id: iezve23kex
+  predilex_id: letera
   family: "R"
   gloss: "wants:"
   short: "[E:tce pan] desires/wishes/wants that [A:()] be the case; [E] would seize the opportunity to make [A] true."
 kotmi:
   id: ch2b852dq7
+  predilex_id: muyete
   family: "R"
   gloss: "intends:"
   short: "[E:tce pan] intends/plans to make [A:()] true, having reasonable confidence in their ability to do so."
 kutmi:
   id: 0g7kesm6nq
+  predilex_id: retele
   family: "R"
   gloss: "prays:"
   short: "[E:tce pan] makes prayer [A:()], hoping that, somehow, this thought would influence reailty in the desired way, possibly throught the help of supernatural beings or forces."
 fuher:
   id: odaizkibaq
+  predilex_id: zeduyu
   family: "R"
   gloss: "fly"
   short: "[E:tce* pan] flies (in air/space)."
 folin:
   id: ueqbcavbvq
+  predilex_id: weyake
   family: "R"
   gloss: "airplane"
   short: "[E:tce* pan] is an airplane."
 jlei:
   id: l2gx6yauc8
+  predilex_id: pereco{E,O,A}
   family: "R"
   gloss: "motivated:"
   short: "[E:tce* pan] is motivated to make [A:()] true by [O:tce* man] (motivation)."
@@ -2614,36 +2713,43 @@ jlei:
     TODO: Define what a motivation is. someone else? propositions?
 zuan:
   id: bayilnplg2
+  predilex_id: qetufo
   family: "R"
   gloss: "walks"
   short: "[E:tce* pan] walks."
 vune:
   id: x2x2xeye5x
+  predilex_id: payito{A,E}
   family: "R"
   gloss: "enjoyable"
   short: "[E:tce* man] is enjoyable/great/nice for [A:tce* pan] (default: {bzael})."
 jvin:
   id: ooyvglzn7l
+  predilex_id: heramo
   family: "R"
   gloss: "dances"
   short: "[E:tce* pan] dances."
 blan:
   id: 7qni8huxuw
+  predilex_id: zeyawu{A,E}
   family: "R"
   short: "[E:tce* man] is beautiful according to [A:tce man] (default: {bzael})."
   gloss: "beautiful"
 pcien:
   id: 0uujkotag5
+  predilex_id: hiwofe
   family: "R"
   gloss: "bread"
   short: "[E:tce* pan] is bread."
 ban:
   id: pwmxutektw
+  predilex_id: lasofe
   family: "R"
   short: "[E:tce* man] is a language."
   gloss: "language"
 zigmo:
   id: wlbcggayj6
+  predilex_id: pawimo
   family: "R"
   short: "[E:tce* pan] is an inscription of text [A:tce* ecoma]."
   gloss: "written"
@@ -2654,6 +2760,7 @@ tukfa:
   gloss: "medium"
 soane:
   id: rmpkifsf0c
+  predilex_id: lecafu{A,E}
   family: "R"
   gloss: "stolen"
   short: "[E:tce* pan] is stolen from [A:tce* pan]."
@@ -2661,6 +2768,7 @@ soane:
     Use with {gzi} to express who/what steals (E-Xd).
 tari:
   id: dzrpftevt6
+  predilex_id: jomeli
   family: "R"
   gloss: "attemps:"
   short: |
@@ -2673,6 +2781,7 @@ tuli:
   short: "[E:tce* man] requires/needs [A:()] to being true. [A] is a necessity for [E]."
 miun:
   id: mu4oshpucp
+  predilex_id: sevudo
   family: "R"
   gloss: "sleeps"
   short: "[E:tce* pan] sleeps."
@@ -2688,6 +2797,7 @@ juon:
   short: "[E:tce* man] is bad according to [A:tce pan] (default: {bzael})."
 kunu:
   id: 6runpjljp0
+  predilex_id: hojiso
   family: "R"
   gloss: "feels"
   short: "[E:tce* pan] feels sentiment/emotion/sensation [A:tce* man]."
@@ -2695,51 +2805,60 @@ kunu:
     TODO: Define sentiment/emotion/sensation.
 viru:
   id: r9jofkaowc
+  predilex_id: zapiyo
   family: "R"
   gloss: "sees"
   short: "[E:tce* pan] sees [A:tce* pan]."
 pure:
   id: uj342f9oaw
+  predilex_id: miciko
   family: "R"
   gloss: "hears"
   short: "[E:tce* pan] hears [A:tce* man]."
   notes: For listening see {etripure}.
 vain:
   id: ndedgziytg
+  predilex_id: yogije
   family: "R"
   gloss: "alive"
   short: "[E:tce* pan] is alive."
 vaun:
   id: 647zwucgf3
+  predilex_id: miqimi
   family: "R"
   gloss: "dead"
   short: "[E:tce* pan] is dead."
 cfin:
   id: r3ghqjwt6v
+  predilex_id: wozohu
   family: "R"
   gloss: "solid"
   tags: [matter]
   short: "[E:tce* pan] is a solid (state of matter)."
 cfen:
   id: 6rko2uu7va
+  predilex_id: jigota
   family: "R"
   gloss: "liquid"
   tags: [matter]
   short: "[E:tce* pan] is a liquid (state of matter)."
 cfan:
   id: mfalhp75eo
+  predilex_id: vekawi
   family: "R"
   gloss: "gas"
   tags: [matter]
   short: "[E:tce* pan] is a gas (state of matter)."
 cfean:
   id: g8ff14fir3
+  predilex_id: rozeqa
   family: "R"
   gloss: "fuild"
   tags: [matter]
   short: "[E:tce* pan] is a fuild (state of matter, gas or liquid)."
 jeon:
   id: xzllyv1sx1
+  predilex_id: seliwa
   family: "R"
   gloss: "water"
   tags: [matter]
@@ -2748,53 +2867,62 @@ jeon:
     To speak about liquid water, add {cfen}.
 gour:
   id: ilftg4btmc
+  predilex_id: yobanu
   family: "R"
   gloss: "dog"
   tags: [animal]
   short: "[E:tce* pan] is a dog."
 kanan:
   id: edmwc8ujnr
+  predilex_id: babuto
   family: "R"
   gloss: "wolf"
   tags: [animal]
   short: "[E:tce* pan] is a wolf."
 kroan:
   id: 3ojsocuqre
+  predilex_id: buwuvu
   family: "R"
   gloss: "frog"
   tags: [animal]
   short: "[E:tce* pan] is a frog."
 spoul:
   id: v0bop7yzj1
+  predilex_id: ruqume
   family: "R"
   gloss: "testudine"
   tags: [animal]
   short: "[E:tce* pan] is a turtle/tortoise/testudine/member of order Testudines"
 toril:
   id: qsevjdaur5
+  predilex_id: daliwe
   family: "R"
   gloss: "bird"
   tags: [animal]
   short: "[E:tce* pan] is a bird."
 cein:
   id: ju1aijntrb
+  predilex_id: yekiye
   family: "R"
   gloss: "room"
   short: "[E:tce* pan] is a room."
 caun:
   id: kar7h43drl
+  predilex_id: ziwayu
   family: "R"
   gloss: "animal"
   tags: [animal]
   short: "[E:tce* pan] is an animal."
 flur:
   id: hp3x2jerun
+  predilex_id: dayilu
   family: "R"
   tags: [plant]
   gloss: "plant"
   short: "[E:tce* pan] is a plant."
 jveno:
   id: 5z3fg2p8rj
+  predilex_id: wijavi
   family: "R"
   gloss: "friendly"
   short: "[E:tce* pan] is kind/behaves friendly towards [A:tce* man]."
@@ -2810,6 +2938,7 @@ zire:
   short: "[E:tce* pan] respects [A:tce* man]."
 zbui:
   id: fn8nachgm7
+  predilex_id: tapuki
   family: "R"
   gloss: "copulates"
   short: "[E:tce* pan] have sex/sexual intercourse/copulates/mates with [A:tce* pan]."
@@ -2820,16 +2949,19 @@ jiro:
   short: "[E:tce* pan] shares [A:tce* man] with [O:tce* pan]."
 sier:
   id: wyulrjphcd
+  predilex_id: jetoja
   family: "R"
   gloss: "internet"
   short: "[E:tca man] is the Internet."
 stini:
   id: lf05kqsaiu
+  predilex_id: viquha
   family: "R"
   gloss: "rigid"
   short: "[E:tce* pan] is rigid/not bendable."
 merun:
   id: c84admq4vz
+  predilex_id: maweya
   family: "R"
   gloss: "organism"
   short: "[E:tce* pan] is an organism / form of life."
@@ -2840,17 +2972,20 @@ slane:
   short: "[E:tce* pan] is tied/pinned to [A:tce* pan]."
 glon:
   id: je2by0lctr
+  predilex_id: rimaqe
   family: "R"
   gloss: "game"
   short: "[E:tce* man] is a game/activity made for entertainement purposes."
   notes: It may not be actually played right now, while using {eglonsa} implies that there is a player.
 spenu:
   id: mre2klwbx7
+  predilex_id: gebuze
   family: "R"
   gloss: "look"
   short: "[E:tce* pan] looks at/watches [A:tce* pan]."
 vihon:
   id: re4w2vqoju
+  predilex_id: yolase
   family: "R"
   gloss: "car"
   short: "[E:tce* pan] is a car."
@@ -2868,6 +3003,7 @@ zenio:
     Use with {gzi} to express who/what provides [E].
 curo:
   id: 6fkztdm4xl
+  predilex_id: bawako
   family: "R"
   gloss: "grammar"
   short: "[E:tca man] is the grammar of [A:tca man]."
@@ -2875,11 +3011,13 @@ curo:
     TODO: See {cei} notes.
 tsiu:
   id: oowoy3auep
+  predilex_id: fazaye
   family: "R"
   gloss: "finds"
   short: "[E:tce* pan] finds/discovers [A:tce* man]."
 tsui:
   id: jo5uxpp9f9
+  predilex_id: mequza
   family: "R"
   gloss: "searches"
   short: "[E:tce* pan] searches/looks for something that satisfies [A:(p)]."
@@ -2887,42 +3025,50 @@ tsui:
     This doesn't imply that something satisfying [A] really exists.
 buan:
   id: ernf6oh1zg
+  predilex_id: rediwi
   family: "R"
   gloss: "text"
   short: "[A:tce* man] is a text."
 bino:
   id: 83sklgorvt
+  predilex_id: yotiku
   family: "R"
   gloss: "sick"
   short: "[E:tce* pan] is ill/sick from disease [A:tce* man]."
 saul:
   id: 7hsf409fle
+  predilex_id: kayayu
   family: "R"
   gloss: "light"
   short: "[E:tce* pan] is light (energy)."
 cmiri:
   id: a0ngc6glp1
+  predilex_id: wofepu
   family: "R"
   gloss: "emits"
   short: "[E:tce* pan] emits/produce [A:tce* pan]."
 cmiru:
   id: stnikxm23l
+  predilex_id: matube
   family: "R"
   gloss: "receives"
   short: "[E:tce* pan] receives/absorbs [A:tce* pan]."
 flun:
   id: uu6cakexur
+  predilex_id: yulogu
   family: "R"
   gloss: "sound"
   short: "[A:tce* man] is a sound."
 fana:
   id: ydafwz0dpc
+  predilex_id: hibeto
   family: "R"
   gloss: "social parent"
   tags: [kinship, family]
   short: "[E:tce* pan] is a social parent of [A:tce* pan] (child). [E] raises [A]."
 vele:
   id: qexvxnyxrj
+  predilex_id: yelepu
   family: "R"
   gloss: "genetic parent"
   tags: [kinship, family]
@@ -2931,18 +3077,21 @@ vele:
     [E] directly contributes to the genetic makeup of [A].
 kana:
   id: xrpthmvqzq
+  predilex_id: nacona
   family: "R"
   gloss: "sibling"
   tags: [kinship, family]
   short: "[E:tce* pan] is a sibling/brother/sister of [A:tce* pan]."
 kene:
   id: dkmrgjgriv
+  predilex_id: memeni
   family: "R"
   gloss: "nibling"
   tags: [kinship, family]
   short: "[E:tce* pan] is a nibling/nephew/nice of [A:tce* pan] (uncle/aunt)."
 mana:
   id: la6bqysk7n
+  predilex_id: tawoqu
   family: "R"
   gloss: "mother"
   tags: [kinship, family]
@@ -2950,6 +3099,7 @@ mana:
   notes: Equivalent to {zin fana}.
 pana:
   id: kfxorufmmw
+  predilex_id: mabezu
   family: "R"
   gloss: "father"
   tags: [kinship, family]
@@ -2957,6 +3107,7 @@ pana:
   notes: Equivalent to {zun fana}.
 jnehu:
   id: dmqfp5rpq1
+  predilex_id: keyepe
   family: "R"
   gloss: "takes care"
   tags: [kinship, family]
@@ -2965,12 +3116,14 @@ jnehu:
     [E] ensures that the needs of [A] are fulfulled.
 dzana:
   id: xm9tse7cct
+  predilex_id: nelaqa
   family: "R"
   gloss: "married"
   tags: [kinship, family]
   short: "[E:tce* pan] is married to [A:tce* pan]."
 kineo:
   id: 96lvpzzkom
+  predilex_id: jepeno
   family: "R"
   gloss: "contact"
   short: "[E:tce* pan] makes physical contact with [A:tce* pan]."
@@ -2979,6 +3132,7 @@ kineo:
     agency.
 zgehal:
   id: jgewshmmt3
+  predilex_id: cavoyo
   family: "R"
   gloss: "strange"
   short: "[E:tce* man] is strange/weird."
@@ -2987,32 +3141,38 @@ zgehal:
     subjective "actor" in the context?
 zvaor:
   id: lsnj8jjkmu
+  predilex_id: qidiqa{A}
   family: "R"
   gloss: "accident"
   short: "[E:()] is an accident/unintentional."
 ckuil:
   id: fcl0t79yc5
+  predilex_id: docuga
   family: "R"
   gloss: "stellar body"
   short: "[E:tce* pan] is a stellar body."
   notes: "Stars, planets, moons, asteroid etc are stellar bodies."
 ckuel:
   id: h9j1gg2cwz
+  predilex_id: sawahe
   family: "R"
   gloss: "star"
   short: "[E:tce* pan] is a star."
 ckual:
   id: i24b50cv0l
+  predilex_id: pokahi
   family: "R"
   gloss: "planet"
   short: "[E:tce* pan] is a planet."
 ckuol:
   id: yfcj6sjbss
+  predilex_id: mohoje
   family: "R"
   gloss: "moon"
   short: "[E:tce* pan] is a major natural satellite/moon."
 kari:
   id: w0aqh2uwhk
+  predilex_id: zikimu
   family: "R"
   gloss: "axiomatic-belief:"
   short: "[E:tce* pan] has axiomatic belief that [A:()] is true."
@@ -3021,87 +3181,104 @@ kari:
     put into doupt.
 kuri:
   id: kxo9ztaycl
+  predilex_id: hocobo
   family: "R"
   gloss: "thinks:"
   short: "[E:tce* pan] thinks that [A:()] is true."
 meon:
   id: ym0o9kvaix
+  predilex_id: nahala
   family: "R"
   gloss: "apple"
   short: "[E:tce* pan] is an apple."
   tags: [food]
 kcaor:
   id: xsvrcy3wof
+  predilex_id: yohaye
   family: "R"
   gloss: "table"
   short: "[E:tce* pan] is a table."
 stan:
   id: bc0e4pcz9h
+  predilex_id: jitoke
   family: "R"
   gloss: "country"
   short: "[E:tce* pan] is a country/territory."
 drair:
   id: uuwufiyz1v
+  predilex_id: sibeye
   family: "R"
   gloss: "god"
   short: "[E:tce* man] is a god."
 marai:
   id: wdughdrr2i
+  predilex_id: tabupo
   family: "R"
   gloss: "remembers:"
   short: "[E:tce* pan] remembers the past experience of perceiving that [A:()] was the case."
 munai:
   id: wl8bgxuacj
+  predilex_id: dapusi
   family: "R"
   gloss: "intuits:"
   short: "[E:tce* pan] intuits that [A:()] is the case."
 munui:
   id: ettifc4jmj
+  predilex_id: pupepe
   family: "R"
   gloss: "cultural knowledge:"
   short: "[E:tce* pan] has cultural knowledge, collective wisdom according to which [A:()] is the case."
 valai:
   id: puq4yi3rrf
+  predilex_id: gezavo
   family: "R"
   gloss: "infers from senses:"
   short: "[E:tce* pan] infers from their current sensorial experience that [A:()] is the case."
 valoi:
   id: w14bplmcqv
+  predilex_id: quzapa
   family: "R"
   gloss: "infers from multiple sources:"
   short: "[E:tce* pan] infers (from several sources of information) that [A:()] is the case."
 munoi:
   id: xq83jvzd55
+  predilex_id: kukici
   family: "R"
   gloss: "hearsay:"
   short: "[E:tce* pan] has got second-hand information or hearsay according to which [A:()] is the case."
 bale:
   id: ktg311prdc
+  predilex_id: tugivo
   family: "R"
   gloss: "standing"
   short: "[E:tce* pan] is standing on [A:tce* pan]."
 ctua:
   id: lzwen9akg1
+  predilex_id: vazoco
   family: "R"
   gloss: "sit"
   short: "[E:tce* pan] is sitting on [A:tce* pan]."
 proi:
   id: p6vxsz77g5
+  predilex_id: winiza
   family: "R"
   gloss: "lying down"
   short: "[E:tce* pan] is lying down on [A:tce* pan]."
 gavgin:
   id: clobthv9y6
+  predilex_id: zideli
   family: "R"
   gloss: "crystal"
   short: "[E:tce* pan] is a crystal/gem/mineral with orderly atomic structure [A:tca man]."
 jalan:
   id: odewd63czr
+  predilex_id: rewoma
   family: "R"
   short: "[E:tce* pan] is awake."
   gloss: "awake"
 celia:
   id: fdsj3ynb15
+  predilex_id: jaroka
   family: "R"
   gloss: "science"
   short: "[E:tca man] is the science/study/body of knowledge about topic [A:tce* man]."
@@ -3109,52 +3286,62 @@ celia:
     TODO: Define what a topic is.
 filu:
   id: 1deyt0qtei
+  predilex_id: mamuvu
   family: "R"
   gloss: "gives birth"
   short: "[E:tce* pan] gives birth to/begets [A:tce* pan]."
 sahar:
   id: 5f1kx0ktx8
+  predilex_id: pazuti
   family: "R"
   tags: [plant]
   gloss: "blossom"
   short: "[E:tce* pan] is a blossom/flower (reproductive structure of a flowering plant {esaharflur})."
 kena:
   id: q9fyy1qn9d
+  predilex_id: cewomo
   family: "R"
   gloss: "holds"
   short: "[E:tce* pan] holds/grasps [A:tce* pan]."
 jarai:
   id: wwih32fwvc
+  predilex_id: capici
   family: "R"
   gloss: "paid work:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as one of their jobs/occupations (paid work)."
 zerai:
   id: od2vvlzdn2
+  predilex_id: gameke
   family: "R"
   gloss: "personality trait:"
   short: "[E:tce pan] has satisfying property [A:(tce pan)] as a personality trait."
 dzai:
   id: ewii2lwhb7
+  predilex_id: tunomo
   family: "R"
   gloss: "skilled:"
   short: "[E:tce pan] is skilled/an expert at satisfy property [A:(tce pan)]."
 dzui:
   id: zwvj8ibmcc
+  predilex_id: zekupa
   family: "R"
   gloss: "able:"
   short: "[E:tce pan] is able to satisfy property [A:(tce pan)]."
 benal:
   id: cvvwmrotg2
+  predilex_id: bebera
   family: "R"
   gloss: "healthy"
   short: "[E:tce* pan] is healthy/fit/well/in good health."
 jogmal:
   id: zc08tmqeum
+  predilex_id: mahige
   family: "R"
   gloss: "wound"
   short: "[E:tce* pan] is a wound."
 meul:
   id: afkl3d764n
+  predilex_id: nirunu
   family: "R"
   short: "[E:tce* pan] (default: water) is raining."
   gloss: "rain"
@@ -3228,47 +3415,56 @@ dria:
   short: "[E:tce pan] offers/intends to sell [A:tce pan] for price/in exchange for [O:tce pan] (where success is not implied)."
 pubdel:
   id: falmva70zj
+  predilex_id: zorace
   family: "R"
   gloss: "soil"
   short: "[E:tce* pan] is soil/dirt/pebbles/silt/clay (soil of all types)."
 baluor:
   id: wn6yzmye8r
+  predilex_id: huloma
   family: "R"
   gloss: "stone"
   short: "[E:tce* pan] is a stone/rock/boulder (unified unbroken mass)."
 boiur:
   id: ttvo8lgox4
+  predilex_id: hayuce
   family: "R"
   gloss: "dry land"
   short: "[E:tce* pan] is dry land (not watery, can be stepped on)."
   notes: "antonyms: {suier}, {gzeon}"
 suier:
   id: wl3qaptjzv
+  predilex_id: mizohu
   family: "R"
   gloss: "sea"
   short: "[E:tce* pan] is a sea/ocean/lake (relatively large non-flowing body of water)."
 gzeon:
   id: bvejlt10si
+  predilex_id: fujofa
   family: "R"
   gloss: "river"
   short: "[E:tce* pan] is a river/stream/brook (relatively large flowing body of water)."
 sanol:
   id: 84wqipbpce
+  predilex_id: yujusi
   family: "R"
   gloss: "air"
   short: "[E:tce* pan] is air/breathable atmosphere/gas at correct pressure for [A:tce* pan] (default: {flan}/humans)."
 soeon:
   id: atojlgas61
+  predilex_id: zayawa
   family: "R"
   gloss: "sky"
   short: "[E:tce* pan] is is the sky (high troposphere and above)."
 cnue:
   id: kx3walxiid
+  predilex_id: deludo{A,E}
   family: "R"
   short: "[E:tce* pan] is a piece/portion/part of [A:tce pan]."
   gloss: "portion"
 duna:
   id: pcq9zoejuv
+  predilex_id: jubaku
   family: "R"
   short: "[E:tce pan] gives [A:tce* pan] to [O:tce pan]."
   gloss: "gives"
@@ -3281,23 +3477,27 @@ duna:
     [E] does not accept payment or expect reciprocation from [O].
 flan:
   id: cjj2u7h6ir
+  predilex_id: wayami
   family: "R"
   short: "[E:tce* man] is a human being."
   gloss: "human"
 fulie:
   id: r8ezp2roox
+  predilex_id: ridowe
   family: "R"
   gloss: "sum"
   tags: ["maths"]
   short: "[E:tce gan] is the sum of numbers in list [A:blu tce gan]."
 fuliu:
   id: pd94naqm1w
+  predilex_id: dotega
   family: "R"
   gloss: "product"
   tags: ["maths"]
   short: "[E:tce gan] is the product of numbers in list [A:blu tce gan]."
 bire:
   id: peug1pbvxf
+  predilex_id: pumema
   family: "R"
   gloss: "year"
   short: "[E:tce gan] is 1 year (Gregorian Calandar) times [A:tce gan] (default: 1)."
@@ -3316,6 +3516,7 @@ birei:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 gare:
   id: q5yr0ta93i
+  predilex_id: powune
   family: "R"
   gloss: "month"
   short: "[E:tce gan] is 1 month (Gregorian Calandar) times [A:tce gan] (default: 1)."
@@ -3334,6 +3535,7 @@ garei:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 kora:
   id: ccfnhkiitg
+  predilex_id: mitofo
   family: "R"
   gloss: "week"
   short: "[E:tce gan] is 1 week (from Xday midnight to next Xday midnight, Gregorian Calandar) times [A:tce gan] (default: 1)."
@@ -3352,6 +3554,7 @@ korai:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 dena:
   id: cfjh1v5inn
+  predilex_id: qegice
   family: "R"
   gloss: "day (unit)"
   short: "[E:tce gan] is 1 day times [A:tce gan] (default: 1)."
@@ -3370,6 +3573,7 @@ denai:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 sura:
   id: 7jdojjj4lv
+  predilex_id: yuluno
   family: "R"
   gloss: "hour (unit)"
   short: "[E:tce gan] is 1 hour times [A:tce gan] (default: 1)."
@@ -3388,6 +3592,7 @@ surai:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 jero:
   id: hxbyme2tnh
+  predilex_id: muvobe
   family: "R"
   gloss: "minute (unit)"
   short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
@@ -3402,6 +3607,7 @@ jeroi:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 vola:
   id: mhrlcmuwvk
+  predilex_id: wakudo
   family: "R"
   gloss: "second (unit)"
   short: "[E:tce gan] is 1 second times [A:tce gan] (default: 1)."
@@ -3416,42 +3622,49 @@ volai:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 mula:
   id: w93rd5hdrd
+  predilex_id: dodozo
   family: "R"
   gloss: "meter"
   short: "[E:tce gan] is 1 meter times [A:tce gan] (default: 1)."
   tags: [space, unit]
 gulo:
   id: vbit1n0jcf
+  predilex_id: daqobo
   family: "R"
   gloss: "kilogram"
   short: "[E:tce gan] is 1 kilogram times [A:tce gan] (default: 1)."
   tags: [unit]
 pere:
   id: vyzkrgasib
+  predilex_id: wunuji
   family: "R"
   gloss: "ampere"
   short: "[E:tce gan] is 1 ampere times [A:tce gan] (default: 1)."
   tags: [unit]
 kele:
   id: ata2lrtlvb
+  predilex_id: hemoda
   family: "R"
   gloss: "kelvin"
   short: "[E:tce gan] is 1 kelvin times [A:tce gan] (default: 1)."
   tags: [unit]
 kelu:
   id: p6q0cb2cld
+  predilex_id: hocegi
   family: "R"
   gloss: "degree-celcius"
   short: "[E:tce gan] is 1 degree Celcius times [A:tce gan] (default: 1)."
   tags: [unit]
 saura:
   id: qxk4kuezqg
+  predilex_id: cemahi
   family: "R"
   gloss: "candela"
   short: "[E:tce gan] is 1 candela times [A:tce gan] (default: 1)."
   tags: [unit]
 june:
   id: ulx09krbl9
+  predilex_id: pajipa
   family: "R"
   gloss: "inverse"
   short: "[E:tce gan] is the inverse (1/x) of [A:tce gan] (default: 1)."
@@ -3471,48 +3684,56 @@ june:
 
 cpie:
   id: nneh2x85ud
+  predilex_id: piyofi{A,E}
   family: "R"
   gloss: "length"
   short: "[E:tce gan] (length) is the length of segment [A:tce pan]."
   tags: ["measurement"]
 cpia:
   id: 1p6a8o9nk3
+  predilex_id: mugone{A,E}
   family: "R"
   gloss: "area"
   short: "[E:tce gan] (length^2) is the area of surface [A:tce pan]."
   tags: ["measurement"]
 cpio:
   id: nd9g9s8u4q
+  predilex_id: vorecu{A,E}
   family: "R"
   gloss: "volume"
   short: "[E:tce gan] (length^3) is the volume of [A:tce pan]."
   tags: ["measurement"]
 cpuin:
   id: afnwxto0ke
+  predilex_id: kirupu
   family: "R"
   gloss: "point"
   short: "[E:tce pan] is a (0d) point."
   tags: ["geometry"]
 cpuen:
   id: wo4n0r54ks
+  predilex_id: puhidu
   family: "R"
   gloss: "line"
   short: "[E:tce pan] is a (1d) line."
   tags: ["geometry"]
 cpuan:
   id: i9d94cz5n6
+  predilex_id: samuba
   family: "R"
   gloss: "plane"
   short: "[E:tce pan] is a (2d) plane."
   tags: ["geometry"]
 jogme:
   id: gpn685u76q
+  predilex_id: pigawi{A,E}
   family: "R"
   gloss: "mass"
   short: "[E:tce gan] (mass) is the mass of [A:tce pan]."
   tags: ["measurement"]
 ckia:
   id: ldcalrk1ii
+  predilex_id: zaliyi{A,E}
   family: "R"
   gloss: "speed"
   short: "[E:tce gan] (length/time) is the instantaneous speed of [A:tce pan]."
@@ -3525,178 +3746,208 @@ gzia:
   tags: ["measurement"]
 cnie:
   id: b0ey5as5c6
+  predilex_id: kiweko{A,E}
   family: "R"
   gloss: "age"
   short: "[E:tce gan] (time) is the age of [A:tce pan]."
   tags: ["measurement"]
 minui:
   id: 69ycoe83s6
+  predilex_id: gajanu{A,E}
   family: "R"
   gloss: "sound volume"
   short: "[E:tce gan] is the sound volume produced by [A:()], perceived by [O:tce pan] (default: {bzael})."
   tags: ["measurement"]
 fsau:
   id: vrsqhhv0zp
+  predilex_id: gelage
   family: "R"
   gloss: "wear"
   short: "[E:tce* pan] wears [A:tce* pan]."
 gion:
   id: l5muhbsrar
+  predilex_id: bakimi
   family: "R"
   gloss: "shirt"
   short: "[E:tce* pan] is a shirt/top."
   tags: [clothing, wearable]
 miul:
   id: bfcph6juna
+  predilex_id: fehuci
   family: "R"
   gloss: "pants"
   short: "[E:tce* pan] is a pants/shorts/skirt."
   tags: [clothing, wearable]
 gial:
   id: g4vk2d8xbd
+  predilex_id: qutaji
   family: "R"
   gloss: "undershirt"
   short: "[E:tce* pan] is an undershirt/bra."
   tags: [clothing, wearable]
 bior:
   id: j7pp7vnyha
+  predilex_id: bufajo
   family: "R"
   gloss: "underwear"
   short: "[E:tce* pan] is an underwear/underpants/panties."
   tags: [clothing, wearable]
 toro:
   id: rdsie2ychy
+  predilex_id: bobiqa
   family: "R"
   gloss: "joint"
   short: "[E:tce pan] is a joint between [A:tco pan], [A] are connected together by [E]."
   tags: [body]
 ceor:
   id: o7ryd10lwu
+  predilex_id: rikopi
   family: "R"
   gloss: "organ"
   short: "[E:tce* pan] is an organ."
   tags: [body]
 treun:
   id: g4mtuykzjn
+  predilex_id: lukaso
   family: "R"
   gloss: "trunk"
   short: "[E:tce pan] is a trunk (central part of the body)."
   tags: [body]
 zlier:
   id: oyemdfrbzy
+  predilex_id: copika
   family: "R"
   gloss: "arm"
   short: "[E:tce* pan] is an arm."
   tags: [body]
 zlior:
   id: r2j7n1mftn
+  predilex_id: maqawo
   family: "R"
   gloss: "leg"
   short: "[E:tce* pan] is a leg."
   tags: [body]
 kenen:
   id: s4ekzm38rl
+  predilex_id: tehihi
   family: "R"
   gloss: "hand"
   short: "[E:tce* pan] is a hand."
   tags: [body]
 kenon:
   id: ypph5jwrme
+  predilex_id: dalibe
   family: "R"
   gloss: "foot"
   short: "[E:tce* pan] is a foot."
   tags: [body]
 zinul:
   id: ue37g3p56o
+  predilex_id: yiquvo
   family: "R"
   gloss: "finger"
   short: "[E:tce pan] is a finger"
   tags: [body]
 kirun:
   id: ja9wfwwifa
+  predilex_id: zejeti
   family: "R"
   gloss: "head"
   short: "[E:tce* pan] is a head."
   tags: [body]
 glaen:
   id: uwmxjgjvh7
+  predilex_id: haduzi
   family: "R"
   gloss: "genitals"
   short: "[E:tce* pan] are genitals."
   tags: [body]
 glaon:
   id: ioxa2c03t6
+  predilex_id: yakego
   family: "R"
   gloss: "buttocks"
   short: "[E:tce* pan] is a rear/buttock."
   tags: [body]
 buren:
   id: skexhz96gk
+  predilex_id: wahulo
   family: "R"
   gloss: "mouth"
   short: "[E:tce* pan] is a mouth."
   tags: [body]
 virun:
   id: ompuogjgt7
+  predilex_id: jovonu
   family: "R"
   gloss: "eye"
   short: "[E:tce* pan] is an eye."
   tags: [body]
 gnoil:
   id: mqmszfhjbp
+  predilex_id: vuniri
   family: "R"
   gloss: "breast"
   short: "[E:tce* pan] is a breast."
   tags: [body]
 serin:
   id: fpbl9tm4ul
+  predilex_id: rofoga
   family: "R"
   gloss: "tongue"
   short: "[E:tce* pan] is a tongue."
   tags: [body]
 fanin:
   id: qhoa1afbkl
+  predilex_id: tuhoji
   family: "R"
   gloss: "nose"
   short: "[E:tce* pan] is a nose."
   tags: [body]
 puren:
   id: hyptrjozor
+  predilex_id: qiceva
   family: "R"
   gloss: "ear"
   short: "[E:tce* pan] is an ear."
   tags: [body]
 panal:
   id: i1gedyvymh
+  predilex_id: zowima
   family: "R"
   gloss: "skin"
   short: "[E:tce* pan] is skin."
   tags: [body]
 cilun:
   id: q1gdgaz05x
+  predilex_id: hobewe
   family: "R"
   gloss: "bone"
   short: "[E:tce* pan] is a bone."
   tags: [body]
 zekta:
   id: j0bdfwp4lb
+  predilex_id: lehaco
   family: "R"
   gloss: "pain"
   short: "[E:tce pan] feels pain which seems located in [A:tce pan]."
   tags: [body]
 dogmu:
   id: aiczmufvcq
+  predilex_id: gunuba
   family: "R"
   gloss: "governs"
   short: "[E:tce pan] governs people [A:tce* pan]."
 gogdul:
   id: iwjm1mv0ij
+  predilex_id: regara
   family: "R"
   gloss: "tentacle"
   short: "[E:tce* pan] is a tentacle."
   tags: [body]
 tsir:
   id: zkravpgbit
+  predilex_id: dufiqa
   family: "R"
   gloss: "bed"
   short: "[E:tce* pan] is a bed."
@@ -3707,11 +3958,13 @@ gzian:
   short: "[E:tce* pan] showers in substance [A:tce pan] (default: water)."
 snoil:
   id: bovvdgkucg
+  predilex_id: huviji
   family: "R"
   gloss: "monster"
   short: "[E:tce* pan] is a monster."
 zmoni:
   id: zbbqohy82q
+  predilex_id: tekibo
   family: "R"
   gloss: "picture:"
   short: "[E:tce* pan] is a picture depicting [A:()]."
@@ -3720,6 +3973,7 @@ zmoni:
     as the volume captured by the field of view of the camera.
 zoli:
   id: gbk8uduqqh
+  predilex_id: kabane{A,E}
   family: "R"
   gloss: "with-tool:"
   short: "[A:()] is realised using tool [E:tce* man]."
@@ -3728,11 +3982,13 @@ zoli:
     involved, see {etcuzoli}.
 zolin:
   id: enzha5idyj
+  predilex_id: rocasu
   family: "R"
   gloss: "register-tool"
   short: "Register tool [E:tce* man] in the context. Constraint for {zoli}."
 jine:
   id: cmjmwddxde
+  predilex_id: guqatu
   family: "R"
   gloss: "centered-range"
   tags: [number]
@@ -3740,6 +3996,7 @@ jine:
     [E:tce gan] are all numbers in the range [A:tce gan] ± [O:tce gan] (default: 1).
 jina:
   id: blyloql45h
+  predilex_id: fedebo
   family: "R"
   gloss: "interval-range"
   tags: [number]
@@ -3747,6 +4004,7 @@ jina:
     [E:tce gan] are all numbers in the range from [A:tce gan] to [O:tce gan].
 jino:
   id: twcf0jan6n
+  predilex_id: jagozi
   family: "R"
   gloss: "floor-ceil"
   tags: [number]
@@ -3757,11 +4015,13 @@ jino:
     to have a length of 1.
 pafken:
   id: ymuvroa9iu
+  predilex_id: guluna
   family: "R"
   gloss: "potato"
   short: "[E:tce pan] is a potato."
 zino:
   id: cmeot2jbo9
+  predilex_id: golapu{O,A,E}
   family: "R"
   gloss: "color"
   tags: ["color"]
@@ -3770,6 +4030,7 @@ zino:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmir:
   id: d0l3cp2pwk
+  predilex_id: qokaza
   family: "R"
   gloss: "white"
   tags: ["color"]
@@ -3778,6 +4039,7 @@ zmir:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmire:
   id: ad4rvdw2zl
+  predilex_id: caneli
   family: "R"
   gloss: "lighter"
   tags: ["color"]
@@ -3788,6 +4050,7 @@ zmire:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmur:
   id: tfeeujlwxv
+  predilex_id: nosune
   family: "R"
   gloss: "darker"
   tags: ["color"]
@@ -3796,6 +4059,7 @@ zmur:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmure:
   id: 4e113ltt58
+  predilex_id: jeduna
   family: "R"
   gloss: "darker"
   tags: ["color"]
@@ -3806,6 +4070,7 @@ zmure:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmer:
   id: qxdacbj9pt
+  predilex_id: felawe
   family: "R"
   gloss: "red-ish"
   tags: ["color"]
@@ -3814,6 +4079,7 @@ zmer:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmar:
   id: 8tl5qke633
+  predilex_id: fegovi
   family: "R"
   gloss: "green-ish"
   tags: ["color"]
@@ -3822,6 +4088,7 @@ zmar:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmor:
   id: aqb12hf0h5
+  predilex_id: dafoye
   family: "R"
   gloss: "blue-ish"
   tags: ["color"]
@@ -3830,6 +4097,7 @@ zmor:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmeher:
   id: dab5wa7knk
+  predilex_id: kukewo
   family: "R"
   gloss: "red"
   tags: ["color"]
@@ -3838,6 +4106,7 @@ zmeher:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmahar:
   id: 3za1drxike
+  predilex_id: ralija
   family: "R"
   gloss: "lime green"
   tags: ["color"]
@@ -3846,6 +4115,7 @@ zmahar:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmohor:
   id: m1bbuv2bkp
+  predilex_id: jayina
   family: "R"
   gloss: "blue"
   tags: ["color"]
@@ -3854,6 +4124,7 @@ zmohor:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmear:
   id: 4p1ty9pgoi
+  predilex_id: putovo
   family: "R"
   gloss: "yellow"
   tags: ["color"]
@@ -3862,6 +4133,7 @@ zmear:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmaor:
   id: v0880nf0fg
+  predilex_id: fefaze
   family: "R"
   gloss: "cyan"
   tags: ["color"]
@@ -3870,6 +4142,7 @@ zmaor:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmeor:
   id: v46cs9fs33
+  predilex_id: dapeno
   family: "R"
   gloss: "magenta"
   tags: ["color"]
@@ -3878,6 +4151,7 @@ zmeor:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmeaer:
   id: vebh9m3k5f
+  predilex_id: jigeho
   family: "R"
   gloss: "orange"
   tags: ["color"]
@@ -3886,6 +4160,7 @@ zmeaer:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmaear:
   id: 16k054sa4h
+  predilex_id: cefazi
   family: "R"
   gloss: "chartreuse (green)"
   tags: ["color"]
@@ -3894,6 +4169,7 @@ zmaear:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmaoar:
   id: dfw5luy241
+  predilex_id: rubuho
   family: "R"
   gloss: "spring green"
   tags: ["color"]
@@ -3902,6 +4178,7 @@ zmaoar:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmoaor:
   id: p2xvyctf5x
+  predilex_id: roneda
   family: "R"
   gloss: "azure"
   tags: ["color"]
@@ -3910,6 +4187,7 @@ zmoaor:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmoeor:
   id: 95n4o1eyit
+  predilex_id: togafa
   family: "R"
   gloss: "violet"
   tags: ["color"]
@@ -3918,6 +4196,7 @@ zmoeor:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 zmeoer:
   id: zzferj56lq
+  predilex_id: minequ
   family: "R"
   gloss: "rose"
   tags: ["color"]
@@ -3926,6 +4205,7 @@ zmeoer:
     - ["icon-book", "Colors", https://eberban.github.io/eberban/books/refgram/book/vocabulary/colors.html]
 cekmi:
   id: rn07g95kw6
+  predilex_id: padita
   family: "R"
   gloss: "differs:"
   tags: ["color"]
@@ -3942,16 +4222,19 @@ cekmi:
       bi fi ki be ke tce ga ki
 tconi:
   id: 1ekbkw2s33
+  predilex_id: kowasu
   family: "R"
   gloss: "mutual-1:"
   short: "All pairs subset of [E:tco p] have property [A:(tco p)]."
 tcori:
   id: ho1az3mcl2
+  predilex_id: josuma
   family: "R"
   gloss: "mutual-2:"
   short: "All pairs subset of [E:tco p] have their members mutually satisfy relation [A:(tca a, tca p)]."
 jnu:
   id: gi4jvusxpm
+  predilex_id: loluzi
   family: "R"
   gloss: "big:"
   tags: [intensity]
@@ -3976,6 +4259,7 @@ jnu:
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
 jni:
   id: ik7qjuwuxm
+  predilex_id: lumoja
   family: "R"
   gloss: "small:"
   tags: [intensity]
@@ -4000,6 +4284,7 @@ jni:
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
 jnuhi:
   id: yw2t4sv9sb
+  predilex_id: rajega{E,\A}
   family: "R"
   gloss: "increasingly:"
   short: |
@@ -4010,6 +4295,7 @@ jnuhi:
     at the same time.
 jnihi:
   id: dysqdtql0v
+  predilex_id: rufoge{E,\A}
   family: "R"
   gloss: "decreasingly:"
   short: |
@@ -4020,35 +4306,41 @@ jnihi:
     at the same time.
 buran:
   id: ndf5i6skum
+  predilex_id: tagaze
   family: "R"
   gloss: "bunny"
   tags: ["animal"]
   short: "[E:tce* pan] is a bunny/rabbit."
 bjaor:
   id: o8g2lhe4rd
+  predilex_id: berape
   family: "R"
   gloss: "elephant"
   tags: ["animal"]
   short: "[E:tce* pan] is an elephant."
 graulin:
   id: 7386lgkl9w
+  predilex_id: zimoke
   family: "R"
   gloss: "dragon"
   tags: ["animal", "mythical"]
   short: "[E:tce* pan] is a dragon."
 coriu:
   id: zas8minuik
+  predilex_id: yoguwo{A,E}
   family: "R"
   gloss: "owned-by"
   short: "[E:tce* man] is possessed/owned by [A:tce man]."
 djia:
   id: 56lqin725a
+  predilex_id: kamiyo
   family: "R"
   gloss: "set-overlaps"
   tags: [set]
   short: "[E:tce p] and [A:tce p] overlap (they have a non-empty intersection)."
 bzael:
   id: eczagf3v06
+  predilex_id: wugile
   family: "R"
   gloss: "opiner"
   short: "[E:tce man] is an opiner in the current context."
@@ -4061,16 +4353,19 @@ bzael:
     like {blan} are by default according to the opiner {bzael}.
 zoal:
   id: ob1f25nx3q
+  predilex_id: kirawa{A,E}
   family: "R"
   gloss: "new"
   short: "[E:tce* man] is new according to [A:tce man] (default: {bzael})."
 ctuhi:
   id: nqzh6pl3w0
+  predilex_id: hubafi
   family: "R"
   gloss: "silly"
   short: "[E:tce* man] is silly according to [A:tce* pan] (default: {bzael})."
 djio:
   id: s1oc7xvo0q
+  predilex_id: digama{A,E}
   family: "R"
   gloss: "cardinality"
   short: "[E:tca gin] is the cardinality/size of [A:ma]."
@@ -4078,56 +4373,67 @@ djio:
     Provides the length of various structures, such as sets and lists.
 fania:
   id: fyc3rf8rf7
+  predilex_id: naneje
   family: "R"
   gloss: "smells"
   short: "[E:tce* pan] smells (perceives smell of) [A:tce* pan]."
 serie:
   id: hflpzqe80s
+  predilex_id: dihodu
   family: "R"
   gloss: "smells"
   short: "[E:tce* pan] feels the taste of [A:tce* pan]."
 zailu:
   id: ma7fvqdibi
+  predilex_id: pinole
   family: "R"
   gloss: "rotates"
   short: "[E:tce* pan] rotates, spins, turns around axis [A:tce* pan]."
 soli:
   id: agk3nnes4a
+  predilex_id: tiheya
   family: "R"
   gloss: "metaphor:"
   short: "[E:p] metaphoricaly satisfy property [A:(p)]."
 mliel:
   id: xuvbg8gnll
+  predilex_id: yibela
   family: "R"
   gloss: "cold"
   short: "[E:tce* pan] (default: the air) feels cold to the touch."
 mlial:
   id: pne1nwyhy8
+  predilex_id: mepevi
   family: "R"
   gloss: "warm"
   short: "[E:tce* pan] (default: the air) feels warm to the touch."
 cpere:
   id: gant5ud5xq
+  predilex_id: saloki{A,E}
   family: "R"
   gloss: "temperature"
   short: "[E:tce gan] is the mean temperature of the volume [A:tce* pan]."
 cluin:
   id: bnpo8nb1px
+  predilex_id: yogufi
   family: "R"
   gloss: "spring"
   short: "It is spring."
 cluen:
   id: eebgcxilaa
+  predilex_id: yinudi
   family: "R"
   gloss: "summer"
   short: "It is summer."
 cluan:
   id: fdg4wm00j7
+  predilex_id: huzade
   family: "R"
   gloss: "autumn"
   short: "It is autumn/fall."
 cluon:
   id: dci7ddkc8v
+  predilex_id: wibica
   family: "R"
   gloss: "winter"
   short: "It is winter."
@@ -4173,11 +4479,13 @@ fekti:
   short: "[E:tce ma] looks similar to things satifying [A:(tce ma)]. [E] is [A]-like."
 spel:
   id: vmenrgkg75
+  predilex_id: yogesu{A,E}
   family: "R"
   gloss: "pointed to"
   short: "[E:tce* pan] is pointed to/singled out ostensibly by [A:tce* pan] (default: speaker)."
 sfia:
   id: sgr7bp1msz
+  predilex_id: pedobu
   family: "R"
   gloss: "currency"
   tags: [currency]
@@ -4187,6 +4495,7 @@ sfia:
 
 sari:
   id: mva5065f60
+  predilex_id: jokovi
   family: "R"
   gloss: "between:"
   tags: [time, tense]
@@ -4196,6 +4505,7 @@ sari:
     (To speak about an event that occurs between them but don't meet them, use {sari seno}).
 sre:
   id: 5rdw01axi4
+  predilex_id: bopiti
   family: "R"
   gloss: "before:"
   tags: [time, tense]
@@ -4206,6 +4516,7 @@ sre:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sru:
   id: m3p1pma6zf
+  predilex_id: bopiti{A,E,O}
   family: "R"
   gloss: "after:"
   tags: [time, tense]
@@ -4236,6 +4547,7 @@ sro:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srui:
   id: 64scvsnfn7
+  predilex_id: nutida
   family: "R"
   gloss: "contains:"
   tags: [time, tense]
@@ -4244,6 +4556,7 @@ srui:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srei:
   id: 0fj04kshgt
+  predilex_id: nutida{A,E}
   family: "R"
   gloss: "contained-by:"
   tags: [time, tense]
@@ -4252,6 +4565,7 @@ srei:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 srai:
   id: cwg79aqwl8
+  predilex_id: fadopa
   family: "R"
   gloss: "intersects-with:"
   tags: [time, tense]
@@ -4260,6 +4574,7 @@ srai:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sri:
   id: u3q3u80bs7
+  predilex_id: vineje
   family: "R"
   gloss: "unconstrained:"
   tags: [time, tense]
@@ -4285,6 +4600,7 @@ skeri:
     This year I'll go to Japan.
 sni:
   id: wx9gxr4xrp
+  predilex_id: wipiyo
   family: "R"
   gloss: "possible:"
   tags: [time, tense, modal]
@@ -4293,6 +4609,7 @@ sni:
     - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
 snu:
   id: 16f4flzhb2
+  predilex_id: tocawu
   family: "R"
   gloss: "necessary:"
   tags: [time, tense, modal]
@@ -4301,6 +4618,7 @@ snu:
     - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
 sna:
   id: m14pml81zw
+  predilex_id: votigo
   family: "R"
   gloss: "counterfactual:"
   tags: [time, tense]
@@ -4316,6 +4634,7 @@ sna:
     - ["icon-book", "Event and tenses - Counterfactual conditionals", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#counterfactual-conditionals]
 sunai:
   id: 1qs74axcu1
+  predilex_id: losayu
   family: "R"
   gloss: "parallel-universe:"
   tags: [time, tense]
@@ -4327,6 +4646,7 @@ sunai:
 
 ski:
   id: yktbdu521a
+  predilex_id: wogika
   family: "R"
   gloss: "event:"
   tags: [time, event]
@@ -4335,6 +4655,7 @@ ski:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skin:
   id: nt7nm8e1y5
+  predilex_id: dosoko
   family: "R"
   gloss: "event-occurs"
   tags: [time, event]
@@ -4351,6 +4672,7 @@ skul:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skinu:
   id: pmwsbwwa6w
+  predilex_id: zisime{A,E}
   family: "R"
   gloss: "event-start"
   tags: [time, event]
@@ -4360,6 +4682,7 @@ skinu:
     Mostly useful with {jini}/{jiri} to order events.
 skiru:
   id: ah0c4muyyx
+  predilex_id: pizada{A,E}
   family: "R"
   gloss: "event-end"
   tags: [time, event]
@@ -4377,12 +4700,14 @@ skiru:
 #     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skuli:
   id: mqfz0l96zc
+  predilex_id: lopogi
   family: "R"
   gloss: "event-concurrent:"
   tags: [time, event]
   short: "[A:()] occurs in the same timespan as event [E:tca ski]."
 sken:
   id: palszydy29
+  predilex_id: yilahu
   family: "R"
   gloss: space-time-volume
   tags: [space, time]
@@ -4392,6 +4717,7 @@ sken:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skan:
   id: 17akg2234q
+  predilex_id: gegulu
   family: "R"
   gloss: time-span
   tags: [time]
@@ -4401,6 +4727,7 @@ skan:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 sufkun:
   id: u6sn4vyfzh
+  predilex_id: kikipa
   family: "R"
   gloss: present
   tags: [time]
@@ -4429,35 +4756,41 @@ skon:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 zear:
   id: llu33swjlk
+  predilex_id: vijutu
   family: "R"
   gloss: book
   short: |
     [E:tce* pan] is a book.
 fleon:
   id: rxknm8lb4u
+  predilex_id: tatazu
   family: "R"
   gloss: music
   short: |
     [E:tce* pan] is a music.
 jnaha:
   id: svkaim6riw
+  predilex_id: cijite
   family: "R"
   gloss: laugh
   short: "[E:tce* pan] laugh because [A:()] is true."
 pseo:
   id: 4s9x0v0nby
+  predilex_id: ziceri
   family: "R"
   gloss: distance
   tags: ["space"]
   short: "[E:tce gan] is the distance between [A:tce pan] and [O:tce pan] (default: referential {peni})."
 psulo:
   id: 7vn4ceujmp
+  predilex_id: zemido
   family: "R"
   gloss: center
   tags: ["space"]
   short: "[E:tca pan] is the center (average position) of [A:tce pan]."
 pani:
   id: 5fsi11zwja
+  predilex_id: soyenu
   family: "R"
   gloss: "inside:"
   tags: ["space"]
@@ -4468,6 +4801,7 @@ pani:
     both inside and outside.
 pali:
   id: w71x9r0797
+  predilex_id: bavigo
   family: "R"
   gloss: "outside:"
   tags: ["space"]
@@ -4478,6 +4812,7 @@ pali:
     something can be both inside and outside.
 peni:
   id: t175fzkni1
+  predilex_id: dequma{A,E}
   family: "R"
   gloss: "cartesian-referential:"
   tags: ["space"]
@@ -4488,6 +4823,7 @@ peni:
     By default in a text the referential is the speaker.
 penu:
   id: 2sthq7nyfa
+  predilex_id: huvipa{A,E}
   family: "R"
   gloss: behind
   tags: ["space"]
@@ -4499,6 +4835,7 @@ penu:
     and the relative value must be in the behind direction.
 pena:
   id: hpcj7idr7s
+  predilex_id: huvipa
   family: "R"
   gloss: in-front-of
   tags: ["space"]
@@ -4510,6 +4847,7 @@ pena:
     and the relative value must be in the in-front direction.
 peno:
   id: nmk5qmo7fv
+  predilex_id: dubepi{A,E}
   family: "R"
   gloss: to-the-left-of
   tags: ["space"]
@@ -4521,6 +4859,7 @@ peno:
     and the relative value must be in the left direction.
 pene:
   id: 58b63lo9cb
+  predilex_id: dubepi
   family: "R"
   gloss: to-the-right-of
   tags: ["space"]
@@ -4532,6 +4871,7 @@ pene:
     and the relative value must be in the right direction.
 peniu:
   id: 5nrtbh0sv6
+  predilex_id: puwomi
   family: "R"
   gloss: above
   tags: ["space"]
@@ -4543,6 +4883,7 @@ peniu:
     and the relative value must be in the above direction.
 penie:
   id: gnevlw6p4m
+  predilex_id: puwomi{A,E}
   family: "R"
   gloss: below
   tags: ["space"]
@@ -4554,6 +4895,7 @@ penie:
     and the relative value must be in the below direction.
 pnuen:
   id: uqly4vvvgx
+  predilex_id: jicazu
   family: "R"
   gloss: vertical
   tags: ["space"]
@@ -4563,6 +4905,7 @@ pnuen:
     TODO: Specify margin of error.
 pneon:
   id: b0ic7nzxd8
+  predilex_id: gupuhe
   family: "R"
   gloss: left-right
   tags: ["space"]
@@ -4572,6 +4915,7 @@ pneon:
     TODO: Specify margin of error.
 pnaun:
   id: 526611yo25
+  predilex_id: kuleze
   family: "R"
   gloss: front-back
   tags: ["space"]
@@ -4591,6 +4935,7 @@ pini:
     By default in a text the referential is closest celestial body from the speaker.
 pina:
   id: q3ha2dc3ld
+  predilex_id: lawena
   family: "R"
   gloss: to-the-north-of
   tags: ["space"]
@@ -4602,6 +4947,7 @@ pina:
     and the relative value must be in the north direction.
 pinu:
   id: oddrpzstav
+  predilex_id: lawena{A,E}
   family: "R"
   gloss: to-the-south-of
   tags: ["space"]
@@ -4613,6 +4959,7 @@ pinu:
     and the relative value must be in the south direction.
 pino:
   id: iduj207sqi
+  predilex_id: bilari{A,E}
   family: "R"
   gloss: to-the-west-of
   tags: ["space"]
@@ -4624,6 +4971,7 @@ pino:
     and the relative value must be in the west direction.
 pine:
   id: awjcblokyu
+  predilex_id: bilari
   family: "R"
   gloss: to-the-east-of
   tags: ["space"]
@@ -4635,6 +4983,7 @@ pine:
     and the relative value must be in the east direction.
 piniu:
   id: 9oo7ok5t64
+  predilex_id: boriwa
   family: "R"
   gloss: altitude-above
   tags: ["space"]
@@ -4646,6 +4995,7 @@ piniu:
     and the relative value must be in the above direction.
 pinie:
   id: d7dd6iak18
+  predilex_id: boriwa{A,E}
   family: "R"
   gloss: altitude-below
   tags: ["space"]
@@ -4657,6 +5007,7 @@ pinie:
     and the relative value must be in the below direction.
 kcuni:
   id: 5acshqks6b
+  predilex_id: weqisa
   family: "R"
   gloss: station
   tags: [vehicule]
@@ -4664,49 +5015,58 @@ kcuni:
   notes: "[A] is a property so that the present presence of a vehicle is not needed."
 tcuan:
   id: w0u2nzirqc
+  predilex_id: tewesa
   family: "R"
   gloss: train
   tags: [vehicule]
   short: "[E:tce* pan] is a train."
 cehil:
   id: by9qbcmbfq
+  predilex_id: hunate
   family: "R"
   gloss: boat
   tags: [vehicule]
   short: "[E:tce* pan] is a boat."
 drion:
   id: f6ri7fuw7z
+  predilex_id: vapewe
   family: "R"
   gloss: bicycle
   tags: [vehicule]
   short: "[E:tce* pan] is a bicycle."
 sonul:
   id: 299pus3rzs
+  predilex_id: vizume
   family: "R"
   gloss: measuring-device
   short: "[E:tce* pan] is a measuring device."
 vogbi:
   id: dzp38nhcw3
+  predilex_id: qogopu
   family: "R"
   gloss: leader
   short: "[E:tce* pan] is the leader of [A:tce pan]."
 cnuhe:
   id: p0g66q8zas
+  predilex_id: gehaqa
   family: "R"
   gloss: generous
   short: "[E:tce pan] is generous towards [A:tce man]."
 zihir:
   id: 9ybt1fnuik
+  predilex_id: fuqeva
   family: "R"
   gloss: rich
   short: "[E:tce pan] is rich."
 zihur:
   id: f48eqzzqqc
+  predilex_id: benala
   family: "R"
   gloss: poor
   short: "[E:tce pan] is poor."
 taktin:
   id: 8hson1dier
+  predilex_id: reyaru
   family: "R"
   gloss: dangerous
   short: "[E:tce pan] is dangerous for [A:tce pan] (default: {bzael})."
@@ -4715,21 +5075,25 @@ taktin:
     Use {kuri} to state who thinks its dangerous.
 ksuar:
   id: n0r4kfjv55
+  predilex_id: manuvi{A,E}
   family: "R"
   gloss: interesting
   short: "[E:tce pan] is interesting according to [A:tce pan] (default: {bzael})."
 miore:
   id: grako8zxy2
+  predilex_id: minora
   family: "R"
   gloss: shape
   short: "[E:tce man] is a shape of [A:tce pan]."
 celio:
   id: unqmr4pgg0
+  predilex_id: litefo
   family: "R"
   gloss: secret
   short: "[E:tce* man] is a secret among [A:tce pan]."
 tian:
   id: apew64vr0p
+  predilex_id: cucogo
   family: "R"
   gloss: food
   short: "[E:tce* man] is edible by/food for [A:tce* pan] (default: species of {bzael})."
@@ -4740,6 +5104,7 @@ gnuri:
   short: "[E:tce man] is made to have flavor of things satisfying [A:(tce man)]."
 kalan:
   id: v4j1hdrofu
+  predilex_id: pigasa
   family: "R"
   gloss: drink
   short: "[E:tce* man] is potable/drinkable/a drink for [A:tce* pan] (default: species of {bzael})."
@@ -4750,11 +5115,13 @@ daliu:
   short: "[E:tce* man] is dedicated to/in use by [A:tce pan]."
 fnala:
   id: 43dhivbbtp
+  predilex_id: simeli
   family: "R"
   gloss: follows
   short: "[E:tce pan] follows [A:tce pan]."
 funai:
   id: p1hilk9iyy
+  predilex_id: zezafi
   family: "R"
   gloss: suggests
   short: "[E:tce pan] suggests that [A:()] should be true."
@@ -4765,6 +5132,7 @@ zotke:
   short: "[E:tce* man] fits in category/genre [A:tce* man]."
 jiune:
   id: c66rr2j8fm
+  predilex_id: zinara{O,A,E}
   family: "R"
   gloss: "n-th"
   tags: [number, list]
@@ -4783,6 +5151,7 @@ dzei:
     considered.
 zguhi:
   id: 4alugho403
+  predilex_id: cebuni
   family: "R"
   gloss: "juice:"
   short: |
@@ -4791,12 +5160,14 @@ zguhi:
     [A] is not an entity but a property since the thing being made into juice may no longer exists.
 cahil:
   id: 9hsax9mv0q
+  predilex_id: fuqilo
   family: "R"
   gloss: "egg"
   short: |
     [E:tce pan] is an egg.
 kelon:
   id: kneckch5o6
+  predilex_id: meluyo
   family: "R"
   gloss: "box"
   short: |
@@ -4806,6 +5177,7 @@ kelon:
     but the volume between them.
 pekmu:
   id: esc4oa97rr
+  predilex_id: wiyedi{A,E}
   family: "R"
   gloss: "wall"
   short: |
@@ -4815,18 +5187,21 @@ pekmu:
     discontinuity.
 ganol:
   id: hakbao1f1r
+  predilex_id: hiwufo
   family: "R"
   gloss: "chicken"
   short: |
     [E:tce* pan] is a chicken.
 tcero:
   id: kgx9ydzmch
+  predilex_id: woqire
   family: "R"
   gloss: "set-mapping"
   short: |
     Members of [E:tce p] can be mapped one by one to members of [A:tce p] using relation [O:(tca p,tca p)].
 flir:
   id: 3i3k6yr8jo
+  predilex_id: culuke
   family: "R"
   gloss: "face"
   short: |
@@ -4834,6 +5209,7 @@ flir:
   tags: [body]
 sibdin:
   id: a9blqu7rgx
+  predilex_id: vuvifo
   family: "R"
   gloss: "toilet"
   short: |
@@ -4910,42 +5286,49 @@ klao:
     member of [A] satisfies [O] with the following member.    
 celuar:
   id: f1la1jggsk
+  predilex_id: hifuno
   family: "R"
   gloss: "mushroom"
   short: "[E:tce* pan] is a mushroom."
   tags: [food]
 teonin:
   id: 4jd51cfja3
+  predilex_id: belaya
   family: "R"
   gloss: "rice"
   short: "[E:tce* pan] is rice."
   tags: [food]
 jgelin:
   id: lsj67h3xv7
+  predilex_id: kuwevo
   family: "R"
   gloss: "olive"
   short: "[E:tce* pan] is an olive."
   tags: [food, fruit, plant]
 merean:
   id: 2g3k5ais88
+  predilex_id: zepuqu
   family: "R"
   gloss: "onion"
   short: "[E:tce* pan] is an onion."
   tags: [food, plant]
 meloan:
   id: cyprcdsw9l
+  predilex_id: cubaqi
   family: "R"
   gloss: "garlic head"
   short: "[E:tce* pan] is a garlic head."
   tags: [food, plant]
 cpunu:
   id: 7ps3utese2
+  predilex_id: gewuma
   family: "R"
   gloss: "fruit"
   short: "[E:tce pan] is a fruit of [A:tce pan]."
   tags: [fruit, plant]
 joeloi:
   id: 971azktj9b
+  predilex_id: dabono
   family: "R"
   gloss: "oil"
   short: "[E:tce* pan] is oil made from something that satisfies [A:(tce pan)]."
@@ -4962,11 +5345,13 @@ gatfi:
     Everything that satisfies [A] is a result of applying the receipe.
 cmuel:
   id: 8q50y3hb3c
+  predilex_id: zomayi
   family: "R"
   gloss: "building"
   short: "[E:tce* pan] is a building."
 kalu:
   id: j2zcgd5mek
+  predilex_id: wujiro{A,E}
   family: "R"
   gloss: "divided-from"
   tags: ["transformation"]
@@ -4982,115 +5367,135 @@ kalu:
     divided from multiple things, which is not the case).
 filiel:
   id: gdpsn5c3de
+  predilex_id: poyogo
   family: "R"
   gloss: "pocket"
   short: "[E:tce* pan] is a pocket."
 trai:
   id: 6vrbrkb4i6
+  predilex_id: buqije
   family: "R"
   gloss: "anger"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is angry about [A:()] being true."
 kori:
   id: vlw8psnhxu
+  predilex_id: direni
   family: "R"
   gloss: "anxiety"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is anxious about [A:()] being true."
 tcai:
   id: lg39c0rlpd
+  predilex_id: hemora
   family: "R"
   gloss: "awe"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) in awe of [A:()] being true."
 kouli:
   id: rynt2kga99
+  predilex_id: sejuso
   family: "R"
   gloss: "awkward"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) feels awkward about [A:()] being true."
 jdai:
   id: ildysddhvi
+  predilex_id: sebifa
   family: "R"
   gloss: "bored"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is bored with [A:()] being true."
 ksai:
   id: sz89t72vcd
+  predilex_id: sosinu
   family: "R"
   gloss: "calm"
   short: "[E:tce* pan] (default: bzael) feels calm about [A:()] being true."
 mreli:
   id: wtncyvxjx4
+  predilex_id: muwuge
   family: "R"
   gloss: "confusion"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is confused about [A:()] being true."
 geri:
   id: s2oebo53cd
+  predilex_id: cufada
   family: "R"
   gloss: "crave"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) craves [A:()] being true."
 gjoi:
   id: 5mrg0diog3
+  predilex_id: gunimu
   family: "R"
   gloss: "disgust"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is disgusted by [A:()] being true."
 krei:
   id: 2ru9d94qgg
+  predilex_id: royuvi
   family: "R"
   gloss: "sympathy"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) sympathises with [A:()] being true."
 zgai:
   id: 540jap6p3s
+  predilex_id: huhowo
   family: "R"
   gloss: "fear"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is afraid about [A:()] being true."
 prui:
   id: ysvvowy2y6
+  predilex_id: fivuge
   family: "R"
   gloss: "interest"
   short: "[E:tce* pan] (default: bzael) is interested in [A:()] being true."
 dole:
   id: 9bee8fm3j5
+  predilex_id: cimesu
   family: "R"
   gloss: "romantic"
   tags: [emotion]
   short: "[E:tce pan] (default: bzael) feels romantic about [A:()] being true."
 fsuo:
   id: q7fefcwdki
+  predilex_id: cimuge
   family: "R"
   gloss: "sexual"
   short: "[E:tce pan] (default: bzael) feels sexual about [A:()] being true."
 vriai:
   id: ganixoaec2
+  predilex_id: savaye
   family: "R"
   gloss: "nostalgia"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is nostalgic about [A:()] being true."
 plui:
   id: c2pm9lkdn5
+  predilex_id: hacera
   family: "R"
   gloss: "relief"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) feels relieved from [A:()] being true by [O:()] being true."
 jbini:
   id: mnqotqp5sn
+  predilex_id: zirowa
   family: "R"
   gloss: "surprise"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is surprised by [A:()] being true."
 vini:
   id: 95ce2as51c
+  predilex_id: gazogi
   family: "R"
   gloss: "equiv"
   short: "[E:p] is equivalent to [A:p]."
 zipfi:
   id: u7kf297mm0
+  predilex_id: wuwoga
   family: "R"
   gloss: "celebration"
   short: "[E:tce pan] celebrates event described by [A:()]."
@@ -5104,176 +5509,206 @@ zipfi:
 
 e tsae ban:
   id: wf13qtgrwk
+  predilex_id: noraji
   family: "C"
   gloss: "conlang"
   short: "[E:tce* ban] is a constructed language/conlang."
 e boiur spoul:
   id: krykgk8hic
+  predilex_id: ruqewi
   family: "C"
   gloss: "tortoise"
   tags: [animal]
   short: "[E:tce* pan] is a tortoise"
 e ber ban:
   id: l3hopxljdm
+  predilex_id: berasa
   family: "C"
   gloss: "eberban"
   tags: [cultural]
   short: "[E:tca ban] is the eberban language."
 e uaotearoa stan:
   id: 0hmp09luqa
+  predilex_id: ziwofa
   family: "C"
   gloss: "Aotearoa (New Zealand)"
   tags: [cultural]
   short: "[E:tca stan] is Aotearoa (New Zealand)."
 e ujbo ban:
   id: ngdssrwkz9
+  predilex_id: biwiwa
   family: "C"
   gloss: "lojban"
   tags: [cultural]
   short: "[E:tca ban] is the lojban language."
 e ufranse ban:
   id: prqgtxzvj7
+  predilex_id: cireya
   family: "C"
   gloss: "french language"
   tags: [cultural]
   short: "[E:tca ban] is the french language."
 e ufranse stan:
   id: ql0k4zdkcv
+  predilex_id: deligi
   family: "C"
   gloss: "France"
   tags: [cultural]
   short: "[E:tca stan] is France."
 e uinglic ban:
   id: funyada7wl
+  predilex_id: gefiqo
   family: "C"
   gloss: "english language"
   tags: [cultural]
   short: "[E:tca ban] is the english language."
 e unihon ban:
   id: 1x7rqmd7o9
+  predilex_id: zijowa
   family: "C"
   gloss: "japanese language"
   tags: [cultural]
   short: "[E:tca ban] is the japanese language."
 e unihon stan:
   id: mpd6xpvqnk
+  predilex_id: jowuzi
   family: "C"
   gloss: "Japan"
   tags: [cultural]
   short: "[E:tca stan] is Japan."
 e udjonguo ban:
   id: 6b3k4qzh5t
+  predilex_id: fugaka
   family: "C"
   gloss: "chinese language"
   tags: [cultural]
   short: "[E:tca ban] is chinese language."
 e udjonguo stan:
   id: umjwjoi13h
+  predilex_id: yuhuvi
   family: "C"
   gloss: "China"
   tags: [cultural]
   short: "[E:tca stan] is China."
 e udoitce ban:
   id: ro6uq1ihpz
+  predilex_id: dafana
   family: "C"
   gloss: "german language"
   tags: [cultural]
   short: "[E:tca ban] is german language."
 e udoitce stan:
   id: wrjrg2gvav
+  predilex_id: gobite
   family: "C"
   gloss: "Germany"
   tags: [cultural]
   short: "[E:tca stan] is Germany."
 e umiser stan:
   id: vrbsurc6ev
+  predilex_id: femari
   family: "C"
   gloss: "Egypt"
   tags: [cultural]
   short: "[E:tca stan] is Egypt."
 e uhangu ban:
   id: hsclm6vdb3
+  predilex_id: yaraye
   family: "C"
   gloss: "south korean language"
   tags: [cultural]
   short: "[E:tca ban] is south korean language."
 e uhangu stan:
   id: j5qgrzg33d
+  predilex_id: fawizu
   family: "C"
   gloss: "South Korea"
   tags: [cultural]
   short: "[E:tca stan] is South Korea."
 e umaori ban:
   id: 5pkk20qhjt
+  predilex_id: gegugu
   family: "C"
   gloss: "māori language"
   tags: [cultural]
   short: "[E:tca ban] is the māori language (New Zealand)."
 e utcoson ban:
   id: xapwbat5r8
+  predilex_id: yivota
   family: "C"
   gloss: "north korean language"
   tags: [cultural]
   short: "[E:tca ban] is north korean language."
 e utcoson stan:
   id: m9uia2qvmv
+  predilex_id: fecege
   family: "C"
   gloss: "North Korea"
   tags: [cultural]
   short: "[E:tca stan] is North Korea."
 e utoan ban:
   id: c8xqa37om4
+  predilex_id: tavava
   family: "C"
   gloss: "Toaq language"
   tags: [cultural]
   short: "[E:tca ban] is the Toaq language."
 e upolski ban:
   id: 52gcuxc8ly
+  predilex_id: ducavi
   family: "C"
   gloss: "Polish language"
   tags: [cultural]
   short: "[E:tca ban] is the Polish language."
 e upolski stan:
   id: p5jeok3nug
+  predilex_id: lubeho
   family: "C"
   gloss: "Poland"
   tags: [cultural]
   short: "[E:tca ban] is Poland."
 e upona ban:
   id: ur0huidr0e
+  predilex_id: rejewe
   family: "C"
   gloss: "Toki Pona language"
   tags: [cultural]
   short: "[E:tca ban] is the Toki Pona language."
 e uafrikan ban:
   id: 5dgm2v0am1
+  predilex_id: gukanu
   family: "C"
   gloss: "Afrikaans language"
   tags: [cultural]
   short: "[E:tca ban] is the Afrikaans language."
 e kre vire:
   id: t1wi0cej5p
+  predilex_id: megaju{O,E,A}
   family: "C"
   gloss: "guided visit"
   short: "[E:tce* pan] visits [A:tce* pan] with guide [O:tce* pan]."
 e spie toril:
   id: z6av1nqtuf
+  predilex_id: rutuhu
   family: "C"
   gloss: "parrot"
   tags: [animal]
   short: "[E:tce* pan] is a parrot."
 e du zoi:
   id: sw1lnyrbpe
+  predilex_id: tekoji
   family: "C"
   gloss: "paragraph"
   short: "[E:tce* man] is a paragraph."
 e bino cnue:
   id: o5vxdoahhm
+  predilex_id: vihubu
   family: "C"
   gloss: "symptom"
   short: "[E:tce* man] [ill/sickness] is characterized by symptom [A:tce* man]."
 e spua ckuil:
   id: umamaeu1na
+  predilex_id: rameva
   family: "C"
   gloss: "home stellar body (Earth)"
   short: |
@@ -5281,6 +5716,7 @@ e spua ckuil:
     (default: {flan}/humans, thus [E] defaults to Earth).
 e spua ckuel:
   id: 732rregyg8
+  predilex_id: tawuho
   family: "C"
   gloss: "home star (Sun)"
   short: |
@@ -5294,6 +5730,7 @@ e spua ckuel:
 #   short: "[E:tce* man] is mortal/fated to die."
 e jveno kena:
   id: wvg2ebwap5
+  predilex_id: guzava
   family: "C"
   gloss: "hugs"
   short: "[E:tce* pan] hugs [A:tce* pan]."
@@ -5321,12 +5758,14 @@ e bzael mua:
   notes: See {bzael} for explanations.
 e ca ma:
   id: 2vi80y570m
+  predilex_id: sumera
   family: "C"
   gloss: "eberban-quote"
   short: "[E:tce* man] is a grammatically valid Eberban quote."
   notes: Can be constructed using {ca}.
 e tari pure:
   id: 9v79ww9nwi
+  predilex_id: nenura
   family: "C"
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
@@ -5338,6 +5777,7 @@ e ban ci:
   short: "[E:tce* man] is a word in language [A:tce* man] (default: eberban)."
 e ci vini:
   id: 9ravc9ou95
+  predilex_id: zewufa{O,E,A}
   family: "C"
   gloss: "word-meaning"
   short: "[E:tce* man] (quote or word) have a meaning equivalent to [A:p] in language [O: tce* man] (default: eberban)."
@@ -5412,6 +5852,7 @@ en ceu peu sa:
   short: "[E:tca man] is uttered as [A: blu eceuma]"
 en a ol sai:
   id: 5kgq6jl1at
+  predilex_id: royewa
   family: "C"
   gloss: "asserts:"
   short: "[E:tce pan] asserts that [A:()] is true."
@@ -5420,6 +5861,7 @@ en a ol sai:
     P is an unnameable predicate used solely for this purpose.
 en al ol sai:
   id: wg9fbpescm
+  predilex_id: vujege
   family: "C"
   gloss: "requests:"
   short: "[E:tce pan] requests/order that [A:()] is true."
@@ -5428,6 +5870,7 @@ en al ol sai:
     P is an unnameable predicate used solely for this purpose.
 en o ol sai:
   id: b0c73ecend
+  predilex_id: neruji{E,O,A}
   family: "C"
   gloss: "asks"
   short: "[E:tce pan] asks question represented by predicate [A:p] to addressee [O:tce man]."
@@ -5436,6 +5879,7 @@ en o ol sai:
     eio'ol via !P fo mo}. P is an unnameable predicate used solely for this purpose.
 e on peu:
   id: jpvb7ytjfg
+  predilex_id: vojowi
   family: "C"
   gloss: "dictionary"
   short: "[E:tce* pan] is a dictionary."
@@ -5452,12 +5896,14 @@ en skal co sa:
     can be fetched.
 e blu ski:
   id: f24mp2j8zu
+  predilex_id: vofape
   family: "C"
   gloss: "occurence-list:"
   tags: [time]
   short: "[E:blu ski] is the list of occurences of [A:()] (in the past and the future), orderer by chronologically increasing starting time."
 en sre blu ski:
   id: o6taqi388f
+  predilex_id: qufuca
   family: "C"
   gloss: "future-occurencies:"
   tags: [time, tense]
@@ -5466,6 +5912,7 @@ en sre blu ski:
     The first element of the list is the closest event from the present/reference time.
 en sru blu ski:
   id: exaqlp8qex
+  predilex_id: liduqu
   family: "C"
   gloss: "past-occurencies:"
   tags: [time, tense]
@@ -5602,89 +6049,105 @@ e bire sru:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 e glon sa:
   id: j31as5z1tr
+  predilex_id: hiyuke
   family: "C"
   gloss: "plays"
   short: "[E:tce pan] plays game [A:tce* pan]."
   notes: Implies that there is a player [E].
 e glon skol:
   id: dyp4u0gi58
+  predilex_id: dugobe
   family: "C"
   gloss: "video game"
   short: "[E:tce pan] is a video game."
   notes: "[E] is not necessarily a game played on a computer, but can also be on game consoles or phone."
 e filiel skal:
   id: tmtoheohak
+  predilex_id: punoye
   family: "C"
   gloss: "smartphone"
   short: "[E:tce pan] is a smartphone."
 e buan spenu:
   id: mf42sda4or
+  predilex_id: lacape
   family: "C"
   gloss: "reads"
   short: "[E:tce* pan] reads [A:tce* pan]."
 e jero sonul:
   id: rnerw0268q
+  predilex_id: birila
   family: "C"
   gloss: "clock"
   short: "[E:tce* pan] is a clock/watch."
 e skan sonul:
   id: dsjjxhug6w
+  predilex_id: wicijo
   family: "C"
   gloss: "chronometer"
   short: "[E:tce* pan] is a chronometer."
 e mi me:
   id: vq36s4o59o
+  predilex_id: zuzuyi
   family: "C"
   gloss: "this"
   short: "[E:tce* pan] is this, something specific the speaker have in mind which is near the speaker."
 e mo me:
   id: yv0djrrsio
+  predilex_id: fiyuje
   family: "C"
   gloss: "this"
   short: "[E:tce* pan] is that, something specific the speaker have in mind which is near the listener."
 e moe me:
   id: ffh43wbw7b
+  predilex_id: wafajo
   family: "C"
   gloss: "that younder"
   short: "[E:tce* pan] is that younder, something specific the speaker have in mind which is neither near the speaker or the listener."
 e uiuro sfia:
   id: q15u6virsz
+  predilex_id: cogane
   family: "C"
   gloss: "EUR"
   tags: [currency]
   short: "[E:tce gan] is 1 euro (EUR) times [A:tce gan] (default: 1)."
 e u'uzdolar sfia:
   id: 9uzfmtxv63
+  predilex_id: toqomu
   family: "C"
   gloss: "USD"
   tags: [currency]
   short: "[E:tce gan] is 1 US dollar (USD) times [A:tce gan] (default: 1)."
 e uien sfia:
   id: hi161hj19u
+  predilex_id: hopohi
   family: "C"
   gloss: "JPY"
   tags: [currency]
   short: "[E:tce gan] is 1 japanese yen (JPY) times [A:tce gan] (default: 1)."
 e usterlin sfia:
   id: qp8jmenoxz
+  predilex_id: qipona
   family: "C"
   gloss: "GBP"
   tags: [currency]
   short: "[E:tce gan] is 1 pound sterling (GBP) times [A:tce gan] (default: 1)."
 e uiuan sfia:
   id: k9rr7y024a
+  predilex_id: kejenu
   family: "C"
   gloss: "CNY/RMB"
   tags: [currency]
   short: "[E:tce gan] is 1 chinese yuan (CNY/RMB) times [A:tce gan] (default: 1)."
 e uaudolar sfia:
   id: 1mub34ta75
+  predilex_id: jozejo
   family: "C"
   gloss: "AUD"
   tags: [currency]
   short: "[E:tce gan] is 1 australian dollar (AUD) times [A:tce gan] (default: 1)."
 e ubitkoin sfia:
   id: fljiscc9x2
+  predilex_id: kajefo
   family: "C"
   gloss: "BTC"
   tags: [currency]
@@ -5711,6 +6174,7 @@ e mine dzei:
     considered.
 e gien tcia:
   id: 57282n39r3
+  predilex_id: nikuro{A,E}
   family: "C"
   gloss: "integer-subset"
   tags: [set]
@@ -5718,6 +6182,7 @@ e gien tcia:
     [E:tce gien] is the subset of all intergers (unitless) in [A:tce gan].
 e zai man:
   id: 5regih2sfj
+  predilex_id: zisefo{O,E,A}
   family: "C"
   gloss: "name"
   tags: [set]
@@ -5726,12 +6191,14 @@ e zai man:
   see_also: [za, zai]
 e blu jnuhi:
   id: 7y4m7u346i
+  predilex_id: ririsu
   family: "C"
   gloss: "increasing-order:"
   short: |
     [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
 e blu jnihi:
   id: 2ivqr4ouem
+  predilex_id: ruzori
   family: "C"
   gloss: "decreasing-order:"
   short: |
@@ -5743,12 +6210,14 @@ e ban sa:
   gloss: "language"
 e stan sa:
   id: 038s3l4yp4
+  predilex_id: geceqa
   family: "C"
   gloss: citizen
   short: |
     [E:tce* pan] is a citizen of [A:tce* pan].
 e me gi:
   id: b9jvmkt3og
+  predilex_id: gikalo
   family: "C"
   gloss: "(elliptical)"
   short: |
@@ -5777,41 +6246,49 @@ e ski kagve:
   gloss: "event@context"
 e toro zlier:
   id: j8hqhxb3ij
+  predilex_id: fiyovu
   family: "C"
   short: "[E:tce* pan] is an elbow."
   gloss: "elbow"
 e toro zlior:
   id: 90bxf8eqsg
+  predilex_id: nufawi
   family: "C"
   short: "[E:tce* pan] is a knee."
   gloss: "knee"
 e zlier kenen:
   id: pnn6qjo0p8
+  predilex_id: kekobo
   family: "C"
   short: "[E:tce* pan] is a wrist."
   gloss: "wrist"
 e zlior kenon:
   id: axlpdctp7v
+  predilex_id: niwira
   family: "C"
   short: "[E:tce* pan] is a ankle."
   gloss: "ankle"
 e treun zlier:
   id: dx28ywfi3h
+  predilex_id: mibuyi
   family: "C"
   short: "[E:tce* pan] is a shoulder."
   gloss: "shoulder"
 e treun kirun:
   id: 06rcemltv3
+  predilex_id: yidima
   family: "C"
   short: "[E:tce* pan] is a neck."
   gloss: "neck"
 e treun zlior:
   id: 70o68q45ps
+  predilex_id: dupaki
   family: "C"
   short: "[E:tce* pan] is a hip."
   gloss: "hip"
 e zinul jiu:
   id: wbul6chj24
+  predilex_id: mevapa
   family: "C"
   short: "[A:tce* pan] is the [E:tce gan]th finger of a hand/foot."
   notes: |
@@ -5822,16 +6299,19 @@ e zinul jiu:
   gloss: "nth-finger"
 e tian sa:
   id: fp326p16jr
+  predilex_id: qayiho
   family: "C"
   gloss: "eats"
   short: "[E:tce pan] eats [A:tce pan]."
 e kalan sa:
   id: egsqs45rsj
+  predilex_id: cewide
   family: "C"
   gloss: "drinks"
   short: "[E:tce* pan] drinks [A:tce* pan]."
 e pani penu:
   id: 5l5ploryal
+  predilex_id: fawito{A,E}
   family: "C"
   gloss: "back-part"
   short: "[E:tce* pan] is in the back part of [A:tce* pan]."
@@ -5840,6 +6320,7 @@ e pani penu:
     established middle-point (usually the center of mass).
 e pani pena:
   id: qf0g5dw7fq
+  predilex_id: resuri{A,E}
   family: "C"
   gloss: "front-part"
   short: "[E:tce* pan] is in the front part of [A:tce* pan]."
@@ -5848,6 +6329,7 @@ e pani pena:
     established middle-point (usually the center of mass).
 e pani peno:
   id: i8zmc7teu4
+  predilex_id: konase{A,E}
   family: "C"
   gloss: "left-part"
   short: "[E:tce* pan] is in the left part of [A:tce* pan]."
@@ -5856,6 +6338,7 @@ e pani peno:
     established middle-point (usually the center of mass).
 e pani pene:
   id: 1h0a4yvlln
+  predilex_id: zukihi{A,E}
   family: "C"
   gloss: "right-part"
   short: "[E:tce* pan] is in the right part of [A:tce* pan]."
@@ -5864,6 +6347,7 @@ e pani pene:
     established middle-point (usually the center of mass).
 e pani peniu:
   id: glg7ptsf4i
+  predilex_id: nefune{A,E}
   family: "C"
   gloss: "top-part"
   short: "[E:tce* pan] is in the top part of [A:tce* pan]."
@@ -5872,6 +6356,7 @@ e pani peniu:
     established middle-point (usually the center of mass).
 e pani penie:
   id: i2p4fkz8u5
+  predilex_id: wibupu{A,E}
   family: "C"
   gloss: "bottom-part"
   short: "[E:tce* pan] is in the bottom part of [A:tce* pan]."
@@ -5880,56 +6365,66 @@ e pani penie:
     established middle-point (usually the center of mass).
 e tcu zoli:
   id: idx3jnwsgj
+  predilex_id: fadota
   family: "C"
   gloss: "with-all-tools:"
   short: "[A:()] is realised using all tools [E:tce man]."
 e tian tsau:
   id: qdwr2zidwf
+  predilex_id: penome{A,E}
   family: "C"
   gloss: "cooking"
   short: "[E:tce* pan] is cooked (food crafting) by [A:tce pan]."
 e cfen mula:
   id: 2rf720dxu3
+  predilex_id: kiboci
   family: "C"
   gloss: "litre"
   short: "[E:tce gan] is 1 litre (10^-3 m3) times [A:tce gan] (default: 1)."
   tags: [space, unit]
 e cnue meloan:
   id: 9fc31ltwy9
+  predilex_id: nabuyu
   family: "C"
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."
   tags: [food, plant]
 e kine cmuel:
   id: wlqy92kdaz
+  predilex_id: cegebu
   family: "C"
   gloss: "school"
   short: "[E:tce* pan] is a school/educational building."
 e spua cmuel:
   id: wlqy92kdaz
+  predilex_id: detume
   family: "C"
   gloss: "residential building"
   short: "[E:tce* pan] is a house/residential building."
 e pnuen cpie:
   id: fb6aza9xej
+  predilex_id: jilobo{A,E}
   family: "C"
   gloss: "height"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
 e pneon cpie:
   id: ie3rzd0ac7
+  predilex_id: wuzovu{A,E}
   family: "C"
   gloss: "width"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
 e pnaun cpie:
   id: vxeydlyrp7
+  predilex_id: vuciko{A,E}
   family: "C"
   gloss: "depth"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the depth (front-back length) of [A:tce pan]."
 e cpuan kalu:
   id: upob68pr52
+  predilex_id: gogaro
   family: "C"
   gloss: "slice"
   short: "[E:tce pan] are slices that were sliced from [A:(tce pan)]."
@@ -5940,6 +6435,7 @@ e cpuan kalu:
     the tangent of their cutting plane, such that height corresponds to thickness.
 en an skun sai:
   id: d6ahqqz2b3
+  predilex_id: kahadi
   family: "C"
   gloss: "set-time-anchor:"
   tags: ["time", "context"]
@@ -5953,18 +6449,21 @@ e tian katmi:
   short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]." 
 e bzael krei:
   id: 9ghhob4dpk
+  predilex_id: royuvi
   family: "C"
   gloss: "empathy"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) empathises for [A:()] being true."
 e fsuo katmi:
   id: e4do0r7a33
+  predilex_id: jotehi
   family: "C"
   gloss: "sexual desire"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) sexually desires that [A:()] be the case."
 e birei denai:
   id: xzpesschjb
+  predilex_id: yesatu
   family: "C"
   gloss: "anniversary"
   tags: [time]
