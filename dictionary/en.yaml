@@ -4234,7 +4234,7 @@ tcori:
   short: "All pairs subset of [E:tco p] have their members mutually satisfy relation [A:(tca a, tca p)]."
 jnu:
   id: gi4jvusxpm
-  predilex_id: loluzi
+  predilex_id: loluzi{E,O,A,U}
   family: "R"
   gloss: "big:"
   tags: [intensity]
@@ -4259,7 +4259,7 @@ jnu:
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
 jni:
   id: ik7qjuwuxm
-  predilex_id: lumoja
+  predilex_id: lumoja{E,O,A,U}
   family: "R"
   gloss: "small:"
   tags: [intensity]
