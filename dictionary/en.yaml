@@ -2537,7 +2537,7 @@ spua:
   gloss: "home"
   short: "[E:tce* pan] is a home/dwelling for [A:tce* pan]."
   notes: |
-    Can qualify the building {espuacmuel} or a larger space containing it
+    Can qualify the building {espuactal} or a larger space containing it
     (region/state/country/planet/etc).
 zaro:
   id: rzmceyzcgr
@@ -3075,7 +3075,7 @@ vele:
   short: |
     [E:tce* pan] is a genetic direct parent of [A:tce* pan].
     [E] directly contributes to the genetic makeup of [A].
-kana:
+tana:
   id: xrpthmvqzq
   predilex_id: nacona
   family: "R"
@@ -5343,7 +5343,7 @@ gatfi:
   short: "[E:tce pan] is a receipe realized by satisfying [A:(tce pan)]."
   notes: |
     Everything that satisfies [A] is a result of applying the receipe.
-cmuel:
+ctal:
   id: 8q50y3hb3c
   predilex_id: zomayi
   family: "R"
@@ -5502,6 +5502,18 @@ zipfi:
   notes: |
     [E] thinks that [A] is currently occuring, but that may not be the case. Even
     if [A] is not the case, [E] are still celebrating.
+bjonil:
+  id: 0hlik6cq1x
+  predilex_id: tofeve
+  family: "R"
+  gloss: "movie"
+  short: "[E:tce* man] is a movie/film."
+glunor:
+  id: 8ijl0xvmda
+  predilex_id: higovu
+  family: "R"
+  gloss: "cake"
+  short: "[E:tce* pan] is a cake."
 
 # -----
 # Compounds
@@ -6389,13 +6401,13 @@ e cnue meloan:
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."
   tags: [food, plant]
-e kine cmuel:
+e kine ctal:
   id: wlqy92kdaz
   predilex_id: cegebu
   family: "C"
   gloss: "school"
   short: "[E:tce* pan] is a school/educational building."
-e spua cmuel:
+e spua ctal:
   id: wlqy92kdaz
   predilex_id: detume
   family: "C"
@@ -6477,10 +6489,17 @@ e birei denai:
     start {sra} or end {sro}.
 e sahar flur:
   id: og9kw8xlsk
+  predilex_id: zeliso
   family: "C"
   tags: [plant]
   gloss: "flowering-plant"
   short: "[E:tce* pan] is a flowering plant."
+e bjonil ctal:
+  id: b1maacrtqm
+  predilex_id: tehinu
+  family: "C"
+  gloss: "cinema"
+  short: "[E:tce* pan] is a cinema/movie theater."
 
 # Spelling
 _spelling:
