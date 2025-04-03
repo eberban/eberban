@@ -78,7 +78,7 @@
 
 	function search(query) {
 		const filters = query.split(",");
-		document.getElementById("dictionary").innerHTML = html_dictionary(filters);
+		html_dictionary(filters);
 		window.scrollTo(0, 0);
 	}
 
