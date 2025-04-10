@@ -3,9 +3,17 @@ import { fileURLToPath } from "node:url"
 import { defineConfig } from "vite"
 import ViteYaml from "@modyfi/vite-plugin-yaml";
 
+import { 
+    begin,
+    end,
+    ignore,
+    non_capturing_group,
+    one_or_more,
+    any_number_of
+} from "./scripts/regex";
+
 // Adapted from https://github.com/vitejs/vite/issues/6596#issuecomment-1651355986
-// Note (vite dev): This only changes the request, it does NOT change the url on
-// the browser.
+// Note (vite dev): This plugin adds trailing slash.
 // Note (vite preview): Nothing happens.
 // Note (GitHub Pages): GitHub Pages adds trailing slash itself in the browser.
 //                      https://github.com/slorber/trailing-slash-guide
@@ -15,26 +23,25 @@ const AppendTrailingUrlSlash = () => {
         apply: "serve",
         enforce: "post",
         configureServer(server) {
-            server.middlewares.use((req, _, next) => {
+            server.middlewares.use((req, res, next) => {
                 if (!req.url) {
                     return next();
                 }
-                const start = "^";
-                const end = "$";
-                const group = (s) => `(?:${s})`;
-                const ignore = (s) => `[^${s}]`;
-                const zeroOrMore = (s) => s + "*";
-                const oneOrMore = (s) => s + "+";
                 const regexp = new RegExp(
-                    start +
+                    begin +
                         "/" +
-                        zeroOrMore(group(oneOrMore(ignore("@")) + "/")) +
-                        oneOrMore(ignore("@./")) +
+                        any_number_of(non_capturing_group(
+                            one_or_more(ignore("@")) + "/"
+                        )) +
+                        one_or_more(ignore("@./")) +
                         end,
                     "g",
                 );
                 if (regexp.test(req.url)) {
-                    req.url += "/";
+                    const MOVED_PERMANENTLY = 301;
+                    res.writeHead(MOVED_PERMANENTLY, { Location: req.url + "/" });
+                    res.end();
+                    return;
                 }
                 next();
             });
