@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "pegjs": "^0.10.0",
+    "react-string-replace": "^1.1.1",
     "store2": "^2.14.4"
   },
   "devDependencies": {
