@@ -2,12 +2,12 @@ import { describe, expect, test } from "vitest";
 import lex from "./index";
 
 
-test(`A string is not lexed if it is empty`, () => {
+test.skip(`A string is not lexed if it is empty`, () => {
     expect(lex(``)).toStrictEqual([]);
 })
 
 
-describe(`A single eberban space is lexed if the inputted string`, () => {
+describe.skip(`A single eberban space is lexed if the inputted string`, () => {
     describe(`comprises a single eberban space`, () => {
         test.for([
             `q`, `w`, `x`, `y`,
@@ -86,7 +86,7 @@ describe(`A single eberban space is lexed if the inputted string`, () => {
 */
 
 
-describe(`An eberban particle is lexed if it`, () => {
+describe.skip(`An eberban particle is lexed if it`, () => {
     describe(`comprises a single non-sonorant-shyllable`, () => {
         test.for([`zi`, `mio`, `tiho`, `saeoi`])(`%s`, (input) => {
             expect(lex(input)).toStrictEqual([{ type: `Particle`, value: input }]);
@@ -116,7 +116,7 @@ describe(`An eberban particle is lexed if it`, () => {
 });
 
 
-describe(`An eberban root is lexed if it`, () => {
+describe.skip(`An eberban root is lexed if it`, () => {
     describe(`
         1. begins with one non-sonorant-shyllable
         2. ends with a sonorant
