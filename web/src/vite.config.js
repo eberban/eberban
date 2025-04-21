@@ -1,6 +1,7 @@
 import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { defineConfig } from "vite"
+import Preact from "@preact/preset-vite";
 import ViteYaml from "@modyfi/vite-plugin-yaml";
 
 import { 
@@ -68,7 +69,7 @@ export default defineConfig({
             },
         },
     },
-    plugins: [AppendTrailingUrlSlash(), ViteYaml()],
+    plugins: [AppendTrailingUrlSlash(), Preact(), ViteYaml()],
     // The root is specified within package.json scripts via Vite CLI.
     publicDir: "../images",
     // The test config is specified in the package.json via Vitest CLI.
