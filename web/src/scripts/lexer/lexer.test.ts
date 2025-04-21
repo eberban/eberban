@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import lex from "./index";
 
 
-describe.skip(`A string is not lexed if it`, () => {
+describe(`A string is not lexed if it`, () => {
     test(`is empty`, () => {
         expect(lex(``)).toStrictEqual([]);
     });
