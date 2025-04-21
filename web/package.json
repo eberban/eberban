@@ -19,7 +19,8 @@
     "build": "run-s task-peg_to_pegjs task-pegjs_to_js task-vite-build",
     "build-to-deploy": "run-s task-peg_to_pegjs task-pegjs_to_js task-vite-build-to-deploy",
     "preview": "vite preview src --outDir ../dist",
-    "test": "vitest --reporter=dot"
+    "test": "vitest --reporter=dot",
+    "test-ci": "vitest --reporter=dot --reporter=github-actions"
   },
   "dependencies": {
     "esbuild": "^0.25.8",
