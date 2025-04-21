@@ -84,7 +84,7 @@ describe(`A string is not lexed if it`, () => {
 */
 
 
-describe.skip(`An eberban particle is lexed if it`, () => {
+describe(`An eberban particle is lexed if it`, () => {
     describe(`comprises a single non-sonorant-shyllable`, () => {
         test.for([`zi`, `mio`, `tiho`, `saeoi`])(`%s`, (input) => {
             expect(lex(input)).toStrictEqual([{ type: `Particle`, value: input }]);
