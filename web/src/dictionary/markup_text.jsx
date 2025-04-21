@@ -11,6 +11,7 @@ import {
     non_capturing_group,
     one_or_more,
     optional,
+    set,
     space,
     word_char,
 } from "../scripts/regex";
@@ -105,7 +106,7 @@ function eberban_quote_kit() {
 function place_kit() {
     function whole() {
         const in_brackets = (s) => "\\[" + s + "\\]";
-        const place = non_capturing_group(any_of("E", "A", "O", "U"));
+        const place = set("E", "A", "O", "U");
         const arg = non_capturing_group(":" + fewest_positive_number_of(any));
         return {
             regex: new RegExp(group(in_brackets(place + optional(arg))), "g"),

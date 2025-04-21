@@ -20,6 +20,7 @@ export const fewest_positive_number_of = (s) => s + "+?";
 
 export const optional = (s) => s + "?";
 
+export const set = (...strings) => "[" + strings.join("") + "]";
 
 /* CHARACTERS & SETS */
 
