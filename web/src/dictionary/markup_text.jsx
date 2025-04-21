@@ -1,5 +1,6 @@
 import reactStringReplace from "react-string-replace";
 import {
+    any,
     any_of,
     any_number_of,
     backslash,
@@ -10,6 +11,8 @@ import {
     non_capturing_group,
     one_or_more,
     optional,
+    space,
+    word_char,
 } from "../scripts/regex";
 
 
@@ -41,7 +44,7 @@ function break_kit() {
 function bold_kit() {
     const bolded = (s) => "__" + s + "__";
     return {
-        regex: new RegExp(group(bolded(fewest_positive_number_of("."))), "g"),
+        regex: new RegExp(group(bolded(fewest_positive_number_of(any))), "g"),
         replacer: (s) => <strong>{remove_delimiters(remove_delimiters(s))}</strong>,
     };
 }
@@ -49,7 +52,7 @@ function bold_kit() {
 function italics_kit() {
     const in_italics = (s) => "_" + s + "_";
     return {
-        regex: new RegExp(group(in_italics(fewest_positive_number_of("."))), "g"),
+        regex: new RegExp(group(in_italics(fewest_positive_number_of(any))), "g"),
         replacer: (s) => <em>{remove_delimiters(s)}</em>,
     };
 }
@@ -57,7 +60,7 @@ function italics_kit() {
 function definition_quote_kit() {
     const in_quote = (s) => "`" + s + "`";
     return {
-        regex: new RegExp(group(in_quote(fewest_positive_number_of("."))), "g"),
+        regex: new RegExp(group(in_quote(fewest_positive_number_of(any))), "g"),
         replacer: (s) => <code>{remove_delimiters(s)}</code>,
     };
 }
@@ -66,7 +69,7 @@ function eberban_quote_kit() {
     function whole() {
         const in_quote = (s) => "{" + s + "}";
         return {
-            regex: new RegExp(group(in_quote(fewest_positive_number_of("."))), "g"),
+            regex: new RegExp(group(in_quote(fewest_positive_number_of(any))), "g"),
             replacer: (string) => {
                 const kit = content_kit();
                 let content = remove_delimiters(string);
@@ -79,10 +82,10 @@ function eberban_quote_kit() {
     function content_kit() {
         const as_one_link = (s) => "<" + s + ">";
         const simple_word_link = 
-            does_not_begin_with("!" + any_number_of("\\w")) + one_or_more("\\w");
+            does_not_begin_with("!" + any_number_of(word_char)) + one_or_more(word_char);
         const compound_word_link = as_one_link(non_capturing_group(
             fewest_positive_number_of(
-                non_capturing_group(one_or_more("\\w") + optional("\\s")),
+                non_capturing_group(one_or_more(word_char) + optional(space)),
             ),
         ));
         return {
@@ -103,7 +106,7 @@ function place_kit() {
     function whole() {
         const in_brackets = (s) => "\\[" + s + "\\]";
         const place = non_capturing_group(any_of("E", "A", "O", "U"));
-        const arg = non_capturing_group(":" + fewest_positive_number_of("."));
+        const arg = non_capturing_group(":" + fewest_positive_number_of(any));
         return {
             regex: new RegExp(group(in_brackets(place + optional(arg))), "g"),
             replacer: (string) => {
@@ -125,7 +128,7 @@ function place_kit() {
     };
     function content_kit() {
         return {
-            regex: new RegExp(group("\\w" + one_or_more("\\w")), "g"),
+            regex: new RegExp(group(word_char + one_or_more(word_char)), "g"),
             replacer: (s) => <DictLink>{s}</DictLink>,
         };
     };
