@@ -64,32 +64,35 @@ describe(`A string is not lexed if it`, () => {
 /*
   DEFINITIONS
 
-  :: vhowel ::
+  :: mahul ::
   
-  A character from the set { h, i , e, a, o, u }. Note that `h` must be between
-  two vowels.
+  One or more consecutive vowels, optionally including "h".
+  Representation: V(h?V)*
+ 
+  :: shyllable ::
 
-  :: vunit ::
+  A single consonant or consonant cluster followed by a mahul.
+  Representation: CC?C?[mahul]
 
-  A single consonant or consonant cluster followed by one or more vhowels. E.g.:
+  Examples:
 
-  - sonorant-vunit: sonorant followed by one or more vhowels.
-  - non-sonorant-vunit: non-sonorant consonant followed by one or more vhowels.
-  - medial-pair-vunit: medial pair followed by one or more vhowels.
+  - sonorant-shyllable: sonorant followed by a mahul.
+  - non-sonorant-shyllable: non-sonorant consonant followed by a mahul.
+  - medial-pair-shyllable: medial pair followed by a mahul.
 
-  Etc.
+  Etc. 
 */
 
 
 describe(`An eberban particle is lexed if it`, () => {
-    describe(`comprises a single non-sonorant-vunit`, () => {
+    describe(`comprises a single non-sonorant-shyllable`, () => {
         test.for([`zi`, `mio`, `tiho`, `saeoi`])(`%s`, (input) => {
             expect(lex(input)).toStrictEqual([{ type: `Particle`, value: input }]);
         });
     });
     describe(`
-        1. begins with at least one vhowel
-        2. follows with any number of sonorant-vunits
+        1. begins with a mahul
+        2. follows with any number of sonorant-shyllables
         3. optionally ends with a sonorant
         `,
         () => {
@@ -99,7 +102,7 @@ describe(`An eberban particle is lexed if it`, () => {
         },
     );
     describe(`
-        1. begins with one or more sonorant-vunits
+        1. begins with one or more sonorant-shyllables
         2. optionally ends with a sonorant
         `,
         () => {
@@ -113,7 +116,7 @@ describe(`An eberban particle is lexed if it`, () => {
 
 describe(`An eberban root is lexed if it`, () => {
     describe(`
-        1. begins with one non-sonorant-vunit
+        1. begins with one non-sonorant-shyllable
         2. ends with a sonorant
         `,
         () => {
@@ -123,11 +126,11 @@ describe(`An eberban root is lexed if it`, () => {
         },
     );
     describe(`
-        1. begins with one non-sonorant-vunit
+        1. begins with one non-sonorant-shyllable
         2. follows with at least one of:
-           a. sonorant-vunit
-           b. medial-pair-vunit
-           c. consonant-triplet-vunit
+           a. sonorant-shyllable
+           b. medial-pair-shyllable
+           c. consonant-triplet-shyllable
         3. optionally ends with a sonorant
         `,
         () => {
@@ -140,11 +143,11 @@ describe(`An eberban root is lexed if it`, () => {
         },
     );
     describe(`
-        1. begins with one initial-pair-vunit
+        1. begins with one initial-pair-shyllable
         2. follows with any number of:
-           a. sonorant-vunit
-           b. medial-pair-vunit
-           c. consonant-triplet-vunit
+           a. sonorant-shyllable
+           b. medial-pair-shyllable
+           c. consonant-triplet-shyllable
         3. optionally ends with a sonorant
         `,
         () => {
