@@ -2,10 +2,12 @@ import { describe, expect, test } from "vitest";
 import lex from "./index";
 
 
-describe(`A string is not lexed if it`, () => {
-    test(`is empty`, () => {
-        expect(lex(``)).toStrictEqual([]);
-    });
+test(`A string is not lexed if it is empty`, () => {
+    expect(lex(``)).toStrictEqual([]);
+})
+
+
+describe(`A single eberban space is lexed if the inputted string`, () => {
     describe(`comprises a single eberban space`, () => {
         test.for([
             `q`, `w`, `x`, `y`,
@@ -15,7 +17,7 @@ describe(`A string is not lexed if it`, () => {
             `'`, `"`, `\``,
             `:`, `;`, `,`, `.`, `?`,
         ])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`comprises a single repeated eberban space`, () => {
@@ -23,39 +25,39 @@ describe(`A string is not lexed if it`, () => {
             `qq`, `   `, `​​`, `👀👀👀👀👀`, `||||||`,
             `>>>>>>>`, `''''''''`, `:::::::::`,
         ])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`begins with hyphen(s) and ends with eberban space(s)`, () => {
         test.for([`- `, `--: `, `---)...`])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`begins with eberban space(s) and ends with hyphen(s)`, () => {
         test.for([`... ---`, `(--`, `👀-`])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`comprises hyphen(s) surrounded by eberban space(s)`, () => {
         test.for([`:-)`, `;--;`, `\\-/`, `  ---  `])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`comprises square bracket characters`, () => {
         test.for([`[`, `]`, `[]`, `][`, `][][][`, `[[]][[]]]`])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`comprises a mix of square bracket characters and eberban spaces`, () => {
         test.for([`[...]`, `[-]`, ` [ [  []  ] ] `])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
     describe(`comprises a multitude of eberban spaces`, () => {
         test.for([
             `qwwwwqqyyyxxx`, ` q q q q `, `~!@&^#%`, `(*&www👀*)`,
         ])(`%s`, (input) => {
-            expect(lex(input)).toStrictEqual([]);
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
 });
