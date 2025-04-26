@@ -86,9 +86,9 @@ describe(`A single eberban space is lexed if the inputted string`, () => {
 */
 
 
-describe.skip(`An eberban particle is lexed if it`, () => {
+describe(`An eberban particle is lexed if it`, () => {
     describe(`comprises a single non-sonorant-shyllable`, () => {
-        test.for([`zi`, `mio`, `tiho`, `saeoi`])(`%s`, (input) => {
+        test.for([`zi`, `mio`, `tiho`, `saeoi`, `paoieheha`])(`%s`, (input) => {
             expect(lex(input)).toStrictEqual([{ type: `Particle`, value: input }]);
         });
     });
@@ -98,7 +98,7 @@ describe.skip(`An eberban particle is lexed if it`, () => {
         3. optionally ends with a sonorant
         `,
         () => {
-            test.for([`a`, `ahu`, `al`, `anu`, `oie`, `oiu`])(`%s`, (input) => {
+            test.for([`a`, `ahu`, `al`, `anu`, `oie`, `oiu`, `uhieaho`])(`%s`, (input) => {
                 expect(lex(input)).toStrictEqual([{ type: `Particle`, value: input }]);
             });
         },
@@ -108,7 +108,7 @@ describe.skip(`An eberban particle is lexed if it`, () => {
         2. optionally ends with a sonorant
         `,
         () => {
-            test.for([`ni`, `ra`, `lu`, `nahinel`, `lulu`])(`%s`, (input) => {
+            test.for([`ni`, `ra`, `lu`, `nahinel`, `rihihihe`, `lulu`])(`%s`, (input) => {
                 expect(lex(input)).toStrictEqual([{ type: `Particle`, value: input }]);
             });
         },
