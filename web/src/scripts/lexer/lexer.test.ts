@@ -7,7 +7,7 @@ test(`A string is not lexed if it is empty`, () => {
 })
 
 
-describe.skip(`A single eberban space is lexed if the inputted string`, () => {
+describe(`A single eberban space is lexed if the inputted string`, () => {
     describe(`comprises a single eberban space`, () => {
         test.for([
             `q`, `w`, `x`, `y`,
