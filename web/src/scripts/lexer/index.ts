@@ -16,6 +16,9 @@ interface Lexeme {
     readonly value: string,
 };
 
+const SPACE: Lexeme = { type: "Space", value: "" };
+
+
 export default function lex(input: string): Lexeme[] {
     const lexemes: Lexeme[] = [];
     let last_char = "";
@@ -25,7 +28,7 @@ export default function lex(input: string): Lexeme[] {
         } else if (is_alphabetical(char)) {
             ;
         } else {
-            lexemes.push({ type: "Space", value: "" });
+            lexemes.push(SPACE);
         }
         last_char = char;
     }
