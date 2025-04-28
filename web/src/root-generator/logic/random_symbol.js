@@ -1,5 +1,11 @@
 import { get_random_item } from "../../scripts/utils";
-
+import {
+    all_initial_pairs,
+    all_medial_pairs,
+    all_non_sonorants,
+    all_sonorants,
+    all_vowels,
+} from "../../scripts/eberban-symbols";
 
 /*
   Random-selection functions.
@@ -7,147 +13,20 @@ import { get_random_item } from "../../scripts/utils";
 */
 
 
-const all_initial_pairs = [
-    "mn",
-    "mr",
-    "ml",
-    "pr",
-    "pl",
-    "ps",
-    "pc",
-    "br",
-    "bl",
-    "bz",
-    "bj",
-    "fn",
-    "fr",
-    "fl",
-    "fs",
-    "fc",
-    "vn",
-    "vr",       
-    "vl",
-    "vz",
-    "vj",
-    "tr",
-    "ts",
-    "tc",
-    "dr",
-    "dz",
-    "dj",
-    "sn",
-    "sr",
-    "sl",
-    "sm",
-    "sp",
-    "sf",
-    "st",
-    "sk",
-    "zn",
-    "zr",
-    "zl",
-    "zm",
-    "zb",
-    "zv",
-    "zd",
-    "zg",
-    "cn",
-    "cr",
-    "cl",
-    "cm",
-    "cp",
-    "cf",
-    "ct",
-    "ck",
-    "jn",
-    "jr",
-    "jl",
-    "jm",
-    "jb",
-    "jv",
-    "jd",
-    "jg",
-    "kn",
-    "kr",
-    "kl",
-    "ks",
-    "kc",
-    "gn",
-    "gr",
-    "gl",
-    "gz",
-    "gj",
-];
-
 function initial_pair() {
     return get_random_item(all_initial_pairs);
 }
 
-const all_medial_pairs = [
-    "nr",
-    "nl",
-    "rn",
-    "ln",
-    "pm",
-    "pf",
-    "pt",
-    "pk",
-    "bm",
-    "bv",
-    "bd",
-    "bg",
-    "tm",
-    "tp",
-    "tf",
-    "tk",
-    "dm",
-    "db",
-    "dv",
-    "dg",
-    "fm",
-    "fp",
-    "ft",
-    "fk",
-    "vm",
-    "vb",
-    "vd",
-    "vg",
-    "gm",
-    "gb",
-    "gv",
-    "gd",
-    "km",
-    "kp",
-    "kf",
-    "kt",
-];
-
 function medial_pair() {
     return get_random_item(all_medial_pairs);
 }
-
-const all_non_sonorants = [
-    "m",
-    "p",
-    "b",
-    "f",
-    "v",
-    "t",
-    "d",
-    "s",
-    "z",
-    "c",
-    "j",
-    "k",
-    "g",
-];
 
 function non_sonorant() {
     return get_random_item(all_non_sonorants);
 }
 
 function sonorant() {
-    return get_random_item(["n", "r", "l"]);
+    return get_random_item(all_sonorants);
 }
 
 function triplet() {
@@ -170,7 +49,6 @@ function triplet() {
 
 function* generate_vhowels(letter_count) {
     // Vowels only.
-    const all_vowels = ["i", "e", "a", "o", "u"];
     const first = get_random_item(all_vowels);
     yield first;
     if (letter_count === 1) {
