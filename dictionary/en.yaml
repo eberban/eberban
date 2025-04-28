@@ -5514,6 +5514,22 @@ glunor:
   family: "R"
   gloss: "cake"
   short: "[E:tce* pan] is a cake."
+maul:
+  id: bkpgt1idon
+  predilex_id: rotanu
+  family: "R"
+  gloss: "vowel"
+  short: "[E:ecema] is a vowel."
+  links:
+    - ["icon-book", "Morphology", https://eberban.github.io/eberban/books/refgram/book/morphonology/morphology.html]
+mahul:
+  id: 385as7znlo
+  family: "R"
+  gloss: "vhowel"
+  short: "[E:ecema] is one or more consecutive vowels, optionally including \"h\"."
+  notes: "Representation: V(h?V)*"
+  links:
+    - ["icon-book", "Morphology", https://eberban.github.io/eberban/books/refgram/book/morphonology/morphology.html]
 
 # -----
 # Compounds
