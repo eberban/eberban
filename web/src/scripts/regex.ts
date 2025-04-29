@@ -30,6 +30,9 @@ export const ignore = (s: string) => "[^" + s + "]";
 export const begin = "^";
 export const end = "$";
 
+export const any = ".";
 export const backslash = "\\\\";
+export const space = "\\s";
+export const word_char = "\\w";
 
 export const line_feed = non_capturing_group(any_of("\\\r\\\n", "\\\r", "\\\n"));
