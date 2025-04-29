@@ -5,7 +5,7 @@ import {
     all_non_sonorants,
     all_sonorants,
     all_vowels,
-} from "../../scripts/eberban-symbols";
+} from "../../scripts/eberban_symbols";
 
 /*
   Random-selection functions.

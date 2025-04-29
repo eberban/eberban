@@ -1,0 +1,25 @@
+name: Build the website (no mdbook)
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install NPM dependencies for the website
+        run: |
+          cd web
+          npm install
+          cd ..
+        
+      - name: Build the website
+        run: |
+          cd web
+          npm run build-to-deploy
+          cd ..
