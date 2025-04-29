@@ -3,7 +3,7 @@ interface Lexeme {
     readonly value: string,
 };
 
-export default function lex(input: string): Lexeme[] {
+export default function lex(_: string): Lexeme[] {
     return [
         { type: "InvalidType", value: "InvalidValue" },
     ];
