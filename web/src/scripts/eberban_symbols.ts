@@ -1,4 +1,4 @@
-export const all_sonorants = ["n", "r", "l"];
+export const all_sonorants = ["n", "r", "l"] as const;
 
 export const all_non_sonorants = [
     "m",
@@ -14,9 +14,9 @@ export const all_non_sonorants = [
     "j",
     "k",
     "g",
-];
+] as const;
 
-export const all_vowels = ["i", "e", "a", "o", "u"];
+export const all_vowels = ["i", "e", "a", "o", "u"] as const;
 
 export const all_initial_pairs = [
     "mn",
