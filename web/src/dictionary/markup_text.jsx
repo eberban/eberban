@@ -111,16 +111,14 @@ function place_kit() {
         return {
             regex: new RegExp(group(in_brackets(place + optional(arg))), "g"),
             replacer: (string) => {
+                const [_, left_bracket, content, right_bracket] = string.match(
+                    new RegExp(group("\\[") + group(one_or_more(any)) + group("\\]"))
+                );
                 const kit = content_kit();
-                const [left_bracket, content, right_bracket] = [
-                    string.slice(0, 1),
-                    reactStringReplace(string.slice(1, -1), kit.regex, kit.replacer),
-                    string.slice(-1),
-                ];
                 return (
                     <span class="label label-info place">
                         <span class="hidden">{left_bracket}</span>
-                        {content}
+                        {reactStringReplace(content, kit.regex, kit.replacer)}
                         <span class="hidden">{right_bracket}</span>
                     </span>
                 );
