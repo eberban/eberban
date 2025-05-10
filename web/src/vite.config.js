@@ -7,8 +7,8 @@ import ViteYaml from "@modyfi/vite-plugin-yaml";
 import { 
     begin,
     end,
-    ignore,
     non_capturing_group,
+    not_in_set,
     one_or_more,
     any_number_of
 } from "./scripts/regex";
@@ -32,9 +32,9 @@ const AppendTrailingUrlSlash = () => {
                     begin +
                         "/" +
                         any_number_of(non_capturing_group(
-                            one_or_more(ignore("@")) + "/"
+                            one_or_more(not_in_set("@")) + "/"
                         )) +
-                        one_or_more(ignore("@./")) +
+                        one_or_more(not_in_set("@./")) +
                         end,
                     "g",
                 );

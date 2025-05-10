@@ -20,12 +20,11 @@ export const fewest_positive_number_of = (s: string) => s + "+?";
 
 export const optional = (s: string) => s + "?";
 
+export const not_in_set = (...strings: string[]) => "[^" + strings.join("") + "]";
 export const set = (...strings: string[]) => "[" + strings.join("") + "]";
 
 
 /* CHARACTERS & SETS */
-
-export const ignore = (s: string) => "[^" + s + "]";
 
 export const begin = "^";
 export const end = "$";
