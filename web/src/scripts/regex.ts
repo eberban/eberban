@@ -26,8 +26,11 @@ export const set = (...strings: string[]) => "[" + strings.join("") + "]";
 
 /* CHARACTERS & SETS */
 
+export const any = "."
 export const begin = "^";
 export const end = "$";
+export const space = "\\s";
+export const word_char = "\\w";
 
 export const backslash = "\\\\";
 
