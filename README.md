@@ -7,7 +7,7 @@ following goals :
   particles in a way that is close to the [higher-order logic] it
   translates into, while abstracting away the verbosity of explicitely
   providing variables as arguments of predicates.
-- __being regular :__ valid sentences are syntaxicaly unambiguous. Most grammar
+- __being regular :__ valid sentences are syntactically unambiguous. Most grammar
   rules rely on particles which are organised in families, each starting with
   a unique prefix. Many additional patterns are shared between particles and
   predicate words to help learning groups of related words.

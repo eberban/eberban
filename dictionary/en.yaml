@@ -1549,7 +1549,7 @@ a:
   gloss: "#assert"
   short: "Starts an assertive sentence, that the speaker asserts is true."
   notes: |
-    {a !X} is syntaxic sugar for {oni <e ze a> !X ol !P be mi <e a ol sai> <e ze a>}, with
+    {a !X} is syntactic sugar for {oni <e ze a> !X ol !P be mi <e a ol sai> <e ze a>}, with
     _X_ being the asserted proposition, and _P_ an unnamable predicate used
     solely to make an axiom. Since by uttering a {a} sentence the speaker
     indeed asserts ({<e a ol sai>}) the proposition, it is not possible to reject this
@@ -1564,7 +1564,7 @@ al:
   gloss: "#request"
   short: "Starts an injunctive/order/request sentence, that the speaker requests to be true."
   notes: |
-    {al !X} is syntaxic sugar for {oni <e ze al> !X ol !P be mi <e al ol sai> <e ze al>}, with
+    {al !X} is syntactic sugar for {oni <e ze al> !X ol !P be mi <e al ol sai> <e ze al>}, with
     _X_ being the requested proposition, and _P_ an unnamable predicate used
     solely to make an axiom. Since by uttering a {a} sentence the speaker
     indeed requests ({<e al ol sai>}) the proposition, it is not possible to reject this
@@ -1579,7 +1579,7 @@ o:
   gloss: "#question"
   short: "Start a question definition, the arguments being the unknown informations."
   notes: |
-    {o !P !X} is syntaxic sugar for {oni !P !X ol !R be mi eio'ol via !P fo
+    {o !P !X} is syntactic sugar for {oni !P !X ol !R be mi eio'ol via !P fo
     mo}, _P_ being the defined predicate word, _X_ the definition, and _R_ an
     unnamable predicate used solely to make an axiom. Since by uttering a {o}
     sentence the speaker indeed ask a question ({<e o ol sai>}), it is not possible to
@@ -2077,7 +2077,7 @@ blu:
   short: |
     [E:blun] is a list of things all satisfying [A:(p)].
   notes: |
-    {peu} is syntaxic sugar to make lists.
+    {peu} is syntactic sugar to make lists.
 bluni:
   id: 6oxelxxwxd
   predilex_id: fuwiyi{O,A,E,U}
@@ -5885,7 +5885,7 @@ en a ol sai:
   gloss: "asserts:"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
-    {a !X} can be modeled as being syntaxic sugar for {oni <e ze a> !X ol !P be mi <en a ol sai> <e ze a>}.
+    {a !X} can be modeled as being syntactic sugar for {oni <e ze a> !X ol !P be mi <en a ol sai> <e ze a>}.
     P is an unnameable predicate used solely for this purpose.
 en al ol sai:
   id: wg9fbpescm
@@ -5894,7 +5894,7 @@ en al ol sai:
   gloss: "requests:"
   short: "[E:tce pan] requests/order that [A:()] is true."
   notes: |
-    {al !X} can be modeled as being syntaxic sugar for {oni <e ze al> !X ol !P be mi <en al ol sai> <e ze a>}.
+    {al !X} can be modeled as being syntactic sugar for {oni <e ze al> !X ol !P be mi <en al ol sai> <e ze a>}.
     P is an unnameable predicate used solely for this purpose.
 en o ol sai:
   id: b0c73ecend
