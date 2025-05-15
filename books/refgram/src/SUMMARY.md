@@ -35,7 +35,7 @@ storing a set of used identifiers in the context, with a predicate to generate a
 assigned to a pred with BO) and immediately store it in that set.
 
 - [Eberban from scratch](from_scratch/intro.md)
-- [Syntaxic sugar]()
+- [Syntactic sugar]()
   - [Identifiers (zai)](from_scratch/sugar/zai.md)
   - [Lists (bu)]()
 - [From core to complete grammar]()
