@@ -5894,7 +5894,7 @@ en al ol sai:
   gloss: "requests:"
   short: "[E:tce pan] requests/order that [A:()] is true."
   notes: |
-    {al X} can be modeled as being syntaxic sugar for {oni <e ze al> !X ol !P be mi <en al ol sai> <e ze a>}.
+    {al !X} can be modeled as being syntaxic sugar for {oni <e ze al> !X ol !P be mi <en al ol sai> <e ze a>}.
     P is an unnameable predicate used solely for this purpose.
 en o ol sai:
   id: b0c73ecend
