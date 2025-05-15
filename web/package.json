@@ -24,7 +24,6 @@
     "htmr": "^1.0.2",
     "pegjs": "^0.10.0",
     "preact-render-to-string": "^6.5.13",
-    "react-string-replace": "^1.1.1",
     "store2": "^2.14.4"
   },
   "devDependencies": {
