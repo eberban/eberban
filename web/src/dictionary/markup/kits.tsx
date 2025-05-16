@@ -1,4 +1,4 @@
-import type { JSX_Child, Replacer } from "./types";
+import type { Replacer } from "./types";
 import markup_to_jsx_child from "./to_jsx_child";
 import {
     any,
@@ -24,19 +24,17 @@ function DictLink({ children }: { children: string}) {
 }
 
 
-/* TYPES */
+/* ENTRY */
 
 
-// Kits are how we extend markup syntax. 
+// Kits are how we extend markup syntax. We write them as () => Kit for
+// readability.
 type Kit = {
     // If this is true, we cast the parameters of Replacer to string.
     keep_children_as_string?: boolean,
     regex_string: string,
     replacer: Replacer,
 }
-
-
-/* KITS -- written as functions for readability */
 
 
 function break_kit(): Kit {
@@ -130,33 +128,12 @@ function place_kit(): Kit {
 }
 
 
-/* ENTRY */
-
-
-export function markup_inline(text: string) {
-    let output: JSX_Child = text;
-    const markup_kits = [
+const markup_kits = [
         break_kit,
         bold_kit,
         italics_kit,
         definition_quote_kit,
         eberban_quote_kit,
-        place_kit,
-    ];
-    for (const kit of markup_kits) {
-        const { keep_children_as_string, regex_string, replacer } = kit();
-        output = markup_to_jsx_child(
-            output,
-            regex_string,
-            replacer,
-            keep_children_as_string
-        );
-    }
-    return output;
-}
-
-export function markup_block(text: string) {
-    return text
-        .split(new RegExp(group(line_feed + line_feed), "g"))
-        .map((content) => <p>{markup_inline(content)}</p>);    
-}
+        place_kit,    
+];
+export default markup_kits;
