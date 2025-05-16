@@ -1,5 +1,5 @@
-import type { JSX_Child, Replacer } from "./markup_types";
-import markup_to_jsx_child from "./markup_to_jsx_child";
+import type { JSX_Child, Replacer } from "./types";
+import markup_to_jsx_child from "./to_jsx_child";
 import {
     any,
     any_of,
@@ -16,7 +16,7 @@ import {
     set,
     space,
     word_char,
-} from "../scripts/regex";
+} from "../../scripts/regex";
 
 
 function DictLink({ children }: { children: string}) {

@@ -1,7 +1,7 @@
 import react_htmr from "htmr";
 import { JSX, VNode } from "preact";
 import render_to_string from "preact-render-to-string";
-import type { JSX_Child, Replacer } from "./markup_types";
+import type { JSX_Child, Replacer } from "./types";
 
 /* WORKAROUND */
 
