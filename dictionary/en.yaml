@@ -594,7 +594,10 @@ se:
   family: "SI"
   gloss: "<EE>"
   tags: [core]
-  short: "Expose E place, and chain to E."
+  short: |
+    Expose E place, and chain to E.
+
+    __Compound suffix__: makes the compound intransitive sharing.
   links:
     - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 sa:
@@ -602,7 +605,21 @@ sa:
   family: "SI"
   gloss: "<AA>"
   tags: [core]
-  short: "Expose A place, and chain to A."
+  short: |
+    Expose A place, and chain to A.
+
+    __Compound suffix__: makes the compound transitive sharing.
+  links:
+    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
+sai:
+  id: is38dnapc7
+  family: "SI"
+  gloss: "<AA=>"
+  tags: [core]
+  short: |
+    Expose A place, and chain to A with equivalence.
+
+    __Compound suffix__: makes the compound transitive equivalence.
   links:
     - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 so:
