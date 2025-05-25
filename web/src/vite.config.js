@@ -71,4 +71,5 @@ export default defineConfig({
     plugins: [AppendTrailingUrlSlash(), ViteYaml()],
     // The root is specified within package.json scripts via Vite CLI.
     publicDir: "../images",
+    // The test config is specified in the package.json via Vitest CLI.
 });
