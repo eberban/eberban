@@ -1248,7 +1248,7 @@ jiu:
   see_also: [jiune, blua]
   short: |
     Ordinal number terminator. The preceding number have definition:\
-    [E:tca p] is the [number]th member of sequence [A:blu p].\
+    [E:tca p] is the [number]th member of sequence [A:ebluse].\
     Indexing is done using zero-based numbering, such as the first member is the 0th.
     The number must be a (possibly 0) positive integer.
   notes: |
@@ -1485,7 +1485,7 @@ cie:
 ce:
   id: yjvjupth2t
   family: "CE"
-  short: "[E:blu ecema] is the string/list of letters encoded by [quote]."
+  short: "[E:tca ecoma] is the string/list of letters encoded by [quote]."
   gloss: "#spelling-start"
   notes: |
     Search __@S__ to only show spelling units.
@@ -1494,7 +1494,7 @@ ce:
 ceu:
   id: zsud61ou1j
   family: "CE"
-  short: "[E:blu eceuma] is the string of sounds encoded by [quote]."
+  short: "[E:tca ecoma] is the string of sounds encoded by [quote]."
   gloss: "#utterance-spelling-start"
   notes: |
     Search __@S__ to only show spelling units.
@@ -2081,9 +2081,9 @@ blu:
   gloss: "list:"
   tags: [list]
   short: |
-    [E:blun] is a list of things all satisfying [A:(p)].
+    [E:ebluse] is a list of things all satisfying [A:(p)].
   notes: |
-    {peu} is syntactic sugar to make lists.
+    {peu} and {pehu} are syntactic sugar to make lists.
 bluni:
   id: 6oxelxxwxd
   predilex_id: fuwiyi{O,A,E,U}
@@ -2108,7 +2108,7 @@ bluhe:
   gloss: "list-concat-2"
   tags: [list]
   short: |
-    [E:blu p] is the concatenation of lists [A:blu p] and [O:blu p].
+    [E:ebluse] is the concatenation of lists [A:ebluse] and [O:ebluse].
 blue:
   id: bqqk6gqk0k
   predilex_id: tujoco
@@ -2116,7 +2116,7 @@ blue:
   gloss: "list-concat-many"
   tags: [list]
   short: |
-    [E:blu p] is the concatenation of all lists in list [A:blu blu p].
+    [E:ebluse] is the concatenation of all lists in list [A:blu ebluse].
 blua:
   id: 2wwxz8b8gr
   predilex_id: mogoju
@@ -2124,7 +2124,7 @@ blua:
   gloss: "list-reverse"
   tags: [list]
   short: |
-    [E:blu p] is list [A:blu p] in reverse order.
+    [E:ebluse] is list [A:ebluse] in reverse order.
 blea:
   id: un9423gr90
   predilex_id: sehiva
@@ -2132,7 +2132,7 @@ blea:
   gloss: "list-contain"
   tags: [list]
   short: |
-    [E:blu a] is included/contained in [A:blu a].
+    [E:ebluse] is included/contained in [A:ebluse].
 bleu:
   id: zp415dp0q0
   predilex_id: yilodi{A,E}
@@ -4495,7 +4495,7 @@ sfia:
   family: "R"
   gloss: "currency"
   tags: [currency]
-  short: "[E:tce gan] is 1 unit of currency represented by ISO-4217 code [A:blu ecema] times [O:tce gan] (default: 1)."
+  short: "[E:tce gan] is 1 unit of currency represented by ISO-4217 code [A:tca ecoma] times [O:tce gan] (default: 1)."
 
 # Time relations
 
@@ -5143,7 +5143,7 @@ jiune:
   gloss: "n-th"
   tags: [number, list]
   short: |
-    [E:tca p] is the [O:tca gan]th (starts counting at 0) member of sequence [A:blu p].
+    [E:tca p] is the [O:tca gan]th (starts counting at 0) member of sequence [A:ebluse].
   see_also: [jiu]
 dzei:
   id: a5sx15j283
@@ -5817,16 +5817,6 @@ e ci vini:
   short: "[E:tce* man] (quote or word) have a meaning equivalent to [A:p] in language [O: tce* man] (default: eberban)."
   notes: |
     [A] is a possible meaning of [E].
-e ce ma:
-  id: 1w44wy894g
-  family: "C"
-  gloss: "letter"
-  short: "[E:tce* man] is a letter/grapheme."
-e ceu ma:
-  id: 2s1nee0bdi
-  family: "C"
-  gloss: "sound"
-  short: "[E:tce* man] is a sound/phoneme."
 e co ma:
   id: 4u8h1cwf6p
   family: "C"
@@ -5878,12 +5868,12 @@ en ce peu sa:
   id: 000sw1j82d
   family: "C"
   gloss: "spelled"
-  short: "[E:tca man] is spelled as [A: blu ecema]"
+  short: "[E:tca man] is spelled as [A:tca ecoma]"
 en ceu peu sa:
   id: b0pxo862df
   family: "C"
   gloss: "uttered"
-  short: "[E:tca man] is uttered as [A: blu eceuma]"
+  short: "[E:tca man] is uttered as [A:tca ecoma]"
 e a sai:
   id: 5kgq6jl1at
   predilex_id: royewa
@@ -6522,6 +6512,14 @@ e bjonil ctal:
   family: "C"
   gloss: "cinema"
   short: "[E:tce* pan] is a cinema/movie theater."
+e blu se:
+  id: op39jgoygr
+  family: "C"
+  gloss: "list"
+  short: "[E:ma] is a list."
+  notes: |
+    It doesn't state anything about its items, and allows them to even be of different types,
+    which {blu} doesn't allow.
 
 # Spelling
 _spelling:
