@@ -2083,7 +2083,7 @@ blu:
   short: |
     [E:blun] is a list of things all satisfying [A:(p)].
   notes: |
-    {peu} is syntaxic sugar to make lists.
+    {peu} is syntactic sugar to make lists.
 bluni:
   id: 6oxelxxwxd
   predilex_id: fuwiyi{O,A,E,U}
