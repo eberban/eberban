@@ -980,7 +980,7 @@ oni:
   short: "Start a predicate definition which captures the current context."
   links:
     - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
-ol:
+onu:
   id: 7uffxtuqg2
   family: "O"
   gloss: "#def-axiom"
@@ -992,19 +992,21 @@ ol:
     of being uttered. An interlocutor might accept this axioms with {nu} or just
     ignore it, while the speaker can revert it using {ni}.
   notes: |
-    {ol gi ...} is equivalent to {on gi ... nu gi}
+    {onu gi ...} is equivalent to {on gi ... nu gi}
   links:
     - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
-ahu:
-  id: nxtau0gqfz
-  family: "A"
-  gloss: "#sentence-wrapper"
-  tags: [core]
-  short: |
-    Registers a sentence wrapper, such that any sentence [E:()] expressed with
-    {a} is wrapped by this registered predicate.
-  links:
-    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
+# TODO: Replace with a compound/root that will be defined with "on"
+# Compound should probably contain "a" and other part related to "wrapping"
+# ahu:
+#   id: nxtau0gqfz
+#   family: "A"
+#   gloss: "#sentence-wrapper"
+#   tags: [core]
+#   short: |
+#     Registers a sentence wrapper, such that any sentence [E:()] expressed with
+#     {a} is wrapped by this registered predicate.
+#   links:
+#     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 an:
   id: zkukmnzdxs
   family: "A"
@@ -1015,16 +1017,18 @@ an:
     provided to any following sentences.
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
-anu:
-  id: utl5b5flgt
-  family: "A"
-  gloss: "#auto-context-updater"
-  tags: [core, context]
-  short: |
-    Registers a context-switching sentence, that will be applied automatically
-    between each sentences as if it was used with {an}.
-  links:
-    - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
+# TODO: Replace with a compound/root that will be defined with "on".
+# Compound should probably contain "an" and other part related to "automatic".
+# anu:
+#   id: utl5b5flgt
+#   family: "A"
+#   gloss: "#auto-context-updater"
+#   tags: [core, context]
+#   short: |
+#     Registers a context-switching sentence, that will be applied automatically
+#     between each sentences as if it was used with {an}.
+#   links:
+#     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 nu:
   id: em8adaqgg3
   family: "NI"
@@ -1566,13 +1570,8 @@ a:
   gloss: "#assert"
   short: "Starts an assertive sentence, that the speaker asserts is true."
   notes: |
-    {a !X} is syntaxic sugar for {oni <e ze a> !X ol !P be mi <e a ol sai> <e ze a>}, with
-    _X_ being the asserted proposition, and _P_ an unnamable predicate used
-    solely to make an axiom. Since by uttering a {a} sentence the speaker
-    indeed asserts ({<e a ol sai>}) the proposition, it is not possible to reject this
-    axiom.
-
-    {<e ze a>} thus allows to refer to the latest assertion.
+    {<e a ze>} allows to state again the content of the latest {a} assertion, which can be used to
+    negate it or state it in another context.
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 al:
@@ -1581,13 +1580,8 @@ al:
   gloss: "#request"
   short: "Starts an injunctive/order/request sentence, that the speaker requests to be true."
   notes: |
-    {al !X} is syntaxic sugar for {oni <e ze al> !X ol !P be mi <e al ol sai> <e ze al>}, with
-    _X_ being the requested proposition, and _P_ an unnamable predicate used
-    solely to make an axiom. Since by uttering a {a} sentence the speaker
-    indeed requests ({<e al ol sai>}) the proposition, it is not possible to reject this
-    axiom.
-
-    {<e ze al>} thus allows to refer to the latest assertion.
+    {<e al ze>} allows to state again the content of the latest {al} assertion, which can be used to
+    negate it or state it in another context.
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 o:
@@ -1595,12 +1589,7 @@ o:
   family: "O"
   gloss: "#question"
   short: "Start a question definition, the arguments being the unknown informations."
-  notes: |
-    {o !P !X} is syntaxic sugar for {oni !P !X ol !R be mi eio'ol via !P fo
-    mo}, _P_ being the defined predicate word, _X_ the definition, and _R_ an
-    unnamable predicate used solely to make an axiom. Since by uttering a {o}
-    sentence the speaker indeed ask a question ({<e o ol sai>}), it is not possible to
-    reject this axiom.
+  see_also: ["e o sai"]
   links:
     - ["icon-book", "Sentences - O family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#o-family]
 du:
@@ -5785,12 +5774,12 @@ e kine buan:
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
   definition: "on ekinibun ke ka pi ke buan gla kine via seru ka"
-e ze a:
+e a ze:
   id: mfyipbixdd
   family: "C"
   short: "Repeats the previous assertion. See {a} notes."
   gloss: "latest-assertion"
-e ze al:
+e al ze:
   id: s2gdsl21l7
   family: "C"
   short: "Repeats the previous request. See {al} notes."
@@ -5895,33 +5884,33 @@ en ceu peu sa:
   family: "C"
   gloss: "uttered"
   short: "[E:tca man] is uttered as [A: blu eceuma]"
-en a ol sai:
+e a sai:
   id: 5kgq6jl1at
   predilex_id: royewa
   family: "C"
   gloss: "asserts:"
   short: "[E:tce pan] asserts that [A:()] is true."
   notes: |
-    {a !X} can be modeled as being syntaxic sugar for {oni <e ze a> !X ol !P be mi <en a ol sai> <e ze a>}.
-    P is an unnameable predicate used solely for this purpose.
-en al ol sai:
+    {a !X} is syntactic sygar for {on <e a ze> !X onu !P be mi <e a sai> <e a ze>}.
+e al sai:
   id: wg9fbpescm
   predilex_id: vujege
   family: "C"
   gloss: "requests:"
   short: "[E:tce pan] requests/order that [A:()] is true."
   notes: |
-    {al X} can be modeled as being syntaxic sugar for {oni <e ze al> !X ol !P be mi <en al ol sai> <e ze a>}.
-    P is an unnameable predicate used solely for this purpose.
-en o ol sai:
+    {al !X} is syntactic sygar for {on <e al ze> !X onu !P be mi <e al sai> <e al ze>}.
+e o sai:
   id: b0c73ecend
   predilex_id: neruji{E,O,A}
   family: "C"
   gloss: "asks"
   short: "[E:tce pan] asks question represented by predicate [A:p] to addressee [O:tce man]."
   notes: |
-    {o !X !Y} can be modeled as being syntactic sugar for {oni !P !X ol !R be mi
-    eio'ol via !P fo mo}. P is an unnameable predicate used solely for this purpose.
+    {o !X !Y} can be modeled as being syntactic sugar for {oni !P !X onu !R be mi
+    <e o sai> via !P fo mo}. R is an unnamable predicate used as an axiom, as uttering the question
+    is performative in itself. Thus there is no need to name this axiom to be able to disable it, and
+    further questions will not disable axioms for previous questions.
 e on peu:
   id: jpvb7ytjfg
   predilex_id: vojowi

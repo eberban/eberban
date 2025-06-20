@@ -23,22 +23,19 @@ sentence.
 - __a__ (assertion): __a__ allows the speaker to make an assertion of a proposition (0-ary
   predicate).
 
-- __al__ (injunction): __al__ allows the speaker to make a request/order/command.
-
 - __an__ (context update): The context argument of the predicate wrapped with __a__ is filled with a
   globally managed context variable that can be updated using __an__. __an__ wraps a 1-ary predicate
   that takes as its parameter the new context, which can thus be constrained in terms of the current
   implicit context argument. The vocabulary contains many predicates designed to easily be used with
   __an__ to provide many important concepts, such as tenses.
 
-- __anu__ (register automatic context update): __anu__ wraps a 1-ary like __an__, which describes
-  how the context is updated after each __a__ sentence ends. It is currently unknown if it will be
-  used significantly by casual speakers, but its existence is necessary to implement things like the
-  "present" going forward in time after each sentence.
+- __al__ (injunction): __al__ allows the speaker to make a request/order/command.
 
-- __ahu__ (sentence wrapper): __ahu__ wraps a 1-ary predicate that will take every sentence
-  expressed with __a__ as an argument, which is mainly used to correctly configure the context for
-  some features to work. Will likely not be used by casual speakers.
+> All __A__ particles except __an__ get their meaning from their associated compound __e A sai__
+> (__e a sai__ for __a__, __e al sai__ for __al__, ...). This allows to easily add new sentence
+> starters similar to speech acts in other languages.
+>
+> __e A ze__ can be used to state again the content of the last __A__ sentence. 
 
 ## O family
 
@@ -64,7 +61,7 @@ sentence.
 - __oni__ (capturing definition): Same as __on__ but captures the current global context. The
   implicit context argument is ignored.
 
-- __ol__ (performative / axiom definition): Shorthand of defining a predicate using __on__ then
+- __onu__ (performative / axiom definition): Shorthand of defining a predicate using __on__ then
   enabling it as an axiom with __nu__. Can be used as an equivalent to a [performative] speech act
   in natural language.
 
