@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "ids": "node ./generate_word_ids ./en.yaml"
-  }
-}
