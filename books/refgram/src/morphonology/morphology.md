@@ -31,7 +31,7 @@ __Particles__ are words exerting grammatical functions. They can either:
 - start with a single _non-sonorant consonant_, followed only by _vhowels_, like __zi__,
   __mio__ or __tiho__.
 - start with a _sonorant_ or _vowels_, and be a string of _vhowels_ and _sonorants_. They can end
-  either with a _vowel_ or _sonorant_. Exemples: __a__, __ol__, __ahu__ or __nu__.
+  either with a _vowel_ or _sonorant_. Exemples: __a__, __on__, __ahu__ or __nu__.
 
 Particles are themselves categorized into __families__ having identical grammar
 but different meanings. Those families are usually designated using a particle in capital letters
