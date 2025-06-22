@@ -4795,27 +4795,23 @@ psulo:
   tags: ["space"]
   short: "[E:tca pan] is the center (average position) of [A:tce pan]."
 pani:
-  id: 5fsi11zwja
-  predilex_id: soyenu
+  id: 6jp262xhb4
   family: "R"
-  gloss: "inside:"
+  gloss: "inside"
   tags: ["space"]
-  short: "Inside of [E:tce pan], [A:()] occurs."
+  short: "[E:tce pan] is inside of [A:tce pan]."
   notes: |
-    The volumes of the entities involved in [A] must intersect with the volume
-    of [E]. They don't need to be fully contained in it, so something can be
-    both inside and outside.
+    To speak about individual physical objects. To speak about an event occuring
+    in some location, use {epaniski}.
 pali:
-  id: w71x9r0797
-  predilex_id: bavigo
+  id: t27dz8wbr9
   family: "R"
-  gloss: "outside:"
+  gloss: "outside"
   tags: ["space"]
-  short: "Outside of [E:tce pan], [A:()] occurs."
+  short: "[E:tce pan] is outside of [A:tce pan]."
   notes: |
-    The volumes of the entities involved in [A] must intersect with the inverse
-    of the volume of [E]. They don't need to be fully contained in it, so
-    something can be both inside and outside.
+    To speak about individual physical objects. To speak about an event occuring
+    in some location, use {epaliski}.
 peni:
   id: t175fzkni1
   predilex_id: dequma{A,E}
@@ -6520,6 +6516,26 @@ e blu se:
   notes: |
     It doesn't state anything about its items, and allows them to even be of different types,
     which {blu} doesn't allow.
+e pani ski:
+  id: 5fsi11zwja
+  predilex_id: soyenu
+  family: "C"
+  gloss: "inside:"
+  tags: ["space"]
+  short: "Inside of [E:tce pan], [A:()] occurs."
+  notes: |
+    The volumes of the entities involved in [A] must be fully contained within the volume
+    of [E].
+e pali ski:
+  id: w71x9r0797
+  predilex_id: bavigo
+  family: "R"
+  gloss: "outside:"
+  tags: ["space"]
+  short: "Outside of [E:tce pan], [A:()] occurs."
+  notes: |
+    The volumes of the entities involved in [A] must be fully contained within the inverse
+    of the volume of [E].
 
 # Spelling
 _spelling:
