@@ -2309,7 +2309,7 @@ gan:
   notes: |
     {gan} numbers are an extension field of {gen} (real numbers) that supports
     units like length, mass, etc.
-ven:
+vne:
   id: d9fzfk4r83
   family: "R"
   gloss: "satisfies-at-least"
@@ -2317,22 +2317,22 @@ ven:
   short: "List of arguments [E:ebluse] (default: empty list) satisfies at least (included) [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
   notes: |
     With default [O] it corresponds to an OR logical operator.
-  see_also: ["van", "von", "vun", "eblumae"]
-van:
+  see_also: ["vna", "vno", "vnu", "eblumae"]
+vna:
   id: f5t4czvnac
   family: "R"
   gloss: "satisfies-exactly"
   tags: [set, connective]
   short: "List of arguments [E:ebluse] (default: empty list) satisfies exactly [O:tce gin] (default: 1) predicate(s) in set [A:tcehi ()]."
-  see_also: ["ven", "von", "vun", "eblumae"]
-von:
+  see_also: ["vne", "vno", "vnu", "eblumae"]
+vno:
   id: 6blh1b2gk3
   family: "R"
   gloss: "satisfies-at-most"
   tags: [set, connective]
   short: "List of arguments [E:ebluse] (default: empty list) satisfies at most (included) [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
-  see_also: ["ven", "van", "vun", "eblumae"]
-vun:
+  see_also: ["vne", "vna", "vnu", "eblumae"]
+vnu:
   id: qsivboraps
   family: "R"
   gloss: "satisfies-all"
@@ -2340,7 +2340,7 @@ vun:
   short: "List of arguments [E:ebluse] (default: empty list) satisfies all predicates in set [A:tcehi (...)]."
   notes: |
     With default [O] it corresponds to an AND logical operator.
-  see_also: ["ven", "van", "von", "eblumae"]
+  see_also: ["vne", "vna", "vno", "eblumae"]
 mine:
   id: qt6yew5oof
   predilex_id: zovahi{A,E}
