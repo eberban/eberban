@@ -120,12 +120,6 @@ ma:
   see_also: ["man"]
   links:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
-man:
-  id: r7zw74om6f
-  family: "R"
-  gloss: "atom set"
-  short: "[E:tcehi* ma] is a set of one or more atoms."
-  see_also: ["ma"]
 mai:
   id: uwjxg46v4h
   predilex_id: gisiwu
@@ -153,7 +147,17 @@ mao:
     𝜆c 𝜆e 𝜆A ∀x ∀y ... A(c,x,y,...)
   links:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
-
+mae:
+  id: k9n5jsy7np
+  family: "MI"
+  gloss: "partial-appl:"
+  tags: [core]
+  short: "[E:(...)] is equivalent to [A:(p,...)] with first slot filled with [O:p]."
+  definition: 𝜆c 𝜆E 𝜆A 𝜆o ∀x ∀y ... E(x,y,...) ⇔ A(o,x,y,...)
+  transitive: true
+  links:
+    - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
+  see_also: ["eblumae"]
 mui:
   id: yftgrzjtiw
   predilex_id: zalego
@@ -2042,6 +2046,12 @@ tcihu:
         vi ka bi ke
         fi ka gia
         fi ka tcia ke
+man:
+  id: r7zw74om6f
+  family: "R"
+  gloss: "atom set"
+  short: "[E:tcehi* ma] is a set of one or more atoms."
+  see_also: ["ma"]
 kin:
   id: hypka57wfp
   predilex_id: sigufi
@@ -2299,91 +2309,38 @@ gan:
   notes: |
     {gan} numbers are an extension field of {gen} (real numbers) that supports
     units like length, mass, etc.
-
-
-## Can be expressed with tcia + other tc- words
-
-# tcea:
-#   id: val5msurqc
-#   family: "R"
-#   gloss: "OR-S:"
-#   tags: [set, connective]
-#   short: "At least one member of [E:tce p] satisfies property [A:(tca p)]"
-# tceai:
-#   id: dhyuzaems9
-#   family: "R"
-#   gloss: "OR-S-raw:"
-#   tags: [set, connective]
-#   short: "At least one member of [E:tcehi p] satisfies property [A:(p)]"
-# tceo:
-#   id: nax6hot9qu
-#   family: "R"
-#   gloss: "XOR-S:"
-#   tags: [set, connective]
-#   short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(tca p)]."
-# tceoi:
-#   id: hfwn93xw2o
-#   family: "R"
-#   gloss: "XOR-S-raw:"
-#   tags: [set, connective]
-#   short: "Exactly [O:tce gin] (default: 1) members of [E:tce p] satisfies property [A:(p)]."
-
 ven:
+  id: d9fzfk4r83
+  family: "R"
+  gloss: "satisfies-at-least"
+  tags: [set, connective]
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies at least (included) [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
+  notes: |
+    With default [O] it corresponds to an OR logical operator.
+  see_also: ["van", "von", "vun", "eblumae"]
+van:
+  id: f5t4czvnac
+  family: "R"
+  gloss: "satisfies-exactly"
+  tags: [set, connective]
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies exactly [O:tce gin] (default: 1) predicate(s) in set [A:tcehi ()]."
+  see_also: ["ven", "von", "vun", "eblumae"]
+von:
+  id: 6blh1b2gk3
+  family: "R"
+  gloss: "satisfies-at-most"
+  tags: [set, connective]
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies at most (included) [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
+  see_also: ["ven", "van", "vun", "eblumae"]
+vun:
   id: qsivboraps
   family: "R"
-  gloss: "AND-P0:"
+  gloss: "satisfies-all"
   tags: [set, connective]
-  short: "This proposition is true if all propositions in set [E:tcehi ()] are true."
-van:
-  id: d9fzfk4r83
-  predilex_id: jecudi
-  family: "R"
-  gloss: "OR-P0:"
-  tags: [set, connective]
-  short: "This proposition is true if at least one proposition in set [E:tcehi ()] is true."
-von:
-  id: f5t4czvnac
-  predilex_id: tacono
-  family: "R"
-  gloss: "XOR-P0:"
-  tags: [set, connective]
-  short: "This proposition is true if exactly [A:tce gin] (default: 1) proposition(s) in set [E:tcehi ()] is true."
-vene:
-  id: ovzzfajdlw
-  family: "R"
-  gloss: "AND-P1:"
-  tags: [set, connective]
-  short: "This proposition is true if [E:p] satisfies all properties in set [A:tcehi (p)]."
-vane:
-  id: 6ksleotknl
-  family: "R"
-  gloss: "OR-P1:"
-  tags: [set, connective]
-  short: "This proposition is true if [E:p] satisfies at least one property in set [A:tcehi (p)]."
-vone:
-  id: kog0cgvvza
-  family: "R"
-  gloss: "XOR-P1:"
-  tags: [set, connective]
-  short: "This proposition is true if [E:a] satisfies exactly [O:tce gin] (default: 1) proposition(s) in set [A:tcehi (p)]."
-vena:
-  id: 4aamcwbbmi
-  family: "R"
-  gloss: "AND-P2"
-  tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies all relations in set [O:tcehi (p,b)]."
-vana:
-  id: y8teg1w87d
-  family: "R"
-  gloss: "OR-P2"
-  tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies at least one relation in set [O:tcehi (p,b)]."
-vona:
-  id: 6xyrpofoby
-  family: "R"
-  gloss: "XOR-P2"
-  tags: [set, connective]
-  short: "This proposition is true if [E:p] and [A:b] satisfies exactly [U:tce gin] (default: 1) relation(s) in set [O:tcehi (p,b)]."
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies all predicates in set [A:tcehi (...)]."
+  notes: |
+    With default [O] it corresponds to an AND logical operator.
+  see_also: ["ven", "van", "von", "eblumae"]
 mine:
   id: qt6yew5oof
   predilex_id: zovahi{A,E}
@@ -4407,12 +4364,14 @@ mliel:
   family: "R"
   gloss: "cold"
   short: "[E:tce* pan] (default: the air) feels cold to the touch."
+  see_also: ["mlial"]
 mlial:
   id: pne1nwyhy8
   predilex_id: mepevi
   family: "R"
   gloss: "warm"
   short: "[E:tce* pan] (default: the air) feels warm to the touch."
+  see_also: ["mliel"]
 cpere:
   id: gant5ud5xq
   predilex_id: saloki{A,E}
@@ -5532,6 +5491,31 @@ mahul:
   notes: "Representation: V(h?V)*"
   links:
     - ["icon-book", "Morphology", https://eberban.github.io/eberban/books/refgram/book/morphonology/morphology.html]
+zguin:
+  id: zaq3ewglh1
+  family: "R"
+  gloss: "machine"
+  short: "[E:tce* pan] is a machine."
+sfuer:
+  id: e99u95fxhm
+  family: "R"
+  gloss: "windy"
+  short: "There is wind."
+  notes: |
+    It is considered windy if air is moving at 1 m/s or more.
+    TODO: What should be the formula from air speed to intensity in intensy mode ({stu})?.
+    To speak about measured speed (in m/s for example), use {ckia}.
+fluer:
+  id: qk39xzxgrf
+  family: "R"
+  gloss: "current"
+  short: "There is current in a fluid."
+  notes: |
+    Current is considered significant if the fuild is moving at 0.1 m/s or more.
+    TODO: What should be the formula from fluid speed to intensity in intensy mode ({stu})?.
+    To speak about measured speed (in m/s for example), use {ckia}.
+    
+
 
 # -----
 # Compounds
@@ -5921,24 +5905,34 @@ e blu ski:
   gloss: "occurence-list:"
   tags: [time]
   short: "[E:blu ski] is the list of occurences of [A:()] (in the past and the future), orderer by chronologically increasing starting time."
-en sre blu ski:
+en sru blu ski:
   id: o6taqi388f
   predilex_id: qufuca
   family: "C"
   gloss: "future-occurencies:"
   tags: [time, tense]
-  short: "[E:blu ski] is the list of future occurences of [A:()], orderer by chronologically increasing starting time."
+  short: |
+    [E:blu ski] is the list of future occurences of [A:()], ordered by chronologically increasing starting time.
   notes: |
-    The first element of the list is the closest event from the present/reference time.
-en sru blu ski:
+    The first element of the list is the closest event from the present/reference time, but will not include present occurences.
+en sre blu ski:
   id: exaqlp8qex
   predilex_id: liduqu
   family: "C"
   gloss: "past-occurencies:"
   tags: [time, tense]
-  short: "[E:blu ski] is the list of past occurences of [A:()], orderer by chronologically decreasing starting time."
+  short: |
+    [E:blu ski] is the list of past occurences of [A:()], ordered by chronologically decreasing starting time.
   notes: |
-    The first element of the list is the closest event from the present/reference time.
+    The first element of the list is the closest event from the present/reference time, but will not include present occurences.
+en srai blu ski:
+  id: 2w8tryjheb
+  family: "C"
+  gloss: "again:"
+  tags: [time, tense]
+  short: |
+    Now occurs an member of [E:blu ski], which is the list of past and present occurences of [A:()],
+    ordered by chronologically decreasing starting time.
 e ti sre:
   id: ey5f5raem9
   family: "C"
@@ -6529,13 +6523,24 @@ e pani ski:
 e pali ski:
   id: w71x9r0797
   predilex_id: bavigo
-  family: "R"
+  family: "C"
   gloss: "outside:"
   tags: ["space"]
   short: "Outside of [E:tce pan], [A:()] occurs."
   notes: |
     The volumes of the entities involved in [A] must be fully contained within the inverse
     of the volume of [E].
+e sfuer zguin:
+  id: qlqy5bxoso
+  family: "C"
+  gloss: "fan"
+  short: "[E:tce pan] is a fan (wind-making machine)."
+e blu mae:
+  id: jg0kn1bef7
+  family: "C"
+  gloss: "list-appl:"
+  short: "Evaluates predicate [A:(...)] with list of arguments [E:ebluse]."
+  see_also: ["mae"]
 
 # Spelling
 _spelling:

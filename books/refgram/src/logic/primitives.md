@@ -7,6 +7,7 @@ to express logical primitives that the grammar itself don't cover.
 \\[ \begin{align}
 \text{ma}(c,e)      &= \text{is-atom}(e) \\\\
 \text{mai}(c,e)     &= \top \\\\
+\text{mae}(c,E,A,o)   &= \forall x_0 \dots \forall x_n. \\ E(c,x_0,\dots,x_n) \Leftrightarrow A(c,o,x_0,\dots,x_n) \\\\
 \text{mao}(c,e,A,O)   &= \forall x_0 \dots \forall x_n. \\ O(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\\\
 \text{mui}(c)       &= \text{unknown} \\\\
 \text{mue}(c,e)     &= c = e \\\\
@@ -19,6 +20,12 @@ __mai__ (intransitive) puts no constraint on its argument, and is true for any p
 However to be used $(e) must exist (at some point an existential variable must
 be created), and for some definitions expressing this existence and nothing
 more is useful.
+
+__mae__ (transitive) allows to perform [partial
+application](https://en.wikipedia.org/wiki/Partial_application), stating that $(E) (which have $(n)
+arguments) is equivalent to $(A) (which have $(n + 1) arguments) with its first slot "filled" by
+$(o). It can be used to manipulate arguments as lists, perform operations on them and then evaluate
+predicates with them.
 
 __mao__ (transitive) allows the speaker to express the concept that $(A) is a subset of $(O),
 in the sense that any list of arguments that satisfy $(A) also satisfy $(O). It
