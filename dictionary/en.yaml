@@ -4288,12 +4288,21 @@ graulin:
   gloss: "dragon"
   tags: ["animal", "mythical"]
   short: "[E:tce* pan] is a dragon."
+coro:
+  id: 299go33r7r
+  family: "R"
+  gloss: "in-possession-of"
+  short: "[E:tce* man] is in possession of [A:tce man]."
+  notes: |
+    [A] may not be the legal owner of [A]. [A] may be using [E], or [E] may be designated to [A].
+    Examples of usage are "John's chair", "John's plate", etc where John is eating somewhere but doesn't
+    legally own the objects.
 coriu:
   id: zas8minuik
   predilex_id: yoguwo{A,E}
   family: "R"
   gloss: "owned-by"
-  short: "[E:tce* man] is possessed/owned by [A:tce man]."
+  short: "[E:tce* man] is owned by [A:tce man]."
 djia:
   id: 56lqin725a
   predilex_id: kamiyo
