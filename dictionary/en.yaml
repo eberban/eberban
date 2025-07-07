@@ -2408,7 +2408,7 @@ vahul:
   predilex_id: lumica
   family: "R"
   gloss: "milk"
-  short: "[E:tce* pan] is milk."
+  short: "[E:tce* pan] is milk, either coming from lactating animals or plant-based alternatives."
 mian:
   id: vgeqteao1c
   predilex_id: nifuki
@@ -6550,6 +6550,16 @@ e blu mae:
   gloss: "list-appl:"
   short: "Evaluates predicate [A:(...)] with list of arguments [E:ebluse]."
   see_also: ["mae"]
+e flur vahul:
+  id: 91cvojysmg
+  family: "R"
+  gloss: "plant-based milk"
+  short: "[E:tce* pan] is plant-based milk made from plants satisfying [A:(tce pan)]."
+e caun vahul:
+  id: qefotcaezf
+  family: "R"
+  gloss: "plant-based milk"
+  short: "[E:tce* pan] is milk that was produced by lactating animals satisfying [A:(tce pan)]."
 
 # Spelling
 _spelling:
