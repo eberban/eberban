@@ -2714,13 +2714,20 @@ zigmo:
   id: wlbcggayj6
   predilex_id: pawimo
   family: "R"
-  short: "[E:tce* pan] is an inscription of text [A:tce* ecoma]."
   gloss: "written"
+  short: "[E:tce* pan] is an inscription of text [A:tce* ecoma]."
 tukfa:
   id: a83mxj4jhm
   family: "R"
-  short: "[E:tce* pan] is displayed on medium [A:tce* pan]."
   gloss: "medium"
+  short: "[E:tce* pan] is displayed on medium [A:tce* pan]."
+tukfu:
+  id: 1y70bzhhvg
+  family: "R"
+  gloss: "featured"
+  short: "[E:tce* pan] is some media featured in other media [A:tce* pan]."
+  notes: |
+    Examples: the soundtrack of a movie/game, 2D or 3D assets in a game, etc.
 soane:
   id: rmpkifsf0c
   predilex_id: lecafu{A,E}
