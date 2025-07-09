@@ -12,99 +12,83 @@
 <body>
 	<div class="wrapper">
 		<header>
-			<h1 class="text-center">
+			<h1>
 				<a href="..">eberban</a> root&nbsp;generator
 			</h1>
+			<p>
+				This page generates random valid eberban roots that are not yet
+				present in the official dictionary. Refresh the page to generate
+				new words.
+			</p>
+			<p>
+				Words are classified by length, shorter forms being preferred
+				for more common concepts.
+			</p>
 		</header>
 		<main>
 			<section>
-				<p class="text-center">
-					This page generates random valid eberban roots that are not
-					yet present in the official dictionary. Hit 🔁 to generate
-					new words.
-				</p>
-				<p class="text-center">
-					Words are classified by length, shorter forms being
-					preferred for more common concepts.
-				</p>
-				<div id="transitivity-row">
-					<button id="intransitive">
-						Intransitive
-					</button>
-					<button id="transitive">
-						Transitive
-					</button>
-				</div>
-			</section>
-			<section>
-				<div id="carousel-viewport-container">
-					<ol id="carousel-viewport">
-						<li class="carousel-column">
-							<h3 class="text-center">Short</h3>
-							<ul id="short-roots" class="text-center"></ul>
-						</li>
-						<li class="carousel-column">
-							<h3 class="text-center">Medium</h3>
-							<ul id="medium-roots" class="text-center"></ul>
-						</li>
-						<li class="carousel-column">
-							<h3 class="text-center">Long</h3>
-							<ul id="long-roots" class="text-center"></ul>
-						</li>
-						<li class="carousel-column">
-							<h3 class="text-center">Longer</h3>
-							<ul id="longer-roots" class="text-center"></ul>
-						</li>
-					</ol>
-					<button id="prev">◀️</button>
-					<button id="refresh">🔁</button>
-					<button id="next">▶️</button>
-				</div>
-				<ol class="carousel-nav">
+				<h2>Transitive</h2>
+				<ol class="row">
 					<li>
-						<button id="left-most"></button>
+						<h3>Short</h3>
+						<ul id="transitive-short">
+							<!-- These columns load before the roots are
+								generated. So these elements are added in to pad
+								the columns out to reduce the Flash of Unstyled
+								Content. This is a temporary measure until our
+								next redesign of the Root Generator. -->
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+						</ul>
 					</li>
-					<li>
-						<button id="middle-two"></button>
+						<li>
+						<h3>Medium</h3>
+						<ul id="transitive-medium"></ul>
 					</li>
-					<li>
-						<button id="right-most"></button>
+						<li>
+						<h3>Long</h3>
+						<ul id="transitive-long"></ul>
+					</li>
+						<li>
+						<h3>Longer</h3>
+						<ul id="transitive-longer"></ul>
 					</li>
 				</ol>
+			</section>
+			<section>
+				<h2>Intransitive</h2>
+				<ol class="row">
+					<li>
+						<h3>Short</h3>
+						<ul id="intransitive-short"></ul>
+					</li>
+						<li>
+						<h3>Medium</h3>
+						<ul id="intransitive-medium"></ul>
+					</li>
+						<li>
+						<h3>Long</h3>
+						<ul id="intransitive-long"></ul>
+					</li>
+						<li>
+						<h3>Longer</h3>
+						<ul id="intransitive-longer"></ul>
+					</li>
+				</ol>
+			</section>
 		</main>
 	</div>
 	<script type="module">
-		import carousel from "./ui/carousel";
-		import root_lists from "./ui/root_lists";
-
-
-		/* Root Lists */
-
-
-		document.getElementById("intransitive").addEventListener("click", function() {
-			return root_lists.switch_transitivity_to(this.id);
-		});
-		document.getElementById("transitive").addEventListener("click", function() {
-			return root_lists.switch_transitivity_to(this.id);
-		});
-		document.getElementById("refresh").addEventListener("click", () => root_lists.refresh());
-
-
-		/* Column View */
-
-
-		document.getElementById("prev").addEventListener("click", () => carousel.prev());
-		document.getElementById("next").addEventListener("click", () => carousel.next());
-
-		document.getElementById("left-most").addEventListener("click", function() { 
-			return carousel.directly_to(this.id);
-		});
-		document.getElementById("middle-two").addEventListener("click", function() { 
-			return carousel.directly_to(this.id);
-		});
-		document.getElementById("right-most").addEventListener("click", function() { 
-			return carousel.directly_to(this.id);
-		});
+		import render from "./ui/root_lists";
+		render();
 	</script>
 </body>
 </html>
