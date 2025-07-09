@@ -1,110 +1,40 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 	<title>eberban root generator</title>
-	<meta name="description" content="Generator of valid eberban roots that are not yet present in the dictionary.">
+	<link type="text/css" href="/legacy/layout-legacy.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="200x200" href="/icon.png">
-	<link rel="stylesheet" href="../styles/reset.css">
-	<link rel="stylesheet" href="../styles/common.css">
-	<link rel="stylesheet" href="./root_generator.css">
+	<link href="/legacy/bootstrap-legacy.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="module" src="/legacy/bootstrap-legacy.js"></script>
 </head>
+
 <body>
-	<div class="wrapper">
-		<header>
-			<h1 class="text-center">
-				<a href="..">eberban</a> root&nbsp;generator
-			</h1>
-		</header>
-		<main>
-			<section>
-				<p class="text-center">
-					This page generates random valid eberban roots that are not
-					yet present in the official dictionary. Hit 🔁 to generate
-					new words.
-				</p>
-				<p class="text-center">
-					Words are classified by length, shorter forms being
-					preferred for more common concepts.
-				</p>
-				<div id="transitivity-row">
-					<button id="intransitive">
-						Intransitive
-					</button>
-					<button id="transitive">
-						Transitive
-					</button>
-				</div>
-			</section>
-			<section>
-				<div id="carousel-viewport-container">
-					<ol id="carousel-viewport">
-						<li class="carousel-column">
-							<h3 class="text-center">Short</h3>
-							<ul id="short-roots" class="text-center"></ul>
-						</li>
-						<li class="carousel-column">
-							<h3 class="text-center">Medium</h3>
-							<ul id="medium-roots" class="text-center"></ul>
-						</li>
-						<li class="carousel-column">
-							<h3 class="text-center">Long</h3>
-							<ul id="long-roots" class="text-center"></ul>
-						</li>
-						<li class="carousel-column">
-							<h3 class="text-center">Longer</h3>
-							<ul id="longer-roots" class="text-center"></ul>
-						</li>
-					</ol>
-					<button id="prev">◀️</button>
-					<button id="refresh">🔁</button>
-					<button id="next">▶️</button>
-				</div>
-				<ol class="carousel-nav">
-					<li>
-						<button id="left-most"></button>
-					</li>
-					<li>
-						<button id="middle-two"></button>
-					</li>
-					<li>
-						<button id="right-most"></button>
-					</li>
-				</ol>
-		</main>
+	<div class="container">
+		<h1><a href="..">eberban</a> root generator</h1>
+
+		<p>
+			This page generates random valid eberban roots that are not yet
+			present in the official dictionary. Refresh the page to generate
+			new words.
+		</p>
+
+		<p>
+			Words are classified by length, shorter forms being prefered for
+			more common concepts.
+		</p>
+
+		<div id="words"></div>
 	</div>
-	<script type="module">
-		import carousel from "./ui/carousel";
-		import root_lists from "./ui/root_lists";
 
-
-		/* Root Lists */
-
-
-		document.getElementById("intransitive").addEventListener("click", function() {
-			return root_lists.switch_transitivity_to(this.id);
-		});
-		document.getElementById("transitive").addEventListener("click", function() {
-			return root_lists.switch_transitivity_to(this.id);
-		});
-		document.getElementById("refresh").addEventListener("click", () => root_lists.refresh());
-
-
-		/* Column View */
-
-
-		document.getElementById("prev").addEventListener("click", () => carousel.prev());
-		document.getElementById("next").addEventListener("click", () => carousel.next());
-
-		document.getElementById("left-most").addEventListener("click", function() { 
-			return carousel.directly_to(this.id);
-		});
-		document.getElementById("middle-two").addEventListener("click", function() { 
-			return carousel.directly_to(this.id);
-		});
-		document.getElementById("right-most").addEventListener("click", function() { 
-			return carousel.directly_to(this.id);
-		});
-	</script>
 </body>
+
+<script type="module">
+	import { format_html_generated_roots } from "./root-generator";
+	$('#words').html(format_html_generated_roots());
+</script>
+
 </html>
