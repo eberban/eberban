@@ -1,9 +1,16 @@
-/*                */
-/* Mobile styles. */
-/*                */
-
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -15,136 +22,7 @@ ol, ol li {
     list-style: none;
 }
 
-#transitivity-row {
+.row {
     display: flex;
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
-}
-
-#intransitive {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-#transitive {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-#intransitive, #transitive {
-    font-size: 1.5rem;
-}
-
-#intransitive:disabled, #transitive:disabled {
-    cursor: not-allowed;
-    background-color: #a5a5a5;
-    background-image: none;
-}
-
-/* Carousel styling begins here. */
-/* Adapted from https://codepen.io/Schepp/pen/WNbQByE */
-
-* {
-    --carousel-heading-size: 2rem;
-    --carousel-heading-margin-bottom: 2rem;
-    --carousel-button-font: 2rem;
-    --carousel-button-padding-y: 1rem;
-}
-
-#carousel-viewport-container {
-    /* Anchor. */
-    position: relative;
-}
-
-#carousel-viewport {
-    display: flex;
-    /* Scroll horizontally, but hide the scrollbar. */
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-}
-
-.carousel-column {
-    /* Show only 2 columns. */
-    flex: 0 0 50%;
-}
-
-.carousel-column h3 {
-    font-size: var(--carousel-heading-size);
-    margin-bottom: var(--carousel-heading-margin-bottom);
-}
-
-#prev, #refresh, #next {
-    width: fit-content;
-    line-height: 1;
-    font-size: var(--carousel-button-font);
-    user-select: none;
-    background: none;
-    padding-top: calc(var(--carousel-button-padding-y) / 2);
-    padding-bottom: calc(var(--carousel-button-padding-y) / 2);
-    margin: 0;
-    border: 0;
-    /* Go to anchor... */
-    position: absolute;
-    /* ...And be vertically centred outside of normal document flow. */
-    /* First line: get centre point of button. */
-    /* Second line: compensate for headings. */
-    bottom: calc(
-        0%
-        + (0% - var(--carousel-button-font) / 2) - (var(--carousel-button-padding-y) / 2)
-        + ((100% - var(--carousel-heading-size) - var(--carousel-heading-margin-bottom)) / 2)
-    );
-}
-
-#prev {
-    left: 0;
-}
-
-#refresh {
-    /* And also be horizontally centred outside of normal document flow. */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#next {
-    right: 0;
-}
-
-.carousel-nav {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 3.5rem;
-}
-
-.carousel-nav button {
-    font-size: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background-clip: content-box;
-    border: none;
-}
-
-.carousel-nav button.here {
-    background-image: none;
-}
-
-.carousel-nav button:hover,
-.carousel-nav button.here {
-    background-color: #333;
-    border: none;
-}
-
-/*                      */
-/* Wider-screen styles. */
-/*                      */
-
-@media only screen and (min-width: 50rem) {
-    #transitivity-row {
-        justify-content: space-evenly;
-    }
-
-    #intransitive, #transitive {
-        width: 30%;
-        border-radius: 5px;
-    }
+    justify-content: space-between;
 }
