@@ -1,16 +1,7 @@
-import react_htmr from "htmr";
-import { JSX, VNode } from "preact";
+import { JSX } from "preact";
+import { parse } from "preact-parser";
 import render_to_string from "preact-render-to-string";
 import type { JSX_Child, Replacer } from "./types";
-
-/* WORKAROUND */
-
-const htmr = (input: string) => {
-    // htmr deals in React.ReactNode
-    // Preact deals in VNode
-    // So we cast to VNode as that's what we mostly use.
-    return react_htmr(input) as VNode;
-}
 
 /* TYPES */
 
@@ -76,7 +67,7 @@ function make_replacements(
             if (keep_children_as_string) {
                 return replacer(...captured_strings);
             }
-            return replacer(...captured_strings.map((s) => s ? htmr(s) : s));
+            return replacer(...captured_strings.map((s) => s ? parse(s) : s));
         })();
         replacements.push({
             begin_index: match_array.index,
@@ -105,5 +96,5 @@ function replace_string_with_jsx(input: string, replacements: Replacement[]): JS
     if (last_index <= (input.length - 1)) {
         output += input.substring(last_index);
     }
-    return htmr(output);
+    return parse(output);
 }
