@@ -25,7 +25,7 @@ export default function markup_to_jsx_child(
     replacer: Replacer,
     keep_children_as_string: boolean = false,
 ) {
-    const string_input = jsx_children_to_string(input);
+    const string_input = typeof input === "string" ? input : render_to_string(input);
 
     // We use a separate regex to test whether we need to make_replacements().
     // This is because using regex.test() on a global regex advances its lastIndex
@@ -40,13 +40,6 @@ export default function markup_to_jsx_child(
         keep_children_as_string
     );
     return replace_string_with_jsx(string_input, replacements);
-}
-
-function jsx_children_to_string(input: JSX_Child): string {
-    if (typeof input === "string") {
-            return input;
-        }
-    return render_to_string(input);
 }
 
 function make_replacements(

@@ -82,11 +82,11 @@ function eberban_quote_kit(): Kit {
         },  
     };
     function content_kit(): Kit {
-        const as_one_link = (s: string) => "<" + s + ">";
         const simple_word_link = group(
             does_not_begin_with("!" + any_number_of(word_char)) +
             one_or_more(word_char)
         );  
+        const as_one_link = (s: string) => "<" + s + ">";
         const compound_word_link = as_one_link(group(
             fewest_positive_number_of(non_capturing_group(
                 one_or_more(word_char) + optional(space)
