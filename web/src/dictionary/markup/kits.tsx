@@ -36,6 +36,16 @@ type Kit = {
     replacer: Replacer,
 }
 
+// We're using preact-parser which suits our needs nearly perfectly. It's just
+// that single newlines are swallowed by default. So instead, we're replacing
+// them with spaces until this gets fixed:
+// https://github.com/jahilldev/preact-parser/issues
+function new_line_to_space_kit(): Kit {
+    return {
+        regex_string: group(line_feed),
+        replacer: () => <>{" "}</>,
+    }
+}
 
 function break_kit(): Kit {
     return {
@@ -132,6 +142,7 @@ function place_kit(): Kit {
 
 
 const markup_kits = [
+        new_line_to_space_kit,
         break_kit,
         bold_kit,
         italics_kit,
