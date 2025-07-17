@@ -80,10 +80,8 @@ function make_replacements(
 
 function replace_string_with_jsx(input: string, replacements: Replacement[]): JSX_Child {
     // Considered alternative: returning JSX_Child[].
-    // This doesn't work. We already need to have our input as string so that we
-    // can perform regex. This means we'll need to htmr() it again. htmr(),
-    // however, trims its string input. So if we pass it childs of a JSX_Child[],
-    // then we lose spaces on the rendered JSX.  
+    // This doesn't work because the spaces between string and JSX.Element are
+    // ignored.
     let output = "";
     let last_index = 0;
     for (const replacement of replacements) {
