@@ -43,11 +43,6 @@ function join_expr(n) {
     return s;
 }
 
-// Credit: https://web.archive.org/web/20090717035140if_/javascript.about.com/od/problemsolving/a/modulobug.htm
-export function mod(n, modulus) {
-    return ((n % modulus) + modulus) % modulus;
-}
-
 export function remove_spaces(tree) {
     if (tree.length > 0 && among(tree[0], ["spaces", "initial_spaces"])) return null;
     var i = 0;
