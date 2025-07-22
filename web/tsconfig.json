@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
