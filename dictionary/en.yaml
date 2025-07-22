@@ -4751,7 +4751,7 @@ psulo:
   gloss: center
   tags: ["space"]
   short: "[E:tca pan] is the center (average position) of [A:tce pan]."
-pani:
+pane:
   id: 6jp262xhb4
   family: "R"
   gloss: "inside"
@@ -4759,8 +4759,8 @@ pani:
   short: "[E:tce pan] is inside of [A:tce pan]."
   notes: |
     To speak about individual physical objects. To speak about an event occuring
-    in some location, use {epaniski}.
-pali:
+    in some location, use {epaneski}.
+pale:
   id: t27dz8wbr9
   family: "R"
   gloss: "outside"
@@ -4768,7 +4768,7 @@ pali:
   short: "[E:tce pan] is outside of [A:tce pan]."
   notes: |
     To speak about individual physical objects. To speak about an event occuring
-    in some location, use {epaliski}.
+    in some location, use {epaleski}.
 peni:
   id: t175fzkni1
   predilex_id: dequma{A,E}
@@ -6335,7 +6335,7 @@ e kalan sa:
   family: "C"
   gloss: "drinks"
   short: "[E:tce* pan] drinks [A:tce* pan]."
-e pani penu:
+e pane penu:
   id: 5l5ploryal
   predilex_id: fawito{A,E}
   family: "C"
@@ -6344,7 +6344,7 @@ e pani penu:
   notes: |
     [A] must be something that have clearly identified front-back direction and
     established middle-point (usually the center of mass).
-e pani pena:
+e pane pena:
   id: qf0g5dw7fq
   predilex_id: resuri{A,E}
   family: "C"
@@ -6353,7 +6353,7 @@ e pani pena:
   notes: |
     [A] must be something that have clearly identified front-back direction and
     established middle-point (usually the center of mass).
-e pani peno:
+e pane peno:
   id: i8zmc7teu4
   predilex_id: konase{A,E}
   family: "C"
@@ -6362,7 +6362,7 @@ e pani peno:
   notes: |
     [A] must be something that have clearly identified left-right direction and
     established middle-point (usually the center of mass).
-e pani pene:
+e pane pene:
   id: 1h0a4yvlln
   predilex_id: zukihi{A,E}
   family: "C"
@@ -6371,7 +6371,7 @@ e pani pene:
   notes: |
     [A] must be something that have clearly identified left-right direction and
     established middle-point (usually the center of mass).
-e pani peniu:
+e pane peniu:
   id: glg7ptsf4i
   predilex_id: nefune{A,E}
   family: "C"
@@ -6380,7 +6380,7 @@ e pani peniu:
   notes: |
     [A] must be something that have clearly identified top-bottom direction and
     established middle-point (usually the center of mass).
-e pani penie:
+e pane penie:
   id: i2p4fkz8u5
   predilex_id: wibupu{A,E}
   family: "C"
@@ -6522,7 +6522,7 @@ e blu se:
   notes: |
     It doesn't state anything about its items, and allows them to even be of different types,
     which {blu} doesn't allow.
-e pani ski:
+e pane ski:
   id: 5fsi11zwja
   predilex_id: soyenu
   family: "C"
@@ -6532,7 +6532,7 @@ e pani ski:
   notes: |
     The volumes of the entities involved in [A] must be fully contained within the volume
     of [E].
-e pali ski:
+e pale ski:
   id: w71x9r0797
   predilex_id: bavigo
   family: "C"
