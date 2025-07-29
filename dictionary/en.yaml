@@ -4755,6 +4755,20 @@ psulo:
   gloss: center
   tags: ["space"]
   short: "[E:tca pan] is the center (average position) of [A:tce pan]."
+cko:
+  id: yp4zlj70hh
+  family: "R"
+  gloss: "event-anchor-relation:"
+  tags: ["space"]
+  short: |
+    [A:()] occurs such that every physical entity involved in [A] satisfy relation [O:(tce pan,tce,pan)]
+    with [E:tce pan] (anchor).
+  notes: |
+    Can be used to use any spacial relation to restrict the location of an event.
+
+    {me espuactal cko vio pane fia mo etiansa meon}\
+    or shorter\
+    {me espuactal cko !vioia pane fia mo etiansa meon}\
 pane:
   id: 6jp262xhb4
   family: "R"
@@ -4762,8 +4776,9 @@ pane:
   tags: ["space"]
   short: "[E:tce pan] is inside of [A:tce pan]."
   notes: |
-    To speak about individual physical objects. To speak about an event occuring
-    in some location, use {epaneski}.
+    Used to speak about individual physical objects.
+    
+    To speak about an event occuring in some location, use {cko vio pane fia ...}.
 pale:
   id: t27dz8wbr9
   family: "R"
@@ -4771,8 +4786,9 @@ pale:
   tags: ["space"]
   short: "[E:tce pan] is outside of [A:tce pan]."
   notes: |
-    To speak about individual physical objects. To speak about an event occuring
-    in some location, use {epaleski}.
+    Used to speak about individual physical objects.
+    
+    To speak about an event occuring outside some location, use {cko vio pale fia ...}.
 peni:
   id: t175fzkni1
   predilex_id: dequma{A,E}
@@ -6526,26 +6542,6 @@ e blu se:
   notes: |
     It doesn't state anything about its items, and allows them to even be of different types,
     which {blu} doesn't allow.
-e pane ski:
-  id: 5fsi11zwja
-  predilex_id: soyenu
-  family: "C"
-  gloss: "inside:"
-  tags: ["space"]
-  short: "Inside of [E:tce pan], [A:()] occurs."
-  notes: |
-    The volumes of the entities involved in [A] must be fully contained within the volume
-    of [E].
-e pale ski:
-  id: w71x9r0797
-  predilex_id: bavigo
-  family: "C"
-  gloss: "outside:"
-  tags: ["space"]
-  short: "Outside of [E:tce pan], [A:()] occurs."
-  notes: |
-    The volumes of the entities involved in [A] must be fully contained within the inverse
-    of the volume of [E].
 e sfuer zguin:
   id: qlqy5bxoso
   family: "C"
