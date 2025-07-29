@@ -243,8 +243,14 @@ function renderParagraphs(text) {
 }
 
 function addDictionaryLinks(text) {
-	text = text.replaceAll(/&lt;(.+?)&gt;|(?<!!)([A-Za-z_]+)/g, '<a href="#$1$2">$1$2</a>');
-	text = text.replaceAll('!', '');
+	text = text.replaceAll(/&lt;(.+?)&gt;|([A-Za-z_!]+)/g, (match, p1, p2) => {
+		const content = p1 || p2;
+		if (content.startsWith("!")) {
+			return content.slice(1);
+		}
+		
+		return `<a href="#${content}">${content}</a>`
+	});
 
 	return text;
 }
