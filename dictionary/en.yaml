@@ -139,7 +139,9 @@ mao:
   predilex_id: kavuqo
   family: "MI"
   gloss: "nary-imply"
-  tags: [core, transitive]
+  tags: [core]
+  transitive: true
+  sharing: false
   short: "All arguments satisfy predicate [A:p] if they satisfy predicate [O:p] (default: always true)."
   definition: 𝜆c 𝜆e 𝜆A 𝜆O ∀x ∀y ... O(c,x,y,...) ⇒ A(c,x,y,...)
   notes: |
@@ -155,6 +157,7 @@ mae:
   short: "[E:(...)] is equivalent to [A:(p,...)] with first slot filled with [O:p]."
   definition: 𝜆c 𝜆E 𝜆A 𝜆o ∀x ∀y ... E(x,y,...) ⇔ A(o,x,y,...)
   transitive: true
+  sharing: false
   links:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
   see_also: ["eblumae"]
@@ -192,6 +195,7 @@ mua:
   short: True if context [E:ma] makes [A:()] true.
   definition: 𝜆c 𝜆e 𝜆A A(e)
   transitive: true
+  sharing: false
   notes: |
     Evaluate a proposition with a provided context instead of the implicit
     forwarded context.

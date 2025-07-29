@@ -6,7 +6,8 @@ const ignored = [ '_spelling', '_cardinal', '_number', 'i', 'e', 'u' ];
 const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words_biased);
 
 const tags_style = {
-	"transitive": "btn-info",
+	"transitive sharing": "btn-info",
+	"transitive equiv": "btn-warning",
 	"core": "btn-success",
 };
 
@@ -24,13 +25,23 @@ words_sorted.forEach((word) => {
 	// Detect transitive words.
 	let intransitive = false;
 	let transitive = false;
+	let sharing = true;
 
 	// TODO: Supports compounds transitivity inheritance and override
 	if (['R'].includes(entry.family)) {
+		console.log(word);
 		if (word.match(/^.*(n|r|l)$/g)) {
 			intransitive = true;
 		} else {
 			transitive = true;
+		}
+
+		if (transitive && word.length == 3) {
+			sharing = false;
+		}
+
+		if (transitive && word.slice(-1) == "i") {
+			sharing = false;
 		}
 	}
 
@@ -40,6 +51,10 @@ words_sorted.forEach((word) => {
 		} else {
 			intransitive = true;
 		}
+
+		if (entry.sharing == false) {
+			sharing = false;
+		}
 	}
 
 	if ((intransitive || transitive) && entry.tags == undefined)
@@ -47,8 +62,10 @@ words_sorted.forEach((word) => {
 	
 	if (intransitive) {
 		entry.tags.unshift("intransitive");
-	} else if (transitive) {
-		entry.tags.unshift("transitive");
+	} else if (transitive && sharing) {
+		entry.tags.unshift("transitive sharing");
+	} else if (transitive && !sharing) {
+		entry.tags.unshift("transitive equiv");
 	}
 
 	entry.html_output = html_word_entry(word, entry);
