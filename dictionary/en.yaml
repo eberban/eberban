@@ -6137,18 +6137,24 @@ e mi me:
   family: "C"
   gloss: "this"
   short: "[E:tce* pan] is this, something specific the speaker have in mind which is near the speaker."
+  notes: |
+    TODO: Should the "near" distance be left vague or be more precise like with {epseopane}?
 e mo me:
   id: yv0djrrsio
   predilex_id: fiyuje
   family: "C"
   gloss: "this"
   short: "[E:tce* pan] is that, something specific the speaker have in mind which is near the listener."
+  notes: |
+    TODO: Should the "near" distance be left vague or be more precise like with {epseopane}?
 e moe me:
   id: ffh43wbw7b
   predilex_id: wafajo
   family: "C"
   gloss: "that younder"
   short: "[E:tce* pan] is that younder, something specific the speaker have in mind which is neither near the speaker or the listener."
+  notes: |
+    TODO: Should the "near" distance be left vague or be more precise like with {epseopane}?
 e uiuro sfia:
   id: q15u6virsz
   predilex_id: cogane
@@ -6555,12 +6561,12 @@ e blu mae:
   see_also: ["mae"]
 e flur vahul:
   id: 91cvojysmg
-  family: "R"
+  family: "C"
   gloss: "plant-based milk"
   short: "[E:tce* pan] is plant-based milk made from plants satisfying [A:(tce pan)]."
 e caun vahul:
   id: qefotcaezf
-  family: "R"
+  family: "C"
   gloss: "plant-based milk"
   short: "[E:tce* pan] is milk that was produced by lactating animals satisfying [A:(tce pan)]."
 en tu pini guri:
@@ -6640,6 +6646,18 @@ en suhur guri se:
 
     If this word is not used in a space restricted context, it will be both spring and autumn at the
     same time.
+e pseo pane:
+  id: r8ei7d1riz
+  family: "C"
+  gloss: "inside-radius"
+  short: "[E:tce pan] is located at less than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
+  notes: |
+    Default value of [O] conveys meaning of "near"/"next to" for human-size day-to-day conversation.
+e pseo pale:
+  id: lq1uvzug5t
+  family: "C"
+  gloss: "outside-radius"
+  short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
     
 # Spelling
 _spelling:
