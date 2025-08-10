@@ -5532,19 +5532,14 @@ fluer:
     Current is considered significant if the fuild is moving at 0.1 m/s or more.
     TODO: What should be the formula from fluid speed to intensity in intensy mode ({stu})?.
     To speak about measured speed (in m/s for example), use {ckia}.
-guri:
+guren:
   id: 4n0llekfll
   family: "R"
   tags: ["time"]
   gloss: "season"
-  short: "[E:tce* man] is a season occuring during proposition [A:()]."
+  short: "[E:tce* ski] is an occurence of a season."
   notes: |
-    [E] can always be multiple seasons as there are multiple season systems. It
-    can be multiple seasons of the same season system if [A] occurs across season
-    boundaries.
-    Some season systems also depends on the location (north/south hemisphere).
-    See compounds of {guri} for the actual seasons and for more restrictive
-    categories.
+    See compounds of {guren} for the actual seasons and for more restrictive categories.
 
     TODO: What is a season in general? Is it possible to define without enumerating all seasons from
     all season systems?
@@ -6569,83 +6564,71 @@ e caun vahul:
   family: "C"
   gloss: "plant-based milk"
   short: "[E:tce* pan] is milk that was produced by lactating animals satisfying [A:(tce pan)]."
-en tu pini guri:
+en tu pini guren:
   id: fpqty9e5c6
   family: "C"
   tags: ["time"]
   gloss: "meteorological season"
-  short: "[E:tce* man] is a meteorological season (winter/spring/summer/autumn) occuring during proposition [A:()]."
+  short: "[E:tce* ski] is a meteorological season (winter/spring/summer/autumn)."
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
-  see_also: ["enmlielguri e", "ensahargurise", "enmlialgurise", "ensuhurgurise"]
-en mliel guri se:
+  see_also: ["emlielguren", "esaharguren", "emlialguren", "esuhurguren"]
+e mliel guren:
   id: dci7ddkc8v
   predilex_id: wibica
   family: "C"
   tags: ["time"]
   gloss: "winter"
-  short: "Now is winter season."
+  short: "[E:tce* ski] is a winter season."
   notes: |
     Uses the meteorological seasons definition, which begins on the first day of the month that
     include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
     as seasons are swapped between north and south hemisphere.
 
-    - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).
+    - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
     - In south hemisphere, spans from June 1 to August 31.
-
-    If this word is not used in a space restricted context, it will be both winter and summer at the
-    same time.
-en sahar guri se:
+e sahar guren:
   id: bnpo8nb1px
   predilex_id: yogufi
   family: "C"
   tags: ["time"]
   gloss: "spring"
-  short: "Now is spring season."
+  short: "[E:tce* ski] is a spring season."
   notes: |
     Uses the meteorological seasons definition, which begins on the first day of the month that
     include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
     as seasons are swapped between north and south hemisphere.
 
-    - In north hemisphere, spans from March 1 to May 31.
+    - In north hemisphere, spans from March 1 to May 31.\
     - In south hemisphere, spans from Septembre 1 to November 30.
-
-    If this word is not used in a space restricted context, it will be both spring and autumn at the
-    same time.
-en mlial guri se:
+e mlial guren:
   id: eebgcxilaa
   predilex_id: yinudi
   family: "C"
   tags: ["time"]
   gloss: "summer"
-  short: "Now is summer season."
+  short: "[E:tce* ski] is a summer season."
   notes: |
     Uses the meteorological seasons definition, which begins on the first day of the month that
     include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
     as seasons are swapped between north and south hemisphere.
 
-    - In north hemisphere, spans from June 1 to August 31.
+    - In north hemisphere, spans from June 1 to August 31.\
     - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
-
-    If this word is not used in a space restricted context, it will be both winter and summer at the
-    same time.
-en suhur guri se:
+e suhur guren:
   id: fdg4wm00j7
   predilex_id: huzade
   family: "C"
   tags: ["time"]
   gloss: "autumn"
-  short: "Now is autumn season."
+  short: "[E:tce* ski] is an autumn season."
   notes: |
     Uses the meteorological seasons definition, which begins on the first day of the month that
     include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
     as seasons are swapped between north and south hemisphere.
 
-    - In north hemisphere, spans from Septembre 1 to November 30.
+    - In north hemisphere, spans from Septembre 1 to November 30.\
     - In south hemisphere, spans from March 1 to May 31.
-
-    If this word is not used in a space restricted context, it will be both spring and autumn at the
-    same time.
 e pseo pane:
   id: r8ei7d1riz
   family: "C"
