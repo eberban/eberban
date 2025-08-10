@@ -6243,6 +6243,7 @@ e blu jnuhi:
   gloss: "increasing-order:"
   short: |
     [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
+  see_also: ["eblujnihi", "entcublujnuhi", "entcublujnihi"]
 e blu jnihi:
   id: 2ivqr4ouem
   predilex_id: ruzori
@@ -6250,6 +6251,24 @@ e blu jnihi:
   gloss: "decreasing-order:"
   short: |
     [E:blu p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
+  see_also: ["eblujnehi", "entcublujnuhi", "entcublujnihi"]
+en tcu blu jnuhi:
+  id: jk9v121j7v
+  family: "C"
+  gloss: "all-increasing-ordered:"
+  short: |
+    [E:blu p] is the list of all things that satisfy measuring relation [A:(tce gan,tca p)], ordered from smallest to largest.
+  notes: |
+    Can be used to rank all things satisfying a property using a single relation [A], instead of manually constructing a list
+    from a {tcu} and then ordering it with {blu jnuhi}.
+  see_also: ["eblujnihi", "eblujnehi", "entcublujnihi"]
+en tcu blu jnihi:
+  id: oe7dbtrqpk
+  family: "C"
+  gloss: "all-decreasing-ordered:"
+  short: |
+    [E:blu p] is the list of all things that satisfy measuring relation [A:(tce gan,tca p)], ordered from largest to smallest.
+  see_also: ["eblujnihi", "eblujnehi", "entcublujnuhi"]
 e ban sa:
   id: cvbgy6pdjn
   family: "C"
