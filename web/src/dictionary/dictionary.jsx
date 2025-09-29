@@ -24,6 +24,7 @@ words_sorted.forEach((word) => {
 	// Detect transitive words.
 	let intransitive = false;
 	let transitive = false;
+	let sharing = true;
 
 	// TODO: Supports compounds transitivity inheritance and override
 	if (['R'].includes(entry.family)) {
@@ -34,11 +35,23 @@ words_sorted.forEach((word) => {
 		}
 	}
 
+	if (transitive && word.length == 3) {
+		sharing = false;
+	}
+
+	if (transitive && word.slice(-1) == "i") {
+		sharing = false;
+	}
+
 	if (entry.family == "MI") {
 		if (entry.transitive == true) {
 			transitive = true;
 		} else {
 			intransitive = true;
+		}
+
+		if (entry.sharing == false) {
+			sharing = false;
 		}
 	}
 
@@ -47,8 +60,10 @@ words_sorted.forEach((word) => {
 	
 	if (intransitive) {
 		entry.tags.unshift("intransitive");
-	} else if (transitive) {
-		entry.tags.unshift("transitive");
+	} else if (transitive && sharing) {
+		entry.tags.unshift("transitive sharing");
+	} else if (transitive && !sharing) {
+		entry.tags.unshift("transitive equiv");
 	}
 
 	entry.preact_string = format_preact_string(entry, word);

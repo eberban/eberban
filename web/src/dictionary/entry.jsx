@@ -72,8 +72,9 @@ function Tags({ tags }) {
     }
     const extra_class = (tag) => {
         return {
-            transitive: "btn-info",
-            core: "btn-success",
+            "transitive sharing": "btn-info",
+            "transitive equiv": "btn-warning",
+            "core": "btn-success",
         }[tag] ?? ""
     };
     return (
