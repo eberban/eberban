@@ -1,4 +1,6 @@
+import { parse } from "preact-parser";
 import { render } from "preact";
+import render_to_string from "preact-render-to-string";
 
 import dictionary from "../../../dictionary/en.yaml";
 import { compare_words, compare_words_biased  } from "./compare_words";
@@ -49,7 +51,7 @@ words_sorted.forEach((word) => {
 		entry.tags.unshift("transitive");
 	}
 
-	entry.react_vars = html_word_entry(word, entry);
+	entry.preact_string = format_preact_string(entry, word);
 });
 
 const spelling_words_sorted = Object.keys(dictionary["_spelling"]).sort(compare_words);
@@ -72,7 +74,7 @@ spelling_words_sorted.forEach((word) => {
 
 	entry.links.push(["icon-book", "Quotes", "https://eberban.github.io/eberban/books/refgram/book/grammar/quotes.html"]);
 
-	entry.react_vars = html_word_entry(word, entry);
+	entry.preact_string = format_preact_string(entry, word);
 });
 
 export function count_word_types() {
@@ -89,20 +91,25 @@ export function count_word_types() {
 	return { roots, particles, compounds };
 }
 
-function html_word_entry(word, entry) {
-	return {
-		extra_css_class: entry.extra_css_class,
-		word,
-		family: entry.family,
-		gloss: entry.gloss,
-		short: entry.short,
-		notes: entry.notes,
-		see_also: entry.see_also,
-		tags: entry.tags,
-		links: entry.links,
-		definition: entry.definition,
-		id: entry.id,
-	}
+function format_preact_string(entry, word) {
+	return ( 
+		render_to_string(
+			<Entry
+				key={entry.id}
+				extra_css_class={entry.extra_css_class}
+				word={word}
+				family={entry.family}
+				gloss={entry.gloss}
+				short={entry.short}
+				notes={entry.notes}
+				see_also={entry.see_also}
+				tags={entry.tags}
+				links={entry.links}
+				definition={entry.definition}
+				id={entry.id}
+			/>
+		)
+	);
 }
 
 function may_insert_entry(results, filters, word, entry) {
@@ -169,11 +176,11 @@ function may_insert_entry(results, filters, word, entry) {
 
 	if (exact_match) {
 		// Exact match => first entry
-		// output = entry.react_vars + output;
-		results.unshift(entry.react_vars);
+		// output = entry.preact_string + output;
+		results.unshift(entry.preact_string);
 	} else {
-		// output += entry.react_vars
-		results.push(entry.react_vars);
+		// output += entry.preact_string
+		results.push(entry.preact_string);
 	}
 }
 
@@ -201,10 +208,10 @@ export function html_dictionary(filters) {
 function EntryList({ list }) {
     return (
         <>
-            <div id="search-stats">
-                {list.length} results found.
-            </div>
-            {list.map((e) => <Entry {...e} />)}
+        	<div id="search-stats">
+          		{list.length} results found.
+          </div>
+        	{list.map((str) => parse(str))}
         </>
     );
-}
+	}
