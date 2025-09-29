@@ -3544,7 +3544,7 @@ dena:
     and we're not speaking about a specific day in the Gregorian calendar,
     [E] is a subset of all possible durations of a day.
 denai:
-  id: lvhzpvgj4z
+  id: hlxvt9w4ga
   family: "R"
   gloss: "day (event)"
   short: "Now is the day [E:tce gien] (default: 0) of [A:()] (default: {garei})."
@@ -3563,7 +3563,7 @@ sura:
     and we're not speaking about a specific hour in the Gregorian calendar,
     [E] is a subset of all possible durations of an hour.
 surai:
-  id: lvhzpvgj4z
+  id: csqvyaljot
   family: "R"
   gloss: "hour (event)"
   short: "Now is the hour [E:tce gien] of [A:()] (default: {denai})."
@@ -3578,7 +3578,7 @@ jero:
   short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
   tags: [time, unit, minute]
 jeroi:
-  id: lvhzpvgj4z
+  id: l5u3vuf9yc
   family: "R"
   gloss: "minute (event)"
   short: "Now is the minute [E:tce gien] of [A:()] (default: {surai})"
@@ -6462,7 +6462,7 @@ e kine ctal:
   gloss: "school"
   short: "[E:tce* pan] is a school/educational building."
 e spua ctal:
-  id: wlqy92kdaz
+  id: urxuw8ethp
   predilex_id: detume
   family: "C"
   gloss: "residential building"
