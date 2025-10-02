@@ -1102,7 +1102,8 @@ bi:
   tags: [core, negation]
   short: "Wide scope negation ranging over existential variables and predicates."
   links:
-    - ["icon-book", "Predicate transformations - Negations", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations]
+    # Quoting the "?"-containing URL so check_word_ids.sh can parse this file
+    - ["icon-book", "Predicate transformations - Negations", "https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations"] 
 bo:
   id: 9eludeaq4v
   family: "BO"

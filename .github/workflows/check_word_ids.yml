@@ -1,0 +1,27 @@
+name: Check dictionary IDs are unique
+
+on:
+  push:
+    paths:
+      - dictionary/en.yaml
+  pull_request:
+    paths:
+      - dictionary/en.yaml   
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Install NPM dependencies for the dictionary scripts
+        run: |
+          cd dictionary
+          npm install
+          cd ..
+
+      - name: Check dictionary IDs are unique
+        run: |
+          node dictionary/check_word_ids.js dictionary/en.yaml
