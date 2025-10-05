@@ -50,7 +50,7 @@
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 5:
-  id: xlftdvdomw
+  id: jxgthvv20z
   family: "TI"
   gloss: "tie"
   tags: [number, digit, informal]
@@ -59,7 +59,7 @@
   links:
     - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 6:
-  id: 3xu1e18wct
+  id: clpqjeyf1b
   family: "TI"
   gloss: "tia"
   tags: [number, digit, informal]
@@ -150,7 +150,7 @@ mao:
   links:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
 mae:
-  id: xlftdvdomw
+  id: k9n5jsy7np
   family: "MI"
   gloss: "partial-appl:"
   tags: [core]
@@ -481,7 +481,7 @@ fie:
   links:
     - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
 fia:
-  id: v47til8m74
+  id: 0uktfjuhwa
   family: "FI"
   gloss: "]A=["
   tags: [core]
@@ -1016,7 +1016,7 @@ onu:
 #   links:
 #     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 an:
-  id: v47til8m74
+  id: zkukmnzdxs
   family: "A"
   gloss: "#update-context"
   tags: [core, context]
@@ -1324,7 +1324,7 @@ jei:
   links:
     - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
 ti:
-  id: 3xu1e18wct
+  id: ivcpysqf4j
   family: "TI"
   short: "Digit 0"
   gloss: "0"
@@ -1594,7 +1594,7 @@ al:
   links:
     - ["icon-book", "Sentences - A family", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#a-family]
 o:
-  id: 3xu1e18wct
+  id: ici1wrui6g
   family: "O"
   gloss: "#question"
   short: "Start a question definition, the arguments being the unknown informations."
@@ -3933,7 +3933,7 @@ tsir:
   gloss: "bed"
   short: "[E:tce* pan] is a bed."
 gzian:
-  id: 3xu1e18wct
+  id: jhnc5nvbrz
   family: "R"
   gloss: "showers"
   short: "[E:tce* pan] showers in substance [A:tce pan] (default: water)."
@@ -6914,7 +6914,7 @@ _spelling:
     short: |
       {ce}: \\ (backslash) symbol.
   sla: 
-    id: 3xu1e18wct
+    id: iohrkvpgou
     gloss: "|"
     tags: ["symbol"]
     short: |
@@ -6932,7 +6932,7 @@ _spelling:
     short: |
       {ce}: ? (question mark) symbol.
   gli: 
-    id: 3xu1e18wct
+    id: nkbk8lcocf
     gloss: "UPPERCASE:"
     tags: ["case"]
     short: |
