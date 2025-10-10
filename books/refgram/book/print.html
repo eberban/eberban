@@ -1,0 +1,1862 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Eberban Reference Grammar</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="res/leipzig.min.css">
+        <link rel="stylesheet" href="res/style.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Morphonology</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="morphonology/morphology.html"><strong aria-hidden="true">2.1.</strong> Morphology</a></li><li class="chapter-item expanded "><a href="morphonology/phonology.html"><strong aria-hidden="true">2.2.</strong> Phonology</a></li></ol></li><li class="chapter-item expanded "><a href="logic/intro.html"><strong aria-hidden="true">3.</strong> Logic framework</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="logic/chaining.html"><strong aria-hidden="true">3.1.</strong> Chaining</a></li><li class="chapter-item expanded "><a href="logic/explicit_binding.html"><strong aria-hidden="true">3.2.</strong> Explicit binding (VI/FI/SI/PE/KI/GI/BA)</a></li><li class="chapter-item expanded "><a href="logic/sentences.html"><strong aria-hidden="true">3.3.</strong> Sentences (A/O/NI/RA/RI/PO)</a></li><li class="chapter-item expanded "><a href="logic/primitives.html"><strong aria-hidden="true">3.4.</strong> Logical primitives (MI)</a></li><li class="chapter-item expanded "><a href="logic/transformations.html"><strong aria-hidden="true">3.5.</strong> Predicate transformations (ZI/BI)</a></li><li class="chapter-item expanded "><a href="logic/default.html"><strong aria-hidden="true">3.6.</strong> Default arguments</a></li></ol></li><li class="chapter-item expanded "><a href="dictionary_conventions.html"><strong aria-hidden="true">4.</strong> Dictionary conventions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Additional grammar</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="grammar/discourse.html"><strong aria-hidden="true">5.1.</strong> Discourse predicates (MI)</a></li><li class="chapter-item expanded "><a href="grammar/borrowings.html"><strong aria-hidden="true">5.2.</strong> Borrowings (u-)</a></li><li class="chapter-item expanded "><a href="grammar/compounds.html"><strong aria-hidden="true">5.3.</strong> Compounds (e-)</a></li><li class="chapter-item expanded "><a href="grammar/quotes.html"><strong aria-hidden="true">5.4.</strong> Quotes (c-)</a></li><li class="chapter-item expanded "><a href="grammar/enum.html"><strong aria-hidden="true">5.5.</strong> Enumeration (PE/BU)</a></li><li class="chapter-item expanded "><a href="grammar/adverbs.html"><strong aria-hidden="true">5.6.</strong> Adverbs and prepositions (voi/foi)</a></li><li class="chapter-item expanded "><a href="grammar/numbers.html"><strong aria-hidden="true">5.7.</strong> Numbers (TI/j-)</a></li><li class="chapter-item expanded "><a href="grammar/annotations.html"><strong aria-hidden="true">5.8.</strong> Annotations (d-)</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Vocabulary design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="vocabulary/guidelines.html"><strong aria-hidden="true">6.1.</strong> Guidelines</a></li><li class="chapter-item expanded "><a href="vocabulary/event_tenses.html"><strong aria-hidden="true">6.2.</strong> Event and tenses</a></li><li class="chapter-item expanded "><a href="vocabulary/calendar_time.html"><strong aria-hidden="true">6.3.</strong> Calendar and time</a></li><li class="chapter-item expanded "><a href="vocabulary/colors.html"><strong aria-hidden="true">6.4.</strong> Colors</a></li></ol></li><li class="chapter-item expanded "><a href="writing/intro.html"><strong aria-hidden="true">7.</strong> Writing systems</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="writing/linear.html"><strong aria-hidden="true">7.1.</strong> Linear writing system</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Planar writing system</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Eberban Reference Grammar</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/eberban/eberban" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>Eberban</strong> is a <a href="https://en.wikipedia.org/wiki/Engineered_language#Logical_languages">logical</a> <a href="https://en.wikipedia.org/wiki/Constructed_language">constructed language</a> aimed to satisfy the
+following goals :</p>
+<ul>
+<li><strong>being simple :</strong> the Eberban grammar allows manipulating predicates with
+particles in a way that is close to the <a href="https://en.wikipedia.org/wiki/Higher-order_logic">higher-order logic</a> it translates
+into, while abstracting away the verbosity of explicitly providing variables
+as arguments of predicates.</li>
+<li><strong>being regular :</strong> valid sentences are syntactically unambiguous. Most
+grammar rules rely on particles which are organised into families, each
+starting with a unique prefix. Many additional patterns are shared between
+particles and predicate words to help with learning groups of related words.</li>
+<li><strong>being expressive :</strong> the grammar and core vocabulary focus on providing a
+simple framework, on top of which can be built abstractions, complex concepts
+and tools. Since those are built into Eberban itself, users can create their
+own tools and abstractions to express entirely new concepts.</li>
+</ul>
+<p><strong>Eberban</strong> takes inspiration from <a href="https://mw.lojban.org/papri/Lojban">Lojban</a> and other logical languages, but
+tries novel approaches to satisfy the above goals.</p>
+<p>Most resources are hosted on <a href="https://eberban.github.io/eberban/">GitHub pages</a>, such as :</p>
+<ul>
+<li>parsers, which transform text into a tree structure, that can also be
+visualized as nested boxes.</li>
+<li>a dictionary to search words and their definitions.</li>
+<li>learning resources to discover the language grammar and concepts.</li>
+</ul>
+<p>If you would like to get involved, please also consider joining our
+<a href="https://discord.com/invite/KKB79RwWUc">Discord server</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="morphology"><a class="header" href="#morphology">Morphology</a></h1>
+<p>The morphology of Eberban is composed of 16 consonants (<strong>n, r, l, m, p, b, f, v, t, d, s, z, c, j,
+g, k</strong>), five vowels (<strong>i, e, a, o, u</strong>) the letter <strong>h</strong>, the hyphen <strong>-</strong> and the quotation marks
+<strong>[</strong> and <strong>]</strong>, for a total of 25 symbols. Among the consonants, <strong>n</strong>, <strong>r</strong> and <strong>l</strong> are
+designated as (alveolar) <strong>sonorants</strong>, and play an important role in Eberban’s morphology. The
+alphabetical order is <code>hnrlmpbfvtdszcjkgieaou</code>. The same letter appearing multiple times in a row is
+considered identical to the letter not being repeated, but can informally be used in written media
+to convey length of sounds in speech. Any other character is considered a space, and quotation marks
+are also considered a space outside of foreign quotes syntax (explained later).</p>
+<p>Strings of multiple vowels and <strong>h</strong> appear a lot in Eberban’s morphology, and thus are coined
+<strong>vhowels</strong> in this book. Note that in <strong>vhowels</strong>, <strong>h</strong> can only appear between two vowels.</p>
+<p>Words are usually written separated by spaces, however this is not mandatory. Spaces are only
+mandatory before words starting with a <strong>vowel</strong> or a <strong>sonorant</strong>.</p>
+<p>Eberban text is usually written all lowercase (outside of foreign text quotes), but uppercase can
+informally be used in written media to convey volume (such as yelling). No punctuation symbol is
+used but informally punctuation from other languages can be used as long as the proper Eberban
+grammar is also used. <code>.</code> is commonly used to visually join two words that must have space between
+them, while one or many <code>.</code> surrounded by spaces usually convey a longer pause in speach. Hyphen can
+be used at syllable boundary to make them stand-out without breaking the word in two, and also allows
+a word to continue on the next line.</p>
+<h2 id="word-types"><a class="header" href="#word-types">Word types</a></h2>
+<h3 id="particles"><a class="header" href="#particles">Particles</a></h3>
+<p><strong>Particles</strong> are words exerting grammatical functions. They can either:</p>
+<ul>
+<li>start with a single <em>non-sonorant consonant</em>, followed only by <em>vhowels</em>, like <strong>zi</strong>,
+<strong>mio</strong> or <strong>tiho</strong>.</li>
+<li>start with a <em>sonorant</em> or <em>vowels</em>, and be a string of <em>vhowels</em> and <em>sonorants</em>. They can end
+either with a <em>vowel</em> or <em>sonorant</em>. Exemples: <strong>a</strong>, <strong>on</strong>, <strong>ahu</strong> or <strong>nu</strong>.</li>
+</ul>
+<p>Particles are themselves categorized into <strong>families</strong> having identical grammar
+but different meanings. Those families are usually designated using a particle in capital letters
+(like <strong>MI</strong> or <strong>VEI</strong>), which is by convention the first particle in this family in alphabetical
+order.</p>
+<p>All other words are <strong>predicate words</strong> and express intrinsic meanings, such as “cat”, “language” or
+“teach”. They are grouped into the following categories :</p>
+<h3 id="roots"><a class="header" href="#roots">Roots</a></h3>
+<p><strong>Roots</strong> are the building blocks of the language and express meanings that would be hard or too
+long to convey otherwise. They can either:</p>
+<ul>
+<li>start with a single <em>non-sonorant consonant</em> followed by a mix of <em>vhowels</em> and at least one
+<em>sonorant</em>, <em>medial consonant pair</em> or <em>consonant triplet</em>, like <strong>ban</strong>, <strong>mana</strong>, <strong>cuina</strong> or
+<strong>marne</strong>.</li>
+<li>start with a valid <em>initial consonant pair</em> followed by a mix of <em>vhowels</em> and any number of
+<em>sonorants</em>, <em>medial consonant pairs</em>  or <em>consonant triplet</em> (even none), like <strong>bju</strong>, <strong>cpena</strong>
+or <strong>djin</strong>.</li>
+</ul>
+<p>A <em>consonant triplet</em> is a string of 3 consonants C1C2C3 such that C1C2 is a medial pair <strong>and</strong>
+C2C3 is an initial pair.</p>
+<p>A <em>sonorant</em> can appear only between two <em>vowels</em> or at the end of the root, while a medial pair or
+consonant triplet can appear only between two <em>vowels</em>, but not at the end.</p>
+<p>The following chart shows <strong>initial pairs</strong> in light blue, <strong>medial pairs</strong> in pink, and invalid
+pairs in dark gray (with a short explanation for why they are invalid):</p>
+<p><img src="morphonology/chart-pairs.png" alt="Chart of valid initial and medial pairs" /></p>
+<h3 id="borrowings"><a class="header" href="#borrowings">Borrowings</a></h3>
+<p><strong>Borrowings</strong> allow importing foreign words or names. They are prefixed by the vowel <strong>u</strong>, and
+have more relaxed rules about consonants than native Eberban words: </p>
+<ul>
+<li><em>Initial pairs</em> can also appear in the middle of the word.</li>
+<li><em>Medial pairs</em> can also appear initially as they can be easily uttered after borrowing prefix
+<strong>u</strong></li>
+<li><em>Sonorant</em> + <em>consonant</em> also counts as a consonant pair and doesn’t break into 2 words.</li>
+<li><em>Sonorant</em> + <em>initial pair</em> also counts as a consonant triplet and doesn’t break into 2 words.</li>
+</ul>
+<p>After the <strong>u</strong>  prefix the borrowing can start by a vowel, a single consonant, a initial or medial
+consonant pair, a consonant triplet or <strong>h</strong>. If this first letter is a <strong>u</strong> it must be prefixed
+with a <strong>’</strong> to separate it from the the prefix.</p>
+<p>Borrowings must end with a <em>vowel</em>, or a <em>vowel</em> followed by a single <em>consonant</em> (not only
+<em>sonorants</em>). In written media, borrowings must be followed by space(s), which is realized in speech
+by pausing after the borrowing to properly separate it from the following word.</p>
+<p>Similarly, the initial <strong>u</strong> must be preceded by space(s), and realized orally as either a pause or
+a glottal stop.</p>
+<h3 id="freeform-variables"><a class="header" href="#freeform-variables">Freeform variables</a></h3>
+<p><strong>Freeform variables</strong> allow speakers to define their own predicates with less morphological
+restrictions than with roots or dedicated particles. They follow the same morphology as <em>borrowings</em>
+but use the <strong>i</strong> prefix instead of <strong>u</strong>.</p>
+<h3 id="compounds"><a class="header" href="#compounds">Compounds</a></h3>
+<p><strong>Compounds</strong> allow making new words from multiple other kind of words. They start with either
+<strong>e</strong>, <strong>en</strong> or <strong>er</strong> and follow the same rule as the <strong>u</strong> of borrowings. Their structure will be
+detailed <a href="morphonology/../grammar/compounds.html">later in this book</a>.</p>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<p>With spaces : <em>a za ualis zue gali spie ebansa eberban</em><br />
+With mandatory spaces only : <em>aza.ualis.zuegalispie.ebansa.eberban</em><br />
+Meaning: Alice is happy to speak in Eberban.</p>
+<p>Particles : <em>a</em>, <em>za</em>, <em>zue</em><br />
+Borrowing : <em>ualis</em><br />
+Freeform variable: <em>ibar</em> (not present in exemple)<br />
+Root : <em>gali</em>, <em>spie</em><br />
+Compounds : <em>ebansa</em>, <em>eberban</em></p>
+<h3 id="reasoning"><a class="header" href="#reasoning">Reasoning</a></h3>
+<p>Outside of borrowings and assignable names, encountering a <em>non-sonorant consonant</em> or a pause means
+it is the end of a word; unless it the first letter of a <em>medial consonant pair</em> which cannot be
+misunderstood for the start of a new word. Spaces prevent words starting with a <em>vowel</em> or
+<em>sonorant</em> to “merge” into the previous words.</p>
+<p>These simple rules prevent any ambiguity of word boundaries, which is called a <strong>Self-Segregating
+Morphology</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="phonology"><a class="header" href="#phonology">Phonology</a></h1>
+<table><thead><tr><th>Letter</th><th>IPA</th><th>Description</th><th>Audio</th></tr></thead><tbody>
+<tr><td>h</td><td>[h]</td><td>a glottal aspirant</td><td><audiobtn>01_h</audiobtn></td></tr>
+<tr><td>n</td><td>[n], [ŋ]</td><td>a dental or velar nasal</td><td><audiobtn>02_n</audiobtn></td></tr>
+<tr><td>r</td><td>[ɣ] [ʁ] ([r], [ʀ])</td><td>a velar or uvular fricative (alveolar or uvular trills are also accepted)</td><td><audiobtn>03_r</audiobtn> <audiobtn>03_r_french</audiobtn> <audiobtn>03_r_spanish</audiobtn> <audiobtn>03_r_alt</audiobtn></td></tr>
+<tr><td>l</td><td>[l]</td><td>a lateral approximant</td><td><audiobtn>04_l</audiobtn></td></tr>
+<tr><td> </td><td></td><td></td><td></td></tr>
+<tr><td>m</td><td>[m]</td><td>a bilabial nasal</td><td><audiobtn>05_m</audiobtn></td></tr>
+<tr><td>p</td><td>[p]</td><td>an unvoiced bilabial stop</td><td><audiobtn>06_p</audiobtn></td></tr>
+<tr><td>b</td><td>[b]</td><td>a voiced bilabial stop</td><td><audiobtn>07_b</audiobtn></td></tr>
+<tr><td>f</td><td>[f]</td><td>an unvoiced labiodental fricative</td><td><audiobtn>08_f</audiobtn></td></tr>
+<tr><td>v</td><td>[v]</td><td>a voiced labiodental fricative</td><td><audiobtn>09_v</audiobtn></td></tr>
+<tr><td>t</td><td>[t]</td><td>an unvoiced dental/alveolar stop</td><td><audiobtn>10_t</audiobtn></td></tr>
+<tr><td>d</td><td>[d]</td><td>a voiced dental/alveolar stop</td><td><audiobtn>11_d</audiobtn></td></tr>
+<tr><td>s</td><td>[s]</td><td>an unvoiced alveolar sibilant</td><td><audiobtn>12_s</audiobtn></td></tr>
+<tr><td>z</td><td>[z]</td><td>a voiced alveolar sibilant</td><td><audiobtn>13_z</audiobtn></td></tr>
+<tr><td>c</td><td>[ʃ], [ʂ]</td><td>an unvoiced coronal sibilant</td><td><audiobtn>14_c</audiobtn> <audiobtn>14_c2</audiobtn></td></tr>
+<tr><td>j</td><td>[ʒ], [ʐ]</td><td>a voiced coronal sibilant</td><td><audiobtn>15_j</audiobtn> <audiobtn>15_j2</audiobtn></td></tr>
+<tr><td>k</td><td>[k]</td><td>an unvoiced velar stop</td><td><audiobtn>16_k</audiobtn></td></tr>
+<tr><td>g</td><td>[ɡ]</td><td>a voiced velar stop</td><td><audiobtn>17_g</audiobtn></td></tr>
+<tr><td> </td><td></td><td></td><td></td></tr>
+<tr><td>i</td><td>[i]</td><td>a front close vowel</td><td><audiobtn>18_i</audiobtn></td></tr>
+<tr><td>e</td><td>[ɛ], [e]</td><td>a front mid vowel</td><td><audiobtn>19_e</audiobtn> <audiobtn>19_e2</audiobtn></td></tr>
+<tr><td>a</td><td>[a], [ɑ]</td><td>an open vowel</td><td><audiobtn>20_a</audiobtn> <audiobtn>20_a2</audiobtn></td></tr>
+<tr><td>o</td><td>[o], [ɔ]</td><td>a back mid vowel</td><td><audiobtn>21_o</audiobtn> <audiobtn>21_o2</audiobtn></td></tr>
+<tr><td>u</td><td>[u]</td><td>a back close vowel</td><td><audiobtn>22_u</audiobtn></td></tr>
+</tbody></table>
+<p>At the start of a <strong>vowel</strong> or <strong>sonorant</strong> initial word, it is mandatory to
+make a pause or utter a glottal stop [ʔ] <audiobtn>23_stop</audiobtn>.</p>
+<p>Consecutive vowels are separated by hiatuses, but glides like
+[j] <audiobtn>glide_y</audiobtn> and [w] <audiobtn>glide_w</audiobtn>
+are allowed respectively alongside or instead of [i] and [u].</p>
+<p>Where spaces are allowed, a speaker or writter can express hesitation by using
+one or more of the letter <strong>n</strong> surrounded by spaces, which is realized as [n̩].</p>
+<p>In speech, the schwa sound [ə] can be used in between consonants of a pair if
+the speaker has trouble uttering the pair as-is. It has no written equivalent.</p>
+<p>Quotation marks <strong>[</strong> and <strong>]</strong>, when used for foreign quotes grammar, are both realized
+as a palatal click ([ǂ] <audiobtn>24_quote_fronter</audiobtn> <audiobtn>24_quote_centre</audiobtn>) which distingly marks the start and end of a quote.</p>
+<h2 id="example-1"><a class="header" href="#example-1">Example</a></h2>
+<p>Sentence : <em>a za ualis zue gali spie nnnn ebansa eberban</em><br />
+Pronounciation : [ʔa za ʔualis zue ɡali spie .. n̩ː .. ʔebansa ʔeberban]</p>
+<blockquote>
+<p>Big thanks to <em>zuna</em> for the recordings!</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logic-framework"><a class="header" href="#logic-framework">Logic framework</a></h1>
+<p>Eberban is based on a custom <strong><a href="https://en.wikipedia.org/wiki/Higher-order_logic">Higher-order Logic (HOL)</a></strong> and tries to stay
+pretty close to expressions in such logic while being targeted for human speech.</p>
+<p>Eberban grammar allows the speaker to manipulate <strong>predicates</strong>. They are
+functions that take <strong>arguments</strong> as input and output a <strong>truth value</strong> which
+can be <strong>true</strong>, <strong>false</strong> or <strong>unknown/undefined</strong>. They are introduced by
+<strong>predicate words</strong> or created from other predicates using Eberban grammar.</p>
+<p>Arguments are not filled using <strong>predicate words</strong> directly and there is no
+word that directly represents them. Instead some <strong>particles</strong> allow the speaker
+to select which arguments are going to be used for various operations on 
+<strong>predicates</strong>, such as connecting them with each other. Arguments are typed, 
+and can either represent <strong>predicates</strong> or non-predicates which are called
+<strong>atoms</strong>.</p>
+<p>The first of these arguments is handled automatically by the grammar and is
+called the <strong>context argument</strong>. It is used to carry information between
+predicates without verbosity for speakers to implement things, such as tenses.</p>
+<p>Other arguments are represented using the vowels <strong>e, a, o, u</strong> in this order.
+They are used in definitions but also in some families of particles related to
+argument selection. They are called <strong>explicit arguments</strong> (to exclude the
+<em>implicit</em> context argument), and we call <strong>arity</strong> (N-ary) the number of
+<strong>explicit arguments</strong>.</p>
+<p>Here is an exemple of a simple predicate :</p>
+<blockquote>
+<p><strong>mian</strong></p>
+<p>\[ \text{mian}(c,e) = \text{[$e$ is a cat in context $c$]} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a cat in context $(c).</p>
+<p>$(c) and $(e) are arguments that will be provided when used in a sentence.</p>
+</blockquote>
+<blockquote>
+<p>In future explanations we’ll omit the context argument outside of logical
+notation to be shorter, unless the context argument is the focus of the
+explanation.</p>
+</blockquote>
+<p>Any <strong>predicate word</strong> not yet defined in the dictionnary or by the speaker
+return <strong>unknown/undefined</strong> for any arguments.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chaining"><a class="header" href="#chaining">Chaining</a></h1>
+<p>When two predicates are strung one after the other they form a new predicate,
+which has the same arguments as the left predicate.</p>
+<p>Every predicate has a default <strong>chaining behavior</strong> which dictates how two
+predicates are connected together. If the left predicate has <strong>intransitive
+behavior</strong>, then its <strong>E</strong> place will interact with the right predicate.
+Otherwise if the left predicate has <strong>transitive behavior</strong>, then the <strong>A</strong>
+place is used.</p>
+<blockquote>
+<p>For <strong>root words</strong>, they have <strong>transitive behavior</strong> if they end with a
+<strong>vowel</strong>, while they have <strong>intransitive behavior</strong> if they end with <strong>n, r
+or l</strong>.</p>
+<p>This place can expect either an atom/generic, or a predicate. As this can
+greatly impact the structure of sentences, this is encoded in <strong>root words</strong>
+with the following rules:</p>
+<ul>
+<li>if the root is a form <strong>CCV</strong>, the A place is a predicate place.</li>
+<li>if the root ends with an <strong>-i</strong>, the A place is a predicate place.</li>
+<li>otherwise the place is an atom/generic place.</li>
+<li>an intransitive root shouldn’t have a E predicate place, as it will be chained
+to as if it was an atom/generic place. If a predicate have a
+single predicate place, it should be transitive with a single A predicate place.
+A predicate with many predicate places can have a E predicate place but it
+must be transitive.</li>
+</ul>
+<p>Particles acting as predicates have different rules which will be explained
+later.</p>
+<p>When chaining predicates the new predicate inherits the <strong>chaining behavior</strong>
+of the left predicate.</p>
+</blockquote>
+<h2 id="atom-argument-chaining"><a class="header" href="#atom-argument-chaining">Atom argument chaining</a></h2>
+<p>If the chaining argument is an <strong>atom</strong> argument, then the variable filling this
+argument also fills the <strong>E</strong> argument of the right predicate. The
+<strong>context argument</strong> is automatically shared between left and right predicates.</p>
+<blockquote>
+<p><strong>mian blan</strong></p>
+<p>\[ \begin{align}
+\text{mian}(c,e)   &amp;= \text{[$e$ is a cat]} \\
+\text{blan}(c,e)   &amp;= \text{[$e$ is beautiful]} \\
+\ \\
+\text{blan}_1(c,e) &amp;= \text{blan}(c,e) \\
+\ \\
+\text{mian}_1(c,e) &amp;= \text{mian}(c,e) \wedge \text{blan}_1(c,\color{magenta}{e})
+\end{align} \]</p>
+<p>Given $(c),$(e):<br />
+$(e) is a cat and is beautiful.</p>
+</blockquote>
+<p>If the right predicate has more than one explicit argument, then it is wrapped
+in a predicate having only one explicit argument and every other argument is
+filled with <strong>existential variables</strong>. The process of wrapping the predicate and
+creating <strong>existential variables</strong> to have the correct arity is called
+<strong>arity mismatch resolution</strong> and it is a key aspect of Eberban grammar to
+reduce verbosity in simple cases.</p>
+<blockquote>
+<p><strong>mian bure</strong></p>
+<p>\[ \begin{align}
+\text{etiansa}(c,e,a)                    &amp;= \text{[$e$ eats $a$]} \\
+\ \\
+\text{etiansa}_1(c,e,a)                  &amp;= \text{etiansa}(c,e,a) \\
+\color{magenta}{\text{etiansa}^w_1(c,e)} &amp;= \color{magenta}{\exists a. \text{etiansa}_1(c,e,a)} \\
+\ \\
+\text{mian}_1(c,e) &amp;= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e)
+\end{align} \]</p>
+<p>Given $(c),$(e):<br />
+$(e) is a cat and there exists an $(a) such that $(e) eats $(a).<br />
+$(e) is a cat that eats something.</p>
+</blockquote>
+<h2 id="predicate-argument-chaining"><a class="header" href="#predicate-argument-chaining">Predicate argument chaining</a></h2>
+<p>If the chaining argument is a <strong>predicate argument</strong>, then the right predicate
+is stated to be equivalent to the predicate represented by the argument. If the
+<strong>predicate argument</strong> and right predicate don’t match in arity, then the
+<strong>arity mismatch resolution</strong> is performed. The right predicate is not stated as
+is, and will be <em>instantiated</em> by the left predicate (according to its
+definition). The right predicate is able to be <em>instantiated</em> multiple times and
+with any (correctly typed) arguments, and with a different <em>context argument</em>.</p>
+<blockquote>
+<p><strong>tce mian</strong></p>
+<p>\[ \begin{align}
+\text{tce}(c,e,A)   &amp;= \text{[$e$ is a set of things that satisfies $A$ (1-ary)]} \\
+\ \\
+\text{mian}_1(c,e)  &amp;= \text{mian}(c,e) \\
+\ \\
+\text{tce}_1(c,e,A) &amp;= tce(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{mian}_1}
+\end{align} \]</p>
+<p>Given $(c), $(e), $(A):<br />
+$(e) is a set of things that satisfies $(A), and $(A) is equivalent to
+<em>mian</em>.<br />
+$(e) is a set/group of cats.</p>
+</blockquote>
+<blockquote>
+<p><strong>gli mian</strong></p>
+<p>\[ \begin{align}
+\text{gali}(c,e,A)   &amp;= \text{[$e$ is happy about $A$ (0-ary) being true]} \\
+\ \\
+\text{mian}_1(c,e)  &amp;= \text{mian}(c,e) \\
+\text{mian}^w_1(c)  &amp;= \exists e. \text{mian}_1(c,e) \\
+\ \\
+\text{gali}_1(c,e,A) &amp;= gali(c,e,A) \wedge A \Leftrightarrow \text{mian}^w_1
+\end{align} \]</p>
+<p>Given $(c), $(e), $(A):<br />
+$(e) is happy about $(A) being true, and $(A) is equivalent to
+\(\text{mian}^w_1\).<br />
+$(e) is happy that there exist a cat.</p>
+</blockquote>
+<h2 id="longer-chains"><a class="header" href="#longer-chains">Longer chains</a></h2>
+<p>When more than two predicates are strung one after the other they are chained in
+right-grouping order (<code>A (B (C D))</code>).</p>
+<blockquote>
+<p><strong>mi dona tcu mian</strong></p>
+<p>\[ \begin{align}
+\text{mi}(c,e)       &amp;= \text{[$e$ is a speaker]} \\
+\text{dona}(c,e,a)   &amp;= \text{[$e$ likes $a$]} \\
+\text{tcu}(c,e,A)    &amp;= \text{[$e$ is the set of all things that satisfy $A$ (1-ary)]} \\
+\ \\
+\text{mian}_1(c,e)   &amp;= \text{mian}(c,e) \\
+\ \\
+\text{tcu}_1(c,e,A)  &amp;= \text{tcu}(c,e,A) \wedge A \Leftrightarrow \text{mian}_1 \\
+\text{tcu}^w_1(c,e)  &amp;= \exists A. \text{tcu}_1(c,e,A) \\
+\ \\
+\text{dona}_1(c,e,a) &amp;= \text{dona}(c,e,a) \wedge \text{tcu}^w_1(c,a) \\
+\text{dona}^w_1(c,e) &amp;= \exists a. \text{dona}_1(c,e,a) \\
+\ \\
+\text{mi}_1(c,e)     &amp;= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e)
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a speaker who likes all cats.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="explicit-binding-vifisipekigiba"><a class="header" href="#explicit-binding-vifisipekigiba">Explicit binding (VI/FI/SI/PE/KI/GI/BA)</a></h1>
+<h2 id="left-atom-place-selection"><a class="header" href="#left-atom-place-selection">Left atom place selection</a></h2>
+<p>When the speaker wants to interact with an argument that normal chaining doesn’t
+select (due to transitivity, or because they want to interact with O or U
+arguments), it is possible to attach additional bindings using the <strong>VI</strong> family
+of particles after a predicate, followed by another (chain of) predicate(s),
+which is closed by the <strong>vei</strong> particle to return to the previously seen
+chaining behavior.</p>
+<blockquote>
+<p><strong>vei</strong> is the only member of family <strong>VEI</strong>, and not a member of <strong>VI</strong>.</p>
+</blockquote>
+<p><strong>ve, va, vo, vu</strong> allow binding atom (or generic) arguments :</p>
+<blockquote>
+<p><strong>mi duna [vo mo vei] meon</strong></p>
+<p>\[ \begin{align}
+\text{mi}(c,e)         &amp;= \text{[$e$ is a speaker]} \\
+\text{duna}(c,e,a,o)   &amp;= \text{[$e$ gives $a$ to $o$]} \\
+\text{mo}(c,e)         &amp;= \text{[$e$ is a listener]} \\
+\text{meon}(c,e)       &amp;= \text{[$e$ is an apple]} \\
+\ \\
+\text{mo}_1(c,e)       &amp;= \text{mo}(c,e) \\
+\text{meon}_1(c,e)     &amp;= \text{meon}(c,e) \\
+\ \\
+\text{duna}_1(c,e,a,o) &amp;= \text{duna}(c,e,a,o) \color{magenta}{\wedge \text{mo}_1(c,o)} \wedge \text{meon}_1(c,a) \\
+\text{duna}^w_1(c,e)   &amp;= \exists a \exists o. \text{duna}_1(c,e,a,o) \\
+\ \\
+\text{mi}_1(c,e)       &amp;= \text{mi}(c,e) \wedge \text{duna}^w_1(c,e) \\
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a speaker who gives an apple to a listener.</p>
+</blockquote>
+<p>To bind more than one argument of the same predicate we have to use the <strong>FI</strong>
+family, which interacts with the same predicate as the last non-closed <strong>VI</strong>.</p>
+<p>The <strong>FI</strong> family follows the same pattern of vowels as <strong>VI</strong>.
+The above sentence can thus be rewritten as <code>duna [ve mi, fo mo vei] meon</code> or
+even as <code>duna [ve mi, fo mo, fa meon vei]</code>. <strong>FI</strong> have additional members:
+<strong>feu</strong> to bind the same place as the previous <strong>FI</strong> or <strong>VI</strong> in the chain,
+while <strong>fau</strong> binds the next place (this allows bind places of a predicate
+having more than 4 slots, which should however be rare).</p>
+<p>In the last exemple it is possible to omit the final <strong>vei</strong>. It is, however,
+not possible to do so in the previous exemples as we would get the chain
+<code>mo meon</code> which is not what we want.</p>
+<h2 id="arguments-list"><a class="header" href="#arguments-list">Arguments list</a></h2>
+<p>Between <strong>VI/FI</strong> and the inner predicate an <strong>arguments list</strong> can be provided
+by having zero or more <strong>KI/GI/BA</strong> terminated with <strong>be</strong>, in which case the
+bindings will occur with those arguments instead of the arguments of the
+predicate after <strong>be</strong>.</p>
+<p><strong>KI</strong> (all particles starting with <em>k-</em>) represent an atom or generic argument
+$(x) and have meaning \(ki(c,e) = [\text{$e$ is variable $x$}]\).</p>
+<p><strong>GI</strong> (all particles starting with <em>g-</em>), however, represents a predicate whose
+arity and type will be inferred from its usage in the sentence. All <strong>GI</strong>
+starting with <strong>gi-</strong> have <strong>intransitive sharing behavior</strong>, while the others starting
+with <strong>ge/ga/go/gu-</strong> have <strong>transitive behavior</strong>. For transitive <strong>GI</strong>,
+chaining to a <strong>GI</strong> ending with <strong>-i</strong> will be done <strong>by equivalence</strong>, otherwise
+by <strong>sharing</strong> (like the final <strong>-i</strong> rule for roots).</p>
+<p>Any <strong>BA</strong> used in the argument list allow skipping this argument if it is not
+used in the inner predicate. Which <strong>BA</strong> member is used doesn’t matter.</p>
+<blockquote>
+<p><strong>mi dona [va ke be: mian etiansa ke]</strong></p>
+<p>\[ \begin{align}
+\text{mian}(c,e)       &amp;= \text{[$e$ is a cat]} \\
+\text{etiansa}(c,e,a)     &amp;= \text{[$e$ eats $a$]} \\
+\ \\
+\text{etiansa}_1(c,e,a)   &amp;= \text{etiansa}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,a)} \\
+\text{etiansa}^w_1(c,e)   &amp;= \exists a. \text{etiansa}_1(c,e,a) \\
+\ \\
+\text{mian}_1(c,e)     &amp;= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\
+\text{mian}^w_1(c)     &amp;= \exists e. \text{mian}_1(c,e) \\
+\ \\
+\text{va}_1(c,e)       &amp;= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}^w_1(c) \\
+\ \\
+\text{dona}_1(c,e,a)   &amp;= \text{dona}(c,e,a) \wedge \text{va}_1(c,a) \\
+\text{dona}^w_1(c,e)   &amp;= \exists a. \text{dona}_1(c,e,a) \\
+\ \\
+\text{mi}_1(c,e)       &amp;= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a speaker who likes [something eaten by a cat].</p>
+</blockquote>
+<p><strong>BA</strong> can also be used outside of the argument list, which adds an argument at
+the end of the list and uses it directly. <strong>ba</strong> declares an atom/generic
+argument (like a KI), <strong>bahi</strong> a transitivite predicate argument (like a
+gi-initial GI), and <strong>bahe</strong> an intransitive predicate argument (like a non
+gi-initial GI). <strong>bai</strong>, <strong>baihi</strong> and <strong>baihe</strong> on the other hand always adds
+an argument at the end of the <strong>sentence arguments list</strong>, which is mostly
+useful when asking questions.</p>
+<p>The above example can thus be shortened as <em>mi dona [va be mian etiansa <strong>ba</strong>]</em>.</p>
+<h2 id="right-place-and-chaining-selection"><a class="header" href="#right-place-and-chaining-selection">Right place and chaining selection</a></h2>
+<p>When it is only needed to bind one or two places of a predicate, using <strong>VI/FI</strong>
+and multiple lists of multiple arguments quickly becomes verbose. For that
+reason, predicates can be prefixed with particles of family <strong>SI</strong> (all
+particles starting with <em>s-</em>), which override the chaining behavior.</p>
+<p><strong>se, sa, so, su</strong> select the place corresponding to its vowel both for the
+argument bound with a predicate on its right, and for the single argument that
+is exposed in the combined predicate. The right place is bound by sharing, while
+adding a final <strong>-i</strong> makes it bound by equivalence.</p>
+<blockquote>
+<p><strong>mian se etiansa blan</strong></p>
+<p>\[ \begin{align}
+\text{blan}(c,e)                       &amp;= \text{[$e$ is beautiful]} \\
+\ \\
+\text{blan}_1(c,e)                     &amp;= \text{blan}(c,e) \\
+\ \\
+\text{etiansa}_1(c,e,a)                   &amp;= \text{etiansa}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\
+\text{etiansa}^w_1(c,\color{magenta}{e})  &amp;= \exists a. \text{etiansa}_1(c,e,a) \\
+\ \\
+\text{mian}_1(c,e)                     &amp;= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a cat that eats something, and $(e) is beautiful.</p>
+</blockquote>
+<p><strong>SI</strong> particles with two vowels (except <strong>i</strong>) allow to select both, the two
+vowels representing the two exposed place, and the second vowel corresponding to
+the slot bound with a predicate on its right. As with single vowel the right place
+is bound by sharing, while adding a final <strong>-i</strong> makes it bound by equivalence.</p>
+<blockquote>
+<p><strong>meon sae etiansa mian</strong></p>
+<p>\[ \begin{align}
+\text{mian}_1(c,e)                    &amp;= \text{mian}(c,e) \\
+\ \\
+\text{etiansa}_1(c,e,a)                  &amp;= \text{etiansa}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\
+\text{etiansa}^w_1(c,\color{magenta}{a}) &amp;= \exists e. \text{etiansa}_1(c,e,a) \\
+\ \\
+\text{meon}_1(c,e)                    &amp;= \text{meon}(c,e) \wedge \text{etiansa}^w_1(c,e) \\
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is an apple which is eaten by a cat.</p>
+</blockquote>
+<p><strong>SI</strong> particles follow a more general pattern to support more slots and usages:</p>
+<ul>
+<li><strong>si</strong> followed by a single vowel makes the predicate “transparent” by
+re-exposing all the places of the predicate on its right, which is bound to
+the slot corresponding to the vowel used. This is mostly useful with predicates
+having a proposition (0-ary) place, such that the predicates before and after
+can be bound together “across” the predicate with the proposition place.</li>
+<li>Otherwise, <strong>SI</strong> particles are composed of an <strong>s</strong> followed either by
+one or many <strong>e/a/o/u</strong> or a single <strong>i</strong>, which can optionally be followed
+by <strong>h</strong> followed by a single <strong>e/a/o/u</strong>. The one or many <strong>e/a/o/u</strong> lists
+the slots of the predicate to expose, while a single <strong>i</strong> exposes none.
+The <strong>h</strong> followed by a single <strong>e/a/o/u</strong> selects the slot bound with a
+predicate on the right. When absent, the last <strong>e/a/o/u</strong> is used instead.
+Final <strong>-i</strong> encodes if the place is bound with sharing or equivalence.</li>
+</ul>
+<blockquote>
+<p>Exemples :</p>
+<ul>
+<li>sia: Transparent A</li>
+<li>sea: Expose E and A, chain to A with sharing</li>
+<li>seho: Expose E only, chain to O with sharing</li>
+<li>saeoi: Expose A, E and O (in this order), chain to O with equivalence.</li>
+</ul>
+</blockquote>
+<h2 id="left-predicate-place-selection"><a class="header" href="#left-predicate-place-selection">Left predicate place selection</a></h2>
+<p>Using <strong>ve, va, vo, vu</strong> on a predicate argument will not provide its
+definition but instead share it like an atom argument with the following
+predicate. The bound place must have the same predicate argument type however.
+To provide a definition of the predicate argument the particles <strong>vie, via, vio,
+viu</strong> (and <strong>FI</strong> equivalents) must be used. <strong>FI</strong> have again additional members:
+<strong>fei</strong> to bind the same place as the previous <strong>FI</strong> or <strong>VI</strong> in the chain,
+while <strong>fai</strong> binds the next place.</p>
+<p>If we take the example <code>tce mian</code> from the previous chapter it is equivalent to
+<code>tce via mian</code>. Sharing with <strong>ve, va, …</strong> can be used like so:</p>
+<blockquote>
+<p><strong>mi katmi [va sae tuli mo]</strong></p>
+<p>\[ \begin{align}
+\text{katmi}(c,e,A)               &amp;= \text{[$e$ wants $A$ (0-ary) to be true]} \\
+\text{tuli}(c,e,A)                &amp;= \text{[$e$ needs $A$ (0-ary) to be true]} \\
+\text{mo}(c,e)                    &amp;= \text{[$e$ is a listener]} \\
+\ \\
+\text{mo}_1(c,e)                  &amp;= \text{mo}(c,e) \\
+\ \\
+\text{tuli}_1(c,e,A)              &amp;= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\
+\text{tuli}^w_1(c,A)              &amp;= \exists e. \text{tuli}_1(c,e,A) \\
+\ \\
+\text{katmi}_1(c,e,A)             &amp;= \text{katmi}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\
+\text{katmi}^w_1(c,e)             &amp;= \exists A. \text{katmi}_1(c,e,A) \\
+\ \\
+\text{mi}_1(c,e)                  &amp;= \text{mi}(c,e) \wedge \text{katmi}^w_1(c,e) \\
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a speaker who wants some proposition (which is needed to be true by a listener) is true.</p>
+</blockquote>
+<p>While using <strong>via</strong>, it has a different meaning :</p>
+<blockquote>
+<p><strong>mi katmi [via sae tuli mo]</strong></p>
+<p>\[ \begin{align}
+\text{mo}_1(c,e)                  &amp;= \text{mo}(c,e) \\
+\ \\
+\text{tuli}_1(c,e,A)              &amp;= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\
+\text{tuli}^w_1(c)                &amp;= \exists e. \exists A. \text{tuli}_1(c,e,A) \\
+\ \\
+\text{katmi}_1(c,e,A)             &amp;= \text{katmi}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\
+\text{katmi}^w_1(c,e)             &amp;= \exists A. \text{katmi}_1(c,e,A) \\
+\ \\
+\text{mi}_1(c,e)                  &amp;= \text{mi}(c,e) \wedge \text{katmi}^w_1(c,e) \\
+\end{align} \]</p>
+<p>Given $(c), $(e):<br />
+$(e) is a speaker who wants that [some truth is needed by a listener] is true.</p>
+</blockquote>
+<h2 id="brackets"><a class="header" href="#brackets">Brackets</a></h2>
+<p><strong>pe</strong> and <strong>pei</strong> are like spoken brackets that wrap a predicate or chain of
+predicates to define a new one, and have higher priority than chaining : <code>A B pe C D pei E F</code> will be chained in order <code>A (B ([C D] (E F)))</code> instead of <code>A (B (C (D (E F))))</code>. <strong>pe</strong> can also be followed by an argument list to define the
+arguments of this new predicate.</p>
+<p>Using <strong>VI/FI/SI</strong> is often preferred and more simple than using <strong>pe</strong> and
+<strong>pei</strong>, but in some cases it is not possible. Those cases will be presented in
+later chapters.</p>
+<h2 id="multi-places-vi"><a class="header" href="#multi-places-vi">Multi-places VI</a></h2>
+<p><strong>VI</strong> family extends to particle having multiple <strong>EAOU</strong> vowels, each optionaly
+preceeded by a <strong>I</strong>. Each non-final <strong>EAOU</strong> will bind a single predicate from
+the following chain, while the last vowel binds the rest.</p>
+<ul>
+<li><em>mi dona vao: mo, meon</em>: I give you an apple.</li>
+<li><em>mi kelo vaio: za ubob, sae coriu vihon</em>: I’m thanksfull to Bob that I own a car.</li>
+<li><em>drie veao: mi, meon, e uiuro sfia jo ta</em>: I buy apple(s) for 0.2 EUR (total).</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sentences-aoniraripo"><a class="header" href="#sentences-aoniraripo">Sentences (A/O/NI/RA/RI/PO)</a></h1>
+<p>Eberban sentences all start with particles in families <strong>A</strong>, <strong>O</strong> or <strong>NI</strong>, which are
+respectively all particles which start with <strong>a-</strong>, <strong>o-</strong> and <strong>n-</strong>. They are followed by a
+combination of these elements:</p>
+<ul>
+<li>a <strong>definable word</strong>: a root, compound, <strong>GI</strong> and i-variable (optionally namespaced, see <strong>ohi</strong>
+explanation below).</li>
+<li>an <strong>inner predicate</strong>, which is a <strong>predicate chain</strong> optionally prefixed by an <strong>argument
+list</strong>.</li>
+</ul>
+<p><strong>A</strong>, <strong>O</strong> and <strong>NI</strong> differ in what is expected after them:</p>
+<ul>
+<li><strong>A</strong> must be followed by an <strong>inner predicate</strong>.</li>
+<li><strong>NI</strong> must be followed by a <strong>definable word</strong>.</li>
+<li><strong>O</strong> must be followed by a <strong>definable word</strong> then an <strong>inner predicate</strong>.</li>
+</ul>
+<p>If the first sentence of a paragraph doesn’t start with <strong>A/O/NI</strong>, then it is implicitly a <strong>a</strong>
+sentence.</p>
+<h2 id="a-family"><a class="header" href="#a-family">A family</a></h2>
+<ul>
+<li>
+<p><strong>a</strong> (assertion): <strong>a</strong> allows the speaker to make an assertion of a proposition (0-ary
+predicate).</p>
+</li>
+<li>
+<p><strong>an</strong> (context update): The context argument of the predicate wrapped with <strong>a</strong> is filled with a
+globally managed context variable that can be updated using <strong>an</strong>. <strong>an</strong> wraps a 1-ary predicate
+that takes as its parameter the new context, which can thus be constrained in terms of the current
+implicit context argument. The vocabulary contains many predicates designed to easily be used with
+<strong>an</strong> to provide many important concepts, such as tenses.</p>
+</li>
+<li>
+<p><strong>al</strong> (injunction): <strong>al</strong> allows the speaker to make a request/order/command.</p>
+</li>
+</ul>
+<blockquote>
+<p>All <strong>A</strong> particles except <strong>an</strong> get their meaning from their associated compound <strong>e A sai</strong>
+(<strong>e a sai</strong> for <strong>a</strong>, <strong>e al sai</strong> for <strong>al</strong>, …). This allows to easily add new sentence
+starters similar to speech acts in other languages.</p>
+<p><strong>e A ze</strong> can be used to state again the content of the last <strong>A</strong> sentence. </p>
+</blockquote>
+<h2 id="o-family"><a class="header" href="#o-family">O family</a></h2>
+<ul>
+<li>
+<p><strong>o</strong> (question): <strong>o</strong> allows the speaker to ask a question by defining a predicate to be used by
+the interlocutors. This predicate must then be used in reply.</p>
+<p>A 0-ary predicate prompts the listener to assert it is true (a gi), that it is false (a bi/zi gi),
+or that it is unknown (mui). (TODO: Add an easy way to state the <strong>answer</strong> to the question is
+unknown / gi equivalent to mui).</p>
+<p>Similarly, a higher arity predicate prompts the listener to provide the required arguments to make
+the predicate true, to negate it if there are no such arguments, or to assert that it is unknown.</p>
+</li>
+<li>
+<p><strong>on</strong> (definition): <strong>on</strong> allows the speaker to assign a definition to a word, and is an
+important tool to create the vocabulary of Eberban and avoid repetitions.</p>
+<p>It can also be used by speakers to simplify complex sentences by defining part of it using <strong>on</strong>,
+then using the defined predicate(s) in a <strong>a</strong> sentence.</p>
+<p>Note that the definition doesn’t use the global context argument, and instead uses the context
+argument provided by the sentence using this predicate.</p>
+</li>
+<li>
+<p><strong>oni</strong> (capturing definition): Same as <strong>on</strong> but captures the current global context. The
+implicit context argument is ignored.</p>
+</li>
+<li>
+<p><strong>onu</strong> (performative / axiom definition): Shorthand of defining a predicate using <strong>on</strong> then
+enabling it as an axiom with <strong>nu</strong>. Can be used as an equivalent to a <a href="https://en.wikipedia.org/wiki/Performativity">performative</a> speech act
+in natural language.</p>
+</li>
+<li>
+<p><strong>ohi</strong> (imports): Imports definitions and enabled axioms from eberban quote in slot <strong>E</strong> under
+the <strong>namespace</strong> represented by the “defined predicate” following <strong>ohi</strong>. Predicates in
+namespaces can be used by prefixing them with the namespace predicate followed by <strong>PI</strong> (with
+single member <strong>pi</strong>) If word <strong>ga</strong> is imported in <strong>namespace</strong> <strong>gi</strong> (using <code>ohi gi &lt;quote defining ga&gt;</code>), then it can be used with <code>gi pi ga</code>.</p>
+</li>
+<li>
+<p><strong>oie/oia/oio/oiu</strong> (set defaults): Set the default binding for a slot of the given predicate. See
+<a href="logic/default.html">the chapter on defaults</a></p>
+</li>
+</ul>
+<h2 id="ni-family"><a class="header" href="#ni-family">NI family</a></h2>
+<ul>
+<li>
+<p><strong>nu</strong> (enable axiom): Considers the provided <em>definable word</em> as an axiom, a proposition that is
+true by definition, and which is evaluated within the current global context.</p>
+<p>Redefining this word will not change the enabled axiom, however enabling it again using <strong>nu</strong>
+will disable the previous one and enable the new one.</p>
+</li>
+<li>
+<p><strong>ni</strong> (disable axiom): Disable an axiom previously enabled with <strong>nu</strong>. </p>
+</li>
+<li>
+<p><strong>nohu</strong>: enable all axioms in given namespace.</p>
+</li>
+<li>
+<p><strong>nohi</strong>: disable all axioms in given namespace.</p>
+</li>
+<li>
+<p><strong>no</strong>: extract a predicate from its namespace to put it in the root namespace. Equivalent to
+<code>on &lt;pred&gt; &lt;namespace&gt; pi &lt;pred&gt;</code></p>
+</li>
+<li>
+<p><strong>noi</strong>: extract all predicates from given namespace. <code>noi &lt;namespace&gt;</code> is equivalent to saying
+<code>no &lt;namespace&gt; pi &lt;pred&gt;</code> for all <code>&lt;pred&gt;</code> in <code>&lt;namespace&gt;</code>.</p>
+</li>
+</ul>
+<h2 id="ra-and-ri-erasers"><a class="header" href="#ra-and-ri-erasers">RA and RI erasers</a></h2>
+<p><strong>ra</strong> is a special word which erase anything said since the start of the current sentence, initial
+<strong>A/O/NI</strong> included. It must be surrounded by spaces or pauses.</p>
+<p>It is able to erase it even if the text is ungrammatical, and will erase anything back to the start
+of the last sentence where the text was still grammatical (this means that an ungrammatical sentence
+followed by grammatically-looking sentences actually just counts as a single ungrammatical
+sentence).</p>
+<p>However one must be careful with <a href="logic/../grammar/quotes.html">foreign quotes</a>. If the text was grammatical
+until now, a <strong>ra</strong> appearing inside the foreign quote will be quoted and will not erase the
+sentence. However if the sentence was ungrammatical, then <strong>ra</strong> will erase the sentence even if it
+looks like it is inside a foreign quote. To avoid this issue, it is recommended to properlly close
+the foreign quote (as if the text was grammatical), so that <strong>ra</strong> will properly erase the
+sentence regardless of if the sentence was grammatical or not.</p>
+<blockquote>
+<p><strong>Exemple :</strong> <em>a sune <del>a not eberban text ra</del> a sunu</em></p>
+</blockquote>
+<p>To erase only a part of a sentence, <strong>RI</strong> can be used to erase the content of the current chain (it
+must still be grammatical). If used inside a scope like <strong>VI/PE/..</strong> and more needs to be erased,
+the chain must be made valid again (by adding a dummy <strong>ma</strong> for exemple), the scope needs to be
+closed (with <strong>VEI/PEI/..</strong>), and then <strong>RI</strong> can be used again.</p>
+<p><strong>VI/PE/..</strong> can thus also be used as a marker when you think you may make a mistake.</p>
+<blockquote>
+<p><strong>Exemple :</strong> <em>a mi pe <del>buri meon ri</del> etiansa meon</em></p>
+</blockquote>
+<h2 id="paragraph-marker-po"><a class="header" href="#paragraph-marker-po">Paragraph marker PO</a></h2>
+<p><strong>PO</strong> can be placed before <strong>A/O/NI</strong> to mark a change of subject or
+new paragraph. If <strong>PO</strong> is not followed by one of them then <strong>a</strong> is implied.
+If multiple prefixes in a row are used it must be the first of them.</p>
+<p><strong>PO</strong> contains 2 members <strong>po</strong> and <strong>poi</strong>, which affects definitions involving namespaces:</p>
+<ul>
+<li>Inside a text imported with <strong>ohi</strong>, <strong>po</strong> marks the following definitions as <strong>public</strong>, meaning
+they’ll be accessible in the namespace using <strong>PI</strong>. <strong>poi</strong> on the other end marks the following
+definitions as <strong>private</strong>, making them inaccessible in the namespace. This allows to hide
+implementation details.</li>
+<li>Outside a text imported with <strong>ohi</strong>, predicates defined in a namespace will not be exported
+by <strong>noi</strong> if defined in a <strong>poi</strong> paragraph, while they will be exported if defined in a <strong>po</strong>
+paragraph. In both cases they are accessible with <strong>PI</strong>.</li>
+</ul>
+<h2 id="conversations-and-special-namespaces"><a class="header" href="#conversations-and-special-namespaces">Conversations and special namespaces</a></h2>
+<p>In a conversion between multiple interlocutors, the following rules applies:</p>
+<ul>
+<li>the context is carried between the sentences of all interlocutors, in order of utturance</li>
+<li>a context transformation is applied when changing speaker to update personal pronouns and related
+concepts (TODO: create word for it and define how it works)</li>
+<li>definitions made by an interlocutor applies to all. All interlocutors shares the same word
+meanings in the <em>root namespace</em>.</li>
+</ul>
+<p><strong>MI</strong> is used for special namespaces than can be used but not modified freely by the speakers, and
+allows mitigating problems that can be caused by the above rules (like an interlocutor redefining
+a word another wants to use for its former meaning).</p>
+<ul>
+<li><strong>mio</strong> (inclusive we) namespace contains all the words defined in the official dictionnary. It
+can be used to access a word that has been overwritten by any interlocutor’s definition.</li>
+<li><strong>mi</strong> (speaker) namespace contains all the words from <strong>mio</strong>, but is modified by any definitions
+made by the speaker; and is not modified by definitions made by other interlocutors.</li>
+<li><strong>mo</strong> (interlocutor) namespace contains all the words from <strong>mio</strong>, but is modified by any
+definitions made by interlocutors; and is not modified by definitions made by the speaker.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logical-primitives-mi"><a class="header" href="#logical-primitives-mi">Logical primitives (MI)</a></h1>
+<p>Particles of family <strong>MI</strong> (all particles starting with <em>m-</em>) act as predicate
+words, and some of them are defined directly in logical notation with the goal
+to express logical primitives that the grammar itself don’t cover.</p>
+<p>\[ \begin{align}
+\text{ma}(c,e)      &amp;= \text{is-atom}(e) \\
+\text{mai}(c,e)     &amp;= \top \\
+\text{mae}(c,E,A,o)   &amp;= \forall x_0 \dots \forall x_n. \ E(c,x_0,\dots,x_n) \Leftrightarrow A(c,o,x_0,\dots,x_n) \\
+\text{mao}(c,e,A,O)   &amp;= \forall x_0 \dots \forall x_n. \ O(c,x_0,\dots,x_n) \Rightarrow A(c,x_0,\dots,x_n) \\
+\text{mui}(c)       &amp;= \text{unknown} \\
+\text{mue}(c,e)     &amp;= c = e \\
+\text{mua}(c,e,A)   &amp;= A(e) \\
+\end{align} \]</p>
+<p><strong>ma</strong> (intransitive) wraps the primitive concept of its argument being an atom.</p>
+<p><strong>mai</strong> (intransitive) puts no constraint on its argument, and is true for any possible $(e).
+However to be used $(e) must exist (at some point an existential variable must
+be created), and for some definitions expressing this existence and nothing
+more is useful.</p>
+<p><strong>mae</strong> (transitive) allows to perform <a href="https://en.wikipedia.org/wiki/Partial_application">partial
+application</a>, stating that $(E) (which have $(n)
+arguments) is equivalent to $(A) (which have $(n + 1) arguments) with its first slot “filled” by
+$(o). It can be used to manipulate arguments as lists, perform operations on them and then evaluate
+predicates with them.</p>
+<p><strong>mao</strong> (transitive) allows the speaker to express the concept that $(A) is a subset of $(O),
+in the sense that any list of arguments that satisfy $(A) also satisfy $(O). It
+is useful as it doesn’t require the language itself to support a variable number
+of arguments. Instead both $(A) and $(O) are just considered predicates of
+possibly unknown arity and only the implication is relevant. $(A) and $(O)
+can be of different arities, in which <strong>arity mismatch resolution</strong> can
+be used to give them identical arity. This word can be useful for some
+definitions, or to express that a predicate $(A) represents multiple
+combinations of values that make $(O) true, that answers a question represented
+by $(O). $(E) slot is skipped to make it easier to use in sentences.</p>
+<p><strong>mui</strong> (intransitive) always returns the <strong>unknown</strong> truth value.</p>
+<p><strong>mue</strong> (intransitive) and <strong>mua</strong> (transitive) allows the speaker to interact with the usually hidden
+context argument. <strong>mue</strong> accepts a 1-ary predicate that is true when provided
+the context as an <strong>explicit argument</strong>, while <strong>mua</strong> takes a proposition $(A)
+and an atom $(e) such that $(A) is true when $(e) is provided as the hidden
+context argument. These predicate words are what allows the context argument
+to be really useful: the grammar automatically forwards the context parameter
+for the speaker, which can then be used by predicates.</p>
+<p>Other <strong>MI</strong> particles are not logical wrappers, they are simply root words
+included in <strong>MI</strong> for convenience and will be explained in a later chapter.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="predicate-transformations-zibi"><a class="header" href="#predicate-transformations-zibi">Predicate transformations (ZI/BI)</a></h1>
+<p>Particles of the <strong>ZI</strong> family (all particles starting with <em>z-</em>) are used to
+transform the immediately following predicate, before chaining or explicit
+bindings are performed.</p>
+<blockquote>
+<p>To use a <strong>ZI</strong> on more than one predicate word it should be wrapped in
+brackets <strong>pe … pei</strong>, which itself will be prefixed with <strong>ZI</strong>.</p>
+</blockquote>
+<h2 id="negations"><a class="header" href="#negations">Negations</a></h2>
+<p><strong>zi</strong> allows the speaker to negate the predicate being prefixed. However,
+it doesn’t negate any existential variables created when performing <strong>arity
+mismatch resolution</strong>, other predicates in the chain, or explicit bindings.
+<strong>zi</strong> is called the <strong>short scope negation</strong>.</p>
+<blockquote>
+<p><strong>mi zi etiansa meon</strong></p>
+<p>\[ \begin{align}
+\text{mi}(c,e)       &amp;= \text{[$e$ is a speaker]} \\
+\text{etiansa}(c,e,a)   &amp;= \text{[$e$ eats $a$]} \\
+\text{meon}(c,e)     &amp;= \text{[$e$ is an apple]} \\
+\ \\
+\text{meon}_1(c,e)   &amp;= \text{meon}(c,e) \\
+\ \\
+\text{etiansa}_1(c,e,a) &amp;= \color{magenta}{(\neg \text{etiansa}(c,e,a))} \wedge \text{meon}_1(c,e) \\
+\text{etiansa}^w_1(c,e) &amp;= \exists a. \text{etiansa}_1(c,e,a) \\
+\ \\
+\text{mi}_1(c,e)     &amp;= \text{mi}(c,e) \wedge \text{etiansa}^w_1(c,e) \\
+\text{mi}^w_1(c)     &amp;= \exists e. \text{mi}_1(c,e)
+\end{align} \]</p>
+<p>Assertion given $(c):<br />
+I and an apple exists, but I don’t eat it.<br />
+Would be false if no apple existed.</p>
+</blockquote>
+<p>There also exists a <strong>long scope negation</strong> with particle <strong>bi</strong>, which also
+negates existential variables introduced by the arity mismatch resultion and
+other predicates in the chain or explicit bindings.</p>
+<blockquote>
+<p><strong>mi bi etiansa meon</strong></p>
+<p>\[ \begin{align}
+\text{etiansa}_1(c,e,a) &amp;= \text{etiansa}(c,e,a) \wedge \text{meon}(c,e) \\
+\text{etiansa}^w_1(c,e) &amp;= \color{magenta}{\neg (\exists a. \text{etiansa}_1(c,e,a))} \\
+\ \\
+\text{mi}_1(c,e)     &amp;= \text{mi}(c,e) \wedge \text{etiansa}^w_1(c,e) \\
+\text{mi}^w_1(c)     &amp;= \exists e. \text{mi}_1(c,e)
+\end{align} \]</p>
+<p>Assertion given $(c):<br />
+I exist and it is false that I eat an apple.<br />
+It doesn’t imply the existence of an apple.</p>
+</blockquote>
+<blockquote>
+<p><strong>bi</strong> is in its own family <strong>BI</strong> as it transforms more than just the prefixed
+predicate.</p>
+</blockquote>
+<h2 id="names"><a class="header" href="#names">Names</a></h2>
+<p>Prefixing a 1-ary predicate with <strong>za</strong> transforms it into a name:
+\([\text{$e$ is named with property $P$ by $a$}]\). <strong>SI</strong> can be added between
+<strong>za</strong> and the predicate to select which argument is used for the property.
+<strong>za</strong> is intransitive as it is most of the time not needed to define who named
+$(e) like that.</p>
+<p>To speak about the name itself, <strong>zai</strong> must be used:
+\([\text{$e$ is the name corresponding to property $P$}]\).</p>
+<h2 id="anaphora"><a class="header" href="#anaphora">Anaphora</a></h2>
+<p><strong>ze</strong> allows the speaker to refer to the latest <strong>non-wrapped</strong> instance of the
+prefixed predicate instead of creating a new instance. Arguments provided to
+this reference predicate (ignoring the implicit context argument) are stated to
+match ones the instance had.</p>
+<blockquote>
+<p><strong>mian etiansa
+a mi dona ze mian</strong></p>
+<p>\[ \begin{align}
+\text{mian}(c,e)                         &amp;= \text{[$e$ is a cat]} \\
+\text{dona}(c,e,a)                       &amp;= \text{[$e$ likes $a$]} \\
+\ \\
+\text{etiansa}_1(c,e,a)                     &amp;= \text{etiansa}(c,e,a) \\
+\text{etiansa}^w_1(c,e)                     &amp;= \exists a. \text{etiansa}_1(c,e,a) \\
+\ \\
+\color{magenta}{\text{mian}_1(c,e_1)}    &amp;= \text{mian}(c,e_1) \wedge \text{etiansa}^w_1(c,e_1) \\
+\text{mian}^w_1(c)                       &amp;= \exists e. \text{mian}_1(c,e) \\
+\ \\
+\color{magenta}{\text{ze-mian}_1(c,e)}   &amp;= \color{magenta}{e = e_1} \\
+\text{dona}_1(c,e_2,a_2)                 &amp;= \text{dona}(c,e_2,a_2) \wedge \color{magenta}{\text{ze-mian}_1(c,a)} \\
+\text{dona}^w_1(c,e)                     &amp;= \exists a. \text{dona}_1(c,e,a) \\
+\ \\
+\text{mi}_1(c,e)                         &amp;= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\
+\text{mi}^w_1(c)                         &amp;= \exists e. \text{mi}_1(c,e) \\
+\end{align} \]</p>
+<p>Assertion given $(c): A cat eats something.<br />
+Assertion given $(c): I like <strong>this cat</strong>.</p>
+</blockquote>
+<p>When prefixing a compound, <strong>ze</strong> will refer to the lastest instance of that
+exact compound. To make sentences shorter, <strong>zei</strong> can be used before a
+predicate word to refer the latest compound containing this word.</p>
+<blockquote>
+<p><code>ze eberban</code> will refer to the latest <code>eberban</code> instance, while <code>zei ban</code> will
+refer to the latest compound containing <code>ban</code>, for exemple <code>eberban</code>.</p>
+</blockquote>
+<p>Which one is the <strong>latest instance</strong> is determined by word order in the text, and
+using a predicate defined using this word doesn’t make it the <strong>latest</strong> again.
+Thus in</p>
+<p><em>on gia mian blan a <strong>mian</strong> etiansa a gia dona ze mian</em>,</p>
+<p><em>ze mian</em> refers to the <strong>mian</strong> in bold in the <strong>a</strong> sentence, and not the
+<strong>mian</strong> in <strong>gia</strong>’s definition.</p>
+<p>However if the last instance of the word is indeed in a definition (or in some
+predicate that can be used multiple times), then <strong>ze</strong> refers to the last time
+it has been used. Thus in</p>
+<p><em>on gia <strong>mian</strong> blan a gia dona ze mian</em>,</p>
+<p><em>ze mian</em> refers to the <strong>mian</strong> inside <strong>gia</strong>’s definition, which is last
+used in the <strong>a</strong> sentence. The text can thus be translated as
+“A beautiful cat which likes itself”.</p>
+<p><strong>zeu</strong> allows to refer to the <strong>context variable</strong> used to evaluate the
+<strong>last instance</strong> of the predicate word, while <strong>zeiu</strong> does the same to refer
+to the latest compound containing this word.</p>
+<blockquote>
+<p>TODO: Formalize how anaphora behaves when the last instance was evaluated
+multiple times with different values. This is related to <a href="https://en.wikipedia.org/wiki/Donkey_sentence">donkey anaphora</a> and
+is far from trivial to solve.</p>
+</blockquote>
+<p><span id="bo"></span></p>
+<blockquote>
+<p>A related concept is <strong>forethought reference</strong> using <strong>KI/GI</strong> variables. A
+<strong>KI/GI</strong> variable is first assigned by prefixing with <strong>bo</strong> before being
+used in reference. Such <strong>KI</strong> variables can be used similarly to pronouns in
+other languages. Such <strong>GI</strong> variables are more complex to use, but are
+necessary to define some concepts of Eberban’s vocabulary.</p>
+</blockquote>
+<h1 id="instantiation"><a class="header" href="#instantiation">Instantiation</a></h1>
+<p><strong>zu/zui</strong> allows the speaker to instantiate an argument of some predicate,
+which is particularly useful when a predicate is shared using <strong>VI/FI</strong> or a
+<strong>KI</strong> variable or argument and we want to use it with some arguments. <strong>GI</strong>
+variables could be replaced with <strong>KI</strong> variables that are then used in chaining with
+<strong>zu/zui</strong>. <strong>zu</strong> instantiates the predicate with <strong>transitive</strong> behavior while
+<strong>zui</strong> is <strong>intransitive</strong>.</p>
+<h2 id="other"><a class="header" href="#other">Other</a></h2>
+<p><strong>zue</strong> allows the speaker to transform a predicate having an <strong>A</strong> 0-ary
+predicate place to a predicate having an <strong>A</strong> 1-ary predicate place which is
+satisfied by the <strong>E</strong> argument.</p>
+<p><strong>mi katmi mi jvin</strong> (I want that [I dance]) can thus be replaced by <strong>mi zue
+katmi jvin</strong> (I want to dance).</p>
+<p>Note that they are not exactly equivalent, as in the first example the two
+<strong>mi</strong> might not refer to the same individual(s)
+(if there are multiple speakers), while in the second example it is necessarily
+the same. Aside from this slight difference both examples are here the same
+length and thus might seem a bit overkill, but it is more useful if the thing
+being repeated is longer than one syllable.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="default-arguments"><a class="header" href="#default-arguments">Default arguments</a></h1>
+<p>Some predicates are often used with the same arguments. While it can be possible to define new
+predicates that wrap them and provide this argument, this would lead to multiple words for the same
+concepts, and might not be practical for predicates made with some grammar rules such as numbers.
+Also, those common arguments might be specific to some text or speech.</p>
+<p>To address the above, Eberban allows the management of <strong>default arguments</strong>, which are properties
+that some arguments must satisfy <strong>only when there are no explicit bounds on them</strong>.</p>
+<p>Let’s take as an example the predicate <strong>espuackuil</strong>, which means</p>
+<p>\[\text{espuackuil}(c,e,a) = [\text{$e$ is the home stellar body of species $a$}]\]</p>
+<p>We could want that <strong>A</strong> are humans by default so that we don’t have to always specify it is the
+home planet of humans/Earth nor have to define another separate predicate.</p>
+<p>To do that, we can use the <strong>oie/oia/oio/oiu</strong> series in <strong>O</strong> to define this default property. <code>oia espuackuil flan</code> defines that by default the <strong>A</strong> place of <strong>espuackuil</strong> satisfies the property
+<strong>flan</strong> (being a human). The <strong>E</strong> place doesn’t have a default bind, which can be seen as having
+the default bind of satisfying <strong>mai</strong> (exists).</p>
+<blockquote>
+<p><code>oia espuackuil mai</code> can thus be used to “remove” the default human bind.</p>
+</blockquote>
+<p>This default property can be used with the <strong>zoie/zoia/zoio/zoiu</strong> series in <strong>ZI</strong>: <code>zoia espuackuil</code> is thus equivalent to <code>flan</code> in this case.</p>
+<p>Any argument that is not re-exported as an argument of the wrapping predicate and not bound with
+chaining or explicit binding automatically has the default bound.</p>
+<p>If an argument is re-exported by the wrapping predicate, then the default bound is instead inherited
+by the wrapped predicate (as if <strong>oie/etc</strong> was used on them too). This also applies with <strong>O</strong>
+definitions, such as if we define the predicate <code>o ga espuackuil</code> then the <strong>A</strong> argument of <strong>ga</strong>
+also defaults to <em>flan</em>, and <em>ga</em> can be used in place of <em>espuackuil</em>.</p>
+<blockquote>
+<p>Note that after defining <em>ga</em>, changing a default bind on <em>espuackuil</em> will not modify the
+corresponding bind of <em>ga</em>. <code>oia ga ...</code> will thus be required instead.</p>
+</blockquote>
+<p>Here is an example with all default bindings added: </p>
+<blockquote>
+<p><strong>mi dona espuackuil</strong></p>
+<p>\[ \begin{align}
+\text{mi}(c,e)                &amp;= \text{[$e$ is a speaker]} \\
+\text{dona}(c,e,a)            &amp;= \text{[$e$ likes $a$]} \\
+\ \\
+\text{espuackuil}_1(c,e,a)    &amp;= \text{espuackuil}(c,e,a) \\
+\text{zoia-espuackuil}_1(c,e) &amp;= \text{zoia-espuackuil}(c,e) \\
+\text{espuackuil}^w_1(c,e)    &amp;= \exists a. \text{espuackuil}_1(c,e,a) \color{magenta}{\wedge \text{zoia-espuackuil}_1(c,a)} \\
+\ \\
+\text{dona}_1(c,e,a)          &amp;= \text{dona}(c,e,a) \wedge \text{espuackuil}^w_1(c,e) \\
+\text{zoia-dona}_1(c,e)       &amp;= \text{zoia-dona}(c,e) \\
+\text{dona}^w_1(c,e)          &amp;= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\
+\ \\
+\text{mi}_1(c,e)              &amp;= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\
+\text{mi}^w_1(c)              &amp;= \exists e. \text{mi}_1(c,e) \\
+\end{align} \]</p>
+<p>I like the home planet of humans (Earth, until humans start to live on other planets).</p>
+</blockquote>
+<p>Manually binding the argument will prevent the default bind to be added:</p>
+<blockquote>
+<p><strong>mi dona espuackuil va mian</strong></p>
+<p>\[ \begin{align}
+\text{mi}(c,e)                &amp;= \text{[$e$ is a speaker]} \\
+\text{dona}(c,e,a)            &amp;= \text{[$e$ likes $a$]} \\
+\text{mian}(c,e)              &amp;= \text{[$e$ is a cat]} \\
+\ \\
+\text{mian}_1(c,e)            &amp;= \text{mian}(c,e) \\
+\ \\
+\text{espuackuil}_1(c,e,a)    &amp;= \text{espuackuil}(c,e,a) \color{magenta}{\wedge \text{mian}_1(c,e)}\\
+\text{espuackuil}^w_1(c,e)    &amp;= \exists a. \text{espuackuil}_1(c,e,a) \\
+\ \\
+\text{dona}_1(c,e,a)          &amp;= \text{dona}(c,e,a) \wedge \text{espuackuil}^w_1(c,e) \\
+\text{zoia-dona}_1(c,e)       &amp;= \text{zoia-dona}(c,e) \\
+\text{dona}^w_1(c,e)          &amp;= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\
+\ \\
+\text{mi}_1(c,e)              &amp;= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\
+\text{mi}^w_1(c)              &amp;= \exists e. \text{mi}_1(c,e) \\
+\end{align} \]</p>
+<p>I like the home planet of cats (still Earth, unless we find or bring cats on other planets).</p>
+</blockquote>
+<blockquote>
+<p>Other chapters will omit default binds (unless they are important) to reduce
+verbosity.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dictionary-conventions"><a class="header" href="#dictionary-conventions">Dictionary conventions</a></h1>
+<h2 id="notation"><a class="header" href="#notation">Notation</a></h2>
+<p>The dictionary makes the distinction between meaning and definition.</p>
+<h3 id="meaning"><a class="header" href="#meaning">Meaning</a></h3>
+<p>The meaning of each word is written in English with arguments
+being represented by vowels in brackets <code>[]</code>.</p>
+<p>The first time the vowel is used it is followed by one or more Eberban words.
+These words denote the vowel’s type and constraints. Single letters like <code>a</code> can
+be used to represent an argument’s generic type.</p>
+<p>The same letter used in multiple places means the arguments share the same type.</p>
+<p>Parentheses <code>()</code> represent predicate arguments (as opposed to atom or generic arguments),
+where each argument constraint is listed in between, separated by commas.</p>
+<blockquote>
+<p>Exemples of meanings:</p>
+<ul>
+<li><code>mi: [E:tce* man] is I/me/a speaker/author.</code></li>
+<li><code>etiansa: [E:tce* den] eats [A:tce* den].</code></li>
+<li><code>meon: [E:tce* den] is an apple.</code></li>
+<li><code>[E:tcei a] is a (non-empty) set of some things that individualy satisfy [A:(tca a)].</code></li>
+<li><code>mua: True if context [E:ma] makes [A:()] true.</code></li>
+</ul>
+</blockquote>
+<h3 id="definition"><a class="header" href="#definition">Definition</a></h3>
+<p>The definition of each word is written in Eberban. Definitions either have an
+argument list or re-export the places of the left-most predicate in the chain.</p>
+<h2 id="set-arguments"><a class="header" href="#set-arguments">Set arguments</a></h2>
+<p>Many predicates expect their arguments to be <strong>sets</strong>, which is expressed in
+Eberban by the roots starting with <em>tc-</em>. <strong>tce</strong> in particular states that it
+is a non-empty set. In definitions, a star <code>*</code> is added next to it when the
+predicate uses this set in a <strong>distributive</strong> way, which means that the predicate
+is also true if we provide a subset. Otherwise it is said to be <strong>collective</strong>,
+and a set satisfying the predicate doesn’t necessarily imply that a subset of
+it will also satisfy the predicate.</p>
+<p>Having mainly set arguments like so means that, unless specified, the number of
+members of the set is left vague. Thus, the sentence <em>mi etiansa meon</em> could
+equally mean the following :</p>
+<ul>
+<li><strong>I</strong> eat <strong>one apple</strong>.</li>
+<li><strong>We</strong> eat <strong>one apple</strong>.</li>
+<li><strong>I</strong> eat <strong>multiple apples</strong>.</li>
+<li><strong>We</strong> eat <strong>multiple apples</strong>.</li>
+</ul>
+<p>It also doesn’t specify <em>which</em> apples everyone is eating: <strong>bure</strong> is
+satisfied if everyone eats at least one of the apples, and every apple is eaten
+by at least one.</p>
+<p>This allows the speaker to be vague by default. This can be made more precise by
+adding more words.</p>
+<blockquote>
+<p>For simplicity, translations will be written in singular unless it is
+important to make the distinction.</p>
+</blockquote>
+<!-- ## Map arguments and context
+
+Another kind of data structure used in eberban is a __map__ or __dictionary__,
+which consist of a set of __keys__ each assiocated with a __value__. This allow
+to "store" multiple information into a single atom. Since the context argument
+is used to implement many features, it is thus using maps.
+
+Definitions might refer to entries of such maps using the `@` symbol followed
+by the name of the key. If `@` is used just after a vowel then it means the
+vowel argument is map and the definition is refering to an entry of such map.
+If there are no vowel before, it refers to an entry of the context argument.
+
+Exemples will be given in later chapters when explaining concepts using contexts
+or maps. -->
+<h2 id="glosses-ending-with-"><a class="header" href="#glosses-ending-with-">Glosses ending with <code>:</code></a></h2>
+<p>Glosses should end with <code>:</code> is default chaining behavior chains to a predicate
+place, meaning the following chain is “wrapped” in it. This can help learners
+to more quickly understand the structure of a glossed sentence.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="discourse-predicates-mi"><a class="header" href="#discourse-predicates-mi">Discourse predicates (MI)</a></h1>
+<p>Discourse predicates are additional <strong>MI</strong> particles that don’t wrap logical primitives, but are
+instead part of <strong>MI</strong> for historical reasons and are related to the discourse.</p>
+<p><strong>mi</strong> (intransitive) refers to the speaker(s) in speech, or narrator(s) in writen media, with at
+least one of the members being the main speaker/narrator.</p>
+<p><strong>mo</strong> (intransitive) refers to the listerner(s)/interlocutor(s).</p>
+<p><strong>mio</strong> (intransitive) refers to a set of individuals which includes at least the main speaker and
+at least one of the listener(s)/interlocutor(s), and doesn’t include something that is neither a
+speaker or listener. It can be seen as an <strong>inclusive we</strong>.</p>
+<p><strong>mie</strong> (intransitive) on the other hand refers to a set of individuals which includes at least the
+main speakers and which can include anything that <strong>is not</strong> the listener. It can be seen as an
+<strong>exclusive we</strong>.</p>
+<p><strong>moe</strong> (intransitive) refers to a set of individuals which includes neither speakers bor listeners.
+It can be seen as <strong>third person pronoun</strong>.</p>
+<p><strong>me</strong> (intransitive) is something that the speaker(s) particulary have in mind. Corresponds loosely
+to <em>the</em> or <em>this</em> in English.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="borrowings-u-"><a class="header" href="#borrowings-u-">Borrowings (u-)</a></h1>
+<p>Borrowings allow importing words from other languages which would be
+difficult or even impossible to translate using root words, such as proper
+names, names of species, and some cultural concepts Eberban avoids including
+in its roots to be more culturally neutral.</p>
+<p>Borrowings start with the letter <strong>u</strong>, followed by the borrowed word written
+in the phonology and morphology allowed by Eberban while trying to stay
+close to the original pronounciation.</p>
+<p>If the borrowed word starts with <strong>u</strong> then the prefix used is <strong>u’</strong> to avoid
+2 consecutive <em>u</em>.</p>
+<p>A chain of multiple borrowings will count as only one predicate composed of
+multiple parts. To prevent two borrowings from fusing into one predicate, you
+can separate them with the particle <strong>be</strong> (<strong>be</strong> can optionally appear after
+every borrowing group but is only necessary when separating multiple groups).</p>
+<p>A borrowing’s meaning is not defined in Eberban, and its truth value is always 
+undefined. It can be used to import foreign words that interlocutors will 
+collectively understand, but using non-borrowings is always preferred if
+possible. Borrowings can have any number of arguments, and since it is not
+defined in Eberban, each of them is considered to be generic. No type inference
+can be informed, therefore, <code>vie/via/...</code> must be used for predicate equivalence
+bindings.</p>
+<p>Like roots and compounds, borrowings are transitive if they end with a vowel,
+while they are intransitive if they end with a consonant (not only sonorants).</p>
+<p>Borrowings can be used to import proper nouns by prefixing them with particle
+<strong>za</strong>, which gives it the meaning <code>[tce* man] is named [borrowed word]</code> (a
+more complete explanation of <strong>za</strong> will be given at a later chapter).</p>
+<h2 id="example-2"><a class="header" href="#example-2">Example</a></h2>
+<div data-gloss>
+<p>mi za umia uentropi (be)</p>
+<p>mi {za umia uentropi} {(be)}</p>
+<p>{E:$(x) is the speaker} {[E:$(x) is named “mia entropi”]} {(end of borrowing)}</p>
+<p>I am named “mia entropi”.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="compounds-e-"><a class="header" href="#compounds-e-">Compounds (e-)</a></h1>
+<p>Providing a root for every concept would be extremely impractical and isn’t great for memorization.
+Complex concepts are often built upon multiple primitive concepts, and compounds are used for this
+purpose.</p>
+<p>Compounds allow the transformation of any string of valid Eberban words (particles, roots and
+borrowings) into a single unit. While a compound <strong>ignores the grammatical rules of the individual
+words</strong>, its meaning should (to a certain extent) be related.</p>
+<p>A compound start with either <strong>e, en, er</strong>, respectively starting a compound composed of two, three,
+or more words. er-compounds stop when a single <strong>e</strong> is encountered (with a space before it). Spaces
+can be inserted between any parts of the compound.</p>
+<p>If the first word starts with a vowel (a borrowing or <strong>A/O</strong> particle) then the pause before this
+vowel is optional. <strong>NI</strong> particles needs to be prefixed by a pause or space to not be confused with
+the <strong>en</strong> start.</p>
+<p>Compounds have <strong>unique and fixed meanings which are defined in the dictionary</strong>, and while the
+definition of each one can be arbitrary, they usually provide arguments taken from their individual
+components. Usually, the most important word is the rightmost one, and additional words are added to
+the left to help narrow down the meaning, yielding greater precision.</p>
+<p>It is common to lexicalize a borrowing by making a compound with it. Cultural concepts are borrowed
+with endonyms, sounding similar to the original word.</p>
+<p>A compound have the same <strong>transitivity</strong> as its last/rightmost component (transitive/intransitive +
+if that place is bounded with sharing/equivalence). If the compound transitivity should differ from
+that component, an extra word is added in the compound among the followings:</p>
+<ul>
+<li><strong>se</strong>: intransitive sharing</li>
+<li><strong>sa</strong>: transitive sharing</li>
+<li><strong>sai</strong>: transitive equivalence</li>
+</ul>
+<p>Other particles that cannot be used directly as predicates are considered intransitive sharing.</p>
+<blockquote>
+<p><strong>e ber ban :</strong> <code>[tca man] is the eberban language.</code></p>
+<ul>
+<li>ber : <code>[E:tce* man] reflects this language (eberban).</code></li>
+<li>ban : <code>[E:tce* man] is a language.</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>e uinglic ban :</strong> <code>[E:tca ban] is the english language.</code></p>
+<ul>
+<li>uinglic : borrowing of “english”.</li>
+<li>ban : <code>[E:tce* man] is a language.</code></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>e glon sa :</strong> <code>[E:tce pan] plays game [A:tce* pan].</code></p>
+<ul>
+<li>glon : <code>[E:tce* man] is a game.</code></li>
+<li>sa: We’re making a transitivite version of glon.</li>
+</ul>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quotes-c-"><a class="header" href="#quotes-c-">Quotes (c-)</a></h1>
+<p><strong>ci</strong> (<strong>CI</strong>) allows quoting a single Eberban word (particle, root, borrowing,
+compound), ignoring its grammar. It has the definition <code>[E:tca man] is word [word].</code></p>
+<p><strong>cie</strong> will instead express the family of the word.</p>
+<ul>
+<li><strong>ci fe</strong> : <code>[E:tca man] is the word &quot;fe&quot;.</code></li>
+<li><strong>cie fe</strong> : <code>[E:tca man] is word family FE.</code></li>
+<li><strong>ci spi</strong>: <code>[E:tca man] is the word &quot;spi&quot;.</code></li>
+<li><strong>cie spi</strong>: <code>[E:tca man] is the concept of a root word.</code></li>
+</ul>
+<hr />
+<p><strong>ce</strong> (<strong>CE</strong>) and <strong>cei</strong> (<strong>CEI</strong>) allow, respectively, starting and ending a
+spelling quote that is composed of units representing single characters. These
+units begin with either of the following: a single consonant (including
+sonorants), an initial consonant pair, or nothing. They are then followed by a
+series of vowels which can be separated by h.</p>
+<p>Since spelling is usually used in noisy environments to clarify how words are
+written, units representing Eberban characters include some redundancy to help
+recognition.</p>
+<table><thead><tr><th style="text-align: center">Letter</th><th style="text-align: center">Unit</th><th></th><th style="text-align: center">Letter</th><th style="text-align: center">Unit</th><th></th><th style="text-align: center">Letter</th><th style="text-align: center">Unit</th><th></th><th style="text-align: center">Letter</th><th style="text-align: center">Unit</th></tr></thead><tbody>
+<tr><td style="text-align: center">P</td><td style="text-align: center">pi</td><td></td><td style="text-align: center">B</td><td style="text-align: center">bu</td><td></td><td style="text-align: center">F</td><td style="text-align: center">fi</td><td></td><td style="text-align: center">V</td><td style="text-align: center">vu</td></tr>
+<tr><td style="text-align: center">T</td><td style="text-align: center">ti</td><td></td><td style="text-align: center">D</td><td style="text-align: center">du</td><td></td><td style="text-align: center">S</td><td style="text-align: center">si</td><td></td><td style="text-align: center">Z</td><td style="text-align: center">zu</td></tr>
+<tr><td style="text-align: center">C</td><td style="text-align: center">ci</td><td></td><td style="text-align: center">J</td><td style="text-align: center">ju</td><td></td><td style="text-align: center">K</td><td style="text-align: center">ki</td><td></td><td style="text-align: center">G</td><td style="text-align: center">gu</td></tr>
+<tr><td style="text-align: center">M</td><td style="text-align: center">mi</td><td></td><td style="text-align: center">N</td><td style="text-align: center">nu</td><td></td><td style="text-align: center">R</td><td style="text-align: center">ri</td><td></td><td style="text-align: center">L</td><td style="text-align: center">lu</td></tr>
+<tr><td style="text-align: center">H</td><td style="text-align: center">ihi</td><td></td><td style="text-align: center">(space)</td><td style="text-align: center">uhu</td><td></td><td style="text-align: center">I</td><td style="text-align: center">i</td><td></td><td style="text-align: center">E</td><td style="text-align: center">e</td></tr>
+<tr><td style="text-align: center">A</td><td style="text-align: center">a</td><td></td><td style="text-align: center">O</td><td style="text-align: center">o</td><td></td><td style="text-align: center">U</td><td style="text-align: center">u</td><td></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+</tbody></table>
+<p>Spaces between them is optional unless before a unit starting with a vowel.</p>
+<p><a href="grammar/numbers.html">Digits</a> can be spelled by following the same pattern as <strong>TI</strong> but
+by replacing <em>t</em> with <em>tc</em>: tci, tce, tca, …</p>
+<p>Examples:</p>
+<ul>
+<li><code>za ce bu o bu tco cei</code> = named B-O-B-3</li>
+<li><code>tian de ce ti i a nu cei</code> = tian (spelled T-I-A-N)</li>
+</ul>
+<p><strong>ceu</strong> is another member of <strong>CE</strong> that spells the sounds of a quote.</p>
+<hr />
+<p><strong>ca</strong> (<strong>CA</strong> family) allows quoting any grammatically correct Eberban text,
+and is terminated by <strong>cai</strong> (<strong>CAI</strong>). The text can itself contain inner <strong>ca</strong>
+quotes as <strong>cai</strong> will match its opening <strong>ca</strong>. The quote acts as a predicate
+with meaning <code>[E:tca ecaskan] is text [text].</code> (<strong>ecaskan</strong> being the predicate
+word for a grammatically correct Eberban quote, while <strong>skan</strong> is the word for a
+quote or string of arbitrary data).</p>
+<hr />
+<p><strong>co</strong> (<strong>CO</strong>) allows quoting anything such as foreign text, grammatically incorrect Eberban text,
+or even arbitrary data. <strong>co</strong> has two quotation modes :</p>
+<ul>
+<li>if immediately followed by a <strong>[</strong> (which can be prefixed by spaces), then it quotes foreign text
+until <strong>]</strong> is reached. Thus this cannot quote text that contains <strong>]</strong>. </li>
+<li>otherwise it is followed by a single arbitrary root or particle, which has the role of a delimiter
+(it is not necessary for it to be an existing particle or root, only a valid form), followed by
+<strong>[</strong>. Any following characters (including spaces) are considered part of the quoted text, while in
+speech following pause is also considered part of the quote. The quote ends when this word appears
+again prefixed by <strong>]</strong>. The delimiter word prefixed by a <strong>]</strong> must <strong>NOT</strong> appear in the text,
+either written with same letters or pronounced the same way (reminder that <strong>]</strong> is uttered as a
+palatal click), as it will be considered to be the end of the quote, and the remaining part will
+leak out of the quote.</li>
+</ul>
+<p>This whole block acts as a predicate with the definition <code>[E:tca skan] is foreign text/arbitrary data with content: [content].</code></p>
+<p>As the content may be unreadable for the speaker, they can use the single word
+<strong>coi</strong> (<strong>COI</strong>) instead of the full quote. Foreign quotes are the canonical
+way to embed things such as images or URLs into Eberban text. It is recommended
+however to provide a description in Eberban to help comprehension for all
+speakers, listeners or readers.</p>
+<div data-gloss>
+<p>eberban sae ebansa ca mi dona eberban cai siro co [I like eberban] ebansa euinglic’ban</p>
+<p>eberban sae ebansa {ca mi dona eberban cai} siro {co [I like eberban]} ebansa euinglic’ban</p>
+<p>{E:$(x) is the Eberban language} {chain A&gt;E} {E:$(y) is expressed in language A:$(x)}
+{E:$(y) is text “I like Eberban” (in Eberban)} {E:$(y) has translation A:$(z)}
+{E:$(z) is text “I like Eberban” (foreign)} {E:$(z) is expressed in language A:$(w)}
+{E:$(w) is the English language}</p>
+<p>“mi dona eberban” (in Eberban) has translation “I like Eberban” (in English).</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enumeration-pebu"><a class="header" href="#enumeration-pebu">Enumeration (PE/BU)</a></h1>
+<p>We’ve seen before particles <strong>pe</strong> and <strong>pei</strong> that are like spoken brackets. <strong>pe</strong> is part of
+family <strong>PE</strong> which provide a more general feature called an <em>enumeration</em>. It allows to list
+<em>items</em> which are used differently depending on which <strong>PE</strong> is used. Items separation is done using
+<strong>bu</strong> (only member of <strong>BU</strong>) in 2 possible mays:</p>
+<ul>
+<li>separator: <strong>PE</strong> is followed by multiple chains, each separated by <strong>bu</strong>.</li>
+<li>prefix: <strong>PE</strong> is immediatly followed by <strong>bu</strong>. Then each item is a single predicate, and items
+are not separated by <strong>bu</strong>.</li>
+</ul>
+<p><strong>PE</strong> family contains the following members:</p>
+<ul>
+<li><strong>pe</strong>: Simply exposes the slots of the items. If there are multiple items, it perform an AND
+operator between them.
+<blockquote>
+<p>Exemple: <code>mi [pe [etiansa] bu [dona] pei] meon</code> = I [eat and like] an apple.</p>
+</blockquote>
+</li>
+<li><strong>pea</strong>: Makes a set from one member of each listed sets.
+<blockquote>
+<p>Exemple: <code>mio [pea bu [za ualis] [za ubob] (pei)]</code> = We are Alice and Bob.</p>
+</blockquote>
+</li>
+<li><strong>peo</strong>: Makes a set such that a generic/atom that satisfy each item is a member of the set.
+<blockquote>
+<p>Exemple: <code>[peo [tcu mian] bu [meon] (pei)]</code> = A set of {the set of all cats, a set of apples}.</p>
+</blockquote>
+</li>
+<li><strong>peho</strong>: Makes a set of predicates.
+<blockquote>
+<p>Exemple: <code>me vone [peho bu [mian] [meon] (pei)]</code> = This is [a cat OR an apple].</p>
+</blockquote>
+</li>
+<li><strong>peu</strong>: Makes a list such that a generic/atom that satisfy each item is a member of the list (in
+order).
+<blockquote>
+<p>Exemple: <code>[peu bu [mian] [meon] pei] blua [peu [meon] bu [mian] (pei)]</code> = List [a cat, an apple]
+is list [an apple, a cat] in reverse order.</p>
+</blockquote>
+</li>
+<li><strong>pehu</strong>: Makes a list of predicates.
+<blockquote>
+<p>No exemple as usages of predicates lists as they are mostly used by words with complex meanings.</p>
+</blockquote>
+</li>
+</ul>
+<p>An empty enum can be made with <code>PE bu PEI</code>. However Eberban doesn’t consider the empty set exists,
+while the empty list does. When used with <strong>pe</strong>, it makes an always true predicate.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="adverbs-and-prepositions-voifoi"><a class="header" href="#adverbs-and-prepositions-voifoi">Adverbs and prepositions (voi/foi)</a></h1>
+<p><strong>voi/foi</strong> can be used to attach a single predicate X as an adverb of another predicate Y. Y
+will be evaluated by X (by binding Y to the A slot of X), however the predicate resulting from
+the combination of adverb X and Y is a new predicate exposing all the slots of X. It means
+explicit bounds or chaining of Y will interact with its slots, but will not be evaluated inside of
+X.</p>
+<p>This is very useful where X is a context-modifying predicate, as it avoids further bindings to be
+affected by that context modification.</p>
+<p>For exemple, with <code>sru</code> meaning <code>[A:()] will occur</code>, usage with and without <strong>voi</strong> differs in
+meaning:</p>
+<ul>
+<li><code>mi etiansa (Y) voi sru (X) fa meon</code> = I will eat an apple (which exists now)</li>
+<li><code>mi sru etiansa meon</code> = I will eat an apple (which will exist)</li>
+</ul>
+<p>Any predicates present after the single predicate X form a chain C which will be sharing-bound to the E
+slot of X. This allows to have preposition-like clauses.</p>
+<p>For exemple, with <code>epaneski</code> meaning <code>Inside of [E:tce pan], [A:()] occurs</code> and <code>sru</code> meaning <code>[A:()] occured</code>:</p>
+<ul>
+<li><code>mi etiansa (Y) voi epaneski (X) spua fa meon sae duna (Y2) voi sru (X2) fa mo</code>: I eat in the house an apple that you gave
+me (you’re not necessarily in the house)</li>
+<li><code>spua epaneski mi etiansa meon sae duna voi sru fa mo</code>: In the house: I eat an apple that you gave me
+(you were in the house and that’s where you gave the apple to me)</li>
+</ul>
+<p>To instead perform equivalence binding (if E is a predicate slot), <strong>vioi/fioi</strong> can be used.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="numbers-tij-"><a class="header" href="#numbers-tij-">Numbers (TI/j-)</a></h1>
+<p>Numbers are important to communicate and serve many purposes. Eberban numbers
+are expressed as a chain of <strong>TI</strong> particles (any particles starting with <em>t-</em>),
+which can optionally contain separators and a terminator starting with <em>j-</em> to
+make more advanced numbers.</p>
+<h2 id="digits"><a class="header" href="#digits">Digits</a></h2>
+<p>Numbers are mainly composed of digits (<strong>TI</strong> family), which are chained one
+after the other, starting from the highest significant one to the lowest, and is
+by default expressed in base ten.</p>
+<table><thead><tr><th style="text-align: center"></th><th style="text-align: center">-i</th><th style="text-align: center">-e</th><th style="text-align: center">-a</th><th style="text-align: center">-o</th><th style="text-align: center">-u</th></tr></thead><tbody>
+<tr><td style="text-align: center">t-</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">2</td><td style="text-align: center">3</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center">ti-</td><td style="text-align: center"></td><td style="text-align: center">5</td><td style="text-align: center">6</td><td style="text-align: center">7</td><td style="text-align: center">8</td></tr>
+<tr><td style="text-align: center">te-</td><td style="text-align: center">9</td><td style="text-align: center"></td><td style="text-align: center">A</td><td style="text-align: center">B</td><td style="text-align: center">C</td></tr>
+<tr><td style="text-align: center">ta-</td><td style="text-align: center">D</td><td style="text-align: center">E</td><td style="text-align: center"></td><td style="text-align: center">F</td><td style="text-align: center">…</td></tr>
+</tbody></table>
+<p><strong>te ta</strong> thus means <strong>12</strong> while <strong>tei ti tu</strong> means <strong>904</strong>.</p>
+<p>While it is normally not allowed to use a digit higher than the base, it is
+allowed if only one digit is used since there is no ambiguity over its value.
+<strong>teo</strong> is thus <strong>B/11</strong>, while <strong>teo ti</strong> is not allowed in base ten.</p>
+<blockquote>
+<p>The series described in the table is infinite and can be expanded if the
+speaker wants to use larger bases by iterating over the vowels in order and
+skipping cases where the same vowel appears multiple times in a row (since
+Eberban considers multiple identical letters the same as a single one)</p>
+<p>ti, ta, …, tu<br />
+tie, tia, …, tua, tuo<br />
+tiei, tiea, …, tuoa, tuou</p>
+</blockquote>
+<h2 id="number-syntax"><a class="header" href="#number-syntax">Number syntax</a></h2>
+<p>Numbers follow the following syntax with some parts being optional:</p>
+<p><em>base</em> <strong>ju</strong> <em>integer-part</em> <strong>jo</strong> <em>fractional-part</em> <strong>ja</strong> <em>repeated-part</em> <strong>je</strong> <em>magnitude</em></p>
+<ol>
+<li>Optionaly the <em>base</em> of the number can be expressed by a single <strong>TI</strong>
+followed by <strong>ju</strong>. This <strong>TI</strong> is the last digit of the base used, thus
+<strong>tei ju</strong> is base ten, <strong>teo ju</strong> is base twelve, and <strong>tao ju</strong> is
+hexadecimal. If absent it defaults to base ten (<strong>tei ju</strong>), unless the default
+base is overwritten in the context (TODO: Add word to set such default base).</li>
+<li>The <em>integer part</em> of the number, as a string of zero or more digits <strong>TI</strong>.
+If there are zero digits then a fractional part is mandatory, unless <strong>je</strong> is used.</li>
+<li>This integer part can then optionally be followed by <strong>jo</strong> and a <em>fractional
+part</em> which is also a string of zero or more digits <strong>TI</strong>. <strong>joi</strong> can be used instead to also
+make the number negative.</li>
+<li>If there is a fractional part, it can be followed by <strong>ja</strong> and a <em>repeated part</em> which is also a
+string of at least one digit <strong>TI</strong>. The number has these digits repeated indefinitely.</li>
+<li>Regardless of the presence of a fractional part or integer part, the number can then contain
+<strong>je</strong> followed by a <em>magnitude</em>, which is a string of at least one digit <strong>TI</strong>. The value
+expressed is the previous part multiplied by \(\text{base}^{\text{magnitude}}\). <strong>jei</strong> can be
+used instead to express a negative magnitude. If only the magnitude is present then the integer
+part is considered to be equal <strong>1</strong>.</li>
+</ol>
+<blockquote>
+<p>Examples :</p>
+<ul>
+<li>teo ju tie tia = \(56_{12}\)</li>
+<li>tu ta = \(42\)</li>
+<li>to jo te tu te tie tei = \(3.14159\)</li>
+<li>to jo te ja to = \(3.1\overline{3}\), \(3.1333\dots\)</li>
+<li>to jo ja to = \(3.\overline{3}\), \(3.333\dots\)</li>
+<li>to joi = \(-3\)</li>
+<li>tia jo ti ta ta je ta to = \(6.022 \times 10^{23}\)</li>
+<li>tei jo te ti tei jei to te = \(9.109 \times 10^{-31}\)</li>
+</ul>
+</blockquote>
+<h2 id="various-usage-of-numbers"><a class="header" href="#various-usage-of-numbers">Various usage of numbers</a></h2>
+<p>Numbers have various usages which require different definitions and arguments.
+The desired definition can be selected by ending the number with a particle of
+family <strong>JI</strong> (<strong>jie</strong> is inferred if omitted). <strong>jie</strong> is mandatory between
+consecutive numbers to tell them apart. Particles other than <strong>jie</strong> must follow
+positive integer (no fractional part).</p>
+<ul>
+<li><strong>ji</strong>: <code>[E:tce* a] is (a group of) [number] things satisfying [A:(tca a)].</code><br />
+Speaks about a set of expressed cardinality.</li>
+<li><strong>jia</strong>: <code>[E:tce* a] is (a group of) [number] things satisfying [A:(a)].</code><br />
+Same but uses the raw property variant of set definitions.</li>
+<li><strong>jio</strong>: <code>[E:tcu a] is (a group of) the only [number] things satisfying [A:(tca a)].</code><br />
+These are the only things that satisfy the property. There is nothing that
+satisfies A which is not in the set.</li>
+<li><strong>jioa</strong>: <code>[E:tcu a] is (a group of) the only [number] things satisfying [A:(a)].</code><br />
+Same but uses the raw property variant of set definitions.</li>
+<li><strong>jiu</strong>: <code>[E:tca a] is the [number]th member of sequence [A:blu a].</code><br />
+Speaks about an element in an ordered list. Index follows zero-based numbering, such that
+the first element is the 0th.</li>
+<li><strong>jie</strong>: <code>[E:tce gan] is the number [number] times [A:tce gan] (default: 1 unitless).</code><br />
+<code>gan</code> is the word for a number, and both arguments are sets of numbers. These
+sets allow handling many numbers (ranges, approximations, or even arbitrarily
+constructed ones), and math operations are also defined using sets to
+distributively operate on each value of the set. The <strong>A</strong> argument allows 
+multiplying this number with another number such as unit numbers (“1 meter”,
+“1 kilogram”, etc). The <strong>A</strong> argument defaults to <strong>1 unitless</strong>.</li>
+</ul>
+<p>Note that the <em>raw property of set definitions</em> refers to the fact that sets
+have two types of predicates: one where a member must satisfy argument <code>(a)</code> and
+the other <code>(tca a)</code>. Many predicates expect their arguments to be sets, so the
+latter is usually used. The former allows accessing raw members, an example use
+case is dealing with nested sets.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="annotations-d-"><a class="header" href="#annotations-d-">Annotations (d-)</a></h1>
+<p>Annotations are additional grammar that don’t modify the logical meaning of the
+text, and simply add notes or metadata. These annotations are also called “free”
+prefixes and suffixes as they can be added freely before and after many elements
+of the grammar.</p>
+<h2 id="free-scope"><a class="header" href="#free-scope">Free scope</a></h2>
+<p>By default annotations are somewhat related only to the word they are attached
+to. However the scope can be changed by prefixing the annotation with <strong>DU</strong>:</p>
+<ul>
+<li><strong>du</strong>: Annotation refers to the annotated predicate, its explicit bindings and its following chaining.</li>
+<li><strong>duo</strong>: Annotation refers to the entire sentence.</li>
+</ul>
+<h2 id="free-prefixes-di"><a class="header" href="#free-prefixes-di">Free prefixes DI</a></h2>
+<p><strong>DI</strong> contains all particles starting with <em>di-</em> and are prefixes to other
+elements of the grammar. They currently contains particles related to “focus”:</p>
+<ul>
+<li><strong>di</strong>: Attention focus: the listener should be extra attentive to the
+following word. Maybe it would be especially prone to confusion? </li>
+<li><strong>die</strong>: Contrastive focus: It’s that thing and not something else that was
+expected. </li>
+<li><strong>dia</strong>: Newsworthiness focus: Marks the part of the sentence containing the
+most important new information.</li>
+</ul>
+<h2 id="free-interjection-de-suffix"><a class="header" href="#free-interjection-de-suffix">Free interjection DE (suffix)</a></h2>
+<p><strong>DE</strong> contains all particles starting with <em>de-</em> and is a suffix to other
+elements of the grammar. It is followed by a single predicate which can be
+prefixed by <strong>SI/ZI</strong>. However it doesn’t support chains of predicates, unless
+they are wrapped in <strong>pe … pei</strong>.</p>
+<p><strong>de</strong> uses this predicate as an interjection. Using a borrowing can be used
+to make onomatopoeia, like <code>de uahaha</code> for laughter. Using a predicate word
+could be compared to emojis or lojban’s attitudinals, like <code>de gali</code> (love/❤️).</p>
+<p><strong>dei</strong> uses this predicate as a metadata tag or <em>#hashtag</em>.</p>
+<h2 id="free-parenthetical-dadai-suffix"><a class="header" href="#free-parenthetical-dadai-suffix">Free parenthetical DA…DAI (suffix)</a></h2>
+<p>The families <strong>DA</strong> and <strong>DAI</strong> have single members <strong>da</strong> and <strong>dai</strong>
+respectively. <strong>DA</strong> allows starting a parenthetical note which is ended by
+<strong>DAI</strong>. This note can be any valid eberban text.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="guidelines"><a class="header" href="#guidelines">Guidelines</a></h1>
+<p>To simplify designing and learning groups of words, they are usually designed by following a
+pattern like a common prefix. To stay consistent across the whole dictionary those patterns should
+follow the following guidelines:</p>
+<ul>
+<li>Vowels IEAOU encode order and scale, from small/negative to big/positive. As final -i encodes
+the type of the transitive place, it should be skipped in final vowel patterns.</li>
+<li>Vowels can encode direction by following the following cross diagram. As A is the loudest vowed
+and the 3rd vowel out of 5, it is used to represent forward. I is used for the center and other
+vowels are placed in counter-clockwise order.
+<pre><code>  A
+  |
+  |
+O-I-E
+  |
+  U
+</code></pre>
+</li>
+<li>Vowel patterns should be prefered over sonorant patterns. If sonorant patterns are used they
+should follow the same guidelines with NRL order.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="event-and-tenses"><a class="header" href="#event-and-tenses">Event and tenses</a></h1>
+<h2 id="what-is-the-general-design-of-eberbans-time-system"><a class="header" href="#what-is-the-general-design-of-eberbans-time-system">What is the general design of Eberban’s time system?</a></h2>
+<p>Time is represented using a graph of instants. It supports multiple possible futures and pasts,
+parallel and fictional universes. The context variable caries time-related information to time-aware
+predicates that handles time for you behind the scene.</p>
+<p>Physical entities (<em>pan</em>) are associated with the space-time volume (<em>skan</em>) they occupy, as the
+spatial volume they occupy at each instant they exist (possibly along multiple timelines).</p>
+<img src="vocabulary/timelines.svg" style="width: 100%;"/>
+<h2 id="common-timespan"><a class="header" href="#common-timespan">Common timespan</a></h2>
+<p>Each use of <em>pan</em> interacts with a time interval (formed by a start and end instant, and a specific
+path connecting them) stored in the context called the <strong>common timespan</strong>. Each <em>pan</em> states that
+the physical entity exists during the <strong>common timespan</strong> (it may exist outside of it), and words
+describing an action like <em>etiansa</em> (eat) states that the <strong>common timespan</strong> is contained during
+the timespan of the action. The <strong>common timespan</strong> is thus the intersection of all the time spans
+of all involved physical entities and actions.</p>
+<p>This <strong>common timespan</strong> is placed in the context by <em>ski</em> and time relations words, which constrain
+it to be maximal (given some timespan <em>x</em>, there doesn’t exist another timespan <em>y</em> that contains
+<em>x</em> which makes the proposition true; this timespan <em>y</em> is not contained by one or many timespans of
+involved physical entities or actions).</p>
+<p>This design allows to easily express events involving many entities and actions. The sentence “In
+this room there is an cat, and you eating an apple” expresses the presence of the cat while you’re
+eating an apple. The existence of the cat, you, the apple and the action of eating all contains the
+<strong>common timespan</strong> (and they can unfold outside of it).</p>
+<h2 id="time-anchor"><a class="header" href="#time-anchor">Time anchor</a></h2>
+<p>The time anchor is a timespan that is automatically stated to be contained by the <strong>sentence common
+timespan</strong>, and which is usually the <strong>present</strong>.</p>
+<p>The current time anchor can be refered to using <em>skun</em>, and <em>en an skun sai</em> can be used in a <em>an</em>
+sentence to change the time anchor for future sentences.</p>
+<p>The real world present can be refered to using <em>sufkun</em>, which is updated between each sentence to
+“move forward in time”.</p>
+<h2 id="time-relations"><a class="header" href="#time-relations">Time relations</a></h2>
+<p>Time relations relates an <strong>inner proposition</strong> (it’s A slot) with a reference event (E slot), which
+by default is the <strong>outer proposition</strong> current event.</p>
+<ul>
+<li><em>sre</em>: A <strong>is before</strong> E: end of A is before the start of E</li>
+<li><em>sra</em>: A <strong>starts</strong> E: start of A is start of E</li>
+<li><em>sro</em>: A <strong>finishes</strong> E: end of A is end of E</li>
+<li><em>sru</em>: A <strong>is after</strong> E: start of A is after the end of E</li>
+<li><em>srui</em>: A <strong>contains</strong> E</li>
+<li><em>srei</em>: A <strong>is contained by</strong> E</li>
+<li><em>srai</em>: A <strong>intersects with</strong> E</li>
+<li><em>sri</em>: A <strong>is unconstrained by</strong> E (but still reachable from E).</li>
+</ul>
+<p><em>sre</em> (before) and <em>sru</em> (after) have an O slot for the duration separating the 2 timespans. As
+giving a precise duration may be difficult or too precise, compounds with time units are made to
+give a vague time scale of such duration :</p>
+<ul>
+<li><em>e ti sre/sru</em>: very short time for common speech, less than 1 second (excluded)</li>
+<li><em>e vola sre/sru</em>: few seconds, between 1 second (included) and 1 minute (excluded)</li>
+<li><em>e jero sre/sru</em>: few minutes, between 1 minute (included) and 1 hour (excluded)</li>
+<li><em>e sura sre/sru</em>: few hours, between 1 hour (included) and 1 day (excluded)</li>
+<li><em>e dena sre/sru</em>: few days, between 1 day (included) and 1 week (excluded)</li>
+<li><em>e kora sre/sru</em>: few weeks, between 1 week (included) and 1 month (excluded)</li>
+<li><em>e gare sre/sru</em>: few months, between 1 month (included) and 1 year (excluded)</li>
+<li><em>e bire sre/sru</em>: more than 1 year (included)</li>
+</ul>
+<h2 id="how-are-events-modeled"><a class="header" href="#how-are-events-modeled">How are events modeled?</a></h2>
+<p>An event (<em>ski</em>) is modeled as an object containing the following information:</p>
+<ul>
+<li>The proposition describing the event</li>
+<li>The set of all physical entities involved in the proposition, each with their associated
+space-time volume</li>
+<li>Possibly other informations, this will be figured out with usage.</li>
+</ul>
+<h2 id="event-words"><a class="header" href="#event-words">Event words</a></h2>
+<p><em>ski</em> allows to related an event (E slot) with its defining propositon (A slot). It evaluates this
+proposition with its own <strong>inner common timespan</strong>, and doesn’t relate it with another event. “I
+like the event of [you dance]” doesn’t means that the “liking” and the “dancing” occurs at the same
+time. Inside a <em>ski</em> or in a sentence, <em>skul</em> can be used to refer to the current event.</p>
+<!-- *skun* allows to state that a given event (E slot) is occuring in the **outer common timespan** with
+the exact same set of physical entities it was defined with. "That (dancing) occured before lunch"
+speaks about the same event (the one where you dance and that I liked). -->
+<h2 id="modal-logic"><a class="header" href="#modal-logic">Modal logic</a></h2>
+<p>Something is <strong>necessary</strong> if it occurs in all timelines containing the
+<strong>common timespan</strong>, while something is <strong>possible</strong> if it occurs in at least
+one timeline. Sentences states that their content is necessary, but it can
+be expressed explicitly using:</p>
+<ul>
+<li><em>sni</em>: A is possible</li>
+<li><em>snu</em>: A is necessary</li>
+</ul>
+<h2 id="counterfactual-conditionals"><a class="header" href="#counterfactual-conditionals">Counterfactual conditionals</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Counterfactual_conditional">Counterfactual conditionals</a> can be expressed using <em>sna</em> which have meaning
+“A would be true if E was true.” It implies that: </p>
+<ul>
+<li>both E and A are false in the current timeline</li>
+<li>at any instant I in the past of the current timeline, if E occurs in the future of I, then
+A necessarily occurs too.</li>
+<li>as A is evaluated in the current timeline with some common timespan T , it is evaluated in
+the other timelines with a timespan T2 such that T and T2 have the same duration, and their
+distance with I is the same.</li>
+</ul>
+<h2 id="space-relations"><a class="header" href="#space-relations">Space relations</a></h2>
+<p>TODO</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="calendar-and-time"><a class="header" href="#calendar-and-time">Calendar and time</a></h1>
+<p>Eberban time system aims to provide powerful and consistent tools to speak about durations and
+calendars. However to provide that power and consistency they may not follow arbitrary conventions
+found in other languages.</p>
+<h2 id="durations"><a class="header" href="#durations">Durations</a></h2>
+<p>Duration words allows to measure elpased time that may not be aligned to the calendar, such as the
+duration of a piece of music (3 minutes and 32 seconds). Since some units of measurements are based
+on calendar concepts that don’t have consistent duration, the duration expressed by those word is
+the set of acceptable values. Duration words also follow the number predicate structure (<strong>E</strong> is X
+times <strong>A</strong>) which allows to easily compose them with numbers or other units of measurement.</p>
+<ul>
+<li><strong>bire</strong>: <strong>E</strong> is 1 year (Gregorian Calendar) times <strong>A</strong> (default: 1)</li>
+<li><strong>gare</strong>: <strong>E</strong> is 1 month (Gregorian Calendar) times <strong>A</strong> (default: 1)</li>
+<li><strong>kora</strong>: <strong>E</strong> is 1 week (from Xday midnight to next Xday midnight) times <strong>A</strong> (default: 1)</li>
+<li><strong>dena</strong>: <strong>E</strong> is 1 day times <strong>A</strong> (default: 1)</li>
+<li><strong>sura</strong>: <strong>E</strong> is 1 hour times <strong>A</strong> (default: 1)</li>
+<li><strong>jero</strong>: <strong>E</strong> is 1 minute times <strong>A</strong> (default: 1)</li>
+<li><strong>vola</strong>: <strong>E</strong> is 1 second times <strong>A</strong> (default: 1)</li>
+</ul>
+<blockquote>
+<p>To speak about milliseconds and smaller, use multiplication with <strong>vola</strong>.</p>
+</blockquote>
+<p><strong>vulu</strong> can be used to speak about the duration <strong>E</strong> of an event <strong>A</strong>.</p>
+<h2 id="calendar-events"><a class="header" href="#calendar-events">Calendar events</a></h2>
+<h3 id="hours-minutes-and-seconds"><a class="header" href="#hours-minutes-and-seconds">Hours, minutes and seconds</a></h3>
+<p>Words for hours, minutes and seconds have the following meanings:</p>
+<ul>
+<li><strong>surai</strong>: Now is the hour <strong>E</strong> of <strong>A</strong> (default: day/<strong>denai</strong>).</li>
+<li><strong>jeroi</strong>: Now is the minute <strong>E</strong> of <strong>A</strong> (default: hour/<strong>surai</strong>).</li>
+<li><strong>volai</strong>: Now is the second <strong>E</strong> of <strong>A</strong> (default: minute/<strong>jeroi</strong>).</li>
+</ul>
+<p>They are relative to the start of an event described by <strong>A</strong>, thus the “minute 0” is from the start
+of <strong>A</strong> to 1 minute (excluded) after. “Minute 15” is 15 minutes after the start of <strong>A</strong> to 16
+minutes (excluded). <strong>A</strong> is a set of numbers that must all be consecutive integers, such as
+“Minutes 10 to 15” is an event spanning from 10 minutes after the start of <strong>A</strong> to 15 minutes.
+<strong>E</strong> can contain negative numbers, such as “Minute -2” is from 2 minutes before the start of
+<strong>A</strong> to 1 minute (excluded) before the start of <strong>A</strong>.</p>
+<h3 id="calendar-aligned-events"><a class="header" href="#calendar-aligned-events">Calendar-aligned events</a></h3>
+<p>Concept of days, weeks, month and years are inherently speaking about events that are aligned with
+the calendar. “The first day of the festival” speaks about a day starting from midnight to the next
+midnight, even if the festival starts at 10.</p>
+<p>Aside from this alignment detail, the following words works the same way as <strong>surai/jeroi/volai</strong>;
+which means the first day of the week/month/year is day 0, and the first month of the year is month
+0. You should thus be careful when translating a date from and to Eberban.</p>
+<ul>
+<li><strong>birei</strong>: Now is year <strong>E</strong> (default: 0) of <strong>A</strong> (default: Gregorian Calendar). Year 1 is 1 AD, but year 0
+is 1 BC and year -1 is 2 BC. This matches <a href="https://en.wikipedia.org/wiki/Astronomical_year_numbering">Astronomical year numbering</a>.</li>
+<li><strong>garei</strong>: Now is month <strong>E</strong> (default: 0) of <strong>A</strong> (default: year/<strong>birei</strong>).</li>
+<li><strong>korai</strong>: Now is week <strong>E</strong> (default: 0) of <strong>A</strong> (default: year/<strong>birei</strong>). Weeks starts on Monday and end
+on Sunday.</li>
+<li><strong>denai</strong>: Now is the day <strong>E</strong> (default: 0) of <strong>A</strong> (default: month/<strong>garei</strong>).</li>
+</ul>
+<p><strong>E</strong> defaulting to 0 allows to quickly express “the same day/week/month/year as (the start of) X”.</p>
+<p>Compounds of form <em>e TI denai</em> are defined for each day of the week, and have the same meaning as
+<strong>denai</strong> with this additional constraint that <strong>E</strong> is the particular day of the week.</p>
+<h3 id="exemples"><a class="header" href="#exemples">Exemples</a></h3>
+<blockquote>
+<p><strong>Telling the current time of the day:</strong><br />
+<em>a [se tie tu] jeroi [se te tio] surai</em><br />
+Now the minute 54 of the hour 17 (of a day)</p>
+</blockquote>
+<blockquote>
+<p><strong>Telling the current date:</strong><br />
+<em>a se ti e tia denai se tiu garei</em><br />
+Now is a Sunday, the day 0 of month 8 (September 1st)</p>
+</blockquote>
+<blockquote>
+<p><em>a mi drie meon sri se te denai skun srui mi etiansa ze meon</em><br />
+I buy an apple, and tomorrow I will eat it.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="colors"><a class="header" href="#colors">Colors</a></h1>
+<p><strong>zino</strong> is used to speak about the color <strong>A</strong> of thing <strong>E</strong>, perceived by <strong>O</strong> (which defaults
+to the opiner/bzael). It purposefully speaks about the perception of color and not “the real color
+of the object”. For exemple if a white object is only lit with a red light, it will be perceived red
+by the observer (unless they are color blind).</p>
+<p>The words for the colors themselves follow the pattern zmXr and are based on the <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV coordinate
+system</a>. Colors represent a main coordinate and a range of close coordinates that are considered to
+be similar enough (TODO: specify such acceptable range).</p>
+<ul>
+<li>zmir: E is color white</li>
+<li>zmer: E is color red-ish</li>
+<li>zmar: E is color green-ish</li>
+<li>zmor: E is color blue-ish</li>
+<li>zmur: E is color black</li>
+</ul>
+<p>Words for red/green/blue above are very broad if proper hue precision is unnecessary, but more
+precise colors can be expressed by following the same pattern while combining the vowels :</p>
+<p><img src="vocabulary/color_wheel.png" alt="Color wheel" /></p>
+<p><strong>zmire</strong> and <strong>zmure</strong> allows to speak about ligher (less saturated) and darker (less value)
+colors.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="writing-systems"><a class="header" href="#writing-systems">Writing systems</a></h1>
+<p>As presented in the morphology chapter, Eberban can be written using the Latin
+alphabet. However, there is also a custom writing system that takes advantage of
+Eberban’s morphology which is usable in a <strong>linear form</strong> similar to how text is
+written in the Latin alphabet, and in a <strong>planar form</strong> which replaces argument
+binding particles like <strong>VI, FI or SI</strong> with graphical 2D notation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linear-writing-system"><a class="header" href="#linear-writing-system">Linear writing system</a></h1>
+<img src="writing/symbols.svg" style="width: 100%; background: white; border: 2px solid black" />
+<p>The linear writing system is structured around syllables with a vowel written in the center and the
+consonants or sonorants being written above or below, forming four corners (up left, up right, down
+left, down right). </p>
+<ul>
+<li>If a syllable starts with a sonorant (N-initial particles, or multi-syllables words like
+ma-<strong>na</strong>.), it can be written either in the top or bottom left. </li>
+<li>If a syllable starts with one or two consonants, they must be placed up or down depending if the
+first consonant is unvoiced (up) or voiced (down). If there are two consonants they occupy thus
+both left and right place. We know the right one doesn’t correspond to the syllable end because
+there is another consonant on its left.</li>
+<li>If a syllable ends with a sonorant and is the last syllable of the word, it must be placed on the
+right and opposite side of the initial consonant or sonorant. If there is no initial it can be
+written either up or down.</li>
+<li>If a syllable ends with a consonant because it is part of a medial pair or triplet, then the first
+consonant must be placed on the opposite side of the initial consonant of the current syllable,
+and the following consonants will be written at the start of the next syllable (following syllable
+start rules). This means that for exemple in <code>vog-bi</code>, since initial <code>v</code> is written at the bottom
+left, the <code>g</code> must be written at the top right, even though it is voiced and thus is usually
+written at the bottom. We know it’s a <code>g</code> and not a <code>k</code> thanks to the following <code>b</code> which is
+voiced and thus written at the bottom left. If the syllable doesn’t have an initial consonant it
+is adviced to write the ending consonant on its usual side, however it is not mandatory.</li>
+<li>This writting system ignores spaces. Use symbol for pause (<code>'</code>) when necessary. In borrowings and
+freeform variables ending with a consonant, it must be written at the start of the pause symbol
+(avoiding the ambiguity of consonants at the end of syllable which is usually resolved thanks to
+the following consonant, while there is none here).</li>
+</ul>
+<h2 id="computer-font"><a class="header" href="#computer-font">Computer font</a></h2>
+<p>A computer font is <a href="https://eberban.github.io/eberban/font/eberban-Regular.otf">available to
+download</a>.</p>
+<p>To write with this font some modifications needs to be made to texts to be rendered properly.
+However it uses the fact that the Eberban grammar doesn’t care of case or repeated letters. This
+thus mean that text written with this font is perfectly valid Eberban but may look a bit odd (with
+repeated letters, uppercase and hyphens) when displayed with another font.</p>
+<p>The font works by only having vowels, <code>'</code> and space moving the cursor forward. Consonants, sonorants
+and <code>H</code> are written without moving the cursor and <em>stacks</em> above or below the following vowel. They
+are however not automatically moved to the right or the opposite side, and the following
+modifications must be made :</p>
+<ul>
+<li>initial pair: the second consonant (or sonorant) must be doubled to be shifted to the right. <code>tcu</code>
+must thus be written <code>tccu</code>.</li>
+<li>medial pairs and triplets: medial pairs consonants (or sonorants) are split between the end of the
+a syllable and the start of the next.
+<ul>
+<li>If the first letter can be written on the correct side (up/down), an hyphen <code>-</code> must be written
+between them to shirt the first letter in the correct place. <code>padgon</code> is thus written <code>pad-gon</code>.</li>
+<li>If the first letter must be written on the opposite side, it just needs to be written in
+uppercase. <code>vogbi</code> is thus written <code>voGbi</code></li>
+</ul>
+</li>
+<li>sonorants: sonorants by default are considered to be at the start of a syllable. In words ending
+with a sonorant however they should be placed at the end of the syllable. Writing a space after
+them shift them to the correct place. Sonorants at the start of a medial pair or a triplet in a
+borrowing also support being followed by an hyphen <code>-</code>, as a space would break the word apart.</li>
+<li>sonorants, M and H: by default they are written above the vowels, but writing them uppercase moves
+them below.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="res/leipzig.min.js"></script>
+        <script type="text/javascript" src="res/leipzig_apply.js"></script>
+        <script type="text/javascript" src="res/audiobtn.js"></script>
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>
