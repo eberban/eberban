@@ -1,8 +1,14 @@
 name: Run tests for the website
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - web/src/scripts/lexer/**
   pull_request:
     branches: [master]
+    paths:
+      - web/src/scripts/lexer/**
 
 jobs:
   install-and-test:
