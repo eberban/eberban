@@ -2,12 +2,12 @@ import { describe, expect, test } from "vitest";
 import lex from "./index";
 
 
-test.skip(`A string is not lexed if it is empty`, () => {
+test(`A string is not lexed if it is empty`, () => {
     expect(lex(``)).toStrictEqual([]);
 })
 
 
-describe.skip(`A single eberban space is lexed if the inputted string`, () => {
+describe(`A single eberban space is lexed if the inputted string`, () => {
     describe(`comprises a single eberban space`, () => {
         test.for([
             `q`, `w`, `x`, `y`,
