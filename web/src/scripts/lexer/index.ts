@@ -4,7 +4,5 @@ interface Lexeme {
 };
 
 export default function lex(_: string): Lexeme[] {
-    return [
-        { type: "InvalidType", value: "InvalidValue" },
-    ];
+    return [];
 }
