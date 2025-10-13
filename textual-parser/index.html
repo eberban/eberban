@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>eberban textual parser</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+  <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,viewport-fit=cover" />
+  <link rel="icon" type="image/png" sizes="200x200" href="/eberban/icon.png">
+  <style>
+    form,
+    select {
+      margin: 4px 0
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="module" crossorigin src="/eberban/assets/textual-parser-C3hAjrgN.js"></script>
+  <link rel="modulepreload" crossorigin href="/eberban/assets/utils-IfPWtw63.js">
+  <link rel="modulepreload" crossorigin href="/eberban/assets/simplify_tree-CrXtGTGF.js">
+</head>
+
+<body>
+  <meta charset='utf-8' />
+
+  <span style="font: 15px arial, sans-serif;">Type any <a href="..">eberban</a> text in the following textarea. The result will
+    be parsed as you type:</span>
+  <br /><br />
+
+  <form id="form1" name="form1" method="post" action="" style="width:100%">
+    <textarea id="input_textarea" style="width:100%" rows="8" spellcheck="false" autofocus></textarea>
+    <br />
+    <span style="font: 15px arial, sans-serif;">Output mode: </span>
+    <select id="optlist" onChange="run_camxes()">
+      <option>Raw output</option>
+      <option>Condensed</option>
+      <option id="default">Prettified (with ellided words)</option>
+      <option>Prettified + families (with ellided words)</option>
+      <option>Prettified + families ext (with ellided words)</option>
+      <option>Prettified (without ellided words)</option>
+      <option>Prettified + families (without ellided words)</option>
+      <option>Prettified + families ext (without ellided words)</option>
+    </select>
+    <select id="morpho-mode" onChange="run_camxes();">
+      <option>Remove morphology</option>
+      <option>Keep morphology</option>
+    </select>
+    <select id="spaces-display-mode" onChange="run_camxes();">
+      <option>Hide spaces</option>
+      <option>Display spaces as '_'</option>
+    </select>
+  </form>
+
+  <div
+    style="display:block; overflow: scroll; max-height:24em; border: solid 1px; padding: 10px; background-color: #DDDDFF;"
+    height="24em">
+    <pre style="white-space: pre-wrap;"><code id="parse_result" width="100%" height="100%"> </code></pre>
+  </div>
+
+
+</body>
+
+</html>
