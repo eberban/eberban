@@ -840,7 +840,7 @@ zoie:
   gloss: "#get-default-E"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the E place of \[predicate\] (set with {oie}).
+    Satisfy the default bound of the E place of [predicate] (set with {oie}).
   links:
     - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zoia:
@@ -849,7 +849,7 @@ zoia:
   gloss: "#get-default-A"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the A place of \[predicate\] (set with {oia}).
+    Satisfy the default bound of the A place of [predicate] (set with {oia}).
   links:
     - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zoio:
@@ -858,7 +858,7 @@ zoio:
   gloss: "#get-default-O"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the O place of \[predicate\] (set with {oio}).
+    Satisfy the default bound of the O place of [predicate] (set with {oio}).
   links:
     - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zoiu:
@@ -867,7 +867,7 @@ zoiu:
   gloss: "#get-default-U"
   tags: [core, default]
   short: |
-    Satisfy the default bound of the U place of \[predicate\] (set with {oiu}).
+    Satisfy the default bound of the U place of [predicate] (set with {oiu}).
   links:
     - ["icon-book", "Default arguments", https://eberban.github.io/eberban/books/refgram/book/logic/default.html]
 zu:
@@ -1102,7 +1102,8 @@ bi:
   tags: [core, negation]
   short: "Wide scope negation ranging over existential variables and predicates."
   links:
-    - ["icon-book", "Predicate transformations - Negations", https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations]
+    # Quoting the "?"-containing URL so check_word_ids.sh can parse this file
+    - ["icon-book", "Predicate transformations - Negations", "https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations"] 
 bo:
   id: 9eludeaq4v
   family: "BO"
@@ -1687,7 +1688,7 @@ pe:
     Since it is a member of PE, {BU} can be used inside it. Each item is a predicate and all are
     stated to be true (AND operator). They share the same slots.
 
-    {mi pe etiansa bu dona pei meon} = I \[eat and like\] an apple.
+    {mi pe etiansa bu dona pei meon} = I [eat and like] an apple.
   links:
     - ["icon-book", "Explicit binding - Brackets", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#brackets]
     - ["icon-book", "Enumeration", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
@@ -3544,7 +3545,7 @@ dena:
     and we're not speaking about a specific day in the Gregorian calendar,
     [E] is a subset of all possible durations of a day.
 denai:
-  id: lvhzpvgj4z
+  id: hlxvt9w4ga
   family: "R"
   gloss: "day (event)"
   short: "Now is the day [E:tce gien] (default: 0) of [A:()] (default: {garei})."
@@ -3563,7 +3564,7 @@ sura:
     and we're not speaking about a specific hour in the Gregorian calendar,
     [E] is a subset of all possible durations of an hour.
 surai:
-  id: lvhzpvgj4z
+  id: csqvyaljot
   family: "R"
   gloss: "hour (event)"
   short: "Now is the hour [E:tce gien] of [A:()] (default: {denai})."
@@ -3578,7 +3579,7 @@ jero:
   short: "[E:tce gan] is 1 minute times [A:tce gan] (default: 1)."
   tags: [time, unit, minute]
 jeroi:
-  id: lvhzpvgj4z
+  id: l5u3vuf9yc
   family: "R"
   gloss: "minute (event)"
   short: "Now is the minute [E:tce gien] of [A:()] (default: {surai})"
@@ -6462,7 +6463,7 @@ e kine ctal:
   gloss: "school"
   short: "[E:tce* pan] is a school/educational building."
 e spua ctal:
-  id: wlqy92kdaz
+  id: urxuw8ethp
   predilex_id: detume
   family: "C"
   gloss: "residential building"
@@ -6669,173 +6670,173 @@ _spelling:
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter P.\
-      {ceu}: Sound \[p] (IPA).
+      {ceu}: Sound [p] (IPA).
   bu: 
     id: jv5jdt8brj
     gloss: B
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter B.\
-      {ceu}: Sound \[b] (IPA).
+      {ceu}: Sound [b] (IPA).
   fi: 
     id: zhcwp4omtj
     gloss: F
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter F.\
-      {ceu}: Sound \[f] (IPA).
+      {ceu}: Sound [f] (IPA).
   vu: 
     id: n4q80wyalg
     gloss: V
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter V.\
-      {ceu}: Sound \[v] (IPA).
+      {ceu}: Sound [v] (IPA).
   ti: 
     id: lrmti46sir
     gloss: T
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter T.\
-      {ceu}: Sound \[t] (IPA).
+      {ceu}: Sound [t] (IPA).
   du: 
     id: 9hbytu99i7
     gloss: D
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter D.\
-      {ceu}: Sound \[d] (IPA).
+      {ceu}: Sound [d] (IPA).
   si: 
     id: 0iw5lmhhmw
     gloss: S
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter S.\
-      {ceu}: Sound \[s] (IPA).
+      {ceu}: Sound [s] (IPA).
   zu: 
     id: wmv5jemupg
     gloss: Z
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter Z.\
-      {ceu}: Sound \[z] (IPA).
+      {ceu}: Sound [z] (IPA).
   ci: 
     id: 6l8g98ctrg
     gloss: C
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter C.\
-      {ceu}: Sounds \[ʃ] or \[ʂ] (IPA).
+      {ceu}: Sounds [ʃ] or [ʂ] (IPA).
   ju: 
     id: xmd29mbi8f
     gloss: J
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter J.\
-      {ceu}: Sounds \[ʒ] or \[ʐ] (IPA).
+      {ceu}: Sounds [ʒ] or [ʐ] (IPA).
   ki: 
     id: pg94ncpjyo
     gloss: K
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter K.\
-      {ceu}: Sound \[k] (IPA).
+      {ceu}: Sound [k] (IPA).
   gu: 
     id: ozi51vdotq
     gloss: G
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter G.\
-      {ceu}: Sound \[ɡ] (IPA).
+      {ceu}: Sound [ɡ] (IPA).
   mi: 
     id: 50m9r74hya
     gloss: M
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter M.\
-      {ceu}: Sound \[m] (IPA).
+      {ceu}: Sound [m] (IPA).
   nu: 
     id: i8v5uyrq3i
     gloss: 'N'
     tags: ["native", "sonorant"]
     short: |
       {ce}: Letter N.\
-      {ceu}: Sounds \[n] or \[ŋ] (IPA).
+      {ceu}: Sounds [n] or [ŋ] (IPA).
   ri: 
     id: lsc2ddbb49
     gloss: R
     tags: ["native", "sonorant"]
     short: |
       {ce}: Letter R.\
-      {ceu}: Sounds \[ɣ], \[ʁ], \[r] or \[ʀ] (IPA).
+      {ceu}: Sounds [ɣ], [ʁ], [r] or [ʀ] (IPA).
   lu: 
     id: 578oyb497a
     gloss: L
     tags: ["native", "sonorant"]
     short: |
       {ce}: Letter L.\
-      {ceu}: Sound \[l] (IPA).
+      {ceu}: Sound [l] (IPA).
   ihi: 
     id: p6o6lxpp7l
     gloss: H
     tags: ["native", "vhowel"]
     short: |
       {ce}: Letter H.\
-      {ceu}: Sound \[h] (IPA).
+      {ceu}: Sound [h] (IPA).
   uhu: 
     id: 2pzry3n25u
     gloss: "(space)"
     tags: ["native"]
     short: |
       {ce}: Space character.\
-      {ceu}: Sound \[ʔ] (IPA) or pause.
+      {ceu}: Sound [ʔ] (IPA) or pause.
   i: 
     id: xlut6t956h
     gloss: I
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter I.\
-      {ceu}: Sound \[i] (IPA).
+      {ceu}: Sound [i] (IPA).
   e: 
     id: wy1kwyzsu0
     gloss: E
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter E.\
-      {ceu}: Sounds \[ɛ] or \[e] (IPA).
+      {ceu}: Sounds [ɛ] or [e] (IPA).
   a: 
     id: 9hrc3w1lki
     gloss: A
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter A.\
-      {ceu}: Sounds \[a] or \[ɑ] (IPA).
+      {ceu}: Sounds [a] or [ɑ] (IPA).
   o: 
     id: pjj8vofua1
     gloss: O
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter O.\
-      {ceu}: Sounds \[o] or \[ɔ] (IPA).
+      {ceu}: Sounds [o] or [ɔ] (IPA).
   u: 
     id: ktzorp451u
     gloss: U
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter U.\
-      {ceu}: Sound \[u] (IPA).
+      {ceu}: Sound [u] (IPA).
   ua: 
     id: j0mrfltg17
     gloss: W
     short: |
       {ce}: Letter W.\
-      {ceu}: Sound \[w] (IPA).
+      {ceu}: Sound [w] (IPA).
   ia: 
     id: n6wfjkf24c
     gloss: "Y"
     short: |
       {ce}: Letter Y.\
-      {ceu}: Sound \[j] (IPA).
+      {ceu}: Sound [j] (IPA).
   ksi: 
     id: jrrvnf5981
     gloss: "X"
@@ -6911,7 +6912,7 @@ _spelling:
     gloss: "\\"
     tags: ["symbol"]
     short: |
-      {ce}: \\ (backslash) symbol.
+      {ce}: \ (backslash) symbol.
   sla: 
     id: iohrkvpgou
     gloss: "|"

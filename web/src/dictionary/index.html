@@ -8,7 +8,7 @@
 	<link href="../legacy/bootstrap-legacy.css" rel="stylesheet">
 	<link type="text/css" href="../legacy/layout-legacy.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="../legacy/bootstrap-legacy.js"></script>
+	<script type="module" src="../legacy/bootstrap-legacy.js"></script>
 </head>
 
 <body>
@@ -78,7 +78,7 @@
 
 	function search(query) {
 		const filters = query.split(",");
-		document.getElementById("dictionary").innerHTML = html_dictionary(filters);
+		html_dictionary(filters);
 		window.scrollTo(0, 0);
 	}
 
