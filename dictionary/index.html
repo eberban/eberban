@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+	<title>eberban dictionary</title>
+	<link rel="icon" type="image/png" sizes="200x200" href="/eberban/icon.png">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="module" crossorigin src="/eberban/assets/dictionary-Bz6ENMnf.js"></script>
+  <link rel="modulepreload" crossorigin href="/eberban/assets/utils-IfPWtw63.js">
+  <link rel="modulepreload" crossorigin href="/eberban/assets/bootstrap-legacy-N8hfoYcW.js">
+  <link rel="modulepreload" crossorigin href="/eberban/assets/en-ByXXfKfO.js">
+  <link rel="stylesheet" crossorigin href="/eberban/assets/bootstrap-legacy-JhqxZCQ6.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>
+			<a href="..">eberban</a> dictionary
+		</h1>
+
+		<div style="margin-bottom: 10px;">
+			(
+			<span data-tooltip="Some particles families follow a general pattern and only a
+					subset of it is registered in the dictionnary">
+				<a href="#@P">
+					<span id="particles-count"></span>
+					particles*
+				</a>
+			</span>
+
+			, <a href="#@R">
+				<span id="roots-count"></span> roots
+			</a>
+
+			, <a href="#@C">
+				<span id="compounds-count"></span> compounds
+			</a>
+			)
+		</div>
+
+		<div class="row">
+			<a href="#" id="search-reset" class="btn span2">Clear search</a>
+			<input type="text" class="span9 input-medium" id="search" style="padding: 4px 14px; height: revert;">
+		</div>
+
+		<ul>
+			<li>Prefix with <span class="label label-info">#</span> to search a tag (exact match)</li>
+			<li>Prefix with <span class="label label-info">@</span> to search for a family (exact match, particle
+				families, P for all particles, R for roots, C for compounds)</li>
+			<li>Prefix with <span class="label label-info">!</span> to search for an eberban word (partial match, write
+				compounds without spaces)</li>
+			<li>Prefix with <span class="label label-info">?</span> to search in gloss or short description (partial
+				match)</li>
+			<li>Without prefix it searches among eberban word, gloss, short, unique id and notes</li>
+			<li>Multiple keywords can be search by separating them with a comma <span class="label label-info">,</span>
+			</li>
+			<li>Compounds must be searched with parts separated with a space character <span class="label label-info"> </span>.</li>
+		</ul>
+
+		<i>After a dictionary update you may have to reload the page (with Ctrl + F5 on a computer) to be up to
+			date.</i>
+
+		<hr />
+
+		<div id="dictionary"></div>
+	</div>
+
+</body>
+
+
+</html>
