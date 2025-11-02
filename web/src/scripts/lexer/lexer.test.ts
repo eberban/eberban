@@ -28,6 +28,11 @@ describe(`A single eberban space is lexed if the inputted string`, () => {
             expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
         });
     });
+    describe(`comprises multiple different whitespace characters`, () => {
+        test.for([` ​​`, `   `, `  　  `])(`%s`, (input) => {
+            expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
+        });
+    })
     describe(`begins with hyphen(s) and ends with eberban space(s)`, () => {
         test.for([`- `, `--: `, `---)...`])(`%s`, (input) => {
             expect(lex(input)).toStrictEqual([{type: "Space", value: "" }]);
