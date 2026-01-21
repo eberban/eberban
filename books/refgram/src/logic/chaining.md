@@ -59,7 +59,7 @@ creating __existential variables__ to have the correct arity is called
 __arity mismatch resolution__ and it is a key aspect of Eberban grammar to
 reduce verbosity in simple cases.
 
-> __mian bure__
+> __mian etiansa__
 >
 > \\[ \begin{align}
 > \text{etiansa}(c,e,a)                    &= \text{[$e$ eats $a$]} \\\\
@@ -99,7 +99,7 @@ with any (correctly typed) arguments, and with a different _context argument_.
 > _mian_.\
 > $(e) is a set/group of cats.
 
-> __gli mian__
+> __gali mian__
 >
 > \\[ \begin{align}
 > \text{gali}(c,e,A)   &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\

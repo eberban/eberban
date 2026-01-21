@@ -50,7 +50,7 @@ equally mean the following :
 - __I__ eat __multiple apples__.
 - __We__ eat __multiple apples__.
 
-It also doesn't specify _which_ apples everyone is eating: __bure__ is
+It also doesn't specify _which_ apples everyone is eating: __etiansa__ is
 satisfied if everyone eats at least one of the apples, and every apple is eaten
 by at least one.
 
