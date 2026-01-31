@@ -84,3 +84,9 @@ Manually binding the argument will prevent the default bind to be added:
 
 > Other chapters will omit default binds (unless they are important) to reduce
 > verbosity.
+
+## Advanced default bounds
+
+With the above concept, it is not possible for a default bound to depend on an argument fed into
+another slot. The particles __oien/oian/oion/oiun__ allows to define a default bind which receives
+all the arguments of the predicate having the unbound slot.

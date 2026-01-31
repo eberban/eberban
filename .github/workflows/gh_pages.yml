@@ -46,6 +46,10 @@ jobs:
       - name: Build refgram book
         run: |
           mdbook build books/refgram
+
+      - name: Build new_course book
+        run: |
+          mdbook build books/new_course
         
       - name: Install NPM dependencies for the website
         run: |

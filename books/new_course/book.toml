@@ -1,0 +1,18 @@
+[book]
+authors = ["mia entropy"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Eberban Course"
+
+[output.html]
+default-theme = "rust"
+mathjax-support = true
+git-repository-url = "https://github.com/eberban/eberban"
+git-repository-icon = "fa-github"
+curly-quotes = true
+site-url = "https://eberban.github.io/eberban/books/new_course/book/"
+
+additional-js = [
+    "res/audiobtn.js"
+]
