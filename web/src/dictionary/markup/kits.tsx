@@ -82,11 +82,11 @@ function definition_quote_kit(): Kit {
 function eberban_quote_kit(): Kit {
     const in_quote = (s: string) => "{" + s + "}";
     return {
-        keep_children_as_string: true,
         regex_string: in_quote(group(fewest_positive_number_of(any))),
         replacer: (content) => {
-            const { regex_string, replacer } = content_kit();
-            let rendered_content = markup_to_jsx_child(content as string, regex_string, replacer);
+            const { regex_string, replacer, keep_children_as_string } = content_kit();
+            let rendered_content = markup_to_jsx_child(
+                content as string, regex_string, replacer, keep_children_as_string);
             rendered_content = markup_to_jsx_child(rendered_content, "!", () => <></>);
             return <span class="ebb-quote">{rendered_content}</span>;
         },  
@@ -103,6 +103,7 @@ function eberban_quote_kit(): Kit {
             ))
         ));
         return {
+            keep_children_as_string: true,
             regex_string: any_of(simple_word_link, compound_word_link),
             replacer: (simple_word_link, compound_word_link) => {
             // Only one of these will be defined.
