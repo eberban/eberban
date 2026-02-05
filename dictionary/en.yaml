@@ -2314,38 +2314,83 @@ gan:
   notes: |
     {gan} numbers are an extension field of {gen} (real numbers) that supports
     units like length, mass, etc.
-vne:
+venu:
   id: d9fzfk4r83
   family: "R"
-  gloss: "satisfies-at-least"
-  tags: [set, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies at least (included) [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
+  gloss: "satisfies-at-least-N-preds"
+  tags: [set, list, connective]
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies at least [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
   notes: |
     With default [O] it corresponds to an OR logical operator.
-  see_also: ["vna", "vno", "vnu", "eblumae"]
-vna:
-  id: f5t4czvnac
+
+    Prefix with {etebleu} or {etableu} to easily transform this into a property/relation that can be used
+    with other words.
+
+    __Example:__\
+    {me [pea bu mian, gour pei] veni etebleu venu [peho bu za ufeliksi, za ureksi]}\
+    Among the cat and the dog, at least one of them is named either Felix or Rex.    
+  see_also: ["vanu", "vonu", "vunu", "veni", "vani", "voni", "vuni", "eblumae"]
+vanu:
+  id: f5t4czvnuc
   family: "R"
-  gloss: "satisfies-exactly"
-  tags: [set, connective]
+  gloss: "satisfies-exactly-N-preds"
+  tags: [set, list, connective]
   short: "List of arguments [E:ebluse] (default: empty list) satisfies exactly [O:tce gin] (default: 1) predicate(s) in set [A:tcehi ()]."
-  see_also: ["vne", "vno", "vnu", "eblumae"]
-vno:
+  notes: |
+    See notes of {venu} for detailed exemple of usage.
+  see_also: ["venu", "vonu", "vunu", "vani", "voni", "vuni", "eblumae"]
+vonu:
   id: 6blh1b2gk3
   family: "R"
-  gloss: "satisfies-at-most"
-  tags: [set, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies at most (included) [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
-  see_also: ["vne", "vna", "vnu", "eblumae"]
-vnu:
+  gloss: "satisfies-at-most-N-preds"
+  tags: [set, list, connective]
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies at most [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
+  notes: |
+    See notes of {venu} for detailed exemple of usage.
+  see_also: ["venu", "vanu", "vunu", "veni", "vani", "voni", "vuni", "eblumae"]
+vunu:
   id: qsivboraps
   family: "R"
-  gloss: "satisfies-all"
-  tags: [set, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies all predicates in set [A:tcehi (...)]."
+  gloss: "satisfies-all-except-N-preds"
+  tags: [set, list, connective]
+  short: "List of arguments [E:ebluse] (default: empty list) satisfies all except [O:tce gin] (default: 0) predicates in set [A:tcehi (...)]."
   notes: |
     With default [O] it corresponds to an AND logical operator.
-  see_also: ["vne", "vna", "vno", "eblumae"]
+
+    See notes of {venu} for detailed exemple of usage.
+  see_also: ["venu", "vanu", "vonu", "veni", "vani", "voni", "vuni", "eblumae"]
+veni:
+  id: 6sy0lhny4i
+  family: "R"
+  gloss: "at-least-N-members-satisfies"
+  tags: [set, connective]
+  short: "At least [O:tce gin] (default: 1) members of set [E:tce p] satisfies property [A:(p)]."
+  notes: |
+    With default [O] it corresponds to an OR logical operator.
+  see_also: ["venu", "vanu", "vonu", "vunu", "vani", "voni", "vuni"]
+vani:
+  id: ko2nn8ztz4
+  family: "R"
+  gloss: "exactly-N-members-satisfies"
+  tags: [set, connective]
+  short: "Exactly [O:tce gin] (default: 1) members of set [E:tce p] satisfies property [A:(p)]."
+  see_also: ["venu", "vanu", "vonu", "vunu", "veni", "voni", "vuni"]
+voni:
+  id: chewxhquck
+  family: "R"
+  gloss: "at-most-N-members-satisfies"
+  tags: [set, connective]
+  short: "At most [O:tce gin] (default: 1) members of set [E:tce p] satisfies property [A:(p)]."
+  see_also: ["venu", "vanu", "vonu", "vunu", "veni", "vani", "vuni"]
+vuni:
+  id: 6bhqkyn3og
+  family: "R"
+  gloss: "all-except-N-members-satisfies"
+  tags: [set, connective]
+  short: "All except [O:tce gin] (default: 0) members of set [E:tce p] satisfies property [A:(p)]."
+  notes: |
+    With default [O] it corresponds to an AND logical operator.
+  see_also: ["venu", "vanu", "vonu", "vunu", "veni", "vani", "voni"]
 mine:
   id: qt6yew5oof
   predilex_id: zovahi{A,E}
@@ -6563,6 +6608,16 @@ e blu se:
   notes: |
     It doesn't state anything about its items, and allows them to even be of different types,
     which {blu} doesn't allow.
+e te bleu:
+  id: nqcbn7rmem
+  family: "C"
+  gloss: "1-list"
+  short: "[E:p] is the only member of list [A:blu p]."
+e ta bleu:
+  id: crzlw151ac
+  family: "C"
+  gloss: "2-list"
+  short: "[E:p] and [A:b] are the only members (in order) of list [A:ebluse]."
 e sfuer zguin:
   id: qlqy5bxoso
   family: "C"
