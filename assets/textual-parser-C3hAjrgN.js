@@ -1,0 +1,3 @@
+import"./utils-IfPWtw63.js";import{c as d,a as c}from"./simplify_tree-CrXtGTGF.js";document.getElementById("default").defaultSelected=!0;window.onload=i;function i(){s()}$("#input_textarea").bind("keyup",function(t){s()});function s(){try{var t=$("#input_textarea").val();t=" "+t;var o=d.parse(t)}catch(e){if(e.location!==void 0){var a=`
+Location: [`+e.location.start.offset+", "+e.location.end.offset+"]";a+=`
+…`+t.substring(e.location.start.offset,e.location.start.offset+12)+"…"}else var a="";$("#parse_result").text(e.toString()+a);return}var n=document.getElementById("optlist").selectedIndex;document.getElementById("morpho-mode").selectedIndex==1&&(n|=16);var r=document.getElementById("spaces-display-mode").selectedIndex==1;r&&(n|=8),o=c(o,n),$("#parse_result").text(o)}
