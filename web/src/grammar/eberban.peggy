@@ -15,7 +15,8 @@
 //   rule, and other terms will be matched but silenced. Only one @ returns the output as-is, while multiple
 //   @ return an array.
 // - `terms { JS code }` match terms, but override its output by what is returned by the code. Code has access
-//   to named terms of the form `name:term`. This cannot be used alongside @ pluck operator in the same rule
+//   to named terms of the form `name:term`. This cannot be used alongside @ pluck operator in the same scope
+//   (`()` scopes or whole rule if no `()` scopes)
 
 // Per-parse initializer
 {
@@ -179,13 +180,13 @@ Plosive = T / D / K / G / P / B
 Sibilant = C / S / J / Z
 Sonorant = N / R / L
 
-Consonant = !E_OtherLatinLetters (Voiced / Unvoiced / Liquid / Nasal)
+Consonant = !E_OtherLatinLetters @(Voiced / Unvoiced / Liquid / Nasal)
 Nasal = M / N
 Liquid = L / R
 Voiced = B / D / G / V / Z / J
 Unvoiced = P / T / K / F / S / C
 
-Vowel = !E_OtherLatinLetters (I / E / A / O / U)
+Vowel = !E_OtherLatinLetters @(I / E / A / O / U)
 
 // # Eberban letters
 I "I" = [iI]+ { return "i" }

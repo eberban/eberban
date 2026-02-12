@@ -20,7 +20,8 @@
     "build-to-deploy": "run-s task-peg_to_pegjs task-pegjs_to_js task-vite-build-to-deploy",
     "preview": "vite preview src --outDir ../dist",
     "test": "vitest --reporter=dot",
-    "test-ci": "vitest --reporter=dot --reporter=github-actions"
+    "test-ci": "vitest --reporter=dot --reporter=github-actions",
+    "build-peggy": "npx peggy ./src/grammar/eberban.peggy -o ./src/grammar/eberban.peggy.js --cache --format es"
   },
   "dependencies": {
     "confusables": "^1.1.1",

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Eberban Textual Parser v2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0,viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="200x200" href="/icon.png">
+    <style>
+        form,
+        select {
+            margin: 4px 0
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <form id="form1" name="form1" method="post" action="" style="width:100%">
+        <textarea id="input_textarea" style="width:100%" rows="8" spellcheck="false" autofocus></textarea>
+    </form>
+    <hr />
+
+    <div
+        style="display:block; overflow: scroll; border: solid 1px; padding: 10px; background-color: #DDDDFF;">
+        <pre style="white-space: pre-wrap;"><code id="parse_result"></code></pre>
+    </div>
+
+    <script type="module">
+        import * as parser from "../grammar/eberban.peggy.js";
+
+        window.onload = run_parser();
+
+        $('#input_textarea').bind("keyup",
+            function (e) {
+                run_parser();
+            }
+        );
+
+        function run_parser() {
+            try {
+                var input = $('#input_textarea').val();
+                var result = parser.parse(input);
+            } catch (err) {
+                if (err.location !== undefined) {
+                    var location_info = '\nLocation: [' + err.location.start.offset + ', ' + err.location.end.offset + ']';
+                    location_info += '\n…' + input.substring(err.location.start.offset, err.location.start.offset + 12) + '…';
+                } else var location_info = "";
+                $('#parse_result').text(err.toString() + location_info);
+                return;
+            }
+
+            $('#parse_result').text(JSON.stringify(result, null, 2));
+        }
+
+    </script>
+
+</body>
