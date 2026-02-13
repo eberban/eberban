@@ -42,10 +42,137 @@
         
         return out
     }
+
+    function stringify_word(word) {
+        if(word.family == "Compound") {
+            return `${word.prefix} ${word.list.map(stringify_word).join(" ")}`
+        }
+
+        if(word.family == "FFVariable") {
+            if(word.content.startsWith("i")) {
+                return `i.${word.content}`;
+            }
+            return `i${word.content}`;
+        }
+
+        if(word.family == "Borrowing") {
+            if(word.content.startsWith("u")) {
+                return `u.${word.content}`;
+            }
+            return `u${word.content}`;
+        }
+
+        if(word.family == "Root" || word.family == "Particle") {
+            return word.word;
+        }
+
+        return "<unknown word type>"
+    }
 }
 
 TextWithWarnings = output:Text { return { output, warnings } }
-Text = Spaces? @(@NativeWord Spaces?)*
+Text = Spaces? @(@(FreeformVariable / Borrowing / Compound / NativeWord) Spaces?)*
+
+// # Compounds
+Compound "compound" = W_HyphenPreWord? @(CompoundN / Compound3 / Compound2)
+Compound2 = E W_CompoundPrefixPostHyphen?
+    list:CompoundWord|2| { return { family: "Compound", prefix: "e", content: list }}
+Compound3 = E W_CompoundHyphenInPrefix? N W_CompoundPrefixPostHyphen?
+    list:CompoundWord|3| { return { family: "Compound", prefix: "en", content: list }}
+CompoundN = E W_CompoundHyphenInPrefix? R W_CompoundPrefixPostHyphen?
+    list:(!CompoundNEnd @CompoundWord)* CompoundNEnd
+    {
+        if (list.length == 0) {
+            error(`Empty compounds are not allowed`)
+        } else if (list.length == 1) {
+            warn(`Don't use compounds of size 1, directly use the word "${stringify_word(list[0])}" instead`);
+        } else if (list.length == 2) {
+            warn(`Use fixed-size compound "e ${list.map(stringify_word).join(" ")}" instead`);
+        } else if (list.length == 3) {
+            warn(`Use fixed-size compound "en ${list.map(stringify_word).join(" ")}" instead`);
+        }
+
+        return { family: "Compound", prefix: "er", content: list }
+    }
+CompoundNEnd = Spaces W_HyphenPreWord? E W_HyphenPostWord? Spaces
+CompoundWord = Spaces? !E_IncompleteCompound !E_NestedCompound @(Borrowing / NativeWord)
+
+E_NestedCompound = E { error(
+`Compounds cannot be nested`
+)}
+E_IncompleteCompound = EOF { error(
+`Compound is incomplete. If compound contains a borrowing, be sure to end the borrowing with a space to mark its end`
+)}
+W_CompoundPrefixPostHyphen = &HyphenChar HyphenOpt { warn(
+`Hyphen is not allowed after the E/EN/ER prefix of a compound, you can use space instead`
+)}
+W_CompoundHyphenInPrefix = &HyphenChar HyphenOpt &(N/R) { warn(
+`Hyphen is not allowed inside the EN/ER prefix of a compound`
+)}
+
+// # Freeform words
+FreeformVariable "freeform variable" =
+    W_FreeformVariablePreHyphen? I
+    (   Spaces W_FreeformVariablePrefixHyphen?
+        / W_FreeformVariablePrefixHyphen? W_IInitialFreeformVariable?
+    )
+    x:FreeformContent W_HyphenPostWord? FreeformEnd
+    { return { family:"FFVariable", content: recur_join(x) } }
+Borrowing "borrowing" =
+    W_BorrowingVariablePreHyphen? U
+    (   Spaces W_BorrowingPrefixHyphen?
+        / W_BorrowingPrefixHyphen? W_UInitialBorrowing?
+    )
+    x:FreeformContent W_HyphenPostWord? FreeformEnd
+    { return { family:"Borrowing", content: recur_join(x) } }
+FreeformContent =
+    (FreeformConsonants W_HyphenAfterMedialOrTriplet?/ H W_FreeformHyphenAfterH?)?
+    Vhowels
+    (FreeformConsonants Vhowels)*
+    W_HyphenBeforeFinalConsonant? !E_FreeformMultiConsonentsEnding Consonant?
+FreeformConsonants = TripletFreeform
+    / MedialPair
+    / @(Sonorant / M) HyphenOpt @Consonant
+    / HyphenOpt @(&InitialPair W_HyphenInInitialPair? InitialPair / Consonant) W_FreeformHyphenAfterInitial?
+FreeformEnd = &(SentenceEraser / SpaceChar / EOF)
+
+W_FreeformVariablePreHyphen = &HyphenChar HyphenOpt &I { warn(
+`Hyphen is not allowed before the I prefix of a freeform variable`
+)}
+W_BorrowingVariablePreHyphen = &HyphenChar HyphenOpt &U { warn(
+`Hyphen is not allowed before the U prefix of a borrowing`
+)}
+
+W_FreeformVariablePrefixHyphen = &HyphenChar HyphenOpt { warn(
+`Hyphen is not allowed after the I prefix of a freeform variable, you can use space instead`
+)}
+W_BorrowingPrefixHyphen = &HyphenChar HyphenOpt { warn(
+`Hyphen is not allowed after the U prefix of a borrowing, you can use space instead`
+)}
+
+W_IInitialFreeformVariable = HyphenOpt &I { warn(
+`Freeform variables with content starting with I are required to start with a space without hyphen ("i i...")`
+)}
+W_UInitialBorrowing = HyphenOpt &U { warn(
+`Borrowings with content starting with U are required to start with a space without hyphen ("u u...")`
+)}
+
+W_FreeformHyphenAfterH = &HyphenChar HyphenOpt { warn(
+`Hyphen cannot appear after H.
+If needed and possible, hyphen at the end of this syllable`
+)}
+W_FreeformHyphenAfterInitial = &HyphenChar HyphenOpt &Vowel { warn(
+`Hyphen is not allowed after an initial pair or consonant.
+If needed and possible, hyphen before the pair or consonant; or after the following vowel`
+)}
+W_HyphenBeforeFinalConsonant = &HyphenChar HyphenOpt &Consonant { warn(
+`Hyphen is not allowed before final consonant as the syllable ends after it.
+If needed, hyphen before this syllable.`
+)}
+E_FreeformMultiConsonentsEnding = Consonant HyphenOpt Consonant { error(
+`Borrowing/freeform can end with at most 1 consonant`
+)}
+
 
 // # Native words
 NativeWord = RootWord / ParticleWord
@@ -96,7 +223,7 @@ RootMedialThenVhowels = W_HyphenBeforeMedialOrTriplet? RootMedialOrTriplet W_Hyp
  
 W_HyphenAfterInitial = &HyphenChar HyphenOpt { warn(
 `Hyphen is not allowed after an initial pair or consonant.
-If needed hyphen after the following vowel if the word is made of multiple syllables`
+If needed, hyphen after the following vowel if the word is made of multiple syllables`
 )}
 
 W_HyphenBeforeMedialOrTriplet = &HyphenChar HyphenOpt &RootMedialOrTriplet { warn(
@@ -107,7 +234,7 @@ W_HyphenAfterMedialOrTriplet = &HyphenChar HyphenOpt { warn(
 `Hyphen is not allowed after a medial pair XY or triplet XYZ.
 If needed, try X-Y or X-YZ`
 )}
-W_HyphenAfterMedialSonorant = &HyphenChar HyphenOpt { warn(
+W_HyphenAfterMedialSonorant = &HyphenChar HyphenOpt &Vowel { warn(
 `Hyphen is not allowed after a medial sonorant.
 If needed, hyphen before the sonorant`
 )}
@@ -122,15 +249,29 @@ W_HyphenPostWord = &HyphenChar HyphenOpt { warn("Hyphen is not allowed at the en
 PostWord = !Sonorant &Consonant / Spaces
 
 // # Vowels and Vhowels
-Vhowels = x:Vowels y:(HyphenOpt @H W_HyphenAfterH? @Vowels )* { return recur_join([x, ...y]) }
-Vowels = x:Vowel y:(HyphenOpt @Vowel)* { return [x, ...y].join("") }
+Vhowels = !E_NoVowelBeforeH x:Vowels y:(HyphenOpt !E_NoVowelAfterH @H W_HyphenAfterH? @Vowels )* { return recur_join([x, ...y]) }
+Vowels =
+    x:Vowel
+    y:(
+        HyphenOpt @z:Vowel
+        &{
+            if(x === z) {
+                error(`Hyphen cannot be used between 2 instances of the same vowel`)
+            }
+            return true
+        }
+    )*
+    { return [x, ...y].join("") }
 W_HyphenAfterH = &HyphenChar HyphenOpt { warn("Hyphen should appear before H (where the syllable starts)") }
+E_NoVowelBeforeH = H { error("H can only appear between vowels") }
+E_NoVowelAfterH = H !Vowel { error("H can only appear between vowels") }
 
 // # Triplets
+FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant HyphenOpt @MedialPair
 RootMedialOrTriplet = !Sonorant TripletRoot / MedialPair
 
-TripletFreeform = !E_TripletXYFreeform !E_TripletYZ tri:TripletMatch { return tri.join("") }
-TripletRoot = !E_TripletXYRoot !E_TripletYZ tri:TripletMatch { return tri.join("") }
+TripletFreeform = &TripletMatch !E_TripletXYFreeform !E_TripletYZ tri:TripletMatch { return tri.join("") }
+TripletRoot = &TripletMatch !E_TripletXYRoot !E_TripletYZ tri:TripletMatch { return tri.join("") }
 TripletMatch "triplet" = !E_Quadruplet @Consonant HyphenOpt @Consonant W_HyphenInInitialPairOfTriplet? @Consonant
 
 W_HyphenInInitialPairOfTriplet = &HyphenChar HyphenOpt &Consonant { warn("In triplet, XY-Z is not allowed. If needed change to X-YZ") }
@@ -188,6 +329,12 @@ Unvoiced = P / T / K / F / S / C
 
 Vowel = !E_OtherLatinLetters @(I / E / A / O / U)
 
+// # Erasers
+SentenceEraser = (Spaces RA+)+ Spaces
+ChainEraser = Spaces RI Spaces
+RA = R A
+RI = R I
+
 // # Eberban letters
 I "I" = [iI]+ { return "i" }
 E "E" = [eE]+ { return "e" }
@@ -216,11 +363,13 @@ K "K" = [kK]+ { return "k" }
 
 E_OtherLatinLetters = x:[qwxy]i { error(`${x} is not an Eberban letter`) }
 
-// # Special characters
+// # Spaces / Pause 
 Spaces = SpaceChar+ Hesitation? / EOF
 SpaceChar = !(DigitSymbol / HyphenChar / [a-zA-Z]) .
 Hesitation = (N (SpaceChar+ / EOF))+
 
+
+// # Special characters
 HyphenOpt = (HyphenChar [\n\r]*)? // Optional hyphen with linebreak support
 HyphenChar = [\u2010\u2014\u002D]
 
