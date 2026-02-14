@@ -1,13 +1,16 @@
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
-//   helpfull error. As the rule should not appear in a valid text, usage of error rules
-//   in normal rules should be prefixed by `!`.
+//   helpfull err. As the rule should not appear in a valid text, usage of err rules
+//   in normal rules should be prefixed by `!`. The error reporting should be done as
+//   `&{ return err("message") }`, which queues the error and make the rule match.
+//   Queue error are processed in the top rules of the parser, but will be discarded
+//   when using the sentence eraser RA (hense why it's more complex than just using peggy's error fn).
 // - W_ prefixed rules match patterns that are accepted for convenience but that are not considered
 //   correct. They don't halt parsing and instead registers warnings that are all returned alongside
 //   the parsing output. As pattern can or cannot appear, usage of warning rules in normal rules
 //   should be suffixed with `?`. The pattern must fully parse the accepted mistake for the rest of the
 //   parsing to continue.
-// - When combining multiple error/warning rules, keep the match "positive", do not use `!` or `?`.
+// - When combining multiple err/warning rules, keep the match "positive", do not use `!` or `?`.
 //   Usage of `!` or `?` must be kept at call-site.
 //
 // Hints:
@@ -20,7 +23,8 @@
 
 // Per-parse initializer
 {
-	const warnings = [];
+	var warnings = [];
+    var pending_error = null;
     
     function warn(msg) {
     	warnings.push({
@@ -29,12 +33,19 @@
         })
     }
     
-    function recur_join(input) {
+    function recur_join(input, sep = "") {
     	var out = "";
+        var first = true;
         
         for(const x of input) {
+            if(first) {
+                first = false;
+            } else {
+                out += sep;
+            }
+
         	if(Array.isArray(x)) {
-            	out += recur_join(x);
+            	out += recur_join(x, sep);
             } else if(x != null) {
             	out += x;	
             }
@@ -68,13 +79,186 @@
 
         return "<unknown word type>"
     }
+
+    function with_free(word, free_pre, free_post) {
+        if(free_pre?.length) {
+            word.free_pre = free_pre
+        }
+
+        if(free_post?.length) {
+            word.free_post = free_post
+        }
+
+        return word
+    }
+
+    function elidible(maybe_word, def) {
+        if(maybe_word != null && maybe_word != undefined) {
+            return maybe_word
+        }
+
+        def.elided = true
+        return def
+    }
+
+    function err(text) {
+        pending_error = {
+            message: text,
+            location: location()
+        };
+
+        return false;
+    }
 }
 
-TextWithWarnings = output:Text { return { output, warnings } }
-Text = NativeWordsList
-NativeWordsList = Spaces? @(@(FreeformVariable / Borrowing / Compound / RootWord / ClassifiedParticle ) Spaces?)*
+// Actually report pending error if it has not been erased.
+MainWithError = @MainWithWarnings &{
+    if(pending_error) {
+        error(pending_error.message, pending_error.location);
+    } 
+    return true
+}
+// Main rule, match flags, text prefixes, paragraphs, and include collected warnings
+MainWithWarnings = flags: LanguageFlags pre:(FreePrefix)* para:Paragraphs? Spaces? EOF
+    { return { flags, pre, paragraphs: para, warnings } }
+LanguageFlags = DO_Free*
 
-// # 
+// # Text structure
+Paragraphs = head:Paragraph tail:(&PO_Free @Paragraph)* { return [head, ...tail] }
+Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / SentenceErasedInvalid)* { return { starter, sentences: [head, ...tail]}}
+
+// We want grammatical sentences that can be followed by RA to erase them, which means 
+// sentence_erased_1 must appear first. While we want to erase ungrammatical text with RA, we don't
+// want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
+Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
+
+// Ensure sentence ends because a new sentence/paragraph start or end of quote/text is reached,
+// instead of just failing to parse more. Necessary to make sentence_erased_2 work properly, as an
+// invalid sentence starting valid would otherwise split into 2 sentences.
+SentenceChoice = @(SentenceO / SentenceNI / SentenceA) &PostSentence
+PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / EOF)
+SentenceStarter = A_Free / O_Free / NI_Free
+
+SentenceErasedValid = s:SentenceChoice eraser:SentenceEraser { s.kind = `Erased ${s.kind}`; s.eraser = eraser; return s }
+SentenceErasedInvalid = starter:SentenceStarter? rest:(!SentenceEraser @.)* eraser:SentenceEraser
+    &{ pending_error = null; return true }
+    { return { kind: "Erased Invalid", starter, rest: rest.join("").trim(), eraser }}
+
+SentenceO = starter:O_Free defined:UnitDefinable definition:DefinitionWithArguments
+    { return { kind: "O Sentence", starter, defined, definition }}
+// change to elidible
+SentenceA = starter:A_Elidible definition:DefinitionWithArguments { return { kind: "A Sentence", starter, definition}}
+SentenceNI = starter:NI_Free pred:UnitDefinable { return { kind: "NI Sentence", starter, pred }}
+
+// # Chaining
+DefinitionWithArguments = args: ArgumentsList? chain:Chain { return { args, chain } }
+ArgumentsList = list:(KI_Free / GI_Free / BA_Free)* terminator:BE_Free { return { list, terminator }}
+
+Chain = " TODO"
+UnitDefinable = " TODO"
+
+// # Numbers
+Number "number" = x:NumberFormat
+&{
+    if(x.base == null && x.int == null && x.fract == null && x.repeat == null && x.magn == null) {
+        if(x.term.elided) {
+            return false; // matched nothing, can be anything else
+        }
+
+        return err("Cannot use JI alone, must be preceded by at least one digit");
+    }
+
+    if(x.fract == null && x.repeat != null) {
+        return err("Repeating digits can only appear in a fractional part (started with JO)");
+    }
+
+    if(x.base != null && x.int == null && x.fract == null && x.magn == null) {
+        return err(
+            "Cannot specify a number with only the base part.\n" +
+            "Provide an integer part, a fractional part (with JO) or a magnitude (with JE)"
+        );
+    }
+
+    return true;
+}
+{ return { family: "Number", value: x }}
+
+NumberFormat =
+    base:NumberBase? int:NumberDigits? fract:NumberFractional? repeat:NumberRepeat? magn:NumberMagnitude? term:JI_Elidible
+    { return { base, int, fract, repeat, magn, term} }
+NumberBase = !E_NumberEmptyBase value:TI_Free sep:JU_Free { return { value, sep }}
+NumberFractional = !E_NumberEmptyFractional sep:JO_Free value:NumberDigits { return { sep, value }}
+NumberRepeat = !E_NumberEmptyRepeat sep:JA_Free value:NumberDigits { return { sep, value }}
+NumberMagnitude = !E_NumberEmptyMagnitude sep:JE_Free value:NumberDigits { return { sep, value }}
+NumberDigits = TI_Free+
+
+E_NumberEmptyBase = JU_Free &{ return err("JU must be prefixed by at least one TI") }
+E_NumberEmptyFractional = JO_Free !NumberDigits &{ return err("JO must be followed by at least one TI") }
+E_NumberEmptyRepeat = JA_Free !NumberDigits &{ return err("JA must be followed by at least one TI") }
+E_NumberEmptyMagnitude = JE_Free !NumberDigits &{ return err("JE must be followed by at least one TI") }
+
+// # Borrowing groups
+BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { family: "BorrowingGroup", group: x, terminator: y } }
+
+// # Particle families with free pre/post
+FreePrefix "free prefix" = "!"
+FreePostfix "free postfix" = "!"
+
+A_Free   = pre:FreePrefix* Spaces? w:A    post:FreePostfix*  { return with_free(w, pre, post) }
+O_Free   = pre:FreePrefix* Spaces? w:O    post:FreePostfix*  { return with_free(w, pre, post) }
+NI_Free  =                 Spaces? w:NI                      { return with_free(w, [], []) }
+
+BI_Free  = pre:FreePrefix* Spaces? w:BI    post:FreePostfix* { return with_free(w, pre, post) }
+BE_Free  =                 Spaces? w:BE                      { return with_free(w, [], []) }
+BA_Free  = pre:FreePrefix* Spaces? w:BA                      { return with_free(w, pre, []) }
+BO_Free  = pre:FreePrefix* Spaces? w:BO                      { return with_free(w, pre, []) }
+BU_Free  = pre:FreePrefix* Spaces? w:BU                      { return with_free(w, pre, []) }
+
+DI_Free  =                 Spaces? w:DI                      { return with_free(w, [], []) }
+DE_Free  =                 Spaces? w:DE                      { return with_free(w, [], []) }
+DA_Free  =                 Spaces? w:DA                      { return with_free(w, [], []) }
+DAI_Free =                 Spaces? w:DAI                     { return with_free(w, [], []) }
+DO_Free  =                 Spaces? w:DO                      { return with_free(w, [], []) }
+DU_Free  =                 Spaces? w:DU                      { return with_free(w, [], []) }
+
+SI_Free  = pre:FreePrefix* Spaces? w:SI                      { return with_free(w, pre, []) }
+ZI_Free  = pre:FreePrefix* Spaces? w:ZI                      { return with_free(w, pre, []) }
+FI_Free  = pre:FreePrefix* Spaces? w:FI    post:FreePostfix* { return with_free(w, pre, post) }
+VI_Free  = pre:FreePrefix* Spaces? w:VI    post:FreePostfix* { return with_free(w, pre, post) }
+VEI_Free =                 Spaces? w:VEI                     { return with_free(w, [], []) }
+
+GI_Free  =                 Spaces? w:GI                      { return with_free(w, [], []) }
+KI_Free  =                 Spaces? w:KI                      { return with_free(w, [], []) }
+MI_Free  = pre:FreePrefix* Spaces? w:MI                      { return with_free(w, pre, []) }
+
+PI_Free  =                 Spaces? w:PI                      { return with_free(w, [], []) }
+PE_Free  = pre:FreePrefix* Spaces? w:PE    post:FreePostfix* { return with_free(w, pre, post) }
+PEI_Free =                 Spaces? w:PEI                     { return with_free(w, [], []) }
+PA_Free  =                 Spaces? w:PA                      { return with_free(w, [], []) }
+PO_Free  = pre:FreePrefix* Spaces? w:PO    post:FreePostfix* { return with_free(w, pre, post) }
+PU_Free  =                 Spaces? w:PU                      { return with_free(w, [], []) }
+
+TI_Free  =                 Spaces? w:TI                      { return with_free(w, [], []) }
+
+JI_Free  =                 Spaces? w:JI                      { return with_free(w, [], []) }
+JE_Free  =                 Spaces? w:JE                      { return with_free(w, [], []) }
+JA_Free  =                 Spaces? w:JA                      { return with_free(w, [], []) }
+JO_Free  =                 Spaces? w:JO                      { return with_free(w, [], []) }
+JU_Free  =                 Spaces? w:JU                      { return with_free(w, [], []) }
+
+CI_Free  = pre:FreePrefix* Spaces? w:CI                      { return with_free(w, pre, []) }
+CE_Free  = pre:FreePrefix* Spaces? w:CE                      { return with_free(w, pre, []) }
+CEI_Free = pre:FreePrefix* Spaces? w:CEI                     { return with_free(w, pre, []) }
+CA_Free  = pre:FreePrefix* Spaces? w:CA                      { return with_free(w, pre, []) }
+CAI_Free = pre:FreePrefix* Spaces? w:CAI                     { return with_free(w, pre, []) }
+CO_Free  = pre:FreePrefix* Spaces? w:CO                      { return with_free(w, pre, []) }
+COI_Free = pre:FreePrefix* Spaces? w:COI                     { return with_free(w, pre, []) }
+
+A_Elidible   = x:A_Free?   { return elidible(x, { family: "A", word: "a" })}
+BE_Elidible  = x:BE_Free?  { return elidible(x, { family: "BE", word: "be" })}
+PEI_Elidible = x:PEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
+VEI_Elidible = x:VEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
+JI_Elidible  = x:JI_Free?  { return elidible(x, { family: "JI", word: "jie" })}
 
 // # Particle families
 ClassifiedParticle = A / O / NI
@@ -112,9 +296,9 @@ FI  = &ParticleWord        &(OH f OH Vhowels OH &PostWord)           x:ParticleW
 VI  = &ParticleWord !(VEI) &(OH v OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"VE", word: x.word }}
 VEI = &ParticleWord        &(OH v OH e OH i OH &PostWord)            x:ParticleWord { return { family:"VEI", word: x.word }}
 
-TI = W_TIMinusSymbol? TI_Symbol W_TIMinusSymbol? W_TIMathSymbols? / TI_Word
+TI = W_TIMinusSymbol? @TI_Symbol W_TIMinusSymbol? W_TIMathSymbols? / TI_Word
 TI_Word = &ParticleWord    &(OH t OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"TI", word: x.word }}
-TI_Symbol = x:DigitSymbol                                                     { return { family:"TI", symbol: x }}
+TI_Symbol = x:DigitSymbol                                                           { return { family:"TI", symbol: x }}
 
 DI  = &ParticleWord        &(OH d OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"DI", word: x.word }}
 DE  = &ParticleWord        &(OH d OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"DE", word: x.word }}
@@ -161,10 +345,9 @@ Compound3 = e W_CompoundHyphenInPrefix? n W_CompoundPrefixPostHyphen?
     list:CompoundWord|3| { return { family: "Compound", prefix: "en", content: list }}
 CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
     list:(!CompoundNEnd @CompoundWord)* CompoundNEnd
+    &{ if (list.length == 0) return err(`Empty compounds are not allowed`) }
     {
-        if (list.length == 0) {
-            error(`Empty compounds are not allowed`)
-        } else if (list.length == 1) {
+         else if (list.length == 1) {
             warn(`Don't use compounds of size 1, directly use the word "${stringify_word(list[0])}" instead`);
         } else if (list.length == 2) {
             warn(`Use fixed-size compound "e ${list.map(stringify_word).join(" ")}" instead`);
@@ -177,10 +360,10 @@ CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
 CompoundNEnd = Spaces W_HyphenPreWord? e W_HyphenPostWord? Spaces
 CompoundWord = Spaces? !E_IncompleteCompound !E_NestedCompound @(Borrowing / NativeWord)
 
-E_NestedCompound = e { error(
+E_NestedCompound = e &{ return err(
 `Compounds cannot be nested`
 )}
-E_IncompleteCompound = EOF { error(
+E_IncompleteCompound = EOF &{ return err(
 `Compound is incomplete. If compound contains a borrowing, be sure to end the borrowing with a space to mark its end`
 )}
 W_CompoundPrefixPostHyphen = &HyphenChar OH { warn(
@@ -249,7 +432,7 @@ W_HyphenBeforeFinalConsonant = &HyphenChar OH &Consonant { warn(
 `Hyphen is not allowed before final consonant as the syllable ends after it.
 If needed, hyphen before this syllable.`
 )}
-E_FreeformMultiConsonentsEnding = Consonant OH Consonant { error(
+E_FreeformMultiConsonentsEnding = Consonant OH Consonant &{ return err(
 `Borrowing/freeform can end with at most 1 consonant`
 )}
 
@@ -342,12 +525,12 @@ Vowels =
 
 
         if(x === y[0]) {
-            return error(`Hyphen cannot be used between 2 instances of the same vowel`)
+            return err(`Hyphen cannot be used between 2 instances of the same vowel`)
         }
 
         for(var i = 1; i < y.length; i++) {
             if(y[i-1] === y[i]) {
-                return error(`Hyphen cannot be used between 2 instances of the same vowel`)
+                return err(`Hyphen cannot be used between 2 instances of the same vowel`)
             }
         }
 
@@ -355,8 +538,8 @@ Vowels =
     }
     { return [x, ...y].join("") }
 W_HyphenAfterH = &HyphenChar OH { warn("Hyphen should appear before h (where the syllable starts)") }
-E_NoVowelBeforeH = h { error("h can only appear between vowels") }
-E_NoVowelAfterH = h OH !Vowel { error("h can only appear between vowels") }
+E_NoVowelBeforeH = h &{ return err("h can only appear between vowels") }
+E_NoVowelAfterH = h OH !Vowel &{ return err("h can only appear between vowels") }
 
 // # Triplets
 FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant OH @MedialPair
@@ -368,13 +551,13 @@ TripletMatch "triplet" = !E_Quadruplet @Consonant OH @Consonant W_HyphenInInitia
 
 W_HyphenInInitialPairOfTriplet = &HyphenChar OH &Consonant { warn("In triplet, XY-Z is not allowed. If needed change to X-YZ") }
 E_Quadruplet = Consonant|4|
-	{ error(`Up to 3 consonants (triplet) can appear in a row`) }
+	&{ return err(`Up to 3 consonants (triplet) can appear in a row`) }
 E_TripletXYFreeform = !(MedialPair / Sonorant) x:Consonant OH y:Consonant
-	{ error(`In roots, triplets XYZ should have XY be a medial pair or X be a sonorant, but ${x}${y} isn't`) }
+	&{ return err(`In roots, triplets XYZ should have XY be a medial pair or X be a sonorant, but ${x}${y} isn't`) }
 E_TripletXYRoot = !MedialPair x:Consonant OH y:Consonant
-	{ error(`In roots, triplets XYZ should have XY be a medial pair, but ${x}${y} isn't`) }
+	&{ return err(`In roots, triplets XYZ should have XY be a medial pair, but ${x}${y} isn't`) }
 E_TripletYZ = Consonant !InitialPair x:Consonant OH y:Consonant
-	{ error(`Triplets XYZ should have YZ be an initial pair pair, but ${x}${y} isn't`) }
+	&{ return err(`Triplets XYZ should have YZ be an initial pair pair, but ${x}${y} isn't`) }
 
 // # Medial pair
 MedialPair "medial pair" = !Initial !E_InvalidPairs pair:MedialPatterns { return pair.join("") }
@@ -387,7 +570,7 @@ MedialPlosive = @Plosive OH @(f / v / Plosive / m)
 W_HyphenInInitialPair = &(Consonant HyphenChar &Consonant { warn("Hyphen is not allowed inside an initial pair") })
 InitialPair "initial pair" =
 	&Initial !E_InvalidPairs 
-    pair:(@Consonant OH @Consonant) // handle warning separatly for better error messages in triplets
+    pair:(@Consonant OH @Consonant) // handle warning separatly for better err messages in triplets
     !Consonant { return pair.join("") }
 Initial =
 	@(Plosive / f / v) OH @Sibilant
@@ -397,15 +580,15 @@ Initial =
 
 E_InvalidPairs = E_PairVoiceness1 / E_PairVoiceness2 / E_SibilantPair / E_PB_N / E_TD_NL
 E_PairVoiceness1 = x:Voiced OH y:Unvoiced
-	{ error(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
+	&{ return err(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
 E_PairVoiceness2 = x:Unvoiced OH y:Voiced
-	{ error(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
+	&{ return err(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
 E_SibilantPair = x:Sibilant OH y:Sibilant
-	{ error(`${x}${y} is an invalid pair because both consonants are sibilants (csjz)`)}
+	&{ return err(`${x}${y} is an invalid pair because both consonants are sibilants (csjz)`)}
 E_PB_N = x:(p / b) OH y:n
-	{ error(`${x}${y} is an invalid pair as p/b cannot be followed by n`)}
+	&{ return err(`${x}${y} is an invalid pair as p/b cannot be followed by n`)}
 E_TD_NL = x:(t / d) OH y:(n / l)
-	{ error(`${x}${y} is an invalid pair as t/d cannot be followed by n/l`)}
+	&{ return err(`${x}${y} is an invalid pair as t/d cannot be followed by n/l`)}
 
 // # Categories of letters
 Other = p / b / t / d / v / f / k / g / m / n
@@ -422,10 +605,10 @@ Unvoiced = p / t / k / f / s / c
 Vowel = !E_OtherLatinLetters @(i / e / a / o / u)
 
 // # Erasers
-SentenceEraser = (Spaces RA+)+ Spaces
+SentenceEraser = x:(Spaces @RA+)+ Spaces { return recur_join(x, " ") }
 ChainEraser = Spaces RI Spaces
-RA = r a
-RI = r i
+RA "ra" = r a { return "ra" }
+RI "ri" = r i { return "ri" }
 
 // # Eberban letters
 i "i" = [iI]+ { return "i" }
@@ -453,7 +636,7 @@ j "j" = [jJ]+ { return "j" }
 g "g" = [gG]+ { return "g" }
 k "k" = [kK]+ { return "k" }
 
-E_OtherLatinLetters = x:[qwxy]i { error(`${x} is not an Eberban letter`) }
+E_OtherLatinLetters = x:[qwxy]i &{ return err(`${x} is not an Eberban letter`) }
 
 // # Spaces / Pause 
 Spaces = SpaceChar+ Hesitation? / EOF
