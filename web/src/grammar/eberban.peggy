@@ -71,15 +71,95 @@
 }
 
 TextWithWarnings = output:Text { return { output, warnings } }
-Text = Spaces? @(@(FreeformVariable / Borrowing / Compound / NativeWord) Spaces?)*
+Text = NativeWordsList
+NativeWordsList = Spaces? @(@(FreeformVariable / Borrowing / Compound / RootWord / ClassifiedParticle ) Spaces?)*
+
+// # 
+
+// # Particle families
+ClassifiedParticle = A / O / NI
+    / MI
+    / PI / PE / PEI / PA / PO / PU
+    / BI / BE / BA / BO / BU
+    / FI / VI / VEI
+    / TI
+    / DI / DE / DA / DAI / DO / DU
+    / SI / ZI
+    / CI / CE / CEI / CA / CAI / CO / COI / CU
+    / JI / JE / JA / JO / JU
+    / KI / GI
+
+A   = &ParticleWord        &(OH &a ParticleFormNAOX OH &PostWord)    x:ParticleWord { return { family:"A", word: x.word }}
+O   = &ParticleWord        &(OH &o ParticleFormNAOX OH &PostWord)    x:ParticleWord { return { family:"O", word: x.word }}
+NI  = &ParticleWord        &(OH &n ParticleFormNAOX OH &PostWord)    x:ParticleWord { return { family:"NI", word: x.word }}
+
+MI  = &ParticleWord        &(OH m OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"MI", word: x.word }}
+
+PI  = &ParticleWord        &(OH p OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"PI", word: x.word }}
+PE  = &ParticleWord !(PEI) &(OH p OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"PE", word: x.word }}
+PEI = &ParticleWord        &(OH p OH e OH i OH &PostWord)            x:ParticleWord { return { family:"PEI", word: x.word }}
+PA  = &ParticleWord        &(OH p OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"PA", word: x.word }}
+PO  = &ParticleWord        &(OH p OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"PO", word: x.word }}
+PU  = &ParticleWord        &(OH p OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"PU", word: x.word }}
+
+BI  = &ParticleWord        &(OH b OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"BI", word: x.word }}
+BE  = &ParticleWord        &(OH b OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"BE", word: x.word }}
+BA  = &ParticleWord        &(OH b OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"BA", word: x.word }}
+BO  = &ParticleWord        &(OH b OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"BO", word: x.word }}
+BU  = &ParticleWord        &(OH b OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"BU", word: x.word }}
+
+FI  = &ParticleWord        &(OH f OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"FI", word: x.word }}
+VI  = &ParticleWord !(VEI) &(OH v OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"VE", word: x.word }}
+VEI = &ParticleWord        &(OH v OH e OH i OH &PostWord)            x:ParticleWord { return { family:"VEI", word: x.word }}
+
+TI = W_TIMinusSymbol? TI_Symbol W_TIMinusSymbol? W_TIMathSymbols? / TI_Word
+TI_Word = &ParticleWord    &(OH t OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"TI", word: x.word }}
+TI_Symbol = x:DigitSymbol                                                     { return { family:"TI", symbol: x }}
+
+DI  = &ParticleWord        &(OH d OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"DI", word: x.word }}
+DE  = &ParticleWord        &(OH d OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"DE", word: x.word }}
+DA  = &ParticleWord !(DAI) &(OH d OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"DA", word: x.word }}
+DAI = &ParticleWord        &(OH d OH a OH i OH &PostWord)            x:ParticleWord { return { family:"DAI", word: x.word }}
+DO  = &ParticleWord        &(OH d OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"DO", word: x.word }}
+DU  = &ParticleWord        &(OH d OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"DU", word: x.word }}
+
+SI  = &ParticleWord        &(OH s OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"SI", word: x.word }}
+ZI  = &ParticleWord        &(OH z OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"ZI", word: x.word }}
+
+CI  = &ParticleWord        &(OH c OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"CI", word: x.word }}
+CE  = &ParticleWord !(CEI) &(OH c OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"CE", word: x.word }}
+CEI = &ParticleWord        &(OH c OH e OH i OH &PostWord)            x:ParticleWord { return { family:"CEI", word: x.word }}
+CA  = &ParticleWord !(CAI) &(OH c OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"CA", word: x.word }}
+CAI = &ParticleWord        &(OH c OH a OH i OH &PostWord)            x:ParticleWord { return { family:"CAI", word: x.word }}
+CO  = &ParticleWord !(COI) &(OH c OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"CO", word: x.word }}
+COI = &ParticleWord        &(OH c OH o OH i OH &PostWord)            x:ParticleWord { return { family:"COI", word: x.word }}
+CU  = &ParticleWord        &(OH c OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"CU", word: x.word }}
+
+JI  = &ParticleWord        &(OH j OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"JI", word: x.word }}
+JE  = &ParticleWord        &(OH j OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"JE", word: x.word }}
+JA  = &ParticleWord        &(OH j OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"JA", word: x.word }}
+JO  = &ParticleWord        &(OH j OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"JO", word: x.word }}
+JU  = &ParticleWord        &(OH j OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"JU", word: x.word }}
+
+KI  = &ParticleWord        &(OH k OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"KI", word: x.word }}
+GI  = &ParticleWord        &(OH g OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"GI", word: x.word }}
+
+W_TIMinusSymbol = &HyphenChar OH { warn(
+`Eberban doesn't support minus sign symbol and this is considered an hyphen, which is not allowed here.
+Use particle "joi" to make a number negative, or use appropriate verb to perform substraction.`
+)}
+W_TIMathSymbols = &( " "* [/+*]) { warn(
+`Eberban doesn't support math symbols, which are considered spaces.
+Uuse appropriate verb to perform mathematical operation.`
+)}
 
 // # Compounds
 Compound "compound" = W_HyphenPreWord? @(CompoundN / Compound3 / Compound2)
-Compound2 = E W_CompoundPrefixPostHyphen?
+Compound2 = e W_CompoundPrefixPostHyphen?
     list:CompoundWord|2| { return { family: "Compound", prefix: "e", content: list }}
-Compound3 = E W_CompoundHyphenInPrefix? N W_CompoundPrefixPostHyphen?
+Compound3 = e W_CompoundHyphenInPrefix? n W_CompoundPrefixPostHyphen?
     list:CompoundWord|3| { return { family: "Compound", prefix: "en", content: list }}
-CompoundN = E W_CompoundHyphenInPrefix? R W_CompoundPrefixPostHyphen?
+CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
     list:(!CompoundNEnd @CompoundWord)* CompoundNEnd
     {
         if (list.length == 0) {
@@ -94,82 +174,82 @@ CompoundN = E W_CompoundHyphenInPrefix? R W_CompoundPrefixPostHyphen?
 
         return { family: "Compound", prefix: "er", content: list }
     }
-CompoundNEnd = Spaces W_HyphenPreWord? E W_HyphenPostWord? Spaces
+CompoundNEnd = Spaces W_HyphenPreWord? e W_HyphenPostWord? Spaces
 CompoundWord = Spaces? !E_IncompleteCompound !E_NestedCompound @(Borrowing / NativeWord)
 
-E_NestedCompound = E { error(
+E_NestedCompound = e { error(
 `Compounds cannot be nested`
 )}
 E_IncompleteCompound = EOF { error(
 `Compound is incomplete. If compound contains a borrowing, be sure to end the borrowing with a space to mark its end`
 )}
-W_CompoundPrefixPostHyphen = &HyphenChar HyphenOpt { warn(
-`Hyphen is not allowed after the E/EN/ER prefix of a compound, you can use space instead`
+W_CompoundPrefixPostHyphen = &HyphenChar OH { warn(
+`Hyphen is not allowed after the e/EN/ER prefix of a compound, you can use space instead`
 )}
-W_CompoundHyphenInPrefix = &HyphenChar HyphenOpt &(N/R) { warn(
+W_CompoundHyphenInPrefix = &HyphenChar OH &(n/r) { warn(
 `Hyphen is not allowed inside the EN/ER prefix of a compound`
 )}
 
 // # Freeform words
 FreeformVariable "freeform variable" =
-    W_FreeformVariablePreHyphen? I
+    W_FreeformVariablePreHyphen? i
     (   Spaces W_FreeformVariablePrefixHyphen?
         / W_FreeformVariablePrefixHyphen? W_IInitialFreeformVariable?
     )
     x:FreeformContent W_HyphenPostWord? FreeformEnd
     { return { family:"FFVariable", content: recur_join(x) } }
 Borrowing "borrowing" =
-    W_BorrowingVariablePreHyphen? U
+    W_BorrowingVariablePreHyphen? u
     (   Spaces W_BorrowingPrefixHyphen?
         / W_BorrowingPrefixHyphen? W_UInitialBorrowing?
     )
     x:FreeformContent W_HyphenPostWord? FreeformEnd
     { return { family:"Borrowing", content: recur_join(x) } }
 FreeformContent =
-    (FreeformConsonants W_HyphenAfterMedialOrTriplet?/ H W_FreeformHyphenAfterH?)?
+    (FreeformConsonants W_HyphenAfterMedialOrTriplet?/ h W_FreeformHyphenAfterH?)?
     Vhowels
     (FreeformConsonants Vhowels)*
     W_HyphenBeforeFinalConsonant? !E_FreeformMultiConsonentsEnding Consonant?
 FreeformConsonants = TripletFreeform
     / MedialPair
-    / @(Sonorant / M) HyphenOpt @Consonant
-    / HyphenOpt @(&InitialPair W_HyphenInInitialPair? InitialPair / Consonant) W_FreeformHyphenAfterInitial?
+    / @(Sonorant / m) OH @Consonant
+    / OH @(&InitialPair W_HyphenInInitialPair? InitialPair / Consonant) W_FreeformHyphenAfterInitial?
 FreeformEnd = &(SentenceEraser / SpaceChar / EOF)
 
-W_FreeformVariablePreHyphen = &HyphenChar HyphenOpt &I { warn(
-`Hyphen is not allowed before the I prefix of a freeform variable`
+W_FreeformVariablePreHyphen = &HyphenChar OH &i { warn(
+`Hyphen is not allowed before the i prefix of a freeform variable`
 )}
-W_BorrowingVariablePreHyphen = &HyphenChar HyphenOpt &U { warn(
-`Hyphen is not allowed before the U prefix of a borrowing`
-)}
-
-W_FreeformVariablePrefixHyphen = &HyphenChar HyphenOpt { warn(
-`Hyphen is not allowed after the I prefix of a freeform variable, you can use space instead`
-)}
-W_BorrowingPrefixHyphen = &HyphenChar HyphenOpt { warn(
-`Hyphen is not allowed after the U prefix of a borrowing, you can use space instead`
+W_BorrowingVariablePreHyphen = &HyphenChar OH &u { warn(
+`Hyphen is not allowed before the u prefix of a borrowing`
 )}
 
-W_IInitialFreeformVariable = HyphenOpt &I { warn(
-`Freeform variables with content starting with I are required to start with a space without hyphen ("i i...")`
+W_FreeformVariablePrefixHyphen = &HyphenChar OH { warn(
+`Hyphen is not allowed after the i prefix of a freeform variable, you can use space instead`
 )}
-W_UInitialBorrowing = HyphenOpt &U { warn(
-`Borrowings with content starting with U are required to start with a space without hyphen ("u u...")`
+W_BorrowingPrefixHyphen = &HyphenChar OH { warn(
+`Hyphen is not allowed after the u prefix of a borrowing, you can use space instead`
 )}
 
-W_FreeformHyphenAfterH = &HyphenChar HyphenOpt { warn(
-`Hyphen cannot appear after H.
+W_IInitialFreeformVariable = OH &i { warn(
+`Freeform variables with content starting with i are required to start with a space without hyphen ("i i...")`
+)}
+W_UInitialBorrowing = OH &u { warn(
+`Borrowings with content starting with u are required to start with a space without hyphen ("u u...")`
+)}
+
+W_FreeformHyphenAfterH = &HyphenChar OH { warn(
+`Hyphen cannot appear after h.
 If needed and possible, hyphen at the end of this syllable`
 )}
-W_FreeformHyphenAfterInitial = &HyphenChar HyphenOpt &Vowel { warn(
+W_FreeformHyphenAfterInitial = &HyphenChar OH &Vowel { warn(
 `Hyphen is not allowed after an initial pair or consonant.
 If needed and possible, hyphen before the pair or consonant; or after the following vowel`
 )}
-W_HyphenBeforeFinalConsonant = &HyphenChar HyphenOpt &Consonant { warn(
+W_HyphenBeforeFinalConsonant = &HyphenChar OH &Consonant { warn(
 `Hyphen is not allowed before final consonant as the syllable ends after it.
 If needed, hyphen before this syllable.`
 )}
-E_FreeformMultiConsonentsEnding = Consonant HyphenOpt Consonant { error(
+E_FreeformMultiConsonentsEnding = Consonant OH Consonant { error(
 `Borrowing/freeform can end with at most 1 consonant`
 )}
 
@@ -190,7 +270,7 @@ ParticleFormCV =
     !MedialPair
 
 ParticleFormNAOX =
-	@(N W_HyphenAfterInitial?/ &A / &O)
+	@(n W_HyphenAfterInitial?/ &a / &o)
     @Vhowels
     @SonorantThenVhowels*
     W_HyphenBeforeFinalSonorant? @Sonorant?
@@ -218,165 +298,177 @@ RootFormCCVX =
     W_HyphenBeforeFinalSonorant? @Sonorant?
     
 RootMedialOrSonorantThenVowels = RootMedialThenVhowels / SonorantThenVhowels
-SonorantThenVhowels = HyphenOpt Sonorant !Sonorant W_HyphenAfterMedialSonorant? Vhowels
+SonorantThenVhowels = OH Sonorant !Sonorant W_HyphenAfterMedialSonorant? Vhowels
 RootMedialThenVhowels = W_HyphenBeforeMedialOrTriplet? RootMedialOrTriplet W_HyphenAfterMedialOrTriplet? Vhowels
  
-W_HyphenAfterInitial = &HyphenChar HyphenOpt { warn(
+W_HyphenAfterInitial = &HyphenChar OH { warn(
 `Hyphen is not allowed after an initial pair or consonant.
 If needed, hyphen after the following vowel if the word is made of multiple syllables`
 )}
 
-W_HyphenBeforeMedialOrTriplet = &HyphenChar HyphenOpt &RootMedialOrTriplet { warn(
+W_HyphenBeforeMedialOrTriplet = &HyphenChar OH &RootMedialOrTriplet { warn(
 `Hyphen is not allowed before a medial pair XY or triplet XYZ.
 If needed, try X-Y or X-YZ`
 )}
-W_HyphenAfterMedialOrTriplet = &HyphenChar HyphenOpt { warn(
+W_HyphenAfterMedialOrTriplet = &HyphenChar OH { warn(
 `Hyphen is not allowed after a medial pair XY or triplet XYZ.
 If needed, try X-Y or X-YZ`
 )}
-W_HyphenAfterMedialSonorant = &HyphenChar HyphenOpt &Vowel { warn(
+W_HyphenAfterMedialSonorant = &HyphenChar OH &Vowel { warn(
 `Hyphen is not allowed after a medial sonorant.
 If needed, hyphen before the sonorant`
 )}
-W_HyphenBeforeFinalSonorant = &HyphenChar HyphenOpt &Sonorant { warn(
+W_HyphenBeforeFinalSonorant = &HyphenChar OH &Sonorant { warn(
 `Hyphen is not allowed before final sonorant as the syllable ends after it.
 If needed, hyphen before this syllable.`
 )}
 
-W_HyphenPreWord = &HyphenChar HyphenOpt { warn("Hyphen is not allowed at the start of a word" ) }
-W_HyphenPostWord = &HyphenChar HyphenOpt { warn("Hyphen is not allowed at the end of a word" ) }
+W_HyphenPreWord = &HyphenChar OH { warn("Hyphen is not allowed at the start of a word" ) }
+W_HyphenPostWord = &HyphenChar OH { warn("Hyphen is not allowed at the end of a word" ) }
 
-PostWord = !Sonorant &Consonant / Spaces
+PostWord = !Sonorant &Consonant / DigitSymbol / Spaces
 
 // # Vowels and Vhowels
-Vhowels = !E_NoVowelBeforeH x:Vowels y:(HyphenOpt !E_NoVowelAfterH @H W_HyphenAfterH? @Vowels )* { return recur_join([x, ...y]) }
+Vhowels = !E_NoVowelBeforeH x:Vowels y:(OH !E_NoVowelAfterH @h W_HyphenAfterH? @Vowels )* { return recur_join([x, ...y]) }
 Vowels =
     x:Vowel
     y:(
-        HyphenOpt @z:Vowel
-        &{
-            if(x === z) {
-                error(`Hyphen cannot be used between 2 instances of the same vowel`)
-            }
-            return true
-        }
+        OH @Vowel
+        
     )*
+    &{
+        if(y === [])
+            return true;
+
+
+        if(x === y[0]) {
+            return error(`Hyphen cannot be used between 2 instances of the same vowel`)
+        }
+
+        for(var i = 1; i < y.length; i++) {
+            if(y[i-1] === y[i]) {
+                return error(`Hyphen cannot be used between 2 instances of the same vowel`)
+            }
+        }
+
+        return true
+    }
     { return [x, ...y].join("") }
-W_HyphenAfterH = &HyphenChar HyphenOpt { warn("Hyphen should appear before H (where the syllable starts)") }
-E_NoVowelBeforeH = H { error("H can only appear between vowels") }
-E_NoVowelAfterH = H !Vowel { error("H can only appear between vowels") }
+W_HyphenAfterH = &HyphenChar OH { warn("Hyphen should appear before h (where the syllable starts)") }
+E_NoVowelBeforeH = h { error("h can only appear between vowels") }
+E_NoVowelAfterH = h OH !Vowel { error("h can only appear between vowels") }
 
 // # Triplets
-FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant HyphenOpt @MedialPair
+FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant OH @MedialPair
 RootMedialOrTriplet = !Sonorant TripletRoot / MedialPair
 
 TripletFreeform = &TripletMatch !E_TripletXYFreeform !E_TripletYZ tri:TripletMatch { return tri.join("") }
 TripletRoot = &TripletMatch !E_TripletXYRoot !E_TripletYZ tri:TripletMatch { return tri.join("") }
-TripletMatch "triplet" = !E_Quadruplet @Consonant HyphenOpt @Consonant W_HyphenInInitialPairOfTriplet? @Consonant
+TripletMatch "triplet" = !E_Quadruplet @Consonant OH @Consonant W_HyphenInInitialPairOfTriplet? @Consonant
 
-W_HyphenInInitialPairOfTriplet = &HyphenChar HyphenOpt &Consonant { warn("In triplet, XY-Z is not allowed. If needed change to X-YZ") }
+W_HyphenInInitialPairOfTriplet = &HyphenChar OH &Consonant { warn("In triplet, XY-Z is not allowed. If needed change to X-YZ") }
 E_Quadruplet = Consonant|4|
 	{ error(`Up to 3 consonants (triplet) can appear in a row`) }
-E_TripletXYFreeform = !(MedialPair / Sonorant) x:Consonant HyphenOpt y:Consonant
+E_TripletXYFreeform = !(MedialPair / Sonorant) x:Consonant OH y:Consonant
 	{ error(`In roots, triplets XYZ should have XY be a medial pair or X be a sonorant, but ${x}${y} isn't`) }
-E_TripletXYRoot = !MedialPair x:Consonant HyphenOpt y:Consonant
+E_TripletXYRoot = !MedialPair x:Consonant OH y:Consonant
 	{ error(`In roots, triplets XYZ should have XY be a medial pair, but ${x}${y} isn't`) }
-E_TripletYZ = Consonant !InitialPair x:Consonant HyphenOpt y:Consonant
+E_TripletYZ = Consonant !InitialPair x:Consonant OH y:Consonant
 	{ error(`Triplets XYZ should have YZ be an initial pair pair, but ${x}${y} isn't`) }
 
 // # Medial pair
 MedialPair "medial pair" = !Initial !E_InvalidPairs pair:MedialPatterns { return pair.join("") }
 MedialPatterns = MedialN / MedialFV / MedialPlosive
-MedialN = @Liquid HyphenOpt @N / @N HyphenOpt @Liquid
-MedialFV = @(F / V) HyphenOpt @(Plosive / M)
-MedialPlosive = @Plosive HyphenOpt @(F / V / Plosive / M)
+MedialN = @Liquid OH @n / @n OH @Liquid
+MedialFV = @(f / v) OH @(Plosive / m)
+MedialPlosive = @Plosive OH @(f / v / Plosive / m)
 
 // # Initial pair
-W_HyphenInInitialPair = &(Consonant HyphenChar { warn("Hyphen is not allowed inside an initial pair") })
+W_HyphenInInitialPair = &(Consonant HyphenChar &Consonant { warn("Hyphen is not allowed inside an initial pair") })
 InitialPair "initial pair" =
 	&Initial !E_InvalidPairs 
-    pair:(@Consonant HyphenOpt @Consonant) // handle warning separatly for better error messages in triplets
+    pair:(@Consonant OH @Consonant) // handle warning separatly for better error messages in triplets
     !Consonant { return pair.join("") }
 Initial =
-	@(Plosive / F / V) HyphenOpt @Sibilant
-    / @Sibilant HyphenOpt @Other
-    / @Sibilant HyphenOpt @Sonorant
-    / !(Sonorant Sonorant) @Other HyphenOpt @Sonorant
+	@(Plosive / f / v) OH @Sibilant
+    / @Sibilant OH @Other
+    / @Sibilant OH @Sonorant
+    / !(Sonorant Sonorant) @Other OH @Sonorant
 
 E_InvalidPairs = E_PairVoiceness1 / E_PairVoiceness2 / E_SibilantPair / E_PB_N / E_TD_NL
-E_PairVoiceness1 = x:Voiced HyphenOpt y:Unvoiced
+E_PairVoiceness1 = x:Voiced OH y:Unvoiced
 	{ error(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
-E_PairVoiceness2 = x:Unvoiced HyphenOpt y:Voiced
+E_PairVoiceness2 = x:Unvoiced OH y:Voiced
 	{ error(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
-E_SibilantPair = x:Sibilant HyphenOpt y:Sibilant
+E_SibilantPair = x:Sibilant OH y:Sibilant
 	{ error(`${x}${y} is an invalid pair because both consonants are sibilants (csjz)`)}
-E_PB_N = x:(P / B) HyphenOpt y:N
-	{ error(`${x}${y} is an invalid pair as P/B cannot be followed by N`)}
-E_TD_NL = x:(T / D) HyphenOpt y:(N / L)
-	{ error(`${x}${y} is an invalid pair as T/D cannot be followed by N/L`)}
+E_PB_N = x:(p / b) OH y:n
+	{ error(`${x}${y} is an invalid pair as p/b cannot be followed by n`)}
+E_TD_NL = x:(t / d) OH y:(n / l)
+	{ error(`${x}${y} is an invalid pair as t/d cannot be followed by n/l`)}
 
 // # Categories of letters
-Other = P / B / T / D / V / F / K / G / M / N
-Plosive = T / D / K / G / P / B
-Sibilant = C / S / J / Z
-Sonorant = N / R / L
+Other = p / b / t / d / v / f / k / g / m / n
+Plosive = t / d / k / g / p / b
+Sibilant = c / s / j / z
+Sonorant = n / r / l
 
 Consonant = !E_OtherLatinLetters @(Voiced / Unvoiced / Liquid / Nasal)
-Nasal = M / N
-Liquid = L / R
-Voiced = B / D / G / V / Z / J
-Unvoiced = P / T / K / F / S / C
+Nasal = m / n
+Liquid = l / r
+Voiced = b / d / g / v / z / j
+Unvoiced = p / t / k / f / s / c
 
-Vowel = !E_OtherLatinLetters @(I / E / A / O / U)
+Vowel = !E_OtherLatinLetters @(i / e / a / o / u)
 
 // # Erasers
 SentenceEraser = (Spaces RA+)+ Spaces
 ChainEraser = Spaces RI Spaces
-RA = R A
-RI = R I
+RA = r a
+RI = r i
 
 // # Eberban letters
-I "I" = [iI]+ { return "i" }
-E "E" = [eE]+ { return "e" }
-A "A" = [aA]+ { return "a" }
-O "O" = [oO]+ { return "o" }
-U "U" = [uU]+ { return "u" }
+i "i" = [iI]+ { return "i" }
+e "e" = [eE]+ { return "e" }
+a "a" = [aA]+ { return "a" }
+o "o" = [oO]+ { return "o" }
+u "u" = [uU]+ { return "u" }
 
-H "H" = [hH]+ { return "h" }
-N "N" = [nN]+ { return "n" }
-R "R" = [rR]+ { return "r" }
-L "L" = [lL]+ { return "l" }
+h "h" = [hH]+ { return "h" }
+n "n" = [nN]+ { return "n" }
+r "r" = [rR]+ { return "r" }
+l "l" = [lL]+ { return "l" }
 
-M "M" = [mM]+ { return "m" }
-P "P" = [pP]+ { return "p" }
-B "B" = [bB]+ { return "b" }
-F "F" = [fF]+ { return "f" }
-V "V" = [vV]+ { return "v" }
-T "T" = [tT]+ { return "t" }
-D "D" = [dD]+ { return "d" }
-S "S" = [sS]+ { return "s" }
-Z "Z" = [zZ]+ { return "z" }
-C "C" = [cC]+ { return "c" }
-J "J" = [jJ]+ { return "j" }
-G "G" = [gG]+ { return "g" }
-K "K" = [kK]+ { return "k" }
+m "m" = [mM]+ { return "m" }
+p "p" = [pP]+ { return "p" }
+b "b" = [bB]+ { return "b" }
+f "f" = [fF]+ { return "f" }
+v "v" = [vV]+ { return "v" }
+t "t" = [tT]+ { return "t" }
+d "d" = [dD]+ { return "d" }
+s "s" = [sS]+ { return "s" }
+z "z" = [zZ]+ { return "z" }
+c "c" = [cC]+ { return "c" }
+j "j" = [jJ]+ { return "j" }
+g "g" = [gG]+ { return "g" }
+k "k" = [kK]+ { return "k" }
 
 E_OtherLatinLetters = x:[qwxy]i { error(`${x} is not an Eberban letter`) }
 
 // # Spaces / Pause 
 Spaces = SpaceChar+ Hesitation? / EOF
 SpaceChar = !(DigitSymbol / HyphenChar / [a-zA-Z]) .
-Hesitation = (N (SpaceChar+ / EOF))+
+Hesitation = (n (SpaceChar+ / EOF))+
 
 
 // # Special characters
-HyphenOpt = (HyphenChar [\n\r]*)? // Optional hyphen with linebreak support
+OH = (HyphenChar [\n\r]*)? // Optional Hyphen with linebreak support
 HyphenChar = [\u2010\u2014\u002D]
 
 QuoteMarkStart = "["
 QuoteMarkEnd = "]"
 
-DigitSymbol = [0-9]
+DigitSymbol "digit" = [0-9]
 
 EOF = !.
 Dummy = (. / !.) { return true }
