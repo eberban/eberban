@@ -350,14 +350,6 @@ VerbEnumFull = args:ArgumentsList? x:Chain y:(BU_Free Chain)*
 
 Number "number" = x:NumberFormat
     &{
-        if(x.base == null && x.int == null && x.fract == null && x.repeat == null && x.magn == null) {
-            if(x.end.elided) {
-                return false; // matched nothing, can be anything else
-            }
-
-            return err("Cannot use JI alone, must be preceded by at least one digit");
-        }
-
         if(x.fract == null && x.repeat != null) {
             return err("Repeating digits can only appear in a fractional part (started with JO)");
         }
@@ -373,15 +365,40 @@ Number "number" = x:NumberFormat
     }
     { return { family: "Number", value: x }}
 
-NumberFormat =
-    base:NumberBase? int:NumberDigits fract:NumberFractional? repeat:NumberRepeat? magn:NumberMagnitude? end:JI_Elidible
-    { return { base, int, fract, repeat, magn, end} }
-NumberBase = !E_NumberEmptyBase value:TI_Free sep:JU_Free { return { value, sep }}
-NumberFractional = !E_NumberEmptyFractional sep:JO_Free value:NumberDigits { return { sep, value }}
-NumberRepeat = !E_NumberEmptyRepeat sep:JA_Free value:NumberDigits { return { sep, value }}
-NumberMagnitude = !E_NumberEmptyMagnitude sep:JE_Free value:NumberDigits { return { sep, value }}
+NumberFormat = !E_NumberEndAlone
+    parts:(NumberBase / NumberInt / NumberFractional / NumberRepeat / NumberMagnitude)+ end:JI_Elidible
+    !{
+        var latest_part_id = 0;
+
+        for(var part of parts) {
+            var part_id = 0;
+
+            if(part.base != null) part_id = 1;
+            else if(part.int != null) part_id = 2;
+            else if(part.fract != null) part_id = 3;
+            else if(part.repeat != null) part_id = 4;
+            else if(part.magn != null) part_id = 5;
+
+            if(part_id <= latest_part_id)
+                return err("Numbers parts must follow order [base JU int JO fract JA repeat JE magn JI] without duplicates");
+
+            latest_part_id = part_id
+        }
+    }
+    {
+        var res = {};
+        for(var part of parts)
+            res = {...res, ...part, end};
+        return res
+    }
+NumberBase = !E_NumberEmptyBase value:TI_Free sep:JU_Free { return { base: { value, sep } } }
+NumberInt = value:NumberDigits { return { int: value } }
+NumberFractional = !E_NumberEmptyFractional sep:JO_Free value:NumberDigits { return { fract: { sep, value } } }
+NumberRepeat = !E_NumberEmptyRepeat sep:JA_Free value:NumberDigits { return { repeat: { sep, value }}}
+NumberMagnitude = !E_NumberEmptyMagnitude sep:JE_Free value:NumberDigits { return { magn: { sep, value }}}
 NumberDigits = TI_Free+
 
+E_NumberEndAlone = JI_Free &{ return err("JI cannot be used alone, must be preceded by at least one number part") }
 E_NumberEmptyBase = JU_Free &{ return err("JU must be prefixed by at least one TI") }
 E_NumberEmptyFractional = JO_Free !NumberDigits &{ return err("JO must be followed by at least one TI") }
 E_NumberEmptyRepeat = JA_Free !NumberDigits &{ return err("JA must be followed by at least one TI") }
