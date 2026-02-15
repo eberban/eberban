@@ -126,14 +126,27 @@ MainWithWarnings = main:Text {
         main.warnings = warnings;
     return main
 }
-Text = flags: LanguageFlags pre:(FreePrefix)* para:Paragraphs? Spaces? EOF?
-    { return { flags, pre, paragraphs: para } }
+Text = flags: LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces? EOF?
+    { 
+        var res = {};
+
+        if(flags?.length != 0) res.flags = flags;
+        if(pre?.length != 0) res.pre = pre;
+
+        res.paragraphs = paras;
+        
+        return res;
+    }
 LanguageFlags = DO_Free*
 
 // # Text structure ================================================
 
 Paragraphs = head:Paragraph tail:(&PO_Free @Paragraph)* { return [head, ...tail] }
-Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / SentenceErasedInvalid)* { return { starter, sentences: [head, ...tail]}}
+Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / SentenceErasedInvalid)*
+    {
+        if(starter != null) return { starter, sentences: [head, ...tail] }
+        return { sentences: [head, ...tail] }
+    }
 
 // We want grammatical sentences that can be followed by RA to erase them, which means 
 // SentenceErasedValid must appear first. While we want to erase ungrammatical text with RA, we don't
