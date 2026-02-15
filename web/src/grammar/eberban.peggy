@@ -348,7 +348,7 @@ VerbEnum = start:PE_Free inner:(VerbEnumCompact / VerbEnumFull) end:PEI_Elidible
     {
         var res = {start, ...inner}
         res.end = end
-        return end
+        return res
     }
 
 VerbEnumCompact = sep:BU_Free items:(BI_Free? ChainVerbAndBinds)* !BU_Free
