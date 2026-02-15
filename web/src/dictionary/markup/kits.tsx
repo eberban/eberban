@@ -121,9 +121,10 @@ function place_kit(): Kit {
     return {
         regex_string: in_brackets(place + optional(arg)),
         replacer: (place, arg) => {
-            const { regex_string, replacer } = arg_kit();
+            const { regex_string, replacer, keep_children_as_string } = arg_kit();
             // Sometimes there is no arg.
-            const arg_with_links = markup_to_jsx_child(arg ?? "", regex_string, replacer);
+            const arg_with_links = markup_to_jsx_child(
+                arg ?? "", regex_string, replacer, keep_children_as_string);
             return (
                 <span class="label label-info place">
                     <span class="hidden">{"["}</span>
@@ -135,6 +136,7 @@ function place_kit(): Kit {
     }
     function arg_kit(): Kit {
         return {
+            keep_children_as_string: true,
             regex_string: group(word_char + one_or_more(word_char)),
             replacer: (s) => <DictLink>{s as string}</DictLink>,
         };
