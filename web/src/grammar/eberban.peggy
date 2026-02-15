@@ -200,7 +200,7 @@ ArgumentsList = list:(KI_Free / GI_Free / BA_Free)* end:BE_Free { return { list,
 
 Chain = erased:ChainErased* !E_ChainEmpty inner:ChainInner
     {
-        if(erased?.length) inner.erased_before = erased;
+        if(erased?.length) return {erased, ...inner}
         return inner
     }
 ChainErased = chain:ChainInner eraser:ChainEraser { return { chain, eraser }}
@@ -274,12 +274,19 @@ ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
             verb.post = post;
         return verb
     }
-ChainVerbModified = modifier:ZI_Free select:SI_Free? verb:(ChainVerbModified / ChainVerbSelect)
+ChainVerbModified = modifiers:(ZI_Free SI_Free?)+ modified:(ChainVerbModified / ChainVerbSelect)
     { 
-        var res = { modifier }
+        var res = {}
 
-        if(select != null) res.select = select;
-        res.verb = verb;
+        modifiers = modifiers.map(x => {
+            var res = { modifier: x[0] };
+            if(x[1] != null) res.select = x[1];
+            return res
+        })
+
+        if(modifiers?.length == 1) res.modifiers = modifiers[0];
+        if(modifiers?.length > 1) res.modifiers = modifiers;
+
         return res;
     }
 ChainVerbSelect = VerbDefinableUsage / VerbInlineAssignment / KI_Free / BA_Free / MI_Free
@@ -622,14 +629,14 @@ FreeformVariable "freeform variable" =
         / W_FreeformVariablePrefixHyphen? W_IInitialFreeformVariable?
     )
     x:FreeformContent W_HyphenPostWord? FreeformEnd
-    { return { family:"FFVariable", content: recur_join(x) } }
+    { return { family:"FFVariable", prefix: "i", content: recur_join(x) } }
 Borrowing "borrowing" =
     W_BorrowingVariablePreHyphen? u
     (   Spaces W_BorrowingPrefixHyphen?
         / W_BorrowingPrefixHyphen? W_UInitialBorrowing?
     )
     x:FreeformContent W_HyphenPostWord? FreeformEnd
-    { return { family:"Borrowing", content: recur_join(x) } }
+    { return { family:"Borrowing", prefix: "u", content: recur_join(x) } }
 FreeformContent =
     (FreeformConsonants W_HyphenAfterMedialOrTriplet?/ h W_FreeformHyphenAfterH?)?
     Vhowels
@@ -855,7 +862,7 @@ Vowel = !E_OtherLatinLetters @(i / e / a / o / u)
 // # Erasers ========================================
 
 SentenceEraser = x:(Spaces @RA+)+ Spaces { return recur_join(x, " ") }
-ChainEraser = Spaces RI Spaces
+ChainEraser = Spaces RI Spaces { return "ri" }
 RA "ra" = r a { return "ra" }
 RI "ri" = r i { return "ri" }
 
