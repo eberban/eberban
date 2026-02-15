@@ -111,11 +111,14 @@
 
     // Custom error function that stores the error to be handled later. This
     // allows errors to be recoverable in case speaker use sentence eraser RA.
+    // On multiple errors the first one is kept to provide usually more precise error messages.
     function err(text) {
-        pending_error = {
-            message: text,
-            location: location()
-        };
+        if(pending_error == null) {
+            pending_error = {
+                message: text,
+                location: location()
+            };
+        }        
 
         return false;
     }
@@ -134,7 +137,8 @@ MainWithWarnings = main:Text {
 
 // # Text structure ================================================
 
-Text = flags: LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces? EOF?
+Text = Spaces? EOF { return {} } // allow empty text
+    / flags:LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces? EOF?
     { 
         var res = {};
 
@@ -328,7 +332,7 @@ ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
     QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word }
     { return { kind: "ForeignQuote", start, delim: mark_start, content: content.join("")}}
 
-SpellingQuote = starter:CE_Free items:SpellingQuoteItem+ end:CEI_Free { kind: "Spelling Quote", starter, items, end}
+SpellingQuote = starter:CE_Free items:SpellingQuoteItem+ end:CEI_Free { return { kind: "Spelling Quote", starter, items, end } }
 SpellingQuoteItem = Spaces? !CEI x:(InitialPair / Consonant)? y:Vhowels { return recur_join([x, y]) }
 
 // # Enum =============================================
@@ -582,6 +586,7 @@ CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
     &{
         if (list.length == 0)
             return err(`Empty compounds are not allowed`)
+        return true
     } {
         if (list.length == 1) {
             warn(`Don't use compounds of size 1, directly use the word "${stringify_word(list[0])}" instead`);
@@ -591,7 +596,7 @@ CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
             warn(`Use fixed-size compound "en ${list.map(stringify_word).join(" ")}" instead`);
         }
 
-        return { family: "Compound", prefix: "er", content: list }
+        return { family: "Compound", prefix: "er", content: list, postfix: "e" }
     }
 CompoundNEnd = Spaces W_HyphenPreWord? e W_HyphenPostWord? Spaces
 CompoundWord = Spaces? !E_IncompleteCompound !E_NestedCompound @(Borrowing / NativeWord)
