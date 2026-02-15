@@ -119,22 +119,28 @@ MainWithError = @MainWithWarnings &{
     return true
 }
 // Main rule, match flags, text prefixes, paragraphs, and include collected warnings
-MainWithWarnings = flags: LanguageFlags pre:(FreePrefix)* para:Paragraphs? Spaces? EOF
-    { return { flags, pre, paragraphs: para, warnings } }
+MainWithWarnings = main:Text { 
+    if(warnings?.length > 0)
+        main.warnings = warnings;
+    return main
+}
+Text = flags: LanguageFlags pre:(FreePrefix)* para:Paragraphs? Spaces? EOF?
+    { return { flags, pre, paragraphs: para } }
 LanguageFlags = DO_Free*
 
-// # Text structure
+// # Text structure ================================================
+
 Paragraphs = head:Paragraph tail:(&PO_Free @Paragraph)* { return [head, ...tail] }
 Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / SentenceErasedInvalid)* { return { starter, sentences: [head, ...tail]}}
 
 // We want grammatical sentences that can be followed by RA to erase them, which means 
-// sentence_erased_1 must appear first. While we want to erase ungrammatical text with RA, we don't
+// SentenceErasedValid must appear first. While we want to erase ungrammatical text with RA, we don't
 // want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
 
-// Ensure sentence ends because a new sentence/paragraph start or end of quote/text is reached,
-// instead of just failing to parse more. Necessary to make sentence_erased_2 work properly, as an
-// invalid sentence starting valid would otherwise split into 2 sentences.
+// Ensure sentence ends because a new sentence/paragraph star, end of quote/text is reached or sentence
+// eraser at the end of a valid sentence, instead of just failing to parse more. Necessary to make
+// SentenceErasedInvalid work properly, as an invalid sentence starting valid would otherwise split into 2 sentences.
 SentenceChoice = @(SentenceO / SentenceNI / SentenceA) &PostSentence
 PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / EOF)
 SentenceStarter = A_Free / O_Free / NI_Free
@@ -144,48 +150,185 @@ SentenceErasedInvalid = starter:SentenceStarter? rest:(!SentenceEraser @.)* eras
     &{ pending_error = null; return true }
     { return { kind: "Erased Invalid", starter, rest: rest.join("").trim(), eraser }}
 
-SentenceO = starter:O_Free defined:UnitDefinable definition:DefinitionWithArguments
+SentenceO = starter:O_Free defined:VerbDefinable definition:DefinitionWithArguments
     { return { kind: "O Sentence", starter, defined, definition }}
-// change to elidible
 SentenceA = starter:A_Elidible definition:DefinitionWithArguments { return { kind: "A Sentence", starter, definition}}
-SentenceNI = starter:NI_Free pred:UnitDefinable { return { kind: "NI Sentence", starter, pred }}
+SentenceNI = starter:NI_Free pred:VerbDefinable { return { kind: "NI Sentence", starter, pred }}
 
-// # Chaining
-DefinitionWithArguments = args: ArgumentsList? chain:Chain { return { args, chain } }
-ArgumentsList = list:(KI_Free / GI_Free / BA_Free)* terminator:BE_Free { return { list, terminator }}
+// # Chaining ========================================
 
-Chain = " TODO"
-UnitDefinable = " TODO"
+DefinitionWithArguments = args: ArgumentsList? chain:Chain
+    {
+        if(args != null) return { args, chain }
+        return chain
+    }
+ArgumentsList = list:(KI_Free / GI_Free / BA_Free)* end:BE_Free { return { list, end }}
 
-// # Numbers
+Chain = erased:ChainErased* inner:ChainInner
+    {
+        if(erased?.length) inner.erased_before = erased;
+        return inner
+    }
+ChainErased = chain:ChainInner eraser:ChainEraser { return { chain, eraser }}
+ChainNegation = neg:BI_Free chain:Chain { return {wide_negation:neg, ...chain} }
+ChainInner = ChainNegation / verb:ChainVerbAndBinds next:ChainInner?
+    { 
+        if(next != null) verb.next = next;
+        return verb
+    }
+ChainVerbAndBinds = verb:ChainVerb exp:ExplicitBindGroup*
+    {
+        var chain = { verb }
+        if(exp?.length == 1) chain.explicit_binds = exp[0];
+        else if(exp?.length > 1) chain.explicit_binds = exp;
+
+        return chain;
+    }
+
+ExplicitBindGroup = first:ExplicitBindFirst next:ExplicitBindNext* end:VEI_Elidible
+    {
+        return {
+            binds: [first, ...next].map(x => {
+                var res = {};
+
+                if(x[0] != null) res.wide_negation = x[0];
+
+                res.start = x[1];
+                res.inner = x[2];
+
+                return res
+            }),
+            end
+        }
+    }
+ExplicitBindFirst = BI_Free? VI_Free DefinitionWithArguments
+ExplicitBindNext = BI_Free? FI_Free DefinitionWithArguments
+
+ChainVerb = verb:ChainVerbPlaceSelect post:FreePostfix*
+    {
+        if(post?.length)
+            verb.post = post;
+        return verb
+    }
+ChainVerbPlaceSelect = select:SI_Free? verb:(ChainVerbModified / ChainVerbSelect)
+    {
+        if(select != null)
+            return { select, ...verb }
+        return verb
+    }
+ChainVerbModified = ZI_Free ChainVerbPlaceSelect
+ChainVerbSelect = VerbDefinableUsage / VerbInlineAssignment / KI_Free / BA_Free / MI_Free
+    / VerbQuote / VerbEnum / BorrowingGroup / Number
+
+// # Definable =======================================
+
+VerbInlineAssignment = pre:FreePrefix* start:BO_Free verb:(KI_Free / VerbDefinable)
+    { return { kind: "InlineAssignment", pre, start, verb }}
+VerbDefinable = !MI_Free @VerbDefinableUsage
+VerbDefinableUsage = namespace:VerbDefinableNamespace* verb:VerbDefinablePart
+    {
+        if(namespace?.length == 1)
+            return { namespace: namespace[0], ...verb }
+        if(namespace?.length > 1)
+            return { namespace: namespace, ...verb }
+        return verb
+    }
+VerbDefinableNamespace = parent:(VerbDefinablePart / MI_Free) sep:PI_Free
+    { return { parent, sep }}
+VerbDefinablePart = pre:FreePrefix* Spaces?
+    word:(GI_Free / FreeformVariable / Compound / RootWord)
+    {
+        if(pre?.length)
+            return { pre, ...word }
+        return word
+    }
+
+// # Quotes =============================================
+
+VerbQuote = GrammaticalQuote / SingleWordQuote / ForeignQuote / SpellingQuote
+
+GrammaticalQuote = start:CA_Free text:Text end:CAI_Free
+    { return { kind: "GrammaticalQuote", start, text, end }}
+
+SingleWordQuote = start:CI_Free Spaces? word:(NativeWord / Compound / Borrowing)
+    { return { kind: "SingleWordQuote", start, word }}
+
+ForeignQuote = (ForeignQuoteElided / ForeignQuoteSimple / ForeignQuoteEscaped)
+ForeignQuoteElided = start:COI_Free { return { kind: "Foreign Quote", particle: start}}
+ForeignQuoteSimple = start:CO_Free
+    (!QuoteMarkStart SpaceChar)*
+    QuoteMarkStart content:(!QuoteMarkEnd @.)* end:QuoteMarkEnd
+    { return { kind: "ForeignQuote", start, content: content.join("")}}
+ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
+    content:(
+        !(QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word })
+        @.
+    )*
+    QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word }
+    { return { kind: "ForeignQuote", start, delim: mark_start, content: content.join("")}}
+
+SpellingQuote = starter:CE_Free items:SpellingQuoteItem+ end:CEI_Free { kind: "Spelling Quote", starter, items, end}
+SpellingQuoteItem = Spaces? !CEI x:(InitialPair / Consonant)? y:Vhowels { return recur_join([x, y]) }
+
+// # Enum =============================================
+
+VerbEnum = start:PE_Free inner:(VerbEnumCompact / VerbEnumFull) end:PEI_Elidible
+    {
+        var res = {start, ...inner}
+        res.end = end
+        return end
+    }
+
+VerbEnumCompact = sep:BU_Free items:(BI_Free? ChainVerbAndBinds)* !BU_Free
+    { return { sep, items: items.map((x) => {
+        if(x[0] != null)
+            return { wide_negation:x[0], chain: x[1] }
+        return { chain: x[1] }
+    }) }}
+VerbEnumFull = args:ArgumentsList? x:Chain y:(BU_Free Chain)*
+    {
+        var res = {}
+
+        if(args != null) res.args = args;
+        res.items = [
+            {sep: null, chain:x},
+            ...(y.map((x) => {
+                return {sep: x[0], chain: x[1] }
+            }))
+        ];
+        return res
+    }
+
+// # Numbers ==========================================
+
 Number "number" = x:NumberFormat
-&{
-    if(x.base == null && x.int == null && x.fract == null && x.repeat == null && x.magn == null) {
-        if(x.term.elided) {
-            return false; // matched nothing, can be anything else
+    &{
+        if(x.base == null && x.int == null && x.fract == null && x.repeat == null && x.magn == null) {
+            if(x.end.elided) {
+                return false; // matched nothing, can be anything else
+            }
+
+            return err("Cannot use JI alone, must be preceded by at least one digit");
         }
 
-        return err("Cannot use JI alone, must be preceded by at least one digit");
-    }
+        if(x.fract == null && x.repeat != null) {
+            return err("Repeating digits can only appear in a fractional part (started with JO)");
+        }
 
-    if(x.fract == null && x.repeat != null) {
-        return err("Repeating digits can only appear in a fractional part (started with JO)");
-    }
+        if(x.base != null && x.int == null && x.fract == null && x.magn == null) {
+            return err(
+                "Cannot specify a number with only the base part.\n" +
+                "Provide an integer part, a fractional part (with JO) or a magnitude (with JE)"
+            );
+        }
 
-    if(x.base != null && x.int == null && x.fract == null && x.magn == null) {
-        return err(
-            "Cannot specify a number with only the base part.\n" +
-            "Provide an integer part, a fractional part (with JO) or a magnitude (with JE)"
-        );
+        return true;
     }
-
-    return true;
-}
-{ return { family: "Number", value: x }}
+    { return { family: "Number", value: x }}
 
 NumberFormat =
-    base:NumberBase? int:NumberDigits? fract:NumberFractional? repeat:NumberRepeat? magn:NumberMagnitude? term:JI_Elidible
-    { return { base, int, fract, repeat, magn, term} }
+    base:NumberBase? int:NumberDigits fract:NumberFractional? repeat:NumberRepeat? magn:NumberMagnitude? end:JI_Elidible
+    { return { base, int, fract, repeat, magn, end} }
 NumberBase = !E_NumberEmptyBase value:TI_Free sep:JU_Free { return { value, sep }}
 NumberFractional = !E_NumberEmptyFractional sep:JO_Free value:NumberDigits { return { sep, value }}
 NumberRepeat = !E_NumberEmptyRepeat sep:JA_Free value:NumberDigits { return { sep, value }}
@@ -197,12 +340,23 @@ E_NumberEmptyFractional = JO_Free !NumberDigits &{ return err("JO must be follow
 E_NumberEmptyRepeat = JA_Free !NumberDigits &{ return err("JA must be followed by at least one TI") }
 E_NumberEmptyMagnitude = JE_Free !NumberDigits &{ return err("JE must be followed by at least one TI") }
 
-// # Borrowing groups
-BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { family: "BorrowingGroup", group: x, terminator: y } }
+// # Borrowing groups =================================
 
-// # Particle families with free pre/post
-FreePrefix "free prefix" = "!"
-FreePostfix "free postfix" = "!"
+BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { family: "BorrowingGroup", group: x, end: y } }
+
+// # Free pre/post ========================================
+
+FreePrefix "free prefix" = FreeMetadata
+FreePostfix "free postfix" = "?"
+
+FreeMetadata = scope:FreeScope? meta:DI_Free {
+    if(scope != null)
+        return { scope, meta }
+    return { meta }
+}
+FreeScope = DU_Free
+
+// # Particle families with free pre/post ================
 
 A_Free   = pre:FreePrefix* Spaces? w:A    post:FreePostfix*  { return with_free(w, pre, post) }
 O_Free   = pre:FreePrefix* Spaces? w:O    post:FreePostfix*  { return with_free(w, pre, post) }
@@ -260,7 +414,8 @@ PEI_Elidible = x:PEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
 VEI_Elidible = x:VEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
 JI_Elidible  = x:JI_Free?  { return elidible(x, { family: "JI", word: "jie" })}
 
-// # Particle families
+// # Particle families ==============================
+
 ClassifiedParticle = A / O / NI
     / MI
     / PI / PE / PEI / PA / PO / PU
@@ -337,7 +492,8 @@ W_TIMathSymbols = &( " "* [/+*]) { warn(
 Uuse appropriate verb to perform mathematical operation.`
 )}
 
-// # Compounds
+// # Compounds ========================================
+
 Compound "compound" = W_HyphenPreWord? @(CompoundN / Compound3 / Compound2)
 Compound2 = e W_CompoundPrefixPostHyphen?
     list:CompoundWord|2| { return { family: "Compound", prefix: "e", content: list }}
@@ -345,9 +501,11 @@ Compound3 = e W_CompoundHyphenInPrefix? n W_CompoundPrefixPostHyphen?
     list:CompoundWord|3| { return { family: "Compound", prefix: "en", content: list }}
 CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
     list:(!CompoundNEnd @CompoundWord)* CompoundNEnd
-    &{ if (list.length == 0) return err(`Empty compounds are not allowed`) }
-    {
-         else if (list.length == 1) {
+    &{
+        if (list.length == 0)
+            return err(`Empty compounds are not allowed`)
+    } {
+        if (list.length == 1) {
             warn(`Don't use compounds of size 1, directly use the word "${stringify_word(list[0])}" instead`);
         } else if (list.length == 2) {
             warn(`Use fixed-size compound "e ${list.map(stringify_word).join(" ")}" instead`);
@@ -373,7 +531,8 @@ W_CompoundHyphenInPrefix = &HyphenChar OH &(n/r) { warn(
 `Hyphen is not allowed inside the EN/ER prefix of a compound`
 )}
 
-// # Freeform words
+// # Freeform words ==================================
+
 FreeformVariable "freeform variable" =
     W_FreeformVariablePreHyphen? i
     (   Spaces W_FreeformVariablePrefixHyphen?
@@ -437,7 +596,8 @@ E_FreeformMultiConsonentsEnding = Consonant OH Consonant &{ return err(
 )}
 
 
-// # Native words
+// # Native words ================================
+
 NativeWord = RootWord / ParticleWord
 NativeForm = RootForm / ParticleForm
 
@@ -511,7 +671,8 @@ W_HyphenPostWord = &HyphenChar OH { warn("Hyphen is not allowed at the end of a 
 
 PostWord = !Sonorant &Consonant / DigitSymbol / Spaces
 
-// # Vowels and Vhowels
+// # Vowels and Vhowels ================================
+
 Vhowels = !E_NoVowelBeforeH x:Vowels y:(OH !E_NoVowelAfterH @h W_HyphenAfterH? @Vowels )* { return recur_join([x, ...y]) }
 Vowels =
     x:Vowel
@@ -541,7 +702,8 @@ W_HyphenAfterH = &HyphenChar OH { warn("Hyphen should appear before h (where the
 E_NoVowelBeforeH = h &{ return err("h can only appear between vowels") }
 E_NoVowelAfterH = h OH !Vowel &{ return err("h can only appear between vowels") }
 
-// # Triplets
+// # Triplets ================================
+
 FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant OH @MedialPair
 RootMedialOrTriplet = !Sonorant TripletRoot / MedialPair
 
@@ -559,14 +721,16 @@ E_TripletXYRoot = !MedialPair x:Consonant OH y:Consonant
 E_TripletYZ = Consonant !InitialPair x:Consonant OH y:Consonant
 	&{ return err(`Triplets XYZ should have YZ be an initial pair pair, but ${x}${y} isn't`) }
 
-// # Medial pair
+// # Medial pair =================================
+
 MedialPair "medial pair" = !Initial !E_InvalidPairs pair:MedialPatterns { return pair.join("") }
 MedialPatterns = MedialN / MedialFV / MedialPlosive
 MedialN = @Liquid OH @n / @n OH @Liquid
 MedialFV = @(f / v) OH @(Plosive / m)
 MedialPlosive = @Plosive OH @(f / v / Plosive / m)
 
-// # Initial pair
+// # Initial pair =================================
+
 W_HyphenInInitialPair = &(Consonant HyphenChar &Consonant { warn("Hyphen is not allowed inside an initial pair") })
 InitialPair "initial pair" =
 	&Initial !E_InvalidPairs 
@@ -590,7 +754,8 @@ E_PB_N = x:(p / b) OH y:n
 E_TD_NL = x:(t / d) OH y:(n / l)
 	&{ return err(`${x}${y} is an invalid pair as t/d cannot be followed by n/l`)}
 
-// # Categories of letters
+// # Categories of letters ============================
+
 Other = p / b / t / d / v / f / k / g / m / n
 Plosive = t / d / k / g / p / b
 Sibilant = c / s / j / z
@@ -604,13 +769,15 @@ Unvoiced = p / t / k / f / s / c
 
 Vowel = !E_OtherLatinLetters @(i / e / a / o / u)
 
-// # Erasers
+// # Erasers ========================================
+
 SentenceEraser = x:(Spaces @RA+)+ Spaces { return recur_join(x, " ") }
 ChainEraser = Spaces RI Spaces
 RA "ra" = r a { return "ra" }
 RI "ri" = r i { return "ri" }
 
-// # Eberban letters
+// # Eberban letters ===================================
+
 i "i" = [iI]+ { return "i" }
 e "e" = [eE]+ { return "e" }
 a "a" = [aA]+ { return "a" }
@@ -638,13 +805,15 @@ k "k" = [kK]+ { return "k" }
 
 E_OtherLatinLetters = x:[qwxy]i &{ return err(`${x} is not an Eberban letter`) }
 
-// # Spaces / Pause 
+// # Spaces / Pause ===========================================
+
 Spaces = SpaceChar+ Hesitation? / EOF
 SpaceChar = !(DigitSymbol / HyphenChar / [a-zA-Z]) .
 Hesitation = (n (SpaceChar+ / EOF))+
 
 
-// # Special characters
+// # Special characters ====================================
+
 OH = (HyphenChar [\n\r]*)? // Optional Hyphen with linebreak support
 HyphenChar = [\u2010\u2014\u002D]
 
@@ -654,4 +823,3 @@ QuoteMarkEnd = "]"
 DigitSymbol "digit" = [0-9]
 
 EOF = !.
-Dummy = (. / !.) { return true }
