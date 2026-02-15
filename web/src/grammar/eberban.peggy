@@ -1,3 +1,5 @@
+// EBERBAN GRAMMAR - v0.64
+
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
 //   helpfull err. As the rule should not appear in a valid text, usage of err rules
@@ -141,9 +143,13 @@ Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
 // Ensure sentence ends because a new sentence/paragraph star, end of quote/text is reached or sentence
 // eraser at the end of a valid sentence, instead of just failing to parse more. Necessary to make
 // SentenceErasedInvalid work properly, as an invalid sentence starting valid would otherwise split into 2 sentences.
-SentenceChoice = @(SentenceO / SentenceNI / SentenceA) &PostSentence
+SentenceChoice = @(SentenceO / SentenceNI / SentenceA) !E_UnmatchedResume &PostSentence
 PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / EOF)
 SentenceStarter = A_Free / O_Free / NI_Free
+
+E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
+`Failed to resume binding. Note that while leading SI can differ, anything following a ZI must match.`
+)}
 
 SentenceErasedValid = s:SentenceChoice eraser:SentenceEraser { s.kind = `Erased ${s.kind}`; s.eraser = eraser; return s }
 SentenceErasedInvalid = starter:SentenceStarter? rest:(!SentenceEraser @.)* eraser:SentenceEraser
@@ -171,14 +177,41 @@ Chain = erased:ChainErased* inner:ChainInner
     }
 ChainErased = chain:ChainInner eraser:ChainEraser { return { chain, eraser }}
 ChainNegation = neg:BI_Free chain:Chain { return {wide_negation:neg, ...chain} }
-ChainInner = ChainNegation / verb:ChainVerbAndBinds next:ChainInner?
+
+ChainInner = ChainNegation
+    / chain:ChainVerbAndBinds next:ChainInner? resume:(
+        resume_start:PA_Free resume_chain:ChainVerbAndBinds
+        &{ 
+            // Can we do this without JSON.stringify?!
+            return JSON.stringify(chain.verb) === JSON.stringify(resume_chain.verb)
+        }
+        resume_next:ChainInner?
+        { 
+            var res = { start: resume_start, chain: resume_chain };
+
+            if(resume_next != null) res.next = resume_next;
+            
+            return res
+        }
+    )*
     { 
-        if(next != null) verb.next = next;
-        return verb
+        if(next != null) chain.next = next;
+
+        if(resume?.length == 1) chain.resume = resume[0];
+        if(resume?.length > 1) chain.resume = resume;
+
+
+        return chain
     }
-ChainVerbAndBinds = verb:ChainVerb exp:ExplicitBindGroup*
+
+ChainVerbAndBinds = select:SI_Free? verb:ChainVerb exp:ExplicitBindGroup*
     {
-        var chain = { verb }
+        var chain = { }
+
+        if(select != null) chain.select = select;
+
+        chain.verb = verb;
+    
         if(exp?.length == 1) chain.explicit_binds = exp[0];
         else if(exp?.length > 1) chain.explicit_binds = exp;
 
@@ -204,19 +237,20 @@ ExplicitBindGroup = first:ExplicitBindFirst next:ExplicitBindNext* end:VEI_Elidi
 ExplicitBindFirst = BI_Free? VI_Free DefinitionWithArguments
 ExplicitBindNext = BI_Free? FI_Free DefinitionWithArguments
 
-ChainVerb = verb:ChainVerbPlaceSelect post:FreePostfix*
+ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
     {
         if(post?.length)
             verb.post = post;
         return verb
     }
-ChainVerbPlaceSelect = select:SI_Free? verb:(ChainVerbModified / ChainVerbSelect)
-    {
-        if(select != null)
-            return { select, ...verb }
-        return verb
+ChainVerbModified = modifier:ZI_Free select:SI_Free? verb:(ChainVerbModified / ChainVerbSelect)
+    { 
+        var res = { modifier }
+
+        if(select != null) res.select = select;
+        res.verb = verb;
+        return res;
     }
-ChainVerbModified = ZI_Free ChainVerbPlaceSelect
 ChainVerbSelect = VerbDefinableUsage / VerbInlineAssignment / KI_Free / BA_Free / MI_Free
     / VerbQuote / VerbEnum / BorrowingGroup / Number
 
