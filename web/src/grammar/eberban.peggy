@@ -28,6 +28,7 @@
 	var warnings = [];
     var pending_error = null;
     
+    // Add warning to the warnings list
     function warn(msg) {
     	warnings.push({
         	message: msg,
@@ -35,6 +36,8 @@
         })
     }
     
+    // Recursively concatenates arrays of (arrays of ...) strings
+    // Use in the morphology part to assemble all the letters into the final word
     function recur_join(input, sep = "") {
     	var out = "";
         var first = true;
@@ -55,6 +58,7 @@
         
         return out
     }
+
 
     function stringify_word(word) {
         if(word.family == "Compound") {
@@ -82,6 +86,7 @@
         return "<unknown word type>"
     }
 
+    // Annotate word with extra fields free_pre/free_post if they are not empty arrays
     function with_free(word, free_pre, free_post) {
         if(free_pre?.length) {
             word.free_pre = free_pre
@@ -94,6 +99,7 @@
         return word
     }
 
+    // If maybe_word is null, return a default variant which is considered elided.
     function elidible(maybe_word, def) {
         if(maybe_word != null && maybe_word != undefined) {
             return maybe_word
@@ -103,6 +109,8 @@
         return def
     }
 
+    // Custom error function that stores the error to be handled later. This
+    // allows errors to be recoverable in case speaker use sentence eraser RA.
     function err(text) {
         pending_error = {
             message: text,
@@ -115,17 +123,17 @@
 
 // Actually report pending error if it has not been erased.
 MainWithError = @MainWithWarnings &{
-    if(pending_error) {
-        error(pending_error.message, pending_error.location);
-    } 
+    if(pending_error) error(pending_error.message, pending_error.location);
     return true
 }
 // Main rule, match flags, text prefixes, paragraphs, and include collected warnings
 MainWithWarnings = main:Text { 
-    if(warnings?.length > 0)
-        main.warnings = warnings;
+    if(warnings?.length > 0) main.warnings = warnings;
     return main
 }
+
+// # Text structure ================================================
+
 Text = flags: LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces? EOF?
     { 
         var res = {};
@@ -133,13 +141,9 @@ Text = flags: LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces? EOF?
         if(flags?.length != 0) res.flags = flags;
         if(pre?.length != 0) res.pre = pre;
 
-        res.paragraphs = paras;
-        
-        return res;
+        return { ...res, paragraphs: paras}
     }
 LanguageFlags = DO_Free*
-
-// # Text structure ================================================
 
 Paragraphs = head:Paragraph tail:(&PO_Free @Paragraph)* { return [head, ...tail] }
 Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / SentenceErasedInvalid)*
@@ -156,12 +160,19 @@ Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
 // Ensure sentence ends because a new sentence/paragraph star, end of quote/text is reached or sentence
 // eraser at the end of a valid sentence, instead of just failing to parse more. Necessary to make
 // SentenceErasedInvalid work properly, as an invalid sentence starting valid would otherwise split into 2 sentences.
-SentenceChoice = @(SentenceO / SentenceNI / SentenceA) !E_UnmatchedResume &PostSentence
+SentenceChoice = @(SentenceO / SentenceNI / SentenceA) !E_UnmatchedLeadings &PostSentence
 PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / EOF)
 SentenceStarter = A_Free / O_Free / NI_Free
 
+E_UnmatchedLeadings = E_UnmatchedFI / E_UnmatchedVEI / E_UnmatchedBE / E_UnmatchedPEI / E_UnmatchedBU / E_UnmatchedResume
+
+E_UnmatchedFI = FI_Free &{ return err("There is no VI scope still open for this FI to attach to")}
+E_UnmatchedVEI = VEI_Free &{ return err("There is no VI scope still open for this VEI to attach to")}
+E_UnmatchedBE = BE_Free &{ return err("BE can only be used to end an arguments list or a borrowing group")}
+E_UnmatchedPEI = BU_Free &{ return err("There is no PE scope still open for this PEI to attach to")}
+E_UnmatchedBU = BU_Free &{ return err("BU can only be used inside still open enumerations started with PE")}
 E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
-`Failed to resume binding. Note that while leading SI can differ, anything following a ZI must match.`
+`Failed to resume binding. Note that while leading SI can differ, anything following a ZI must match`
 )}
 
 SentenceErasedValid = s:SentenceChoice eraser:SentenceEraser { s.kind = `Erased ${s.kind}`; s.eraser = eraser; return s }
@@ -183,7 +194,7 @@ DefinitionWithArguments = args: ArgumentsList? chain:Chain
     }
 ArgumentsList = list:(KI_Free / GI_Free / BA_Free)* end:BE_Free { return { list, end }}
 
-Chain = erased:ChainErased* inner:ChainInner
+Chain = erased:ChainErased* !E_ChainEmpty inner:ChainInner
     {
         if(erased?.length) inner.erased_before = erased;
         return inner
@@ -191,9 +202,12 @@ Chain = erased:ChainErased* inner:ChainInner
 ChainErased = chain:ChainInner eraser:ChainEraser { return { chain, eraser }}
 ChainNegation = neg:BI_Free chain:Chain { return {wide_negation:neg, ...chain} }
 
+E_ChainEmpty = !ChainInner &{ return err("A chain must contain at least one (non erased) verb")}
+E_ResumeChainEmpty = !ChainVerbAndBinds &{ return err("PA must be followed by a verb, for which it'll resume bindings to the latest instead up the chains")}
+
 ChainInner = ChainNegation
     / chain:ChainVerbAndBinds next:ChainInner? resume:(
-        resume_start:PA_Free resume_chain:ChainVerbAndBinds
+        resume_start:PA_Free !E_ResumeChainEmpty resume_chain:ChainVerbAndBinds
         &{ 
             // Can we do this without JSON.stringify?!
             return JSON.stringify(chain.verb) === JSON.stringify(resume_chain.verb)
@@ -363,7 +377,7 @@ Number "number" = x:NumberFormat
 
         return true;
     }
-    { return { family: "Number", value: x }}
+    { return { kind: "Number", value: x }}
 
 NumberFormat = !E_NumberEndAlone
     parts:(NumberBase / NumberInt / NumberFractional / NumberRepeat / NumberMagnitude)+ end:JI_Elidible
@@ -406,7 +420,7 @@ E_NumberEmptyMagnitude = JE_Free !NumberDigits &{ return err("JE must be followe
 
 // # Borrowing groups =================================
 
-BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { family: "BorrowingGroup", group: x, end: y } }
+BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { kind: "BorrowingGroup", group: x, end: y } }
 
 // # Free pre/post ========================================
 
@@ -475,7 +489,7 @@ COI_Free = pre:FreePrefix* Spaces? w:COI                     { return with_free(
 A_Elidible   = x:A_Free?   { return elidible(x, { family: "A", word: "a" })}
 BE_Elidible  = x:BE_Free?  { return elidible(x, { family: "BE", word: "be" })}
 PEI_Elidible = x:PEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
-VEI_Elidible = x:VEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
+VEI_Elidible = x:VEI_Free? { return elidible(x, { family: "VEI", word: "vei" })}
 JI_Elidible  = x:JI_Free?  { return elidible(x, { family: "JI", word: "jie" })}
 
 // # Particle families ==============================
