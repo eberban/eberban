@@ -739,7 +739,7 @@ suo:
   family: "SI"
   gloss: "<UO>"
   tags: [core]
-  short: "Expose places A and O, then chain to O."
+  short: "Expose places U and O, then chain to O."
   links:
     - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 si:
@@ -3048,7 +3048,7 @@ buan:
   predilex_id: rediwi
   family: "R"
   gloss: "text"
-  short: "[A:tce* man] is a text."
+  short: "[E:tce* man] is a text."
 bino:
   id: 83sklgorvt
   predilex_id: yotiku
@@ -3159,12 +3159,12 @@ zgehal:
   notes: |
     TODO: According to who? Since it seems subjective, could it use a
     subjective "actor" in the context?
-zvaor:
+zvaoi:
   id: lsnj8jjkmu
   predilex_id: qidiqa{A}
   family: "R"
   gloss: "accident"
-  short: "[E:()] is an accident/unintentional."
+  short: "[A:()] is an accident/unintentional."
 ckuil:
   id: fcl0t79yc5
   predilex_id: docuga
