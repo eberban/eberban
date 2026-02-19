@@ -20,10 +20,6 @@ by default expressed in base ten.
 
 __te ta__ thus means __12__ while __tei ti tu__ means __904__.
 
-While it is normally not allowed to use a digit higher than the base, it is
-allowed if only one digit is used since there is no ambiguity over its value.
-__teo__ is thus __B/11__, while __teo ti__ is not allowed in base ten.
-
 > The series described in the table is infinite and can be expanded if the
 > speaker wants to use larger bases by iterating over the vowels in order and
 > skipping cases where the same vowel appears multiple times in a row (since
@@ -44,6 +40,11 @@ _base_ __ju__ _integer-part_ __jo__ _fractional-part_ __ja__ _repeated-part_ __j
    __tei ju__ is base ten, __teo ju__ is base twelve, and __tao ju__ is
    hexadecimal. If absent it defaults to base ten (__tei ju__), unless the default
    base is overwritten in the context (TODO: Add word to set such default base).
+   
+   The value of a number is the sum of each digit mutiplied by `(base+1)index`, where `index`
+   the 0-based index counting from the right. Note that by that definition, it is actually possible
+   to use __TI__ digits that are bigger than the _base_, but is discouraged outside of single
+   digit numbers.
 2. The _integer part_ of the number, as a string of zero or more digits __TI__.
    If there are zero digits then a fractional part is mandatory, unless __je__ is used.
 3. This integer part can then optionally be followed by __jo__ and a _fractional

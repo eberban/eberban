@@ -63,6 +63,7 @@ export default defineConfig({
                 "dictionary": resolve(__dirname, "dictionary/index.html"),
                 "root-generator": resolve(__dirname, "root-generator/index.html"),
                 "textual-parser": resolve(__dirname, "textual-parser/index.html"),
+                "textual-parser-peggy": resolve(__dirname, "textual-parser/peggy.html"),
                 "visual-parser": resolve(__dirname, "visual-parser/index.html"),
                 // The reference grammar is within this repo but external to
                 // this web application, so it is not listed as an input.
