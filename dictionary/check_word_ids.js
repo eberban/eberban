@@ -17,9 +17,9 @@ const fs = require("fs");
 const YAML = require("yaml");
 
 const dictionary_file = fs.readFileSync(file_name, "utf8");
-const lineCounter = new YAML.LineCounter();
+const line_counter = new YAML.LineCounter();
 const { dictionary_doc, dictionary } = (() => {
-  const d = YAML.parseDocument(dictionary_file, { lineCounter });
+  const d = YAML.parseDocument(dictionary_file, { lineCounter: line_counter });
   return { dictionary_doc: d.contents.items, dictionary: d.toJS() };
 })();
 
@@ -66,24 +66,24 @@ for (const {key, value } of dictionary_doc) {
   if (word === "_spelling") {
     for (const { key: spelling_key, value: spelling_value } of value.items) {
       const spelling_word = spelling_key.value;
-      const spelling_word_line_data = lineCounter.linePos(spelling_value.range[0]);
+      const spelling_word_line_data = line_counter.linePos(spelling_value.range[0]);
       if (!check_word_has_id(spelling_word, dictionary["_spelling"])) {
         record_word_with_missing_id(spelling_word, spelling_word_line_data);
         continue; // No id, so we'll skip the other id checks
       }
       const id = dictionary["_spelling"][spelling_word].id;
-      const id_line_data = lineCounter.linePos(spelling_value.items[0].value.range[0]);
+      const id_line_data = line_counter.linePos(spelling_value.items[0].value.range[0]);
       record_id(spelling_word, id, id_line_data);
     }
     continue; // _spelling words completed, move to the next non-spelling word
   }
-  const word_line_data = lineCounter.linePos(value.range[0]);
+  const word_line_data = line_counter.linePos(value.range[0]);
   if (!check_word_has_id(word, dictionary)) {
     record_word_with_missing_id(word, word_line_data);
     continue; // No id, so we'll skip the other id checks
   }
   const id = dictionary[word].id;
-  const id_line_data = lineCounter.linePos(value.items[0].value.range[0]);
+  const id_line_data = line_counter.linePos(value.items[0].value.range[0]);
   record_id(word, id, id_line_data);
 }
 
