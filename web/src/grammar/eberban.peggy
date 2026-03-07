@@ -27,6 +27,7 @@
 {
 	var warnings = [];
     var pending_error = null;
+    var gram_quote_nesting = 0;
     
     // Add warning to the warnings list
     function warn(msg) {
@@ -129,16 +130,30 @@ MainWithError = @MainWithWarnings &{
     if(pending_error) error(pending_error.message, pending_error.location);
     return true
 }
-// Main rule, match flags, text prefixes, paragraphs, and include collected warnings
-MainWithWarnings = main:Text { 
+// Add collected warnings to matched text.
+MainWithWarnings = main:RootText { 
     if(warnings?.length > 0) main.warnings = warnings;
     return main
 }
 
 // # Text structure ================================================
 
+// Root level text (not inside quotes) which additionally provides error messages for leading unmatched particles.
+RootText = @Text !E_UnmatchedLeadings
+E_UnmatchedLeadings = E_UnmatchedFI / E_UnmatchedVEI / E_UnmatchedBE / E_UnmatchedPEI / E_UnmatchedBU / E_UnmatchedResume
+E_UnmatchedFI = FI_Free &{ return err("There is no VI scope still open for this FI to attach to")}
+E_UnmatchedVEI = VEI_Free &{ return err("There is no VI scope still open for this VEI to attach to")}
+E_UnmatchedBE = BE_Free &{ return err("BE can only be used to end an arguments list or a borrowing group")}
+E_UnmatchedPEI = PEI_Free &{ return err("There is no PE scope still open for this PEI to attach to")}
+E_UnmatchedBU = BU_Free &{ return err("BU can only be used inside still open enumerations started with PE")}
+E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
+`Failed to resume binding. Note that while leading SI can differ, anything following a ZI must match`
+)}
+
+// Main text rule, which can be nested inside quotes.
+// Match language flags, text prefixes and paragraphs.
 Text = Spaces? EOF { return {} } // allow empty text
-    / flags:LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces? EOF?
+    / flags:LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces?
     { 
         var res = {};
 
@@ -161,28 +176,39 @@ Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / Se
 // want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
 
-// Ensure sentence ends because a new sentence/paragraph star, end of quote/text is reached or sentence
-// eraser at the end of a valid sentence, instead of just failing to parse more. Necessary to make
-// SentenceErasedInvalid work properly, as an invalid sentence starting valid would otherwise split into 2 sentences.
-SentenceChoice = @(SentenceO / SentenceNI / SentenceA) !E_UnmatchedLeadings &PostSentence
-PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / EOF)
+// Ensure sentence ends because:
+// - a new sentence/paragraph start
+// - end of quote is reached (either explicitly with CAI or elided)
+// - end of text
+// - sentence eraser at the end of a valid sentence.
+// This is important to ensure sentences are not split in half, as reaching the invalid part would
+// finished to parse a sentence and then fail inside a new one. We want this so that a sentence that
+// become invalid can be fully erased with RA.
+SentenceChoice = @(SentenceO / SentenceNI / SentenceA) &PostSentence
+PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / GrammaticalQuoteTerminatorElider / EOF)
 SentenceStarter = A_Free / O_Free / NI_Free
 
-E_UnmatchedLeadings = E_UnmatchedFI / E_UnmatchedVEI / E_UnmatchedBE / E_UnmatchedPEI / E_UnmatchedBU / E_UnmatchedResume
+GrammaticalQuoteTerminatorElider = FI_Free / VEI_Free / PEI_Free / BU_Free / PA_Free
 
-E_UnmatchedFI = FI_Free &{ return err("There is no VI scope still open for this FI to attach to")}
-E_UnmatchedVEI = VEI_Free &{ return err("There is no VI scope still open for this VEI to attach to")}
-E_UnmatchedBE = BE_Free &{ return err("BE can only be used to end an arguments list or a borrowing group")}
-E_UnmatchedPEI = BU_Free &{ return err("There is no PE scope still open for this PEI to attach to")}
-E_UnmatchedBU = BU_Free &{ return err("BU can only be used inside still open enumerations started with PE")}
-E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
-`Failed to resume binding. Note that while leading SI can differ, anything following a ZI must match`
-)}
+SentenceErasedValid =
+    s:SentenceChoice eraser:SentenceEraser
+    !E_ErasedMustBeFollowedBySentenceStarter
+    { s.kind = `Erased ${s.kind}`; s.eraser = eraser; return s }
 
-SentenceErasedValid = s:SentenceChoice eraser:SentenceEraser { s.kind = `Erased ${s.kind}`; s.eraser = eraser; return s }
-SentenceErasedInvalid = starter:SentenceStarter? rest:(!SentenceEraser @.)* eraser:SentenceEraser
+SentenceErasedInvalid =
+    // Inside a grammatical quote, structures that can elide CAI ends the previous sentence and then should
+    // not be considered invalid and erased with RA
+    !(GrammaticalQuoteTerminatorElider &{return gram_quote_nesting != 0})
+    starter:SentenceStarter? rest:(!SentenceEraser @.)* eraser:SentenceEraser
+    // Erased sentence, discard any error and return the erased "sentence"
     &{ pending_error = null; return true }
+    !E_ErasedMustBeFollowedBySentenceStarter
     { return { kind: "Erased Invalid", starter, rest: rest.join("").trim(), eraser }}
+
+E_ErasedMustBeFollowedBySentenceStarter =
+    Spaces?
+    !(EOF / SentenceStarter / PO_Free)
+    &{ return err("After erasing a sentence with RA, the following sentence starter cannot be elided (prefix the sentence with A/O/NI)")}
 
 SentenceO = starter:O_Free defined:VerbDefinable definition:DefinitionWithArguments
     { return { kind: "O Sentence", starter, defined, definition }}
@@ -207,11 +233,18 @@ ChainErased = chain:ChainInner eraser:ChainEraser { return { chain, eraser }}
 ChainNegation = neg:BI_Free chain:Chain { return {wide_negation:neg, ...chain} }
 
 E_ChainEmpty = !ChainInner &{ return err("A chain must contain at least one (non erased) verb")}
-E_ResumeChainEmpty = !ChainVerbAndBinds &{ return err("PA must be followed by a verb, for which it'll resume bindings to the latest instead up the chains")}
+E_ResumeChainEmpty = !ChainVerbAndBinds &{ return err("PA must be followed by a verb, for which it'll resume bindings to the latest instance up the chains")}
 
 ChainInner = ChainNegation
-    / chain:ChainVerbAndBinds next:ChainInner? resume:(
+    / chain:ChainVerbAndBinds next:ChainInner?
+    // ECHO-resumptive, allows to resume binds to a verb higher in the chain.
+    // Can occur multiple times so that it also works when using ECHO-resumptive
+    // inside a previous resume chain.
+    resume:(
         resume_start:PA_Free !E_ResumeChainEmpty resume_chain:ChainVerbAndBinds
+        // Only match here if the first verb of the resume chain matches this step
+        // verb. If that'es not the case, do not match so that this step finish matching
+        // and it tries to match again on the immediatly higher step.
         &{ 
             // Can we do this without JSON.stringify?!
             return JSON.stringify(chain.verb) === JSON.stringify(resume_chain.verb)
@@ -230,7 +263,6 @@ ChainInner = ChainNegation
 
         if(resume?.length == 1) chain.resume = resume[0];
         if(resume?.length > 1) chain.resume = resume;
-
 
         return chain
     }
@@ -319,7 +351,15 @@ VerbDefinablePart = pre:FreePrefix* Spaces?
 
 VerbQuote = GrammaticalQuote / SingleWordQuote / ForeignQuote / SpellingQuote
 
-GrammaticalQuote = start:CA_Free text:Text end:CAI_Free
+GrammaticalQuote =
+    start:CA_Free
+    &{ gram_quote_nesting++; return true }
+    // hack to decrement quote nesting regardless of parsing success
+    text:(
+        @Text &{ gram_quote_nesting--; return true}
+        / &{ gram_quote_nesting--; return false}
+    )
+    end:CAI_Elidible
     { return { kind: "GrammaticalQuote", start, text, end }}
 
 SingleWordQuote = start:CI_Free Spaces? word:(NativeWord / Compound / Borrowing)
@@ -502,6 +542,7 @@ BE_Elidible  = x:BE_Free?  { return elidible(x, { family: "BE", word: "be" })}
 PEI_Elidible = x:PEI_Free? { return elidible(x, { family: "PEI", word: "pei" })}
 VEI_Elidible = x:VEI_Free? { return elidible(x, { family: "VEI", word: "vei" })}
 JI_Elidible  = x:JI_Free?  { return elidible(x, { family: "JI", word: "jie" })}
+CAI_Elidible = x:CAI_Free? { return elidible(x, { family: "CAI", word: "cai" })}
 
 // # Particle families ==============================
 
