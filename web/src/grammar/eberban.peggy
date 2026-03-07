@@ -360,6 +360,33 @@ GrammaticalQuote =
         / &{ gram_quote_nesting--; return false}
     )
     end:CAI_Elidible
+
+    // Warning if non-final quote terminator CAI is elided and text contains multiple sentences
+    (
+        !(Spaces? EOF)
+        &{
+            function isComplex() {
+                if (end.elided != true) return false;
+                if (text.paragraphs == null) return false;
+                if (text.paragraphs.length > 1) return true;
+
+                let non_elided_sentences = text.paragraphs[0].sentences
+                    .filter(s => s.eraser == undefined)
+                    .length;
+                if (non_elided_sentences > 1) return true;
+
+                return false;
+            }
+           
+            if (isComplex()) {
+                warn("Non text-final CAI is discouraged to be elided when quote contains multiple sentences "
+                + "as the scope of the scope can easily get confusing.");
+            }
+
+            return true;
+        }
+    )?
+   
     { return { kind: "GrammaticalQuote", start, text, end }}
 
 SingleWordQuote = start:CI_Free Spaces? word:(NativeWord / Compound / Borrowing)
