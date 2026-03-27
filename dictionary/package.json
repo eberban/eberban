@@ -4,6 +4,6 @@
     "check-ids": "node ./check_word_ids ./en.yaml"
   },
   "dependencies": {
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.3"
   }
 }
