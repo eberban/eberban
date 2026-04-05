@@ -18,14 +18,16 @@
 //
 // ## Item types
 //
-//   word      — single word box (root, particle, etc.)
-//   group     — SI/ZI prefix(es) + verb, rendered side-by-side
-//   nested    — VI/FI bind group or PE enum, rendered as a nested
-//               grid inside a container in row 2
-//   terminator — thin empty box at sentence end (matches bar width)
+//   word       — single word box (root, particle, etc.)
+//   group      — SI/ZI prefix(es) + verb, rendered side-by-side
+//   nested     — VI/FI bind group, rendered as nested grid in row 2
+//   nested-text — grammatical quote (CA), contains full parsed text
+//   terminator — thin empty box at sentence end
 //   separator  — thin empty box between PE enum items (prefix mode)
+//   return     — thin vertical connector after inline binds,
+//                bridges offset depth back to baseline
 //
-// ## Nesting
+// ## Nesting & Inlining
 //
 // VI/FI bind groups and PE enumerations are rendered as nested grids
 // inside a container div (vbox-bind-group). Each nested grid has its
@@ -33,15 +35,16 @@
 //
 // When a verb's explicit binds are the LAST thing in a chain (no next),
 // the bind items are "inlined" — appended to the parent grid with
-// colored bar sections instead of creating a nested block.
+// colored bar sections and a progressive depth offset to show nesting.
+// A thin "return" connector bridges back to baseline after inlined binds.
 //
 // ## Color scheme (semantic CSS variables in boxes.css)
 //
 // Bars:    bar-default (dark), bar-bind (pink), bar-adverb (orange),
-//          bar-enum (green)
-// Words:   content (blue), si (yellow), bind (light pink),
-//          zi (coral), compound-bg (purple), sentence-bg (dark),
-//          adverb (light orange), enum (light green)
+//          bar-enum (green), bar-quote (gold)
+// Words:   content (blue), si (lavender), bind (light pink),
+//          zi (salmon), compound-bg (blue), sentence-bg (dark),
+//          adverb (light orange), enum (light green), quote (gold)
 //
 // ## Key functions
 //
@@ -218,7 +221,7 @@ function collectEnumItems(verb) {
             }
         }
 
-        stepsToItems(flattenChain(item.chain), barColor, items);
+        stepsToItems(flattenChain(item.chain), barColor, items, 0);
     }
 
     if (verb.end) {
@@ -245,7 +248,10 @@ function renderGrid(items) {
         // Row 2 extra classes (first/last margin + rounding)
         let extra = (isFirst ? "vbox-first " : "") + (isLast ? "vbox-last" : "");
         extra = extra.trim();
-        let depthStyle = item.depth ? ` style="margin-top:${item.depth * INLINE_DEPTH_OFFSET_PX}px"` : "";
+        let depthPx = (item.depth || 0) * INLINE_DEPTH_OFFSET_PX;
+        let depthStyle = depthPx ? ` style="margin-top:${depthPx}px"` : "";
+        // Nested bind groups need extra margin on top of depth offset for visual separation
+        let nestedDepthStyle = depthPx ? ` style="margin-top:${depthPx + 5}px"` : "";
 
         // Bar extra classes
         let barExtra = "";
@@ -271,7 +277,7 @@ function renderGrid(items) {
                 html += renderGroup(item.prefixes, item.verb, extra, item.siCount, depthStyle);
                 break;
             case "nested":
-                html += renderNestedBind(item.bindGroup, extra, depthStyle);
+                html += renderNestedBind(item.bindGroup, extra, nestedDepthStyle);
                 break;
             case "nested-text":
                 html += `<div class="vbox-bind-group ${extra || ""}"${depthStyle}>${renderText(item.text)}</div>`;
@@ -344,7 +350,7 @@ function renderNestedBind(bindGroup, extra, depthStyle) {
     let innerItems = [];
     collectBindItems(bindGroup, innerItems);
     if (innerItems.length > 0) innerItems[innerItems.length - 1].chainPlace = "";
-    return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(innerItems)}</div></div>`;
+    return `<div class="vbox-bind-group ${extra || ""}"${depthStyle || ""}><div class="vbox-chain">${renderGrid(innerItems)}</div></div>`;
 }
 
 function renderEnum(verb, extra, depthStyle) {
@@ -612,17 +618,6 @@ function wordItem(node, barColor) {
     return { type: "word", node, color: getWordColor(node), barColor, exposed: "", chainPlace: "" };
 }
 
-function hasNestedBinds(bindGroup) {
-    for (let bind of bindGroup.binds) {
-        let cur = bind.inner?.chain || bind.inner;
-        while (cur) {
-            if (cur.explicit_binds) return true;
-            cur = cur.next;
-        }
-    }
-    return false;
-}
-
 function isAdverbStart(start) {
     return start?.word?.startsWith("voi") || start?.word?.startsWith("foi");
 }
@@ -706,20 +701,21 @@ function setupTooltips() {
         document.body.appendChild(tooltipEl);
     }
 
-    $('#parse-result-boxes').off('mouseenter.vbox mouseleave.vbox mousemove.vbox');
+    $('#parse-result-boxes').off('.vbox');
 
-    $('#parse-result-boxes').on('mouseenter.vbox', '[data-tooltip]', function (e) {
-        tooltipEl.textContent = this.getAttribute('data-tooltip');
-        tooltipEl.style.display = "block";
-        positionTooltip(e);
+    $('#parse-result-boxes').on('mousemove.vbox', function (e) {
+        let target = e.target.closest('[data-tooltip]');
+        if (target) {
+            tooltipEl.textContent = target.getAttribute('data-tooltip');
+            tooltipEl.style.display = "block";
+            positionTooltip(e);
+        } else {
+            tooltipEl.style.display = "none";
+        }
     });
 
-    $('#parse-result-boxes').on('mouseleave.vbox', '[data-tooltip]', function () {
+    $('#parse-result-boxes').on('mouseleave.vbox', function () {
         tooltipEl.style.display = "none";
-    });
-
-    $('#parse-result-boxes').on('mousemove.vbox', '[data-tooltip]', function (e) {
-        positionTooltip(e);
     });
 }
 
