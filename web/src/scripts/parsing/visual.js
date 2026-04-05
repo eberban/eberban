@@ -445,8 +445,8 @@ function renderNumber(verb, extra, depthStyle) {
     let val = verb.value;
 
     let parts = [];
+    if (val.base) { for (let d of asArray(val.base.value)) parts.push(d); parts.push(val.base.sep); }
     if (val.int) for (let d of val.int) parts.push(d);
-    if (val.base) { parts.push(val.base.sep); for (let d of val.base.value) parts.push(d); }
     if (val.fract) { parts.push(val.fract.sep); for (let d of val.fract.value) parts.push(d); }
     if (val.repeat) { parts.push(val.repeat.sep); for (let d of val.repeat.value) parts.push(d); }
     if (val.magn) { parts.push(val.magn.sep); for (let d of val.magn.value) parts.push(d); }
@@ -472,24 +472,23 @@ function renderNumber(verb, extra, depthStyle) {
 }
 
 function computeNumberDisplay(value) {
-    let base = value.base ? digitsToInt(value.base.value) : 10;
     let parts = [];
 
-    if (value.int) parts.push(digitsToInt(value.int, base).toString());
-    if (value.fract) {
-        let fracStr = value.fract.value.map(d => digitValue(d).toString(base)).join("");
-        parts.push("." + fracStr);
+    // Base override: Eberban specifies highest digit, natlangs use digit+1
+    if (value.base) {
+        let baseDigit = digitValue(asArray(value.base.value)[0]);
+        parts.push(`(base ${baseDigit + 1}) `);
     }
-    if (value.repeat) {
-        let repStr = value.repeat.value.map(d => digitValue(d).toString(base)).join("");
-        parts.push("(" + repStr + ")\u0305");
-    }
+
+    if (value.int) parts.push(rawDigits(value.int));
+    if (value.fract) parts.push("." + rawDigits(value.fract.value));
+    if (value.repeat) parts.push("(" + rawDigits(value.repeat.value) + ")\u0305");
 
     let result = parts.join("") || "0";
 
     if (value.magn) {
-        let exp = digitsToInt(value.magn.value, base);
-        result += " \u00d7" + base + superscript(exp);
+        let expStr = rawDigits(value.magn.value);
+        result += " \u00d7base" + superscript(expStr);
     }
 
     if (value.end) {
@@ -505,20 +504,18 @@ function digitValue(d) {
     return match ? parseInt(match[1]) : 0;
 }
 
-function digitsToInt(digits, base) {
-    base = base || 10;
-    let result = 0;
-    for (let d of digits) {
-        result = result * base + digitValue(d);
-    }
-    return result;
+function rawDigits(digits) {
+    return asArray(digits).map(d => {
+        let v = digitValue(d);
+        return v < 10 ? v.toString() : String.fromCharCode(55 + v); // A=10, B=11, etc.
+    }).join("");
 }
 
-function superscript(n) {
+function superscript(s) {
     let sup = { '0': '\u2070', '1': '\u00b9', '2': '\u00b2', '3': '\u00b3', '4': '\u2074',
                 '5': '\u2075', '6': '\u2076', '7': '\u2077', '8': '\u2078', '9': '\u2079',
                 '-': '\u207b' };
-    return String(n).split("").map(c => sup[c] || c).join("");
+    return String(s).split("").map(c => sup[c] || c).join("");
 }
 
 function compoundPart(word, gloss, extraClass, short) {
@@ -616,6 +613,10 @@ function stripModifiers(verb) {
 
 function wordItem(node, barColor) {
     return { type: "word", node, color: getWordColor(node), barColor, exposed: "", chainPlace: "" };
+}
+
+function asArray(val) {
+    return Array.isArray(val) ? val : [val];
 }
 
 function isAdverbStart(start) {
