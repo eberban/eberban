@@ -57,6 +57,8 @@ import dictionary from '../../../../dictionary/en.yaml';
 import * as parser from "../../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
 
+const INLINE_DEPTH_OFFSET_PX = 10;
+
 // ============================================================
 // Entry point
 // ============================================================
@@ -130,17 +132,24 @@ function collectChainItems(chain, starter, defined, barColor) {
     if (starter) items.push(wordItem(starter, barColor));
     if (defined) items.push(wordItem(defined, barColor));
 
-    stepsToItems(flattenChain(chain), barColor, items);
+    stepsToItems(flattenChain(chain), barColor, items, 0);
 
     // Last item never shows chainPlace
     if (items.length > 0) items[items.length - 1].chainPlace = "";
+
+    // Return connector if any items have depth > 0
+    let maxDepth = 0;
+    for (let it of items) if (it.depth > maxDepth) maxDepth = it.depth;
+    if (maxDepth > 0) {
+        items.push({ type: "return", barColor, maxDepth });
+    }
 
     // Sentence terminator
     items.push({ type: "terminator", barColor });
     return items;
 }
 
-function stepsToItems(steps, barColor, items) {
+function stepsToItems(steps, barColor, items, depth) {
     let slots = getSlotInfo(steps);
 
     for (let i = 0; i < steps.length; i++) {
@@ -153,34 +162,36 @@ function stepsToItems(steps, barColor, items) {
 
         if (prefixes.length > 0) {
             let siCount = step.select ? 1 : 0;
-            items.push({ type: "group", prefixes, verb, barColor, exposed, chainPlace, siCount });
+            items.push({ type: "group", prefixes, verb, barColor, exposed, chainPlace, siCount, depth });
         } else {
-            items.push({ type: "word", node: verb, color: getWordColor(verb), barColor, exposed, chainPlace });
+            items.push({ type: "word", node: verb, color: getWordColor(verb), barColor, exposed, chainPlace, depth });
         }
 
         if (step.explicit_binds) {
-            if (!isLast || step.explicit_binds.binds.length > 1) {
-                items.push({ type: "nested", bindGroup: step.explicit_binds, barColor });
+            if (!isLast) {
+                items.push({ type: "nested", bindGroup: step.explicit_binds, barColor, depth });
             } else {
-                collectBindItems(step.explicit_binds, items);
+                collectBindItems(step.explicit_binds, items, depth, true);
             }
         }
     }
 }
 
-function collectBindItems(bindGroup, items) {
+function collectBindItems(bindGroup, items, depth, inline) {
+    let nextDepth = (depth || 0) + (inline ? 1 : 0);
     for (let bind of bindGroup.binds) {
         let adverb = isAdverbStart(bind.start);
         let barColor = adverb ? "vbox-bar-adverb" : "vbox-bar-bind";
         let wordColor = adverb ? "vbox-adverb" : "vbox-bind";
 
-        items.push({ type: "word", node: bind.start, color: wordColor, barColor, exposed: "", chainPlace: "" });
-        stepsToItems(flattenChain(bind.inner?.chain || bind.inner), barColor, items);
+        items.push({ type: "word", node: bind.start, color: wordColor, barColor, exposed: "", chainPlace: "", depth: nextDepth });
+        stepsToItems(flattenChain(bind.inner?.chain || bind.inner), barColor, items, nextDepth);
     }
 
-    if (bindGroup.end) {
+    // VEI: omit only if inline AND elided
+    if (bindGroup.end && !(inline && bindGroup.end.elided)) {
         let color = bindGroup.end.elided ? "vbox-bind vbox-elided" : "vbox-bind";
-        items.push({ type: "word", node: bindGroup.end, color, barColor: "vbox-bar-bind", exposed: "", chainPlace: "" });
+        items.push({ type: "word", node: bindGroup.end, color, barColor: "vbox-bar-bind", exposed: "", chainPlace: "", depth: nextDepth });
     }
 }
 
@@ -234,6 +245,7 @@ function renderGrid(items) {
         // Row 2 extra classes (first/last margin + rounding)
         let extra = (isFirst ? "vbox-first " : "") + (isLast ? "vbox-last" : "");
         extra = extra.trim();
+        let depthStyle = item.depth ? ` style="margin-top:${item.depth * INLINE_DEPTH_OFFSET_PX}px"` : "";
 
         // Bar extra classes
         let barExtra = "";
@@ -247,45 +259,50 @@ function renderGrid(items) {
 
         // Render bar cell (all types except separator get one)
         if (item.type !== "separator") {
-            html += barCell(item.barColor, item.exposed, item.chainPlace, barExtra);
+            html += barCell(item.barColor, item.exposed, item.chainPlace, barExtra, depthStyle);
         }
 
         // Render row 2 content
         switch (item.type) {
             case "word":
-                html += renderVerbContent(item.node, item.color, extra);
+                html += renderVerbContent(item.node, item.color, extra, depthStyle);
                 break;
             case "group":
-                html += renderGroup(item.prefixes, item.verb, extra, item.siCount);
+                html += renderGroup(item.prefixes, item.verb, extra, item.siCount, depthStyle);
                 break;
             case "nested":
-                html += renderNestedBind(item.bindGroup, extra);
+                html += renderNestedBind(item.bindGroup, extra, depthStyle);
                 break;
             case "nested-text":
-                html += `<div class="vbox-bind-group ${extra || ""}">${renderText(item.text)}</div>`;
+                html += `<div class="vbox-bind-group ${extra || ""}"${depthStyle}>${renderText(item.text)}</div>`;
                 break;
             case "terminator":
-                html += thinBox("vbox-sentence-bg", extra);
+                html += thinBox("vbox-sentence-bg", extra, depthStyle);
                 break;
             case "separator":
-                html += barCell(item.barColor, "", "", barExtra);
-                html += thinBox(item.color, extra);
+                html += barCell(item.barColor, "", "", barExtra, depthStyle);
+                html += thinBox(item.color, extra, depthStyle);
                 break;
+            case "return": {
+                let returnHeight = item.maxDepth * INLINE_DEPTH_OFFSET_PX;
+                html += `<div class="vbox-return vbox-bar-bind" style="height:${returnHeight}px"></div>`;
+                break;
+            }
         }
     }
     return html;
 }
 
-function barCell(barColor, exposed, chainPlace, barExtra) {
+function barCell(barColor, exposed, chainPlace, barExtra, depthStyle) {
     let content = "";
     if (exposed) content += `<span class="vbox-bar-exposed">${exposed}</span>`;
     if (chainPlace) content += `<span class="vbox-bar-chain-place">${chainPlace}</span>`;
-    return `<div class="vbox-bar ${barColor} ${barExtra || ""}">${content}</div>`;
+    return `<div class="vbox-bar ${barColor} ${barExtra || ""}"${depthStyle || ""}>${content}</div>`;
 }
 
 // Thin box with invisible text for height matching (terminator, enum separator)
-function thinBox(colorClass, extra) {
-    return `<div class="vbox-terminator ${colorClass} ${extra || ""}">`
+function thinBox(colorClass, extra, depthStyle) {
+    return `<div class="vbox-terminator ${colorClass} ${extra || ""}"${depthStyle || ""}>`
         + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
         + `<span class="vbox-word-gloss" style="visibility:hidden">x</span>`
         + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
@@ -296,19 +313,19 @@ function thinBox(colorClass, extra) {
 // Content renderers (row 2 of grid)
 // ============================================================
 
-function renderVerbContent(verb, color, extra) {
+function renderVerbContent(verb, color, extra, depthStyle) {
     if (!verb) return `<div class="vbox-word ${color}"></div>`;
-    if (verb.family === "Compound") return renderCompound(verb, extra);
-    if (verb.kind === "Number") return renderNumber(verb, extra);
-    if (verb.start?.family === "PE") return renderEnum(verb, extra);
-    if (verb.kind === "SingleWordQuote") return renderSingleWordQuote(verb, extra);
-    if (verb.kind === "Spelling Quote") return renderSpellingQuote(verb, extra);
-    if (verb.kind === "GrammaticalQuote") return renderGrammaticalQuote(verb, extra);
-    if (verb.kind === "ForeignQuote") return renderForeignQuote(verb, extra);
-    return wordBox(verb, color, extra);
+    if (verb.family === "Compound") return renderCompound(verb, extra, depthStyle);
+    if (verb.kind === "Number") return renderNumber(verb, extra, depthStyle);
+    if (verb.start?.family === "PE") return renderEnum(verb, extra, depthStyle);
+    if (verb.kind === "SingleWordQuote") return renderSingleWordQuote(verb, extra, depthStyle);
+    if (verb.kind === "Spelling Quote") return renderSpellingQuote(verb, extra, depthStyle);
+    if (verb.kind === "GrammaticalQuote") return renderGrammaticalQuote(verb, extra, depthStyle);
+    if (verb.kind === "ForeignQuote") return renderForeignQuote(verb, extra, depthStyle);
+    return wordBox(verb, color, extra, depthStyle);
 }
 
-function renderGroup(prefixes, verb, extra, siCount) {
+function renderGroup(prefixes, verb, extra, siCount, depthStyle) {
     let html = "";
     for (let i = 0; i < prefixes.length; i++) {
         html += wordBox(prefixes[i], getWordColor(prefixes[i]));
@@ -320,32 +337,32 @@ function renderGroup(prefixes, verb, extra, siCount) {
     // Separator before verb
     html += `<div class="vbox-group-sep"></div>`;
     html += renderVerbContent(verb, getWordColor(verb));
-    return `<div class="vbox-pair ${extra || ""}">${html}</div>`;
+    return `<div class="vbox-pair ${extra || ""}"${depthStyle || ""}>${html}</div>`;
 }
 
-function renderNestedBind(bindGroup, extra) {
+function renderNestedBind(bindGroup, extra, depthStyle) {
     let innerItems = [];
     collectBindItems(bindGroup, innerItems);
     if (innerItems.length > 0) innerItems[innerItems.length - 1].chainPlace = "";
     return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(innerItems)}</div></div>`;
 }
 
-function renderEnum(verb, extra) {
+function renderEnum(verb, extra, depthStyle) {
     let enumItems = collectEnumItems(verb);
-    return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(enumItems)}</div></div>`;
+    return `<div class="vbox-bind-group ${extra || ""}"${depthStyle || ""}><div class="vbox-chain">${renderGrid(enumItems)}</div></div>`;
 }
 
-function renderSingleWordQuote(verb, extra) {
+function renderSingleWordQuote(verb, extra, depthStyle) {
     let parts = compoundPart(verb.start.word, lookupGloss(verb.start.word), " vbox-quote-delim", lookupShort(verb.start.word))
         + compoundPart(verb.word.word, lookupGloss(verb.word.word), "", lookupShort(verb.word.word));
 
-    return `<div class="vbox-compound vbox-quote ${extra || ""}">`
+    return `<div class="vbox-compound vbox-quote ${extra || ""}"${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-family">QUOTE</span>`
         + `</div>`;
 }
 
-function renderSpellingQuote(verb, extra) {
+function renderSpellingQuote(verb, extra, depthStyle) {
     let parts = compoundPart(verb.starter.word, lookupGloss(verb.starter.word), " vbox-quote-delim", lookupShort(verb.starter.word));
 
     for (let item of verb.items) {
@@ -358,13 +375,13 @@ function renderSpellingQuote(verb, extra) {
         parts += compoundPart(endWord, lookupGloss(verb.end.word), " vbox-quote-delim", lookupShort(verb.end.word));
     }
 
-    return `<div class="vbox-compound vbox-quote ${extra || ""}">`
+    return `<div class="vbox-compound vbox-quote ${extra || ""}"${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-family">SPELLING QUOTE</span>`
         + `</div>`;
 }
 
-function renderGrammaticalQuote(verb, extra) {
+function renderGrammaticalQuote(verb, extra, depthStyle) {
     let barColor = "vbox-bar-quote";
     let items = [];
     items.push({ type: "word", node: verb.start, color: "vbox-quote", barColor, exposed: "", chainPlace: "" });
@@ -374,22 +391,22 @@ function renderGrammaticalQuote(verb, extra) {
         items.push({ type: "word", node: verb.end, color, barColor, exposed: "", chainPlace: "" });
     }
     if (items.length > 0) items[items.length - 1].chainPlace = "";
-    return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(items)}</div></div>`;
+    return `<div class="vbox-bind-group ${extra || ""}"${depthStyle || ""}><div class="vbox-chain">${renderGrid(items)}</div></div>`;
 }
 
-function renderForeignQuote(verb, extra) {
+function renderForeignQuote(verb, extra, depthStyle) {
     let parts = compoundPart(verb.start.word, lookupGloss(verb.start.word), " vbox-quote-delim", lookupShort(verb.start.word))
         + `<div class="vbox-compound-part vbox-foreign-bracket">`
         + `<span class="vbox-compound-part-word">${esc(verb.content)}</span>`
         + `</div>`;
 
-    return `<div class="vbox-compound vbox-quote ${extra || ""}">`
+    return `<div class="vbox-compound vbox-quote ${extra || ""}"${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-family">QUOTE</span>`
         + `</div>`;
 }
 
-function renderCompound(verb, extra) {
+function renderCompound(verb, extra, depthStyle) {
     let dictKey = verb.prefix + " " + verb.content.map(c => c.word).join(" ") + (verb.postfix ? " " + verb.postfix : "");
     let gloss = lookupGloss(dictKey);
 
@@ -411,14 +428,14 @@ function renderCompound(verb, extra) {
 
     let short = lookupShort(dictKey);
     let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
-    return `<div class="vbox-compound ${extra || ""}"${tooltip}>`
+    return `<div class="vbox-compound ${extra || ""}"${tooltip}${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">COMPOUND</span>`
         + `</div>`;
 }
 
-function renderNumber(verb, extra) {
+function renderNumber(verb, extra, depthStyle) {
     let val = verb.value;
 
     let parts = [];
@@ -441,7 +458,7 @@ function renderNumber(verb, extra) {
 
     let display = computeNumberDisplay(val);
 
-    return `<div class="vbox-compound ${extra || ""}">`
+    return `<div class="vbox-compound ${extra || ""}"${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${partsHtml}</div>`
         + `<span class="vbox-word-gloss">${esc(display)}</span>`
         + `<span class="vbox-word-family">NUMBER</span>`
@@ -506,7 +523,7 @@ function compoundPart(word, gloss, extraClass, short) {
         + `</div>`;
 }
 
-function wordBox(node, color, extra) {
+function wordBox(node, color, extra, depthStyle) {
     if (!node) return "";
     let word = getWordText(node);
     let gloss = lookupGloss(word);
@@ -519,7 +536,7 @@ function wordBox(node, color, extra) {
     }
 
     let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
-    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}>`
+    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}${depthStyle || ""}>`
         + `<span class="vbox-word-text">${esc(word)}</span>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">${esc(family)}</span>`
@@ -593,6 +610,17 @@ function stripModifiers(verb) {
 
 function wordItem(node, barColor) {
     return { type: "word", node, color: getWordColor(node), barColor, exposed: "", chainPlace: "" };
+}
+
+function hasNestedBinds(bindGroup) {
+    for (let bind of bindGroup.binds) {
+        let cur = bind.inner?.chain || bind.inner;
+        while (cur) {
+            if (cur.explicit_binds) return true;
+            cur = cur.next;
+        }
+    }
+    return false;
 }
 
 function isAdverbStart(start) {

@@ -323,6 +323,13 @@ html {
     pointer-events: none;
 }
 
+/* === Return connector (bridges offset back to baseline) === */
+.vbox-return {
+    grid-row: 2;
+    width: 3px;
+    align-self: start;
+}
+
 /* === Elided === */
 .vbox-elided .vbox-word-text {
     font-size: 12px;
