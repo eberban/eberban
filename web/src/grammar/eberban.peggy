@@ -154,12 +154,11 @@ E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
 // Main text rule, which can be nested inside quotes.
 // Match language flags, text prefixes and paragraphs.
 Text = Spaces? EOF { return {} } // allow empty text
-    / flags:LanguageFlags pre:(FreePrefix)* paras:Paragraphs? Spaces?
+    / flags:LanguageFlags paras:Paragraphs? Spaces?
     { 
         var res = {};
 
         if(flags?.length != 0) res.flags = flags;
-        if(pre?.length != 0) res.pre = pre;
 
         return { ...res, paragraphs: paras}
     }
@@ -523,9 +522,9 @@ FreeScope = DU_Free
 
 // # Particle families with free pre/post ================
 
-A_Free   = pre:FreePrefix* Spaces? w:A    post:FreePostfix*  { return with_free(w, pre, post) }
-O_Free   = pre:FreePrefix* Spaces? w:O    post:FreePostfix*  { return with_free(w, pre, post) }
-NI_Free  =                 Spaces? w:NI                      { return with_free(w, [], []) }
+A_Free   = pre:FreePrefix* Spaces? w:A     post:FreePostfix* { return with_free(w, pre, post) }
+O_Free   = pre:FreePrefix* Spaces? w:O     post:FreePostfix* { return with_free(w, pre, post) }
+NI_Free  = pre:FreePrefix* Spaces? w:NI                      { return with_free(w, [], []) }
 
 BI_Free  = pre:FreePrefix* Spaces? w:BI    post:FreePostfix* { return with_free(w, pre, post) }
 BE_Free  =                 Spaces? w:BE                      { return with_free(w, [], []) }

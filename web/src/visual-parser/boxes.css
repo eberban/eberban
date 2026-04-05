@@ -111,6 +111,7 @@ html {
 /* === Word cell (row 2) === */
 .vbox-word {
     grid-row: 2;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,6 +340,59 @@ html {
     margin-top: auto;
 }
 
+/* === Annotation icon + popover === */
+.vbox-annot-icon {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    font-size: 10px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.5;
+}
+.vbox-annot-icon:hover { opacity: 1; }
+
+.vbox-popover {
+    position: fixed;
+    z-index: 10001;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    max-width: 500px;
+    font-size: 13px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.vbox-popover-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 0;
+}
+
+.vbox-popover-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    white-space: nowrap;
+}
+
+.vbox-popover-parens {
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #eee;
+}
+
+/* Reset word box grid-row inside popovers */
+.vbox-popover .vbox-word {
+    grid-row: unset;
+}
+
 /* === Elided === */
 .vbox-elided .vbox-word-text {
     font-size: 12px;
@@ -351,6 +405,7 @@ html {
 }
 
 .vbox-para-header {
+    position: relative;
     display: flex;
     align-items: baseline;
     gap: 8px;

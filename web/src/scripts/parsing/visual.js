@@ -61,6 +61,8 @@ import * as parser from "../../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
 
 const INLINE_DEPTH_OFFSET_PX = 10;
+let annotationStore = {};
+let annotationNextId = 0;
 
 // ============================================================
 // Entry point
@@ -71,10 +73,13 @@ export function parse() {
     $('#result-row').slideDown();
 
     try {
+        annotationStore = {};
+        annotationNextId = 0;
         var result = parser.parse(input, { grammarSource: "form" });
         $('#parse-result-raw').html(`<pre>${JSON.stringify(result, null, 4)}</pre>`);
         $('#parse-result-boxes').html(renderText(result));
         setupTooltips();
+        setupAnnotationPopovers();
         $('#parser_error_box').hide();
 
         if (result?.warnings != undefined) {
@@ -112,7 +117,17 @@ function renderText(output) {
         if (para.starter) {
             let word = getWordText(para.starter);
             let gloss = lookupGloss(word);
-            inner += `<div class="vbox-para-header vbox-sentence-bg">`
+            let annotIcon = "";
+            let annotAttr = "";
+            let annotHtml = buildAnnotationHtml(para.starter);
+            if (annotHtml) {
+                let id = annotationNextId++;
+                annotationStore[id] = annotHtml;
+                annotIcon = `<span class="vbox-annot-icon">\uD83D\uDCAC</span>`;
+                annotAttr = ` data-annotation-id="${id}"`;
+            }
+            inner += `<div class="vbox-para-header vbox-sentence-bg"${annotAttr}>`
+                + annotIcon
                 + `<span class="vbox-word-text">${esc(word)}</span>`
                 + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
                 + `<span class="vbox-word-family">${esc(getDisplayFamily(para.starter))}</span>`
@@ -608,12 +623,66 @@ function wordBox(node, color, extra, depthStyle) {
         word = `(${word})`;
     }
 
+    // Build annotation popover content if node has pre/post annotations
+    let annotIcon = "";
+    let annotAttr = "";
+    let annotHtml = buildAnnotationHtml(node);
+    if (annotHtml) {
+        let id = annotationNextId++;
+        annotationStore[id] = annotHtml;
+        annotIcon = `<span class="vbox-annot-icon">\uD83D\uDCAC</span>`;
+        annotAttr = ` data-annotation-id="${id}"`;
+    }
+
     let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
-    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}${depthStyle || ""}>`
+    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}${annotAttr}${depthStyle || ""}>`
+        + annotIcon
         + `<span class="vbox-word-text">${esc(word)}</span>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">${esc(family)}</span>`
         + `</div>`;
+}
+
+function buildAnnotationHtml(node) {
+    let parts = [];
+
+    // DI focus prefixes
+    if (node.pre) {
+        for (let p of node.pre) {
+            let scope = p.scope ? esc(p.scope.word) + " " : "";
+            let gloss = lookupGloss(p.meta.word);
+            parts.push(`<div class="vbox-popover-row">`
+                + `<span class="vbox-popover-label">FOCUS</span>`
+                + `<span>${scope}${esc(p.meta.word)}${gloss ? " — " + esc(gloss) : ""}</span>`
+                + `</div>`);
+        }
+    }
+
+    if (node.post) {
+        for (let p of node.post) {
+            // DE interjections
+            if (p?.kind === "Interjection") {
+                let tagGloss = lookupGloss(p.tag.word);
+                let label = esc(p.tag.word) + (tagGloss ? " (" + esc(tagGloss) + ")" : "");
+                let verbText = getWordText(p.verb);
+                let verbGloss = lookupGloss(verbText);
+                let siText = p.select ? esc(p.select.word) + " " : "";
+                parts.push(`<div class="vbox-popover-row">`
+                    + `<span class="vbox-popover-label">${label}</span>`
+                    + `<span>${siText}${esc(verbText)}${verbGloss ? " — " + esc(verbGloss) : ""}</span>`
+                    + `</div>`);
+            }
+            // DA/DAI parentheticals
+            if (p?.kind === "Parenthetical") {
+                parts.push(`<div class="vbox-popover-row">`
+                    + `<span class="vbox-popover-label">PARENTHETICAL</span>`
+                    + `</div>`
+                    + `<div class="vbox-popover-parens">${renderText(p.content)}</div>`);
+            }
+        }
+    }
+
+    return parts.length ? parts.join("") : "";
 }
 
 // ============================================================
@@ -800,5 +869,65 @@ function positionTooltip(e) {
     if (y + h > window.innerHeight - 8) y = e.clientY - h - 8;
     tooltipEl.style.left = x + "px";
     tooltipEl.style.top = y + "px";
+}
+
+// ============================================================
+// Annotation popovers
+// ============================================================
+
+let popoverEl = null;
+let popoverTimeout = null;
+
+function setupAnnotationPopovers() {
+    if (!popoverEl) {
+        popoverEl = document.createElement("div");
+        popoverEl.className = "vbox-popover";
+        popoverEl.style.display = "none";
+        document.body.appendChild(popoverEl);
+
+        // Keep popover open while hovering it
+        popoverEl.addEventListener("mouseenter", () => {
+            clearTimeout(popoverTimeout);
+        });
+        popoverEl.addEventListener("mouseleave", () => {
+            popoverTimeout = setTimeout(() => {
+                popoverEl.style.display = "none";
+            }, 200);
+        });
+    }
+
+    $('#parse-result-boxes').off('.vbox-annot');
+
+    $('#parse-result-boxes').on('mouseenter.vbox-annot', '.vbox-annot-icon', function (e) {
+        clearTimeout(popoverTimeout);
+        let annotEl = this.closest('[data-annotation-id]');
+        if (!annotEl) return;
+        let id = annotEl.getAttribute('data-annotation-id');
+        if (!(id in annotationStore)) return;
+
+        popoverEl.innerHTML = annotationStore[id];
+        popoverEl.style.display = "block";
+
+        // Position above the icon
+        let rect = this.getBoundingClientRect();
+        let popW = popoverEl.offsetWidth;
+        let popH = popoverEl.offsetHeight;
+        let x = rect.left + rect.width / 2 - popW / 2;
+        let y = rect.top - popH - 6;
+
+        // Keep on screen
+        if (x < 8) x = 8;
+        if (x + popW > window.innerWidth - 8) x = window.innerWidth - popW - 8;
+        if (y < 8) y = rect.bottom + 6; // flip below if no room above
+
+        popoverEl.style.left = x + "px";
+        popoverEl.style.top = y + "px";
+    });
+
+    $('#parse-result-boxes').on('mouseleave.vbox-annot', '.vbox-annot-icon', function () {
+        popoverTimeout = setTimeout(() => {
+            popoverEl.style.display = "none";
+        }, 200);
+    });
 }
 
