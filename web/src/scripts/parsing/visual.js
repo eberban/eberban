@@ -1,3 +1,58 @@
+// ============================================================
+// Eberban Visual Box Renderer
+// ============================================================
+//
+// Renders PEGGY parser output as nested colored box diagrams.
+//
+// ## Architecture
+//
+// The rendering is a 2-phase process:
+//
+// 1. COLLECT: Walk the parse tree and build a flat list of "items".
+//    Each item represents one grid column and carries its type,
+//    color, bar color, and slot info (exposed places / chain place).
+//
+// 2. RENDER: Convert items into a CSS Grid with 2 rows:
+//    - Row 1: continuous colored bar with per-verb slot labels
+//    - Row 2: word boxes, compound/number boxes, or nested groups
+//
+// ## Item types
+//
+//   word      — single word box (root, particle, etc.)
+//   group     — SI/ZI prefix(es) + verb, rendered side-by-side
+//   nested    — VI/FI bind group or PE enum, rendered as a nested
+//               grid inside a container in row 2
+//   terminator — thin empty box at sentence end (matches bar width)
+//   separator  — thin empty box between PE enum items (prefix mode)
+//
+// ## Nesting
+//
+// VI/FI bind groups and PE enumerations are rendered as nested grids
+// inside a container div (vbox-bind-group). Each nested grid has its
+// own colored bar (pink for binds, orange for adverbs, green for enums).
+//
+// When a verb's explicit binds are the LAST thing in a chain (no next),
+// the bind items are "inlined" — appended to the parent grid with
+// colored bar sections instead of creating a nested block.
+//
+// ## Color scheme (semantic CSS variables in boxes.css)
+//
+// Bars:    bar-default (dark), bar-bind (pink), bar-adverb (orange),
+//          bar-enum (green)
+// Words:   content (blue), si (yellow), bind (light pink),
+//          zi (coral), compound-bg (purple), sentence-bg (dark),
+//          adverb (light orange), enum (light green)
+//
+// ## Key functions
+//
+// collectChainItems  — entry: parse tree → item list (with terminator)
+// stepsToItems       — shared: chain steps → items (used by all collectors)
+// collectBindItems   — VI/FI binds → items (per-bind adverb detection)
+// collectEnumItems   — PE enum → items (separator/prefix mode)
+// renderGrid         — items → HTML (grid with bar cells + content cells)
+// renderVerbContent  — dispatches to compound/number/enum/wordBox renderers
+// ============================================================
+
 import dictionary from '../../../../dictionary/en.yaml';
 import * as parser from "../../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
@@ -67,8 +122,6 @@ function renderSentence(sentence) {
 // Collect items: walk parse tree → flat list of grid items
 // ============================================================
 
-// Each item: { type: "word"|"group"|"nested", barColor, exposed, chainPlace, ... }
-
 function collectChainItems(chain, starter, defined, barColor) {
     if (!chain) return [];
     let items = [];
@@ -76,8 +129,7 @@ function collectChainItems(chain, starter, defined, barColor) {
     if (starter) items.push(wordItem(starter, barColor));
     if (defined) items.push(wordItem(defined, barColor));
 
-    let steps = flattenChain(chain);
-    stepsToItems(steps, barColor, items);
+    stepsToItems(flattenChain(chain), barColor, items);
 
     // Last item never shows chainPlace
     if (items.length > 0) items[items.length - 1].chainPlace = "";
@@ -95,7 +147,6 @@ function stepsToItems(steps, barColor, items) {
         let { exposed, chainPlace } = slots[i];
         let isLast = i === steps.length - 1;
 
-        // Extract ZI/SI prefixes
         let prefixes = extractPrefixes(step);
         let verb = stripModifiers(step.verb);
 
@@ -105,7 +156,6 @@ function stepsToItems(steps, barColor, items) {
             items.push({ type: "word", node: verb, color: getWordColor(verb), barColor, exposed, chainPlace });
         }
 
-        // Explicit binds
         if (step.explicit_binds) {
             if (!isLast || step.explicit_binds.binds.length > 1) {
                 items.push({ type: "nested", bindGroup: step.explicit_binds, barColor });
@@ -132,6 +182,41 @@ function collectBindItems(bindGroup, items) {
     }
 }
 
+function collectEnumItems(verb) {
+    let barColor = "vbox-bar-enum";
+    let wordColor = "vbox-enum";
+    let items = [];
+
+    items.push({ type: "word", node: verb.start, color: wordColor, barColor, exposed: "", chainPlace: "" });
+
+    let isPrefixMode = !!verb.sep;
+    if (isPrefixMode) {
+        items.push({ type: "word", node: verb.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
+    }
+
+    for (let i = 0; i < verb.items.length; i++) {
+        let item = verb.items[i];
+
+        if (i > 0) {
+            if (isPrefixMode) {
+                items.push({ type: "separator", barColor, color: wordColor });
+            } else if (item.sep) {
+                items.push({ type: "word", node: item.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
+            }
+        }
+
+        stepsToItems(flattenChain(item.chain), barColor, items);
+    }
+
+    if (verb.end) {
+        let color = verb.end.elided ? `${wordColor} vbox-elided` : wordColor;
+        items.push({ type: "word", node: verb.end, color, barColor, exposed: "", chainPlace: "" });
+    }
+
+    if (items.length > 0) items[items.length - 1].chainPlace = "";
+    return items;
+}
+
 // ============================================================
 // Render grid from items
 // ============================================================
@@ -142,10 +227,10 @@ function renderGrid(items) {
         let item = items[i];
         let isFirst = i === 0;
         let isLast = i === items.length - 1;
-        // For bar border: last bar is the item before the terminator (or last item if no terminator)
         let nextIsTerminator = i + 1 < items.length && items[i + 1].type === "terminator";
-        let isLastBar = isLast || nextIsTerminator;
-        let extra = (isFirst ? "vbox-first" : "") + (isLast ? " vbox-last" : "");
+
+        // Row 2 extra classes (first/last margin + rounding)
+        let extra = (isFirst ? "vbox-first " : "") + (isLast ? "vbox-last" : "");
         extra = extra.trim();
 
         // Bar extra classes
@@ -156,30 +241,31 @@ function renderGrid(items) {
         } else if (nextIsTerminator || isLast) {
             barExtra += "vbox-bar-noborder";
         }
+        barExtra = barExtra.trim();
 
-        if (item.type === "terminator") {
-            html += barCell(item.barColor, "", "", barExtra);
-            html += `<div class="vbox-terminator vbox-sentence-bg ${extra}">`
-                + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
-                + `<span class="vbox-word-gloss" style="visibility:hidden">x</span>`
-                + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
-                + `</div>`;
-        } else {
+        // Render bar cell (all types except separator get one)
+        if (item.type !== "separator") {
             html += barCell(item.barColor, item.exposed, item.chainPlace, barExtra);
+        }
 
-            if (item.type === "word") {
+        // Render row 2 content
+        switch (item.type) {
+            case "word":
                 html += renderVerbContent(item.node, item.color, extra);
-            } else if (item.type === "group") {
+                break;
+            case "group":
                 html += renderGroup(item.prefixes, item.verb, extra);
-            } else if (item.type === "nested") {
+                break;
+            case "nested":
                 html += renderNestedBind(item.bindGroup, extra);
-            } else if (item.type === "enum-sep") {
-                html += `<div class="vbox-terminator ${item.color || ""} ${extra}">`
-                    + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
-                    + `<span class="vbox-word-gloss" style="visibility:hidden">x</span>`
-                    + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
-                    + `</div>`;
-            }
+                break;
+            case "terminator":
+                html += thinBox("vbox-sentence-bg", extra);
+                break;
+            case "separator":
+                html += barCell(item.barColor, "", "", barExtra);
+                html += thinBox(item.color, extra);
+                break;
         }
     }
     return html;
@@ -190,6 +276,15 @@ function barCell(barColor, exposed, chainPlace, barExtra) {
     if (exposed) content += `<span class="vbox-bar-exposed">${exposed}</span>`;
     if (chainPlace) content += `<span class="vbox-bar-chain-place">${chainPlace}</span>`;
     return `<div class="vbox-bar ${barColor} ${barExtra || ""}">${content}</div>`;
+}
+
+// Thin box with invisible text for height matching (terminator, enum separator)
+function thinBox(colorClass, extra) {
+    return `<div class="vbox-terminator ${colorClass} ${extra || ""}">`
+        + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
+        + `<span class="vbox-word-gloss" style="visibility:hidden">x</span>`
+        + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
+        + `</div>`;
 }
 
 // ============================================================
@@ -214,55 +309,13 @@ function renderGroup(prefixes, verb, extra) {
 function renderNestedBind(bindGroup, extra) {
     let innerItems = [];
     collectBindItems(bindGroup, innerItems);
-
     if (innerItems.length > 0) innerItems[innerItems.length - 1].chainPlace = "";
-
     return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(innerItems)}</div></div>`;
 }
 
 function renderEnum(verb, extra) {
     let enumItems = collectEnumItems(verb);
     return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(enumItems)}</div></div>`;
-}
-
-function collectEnumItems(verb) {
-    let barColor = "vbox-bar-enum";
-    let wordColor = "vbox-enum";
-    let items = [];
-
-    // PE starter
-    items.push({ type: "word", node: verb.start, color: wordColor, barColor, exposed: "", chainPlace: "" });
-
-    // Prefix mode: bu appears after PE
-    let isPrefixMode = !!verb.sep;
-    if (isPrefixMode) {
-        items.push({ type: "word", node: verb.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
-    }
-
-    for (let i = 0; i < verb.items.length; i++) {
-        let item = verb.items[i];
-
-        // Separator between items
-        if (i > 0) {
-            if (isPrefixMode) {
-                items.push({ type: "enum-sep", barColor, color: wordColor });
-            } else if (item.sep) {
-                items.push({ type: "word", node: item.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
-            }
-        }
-
-        // Item chain
-        stepsToItems(flattenChain(item.chain), barColor, items);
-    }
-
-    // PEI end
-    if (verb.end) {
-        let color = verb.end.elided ? `${wordColor} vbox-elided` : wordColor;
-        items.push({ type: "word", node: verb.end, color, barColor, exposed: "", chainPlace: "" });
-    }
-
-    if (items.length > 0) items[items.length - 1].chainPlace = "";
-    return items;
 }
 
 function renderCompound(verb, extra) {
@@ -288,7 +341,6 @@ function renderNumber(verb, extra) {
     let display = formatNumber(verb.value);
     let val = verb.value;
 
-    // Collect all component parts as sub-cells
     let parts = [];
     if (val.int) for (let d of val.int) parts.push(d);
     if (val.base) { parts.push(val.base.sep); for (let d of val.base.value) parts.push(d); }
@@ -299,10 +351,9 @@ function renderNumber(verb, extra) {
 
     let partsHtml = parts.map(p => {
         let w = p.word || p.symbol || "?";
-        let g = lookupGloss(w);
         return `<div class="vbox-compound-part">`
             + `<span class="vbox-compound-part-word">${esc(w)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(g)}</span>`
+            + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(w))}</span>`
             + `</div>`;
     }).join("");
 
@@ -355,25 +406,16 @@ function getSILabel(select) {
 
 function getTransitivity(verb) {
     if (!verb) return false;
-
     if (verb.family === "Compound")
         return getTransitivity(verb.content[verb.content.length - 1]);
-
     if (verb.family === "Root" || verb.family === "Particle") {
         let last = verb.word?.[verb.word.length - 1];
         return last ? "ieaou".includes(last) : false;
     }
-
-    if (verb.family === "MI")
-        return dictionary[verb.word]?.transitive || false;
-
-    if (verb.family === "GI")
-        return !verb.word?.startsWith("gi");
-
-    if (verb.start?.family === "PE")
-        return dictionary[verb.start.word]?.transitive ?? true;
-
-    return false; // KI, Number, Quote, Borrowing, FFVariable
+    if (verb.family === "MI") return dictionary[verb.word]?.transitive || false;
+    if (verb.family === "GI") return !verb.word?.startsWith("gi");
+    if (verb.start?.family === "PE") return dictionary[verb.start.word]?.transitive ?? true;
+    return false;
 }
 
 // ============================================================
@@ -415,12 +457,10 @@ function isAdverbStart(start) {
 }
 
 function getWordText(node) {
-    // Check kind first (some have .word as an object, not string)
     if (node.kind === "SingleWordQuote") return node.start.word + " " + (node.word?.word || "?");
     if (node.kind === "InlineAssignment") return node.start.word + " " + getWordText(node.verb);
     if (node.kind === "BorrowingGroup") return node.group.map(b => "u" + b.content).join(" ");
     if (node.kind === "Number") return formatNumber(node.value);
-    // Then check simple fields
     if (typeof node.word === "string") return node.word;
     if (node.family === "Compound") return node.prefix + node.content.map(c => c.word).join("");
     if (node.family === "FFVariable") return "i" + node.content;
