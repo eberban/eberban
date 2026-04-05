@@ -308,7 +308,7 @@ ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
     }
 ChainVerbModified = modifiers:(ZI_Free SI_Free?)+ modified:(ChainVerbModified / ChainVerbSelect)
     { 
-        var res = {}
+        var res = { ...modified }
 
         modifiers = modifiers.map(x => {
             var res = { modifier: x[0] };

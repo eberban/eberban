@@ -1,0 +1,197 @@
+/* Visual Box Renderer - Eberban Parser */
+
+:root {
+    --vbox-blue: #7fb8e8;
+    --vbox-yellow: #f5d980;
+    --vbox-pink: #e8a0bf;
+    --vbox-orange: #e8b070;
+    --vbox-purple: #b8a0d8;
+    --vbox-dark: #404050;
+    --vbox-white: #f8f8fa;
+    --vbox-radius: 5px;
+    --vbox-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    --vbox-bar-height: 22px;
+}
+
+#parse-result-boxes {
+    overflow-x: auto;
+}
+
+/* === Sentence === */
+.vbox-sentence {
+    display: inline-block;
+    margin: 8px 0;
+    border-radius: var(--vbox-radius);
+    box-shadow: var(--vbox-shadow);
+    overflow: hidden;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* === Chain grid: 2 rows (bar + words), columns auto === */
+.vbox-chain {
+    display: inline-grid;
+    grid-template-rows: var(--vbox-bar-height) auto;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    align-items: start;
+}
+
+/* === Bar cell (row 1) === */
+.vbox-bar {
+    grid-row: 1;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--vbox-bar-height);
+    padding: 0 6px;
+    background: var(--vbox-dark);
+}
+
+.vbox-bar-pink { background: #d0609a !important; }
+.vbox-bar-orange { background: #d09050 !important; }
+
+.vbox-bar-exposed {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ddd;
+}
+
+.vbox-bar-chain-place {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.vbox-bar-pink .vbox-bar-exposed { color: #553040; }
+.vbox-bar-pink .vbox-bar-chain-place { color: #3a1525; }
+.vbox-bar-orange .vbox-bar-exposed { color: #5a4020; }
+.vbox-bar-orange .vbox-bar-chain-place { color: #3a2510; }
+
+/* === Word cell (row 2) === */
+.vbox-word {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 10px;
+    min-width: 44px;
+    text-align: center;
+    gap: 1px;
+    margin: 0 3px;
+}
+
+.vbox-word-text {
+    font-weight: 700;
+    font-size: 14px;
+    color: #1a1a2e;
+}
+
+.vbox-word-gloss {
+    font-style: italic;
+    font-size: 12px;
+    color: #444;
+}
+
+.vbox-word-family {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+
+/* === SI + verb pair (two boxes side-by-side in one grid cell) === */
+.vbox-pair {
+    grid-row: 2;
+    display: flex;
+    gap: 1px;
+    margin: 0 3px;
+}
+
+.vbox-pair > .vbox-word {
+    grid-row: unset;
+    margin: 0;
+}
+
+/* === Color Classes === */
+.vbox-bg-blue { background: var(--vbox-blue); }
+.vbox-bg-yellow { background: var(--vbox-yellow); }
+.vbox-bg-pink { background: var(--vbox-pink); }
+.vbox-bg-orange { background: var(--vbox-orange); }
+.vbox-bg-purple { background: var(--vbox-purple); }
+.vbox-bg-white { background: var(--vbox-white); }
+
+.vbox-bg-dark { background: var(--vbox-dark); }
+.vbox-bg-dark .vbox-word-text { color: #fff; }
+.vbox-bg-dark .vbox-word-gloss { color: #ccc; }
+.vbox-bg-dark .vbox-word-family { color: #aaa; }
+
+/* === Bind Group (nested, sits in row 2) === */
+.vbox-bind-group {
+    grid-row: 2;
+    display: inline-block;
+    border-radius: var(--vbox-radius);
+    overflow: hidden;
+    box-shadow: var(--vbox-shadow);
+    white-space: nowrap;
+    margin: 0 3px;
+}
+
+/* === Compound Box === */
+.vbox-compound {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 8px;
+    background: var(--vbox-purple);
+    text-align: center;
+    gap: 2px;
+    margin: 0 3px;
+}
+
+.vbox-compound-parts {
+    display: flex;
+    gap: 1px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.vbox-compound-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 5px;
+    background: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+}
+
+.vbox-compound-part-word {
+    font-weight: 600;
+    color: #333;
+}
+
+.vbox-compound-part-gloss {
+    font-style: italic;
+    font-size: 10px;
+    color: #555;
+}
+
+/* === Elided === */
+.vbox-elided {
+    opacity: 0.35;
+    border: 1px dashed #999;
+}
+
+/* === Paragraph === */
+.vbox-paragraph {
+    margin: 4px 0;
+}
