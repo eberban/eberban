@@ -151,7 +151,8 @@ function stepsToItems(steps, barColor, items) {
         let verb = stripModifiers(step.verb);
 
         if (prefixes.length > 0) {
-            items.push({ type: "group", prefixes, verb, barColor, exposed, chainPlace });
+            let siCount = step.select ? 1 : 0;
+            items.push({ type: "group", prefixes, verb, barColor, exposed, chainPlace, siCount });
         } else {
             items.push({ type: "word", node: verb, color: getWordColor(verb), barColor, exposed, chainPlace });
         }
@@ -254,7 +255,7 @@ function renderGrid(items) {
                 html += renderVerbContent(item.node, item.color, extra);
                 break;
             case "group":
-                html += renderGroup(item.prefixes, item.verb, extra);
+                html += renderGroup(item.prefixes, item.verb, extra, item.siCount);
                 break;
             case "nested":
                 html += renderNestedBind(item.bindGroup, extra);
@@ -299,9 +300,17 @@ function renderVerbContent(verb, color, extra) {
     return wordBox(verb, color, extra);
 }
 
-function renderGroup(prefixes, verb, extra) {
+function renderGroup(prefixes, verb, extra, siCount) {
     let html = "";
-    for (let p of prefixes) html += wordBox(p, getWordColor(p));
+    for (let i = 0; i < prefixes.length; i++) {
+        html += wordBox(prefixes[i], getWordColor(prefixes[i]));
+        // Separator after outer SI (between SI and ZI group)
+        if (siCount && i === siCount - 1 && i < prefixes.length - 1) {
+            html += `<div class="vbox-group-sep"></div>`;
+        }
+    }
+    // Separator before verb
+    html += `<div class="vbox-group-sep"></div>`;
     html += renderVerbContent(verb, getWordColor(verb));
     return `<div class="vbox-pair ${extra || ""}">${html}</div>`;
 }
@@ -431,6 +440,7 @@ function flattenChain(chain) {
 
 function extractPrefixes(step) {
     let prefixes = [];
+    if (step.select) prefixes.push(step.select);
     if (step.verb?.modifiers) {
         let mods = Array.isArray(step.verb.modifiers) ? step.verb.modifiers : [step.verb.modifiers];
         for (let m of mods) {
@@ -438,7 +448,6 @@ function extractPrefixes(step) {
             if (m.select) prefixes.push(m.select);
         }
     }
-    if (step.select) prefixes.push(step.select);
     return prefixes;
 }
 

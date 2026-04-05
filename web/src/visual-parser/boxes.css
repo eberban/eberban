@@ -8,10 +8,10 @@
 
     /* Word boxes */
     --vbox-word-content: #7fb8e8;
-    --vbox-word-si: #f5d980;
+    --vbox-word-si: #b8a0d8;
     --vbox-word-bind: #e8a0bf;
-    --vbox-word-zi: #e05050;
-    --vbox-word-compound: #b8a0d8;
+    --vbox-word-zi: #e0a0a0;
+    --vbox-word-compound: #7fb8e8;
     --vbox-word-sentence: #404050;
     --vbox-word-adverb: #e8b878;
     --vbox-bar-enum: #509060;
@@ -101,7 +101,6 @@
     align-items: center;
     justify-content: flex-start;
     padding: 6px 10px;
-    min-width: 44px;
     text-align: center;
     gap: 1px;
     margin: 0 3px;
@@ -143,6 +142,10 @@
     box-shadow: none;
 }
 
+.vbox-group-sep {
+    width: 3px;
+}
+
 /* === Word Color Classes === */
 .vbox-content { background: var(--vbox-word-content); }
 .vbox-si { background: var(--vbox-word-si); }
@@ -162,9 +165,6 @@
 .vbox-bar-enum .vbox-bar-exposed { color: #fff; }
 .vbox-bar-enum .vbox-bar-chain-place { color: #dfd; }
 
-.vbox-zi .vbox-word-text { color: #fff; }
-.vbox-zi .vbox-word-gloss { color: #fcc; }
-.vbox-zi .vbox-word-family { color: #ebb; }
 
 /* === Bind Group (nested, sits in row 2) === */
 .vbox-bind-group {
