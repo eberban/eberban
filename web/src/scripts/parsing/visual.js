@@ -109,7 +109,15 @@ function renderText(output) {
     let html = "";
     for (let para of output.paragraphs) {
         let inner = "";
-        if (para.starter) inner += wordBox(para.starter, "vbox-sentence-bg");
+        if (para.starter) {
+            let word = getWordText(para.starter);
+            let gloss = lookupGloss(word);
+            inner += `<div class="vbox-para-header vbox-sentence-bg">`
+                + `<span class="vbox-word-text">${esc(word)}</span>`
+                + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
+                + `<span class="vbox-word-family">${esc(getDisplayFamily(para.starter))}</span>`
+                + `</div>`;
+        }
         for (let s of para.sentences) inner += renderSentence(s);
         html += `<div class="vbox-paragraph">${inner}</div>`;
     }

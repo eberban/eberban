@@ -340,3 +340,12 @@ html {
 .vbox-paragraph {
     margin: 4px 0;
 }
+
+.vbox-para-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: var(--vbox-radius);
+    margin-bottom: 4px;
+}
