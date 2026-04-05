@@ -69,6 +69,7 @@ export function parse() {
         var result = parser.parse(input, { grammarSource: "form" });
         $('#parse-result-raw').html(`<pre>${JSON.stringify(result, null, 4)}</pre>`);
         $('#parse-result-boxes').html(renderText(result));
+        setupTooltips();
         $('#parser_error_box').hide();
 
         if (result?.warnings != undefined) {
@@ -432,7 +433,9 @@ function renderCompound(verb, extra) {
             + `</div>`;
     }
 
-    return `<div class="vbox-compound ${extra || ""}">`
+    let short = lookupShort(dictKey);
+    let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
+    return `<div class="vbox-compound ${extra || ""}"${tooltip}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">COMPOUND</span>`
@@ -527,13 +530,15 @@ function wordBox(node, color, extra) {
     let word = getWordText(node);
     let gloss = lookupGloss(word);
     let family = getDisplayFamily(node);
+    let short = lookupShort(word);
     let elided = "";
     if (node.elided) {
         elided = " vbox-elided";
         word = `(${word})`;
     }
 
-    return `<div class="vbox-word ${color}${elided} ${extra || ""}">`
+    let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
+    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}>`
         + `<span class="vbox-word-text">${esc(word)}</span>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">${esc(family)}</span>`
@@ -644,6 +649,10 @@ function lookupGloss(word) {
     return word ? (dictionary[word]?.gloss || "") : "";
 }
 
+function lookupShort(word) {
+    return word ? (dictionary[word]?.short?.trim() || "") : "";
+}
+
 function lookupSpelling(unit) {
     return unit ? (dictionary._spelling?.[unit]?.gloss || "") : "";
 }
@@ -673,3 +682,47 @@ function esc(text) {
     if (!text) return "";
     return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
+
+// ============================================================
+// Tooltip (fixed-position, escapes overflow clipping)
+// ============================================================
+
+let tooltipEl = null;
+
+function setupTooltips() {
+    if (!tooltipEl) {
+        tooltipEl = document.createElement("div");
+        tooltipEl.className = "vbox-tooltip";
+        tooltipEl.style.display = "none";
+        document.body.appendChild(tooltipEl);
+    }
+
+    $('#parse-result-boxes').off('mouseenter.vbox mouseleave.vbox mousemove.vbox');
+
+    $('#parse-result-boxes').on('mouseenter.vbox', '[data-tooltip]', function (e) {
+        tooltipEl.textContent = this.getAttribute('data-tooltip');
+        tooltipEl.style.display = "block";
+        positionTooltip(e);
+    });
+
+    $('#parse-result-boxes').on('mouseleave.vbox', '[data-tooltip]', function () {
+        tooltipEl.style.display = "none";
+    });
+
+    $('#parse-result-boxes').on('mousemove.vbox', '[data-tooltip]', function (e) {
+        positionTooltip(e);
+    });
+}
+
+function positionTooltip(e) {
+    let x = e.clientX + 12;
+    let y = e.clientY + 16;
+    // Keep on screen
+    let w = tooltipEl.offsetWidth;
+    let h = tooltipEl.offsetHeight;
+    if (x + w > window.innerWidth - 8) x = e.clientX - w - 8;
+    if (y + h > window.innerHeight - 8) y = e.clientY - h - 8;
+    tooltipEl.style.left = x + "px";
+    tooltipEl.style.top = y + "px";
+}
+

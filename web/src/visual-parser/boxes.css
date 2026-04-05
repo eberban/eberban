@@ -290,6 +290,34 @@
     border-bottom: 2px solid var(--vbox-word-quote);
 }
 
+/* === Tooltip on hover === */
+[data-tooltip] {
+    cursor: help;
+}
+/* Disable legacy CSS tooltip */
+#parse-result-boxes [data-tooltip]:hover::after {
+    display: none !important;
+}
+
+/* Tooltip rendered as a fixed-position element via JS */
+.vbox-tooltip {
+    position: fixed;
+    z-index: 10000;
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    white-space: normal;
+    width: max-content;
+    max-width: 500px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
 /* === Elided === */
 .vbox-elided .vbox-word-text {
     font-size: 12px;
