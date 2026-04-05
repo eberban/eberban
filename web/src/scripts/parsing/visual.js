@@ -448,15 +448,18 @@ function renderNumber(verb, extra) {
     if (val.fract) { parts.push(val.fract.sep); for (let d of val.fract.value) parts.push(d); }
     if (val.repeat) { parts.push(val.repeat.sep); for (let d of val.repeat.value) parts.push(d); }
     if (val.magn) { parts.push(val.magn.sep); for (let d of val.magn.value) parts.push(d); }
-    if (val.end && !val.end.elided) parts.push(val.end);
+    if (val.end) parts.push(val.end);
 
     let partsHtml = parts.map(p => {
         let w = p.word || p.symbol || "?";
-        let isDelim = p.family === "JI" || p.family === "JO" || p.family === "JA" || p.family === "JE" || p.family === "JU";
-        let delimClass = isDelim ? " vbox-quote-delim" : "";
-        return `<div class="vbox-compound-part${delimClass}">`
-            + `<span class="vbox-compound-part-word">${esc(w)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(w))}</span>`
+        let isJ = p.family === "JI" || p.family === "JO" || p.family === "JA" || p.family === "JE" || p.family === "JU";
+        let delimClass = isJ ? " vbox-quote-delim" : "";
+        let elided = p.elided ? " vbox-elided" : "";
+        let display = p.elided ? `(${w})` : w;
+        let gloss = isJ ? "" : lookupGloss(w);
+        return `<div class="vbox-compound-part${delimClass}${elided}">`
+            + `<span class="vbox-compound-part-word">${esc(display)}</span>`
+            + `<span class="vbox-compound-part-gloss">${esc(gloss)}</span>`
             + `</div>`;
     }).join("");
 
@@ -490,9 +493,9 @@ function computeNumberDisplay(value) {
         result += " \u00d7" + base + superscript(exp);
     }
 
-    if (value.end && !value.end.elided) {
-        let jiGloss = lookupGloss(value.end.word);
-        if (jiGloss) result += " " + jiGloss;
+    if (value.end) {
+        let jiSuffix = { "ji": " (cardinal set)", "jiu": " (ordinal)" };
+        result += jiSuffix[value.end.word] || "";
     }
 
     return result;
