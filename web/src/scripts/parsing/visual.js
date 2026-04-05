@@ -48,7 +48,7 @@ function renderText(output) {
     let html = "";
     for (let para of output.paragraphs) {
         let inner = "";
-        if (para.starter) inner += wordBox(para.starter, "vbox-bg-dark");
+        if (para.starter) inner += wordBox(para.starter, "vbox-sentence-bg");
         for (let s of para.sentences) inner += renderSentence(s);
         html += `<div class="vbox-paragraph">${inner}</div>`;
     }
@@ -81,6 +81,9 @@ function collectChainItems(chain, starter, defined, barColor) {
 
     // Last item never shows chainPlace
     if (items.length > 0) items[items.length - 1].chainPlace = "";
+
+    // Sentence terminator
+    items.push({ type: "terminator", barColor });
     return items;
 }
 
@@ -114,18 +117,18 @@ function stepsToItems(steps, barColor, items) {
 }
 
 function collectBindItems(bindGroup, items) {
-    let adverb = isAdverbBind(bindGroup);
-    let barColor = adverb ? "vbox-bar-orange" : "vbox-bar-pink";
-    let wordColor = adverb ? "vbox-bg-orange" : "vbox-bg-pink";
-
     for (let bind of bindGroup.binds) {
+        let adverb = isAdverbStart(bind.start);
+        let barColor = adverb ? "vbox-bar-adverb" : "vbox-bar-bind";
+        let wordColor = adverb ? "vbox-adverb" : "vbox-bind";
+
         items.push({ type: "word", node: bind.start, color: wordColor, barColor, exposed: "", chainPlace: "" });
         stepsToItems(flattenChain(bind.inner?.chain || bind.inner), barColor, items);
     }
 
     if (bindGroup.end) {
-        let color = bindGroup.end.elided ? `${wordColor} vbox-elided` : wordColor;
-        items.push({ type: "word", node: bindGroup.end, color, barColor, exposed: "", chainPlace: "" });
+        let color = bindGroup.end.elided ? "vbox-bind vbox-elided" : "vbox-bind";
+        items.push({ type: "word", node: bindGroup.end, color, barColor: "vbox-bar-bind", exposed: "", chainPlace: "" });
     }
 }
 
@@ -137,27 +140,50 @@ function renderGrid(items) {
     let html = "";
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
-        let extra = (i === 0 ? "vbox-first" : "") + (i === items.length - 1 ? " vbox-last" : "");
+        let isFirst = i === 0;
+        let isLast = i === items.length - 1;
+        // For bar border: last bar is the item before the terminator (or last item if no terminator)
+        let nextIsTerminator = i + 1 < items.length && items[i + 1].type === "terminator";
+        let isLastBar = isLast || nextIsTerminator;
+        let extra = (isFirst ? "vbox-first" : "") + (isLast ? " vbox-last" : "");
         extra = extra.trim();
 
-        html += barCell(item.barColor, item.exposed, item.chainPlace);
+        // Bar extra classes
+        let barExtra = "";
+        if (isFirst) barExtra += "vbox-bar-first ";
+        if (item.type === "terminator") {
+            barExtra += "vbox-bar-last";
+        } else if (nextIsTerminator || isLast) {
+            barExtra += "vbox-bar-noborder";
+        }
 
-        if (item.type === "word") {
-            html += renderVerbContent(item.node, item.color, extra);
-        } else if (item.type === "group") {
-            html += renderGroup(item.prefixes, item.verb, extra);
-        } else if (item.type === "nested") {
-            html += renderNestedBind(item.bindGroup, extra);
+        if (item.type === "terminator") {
+            html += barCell(item.barColor, "", "", barExtra);
+            html += `<div class="vbox-terminator vbox-sentence-bg ${extra}">`
+                + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
+                + `<span class="vbox-word-gloss" style="visibility:hidden">x</span>`
+                + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
+                + `</div>`;
+        } else {
+            html += barCell(item.barColor, item.exposed, item.chainPlace, barExtra);
+
+            if (item.type === "word") {
+                html += renderVerbContent(item.node, item.color, extra);
+            } else if (item.type === "group") {
+                html += renderGroup(item.prefixes, item.verb, extra);
+            } else if (item.type === "nested") {
+                html += renderNestedBind(item.bindGroup, extra);
+            }
         }
     }
     return html;
 }
 
-function barCell(barColor, exposed, chainPlace) {
+function barCell(barColor, exposed, chainPlace, barExtra) {
     let content = "";
     if (exposed) content += `<span class="vbox-bar-exposed">${exposed}</span>`;
     if (chainPlace) content += `<span class="vbox-bar-chain-place">${chainPlace}</span>`;
-    return `<div class="vbox-bar ${barColor}">${content}</div>`;
+    return `<div class="vbox-bar ${barColor} ${barExtra || ""}">${content}</div>`;
 }
 
 // ============================================================
@@ -241,7 +267,11 @@ function wordBox(node, color, extra) {
     let word = getWordText(node);
     let gloss = lookupGloss(word);
     let family = getDisplayFamily(node);
-    let elided = node.elided ? " vbox-elided" : "";
+    let elided = "";
+    if (node.elided) {
+        elided = " vbox-elided";
+        word = `(${word})`;
+    }
 
     return `<div class="vbox-word ${color}${elided} ${extra || ""}">`
         + `<span class="vbox-word-text">${esc(word)}</span>`
@@ -328,21 +358,21 @@ function wordItem(node, barColor) {
     return { type: "word", node, color: getWordColor(node), barColor, exposed: "", chainPlace: "" };
 }
 
-function isAdverbBind(bindGroup) {
-    return bindGroup.binds.some(b =>
-        b.start?.word?.startsWith("voi") || b.start?.word?.startsWith("foi")
-    );
+function isAdverbStart(start) {
+    return start?.word?.startsWith("voi") || start?.word?.startsWith("foi");
 }
 
 function getWordText(node) {
-    if (node.word) return node.word;
+    // Check kind first (some have .word as an object, not string)
+    if (node.kind === "SingleWordQuote") return node.start.word + " " + (node.word?.word || "?");
+    if (node.kind === "InlineAssignment") return node.start.word + " " + getWordText(node.verb);
+    if (node.kind === "BorrowingGroup") return node.group.map(b => "u" + b.content).join(" ");
+    if (node.kind === "Number") return formatNumber(node.value);
+    // Then check simple fields
+    if (typeof node.word === "string") return node.word;
     if (node.family === "Compound") return node.prefix + node.content.map(c => c.word).join("");
     if (node.family === "FFVariable") return "i" + node.content;
     if (node.family === "Borrowing") return "u" + node.content;
-    if (node.kind === "BorrowingGroup") return node.group.map(b => "u" + b.content).join(" ");
-    if (node.kind === "Number") return formatNumber(node.value);
-    if (node.kind === "SingleWordQuote") return node.start.word + " " + (node.word?.word || "?");
-    if (node.kind === "InlineAssignment") return node.start.word + " " + getWordText(node.verb);
     return "?";
 }
 
@@ -367,12 +397,12 @@ function lookupGloss(word) {
 
 function getWordColor(node) {
     let f = node?.family;
-    if (f === "VE" || f === "VEI" || f === "FI") return "vbox-bg-pink";
-    if (f === "ZI" || f === "BI" || f === "BO") return "vbox-bg-coral";
-    if (f === "SI") return "vbox-bg-yellow";
-    if (f === "A" || f === "O" || f === "NI" || f === "NU" || f === "PO") return "vbox-bg-dark";
-    if (f === "Compound" || f === "Borrowing" || f === "FFVariable" || f === "PE" || f === "PEI" || f === "BU") return "vbox-bg-purple";
-    return "vbox-bg-blue";
+    if (f === "VE" || f === "VEI" || f === "FI") return "vbox-bind";
+    if (f === "ZI" || f === "BI" || f === "BO") return "vbox-zi";
+    if (f === "SI") return "vbox-si";
+    if (f === "A" || f === "O" || f === "NI" || f === "NU" || f === "PO") return "vbox-sentence-bg";
+    if (f === "Compound" || f === "Borrowing" || f === "FFVariable" || f === "PE" || f === "PEI" || f === "BU") return "vbox-compound-bg";
+    return "vbox-content";
 }
 
 function getDisplayFamily(node) {

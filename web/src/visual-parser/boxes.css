@@ -1,16 +1,23 @@
 /* Visual Box Renderer - Eberban Parser */
 
 :root {
-    --vbox-blue: #7fb8e8;
-    --vbox-yellow: #f5d980;
-    --vbox-pink: #d0609a;
-    --vbox-orange: #d09050;
-    --vbox-coral: #e05050;
-    --vbox-purple: #b8a0d8;
-    --vbox-dark: #404050;
-    --vbox-white: #f8f8fa;
+    /* Bars */
+    --vbox-bar-default: #404050;
+    --vbox-bar-bind: #c04080;
+    --vbox-bar-adverb: #d09050;
+
+    /* Word boxes */
+    --vbox-word-content: #7fb8e8;
+    --vbox-word-si: #f5d980;
+    --vbox-word-bind: #e8a0bf;
+    --vbox-word-zi: #e05050;
+    --vbox-word-compound: #b8a0d8;
+    --vbox-word-sentence: #404050;
+    --vbox-word-adverb: #e8b878;
+
+    /* Layout */
     --vbox-radius: 5px;
-    --vbox-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    --vbox-word-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
     --vbox-bar-height: 22px;
 }
 
@@ -20,14 +27,12 @@
 
 /* === Sentence === */
 .vbox-sentence {
-    display: inline-block;
+    display: block;
     margin: 8px 0;
-    border-radius: var(--vbox-radius);
-    box-shadow: var(--vbox-shadow);
-    overflow: hidden;
     font-family: 'Segoe UI', system-ui, sans-serif;
     font-size: 14px;
     white-space: nowrap;
+    width: fit-content;
 }
 
 /* === Chain grid: 2 rows (bar + words), columns auto === */
@@ -48,16 +53,16 @@
     justify-content: space-between;
     min-height: var(--vbox-bar-height);
     padding: 0 6px;
-    background: var(--vbox-dark);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--vbox-bar-default);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.vbox-bar-pink {
-    background: var(--vbox-pink) !important;
+.vbox-bar-bind {
+    background: var(--vbox-bar-bind) !important;
     border-right-color: rgba(255, 255, 255, 0.25) !important;
 }
-.vbox-bar-orange {
-    background: var(--vbox-orange) !important;
+.vbox-bar-adverb {
+    background: var(--vbox-bar-adverb) !important;
     border-right-color: rgba(255, 255, 255, 0.25) !important;
 }
 
@@ -77,10 +82,10 @@
     color: #fff;
 }
 
-.vbox-bar-pink .vbox-bar-exposed { color: #fff; }
-.vbox-bar-pink .vbox-bar-chain-place { color: #fdd; }
-.vbox-bar-orange .vbox-bar-exposed { color: #fff; }
-.vbox-bar-orange .vbox-bar-chain-place { color: #fed; }
+.vbox-bar-bind .vbox-bar-exposed { color: #fff; }
+.vbox-bar-bind .vbox-bar-chain-place { color: #fdd; }
+.vbox-bar-adverb .vbox-bar-exposed { color: #fff; }
+.vbox-bar-adverb .vbox-bar-chain-place { color: #fed; }
 
 /* === Word cell (row 2) === */
 .vbox-word {
@@ -94,6 +99,7 @@
     text-align: center;
     gap: 1px;
     margin: 0 3px;
+    box-shadow: var(--vbox-word-shadow);
 }
 
 .vbox-word-text {
@@ -120,49 +126,43 @@
 .vbox-pair {
     grid-row: 2;
     display: flex;
-    gap: 1px;
+    gap: 0;
     margin: 0 3px;
+    box-shadow: var(--vbox-word-shadow);
 }
 
 .vbox-pair > .vbox-word {
     grid-row: unset;
     margin: 0;
+    box-shadow: none;
 }
 
-/* === Color Classes === */
-.vbox-bg-blue { background: var(--vbox-blue); }
-.vbox-bg-yellow { background: var(--vbox-yellow); }
-.vbox-bg-pink { background: var(--vbox-pink); }
-.vbox-bg-orange { background: var(--vbox-orange); }
-.vbox-bg-coral { background: var(--vbox-coral); }
-.vbox-bg-purple { background: var(--vbox-purple); }
-.vbox-bg-white { background: var(--vbox-white); }
+/* === Word Color Classes === */
+.vbox-content { background: var(--vbox-word-content); }
+.vbox-si { background: var(--vbox-word-si); }
+.vbox-bind { background: var(--vbox-word-bind); }
+.vbox-zi { background: var(--vbox-word-zi); }
+.vbox-compound-bg { background: var(--vbox-word-compound); }
+.vbox-adverb { background: var(--vbox-word-adverb); }
 
-.vbox-bg-dark { background: var(--vbox-dark); }
-.vbox-bg-dark .vbox-word-text { color: #fff; }
-.vbox-bg-dark .vbox-word-gloss { color: #ccc; }
-.vbox-bg-dark .vbox-word-family { color: #aaa; }
+/* Dark text is default. Override for dark/intense backgrounds: */
+.vbox-sentence-bg { background: var(--vbox-word-sentence); }
+.vbox-sentence-bg .vbox-word-text { color: #fff; }
+.vbox-sentence-bg .vbox-word-gloss { color: #ccc; }
+.vbox-sentence-bg .vbox-word-family { color: #aaa; }
 
-.vbox-bg-pink .vbox-word-text { color: #fff; }
-.vbox-bg-pink .vbox-word-gloss { color: #ecc; }
-.vbox-bg-pink .vbox-word-family { color: #dbb; }
-
-.vbox-bg-orange .vbox-word-text { color: #fff; }
-.vbox-bg-orange .vbox-word-gloss { color: #eda; }
-.vbox-bg-orange .vbox-word-family { color: #dcb; }
-
-.vbox-bg-coral .vbox-word-text { color: #fff; }
-.vbox-bg-coral .vbox-word-gloss { color: #fcc; }
-.vbox-bg-coral .vbox-word-family { color: #ebb; }
+.vbox-zi .vbox-word-text { color: #fff; }
+.vbox-zi .vbox-word-gloss { color: #fcc; }
+.vbox-zi .vbox-word-family { color: #ebb; }
 
 /* === Bind Group (nested, sits in row 2) === */
 .vbox-bind-group {
     grid-row: 2;
     display: inline-block;
     border-radius: var(--vbox-radius);
-    overflow: hidden;
-    box-shadow: var(--vbox-shadow);
+    overflow: clip;
     white-space: nowrap;
+    margin: 3px;
 }
 
 /* === Compound/Number Box === */
@@ -172,10 +172,11 @@
     flex-direction: column;
     align-items: center;
     padding: 6px 8px;
-    background: var(--vbox-purple);
+    background: var(--vbox-word-compound);
     text-align: center;
     gap: 2px;
     margin: 0 3px;
+    box-shadow: var(--vbox-word-shadow);
 }
 
 .vbox-compound-parts {
@@ -205,14 +206,34 @@
     color: #555;
 }
 
-/* === First/last margin flush === */
-.vbox-first { margin-left: 0 !important; }
-.vbox-last { margin-right: 0 !important; }
+/* === First/last: margin flush + corner rounding === */
+.vbox-first { margin-left: 0 !important; border-bottom-left-radius: var(--vbox-radius); }
+.vbox-last { margin-right: 0 !important; border-bottom-right-radius: var(--vbox-radius); }
+
+/* === Bar first/last === */
+.vbox-bar-first { border-top-left-radius: var(--vbox-radius); }
+.vbox-bar-noborder { border-right: none !important; }
+.vbox-bar-last { border-right: none !important; border-top-right-radius: var(--vbox-radius); }
+
+/* === Terminator === */
+.vbox-terminator {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 0;
+    width: var(--vbox-bar-height);
+    box-sizing: border-box;
+    box-shadow: var(--vbox-word-shadow);
+    margin: 0 3px;
+    gap: 1px;
+}
 
 /* === Elided === */
-.vbox-elided {
-    opacity: 0.35;
-    border: 1px dashed #999;
+.vbox-elided .vbox-word-text {
+    font-size: 12px;
+    font-weight: 400;
 }
 
 /* === Paragraph === */
