@@ -14,6 +14,8 @@
     --vbox-word-compound: #7fb8e8;
     --vbox-word-sentence: #404050;
     --vbox-word-adverb: #e8b878;
+    --vbox-word-quote: #e8d890;
+    --vbox-bar-quote: #b0a050;
     --vbox-bar-enum: #509060;
     --vbox-word-enum: #90d0a0;
 
@@ -65,6 +67,10 @@
 }
 .vbox-bar-adverb {
     background: var(--vbox-bar-adverb) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+.vbox-bar-quote {
+    background: var(--vbox-bar-quote) !important;
     border-right-color: rgba(255, 255, 255, 0.25) !important;
 }
 .vbox-bar-enum {
@@ -160,10 +166,23 @@
 .vbox-sentence-bg .vbox-word-gloss { color: #ccc; }
 .vbox-sentence-bg .vbox-word-family { color: #aaa; }
 
+.vbox-quote, .vbox-compound.vbox-quote { background: var(--vbox-word-quote); }
 .vbox-enum { background: var(--vbox-word-enum); }
+
+.vbox-bar-quote .vbox-bar-exposed { color: #fff; }
+.vbox-bar-quote .vbox-bar-chain-place { color: #fed; }
 
 .vbox-bar-enum .vbox-bar-exposed { color: #fff; }
 .vbox-bar-enum .vbox-bar-chain-place { color: #dfd; }
+
+.vbox-foreign-content {
+    grid-row: 2;
+    padding: 6px 10px;
+    background: #f0f0f0;
+    font-style: italic;
+    text-align: center;
+    box-shadow: var(--vbox-word-shadow);
+}
 
 
 /* === Bind Group (nested, sits in row 2) === */
@@ -173,7 +192,10 @@
     border-radius: var(--vbox-radius);
     overflow: clip;
     white-space: nowrap;
-    margin: 3px;
+    margin: 5px 3px 0 3px;
+}
+.vbox-bind-group .vbox-bind-group {
+    margin-top: 0;
 }
 
 /* === Compound/Number Box === */
@@ -239,6 +261,31 @@
     box-shadow: var(--vbox-word-shadow);
     margin: 0 3px;
     gap: 1px;
+}
+
+/* === Quote delimiters (ce/cei/ci/co in compound parts) === */
+.vbox-quote-delim {
+    background: rgba(0, 0, 0, 0.08) !important;
+}
+.vbox-quote-delim:first-child { margin-right: 2px; }
+.vbox-quote-delim:last-child { margin-left: 2px; }
+
+/* === Foreign quote content with [ ] bracket borders === */
+.vbox-foreign-bracket {
+    border: 2px solid #222;
+    border-radius: 0;
+    position: relative;
+}
+/* Mask out top/bottom center to create [ ] shape */
+.vbox-foreign-bracket::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: 4px;
+    right: 4px;
+    border-top: 2px solid var(--vbox-word-quote);
+    border-bottom: 2px solid var(--vbox-word-quote);
 }
 
 /* === Elided === */

@@ -260,6 +260,9 @@ function renderGrid(items) {
             case "nested":
                 html += renderNestedBind(item.bindGroup, extra);
                 break;
+            case "nested-text":
+                html += `<div class="vbox-bind-group ${extra || ""}">${renderText(item.text)}</div>`;
+                break;
             case "terminator":
                 html += thinBox("vbox-sentence-bg", extra);
                 break;
@@ -297,6 +300,10 @@ function renderVerbContent(verb, color, extra) {
     if (verb.family === "Compound") return renderCompound(verb, extra);
     if (verb.kind === "Number") return renderNumber(verb, extra);
     if (verb.start?.family === "PE") return renderEnum(verb, extra);
+    if (verb.kind === "SingleWordQuote") return renderSingleWordQuote(verb, extra);
+    if (verb.kind === "Spelling Quote") return renderSpellingQuote(verb, extra);
+    if (verb.kind === "GrammaticalQuote") return renderGrammaticalQuote(verb, extra);
+    if (verb.kind === "ForeignQuote") return renderForeignQuote(verb, extra);
     return wordBox(verb, color, extra);
 }
 
@@ -325,6 +332,84 @@ function renderNestedBind(bindGroup, extra) {
 function renderEnum(verb, extra) {
     let enumItems = collectEnumItems(verb);
     return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(enumItems)}</div></div>`;
+}
+
+function renderSingleWordQuote(verb, extra) {
+    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
+        + `<span class="vbox-compound-part-word">${esc(verb.start.word)}</span>`
+        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.start.word))}</span>`
+        + `</div>`
+        + `<div class="vbox-compound-part">`
+        + `<span class="vbox-compound-part-word">${esc(verb.word.word)}</span>`
+        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.word.word))}</span>`
+        + `</div>`;
+
+    let display = verb.start.word + " " + verb.word.word;
+    return `<div class="vbox-compound vbox-quote ${extra || ""}">`
+        + `<span class="vbox-word-text">${esc(display)}</span>`
+        + `<span class="vbox-word-gloss">${esc(lookupGloss(verb.word.word))}</span>`
+        + `<div class="vbox-compound-parts">${parts}</div>`
+        + `<span class="vbox-word-family">QUOTE</span>`
+        + `</div>`;
+}
+
+function renderSpellingQuote(verb, extra) {
+    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
+        + `<span class="vbox-compound-part-word">${esc(verb.starter.word)}</span>`
+        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.starter.word))}</span>`
+        + `</div>`;
+
+    for (let item of verb.items) {
+        parts += `<div class="vbox-compound-part">`
+            + `<span class="vbox-compound-part-word">${esc(item)}</span>`
+            + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(item))}</span>`
+            + `</div>`;
+    }
+
+    if (verb.end) {
+        let endWord = verb.end.elided ? `(${verb.end.word})` : verb.end.word;
+        parts += `<div class="vbox-compound-part vbox-quote-delim">`
+            + `<span class="vbox-compound-part-word">${esc(endWord)}</span>`
+            + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.end.word))}</span>`
+            + `</div>`;
+    }
+
+    return `<div class="vbox-compound vbox-quote ${extra || ""}">`
+        + `<span class="vbox-word-text">${esc(verb.items.join(" "))}</span>`
+        + `<span class="vbox-word-gloss">spelling</span>`
+        + `<div class="vbox-compound-parts">${parts}</div>`
+        + `<span class="vbox-word-family">SPELL</span>`
+        + `</div>`;
+}
+
+function renderGrammaticalQuote(verb, extra) {
+    let barColor = "vbox-bar-quote";
+    let items = [];
+    items.push({ type: "word", node: verb.start, color: "vbox-quote", barColor, exposed: "", chainPlace: "" });
+    items.push({ type: "nested-text", text: verb.text, barColor });
+    if (verb.end) {
+        let color = verb.end.elided ? "vbox-quote vbox-elided" : "vbox-quote";
+        items.push({ type: "word", node: verb.end, color, barColor, exposed: "", chainPlace: "" });
+    }
+    if (items.length > 0) items[items.length - 1].chainPlace = "";
+    return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(items)}</div></div>`;
+}
+
+function renderForeignQuote(verb, extra) {
+    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
+        + `<span class="vbox-compound-part-word">${esc(verb.start.word)}</span>`
+        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.start.word))}</span>`
+        + `</div>`
+        + `<div class="vbox-compound-part vbox-foreign-bracket">`
+        + `<span class="vbox-compound-part-word">${esc(verb.content)}</span>`
+        + `</div>`;
+
+    return `<div class="vbox-compound vbox-quote ${extra || ""}">`
+        + `<span class="vbox-word-text">${esc(verb.content)}</span>`
+        + `<span class="vbox-word-gloss">foreign</span>`
+        + `<div class="vbox-compound-parts">${parts}</div>`
+        + `<span class="vbox-word-family">QUOTE</span>`
+        + `</div>`;
 }
 
 function renderCompound(verb, extra) {
@@ -503,6 +588,7 @@ function getWordColor(node) {
     if (f === "SI") return "vbox-si";
     if (f === "A" || f === "O" || f === "NI" || f === "NU" || f === "PO") return "vbox-sentence-bg";
     if (f === "PE" || f === "PEI" || f === "BU") return "vbox-enum";
+    if (f === "CI" || f === "CE" || f === "CEI" || f === "CA" || f === "CAI" || f === "CO") return "vbox-quote";
     if (f === "Compound" || f === "Borrowing" || f === "FFVariable") return "vbox-compound-bg";
     return "vbox-content";
 }
