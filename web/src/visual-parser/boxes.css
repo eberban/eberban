@@ -270,6 +270,7 @@ html {
     width: var(--vbox-bar-height);
     box-sizing: border-box;
     box-shadow: var(--vbox-word-shadow);
+    margin: 0;
     margin: 0 3px;
     gap: 1px;
 }
@@ -328,6 +329,14 @@ html {
     grid-row: 2;
     width: 3px;
     align-self: start;
+}
+
+/* === Args list (neutral) === */
+.vbox-args {
+    background: #d8d8dc;
+}
+.vbox-args .vbox-word-family {
+    margin-top: auto;
 }
 
 /* === Elided === */

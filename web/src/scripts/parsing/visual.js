@@ -125,10 +125,18 @@ function renderText(output) {
 }
 
 function renderSentence(sentence) {
-    let chain = sentence.definition?.chain || sentence.definition;
-    if (!chain && sentence.pred) chain = { verb: sentence.pred };
+    // NI sentences: starter + pred, no chain
+    if (sentence.pred && !sentence.definition) {
+        let items = [];
+        items.push({ type: "starter-group", starter: sentence.starter, defined: sentence.pred, args: null, barColor: "", exposed: "", chainPlace: "" });
+        return `<div class="vbox-sentence"><div class="vbox-chain">${renderGrid(items)}</div></div>`;
+    }
 
-    let items = collectChainItems(chain, sentence.starter, sentence.defined, "");
+    let def = sentence.definition;
+    let args = def?.args || null;
+    let chain = def?.chain || def;
+
+    let items = collectChainItems(chain, sentence.starter, sentence.defined, "", args);
     return `<div class="vbox-sentence"><div class="vbox-chain">${renderGrid(items)}</div></div>`;
 }
 
@@ -136,12 +144,15 @@ function renderSentence(sentence) {
 // Collect items: walk parse tree → flat list of grid items
 // ============================================================
 
-function collectChainItems(chain, starter, defined, barColor) {
+function collectChainItems(chain, starter, defined, barColor, args) {
     if (!chain) return [];
     let items = [];
 
-    if (starter) items.push(wordItem(starter, barColor));
-    if (defined) items.push(wordItem(defined, barColor));
+    if (starter && (defined || args)) {
+        items.push({ type: "starter-group", starter, defined, args, barColor, exposed: "", chainPlace: "" });
+    } else if (starter) {
+        items.push(wordItem(starter, barColor));
+    }
 
     stepsToItems(flattenChain(chain), barColor, items, 0);
 
@@ -195,8 +206,13 @@ function collectBindItems(bindGroup, items, depth, inline) {
         let barColor = adverb ? "vbox-bar-adverb" : "vbox-bar-bind";
         let wordColor = adverb ? "vbox-adverb" : "vbox-bind";
 
-        items.push({ type: "word", node: bind.start, color: wordColor, barColor, exposed: "", chainPlace: "", depth: nextDepth });
-        stepsToItems(flattenChain(bind.inner?.chain || bind.inner), barColor, items, nextDepth);
+        let inner = bind.inner;
+        if (inner?.args) {
+            items.push({ type: "vi-args", node: bind.start, color: wordColor, args: inner.args, barColor, exposed: "", chainPlace: "", depth: nextDepth });
+        } else {
+            items.push({ type: "word", node: bind.start, color: wordColor, barColor, exposed: "", chainPlace: "", depth: nextDepth });
+        }
+        stepsToItems(flattenChain(inner?.chain || inner), barColor, items, nextDepth);
     }
 
     // VEI: omit only if inline AND elided
@@ -284,6 +300,12 @@ function renderGrid(items) {
             case "group":
                 html += renderGroup(item.prefixes, item.verb, extra, item.siCount, depthStyle);
                 break;
+            case "vi-args":
+                html += renderViArgs(item.node, item.color, item.args, extra, depthStyle);
+                break;
+            case "starter-group":
+                html += renderStarterGroup(item.starter, item.defined, item.args, extra, depthStyle);
+                break;
             case "nested":
                 html += renderNestedBind(item.bindGroup, extra, nestedDepthStyle);
                 break;
@@ -337,6 +359,46 @@ function renderVerbContent(verb, color, extra, depthStyle) {
     if (verb.kind === "GrammaticalQuote") return renderGrammaticalQuote(verb, extra, depthStyle);
     if (verb.kind === "ForeignQuote") return renderForeignQuote(verb, extra, depthStyle);
     return wordBox(verb, color, extra, depthStyle);
+}
+
+function renderStarterGroup(starter, defined, args, extra, depthStyle) {
+    let html = wordBox(starter, getWordColor(starter));
+    if (defined) html += wordBox(defined, getWordColor(defined));
+    if (args) {
+        let parts = "";
+        for (let arg of args.list) {
+            let w = getWordText(arg);
+            parts += compoundPart(w, lookupGloss(w), "", lookupShort(w));
+        }
+        let endW = getWordText(args.end);
+        parts += compoundPart(endW, "", " vbox-quote-delim", lookupShort(endW));
+        html += `<div class="vbox-compound vbox-args">`
+            + `<div class="vbox-compound-parts">${parts}</div>`
+            + `<span class="vbox-word-family">ARGS</span>`
+            + `</div>`;
+    }
+    return `<div class="vbox-pair ${extra || ""}"${depthStyle || ""}>${html}</div>`;
+}
+
+function renderViArgs(node, color, args, extra, depthStyle) {
+    let parts = "";
+    for (let arg of args.list) {
+        let w = getWordText(arg);
+        parts += compoundPart(w, lookupGloss(w), "", lookupShort(w));
+    }
+    let endW = getWordText(args.end);
+    parts += compoundPart(endW, "", " vbox-quote-delim", lookupShort(endW));
+
+    let argsBox = `<div class="vbox-compound vbox-args">`
+        + `<div class="vbox-compound-parts">${parts}</div>`
+        + `<span class="vbox-word-family">ARGS</span>`
+        + `</div>`;
+
+    if (node) {
+        let viBox = wordBox(node, color);
+        return `<div class="vbox-pair ${extra || ""}"${depthStyle || ""}>${viBox}${argsBox}</div>`;
+    }
+    return `<div class="vbox-pair ${extra || ""}"${depthStyle || ""}>${argsBox}</div>`;
 }
 
 function renderGroup(prefixes, verb, extra, siCount, depthStyle) {
