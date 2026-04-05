@@ -344,10 +344,7 @@ function renderSingleWordQuote(verb, extra) {
         + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.word.word))}</span>`
         + `</div>`;
 
-    let display = verb.start.word + " " + verb.word.word;
     return `<div class="vbox-compound vbox-quote ${extra || ""}">`
-        + `<span class="vbox-word-text">${esc(display)}</span>`
-        + `<span class="vbox-word-gloss">${esc(lookupGloss(verb.word.word))}</span>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-family">QUOTE</span>`
         + `</div>`;
@@ -362,7 +359,7 @@ function renderSpellingQuote(verb, extra) {
     for (let item of verb.items) {
         parts += `<div class="vbox-compound-part">`
             + `<span class="vbox-compound-part-word">${esc(item)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(item))}</span>`
+            + `<span class="vbox-compound-part-gloss">${esc(lookupSpelling(item))}</span>`
             + `</div>`;
     }
 
@@ -375,10 +372,8 @@ function renderSpellingQuote(verb, extra) {
     }
 
     return `<div class="vbox-compound vbox-quote ${extra || ""}">`
-        + `<span class="vbox-word-text">${esc(verb.items.join(" "))}</span>`
-        + `<span class="vbox-word-gloss">spelling</span>`
         + `<div class="vbox-compound-parts">${parts}</div>`
-        + `<span class="vbox-word-family">SPELL</span>`
+        + `<span class="vbox-word-family">SPELLING QUOTE</span>`
         + `</div>`;
 }
 
@@ -405,34 +400,46 @@ function renderForeignQuote(verb, extra) {
         + `</div>`;
 
     return `<div class="vbox-compound vbox-quote ${extra || ""}">`
-        + `<span class="vbox-word-text">${esc(verb.content)}</span>`
-        + `<span class="vbox-word-gloss">foreign</span>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-family">QUOTE</span>`
         + `</div>`;
 }
 
 function renderCompound(verb, extra) {
-    let fullWord = verb.prefix + verb.content.map(c => c.word).join("");
-    let gloss = lookupGloss(fullWord);
+    let dictKey = verb.prefix + " " + verb.content.map(c => c.word).join(" ") + (verb.postfix ? " " + verb.postfix : "");
+    let gloss = lookupGloss(dictKey);
 
-    let parts = verb.content.map(part =>
-        `<div class="vbox-compound-part">`
-        + `<span class="vbox-compound-part-word">${esc(part.word)}</span>`
-        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(part.word))}</span>`
-        + `</div>`
-    ).join("");
+    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
+        + `<span class="vbox-compound-part-word">${esc(verb.prefix)}</span>`
+        + `</div>`;
+
+    let lastIdx = verb.content.length - 1;
+    parts += verb.content.map((part, i) => {
+        let partGloss;
+        if (i === lastIdx && part.word === "se") partGloss = "→intrans";
+        else if (i === lastIdx && part.word === "sa") partGloss = "→trans";
+        else if (i === lastIdx && part.word === "sai") partGloss = "→trans(pred)";
+        else partGloss = lookupGloss(part.word);
+        return `<div class="vbox-compound-part">`
+            + `<span class="vbox-compound-part-word">${esc(part.word)}</span>`
+            + `<span class="vbox-compound-part-gloss">${esc(partGloss)}</span>`
+            + `</div>`;
+    }).join("");
+
+    if (verb.postfix) {
+        parts += `<div class="vbox-compound-part vbox-quote-delim">`
+            + `<span class="vbox-compound-part-word">${esc(verb.postfix)}</span>`
+            + `</div>`;
+    }
 
     return `<div class="vbox-compound ${extra || ""}">`
-        + `<span class="vbox-word-text">${esc(fullWord)}</span>`
-        + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<div class="vbox-compound-parts">${parts}</div>`
+        + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">COMPOUND</span>`
         + `</div>`;
 }
 
 function renderNumber(verb, extra) {
-    let display = formatNumber(verb.value);
     let val = verb.value;
 
     let parts = [];
@@ -445,18 +452,71 @@ function renderNumber(verb, extra) {
 
     let partsHtml = parts.map(p => {
         let w = p.word || p.symbol || "?";
-        return `<div class="vbox-compound-part">`
+        let isDelim = p.family === "JI" || p.family === "JO" || p.family === "JA" || p.family === "JE" || p.family === "JU";
+        let delimClass = isDelim ? " vbox-quote-delim" : "";
+        return `<div class="vbox-compound-part${delimClass}">`
             + `<span class="vbox-compound-part-word">${esc(w)}</span>`
             + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(w))}</span>`
             + `</div>`;
     }).join("");
 
+    let display = computeNumberDisplay(val);
+
     return `<div class="vbox-compound ${extra || ""}">`
-        + `<span class="vbox-word-text">${esc(display)}</span>`
-        + `<span class="vbox-word-gloss">number</span>`
         + `<div class="vbox-compound-parts">${partsHtml}</div>`
-        + `<span class="vbox-word-family">NUM</span>`
+        + `<span class="vbox-word-gloss">${esc(display)}</span>`
+        + `<span class="vbox-word-family">NUMBER</span>`
         + `</div>`;
+}
+
+function computeNumberDisplay(value) {
+    let base = value.base ? digitsToInt(value.base.value) : 10;
+    let parts = [];
+
+    if (value.int) parts.push(digitsToInt(value.int, base).toString());
+    if (value.fract) {
+        let fracStr = value.fract.value.map(d => digitValue(d).toString(base)).join("");
+        parts.push("." + fracStr);
+    }
+    if (value.repeat) {
+        let repStr = value.repeat.value.map(d => digitValue(d).toString(base)).join("");
+        parts.push("(" + repStr + ")\u0305");
+    }
+
+    let result = parts.join("") || "0";
+
+    if (value.magn) {
+        let exp = digitsToInt(value.magn.value, base);
+        result += " \u00d7" + base + superscript(exp);
+    }
+
+    if (value.end && !value.end.elided) {
+        let jiGloss = lookupGloss(value.end.word);
+        if (jiGloss) result += " " + jiGloss;
+    }
+
+    return result;
+}
+
+function digitValue(d) {
+    let match = dictionary[d.word]?.short?.match(/Digit (\d+)/);
+    return match ? parseInt(match[1]) : 0;
+}
+
+function digitsToInt(digits, base) {
+    base = base || 10;
+    let result = 0;
+    for (let d of digits) {
+        result = result * base + digitValue(d);
+    }
+    return result;
+}
+
+function superscript(n) {
+    let sup = { '0': '\u2070', '1': '\u00b9', '2': '\u00b2', '3': '\u00b3', '4': '\u2074',
+                '5': '\u2075', '6': '\u2076', '7': '\u2077', '8': '\u2078', '9': '\u2079',
+                '-': '\u207b' };
+    return String(n).split("").map(c => sup[c] || c).join("");
 }
 
 function wordBox(node, color, extra) {
@@ -579,6 +639,10 @@ function fmtDigits(digits) {
 
 function lookupGloss(word) {
     return word ? (dictionary[word]?.gloss || "") : "";
+}
+
+function lookupSpelling(unit) {
+    return unit ? (dictionary._spelling?.[unit]?.gloss || "") : "";
 }
 
 function getWordColor(node) {

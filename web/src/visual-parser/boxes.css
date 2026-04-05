@@ -139,13 +139,15 @@
     display: flex;
     gap: 0;
     margin: 0 3px;
-    box-shadow: var(--vbox-word-shadow);
 }
 
 .vbox-pair > .vbox-word {
     grid-row: unset;
     margin: 0;
-    box-shadow: none;
+}
+
+.vbox-pair > .vbox-compound {
+    margin: 0;
 }
 
 .vbox-group-sep {
@@ -273,7 +275,7 @@
 /* === Foreign quote content with [ ] bracket borders === */
 .vbox-foreign-bracket {
     border: 2px solid #222;
-    border-radius: 0;
+    border-radius: 3px !important;
     position: relative;
 }
 /* Mask out top/bottom center to create [ ] shape */
