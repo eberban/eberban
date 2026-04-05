@@ -87,14 +87,14 @@
         return "<unknown word type>"
     }
 
-    // Annotate word with extra fields free_pre/free_post if they are not empty arrays
+    // Annotate word with extra fields pre/post if they are not empty arrays
     function with_free(word, free_pre, free_post) {
         if(free_pre?.length) {
-            word.free_pre = free_pre
+            word.pre = free_pre
         }
 
         if(free_post?.length) {
-            word.free_post = free_post
+            word.post = free_post
         }
 
         return word
@@ -140,12 +140,13 @@ MainWithWarnings = main:RootText {
 
 // Root level text (not inside quotes) which additionally provides error messages for leading unmatched particles.
 RootText = @Text !E_UnmatchedLeadings
-E_UnmatchedLeadings = E_UnmatchedFI / E_UnmatchedVEI / E_UnmatchedBE / E_UnmatchedPEI / E_UnmatchedBU / E_UnmatchedResume
+E_UnmatchedLeadings = E_UnmatchedFI / E_UnmatchedVEI / E_UnmatchedBE / E_UnmatchedPEI / E_UnmatchedBU / E_UnmatchedDAI / E_UnmatchedResume
 E_UnmatchedFI = FI_Free &{ return err("There is no VI scope still open for this FI to attach to")}
 E_UnmatchedVEI = VEI_Free &{ return err("There is no VI scope still open for this VEI to attach to")}
 E_UnmatchedBE = BE_Free &{ return err("BE can only be used to end an arguments list or a borrowing group")}
 E_UnmatchedPEI = PEI_Free &{ return err("There is no PE scope still open for this PEI to attach to")}
 E_UnmatchedBU = BU_Free &{ return err("BU can only be used inside still open enumerations started with PE")}
+E_UnmatchedDAI = DAI_Free &{ return err("There is no DA scope still open for this DAI to attach to")}
 E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
 `Failed to resume binding. Note that while leading SI can differ, anything following a ZI must match`
 )}
@@ -185,7 +186,7 @@ Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
 // finished to parse a sentence and then fail inside a new one. We want this so that a sentence that
 // become invalid can be fully erased with RA.
 SentenceChoice = @(SentenceO / SentenceNI / SentenceA) &PostSentence
-PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / RA / GrammaticalQuoteTerminatorElider / EOF)
+PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / DAI_Free / RA / GrammaticalQuoteTerminatorElider / EOF)
 SentenceStarter = A_Free / O_Free / NI_Free
 
 GrammaticalQuoteTerminatorElider = FI_Free / VEI_Free / PEI_Free / BU_Free / PA_Free
@@ -503,7 +504,15 @@ BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { kind: "Borrowi
 // # Free pre/post ========================================
 
 FreePrefix "free prefix" = FreeMetadata
-FreePostfix "free postfix" = "?"
+FreePostfix "free postfix" = FreeInterjection / FreeParenthetical
+
+FreeInterjection = tag:DE_Free select:SI_Free? verb:(ChainVerbModified / ChainVerbSelect)
+    { return { kind: "Interjection", tag, select, verb } }
+
+FreeParenthetical = start:DA_Free !E_EmptyParenthetical content:Text !E_UnclosedParenthetical end:DAI_Free
+    { return { kind: "Parenthetical", start, content, end } }
+E_EmptyParenthetical = &DAI_Free &{ return err("Parenthetical cannot be empty") }
+E_UnclosedParenthetical = !DAI_Free &{ return err("Unclosed parenthetical (missing dai)") }
 
 FreeMetadata = scope:FreeScope? meta:DI_Free {
     if(scope != null)
