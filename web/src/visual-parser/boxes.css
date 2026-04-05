@@ -1,5 +1,13 @@
 /* Visual Box Renderer - Eberban Parser */
 
+/* === Base (from layout-legacy.css) === */
+body, textarea {
+    font-family: sans-serif !important;
+}
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Bars */
     --vbox-bar-default: #404050;
@@ -27,6 +35,7 @@
 
 #parse-result-boxes {
     overflow-x: auto;
+    padding-bottom: 200px;
 }
 
 /* === Sentence === */
@@ -293,10 +302,6 @@
 /* === Tooltip on hover === */
 [data-tooltip] {
     cursor: help;
-}
-/* Disable legacy CSS tooltip */
-#parse-result-boxes [data-tooltip]:hover::after {
-    display: none !important;
 }
 
 /* Tooltip rendered as a fixed-position element via JS */
