@@ -36,6 +36,10 @@ html {
 #parse-result-boxes {
     overflow-x: auto;
     padding-bottom: 200px;
+    /* Break out of container to full viewport width, keep left aligned */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
 }
 
 /* === Sentence === */
@@ -406,10 +410,10 @@ html {
 
 .vbox-para-header {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: baseline;
     gap: 8px;
-    padding: 4px 10px;
+    padding: 4px 40px 4px 10px;
     border-radius: var(--vbox-radius);
     margin-bottom: 4px;
 }

@@ -309,9 +309,15 @@ function renderGrid(items) {
 
         // Render row 2 content
         switch (item.type) {
-            case "word":
-                html += renderVerbContent(item.node, item.color, extra, depthStyle);
+            case "word": {
+                // PE enums render as bind-groups — need extra margin to clear bar overflow
+                let wordDepth = depthStyle;
+                if (item.node?.start?.family === "PE") {
+                    wordDepth = ` style="margin-top:${(depthPx || 0) + 5}px"`;
+                }
+                html += renderVerbContent(item.node, item.color, extra, wordDepth);
                 break;
+            }
             case "group":
                 html += renderGroup(item.prefixes, item.verb, extra, item.siCount, depthStyle);
                 break;
