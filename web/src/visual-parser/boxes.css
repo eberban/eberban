@@ -3,8 +3,9 @@
 :root {
     --vbox-blue: #7fb8e8;
     --vbox-yellow: #f5d980;
-    --vbox-pink: #e8a0bf;
-    --vbox-orange: #e8b070;
+    --vbox-pink: #d0609a;
+    --vbox-orange: #d09050;
+    --vbox-coral: #e05050;
     --vbox-purple: #b8a0d8;
     --vbox-dark: #404050;
     --vbox-white: #f8f8fa;
@@ -48,10 +49,17 @@
     min-height: var(--vbox-bar-height);
     padding: 0 6px;
     background: var(--vbox-dark);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.vbox-bar-pink { background: #d0609a !important; }
-.vbox-bar-orange { background: #d09050 !important; }
+.vbox-bar-pink {
+    background: var(--vbox-pink) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+.vbox-bar-orange {
+    background: var(--vbox-orange) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
 
 .vbox-bar-exposed {
     font-size: 11px;
@@ -69,10 +77,10 @@
     color: #fff;
 }
 
-.vbox-bar-pink .vbox-bar-exposed { color: #553040; }
-.vbox-bar-pink .vbox-bar-chain-place { color: #3a1525; }
-.vbox-bar-orange .vbox-bar-exposed { color: #5a4020; }
-.vbox-bar-orange .vbox-bar-chain-place { color: #3a2510; }
+.vbox-bar-pink .vbox-bar-exposed { color: #fff; }
+.vbox-bar-pink .vbox-bar-chain-place { color: #fdd; }
+.vbox-bar-orange .vbox-bar-exposed { color: #fff; }
+.vbox-bar-orange .vbox-bar-chain-place { color: #fed; }
 
 /* === Word cell (row 2) === */
 .vbox-word {
@@ -108,7 +116,7 @@
     color: #666;
 }
 
-/* === SI + verb pair (two boxes side-by-side in one grid cell) === */
+/* === SI/ZI + verb pair (side-by-side in one grid cell) === */
 .vbox-pair {
     grid-row: 2;
     display: flex;
@@ -126,6 +134,7 @@
 .vbox-bg-yellow { background: var(--vbox-yellow); }
 .vbox-bg-pink { background: var(--vbox-pink); }
 .vbox-bg-orange { background: var(--vbox-orange); }
+.vbox-bg-coral { background: var(--vbox-coral); }
 .vbox-bg-purple { background: var(--vbox-purple); }
 .vbox-bg-white { background: var(--vbox-white); }
 
@@ -133,6 +142,18 @@
 .vbox-bg-dark .vbox-word-text { color: #fff; }
 .vbox-bg-dark .vbox-word-gloss { color: #ccc; }
 .vbox-bg-dark .vbox-word-family { color: #aaa; }
+
+.vbox-bg-pink .vbox-word-text { color: #fff; }
+.vbox-bg-pink .vbox-word-gloss { color: #ecc; }
+.vbox-bg-pink .vbox-word-family { color: #dbb; }
+
+.vbox-bg-orange .vbox-word-text { color: #fff; }
+.vbox-bg-orange .vbox-word-gloss { color: #eda; }
+.vbox-bg-orange .vbox-word-family { color: #dcb; }
+
+.vbox-bg-coral .vbox-word-text { color: #fff; }
+.vbox-bg-coral .vbox-word-gloss { color: #fcc; }
+.vbox-bg-coral .vbox-word-family { color: #ebb; }
 
 /* === Bind Group (nested, sits in row 2) === */
 .vbox-bind-group {
@@ -142,10 +163,9 @@
     overflow: hidden;
     box-shadow: var(--vbox-shadow);
     white-space: nowrap;
-    margin: 0 3px;
 }
 
-/* === Compound Box === */
+/* === Compound/Number Box === */
 .vbox-compound {
     grid-row: 2;
     display: flex;
@@ -184,6 +204,10 @@
     font-size: 10px;
     color: #555;
 }
+
+/* === First/last margin flush === */
+.vbox-first { margin-left: 0 !important; }
+.vbox-last { margin-right: 0 !important; }
 
 /* === Elided === */
 .vbox-elided {
