@@ -14,6 +14,8 @@
     --vbox-word-compound: #b8a0d8;
     --vbox-word-sentence: #404050;
     --vbox-word-adverb: #e8b878;
+    --vbox-bar-enum: #509060;
+    --vbox-word-enum: #90d0a0;
 
     /* Layout */
     --vbox-radius: 5px;
@@ -63,6 +65,10 @@
 }
 .vbox-bar-adverb {
     background: var(--vbox-bar-adverb) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+.vbox-bar-enum {
+    background: var(--vbox-bar-enum) !important;
     border-right-color: rgba(255, 255, 255, 0.25) !important;
 }
 
@@ -150,6 +156,11 @@
 .vbox-sentence-bg .vbox-word-text { color: #fff; }
 .vbox-sentence-bg .vbox-word-gloss { color: #ccc; }
 .vbox-sentence-bg .vbox-word-family { color: #aaa; }
+
+.vbox-enum { background: var(--vbox-word-enum); }
+
+.vbox-bar-enum .vbox-bar-exposed { color: #fff; }
+.vbox-bar-enum .vbox-bar-chain-place { color: #dfd; }
 
 .vbox-zi .vbox-word-text { color: #fff; }
 .vbox-zi .vbox-word-gloss { color: #fcc; }

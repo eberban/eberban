@@ -173,6 +173,12 @@ function renderGrid(items) {
                 html += renderGroup(item.prefixes, item.verb, extra);
             } else if (item.type === "nested") {
                 html += renderNestedBind(item.bindGroup, extra);
+            } else if (item.type === "enum-sep") {
+                html += `<div class="vbox-terminator ${item.color || ""} ${extra}">`
+                    + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
+                    + `<span class="vbox-word-gloss" style="visibility:hidden">x</span>`
+                    + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
+                    + `</div>`;
             }
         }
     }
@@ -194,6 +200,7 @@ function renderVerbContent(verb, color, extra) {
     if (!verb) return `<div class="vbox-word ${color}"></div>`;
     if (verb.family === "Compound") return renderCompound(verb, extra);
     if (verb.kind === "Number") return renderNumber(verb, extra);
+    if (verb.start?.family === "PE") return renderEnum(verb, extra);
     return wordBox(verb, color, extra);
 }
 
@@ -211,6 +218,51 @@ function renderNestedBind(bindGroup, extra) {
     if (innerItems.length > 0) innerItems[innerItems.length - 1].chainPlace = "";
 
     return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(innerItems)}</div></div>`;
+}
+
+function renderEnum(verb, extra) {
+    let enumItems = collectEnumItems(verb);
+    return `<div class="vbox-bind-group ${extra || ""}"><div class="vbox-chain">${renderGrid(enumItems)}</div></div>`;
+}
+
+function collectEnumItems(verb) {
+    let barColor = "vbox-bar-enum";
+    let wordColor = "vbox-enum";
+    let items = [];
+
+    // PE starter
+    items.push({ type: "word", node: verb.start, color: wordColor, barColor, exposed: "", chainPlace: "" });
+
+    // Prefix mode: bu appears after PE
+    let isPrefixMode = !!verb.sep;
+    if (isPrefixMode) {
+        items.push({ type: "word", node: verb.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
+    }
+
+    for (let i = 0; i < verb.items.length; i++) {
+        let item = verb.items[i];
+
+        // Separator between items
+        if (i > 0) {
+            if (isPrefixMode) {
+                items.push({ type: "enum-sep", barColor, color: wordColor });
+            } else if (item.sep) {
+                items.push({ type: "word", node: item.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
+            }
+        }
+
+        // Item chain
+        stepsToItems(flattenChain(item.chain), barColor, items);
+    }
+
+    // PEI end
+    if (verb.end) {
+        let color = verb.end.elided ? `${wordColor} vbox-elided` : wordColor;
+        items.push({ type: "word", node: verb.end, color, barColor, exposed: "", chainPlace: "" });
+    }
+
+    if (items.length > 0) items[items.length - 1].chainPlace = "";
+    return items;
 }
 
 function renderCompound(verb, extra) {
@@ -401,7 +453,8 @@ function getWordColor(node) {
     if (f === "ZI" || f === "BI" || f === "BO") return "vbox-zi";
     if (f === "SI") return "vbox-si";
     if (f === "A" || f === "O" || f === "NI" || f === "NU" || f === "PO") return "vbox-sentence-bg";
-    if (f === "Compound" || f === "Borrowing" || f === "FFVariable" || f === "PE" || f === "PEI" || f === "BU") return "vbox-compound-bg";
+    if (f === "PE" || f === "PEI" || f === "BU") return "vbox-enum";
+    if (f === "Compound" || f === "Borrowing" || f === "FFVariable") return "vbox-compound-bg";
     return "vbox-content";
 }
 
