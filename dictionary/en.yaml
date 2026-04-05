@@ -739,7 +739,7 @@ suo:
   family: "SI"
   gloss: "<UO>"
   tags: [core]
-  short: "Expose places A and O, then chain to O."
+  short: "Expose places U and O, then chain to O."
   links:
     - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 si:
@@ -3048,7 +3048,7 @@ buan:
   predilex_id: rediwi
   family: "R"
   gloss: "text"
-  short: "[A:tce* man] is a text."
+  short: "[E:tce* man] is a text."
 bino:
   id: 83sklgorvt
   predilex_id: yotiku
@@ -3159,12 +3159,12 @@ zgehal:
   notes: |
     TODO: According to who? Since it seems subjective, could it use a
     subjective "actor" in the context?
-zvaor:
+zvaoi:
   id: lsnj8jjkmu
   predilex_id: qidiqa{A}
   family: "R"
   gloss: "accident"
-  short: "[E:()] is an accident/unintentional."
+  short: "[A:()] is an accident/unintentional."
 ckuil:
   id: fcl0t79yc5
   predilex_id: docuga
@@ -4273,13 +4273,13 @@ jnu:
     filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
     filter.
 
-    {me jnu epnuencpie tcuin} = It's a tall tree. (measurement is "height of a tree", so things that are
+    {me jnu epsuencpie tcuin} = It's a tall tree. (measurement is "height of a tree", so things that are
     not trees are excluded from the comparaison)
 
     If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
     property to [A] and don't filter in [O].
 
-    {me bjaor jnu via epnuencpie fio kroan} = The elephant is tall compared to frogs.  
+    {me bjaor jnu via epsuencpie fio kroan} = The elephant is tall compared to frogs.  
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
@@ -4298,13 +4298,13 @@ jni:
     filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
     filter.
 
-    {me jnu epnuencpie tcuin} = It's a small tree. (measurement is "height of a tree", so things that are
+    {me jnu epsuencpie tcuin} = It's a small tree. (measurement is "height of a tree", so things that are
     not trees are excluded from the comparaison)
 
     If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
     property to [A] and don't filter in [O].
 
-    {me kroan jni via epnuencpie fio bjaor} = The frog is small compared to elephants.  
+    {me kroan jni via epsuencpie fio bjaor} = The frog is small compared to elephants.  
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
@@ -4918,7 +4918,7 @@ penie:
     [E] to all points of [A]. For all those vectors, amongst the absolute values
     of all its components, the above/below component must be the greatest,
     and the relative value must be in the below direction.
-pnuen:
+psuen:
   id: uqly4vvvgx
   predilex_id: jicazu
   family: "R"
@@ -4928,7 +4928,7 @@ pnuen:
   notes: |
     In the referential defined by {peni}.
     TODO: Specify margin of error.
-pneon:
+pseon:
   id: b0ic7nzxd8
   predilex_id: gupuhe
   family: "R"
@@ -4938,7 +4938,7 @@ pneon:
   notes: |
     In the referential defined by {peni}.
     TODO: Specify margin of error.
-pnaun:
+psaun:
   id: 526611yo25
   predilex_id: kuleze
   family: "R"
@@ -6513,21 +6513,21 @@ e spua ctal:
   family: "C"
   gloss: "residential building"
   short: "[E:tce* pan] is a house/residential building."
-e pnuen cpie:
+e psuen cpie:
   id: fb6aza9xej
   predilex_id: jilobo{A,E}
   family: "C"
   gloss: "height"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
-e pneon cpie:
+e pseon cpie:
   id: ie3rzd0ac7
   predilex_id: wuzovu{A,E}
   family: "C"
   gloss: "width"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
-e pnaun cpie:
+e psaun cpie:
   id: vxeydlyrp7
   predilex_id: vuciko{A,E}
   family: "C"
