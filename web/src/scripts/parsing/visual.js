@@ -336,14 +336,8 @@ function renderEnum(verb, extra) {
 }
 
 function renderSingleWordQuote(verb, extra) {
-    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
-        + `<span class="vbox-compound-part-word">${esc(verb.start.word)}</span>`
-        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.start.word))}</span>`
-        + `</div>`
-        + `<div class="vbox-compound-part">`
-        + `<span class="vbox-compound-part-word">${esc(verb.word.word)}</span>`
-        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.word.word))}</span>`
-        + `</div>`;
+    let parts = compoundPart(verb.start.word, lookupGloss(verb.start.word), " vbox-quote-delim", lookupShort(verb.start.word))
+        + compoundPart(verb.word.word, lookupGloss(verb.word.word), "", lookupShort(verb.word.word));
 
     return `<div class="vbox-compound vbox-quote ${extra || ""}">`
         + `<div class="vbox-compound-parts">${parts}</div>`
@@ -352,24 +346,16 @@ function renderSingleWordQuote(verb, extra) {
 }
 
 function renderSpellingQuote(verb, extra) {
-    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
-        + `<span class="vbox-compound-part-word">${esc(verb.starter.word)}</span>`
-        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.starter.word))}</span>`
-        + `</div>`;
+    let parts = compoundPart(verb.starter.word, lookupGloss(verb.starter.word), " vbox-quote-delim", lookupShort(verb.starter.word));
 
     for (let item of verb.items) {
-        parts += `<div class="vbox-compound-part">`
-            + `<span class="vbox-compound-part-word">${esc(item)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(lookupSpelling(item))}</span>`
-            + `</div>`;
+        let spellingShort = dictionary._spelling?.[item]?.short || "";
+        parts += compoundPart(item, lookupSpelling(item), "", spellingShort);
     }
 
     if (verb.end) {
         let endWord = verb.end.elided ? `(${verb.end.word})` : verb.end.word;
-        parts += `<div class="vbox-compound-part vbox-quote-delim">`
-            + `<span class="vbox-compound-part-word">${esc(endWord)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.end.word))}</span>`
-            + `</div>`;
+        parts += compoundPart(endWord, lookupGloss(verb.end.word), " vbox-quote-delim", lookupShort(verb.end.word));
     }
 
     return `<div class="vbox-compound vbox-quote ${extra || ""}">`
@@ -392,10 +378,7 @@ function renderGrammaticalQuote(verb, extra) {
 }
 
 function renderForeignQuote(verb, extra) {
-    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
-        + `<span class="vbox-compound-part-word">${esc(verb.start.word)}</span>`
-        + `<span class="vbox-compound-part-gloss">${esc(lookupGloss(verb.start.word))}</span>`
-        + `</div>`
+    let parts = compoundPart(verb.start.word, lookupGloss(verb.start.word), " vbox-quote-delim", lookupShort(verb.start.word))
         + `<div class="vbox-compound-part vbox-foreign-bracket">`
         + `<span class="vbox-compound-part-word">${esc(verb.content)}</span>`
         + `</div>`;
@@ -410,27 +393,20 @@ function renderCompound(verb, extra) {
     let dictKey = verb.prefix + " " + verb.content.map(c => c.word).join(" ") + (verb.postfix ? " " + verb.postfix : "");
     let gloss = lookupGloss(dictKey);
 
-    let parts = `<div class="vbox-compound-part vbox-quote-delim">`
-        + `<span class="vbox-compound-part-word">${esc(verb.prefix)}</span>`
-        + `</div>`;
+    let parts = compoundPart(verb.prefix, "", " vbox-quote-delim", "");
 
     let lastIdx = verb.content.length - 1;
     parts += verb.content.map((part, i) => {
         let partGloss;
-        if (i === lastIdx && part.word === "se") partGloss = "→intrans";
-        else if (i === lastIdx && part.word === "sa") partGloss = "→trans";
-        else if (i === lastIdx && part.word === "sai") partGloss = "→trans(pred)";
+        if (i === lastIdx && part.word === "se") partGloss = "\u2192intrans";
+        else if (i === lastIdx && part.word === "sa") partGloss = "\u2192trans";
+        else if (i === lastIdx && part.word === "sai") partGloss = "\u2192trans(pred)";
         else partGloss = lookupGloss(part.word);
-        return `<div class="vbox-compound-part">`
-            + `<span class="vbox-compound-part-word">${esc(part.word)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(partGloss)}</span>`
-            + `</div>`;
+        return compoundPart(part.word, partGloss, "", lookupShort(part.word));
     }).join("");
 
     if (verb.postfix) {
-        parts += `<div class="vbox-compound-part vbox-quote-delim">`
-            + `<span class="vbox-compound-part-word">${esc(verb.postfix)}</span>`
-            + `</div>`;
+        parts += compoundPart(verb.postfix, "", " vbox-quote-delim", "");
     }
 
     let short = lookupShort(dictKey);
@@ -460,10 +436,7 @@ function renderNumber(verb, extra) {
         let elided = p.elided ? " vbox-elided" : "";
         let display = p.elided ? `(${w})` : w;
         let gloss = isJ ? "" : lookupGloss(w);
-        return `<div class="vbox-compound-part${delimClass}${elided}">`
-            + `<span class="vbox-compound-part-word">${esc(display)}</span>`
-            + `<span class="vbox-compound-part-gloss">${esc(gloss)}</span>`
-            + `</div>`;
+        return compoundPart(display, gloss, delimClass + elided, lookupShort(w));
     }).join("");
 
     let display = computeNumberDisplay(val);
@@ -523,6 +496,14 @@ function superscript(n) {
                 '5': '\u2075', '6': '\u2076', '7': '\u2077', '8': '\u2078', '9': '\u2079',
                 '-': '\u207b' };
     return String(n).split("").map(c => sup[c] || c).join("");
+}
+
+function compoundPart(word, gloss, extraClass, short) {
+    let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
+    return `<div class="vbox-compound-part${extraClass || ""}"${tooltip}>`
+        + `<span class="vbox-compound-part-word">${esc(word)}</span>`
+        + `<span class="vbox-compound-part-gloss">${esc(gloss)}</span>`
+        + `</div>`;
 }
 
 function wordBox(node, color, extra) {
