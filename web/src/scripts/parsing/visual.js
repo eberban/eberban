@@ -18,14 +18,15 @@
 //
 // ## Item types
 //
-//   word       — single word box (root, particle, etc.)
-//   group      — SI/ZI prefix(es) + verb, rendered side-by-side
-//   nested     — VI/FI bind group, rendered as nested grid in row 2
-//   nested-text — grammatical quote (CA), contains full parsed text
-//   terminator — thin empty box at sentence end
-//   separator  — thin empty box between PE enum items (prefix mode)
-//   return     — thin vertical connector after inline binds,
-//                bridges offset depth back to baseline
+//   word         — single word box (root, particle, etc.)
+//   group        — SI/ZI prefix(es) + verb, rendered side-by-side
+//   nested       — VI/FI bind group, rendered as nested grid in row 2
+//   nested-text  — grammatical quote (CA), contains full parsed text
+//   erased-chain — RI-erased chain segment, pre-rendered with opacity
+//   terminator   — thin empty box at sentence end
+//   separator    — thin empty box between PE enum items (prefix mode)
+//   return       — thin vertical connector after inline binds,
+//                  bridges offset depth back to baseline
 //
 // ## Nesting & Inlining
 //
@@ -54,6 +55,26 @@
 // collectEnumItems   — PE enum → items (separator/prefix mode)
 // renderGrid         — items → HTML (grid with bar cells + content cells)
 // renderVerbContent  — dispatches to compound/number/enum/wordBox renderers
+//
+// ## Annotations (DI/DE/DA)
+//
+// Annotations are rendered as a 💬 icon on the word box. Hovering shows a
+// popover with annotation details. Annotation HTML is stored in annotationStore
+// (keyed by numeric ID) to avoid double-escaping in data attributes.
+//
+// ## Erasure (RA/RI)
+//
+// Sentence erasure (RA): erased sentence wrapped in vbox-erased-sentence (opacity),
+// RA particle rendered as standalone box beside it.
+// Chain erasure (RI): erased chain rendered as nested vbox-bind-group with
+// vbox-erased class, RI particle as normal word item.
+//
+// ## Slot detection
+//
+// Bar labels show exposed places (left) and chain place with ·/≡ symbol (right).
+// parseSISlots: programmatic SI parsing (vowels, h-override, transparency, equiv).
+// getVerbSlots/getVerbTransitivity: derive from verb form (roots, compounds, particles).
+// ZI_SLOTS: hardcoded chaining overrides for ZI modifiers.
 // ============================================================
 
 import dictionary from '../../../../dictionary/en.yaml';
@@ -61,21 +82,45 @@ import * as parser from "../../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
 
 const INLINE_DEPTH_OFFSET_PX = 10;
+
+// Unicode symbols
+const SYM_SHARING   = "\u00b7";  // · middle dot
+const SYM_EQUIV     = "\u2261";  // ≡ triple bar
+const SYM_MULTIPLY  = "\u00d7";  // × multiplication sign
+const SYM_OVERLINE  = "\u0305";  // combining overline
+const SYM_ARROW     = "\u2192";  // → right arrow
+const ICON_ANNOT    = "\uD83D\uDCAC"; // 💬 speech bubble
+const SUPERSCRIPT   = { '0':'\u2070','1':'\u00b9','2':'\u00b2','3':'\u00b3','4':'\u2074',
+                         '5':'\u2075','6':'\u2076','7':'\u2077','8':'\u2078','9':'\u2079','-':'\u207b' };
+
+// Annotation popover store (reset each parse)
 let annotationStore = {};
 let annotationNextId = 0;
+
+/** Build annotation icon + data-attribute for a node, or empty strings if no annotations. */
+function annotationAttrs(node) {
+    let html = buildAnnotationHtml(node);
+    if (!html) return { icon: "", attr: "" };
+    let id = annotationNextId++;
+    annotationStore[id] = html;
+    return {
+        icon: `<span class="vbox-annot-icon">${ICON_ANNOT}</span>`,
+        attr: ` data-annotation-id="${id}"`
+    };
+}
 
 // ============================================================
 // Entry point
 // ============================================================
 
 export function parse() {
-    var input = $('#input_textarea').val();
+    const input = $('#input_textarea').val();
     $('#result-row').slideDown();
 
     try {
         annotationStore = {};
         annotationNextId = 0;
-        var result = parser.parse(input, { grammarSource: "form" });
+        const result = parser.parse(input, { grammarSource: "form" });
         $('#parse-result-raw').html(`<pre>${JSON.stringify(result, null, 4)}</pre>`);
         $('#parse-result-boxes').html(renderText(result));
         setupTooltips();
@@ -83,9 +128,9 @@ export function parse() {
         $('#parser_error_box').hide();
 
         if (result?.warnings != undefined) {
-            var warnings = "";
-            for (var warn of result.warnings) {
-                var err = new GrammarError(warn.message, warn.location);
+            let warnings = "";
+            for (let warn of result.warnings) {
+                let err = new GrammarError(warn.message, warn.location);
                 err.problems[0][0] = "warning";
                 warnings += err.format([{ source: 'form', text: input }]);
                 warnings += "\n\n";
@@ -97,7 +142,7 @@ export function parse() {
             $('#parser_warnings_box').hide();
         }
     } catch (e) {
-        var err_message = typeof e.format === "function"
+        let err_message = typeof e.format === "function"
             ? e.format([{ source: 'form', text: input }])
             : e.toString();
         $('#parse_error').text(err_message);
@@ -117,17 +162,9 @@ function renderText(output) {
         if (para.starter) {
             let word = getWordText(para.starter);
             let gloss = lookupGloss(word);
-            let annotIcon = "";
-            let annotAttr = "";
-            let annotHtml = buildAnnotationHtml(para.starter);
-            if (annotHtml) {
-                let id = annotationNextId++;
-                annotationStore[id] = annotHtml;
-                annotIcon = `<span class="vbox-annot-icon">\uD83D\uDCAC</span>`;
-                annotAttr = ` data-annotation-id="${id}"`;
-            }
-            inner += `<div class="vbox-para-header vbox-sentence-bg"${annotAttr}>`
-                + annotIcon
+            let annot = annotationAttrs(para.starter);
+            inner += `<div class="vbox-para-header vbox-sentence-bg"${annot.attr}>`
+                + annot.icon
                 + `<span class="vbox-word-text">${esc(word)}</span>`
                 + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
                 + `<span class="vbox-word-family">${esc(getDisplayFamily(para.starter))}</span>`
@@ -178,6 +215,11 @@ function renderSentence(sentence) {
 // Collect items: walk parse tree → flat list of grid items
 // ============================================================
 
+/**
+ * Walk a chain parse tree and build a flat item list for renderGrid.
+ * Handles: starter/defined group, chain erasure (RI), step items, inline binds,
+ * return connector, and sentence terminator.
+ */
 function collectChainItems(chain, starter, defined, barColor, args) {
     if (!chain) return [];
     let items = [];
@@ -217,6 +259,8 @@ function collectChainItems(chain, starter, defined, barColor, args) {
     return items;
 }
 
+/** Convert chain steps into grid items. Extracts SI/ZI prefixes, computes slot info,
+ *  and pushes word/group items. Recurses into explicit bind groups. */
 function stepsToItems(steps, barColor, items, depth) {
     let slots = getSlotInfo(steps);
 
@@ -307,6 +351,11 @@ function collectEnumItems(verb) {
 // Render grid from items
 // ============================================================
 
+/**
+ * Render a flat item list into a CSS Grid with 2 rows: bar (row 1) + content (row 2).
+ * Handles depth offset for inlined binds, erased item opacity, and special margin
+ * for container verbs (PE enums, grammatical quotes) to clear bar overflow.
+ */
 function renderGrid(items) {
     let html = "";
     for (let i = 0; i < items.length; i++) {
@@ -395,8 +444,7 @@ function barCell(barColor, exposed, chainPlace, barExtra, depthStyle) {
         let expTip = null;
         if (exposed === "*") expTip = "all places exposed";
         else if (exposed === "~" && chainPlace) {
-            let place = chainPlace.replace(/[\u00b7\u2261]/g, "");
-            expTip = `transparent (re-exposes all places of ${place})`;
+            expTip = `transparent (re-exposes all places of ${stripChainSymbol(chainPlace)})`;
         } else if (exposed === "~") expTip = "transparent";
         else if (exposed === "none") expTip = "no places exposed";
         else if (/^[EAOU]+$/.test(exposed)) expTip = "exposes " + exposed.split("").join(", ");
@@ -404,8 +452,8 @@ function barCell(barColor, exposed, chainPlace, barExtra, depthStyle) {
         content += `<span class="vbox-bar-exposed"${expAttr}>${exposed}</span>`;
     }
     if (chainPlace) {
-        let equiv = chainPlace.includes("\u2261");
-        let place = chainPlace.replace(/[\u00b7\u2261]/g, "");
+        let equiv = chainPlace.includes(SYM_EQUIV);
+        let place = stripChainSymbol(chainPlace);
         let tip = `chains ${place} (${equiv ? "equivalence/predicate" : "sharing/atom"})`;
         content += `<span class="vbox-bar-chain-place" data-tooltip="${tip}">${chainPlace}</span>`;
     }
@@ -567,9 +615,9 @@ function renderCompound(verb, extra, depthStyle) {
     let lastIdx = verb.content.length - 1;
     parts += verb.content.map((part, i) => {
         let partGloss;
-        if (i === lastIdx && part.word === "se") partGloss = "\u2192intrans";
-        else if (i === lastIdx && part.word === "sa") partGloss = "\u2192trans";
-        else if (i === lastIdx && part.word === "sai") partGloss = "\u2192trans(pred)";
+        if (i === lastIdx && part.word === "se") partGloss = SYM_ARROW + "intrans";
+        else if (i === lastIdx && part.word === "sa") partGloss = SYM_ARROW + "trans";
+        else if (i === lastIdx && part.word === "sai") partGloss = SYM_ARROW + "trans(pred)";
         else partGloss = lookupGloss(part.word);
         return compoundPart(part.word, partGloss, "", lookupShort(part.word));
     }).join("");
@@ -628,13 +676,13 @@ function computeNumberDisplay(value) {
 
     if (value.int) parts.push(rawDigits(value.int));
     if (value.fract) parts.push("." + rawDigits(value.fract.value));
-    if (value.repeat) parts.push("(" + rawDigits(value.repeat.value) + ")\u0305");
+    if (value.repeat) parts.push("(" + rawDigits(value.repeat.value) + ")" + SYM_OVERLINE);
 
     let result = parts.join("") || "0";
 
     if (value.magn) {
         let expStr = rawDigits(value.magn.value);
-        result += " \u00d7base" + superscript(expStr);
+        result += " " + SYM_MULTIPLY + "base" + toSuperscript(expStr);
     }
 
     if (value.end) {
@@ -657,11 +705,8 @@ function rawDigits(digits) {
     }).join("");
 }
 
-function superscript(s) {
-    let sup = { '0': '\u2070', '1': '\u00b9', '2': '\u00b2', '3': '\u00b3', '4': '\u2074',
-                '5': '\u2075', '6': '\u2076', '7': '\u2077', '8': '\u2078', '9': '\u2079',
-                '-': '\u207b' };
-    return String(s).split("").map(c => sup[c] || c).join("");
+function toSuperscript(s) {
+    return String(s).split("").map(c => SUPERSCRIPT[c] || c).join("");
 }
 
 function compoundPart(word, gloss, extraClass, short) {
@@ -684,20 +729,10 @@ function wordBox(node, color, extra, depthStyle) {
         word = `(${word})`;
     }
 
-    // Build annotation popover content if node has pre/post annotations
-    let annotIcon = "";
-    let annotAttr = "";
-    let annotHtml = buildAnnotationHtml(node);
-    if (annotHtml) {
-        let id = annotationNextId++;
-        annotationStore[id] = annotHtml;
-        annotIcon = `<span class="vbox-annot-icon">\uD83D\uDCAC</span>`;
-        annotAttr = ` data-annotation-id="${id}"`;
-    }
-
+    let annot = annotationAttrs(node);
     let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";
-    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}${annotAttr}${depthStyle || ""}>`
-        + annotIcon
+    return `<div class="vbox-word ${color}${elided} ${extra || ""}"${tooltip}${annot.attr}${depthStyle || ""}>`
+        + annot.icon
         + `<span class="vbox-word-text">${esc(word)}</span>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
         + `<span class="vbox-word-family">${esc(family)}</span>`
@@ -774,11 +809,13 @@ function getSlotInfo(steps) {
 
 function formatChainPlace(trans, equiv) {
     let place = trans ? "A" : "E";
-    return place + (equiv ? "\u2261" : "\u00b7");
+    return place + (equiv ? SYM_EQUIV : SYM_SHARING);
 }
 
+/** Get slot display info for a verb. Checks ZI modifiers first (hardcoded map),
+ *  then falls back to verb transitivity. Returns { exposed, chainPlace }. */
 function getVerbSlots(verb) {
-    if (!verb) return { exposed: "*", chainPlace: "E\u00b7" };
+    if (!verb) return { exposed: "*", chainPlace: "E" + SYM_SHARING };
 
     // Check ZI modifiers (outermost determines)
     if (verb.modifiers) {
@@ -799,6 +836,9 @@ function getVerbSlots(verb) {
     return { exposed: "*", chainPlace: formatChainPlace(trans, equiv) };
 }
 
+/** Determine transitivity + equivalence for a verb node.
+ *  Roots: last char vowel=trans, CCV(3 chars)/-i=equiv. Compounds: last component.
+ *  MI/GI/BA/PE/KI: family-specific rules. Borrowings: same as roots. */
 function getVerbTransitivity(verb) {
     if (!verb) return { trans: false, equiv: false };
 
@@ -874,6 +914,8 @@ function getRootTransitivity(word) {
     return { trans, equiv };
 }
 
+/** Parse an SI word into slot display info. Extracts place vowels (e→E, a→A, o→O, u→U),
+ *  detects transparent (si-prefix), h-override for chain place, and -i for equivalence. */
 function parseSISlots(word) {
     let chars = word.slice(1); // strip 's'
 
@@ -902,13 +944,17 @@ function parseSISlots(word) {
     let chainPlace = hOverride || places[places.length - 1];
     return {
         exposed: transparent ? "~" : places.join(""),
-        chainPlace: chainPlace + (equiv ? "\u2261" : "\u00b7")
+        chainPlace: chainPlace + (equiv ? SYM_EQUIV : SYM_SHARING)
     };
 }
 
 // ============================================================
 // Helpers
 // ============================================================
+
+function stripChainSymbol(chainPlace) {
+    return chainPlace ? chainPlace.replace(SYM_SHARING, "").replace(SYM_EQUIV, "") : "";
+}
 
 function flattenChain(chain) {
     let steps = [];
