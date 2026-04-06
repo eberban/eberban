@@ -165,7 +165,7 @@ Text = Spaces? EOF { return {} } // allow empty text
 LanguageFlags = DO_Free*
 
 Paragraphs = head:Paragraph tail:(&PO_Free @Paragraph)* { return [head, ...tail] }
-Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / !PO_Free SentenceErasedInvalid)*
+Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / !PO_Free !DAI_Free SentenceErasedInvalid)*
     {
         if(starter != null) return { starter, sentences: [head, ...tail] }
         return { sentences: [head, ...tail] }
