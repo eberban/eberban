@@ -68,6 +68,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 4px;
     min-height: var(--vbox-bar-height);
     padding: 0 6px;
     background: var(--vbox-bar-default);
@@ -145,6 +146,7 @@ html {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #000;
+    margin-top: auto;
 }
 
 /* === SI/ZI + verb pair (side-by-side in one grid cell) === */

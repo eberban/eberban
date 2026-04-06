@@ -353,8 +353,24 @@ function renderGrid(items) {
 
 function barCell(barColor, exposed, chainPlace, barExtra, depthStyle) {
     let content = "";
-    if (exposed) content += `<span class="vbox-bar-exposed">${exposed}</span>`;
-    if (chainPlace) content += `<span class="vbox-bar-chain-place">${chainPlace}</span>`;
+    if (exposed) {
+        let expTip = null;
+        if (exposed === "*") expTip = "all places exposed";
+        else if (exposed === "~" && chainPlace) {
+            let place = chainPlace.replace(/[\u00b7\u2261]/g, "");
+            expTip = `transparent (re-exposes all places of ${place})`;
+        } else if (exposed === "~") expTip = "transparent";
+        else if (exposed === "none") expTip = "no places exposed";
+        else if (/^[EAOU]+$/.test(exposed)) expTip = "exposes " + exposed.split("").join(", ");
+        let expAttr = expTip ? ` data-tooltip="${expTip}"` : "";
+        content += `<span class="vbox-bar-exposed"${expAttr}>${exposed}</span>`;
+    }
+    if (chainPlace) {
+        let equiv = chainPlace.includes("\u2261");
+        let place = chainPlace.replace(/[\u00b7\u2261]/g, "");
+        let tip = `chains ${place} (${equiv ? "equivalence/predicate" : "sharing/atom"})`;
+        content += `<span class="vbox-bar-chain-place" data-tooltip="${tip}">${chainPlace}</span>`;
+    }
     return `<div class="vbox-bar ${barColor} ${barExtra || ""}"${depthStyle || ""}>${content}</div>`;
 }
 
@@ -696,35 +712,160 @@ function buildAnnotationHtml(node) {
 // Slot info computation
 // ============================================================
 
+const VOWELS = "ieaou";
+const CONSONANTS = "npbfvtdszcjkglrm";
+
+// ZI chaining overrides: null = keep verb's own slots
+const ZI_SLOTS = {
+    za: { trans: false, equiv: false },
+    zu: { trans: false, equiv: false },
+    zui: { trans: false, equiv: true },
+    zue: null, ze: null,
+    zoie: { trans: false, equiv: false },
+    zoia: { trans: false, equiv: false },
+    zoio: { trans: false, equiv: false },
+    zoiu: { trans: false, equiv: false },
+};
+
 function getSlotInfo(steps) {
     return steps.map(step => {
-        if (step.select) {
-            let label = getSILabel(step.select);
-            let vowels = label.replace(/[^EAOU]/gi, "");
-            return { exposed: label, chainPlace: vowels[vowels.length - 1] || "E" };
-        }
-        let trans = getTransitivity(step.verb);
-        return { exposed: trans ? "E A" : "E", chainPlace: trans ? "A" : "E" };
+        if (step.select) return parseSISlots(step.select.word);
+        return getVerbSlots(step.verb);
     });
 }
 
-function getSILabel(select) {
-    let entry = dictionary[select.word];
-    return entry?.gloss ? entry.gloss.replace(/[<>]/g, "").trim() : "SI";
+function formatChainPlace(trans, equiv) {
+    let place = trans ? "A" : "E";
+    return place + (equiv ? "\u2261" : "\u00b7");
 }
 
-function getTransitivity(verb) {
-    if (!verb) return false;
-    if (verb.family === "Compound")
-        return getTransitivity(verb.content[verb.content.length - 1]);
-    if (verb.family === "Root" || verb.family === "Particle") {
-        let last = verb.word?.[verb.word.length - 1];
-        return last ? "ieaou".includes(last) : false;
+function getVerbSlots(verb) {
+    if (!verb) return { exposed: "*", chainPlace: "E\u00b7" };
+
+    // Check ZI modifiers (outermost determines)
+    if (verb.modifiers) {
+        let mods = Array.isArray(verb.modifiers) ? verb.modifiers : [verb.modifiers];
+        let outerZI = mods[0]?.modifier?.word;
+        // ZI's own SI overrides
+        if (mods[0]?.select) return parseSISlots(mods[0].select.word);
+        // Check hardcoded ZI map
+        if (outerZI && outerZI in ZI_SLOTS) {
+            let override = ZI_SLOTS[outerZI];
+            if (override !== null) {
+                return { exposed: "*", chainPlace: formatChainPlace(override.trans, override.equiv) };
+            }
+        }
     }
-    if (verb.family === "MI") return dictionary[verb.word]?.transitive || false;
-    if (verb.family === "GI") return !verb.word?.startsWith("gi");
-    if (verb.start?.family === "PE") return dictionary[verb.start.word]?.transitive ?? true;
-    return false;
+
+    let { trans, equiv } = getVerbTransitivity(verb);
+    return { exposed: "*", chainPlace: formatChainPlace(trans, equiv) };
+}
+
+function getVerbTransitivity(verb) {
+    if (!verb) return { trans: false, equiv: false };
+
+    // Compound: last component determines, se/sa/sai override
+    if (verb.family === "Compound") {
+        let last = verb.content[verb.content.length - 1];
+        let lastWord = last?.word;
+        if (lastWord === "se") return { trans: false, equiv: false };
+        if (lastWord === "sa") return { trans: true, equiv: false };
+        if (lastWord === "sai") return { trans: true, equiv: true };
+        return getVerbTransitivity(last);
+    }
+
+    // Root / Particle: derive from word form
+    if (verb.family === "Root" || verb.family === "Particle") {
+        return getRootTransitivity(verb.word);
+    }
+
+    // MI: dictionary
+    if (verb.family === "MI") {
+        let entry = dictionary[verb.word];
+        return { trans: entry?.transitive || false, equiv: entry?.equivalence || false };
+    }
+
+    // GI: gi- intrans, others trans. -i after first vowel → equiv
+    if (verb.family === "GI") {
+        let w = verb.word;
+        let intrans = w?.startsWith("gi") && (w.length === 2 || !VOWELS.includes(w[2]));
+        let trans = !intrans;
+        let equiv = trans && w?.endsWith("i");
+        return { trans, equiv };
+    }
+
+    // BA: always sharing. h present: after h i=trans, e=intrans. No h → atom intrans.
+    if (verb.family === "BA") {
+        let w = verb.word;
+        let hIdx = w?.indexOf("h");
+        if (hIdx >= 0 && hIdx + 1 < w.length) {
+            return { trans: w[hIdx + 1] === "i", equiv: false };
+        }
+        return { trans: false, equiv: false };
+    }
+
+    // BorrowingGroup: last item, same rule as roots
+    if (verb.kind === "BorrowingGroup") {
+        let last = verb.group[verb.group.length - 1];
+        return getRootTransitivity(last.word || last.content);
+    }
+
+    // PE: dictionary
+    if (verb.start?.family === "PE") {
+        let entry = dictionary[verb.start.word];
+        return { trans: entry?.transitive ?? true, equiv: false };
+    }
+
+    // KI, quotes, numbers: intrans sharing
+    return { trans: false, equiv: false };
+}
+
+function getRootTransitivity(word) {
+    if (!word) return { trans: false, equiv: false };
+    let last = word[word.length - 1];
+    let trans = VOWELS.includes(last);
+    let equiv = false;
+    if (trans) {
+        // -i final → equiv
+        if (last === "i") equiv = true;
+        // CCV with single vowel (exactly 3 chars: CC+V) → equiv
+        else if (word.length === 3 && CONSONANTS.includes(word[0]) && CONSONANTS.includes(word[1])) {
+            equiv = true;
+        }
+    }
+    return { trans, equiv };
+}
+
+function parseSISlots(word) {
+    let chars = word.slice(1); // strip 's'
+
+    // Transparent: si + vowel(s) — still has chain place from remaining vowels
+    let transparent = false;
+    if (chars[0] === "i" && chars.length > 1) {
+        transparent = true;
+        chars = chars.slice(1); // consume the 'i', parse rest normally
+    }
+
+    let places = [], hOverride = null, hFlag = false, equiv = false;
+
+    for (let c of chars) {
+        if (c === "h") {
+            hFlag = true;
+        } else if (VOWELS.includes(c) && c !== "i") {
+            places.push(c.toUpperCase());
+            if (hFlag) { hOverride = c.toUpperCase(); hFlag = false; }
+        } else if (c === "i") {
+            equiv = true;
+        }
+    }
+
+    if (places.length === 0) return { exposed: transparent ? "~" : "none", chainPlace: "" };
+
+    let chainPlace = hOverride || places[places.length - 1];
+    return {
+        exposed: transparent ? "~" : places.join(""),
+        chainPlace: chainPlace + (equiv ? "\u2261" : "\u00b7")
+    };
 }
 
 // ============================================================
@@ -797,7 +938,13 @@ function fmtDigits(digits) {
 }
 
 function lookupGloss(word) {
-    return word ? (dictionary[word]?.gloss || "") : "";
+    if (!word) return "";
+    let entry = dictionary[word];
+    if (entry) return entry.gloss || "";
+    // Borrowings (u- prefix) have no dictionary entry — no gloss
+    if (word.startsWith("u")) return "";
+    // Unknown word
+    return "???";
 }
 
 function lookupShort(word) {
@@ -824,7 +971,7 @@ function getDisplayFamily(node) {
     let f = node?.family;
     if (f === "Root") return "ROOT";
     if (f === "Compound") return "COMP";
-    if (f === "Borrowing") return "BORR";
+    if (f === "Borrowing" || node?.kind === "BorrowingGroup") return "BORROWING";
     if (f === "FFVariable") return "VAR";
     return f || "";
 }
