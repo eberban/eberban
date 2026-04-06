@@ -124,6 +124,7 @@ export function parse() {
         $('#parse-result-raw').html(`<pre>${JSON.stringify(result, null, 4)}</pre>`);
         $('#parse-result-tree').html(renderTree(result));
         setupTreeToggles();
+        $('#parse-result-glossing').html(renderGlosses(collectWords(result)));
         $('#parse-result-boxes').html(renderText(result));
         setupTooltips();
         setupAnnotationPopovers();
@@ -1065,6 +1066,77 @@ function getDisplayFamily(node) {
 function esc(text) {
     if (!text) return "";
     return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+// ============================================================
+// Glosses tab
+// ============================================================
+
+const EBB_ORDER = "ieaouhnnrlmpbfvtdszcjkg";
+
+function ebbCompare(a, b) {
+    let len = Math.min(a.length, b.length);
+    for (let i = 0; i < len; i++) {
+        let ai = EBB_ORDER.indexOf(a[i].toLowerCase());
+        let bi = EBB_ORDER.indexOf(b[i].toLowerCase());
+        if (ai === -1) ai = 99;
+        if (bi === -1) bi = 99;
+        if (ai !== bi) return ai - bi;
+    }
+    return a.length - b.length;
+}
+
+/** Walk parse tree and collect all word strings into a Set. */
+function collectWords(obj, words) {
+    if (!obj || typeof obj !== "object") return;
+    words = words || new Set();
+
+    // Compound dict key: "prefix content1 content2 ..."
+    if (obj.family === "Compound" && obj.prefix && obj.content) {
+        let key = obj.prefix + " " + obj.content.map(c => c.word).join(" ") + (obj.postfix ? " " + obj.postfix : "");
+        words.add(key);
+    }
+
+    // Regular word
+    if (typeof obj.word === "string" && obj.word) {
+        words.add(obj.word);
+    }
+
+    // Recurse
+    for (let val of Object.values(obj)) {
+        if (Array.isArray(val)) {
+            for (let item of val) collectWords(item, words);
+        } else if (val && typeof val === "object") {
+            collectWords(val, words);
+        }
+    }
+    return words;
+}
+
+function renderGlosses(words) {
+    let entries = [];
+    for (let w of words) {
+        let entry = dictionary[w];
+        if (!entry) continue;
+        entries.push({ word: w, family: entry.family || "", gloss: entry.gloss || "", short: entry.short || "" });
+    }
+    entries.sort((a, b) => ebbCompare(a.word, b.word));
+
+    if (entries.length === 0) return "<i>No dictionary words found.</i>";
+
+    let rows = entries.map(e =>
+        `<tr>`
+        + `<td class="gloss-word">${esc(e.word)}</td>`
+        + `<td class="gloss-family">${esc(e.family)}</td>`
+        + `<td>${esc(e.gloss)}</td>`
+        + `<td class="gloss-short">${esc(e.short)}</td>`
+        + `</tr>`
+    ).join("");
+
+    return `<table class="gloss-table">`
+        + `<tr><th>Word</th><th>Family</th><th>Gloss</th><th>Short</th></tr>`
+        + rows
+        + `</table>`;
 }
 
 // ============================================================
