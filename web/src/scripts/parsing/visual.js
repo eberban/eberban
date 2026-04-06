@@ -140,11 +140,28 @@ function renderText(output) {
 }
 
 function renderSentence(sentence) {
+    let raBox = wordBox({ family: "RA", word: "ra" }, "vbox-sentence-bg vbox-ra-box");
+
+    // Erased invalid sentence (RA on ungrammatical text)
+    if (sentence.kind === "Erased Invalid") {
+        let text = (sentence.starter ? getWordText(sentence.starter) + " " : "") + (sentence.rest || "");
+        let invalidBox = wordBox({ family: "INVALID", word: text }, "vbox-sentence-bg");
+        return `<div class="vbox-sentence">`
+            + `<div class="vbox-erased-sentence">${invalidBox}</div>`
+            + raBox
+            + `</div>`;
+    }
+
+    // Erased valid sentence (RA on grammatical sentence)
+    let isErased = sentence.kind?.startsWith("Erased");
+
     // NI sentences: starter + pred, no chain
     if (sentence.pred && !sentence.definition) {
         let items = [];
         items.push({ type: "starter-group", starter: sentence.starter, defined: sentence.pred, args: null, barColor: "", exposed: "", chainPlace: "" });
-        return `<div class="vbox-sentence"><div class="vbox-chain">${renderGrid(items)}</div></div>`;
+        let grid = `<div class="vbox-chain">${renderGrid(items)}</div>`;
+        if (isErased) grid = `<div class="vbox-erased-sentence">${grid}</div>`;
+        return `<div class="vbox-sentence">${grid}${isErased ? raBox : ""}</div>`;
     }
 
     let def = sentence.definition;
@@ -152,7 +169,9 @@ function renderSentence(sentence) {
     let chain = def?.chain || def;
 
     let items = collectChainItems(chain, sentence.starter, sentence.defined, "", args);
-    return `<div class="vbox-sentence"><div class="vbox-chain">${renderGrid(items)}</div></div>`;
+    let grid = `<div class="vbox-chain">${renderGrid(items)}</div>`;
+    if (isErased) grid = `<div class="vbox-erased-sentence">${grid}</div>`;
+    return `<div class="vbox-sentence">${grid}${isErased ? raBox : ""}</div>`;
 }
 
 // ============================================================
@@ -167,6 +186,18 @@ function collectChainItems(chain, starter, defined, barColor, args) {
         items.push({ type: "starter-group", starter, defined, args, barColor, exposed: "", chainPlace: "" });
     } else if (starter) {
         items.push(wordItem(starter, barColor));
+    }
+
+    // Chain erasure (RI): render erased chain as nested container, then RI particle
+    if (chain.erased) {
+        for (let entry of chain.erased) {
+            let erasedItems = [];
+            stepsToItems(flattenChain(entry.chain), barColor, erasedItems, 0);
+            if (erasedItems.length > 0) erasedItems[erasedItems.length - 1].chainPlace = "";
+            let erasedGrid = `<div class="vbox-chain">${renderGrid(erasedItems)}</div>`;
+            items.push({ type: "erased-chain", html: `<div class="vbox-bind-group vbox-erased">${erasedGrid}</div>`, barColor, exposed: "", chainPlace: "" });
+            items.push({ type: "word", node: { family: "RI", word: "ri" }, color: "vbox-sentence-bg", barColor, exposed: "", chainPlace: "" });
+        }
     }
 
     stepsToItems(flattenChain(chain), barColor, items, 0);
@@ -300,7 +331,11 @@ function renderGrid(items) {
         } else if (nextIsTerminator || isLast) {
             barExtra += "vbox-bar-noborder";
         }
+        if (item.erased) barExtra += " vbox-erased";
         barExtra = barExtra.trim();
+
+        // Erased items get opacity on content
+        if (item.erased) extra = (extra ? extra + " " : "") + "vbox-erased";
 
         // Render bar cell (all types except separator get one)
         if (item.type !== "separator") {
@@ -327,6 +362,9 @@ function renderGrid(items) {
                 break;
             case "starter-group":
                 html += renderStarterGroup(item.starter, item.defined, item.args, extra, depthStyle);
+                break;
+            case "erased-chain":
+                html += item.html;
                 break;
             case "nested":
                 html += renderNestedBind(item.bindGroup, extra, nestedDepthStyle);
@@ -941,8 +979,8 @@ function lookupGloss(word) {
     if (!word) return "";
     let entry = dictionary[word];
     if (entry) return entry.gloss || "";
-    // Borrowings (u- prefix) have no dictionary entry — no gloss
-    if (word.startsWith("u")) return "";
+    // Borrowings (u- prefix) or multi-word strings (invalid text) — no gloss
+    if (word.startsWith("u") || word.includes(" ")) return "";
     // Unknown word
     return "???";
 }

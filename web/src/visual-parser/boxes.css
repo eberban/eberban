@@ -399,6 +399,27 @@ html {
     grid-row: unset;
 }
 
+/* === Erased (RA/RI) === */
+.vbox-erased {
+    opacity: 0.3;
+}
+
+/* Erased sentence wrapper */
+.vbox-erased-sentence {
+    display: inline-block;
+    opacity: 0.3;
+    border-radius: var(--vbox-radius);
+    overflow: clip;
+}
+
+/* RA/RI eraser box */
+.vbox-ra-box {
+    display: inline-flex;
+    grid-row: unset;
+    margin-left: 6px;
+    border-radius: var(--vbox-radius) !important;
+}
+
 /* === Elided === */
 .vbox-elided .vbox-word-text {
     font-size: 12px;
