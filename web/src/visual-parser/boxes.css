@@ -136,7 +136,7 @@ html {
 .vbox-word-gloss {
     font-style: italic;
     font-size: 12px;
-    color: #444;
+    color: #222;
 }
 
 .vbox-word-family {
@@ -144,7 +144,7 @@ html {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #666;
+    color: #000;
 }
 
 /* === SI/ZI + verb pair (side-by-side in one grid cell) === */
@@ -180,7 +180,7 @@ html {
 .vbox-sentence-bg { background: var(--vbox-word-sentence); }
 .vbox-sentence-bg .vbox-word-text { color: #fff; }
 .vbox-sentence-bg .vbox-word-gloss { color: #ccc; }
-.vbox-sentence-bg .vbox-word-family { color: #aaa; }
+.vbox-sentence-bg .vbox-word-family { color: rgba(255, 255, 255, 0.5); }
 
 .vbox-quote, .vbox-compound.vbox-quote { background: var(--vbox-word-quote); }
 .vbox-enum { background: var(--vbox-word-enum); }

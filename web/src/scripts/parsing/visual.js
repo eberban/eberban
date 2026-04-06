@@ -310,9 +310,10 @@ function renderGrid(items) {
         // Render row 2 content
         switch (item.type) {
             case "word": {
-                // PE enums render as bind-groups — need extra margin to clear bar overflow
+                // Container verbs (PE enums, grammatical quotes) render as bind-groups —
+                // need extra margin to clear bar overflow in flattened/nested binds
                 let wordDepth = depthStyle;
-                if (item.node?.start?.family === "PE") {
+                if (item.node?.start?.family === "PE" || item.node?.kind === "GrammaticalQuote") {
                     wordDepth = ` style="margin-top:${(depthPx || 0) + 5}px"`;
                 }
                 html += renderVerbContent(item.node, item.color, extra, wordDepth);
