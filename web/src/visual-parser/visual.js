@@ -77,8 +77,8 @@
 // ZI_SLOTS: hardcoded chaining overrides for ZI modifiers.
 // ============================================================
 
-import dictionary from '../../../../dictionary/en.yaml';
-import * as parser from "../../grammar/eberban.peggy.js";
+import dictionary from '../../../dictionary/en.yaml';
+import * as parser from "../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
 
 const INLINE_DEPTH_OFFSET_PX = 10;

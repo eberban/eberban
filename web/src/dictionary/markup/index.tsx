@@ -1,7 +1,7 @@
 import type { JSX_Child } from "./types";
 import markup_kits from "./kits";
 import markup_to_jsx_child from "./to_jsx_child";
-import { group, line_feed } from "../../scripts/regex";
+import { group, line_feed } from "../../shared/regex";
 
 export function markup_inline(text: string) {
     let output: JSX_Child = text;

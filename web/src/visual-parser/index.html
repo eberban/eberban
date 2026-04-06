@@ -7,9 +7,9 @@
 	<title>eberban visual parser</title>
 	<link type="text/css" href="boxes.css" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="200x200" href="/icon.png">
-	<link href="/legacy/bootstrap-legacy.css" rel="stylesheet">
+	<link href="/vendor/bootstrap-legacy.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="module" src="/legacy/bootstrap-legacy.js"></script>
+	<script type="module" src="/vendor/bootstrap-legacy.js"></script>
 </head>
 
 <body>
@@ -73,7 +73,7 @@
 	});
 	
 	// parse on page reload
-	import { parse } from "../scripts/parsing/visual";
+	import { parse } from "./visual";
 
 	window.onload = parse();
 

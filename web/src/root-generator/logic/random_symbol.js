@@ -1,11 +1,11 @@
-import { get_random_item } from "../../scripts/utils";
+import { get_random_item } from "../../shared/utils";
 import {
     all_initial_pairs,
     all_medial_pairs,
     all_non_sonorants,
     all_sonorants,
     all_vowels,
-} from "../../scripts/eberban_symbols";
+} from "../../shared/eberban_symbols";
 
 /*
   Random-selection functions.

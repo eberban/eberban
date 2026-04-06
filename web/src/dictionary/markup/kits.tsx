@@ -16,7 +16,7 @@ import {
     set,
     space,
     word_char,
-} from "../../scripts/regex";
+} from "../../shared/regex";
 
 
 function DictLink({ children }: { children: JSX_Child | undefined}) {

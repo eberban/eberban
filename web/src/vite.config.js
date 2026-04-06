@@ -11,7 +11,7 @@ import {
     not_in_set,
     one_or_more,
     any_number_of
-} from "./scripts/regex";
+} from "./shared/regex";
 
 // Adapted from https://github.com/vitejs/vite/issues/6596#issuecomment-1651355986
 // Note (vite dev): This plugin adds trailing slash.
@@ -63,7 +63,6 @@ export default defineConfig({
                 "dictionary": resolve(__dirname, "dictionary/index.html"),
                 "root-generator": resolve(__dirname, "root-generator/index.html"),
                 "textual-parser": resolve(__dirname, "textual-parser/index.html"),
-                "textual-parser-peggy": resolve(__dirname, "textual-parser/peggy.html"),
                 "visual-parser": resolve(__dirname, "visual-parser/index.html"),
                 // The reference grammar is within this repo but external to
                 // this web application, so it is not listed as an input.

@@ -10,21 +10,17 @@
     "url": "https://github.com/eberban/eberban"
   },
   "scripts": {
-    "task-peg_to_pegjs": "node ./src/scripts/peg/peg_to_pegjs.cjs ./src/grammar/eberban.peg",
-    "task-pegjs_to_js": "node ./src/scripts/peg/pegjs_to_js.cjs ./src/grammar/eberban.pegjs",
     "task-vite-build": "tsc && vite build src --outDir ../dist --emptyOutDir",
     "task-vite-build-to-deploy": "tsc && vite build src --outDir ../..",
     "dev": "vite src",
-    "peg-dev": "run-s task-peg_to_pegjs task-pegjs_to_js dev",
-    "build": "run-s task-peg_to_pegjs task-pegjs_to_js task-vite-build",
-    "build-to-deploy": "run-s build-peggy task-peg_to_pegjs task-pegjs_to_js task-vite-build-to-deploy",
+    "build": "run-s build-peggy task-vite-build",
+    "build-to-deploy": "run-s build-peggy task-vite-build-to-deploy",
     "preview": "vite preview src --outDir ../dist",
     "test": "vitest --reporter=dot",
     "build-peggy": "npx peggy ./src/grammar/eberban.peggy -o ./src/grammar/eberban.peggy.js --cache --format es"
   },
   "dependencies": {
     "esbuild": "^0.25.8",
-    "pegjs": "^0.10.0",
     "preact-parser": "^1.3.7",
     "preact-render-to-string": "^6.5.13",
     "store2": "^2.14.4"
