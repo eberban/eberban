@@ -250,11 +250,13 @@ function collectChainItems(chain, starter, defined, barColor, args) {
     // Last item never shows chainPlace
     if (items.length > 0) items[items.length - 1].chainPlace = "";
 
-    // Return connector if any items have depth > 0
-    let maxDepth = 0;
-    for (let it of items) if (it.depth > maxDepth) maxDepth = it.depth;
-    if (maxDepth > 0) {
-        items.push({ type: "return", barColor, maxDepth });
+    // Return connector: bridge from last item's depth back to baseline
+    let lastDepth = 0;
+    for (let i = items.length - 1; i >= 0; i--) {
+        if (items[i].depth > 0) { lastDepth = items[i].depth; break; }
+    }
+    if (lastDepth > 0) {
+        items.push({ type: "return", barColor, maxDepth: lastDepth });
     }
 
     // Sentence terminator

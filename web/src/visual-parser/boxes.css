@@ -213,7 +213,7 @@ html {
     margin: 5px 3px 0 3px;
 }
 .vbox-bind-group .vbox-bind-group {
-    margin-top: 0;
+    margin-top: 5px;
 }
 
 /* === Compound/Number Box === */
