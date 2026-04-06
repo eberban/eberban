@@ -6556,6 +6556,7 @@ en an skun sai:
     [A] is a property so that the time anchor can change between sentences by depending on other context
     information, like {sufkun} (present) which makes the present move "forward in time" between sentences.
 e tian katmi:
+  id: e5tguybxso
   family: "C"
   gloss: "hungry"
   short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]." 
