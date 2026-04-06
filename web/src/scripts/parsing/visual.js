@@ -122,6 +122,8 @@ export function parse() {
         annotationNextId = 0;
         const result = parser.parse(input, { grammarSource: "form" });
         $('#parse-result-raw').html(`<pre>${JSON.stringify(result, null, 4)}</pre>`);
+        $('#parse-result-tree').html(renderTree(result));
+        setupTreeToggles();
         $('#parse-result-boxes').html(renderText(result));
         setupTooltips();
         setupAnnotationPopovers();
@@ -1063,6 +1065,72 @@ function getDisplayFamily(node) {
 function esc(text) {
     if (!text) return "";
     return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+// ============================================================
+// Parse tree viewer
+// ============================================================
+
+/** Render a JSON value as a collapsible HTML tree. Depth < 2 expanded by default. */
+function renderTree(value, key, depth) {
+    depth = depth || 0;
+    let keyHtml = key !== undefined ? `<span class="ptree-key">${esc(String(key))}:</span> ` : "";
+
+    if (value === null || value === undefined) {
+        return `<div class="ptree-node">${keyHtml}<span class="ptree-null">${value === null ? "null" : "undefined"}</span></div>`;
+    }
+    if (typeof value === "string") {
+        return `<div class="ptree-node">${keyHtml}<span class="ptree-str">"${esc(value)}"</span></div>`;
+    }
+    if (typeof value === "number") {
+        return `<div class="ptree-node">${keyHtml}<span class="ptree-num">${value}</span></div>`;
+    }
+    if (typeof value === "boolean") {
+        return `<div class="ptree-node">${keyHtml}<span class="ptree-bool">${value}</span></div>`;
+    }
+
+    let isArr = Array.isArray(value);
+    let entries = isArr ? value.map((v, i) => [i, v]) : Object.entries(value);
+    if (entries.length === 0) {
+        return `<div class="ptree-node">${keyHtml}<span class="ptree-bracket">${isArr ? "[]" : "{}"}</span></div>`;
+    }
+
+    let expanded = true;
+    let arrow = expanded ? "\u25BC" : "\u25B6";
+    let display = expanded ? "" : ' style="display:none"';
+
+    // Preview for collapsed state
+    let preview;
+    if (isArr) {
+        preview = `[${entries.length} item${entries.length > 1 ? "s" : ""}]`;
+    } else {
+        let keys = entries.slice(0, 3).map(([k]) => k);
+        preview = "{" + keys.join(", ") + (entries.length > 3 ? ", ..." : "") + "}";
+    }
+
+    let childrenHtml = entries.map(([k, v]) => renderTree(v, k, depth + 1)).join("");
+    let bracket = isArr ? ["[", "]"] : ["{", "}"];
+
+    return `<div class="ptree-node">`
+        + `<span class="ptree-toggle">${arrow}</span>`
+        + keyHtml
+        + `<span class="ptree-preview">${esc(preview)}</span>`
+        + `<div class="ptree-children"${display}>`
+        + childrenHtml
+        + `<span class="ptree-bracket">${bracket[1]}</span>`
+        + `</div>`
+        + `</div>`;
+}
+
+function setupTreeToggles() {
+    $('#parse-result-tree').off('click.ptree').on('click.ptree', '.ptree-toggle', function () {
+        let node = this.parentElement;
+        let children = node.querySelector('.ptree-children');
+        if (!children) return;
+        let collapsed = children.style.display === "none";
+        children.style.display = collapsed ? "" : "none";
+        this.textContent = collapsed ? "\u25BC" : "\u25B6";
+    });
 }
 
 // ============================================================

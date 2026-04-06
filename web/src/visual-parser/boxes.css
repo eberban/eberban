@@ -440,3 +440,23 @@ html {
     border-radius: var(--vbox-radius);
     margin-bottom: 4px;
 }
+
+/* === Parse Tree Viewer === */
+#parse-result-tree {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    padding: 8px;
+}
+
+.ptree-node { margin-left: 16px; line-height: 1.5; }
+#parse-result-tree > .ptree-node { margin-left: 0; }
+.ptree-toggle { cursor: pointer; user-select: none; display: inline-block; width: 16px; color: #888; }
+.ptree-toggle:hover { color: #333; }
+.ptree-key { font-weight: 600; color: #555; }
+.ptree-str { color: #2a7; }
+.ptree-num { color: #26c; }
+.ptree-bool { color: #c80; }
+.ptree-null { color: #999; font-style: italic; }
+.ptree-preview { color: #999; font-size: 12px; }
+.ptree-bracket { color: #888; }
+.ptree-children { padding-left: 4px; }
