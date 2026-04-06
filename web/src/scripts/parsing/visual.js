@@ -1068,6 +1068,20 @@ function esc(text) {
     return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
+/** Render dictionary markup: [E:type] place notation, {word} references, `code` backticks. */
+function renderMarkup(text) {
+    if (!text) return "";
+    return esc(String(text))
+        // [E:type], [A:(pred)], [*:...] → styled place notation
+        .replace(/\[(\*|[EAOU]):([^\]]*)\]/g, '<span class="mk-place"><span class="mk-place-label">$1</span>:$2</span>')
+        // [FAMILY] → styled family reference (no colon)
+        .replace(/\[([A-Z]+)\]/g, '<span class="mk-ref">$1</span>')
+        // {word} → styled word reference
+        .replace(/\{([^}]+)\}/g, '<span class="mk-word">$1</span>')
+        // `code` → styled inline code
+        .replace(/`([^`]+)`/g, '<code class="mk-code">$1</code>');
+}
+
 // ============================================================
 // Glosses tab
 // ============================================================
@@ -1128,8 +1142,8 @@ function renderGlosses(words) {
         `<tr>`
         + `<td class="gloss-word">${esc(e.word)}</td>`
         + `<td class="gloss-family">${esc(e.family)}</td>`
-        + `<td>${esc(e.gloss)}</td>`
-        + `<td class="gloss-short">${esc(e.short)}</td>`
+        + `<td>${renderMarkup(e.gloss)}</td>`
+        + `<td class="gloss-short">${renderMarkup(e.short)}</td>`
         + `</tr>`
     ).join("");
 
@@ -1224,7 +1238,7 @@ function setupTooltips() {
     $('#parse-result-boxes').on('mousemove.vbox', function (e) {
         let target = e.target.closest('[data-tooltip]');
         if (target) {
-            tooltipEl.textContent = target.getAttribute('data-tooltip');
+            tooltipEl.innerHTML = renderMarkup(target.getAttribute('data-tooltip'));
             tooltipEl.style.display = "block";
             positionTooltip(e);
         } else {

@@ -331,6 +331,13 @@ html {
     pointer-events: none;
 }
 
+/* Markup overrides for dark tooltip background */
+.vbox-tooltip .mk-place { background: rgba(255, 255, 255, 0.15); }
+.vbox-tooltip .mk-place-label { color: #8af; }
+.vbox-tooltip .mk-word { color: #6d8; }
+.vbox-tooltip .mk-ref { color: #bbb; }
+.vbox-tooltip .mk-code { background: rgba(255, 255, 255, 0.1); }
+
 /* === Return connector (bridges offset back to baseline) === */
 .vbox-return {
     grid-row: 2;
@@ -496,4 +503,34 @@ html {
     font-size: 12px;
     color: #555;
     max-width: 400px;
+}
+
+/* === Dictionary markup === */
+.mk-place {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    background: #eef;
+    border-radius: 3px;
+    padding: 0 3px;
+}
+.mk-place-label {
+    font-weight: 700;
+    color: #44c;
+}
+.mk-ref {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #666;
+}
+.mk-word {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-weight: 600;
+    color: #2a7;
+}
+.mk-code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    background: #f0f0f0;
+    border-radius: 3px;
+    padding: 0 3px;
 }
