@@ -309,6 +309,7 @@ function stepsToItems(steps, barColor, items, depth) {
             let remaining = steps.slice(i + 1);
             if (remaining.length > 0) {
                 stepsToItems(remaining, "vbox-bar-default", items, depth + 1);
+                addReturnIfNeeded(items, depth, "vbox-bar-default");
             }
 
             // Render each resume entry
@@ -342,11 +343,26 @@ function stepsToItems(steps, barColor, items, depth) {
                 // Resume continuation: offset for next resume to connect back, except last
                 if (r.next) {
                     let isLastResume = ri === resumes.length - 1;
-                    stepsToItems(flattenChain(r.next), "vbox-bar-default", items, isLastResume ? depth : depth + 1);
+                    let nextDepth = isLastResume ? depth : depth + 1;
+                    stepsToItems(flattenChain(r.next), "vbox-bar-default", items, nextDepth);
+                    addReturnIfNeeded(items, depth, "vbox-bar-default");
                 }
             }
 
             return; // remaining steps already handled
+        }
+    }
+}
+
+/** Insert a return connector if the last item's depth exceeds targetDepth. */
+function addReturnIfNeeded(items, targetDepth, barColor) {
+    for (let i = items.length - 1; i >= 0; i--) {
+        if (items[i].depth !== undefined) {
+            let d = items[i].depth;
+            if (d > targetDepth) {
+                items.push({ type: "return", barColor, maxDepth: d - targetDepth, depth: targetDepth });
+            }
+            break;
         }
     }
 }
@@ -494,7 +510,11 @@ function renderGrid(items) {
                 break;
             case "return": {
                 let returnHeight = item.maxDepth * INLINE_DEPTH_OFFSET_PX;
-                html += `<div class="vbox-return ${item.barColor || "vbox-bar-bind"}" style="height:${returnHeight}px"></div>`;
+                let bgVar = item.barColor === "vbox-bar-bind" ? "--vbox-bar-bind"
+                          : item.barColor === "vbox-bar-adverb" ? "--vbox-bar-adverb"
+                          : "--vbox-bar-default";
+                let returnStyle = `height:${returnHeight}px;background:var(${bgVar})${depthPx ? `;margin-top:${depthPx}px` : ""}`;
+                html += `<div class="vbox-return" style="${returnStyle}"></div>`;
                 break;
             }
         }
