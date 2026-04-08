@@ -1,4 +1,4 @@
-import { is_array } from "../scripts/utils";
+import { is_array } from "../shared/utils";
 import { markup_block, markup_inline } from "./markup";
 
 function Word({ word, is_compound }) {

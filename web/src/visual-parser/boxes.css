@@ -1,0 +1,536 @@
+/* Visual Box Renderer - Eberban Parser */
+
+/* === Base (from layout-legacy.css) === */
+body, textarea {
+    font-family: sans-serif !important;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Bars */
+    --vbox-bar-default: #404050;
+    --vbox-bar-bind: #c04080;
+    --vbox-bar-adverb: #d09050;
+
+    /* Word boxes */
+    --vbox-word-content: #7fb8e8;
+    --vbox-word-si: #b8a0d8;
+    --vbox-word-bind: #e8a0bf;
+    --vbox-word-zi: #e0a0a0;
+    --vbox-word-compound: #7fb8e8;
+    --vbox-word-sentence: #404050;
+    --vbox-word-adverb: #e8b878;
+    --vbox-word-quote: #e8d890;
+    --vbox-bar-quote: #b0a050;
+    --vbox-bar-enum: #509060;
+    --vbox-word-enum: #90d0a0;
+
+    /* Layout */
+    --vbox-radius: 5px;
+    --vbox-word-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+    --vbox-bar-height: 22px;
+}
+
+#parse-result-boxes {
+    overflow-x: auto;
+    padding-bottom: 200px;
+    /* Break out of container to full viewport width, keep left aligned */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
+}
+
+/* === Sentence === */
+.vbox-sentence {
+    display: block;
+    margin: 8px 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+/* === Chain grid: 2 rows (bar + words), columns auto === */
+.vbox-chain {
+    display: inline-grid;
+    grid-template-rows: var(--vbox-bar-height) auto;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    align-items: start;
+}
+
+/* === Bar cell (row 1) === */
+.vbox-bar {
+    grid-row: 1;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    min-height: var(--vbox-bar-height);
+    padding: 0 6px;
+    background: var(--vbox-bar-default);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.vbox-bar-bind {
+    background: var(--vbox-bar-bind) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+.vbox-bar-adverb {
+    background: var(--vbox-bar-adverb) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+.vbox-bar-quote {
+    background: var(--vbox-bar-quote) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+.vbox-bar-enum {
+    background: var(--vbox-bar-enum) !important;
+    border-right-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.vbox-bar-exposed {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ddd;
+}
+
+.vbox-bar-chain-place {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.vbox-bar-bind .vbox-bar-exposed { color: #fff; }
+.vbox-bar-bind .vbox-bar-chain-place { color: #fdd; }
+.vbox-bar-adverb .vbox-bar-exposed { color: #fff; }
+.vbox-bar-adverb .vbox-bar-chain-place { color: #fed; }
+
+/* === Word cell (row 2) === */
+.vbox-word {
+    grid-row: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 10px;
+    text-align: center;
+    gap: 1px;
+    margin: 0 3px;
+    box-shadow: var(--vbox-word-shadow);
+}
+
+.vbox-word-text {
+    font-weight: 700;
+    font-size: 14px;
+    color: #1a1a2e;
+}
+
+.vbox-word-gloss {
+    font-style: italic;
+    font-size: 12px;
+    color: #222;
+}
+
+.vbox-word-family {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000;
+    margin-top: auto;
+}
+
+/* === SI/ZI + verb pair (side-by-side in one grid cell) === */
+.vbox-pair {
+    grid-row: 2;
+    display: flex;
+    gap: 0;
+    margin: 0 3px;
+}
+
+.vbox-pair > .vbox-word {
+    grid-row: unset;
+    margin: 0;
+}
+
+.vbox-pair > .vbox-compound {
+    margin: 0;
+}
+
+.vbox-group-sep {
+    width: 3px;
+}
+
+/* === Word Color Classes === */
+.vbox-content { background: var(--vbox-word-content); }
+.vbox-si { background: var(--vbox-word-si); }
+.vbox-bind { background: var(--vbox-word-bind); }
+.vbox-zi { background: var(--vbox-word-zi); }
+.vbox-compound-bg { background: var(--vbox-word-compound); }
+.vbox-adverb { background: var(--vbox-word-adverb); }
+
+/* Dark text is default. Override for dark/intense backgrounds: */
+.vbox-sentence-bg { background: var(--vbox-word-sentence); }
+.vbox-sentence-bg .vbox-word-text { color: #fff; }
+.vbox-sentence-bg .vbox-word-gloss { color: #ccc; }
+.vbox-sentence-bg .vbox-word-family { color: rgba(255, 255, 255, 0.5); }
+
+.vbox-quote, .vbox-compound.vbox-quote { background: var(--vbox-word-quote); }
+.vbox-enum { background: var(--vbox-word-enum); }
+
+.vbox-bar-quote .vbox-bar-exposed { color: #fff; }
+.vbox-bar-quote .vbox-bar-chain-place { color: #fed; }
+
+.vbox-bar-enum .vbox-bar-exposed { color: #fff; }
+.vbox-bar-enum .vbox-bar-chain-place { color: #dfd; }
+
+.vbox-foreign-content {
+    grid-row: 2;
+    padding: 6px 10px;
+    background: #f0f0f0;
+    font-style: italic;
+    text-align: center;
+    box-shadow: var(--vbox-word-shadow);
+}
+
+
+/* === Bind Group (nested, sits in row 2) === */
+.vbox-bind-group {
+    grid-row: 2;
+    display: inline-block;
+    border-radius: var(--vbox-radius);
+    overflow: clip;
+    white-space: nowrap;
+    margin: 5px 3px 0 3px;
+}
+.vbox-bind-group .vbox-bind-group {
+    margin-top: 5px;
+}
+
+/* === Compound/Number Box === */
+.vbox-compound {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 8px;
+    background: var(--vbox-word-compound);
+    text-align: center;
+    gap: 2px;
+    margin: 0 3px;
+    box-shadow: var(--vbox-word-shadow);
+}
+
+.vbox-compound-parts {
+    display: flex;
+    gap: 1px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.vbox-compound-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 5px;
+    background: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+}
+
+.vbox-compound-part-word {
+    font-weight: 600;
+    color: #333;
+}
+
+.vbox-compound-part-gloss {
+    font-style: italic;
+    font-size: 10px;
+    color: #555;
+}
+
+/* === First/last: margin flush + corner rounding === */
+.vbox-first { margin-left: 0 !important; border-bottom-left-radius: var(--vbox-radius); }
+.vbox-last { margin-right: 0 !important; border-bottom-right-radius: var(--vbox-radius); }
+
+/* === Bar first/last === */
+.vbox-bar-first { border-top-left-radius: var(--vbox-radius); }
+.vbox-bar-noborder { border-right: none !important; }
+.vbox-bar-last { border-right: none !important; border-top-right-radius: var(--vbox-radius); }
+
+/* === Terminator === */
+.vbox-terminator {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 0;
+    width: var(--vbox-bar-height);
+    box-sizing: border-box;
+    box-shadow: var(--vbox-word-shadow);
+    margin: 0;
+    margin: 0 3px;
+    gap: 1px;
+}
+
+/* === Quote delimiters (ce/cei/ci/co in compound parts) === */
+.vbox-quote-delim {
+    background: rgba(0, 0, 0, 0.08) !important;
+}
+.vbox-quote-delim:first-child { margin-right: 2px; }
+.vbox-quote-delim:last-child { margin-left: 2px; }
+
+/* === Foreign quote content with [ ] bracket borders === */
+.vbox-foreign-bracket {
+    border: 2px solid #222;
+    border-radius: 3px !important;
+    position: relative;
+}
+/* Mask out top/bottom center to create [ ] shape */
+.vbox-foreign-bracket::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: 4px;
+    right: 4px;
+    border-top: 2px solid var(--vbox-word-quote);
+    border-bottom: 2px solid var(--vbox-word-quote);
+}
+
+/* === Tooltip on hover === */
+[data-tooltip] {
+    cursor: help;
+}
+
+/* Tooltip rendered as a fixed-position element via JS */
+.vbox-tooltip {
+    position: fixed;
+    z-index: 10000;
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    white-space: normal;
+    width: max-content;
+    max-width: 500px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+/* Markup overrides for dark tooltip background */
+.vbox-tooltip .mk-place { background: rgba(255, 255, 255, 0.15); }
+.vbox-tooltip .mk-place-label { color: #8af; }
+.vbox-tooltip .mk-word { color: #6d8; }
+.vbox-tooltip .mk-ref { color: #bbb; }
+.vbox-tooltip .mk-code { background: rgba(255, 255, 255, 0.1); }
+
+/* === Return connector (bridges offset back to baseline) === */
+.vbox-return {
+    grid-row: 2;
+    width: 3px;
+    align-self: start;
+}
+
+/* === Args list (neutral) === */
+.vbox-args {
+    background: #d8d8dc;
+}
+.vbox-args .vbox-word-family {
+    margin-top: auto;
+}
+
+/* === Annotation icon + popover === */
+.vbox-annot-icon {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    font-size: 10px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.5;
+}
+.vbox-annot-icon:hover { opacity: 1; }
+
+.vbox-popover {
+    position: fixed;
+    z-index: 10001;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    max-width: 500px;
+    font-size: 13px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.vbox-popover-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 0;
+}
+
+.vbox-popover-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    white-space: nowrap;
+}
+
+.vbox-popover-parens {
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #eee;
+}
+
+/* Reset word box grid-row inside popovers */
+.vbox-popover .vbox-word {
+    grid-row: unset;
+}
+
+/* === Erased (RA/RI) === */
+.vbox-erased {
+    opacity: 0.3;
+}
+
+/* Erased sentence wrapper */
+.vbox-erased-sentence {
+    display: inline-block;
+    opacity: 0.3;
+    border-radius: var(--vbox-radius);
+    overflow: clip;
+}
+
+/* RA/RI eraser box */
+.vbox-ra-box {
+    display: inline-flex;
+    grid-row: unset;
+    margin-left: 6px;
+    border-radius: var(--vbox-radius) !important;
+}
+
+/* === Elided === */
+.vbox-elided .vbox-word-text {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* === Paragraph === */
+.vbox-paragraph {
+    margin: 4px 0;
+}
+
+.vbox-para-header {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 4px 40px 4px 10px;
+    border-radius: var(--vbox-radius);
+    margin-bottom: 4px;
+}
+
+/* === Parse Tree Viewer === */
+#parse-result-tree {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    padding: 8px;
+}
+
+.ptree-node { margin-left: 16px; line-height: 1.5; }
+#parse-result-tree > .ptree-node { margin-left: 0; }
+.ptree-toggle { cursor: pointer; user-select: none; display: inline-block; width: 16px; color: #888; }
+.ptree-toggle:hover { color: #333; }
+.ptree-key { font-weight: 600; color: #555; }
+.ptree-str { color: #2a7; }
+.ptree-num { color: #26c; }
+.ptree-bool { color: #c80; }
+.ptree-null { color: #999; font-style: italic; }
+.ptree-preview { color: #999; font-size: 12px; }
+.ptree-bracket { color: #888; }
+.ptree-children { padding-left: 4px; }
+
+/* === Glosses Table === */
+.gloss-table {
+    border-collapse: collapse;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 13px;
+    margin: 8px 0;
+}
+.gloss-table th {
+    text-align: left;
+    padding: 4px 12px;
+    border-bottom: 2px solid #ccc;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+.gloss-table td {
+    padding: 3px 12px;
+}
+.gloss-table tr:nth-child(even) {
+    background: #f5f5f8;
+}
+.gloss-table .gloss-word {
+    font-weight: 600;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+.gloss-table .gloss-family {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #888;
+}
+.gloss-table .gloss-short {
+    font-size: 12px;
+    color: #555;
+    max-width: 400px;
+}
+
+/* === Dictionary markup === */
+.mk-place {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    background: #eef;
+    border-radius: 3px;
+    padding: 0 3px;
+}
+.mk-place-label {
+    font-weight: 700;
+    color: #44c;
+}
+.mk-ref {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #666;
+}
+.mk-word {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-weight: 600;
+    color: #2a7;
+}
+.mk-code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    background: #f0f0f0;
+    border-radius: 3px;
+    padding: 0 3px;
+}
