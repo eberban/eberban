@@ -410,6 +410,9 @@ html {
 .vbox-erased {
     opacity: 0.3;
 }
+.vbox-dimmed {
+    opacity: 0.7;
+}
 
 /* Erased sentence wrapper */
 .vbox-erased-sentence {

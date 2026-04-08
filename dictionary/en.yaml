@@ -1678,6 +1678,12 @@ bu:
   short: "Separator between enumeration items."
   links:
     - ["icon-book", "Enumeration and short erasure", https://eberban.github.io/eberban/books/refgram/book/grammar/enum.html]
+pa:
+  id: l9aa8b0ckj
+  family: "PA"
+  gloss: "resume"
+  tags: [core]
+  short: "ECHO-resumptive. Resumes bindings to a matching verb higher in the chain."
 pe:
   id: c9njzictfu
   family: "PE"

@@ -69,6 +69,14 @@
 // Chain erasure (RI): erased chain rendered as nested vbox-bind-group with
 // vbox-erased class, RI particle as normal word item.
 //
+// ## ECHO-resumptive (PA)
+//
+// When a chain step has a `resume` field, the steps between the original
+// verb and the resume are rendered at depth+1 (offset). The PA particle
+// and resumed verb (dimmed) + binds render at the original depth.
+// Multiple resumes on the same step nest: each resume's continuation
+// (.next) is offset for the next resume to connect back.
+//
 // ## Slot detection
 //
 // Bar labels show exposed places (left) and chain place with ·/≡ symbol (right).
@@ -251,9 +259,10 @@ function collectChainItems(chain, starter, defined, barColor, args) {
     if (items.length > 0) items[items.length - 1].chainPlace = "";
 
     // Return connector: bridge from last item's depth back to baseline
+    // Stop at first item with explicit depth (0 = baseline, no bridge needed)
     let lastDepth = 0;
     for (let i = items.length - 1; i >= 0; i--) {
-        if (items[i].depth > 0) { lastDepth = items[i].depth; break; }
+        if (items[i].depth !== undefined) { lastDepth = items[i].depth; break; }
     }
     if (lastDepth > 0) {
         items.push({ type: "return", barColor, maxDepth: lastDepth });
@@ -285,11 +294,59 @@ function stepsToItems(steps, barColor, items, depth) {
         }
 
         if (step.explicit_binds) {
-            if (!isLast) {
+            if (!isLast || step.resume) {
                 items.push({ type: "nested", bindGroup: step.explicit_binds, barColor, depth });
             } else {
                 collectBindItems(step.explicit_binds, items, depth, true);
             }
+        }
+
+        // ECHO-resumptive: offset remaining steps, then render resume parts
+        if (step.resume) {
+            let resumes = Array.isArray(step.resume) ? step.resume : [step.resume];
+
+            // Remaining steps go at depth+1 (the "between" part)
+            let remaining = steps.slice(i + 1);
+            if (remaining.length > 0) {
+                stepsToItems(remaining, "vbox-bar-default", items, depth + 1);
+            }
+
+            // Render each resume entry
+            for (let ri = 0; ri < resumes.length; ri++) {
+                let r = resumes[ri];
+
+                // PA particle at original depth
+                items.push({ type: "word", node: r.start, color: "vbox-bind", barColor: "vbox-bar-default", exposed: "", chainPlace: "", depth });
+
+                // Resumed verb (dimmed) + its binds at original depth
+                let rSteps = flattenChain(r.chain);
+                let rSlots = getSlotInfo(rSteps);
+                for (let j = 0; j < rSteps.length; j++) {
+                    let rs = rSteps[j];
+                    let rPrefixes = extractPrefixes(rs);
+                    let rVerb = stripModifiers(rs.verb);
+                    let { exposed: rExposed, chainPlace: rChainPlace } = rSlots[j];
+
+                    if (rPrefixes.length > 0) {
+                        let siCount = rs.select ? 1 : 0;
+                        items.push({ type: "group", prefixes: rPrefixes, verb: rVerb, barColor: "vbox-bar-default", exposed: rExposed, chainPlace: rChainPlace, siCount, depth, dimmed: j === 0 });
+                    } else {
+                        items.push({ type: "word", node: rVerb, color: getWordColor(rVerb), barColor: "vbox-bar-default", exposed: rExposed, chainPlace: rChainPlace, depth, dimmed: j === 0 });
+                    }
+
+                    if (rs.explicit_binds) {
+                        items.push({ type: "nested", bindGroup: rs.explicit_binds, barColor: "vbox-bar-default", depth });
+                    }
+                }
+
+                // Resume continuation: offset for next resume to connect back, except last
+                if (r.next) {
+                    let isLastResume = ri === resumes.length - 1;
+                    stepsToItems(flattenChain(r.next), "vbox-bar-default", items, isLastResume ? depth : depth + 1);
+                }
+            }
+
+            return; // remaining steps already handled
         }
     }
 }
@@ -386,10 +443,12 @@ function renderGrid(items) {
             barExtra += "vbox-bar-noborder";
         }
         if (item.erased) barExtra += " vbox-erased";
+        if (item.dimmed) barExtra += " vbox-dimmed";
         barExtra = barExtra.trim();
 
-        // Erased items get opacity on content
+        // Erased/dimmed items get opacity on content
         if (item.erased) extra = (extra ? extra + " " : "") + "vbox-erased";
+        if (item.dimmed) extra = (extra ? extra + " " : "") + "vbox-dimmed";
 
         // Render bar cell (all types except separator get one)
         if (item.type !== "separator") {
@@ -435,7 +494,7 @@ function renderGrid(items) {
                 break;
             case "return": {
                 let returnHeight = item.maxDepth * INLINE_DEPTH_OFFSET_PX;
-                html += `<div class="vbox-return vbox-bar-bind" style="height:${returnHeight}px"></div>`;
+                html += `<div class="vbox-return ${item.barColor || "vbox-bar-bind"}" style="height:${returnHeight}px"></div>`;
                 break;
             }
         }
