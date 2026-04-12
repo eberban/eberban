@@ -18,17 +18,18 @@ export function generateParticleInfo(word) {
     if (!word || word.length < 2) return null;
     let prefix = word[0];
     let rest = word.slice(1);
-    // Strip h separators for analysis
-    let vowels = rest.replace(/h/g, "");
-    if (!/^[ieaou]+$/.test(vowels)) return null;
+    // Validate: only vowels and h separators after the prefix consonant
+    if (!/^[ieaouh]+$/.test(rest) || !/[ieaou]/.test(rest)) return null;
 
+    // Only SI uses h semantically (chain override). VI/FI/TI reject h.
     if (prefix === "v") {
         if (word === "vei") return { family: "VEI", gloss: "]", short: "Ends explicit binding clause." };
-        return generateVI(vowels);
+        if (rest.includes("h")) return null;
+        return generateVI(rest);
     }
-    if (prefix === "f") return generateFI(vowels);
-    if (prefix === "s") return generateSI(vowels);
-    if (prefix === "t") return generateTI(vowels);
+    if (prefix === "f") { if (rest.includes("h")) return null; return generateFI(rest); }
+    if (prefix === "s") return generateSI(rest);
+    if (prefix === "t") { if (rest.includes("h")) return null; return generateTI(rest); }
     return null;
 }
 
@@ -75,11 +76,17 @@ function generateFI(vowels) {
 // SI — slot info
 // ============================================================
 
+// SI vowels: e→E, a→A, o→O, u→U select places to expose.
+// h before a vowel makes it the chain target WITHOUT exposing it.
+// Without h, the last exposed vowel is also the chain place.
+// "i" at the END is an equivalence modifier (sharing → equivalence).
+// "i" in other positions is invalid (except siV transparent pattern).
+// "si" alone is transparent; "si"+single vowel is transparent + chain target.
+// Gloss format: <exposed, chain_mode> e.g. <E, E·>, <EA, A·>, <E, A≡>
 function generateSI(vowels) {
-    // si alone = transparent, chain to transitivity place
-    if (vowels === "i") return { family: "SI", gloss: "I>>", short: "Expose no places and chain to the transitivity place." };
+    if (vowels === "i") return { family: "SI", gloss: ">>", short: "Expose no places and chain to the transitivity place." };
 
-    // si + single vowel = transparent (sie, sia, sio, siu)
+    // Transparent: only "si" + exactly one place vowel (sie, sia, sio, siu).
     let transparent = false;
     let chars = vowels;
     if (chars[0] === "i" && chars.length === 2 && chars[1] in PLACE_MAP) {
@@ -87,39 +94,49 @@ function generateSI(vowels) {
         chars = chars.slice(1);
     }
 
-    let places = [];
-    let equiv = false;
+    // "i" for equivalence is only valid at the very end of the vowel sequence.
+    let equiv = chars.endsWith("i");
+    if (equiv) chars = chars.slice(0, -1);
+    if (chars.includes("i")) return null;
+
+    // Per refgram: at most one h (separating exposed vowels from chain-override vowel)
+    let hCount = (chars.match(/h/g) || []).length;
+    if (hCount > 1) return null;
+
+    // Parse vowels: non-h-prefixed → exposed places, h-prefixed → chain override only
+    let exposed = [];
     let hOverride = null;
     let hFlag = false;
 
     for (let c of chars) {
         if (c === "h") { hFlag = true; continue; }
         if (c in PLACE_MAP) {
-            places.push(PLACE_MAP[c]);
-            if (hFlag) { hOverride = PLACE_MAP[c]; hFlag = false; }
-        } else if (c === "i") {
-            equiv = true;
+            if (hFlag) {
+                // h-prefixed vowel: chain target only, NOT exposed
+                hOverride = PLACE_MAP[c];
+                hFlag = false;
+            } else {
+                exposed.push(PLACE_MAP[c]);
+            }
         }
     }
 
-    if (places.length === 0) return null;
+    if (exposed.length === 0 && !hOverride) return null;
 
-    let chainPlace = hOverride || places[places.length - 1];
+    // Chain place: h-overridden vowel, or last exposed vowel by default
+    let chainPlace = hOverride || exposed[exposed.length - 1];
     let mode = equiv ? SYM_EQUIV : SYM_SHARING;
 
-    // Gloss: <places> with mode on chain place; ~ prefix for transparent
+    // Gloss: <exposed, chain+mode>; ~ prefix for transparent
     let gloss = "<";
     if (transparent) gloss += "~";
-    for (let p of places) {
-        gloss += p;
-        if (p === chainPlace) gloss += mode;
-    }
+    if (exposed.length > 0) gloss += exposed.join("");
+    gloss += ", " + chainPlace + mode;
     gloss += ">";
 
-    // Short
     let exposeDesc = transparent
         ? `Transparent (re-exposes places of chained predicate)`
-        : `Expose ${places.join(", ")}`;
+        : exposed.length > 0 ? `Expose ${exposed.join(", ")}` : "Expose no places";
     let chainDesc = `chain to ${chainPlace} (${equiv ? "equivalence" : "sharing"})`;
     let short = `${exposeDesc}. ${chainDesc[0].toUpperCase() + chainDesc.slice(1)}.`;
 
@@ -131,38 +148,56 @@ function generateSI(vowels) {
 // ============================================================
 
 /** Compute digit value from a TI vowel sequence (e.g. "ie" → 5, "ao" → 15).
- *  Vowels are enumerated with no consecutive repeats: 5 × 4^(n-1) per length.
+ *
+ *  Eberban digits enumerate all vowel sequences where no two consecutive
+ *  vowels are the same (identical vowels merge phonologically).
+ *
+ *  Level sizes: length 1 = 5 (any vowel), length n = 5 × 4^(n-1)
+ *  (first vowel: 5 choices, each subsequent: 4 choices ≠ previous).
+ *
+ *  Digit value = offset (total sequences shorter than n) + position within level.
+ *  Example: "ao" → offset=5 (skip 5 single-vowel entries) + pos=15-5=10 → 15.
+ *
  *  Returns -1 for invalid sequences. */
 export function tiDigitValue(vowels) {
     let n = vowels.length;
     if (n === 0) return -1;
 
+    // Reject consecutive same vowels (phonologically collapsed in Eberban)
     for (let k = 1; k < n; k++) {
         if (vowels[k] === vowels[k - 1]) return -1;
     }
 
+    // Offset: sum of all shorter levels. Each level k has 5 × 4^(k-1) entries.
+    // levelSize tracks the current level's count for later position computation.
     let offset = 0;
     let levelSize = 5;
     for (let k = 1; k < n; k++) { offset += levelSize; levelSize *= 4; }
 
+    // Position within this level using mixed-radix encoding:
+    // - First vowel: 5 choices (index 0-4), place value = levelSize / 5
+    // - Each subsequent vowel: 4 choices (excluding previous vowel),
+    //   adjusted index = vowel_index - 1 if after the skipped previous
     let pos = 0;
-    let factor = levelSize / 5;
+    let factor = levelSize / 5; // place value for first vowel position
     let prev = -1;
 
     for (let k = 0; k < n; k++) {
         let vi = VOWELS_ORDER.indexOf(vowels[k]);
         if (vi < 0) return -1;
+        // For k>0: map 5-choice index to 4-choice index by skipping prev
         let idx = (k === 0) ? vi : (vi > prev ? vi - 1 : vi);
         pos += idx * factor;
         prev = vi;
-        factor = Math.floor(factor / 4);
+        factor = Math.floor(factor / 4); // next position has 4× fewer entries
     }
 
     return offset + pos;
 }
 
-function generateTI(vowels) {
-    let digit = tiDigitValue(vowels);
+function generateTI(rest) {
+    // TI doesn't use h — consecutive same vowels are invalid anyway
+    let digit = tiDigitValue(rest);
     if (digit < 0) return null;
 
     let gloss = digit <= 15 ? digit.toString(16).toUpperCase() : String(digit);
@@ -174,13 +209,17 @@ function generateTI(vowels) {
 // Helpers
 // ============================================================
 
+// For VI/FI, "i" appears BEFORE the place vowel it modifies:
+// "ia" → A with equiv, "aio" → A sharing + O equiv.
 export function parseBindPlaces(vowels) {
     let places = [];
+    let nextEquiv = false;
     for (let ch of vowels) {
         if (ch in PLACE_MAP) {
-            places.push({ place: PLACE_MAP[ch], equiv: false });
-        } else if (ch === "i" && places.length > 0) {
-            places[places.length - 1].equiv = true;
+            places.push({ place: PLACE_MAP[ch], equiv: nextEquiv });
+            nextEquiv = false;
+        } else if (ch === "i") {
+            nextEquiv = true;
         }
     }
     return places;
@@ -210,12 +249,16 @@ function rawDigits(digits) {
     }).join("");
 }
 
+/** Interpret a digit array as a positional number: d[0]×base^(n-1) + ... + d[n-1]×base^0. */
 function digitsToValue(digits, base) {
     let val = 0;
     for (let d of asArray(digits)) val = val * base + digitValue(d);
     return val;
 }
 
+/** Expand a digit array into a human-readable breakdown string.
+ *  E.g. [4,2] in base 10 → { val: 42, breakdown: "4×10¹ + 2×10⁰ = 42" }.
+ *  Zero digits are skipped unless the number is a single zero. */
 function digitsBreakdown(digits, base) {
     let arr = asArray(digits);
     let n = arr.length;
@@ -230,8 +273,21 @@ function digitsBreakdown(digits, base) {
     return { val, breakdown: parts.length > 0 ? parts.join(" + ") + ` = ${val}` : "" };
 }
 
-/** Compute display string and tooltip for a Number AST value node. */
+/** Compute display string and tooltip for a Number AST value node.
+ *
+ *  Eberban number syntax: [base JU] [int] [JO fract] [JA repeat] [JE magn] [JI]
+ *  - base: TI digit(s) specifying highest digit; actual base = digit_value + 1
+ *  - int: sequence of TI digits for the integer part
+ *  - fract: fractional digits after JO (JOI = negative); each digit × base^(-pos)
+ *  - repeat: repeating decimal digits after JA
+ *  - magn: exponent digits after JE (JEI = negative); result × base^magn
+ *  - JI: usage suffix (cardinal, ordinal, number value, etc.)
+ *
+ *  Returns { display, tooltip } where display is the gloss and tooltip is
+ *  a multiline breakdown of the calculation. */
 export function computeNumberInfo(value) {
+    // Resolve base: TI digit represents highest digit, so base = value + 1.
+    // Default base is 10 (tei = digit 9, 9+1 = 10).
     let base = 10;
     let baseExplicit = false;
     if (value.base) {
@@ -244,6 +300,7 @@ export function computeNumberInfo(value) {
     if (!baseExplicit) tooltipLines.push(`Assuming default base 10 (tei ju).`);
     else tooltipLines.push(`Base: ${base}`);
 
+    // Integer part: sum of digit[i] × base^(n-1-i)
     let intValue = 0;
     if (value.int && value.int.length > 0) {
         let { val, breakdown } = digitsBreakdown(value.int, base);
@@ -251,6 +308,8 @@ export function computeNumberInfo(value) {
         if (breakdown) tooltipLines.push(`Integer: ${breakdown}`);
     }
 
+    // Fractional part: sum of digit[i] × base^(-(i+1))
+    // JO separator; JOI (contains "i") makes the number negative
     let fracValue = 0;
     let negFrac = value.fract?.sep?.word?.includes("i");
     if (value.fract?.value?.length > 0) {
@@ -269,6 +328,7 @@ export function computeNumberInfo(value) {
     }
     if (negFrac) fracValue = -fracValue;
 
+    // Repeated part: digits that repeat infinitely (approximate for display)
     let repeatStr = "";
     if (value.repeat?.value?.length > 0) {
         let rDigits = value.repeat.value.map(d => digitValue(d));
@@ -276,6 +336,7 @@ export function computeNumberInfo(value) {
         tooltipLines.push(`Repeating: ${repeatStr}`);
     }
 
+    // Magnitude: result × base^magn. JE separator; JEI = negative exponent
     let magValue = 0;
     let negMag = value.magn?.sep?.word?.includes("i");
     if (value.magn?.value?.length > 0) {
@@ -284,6 +345,7 @@ export function computeNumberInfo(value) {
         tooltipLines.push(`Magnitude: ${SYM_MULTIPLY}${base}${toSuperscript(String(magValue))}`);
     }
 
+    // JI suffix: determines how the number is used (cardinal, ordinal, etc.)
     let jiSuffix = "";
     if (value.end) {
         let jiMap = {
@@ -295,8 +357,10 @@ export function computeNumberInfo(value) {
         if (jiSuffix) tooltipLines.push(`Usage: ${jiSuffix}`);
     }
 
+    // Compute total decimal value
     let total = intValue + fracValue;
     if (value.magn) total *= Math.pow(base, magValue);
+    // Per refgram: if only magnitude is present, integer part defaults to 1
     if (!value.int && value.magn) total = Math.pow(base, magValue);
 
     let display = "";

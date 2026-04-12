@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { tiDigitValue, computeNumberInfo } from "./particle-gloss.js";
+import { tiDigitValue, computeNumberInfo, generateParticleInfo } from "./particle-gloss.js";
 
 describe("tiDigitValue", () => {
     // Generate first 105 digits by enumerating vowel sequences
@@ -81,6 +81,39 @@ describe("tiDigitValue", () => {
     it("rejects empty and invalid input", () => {
         expect(tiDigitValue("")).toBe(-1);
         expect(tiDigitValue("x")).toBe(-1);
+    });
+});
+
+describe("h behavior in generateParticleInfo", () => {
+    it("SI: h-override makes vowel chain-only, not exposed", () => {
+        let sea = generateParticleInfo("sea");
+        let seha = generateParticleInfo("seha");
+        // sea: expose E+A, chain A
+        expect(sea.gloss).toContain("EA");
+        // seha: expose E only, chain A (h-override)
+        expect(seha.gloss).not.toContain("EA");
+        expect(seha.gloss).toContain("E,");
+        expect(seha.gloss).toContain("A");
+    });
+
+    it("SI: seai vs sehai have different exposed places", () => {
+        let seai = generateParticleInfo("seai");
+        let sehai = generateParticleInfo("sehai");
+        // seai: expose E+A, chain A equiv
+        expect(seai.gloss).toMatch(/EA.*A/);
+        // sehai: expose E only, chain A equiv
+        expect(sehai.gloss).not.toContain("EA");
+        expect(sehai.gloss).toContain("E,");
+    });
+
+    it("VI/FI: h is rejected (not semantically meaningful)", () => {
+        expect(generateParticleInfo("vaha")).toBeNull();
+        expect(generateParticleInfo("faha")).toBeNull();
+    });
+
+    it("TI: h makes the word invalid (no h needed, no consecutive same vowels)", () => {
+        expect(generateParticleInfo("tihe")).toBeNull();
+        expect(generateParticleInfo("taha")).toBeNull();
     });
 });
 

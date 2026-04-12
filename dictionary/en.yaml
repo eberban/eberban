@@ -6060,30 +6060,30 @@ _family:
   SI:
     gloss: "Slot info"
     short: |
-      Overrides which places are exposed and which place is chained.
-
-      __Vowels select places:__ e=E, a=A, o=O, u=U. Single vowel: expose and chain that place ({se}: expose E, chain E). Multiple vowels: expose all, chain last ({sea}: expose E+A, chain A).
-
-      __Equivalence modifier:__ adding {i} switches chaining from sharing to equivalence ({sai}: expose A, chain A with equivalence).
-
-      __Transparent:__ {si} prefix makes the verb transparent, re-exposing the places of the chained predicate ({sie}: transparent, chain E).
-
+      Overrides which places are exposed and which place is chained.\
+      \
+      __Vowels select places:__ e=E, a=A, o=O, u=U. Single vowel: expose and chain that place ({se}: expose E, chain E). Multiple vowels: expose all, chain last ({sea}: expose E+A, chain A).\
+      \
+      __Equivalence modifier:__ adding {i} switches chaining from sharing to equivalence ({sai}: expose A, chain A with equivalence).\
+      \
+      __Transparent:__ {si} prefix makes the verb transparent, re-exposing the places of the chained predicate ({sie}: transparent, chain E).\
+      \
       __Chain override:__ {h} before a vowel forces it as the chain place ({sahe}: expose A+E, chain E instead of default A).
     links:
       - ["icon-book", "Explicit binding", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html"]
   VI:
     gloss: "Bind open"
     short: |
-      Opens an explicit binding clause, selecting which place of the bound predicate to fill.
-
-      __Place vowels:__ e=E, a=A, o=O, u=U. Examples: {ve} binds E place, {va} binds A place.
-
-      __Equivalence modifier:__ {i} after a place vowel switches from sharing to equivalence. Examples: {vie} binds E with equivalence, {via} binds A with equivalence.
-
-      __Multi-vowel:__ each non-final vowel consumes 1 verb, final vowel gets the rest. Example: {vao} binds first verb to A, remaining chain to O.
-
-      __Adverbial:__ {voi} starts a sharing-bound adverbial clause, {vioi} starts an equivalence-bound adverbial clause.
-
+      Opens an explicit binding clause, selecting which place of the bound predicate to fill.\
+      \
+      __Place vowels:__ e=E, a=A, o=O, u=U. Examples: {ve} binds E place, {va} binds A place.\
+      \
+      __Equivalence modifier:__ {i} before a place vowel switches from sharing to equivalence. Examples: {vie} binds E with equivalence, {via} binds A with equivalence.\
+      \
+      __Multi-vowel:__ each non-final vowel consumes 1 verb, final vowel gets the rest. Example: {vao} binds first verb to A, remaining chain to O.\
+      \
+      __Adverbial:__ {voi} starts a sharing-bound adverbial clause, {vioi} starts an equivalence-bound adverbial clause.\
+      \
       __Unrelated:__ {vi} states a 0-ary predicate chain unrelated to any place.
     links:
       - ["icon-book", "Explicit binding - Left atom place selection", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection"]
@@ -6091,16 +6091,16 @@ _family:
   FI:
     gloss: "Bind continue"
     short: |
-      Continues to the next explicit binding clause within the same bind group opened by VI.
-
-      __Place vowels:__ same as VI. {fe} continues binding E, {fa} continues binding A.
-
-      __Equivalence modifier:__ {i} switches to equivalence. {fie} binds E with equivalence, {fia} binds A with equivalence.
-
-      __Relative place:__ {feu} rebinds the same place as the previous clause, {fau} binds the next place. {fei}/{fai} are their equivalence variants.
-
-      __Adverbial:__ {foi} continues with a sharing-bound adverbial clause, {fioi} with equivalence.
-
+      Continues to the next explicit binding clause within the same bind group opened by VI.\
+      \
+      __Place vowels:__ same as VI. {fe} continues binding E, {fa} continues binding A.\
+      \
+      __Equivalence modifier:__ {i} before a place vowel switches to equivalence. {fie} binds E with equivalence, {fia} binds A with equivalence.\
+      \
+      __Relative place:__ {feu} rebinds the same place as the previous clause, {fau} binds the next place. {fei}/{fai} are their equivalence variants.\
+      \
+      __Adverbial:__ {foi} continues with a sharing-bound adverbial clause, {fioi} with equivalence.\
+      \
       __Unrelated:__ {fi} states a predicate chain unrelated to any place.
     links:
       - ["icon-book", "Explicit binding - Left atom place selection", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection"]

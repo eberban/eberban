@@ -1006,14 +1006,19 @@ function parseSISlots(word) {
         if (c === "h") {
             hFlag = true;
         } else if (VOWELS.includes(c) && c !== "i") {
-            places.push(c.toUpperCase());
-            if (hFlag) { hOverride = c.toUpperCase(); hFlag = false; }
+            if (hFlag) {
+                // h-prefixed vowel: chain target only, NOT exposed
+                hOverride = c.toUpperCase();
+                hFlag = false;
+            } else {
+                places.push(c.toUpperCase());
+            }
         } else if (c === "i") {
             equiv = true;
         }
     }
 
-    if (places.length === 0) return { exposed: transparent ? "~" : "none", chainPlace: "" };
+    if (places.length === 0 && !hOverride) return { exposed: transparent ? "~" : "none", chainPlace: "" };
 
     let chainPlace = hOverride || places[places.length - 1];
     return {
