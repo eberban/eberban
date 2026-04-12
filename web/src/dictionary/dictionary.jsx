@@ -4,11 +4,13 @@ import render_to_string from "preact-render-to-string";
 
 import dictionary from "../../../dictionary/en.yaml";
 import { compare_words, compare_words_biased  } from "./compare_words";
+import { generateParticleInfo } from "../shared/particle-gloss.js";
 import Entry from "./entry";
 
-const ignored = [ '_spelling', '_cardinal', '_number', 'i', 'e', 'u' ];
+const ignored = [ '_spelling', '_cardinal', '_number', '_family', 'i', 'e', 'u' ];
+const DYNAMIC_FAMILIES = new Set(["SI", "VI", "FI", "VEI", "TI"]);
 
-const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word)).sort(compare_words_biased);
+const words_sorted = Object.keys(dictionary).filter((word) => !ignored.includes(word) && !(DYNAMIC_FAMILIES.has(dictionary[word]?.family) && /^[svft]/.test(word))).sort(compare_words_biased);
 
 words_sorted.forEach((word) => {
 	let entry = dictionary[word];
@@ -213,6 +215,40 @@ export function html_dictionary(filters) {
 
 		may_insert_entry(results, filters, word, dictionary["_spelling"][word]);
 	});
+
+	// Dynamic particle entry when a specific word is typed
+	for (let filter of filters) {
+		let f = filter.trim().toLowerCase();
+		if (f.startsWith('#') || f.startsWith('@') || f.startsWith('?') || f.startsWith('!')) continue;
+		let info = generateParticleInfo(f);
+		if (info) {
+			let famEntry = dictionary._family?.[info.family];
+			let html = render_to_string(
+				<Entry word={f} family={info.family} gloss={info.gloss}
+					short={info.short} tags={["core"]} links={famEntry?.links}
+					extra_css_class="entry-dynamic" />
+			);
+			results.unshift(html);
+		}
+	}
+
+	// Family description entry at top of @family results
+	for (let filter of filters) {
+		let f = filter.trim().toLowerCase();
+		if (f.startsWith('@')) {
+			let fam = f.slice(1).toUpperCase();
+			if (fam === "P") continue; // @p is a special "all particles" filter
+			let famEntry = dictionary._family?.[fam];
+			if (famEntry) {
+				let html = render_to_string(
+					<Entry word={fam} family="" gloss={famEntry.gloss || ""}
+						short={famEntry.short} links={famEntry.links}
+						extra_css_class="entry-family" />
+				);
+				results.unshift(html);
+			}
+		}
+	}
 
 	render(
 		<EntryList list={results} />,

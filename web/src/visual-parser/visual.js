@@ -88,6 +88,7 @@
 import dictionary from '../../../dictionary/en.yaml';
 import * as parser from "../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
+import { generateParticleInfo, parseBindPlaces } from "../shared/particle-gloss.js";
 
 const INLINE_DEPTH_OFFSET_PX = 10;
 
@@ -1124,15 +1125,8 @@ function getWordText(node) {
 }
 
 function getBindVowelPlaces(word) {
-    let places = [];
-    for (let ch of word) {
-        if ('aeou'.includes(ch)) {
-            places.push({ place: ch.toUpperCase(), equiv: false });
-        } else if (ch === 'i' && places.length > 0) {
-            places[places.length - 1].equiv = true;
-        }
-    }
-    return places.map(p => p.place + (p.equiv ? SYM_EQUIV : SYM_SHARING));
+    let vowels = word.replace(/^[^aeiou]+/, "").replace(/h/g, "");
+    return parseBindPlaces(vowels).map(p => p.place + (p.equiv ? SYM_EQUIV : SYM_SHARING));
 }
 
 function formatNumber(value) {
@@ -1154,14 +1148,19 @@ function lookupGloss(word) {
     if (!word) return "";
     let entry = dictionary[word];
     if (entry) return entry.gloss || "";
-    // Borrowings (u- prefix) or multi-word strings (invalid text) — no gloss
     if (word.startsWith("u") || word.includes(" ")) return "";
-    // Unknown word
+    let gen = generateParticleInfo(word);
+    if (gen) return gen.gloss;
     return "???";
 }
 
 function lookupShort(word) {
-    return word ? (dictionary[word]?.short?.trim() || "") : "";
+    if (!word) return "";
+    let entry = dictionary[word];
+    if (entry) return entry.short?.trim() || "";
+    let gen = generateParticleInfo(word);
+    if (gen) return gen.short || "";
+    return "";
 }
 
 function lookupSpelling(unit) {

@@ -28,6 +28,7 @@ function Word({ word, is_compound }) {
 }
 
 function Family({ family }) {
+    if (!family) return null;
     return <a href={`#@${family}`} class="family">{family}</a>;
 }
 
@@ -129,6 +130,7 @@ function Definition({ definition }) {
 }
 
 function Permalink({ id }) {
+    if (!id) return null;
     return (
         <p data-tooltip="Link with a unique ID that will remain the same even if the Eberban word changes">
             <strong><a href={`#${id}`}>Permalink</a></strong>

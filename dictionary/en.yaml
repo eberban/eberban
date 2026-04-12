@@ -250,546 +250,6 @@ baihe:
   short: "Sentence inline intransitive predicate argument marker."
   links:
     - ["icon-book", "Explicit binding - Arguments list", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#arguments-list]
-vei:
-  id: dgx3rzqk2s
-  family: "VEI"
-  gloss: "]"
-  tags: [core, terminator, elidable]
-  short: "Close the latest unclosed VI/FI."
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-vi:
-  id: f29bns2aei
-  family: "VI"
-  gloss: "&["
-  tags: [core]
-  short: "State the following 0-ary predicate chain, unrelated to any place."
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-ve:
-  id: jbhdi1yp6a
-  family: "VI"
-  gloss: "E["
-  tags: [core]
-  short: |
-    The E place of the suffixed predicate is shared with the following predicate
-    chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate E place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-va:
-  id: zflv7yegal
-  family: "VI"
-  gloss: "A["
-  tags: [core]
-  short: |
-    The A place of the suffixed predicate is shared with the following predicate
-    chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate A place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-vo:
-  id: iwknbmwwuw
-  family: "VI"
-  gloss: "O["
-  tags: [core]
-  short: |
-    The O place of the suffixed predicate is shared with the following predicate
-    chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate O place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-vu:
-  id: bfqny28gid
-  family: "VI"
-  gloss: "U["
-  tags: [core]
-  short: |
-    The U place of the suffixed predicate is shared with the following predicate
-    chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate U place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-vie:
-  id: f5qpoxyo34
-  family: "VI"
-  gloss: "E=["
-  tags: [core]
-  short: |
-    The E place of the suffixed predicate is equivalent to the following
-    predicate chain.
-  notes: |
-    The following predicate chain have the same type as the E place and is
-    equivalent. The E place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-via:
-  id: yq567wlm2t
-  family: "VI"
-  gloss: "A=["
-  tags: [core]
-  short: |
-    The A place of the suffixed predicate is equivalent to the following
-    predicate chain.
-  notes: |
-    The following predicate chain have the same type as the A place and is
-    equivalent. The A place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-vio:
-  id: glcyqfkkoq
-  family: "VI"
-  gloss: "O=["
-  tags: [core]
-  short: |
-    The O place of the suffixed predicate is equivalent to the following
-    predicate chain.
-  notes: |
-    The following predicate chain have the same type as the O place and is
-    equivalent. The O place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-viu:
-  id: ce345k1ke4
-  family: "VI"
-  gloss: "U=["
-  tags: [core]
-  short: |
-    The U place of the suffixed predicate is equivalent to the following
-    predicate chain.
-  notes: |
-    The following predicate chain have the same type as the U place and is
-    equivalent. The U place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-voi:
-  id: wvdkovz6eg
-  family: "VI"
-  gloss: "adv["
-  short: Starts adverbial/sharing-bound prepositional clause.
-  notes: |
-    Followed by a single predicate P, and any following predicates (if any) form chain C.
-
-    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
-    bindings of that predicate are evaluated outside of that [A] slot. 
-    
-    Chain C will be sharing-bound to the [E] slot of P.
-    
-    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
-    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
-    is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [foi, vioi, fioi]
-  links:
-    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
-vioi:
-  id: wezusxq6te
-  family: "VI"
-  gloss: "adv=["
-  short: Starts adverbial/equivalence-bound prepositional clause.
-  notes: |
-    Followed by a single predicate P, and any following predicates (if any) form chain C.
-
-    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
-    bindings of that predicate are evaluated outside of that [A] slot. 
-    
-    Chain C will be equivalence-bound to the [E] slot of P.
-    
-    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
-    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
-    is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [foi, voi, fioi]
-  links:
-    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
-fi:
-  id: kd9qbtxtq0
-  family: "FI"
-  gloss: "]&["
-  short: "State the following predicate chain, unrelated to any place."
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fe:
-  id: vyrnf5aysv
-  family: "FI"
-  gloss: "]E["
-  tags: [core]
-  short: |
-    The E place of the predicate suffixed with latest non-closed VI is shared
-    with the following predicate chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate E place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fa:
-  id: qxgljpgy5n
-  family: "FI"
-  gloss: "]A["
-  tags: [core]
-  short: |
-    The A place of the predicate suffixed with latest non-closed VI is shared
-    with the following predicate chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate A place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fo:
-  id: ioz2vm2anw
-  family: "FI"
-  gloss: "]O["
-  tags: [core]
-  short: |
-    The O place of the predicate suffixed with latest non-closed VI is shared
-    with the following predicate chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate O place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fu:
-  id: ydlpoaeiyz
-  family: "FI"
-  gloss: "]U["
-  tags: [core]
-  short: |
-    The U place of the predicate suffixed with latest non-closed VI is shared
-    with the following predicate chain.
-  notes: |
-    The following predicate chain is a property over the variable used in the
-    suffixed predicate U place.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fie:
-  id: yth6gftm5i
-  family: "FI"
-  gloss: "]E=["
-  tags: [core]
-  short: |
-    The E place of the predicate suffixed with latest non-closed VI is equivalent
-    to the following predicate chain.
-  notes: |
-    The following predicate chain have the same type as the E place and is
-    equivalent. The E place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-fia:
-  id: 0uktfjuhwa
-  family: "FI"
-  gloss: "]A=["
-  tags: [core]
-  short: |
-    The A place of the predicate suffixed with latest non-closed VI is equivalent
-    to the following predicate chain.
-  notes: |
-    The following predicate chain have the same type as the A place and is
-    equivalent. The A place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-fio:
-  id: oasxkhx46g
-  family: "FI"
-  gloss: "]O=["
-  tags: [core]
-  short: |
-    The O place of the predicate suffixed with latest non-closed VI is equivalent
-    to the following predicate chain.
-  notes: |
-    The following predicate chain have the same type as the O place and is
-    equivalent. The O place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-fiu:
-  id: ggbu5esdez
-  family: "FI"
-  gloss: "]U=["
-  tags: [core]
-  short: |
-    The U place of the predicate suffixed with latest non-closed VI is equivalent
-    to the following predicate chain.
-  notes: |
-    The following predicate chain have the same type as the U place and is
-    equivalent. The U place must be a predicate place.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-feu:
-  id: xfm9dl3n9d
-  family: "FI"
-  gloss: "]same["
-  tags: [core]
-  short: |
-    The same place as the latest VI/FI, of the predicate suffixed with latest
-    non-closed VI, is shared with the following predicate chain.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fau:
-  id: 7fyf7dhb24
-  family: "FI"
-  gloss: "]next["
-  tags: [core]
-  short: |
-    The next place as the latest VI/FI, of the predicate suffixed with latest
-    non-closed VI, is shared with the following predicate chain.
-  links:
-    - ["icon-book", "Explicit binding - Left atom place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection]
-fei:
-  id: 0ed0lr14i6
-  family: "FI"
-  gloss: "]same=["
-  tags: [core]
-  short: |
-    The same place as the latest VI/FI, of the predicate suffixed with latest
-    non-closed VI, is equivalent to the following predicate chain.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-fai:
-  id: v92a3mw2kl
-  family: "FI"
-  gloss: "]next=["
-  tags: [core]
-  short: |
-    The next place as the latest VI/FI, of the predicate suffixed with latest
-    non-closed VI, is equivalent to with the following predicate chain.
-  links:
-    - ["icon-book", "Explicit binding - Left predicate place selection", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-predicate-place-selection]
-foi:
-  id: 0rc4mfpym6
-  family: "FI"
-  gloss: "]adv["
-  short: Starts adverbial/sharing-bound prepositional clause.
-  notes: |
-    Followed by a single predicate P, and any following predicates (if any) form chain C.
-
-    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
-    bindings of that predicate are evaluated outside of that [A] slot. 
-    
-    Chain C will be sharing-bound to the [E] slot of P.
-    
-    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
-    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
-    is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [voi, vioi, fioi]
-  links:
-    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
-fioi:
-  id: trurybdtxi
-  family: "FI"
-  gloss: "]adv=["
-  short: Starts adverbial/equivalence-bound prepositional clause.
-  notes: |
-    Followed by a single predicate P, and any following predicates (if any) form chain C.
-
-    P must have a predicate [A] slot that will evaluate the predicate {voi} is attached to. Other
-    bindings of that predicate are evaluated outside of that [A] slot. 
-    
-    Chain C will be equivalence-bound to the [E] slot of P.
-    
-    This inversed slot order allows to use (without {SI}) transitive equivalence words that can be used outside of {voi}.
-    Both [E] and [A] slot can be changed using {SI}, but be careful to respect the correct order: first exposed slot
-    is bound to C, while second exposed slot wraps the attached to predicate.
-  see_also: [voi, vioi, foi]
-  links:
-    - ["icon-book", "Adverbs and prepositions", https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html]
-se:
-  id: qgxn2xhcit
-  family: "SI"
-  gloss: "<EE>"
-  tags: [core]
-  short: |
-    Expose E place, and chain to E.
-
-    __Compound suffix__: makes the compound intransitive sharing.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sa:
-  id: oricdbjcuk
-  family: "SI"
-  gloss: "<AA>"
-  tags: [core]
-  short: |
-    Expose A place, and chain to A.
-
-    __Compound suffix__: makes the compound transitive sharing.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sai:
-  id: is38dnapc7
-  family: "SI"
-  gloss: "<AA=>"
-  tags: [core]
-  short: |
-    Expose A place, and chain to A with equivalence.
-
-    __Compound suffix__: makes the compound transitive equivalence.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-so:
-  id: 1veohtfe08
-  family: "SI"
-  gloss: "<OO>"
-  tags: [core]
-  short: "Expose O place, and chain to O."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-su:
-  id: kkao3xh8vs
-  family: "SI"
-  gloss: "<II>"
-  tags: [core]
-  short: "Expose U place, and chain to U."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sea:
-  id: xdpcwhenkp
-  family: "SI"
-  gloss: "<EA>"
-  tags: [core]
-  short: "Expose places E and A, then chain to A."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-seo:
-  id: vxhg5a1wzo
-  family: "SI"
-  gloss: "<EO>"
-  tags: [core]
-  short: "Expose places E and O, then chain to O."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-seu:
-  id: z4ugiojfqh
-  family: "SI"
-  gloss: "<EU>"
-  tags: [core]
-  short: "Expose places E and U, then chain to U."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sae:
-  id: rnwr8famzy
-  family: "SI"
-  gloss: "<AE>"
-  tags: [core]
-  short: "Expose places A and E, then chain to E."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sao:
-  id: xoapimitmx
-  family: "SI"
-  gloss: "<AO>"
-  tags: [core]
-  short: "Expose places A and O, then chain to O."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sau:
-  id: iqjs2euswn
-  family: "SI"
-  gloss: "<AU>"
-  tags: [core]
-  short: "Expose places A and U, then chain to U."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-soe:
-  id: zje1rsx4uk
-  family: "SI"
-  gloss: "<OE>"
-  tags: [core]
-  short: "Expose places O and E, then chain to E."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-soa:
-  id: rythxb2fce
-  family: "SI"
-  gloss: "<OA>"
-  tags: [core]
-  short: "Expose places O and A, then chain to A."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sou:
-  id: s7zufvudfl
-  family: "SI"
-  gloss: "<OU>"
-  tags: [core]
-  short: "Expose places O and U, then chain to U."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sue:
-  id: pyvknqecpo
-  family: "SI"
-  gloss: "<UE>"
-  tags: [core]
-  short: "Expose places U and E, then chain to E."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sua:
-  id: tqdbdmjidp
-  family: "SI"
-  gloss: "<UA>"
-  tags: [core]
-  short: "Expose places U and A, then chain to A"
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-suo:
-  id: gewbwhd3d4
-  family: "SI"
-  gloss: "<UO>"
-  tags: [core]
-  short: "Expose places U and O, then chain to O."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-si:
-  id: gjqcv0bq15
-  family: "SI"
-  gloss: "I>>"
-  tags: [core]
-  short: "Expose non places and chain to the transivity place."
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sie:
-  id: r3xo7t14df
-  family: "SI"
-  gloss: "E>>"
-  tags: [core]
-  short: |
-    Chain to the E place, and exposes all the places of the predicate
-    bound to it.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sia:
-  id: d0l5dow2kn
-  family: "SI"
-  gloss: "A>>"
-  tags: [core]
-  short: |
-    Chain to the A place, and exposes all the places of the predicate
-    bound to it.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-sio:
-  id: imysksrbhz
-  family: "SI"
-  gloss: "O>>"
-  tags: [core]
-  short: |
-    Chain to the O place, and exposes all the places of the predicate
-    bound to it.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
-siu:
-  id: fec2vdxbxf
-  family: "SI"
-  gloss: "U>>"
-  tags: [core]
-  short: |
-    Chain to the U place, and exposes all the places of the predicate
-    bound to it.
-  links:
-    - ["icon-book", "Explicit binding", https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html]
 ze:
   id: hq8iez19yn
   family: "ZI"
@@ -1323,143 +783,6 @@ jei:
     Negative magnitude part separator. Number is multiplied by base^(-magnitude).
   links:
     - ["icon-book", "Numbers - Number syntax", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#number-syntax]
-ti:
-  id: ivcpysqf4j
-  family: "TI"
-  short: "Digit 0"
-  gloss: "0"
-  tags: [digit, number]
-  see_also: [tci]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-te:
-  id: 2oobzn2l6h
-  family: "TI"
-  short: "Digit 1"
-  gloss: "1"
-  tags: [digit, number]
-  see_also: [tce]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-ta:
-  id: byl153scbe
-  family: "TI"
-  short: "Digit 2"
-  gloss: "2"
-  tags: [digit, number]
-  see_also: [tca]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-to:
-  id: ahfrldpv68
-  family: "TI"
-  short: "Digit 3"
-  gloss: "3"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tu:
-  id: p7eyosrgae
-  family: "TI"
-  short: "Digit 4"
-  gloss: "4"
-  tags: [digit, number]
-  see_also: [tcu]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tie:
-  id: mgrqxslqve
-  family: "TI"
-  short: "Digit 5"
-  gloss: "5"
-  tags: [digit, number]
-  see_also: [tcie]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tia:
-  id: hwnppc9ghm
-  family: "TI"
-  short: "Digit 6"
-  gloss: "6"
-  tags: [digit, number]
-  see_also: [tcia]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tio:
-  id: 1mqghjrvry
-  family: "TI"
-  short: "Digit 7"
-  gloss: "7"
-  tags: [digit, number]
-  see_also: [tcio]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tiu:
-  id: ghcbnijzcv
-  family: "TI"
-  short: "Digit 8"
-  gloss: "8"
-  tags: [digit, number]
-  see_also: [tciu]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tei:
-  id: shcfpcezrg
-  family: "TI"
-  short: "Digit 9"
-  gloss: "9"
-  tags: [digit, number]
-  see_also: [tcei]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tea:
-  id: wde3jzgicf
-  family: "TI"
-  short: "Digit A"
-  gloss: "A"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-teo:
-  id: 7ik9nhaqhb
-  family: "TI"
-  short: "Digit B"
-  gloss: "B"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-teu:
-  id: fykhc8yfxl
-  family: "TI"
-  short: "Digit C"
-  gloss: "C"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tai:
-  id: xqnikwdrx3
-  family: "TI"
-  short: "Digit D"
-  gloss: "D"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tae:
-  id: tcdujabqlx
-  family: "TI"
-  short: "Digit E"
-  gloss: "E"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
-tao:
-  id: rvtqoqug7a
-  family: "TI"
-  short: "Digit F"
-  gloss: "F"
-  tags: [digit, number]
-  links:
-    - ["icon-book", "Numbers - Digits", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits]
 ca:
   id: qgitj7lmtu
   family: "CA"
@@ -5832,7 +5155,6 @@ e kine buan:
   family: "C"
   short: "[E:tce* man] is a course teaching about subject [A:tce* man]."
   gloss: "course"
-  definition: "on ekinibun ke ka pi ke buan gla kine via seru ka"
 e a ze:
   id: mfyipbixdd
   family: "C"
@@ -6724,6 +6046,175 @@ e pseo pale:
   gloss: "outside-radius"
   short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
     
+# Family descriptions
+_family:
+  R:
+    gloss: "Root"
+    short: "Content words with inherent meaning. Transitivity determined by word form."
+  C:
+    gloss: "Compound"
+    short: "Multi-root words built from root components. Last component determines transitivity."
+  MI:
+    gloss: "Predicate particle"
+    short: "Predicate particles with dictionary-defined meaning and transitivity."
+  SI:
+    gloss: "Slot info"
+    short: |
+      Overrides which places are exposed and which place is chained.
+
+      __Vowels select places:__ e=E, a=A, o=O, u=U. Single vowel: expose and chain that place ({se}: expose E, chain E). Multiple vowels: expose all, chain last ({sea}: expose E+A, chain A).
+
+      __Equivalence modifier:__ adding {i} switches chaining from sharing to equivalence ({sai}: expose A, chain A with equivalence).
+
+      __Transparent:__ {si} prefix makes the verb transparent, re-exposing the places of the chained predicate ({sie}: transparent, chain E).
+
+      __Chain override:__ {h} before a vowel forces it as the chain place ({sahe}: expose A+E, chain E instead of default A).
+    links:
+      - ["icon-book", "Explicit binding", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html"]
+  VI:
+    gloss: "Bind open"
+    short: |
+      Opens an explicit binding clause, selecting which place of the bound predicate to fill.
+
+      __Place vowels:__ e=E, a=A, o=O, u=U. Examples: {ve} binds E place, {va} binds A place.
+
+      __Equivalence modifier:__ {i} after a place vowel switches from sharing to equivalence. Examples: {vie} binds E with equivalence, {via} binds A with equivalence.
+
+      __Multi-vowel:__ each non-final vowel consumes 1 verb, final vowel gets the rest. Example: {vao} binds first verb to A, remaining chain to O.
+
+      __Adverbial:__ {voi} starts a sharing-bound adverbial clause, {vioi} starts an equivalence-bound adverbial clause.
+
+      __Unrelated:__ {vi} states a 0-ary predicate chain unrelated to any place.
+    links:
+      - ["icon-book", "Explicit binding - Left atom place selection", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection"]
+      - ["icon-book", "Adverbs and prepositions", "https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html"]
+  FI:
+    gloss: "Bind continue"
+    short: |
+      Continues to the next explicit binding clause within the same bind group opened by VI.
+
+      __Place vowels:__ same as VI. {fe} continues binding E, {fa} continues binding A.
+
+      __Equivalence modifier:__ {i} switches to equivalence. {fie} binds E with equivalence, {fia} binds A with equivalence.
+
+      __Relative place:__ {feu} rebinds the same place as the previous clause, {fau} binds the next place. {fei}/{fai} are their equivalence variants.
+
+      __Adverbial:__ {foi} continues with a sharing-bound adverbial clause, {fioi} with equivalence.
+
+      __Unrelated:__ {fi} states a predicate chain unrelated to any place.
+    links:
+      - ["icon-book", "Explicit binding - Left atom place selection", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html#left-atom-place-selection"]
+      - ["icon-book", "Adverbs and prepositions", "https://eberban.github.io/eberban/books/refgram/book/grammar/adverbs.html"]
+  VEI:
+    gloss: "Bind end"
+    short: "Terminates an explicit binding group opened by VI. Elidable at end of sentence."
+    links:
+      - ["icon-book", "Explicit binding", "https://eberban.github.io/eberban/books/refgram/book/logic/explicit_binding.html"]
+  TI:
+    gloss: "Digit"
+    short: "Digit particles for number literals. Vowel combinations encode digit values systematically."
+    links:
+      - ["icon-book", "Numbers - Digits", "https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#digits"]
+  ZI:
+    gloss: "Verb modifier"
+    short: "Modifies the following verb's behavior (anaphora, quantification, etc.)."
+  BA:
+    gloss: "Argument"
+    short: "Inline argument markers for binding predicate arguments in sentences."
+  BE:
+    gloss: "Argument end"
+    short: "Terminates an argument list opened by BA/KI particles."
+  BI:
+    gloss: "Bind prefix"
+    short: "Optional prefix before VI/FI to mark the start of explicit binding."
+  BO:
+    gloss: "Lambda"
+    short: "Lambda abstraction particle for creating predicate expressions."
+  NI:
+    gloss: "Number syntax"
+    short: "Number structure particles (base, sign, separator, etc.)."
+  O:
+    gloss: "Sentence starter"
+    short: "Sentence-level particles (assertion, question, command, etc.)."
+  A:
+    gloss: "Connective"
+    short: "Logical connectives between sentences or predicates."
+  JI:
+    gloss: "Scope"
+    short: "Scope and quantifier particles."
+  JO:
+    gloss: "Scope end"
+    short: "Terminates a scope opened by JI."
+  JA:
+    gloss: "Scope separator"
+    short: "Separates elements within a JI scope."
+  JE:
+    gloss: "Scope modifier"
+    short: "Modifies scope behavior."
+  CA:
+    gloss: "Quote start"
+    short: "Starts a grammatically correct eberban quote."
+  CAI:
+    gloss: "Quote start (foreign)"
+    short: "Starts a foreign text quote."
+  CI:
+    gloss: "Quote word"
+    short: "Single-word quote particle."
+  CE:
+    gloss: "Quote assign"
+    short: "Quote with inline assignment."
+  CEI:
+    gloss: "Quote assign end"
+    short: "Ends a quote assignment."
+  CO:
+    gloss: "Quote end"
+    short: "Ends a grammatically correct eberban quote."
+  COI:
+    gloss: "Quote end (foreign)"
+    short: "Ends a foreign text quote."
+  RA:
+    gloss: "Chain restart"
+    short: "Restarts the chain, discarding previous chain context."
+  RI:
+    gloss: "Chain erase"
+    short: "Erases the preceding chain segment."
+  DU:
+    gloss: "Defined"
+    short: "Definition particles for naming predicates."
+  DI:
+    gloss: "Focus"
+    short: "Focus particles for pragmatic emphasis."
+  DE:
+    gloss: "Interjection"
+    short: "Interjection/attitude particles."
+  DA:
+    gloss: "Parenthetical start"
+    short: "Opens a parenthetical remark."
+  DAI:
+    gloss: "Parenthetical end"
+    short: "Closes a parenthetical remark."
+  BU:
+    gloss: "Enum separator"
+    short: "Separates items in a PE enumeration."
+  PA:
+    gloss: "Echo-resumptive"
+    short: "Resumes a previous predicate for further binding."
+  PE:
+    gloss: "Enum start"
+    short: "Starts an enumeration of predicate chains."
+  PEI:
+    gloss: "Enum end"
+    short: "Terminates a PE enumeration. Elidable at end of sentence."
+  PI:
+    gloss: "Number predicate"
+    short: "Converts a number into a predicate."
+  PO:
+    gloss: "Transformer"
+    short: "Predicate transformer particles."
+  DO:
+    gloss: "Free variable"
+    short: "Free variable particles for referencing unbound variables."
+
 # Spelling
 _spelling:
   pi: 

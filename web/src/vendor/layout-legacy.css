@@ -347,6 +347,16 @@ li.implicit {
 	background-color: rgb(229, 248, 255);
 }
 
+.entry-dynamic > summary {
+	background-color: rgb(255, 243, 229);
+	border-left: 3px solid #d09050;
+}
+
+.entry-family > summary {
+	background-color: rgb(240, 240, 245);
+	border-left: 3px solid #666;
+}
+
 [data-tooltip]:hover::after {
 	display: block;
 	position: absolute;
