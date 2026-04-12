@@ -361,6 +361,7 @@ li.implicit {
 	display: block;
 	position: absolute;
 	content: attr(data-tooltip);
+	white-space: pre-line;
 	border: 1px solid black;
 	border-radius: 5px;
 	background: #eee;

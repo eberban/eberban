@@ -88,19 +88,16 @@
 import dictionary from '../../../dictionary/en.yaml';
 import * as parser from "../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
-import { generateParticleInfo, parseBindPlaces } from "../shared/particle-gloss.js";
+import { generateParticleInfo, parseBindPlaces, computeNumberInfo } from "../shared/particle-gloss.js";
 
 const INLINE_DEPTH_OFFSET_PX = 10;
 
 // Unicode symbols
 const SYM_SHARING   = "\u00b7";  // · middle dot
 const SYM_EQUIV     = "\u2261";  // ≡ triple bar
-const SYM_MULTIPLY  = "\u00d7";  // × multiplication sign
-const SYM_OVERLINE  = "\u0305";  // combining overline
 const SYM_ARROW     = "\u2192";  // → right arrow
 const ICON_ANNOT    = "\uD83D\uDCAC"; // 💬 speech bubble
-const SUPERSCRIPT   = { '0':'\u2070','1':'\u00b9','2':'\u00b2','3':'\u00b3','4':'\u2074',
-                         '5':'\u2075','6':'\u2076','7':'\u2077','8':'\u2078','9':'\u2079','-':'\u207b' };
+
 
 // Annotation popover store (reset each parse)
 let annotationStore = {};
@@ -774,58 +771,17 @@ function renderNumber(verb, extra, depthStyle) {
         return compoundPart(display, gloss, delimClass + elided, lookupShort(w));
     }).join("");
 
-    let display = computeNumberDisplay(val);
+    let { display, tooltip } = computeNumberInfo(val);
 
-    return `<div class="vbox-compound ${extra || ""}"${depthStyle || ""}>`
+    let tipAttr = tooltip ? ` data-tooltip="${esc(tooltip).replace(/\n/g, "&#10;")}"` : "";
+    return `<div class="vbox-compound ${extra || ""}"${tipAttr}${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${partsHtml}</div>`
         + `<span class="vbox-word-gloss">${esc(display)}</span>`
         + `<span class="vbox-word-family">NUMBER</span>`
         + `</div>`;
 }
 
-function computeNumberDisplay(value) {
-    let parts = [];
-
-    // Base override: Eberban specifies highest digit, natlangs use digit+1
-    if (value.base) {
-        let baseDigit = digitValue(asArray(value.base.value)[0]);
-        parts.push(`(base ${baseDigit + 1}) `);
-    }
-
-    if (value.int) parts.push(rawDigits(value.int));
-    if (value.fract) parts.push("." + rawDigits(value.fract.value));
-    if (value.repeat) parts.push("(" + rawDigits(value.repeat.value) + ")" + SYM_OVERLINE);
-
-    let result = parts.join("") || "0";
-
-    if (value.magn) {
-        let expStr = rawDigits(value.magn.value);
-        result += " " + SYM_MULTIPLY + "base" + toSuperscript(expStr);
-    }
-
-    if (value.end) {
-        let jiSuffix = { "ji": " (cardinal set)", "jiu": " (ordinal)" };
-        result += jiSuffix[value.end.word] || "";
-    }
-
-    return result;
-}
-
-function digitValue(d) {
-    let match = dictionary[d.word]?.short?.match(/Digit (\d+)/);
-    return match ? parseInt(match[1]) : 0;
-}
-
-function rawDigits(digits) {
-    return asArray(digits).map(d => {
-        let v = digitValue(d);
-        return v < 10 ? v.toString() : String.fromCharCode(55 + v); // A=10, B=11, etc.
-    }).join("");
-}
-
-function toSuperscript(s) {
-    return String(s).split("").map(c => SUPERSCRIPT[c] || c).join("");
-}
+// Number computation functions imported from shared/particle-gloss.js
 
 function compoundPart(word, gloss, extraClass, short) {
     let tooltip = short ? ` data-tooltip="${esc(short)}"` : "";

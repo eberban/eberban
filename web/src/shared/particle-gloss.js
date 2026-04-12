@@ -1,7 +1,11 @@
 // Dynamic gloss/short generation for infinite particle families (SI, VI, FI, VEI, TI)
 
-const SYM_SHARING = "\u00b7";  // ·
-const SYM_EQUIV   = "\u2261";  // ≡
+const SYM_SHARING  = "\u00b7";  // ·
+const SYM_EQUIV    = "\u2261";  // ≡
+const SYM_MULTIPLY = "\u00d7";  // ×
+const SYM_OVERLINE = "\u0305";  // combining overline
+const SUPERSCRIPT  = { '0':'\u2070','1':'\u00b9','2':'\u00b2','3':'\u00b3','4':'\u2074',
+                       '5':'\u2075','6':'\u2076','7':'\u2077','8':'\u2078','9':'\u2079','-':'\u207b' };
 
 const PLACE_MAP = { e: "E", a: "A", o: "O", u: "U" };
 const VOWELS_ORDER = ["i", "e", "a", "o", "u"];
@@ -181,6 +185,157 @@ export function parseBindPlaces(vowels) {
     }
     return places;
 }
+
+// ============================================================
+// Number display computation
+// ============================================================
+
+function asArray(val) { return Array.isArray(val) ? val : [val]; }
+
+/** Get numeric value of a TI digit node ({ word: "ta" } or { symbol: "5" }). */
+export function digitValue(d) {
+    if (d.symbol) return parseInt(d.symbol, 16) || 0;
+    if (d.word) { let v = tiDigitValue(d.word.slice(1).replace(/h/g, "")); return v >= 0 ? v : 0; }
+    return 0;
+}
+
+function toSuperscript(s) {
+    return String(s).split("").map(c => SUPERSCRIPT[c] || c).join("");
+}
+
+function rawDigits(digits) {
+    return asArray(digits).map(d => {
+        let v = digitValue(d);
+        return v < 10 ? v.toString() : String.fromCharCode(55 + v);
+    }).join("");
+}
+
+function digitsToValue(digits, base) {
+    let val = 0;
+    for (let d of asArray(digits)) val = val * base + digitValue(d);
+    return val;
+}
+
+function digitsBreakdown(digits, base) {
+    let arr = asArray(digits);
+    let n = arr.length;
+    let val = 0;
+    let parts = [];
+    for (let i = 0; i < n; i++) {
+        let d = digitValue(arr[i]);
+        let exp = n - 1 - i;
+        val += d * Math.pow(base, exp);
+        if (d !== 0 || n === 1) parts.push(`${d}${SYM_MULTIPLY}${base}${toSuperscript(String(exp))}`);
+    }
+    return { val, breakdown: parts.length > 0 ? parts.join(" + ") + ` = ${val}` : "" };
+}
+
+/** Compute display string and tooltip for a Number AST value node. */
+export function computeNumberInfo(value) {
+    let base = 10;
+    let baseExplicit = false;
+    if (value.base) {
+        let baseDigits = asArray(value.base.value);
+        base = digitsToValue(baseDigits, 10) + 1;
+        baseExplicit = true;
+    }
+
+    let tooltipLines = [];
+    if (!baseExplicit) tooltipLines.push(`Assuming default base 10 (tei ju).`);
+    else tooltipLines.push(`Base: ${base}`);
+
+    let intValue = 0;
+    if (value.int && value.int.length > 0) {
+        let { val, breakdown } = digitsBreakdown(value.int, base);
+        intValue = val;
+        if (breakdown) tooltipLines.push(`Integer: ${breakdown}`);
+    }
+
+    let fracValue = 0;
+    let negFrac = value.fract?.sep?.word?.includes("i");
+    if (value.fract?.value?.length > 0) {
+        let digits = value.fract.value;
+        let parts = [];
+        for (let i = 0; i < digits.length; i++) {
+            let d = digitValue(digits[i]);
+            fracValue += d / Math.pow(base, i + 1);
+            if (d !== 0 || digits.length === 1) parts.push(`${d}${SYM_MULTIPLY}${base}${toSuperscript("-" + (i + 1))}`);
+        }
+        let label = negFrac ? "Fractional (negative)" : "Fractional";
+        if (parts.length > 0) {
+            let fracFormatted = fracValue.toPrecision(10).replace(/0+$/, "").replace(/\.$/, "").replace(/^0/, "");
+            tooltipLines.push(`${label}: ${parts.join(" + ")} = ${fracFormatted}`);
+        }
+    }
+    if (negFrac) fracValue = -fracValue;
+
+    let repeatStr = "";
+    if (value.repeat?.value?.length > 0) {
+        let rDigits = value.repeat.value.map(d => digitValue(d));
+        repeatStr = "(" + rDigits.join("") + ")" + SYM_OVERLINE;
+        tooltipLines.push(`Repeating: ${repeatStr}`);
+    }
+
+    let magValue = 0;
+    let negMag = value.magn?.sep?.word?.includes("i");
+    if (value.magn?.value?.length > 0) {
+        magValue = digitsToValue(value.magn.value, base);
+        if (negMag) magValue = -magValue;
+        tooltipLines.push(`Magnitude: ${SYM_MULTIPLY}${base}${toSuperscript(String(magValue))}`);
+    }
+
+    let jiSuffix = "";
+    if (value.end) {
+        let jiMap = {
+            ji: "cardinal set", jia: "cardinal set (raw)", jiu: "ordinal",
+            jio: "unique cardinal set", jioa: "unique cardinal set (raw)",
+            jie: "number value"
+        };
+        jiSuffix = jiMap[value.end.word] || "";
+        if (jiSuffix) tooltipLines.push(`Usage: ${jiSuffix}`);
+    }
+
+    let total = intValue + fracValue;
+    if (value.magn) total *= Math.pow(base, magValue);
+    if (!value.int && value.magn) total = Math.pow(base, magValue);
+
+    let display = "";
+    let needsExplicitResult = baseExplicit || !!value.magn;
+
+    if (baseExplicit) display += `(base ${base}) `;
+    if (needsExplicitResult) {
+        if (value.int) display += rawDigits(value.int);
+        else if (!value.magn) display += "0";
+        if (value.fract) display += "." + rawDigits(value.fract.value);
+        if (repeatStr) display += repeatStr;
+        if (value.magn) {
+            if (!value.int && !value.fract) display += "1";
+            display += ` ${SYM_MULTIPLY} ${base}${toSuperscript(String(magValue))}`;
+        }
+        if (Number.isFinite(total) && !repeatStr) {
+            let formatted = Number.isInteger(total) ? total.toString() : total.toPrecision(10).replace(/\.?0+$/, "");
+            display += ` = ${formatted}`;
+        }
+    } else {
+        // Default base, no magnitude: just show the computed value directly
+        if (Number.isFinite(total) && !repeatStr) {
+            let formatted = Number.isInteger(total) ? total.toString() : total.toPrecision(10).replace(/\.?0+$/, "");
+            display += formatted;
+        } else {
+            if (value.int) display += rawDigits(value.int);
+            else display += "0";
+            if (value.fract) display += "." + rawDigits(value.fract.value);
+            if (repeatStr) display += repeatStr;
+        }
+    }
+    if (jiSuffix) display += ` (${jiSuffix})`;
+
+    return { display, tooltip: tooltipLines.join("\n") };
+}
+
+// ============================================================
+// Gloss helpers
+// ============================================================
 
 function fmtPlace(p) {
     return p.place + (p.equiv ? SYM_EQUIV : SYM_SHARING);

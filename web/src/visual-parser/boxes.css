@@ -324,7 +324,7 @@ html {
     font-size: 13px;
     font-style: normal;
     font-weight: normal;
-    white-space: normal;
+    white-space: pre-line;
     width: max-content;
     max-width: 500px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
