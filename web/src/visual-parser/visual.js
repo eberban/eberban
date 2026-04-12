@@ -309,6 +309,7 @@ function stepsToItems(steps, barColor, items, depth) {
             let remaining = steps.slice(i + 1);
             if (remaining.length > 0) {
                 stepsToItems(remaining, "vbox-bar-default", items, depth + 1);
+                if (items.length > 0) items[items.length - 1].chainPlace = "";
                 addReturnIfNeeded(items, depth, "vbox-bar-default");
             }
 
@@ -345,6 +346,7 @@ function stepsToItems(steps, barColor, items, depth) {
                     let isLastResume = ri === resumes.length - 1;
                     let nextDepth = isLastResume ? depth : depth + 1;
                     stepsToItems(flattenChain(r.next), "vbox-bar-default", items, nextDepth);
+                    if (items.length > 0) items[items.length - 1].chainPlace = "";
                     addReturnIfNeeded(items, depth, "vbox-bar-default");
                 }
             }
@@ -380,7 +382,28 @@ function collectBindItems(bindGroup, items, depth, inline) {
         } else {
             items.push({ type: "word", node: bind.start, color: wordColor, barColor, exposed: "", chainPlace: "", depth: nextDepth });
         }
-        stepsToItems(flattenChain(inner?.chain || inner), barColor, items, nextDepth);
+        let chainSteps = flattenChain(inner?.chain || inner);
+        let places = getBindVowelPlaces(bind.start.word);
+
+        if (places.length > 1 && chainSteps.length > 0) {
+            let consumed = Math.min(places.length - 1, chainSteps.length);
+
+            for (let v = 0; v < consumed; v++) {
+                items.push({ type: "separator", barColor, color: wordColor, depth: nextDepth, chainPlace: places[v] });
+                stepsToItems([chainSteps[v]], barColor, items, nextDepth);
+                if (items.length > 0) items[items.length - 1].chainPlace = "";
+            }
+
+            items.push({ type: "separator", barColor, color: wordColor, depth: nextDepth, chainPlace: places[consumed] });
+            let remaining = chainSteps.slice(consumed);
+            if (remaining.length > 0) {
+                stepsToItems(remaining, barColor, items, nextDepth);
+                if (items.length > 0) items[items.length - 1].chainPlace = "";
+            }
+        } else {
+            stepsToItems(chainSteps, barColor, items, nextDepth);
+            if (items.length > 0) items[items.length - 1].chainPlace = "";
+        }
     }
 
     // VEI: omit only if inline AND elided
@@ -413,7 +436,9 @@ function collectEnumItems(verb) {
             }
         }
 
+        let beforeLen = items.length;
         stepsToItems(flattenChain(item.chain), barColor, items, 0);
+        if (items.length > beforeLen) items[items.length - 1].chainPlace = "";
     }
 
     if (verb.end) {
@@ -506,7 +531,15 @@ function renderGrid(items) {
                 break;
             case "separator":
                 html += barCell(item.barColor, "", "", barExtra, depthStyle);
-                html += thinBox(item.color, extra, depthStyle);
+                if (item.chainPlace) {
+                    html += `<div class="vbox-terminator ${item.color} ${extra || ""}"${depthStyle || ""}>`
+                        + `<span class="vbox-word-text" style="visibility:hidden">x</span>`
+                        + `<span class="vbox-word-gloss">${item.chainPlace}</span>`
+                        + `<span class="vbox-word-family" style="visibility:hidden">x</span>`
+                        + `</div>`;
+                } else {
+                    html += thinBox(item.color, extra, depthStyle);
+                }
                 break;
             case "return": {
                 let returnHeight = item.maxDepth * INLINE_DEPTH_OFFSET_PX;
@@ -1088,6 +1121,18 @@ function getWordText(node) {
     if (node.family === "FFVariable") return "i" + node.content;
     if (node.family === "Borrowing") return "u" + node.content;
     return "?";
+}
+
+function getBindVowelPlaces(word) {
+    let places = [];
+    for (let ch of word) {
+        if ('aeou'.includes(ch)) {
+            places.push({ place: ch.toUpperCase(), equiv: false });
+        } else if (ch === 'i' && places.length > 0) {
+            places[places.length - 1].equiv = true;
+        }
+    }
+    return places.map(p => p.place + (p.equiv ? SYM_EQUIV : SYM_SHARING));
 }
 
 function formatNumber(value) {
