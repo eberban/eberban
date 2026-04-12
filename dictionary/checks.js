@@ -2,7 +2,7 @@
 
 
 if (process.argv.length != 3) {
-    console.log('usage : check_word_ids.js <file_path>');
+    console.log('usage : checks.js <file_path>');
     console.log("Script will check all word ids in dictionary YAML file are unique.")
     return;
 }
