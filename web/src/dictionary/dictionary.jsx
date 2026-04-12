@@ -180,7 +180,7 @@ function may_insert_entry(results, filters, word, entry) {
 					entry.without_spaces.includes(filter) ||
 					entry.gloss?.toLowerCase().includes(filter) ||
 					entry.short?.toLowerCase().includes(filter) ||
-					entry.id?.toLowerCase().includes(filter) ||
+					entry.id.toLowerCase() == filter ||
 					entry.notes?.toLowerCase().includes(filter)
 				)
 			) {
