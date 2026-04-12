@@ -11,3 +11,6 @@ web/node_modules
 web/src/grammar/eberban.js
 web/src/grammar/eberban.pegjs
 web/src/grammar/eberban.peggy.js
+
+# Don't track specific AI agents folders.
+.claude/
