@@ -1,5 +1,4 @@
-import store from "store2";
-
+import dictionary from "../../../../dictionary/en.yaml";
 import get_random_roots from "../logic/generator";
 import {
     get_random_three_letter_intransitive_root,
@@ -27,7 +26,7 @@ const match_get_random_root_fn = (root_list_id) => {
 
 const get_roots = (root_list_id) => {
     const get_random_root_fn = match_get_random_root_fn(root_list_id);
-    return get_random_roots(get_random_root_fn);
+    return get_random_roots(get_random_root_fn, dictionary);
 }
 
 const render_root_list = (root_list, roots) => {

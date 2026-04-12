@@ -1,5 +1,5 @@
-import { get_random_item }  from "../../shared/utils";
-import { convert_sequence_to_root, SYMBOLS as S } from "./random_symbol";
+import { get_random_item }  from "../../shared/utils.js";
+import { convert_sequence_to_root, SYMBOLS as S } from "./random_symbol.js";
 
 
 /* ENTRY */

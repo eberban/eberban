@@ -1,6 +1,4 @@
-import dictionary from "../../../../dictionary/en.yaml";
-
-function* generate_roots(get_random_root_fn) {
+function* generate_roots(get_random_root_fn, dictionary) {
     while (true) {
         const root = get_random_root_fn();
         if (!dictionary[root]) {
@@ -9,9 +7,9 @@ function* generate_roots(get_random_root_fn) {
     }
 }
 
-export default function get_random_roots(get_random_root_fn) {
+export default function get_random_roots(get_random_root_fn, dictionary) {
     const roots = [];
-    const generator = generate_roots(get_random_root_fn);
+    const generator = generate_roots(get_random_root_fn, dictionary);
     for (let i = 0; i < 10; i++) {
         roots.push(generator.next().value);
     }
