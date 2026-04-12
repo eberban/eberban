@@ -21,13 +21,13 @@ export function generateParticleInfo(word) {
     // Validate: only vowels and h separators after the prefix consonant
     if (!/^[ieaouh]+$/.test(rest) || !/[ieaou]/.test(rest)) return null;
 
-    // Only SI uses h semantically (chain override). VI/FI/TI reject h.
+    // SI uses h for chain override. FI uses h for relative-place forms. VI/TI reject h.
     if (prefix === "v") {
         if (word === "vei") return { family: "VEI", gloss: "]", short: "Ends explicit binding clause." };
         if (rest.includes("h")) return null;
         return generateVI(rest);
     }
-    if (prefix === "f") { if (rest.includes("h")) return null; return generateFI(rest); }
+    if (prefix === "f") return generateFI(rest);
     if (prefix === "s") return generateSI(rest);
     if (prefix === "t") { if (rest.includes("h")) return null; return generateTI(rest); }
     return null;
@@ -55,15 +55,26 @@ function generateVI(vowels) {
 // FI — explicit bind continue
 // ============================================================
 
-function generateFI(vowels) {
+// FI accepts h for relative-place forms (XhY pattern: direction + h + mode).
+// Also supports multi-vowel (same as VI: each non-final vowel consumes 1 pred).
+function generateFI(rest) {
+    // Strip h for special-case and multi-vowel checks
+    let vowels = rest.replace(/h/g, "");
+
     if (vowels === "i")   return { family: "FI", gloss: `]&[`, short: "State the following predicate chain, unrelated to any place." };
     if (vowels === "oi")  return { family: "FI", gloss: `]adv${SYM_SHARING}[`, short: "Starts adverbial/sharing-bound prepositional clause." };
     if (vowels === "ioi") return { family: "FI", gloss: `]adv${SYM_EQUIV}[`, short: "Starts adverbial/equivalence-bound prepositional clause." };
-    if (vowels === "eu")  return { family: "FI", gloss: `]same${SYM_SHARING}[`, short: "Continue binding to same place (sharing)." };
-    if (vowels === "au")  return { family: "FI", gloss: `]next${SYM_SHARING}[`, short: "Continue binding to next place (sharing)." };
-    if (vowels === "ei")  return { family: "FI", gloss: `]same${SYM_EQUIV}[`, short: "Continue binding to same place (equivalence)." };
-    if (vowels === "ai")  return { family: "FI", gloss: `]next${SYM_EQUIV}[`, short: "Continue binding to next place (equivalence)." };
 
+    // Relative-place forms: XhY where X=direction (e=same, a=next), Y=mode (u=sharing, i=equiv)
+    if (rest === "ehu")  return { family: "FI", gloss: `]same${SYM_SHARING}[`, short: "Continue binding to same place (sharing)." };
+    if (rest === "ahu")  return { family: "FI", gloss: `]next${SYM_SHARING}[`, short: "Continue binding to next place (sharing)." };
+    if (rest === "ehi")  return { family: "FI", gloss: `]same${SYM_EQUIV}[`, short: "Continue binding to same place (equivalence)." };
+    if (rest === "ahi")  return { family: "FI", gloss: `]next${SYM_EQUIV}[`, short: "Continue binding to next place (equivalence)." };
+
+    // Reject any other h usage
+    if (rest.includes("h")) return null;
+
+    // Multi-vowel FI: same as VI (each non-final vowel consumes 1 pred, final gets rest)
     let places = parseBindPlaces(vowels);
     if (places.length === 0) return null;
 

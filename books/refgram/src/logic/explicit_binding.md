@@ -39,9 +39,10 @@ family, which interacts with the same predicate as the last non-closed __VI__.
 The __FI__ family follows the same pattern of vowels as __VI__.
 The above sentence can thus be rewritten as `duna [ve mi, fo mo vei] meon` or
 even as `duna [ve mi, fo mo, fa meon vei]`. __FI__ have additional members:
-__feu__ to bind the same place as the previous __FI__ or __VI__ in the chain,
-while __fau__ binds the next place (this allows bind places of a predicate
-having more than 4 slots, which should however be rare).
+__fehu__ to bind the same place as the previous __FI__ or __VI__ in the chain,
+while __fahu__ binds the next place (this allows bind places of a predicate
+having more than 4 slots, which should however be rare). The __h__ separates
+the direction vowel (e=same, a=next) from the mode vowel (u=sharing, i=equivalence).
 
 In the last exemple it is possible to omit the final __vei__. It is, however,
 not possible to do so in the previous exemples as we would get the chain
@@ -175,8 +176,8 @@ definition but instead share it like an atom argument with the following
 predicate. The bound place must have the same predicate argument type however.
 To provide a definition of the predicate argument the particles __vie, via, vio,
 viu__ (and __FI__ equivalents) must be used. __FI__ have again additional members:
-__fei__ to bind the same place as the previous __FI__ or __VI__ in the chain,
-while __fai__ binds the next place.
+__fehi__ to bind the same place as the previous __FI__ or __VI__ in the chain,
+while __fahi__ binds the next place.
 
 If we take the example `tce mian` from the previous chapter it is equivalent to
 `tce via mian`. Sharing with __ve, va, ...__ can be used like so:
@@ -233,11 +234,11 @@ Using __VI/FI/SI__ is often preferred and more simple than using __pe__ and
 __pei__, but in some cases it is not possible. Those cases will be presented in
 later chapters.
 
-## Multi-places VI
+## Multi-places VI/FI
 
-__VI__ family extends to particle having multiple __EAOU__ vowels, each optionaly
-preceeded by a __I__. Each non-final __EAOU__ will bind a single predicate from
-the following chain, while the last vowel binds the rest.
+__VI__ and __FI__ families extend to particles having multiple __EAOU__ vowels,
+each optionaly preceeded by a __I__. Each non-final __EAOU__ will bind a single
+predicate from the following chain, while the last vowel binds the rest.
 
 - *mi dona vao: mo, meon*: I give you an apple.
 - *mi kelo vaio: za ubob, sae coriu vihon*: I'm thanksfull to Bob that I own a car.

@@ -106,9 +106,51 @@ describe("h behavior in generateParticleInfo", () => {
         expect(sehai.gloss).toContain("E,");
     });
 
-    it("VI/FI: h is rejected (not semantically meaningful)", () => {
+    it("VI: h is rejected", () => {
         expect(generateParticleInfo("vaha")).toBeNull();
+    });
+
+    it("FI: h-based relative-place forms (fehu/fahu/fehi/fahi)", () => {
+        let fehu = generateParticleInfo("fehu");
+        expect(fehu.family).toBe("FI");
+        expect(fehu.gloss).toContain("same");
+
+        let fahu = generateParticleInfo("fahu");
+        expect(fahu.gloss).toContain("next");
+
+        let fehi = generateParticleInfo("fehi");
+        expect(fehi.gloss).toContain("same");
+        expect(fehi.gloss).toContain("≡");
+
+        let fahi = generateParticleInfo("fahi");
+        expect(fahi.gloss).toContain("next");
+        expect(fahi.gloss).toContain("≡");
+    });
+
+    it("FI: old forms feu/fau/fei/fai are now multi-vowel, not relative-place", () => {
+        // feu = E (1 unit) + U (rest), not "same place"
+        let feu = generateParticleInfo("feu");
+        expect(feu.gloss).not.toContain("same");
+        expect(feu.gloss).toContain("E");
+        expect(feu.gloss).toContain("U");
+
+        let fau = generateParticleInfo("fau");
+        expect(fau.gloss).not.toContain("next");
+    });
+
+    it("FI: multi-vowel works (same as VI)", () => {
+        let fao = generateParticleInfo("fao");
+        expect(fao.family).toBe("FI");
+        expect(fao.gloss).toContain("A");
+        expect(fao.gloss).toContain("O");
+
+        let faio = generateParticleInfo("faio");
+        expect(faio.gloss).toContain("A");
+    });
+
+    it("FI: reject invalid h usage", () => {
         expect(generateParticleInfo("faha")).toBeNull();
+        expect(generateParticleInfo("fehahu")).toBeNull();
     });
 
     it("TI: h makes the word invalid (no h needed, no consecutive same vowels)", () => {

@@ -6097,7 +6097,9 @@ _family:
       \
       __Equivalence modifier:__ {i} before a place vowel switches to equivalence. {fie} binds E with equivalence, {fia} binds A with equivalence.\
       \
-      __Relative place:__ {feu} rebinds the same place as the previous clause, {fau} binds the next place. {fei}/{fai} are their equivalence variants.\
+      __Multi-vowel:__ like VI, each non-final vowel consumes 1 verb, final vowel gets the rest. Example: {fao} continues binding first verb to A, remaining chain to O.\
+      \
+      __Relative place:__ {fehu} rebinds the same place as the previous clause, {fahu} binds the next place. {fehi}/{fahi} are their equivalence variants. The {h} separates direction (e=same, a=next) from mode (u=sharing, i=equiv).\
       \
       __Adverbial:__ {foi} continues with a sharing-bound adverbial clause, {fioi} with equivalence.\
       \
