@@ -27,31 +27,28 @@ const { dictionary_doc, dictionary } = (() => {
 // CI FUNCTIONS
 
 
-function check_word_has_id(word, dictionary) {
-  const id = dictionary[word].id;
-  return !!id;
-}
-
 const words_with_missing_ids = [];
 
-function record_word_with_missing_id(word, word_line_data) {
-  const word_line = word_line_data.line;
-  const word_col = word_line_data.col;
-  const word_end_column = word_line_data.col + (word.length - 1);
-  words_with_missing_ids.push({ word, word_line, word_col, word_end_column });
+function record_word_with_missing_id(word) {
+  const word_value = word.value;
+  const word_line = word.line_data.line;
+  const word_col = word.line_data.col;
+  const word_end_column = word.line_data.col + (word_value.length - 1);
+  words_with_missing_ids.push({ word_value, word_line, word_col, word_end_column });
 }
 
 const id_usages = new Map();
 
-function record_id(word, id, id_line_data) {
-  const id_line = id_line_data.line;
-  const id_col = id_line_data.col;
-  const id_end_column = id_line_data.col + (id.length - 1);
-  const usage = { word, id_line, id_col, id_end_column };
-  if (id_usages.has(id)) {
-    id_usages.get(id).push(usage);
+function record_id(word_value, id) {
+  const id_value = id.value;
+  const id_line = id.line_data.line;
+  const id_col = id.line_data.col;
+  const id_end_column = id.line_data.col + (id_value.length - 1);
+  const usage = { word_value, id_line, id_col, id_end_column };
+  if (id_usages.has(id_value)) {
+    id_usages.get(id_value).push(usage);
   } else {
-    id_usages.set(id, [usage]);
+    id_usages.set(id_value, [usage]);
   }
 }
 
@@ -59,40 +56,52 @@ function record_id(word, id, id_line_data) {
 // ITERATING
 
 
+function* yaml_items_iterator(yaml_items, dictionary_lookup) {
+  for (const {key: yaml_key, value: yaml_value} of yaml_items) {
+    const items = yaml_value.items;
+    const word = {
+      value: yaml_key.value,
+      line_data: line_counter.linePos(yaml_value.range[0]),
+    };
+    const id = {
+      // optional chaining as we don't yet know whether the word has an id
+      value: dictionary_lookup[word?.value]?.id,
+      line_data: line_counter.linePos(items[0]?.value.range[0]),
+    };
+    yield { items, word, id };
+  }
+}
+
 // dictionary_doc contains the line counter metadata. So we'll loop over this
 // and lookup ids with the dictionary
-for (const {key, value } of dictionary_doc) {
-  const word = key.value;
-  if (word === "_spelling") {
-    for (const { key: spelling_key, value: spelling_value } of value.items) {
-      const spelling_word = spelling_key.value;
-      const spelling_word_line_data = line_counter.linePos(spelling_value.range[0]);
-      if (!check_word_has_id(spelling_word, dictionary["_spelling"])) {
-        record_word_with_missing_id(spelling_word, spelling_word_line_data);
+for (const {word, id, items} of yaml_items_iterator(dictionary_doc, dictionary)) {
+  // "_spelling" words
+  if (word.value === "_spelling") {
+    for (const { word: spelling_word, id: spelling_id } of yaml_items_iterator(items, dictionary["_spelling"])) {
+      if (!spelling_id.value) {
+        record_word_with_missing_id(spelling_word);
         continue; // No id, so we'll skip the other id checks
       }
-      const id = dictionary["_spelling"][spelling_word].id;
-      const id_line_data = line_counter.linePos(spelling_value.items[0].value.range[0]);
-      record_id(spelling_word, id, id_line_data);
+      record_id(spelling_word.value, spelling_id);
     }
-    continue; // _spelling words completed, move to the next non-spelling word
+    // "_spelling" words completed, no need to check the string "_spelling".
+    // Move to the next non-spelling word.
+    continue; 
   }
-  const word_line_data = line_counter.linePos(value.range[0]);
-  if (!check_word_has_id(word, dictionary)) {
-    record_word_with_missing_id(word, word_line_data);
+  // non-"_spelling" words
+  if (!id.value) {
+    record_word_with_missing_id(word);
     continue; // No id, so we'll skip the other id checks
   }
-  const id = dictionary[word].id;
-  const id_line_data = line_counter.linePos(value.items[0].value.range[0]);
-  record_id(word, id, id_line_data);
+  record_id(word.value, id);
 }
 
 
 // ERROR REPORTING (GitHub Annotation error messages. They'll show in PR diffs)
 
 
-for (const {word, word_line, word_col, word_end_column} of words_with_missing_ids) {
-  console.log(`::error file=${file_name},line=${word_line},col=${word_col},endColumn=${word_end_column}::Word ${word} is missing its ID`);
+for (const {word_value, word_line, word_col, word_end_column} of words_with_missing_ids) {
+  console.log(`::error file=${file_name},line=${word_line},col=${word_col},endColumn=${word_end_column}::Word ${word_value} is missing its ID`);
 }
 if (words_with_missing_ids.length > 0) {
   console.log("❌ Missing ID(s) found.")
@@ -101,8 +110,8 @@ if (words_with_missing_ids.length > 0) {
 let duplicates_found = false;
 for (const [id, all_usages] of id_usages) {
   if (all_usages.length > 1) {
-    all_usages.forEach(({ word, id_line, id_col, id_end_column }) => {
-      console.log(`::error file=${file_name},line=${id_line},col=${id_col},endColumn=${id_end_column}::Duplicate ID ${id} in word ${word}`);
+    all_usages.forEach(({ word_value, id_line, id_col, id_end_column }) => {
+      console.log(`::error file=${file_name},line=${id_line},col=${id_col},endColumn=${id_end_column}::Duplicate ID ${id} in word ${word_value}`);
     })
     duplicates_found = true;
   }
