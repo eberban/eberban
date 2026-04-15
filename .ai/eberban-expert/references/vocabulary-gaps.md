@@ -1,7 +1,7 @@
 # Eberban Vocabulary Status & Gaps
 
-## Current Stats (798 entries)
-- 474 roots, 152 compounds, 172 particles (38 families)
+## Current Stats (~880 entries)
+- ~556 roots, 152 compounds, 172 particles (38 families)
 
 ## Well-Covered Domains
 | Domain | Count | Notes |
@@ -11,43 +11,41 @@
 | number/digit | 46+24 | Complete base system |
 | set operations | 36 | tc- prefix pattern |
 | space | 29 | Physical entities, directions |
+| animal | 25+ | cat, dog, bird, fish, insect, cow, horse, pig, snake, bear, deer, wolf, frog, chicken, sheep, mouse, ant, bee, butterfly |
+| emotion | 29 | Happy, sad, angry, fear, love, trust, hatred, jealous, proud, excited, ashamed, guilt, regret, lonely, + existing |
+| food/drink | 30+ | Fruits, grains, substances, prepared food, drinks |
 | cultural | 23 | Country/language names (compounds) |
 | body parts | 22 | Head, eye, ear, hand, foot, joint, organ |
 | color | 21 | HSV system (zm- prefix) |
-| emotion | 20 | Happy, sad, angry, brave, love, friend |
 | list operations | 22 | Ordered collections |
 | event | 20 | Calendar-aligned occurrences |
+| movement | 17+ | Walk, fly, dance, run, jump, climb, swim, fall, push, pull, throw, carry, hold, hit, sit, stand |
+| plant/nature | 15+ | Tree, grass, mushroom, forest, mountain, island, leaf, seed, flower |
+| weather | 8+ | Rain, wind, sun, snow, cloud, storm, fog, ice |
+| clothing | 10+ | Shirt, pants, wear, shoe, hat, jacket, dress, sock, glove |
+| objects | 15+ | Book, knife, rope, wheel, key, bag, mirror, candle, pen, box, table, bed, chair, shelf, lamp |
 
-## Weak Domains (<15 entries)
+## Weak Domains (still <15 entries)
 | Domain | Count | Examples present |
 |--------|-------|-----------------|
-| animal | 12 | cat, dog, bird, fish, insect, cow, horse, pig |
 | measurement | 11 | length, area, volume, mass, speed |
-| plant | 9 | tree, flower, grass, leaf, blossom |
 | map operations | 9 | key-value structures |
 | kinship | 8 | parent, sibling, child |
-| food | 8 | apple, mushroom, bread, fruit |
 | math | 7 | natural, integer, division |
 | intensity | 7 | big, small, more, less, same |
-| clothing | 4 | Minimal coverage |
 | vehicle | 4 | Minimal coverage |
 | geometry | 3 | Very basic |
 
 ## Missing Domains (0 entries)
-- weather (rain, snow, wind, cloud, storm, temperature)
-- tools/instruments (hammer, knife, pen, computer, phone)
 - weapons
-- architecture/buildings (house, room, door, window, wall, roof)
-- furniture (table, chair, bed, shelf)
 - sports/games
 - musical instruments
 - textures (rough, smooth, soft, hard)
-- smell/taste (sweet, sour, bitter, salty, spicy)
-- cooking/preparation methods
-- materials (wood, metal, glass, plastic, stone, cloth)
+- smell/taste (sweet, sour, bitter, spicy — sweet planned as compound sugar+sensation)
+- cooking methods (cook root deferred — multi-step process design needed)
+- materials (wood, metal, glass, plastic, cloth)
 - professions/occupations
 - communication technology (internet, email, message)
-- geography (mountain, river, ocean, forest, desert)
 - celestial bodies (star, moon, planet — beyond "stellar body")
 
 ## Semantic Prefix Patterns
@@ -60,14 +58,22 @@
 | sp- | speech/communication | spua, spia |
 | bl- | properties/quality | blan, blua |
 
-## Priority for Vocabulary Expansion
-1. **Geography** — needed for basic world description
-2. **Weather** — daily conversation essential
-3. **Materials** — physical world description
-4. **Architecture/furniture** — domestic/spatial vocabulary
-5. **Tools** — practical interaction vocabulary
-6. **Taste/smell/texture** — sensory vocabulary
-7. **Professions** — social vocabulary
-8. **Animals (expand)** — 12 is very limited
-9. **Plants (expand)** — 9 is very limited
-10. **Food (expand)** — 8 is very limited
+## Deferred Design Problems
+- **cook** — root agreed, but place structure needs deeper design (multi-step processes)
+- **travel/goes-to** — same problem (paths, steps, pauses)
+- **cabinet / storage containers** — think about storage holistically
+
+## Emotion Design Decisions
+- **Reactive emotions** (proposition-based, -i ending): happy, sad, angry, fear, anxiety, awe, awkward, bored, calm, confusion, crave, disgust, sympathy, nostalgia, relief, surprise, romantic, sexual, interest, proud, excited, ashamed, guilt, regret
+- **Relational emotions** (entity-based, non-i vowel ending): love, like, friend, jealous, hatred, trust
+- **Unary**: lonely
+- Reason for emotion is handled externally via the context mechanism, not baked into emotion words
+- `zue` already handles "I feel X about [me doing Y]" for proposition-based emotions — no special combinator needed
+
+## Priority for Further Expansion
+1. **Materials** — wood, metal, glass, cloth (physical world)
+2. **Taste/smell/texture** — sensory vocabulary
+3. **Kinship (expand)** — still basic
+4. **Professions** — social vocabulary
+5. **Musical instruments** — cultural vocabulary
+6. **Celestial bodies** — star, moon, planet

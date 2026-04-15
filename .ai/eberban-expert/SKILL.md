@@ -216,7 +216,9 @@ See `references/grammar-deep-dive.md` for formal grammar details and `references
 
 ## Vocabulary State
 
-~798 entries: 474 roots, 152 compounds, 172 particles. Strong in time/tense/sets/logic. Very weak in tools/weather/textures/architecture/furniture/geography. See `references/vocabulary-gaps.md`.
+~880 entries: ~556 roots, 152 compounds, 172 particles. Strong in time/tense/sets/logic/animals/food/emotions/movement/weather/clothing/objects/nature. Still weak in materials/textures/taste/professions/instruments. See `references/vocabulary-gaps.md`.
+
+**Emotion design**: reactive emotions are proposition-based (-i ending, use `zue` for self-referential). Relational emotions (love, hate, trust, jealous) are entity-based (non-i vowel ending). Unary: lonely. Reason is external (context mechanism). A reflexive combinator (`vla`) was explored but deemed redundant with `zue` for practical cases.
 
 ## Numbers
 
@@ -266,6 +268,7 @@ Transitivity determines how verbs chain and what their chaining place accepts:
 - `references/vocabulary-gaps.md` — domain coverage analysis, expansion priorities
 - `references/writing-and-tooling.md` — writing systems, web app, visual renderer, grammar file, dev workflows
 - `references/open-design-problems.md` — unsolved: ze through equivalence boundaries
+- `references/word-form-design.md` — sound symbolism, length strategy, consonant/vowel meaning associations
 
 ## Rules for Contributing
 

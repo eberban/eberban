@@ -4918,6 +4918,488 @@ guren:
 
     TODO: What is a season in general? Is it possible to define without enumerating all seasons from
     all season systems?
+slon:
+  id: pn1dk53jqx
+  family: "R"
+  gloss: "fish"
+  tags: [animal]
+  short: "[E:tce* pan] is a fish."
+cior:
+  id: 96fnkqmp2u
+  family: "R"
+  gloss: "insect"
+  tags: [animal]
+  short: "[E:tce* pan] is an insect."
+sian:
+  id: vu9xldfn8d
+  family: "R"
+  gloss: "snake"
+  tags: [animal]
+  short: "[E:tce* pan] is a snake."
+jvan:
+  id: m557br76lp
+  family: "R"
+  gloss: "horse"
+  tags: [animal]
+  short: "[E:tce* pan] is a horse."
+moir:
+  id: qyttlyynoi
+  family: "R"
+  gloss: "cow"
+  tags: [animal]
+  short: "[E:tce* pan] is a cow."
+grin:
+  id: z2vi1ojwdj
+  family: "R"
+  gloss: "pig"
+  tags: [animal]
+  short: "[E:tce* pan] is a pig."
+mnol:
+  id: vfwq6oo8vn
+  family: "R"
+  gloss: "sheep"
+  tags: [animal]
+  short: "[E:tce* pan] is a sheep."
+vian:
+  id: 67h7e585ju
+  family: "R"
+  gloss: "mouse"
+  tags: [animal]
+  short: "[E:tce* pan] is a mouse."
+boer:
+  id: vnyuccmw8g
+  family: "R"
+  gloss: "bear"
+  tags: [animal]
+  short: "[E:tce* pan] is a bear."
+marir:
+  id: hwpa5qpgmy
+  family: "R"
+  gloss: "deer"
+  tags: [animal]
+  short: "[E:tce* pan] is a deer."
+piol:
+  id: n11i7oa37i
+  family: "R"
+  gloss: "ant"
+  tags: [animal]
+  short: "[E:tce* pan] is an ant."
+zien:
+  id: j29kloobfe
+  family: "R"
+  gloss: "bee"
+  tags: [animal]
+  short: "[E:tce* pan] is a bee."
+briar:
+  id: 4qwoj0dg3y
+  family: "R"
+  gloss: "butterfly"
+  tags: [animal]
+  short: "[E:tce* pan] is a butterfly."
+spir:
+  id: svnikucmsj
+  family: "R"
+  gloss: "salt"
+  tags: [food]
+  short: "[E:tce* pan] is salt (sodium chloride)."
+moul:
+  id: sgti0oxaxz
+  family: "R"
+  gloss: "sugar"
+  tags: [food]
+  short: "[E:tce* pan] is sugar."
+maol:
+  id: 39e03xjy4q
+  family: "R"
+  gloss: "honey"
+  tags: [food]
+  short: "[E:tce* pan] is honey."
+mrun:
+  id: qkhdfiyq9v
+  family: "R"
+  gloss: "cheese"
+  tags: [food]
+  short: "[E:tce* pan] is cheese."
+flon:
+  id: eatcyq0n99
+  family: "R"
+  gloss: "flour"
+  tags: [food]
+  short: "[E:tce* pan] is flour (powder ground from grain)."
+piel:
+  id: nllincgyd1
+  family: "R"
+  gloss: "dough"
+  tags: [food]
+  short: "[E:tce* pan] is dough (mixture of flour and liquid)."
+mluil:
+  id: t1ubcj51hm
+  family: "R"
+  gloss: "chocolate"
+  tags: [food]
+  short: "[E:tce* pan] is chocolate."
+goal:
+  id: gw2d64znbr
+  family: "R"
+  gloss: "wheat"
+  tags: [food, plant]
+  short: "[E:tce* pan] is wheat."
+gain:
+  id: f6611cd3pu
+  family: "R"
+  gloss: "corn"
+  tags: [food, plant]
+  short: "[E:tce* pan] is corn/maize."
+suin:
+  id: yg4xdabm3d
+  family: "R"
+  gloss: "soup"
+  tags: [food]
+  short: "[E:tce* pan] is soup (food that is primarily liquid, obtained by cooking in liquid)."
+druil:
+  id: d9vb2a5upg
+  family: "R"
+  gloss: "banana"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a banana."
+skil:
+  id: j6gl84epct
+  family: "R"
+  gloss: "grape"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a grape."
+cnel:
+  id: lkxmu441ix
+  family: "R"
+  gloss: "lemon"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a lemon."
+briur:
+  id: yl11ghymb6
+  family: "R"
+  gloss: "strawberry"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a strawberry."
+frual:
+  id: q1yam2fcyo
+  family: "R"
+  gloss: "tomato"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a tomato."
+sihul:
+  id: jgjabt20zr
+  family: "R"
+  gloss: "peach"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a peach."
+junol:
+  id: wvpuyj1xg3
+  family: "R"
+  gloss: "pear"
+  tags: [food, fruit]
+  short: "[E:tce* pan] is a pear."
+cpan:
+  id: aiz1xcbm61
+  family: "R"
+  gloss: "tea"
+  tags: [food]
+  short: "[E:tce* pan] is tea (Camellia sinensis)."
+dreir:
+  id: 2xvrc2a0a5
+  family: "R"
+  gloss: "coffee"
+  tags: [food]
+  short: "[E:tce* pan] is coffee (Coffea)."
+cralo:
+  id: v19ii0rfdn
+  family: "R"
+  gloss: "infusion"
+  tags: [food]
+  short: "[E:tce* pan] is an herbal infusion of plant [A:tce* pan] in hot water."
+vono:
+  id: xgahlefurh
+  family: "R"
+  gloss: "flesh"
+  tags: [body]
+  short: "[E:tce* pan] is flesh/muscle tissue of body [A:tce* pan]."
+gano:
+  id: pmf7a8mexa
+  family: "R"
+  gloss: "jealous"
+  tags: [emotion]
+  short: "[E:tce* pan] is jealous of [A:tce* man]."
+kinu:
+  id: dle0ei97j0
+  family: "R"
+  gloss: "hatred"
+  tags: [emotion]
+  short: "[E:tce* pan] hates [A:tce* man]."
+gale:
+  id: fkqe8xuu8k
+  family: "R"
+  gloss: "trust"
+  tags: [emotion]
+  short: "[E:tce* pan] trusts [A:tce* man]."
+fnoi:
+  id: 1rfsosqohp
+  family: "R"
+  gloss: "proud:"
+  tags: [emotion]
+  short: "[E:tce* pan] is proud that [A:()] is true."
+dani:
+  id: zlreg1azj6
+  family: "R"
+  gloss: "excited:"
+  tags: [emotion]
+  short: "[E:tce* pan] is excited that [A:()] is true."
+mori:
+  id: mxcyqrkids
+  family: "R"
+  gloss: "ashamed:"
+  tags: [emotion]
+  short: "[E:tce* pan] is ashamed that [A:()] is true."
+froi:
+  id: 0f2o3xj8ga
+  family: "R"
+  gloss: "guilt:"
+  tags: [emotion]
+  short: "[E:tce* pan] feels guilty that [A:()] is true."
+jiri:
+  id: t6o3x6zaen
+  family: "R"
+  gloss: "regret:"
+  tags: [emotion]
+  short: "[E:tce* pan] regrets that [A:()] is true."
+drol:
+  id: c6b24j1lva
+  family: "R"
+  gloss: "lonely"
+  tags: [emotion]
+  short: "[E:tce* pan] is lonely."
+klin:
+  id: ihvltgq4mv
+  family: "R"
+  gloss: "run"
+  short: "[E:tce* pan] runs."
+piul:
+  id: 4jvrkq38as
+  family: "R"
+  gloss: "jump"
+  short: "[E:tce* pan] jumps."
+zale:
+  id: brbvoy35md
+  family: "R"
+  gloss: "climb"
+  short: "[E:tce* pan] climbs [A:tce* pan]."
+sien:
+  id: gx1dv8pf0z
+  family: "R"
+  gloss: "swim"
+  short: "[E:tce* pan] swims."
+zuor:
+  id: xs01saq39x
+  family: "R"
+  gloss: "fall"
+  short: "[E:tce* pan] falls."
+brua:
+  id: d1dmereczn
+  family: "R"
+  gloss: "push"
+  short: "[E:tce* pan] pushes [A:tce* pan]."
+feru:
+  id: 16okziezzz
+  family: "R"
+  gloss: "pull"
+  short: "[E:tce* pan] pulls [A:tce* pan]."
+spue:
+  id: mc2sikior5
+  family: "R"
+  gloss: "throw"
+  short: "[E:tce* pan] throws [A:tce* pan]."
+malo:
+  id: rzq2nk2rsr
+  family: "R"
+  gloss: "carry"
+  short: "[E:tce* pan] carries [A:tce* pan]."
+palu:
+  id: n55n77x0es
+  family: "R"
+  gloss: "hold"
+  short: "[E:tce* pan] holds [A:tce* pan]."
+trea:
+  id: b4mxtvilve
+  family: "R"
+  gloss: "hit"
+  short: "[E:tce* pan] hits/strikes [A:tce* pan]."
+
+# -- Clothing --
+
+zure:
+  id: kjzqjeyvqd
+  family: "R"
+  gloss: "shoe"
+  tags: [clothing]
+  short: "[E:tce* pan] is a shoe for foot [A:tce* pan]."
+maen:
+  id: x1pbbieacu
+  family: "R"
+  gloss: "hat"
+  tags: [clothing]
+  short: "[E:tce* pan] is a hat/headwear."
+plar:
+  id: tpaqk40hlw
+  family: "R"
+  gloss: "jacket"
+  tags: [clothing]
+  short: "[E:tce* pan] is a jacket/coat."
+fain:
+  id: swebo6gtnz
+  family: "R"
+  gloss: "dress"
+  tags: [clothing]
+  short: "[E:tce* pan] is a dress."
+soel:
+  id: zi10p5ushd
+  family: "R"
+  gloss: "sock"
+  tags: [clothing]
+  short: "[E:tce* pan] is a sock."
+dene:
+  id: fg9hc37k4t
+  family: "R"
+  gloss: "glove"
+  tags: [clothing]
+  short: "[E:tce* pan] is a glove for hand [A:tce* pan]."
+
+# -- Weather --
+
+feil:
+  id: tuh8j0pzlh
+  family: "R"
+  gloss: "snow"
+  tags: [weather]
+  short: "[E:tce* pan] is snow."
+prel:
+  id: nydemla5nt
+  family: "R"
+  gloss: "cloud"
+  tags: [weather]
+  short: "[E:tce* pan] is a cloud."
+kaen:
+  id: 428zea90c7
+  family: "R"
+  gloss: "storm"
+  tags: [weather]
+  short: "[E:tce* pan] is a storm."
+miel:
+  id: 3iy2tt66pq
+  family: "R"
+  gloss: "fog"
+  tags: [weather]
+  short: "[E:tce* pan] is fog."
+kain:
+  id: 8fwlpuy22q
+  family: "R"
+  gloss: "ice"
+  tags: [weather]
+  short: "[E:tce* pan] is ice."
+
+# -- Furniture --
+
+sler:
+  id: 3t3qw35lee
+  family: "R"
+  gloss: "chair"
+  short: "[E:tce* pan] is a chair/seat."
+pear:
+  id: 9l6nu8gaqe
+  family: "R"
+  gloss: "shelf"
+  short: "[E:tce* pan] is a shelf."
+faol:
+  id: 8zwv4w09qk
+  family: "R"
+  gloss: "lamp"
+  short: "[E:tce* pan] is a lamp/light source."
+
+# -- Nature --
+
+muol:
+  id: 7qenv3mtgk
+  family: "R"
+  gloss: "grass"
+  tags: [plant]
+  short: "[E:tce* pan] is grass."
+gran:
+  id: vic52ltfiz
+  family: "R"
+  gloss: "mountain"
+  short: "[E:tce* pan] is a mountain."
+fein:
+  id: 716sdow2s6
+  family: "R"
+  gloss: "forest"
+  tags: [plant]
+  short: "[E:tce* pan] is a forest."
+flul:
+  id: i4ux3ha8yr
+  family: "R"
+  gloss: "island"
+  short: "[E:tce* pan] is an island."
+golo:
+  id: 91x6ec7hb3
+  family: "R"
+  gloss: "seed"
+  tags: [plant]
+  short: "[E:tce* pan] is a seed of plant [A:tce* pan]."
+
+# -- Common Objects --
+
+gzel:
+  id: 24yqm6w0h1
+  family: "R"
+  gloss: "book"
+  short: "[E:tce* pan] is a book."
+tsar:
+  id: ilkjt9psd5
+  family: "R"
+  gloss: "knife"
+  short: "[E:tce* pan] is a knife."
+kran:
+  id: t3669z9dp6
+  family: "R"
+  gloss: "rope"
+  short: "[E:tce* pan] is a rope/string."
+diol:
+  id: anyexhxu3m
+  family: "R"
+  gloss: "wheel"
+  short: "[E:tce* pan] is a wheel."
+cila:
+  id: zei5mbl6mp
+  family: "R"
+  gloss: "key"
+  short: "[E:tce* pan] is a key for lock [A:tce* pan]."
+buen:
+  id: 84wmgvuw6c
+  family: "R"
+  gloss: "bag"
+  short: "[E:tce* pan] is a bag/container."
+seon:
+  id: gzrhfu5cn7
+  family: "R"
+  gloss: "mirror"
+  short: "[E:tce* pan] is a mirror."
+jaul:
+  id: 75thz72mp8
+  family: "R"
+  gloss: "candle"
+  short: "[E:tce* pan] is a candle."
+cpun:
+  id: sgl2sdntfj
+  family: "R"
+  gloss: "pen"
+  short: "[E:tce* pan] is a pen/writing tool."
 
 # -----
 # Compounds
