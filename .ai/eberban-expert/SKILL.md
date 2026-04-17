@@ -275,7 +275,7 @@ Transitivity determines how verbs chain and what their chaining place accepts:
 - Individual particles lowercase (ve, fa, sre). UPPERCASE for family names (VI, FI, SI).
 - Vocabulary: follow existing patterns. IEAOU = small to big scale. Check `dictionary/en.yaml` for domain prefixes (tc- sets, sr- time, zm- colors).
 - Compounds: e/en/er prefix. Transitivity from last component. Add se/sa/sai suffix to override.
-- Dictionary entries: id (INSERT_WORD_ID → `npm run ids`), family, gloss, tags, short. Place notation: `[E:type]`, `[A:(pred)]`, `*` for distributive. Compounds stored as `"e tian sa"` (spaces between parts). Spelling entries under `_spelling` key.
+- Dictionary entries: id (INSERT_WORD_ID → `npm run ids`), family, gloss, tags, short. Place notation: `[E:type]`, `[A:(pred)]`, `*` for distributive. Compounds stored as `"e tian sa"` (spaces between parts). Spelling entries under `_spelling` key. **No section/category comments** (like `# -- Animals --`) in `dictionary/en.yaml` — just add entries directly.
 - PEG grammar: run `npm run build-peggy` after editing eberban.peggy. Morphology rules are fragile — never modify without asking.
 - Always verify morphological validity: no forbidden consonant pairs, SSM compliance.
 - Borrowings: u-prefix, must end with vowel or vowel+single-consonant. Buffer vowels for forbidden clusters.

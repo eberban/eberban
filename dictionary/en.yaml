@@ -1887,12 +1887,6 @@ zaro:
   family: "R"
   gloss: "agrees"
   short: "[E:tce* pan] agrees with [A:tce* pan] that [O:()] is true."
-vania:
-  id: meuqg48faw
-  predilex_id: jogavu{E,O,A}
-  family: "R"
-  gloss: "moves"
-  short: "[E:tce* pan] moves/goes to [A:tce* pan] from [O:tce* pan]."
 gzi:
   id: 3qi3tvpegs
   predilex_id: gunaco
@@ -5400,6 +5394,25 @@ cpun:
   family: "R"
   gloss: "pen"
   short: "[E:tce* pan] is a pen/writing tool."
+flao:
+  id: p6y7yo580y
+  family: "R"
+  gloss: "path"
+  short: "[E:blu sken] is a continuous spatiotemporal path to [A:tce* pan] from [O:tce* pan]."
+  notes: |
+    Each element of the list is the volume occupied by the entity(ies) traversing the path ({krao}) at a single instant.
+    A and O are volumes that contain the last and first volumes of the list respectively.
+    This allows varying precision: "from Paris to Hamburg" or "from France to Germany".
+    Pauses are segments where the spatial component stays constant while time advances.
+    Decompose using list operations. Compare paths via shared properties.
+krao:
+  id: 8678lu3ztg
+  family: "R"
+  gloss: "traverse"
+  short: "[E:tce pan] traverses path [A:flao]."
+  notes: |
+    Example: za ualis krao flao vo za umarsei fa za uparis
+    "Alice traverses a path from Marseille to Paris"
 
 # -----
 # Compounds
