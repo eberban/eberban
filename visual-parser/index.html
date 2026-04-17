@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+	<title>eberban visual parser</title>
+    <link rel="icon" type="image/png" sizes="200x200" href="/eberban/icon.png">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="module" crossorigin src="/eberban/assets/visual-parser-2CITZgvk.js"></script>
+  <link rel="modulepreload" crossorigin href="/eberban/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/eberban/assets/particle-gloss-Cw2Ywi2x.js">
+  <link rel="modulepreload" crossorigin href="/eberban/assets/en-CRVqDtmI.js">
+  <link rel="modulepreload" crossorigin href="/eberban/assets/peggy.min-CdZByZl6.js">
+  <link rel="stylesheet" crossorigin href="/eberban/assets/particle-gloss-9DLgvT5C.css">
+  <link rel="stylesheet" crossorigin href="/eberban/assets/visual-parser-BoXg3L9r.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h3><a href="..">eberban</a> visual parser</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<form>
+					<fieldset>
+						<textarea id="input_textarea" rows="5"
+							placeholder='Type any eberban text here.'
+							style="width: 100%;" spellcheck="false"></textarea>         
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div id="parser_error_box" class="span12"
+				style="display:block; overflow: scroll; border: solid 1px; padding: 10px; background-color: #FFAAAA;">
+				<pre style="white-space: pre-wrap;"><code id="parse_error"></code></pre>
+			</div>
+
+			<div id="parser_warnings_box" class="span12"
+				style="display:block; overflow: scroll; border: solid 1px; padding: 10px; background-color: #FFFFAA;">
+				<pre style="white-space: pre-wrap;"><code id="parse_warnings"></code></pre>
+			</div>
+		</div>
+		<div class="row">
+			<div id="result-row" class="span12" style="display: box;">
+				<legend>Result <small><span id="time-label"></span></small></legend>
+				<ul class="nav nav-tabs">
+					<li><a id="parse-result-raw-tab" href="#parse-result-raw" data-toggle="tab">Raw parser output</a></li>
+					<li><a id="parse-result-tree-tab" href="#parse-result-tree" data-toggle="tab">Parse tree</a></li>
+					<li class="active"><a id="parse-result-boxes-tab" href="#parse-result-boxes"
+							data-toggle="tab">Boxes</a></li>
+					<li><a id="parse-result-glossing-tab" href="#parse-result-glossing" data-toggle="tab">Glosses</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div id="parse-result-raw" class="tab-pane fade"><i>Here, the raw parse output will be shown...</i></div>
+					<div id="parse-result-tree" class="tab-pane fade"><i>Here, the parse result will be shown as a tree...</i>
+					</div>
+					<div id="parse-result-boxes" class="tab-pane active in fade"><i>Here, the parse result will be shown as a
+							series of nested boxes ...</i></div>
+					<div id="parse-result-glossing" class="tab-pane fade"><i>Here, a gloss of the individual words will
+							appear...</i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+</html>
