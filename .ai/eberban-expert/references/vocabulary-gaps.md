@@ -45,7 +45,7 @@
 - cooking methods (cook root deferred — multi-step process design needed)
 - materials (wood, metal, glass, plastic, cloth)
 - professions/occupations
-- communication technology (most online-discourse vocabulary added: vrano message, flane/flanu/flan post/delete/live-state, klan discourse-space, gruno community, grano platform, klano reply, klino reaction, klona mention, vroni live-session, spani spectator, prano account, klane replaced-by, kluna/klunu joins/leaves, bena/benu write/read, flunu listens, zmali video, floli audio-recording, dranu file; outstanding minor: block/mute)
+- communication technology (most online-discourse vocabulary added: vrano message, flane/flanu/flain post/delete/live-state, klan discourse-space, gruno community, grano platform, klano reply, klino reaction, klona mention, vroni live-session, spani spectator, prano account, klane replaced-by, kluna/klunu joins/leaves, bena/benu write/read, flunu listens, zmali video, floli audio-recording, dranu file; outstanding minor: block/mute)
 - celestial bodies (star, moon, planet — beyond "stellar body")
 
 ## Semantic Prefix Patterns

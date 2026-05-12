@@ -5475,7 +5475,7 @@ vrano:
     {vrano} is atemporal: it describes the message as a thing, not the act of
     sending it. Use {flane} for the sending event (timed via tense, with sender
     and destination).
-  see_also: [flane, flanu, flan, klan, klano, klino, klane]
+  see_also: [flane, flanu, flain, klan, klano, klino, klane]
 gruno:
   id: 38sc9xs3gu
   family: "R"
@@ -5565,15 +5565,15 @@ klane:
     [A] (the newer version). Captures edits on chat platforms and amendments
     in commit-style history equally.
 
-    Whether both versions remain {flan} (currently-posted) is a separate
-    axis: chat edits hide [E] so its {flan} state ends when [A]'s starts,
+    Whether both versions remain {flain} (currently-posted) is a separate
+    axis: chat edits hide [E] so its {flain} state ends when [A]'s starts,
     but commit histories and Wikipedia revisions keep both [E] and [A]
-    addressable and {flan}. {klane} doesn't dictate {flan} on its own.
+    addressable and {flain}. {klane} doesn't dictate {flain} on its own.
 
     {klano} children of [E] typically follow the replacement chain to [A]
     by default; speakers can express exceptions via additional relations
     when needed.
-  see_also: [vrano, klano, flan]
+  see_also: [vrano, klano, flain]
 klano:
   id: 284evqb4yc
   family: "R"
@@ -5628,21 +5628,21 @@ flane:
     wrapping it as a message), use other vocabulary ({jiro}, etc.). {flane}
     is specifically for {vrano} delivery.
 
-    Paired with {flanu} (delete) and {flan} (currently-posted state).
-  see_also: [vrano, klan, flanu, flan]
+    Paired with {flanu} (delete) and {flain} (currently-posted state).
+  see_also: [vrano, klan, flanu, flain]
 flanu:
   id: 5tb0ezha1m
   family: "R"
   gloss: "deletes"
   short: "[E:tce pan] deletes messages [A:tce vrano] from locations [O:tce man]."
   notes: |
-    Inverse of {flane}: ends the {flan} (currently-posted) state for [A] in
+    Inverse of {flane}: ends the {flain} (currently-posted) state for [A] in
     [O]. [O] follows the same flexibility as {flane}'s O — typically a {klan},
     optionally a {grano} for "some klan within". Applies to any {vrano}:
     regular posts, comments, reactions ({klino}), and notifications (which
     are {vrano} in a personal notification {klan}).
-  see_also: [vrano, klan, flane, flan]
-flan:
+  see_also: [vrano, klan, flane, flain]
+flain:
   id: pas84wpf1x
   family: "R"
   gloss: "currently-posted"
@@ -5651,7 +5651,7 @@ flan:
     State predicate: holds true while [E] is live in its destination {klan},
     from the {flane} event that posted it until a {flanu} event removes it.
     Counting "messages currently in {klan} X" or "current unread notifications"
-    becomes a cardinality query over {flan} bindings true now.
+    becomes a cardinality query over {flain} bindings true now.
 
     1-place, intransitive. To restrict by {klan}, combine with another
     predicate locating the {vrano} (e.g., the {flane} event that placed it).
