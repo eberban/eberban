@@ -2372,6 +2372,19 @@ buan:
   family: "R"
   gloss: "text"
   short: "[E:tce* man] is a text."
+bena:
+  id: h6oxjgz8dh
+  family: "R"
+  gloss: "writes"
+  short: "[E:tce* pan] writes [A:tce* buan]."
+  see_also: [buan, benu]
+benu:
+  id: mf42sda4or
+  predilex_id: lacape
+  family: "R"
+  gloss: "reads"
+  short: "[E:tce* pan] reads [A:tce* buan]."
+  see_also: [buan, bena]
 bino:
   id: 83sklgorvt
   predilex_id: yotiku
@@ -2402,6 +2415,12 @@ flun:
   family: "R"
   gloss: "sound"
   short: "[A:tce* man] is a sound."
+flunu:
+  id: k5gx3b09f6
+  family: "R"
+  gloss: "listens"
+  short: "[E:tce* pan] listens to [A:tce* pan]."
+  see_also: [flun, spenu]
 fana:
   id: ydafwz0dpc
   predilex_id: hibeto
@@ -5418,6 +5437,295 @@ cotki:
   family: "R"
   gloss: "decides:"
   short: "[E:tce* pan] decides that [A:()] is the case."
+zmali:
+  id: b8v603wfu9
+  family: "R"
+  gloss: "video:"
+  short: "[E:tce* pan] is a video depicting [A:()]."
+  see_also: [zmoni, floli, vrano]
+floli:
+  id: 97zijqevdf
+  family: "R"
+  gloss: "audio-recording:"
+  short: "[E:tce* pan] is an audio recording of [A:()]."
+  see_also: [flun, zmali, vrano]
+dranu:
+  id: 3crx5dtf2q
+  family: "R"
+  gloss: "file"
+  short: "[E:tce* pan] is a file with content [A:tca man]."
+  see_also: [vrano]
+vrano:
+  id: guo4jhct0i
+  family: "R"
+  gloss: "message"
+  short: "[E:tce* pan] is a message/post with content bundle [A:ebluse]."
+  notes: |
+    The bundle [A] is an ordered list of payload items. Typical items: text ({buan}),
+    picture ({zmoni}), video ({zmali}), audio recording ({floli}), file ({dranu}),
+    or a link (via {en skal co sa} with {sa} exposing the locator place).
+
+    A single-payload message is a 1-element list. A multi-payload message is a
+    multi-element list; items can be of different types (no common umbrella).
+
+    When item order is meaningful (e.g., caption then image), construct the list
+    directly. When order is arbitrary, build the list from a set so the listing
+    order carries no information.
+
+    {vrano} is atemporal: it describes the message as a thing, not the act of
+    sending it. Use {flane} for the sending event (timed via tense, with sender
+    and destination).
+  see_also: [flane, flanu, flan, klan, klano, klino, klane]
+gruno:
+  id: 38sc9xs3gu
+  family: "R"
+  gloss: "community"
+  short: "[E:tce* pan] is a community of people sharing/centered on [A:tce* man]."
+  notes: |
+    [A] is what unites the community: a topic, an interest, a person (fan
+    community), an organization, an activity, etc. Members are implicit: a
+    community is by definition a set of people. Examples: Discord server,
+    Facebook group, Reddit subreddit (as a body of people), Twitter follower
+    set.
+  see_also: [klan, grano, prano, kluna, klunu]
+grano:
+  id: sgly1rjlvz
+  family: "R"
+  gloss: "platform"
+  short: "[E:tca man] is a platform/service centered on [A:tce* man]."
+  notes: |
+    A bounded service ecosystem providing infrastructure for accounts
+    ({prano}), discourse-spaces ({klan}), and content ({vrano}). Examples:
+    Twitter, Discord, Reddit, YouTube, a phone carrier, a TV network, an MMO.
+
+    Most {grano} host {klan}, {prano}, and {vrano}; the cardinality of {klan}
+    per {grano} is unconstrained (Twitter ≈ one global klan; Discord = many
+    klan per server).
+
+    Medium-agnostic: an online platform is {grano cnue sier}; offline
+    platforms (broadcast networks, phone systems) are {grano} too. The
+    medium is a separate relation.
+
+    [A] is the theme/purpose (microblogging, video sharing, code hosting).
+    Most uses leave [A] unbound — naming via {za} usually suffices.
+
+    For posting/deletion ({flane}/{flanu}), O accepts a {grano} directly
+    as ergonomic shorthand for "some klan within" — convenient when the
+    speaker doesn't pin a specific venue.
+
+    Distinct from {gruno} (community of people on/around it) and {klan}
+    (a single discourse venue within it).
+  see_also: [gruno, klan, prano, sier]
+klan:
+  id: 3ox8pj49cm
+  family: "R"
+  gloss: "discourse-space"
+  short: "[E:tce* pan] is a discourse space."
+  notes: |
+    A location holding {vrano} (messages/posts). Examples: Discord channel,
+    Reddit subreddit (as a posting space), Facebook group wall, Twitter feed,
+    email inbox, direct-message thread.
+
+    No intrinsic topic. Express topical scope via separate relation or
+    compound when relevant. A {klan} may or may not belong to a {gruno}
+    (community): Discord channels live inside a server ({gruno}), but a
+    DM thread or personal inbox is a standalone {klan} with no parent
+    community. Direct messages still target a {klan} (the DM thread), not
+    the recipient as a person.
+
+    To express that a {klan} belongs to a {gruno}, use {cnue} (part-of):
+    "[klan] cnue [gruno]".
+  see_also: [vrano, gruno, grano, flane]
+kluna:
+  id: amgu85lu4b
+  family: "R"
+  gloss: "joins"
+  short: "[E:tce* pan] joins [A:tca man]."
+  notes: |
+    State-change action: [E] becomes a member of [A] (a {klan}, {gruno},
+    {grano}, {vroni}, or other membership-bearing entity). After the
+    {kluna} event, {tcie} holds between [E] and [A]'s member set.
+  see_also: [klunu, tcie]
+klunu:
+  id: y1jwayloh1
+  family: "R"
+  gloss: "leaves"
+  short: "[E:tce* pan] leaves [A:tca man]."
+  notes: |
+    State-change action: [E] stops being a member of [A]. After the {klunu}
+    event, {tcie} no longer holds between [E] and [A]'s member set.
+  see_also: [kluna, tcie]
+klane:
+  id: 677oml25bb
+  family: "R"
+  gloss: "replaced-by"
+  short: "[E:tca vrano] is replaced by [A:tca vrano]."
+  notes: |
+    Atemporal structural relation: [E] (the older version) is superseded by
+    [A] (the newer version). Captures edits on chat platforms and amendments
+    in commit-style history equally.
+
+    Whether both versions remain {flan} (currently-posted) is a separate
+    axis: chat edits hide [E] so its {flan} state ends when [A]'s starts,
+    but commit histories and Wikipedia revisions keep both [E] and [A]
+    addressable and {flan}. {klane} doesn't dictate {flan} on its own.
+
+    {klano} children of [E] typically follow the replacement chain to [A]
+    by default; speakers can express exceptions via additional relations
+    when needed.
+  see_also: [vrano, klano, flan]
+klano:
+  id: 284evqb4yc
+  family: "R"
+  gloss: "replies-to"
+  short: "[E:tca vrano] is a reply to [A:tca vrano]."
+  notes: |
+    Atemporal structural relation between two {vrano}: [E] is a response to
+    parent [A]. Who replied and when is captured by the {flane} event that
+    sent [E], not by {klano} itself.
+
+    Transitive closure builds the conversation tree: post → comment → reply
+    → reply-to-reply. Works uniformly across tools regardless of how they
+    display threads (Reddit shows trees, Discord shows flat with reply
+    arrows, YouTube treats the video itself as the top-level post with
+    comments as replies to it, etc.).
+  see_also: [vrano, klane, flane]
+klino:
+  id: oecx2x9kyn
+  family: "R"
+  gloss: "reacts-to"
+  short: "[E:tce* pan] reacts to [A:tca vrano] with [O:tce* man]."
+  notes: |
+    State predicate: holds true for the duration of the reaction's lifetime,
+    from placement until the reactor removes it. Counting current reactions
+    on a {vrano} is just the cardinality of bindings that hold now: no need
+    to filter for "most recent" or "not yet removed". Tense references past
+    or future activity normally.
+
+    [O] is the mark/sentiment: a sentiment-predicate (e.g., {dona} for like),
+    a directional/numeric value (upvote/downvote), an emoji (foreign-quoted),
+    or any value distinguishing reaction kinds on the platform.
+  see_also: [vrano, klano]
+flane:
+  id: 1prjvizsl7
+  family: "R"
+  gloss: "sends"
+  short: "[E:tce pan] sends messages [A:tce vrano] to locations [O:tce man]."
+  notes: |
+    [A] is a collective set of {vrano}, letting one {flane} event span multiple
+    sends within its time frame (e.g., "I sent 3 messages yesterday" is one
+    event with three {vrano} in [A]). Singleton set for a single message.
+
+    For grouping multiple content items into a single message, bundle them
+    inside one {vrano} rather than sending them as separate {vrano}.
+
+    [O] is typically a {klan} (the specific discourse-space the message
+    lands in). A {grano} (platform) is also accepted and reads as "some
+    klan within that grano" — ergonomic when the speaker doesn't pin a
+    venue ("posted on Twitter"). For precision, name the klan.
+
+    For non-message transmission (physical sending, sharing raw content without
+    wrapping it as a message), use other vocabulary ({jiro}, etc.). {flane}
+    is specifically for {vrano} delivery.
+
+    Paired with {flanu} (delete) and {flan} (currently-posted state).
+  see_also: [vrano, klan, flanu, flan]
+flanu:
+  id: 5tb0ezha1m
+  family: "R"
+  gloss: "deletes"
+  short: "[E:tce pan] deletes messages [A:tce vrano] from locations [O:tce man]."
+  notes: |
+    Inverse of {flane}: ends the {flan} (currently-posted) state for [A] in
+    [O]. [O] follows the same flexibility as {flane}'s O — typically a {klan},
+    optionally a {grano} for "some klan within". Applies to any {vrano}:
+    regular posts, comments, reactions ({klino}), and notifications (which
+    are {vrano} in a personal notification {klan}).
+  see_also: [vrano, klan, flane, flan]
+flan:
+  id: pas84wpf1x
+  family: "R"
+  gloss: "currently-posted"
+  short: "[E:tca vrano] is currently posted."
+  notes: |
+    State predicate: holds true while [E] is live in its destination {klan},
+    from the {flane} event that posted it until a {flanu} event removes it.
+    Counting "messages currently in {klan} X" or "current unread notifications"
+    becomes a cardinality query over {flan} bindings true now.
+
+    1-place, intransitive. To restrict by {klan}, combine with another
+    predicate locating the {vrano} (e.g., the {flane} event that placed it).
+  see_also: [vrano, flane, flanu]
+prano:
+  id: mb252gtqyx
+  family: "R"
+  gloss: "account"
+  short: "[E:tca pan] is an account on platform [A:tca grano]."
+  notes: |
+    A digital identity entity on a platform, distinct from a {per} (person)
+    because one person can have multiple accounts, an account can be
+    anonymous, or represent a bot, brand, or persona with no single person
+    behind it.
+
+    Owner/controller (if any) is expressed via {coriu} (owned-by).
+    Display name/handle via {za} (name).
+
+    Example: prano va utuitar fe coriu mi
+    "an account on Twitter that I own" (i.e., my Twitter account).
+  see_also: [grano, coriu, za]
+klona:
+  id: vj0rl1zymp
+  family: "R"
+  gloss: "mentions"
+  short: "[E:tce pan] mentions [A:tce man]."
+  notes: |
+    Reference relation: communicative content [E] mentions/references thing
+    [A]:
+    - A book mentions Napoleon.
+    - A tweet mentions the Eiffel Tower.
+    - A video mentions a release date.
+    - A {vrano} mentions an account (UI "@mention").
+
+    Atemporal. Multiple mentions in one [E] = multiple bindings.
+  see_also: [vrano]
+spani:
+  id: w0hn266bnp
+  family: "R"
+  gloss: "spectator:"
+  short: "[E:tce* pan] is a spectator of / witnesses [A:()]."
+  notes: |
+    [E] perceives the event/scene/activity [A] without being a primary
+    participant. Covers Twitch/YouTube viewers, audience members at a play
+    or concert, sports spectators, bystanders to a street scene, witnesses
+    to an accident, etc.
+
+    Distinct from {spenu} (looks at) which takes an atom (a thing seen).
+    {spani} takes a proposition (an event/situation observed).
+
+    Compatible with {vroni}: when [A] of {spani} and [A] of {vroni} refer
+    to the same proposition, [E] of {spani} is a spectator of that
+    {vroni}'s session.
+  see_also: [spenu, vroni]
+vroni:
+  id: vhx6rrbcie
+  family: "R"
+  gloss: "live-session:"
+  short: "[E:tca man] is a live online session in which [A:()] occurs."
+  notes: |
+    The session is a virtual space hosting real-time communication: a Discord
+    voice channel currently active, a Zoom meeting, a Twitch stream, a live
+    conference, a phone call, etc. [A] is the proposition describing what
+    occurs in it: people speaking ({spie}), sharing media ({jiro}),
+    perceiving content ({spenu}), placing reactions ({klino}), and so on.
+
+    Voice call vs video call vs screen share is distinguished by what flows
+    inside [A], not by separate roots. Audio-only sessions have audio-related
+    events in [A]; video sessions add visual events.
+
+    Tense on [E] gives the session's active time window. Participants are
+    implicit through [A]: anyone whose actions or perceptions appear in the
+    proposition is part of the session.
+  see_also: [spani, klan]
 
 # -----
 # Compounds
@@ -5982,12 +6290,6 @@ e filiel skal:
   family: "C"
   gloss: "smartphone"
   short: "[E:tce pan] is a smartphone."
-e buan spenu:
-  id: mf42sda4or
-  predilex_id: lacape
-  family: "C"
-  gloss: "reads"
-  short: "[E:tce* pan] reads [A:tce* pan]."
 e jero sonul:
   id: rnerw0268q
   predilex_id: birila
