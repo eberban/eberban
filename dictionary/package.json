@@ -1,7 +1,7 @@
 {
   "scripts": {
     "ids": "node ./generate_word_ids ./en.yaml",
-    "check-ids": "node ./check_word_ids ./en.yaml"
+    "checks": "node ./checks.js ./en.yaml"
   },
   "dependencies": {
     "yaml": "^2.8.1"

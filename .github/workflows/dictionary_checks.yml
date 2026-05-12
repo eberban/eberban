@@ -1,4 +1,4 @@
-name: Check dictionary IDs are unique
+name: Run dictionary checks
 
 on:
   push:
@@ -22,6 +22,6 @@ jobs:
           npm install
           cd ..
 
-      - name: Check dictionary IDs are unique
+      - name: Run dictionary checks
         run: |
-          node dictionary/check_word_ids.js dictionary/en.yaml
+          node dictionary/checks.js dictionary/en.yaml
