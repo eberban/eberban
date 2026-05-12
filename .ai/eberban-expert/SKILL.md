@@ -150,7 +150,18 @@ Eberban addresses specific Lojban issues:
 
 ## Eberbanization (foreign words)
 
-Map foreign sounds to closest Eberban phonemes (English [k]→k, [dʒ]→dj, [tʃ]→tc, [ʃ]→c), then fix morphology violations (insert buffer vowels for forbidden clusters, ensure valid ending). Names use `za` prefix: `za udjon` = "is named John."
+Steps: (1) **work from IPA, not orthography** → (2) map phonemes (see deep-dive for full table) → (3) fix clusters (buffer vowel) → (4) fix ending (must be V or V+single-C; if foreign ends in cluster, append vowel — mia duplicates last vowel by default) → (5) prefix `u` + space (`u'` if content starts with `u`).
+
+**Key gotchas:**
+- Eberban has no `w` or `y` — map /w/ → `u` glide, /j/ → `i` glide (e.g., "Yuan" /jwɛn/ → `uiuan`).
+- Digraphs `tc`/`dj`/`c`/`j` are single phonemes — never decompose.
+- Borrowing endings: vowel OR vowel+single-consonant. Consonant-pair endings are forbidden — fix by appending/inserting a vowel.
+- Initialisms: concatenate Eberban CE-quote letter-words ("BBC" → `ububuci`, not source-language letter-names like "bi-bi-si").
+- Vowel-final = transitive borrowing, consonant-final = intransitive.
+
+Names use `za` prefix: `za udjon` = "is named John". Multiple borrowings separated with `be`.
+
+See `references/eberbanization.md` for the full phoneme table, cluster-relaxation rules, worked examples, and common-mistake catalogue.
 
 ## Sentence Types
 
@@ -262,6 +273,7 @@ Transitivity determines how verbs chain and what their chaining place accepts:
 ## Reference Files
 
 - `references/grammar-deep-dive.md` — morphology, logic, binding, sentences, transformations, time system
+- `references/eberbanization.md` — methodology for borrowing foreign words (phoneme map, cluster rules, initialisms, worked examples)
 - `references/particle-families.md` — complete particle family inventory
 - `references/numbers-quotes-vocab.md` — numbers, quotes, enumeration, colors, dictionary conventions
 - `references/worked-examples.md` — parsed sentences, common patterns, key lessons

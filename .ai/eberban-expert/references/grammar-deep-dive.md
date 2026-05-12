@@ -22,24 +22,8 @@
 - **Freeform variable**: i+content+space (borrowing rules). Goal: speaker-defined vocabulary with memorable forms (relaxed morphology makes them easier to remember than GI variables which get confusing quickly). Not widely used yet.
 
 ### Eberbanization (adapting foreign words)
-Map foreign sounds to closest Eberban phonemes:
-- English [k] → k, [dʒ] (J) → dj, [tʃ] (Ch) → tc, [ʃ] (Sh) → c
-- English [θ] (th) → t or s, [ð] → d or z (approximate)
-- Drop silent letters, map vowels to closest i/e/a/o/u
 
-Then fix morphology violations:
-- Borrowings must end with vowel or vowel+single-consonant
-- Forbidden clusters → insert buffer vowel (e.g., tcarlz → tcarlaz)
-- If borrowing starts with u, use u' to avoid double-u
-
-**Examples:**
-- "John" → djon → `za udjon` ("is named John")
-- "Charles" → tcarlaz → `za utcarlaz` ("is named Charles")
-- "Bob" → bob → `za ubob`
-- "Alice" → alis → `za ualis`
-
-**Names use za prefix:** `za` + borrowing = "[E] is named [borrowing]"
-**Multiple borrowings:** separate with `be` to prevent fusion
+Methodology moved to `references/eberbanization.md`. See that file for the phoneme-mapping table, cluster-resolution rules, ending fixes, initialism handling, worked examples, and common pitfalls.
 
 ### SSM (Self-Segregating Morphology)
 Non-sonorant consonant = word boundary (unless medial pair). Spaces only mandatory before vowel/sonorant-initial words. Two consecutive words can never form a forbidden cluster.
