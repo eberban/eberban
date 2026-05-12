@@ -5349,11 +5349,6 @@ golo:
 
 # -- Common Objects --
 
-gzel:
-  id: 24yqm6w0h1
-  family: "R"
-  gloss: "book"
-  short: "[E:tce* pan] is a book."
 tsar:
   id: ilkjt9psd5
   family: "R"
@@ -5413,6 +5408,16 @@ krao:
   notes: |
     Example: za ualis krao flao vo za umarsei fa za uparis
     "Alice traverses a path from Marseille to Paris"
+cotko:
+  id: 6zua53vbmb
+  family: "R"
+  gloss: "choose"
+  short: "[E:tce* pan] chooses [A:tce pan] from options [O:tce pan] (A is a subset of O)."
+cotki:
+  id: zzsl9wp7mj
+  family: "R"
+  gloss: "decides:"
+  short: "[E:tce* pan] decides that [A:()] is the case."
 
 # -----
 # Compounds
@@ -6540,7 +6545,12 @@ e pseo pale:
   family: "C"
   gloss: "outside-radius"
   short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
-    
+e kenon trea:
+  id: rl90vve2g1
+  family: "C"
+  gloss: "kick"
+  short: "[E:tce* pan] kicks [A:tce* pan]."
+
 # Family descriptions
 _family:
   R:
