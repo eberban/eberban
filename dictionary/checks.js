@@ -86,7 +86,12 @@ for (const {word, id, items} of yaml_items_iterator(dictionary_doc, dictionary))
     }
     // "_spelling" words completed, no need to check the string "_spelling".
     // Move to the next non-spelling word.
-    continue; 
+    continue;
+  }
+  // Other top-level keys starting with "_" are metadata blocks (e.g. "_family")
+  // with no IDs to check. Skip them. (Other keys may be numeric, hence String().)
+  if (String(word.value).startsWith("_")) {
+    continue;
   }
   // non-"_spelling" words
   if (!id.value) {
