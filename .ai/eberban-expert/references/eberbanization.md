@@ -77,7 +77,7 @@ Spell as concatenated **Eberban letter-words** (the CE-quote spelling units), th
 | H | ihi | | I | i | | E | e | | A | a |
 | O | o | | U | u | | | | | | |
 
-**Letters missing from Eberban's alphabet:** `W` = `ua`, `Y` = `ia`, `X` = `ksi`, `Q` = `kiu`.
+**Letters missing from Eberban's alphabet:** `W` = `ua`, `Y` = `ia`, `X` = `ksi`, `Q` = `ksu`.
 
 **Examples:**
 - BBC → `bu`+`bu`+`ci` → `ububuci`
