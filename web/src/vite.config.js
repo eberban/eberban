@@ -57,6 +57,9 @@ export default defineConfig({
     base: "/eberban/",
     build: {
         // The output directory is specified within package.json via Vite CLI.
+        // Force esbuild for CSS minification: Vite 8 defaults to lightningcss
+        // which rejects IE star-hacks present in vendor/bootstrap-legacy.css.
+        cssMinify: "esbuild",
         rollupOptions: {
             input: {
                 "main": resolve(__dirname, "index.html"),
