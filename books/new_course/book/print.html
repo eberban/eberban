@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Eberban Course</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="01_introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Letters and sounds</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="02_01_morphology.html"><strong aria-hidden="true">2.1.</strong> Morphology</a></li><li class="chapter-item expanded "><a href="02_02_phonology.html"><strong aria-hidden="true">2.2.</strong> Phonology</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Eberban Course</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/eberban/eberban" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><strong>Eberban</strong> is a <a href="https://en.wikipedia.org/wiki/Engineered_language#Logical_languages">logical</a> <a href="https://en.wikipedia.org/wiki/Constructed_language">constructed language</a> aimed to satisfy the
+following goals :</p>
+<ul>
+<li><strong>being simple :</strong> the Eberban grammar allows manipulating predicates with
+particles in a way that is close to the <a href="https://en.wikipedia.org/wiki/Higher-order_logic">higher-order logic</a> it translates
+into, while abstracting away the verbosity of explicitly providing variables
+as arguments of predicates.</li>
+<li><strong>being regular :</strong> valid sentences are syntactically unambiguous. Most
+grammar rules rely on particles which are organised into families, each
+starting with a unique prefix. Many additional patterns are shared between
+particles and predicate words to help with learning groups of related words.</li>
+<li><strong>being expressive :</strong> the grammar and core vocabulary focus on providing a
+simple framework, on top of which can be built abstractions, complex concepts
+and tools. Since those are built into Eberban itself, users can create their
+own tools and abstractions to express entirely new concepts.</li>
+</ul>
+<p><strong>Eberban</strong> takes inspiration from <a href="https://mw.lojban.org/papri/Lojban">Lojban</a> and other logical languages, but
+tries novel approaches to satisfy the above goals.</p>
+<p>Most resources are hosted on <a href="https://eberban.github.io/eberban/">GitHub pages</a>, such as :</p>
+<ul>
+<li>parsers, which transform text into a tree structure, that can also be
+visualized as nested boxes.</li>
+<li>a dictionary to search words and their definitions.</li>
+<li>learning resources to discover the language grammar and concepts.</li>
+</ul>
+<p>If you would like to get involved, please also consider joining our
+<a href="https://discord.com/invite/KKB79RwWUc">Discord server</a>.</p>
+<hr />
+<p>This course aims to provide a slow pace guide of Eberban grammar and vocabulary
+aimed towards learners not familiar with logical notation. Chapter may omit
+details and oversimplify concepts which will be corrected later.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="morphology"><a class="header" href="#morphology">Morphology</a></h1>
+<blockquote>
+<p>In linguistics, morphology is the study of words, including the principles by which they are
+formed, and how they relate to one another within a language.<br />
+<strong>Source:</strong> <a href="https://en.wikipedia.org/wiki/Morphology_(linguistics)">Wikipedia</a></p>
+</blockquote>
+<p>Eberban’s morphology is designed to be <strong>Self-Segregating</strong>, which means there is no ambiguity in
+word boundaries. By knowing the few simple rules of how Eberban words are shaped, one can properly
+separate words written without spaces between them, and without needing to know what most words
+actually mean.</p>
+<h2 id="alphabet"><a class="header" href="#alphabet">Alphabet</a></h2>
+<p>Eberban can be written using the latin alphabet with the following letters:</p>
+<ul>
+<li><strong>consonants</strong>: n, r, l, m, p , b, f, v, t, d, s, z, c, j, g, k</li>
+<li><strong>vowels</strong>: i, e, a, o, u</li>
+<li>the letter <strong>h</strong> </li>
+<li>extra symbols: - (hyphen) and quotation marks [ and ]</li>
+</ul>
+<p>Any other symbol is considered a space. [ and ] are also considered spaces outside of the specific
+grammar of foreign quotes.</p>
+<p>The alphabetical order is <code>hnrlmpbfvtdszcjkgieaou</code>.</p>
+<p>Among the consonants, <strong>n, r and l</strong> are designated as <strong>sonorants</strong> and play important roles in
+Eberban’s morphology as they can appear more freely inside or at the end of words compared to other
+consonants.</p>
+<h2 id="groups-of-letters"><a class="header" href="#groups-of-letters">Groups of letters</a></h2>
+<p>Some letters used in a row form groups which are important for understanding the morphology rules.</p>
+<p>A string of multiple vowels form a group called <strong>vhowels</strong>. <strong>h</strong> can also appear in this group but
+only between 2 vowels.</p>
+<p>2 consonants form pairs which are classified in the following categories:</p>
+<ul>
+<li><strong>initial pair</strong>: can only appear at the start of words</li>
+<li><strong>medial pair</strong>: can only appear inside a word (not at the start)</li>
+<li><strong>invalid pair</strong>: not allowed, usually because they are difficult to utter</li>
+</ul>
+<p>Invalid pairs are due to consonants being impossible or diffult to utter together, the main reason
+being due to voiceness (<code>p</code> is the unvoiced counterpart of <code>b</code> which is voiced).</p>
+<p>Medial pairs on the other hand are pairs that are difficult to utter at the start of a word, but
+easier to utter inside a word.</p>
+<p>The following chart displays what each pair is, with <strong>initial pairs</strong> in blue
+and <strong>medial pairs</strong> in red.</p>
+<p><img src="./assets/chart-pairs.png" alt="Table of consonant pairs" /></p>
+<p><strong>Medial triplets</strong> can also appear in words where <strong>medial pairs</strong> are allowed in the form of
+consonants ABC, where AB is a <strong>medial pair</strong> and BC is an <strong>initial pair</strong>.</p>
+<h2 id="word-types"><a class="header" href="#word-types">Word types</a></h2>
+<p>Words are organized into the following classes:</p>
+<ul>
+<li><strong>particles</strong> are words exerting grammatical functions</li>
+<li><strong>content words</strong> are words conveying meaning about concrete or abstract subjects. They are
+organized in multiple subclasses:
+<ul>
+<li><strong>roots</strong> are somewhat short words and are the main building blocks of the vocabulary</li>
+<li><strong>borrowings</strong> allow importing foreign words and names with more permissive morphology than
+roots</li>
+<li><strong>freeform variables</strong> allow defining your own words with the same permissive morphology as
+borrowings</li>
+<li><strong>compounds</strong> are words composed of other Eberban words used to extend the vocabulary in a more
+memorable way</li>
+</ul>
+</li>
+</ul>
+<h2 id="permissive-writing"><a class="header" href="#permissive-writing">Permissive writing</a></h2>
+<p>The same letter appearing multiple times in a row (case-insensitive) is considered identitcal to the
+letter appearing once. Repeating letters can be informally used to convey length of sounds in
+speech.</p>
+<p>Eberban text is usually written all lowercase (outside of foreign text quotes), but uppercase can
+informally be used to convey volume (yelling). No punctuation symbol is used but informally
+punctuation from other languages can be used alongside proper Eberban grammar.</p>
+<p>Dot <code>.</code> is often used in place of a space to visually join two words which morphologically requires
+a space between them. Using multiple dots can be used to convey longer pauses in speech.</p>
+<p>Hyphen can be used at syllable boundary to make them stand-out without breaking a word in two, and
+also allows a word to continue on a new line (spaces are allowed on the new line before the
+continuation of the word).</p>
+<h2 id="recognize-word-forms"><a class="header" href="#recognize-word-forms">Recognize word forms</a></h2>
+<p>In general, encountering a space, single (non-sonorant) consonant or initial pair (not part of a triplet) marks the
+start of a new word. If the word starts with a vowel or sonorant, it must be prefixed by a space to
+separate it from the previous word; otherwise those letters would still be part of the previous word.</p>
+<h3 id="starts-with-single-consonant"><a class="header" href="#starts-with-single-consonant">Starts with single consonant</a></h3>
+<ul>
+<li>If a word starts with a single consonant only followed by vhowels, then it is a <strong>particle</strong>.</li>
+<li>If a word starts with a single (non-sonorant) consonant followed not only by vhowels (sonorant,
+medial pair or triplet) then it is a <strong>root</strong>.</li>
+<li>If a word starts with a sonorant followed by vhowels and sonorants, then it is <strong>particle</strong>. Those
+are reserved for sentence level particles (they end the current sentence then perform some grammatical function).</li>
+</ul>
+<h3 id="starts-with-an-initial-pair"><a class="header" href="#starts-with-an-initial-pair">Starts with an initial pair</a></h3>
+<p>All words that start with an initial pair are <strong>roots</strong>. The initial pair can be followed by a mix of
+vhowels, sonorants, medial pairs or triplets.</p>
+<h3 id="starts-with-a-vowel"><a class="header" href="#starts-with-a-vowel">Starts with a vowel</a></h3>
+<ul>
+<li>If a word starts with <strong>a</strong> or <strong>o</strong> followed only by vhowels and sonorants, then it is a <strong>particle</strong>.
+Those are also resered for sentence level particles.</li>
+<li>If a word starts with <strong>u</strong>, it is a <strong>borrowing</strong>. It is followed by a mix of vhowels, consonants,
+medial pairs and triplets <strong>and even initial pairs</strong>; and ends once a space is encountered. When
+borrowing a foreign word, one must try to use letters which sounds the closest to original word
+pronunciation. For exemple, the name <em>Alice</em> becomes <em>ualis</em>, <em>computer</em> becomes <em>ukompiutar</em>, etc.
+If the borrowed word would start with <em>u</em>, it is separated from the <em>u</em> prefix of compounds with a
+space (french <em>utopie</em> becomes <em>u utopi</em>). For other starting letters the space is accepted but
+optional. (<em>u alis</em> is accepted).</li>
+<li>If a word starts with <strong>i</strong>, it is a <strong>freeform variable</strong>. It follows the same rules as borrowings
+except its prefix is <strong>i</strong> (thus if the content starts with <strong>i</strong> a space is mandatory between the
+two <strong>i</strong>).</li>
+<li>If a word starts with <strong>e/en/er</strong>, it is a <strong>compound</strong>. Depending of the prefix it respectively
+starts a compound from the following <strong>2/3/N</strong> words. If prefix is <strong>er</strong>, the compound stops when
+a single isolated <strong>e</strong> is encountered. This allow arbitrary long compounds, but its usage will be
+very rare. Spaces between each word, and after the prefix is allowed
+and optional. Words making the compound can be roots, particles and borrowings. Freeform variables
+and compounds are not allowed.<br />
+<strong>Exemples:</strong>
+<ul>
+<li><em>eberban</em> = <em>e ber ban</em> = 2-compound made from <em>ber</em> and <em>ban</em>.</li>
+<li><em>euinglic.ban</em> = <em>e uinglic ban</em> = 2-compound made from <em>uinglic</em> and <em>ban</em>.</li>
+<li><em>encepeusa</em> = <em>en ce peu sa</em> = 3-compound made from <em>ce</em>, <em>peu</em> and <em>sa</em>.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="phonology"><a class="header" href="#phonology">Phonology</a></h1>
+<p>This sections explains how the language is uttered, with recordings for simplicity and
+<a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet">IPA</a> notation for completeness.
+Recordings features the spelling of letters, which contains the spelled letters among other
+letters used to spell it.</p>
+<table><thead><tr><th>Letter</th><th>IPA</th><th>Description</th><th>Audio</th></tr></thead><tbody>
+<tr><td>h</td><td>[h]</td><td>a glottal aspirant</td><td><audiobtn>01_h</audiobtn></td></tr>
+<tr><td>n</td><td>[n], [ŋ]</td><td>a dental or velar nasal</td><td><audiobtn>02_n</audiobtn></td></tr>
+<tr><td>r</td><td>[ɣ] [ʁ] ([r], [ʀ])</td><td>a velar or uvular fricative (alveolar or uvular trills are also accepted)</td><td><audiobtn>03_r</audiobtn> <audiobtn>03_r_french</audiobtn> <audiobtn>03_r_spanish</audiobtn> <audiobtn>03_r_alt</audiobtn></td></tr>
+<tr><td>l</td><td>[l]</td><td>a lateral approximant</td><td><audiobtn>04_l</audiobtn></td></tr>
+<tr><td> </td><td></td><td></td><td></td></tr>
+<tr><td>m</td><td>[m]</td><td>a bilabial nasal</td><td><audiobtn>05_m</audiobtn></td></tr>
+<tr><td>p</td><td>[p]</td><td>an unvoiced bilabial stop</td><td><audiobtn>06_p</audiobtn></td></tr>
+<tr><td>b</td><td>[b]</td><td>a voiced bilabial stop</td><td><audiobtn>07_b</audiobtn></td></tr>
+<tr><td>f</td><td>[f]</td><td>an unvoiced labiodental fricative</td><td><audiobtn>08_f</audiobtn></td></tr>
+<tr><td>v</td><td>[v]</td><td>a voiced labiodental fricative</td><td><audiobtn>09_v</audiobtn></td></tr>
+<tr><td>t</td><td>[t]</td><td>an unvoiced dental/alveolar stop</td><td><audiobtn>10_t</audiobtn></td></tr>
+<tr><td>d</td><td>[d]</td><td>a voiced dental/alveolar stop</td><td><audiobtn>11_d</audiobtn></td></tr>
+<tr><td>s</td><td>[s]</td><td>an unvoiced alveolar sibilant</td><td><audiobtn>12_s</audiobtn></td></tr>
+<tr><td>z</td><td>[z]</td><td>a voiced alveolar sibilant</td><td><audiobtn>13_z</audiobtn></td></tr>
+<tr><td>c</td><td>[ʃ], [ʂ]</td><td>an unvoiced coronal sibilant</td><td><audiobtn>14_c</audiobtn> <audiobtn>14_c2</audiobtn></td></tr>
+<tr><td>j</td><td>[ʒ], [ʐ]</td><td>a voiced coronal sibilant</td><td><audiobtn>15_j</audiobtn> <audiobtn>15_j2</audiobtn></td></tr>
+<tr><td>k</td><td>[k]</td><td>an unvoiced velar stop</td><td><audiobtn>16_k</audiobtn></td></tr>
+<tr><td>g</td><td>[ɡ]</td><td>a voiced velar stop</td><td><audiobtn>17_g</audiobtn></td></tr>
+<tr><td> </td><td></td><td></td><td></td></tr>
+<tr><td>i</td><td>[i]</td><td>a front close vowel</td><td><audiobtn>18_i</audiobtn></td></tr>
+<tr><td>e</td><td>[ɛ], [e]</td><td>a front mid vowel</td><td><audiobtn>19_e</audiobtn> <audiobtn>19_e2</audiobtn></td></tr>
+<tr><td>a</td><td>[a], [ɑ]</td><td>an open vowel</td><td><audiobtn>20_a</audiobtn> <audiobtn>20_a2</audiobtn></td></tr>
+<tr><td>o</td><td>[o], [ɔ]</td><td>a back mid vowel</td><td><audiobtn>21_o</audiobtn> <audiobtn>21_o2</audiobtn></td></tr>
+<tr><td>u</td><td>[u]</td><td>a back close vowel</td><td><audiobtn>22_u</audiobtn></td></tr>
+</tbody></table>
+<p>At the start of a <strong>vowel</strong> or <strong>sonorant</strong> initial word, it is mandatory to
+make a pause or utter a glottal stop [ʔ] <audiobtn>23_stop</audiobtn>.</p>
+<p>Consecutive vowels are separated by hiatuses, but glides like
+[j] <audiobtn>glide_y</audiobtn> and [w] <audiobtn>glide_w</audiobtn>
+are allowed respectively alongside or instead of [i] and [u].</p>
+<p>Where spaces are allowed, a speaker or writter can express hesitation by using
+one or more of the letter <strong>n</strong> surrounded by spaces, which is realized as [n̩].</p>
+<p>In speech, the schwa sound [ə] can be used in between consonants of a pair if
+the speaker has trouble uttering the pair as-is. It has no written equivalent.</p>
+<p>Quotation marks <strong>[</strong> and <strong>]</strong>, when used for foreign quotes grammar, are both realized
+as a palatal click ([ǂ] <audiobtn>24_quote_fronter</audiobtn> <audiobtn>24_quote_centre</audiobtn>) which distingly marks the start and end of a quote.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>Sentence : <em>a za ualis zue gali spie nnnn ebansa eberban</em><br />
+Pronounciation : [ʔa za ʔualis .. zue ɡali spie .. n̩ː .. ʔebansa ʔeberban]</p>
+<blockquote>
+<p>Big thanks to <em>zuna</em> for the recordings!</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="res/audiobtn.js"></script>
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>
