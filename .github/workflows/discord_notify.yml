@@ -1,0 +1,28 @@
+name: Discord notification
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post commits to Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          jq -c '.commits[]' "$GITHUB_EVENT_PATH" | while read -r commit; do
+            payload=$(jq -n --argjson c "$commit" '{
+              embeds: [{
+                title: "[master] \($c.id[0:7])",
+                description: $c.message,
+                url: $c.url,
+                color: 8370408,
+                author: { name: $c.author.name },
+                timestamp: $c.timestamp
+              }]
+            }')
+            curl -fsS -H "Content-Type: application/json" -d "$payload" "$WEBHOOK"
+            sleep 1
+          done
