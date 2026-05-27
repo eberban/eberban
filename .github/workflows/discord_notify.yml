@@ -15,8 +15,8 @@ jobs:
           jq -c '.commits[]' "$GITHUB_EVENT_PATH" | while read -r commit; do
             payload=$(jq -n --argjson c "$commit" '{
               embeds: [{
-                title: "[master] \($c.id[0:7])",
-                description: $c.message,
+                title: ($c.message | split("\n")[0]),
+                description: ($c.message | split("\n")[1:] | join("\n") | sub("^\n+"; "")),
                 url: $c.url,
                 color: 8370408,
                 author: { name: $c.author.name },
