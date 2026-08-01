@@ -1582,6 +1582,33 @@ kagvihi:
     Transformations [E:blu ()] are applied on the context before it is used to evaluate [A:()].
 
 # -----
+# Gismu import project words
+# -----
+bine:
+  id: z63sux0etc
+  family: "R"
+  gloss: "different from"
+  tags: [gismu]
+  short: "[E:ma] is not the same thing as [A:ma]"
+  notes: "From Lojban 'drata'"
+
+star:
+  id: g81da8sysk
+  family: "R"
+  gloss: "strong"
+  tags: [gismu]
+  short: "[E: tce* pan] is strong (able to apply a lot of force)"
+  notes: "From Lojban 'tsali'"
+
+jdui:
+  id: 4tw9fk1ygu
+  family: "R"
+  gloss: "pays-attention-to"
+  tags: [gismu]
+  short: "[E: tce* pan] pays attention to [A:()] being true"
+  notes: "From Lojban 'jundi'"
+
+# -----
 # Other vocabulary, not yet defined in eberban
 # -----
 
