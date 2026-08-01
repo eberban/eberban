@@ -38,15 +38,15 @@ If the chaining argument is an __atom__ argument, then the variable filling this
 argument also fills the __E__ argument of the right predicate. The
 __context argument__ is automatically shared between left and right predicates.
 
-> __mian blan__
+> __mian bjan__
 >
 > \\[ \begin{align}
 > \text{mian}(c,e)   &= \text{[$e$ is a cat]} \\\\
-> \text{blan}(c,e)   &= \text{[$e$ is beautiful]} \\\\
+> \text{bjan}(c,e)   &= \text{[$e$ is beautiful]} \\\\
 > \\ \\\\
-> \text{blan}_1(c,e) &= \text{blan}(c,e) \\\\
+> \text{bjan}_1(c,e) &= \text{bjan}(c,e) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{blan}_1(c,\color{magenta}{e})
+> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{bjan}_1(c,\color{magenta}{e})
 > \end{align} \\]
 >
 > Given $(c),$(e):\

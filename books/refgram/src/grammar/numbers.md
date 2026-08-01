@@ -86,7 +86,7 @@ positive integer (no fractional part).
   satisfies A which is not in the set.
 - __jioa__: `[E:tcu a] is (a group of) the only [number] things satisfying [A:(a)].`\
   Same but uses the raw property variant of set definitions.
-- __jiu__: `[E:tca a] is the [number]th member of sequence [A:blu a].`\
+- __jiu__: `[E:tca a] is the [number]th member of sequence [A:bju a].`\
   Speaks about an element in an ordered list. Index follows zero-based numbering, such that
   the first element is the 0th.
 - __jie__: `[E:tce gan] is the number [number] times [A:tce gan] (default: 1 unitless).`\

@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.65
+// EBERBAN GRAMMAR - v0.66
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -28,7 +28,7 @@
 	var warnings = [];
     var pending_error = null;
     var gram_quote_nesting = 0;
-    
+
     // Add warning to the warnings list
     function warn(msg) {
     	warnings.push({
@@ -36,13 +36,13 @@
             location: location()
         })
     }
-    
+
     // Recursively concatenates arrays of (arrays of ...) strings
     // Use in the morphology part to assemble all the letters into the final word
     function recur_join(input, sep = "") {
     	var out = "";
         var first = true;
-        
+
         for(const x of input) {
             if(first) {
                 first = false;
@@ -53,10 +53,10 @@
         	if(Array.isArray(x)) {
             	out += recur_join(x, sep);
             } else if(x != null) {
-            	out += x;	
+            	out += x;
             }
         }
-        
+
         return out
     }
 
@@ -119,7 +119,7 @@
                 message: text,
                 location: location()
             };
-        }        
+        }
 
         return false;
     }
@@ -131,7 +131,7 @@ MainWithError = @MainWithWarnings &{
     return true
 }
 // Add collected warnings to matched text.
-MainWithWarnings = main:RootText { 
+MainWithWarnings = main:RootText {
     if(warnings?.length > 0) main.warnings = warnings;
     return main
 }
@@ -155,7 +155,7 @@ E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
 // Match language flags, text prefixes and paragraphs.
 Text = Spaces? EOF { return {} } // allow empty text
     / flags:LanguageFlags paras:Paragraphs? Spaces?
-    { 
+    {
         var res = {};
 
         if(flags?.length != 0) res.flags = flags;
@@ -171,7 +171,7 @@ Paragraph = starter:PO_Free? head:Sentence tail:(&SentenceStarter @Sentence / !P
         return { sentences: [head, ...tail] }
     }
 
-// We want grammatical sentences that can be followed by RA to erase them, which means 
+// We want grammatical sentences that can be followed by RA to erase them, which means
 // SentenceErasedValid must appear first. While we want to erase ungrammatical text with RA, we don't
 // want it to trigger inside a grammatical sentence, which can be possible with a foreign quote.
 Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
@@ -245,20 +245,20 @@ ChainInner = ChainNegation
         // Only match here if the first verb of the resume chain matches this step
         // verb. If that'es not the case, do not match so that this step finish matching
         // and it tries to match again on the immediatly higher step.
-        &{ 
+        &{
             // Can we do this without JSON.stringify?!
             return JSON.stringify(chain.verb) === JSON.stringify(resume_chain.verb)
         }
         resume_next:ChainInner?
-        { 
+        {
             var res = { start: resume_start, chain: resume_chain };
 
             if(resume_next != null) res.next = resume_next;
-            
+
             return res
         }
     )*
-    { 
+    {
         if(next != null) chain.next = next;
 
         if(resume?.length == 1) chain.resume = resume[0];
@@ -274,7 +274,7 @@ ChainVerbAndBinds = select:SI_Free? verb:ChainVerb exp:ExplicitBindGroup*
         if(select != null) chain.select = select;
 
         chain.verb = verb;
-    
+
         if(exp?.length == 1) chain.explicit_binds = exp[0];
         else if(exp?.length > 1) chain.explicit_binds = exp;
 
@@ -307,7 +307,7 @@ ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
         return verb
     }
 ChainVerbModified = modifiers:(ZI_Free SI_Free?)+ modified:(ChainVerbModified / ChainVerbSelect)
-    { 
+    {
         var res = { ...modified }
 
         modifiers = modifiers.map(x => {
@@ -377,7 +377,7 @@ GrammaticalQuote =
 
                 return false;
             }
-           
+
             if (isComplex()) {
                 warn("Non text-final CAI is discouraged to be elided when quote contains multiple sentences "
                 + "as the scope of the scope can easily get confusing.");
@@ -386,7 +386,7 @@ GrammaticalQuote =
             return true;
         }
     )?
-   
+
     { return { kind: "GrammaticalQuote", start, text, end }}
 
 SingleWordQuote = start:CI_Free Spaces? word:(NativeWord / Compound / Borrowing)
@@ -783,7 +783,7 @@ ParticleFormNAOX =
     @Vhowels
     @SonorantThenVhowels*
     W_HyphenBeforeFinalSonorant? @Sonorant?
-    !MedialPair    
+    !MedialPair
 
 RootWord "root" = x:RootForm &PostWord { return { family:"Root", word: x}}
 RootForm = !Sonorant W_HyphenPreWord?
@@ -805,11 +805,11 @@ RootFormCCVX =
     @Vhowels
     @RootMedialOrSonorantThenVowels*
     W_HyphenBeforeFinalSonorant? @Sonorant?
-    
+
 RootMedialOrSonorantThenVowels = RootMedialThenVhowels / SonorantThenVhowels
 SonorantThenVhowels = OH Sonorant !Sonorant W_HyphenAfterMedialSonorant? Vhowels
 RootMedialThenVhowels = W_HyphenBeforeMedialOrTriplet? RootMedialOrTriplet W_HyphenAfterMedialOrTriplet? Vhowels
- 
+
 W_HyphenAfterInitial = &HyphenChar OH { warn(
 `Hyphen is not allowed after an initial pair or consonant.
 If needed, hyphen after the following vowel if the word is made of multiple syllables`
@@ -844,7 +844,7 @@ Vowels =
     x:Vowel
     y:(
         OH @Vowel
-        
+
     )*
     &{
         if(y === [])
@@ -890,39 +890,34 @@ E_TripletYZ = Consonant !InitialPair x:Consonant OH y:Consonant
 // # Medial pair =================================
 
 MedialPair "medial pair" = !Initial !E_InvalidPairs pair:MedialPatterns { return pair.join("") }
-MedialPatterns = MedialN / MedialFV / MedialPlosive
+MedialPatterns = MedialN / MedialFV / MedialPlosive / MedialCSonorant
 MedialN = @Liquid OH @n / @n OH @Liquid
 MedialFV = @(f / v) OH @(Plosive / m)
 MedialPlosive = @Plosive OH @(f / v / Plosive / m)
+MedialCSonorant = @Sibilant OH @Sonorant / @Other OH @Sonorant
 
 // # Initial pair =================================
 
 W_HyphenInInitialPair = &(Consonant HyphenChar &Consonant { warn("Hyphen is not allowed inside an initial pair") })
 InitialPair "initial pair" =
-	&Initial !E_InvalidPairs 
+	&Initial !E_InvalidPairs
     pair:(@Consonant OH @Consonant) // handle warning separatly for better err messages in triplets
     !Consonant { return pair.join("") }
 Initial =
 	@(Plosive / f / v) OH @Sibilant
     / @Sibilant OH @Other
-    / @Sibilant OH @Sonorant
-    / !(Sonorant Sonorant) @Other OH @Sonorant
 
-E_InvalidPairs = E_PairVoiceness1 / E_PairVoiceness2 / E_SibilantPair / E_PB_N / E_TD_NL
+E_InvalidPairs = E_PairVoiceness1 / E_PairVoiceness2 / E_SibilantPair
 E_PairVoiceness1 = x:Voiced OH y:Unvoiced
 	&{ return err(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
 E_PairVoiceness2 = x:Unvoiced OH y:Voiced
 	&{ return err(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
 E_SibilantPair = x:Sibilant OH y:Sibilant
 	&{ return err(`${x}${y} is an invalid pair because both consonants are sibilants (csjz)`)}
-E_PB_N = x:(p / b) OH y:n
-	&{ return err(`${x}${y} is an invalid pair as p/b cannot be followed by n`)}
-E_TD_NL = x:(t / d) OH y:(n / l)
-	&{ return err(`${x}${y} is an invalid pair as t/d cannot be followed by n/l`)}
 
 // # Categories of letters ============================
 
-Other = p / b / t / d / v / f / k / g / m / n
+Other = p / b / t / d / v / f / k / g / m
 Plosive = t / d / k / g / p / b
 Sibilant = c / s / j / z
 Sonorant = n / r / l

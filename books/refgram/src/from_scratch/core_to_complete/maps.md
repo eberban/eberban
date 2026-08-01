@@ -173,7 +173,7 @@ value, no need to take input and output as they are retreived from the context).
 <spoiler>
 
 __kagva:__ `[E:kagvin]` represents a map that can be obtained from `[O:kagvin]`
-(default: empty map) by applying the list of transformations `[A:blu ()]`.
+(default: empty map) by applying the list of transformations `[A:bju ()]`.
 ---
 ```
 po kagva ke ka ko be
@@ -271,7 +271,7 @@ with a modified context. We can make a predicate that makes this easier.
 
 <spoiler>
 
-__kagvar:__ Transformations `[E:blu ()]` are applied on the context before it is
+__kagvar:__ Transformations `[E:bju ()]` are applied on the context before it is
 used to evaluate `[A:()]`.
 ---
 ```

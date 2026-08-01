@@ -59,8 +59,41 @@ C2C3 is an initial pair.
 A _sonorant_ can appear only between two _vowels_ or at the end of the root, while a medial pair or
 consonant triplet can appear only between two _vowels_, but not at the end.
 
-The following chart shows __initial pairs__ in light blue, __medial pairs__ in pink, and invalid
-pairs in dark gray (with a short explanation for why they are invalid):
+#### Which pairs are valid
+
+For the pair rules, consonants fall into these overlapping groups:
+
+- __Sibilants__: __c s j z__.
+- __Plosives__: __p b t d k g__.
+- __Fricatives__: __f v__ (plus the sibilants).
+- __Sonorants__: __n r l__.
+- __Voicing__: __b d g v z j__ are voiced, __p t k f s c__ are unvoiced; __m n r l__ have no voicing distinction.
+
+Some constraints apply to every pair XY, regardless of position:
+
+1. X and Y must differ (a doubled letter is spelling for length, not a pair).
+2. If both X and Y carry voicing, they must agree; no voiced + unvoiced or unvoiced + voiced.
+3. Two sibilants never form a pair.
+4. A sonorant followed by a non-sonorant is never a pair; the boundary breaks the string into two words.
+5. __m__ followed by a non-sonorant (other than a sibilant) is disallowed, being too close to __n__ + consonant.
+
+__Initial pairs__ must contain a sibilant, and the second consonant must not be a sonorant. They come in two shapes:
+
+- __Non-sibilant obstruent + sibilant__, voicing matched.
+  Voiced: __bj bz dj dz gj gz vj vz__. Unvoiced: __fc fs kc ks pc ps tc ts__.
+- __Sibilant + non-sonorant__ (a plosive, __f v__, or __m__), voicing matched (__m__ is neutral).
+  Sibilant voiced first: __jb jd jg jv jm zb zd zg zv zm__. Sibilant unvoiced first: __cf ck cp ct cm sf sk sp st sm__.
+
+__Medial pairs__ are every other valid pair. They come in three shapes:
+
+- __Two obstruents of matching voicing__, optionally ending in __m__.
+  Voiced: __bd bg bv db dg dv gb gd gv vb vd vg__, plus __bm dm gm vm__.
+  Unvoiced: __fk fp ft kf kp kt pf pk pt tf tk tp__, plus __fm km pm tm__.
+- __Non-sonorant + sonorant__: any consonant except a sonorant, followed by __n__, __r__, or __l__.
+  This gives __bl br bn cl cr cn dl dr dn fl fr fn gl gr gn jl jr jn kl kr kn ml mr mn pl pr pn sl sr sn tl tr tn vl vr vn zl zr zn__.
+- __n paired with a liquid__: __nl nr ln rn__.
+
+The following chart shows __initial pairs__ in light blue, __medial pairs__ in pink, and invalid pairs in dark gray (with a short explanation for why they are invalid):
 
 ![Chart of valid initial and medial pairs](chart-pairs.png)
 

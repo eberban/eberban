@@ -57,7 +57,7 @@ ke din kin
 
 <spoiler>
 
-__dinu:__ There exists a path/span `[O:blu din]` from node `[E:din]` to node `[A:din]`.
+__dinu:__ There exists a path/span `[O:bju din]` from node `[E:din]` to node `[A:din]`.
 ---
 ```
 po dinu ke ka ko be
@@ -179,10 +179,10 @@ ma
   vi ke izvi gia
   fi bi ma
     ve pe ble
-      va zi blur
+      va zi bjur
       fo ble
         va ke
-        fo zi blur
+        fo zi bjur
     pei fe izvi gia
 ```
 </spoiler>
@@ -349,7 +349,7 @@ in the context a property describing one or multiple __initial time spans__.
 
 <spoiler>
 
-zve: `[E:kagvin]` is the context after inserting the initial time spans `[A:(blu
+zve: `[E:kagvin]` is the context after inserting the initial time spans `[A:(bju
 din)]`.
 ---
 ```

@@ -57,21 +57,21 @@ Logical: `tcu(c, e, mian) ∧ dona(c, e, a) ∧ mi(c, a)`
 
 ---
 
-## Adverb (foi) for tense: `a mi etiansa meon sa duna ve mo fo mi foi sre`
+## Adverb (foi) for tense: `a mi etiansa meon sa duna ve mo fo mi foi spe`
 
 "I eat apple(s) that you **gave** to me."
 
-Parse: `mi (etiansa (meon (sa duna [ve mo fo mi foi sre])))`
+Parse: `mi (etiansa (meon (sa duna [ve mo fo mi foi spe])))`
 - duna(c, e, a, o): "e gives a to o"
 - ve mo: E of duna = listener (giver)
 - fo mi: O of duna = speaker (recipient)
-- foi sre: adverb — sre ("before") wraps ONLY duna's evaluation in past context
+- foi spe: adverb — spe ("before") wraps ONLY duna's evaluation in past context
 - sa: overrides exposed place to A (because E already bound by ve)
 - meon chains with exposed A of duna: apple = thing given
 - etiansa chains normally: A = apple
 - mi chains normally: E = speaker
 
-Key: foi sre wraps only duna. So mi, mo, meon are in PRESENT context (these exist now). Only the giving is past. Without foi, putting sre in the chain would push everything after it into the past.
+Key: foi spe wraps only duna. So mi, mo, meon are in PRESENT context (these exist now). Only the giving is past. Without foi, putting spe in the chain would push everything after it into the past.
 
 ---
 
@@ -88,9 +88,9 @@ The tool is scoped to etiansa only — involved in the eating, not in the apple 
 
 ## Tense scoping: three strategies compared
 
-1. **Verb-only (voi):** `etiansa voi sre vei meon` — sre wraps only etiansa. "Eating was past, apple exists now."
-2. **Transparent (sia):** `sia sre etiansa meon` — sre wraps whole right chain, re-exposes etiansa's places. "In the past: e eats apples." Chain flows through.
-3. **Plain chain:** `sre etiansa meon` — sre swallows chain as its proposition, exposes sre's own places. Breaks left chain flow.
+1. **Verb-only (voi):** `etiansa voi spe vei meon` — spe wraps only etiansa. "Eating was past, apple exists now."
+2. **Transparent (sia):** `sia spe etiansa meon` — spe wraps whole right chain, re-exposes etiansa's places. "In the past: e eats apples." Chain flows through.
+3. **Plain chain:** `spe etiansa meon` — spe swallows chain as its proposition, exposes spe's own places. Breaks left chain flow.
 
 ---
 
@@ -122,7 +122,7 @@ The tool is scoped to etiansa only — involved in the eating, not in the apple 
 a mian etiansa meon           -- "cats eat apples"
 a ze etiansa dona mi          -- "the eaten (apples) like(s) me" (trans: chains via A)
 a se ze etiansa dona mi       -- "the eater(s) (cats) like(s) me" (se overrides to E)
-a va ze etiansa blan          -- "the eaten (apples) are beautiful" (va selects A)
+a va ze etiansa bjan          -- "the eaten (apples) are beautiful" (va selects A)
 ```
 
 **ze preserves transitivity** of the original word. etiansa is vowel-final = transitive, chains via A (eaten). Use se/va to access other slots.
@@ -141,12 +141,12 @@ a va ze etiansa blan          -- "the eaten (apples) are beautiful" (va selects 
 ## Vocabulary design: measurement + chaining = adjectives
 
 ```
-a me jnu epnuencpie tcuin     -- "This is a tall tree"
+a me jmu epnuencpie tcuin     -- "This is a tall tree"
 ```
 
-Parse: `me (jnu (epnuencpie (tcuin)))`
+Parse: `me (jmu (epnuencpie (tcuin)))`
 - epnuencpie tcuin: "height of trees" (measurement restricted to trees)
-- jnu (epnuencpie tcuin): "big in height-of-trees" (comparison class = trees)
+- jmu (epnuencpie tcuin): "big in height-of-trees" (comparison class = trees)
 - me: "this"
 
 **Key insight:** the class word (tcuin) is chained INTO the measurement, so:
@@ -155,13 +155,13 @@ Parse: `me (jnu (epnuencpie (tcuin)))`
 - Word order is `[scale] [dimension] [class]`, NOT `[class] [dimension] [scale]`
 
 Changing the last word changes the comparison class:
-- `jnu epnuencpie tcuin` = "tall tree" (big for a tree)
-- `jnu epnuencpie mian` = "tall cat" (big for a cat)
-- `jnu epnuencpie` alone = "tall" (big in height, compared to anything)
+- `jmu epnuencpie tcuin` = "tall tree" (big for a tree)
+- `jmu epnuencpie mian` = "tall cat" (big for a cat)
+- `jmu epnuencpie` alone = "tall" (big in height, compared to anything)
 
 ---
 
-## Multi-place binding: `a mo duna vo mi fa to ji meon foi sre`
+## Multi-place binding: `a mo duna vo mi fa to ji meon foi spe`
 
 "You gave me 3 apples (in the past)."
 
@@ -176,13 +176,13 @@ a ── sentence: assertion
     │         │    │    └── ji's A ≡ meon (apple)
     │         │    └── cardinal marker
     │         └── digit 3
-    ├─ foi ── sre ─── adverb: "before" (past)
+    ├─ foi ── spe ─── adverb: "before" (past)
     │         └── wraps ONLY duna's evaluation
     └─ (vei) ──────── elided at sentence end
 ```
 
 Note: all arguments (mo, mi, meon) exist in PRESENT. Only the giving is past.
-For everything in the past, prefix whole sentence with sre: `a sre mo duna vo mi fa to ji meon`
+For everything in the past, prefix whole sentence with spe: `a spe mo duna vo mi fa to ji meon`
 
 Common mistake: `a mo duna meon vo mi` — vo would bind to meon, NOT duna! vi always attaches to the immediately preceding verb.
 
@@ -220,7 +220,7 @@ Common mistake: `a mo duna meon vo mi` — vo would bind to meon, NOT duna! vi a
 
 More examples from refgram:
 - `mi kelo vaio: za ubob, sae coriu vihon` — vaio: A(atom)=Bob, iO(pred equiv)=owns car. "I'm thankful to Bob for owning a car."
-- `drie veao: mi, meon, e uiuro sfia jo ta` — veao: E=me, A=apples, O=0.2 EUR. "I buy apples for 0.2 EUR."
+- `dzie veao: mi, meon, e uiuro sfia jo ta` — veao: E=me, A=apples, O=0.2 EUR. "I buy apples for 0.2 EUR."
 
 **Always check the dictionary for place structures** — don't assume from English word order.
 
@@ -365,20 +365,20 @@ Result: `duna(c, speaker, apple, listener)` = "speaker gives apple to listener"
 
 ---
 
-## PA Echo-Resumptive: Deeper verb — `a mi dona etiansa meon pa etiansa ve blan`
+## PA Echo-Resumptive: Deeper verb — `a mi dona etiansa meon pa etiansa ve bjan`
 
 "I like a beautiful apple-eater."
 
-**Without PA** (planned ahead): `a mi dona etiansa va meon fe blan vei`
+**Without PA** (planned ahead): `a mi dona etiansa va meon fe bjan vei`
 
 Parse: `mi (dona (etiansa (meon)))`
 - etiansa meon: A=apple. "e eats apple"
 - dona (etiansa meon): A of dona shares with E of etiansa. "e likes apple-eater"
 - mi: E=speaker. "speaker likes apple-eater"
 
-PA resume: `pa etiansa ve blan`
+PA resume: `pa etiansa ve bjan`
 - Parser walks up: meon ≠ etiansa (fail), etiansa ≡ etiansa (match!)
-- ve blan: bind E of etiansa to blan. "eater is beautiful"
+- ve bjan: bind E of etiansa to bjan. "eater is beautiful"
 
 Result: "speaker likes [beautiful apple-eater]"
 

@@ -113,14 +113,14 @@ argument bound with a predicate on its right, and for the single argument that
 is exposed in the combined predicate. The right place is bound by sharing, while
 adding a final __-i__ makes it bound by equivalence.
 
-> __mian se etiansa blan__
+> __mian se etiansa bjan__
 >
 > \\[ \begin{align}
-> \text{blan}(c,e)                       &= \text{[$e$ is beautiful]} \\\\
+> \text{bjan}(c,e)                       &= \text{[$e$ is beautiful]} \\\\
 > \\ \\\\
-> \text{blan}_1(c,e)                     &= \text{blan}(c,e) \\\\
+> \text{bjan}_1(c,e)                     &= \text{bjan}(c,e) \\\\
 > \\ \\\\
-> \text{etiansa}_1(c,e,a)                   &= \text{etiansa}(c,e,a) \wedge \text{blan}_1(c,\color{magenta}{e}) \\\\
+> \text{etiansa}_1(c,e,a)                   &= \text{etiansa}(c,e,a) \wedge \text{bjan}_1(c,\color{magenta}{e}) \\\\
 > \text{etiansa}^w_1(c,\color{magenta}{e})  &= \exists a. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
 > \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
@@ -242,4 +242,4 @@ predicate from the following chain, while the last vowel binds the rest.
 
 - *mi dona vao: mo, meon*: I give you an apple.
 - *mi kelo vaio: za ubob, sae coriu vihon*: I'm thanksfull to Bob that I own a car.
-- *drie veao: mi, meon, e uiuro sfia jo ta*: I buy apple(s) for 0.2 EUR (total).
+- *dzie veao: mi, meon, e uiuro sfia jo ta*: I buy apple(s) for 0.2 EUR (total).

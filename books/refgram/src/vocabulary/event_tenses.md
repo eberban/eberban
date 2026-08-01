@@ -46,27 +46,27 @@ The real world present can be refered to using *sufkun*, which is updated betwee
 Time relations relates an **inner proposition** (it's A slot) with a reference event (E slot), which
 by default is the **outer proposition** current event.
 
-- *sre*: A **is before** E: end of A is before the start of E
-- *sra*: A **starts** E: start of A is start of E
-- *sro*: A **finishes** E: end of A is end of E
-- *sru*: A **is after** E: start of A is after the end of E
-- *srui*: A **contains** E
-- *srei*: A **is contained by** E
-- *srai*: A **intersects with** E
-- *sri*: A **is unconstrained by** E (but still reachable from E).
+- *spe*: A **is before** E: end of A is before the start of E
+- *spa*: A **starts** E: start of A is start of E
+- *spo*: A **finishes** E: end of A is end of E
+- *spu*: A **is after** E: start of A is after the end of E
+- *spui*: A **contains** E
+- *spei*: A **is contained by** E
+- *spai*: A **intersects with** E
+- *spi*: A **is unconstrained by** E (but still reachable from E).
 
-*sre* (before) and *sru* (after) have an O slot for the duration separating the 2 timespans. As
+*spe* (before) and *spu* (after) have an O slot for the duration separating the 2 timespans. As
 giving a precise duration may be difficult or too precise, compounds with time units are made to
 give a vague time scale of such duration :
 
-- *e ti sre/sru*: very short time for common speech, less than 1 second (excluded)
-- *e vola sre/sru*: few seconds, between 1 second (included) and 1 minute (excluded)
-- *e jero sre/sru*: few minutes, between 1 minute (included) and 1 hour (excluded)
-- *e sura sre/sru*: few hours, between 1 hour (included) and 1 day (excluded)
-- *e dena sre/sru*: few days, between 1 day (included) and 1 week (excluded)
-- *e kora sre/sru*: few weeks, between 1 week (included) and 1 month (excluded)
-- *e gare sre/sru*: few months, between 1 month (included) and 1 year (excluded)
-- *e bire sre/sru*: more than 1 year (included)
+- *e ti spe/spu*: very short time for common speech, less than 1 second (excluded)
+- *e vola spe/spu*: few seconds, between 1 second (included) and 1 minute (excluded)
+- *e jero spe/spu*: few minutes, between 1 minute (included) and 1 hour (excluded)
+- *e sura spe/spu*: few hours, between 1 hour (included) and 1 day (excluded)
+- *e dena spe/spu*: few days, between 1 day (included) and 1 week (excluded)
+- *e kora spe/spu*: few weeks, between 1 week (included) and 1 month (excluded)
+- *e gare spe/spu*: few months, between 1 month (included) and 1 year (excluded)
+- *e bire spe/spu*: more than 1 year (included)
 
 ## How are events modeled?
 
@@ -94,12 +94,12 @@ Something is **necessary** if it occurs in all timelines containing the
 one timeline. Sentences states that their content is necessary, but it can
 be expressed explicitly using:
 
-- *sni*: A is possible
-- *snu*: A is necessary
+- *smi*: A is possible
+- *smu*: A is necessary
   
 ## Counterfactual conditionals
 
-[Counterfactual conditionals] can be expressed using *sna* which have meaning
+[Counterfactual conditionals] can be expressed using *sma* which have meaning
 "A would be true if E was true." It implies that: 
 
 - both E and A are false in the current timeline

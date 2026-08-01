@@ -8,10 +8,10 @@ component and another list as the right component.
 
 <spoiler>
 
-__blur:__ `[E:ma]` is the empty list.
+__bjur:__ `[E:ma]` is the empty list.
 ---
 ```
-po blur zai blun
+po bjur zai blun
 ```
 </spoiler>
 
@@ -25,7 +25,7 @@ po blun ke be
 __ke__ is either the empty list
 ```
 vare
-  vie ke blur
+  vie ke bjur
 ```
 Or a pair whose right component is a list.
 ```
@@ -38,15 +38,15 @@ a common property.
 
 <spoiler>
 
-__blu:__ `[E:blun]` is a list of things all satisfying `[A:(a)]`.
+__bju:__ `[E:blun]` is a list of things all satisfying `[A:(a)]`.
 ---
 ```
-po blu ke gi be
+po bju ke gi be
 vare
   vie ke zai blun
   fia ma
     vi ke sea kin gi
-    fi ke seo kin blu gi
+    fi ke seo kin bju gi
 ```
 </spoiler>
 
@@ -96,7 +96,7 @@ right-to-left (last to first).
 
 <spoiler>
 
-__bla:__ Left folds list `[E:blu a]` with initial `[A:b]` and final `[O:b]`
+__bla:__ Left folds list `[E:bju a]` with initial `[A:b]` and final `[O:b]`
 carries by applying predicate `[U:(b,b,a)]` in first to last order.
 ---
 ```
@@ -127,7 +127,7 @@ the list.
 
 <spoiler>
 
-__blai:__ Right folds list `[E:blu a]` with initial `[A:b]` and final `[O:b]`
+__blai:__ Right folds list `[E:bju a]` with initial `[A:b]` and final `[O:b]`
 carries by applying predicate `[U:(b,b,a)]` in last to first order.
 ---
 ```
@@ -162,10 +162,10 @@ Thanks to these predicates we can easily define list concatenation.
 
 <spoiler>
 
-__ble:__ `[E:blu a]` is the concatenation of all lists in list `[A:blu blu a]` in order.
+__ble:__ `[E:bju a]` is the concatenation of all lists in list `[A:bju bju a]` in order.
 ---
 We first define predicate __ge__ with meaning:
-`[E:blu a]` is the concatenation of lists `[A:blu a]` and `[O:blu a]`.
+`[E:bju a]` is the concatenation of lists `[A:bju a]` and `[O:bju a]`.
 ```
 po ge ke ka ko be
 so blai
@@ -182,7 +182,7 @@ We then define __ble__ using the above predicate:
 po ble ke ka be
 ka bla
   va ke
-  fo blur
+  fo bjur
   fu kie kia kio be
     kie ge
       va kio
@@ -194,10 +194,10 @@ And even inclusion.
 
 <spoiler>
 
-__blea:__ `[E:blu a]` is included/contained in `[A:blu a]`.
+__bjea:__ `[E:bju a]` is included/contained in `[A:bju a]`.
 ---
 ```
-po blea ke ka be
+po bjea ke ka be
 ka ble
   vo ble
     fa ke
@@ -209,7 +209,7 @@ with the following predicate.
 
 <spoiler>
 
-__blo:__ `[E:tce a]` is the set of all the elements in list `[A:blu a]`.
+__blo:__ `[E:tce a]` is the set of all the elements in list `[A:bju a]`.
 ---
 We first define a predicate ensuring that __ke__ is a set containing alls
 elements in list __ka__.
@@ -237,7 +237,7 @@ express the set which is the union of a list of sets.
 
 <spoiler>
 
-__bli:__ `[E:tce a]` is the union of all sets in list `[A:blu tce a]`.
+__bli:__ `[E:tce a]` is the union of all sets in list `[A:bju tce a]`.
 ---
 ```
 po bli ke ka be

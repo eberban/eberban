@@ -7,7 +7,7 @@
 | Domain | Count | Notes |
 |--------|-------|-------|
 | core grammar | 87 | Particles + logic primitives |
-| time/tense | 74+33 | sr- relations, sk- events, duration units |
+| time/tense | 74+33 | sp- relations, sk- events, duration units |
 | number/digit | 46+24 | Complete base system |
 | set operations | 36 | tc- prefix pattern |
 | space | 29 | Physical entities, directions |
@@ -45,18 +45,18 @@
 - cooking methods (cook root deferred — multi-step process design needed)
 - materials (wood, metal, glass, plastic, cloth)
 - professions/occupations
-- communication technology (most online-discourse vocabulary added: vrano message, flane/flanu/flain post/delete/live-state, klan discourse-space, gruno community, grano platform, klano reply, klino reaction, klona mention, vroni live-session, spani spectator, prano account, klane replaced-by, kluna/klunu joins/leaves, bena/benu write/read, flunu listens, zmali video, floli audio-recording, dranu file; outstanding minor: block/mute)
+- communication technology (most online-discourse vocabulary added: vjano message, fsane/fsanu/fsain post/delete/live-state, ksan discourse-space, gzuno community, gzano platform, ksano reply, ksino reaction, ksona mention, vjoni live-session, spani spectator, pcano account, ksane replaced-by, ksuna/ksunu joins/leaves, bena/benu write/read, fsunu listens, zmali video, fsoli audio-recording, dzanu file; outstanding minor: block/mute)
 - celestial bodies (star, moon, planet — beyond "stellar body")
 
 ## Semantic Prefix Patterns
 | Prefix | Domain | Examples |
 |--------|--------|---------|
 | tc- | sets | tce (non-empty set), tca, tcu |
-| sr- | time relations | sre, sra, sro, sru, srui, srei, srai, sri |
+| sp- | time relations | spe, spa, spo, spu, spui, spei, spai, spi |
 | sk- | events | ski, skun |
 | zm- | colors | zmir, zmer, zmar, zmor, zmur |
 | sp- | speech/communication | spua, spia |
-| bl- | properties/quality | blan, blua |
+| bj- | properties/quality | bjan, bjua |
 
 ## Deferred Design Problems
 - **cook** — root agreed, but place structure needs deeper design (multi-step processes)

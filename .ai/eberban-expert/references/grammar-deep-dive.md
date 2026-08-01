@@ -76,8 +76,8 @@ vao = bind A then O. vaio = bind A then predicate-O. Compact alternative to FI c
 - Each **non-final** vowel consumes exactly 1 unit (word, quote, number, PE enum) from the following chain.
 - The **final** vowel gets the remaining chain.
 - `i` before a vowel = equivalence binding (predicate place).
-- Ex: `X vao mian blan etiansa meon vei` → A=mian (1 word), O=`blan etiansa meon` (rest of chain).
-- Ex: `X vaoe mian meon blan etiansa vei` → A=mian, O=meon, E=`blan etiansa` (rest).
+- Ex: `X vao mian bjan etiansa meon vei` → A=mian (1 word), O=`bjan etiansa meon` (rest of chain).
+- Ex: `X vaoe mian meon bjan etiansa vei` → A=mian, O=meon, E=`bjan etiansa` (rest).
 
 ### FI (f+vowel): Bind same pred as last open VI, supports multi-vowel
 **FI = shortcut for vei+vi** (e.g., fa = vei va). Closes current sub-chain and opens new one on same verb.
@@ -87,7 +87,7 @@ Same vowel mapping. Convenience members:
 
 ### Binding properties
 
-- **Bindings are additive, never consumed.** Chaining after vei AND-s more constraints on the same place. `etiansa ve mian fa meon vei blan` = "cat eats beautiful apple" (blan adds to A).
+- **Bindings are additive, never consumed.** Chaining after vei AND-s more constraints on the same place. `etiansa ve mian fa meon vei bjan` = "cat eats beautiful apple" (bjan adds to A).
 - **Double equivalence (via) on same slot ≠ AND** — it means the two definitions are equivalent to each other. Probably a mistake if unintentional.
 - **ve+fe idiom for pronouns**: `mi ve etiansa meon fe dona skan vei` = "I eat apples and like dogs." Repeating `mi` would introduce a new existential (possibly different speaker).
 - **SI vs VI/FI**: SI = linear chain override (no branching). VI/FI = branching (bind multiple places independently). Can mix but FI is clearer in practice.
@@ -100,7 +100,7 @@ Y evaluated by X (Y bound to A of X). Prevents Y's bindings from leaking. Used f
 General pattern: `s` + vowel list + optional `h`+vowel + optional final `-i`
 
 **Single vowel** (`se, sa, so, su`): expose AND right-bind the same place.
-- `se etiansa blan` — expose E, bind E to blan. "e eats something, e is beautiful." 1-ary (E).
+- `se etiansa bjan` — expose E, bind E to bjan. "e eats something, e is beautiful." 1-ary (E).
 
 **Two+ vowels** (`sae, sea, seao, ...`): ALL listed vowels are exposed. Last vowel is also the right-bound place. Exposed order defines new place structure (1st→E, 2nd→A, etc.).
 - `sae etiansa mian` — expose A and E, bind E to mian. "a eaten by cat e." 2-ary (A, E).
@@ -113,7 +113,7 @@ General pattern: `s` + vowel list + optional `h`+vowel + optional final `-i`
 - Use `h` when AMR would wrap the wrong place. If the target arity is lower and AMR naturally wraps the right places, prefer the simpler form (e.g., `sae` over `sahe` when the extra place gets wrapped anyway).
 
 **`si` + vowel = transparent** (`sia, sie, sio, siu`): re-expose all places of the RIGHT predicate. The vowel picks which place of the SI-prefixed predicate receives the right chain. The prefixed predicate's own places exist but are not re-exposed (accessible via VI/FI, otherwise existential).
-- `sia sre etiansa meon` — sre's A gets "eats apples" as proposition, but chain re-exposes etiansa's places. "In the past: e eats apples." Tense wraps whole chain without breaking flow.
+- `sia spe etiansa meon` — spe's A gets "eats apples" as proposition, but chain re-exposes etiansa's places. "In the past: e eats apples." Tense wraps whole chain without breaking flow.
 - Use case: proposition-place predicates (tenses, attitudes) where you want the main chain to flow through.
 
 **`-i` suffix** = equivalence binding (any form).
@@ -130,9 +130,9 @@ Transforms `[A:()]` (proposition) into `[A:(p)]` (1-ary predicate) receiving the
 - `mian zue gali etiansa meon` — gali's E IS the main chain subject, proposition is about E. "A cat is happy that it eats apples." Cat = happy one = eater.
 
 **Tense scoping comparison:**
-1. `etiansa voi sre vei meon` — sre wraps only etiansa. "Eating was past (apple exists now)."
-2. `sia sre etiansa meon` — sre wraps whole right chain transparently. "In the past: e eats apples."
-3. `sre etiansa meon` (no SI) — sre swallows chain, exposes sre's own places. Breaks left chain flow.
+1. `etiansa voi spe vei meon` — spe wraps only etiansa. "Eating was past (apple exists now)."
+2. `sia spe etiansa meon` — spe wraps whole right chain transparently. "In the past: e eats apples."
+3. `spe etiansa meon` (no SI) — spe swallows chain, exposes spe's own places. Breaks left chain flow.
 
 ### KI (k+vhowels): Atom variables
 
@@ -253,7 +253,7 @@ All `m-` particles act as predicate words. Core members are defined directly in 
 - **ma/mai**: type-checking. mai useful in definitions to express bare existence.
 - **mae**: currying primitive. Definition-level; wrapped by list vocabulary for practical use.
 - **mao**: predicate subset/implication: O ⊆ A (anything satisfying O also satisfies A). Handles different arities via mismatch resolution. Definition-level.
-- **mue/mua**: context pair. Powers the time/tense system — sre etc. use mua to evaluate predicates in modified contexts. Context manipulation vocabulary is experimental; the mue/mua mechanism itself is stable.
+- **mue/mua**: context pair. Powers the time/tense system — spe etc. use mua to evaluate predicates in modified contexts. Context manipulation vocabulary is experimental; the mue/mua mechanism itself is stable.
 - **mui**: trivalent unknown value.
 - Other m- particles (mi, mo, me, etc.) are convenience roots, not logical primitives.
 
@@ -261,11 +261,11 @@ All `m-` particles act as predicate words. Core members are defined directly in 
 
 **Setting defaults (O family):**
 - `oie/oia/oio/oiu` + predicate + constraint: set default for E/A/O/U. Only applies when place not explicitly bound.
-- `oia espuackuil flan` = "A of espuackuil defaults to flan (human)"
+- `oia espuackuil fsan` = "A of espuackuil defaults to fsan (human)"
 - `oia espuackuil mai` = remove default (mai = always true = no constraint)
 
 **Reading defaults (ZI family):**
-- `zoie/zoia/zoio/zoiu` + predicate: retrieve current default. `zoia espuackuil` = currently `flan`.
+- `zoie/zoia/zoio/zoiu` + predicate: retrieve current default. `zoia espuackuil` = currently `fsan`.
 
 **Behavior:**
 - Explicit binding (chaining, VI/FI) overrides default — default not applied.
@@ -413,21 +413,21 @@ Example: "In this room there is a cat, and you eating an apple" — the cat's ex
 - **sufkun**: real-world present — auto-advances between sentences ("move forward in time").
 - Change anchor: `en an skun sai` in an `an` sentence.
 
-### Time relations (sr- prefix)
-sre=before, sra=starts, sro=finishes, sru=after, srui=contains, srei=contained-by, srai=intersects, sri=unconstrained.
+### Time relations (sp- prefix)
+spe=before, spa=starts, spo=finishes, spu=after, spui=contains, spei=contained-by, spai=intersects, spi=unconstrained.
 
-**sre/sru have O slot** for duration separating the two timespans.
+**spe/spu have O slot** for duration separating the two timespans.
 
 ### Vague durations
-Compounds with time units give vague time scales for sre/sru's O slot:
-- `e ti sre/sru`: very short (<1s)
-- `e vola sre/sru`: seconds (1s–1min)
-- `e jero sre/sru`: minutes (1min–1h)
-- `e sura sre/sru`: hours (1h–1day)
-- `e dena sre/sru`: days (1day–1week)
-- `e kora sre/sru`: weeks (1week–1month)
-- `e gare sre/sru`: months (1month–1year)
-- `e bire sre/sru`: ≥1 year
+Compounds with time units give vague time scales for spe/spu's O slot:
+- `e ti spe/spu`: very short (<1s)
+- `e vola spe/spu`: seconds (1s–1min)
+- `e jero spe/spu`: minutes (1min–1h)
+- `e sura spe/spu`: hours (1h–1day)
+- `e dena spe/spu`: days (1day–1week)
+- `e kora spe/spu`: weeks (1week–1month)
+- `e gare spe/spu`: months (1month–1year)
+- `e bire spe/spu`: ≥1 year
 
 ### Duration units
 Number predicate structure: E is X times A (default: 1). Bare unit = 1 unit.
@@ -440,10 +440,10 @@ An event is modeled as: proposition + set of physical entities with their space-
 - **skul**: refers to current event (inside ski or sentence).
 
 ### Modal logic
-- **sni**: A is possible (occurs in ≥1 timeline containing common timespan)
-- **snu**: A is necessary (occurs in all timelines)
+- **smi**: A is possible (occurs in ≥1 timeline containing common timespan)
+- **smu**: A is necessary (occurs in all timelines)
 
-### Counterfactual (sna)
+### Counterfactual (sma)
 "A would be true if E was true." Implies:
 1. Both E and A are false in current timeline
 2. At any past instant I: if E occurs in future of I, then A necessarily occurs too
@@ -471,7 +471,7 @@ Day-of-week compounds: `e TI denai` for each weekday.
 **Examples:**
 - `a [se tie tu] jeroi [se te tio] surai` = "It is 17:54" (minute 54 of hour 17)
 - `a se ti e tia denai se tiu garei` = "It is September 1st" (day 0 of month 8, Sunday)
-- `a mi drie meon sri se te denai skun srui mi etiansa ze meon` = "I buy an apple, and tomorrow I will eat it."
+- `a mi dzie meon spi se te denai skun spui mi etiansa ze meon` = "I buy an apple, and tomorrow I will eat it."
 
 ---
 

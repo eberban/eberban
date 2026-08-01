@@ -160,7 +160,7 @@ mae:
   sharing: false
   links:
     - ["icon-book", "Logical primitives", https://eberban.github.io/eberban/books/refgram/book/logic/primitives.html]
-  see_also: ["eblumae"]
+  see_also: ["ebjumae"]
 mui:
   id: yftgrzjtiw
   predilex_id: zalego
@@ -714,17 +714,17 @@ jiu:
   gloss: "#ordinal"
   tags: [terminator, number, list]
   transitive: true
-  see_also: [jiune, blua]
+  see_also: [jiune, bjua]
   short: |
     Ordinal number terminator. The preceding number have definition:\
-    [E:tca p] is the [number]th member of sequence [A:ebluse].\
+    [E:tca p] is the [number]th member of sequence [A:ebjuse].\
     Indexing is done using zero-based numbering, such as the first member is the 0th.
     The number must be a (possibly 0) positive integer.
   notes: |
     See {jiune} for a similar predicate with a place for the number (which allows to ask questions
     about it).
 
-    To speak about the last member, use {blua} to reverse the order of the list.
+    To speak about the last member, use {bjua} to reverse the order of the list.
   links:
     - ["icon-book", "Numbers - Various usage of numbers", https://eberban.github.io/eberban/books/refgram/book/grammar/numbers.html#various-usage-of-numbers]
 ju:
@@ -1140,7 +1140,7 @@ do:
 # Defined predicate words (in order of book)
 # -----
 
-vle:
+vze:
   id: ysh546fklz
   predilex_id: zarowi
   family: "R"
@@ -1148,11 +1148,11 @@ vle:
   tags: [connective]
   short: "True if [E:()] or [A:()] or both is true."
   definition: |
-    on vle ge ga be
+    on vze ge ga be
     bi ma
       vi bi ge
       fi bi ga
-vlu:
+vzu:
   id: eczhmrmkqd
   predilex_id: berogo
   family: "R"
@@ -1162,8 +1162,8 @@ vlu:
     If [E:()] is then [A:()] (default: true) is true, otherwise [O:()]
     (default: true) is true.
   definition: |
-    on vlu ge ga be
-    vle
+    on vzu ge ga be
+    vze
       via mai
         vi ge
         fi ga
@@ -1171,8 +1171,8 @@ vlu:
       fie mai
         vi bi ge
         fi go
-    onia vlu mai
-    onio vlu mai
+    onia vzu mai
+    onio vzu mai
 kidvo:
   id: 3sqq5pyzms
   family: "R"
@@ -1181,7 +1181,7 @@ kidvo:
     [E:p] and [A:p] satisfy relation [O:(p,p)] transitively.
   definition: |
     on kidvo ke ka go be
-    vle
+    vze
       vie ke go ka
       fia bo ki
         vi ke go ki
@@ -1215,7 +1215,7 @@ tcia:
   # definition: |
   #   on tcia ke ka be
   #   mao
-  #     ve ki be vlu
+  #     ve ki be vzu
   #       vie ki tcihe ke
   #       fia ki tcihe ka
 tcehi:
@@ -1410,7 +1410,7 @@ kin:
                  va ka
                  fo ko
     pi e kin pi
-blur:
+bjur:
   id: nro51pm4q2
   predilex_id: bazetu
   family: "R"
@@ -1418,73 +1418,73 @@ blur:
   tags: [list]
   short: |
     [E:ma] is the empty list.
-blu:
+bju:
   id: 4tuaiv3x0b
   predilex_id: cutago
   family: "R"
   gloss: "list:"
   tags: [list]
   short: |
-    [E:ebluse] is a list of things all satisfying [A:(p)].
+    [E:ebjuse] is a list of things all satisfying [A:(p)].
   notes: |
     {peu} and {pehu} are syntactic sugar to make lists.
-bluni:
+bjuni:
   id: 6oxelxxwxd
   predilex_id: fuwiyi{O,A,E,U}
   family: "R"
   gloss: "list-lfold"
   tags: [list]
   short: |
-    Left folds list [E:blu p] with initial [A:b] and final [O:b] carries by
+    Left folds list [E:bju p] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,p)] in first to last order.
-blunu:
+bjunu:
   id: zblktnj4an
   predilex_id: fubuca{O,A,E,U}
   family: "R"
   gloss: "list-rfold"
   tags: [list]
   short: |
-    Right folds list [E:blu p] with initial [A:b] and final [O:b] carries by
+    Right folds list [E:bju p] with initial [A:b] and final [O:b] carries by
     applying predicate [U:(b,b,p)] in last to first order.
-bluhe:
+bjuhe:
   id: ghp1rirgb6
   family: "R"
   gloss: "list-concat-2"
   tags: [list]
   short: |
-    [E:ebluse] is the concatenation of lists [A:ebluse] and [O:ebluse].
-blue:
+    [E:ebjuse] is the concatenation of lists [A:ebjuse] and [O:ebjuse].
+bjue:
   id: bqqk6gqk0k
   predilex_id: tujoco
   family: "R"
   gloss: "list-concat-many"
   tags: [list]
   short: |
-    [E:ebluse] is the concatenation of all lists in list [A:blu ebluse].
-blua:
+    [E:ebjuse] is the concatenation of all lists in list [A:bju ebjuse].
+bjua:
   id: 2wwxz8b8gr
   predilex_id: mogoju
   family: "R"
   gloss: "list-reverse"
   tags: [list]
   short: |
-    [E:ebluse] is list [A:ebluse] in reverse order.
-blea:
+    [E:ebjuse] is list [A:ebjuse] in reverse order.
+bjea:
   id: un9423gr90
   predilex_id: sehiva
   family: "R"
   gloss: "list-contain"
   tags: [list]
   short: |
-    [E:ebluse] is included/contained in [A:ebluse].
-bleu:
+    [E:ebjuse] is included/contained in [A:ebjuse].
+bjeu:
   id: zp415dp0q0
   predilex_id: yilodi{A,E}
   family: "R"
   gloss: "list-set-raw"
   tags: [list, set]
   short: |
-    [E:tce p] is the set of all the elements in list [A:blu p].
+    [E:tce p] is the set of all the elements in list [A:bju p].
 kagvin:
   id: wuklqbdxyk
   predilex_id: yeqigo
@@ -1550,7 +1550,7 @@ kagvi:
   tags: [map, list]
   short: |
     [E:kagvin] represents a map that can be obtained from [O:kagvin] (default: context)
-    by applying the list of transformations [A:blu ()].
+    by applying the list of transformations [A:bju ()].
 kagvien:
   id: eogkr6aqeg
   family: "R"
@@ -1579,7 +1579,7 @@ kagvihi:
   gloss: "context-map-list-wrapper:"
   tags: [map, list, context]
   short: |
-    Transformations [E:blu ()] are applied on the context before it is used to evaluate [A:()].
+    Transformations [E:bju ()] are applied on the context before it is used to evaluate [A:()].
 
 # -----
 # Gismu import project words
@@ -1675,46 +1675,46 @@ venu:
   family: "R"
   gloss: "satisfies-at-least-N-preds"
   tags: [set, list, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies at least [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
+  short: "List of arguments [E:ebjuse] (default: empty list) satisfies at least [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
   notes: |
     With default [O] it corresponds to an OR logical operator.
 
-    Prefix with {etebleu} or {etableu} to easily transform this into a property/relation that can be used
+    Prefix with {etebjeu} or {etabjeu} to easily transform this into a property/relation that can be used
     with other words.
 
     __Example:__\
-    {me [pea bu mian, gour pei] veni etebleu venu [peho bu za ufeliksi, za ureksi]}\
+    {me [pea bu mian, gour pei] veni etebjeu venu [peho bu za ufeliksi, za ureksi]}\
     Among the cat and the dog, at least one of them is named either Felix or Rex.    
-  see_also: ["vanu", "vonu", "vunu", "veni", "vani", "voni", "vuni", "eblumae"]
+  see_also: ["vanu", "vonu", "vunu", "veni", "vani", "voni", "vuni", "ebjumae"]
 vanu:
   id: f5t4czvnuc
   family: "R"
   gloss: "satisfies-exactly-N-preds"
   tags: [set, list, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies exactly [O:tce gin] (default: 1) predicate(s) in set [A:tcehi ()]."
+  short: "List of arguments [E:ebjuse] (default: empty list) satisfies exactly [O:tce gin] (default: 1) predicate(s) in set [A:tcehi ()]."
   notes: |
     See notes of {venu} for detailed exemple of usage.
-  see_also: ["venu", "vonu", "vunu", "vani", "voni", "vuni", "eblumae"]
+  see_also: ["venu", "vonu", "vunu", "vani", "voni", "vuni", "ebjumae"]
 vonu:
   id: 6blh1b2gk3
   family: "R"
   gloss: "satisfies-at-most-N-preds"
   tags: [set, list, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies at most [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
+  short: "List of arguments [E:ebjuse] (default: empty list) satisfies at most [O:tce gin] (default: 1) predicate(s) in set [A:tcehi (...)]."
   notes: |
     See notes of {venu} for detailed exemple of usage.
-  see_also: ["venu", "vanu", "vunu", "veni", "vani", "voni", "vuni", "eblumae"]
+  see_also: ["venu", "vanu", "vunu", "veni", "vani", "voni", "vuni", "ebjumae"]
 vunu:
   id: qsivboraps
   family: "R"
   gloss: "satisfies-all-except-N-preds"
   tags: [set, list, connective]
-  short: "List of arguments [E:ebluse] (default: empty list) satisfies all except [O:tce gin] (default: 0) predicates in set [A:tcehi (...)]."
+  short: "List of arguments [E:ebjuse] (default: empty list) satisfies all except [O:tce gin] (default: 0) predicates in set [A:tcehi (...)]."
   notes: |
     With default [O] it corresponds to an AND logical operator.
 
     See notes of {venu} for detailed exemple of usage.
-  see_also: ["venu", "vanu", "vonu", "veni", "vani", "voni", "vuni", "eblumae"]
+  see_also: ["venu", "vanu", "vonu", "veni", "vani", "voni", "vuni", "ebjumae"]
 veni:
   id: 6sy0lhny4i
   family: "R"
@@ -1773,7 +1773,7 @@ fule:
   family: "R"
   gloss: "knows:"
   short: "[E:tce* pan] knows [A:tce* man] from source [O:tce man]."
-ple:
+pse:
   id: soaifzyvro
   family: "R"
   gloss: "fact:"
@@ -1933,7 +1933,7 @@ seru:
   family: "R"
   gloss: "about"
   short: "[E:tce* man] is about subject [A:tce* man]."
-snai:
+smai:
   id: q0vx1idoej
   predilex_id: rabure
   family: "R"
@@ -1951,7 +1951,7 @@ per:
   family: "R"
   gloss: "person"
   short: "[E:tce* pan] is a person."
-prae:
+pcae:
   id: scjlbqkhj0
   predilex_id: motuwa
   family: "R"
@@ -2018,7 +2018,7 @@ tcuin:
   family: "R"
   short: "[E:tce* pan] is a tree."
   gloss: "tree"
-jnaor:
+jmaor:
   id: 7i380kaavf
   predilex_id: wudana
   family: "R"
@@ -2066,7 +2066,7 @@ folin:
   family: "R"
   gloss: "airplane"
   short: "[E:tce* pan] is an airplane."
-jlei:
+jvei:
   id: l2gx6yauc8
   predilex_id: pereco{E,O,A}
   family: "R"
@@ -2092,7 +2092,7 @@ jvin:
   family: "R"
   gloss: "dances"
   short: "[E:tce* pan] dances."
-blan:
+bjan:
   id: 7qni8huxuw
   predilex_id: zeyawu{A,E}
   family: "R"
@@ -2249,7 +2249,7 @@ kanan:
   gloss: "wolf"
   tags: [animal]
   short: "[E:tce* pan] is a wolf."
-kroan:
+kcoan:
   id: 3ojsocuqre
   predilex_id: buwuvu
   family: "R"
@@ -2283,7 +2283,7 @@ caun:
   gloss: "animal"
   tags: [animal]
   short: "[E:tce* pan] is an animal."
-flur:
+fsur:
   id: hp3x2jerun
   predilex_id: dayilu
   family: "R"
@@ -2296,7 +2296,7 @@ jveno:
   family: "R"
   gloss: "friendly"
   short: "[E:tce* pan] is kind/behaves friendly towards [A:tce* man]."
-slari:
+stari:
   id: dulprqx3y8
   family: "R"
   gloss: "rule"
@@ -2335,18 +2335,18 @@ merun:
   family: "R"
   gloss: "organism"
   short: "[E:tce* pan] is an organism / form of life."
-slane:
+stane:
   id: torlvzglzh
   family: "R"
   gloss: "tied"
   short: "[E:tce* pan] is tied/pinned to [A:tce* pan]."
-glon:
+gzon:
   id: je2by0lctr
   predilex_id: rimaqe
   family: "R"
   gloss: "game"
   short: "[E:tce* man] is a game/activity made for entertainement purposes."
-  notes: It may not be actually played right now, while using {eglonsa} implies that there is a player.
+  notes: It may not be actually played right now, while using {egzonsa} implies that there is a player.
 spenu:
   id: mre2klwbx7
   predilex_id: gebuze
@@ -2436,18 +2436,18 @@ cmiru:
   family: "R"
   gloss: "receives"
   short: "[E:tce* pan] receives/absorbs [A:tce* pan]."
-flun:
+fsun:
   id: uu6cakexur
   predilex_id: yulogu
   family: "R"
   gloss: "sound"
   short: "[A:tce* man] is a sound."
-flunu:
+fsunu:
   id: k5gx3b09f6
   family: "R"
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* pan]."
-  see_also: [flun, spenu]
+  see_also: [fsun, spenu]
 fana:
   id: ydafwz0dpc
   predilex_id: hibeto
@@ -2494,7 +2494,7 @@ pana:
   tags: [kinship, family]
   short: "[E:tce* pan] is a (social) father of [A:tce* pan]."
   notes: Equivalent to {zun fana}.
-jnehu:
+jmehu:
   id: dmqfp5rpq1
   predilex_id: keyepe
   family: "R"
@@ -2593,7 +2593,7 @@ stan:
   family: "R"
   gloss: "country"
   short: "[E:tce* pan] is a country/territory."
-drair:
+dzair:
   id: uuwufiyz1v
   predilex_id: sibeye
   family: "R"
@@ -2647,7 +2647,7 @@ ctua:
   family: "R"
   gloss: "sit"
   short: "[E:tce* pan] is sitting on [A:tce* pan]."
-proi:
+pcoi:
   id: p6vxsz77g5
   predilex_id: winiza
   family: "R"
@@ -2685,7 +2685,7 @@ sahar:
   family: "R"
   tags: [plant]
   gloss: "blossom"
-  short: "[E:tce* pan] is a blossom/flower (reproductive structure of a flowering plant {esaharflur})."
+  short: "[E:tce* pan] is a blossom/flower (reproductive structure of a flowering plant {esaharfsur})."
 suhur:
   id: uy3j4w7uxv
   family: "R"
@@ -2740,7 +2740,7 @@ meul:
   family: "R"
   short: "[E:tce* pan] (default: water) is raining."
   gloss: "rain"
-zniri:
+zmiri:
   id: bbmaoqi9r0
   family: "R"
   gloss: "obligated:"
@@ -2749,7 +2749,7 @@ zniri:
   notes: |
     Examples: praying (in some religions), voting (in some countries), parents
     taking care of their children is societally obligated
-zneri:
+zmeri:
   id: katsvpqhmr
   family: "R"
   gloss: "encouraged:"
@@ -2758,7 +2758,7 @@ zneri:
     [A] is a virtuous/upstanding behavior.
   notes: |
     Examples: charity, volunteer work, being polite
-znari:
+zmari:
   id: juramnwmey
   family: "R"
   gloss: "tolerated:"
@@ -2766,9 +2766,9 @@ znari:
     [A:()] is neither encouraged nor discouraged (i.e. permitted) by authority [E:tce* pan].
     [A] is tolerated.
   notes: |
-    Examples: basically most actions are {znari}, there are so many examples
-    -- the act of breathing is {znari}
-znori:
+    Examples: basically most actions are {zmari}, there are so many examples
+    -- the act of breathing is {zmari}
+zmori:
   id: 2uij97w56c
   family: "R"
   gloss: "discouraged:"
@@ -2777,7 +2777,7 @@ znori:
   notes: |
     Examples: lying (not under oath), crimes with are technically illegal but
     not prosecuted, laughing at a funeral, breaking certain religious laws
-znuri:
+zmuri:
   id: wtc0sbwiwj
   family: "R"
   gloss: "forbidden:"
@@ -2793,17 +2793,17 @@ molai:
   short: |
     [E:tce pan] is made to satisfy [A:(tce pan)] as a reward/punishment.
     [E] is awarded/punished, with result that they satisfy [A].
-krehu:
+kcehu:
   id: giuwxgdlvl
   family: "R"
   gloss: "meat"
   short: "[E:tce* pan] is meat from animal/source [A:tce* pan]."
-drie:
+dzie:
   id: 034abxcqau
   family: "R"
   gloss: "buys"
   short: "[E:tce pan] buys [A:tce pan] for price/in exchange for [O:tce pan] (where success is implied)."
-dria:
+dzia:
   id: f6na2jopyj
   family: "R"
   gloss: "offers"
@@ -2844,14 +2844,14 @@ sanol:
   predilex_id: yujusi
   family: "R"
   gloss: "air"
-  short: "[E:tce* pan] is air/breathable atmosphere/gas at correct pressure for [A:tce* pan] (default: {flan}/humans)."
+  short: "[E:tce* pan] is air/breathable atmosphere/gas at correct pressure for [A:tce* pan] (default: {fsan}/humans)."
 soeon:
   id: atojlgas61
   predilex_id: zayawa
   family: "R"
   gloss: "sky"
   short: "[E:tce* pan] is is the sky (high troposphere and above)."
-cnue:
+cmue:
   id: kx3walxiid
   predilex_id: deludo{A,E}
   family: "R"
@@ -2870,7 +2870,7 @@ duna:
     (TODO: Add words for legal/incidental ownership)
 
     [E] does not accept payment or expect reciprocation from [O].
-flan:
+fsan:
   id: cjj2u7h6ir
   predilex_id: wayami
   family: "R"
@@ -2882,14 +2882,14 @@ fulie:
   family: "R"
   gloss: "sum"
   tags: ["maths"]
-  short: "[E:tce gan] is the sum of numbers in list [A:blu tce gan]."
+  short: "[E:tce gan] is the sum of numbers in list [A:bju tce gan]."
 fuliu:
   id: pd94naqm1w
   predilex_id: dotega
   family: "R"
   gloss: "product"
   tags: ["maths"]
-  short: "[E:tce gan] is the product of numbers in list [A:blu tce gan]."
+  short: "[E:tce gan] is the product of numbers in list [A:bju tce gan]."
 bire:
   id: peug1pbvxf
   predilex_id: pumema
@@ -3139,7 +3139,7 @@ gzia:
   gloss: "population"
   short: "[E:tce gan] (unitless) is the population/number of inhabitants of [A:tce pan]."
   tags: ["measurement"]
-cnie:
+cmie:
   id: b0ey5as5c6
   predilex_id: kiweko{A,E}
   family: "R"
@@ -3201,21 +3201,21 @@ ceor:
   gloss: "organ"
   short: "[E:tce* pan] is an organ."
   tags: [body]
-treun:
+tseun:
   id: g4mtuykzjn
   predilex_id: lukaso
   family: "R"
   gloss: "trunk"
   short: "[E:tce pan] is a trunk (central part of the body)."
   tags: [body]
-zlier:
+zvier:
   id: oyemdfrbzy
   predilex_id: copika
   family: "R"
   gloss: "arm"
   short: "[E:tce* pan] is an arm."
   tags: [body]
-zlior:
+zvior:
   id: r2j7n1mftn
   predilex_id: maqawo
   family: "R"
@@ -3250,14 +3250,14 @@ kirun:
   gloss: "head"
   short: "[E:tce* pan] is a head."
   tags: [body]
-glaen:
+gzaen:
   id: uwmxjgjvh7
   predilex_id: haduzi
   family: "R"
   gloss: "genitals"
   short: "[E:tce* pan] are genitals."
   tags: [body]
-glaon:
+gzaon:
   id: ioxa2c03t6
   predilex_id: yakego
   family: "R"
@@ -3278,7 +3278,7 @@ virun:
   gloss: "eye"
   short: "[E:tce* pan] is an eye."
   tags: [body]
-gnoil:
+gjoil:
   id: mqmszfhjbp
   predilex_id: vuniri
   family: "R"
@@ -3351,7 +3351,7 @@ gzian:
   family: "R"
   gloss: "showers"
   short: "[E:tce* pan] showers in substance [A:tce pan] (default: water)."
-snoil:
+smoil:
   id: bovvdgkucg
   predilex_id: huviji
   family: "R"
@@ -3627,7 +3627,7 @@ tcori:
   family: "R"
   gloss: "mutual-2:"
   short: "All pairs subset of [E:tco p] have their members mutually satisfy relation [A:(tca a, tca p)]."
-jnu:
+jmu:
   id: gi4jvusxpm
   predilex_id: loluzi{E,O,A,U}
   family: "R"
@@ -3642,17 +3642,17 @@ jnu:
     filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
     filter.
 
-    {me jnu epsuencpie tcuin} = It's a tall tree. (measurement is "height of a tree", so things that are
+    {me jmu epsuencpie tcuin} = It's a tall tree. (measurement is "height of a tree", so things that are
     not trees are excluded from the comparaison)
 
     If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
     property to [A] and don't filter in [O].
 
-    {me bjaor jnu via epsuencpie fio kroan} = The elephant is tall compared to frogs.  
+    {me bjaor jmu via epsuencpie fio kcoan} = The elephant is tall compared to frogs.  
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
-jni:
+jmi:
   id: ik7qjuwuxm
   predilex_id: lumoja{E,O,A,U}
   family: "R"
@@ -3667,17 +3667,17 @@ jni:
     filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
     filter.
 
-    {me jnu epsuencpie tcuin} = It's a small tree. (measurement is "height of a tree", so things that are
+    {me jmu epsuencpie tcuin} = It's a small tree. (measurement is "height of a tree", so things that are
     not trees are excluded from the comparaison)
 
     If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
     property to [A] and don't filter in [O].
 
-    {me kroan jni via epsuencpie fio bjaor} = The frog is small compared to elephants.  
+    {me kcoan jmi via epsuencpie fio bjaor} = The frog is small compared to elephants.  
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
-jnuhi:
+jmuhi:
   id: yw2t4sv9sb
   predilex_id: rajega{E,\A}
   family: "R"
@@ -3688,7 +3688,7 @@ jnuhi:
     Starts and stops when it is decreasing. It doesn't stop when it reach a plateau and
     then increase again, which means at a plateau between increase and decrease it is increasing and decreasing
     at the same time.
-jnihi:
+jmihi:
   id: dysqdtql0v
   predilex_id: rufoge{E,\A}
   family: "R"
@@ -3713,7 +3713,7 @@ bjaor:
   gloss: "elephant"
   tags: ["animal"]
   short: "[E:tce* pan] is an elephant."
-graulin:
+gzaulin:
   id: 7386lgkl9w
   predilex_id: zimoke
   family: "R"
@@ -3754,7 +3754,7 @@ bzael:
     {ebzaelmua}.
 
     Words like {kuri} (think) use {ebzaelmua} internally, while subjective words
-    like {blan} are by default according to the opiner {bzael}.
+    like {bjan} are by default according to the opiner {bzael}.
 zoal:
   id: ob1f25nx3q
   predilex_id: kirawa{A,E}
@@ -3799,20 +3799,20 @@ soli:
   family: "R"
   gloss: "metaphor:"
   short: "[E:p] metaphoricaly satisfy property [A:(p)]."
-mliel:
+smiel:
   id: xuvbg8gnll
   predilex_id: yibela
   family: "R"
   gloss: "cold"
   short: "[E:tce* pan] (default: the air) feels cold to the touch."
-  see_also: ["mlial"]
-mlial:
+  see_also: ["smial"]
+smial:
   id: pne1nwyhy8
   predilex_id: mepevi
   family: "R"
   gloss: "warm"
   short: "[E:tce* pan] (default: the air) feels warm to the touch."
-  see_also: ["mliel"]
+  see_also: ["smiel"]
 cpere:
   id: gant5ud5xq
   predilex_id: saloki{A,E}
@@ -3885,7 +3885,7 @@ sari:
   notes: |
     Both events must not overlap. Event described by [A] is met by one event and meets the other.
     (To speak about an event that occurs between them but don't meet them, use {sari seno}).
-sre:
+spe:
   id: 5rdw01axi4
   predilex_id: bopiti
   family: "R"
@@ -3896,7 +3896,7 @@ sre:
     The end of [A] is before the start of [E]. [A] is in the past of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-sru:
+spu:
   id: m3p1pma6zf
   predilex_id: bopiti{A,E,O}
   family: "R"
@@ -3907,7 +3907,7 @@ sru:
     The start of [A] is after the end of [E]. [A] is in the future of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-sra:
+spa:
   id: 4wmrgvvaw2
   family: "R"
   gloss: "starts:"
@@ -3917,7 +3917,7 @@ sra:
     The start of [A] is the start of [E].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-sro:
+spo:
   id: nsnjvcaglb
   family: "R"
   gloss: "finishes:"
@@ -3927,7 +3927,7 @@ sro:
     The end of [E] is the end of [A].
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-srui:
+spui:
   id: 64scvsnfn7
   predilex_id: nutida
   family: "R"
@@ -3936,7 +3936,7 @@ srui:
   short: "[A:()] contains [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-srei:
+spei:
   id: 0fj04kshgt
   predilex_id: nutida{A,E}
   family: "R"
@@ -3945,7 +3945,7 @@ srei:
   short: "[A:()] is contained by [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-srai:
+spai:
   id: cwg79aqwl8
   predilex_id: fadopa
   family: "R"
@@ -3954,7 +3954,7 @@ srai:
   short: "[A:()] intersects with [E:tca ski] (default: current context event)"
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-sri:
+spi:
   id: u3q3u80bs7
   predilex_id: vineje
   family: "R"
@@ -3978,9 +3978,9 @@ skeri:
     The E slot of the tense relations will not be bound, and thus default bounds can take effect.
 
     Exemple:
-    {a peho bu birei sru pei skeri mi vania <e unihon stan>}
+    {a peho bu birei spu pei skeri mi vania <e unihon stan>}
     This year I'll go to Japan.
-sni:
+smi:
   id: wx9gxr4xrp
   predilex_id: wipiyo
   family: "R"
@@ -3989,7 +3989,7 @@ sni:
   short: "It is possible that [A:()] occurs."
   links:
     - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
-snu:
+smu:
   id: 16f4flzhb2
   predilex_id: tocawu
   family: "R"
@@ -3998,7 +3998,7 @@ snu:
   short: "It is necessary that [A:()] occurs."
   links:
     - ["icon-book", "Event and tenses - Modal logic", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html#modal-logic]
-sna:
+sma:
   id: m14pml81zw
   predilex_id: votigo
   family: "R"
@@ -4143,14 +4143,14 @@ zear:
   gloss: book
   short: |
     [E:tce* pan] is a book.
-fleon:
+fseon:
   id: rxknm8lb4u
   predilex_id: tatazu
   family: "R"
   gloss: music
   short: |
     [E:tce* pan] is a music.
-jnaha:
+jmaha:
   id: svkaim6riw
   predilex_id: cijite
   family: "R"
@@ -4421,7 +4421,7 @@ cehil:
   gloss: boat
   tags: [vehicule]
   short: "[E:tce* pan] is a boat."
-drion:
+dzion:
   id: f6ri7fuw7z
   predilex_id: vapewe
   family: "R"
@@ -4440,7 +4440,7 @@ vogbi:
   family: "R"
   gloss: leader
   short: "[E:tce* pan] is the leader of [A:tce pan]."
-cnuhe:
+cmuhe:
   id: p0g66q8zas
   predilex_id: gehaqa
   family: "R"
@@ -4491,7 +4491,7 @@ tian:
   family: "R"
   gloss: food
   short: "[E:tce* man] is edible by/food for [A:tce* pan] (default: species of {bzael})."
-gnuri:
+gjuri:
   id: uhiinytsff
   family: "R"
   gloss: flavored
@@ -4507,7 +4507,7 @@ daliu:
   family: "R"
   gloss: dedicated
   short: "[E:tce* man] is dedicated to/in use by [A:tce pan]."
-fnala:
+fsala:
   id: 43dhivbbtp
   predilex_id: simeli
   family: "R"
@@ -4531,7 +4531,7 @@ jiune:
   gloss: "n-th"
   tags: [number, list]
   short: |
-    [E:tca p] is the [O:tca gan]th (starts counting at 0) member of sequence [A:ebluse].
+    [E:tca p] is the [O:tca gan]th (starts counting at 0) member of sequence [A:ebjuse].
   see_also: [jiu]
 dzei:
   id: a5sx15j283
@@ -4593,7 +4593,7 @@ tcero:
   gloss: "set-mapping"
   short: |
     Members of [E:tce p] can be mapped one by one to members of [A:tce p] using relation [O:(tca p,tca p)].
-flir:
+fsir:
   id: 3i3k6yr8jo
   predilex_id: culuke
   family: "R"
@@ -4671,12 +4671,12 @@ sti:
     the intensity of [A] must be less than -1. Is itself intensity-aware, so can be combined with
     {ste} and {sto} to increase or decrease the threashold. It should be said last/right-most in the
     intensity chain to properly use the conditions of the other intensity words.
-klao:
+ksao:
   id: cbchzguehy
   family: "R"
   gloss: "chain-rel"
   short: |
-    [E:p] satisfies relation [O:(p,p)] with the first member of list [A:blu p], and each non-final
+    [E:p] satisfies relation [O:(p,p)] with the first member of list [A:bju p], and each non-final
     member of [A] satisfies [O] with the following member.    
 celuar:
   id: f1la1jggsk
@@ -4765,7 +4765,7 @@ filiel:
   family: "R"
   gloss: "pocket"
   short: "[E:tce* pan] is a pocket."
-trai:
+tsai:
   id: 6vrbrkb4i6
   predilex_id: buqije
   family: "R"
@@ -4806,7 +4806,7 @@ ksai:
   family: "R"
   gloss: "calm"
   short: "[E:tce* pan] (default: bzael) feels calm about [A:()] being true."
-mreli:
+cmeli:
   id: wtncyvxjx4
   predilex_id: muwuge
   family: "R"
@@ -4827,7 +4827,7 @@ gjoi:
   gloss: "disgust"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is disgusted by [A:()] being true."
-krei:
+kcei:
   id: 2ru9d94qgg
   predilex_id: royuvi
   family: "R"
@@ -4841,7 +4841,7 @@ zgai:
   gloss: "fear"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is afraid about [A:()] being true."
-prui:
+pcui:
   id: ysvvowy2y6
   predilex_id: fivuge
   family: "R"
@@ -4860,14 +4860,14 @@ fsuo:
   family: "R"
   gloss: "sexual"
   short: "[E:tce pan] (default: bzael) feels sexual about [A:()] being true."
-vriai:
+vjiai:
   id: ganixoaec2
   predilex_id: savaye
   family: "R"
   gloss: "nostalgia"
   tags: [emotion]
   short: "[E:tce* pan] (default: bzael) is nostalgic about [A:()] being true."
-plui:
+psui:
   id: c2pm9lkdn5
   predilex_id: hacera
   family: "R"
@@ -4902,7 +4902,7 @@ bjonil:
   family: "R"
   gloss: "movie"
   short: "[E:tce* man] is a movie/film."
-glunor:
+gzunor:
   id: 8ijl0xvmda
   predilex_id: higovu
   family: "R"
@@ -4938,7 +4938,7 @@ sfuer:
     It is considered windy if air is moving at 1 m/s or more.
     TODO: What should be the formula from air speed to intensity in intensy mode ({stu})?.
     To speak about measured speed (in m/s for example), use {ckia}.
-fluer:
+fsuer:
   id: qk39xzxgrf
   family: "R"
   gloss: "current"
@@ -4958,7 +4958,7 @@ guren:
 
     TODO: What is a season in general? Is it possible to define without enumerating all seasons from
     all season systems?
-slon:
+ston:
   id: pn1dk53jqx
   family: "R"
   gloss: "fish"
@@ -4988,13 +4988,13 @@ moir:
   gloss: "cow"
   tags: [animal]
   short: "[E:tce* pan] is a cow."
-grin:
+gzin:
   id: z2vi1ojwdj
   family: "R"
   gloss: "pig"
   tags: [animal]
   short: "[E:tce* pan] is a pig."
-mnol:
+zmol:
   id: vfwq6oo8vn
   family: "R"
   gloss: "sheep"
@@ -5030,7 +5030,7 @@ zien:
   gloss: "bee"
   tags: [animal]
   short: "[E:tce* pan] is a bee."
-briar:
+bziar:
   id: 4qwoj0dg3y
   family: "R"
   gloss: "butterfly"
@@ -5054,13 +5054,13 @@ maol:
   gloss: "honey"
   tags: [food]
   short: "[E:tce* pan] is honey."
-mrun:
+cmun:
   id: qkhdfiyq9v
   family: "R"
   gloss: "cheese"
   tags: [food]
   short: "[E:tce* pan] is cheese."
-flon:
+fson:
   id: eatcyq0n99
   family: "R"
   gloss: "flour"
@@ -5072,7 +5072,7 @@ piel:
   gloss: "dough"
   tags: [food]
   short: "[E:tce* pan] is dough (mixture of flour and liquid)."
-mluil:
+smuil:
   id: t1ubcj51hm
   family: "R"
   gloss: "chocolate"
@@ -5096,7 +5096,7 @@ suin:
   gloss: "soup"
   tags: [food]
   short: "[E:tce* pan] is soup (food that is primarily liquid, obtained by cooking in liquid)."
-druil:
+dzuil:
   id: d9vb2a5upg
   family: "R"
   gloss: "banana"
@@ -5108,19 +5108,19 @@ skil:
   gloss: "grape"
   tags: [food, fruit]
   short: "[E:tce* pan] is a grape."
-cnel:
+cmel:
   id: lkxmu441ix
   family: "R"
   gloss: "lemon"
   tags: [food, fruit]
   short: "[E:tce* pan] is a lemon."
-briur:
+bziur:
   id: yl11ghymb6
   family: "R"
   gloss: "strawberry"
   tags: [food, fruit]
   short: "[E:tce* pan] is a strawberry."
-frual:
+fcual:
   id: q1yam2fcyo
   family: "R"
   gloss: "tomato"
@@ -5144,13 +5144,13 @@ cpan:
   gloss: "tea"
   tags: [food]
   short: "[E:tce* pan] is tea (Camellia sinensis)."
-dreir:
+dzeir:
   id: 2xvrc2a0a5
   family: "R"
   gloss: "coffee"
   tags: [food]
   short: "[E:tce* pan] is coffee (Coffea)."
-cralo:
+ctalo:
   id: v19ii0rfdn
   family: "R"
   gloss: "infusion"
@@ -5180,7 +5180,7 @@ gale:
   gloss: "trust"
   tags: [emotion]
   short: "[E:tce* pan] trusts [A:tce* man]."
-fnoi:
+fsoi:
   id: 1rfsosqohp
   family: "R"
   gloss: "proud:"
@@ -5198,7 +5198,7 @@ mori:
   gloss: "ashamed:"
   tags: [emotion]
   short: "[E:tce* pan] is ashamed that [A:()] is true."
-froi:
+fcoi:
   id: 0f2o3xj8ga
   family: "R"
   gloss: "guilt:"
@@ -5210,13 +5210,13 @@ jiri:
   gloss: "regret:"
   tags: [emotion]
   short: "[E:tce* pan] regrets that [A:()] is true."
-drol:
+dzol:
   id: c6b24j1lva
   family: "R"
   gloss: "lonely"
   tags: [emotion]
   short: "[E:tce* pan] is lonely."
-klin:
+ksin:
   id: ihvltgq4mv
   family: "R"
   gloss: "run"
@@ -5241,7 +5241,7 @@ zuor:
   family: "R"
   gloss: "fall"
   short: "[E:tce* pan] falls."
-brua:
+bzua:
   id: d1dmereczn
   family: "R"
   gloss: "push"
@@ -5266,7 +5266,7 @@ palu:
   family: "R"
   gloss: "hold"
   short: "[E:tce* pan] holds [A:tce* pan]."
-trea:
+tsea:
   id: b4mxtvilve
   family: "R"
   gloss: "hit"
@@ -5286,7 +5286,7 @@ maen:
   gloss: "hat"
   tags: [clothing]
   short: "[E:tce* pan] is a hat/headwear."
-plar:
+psar:
   id: tpaqk40hlw
   family: "R"
   gloss: "jacket"
@@ -5319,7 +5319,7 @@ feil:
   gloss: "snow"
   tags: [weather]
   short: "[E:tce* pan] is snow."
-prel:
+pcel:
   id: nydemla5nt
   family: "R"
   gloss: "cloud"
@@ -5346,7 +5346,7 @@ kain:
 
 # -- Furniture --
 
-sler:
+ster:
   id: 3t3qw35lee
   family: "R"
   gloss: "chair"
@@ -5370,7 +5370,7 @@ muol:
   gloss: "grass"
   tags: [plant]
   short: "[E:tce* pan] is grass."
-gran:
+gzan:
   id: vic52ltfiz
   family: "R"
   gloss: "mountain"
@@ -5381,7 +5381,7 @@ fein:
   gloss: "forest"
   tags: [plant]
   short: "[E:tce* pan] is a forest."
-flul:
+fsul:
   id: i4ux3ha8yr
   family: "R"
   gloss: "island"
@@ -5400,7 +5400,7 @@ tsar:
   family: "R"
   gloss: "knife"
   short: "[E:tce* pan] is a knife."
-kran:
+kcan:
   id: t3669z9dp6
   family: "R"
   gloss: "rope"
@@ -5435,24 +5435,24 @@ cpun:
   family: "R"
   gloss: "pen"
   short: "[E:tce* pan] is a pen/writing tool."
-flao:
+fsao:
   id: p6y7yo580y
   family: "R"
   gloss: "path"
-  short: "[E:blu sken] is a continuous spatiotemporal path to [A:tce* pan] from [O:tce* pan]."
+  short: "[E:bju sken] is a continuous spatiotemporal path to [A:tce* pan] from [O:tce* pan]."
   notes: |
-    Each element of the list is the volume occupied by the entity(ies) traversing the path ({krao}) at a single instant.
+    Each element of the list is the volume occupied by the entity(ies) traversing the path ({kcao}) at a single instant.
     A and O are volumes that contain the last and first volumes of the list respectively.
     This allows varying precision: "from Paris to Hamburg" or "from France to Germany".
     Pauses are segments where the spatial component stays constant while time advances.
     Decompose using list operations. Compare paths via shared properties.
-krao:
+kcao:
   id: 8678lu3ztg
   family: "R"
   gloss: "traverse"
-  short: "[E:tce pan] traverses path [A:flao]."
+  short: "[E:tce pan] traverses path [A:fsao]."
   notes: |
-    Example: za ualis krao flao vo za umarsei fa za uparis
+    Example: za ualis kcao fsao vo za umarsei fa za uparis
     "Alice traverses a path from Marseille to Paris"
 cotko:
   id: 6zua53vbmb
@@ -5469,27 +5469,27 @@ zmali:
   family: "R"
   gloss: "video:"
   short: "[E:tce* pan] is a video depicting [A:()]."
-  see_also: [zmoni, floli, vrano]
-floli:
+  see_also: [zmoni, fsoli, vjano]
+fsoli:
   id: 97zijqevdf
   family: "R"
   gloss: "audio-recording:"
   short: "[E:tce* pan] is an audio recording of [A:()]."
-  see_also: [flun, zmali, vrano]
-dranu:
+  see_also: [fsun, zmali, vjano]
+dzanu:
   id: 3crx5dtf2q
   family: "R"
   gloss: "file"
   short: "[E:tce* pan] is a file with content [A:tca man]."
-  see_also: [vrano]
-vrano:
+  see_also: [vjano]
+vjano:
   id: guo4jhct0i
   family: "R"
   gloss: "message"
-  short: "[E:tce* pan] is a message/post with content bundle [A:ebluse]."
+  short: "[E:tce* pan] is a message/post with content bundle [A:ebjuse]."
   notes: |
     The bundle [A] is an ordered list of payload items. Typical items: text ({buan}),
-    picture ({zmoni}), video ({zmali}), audio recording ({floli}), file ({dranu}),
+    picture ({zmoni}), video ({zmali}), audio recording ({fsoli}), file ({dzanu}),
     or a link (via {en skal co sa} with {sa} exposing the locator place).
 
     A single-payload message is a 1-element list. A multi-payload message is a
@@ -5499,11 +5499,11 @@ vrano:
     directly. When order is arbitrary, build the list from a set so the listing
     order carries no information.
 
-    {vrano} is atemporal: it describes the message as a thing, not the act of
-    sending it. Use {flane} for the sending event (timed via tense, with sender
+    {vjano} is atemporal: it describes the message as a thing, not the act of
+    sending it. Use {fsane} for the sending event (timed via tense, with sender
     and destination).
-  see_also: [flane, flanu, flain, klan, klano, klino, klane]
-gruno:
+  see_also: [fsane, fsanu, fsain, ksan, ksano, ksino, ksane]
+gzuno:
   id: 38sc9xs3gu
   family: "R"
   gloss: "community"
@@ -5514,180 +5514,180 @@ gruno:
     community is by definition a set of people. Examples: Discord server,
     Facebook group, Reddit subreddit (as a body of people), Twitter follower
     set.
-  see_also: [klan, grano, prano, kluna, klunu]
-grano:
+  see_also: [ksan, gzano, pcano, ksuna, ksunu]
+gzano:
   id: sgly1rjlvz
   family: "R"
   gloss: "platform"
   short: "[E:tca man] is a platform/service centered on [A:tce* man]."
   notes: |
     A bounded service ecosystem providing infrastructure for accounts
-    ({prano}), discourse-spaces ({klan}), and content ({vrano}). Examples:
+    ({pcano}), discourse-spaces ({ksan}), and content ({vjano}). Examples:
     Twitter, Discord, Reddit, YouTube, a phone carrier, a TV network, an MMO.
 
-    Most {grano} host {klan}, {prano}, and {vrano}; the cardinality of {klan}
-    per {grano} is unconstrained (Twitter ≈ one global klan; Discord = many
-    klan per server).
+    Most {gzano} host {ksan}, {pcano}, and {vjano}; the cardinality of {ksan}
+    per {gzano} is unconstrained (Twitter ≈ one global ksan; Discord = many
+    ksan per server).
 
-    Medium-agnostic: an online platform is {grano cnue sier}; offline
-    platforms (broadcast networks, phone systems) are {grano} too. The
+    Medium-agnostic: an online platform is {gzano cmue sier}; offline
+    platforms (broadcast networks, phone systems) are {gzano} too. The
     medium is a separate relation.
 
     [A] is the theme/purpose (microblogging, video sharing, code hosting).
     Most uses leave [A] unbound — naming via {za} usually suffices.
 
-    For posting/deletion ({flane}/{flanu}), O accepts a {grano} directly
-    as ergonomic shorthand for "some klan within" — convenient when the
+    For posting/deletion ({fsane}/{fsanu}), O accepts a {gzano} directly
+    as ergonomic shorthand for "some ksan within" — convenient when the
     speaker doesn't pin a specific venue.
 
-    Distinct from {gruno} (community of people on/around it) and {klan}
+    Distinct from {gzuno} (community of people on/around it) and {ksan}
     (a single discourse venue within it).
-  see_also: [gruno, klan, prano, sier]
-klan:
+  see_also: [gzuno, ksan, pcano, sier]
+ksan:
   id: 3ox8pj49cm
   family: "R"
   gloss: "discourse-space"
   short: "[E:tce* pan] is a discourse space."
   notes: |
-    A location holding {vrano} (messages/posts). Examples: Discord channel,
+    A location holding {vjano} (messages/posts). Examples: Discord channel,
     Reddit subreddit (as a posting space), Facebook group wall, Twitter feed,
     email inbox, direct-message thread.
 
     No intrinsic topic. Express topical scope via separate relation or
-    compound when relevant. A {klan} may or may not belong to a {gruno}
-    (community): Discord channels live inside a server ({gruno}), but a
-    DM thread or personal inbox is a standalone {klan} with no parent
-    community. Direct messages still target a {klan} (the DM thread), not
+    compound when relevant. A {ksan} may or may not belong to a {gzuno}
+    (community): Discord channels live inside a server ({gzuno}), but a
+    DM thread or personal inbox is a standalone {ksan} with no parent
+    community. Direct messages still target a {ksan} (the DM thread), not
     the recipient as a person.
 
-    To express that a {klan} belongs to a {gruno}, use {cnue} (part-of):
-    "[klan] cnue [gruno]".
-  see_also: [vrano, gruno, grano, flane]
-kluna:
+    To express that a {ksan} belongs to a {gzuno}, use {cmue} (part-of):
+    "[ksan] cmue [gzuno]".
+  see_also: [vjano, gzuno, gzano, fsane]
+ksuna:
   id: amgu85lu4b
   family: "R"
   gloss: "joins"
   short: "[E:tce* pan] joins [A:tca man]."
   notes: |
-    State-change action: [E] becomes a member of [A] (a {klan}, {gruno},
-    {grano}, {vroni}, or other membership-bearing entity). After the
-    {kluna} event, {tcie} holds between [E] and [A]'s member set.
-  see_also: [klunu, tcie]
-klunu:
+    State-change action: [E] becomes a member of [A] (a {ksan}, {gzuno},
+    {gzano}, {vjoni}, or other membership-bearing entity). After the
+    {ksuna} event, {tcie} holds between [E] and [A]'s member set.
+  see_also: [ksunu, tcie]
+ksunu:
   id: y1jwayloh1
   family: "R"
   gloss: "leaves"
   short: "[E:tce* pan] leaves [A:tca man]."
   notes: |
-    State-change action: [E] stops being a member of [A]. After the {klunu}
+    State-change action: [E] stops being a member of [A]. After the {ksunu}
     event, {tcie} no longer holds between [E] and [A]'s member set.
-  see_also: [kluna, tcie]
-klane:
+  see_also: [ksuna, tcie]
+ksane:
   id: 677oml25bb
   family: "R"
   gloss: "replaced-by"
-  short: "[E:tca vrano] is replaced by [A:tca vrano]."
+  short: "[E:tca vjano] is replaced by [A:tca vjano]."
   notes: |
     Atemporal structural relation: [E] (the older version) is superseded by
     [A] (the newer version). Captures edits on chat platforms and amendments
     in commit-style history equally.
 
-    Whether both versions remain {flain} (currently-posted) is a separate
-    axis: chat edits hide [E] so its {flain} state ends when [A]'s starts,
+    Whether both versions remain {fsain} (currently-posted) is a separate
+    axis: chat edits hide [E] so its {fsain} state ends when [A]'s starts,
     but commit histories and Wikipedia revisions keep both [E] and [A]
-    addressable and {flain}. {klane} doesn't dictate {flain} on its own.
+    addressable and {fsain}. {ksane} doesn't dictate {fsain} on its own.
 
-    {klano} children of [E] typically follow the replacement chain to [A]
+    {ksano} children of [E] typically follow the replacement chain to [A]
     by default; speakers can express exceptions via additional relations
     when needed.
-  see_also: [vrano, klano, flain]
-klano:
+  see_also: [vjano, ksano, fsain]
+ksano:
   id: 284evqb4yc
   family: "R"
   gloss: "replies-to"
-  short: "[E:tca vrano] is a reply to [A:tca vrano]."
+  short: "[E:tca vjano] is a reply to [A:tca vjano]."
   notes: |
-    Atemporal structural relation between two {vrano}: [E] is a response to
-    parent [A]. Who replied and when is captured by the {flane} event that
-    sent [E], not by {klano} itself.
+    Atemporal structural relation between two {vjano}: [E] is a response to
+    parent [A]. Who replied and when is captured by the {fsane} event that
+    sent [E], not by {ksano} itself.
 
     Transitive closure builds the conversation tree: post → comment → reply
     → reply-to-reply. Works uniformly across tools regardless of how they
     display threads (Reddit shows trees, Discord shows flat with reply
     arrows, YouTube treats the video itself as the top-level post with
     comments as replies to it, etc.).
-  see_also: [vrano, klane, flane]
-klino:
+  see_also: [vjano, ksane, fsane]
+ksino:
   id: oecx2x9kyn
   family: "R"
   gloss: "reacts-to"
-  short: "[E:tce* pan] reacts to [A:tca vrano] with [O:tce* man]."
+  short: "[E:tce* pan] reacts to [A:tca vjano] with [O:tce* man]."
   notes: |
     State predicate: holds true for the duration of the reaction's lifetime,
     from placement until the reactor removes it. Counting current reactions
-    on a {vrano} is just the cardinality of bindings that hold now: no need
+    on a {vjano} is just the cardinality of bindings that hold now: no need
     to filter for "most recent" or "not yet removed". Tense references past
     or future activity normally.
 
     [O] is the mark/sentiment: a sentiment-predicate (e.g., {dona} for like),
     a directional/numeric value (upvote/downvote), an emoji (foreign-quoted),
     or any value distinguishing reaction kinds on the platform.
-  see_also: [vrano, klano]
-flane:
+  see_also: [vjano, ksano]
+fsane:
   id: 1prjvizsl7
   family: "R"
   gloss: "sends"
-  short: "[E:tce pan] sends messages [A:tce vrano] to locations [O:tce man]."
+  short: "[E:tce pan] sends messages [A:tce vjano] to locations [O:tce man]."
   notes: |
-    [A] is a collective set of {vrano}, letting one {flane} event span multiple
+    [A] is a collective set of {vjano}, letting one {fsane} event span multiple
     sends within its time frame (e.g., "I sent 3 messages yesterday" is one
-    event with three {vrano} in [A]). Singleton set for a single message.
+    event with three {vjano} in [A]). Singleton set for a single message.
 
     For grouping multiple content items into a single message, bundle them
-    inside one {vrano} rather than sending them as separate {vrano}.
+    inside one {vjano} rather than sending them as separate {vjano}.
 
-    [O] is typically a {klan} (the specific discourse-space the message
-    lands in). A {grano} (platform) is also accepted and reads as "some
-    klan within that grano" — ergonomic when the speaker doesn't pin a
-    venue ("posted on Twitter"). For precision, name the klan.
+    [O] is typically a {ksan} (the specific discourse-space the message
+    lands in). A {gzano} (platform) is also accepted and reads as "some
+    ksan within that gzano" — ergonomic when the speaker doesn't pin a
+    venue ("posted on Twitter"). For precision, name the ksan.
 
     For non-message transmission (physical sending, sharing raw content without
-    wrapping it as a message), use other vocabulary ({jiro}, etc.). {flane}
-    is specifically for {vrano} delivery.
+    wrapping it as a message), use other vocabulary ({jiro}, etc.). {fsane}
+    is specifically for {vjano} delivery.
 
-    Paired with {flanu} (delete) and {flain} (currently-posted state).
-  see_also: [vrano, klan, flanu, flain]
-flanu:
+    Paired with {fsanu} (delete) and {fsain} (currently-posted state).
+  see_also: [vjano, ksan, fsanu, fsain]
+fsanu:
   id: 5tb0ezha1m
   family: "R"
   gloss: "deletes"
-  short: "[E:tce pan] deletes messages [A:tce vrano] from locations [O:tce man]."
+  short: "[E:tce pan] deletes messages [A:tce vjano] from locations [O:tce man]."
   notes: |
-    Inverse of {flane}: ends the {flain} (currently-posted) state for [A] in
-    [O]. [O] follows the same flexibility as {flane}'s O — typically a {klan},
-    optionally a {grano} for "some klan within". Applies to any {vrano}:
-    regular posts, comments, reactions ({klino}), and notifications (which
-    are {vrano} in a personal notification {klan}).
-  see_also: [vrano, klan, flane, flain]
-flain:
+    Inverse of {fsane}: ends the {fsain} (currently-posted) state for [A] in
+    [O]. [O] follows the same flexibility as {fsane}'s O — typically a {ksan},
+    optionally a {gzano} for "some ksan within". Applies to any {vjano}:
+    regular posts, comments, reactions ({ksino}), and notifications (which
+    are {vjano} in a personal notification {ksan}).
+  see_also: [vjano, ksan, fsane, fsain]
+fsain:
   id: pas84wpf1x
   family: "R"
   gloss: "currently-posted"
-  short: "[E:tca vrano] is currently posted."
+  short: "[E:tca vjano] is currently posted."
   notes: |
-    State predicate: holds true while [E] is live in its destination {klan},
-    from the {flane} event that posted it until a {flanu} event removes it.
-    Counting "messages currently in {klan} X" or "current unread notifications"
-    becomes a cardinality query over {flain} bindings true now.
+    State predicate: holds true while [E] is live in its destination {ksan},
+    from the {fsane} event that posted it until a {fsanu} event removes it.
+    Counting "messages currently in {ksan} X" or "current unread notifications"
+    becomes a cardinality query over {fsain} bindings true now.
 
-    1-place, intransitive. To restrict by {klan}, combine with another
-    predicate locating the {vrano} (e.g., the {flane} event that placed it).
-  see_also: [vrano, flane, flanu]
-prano:
+    1-place, intransitive. To restrict by {ksan}, combine with another
+    predicate locating the {vjano} (e.g., the {fsane} event that placed it).
+  see_also: [vjano, fsane, fsanu]
+pcano:
   id: mb252gtqyx
   family: "R"
   gloss: "account"
-  short: "[E:tca pan] is an account on platform [A:tca grano]."
+  short: "[E:tca pan] is an account on platform [A:tca gzano]."
   notes: |
     A digital identity entity on a platform, distinct from a {per} (person)
     because one person can have multiple accounts, an account can be
@@ -5697,10 +5697,10 @@ prano:
     Owner/controller (if any) is expressed via {coriu} (owned-by).
     Display name/handle via {za} (name).
 
-    Example: prano va utuitar fe coriu mi
+    Example: pcano va utuitar fe coriu mi
     "an account on Twitter that I own" (i.e., my Twitter account).
-  see_also: [grano, coriu, za]
-klona:
+  see_also: [gzano, coriu, za]
+ksona:
   id: vj0rl1zymp
   family: "R"
   gloss: "mentions"
@@ -5711,10 +5711,10 @@ klona:
     - A book mentions Napoleon.
     - A tweet mentions the Eiffel Tower.
     - A video mentions a release date.
-    - A {vrano} mentions an account (UI "@mention").
+    - A {vjano} mentions an account (UI "@mention").
 
     Atemporal. Multiple mentions in one [E] = multiple bindings.
-  see_also: [vrano]
+  see_also: [vjano]
 spani:
   id: w0hn266bnp
   family: "R"
@@ -5729,11 +5729,11 @@ spani:
     Distinct from {spenu} (looks at) which takes an atom (a thing seen).
     {spani} takes a proposition (an event/situation observed).
 
-    Compatible with {vroni}: when [A] of {spani} and [A] of {vroni} refer
+    Compatible with {vjoni}: when [A] of {spani} and [A] of {vjoni} refer
     to the same proposition, [E] of {spani} is a spectator of that
-    {vroni}'s session.
-  see_also: [spenu, vroni]
-vroni:
+    {vjoni}'s session.
+  see_also: [spenu, vjoni]
+vjoni:
   id: vhx6rrbcie
   family: "R"
   gloss: "live-session:"
@@ -5743,7 +5743,7 @@ vroni:
     voice channel currently active, a Zoom meeting, a Twitch stream, a live
     conference, a phone call, etc. [A] is the proposition describing what
     occurs in it: people speaking ({spie}), sharing media ({jiro}),
-    perceiving content ({spenu}), placing reactions ({klino}), and so on.
+    perceiving content ({spenu}), placing reactions ({ksino}), and so on.
 
     Voice call vs video call vs screen share is distinguished by what flows
     inside [A], not by separate roots. Audio-only sessions have audio-related
@@ -5752,7 +5752,7 @@ vroni:
     Tense on [E] gives the session's active time window. Participants are
     implicit through [A]: anyone whose actions or perceptions appear in the
     proposition is part of the session.
-  see_also: [spani, klan]
+  see_also: [spani, ksan]
 
 # -----
 # Compounds
@@ -5932,7 +5932,7 @@ e uafrikan ban:
   gloss: "Afrikaans language"
   tags: [cultural]
   short: "[E:tca ban] is the Afrikaans language."
-e kre vire:
+e kere vire:
   id: t1wi0cej5p
   predilex_id: megaju{O,E,A}
   family: "C"
@@ -5951,7 +5951,7 @@ e du zoi:
   family: "C"
   gloss: "paragraph"
   short: "[E:tce* man] is a paragraph."
-e bino cnue:
+e bino cmue:
   id: o5vxdoahhm
   predilex_id: vihubu
   family: "C"
@@ -5964,7 +5964,7 @@ e spua ckuil:
   gloss: "home stellar body (Earth)"
   short: |
     [E:tca pan] is the home stellar body of species [A:tce* man]
-    (default: {flan}/humans, thus [E] defaults to Earth).
+    (default: {fsan}/humans, thus [E] defaults to Earth).
 e spua ckuel:
   id: 732rregyg8
   predilex_id: tawuho
@@ -5972,7 +5972,7 @@ e spua ckuel:
   gloss: "home star (Sun)"
   short: |
     [E:tca pan] is the home star of species [A:tce* man]
-    (default: {flan}/humans, thus [E] defaults to the Sun).
+    (default: {fsan}/humans, thus [E] defaults to the Sun).
 ## TODO: Add back once possible/necessary is added back
 # e siun vaun:
 #   id: n7xvmqqkza
@@ -6134,42 +6134,42 @@ en skal co sa:
   notes: |
     [A] should be a unique identifier representing how and where the content
     can be fetched.
-e blu ski:
+e bju ski:
   id: f24mp2j8zu
   predilex_id: vofape
   family: "C"
   gloss: "occurence-list:"
   tags: [time]
-  short: "[E:blu ski] is the list of occurences of [A:()] (in the past and the future), orderer by chronologically increasing starting time."
-en sru blu ski:
+  short: "[E:bju ski] is the list of occurences of [A:()] (in the past and the future), orderer by chronologically increasing starting time."
+en spu bju ski:
   id: o6taqi388f
   predilex_id: qufuca
   family: "C"
   gloss: "future-occurencies:"
   tags: [time, tense]
   short: |
-    [E:blu ski] is the list of future occurences of [A:()], ordered by chronologically increasing starting time.
+    [E:bju ski] is the list of future occurences of [A:()], ordered by chronologically increasing starting time.
   notes: |
     The first element of the list is the closest event from the present/reference time, but will not include present occurences.
-en sre blu ski:
+en spe bju ski:
   id: exaqlp8qex
   predilex_id: liduqu
   family: "C"
   gloss: "past-occurencies:"
   tags: [time, tense]
   short: |
-    [E:blu ski] is the list of past occurences of [A:()], ordered by chronologically decreasing starting time.
+    [E:bju ski] is the list of past occurences of [A:()], ordered by chronologically decreasing starting time.
   notes: |
     The first element of the list is the closest event from the present/reference time, but will not include present occurences.
-en srai blu ski:
+en spai bju ski:
   id: 2w8tryjheb
   family: "C"
   gloss: "again:"
   tags: [time, tense]
   short: |
-    Now occurs an member of [E:blu ski], which is the list of past and present occurences of [A:()],
+    Now occurs an member of [E:bju ski], which is the list of past and present occurences of [A:()],
     ordered by chronologically decreasing starting time.
-e ti sre:
+e ti spe:
   id: ey5f5raem9
   family: "C"
   gloss: "just-before:"
@@ -6177,7 +6177,7 @@ e ti sre:
   short: "[A:()] occurs less than 1 second (excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e ti sru:
+e ti spu:
   id: 9egdpvfgwq
   family: "C"
   gloss: "just-after:"
@@ -6185,7 +6185,7 @@ e ti sru:
   short: "[A:()] occurs less than 1 second (excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e vola sre:
+e vola spe:
   id: 10utjcfexx
   family: "C"
   gloss: "seconds-before:"
@@ -6193,7 +6193,7 @@ e vola sre:
   short: "[A:()] occurs seconds (between 1 second included and 1 minute excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e vola sru:
+e vola spu:
   id: n7vb7za2mu
   family: "C"
   gloss: "seconds-after:"
@@ -6201,7 +6201,7 @@ e vola sru:
   short: "[A:()] occurs seconds (between 1 second included and 1 minute excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e jero sre:
+e jero spe:
   id: 4bie8njlb2
   family: "C"
   gloss: "minutes-before:"
@@ -6209,7 +6209,7 @@ e jero sre:
   short: "[A:()] occurs minutes (between 1 minute included and 1 hour excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e jero sru:
+e jero spu:
   id: 0zwjen7xl9
   family: "C"
   gloss: "minutes-after:"
@@ -6217,7 +6217,7 @@ e jero sru:
   short: "[A:()] occurs minutes (between 1 minute included and 1 hour excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e sura sre:
+e sura spe:
   id: p9ghshgmxj
   family: "C"
   gloss: "hours-before:"
@@ -6225,7 +6225,7 @@ e sura sre:
   short: "[A:()] occurs hours (between 1 hour included and 1 day excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e sura sru:
+e sura spu:
   id: 7a95uf6jrp
   family: "C"
   gloss: "hours-after:"
@@ -6233,7 +6233,7 @@ e sura sru:
   short: "[A:()] occurs hours (between 1 hour included and 1 day excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e dena sre:
+e dena spe:
   id: ftmheg89q2
   family: "C"
   gloss: "days-before:"
@@ -6241,7 +6241,7 @@ e dena sre:
   short: "[A:()] occurs days (between 1 day included and 1 week excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e dena sru:
+e dena spu:
   id: 4lbwp00732
   family: "C"
   gloss: "days-before:"
@@ -6249,7 +6249,7 @@ e dena sru:
   short: "[A:()] occurs days (between 1 day included and 1 week excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e kora sre:
+e kora spe:
   id: f1b1jrcuud
   family: "C"
   gloss: "weeks-before:"
@@ -6257,7 +6257,7 @@ e kora sre:
   short: "[A:()] occurs weeks (between 1 week included and 1 month excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e kora sru:
+e kora spu:
   id: m1rwaj12jg
   family: "C"
   gloss: "weeks-after:"
@@ -6265,7 +6265,7 @@ e kora sru:
   short: "[A:()] occurs weeks (between 1 week included and 1 month excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e gare sre:
+e gare spe:
   id: zgllh2qv0q
   family: "C"
   gloss: "months-before:"
@@ -6273,7 +6273,7 @@ e gare sre:
   short: "[A:()] occurs months (between 1 month included and 1 year excluded) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e gare sru:
+e gare spu:
   id: x89ati1htd
   family: "C"
   gloss: "months-after:"
@@ -6281,7 +6281,7 @@ e gare sru:
   short: "[A:()] occurs months (between 1 month included and 1 year excluded) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e bire sre:
+e bire spe:
   id: 4xvmmgdql6
   family: "C"
   gloss: "years-before:"
@@ -6289,7 +6289,7 @@ e bire sre:
   short: "[A:()] occurs years (more than 1 year included) before [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e bire sru:
+e bire spu:
   id: wc4y2k476a
   family: "C"
   gloss: "years-after:"
@@ -6297,14 +6297,14 @@ e bire sru:
   short: "[A:()] occurs years (more than 1 year included) after [E:tca ski] (default: current context event)."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
-e glon sa:
+e gzon sa:
   id: j31as5z1tr
   predilex_id: hiyuke
   family: "C"
   gloss: "plays"
   short: "[E:tce pan] plays game [A:tce* pan]."
   notes: Implies that there is a player [E].
-e glon skol:
+e gzon skol:
   id: dyp4u0gi58
   predilex_id: dugobe
   family: "C"
@@ -6439,39 +6439,39 @@ e zai man:
   short: |
     [E:tce man] is a name of [A:tce man] given by [O:tce pan].
   see_also: [za, zai]
-e blu jnuhi:
+e bju jmuhi:
   id: 7y4m7u346i
   predilex_id: ririsu
   family: "C"
   gloss: "increasing-order:"
   short: |
-    [E:blu p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
-  see_also: ["eblujnihi", "entcublujnuhi", "entcublujnihi"]
-e blu jnihi:
+    [E:bju p] is ordered from smallest to largest according to measuring relation [A:(tce gan,tca p)].
+  see_also: ["ebjujmihi", "entcubjujmuhi", "entcubjujmihi"]
+e bju jmihi:
   id: 2ivqr4ouem
   predilex_id: ruzori
   family: "C"
   gloss: "decreasing-order:"
   short: |
-    [E:blu p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
-  see_also: ["eblujnehi", "entcublujnuhi", "entcublujnihi"]
-en tcu blu jnuhi:
+    [E:bju p] is ordered from largest to smalest according to measuring relation [A:(tce gan,tca p)].
+  see_also: ["eblujnehi", "entcubjujmuhi", "entcubjujmihi"]
+en tcu bju jmuhi:
   id: jk9v121j7v
   family: "C"
   gloss: "all-increasing-ordered:"
   short: |
-    [E:blu p] is the list of all things that satisfy measuring relation [A:(tce gan,tca p)], ordered from smallest to largest.
+    [E:bju p] is the list of all things that satisfy measuring relation [A:(tce gan,tca p)], ordered from smallest to largest.
   notes: |
     Can be used to rank all things satisfying a property using a single relation [A], instead of manually constructing a list
-    from a {tcu} and then ordering it with {blu jnuhi}.
-  see_also: ["eblujnihi", "eblujnehi", "entcublujnihi"]
-en tcu blu jnihi:
+    from a {tcu} and then ordering it with {bju jmuhi}.
+  see_also: ["ebjujmihi", "eblujnehi", "entcubjujmihi"]
+en tcu bju jmihi:
   id: oe7dbtrqpk
   family: "C"
   gloss: "all-decreasing-ordered:"
   short: |
-    [E:blu p] is the list of all things that satisfy measuring relation [A:(tce gan,tca p)], ordered from largest to smallest.
-  see_also: ["eblujnihi", "eblujnehi", "entcublujnuhi"]
+    [E:bju p] is the list of all things that satisfy measuring relation [A:(tce gan,tca p)], ordered from largest to smallest.
+  see_also: ["ebjujmihi", "eblujnehi", "entcubjujmuhi"]
 e ban sa:
   id: cvbgy6pdjn
   family: "C"
@@ -6503,7 +6503,7 @@ e me gei:
   gloss: "(elliptical)"
   short: |
     A transitive equivalence elliptical predicate the speaker has in mind.
-e blan sai:
+e bjan sai:
   id: b14thh7qux
   family: "C"
   short: "[A:()] occurs beautifully according to [E:tce man] (default: {bzael})."
@@ -6513,43 +6513,43 @@ e ski kagve:
   family: "C"
   short: "[E:tca ski] is the \"current event\" contained in context [A:c]."
   gloss: "event@context"
-e toro zlier:
+e toro zvier:
   id: j8hqhxb3ij
   predilex_id: fiyovu
   family: "C"
   short: "[E:tce* pan] is an elbow."
   gloss: "elbow"
-e toro zlior:
+e toro zvior:
   id: 90bxf8eqsg
   predilex_id: nufawi
   family: "C"
   short: "[E:tce* pan] is a knee."
   gloss: "knee"
-e zlier kenen:
+e zvier kenen:
   id: pnn6qjo0p8
   predilex_id: kekobo
   family: "C"
   short: "[E:tce* pan] is a wrist."
   gloss: "wrist"
-e zlior kenon:
+e zvior kenon:
   id: axlpdctp7v
   predilex_id: niwira
   family: "C"
   short: "[E:tce* pan] is a ankle."
   gloss: "ankle"
-e treun zlier:
+e tseun zvier:
   id: dx28ywfi3h
   predilex_id: mibuyi
   family: "C"
   short: "[E:tce* pan] is a shoulder."
   gloss: "shoulder"
-e treun kirun:
+e tseun kirun:
   id: 06rcemltv3
   predilex_id: yidima
   family: "C"
   short: "[E:tce* pan] is a neck."
   gloss: "neck"
-e treun zlior:
+e tseun zvior:
   id: 70o68q45ps
   predilex_id: dupaki
   family: "C"
@@ -6651,7 +6651,7 @@ e cfen mula:
   gloss: "litre"
   short: "[E:tce gan] is 1 litre (10^-3 m3) times [A:tce gan] (default: 1)."
   tags: [space, unit]
-e cnue meloan:
+e cmue meloan:
   id: 9fc31ltwy9
   predilex_id: nabuyu
   family: "C"
@@ -6717,7 +6717,7 @@ e tian katmi:
   family: "C"
   gloss: "hungry"
   short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]." 
-e bzael krei:
+e bzael kcei:
   id: 9ghhob4dpk
   predilex_id: royuvi
   family: "C"
@@ -6744,8 +6744,8 @@ e birei denai:
 
     If [A] spanned over multiple days, then the anniversary will too span over multiple
     days. If you want a 1 day anniversary for a multi-day event, speak about its
-    start {sra} or end {sro}.
-e sahar flur:
+    start {spa} or end {spo}.
+e sahar fsur:
   id: og9kw8xlsk
   predilex_id: zeliso
   family: "C"
@@ -6758,36 +6758,36 @@ e bjonil ctal:
   family: "C"
   gloss: "cinema"
   short: "[E:tce* pan] is a cinema/movie theater."
-e blu se:
+e bju se:
   id: op39jgoygr
   family: "C"
   gloss: "list"
   short: "[E:ma] is a list."
   notes: |
     It doesn't state anything about its items, and allows them to even be of different types,
-    which {blu} doesn't allow.
-e te bleu:
+    which {bju} doesn't allow.
+e te bjeu:
   id: nqcbn7rmem
   family: "C"
   gloss: "1-list"
-  short: "[E:p] is the only member of list [A:blu p]."
-e ta bleu:
+  short: "[E:p] is the only member of list [A:bju p]."
+e ta bjeu:
   id: crzlw151ac
   family: "C"
   gloss: "2-list"
-  short: "[E:p] and [A:b] are the only members (in order) of list [A:ebluse]."
+  short: "[E:p] and [A:b] are the only members (in order) of list [A:ebjuse]."
 e sfuer zguin:
   id: qlqy5bxoso
   family: "C"
   gloss: "fan"
   short: "[E:tce pan] is a fan (wind-making machine)."
-e blu mae:
+e bju mae:
   id: jg0kn1bef7
   family: "C"
   gloss: "list-appl:"
-  short: "Evaluates predicate [A:(...)] with list of arguments [E:ebluse]."
+  short: "Evaluates predicate [A:(...)] with list of arguments [E:ebjuse]."
   see_also: ["mae"]
-e flur vahul:
+e fsur vahul:
   id: 91cvojysmg
   family: "C"
   gloss: "plant-based milk"
@@ -6805,8 +6805,8 @@ en tu pini guren:
   short: "[E:tce* ski] is a meteorological season (winter/spring/summer/autumn)."
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
-  see_also: ["emlielguren", "esaharguren", "emlialguren", "esuhurguren"]
-e mliel guren:
+  see_also: ["esmielguren", "esaharguren", "esmialguren", "esuhurguren"]
+e smiel guren:
   id: dci7ddkc8v
   predilex_id: wibica
   family: "C"
@@ -6834,7 +6834,7 @@ e sahar guren:
 
     - In north hemisphere, spans from March 1 to May 31.\
     - In south hemisphere, spans from Septembre 1 to November 30.
-e mlial guren:
+e smial guren:
   id: eebgcxilaa
   predilex_id: yinudi
   family: "C"
@@ -6874,7 +6874,7 @@ e pseo pale:
   family: "C"
   gloss: "outside-radius"
   short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
-e kenon trea:
+e kenon tsea:
   id: rl90vve2g1
   family: "C"
   gloss: "kick"

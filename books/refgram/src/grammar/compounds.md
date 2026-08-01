@@ -43,7 +43,7 @@ Other particles that cannot be used directly as predicates are considered intran
 > - uinglic : borrowing of "english".
 > - ban : `[E:tce* man] is a language.`
 
-> __e glon sa :__ `[E:tce pan] plays game [A:tce* pan].`
+> __e gzon sa :__ `[E:tce pan] plays game [A:tce* pan].`
 >
-> - glon : `[E:tce* man] is a game.`
-> - sa: We're making a transitivite version of glon.
+> - gzon : `[E:tce* man] is a game.`
+> - sa: We're making a transitivite version of gzon.

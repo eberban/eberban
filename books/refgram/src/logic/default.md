@@ -16,14 +16,14 @@ We could want that __A__ are humans by default so that we don't have to always s
 home planet of humans/Earth nor have to define another separate predicate.
 
 To do that, we can use the __oie/oia/oio/oiu__ series in __O__ to define this default property. `oia
-espuackuil flan` defines that by default the __A__ place of __espuackuil__ satisfies the property
-__flan__ (being a human). The __E__ place doesn't have a default bind, which can be seen as having
+espuackuil fsan` defines that by default the __A__ place of __espuackuil__ satisfies the property
+__fsan__ (being a human). The __E__ place doesn't have a default bind, which can be seen as having
 the default bind of satisfying __mai__ (exists).
 
 > `oia espuackuil mai` can thus be used to "remove" the default human bind.
 
 This default property can be used with the __zoie/zoia/zoio/zoiu__ series in __ZI__: `zoia
-espuackuil` is thus equivalent to `flan` in this case.
+espuackuil` is thus equivalent to `fsan` in this case.
 
 Any argument that is not re-exported as an argument of the wrapping predicate and not bound with
 chaining or explicit binding automatically has the default bound.
@@ -31,7 +31,7 @@ chaining or explicit binding automatically has the default bound.
 If an argument is re-exported by the wrapping predicate, then the default bound is instead inherited
 by the wrapped predicate (as if __oie/etc__ was used on them too). This also applies with __O__
 definitions, such as if we define the predicate `o ga espuackuil` then the __A__ argument of __ga__
-also defaults to _flan_, and _ga_ can be used in place of _espuackuil_.
+also defaults to _fsan_, and _ga_ can be used in place of _espuackuil_.
 
 > Note that after defining _ga_, changing a default bind on _espuackuil_ will not modify the
 > corresponding bind of _ga_. `oia ga ...` will thus be required instead.

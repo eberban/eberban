@@ -59,7 +59,7 @@ Logical conlang inspired by Lojban and Toaq. Goals: simple, regular, expressive.
 - **Bindings are additive, never consumed.** Can still chain after vei — it AND-s more constraints. But: equivalence (via) twice on same slot ≠ AND — it means the two definitions are equivalent to each other.
 - **ve+fe idiom**: common for pronouns. `mi ve etiansa meon fe dona skan vei` = "I eat apples and like dogs." Repeating `mi` would create a new existential (possibly different speaker).
 - **SI vs VI/FI**: SI for linear chain override (no branching). VI/FI for branching (bind multiple places independently). Can mix SI+VI but FI is clearer in practice.
-- **voi/foi**: adverb attachment. Wraps ONLY the verb's evaluation, not its arguments (narrow/de re scope). foi = attach another adverb to same verb as last voi. For tenses: `sre` at sentence/proposition start scopes naturally (no wrapping needed). Mid-chain: `voi sre` for narrow scope (only verb is past), `sia sre` for wide/transparent scope (whole sub-chain is past).
+- **voi/foi**: adverb attachment. Wraps ONLY the verb's evaluation, not its arguments (narrow/de re scope). foi = attach another adverb to same verb as last voi. For tenses: `spe` at sentence/proposition start scopes naturally (no wrapping needed). Mid-chain: `voi spe` for narrow scope (only verb is past), `sia spe` for wide/transparent scope (whole sub-chain is past).
 - **se/sa/so/su** (SI): override chaining. Single vowel = expose + bind same place. Two+ vowels = all exposed (order defines new place structure), last = right-bound. `h`+vowel overrides right-bound. `si`+vowel = transparent (re-expose right pred's places, useful for proposition-place predicates like tenses/attitudes). `-i` suffix = equivalence. `sae` ≈ passive voice.
 - **zue** (ZI): promote `[A:()]` to `[A:(p)]` receiving E. SI **after** zue selects places (default `sea`). Use zue when subject = attitude holder; use `sia` when attitude holder is separate/unspecified.
 - **KI** (k+vhowels): atom variables. Each distinct form (ke, ka, kai, ...) is a named variable. `ke(c,e)` = "e is fixed atom x". Use in argument lists, chains, or with `bo` for forethought assignment.
@@ -70,7 +70,7 @@ Logical conlang inspired by Lojban and Toaq. Goals: simple, regular, expressive.
 - **VI attaches to immediately preceding verb** — plan ahead! Place vi right after the verb you need to bind (sentinel VI). PA echo-resumptive in parser helps recover from forgotten sentinels.
 - **Prefer vei to close scopes** (avoids nesting). Multi-vowel vi (voa, vea, etc.) is a clean compromise.
 - **ze**: anaphora — back-references latest mention of prefixed word. Same participants, NOT re-assertion. Like "it/that" (short-range, auto-resolved).
-- **KI as long-lived pronouns**: `bo ke mian blan` assigns ke = beautiful cat. ke persists throughout text. Like naming a character.
+- **KI as long-lived pronouns**: `bo ke mian bjan` assigns ke = beautiful cat. ke persists throughout text. Like naming a character.
 - **GI must be defined** (via o/on/boi/equivalence) — undefined GI returns "unknown" (trivalent). Useful as junction points in questions.
 - **General binding rule** (any verb): binding a non-existent place = no-op, but same slot bound twice = same variable (additivity always holds).
 - **Casual speaker hierarchy**: ze (most common) > KI (when ze ambiguous) > GI (pred variables, rare) > zu/zui (definitions only).
@@ -123,8 +123,8 @@ A = forward (loudest, 3rd of 5), I = center, others counter-clockwise.
 
 ## Vocabulary Design Insight
 
-Vocabulary is designed to compose with chaining. Example: "tall tree" = `jnu epnuencpie tcuin`
-- Right-grouping: jnu(big) → epnuencpie(height) → tcuin(tree)
+Vocabulary is designed to compose with chaining. Example: "tall tree" = `jmu epnuencpie tcuin`
+- Right-grouping: jmu(big) → epnuencpie(height) → tcuin(tree)
 - The class (tree) is baked INTO the measurement → comparison restricted to trees automatically
 - Word order is `[scale] [dimension] [class]`, NOT `[class] [dimension] [scale]`
 
@@ -284,8 +284,8 @@ Transitivity determines how verbs chain and what their chaining place accepts:
 
 ## Rules for Contributing
 
-- Individual particles lowercase (ve, fa, sre). UPPERCASE for family names (VI, FI, SI).
-- Vocabulary: follow existing patterns. IEAOU = small to big scale. Check `dictionary/en.yaml` for domain prefixes (tc- sets, sr- time, zm- colors).
+- Individual particles lowercase (ve, fa, spe). UPPERCASE for family names (VI, FI, SI).
+- Vocabulary: follow existing patterns. IEAOU = small to big scale. Check `dictionary/en.yaml` for domain prefixes (tc- sets, sp- time, zm- colors).
 - Compounds: e/en/er prefix. Transitivity from last component. Add se/sa/sai suffix to override.
 - Dictionary entries: id (INSERT_WORD_ID → `npm run ids`), family, gloss, tags, short. Place notation: `[E:type]`, `[A:(pred)]`, `*` for distributive. Compounds stored as `"e tian sa"` (spaces between parts). Spelling entries under `_spelling` key. **No section/category comments** (like `# -- Animals --`) in `dictionary/en.yaml` — just add entries directly.
 - PEG grammar: run `npm run build-peggy` after editing eberban.peggy. Morphology rules are fragile — never modify without asking.

@@ -39,11 +39,13 @@ Eberban word forms are not random — they should "feel right" for their meaning
 
 When a concept has a strong universal sound association, lean into it:
 - Cat: m- sounds (meow/miaou across languages)
-- Bee: bz/z- sounds (buzz)
-- Frog: kr/gr- sounds (croak)
+- Bee: bz-, z- sounds (buzz)
+- Frog: gz-, kc- onsets for the croak-like plosive edge (the kr / gr cluster can still appear as a medial pair between vowels)
 - Snake: s- sounds (hiss)
 - Hit/strike: sharp plosive (t, k, p)
 - Flow/water: l, r sounds
+
+Note: only pairs that contain a sibilant can start a root. Non-sibilant + sonorant clusters (kr, gr, bl, tr, ...) are medial-only, so use the closest sibilant-bearing onset when you want the cluster feel at the start of a word.
 
 ### Texture & Feel
 

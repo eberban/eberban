@@ -108,7 +108,7 @@ Which one is the __latest instance__ is determined by word order in the text, an
 using a predicate defined using this word doesn't make it the __latest__ again.
 Thus in
 
-_on gia mian blan a __mian__ etiansa a gia dona ze mian_,
+_on gia mian bjan a __mian__ etiansa a gia dona ze mian_,
 
 _ze mian_ refers to the __mian__ in bold in the __a__ sentence, and not the
 __mian__ in __gia__'s definition.
@@ -117,7 +117,7 @@ However if the last instance of the word is indeed in a definition (or in some
 predicate that can be used multiple times), then __ze__ refers to the last time
 it has been used. Thus in
 
-_on gia __mian__ blan a gia dona ze mian_,
+_on gia __mian__ bjan a gia dona ze mian_,
 
 _ze mian_ refers to the __mian__ inside __gia__'s definition, which is last
 used in the __a__ sentence. The text can thus be translated as
