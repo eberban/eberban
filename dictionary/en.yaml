@@ -1589,30 +1589,24 @@ bine:
   family: "R"
   gloss: "different from"
   tags: [gismu]
-  short:
-    "[E:tce pan] is not the same thing as [A:tce pan]"
-  notes:
-    "From Lojban 'drata'"
+  short: "[E:ma] is not the same thing as [A:ma]"
+  notes: "From Lojban 'drata'"
 
-trar:
+star:
   id: g81da8sysk
   family: "R"
   gloss: "strong"
   tags: [gismu]
-  short:
-    "[E: tce* pan] is strong (able to apply a lot of force)"
-  notes:
-    "From Lojban 'tsali'"
+  short: "[E: tce* pan] is strong (able to apply a lot of force)"
+  notes: "From Lojban 'tsali'"
 
 jdui:
   id: 4tw9fk1ygu
   family: "R"
   gloss: "pays-attention-to"
   tags: [gismu]
-  short:
-    "[E: tce* pan] pays attention to [A:()] being true"
-  notes:
-    "From Lojban 'jundi'"
+  short: "[E: tce* pan] pays attention to [A:()] being true"
+  notes: "From Lojban 'jundi'"
 
 # -----
 # Other vocabulary, not yet defined in eberban
