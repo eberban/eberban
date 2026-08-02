@@ -6805,7 +6805,7 @@ en tu pini guren:
   short: "[E:tce* ski] is a meteorological season (winter/spring/summer/autumn)."
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
-  see_also: ["esmielguren", "esaharguren", "esmialguren", "esuhurguren"]
+  see_also: ["fisrin", "smelan", "gavmon", "fcolur"]
 fisrin:
   id: dci7ddkc8v
   predilex_id: wibica
