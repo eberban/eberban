@@ -6020,12 +6020,12 @@ tapre:
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
   notes: "[E] tries to hear [A]."
-ksa:
+ksau:
   id: oqk7vz0ubt
   family: "C"
   gloss: "word"
   short: "[E:tce* man] is a word in language [A:tce* man] (default: eberban)."
-e ksa vini:
+e ksau vini:
   id: 9ravc9ou95
   predilex_id: zewufa{O,E,A}
   family: "C"
