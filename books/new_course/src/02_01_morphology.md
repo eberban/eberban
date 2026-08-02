@@ -50,7 +50,8 @@ and __medial pairs__ in red.
 ![Table of consonant pairs](./assets/chart-pairs.png)
 
 __Medial triplets__ can also appear in words where __medial pairs__ are allowed in the form of
-consonants ABC, where AB is a __medial pair__ and BC is an __initial pair__.
+consonants ABC, where AB is a __medial pair__ and BC is either an __initial pair__ or a
+__consonant-sonorant medial pair__ (e.g. __kl__, __tr__, __pn__).
 
 ## Word types
 

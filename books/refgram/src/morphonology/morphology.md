@@ -54,7 +54,7 @@ long to convey otherwise. They can either:
   or __djin__.
 
 A _consonant triplet_ is a string of 3 consonants C1C2C3 such that C1C2 is a medial pair __and__
-C2C3 is an initial pair.
+C2C3 is either an initial pair or a consonant-sonorant medial pair (e.g. __kl__, __tr__, __pn__).
 
 A _sonorant_ can appear only between two _vowels_ or at the end of the root, while a medial pair or
 consonant triplet can appear only between two _vowels_, but not at the end.

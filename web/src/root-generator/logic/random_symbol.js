@@ -30,18 +30,23 @@ function sonorant() {
 }
 
 function triplet() {
-    const initial_pair_heads = new Set(all_initial_pairs.map((pair) => pair[0]));
+    const cs_medial_pairs = all_medial_pairs.filter((pair) => {
+        return all_non_sonorants.includes(pair[0]) && all_sonorants.includes(pair[1]);
+    });
+    const eligible_yz_pairs = [...all_initial_pairs, ...cs_medial_pairs];
+    const yz_heads = new Set(eligible_yz_pairs.map((pair) => pair[0]));
+
     const eligible_medial_pairs = all_medial_pairs.filter((pair) => {
-        return all_non_sonorants.includes(pair[0]) && initial_pair_heads.has(pair[1]);
+        return all_non_sonorants.includes(pair[0]) && yz_heads.has(pair[1]);
     });
     const selected_medial_pair = get_random_item(eligible_medial_pairs);
 
-    const eligible_initial_pairs = all_initial_pairs.filter((pair) => {
+    const eligible_yz = eligible_yz_pairs.filter((pair) => {
         return selected_medial_pair[1] === pair[0];
     });
-    const selected_initial_pair = get_random_item(eligible_initial_pairs);
+    const selected_yz = get_random_item(eligible_yz);
 
-    return selected_medial_pair + selected_initial_pair[1];
+    return selected_medial_pair + selected_yz[1];
 }
 
 

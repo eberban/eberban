@@ -884,8 +884,8 @@ E_TripletXYFreeform = !(MedialPair / Sonorant) x:Consonant OH y:Consonant
 	&{ return err(`In roots, triplets XYZ should have XY be a medial pair or X be a sonorant, but ${x}${y} isn't`) }
 E_TripletXYRoot = !MedialPair x:Consonant OH y:Consonant
 	&{ return err(`In roots, triplets XYZ should have XY be a medial pair, but ${x}${y} isn't`) }
-E_TripletYZ = Consonant !InitialPair x:Consonant OH y:Consonant
-	&{ return err(`Triplets XYZ should have YZ be an initial pair pair, but ${x}${y} isn't`) }
+E_TripletYZ = Consonant !InitialPair !MedialCSonorant x:Consonant OH y:Consonant
+	&{ return err(`Triplets XYZ should have YZ be an initial pair or a consonant-sonorant medial pair, but ${x}${y} isn't`) }
 
 // # Medial pair =================================
 
