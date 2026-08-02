@@ -5979,7 +5979,7 @@ e spua ckuel:
 #   family: "C"
 #   gloss: "mortal"
 #   short: "[E:tce* man] is mortal/fated to die."
-e jveno kena:
+jvekna:
   id: wvg2ebwap5
   predilex_id: guzava
   family: "C"
@@ -6013,19 +6013,19 @@ e ca ma:
   gloss: "eberban-quote"
   short: "[E:tce* man] is a grammatically valid Eberban quote."
   notes: Can be constructed using {ca}.
-e tari pure:
+tapre:
   id: 9v79ww9nwi
   predilex_id: nenura
   family: "C"
   gloss: "listens"
   short: "[E:tce* pan] listens to [A:tce* man]."
   notes: "[E] tries to hear [A]."
-e ban ci:
+ksa:
   id: oqk7vz0ubt
   family: "C"
   gloss: "word"
   short: "[E:tce* man] is a word in language [A:tce* man] (default: eberban)."
-e ci vini:
+e ksa vini:
   id: 9ravc9ou95
   predilex_id: zewufa{O,E,A}
   family: "C"
@@ -6776,7 +6776,7 @@ e ta bjeu:
   family: "C"
   gloss: "2-list"
   short: "[E:p] and [A:b] are the only members (in order) of list [A:ebjuse]."
-e sfuer zguin:
+sfuen:
   id: qlqy5bxoso
   family: "C"
   gloss: "fan"
@@ -6795,7 +6795,7 @@ e fsur vahul:
 e caun vahul:
   id: qefotcaezf
   family: "C"
-  gloss: "plant-based milk"
+  gloss: "animal milk"
   short: "[E:tce* pan] is milk that was produced by lactating animals satisfying [A:(tce pan)]."
 en tu pini guren:
   id: fpqty9e5c6
