@@ -786,10 +786,13 @@ ParticleFormNAOX =
     !MedialPair
 
 RootWord "root" = x:RootForm &PostWord { return { family:"Root", word: x}}
-RootForm = !Sonorant W_HyphenPreWord?
+RootForm = !Sonorant W_HyphenPreWord? !E_RootStartsWithMedialPair
 	x:(RootFormCVX / RootFormCVS / RootFormCCVX)
     W_HyphenPostWord?
     { return recur_join(x) }
+
+E_RootStartsWithMedialPair = &MedialPair x:Consonant OH y:Consonant
+	&{ return err(`"${x}${y}" is a medial pair, not a valid root start. Roots start with a single consonant or an initial pair; medial pairs only appear between vowels.`) }
 
 RootFormCVX =
 	@Consonant W_HyphenAfterInitial?
