@@ -30,8 +30,9 @@ function sonorant() {
 }
 
 function triplet() {
+    const initial_pair_heads = new Set(all_initial_pairs.map((pair) => pair[0]));
     const eligible_medial_pairs = all_medial_pairs.filter((pair) => {
-        return all_non_sonorants.includes(pair[0]);
+        return all_non_sonorants.includes(pair[0]) && initial_pair_heads.has(pair[1]);
     });
     const selected_medial_pair = get_random_item(eligible_medial_pairs);
 
