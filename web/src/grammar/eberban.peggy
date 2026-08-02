@@ -873,19 +873,48 @@ E_NoVowelAfterH = h OH !Vowel &{ return err("h can only appear between vowels") 
 FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant OH @MedialPair
 RootMedialOrTriplet = !Sonorant TripletRoot / MedialPair
 
-TripletFreeform = &TripletMatch !E_TripletXYFreeform !E_TripletYZ tri:TripletMatch { return tri.join("") }
-TripletRoot = &TripletMatch !E_TripletXYRoot !E_TripletYZ tri:TripletMatch { return tri.join("") }
+// A triplet fits one of these shapes:
+//   1. Medial+Initial: XY is a medial pair and YZ is an initial pair (e.g. pks, ktc, bgz).
+//   2. Onset+Liquid: XY is a medial or initial pair with Y != m, and Z is a liquid r or l
+//      (e.g. pkl, ptr, spl, str).
+//   3. (freeforms only) X is a sonorant and YZ is an initial pair or a CS medial pair.
+TripletRoot     = TripletMedialInitial / TripletOnsetLiquid / TripletInvalid_Root
+TripletFreeform = TripletMedialInitial / TripletOnsetLiquid / TripletSonorantX_Freeform / TripletInvalid_Freeform
+
+TripletMedialInitial      = &MedialPair &(Consonant Initial)          tri:TripletMatch { return tri.join("") }
+TripletOnsetLiquid        = &(MedialPair / Initial)
+                            &(Consonant !(m / Sonorant) Consonant Liquid) tri:TripletMatch { return tri.join("") }
+TripletSonorantX_Freeform = &Sonorant !E_TripletYZ_SonorantX          tri:TripletMatch { return tri.join("") }
+
+TripletInvalid_Root     = &TripletMatch !E_TripletInvalid_Root     tri:TripletMatch { return tri.join("") }
+TripletInvalid_Freeform = &TripletMatch !E_TripletInvalid_Freeform tri:TripletMatch { return tri.join("") }
+
 TripletMatch "triplet" = !E_Quadruplet @Consonant OH @Consonant W_HyphenInInitialPairOfTriplet? @Consonant
 
 W_HyphenInInitialPairOfTriplet = &HyphenChar OH &Consonant { warn("In triplet, XY-Z is not allowed. If needed change to X-YZ") }
 E_Quadruplet = Consonant|4|
 	&{ return err(`Up to 3 consonants (triplet) can appear in a row`) }
-E_TripletXYFreeform = !(MedialPair / Sonorant) x:Consonant OH y:Consonant
-	&{ return err(`In roots, triplets XYZ should have XY be a medial pair or X be a sonorant, but ${x}${y} isn't`) }
-E_TripletXYRoot = !MedialPair x:Consonant OH y:Consonant
-	&{ return err(`In roots, triplets XYZ should have XY be a medial pair, but ${x}${y} isn't`) }
-E_TripletYZ = Consonant !InitialPair !MedialCSonorant x:Consonant OH y:Consonant
-	&{ return err(`Triplets XYZ should have YZ be an initial pair or a consonant-sonorant medial pair, but ${x}${y} isn't`) }
+
+E_TripletYZ_SonorantX = Consonant !Initial !MedialCSonorant x:Consonant OH y:Consonant
+	&{ return err(`In triplet XYZ where X is a sonorant, YZ must be an initial pair or a consonant-sonorant medial pair, but ${x}${y} isn't`) }
+
+E_TripletInvalid_Root =
+	// Y = m: specific rejection
+	&(MedialPair / Initial) x:Consonant m OH z:Consonant
+		&{ return err(`Triplet XYZ where Y is m is not allowed (m + sonorant is hard to utter), but is ${x}m${z}`) }
+	// XY is neither a medial nor an initial pair
+	/ !(MedialPair / Initial) x:Consonant OH y:Consonant
+		&{ return err(`In roots, triplet XYZ requires XY to be a medial pair or an initial pair, but ${x}${y} isn't`) }
+	// XY is valid but YZ doesn't fit either allowed shape
+	/ x:Consonant OH y:Consonant OH z:Consonant
+		&{ return err(`Triplet XYZ ${x}${y}${z} doesn't fit any valid shape: either XY is a medial pair with YZ an initial pair, or XY is a medial/initial pair with Z a liquid (r or l)`) }
+E_TripletInvalid_Freeform =
+	&(MedialPair / Initial) x:Consonant m OH z:Consonant
+		&{ return err(`Triplet XYZ where Y is m is not allowed (m + sonorant is hard to utter), but is ${x}m${z}`) }
+	/ !(MedialPair / Initial / Sonorant) x:Consonant OH y:Consonant
+		&{ return err(`Triplet XYZ requires XY to be a medial pair, an initial pair, or X to be a sonorant, but ${x}${y} isn't`) }
+	/ x:Consonant OH y:Consonant OH z:Consonant
+		&{ return err(`Triplet XYZ ${x}${y}${z} doesn't fit any valid shape`) }
 
 // # Medial pair =================================
 

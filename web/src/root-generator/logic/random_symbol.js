@@ -30,23 +30,28 @@ function sonorant() {
 }
 
 function triplet() {
-    const cs_medial_pairs = all_medial_pairs.filter((pair) => {
-        return all_non_sonorants.includes(pair[0]) && all_sonorants.includes(pair[1]);
-    });
-    const eligible_yz_pairs = [...all_initial_pairs, ...cs_medial_pairs];
-    const yz_heads = new Set(eligible_yz_pairs.map((pair) => pair[0]));
+    const liquids = ["r", "l"];
+    const medial_xys = all_medial_pairs.filter((p) => all_non_sonorants.includes(p[0]));
 
-    const eligible_medial_pairs = all_medial_pairs.filter((pair) => {
-        return all_non_sonorants.includes(pair[0]) && yz_heads.has(pair[1]);
-    });
-    const selected_medial_pair = get_random_item(eligible_medial_pairs);
+    const triplets = [];
 
-    const eligible_yz = eligible_yz_pairs.filter((pair) => {
-        return selected_medial_pair[1] === pair[0];
-    });
-    const selected_yz = get_random_item(eligible_yz);
+    // Shape 1: Medial+Initial (XY medial, YZ initial)
+    for (const xy of medial_xys) {
+        for (const yz of all_initial_pairs) {
+            if (yz[0] === xy[1]) triplets.push(xy + yz[1]);
+        }
+    }
 
-    return selected_medial_pair + selected_yz[1];
+    // Shape 2: Onset+Liquid (XY medial or initial, Y not m nor sonorant, Z liquid)
+    const xy_pool = [...medial_xys, ...all_initial_pairs];
+    for (const xy of xy_pool) {
+        if (xy[1] === "m" || !all_non_sonorants.includes(xy[1])) continue;
+        for (const z of liquids) {
+            if (all_medial_pairs.includes(xy[1] + z)) triplets.push(xy + z);
+        }
+    }
+
+    return get_random_item(triplets);
 }
 
 

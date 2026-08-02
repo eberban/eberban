@@ -12,7 +12,9 @@
 - **Initial pairs**: can start words (chart: light blue)
 - **Medial pairs**: only mid-word between vowels (chart: pink)
 - **Invalid pairs**: forbidden (voicing mismatch, sibilant+sibilant)
-- **Triplets**: medial + (initial pair | CS medial pair) (max 3 consonants in row)
+- **Triplets** (max 3 consonants in row):
+  - Medial+Initial: medial pair + initial pair, e.g. `pks`, `ktc`, `bgz`
+  - Onset+Liquid: (medial or initial pair, Y not m nor sonorant) + liquid r/l, e.g. `pkl`, `ptr`, `spl`, `str`
 
 ### Word Shapes
 - **Particle**: C+vhowels only, OR sonorant/a/o+vhowels+sonorants

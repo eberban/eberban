@@ -53,8 +53,12 @@ long to convey otherwise. They can either:
   _sonorants_, _medial consonant pairs_  or _consonant triplet_ (even none), like __bju__, __cpena__
   or __djin__.
 
-A _consonant triplet_ is a string of 3 consonants C1C2C3 such that C1C2 is a medial pair __and__
-C2C3 is either an initial pair or a consonant-sonorant medial pair (e.g. __kl__, __tr__, __pn__).
+A _consonant triplet_ is a string of 3 consonants XYZ fitting one of the following shapes:
+
+- __Medial+Initial__: XY is a medial pair and YZ is an initial pair (e.g. __pks__, __ktc__,
+  __bgz__).
+- __Onset+Liquid__: XY is a medial or initial pair whose second consonant Y is not __m__ nor
+  a sonorant, and Z is a liquid (__r__ or __l__). E.g. __pkl__, __ptr__, __spl__, __str__.
 
 A _sonorant_ can appear only between two _vowels_ or at the end of the root, while a medial pair or
 consonant triplet can appear only between two _vowels_, but not at the end.

@@ -49,9 +49,14 @@ and __medial pairs__ in red.
 
 ![Table of consonant pairs](./assets/chart-pairs.png)
 
-__Medial triplets__ can also appear in words where __medial pairs__ are allowed in the form of
-consonants ABC, where AB is a __medial pair__ and BC is either an __initial pair__ or a
-__consonant-sonorant medial pair__ (e.g. __kl__, __tr__, __pn__).
+__Medial triplets__ can also appear in words where __medial pairs__ are allowed. A triplet XYZ
+fits one of these two shapes:
+
+- __Medial+Initial__: XY is a __medial pair__ and YZ is an __initial pair__ (e.g. __pks__,
+  __ktc__, __bgz__).
+- __Onset+Liquid__: XY is a __medial__ or __initial pair__ whose second consonant Y is not
+  __m__ nor a sonorant, and Z is a liquid (__r__ or __l__). E.g. __pkl__, __ptr__, __spl__,
+  __str__.
 
 ## Word types
 
