@@ -6513,43 +6513,43 @@ e ski kagve:
   family: "C"
   short: "[E:tca ski] is the \"current event\" contained in context [A:c]."
   gloss: "event@context"
-e toro zvier:
+kilen:
   id: j8hqhxb3ij
   predilex_id: fiyovu
   family: "C"
   short: "[E:tce* pan] is an elbow."
   gloss: "elbow"
-e toro zvior:
+dalun:
   id: 90bxf8eqsg
   predilex_id: nufawi
   family: "C"
   short: "[E:tce* pan] is a knee."
   gloss: "knee"
-e zvier kenen:
+silin:
   id: pnn6qjo0p8
   predilex_id: kekobo
   family: "C"
   short: "[E:tce* pan] is a wrist."
   gloss: "wrist"
-e zvior kenon:
+tilun:
   id: axlpdctp7v
   predilex_id: niwira
   family: "C"
   short: "[E:tce* pan] is a ankle."
   gloss: "ankle"
-e tseun zvier:
+baglor:
   id: dx28ywfi3h
   predilex_id: mibuyi
   family: "C"
   short: "[E:tce* pan] is a shoulder."
   gloss: "shoulder"
-e tseun kirun:
+delon:
   id: 06rcemltv3
   predilex_id: yidima
   family: "C"
   short: "[E:tce* pan] is a neck."
   gloss: "neck"
-e tseun zvior:
+gulon:
   id: 70o68q45ps
   predilex_id: dupaki
   family: "C"
@@ -6566,19 +6566,19 @@ e zinul jiu:
     When looking at the upper side of the hand/foot, the fingers are ordered from back-interior to front to back-exterior.
     If a finger is considered to be the in the middle of the back then it is considered the first.
   gloss: "nth-finger"
-e tian sa:
+bure:
   id: fp326p16jr
   predilex_id: qayiho
   family: "C"
   gloss: "eats"
   short: "[E:tce pan] eats [A:tce pan]."
-e kalan sa:
+vuklo:
   id: egsqs45rsj
   predilex_id: cewide
   family: "C"
   gloss: "drinks"
   short: "[E:tce* pan] drinks [A:tce* pan]."
-e pane penu:
+penru:
   id: 5l5ploryal
   predilex_id: fawito{A,E}
   family: "C"
@@ -6587,7 +6587,7 @@ e pane penu:
   notes: |
     [A] must be something that have clearly identified front-back direction and
     established middle-point (usually the center of mass).
-e pane pena:
+penra:
   id: qf0g5dw7fq
   predilex_id: resuri{A,E}
   family: "C"
@@ -6596,7 +6596,7 @@ e pane pena:
   notes: |
     [A] must be something that have clearly identified front-back direction and
     established middle-point (usually the center of mass).
-e pane peno:
+penro:
   id: i8zmc7teu4
   predilex_id: konase{A,E}
   family: "C"
@@ -6605,7 +6605,7 @@ e pane peno:
   notes: |
     [A] must be something that have clearly identified left-right direction and
     established middle-point (usually the center of mass).
-e pane pene:
+penre:
   id: 1h0a4yvlln
   predilex_id: zukihi{A,E}
   family: "C"
@@ -6614,7 +6614,7 @@ e pane pene:
   notes: |
     [A] must be something that have clearly identified left-right direction and
     established middle-point (usually the center of mass).
-e pane peniu:
+penriu:
   id: glg7ptsf4i
   predilex_id: nefune{A,E}
   family: "C"
@@ -6623,7 +6623,7 @@ e pane peniu:
   notes: |
     [A] must be something that have clearly identified top-bottom direction and
     established middle-point (usually the center of mass).
-e pane penie:
+penrie:
   id: i2p4fkz8u5
   predilex_id: wibupu{A,E}
   family: "C"
@@ -6638,7 +6638,7 @@ e tcu zoli:
   family: "C"
   gloss: "with-all-tools:"
   short: "[A:()] is realised using all tools [E:tce man]."
-e tian tsau:
+tiasnau:
   id: qdwr2zidwf
   predilex_id: penome{A,E}
   family: "C"
@@ -6658,40 +6658,40 @@ e cmue meloan:
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."
   tags: [food, plant]
-e kine ctal:
+tikren:
   id: wlqy92kdaz
   predilex_id: cegebu
   family: "C"
   gloss: "school"
   short: "[E:tce* pan] is a school/educational building."
-e spua ctal:
+domrun:
   id: urxuw8ethp
   predilex_id: detume
   family: "C"
   gloss: "residential building"
   short: "[E:tce* pan] is a house/residential building."
-e psuen cpie:
+psulen:
   id: fb6aza9xej
   predilex_id: jilobo{A,E}
   family: "C"
   gloss: "height"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
-e pseon cpie:
+pselon:
   id: ie3rzd0ac7
   predilex_id: wuzovu{A,E}
   family: "C"
   gloss: "width"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
-e psaun cpie:
+psalun:
   id: vxeydlyrp7
   predilex_id: vuciko{A,E}
   family: "C"
   gloss: "depth"
   tags: ["measurement", "space"]
   short: "[E:tce gan] (length) is the depth (front-back length) of [A:tce pan]."
-e cpuan kalu:
+tila:
   id: upob68pr52
   predilex_id: gogaro
   family: "C"
@@ -6806,7 +6806,7 @@ en tu pini guren:
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
   see_also: ["esmielguren", "esaharguren", "esmialguren", "esuhurguren"]
-e smiel guren:
+fisrin:
   id: dci7ddkc8v
   predilex_id: wibica
   family: "C"
@@ -6820,7 +6820,7 @@ e smiel guren:
 
     - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
     - In south hemisphere, spans from June 1 to August 31.
-e sahar guren:
+smelan:
   id: bnpo8nb1px
   predilex_id: yogufi
   family: "C"
@@ -6834,7 +6834,7 @@ e sahar guren:
 
     - In north hemisphere, spans from March 1 to May 31.\
     - In south hemisphere, spans from Septembre 1 to November 30.
-e smial guren:
+gavmon:
   id: eebgcxilaa
   predilex_id: yinudi
   family: "C"
@@ -6848,7 +6848,7 @@ e smial guren:
 
     - In north hemisphere, spans from June 1 to August 31.\
     - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
-e suhur guren:
+fcolur:
   id: fdg4wm00j7
   predilex_id: huzade
   family: "C"
@@ -6862,19 +6862,19 @@ e suhur guren:
 
     - In north hemisphere, spans from Septembre 1 to November 30.\
     - In south hemisphere, spans from March 1 to May 31.
-e pseo pane:
+pasne:
   id: r8ei7d1riz
   family: "C"
   gloss: "inside-radius"
   short: "[E:tce pan] is located at less than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
   notes: |
     Default value of [O] conveys meaning of "near"/"next to" for human-size day-to-day conversation.
-e pseo pale:
+pasle:
   id: lq1uvzug5t
   family: "C"
   gloss: "outside-radius"
   short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
-e kenon tsea:
+tsekna:
   id: rl90vve2g1
   family: "C"
   gloss: "kick"
