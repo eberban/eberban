@@ -16,7 +16,7 @@ spatial volume they occupy at each instant they exist (possibly along multiple t
 Each use of *pan* interacts with a time interval (formed by a start and end instant, and a specific
 path connecting them) stored in the context called the **common timespan**. Each *pan* states that
 the physical entity exists during the **common timespan** (it may exist outside of it), and words
-describing an action like *etiansa* (eat) states that the **common timespan** is contained during
+describing an action like *bure* (eat) states that the **common timespan** is contained during
 the timespan of the action. The **common timespan** is thus the intersection of all the time spans
 of all involved physical entities and actions.
 
