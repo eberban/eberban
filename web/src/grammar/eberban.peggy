@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.66
+// EBERBAN GRAMMAR - v0.67
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -63,7 +63,7 @@
 
     function stringify_word(word) {
         if(word.family == "Compound") {
-            return `${word.prefix} ${word.list.map(stringify_word).join(" ")}`
+            return `${word.prefix} ${word.content.map(stringify_word).join(" ")}`
         }
 
         if(word.family == "FFVariable") {
@@ -659,12 +659,13 @@ Uuse appropriate verb to perform mathematical operation.`
 
 // # Compounds ========================================
 
-Compound "compound" = W_HyphenPreWord? @(CompoundN / Compound3 / Compound2)
-Compound2 = e W_CompoundPrefixPostHyphen?
-    list:CompoundWord|2| { return { family: "Compound", prefix: "e", content: list }}
-Compound3 = e W_CompoundHyphenInPrefix? n W_CompoundPrefixPostHyphen?
-    list:CompoundWord|3| { return { family: "Compound", prefix: "en", content: list }}
-CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
+Compound "compound" = W_HyphenPreWord? !i @CompoundInner
+CompoundInner = CompoundN / Compound3 / Compound2
+Compound2 = v:(e/i) W_CompoundPrefixPostHyphen?
+    list:CompoundWord|2| { return { family: "Compound", prefix: v, content: list }}
+Compound3 = v:(e/i) W_CompoundHyphenInPrefix? W_CompoundIAfterSonorant? n W_CompoundPrefixPostHyphen?
+    list:CompoundWord|3| { return { family: "Compound", prefix: v + "n", content: list }}
+CompoundN = v:(e/i) W_CompoundHyphenInPrefix? W_CompoundIAfterSonorant? r W_CompoundPrefixPostHyphen?
     list:(!CompoundNEnd @CompoundWord)* CompoundNEnd
     &{
         if (list.length == 0)
@@ -674,18 +675,18 @@ CompoundN = e W_CompoundHyphenInPrefix? r W_CompoundPrefixPostHyphen?
         if (list.length == 1) {
             warn(`Don't use compounds of size 1, directly use the word "${stringify_word(list[0])}" instead`);
         } else if (list.length == 2) {
-            warn(`Use fixed-size compound "e ${list.map(stringify_word).join(" ")}" instead`);
+            warn(`Use fixed-size compound "${v} ${list.map(stringify_word).join(" ")}" instead`);
         } else if (list.length == 3) {
-            warn(`Use fixed-size compound "en ${list.map(stringify_word).join(" ")}" instead`);
+            warn(`Use fixed-size compound "${v}n ${list.map(stringify_word).join(" ")}" instead`);
         }
 
-        return { family: "Compound", prefix: "er", content: list, postfix: "e" }
+        return { family: "Compound", prefix: v + "r", content: list, postfix: "e" }
     }
 CompoundNEnd = Spaces W_HyphenPreWord? e W_HyphenPostWord? Spaces
-CompoundWord = Spaces? !E_IncompleteCompound !E_NestedCompound @(Borrowing / NativeWord)
+CompoundWord = !E_SpacedIPrefix Spaces? !E_IncompleteCompound @(CompoundInner / Borrowing / NativeWord)
 
-E_NestedCompound = e &{ return err(
-`Compounds cannot be nested`
+E_SpacedIPrefix = Spaces i &{ return err(
+`The 'i' compound prefix must be attached to the outer prefix (write 'ei', not 'e i'). To write it out fully, use 'e e'.`
 )}
 E_IncompleteCompound = EOF &{ return err(
 `Compound is incomplete. If compound contains a borrowing, be sure to end the borrowing with a space to mark its end`
@@ -696,6 +697,7 @@ W_CompoundPrefixPostHyphen = &HyphenChar OH { warn(
 W_CompoundHyphenInPrefix = &HyphenChar OH &(n/r) { warn(
 `Hyphen is not allowed inside the EN/ER prefix of a compound`
 )}
+W_CompoundIAfterSonorant = &( s:(n/r) i { warn(`Use '${s}e' instead of ${s}i`)} )
 
 // # Freeform words ==================================
 
