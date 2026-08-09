@@ -6519,25 +6519,25 @@ kilen:
   family: "R"
   short: "[E:tce* pan] is an elbow."
   gloss: "elbow"
-dalun:
+kilon:
   id: 90bxf8eqsg
   predilex_id: nufawi
   family: "R"
   short: "[E:tce* pan] is a knee."
   gloss: "knee"
-silin:
+silen:
   id: pnn6qjo0p8
   predilex_id: kekobo
   family: "R"
   short: "[E:tce* pan] is a wrist."
   gloss: "wrist"
-tilun:
+silon:
   id: axlpdctp7v
   predilex_id: niwira
   family: "R"
   short: "[E:tce* pan] is a ankle."
   gloss: "ankle"
-baglor:
+bagler:
   id: dx28ywfi3h
   predilex_id: mibuyi
   family: "R"
@@ -6806,7 +6806,7 @@ en tu pini guren:
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
   see_also: ["fisrin", "smelan", "gavmon", "fcolur"]
-fisrin:
+smolan:
   id: dci7ddkc8v
   predilex_id: wibica
   family: "R"
@@ -6820,7 +6820,7 @@ fisrin:
 
     - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
     - In south hemisphere, spans from June 1 to August 31.
-smelan:
+smolen:
   id: bnpo8nb1px
   predilex_id: yogufi
   family: "R"
@@ -6834,7 +6834,7 @@ smelan:
 
     - In north hemisphere, spans from March 1 to May 31.\
     - In south hemisphere, spans from Septembre 1 to November 30.
-gavmon:
+smolun:
   id: eebgcxilaa
   predilex_id: yinudi
   family: "R"
@@ -6848,7 +6848,7 @@ gavmon:
 
     - In north hemisphere, spans from June 1 to August 31.\
     - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
-fcolur:
+smolon:
   id: fdg4wm00j7
   predilex_id: huzade
   family: "R"
