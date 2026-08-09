@@ -89,6 +89,7 @@ import dictionary from '../../../dictionary/en.yaml';
 import * as parser from "../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
 import { generateParticleInfo, parseBindPlaces, computeNumberInfo } from "../shared/particle-gloss.js";
+import { compoundDictKey } from "./compound-key.js";
 
 const INLINE_DEPTH_OFFSET_PX = 10;
 
@@ -721,14 +722,17 @@ function renderForeignQuote(verb, extra, depthStyle) {
         + `</div>`;
 }
 
-function renderCompound(verb, extra, depthStyle) {
-    let dictKey = verb.prefix + " " + verb.content.map(c => c.word).join(" ") + (verb.postfix ? " " + verb.postfix : "");
+function renderCompound(verb, extra, depthStyle, nested) {
+    let dictKey = compoundDictKey(verb);
     let gloss = lookupGloss(dictKey);
 
     let parts = compoundPart(verb.prefix, "", " vbox-quote-delim", "");
 
     let lastIdx = verb.content.length - 1;
     parts += verb.content.map((part, i) => {
+        if (part.family === "Compound") {
+            return renderCompound(part, "vbox-compound-nested", "", true);
+        }
         let partGloss;
         if (i === lastIdx && part.word === "se") partGloss = SYM_ARROW + "intrans";
         else if (i === lastIdx && part.word === "sa") partGloss = SYM_ARROW + "trans";
@@ -746,7 +750,7 @@ function renderCompound(verb, extra, depthStyle) {
     return `<div class="vbox-compound ${extra || ""}"${tooltip}${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
         + `<span class="vbox-word-gloss">${esc(gloss)}</span>`
-        + `<span class="vbox-word-family">COMPOUND</span>`
+        + (nested ? "" : `<span class="vbox-word-family">COMPOUND</span>`)
         + `</div>`;
 }
 
@@ -1079,7 +1083,7 @@ function getWordText(node) {
     if (node.kind === "BorrowingGroup") return node.group.map(b => "u" + b.content).join(" ");
     if (node.kind === "Number") return formatNumber(node.value);
     if (typeof node.word === "string") return node.word;
-    if (node.family === "Compound") return node.prefix + node.content.map(c => c.word).join("");
+    if (node.family === "Compound") return node.prefix + node.content.map(getWordText).join("");
     if (node.family === "FFVariable") return "i" + node.content;
     if (node.family === "Borrowing") return "u" + node.content;
     return "?";
@@ -1193,8 +1197,7 @@ function collectWords(obj, words) {
 
     // Compound dict key: "prefix content1 content2 ..."
     if (obj.family === "Compound" && obj.prefix && obj.content) {
-        let key = obj.prefix + " " + obj.content.map(c => c.word).join(" ") + (obj.postfix ? " " + obj.postfix : "");
-        words.add(key);
+        words.add(compoundDictKey(obj));
     }
 
     // Regular word

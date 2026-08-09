@@ -237,6 +237,14 @@ html {
     overflow: hidden;
 }
 
+.vbox-compound-nested {
+    grid-row: unset;
+    padding: 3px 4px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: none;
+}
+
 .vbox-compound-part {
     display: flex;
     flex-direction: column;
