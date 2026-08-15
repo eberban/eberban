@@ -6806,7 +6806,7 @@ en tu pini guren:
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
   see_also: ["fisrin", "smelan", "gavmon", "fcolur"]
-smolan:
+smolen:
   id: dci7ddkc8v
   predilex_id: wibica
   family: "R"
@@ -6820,7 +6820,7 @@ smolan:
 
     - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
     - In south hemisphere, spans from June 1 to August 31.
-smolen:
+smolan:
   id: bnpo8nb1px
   predilex_id: yogufi
   family: "R"
@@ -6834,7 +6834,7 @@ smolen:
 
     - In north hemisphere, spans from March 1 to May 31.\
     - In south hemisphere, spans from Septembre 1 to November 30.
-smolun:
+smolon:
   id: eebgcxilaa
   predilex_id: yinudi
   family: "R"
@@ -6848,7 +6848,7 @@ smolun:
 
     - In north hemisphere, spans from June 1 to August 31.\
     - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
-smolon:
+smolun:
   id: fdg4wm00j7
   predilex_id: huzade
   family: "R"
