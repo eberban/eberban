@@ -4947,15 +4947,13 @@ fsuer:
     Current is considered significant if the fuild is moving at 0.1 m/s or more.
     TODO: What should be the formula from fluid speed to intensity in intensy mode ({stu})?.
     To speak about measured speed (in m/s for example), use {ckia}.
-guren:
+smolin:
   id: 4n0llekfll
   family: "R"
   tags: ["time"]
   gloss: "season"
   short: "[E:tce* ski] is an occurence of a season."
   notes: |
-    See compounds of {guren} for the actual seasons and for more restrictive categories.
-
     TODO: What is a season in general? Is it possible to define without enumerating all seasons from
     all season systems?
 ston:
@@ -6519,25 +6517,25 @@ kilen:
   family: "R"
   short: "[E:tce* pan] is an elbow."
   gloss: "elbow"
-dalun:
+kilon:
   id: 90bxf8eqsg
   predilex_id: nufawi
   family: "R"
   short: "[E:tce* pan] is a knee."
   gloss: "knee"
-silin:
+silen:
   id: pnn6qjo0p8
   predilex_id: kekobo
   family: "R"
   short: "[E:tce* pan] is a wrist."
   gloss: "wrist"
-tilun:
+silon:
   id: axlpdctp7v
   predilex_id: niwira
   family: "R"
   short: "[E:tce* pan] is a ankle."
   gloss: "ankle"
-baglor:
+bagler:
   id: dx28ywfi3h
   predilex_id: mibuyi
   family: "R"
@@ -6797,7 +6795,7 @@ e caun vahul:
   family: "C"
   gloss: "animal milk"
   short: "[E:tce* pan] is milk that was produced by lactating animals satisfying [A:(tce pan)]."
-en tu pini guren:
+en tu pini smolin:
   id: fpqty9e5c6
   family: "C"
   tags: ["time"]
@@ -6805,8 +6803,8 @@ en tu pini guren:
   short: "[E:tce* ski] is a meteorological season (winter/spring/summer/autumn)."
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
-  see_also: ["fisrin", "smelan", "gavmon", "fcolur"]
-fisrin:
+  see_also: ["smolen", "smolan", "smolon", "smolun"]
+smolen:
   id: dci7ddkc8v
   predilex_id: wibica
   family: "R"
@@ -6820,7 +6818,7 @@ fisrin:
 
     - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
     - In south hemisphere, spans from June 1 to August 31.
-smelan:
+smolan:
   id: bnpo8nb1px
   predilex_id: yogufi
   family: "R"
@@ -6834,7 +6832,7 @@ smelan:
 
     - In north hemisphere, spans from March 1 to May 31.\
     - In south hemisphere, spans from Septembre 1 to November 30.
-gavmon:
+smolon:
   id: eebgcxilaa
   predilex_id: yinudi
   family: "R"
@@ -6848,7 +6846,7 @@ gavmon:
 
     - In north hemisphere, spans from June 1 to August 31.\
     - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
-fcolur:
+smolun:
   id: fdg4wm00j7
   predilex_id: huzade
   family: "R"
