@@ -4947,15 +4947,13 @@ fsuer:
     Current is considered significant if the fuild is moving at 0.1 m/s or more.
     TODO: What should be the formula from fluid speed to intensity in intensy mode ({stu})?.
     To speak about measured speed (in m/s for example), use {ckia}.
-guren:
+smolin:
   id: 4n0llekfll
   family: "R"
   tags: ["time"]
   gloss: "season"
   short: "[E:tce* ski] is an occurence of a season."
   notes: |
-    See compounds of {guren} for the actual seasons and for more restrictive categories.
-
     TODO: What is a season in general? Is it possible to define without enumerating all seasons from
     all season systems?
 ston:
@@ -6797,7 +6795,7 @@ e caun vahul:
   family: "C"
   gloss: "animal milk"
   short: "[E:tce* pan] is milk that was produced by lactating animals satisfying [A:(tce pan)]."
-en tu pini guren:
+en tu pini smolin:
   id: fpqty9e5c6
   family: "C"
   tags: ["time"]
@@ -6805,7 +6803,7 @@ en tu pini guren:
   short: "[E:tce* ski] is a meteorological season (winter/spring/summer/autumn)."
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
-  see_also: ["fisrin", "smelan", "gavmon", "fcolur"]
+  see_also: ["smolen", "smolan", "smolon", "smolun"]
 smolen:
   id: dci7ddkc8v
   predilex_id: wibica
