@@ -5751,6 +5751,260 @@ vjoni:
     implicit through [A]: anyone whose actions or perceptions appear in the
     proposition is part of the session.
   see_also: [spani, ksan]
+jvekna:
+  id: wvg2ebwap5
+  predilex_id: guzava
+  family: "R"
+  gloss: "hugs"
+  short: "[E:tce* pan] hugs [A:tce* pan]."
+tapre:
+  id: 9v79ww9nwi
+  predilex_id: nenura
+  family: "R"
+  gloss: "listens"
+  short: "[E:tce* pan] listens to [A:tce* man]."
+  notes: "[E] tries to hear [A]."
+ksau:
+  id: oqk7vz0ubt
+  family: "R"
+  gloss: "word"
+  short: "[E:tce* man] is a word in language [A:tce* man] (default: eberban)."
+kilen:
+  id: j8hqhxb3ij
+  predilex_id: fiyovu
+  family: "R"
+  short: "[E:tce* pan] is an elbow."
+  gloss: "elbow"
+kilon:
+  id: 90bxf8eqsg
+  predilex_id: nufawi
+  family: "R"
+  short: "[E:tce* pan] is a knee."
+  gloss: "knee"
+silen:
+  id: pnn6qjo0p8
+  predilex_id: kekobo
+  family: "R"
+  short: "[E:tce* pan] is a wrist."
+  gloss: "wrist"
+silon:
+  id: axlpdctp7v
+  predilex_id: niwira
+  family: "R"
+  short: "[E:tce* pan] is a ankle."
+  gloss: "ankle"
+bagler:
+  id: dx28ywfi3h
+  predilex_id: mibuyi
+  family: "R"
+  short: "[E:tce* pan] is a shoulder."
+  gloss: "shoulder"
+delon:
+  id: 06rcemltv3
+  predilex_id: yidima
+  family: "R"
+  short: "[E:tce* pan] is a neck."
+  gloss: "neck"
+gulon:
+  id: 70o68q45ps
+  predilex_id: dupaki
+  family: "R"
+  short: "[E:tce* pan] is a hip."
+  gloss: "hip"
+bure:
+  id: fp326p16jr
+  predilex_id: qayiho
+  family: "R"
+  gloss: "eats"
+  short: "[E:tce pan] eats [A:tce pan]."
+vuklo:
+  id: egsqs45rsj
+  predilex_id: cewide
+  family: "R"
+  gloss: "drinks"
+  short: "[E:tce* pan] drinks [A:tce* pan]."
+penru:
+  id: 5l5ploryal
+  predilex_id: fawito{A,E}
+  family: "R"
+  gloss: "back-part"
+  short: "[E:tce* pan] is in the back part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified front-back direction and
+    established middle-point (usually the center of mass).
+penra:
+  id: qf0g5dw7fq
+  predilex_id: resuri{A,E}
+  family: "R"
+  gloss: "front-part"
+  short: "[E:tce* pan] is in the front part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified front-back direction and
+    established middle-point (usually the center of mass).
+penro:
+  id: i8zmc7teu4
+  predilex_id: konase{A,E}
+  family: "R"
+  gloss: "left-part"
+  short: "[E:tce* pan] is in the left part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified left-right direction and
+    established middle-point (usually the center of mass).
+penre:
+  id: 1h0a4yvlln
+  predilex_id: zukihi{A,E}
+  family: "R"
+  gloss: "right-part"
+  short: "[E:tce* pan] is in the right part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified left-right direction and
+    established middle-point (usually the center of mass).
+penriu:
+  id: glg7ptsf4i
+  predilex_id: nefune{A,E}
+  family: "R"
+  gloss: "top-part"
+  short: "[E:tce* pan] is in the top part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified top-bottom direction and
+    established middle-point (usually the center of mass).
+penrie:
+  id: i2p4fkz8u5
+  predilex_id: wibupu{A,E}
+  family: "R"
+  gloss: "bottom-part"
+  short: "[E:tce* pan] is in the bottom part of [A:tce* pan]."
+  notes: |
+    [A] must be something that have clearly identified top-bottom direction and
+    established middle-point (usually the center of mass).
+tiasnau:
+  id: qdwr2zidwf
+  predilex_id: penome{A,E}
+  family: "R"
+  gloss: "cooking"
+  short: "[E:tce* pan] is cooked (food crafting) by [A:tce pan]."
+tikren:
+  id: wlqy92kdaz
+  predilex_id: cegebu
+  family: "R"
+  gloss: "school"
+  short: "[E:tce* pan] is a school/educational building."
+domrun:
+  id: urxuw8ethp
+  predilex_id: detume
+  family: "R"
+  gloss: "residential building"
+  short: "[E:tce* pan] is a house/residential building."
+psulen:
+  id: fb6aza9xej
+  predilex_id: jilobo{A,E}
+  family: "R"
+  gloss: "height"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
+pselon:
+  id: ie3rzd0ac7
+  predilex_id: wuzovu{A,E}
+  family: "R"
+  gloss: "width"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
+psalun:
+  id: vxeydlyrp7
+  predilex_id: vuciko{A,E}
+  family: "R"
+  gloss: "depth"
+  tags: ["measurement", "space"]
+  short: "[E:tce gan] (length) is the depth (front-back length) of [A:tce pan]."
+tila:
+  id: upob68pr52
+  predilex_id: gogaro
+  family: "R"
+  gloss: "slice"
+  short: "[E:tce pan] are slices that were sliced from [A:(tce pan)]."
+  notes: |
+    See {kalu} explanations.
+
+    [E] are cut following close-to-parallel planes. Slices [E] have their up-down direction matching
+    the tangent of their cutting plane, such that height corresponds to thickness.
+sfuen:
+  id: qlqy5bxoso
+  family: "R"
+  gloss: "fan"
+  short: "[E:tce pan] is a fan (wind-making machine)."
+smolen:
+  id: dci7ddkc8v
+  predilex_id: wibica
+  family: "R"
+  tags: ["time"]
+  gloss: "winter"
+  short: "[E:tce* ski] is a winter season."
+  notes: |
+    Uses the meteorological seasons definition, which begins on the first day of the month that
+    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
+    as seasons are swapped between north and south hemisphere.
+
+    - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
+    - In south hemisphere, spans from June 1 to August 31.
+smolan:
+  id: bnpo8nb1px
+  predilex_id: yogufi
+  family: "R"
+  tags: ["time"]
+  gloss: "spring"
+  short: "[E:tce* ski] is a spring season."
+  notes: |
+    Uses the meteorological seasons definition, which begins on the first day of the month that
+    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
+    as seasons are swapped between north and south hemisphere.
+
+    - In north hemisphere, spans from March 1 to May 31.\
+    - In south hemisphere, spans from Septembre 1 to November 30.
+smolon:
+  id: eebgcxilaa
+  predilex_id: yinudi
+  family: "R"
+  tags: ["time"]
+  gloss: "summer"
+  short: "[E:tce* ski] is a summer season."
+  notes: |
+    Uses the meteorological seasons definition, which begins on the first day of the month that
+    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
+    as seasons are swapped between north and south hemisphere.
+
+    - In north hemisphere, spans from June 1 to August 31.\
+    - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
+smolun:
+  id: fdg4wm00j7
+  predilex_id: huzade
+  family: "R"
+  tags: ["time"]
+  gloss: "autumn"
+  short: "[E:tce* ski] is an autumn season."
+  notes: |
+    Uses the meteorological seasons definition, which begins on the first day of the month that
+    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
+    as seasons are swapped between north and south hemisphere.
+
+    - In north hemisphere, spans from Septembre 1 to November 30.\
+    - In south hemisphere, spans from March 1 to May 31.
+pasne:
+  id: r8ei7d1riz
+  family: "R"
+  gloss: "inside-radius"
+  short: "[E:tce pan] is located at less than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
+  notes: |
+    Default value of [O] conveys meaning of "near"/"next to" for human-size day-to-day conversation.
+pasle:
+  id: lq1uvzug5t
+  family: "R"
+  gloss: "outside-radius"
+  short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
+tsekna:
+  id: rl90vve2g1
+  family: "R"
+  gloss: "kick"
+  short: "[E:tce* pan] kicks [A:tce* pan]."
 
 # -----
 # Compounds
@@ -5977,12 +6231,6 @@ e spua ckuel:
 #   family: "C"
 #   gloss: "mortal"
 #   short: "[E:tce* man] is mortal/fated to die."
-jvekna:
-  id: wvg2ebwap5
-  predilex_id: guzava
-  family: "R"
-  gloss: "hugs"
-  short: "[E:tce* pan] hugs [A:tce* pan]."
 e kine buan:
   id: o9bwkmfwvs
   family: "C"
@@ -6011,18 +6259,6 @@ e ca ma:
   gloss: "eberban-quote"
   short: "[E:tce* man] is a grammatically valid Eberban quote."
   notes: Can be constructed using {ca}.
-tapre:
-  id: 9v79ww9nwi
-  predilex_id: nenura
-  family: "R"
-  gloss: "listens"
-  short: "[E:tce* pan] listens to [A:tce* man]."
-  notes: "[E] tries to hear [A]."
-ksau:
-  id: oqk7vz0ubt
-  family: "R"
-  gloss: "word"
-  short: "[E:tce* man] is a word in language [A:tce* man] (default: eberban)."
 e ksau vini:
   id: 9ravc9ou95
   predilex_id: zewufa{O,E,A}
@@ -6511,48 +6747,6 @@ e ski kagve:
   family: "C"
   short: "[E:tca ski] is the \"current event\" contained in context [A:c]."
   gloss: "event@context"
-kilen:
-  id: j8hqhxb3ij
-  predilex_id: fiyovu
-  family: "R"
-  short: "[E:tce* pan] is an elbow."
-  gloss: "elbow"
-kilon:
-  id: 90bxf8eqsg
-  predilex_id: nufawi
-  family: "R"
-  short: "[E:tce* pan] is a knee."
-  gloss: "knee"
-silen:
-  id: pnn6qjo0p8
-  predilex_id: kekobo
-  family: "R"
-  short: "[E:tce* pan] is a wrist."
-  gloss: "wrist"
-silon:
-  id: axlpdctp7v
-  predilex_id: niwira
-  family: "R"
-  short: "[E:tce* pan] is a ankle."
-  gloss: "ankle"
-bagler:
-  id: dx28ywfi3h
-  predilex_id: mibuyi
-  family: "R"
-  short: "[E:tce* pan] is a shoulder."
-  gloss: "shoulder"
-delon:
-  id: 06rcemltv3
-  predilex_id: yidima
-  family: "R"
-  short: "[E:tce* pan] is a neck."
-  gloss: "neck"
-gulon:
-  id: 70o68q45ps
-  predilex_id: dupaki
-  family: "R"
-  short: "[E:tce* pan] is a hip."
-  gloss: "hip"
 e zinul jiu:
   id: wbul6chj24
   predilex_id: mevapa
@@ -6564,84 +6758,12 @@ e zinul jiu:
     When looking at the upper side of the hand/foot, the fingers are ordered from back-interior to front to back-exterior.
     If a finger is considered to be the in the middle of the back then it is considered the first.
   gloss: "nth-finger"
-bure:
-  id: fp326p16jr
-  predilex_id: qayiho
-  family: "R"
-  gloss: "eats"
-  short: "[E:tce pan] eats [A:tce pan]."
-vuklo:
-  id: egsqs45rsj
-  predilex_id: cewide
-  family: "R"
-  gloss: "drinks"
-  short: "[E:tce* pan] drinks [A:tce* pan]."
-penru:
-  id: 5l5ploryal
-  predilex_id: fawito{A,E}
-  family: "R"
-  gloss: "back-part"
-  short: "[E:tce* pan] is in the back part of [A:tce* pan]."
-  notes: |
-    [A] must be something that have clearly identified front-back direction and
-    established middle-point (usually the center of mass).
-penra:
-  id: qf0g5dw7fq
-  predilex_id: resuri{A,E}
-  family: "R"
-  gloss: "front-part"
-  short: "[E:tce* pan] is in the front part of [A:tce* pan]."
-  notes: |
-    [A] must be something that have clearly identified front-back direction and
-    established middle-point (usually the center of mass).
-penro:
-  id: i8zmc7teu4
-  predilex_id: konase{A,E}
-  family: "R"
-  gloss: "left-part"
-  short: "[E:tce* pan] is in the left part of [A:tce* pan]."
-  notes: |
-    [A] must be something that have clearly identified left-right direction and
-    established middle-point (usually the center of mass).
-penre:
-  id: 1h0a4yvlln
-  predilex_id: zukihi{A,E}
-  family: "R"
-  gloss: "right-part"
-  short: "[E:tce* pan] is in the right part of [A:tce* pan]."
-  notes: |
-    [A] must be something that have clearly identified left-right direction and
-    established middle-point (usually the center of mass).
-penriu:
-  id: glg7ptsf4i
-  predilex_id: nefune{A,E}
-  family: "R"
-  gloss: "top-part"
-  short: "[E:tce* pan] is in the top part of [A:tce* pan]."
-  notes: |
-    [A] must be something that have clearly identified top-bottom direction and
-    established middle-point (usually the center of mass).
-penrie:
-  id: i2p4fkz8u5
-  predilex_id: wibupu{A,E}
-  family: "R"
-  gloss: "bottom-part"
-  short: "[E:tce* pan] is in the bottom part of [A:tce* pan]."
-  notes: |
-    [A] must be something that have clearly identified top-bottom direction and
-    established middle-point (usually the center of mass).
 e tcu zoli:
   id: idx3jnwsgj
   predilex_id: fadota
   family: "C"
   gloss: "with-all-tools:"
   short: "[A:()] is realised using all tools [E:tce man]."
-tiasnau:
-  id: qdwr2zidwf
-  predilex_id: penome{A,E}
-  family: "R"
-  gloss: "cooking"
-  short: "[E:tce* pan] is cooked (food crafting) by [A:tce pan]."
 e cfen mula:
   id: 2rf720dxu3
   predilex_id: kiboci
@@ -6656,50 +6778,6 @@ e cmue meloan:
   gloss: "garlic clove"
   short: "[E:tce* pan] is a garlic clove."
   tags: [food, plant]
-tikren:
-  id: wlqy92kdaz
-  predilex_id: cegebu
-  family: "R"
-  gloss: "school"
-  short: "[E:tce* pan] is a school/educational building."
-domrun:
-  id: urxuw8ethp
-  predilex_id: detume
-  family: "R"
-  gloss: "residential building"
-  short: "[E:tce* pan] is a house/residential building."
-psulen:
-  id: fb6aza9xej
-  predilex_id: jilobo{A,E}
-  family: "R"
-  gloss: "height"
-  tags: ["measurement", "space"]
-  short: "[E:tce gan] (length) is the height (up-down length) of [A:tce pan]."
-pselon:
-  id: ie3rzd0ac7
-  predilex_id: wuzovu{A,E}
-  family: "R"
-  gloss: "width"
-  tags: ["measurement", "space"]
-  short: "[E:tce gan] (length) is the width (left-right length) of [A:tce pan]."
-psalun:
-  id: vxeydlyrp7
-  predilex_id: vuciko{A,E}
-  family: "R"
-  gloss: "depth"
-  tags: ["measurement", "space"]
-  short: "[E:tce gan] (length) is the depth (front-back length) of [A:tce pan]."
-tila:
-  id: upob68pr52
-  predilex_id: gogaro
-  family: "R"
-  gloss: "slice"
-  short: "[E:tce pan] are slices that were sliced from [A:(tce pan)]."
-  notes: |
-    See {kalu} explanations.
-
-    [E] are cut following close-to-parallel planes. Slices [E] have their up-down direction matching
-    the tangent of their cutting plane, such that height corresponds to thickness.
 en an skun sai:
   id: d6ahqqz2b3
   predilex_id: kahadi
@@ -6774,11 +6852,6 @@ e ta bjeu:
   family: "C"
   gloss: "2-list"
   short: "[E:p] and [A:b] are the only members (in order) of list [A:ebjuse]."
-sfuen:
-  id: qlqy5bxoso
-  family: "R"
-  gloss: "fan"
-  short: "[E:tce pan] is a fan (wind-making machine)."
 e bju mae:
   id: jg0kn1bef7
   family: "C"
@@ -6804,79 +6877,6 @@ en tu pini smolin:
   notes: |
     Compound refers to the 4-seasons system that switches between the north and south hemisphere.
   see_also: ["smolen", "smolan", "smolon", "smolun"]
-smolen:
-  id: dci7ddkc8v
-  predilex_id: wibica
-  family: "R"
-  tags: ["time"]
-  gloss: "winter"
-  short: "[E:tce* ski] is a winter season."
-  notes: |
-    Uses the meteorological seasons definition, which begins on the first day of the month that
-    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
-    as seasons are swapped between north and south hemisphere.
-
-    - In north hemisphere, spans from December 1 to February 28 (29 in a leap year).\
-    - In south hemisphere, spans from June 1 to August 31.
-smolan:
-  id: bnpo8nb1px
-  predilex_id: yogufi
-  family: "R"
-  tags: ["time"]
-  gloss: "spring"
-  short: "[E:tce* ski] is a spring season."
-  notes: |
-    Uses the meteorological seasons definition, which begins on the first day of the month that
-    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
-    as seasons are swapped between north and south hemisphere.
-
-    - In north hemisphere, spans from March 1 to May 31.\
-    - In south hemisphere, spans from Septembre 1 to November 30.
-smolon:
-  id: eebgcxilaa
-  predilex_id: yinudi
-  family: "R"
-  tags: ["time"]
-  gloss: "summer"
-  short: "[E:tce* ski] is a summer season."
-  notes: |
-    Uses the meteorological seasons definition, which begins on the first day of the month that
-    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
-    as seasons are swapped between north and south hemisphere.
-
-    - In north hemisphere, spans from June 1 to August 31.\
-    - In south hemisphere, spans from December 1 to February 28 (29 in a leap year).
-smolun:
-  id: fdg4wm00j7
-  predilex_id: huzade
-  family: "R"
-  tags: ["time"]
-  gloss: "autumn"
-  short: "[E:tce* ski] is an autumn season."
-  notes: |
-    Uses the meteorological seasons definition, which begins on the first day of the month that
-    include the corresponding equinox or soltice, and spans 3 months. It also depends on the location,
-    as seasons are swapped between north and south hemisphere.
-
-    - In north hemisphere, spans from Septembre 1 to November 30.\
-    - In south hemisphere, spans from March 1 to May 31.
-pasne:
-  id: r8ei7d1riz
-  family: "R"
-  gloss: "inside-radius"
-  short: "[E:tce pan] is located at less than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
-  notes: |
-    Default value of [O] conveys meaning of "near"/"next to" for human-size day-to-day conversation.
-pasle:
-  id: lq1uvzug5t
-  family: "R"
-  gloss: "outside-radius"
-  short: "[E:tce pan] is located at more than [O:tce gan] (distance) (default: 1 meter) from [A:tce pan]."
-tsekna:
-  id: rl90vve2g1
-  family: "R"
-  gloss: "kick"
-  short: "[E:tce* pan] kicks [A:tce* pan]."
 
 # Family descriptions
 _family:
