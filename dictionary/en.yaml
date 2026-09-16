@@ -563,7 +563,7 @@ bi:
   short: "Wide scope negation ranging over existential variables and predicates."
   links:
     # Quoting the "?"-containing URL so checks.js can parse this file
-    - ["icon-book", "Predicate transformations - Negations", "https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations"] 
+    - ["icon-book", "Predicate transformations - Negations", "https://eberban.github.io/eberban/books/refgram/book/logic/transformations.html?highlight=bi#negations"]
 bo:
   id: 9eludeaq4v
   family: "BO"
@@ -871,6 +871,14 @@ ri:
     Erase from the start of the current chain.
   links:
     - ["icon-book", "Sentences - RA and RI erasers", https://eberban.github.io/eberban/books/refgram/book/logic/sentences.html#ra-and-ri-erasers]
+n:
+  id: foawszutzt
+  family: "n"
+  gloss: "hmm"
+  short: |
+    Hesitation sound (hmm)
+  links:
+    - ["icon-book", "Phonology", https://eberban.github.io/eberban/books/refgram/book/morphonology/phonology.html]
 
 za:
   id: 4hiwgkyaqe
@@ -1684,7 +1692,7 @@ venu:
 
     __Example:__\
     {me [pea bu mian, gour pei] veni etebjeu venu [peho bu za ufeliksi, za ureksi]}\
-    Among the cat and the dog, at least one of them is named either Felix or Rex.    
+    Among the cat and the dog, at least one of them is named either Felix or Rex.
   see_also: ["vanu", "vonu", "vunu", "veni", "vani", "voni", "vuni", "ebjumae"]
 vanu:
   id: f5t4czvnuc
@@ -2944,7 +2952,7 @@ korai:
   family: "R"
   gloss: "week (event)"
   short: "Now is the week [A:tce gan] (default: 0) of [O:tce ski] (default: {birei})."
-  tags: [time, event, week]  
+  tags: [time, event, week]
   links:
     - ["icon-book", "Calendar and time", https://eberban.github.io/eberban/books/refgram/book/vocabulary/calendar_time.html]
 dena:
@@ -3648,7 +3656,7 @@ jmu:
     If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
     property to [A] and don't filter in [O].
 
-    {me bjaor jmu via epsuencpie fio kcoan} = The elephant is tall compared to frogs.  
+    {me bjaor jmu via epsuencpie fio kcoan} = The elephant is tall compared to frogs.
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
@@ -3662,7 +3670,7 @@ jmi:
     [E:tce* p] are small compared to all things satisfy property [O:(tca p)] (default: always true)
     ([E] doesn't necessarily satisfy [O]) and measuring relation [A:(tce gan,tca p)] ([E] must satisfy
     [A]), with standard deviation [U:tca gan] (default: 1).
-  notes: | 
+  notes: |
     Measuring relation [A] allows to choose how the things are measured, but can also be used to
     filter what those things are. Since [E] is measured using [A], then it means [E] satisfy this
     filter.
@@ -3673,7 +3681,7 @@ jmi:
     If you want to compare [E] with things satisfying a property that [E] don't satisfy, provide this
     property to [A] and don't filter in [O].
 
-    {me kcoan jmi via epsuencpie fio bjaor} = The frog is small compared to elephants.  
+    {me kcoan jmi via epsuencpie fio bjaor} = The frog is small compared to elephants.
 
     In intensity mode ({stu}), all values are rescaled such that the average is now 0 and [O] standard
     deviations is now 1. This allows to use {ste}/{sto} instead of binding [U] with a number.
@@ -4032,7 +4040,7 @@ ski:
   family: "R"
   gloss: "event:"
   tags: [time, event]
-  short: "[E:tce man] is an event/occurence of [A:()]."
+  short: "[E:tce man] is a concrete, individual instance/occurrence of the event described by [A:()]."
   links:
     - ["icon-book", "Event and tenses", https://eberban.github.io/eberban/books/refgram/book/vocabulary/event_tenses.html]
 skin:
@@ -4192,7 +4200,7 @@ pane:
   short: "[E:tce pan] is inside of [A:tce pan]."
   notes: |
     Used to speak about individual physical objects.
-    
+
     To speak about an event occuring in some location, use {cko vio pane fia ...}.
 pale:
   id: t27dz8wbr9
@@ -4202,7 +4210,7 @@ pale:
   short: "[E:tce pan] is outside of [A:tce pan]."
   notes: |
     Used to speak about individual physical objects.
-    
+
     To speak about an event occuring outside some location, use {cko vio pale fia ...}.
 peni:
   id: t175fzkni1
@@ -4638,7 +4646,7 @@ ste:
     Due to the condition described above, if {ste ste X} is true then {ste X} is also true; "lightly X"
     contains "lightly lightly X". Too express "lightly" without containing "lightly lightly", use
     {sta ste X}.
-sta: 
+sta:
   id: 9pcea8l4be
   family: "R"
   gloss: "moderately:"
@@ -4677,7 +4685,7 @@ ksao:
   gloss: "chain-rel"
   short: |
     [E:p] satisfies relation [O:(p,p)] with the first member of list [A:bju p], and each non-final
-    member of [A] satisfies [O] with the following member.    
+    member of [A] satisfies [O] with the following member.
 celuar:
   id: f1la1jggsk
   predilex_id: hifuno
@@ -4728,7 +4736,7 @@ joeloi:
   short: "[E:tce* pan] is oil made from something that satisfies [A:(tce pan)]."
   notes: |
     [E] is a liquid at room temperature and doesn't mix with water.\
-    [A] is not an entity but a property since the thing being made into oil no longer exists. 
+    [A] is not an entity but a property since the thing being made into oil no longer exists.
   tags: [food]
 gatfi:
   id: 9wocwv8xz1
@@ -4754,7 +4762,7 @@ kalu:
     As [A] is being divided into [E], [A] cease to exist and [E] starts to exist, either at the same
     time or at different times. {kalu} starts when all members of [E] exists. [A] is stated to
     occur before {kalu} starts.
-    
+
     [E] can be a subset of all parts divided from [A], to speak about all the parts, use {tcihi}. If
     there are multiple things being divided, [E] members can come from any of those things (hense why
     you should use {tcihi} instead of {tcu}, as with {tcu} you would say that each part are individually
@@ -6005,6 +6013,13 @@ tsekna:
   family: "R"
   gloss: "kick"
   short: "[E:tce* pan] kicks [A:tce* pan]."
+zoni:
+  id: me82svwc6q
+  family: "R"
+  gloss: "but:"
+  short: |
+    [E:()] is true, but [A:()] is also true (even though this may be unexpected
+    when you know that [E] is true).
 
 # -----
 # Compounds
@@ -6792,7 +6807,7 @@ e tian katmi:
   id: e5tguybxso
   family: "C"
   gloss: "hungry"
-  short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]." 
+  short: "[E:tce* pan] is hungry for food satisfying property [A:(tce pan)]."
 e bzael kcei:
   id: 9ghhob4dpk
   predilex_id: royuvi
@@ -7051,180 +7066,180 @@ _family:
 
 # Spelling
 _spelling:
-  pi: 
+  pi:
     id: 6ubyu8g17n
     gloss: P
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter P.\
       {ceu}: Sound [p] (IPA).
-  bu: 
+  bu:
     id: jv5jdt8brj
     gloss: B
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter B.\
       {ceu}: Sound [b] (IPA).
-  fi: 
+  fi:
     id: zhcwp4omtj
     gloss: F
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter F.\
       {ceu}: Sound [f] (IPA).
-  vu: 
+  vu:
     id: n4q80wyalg
     gloss: V
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter V.\
       {ceu}: Sound [v] (IPA).
-  ti: 
+  ti:
     id: lrmti46sir
     gloss: T
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter T.\
       {ceu}: Sound [t] (IPA).
-  du: 
+  du:
     id: 9hbytu99i7
     gloss: D
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter D.\
       {ceu}: Sound [d] (IPA).
-  si: 
+  si:
     id: 0iw5lmhhmw
     gloss: S
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter S.\
       {ceu}: Sound [s] (IPA).
-  zu: 
+  zu:
     id: wmv5jemupg
     gloss: Z
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter Z.\
       {ceu}: Sound [z] (IPA).
-  ci: 
+  ci:
     id: 6l8g98ctrg
     gloss: C
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter C.\
       {ceu}: Sounds [ʃ] or [ʂ] (IPA).
-  ju: 
+  ju:
     id: xmd29mbi8f
     gloss: J
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter J.\
       {ceu}: Sounds [ʒ] or [ʐ] (IPA).
-  ki: 
+  ki:
     id: pg94ncpjyo
     gloss: K
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter K.\
       {ceu}: Sound [k] (IPA).
-  gu: 
+  gu:
     id: ozi51vdotq
     gloss: G
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter G.\
       {ceu}: Sound [ɡ] (IPA).
-  mi: 
+  mi:
     id: 50m9r74hya
     gloss: M
     tags: ["native", "consonant"]
     short: |
       {ce}: Letter M.\
       {ceu}: Sound [m] (IPA).
-  nu: 
+  nu:
     id: i8v5uyrq3i
     gloss: 'N'
     tags: ["native", "sonorant"]
     short: |
       {ce}: Letter N.\
       {ceu}: Sounds [n] or [ŋ] (IPA).
-  ri: 
+  ri:
     id: lsc2ddbb49
     gloss: R
     tags: ["native", "sonorant"]
     short: |
       {ce}: Letter R.\
       {ceu}: Sounds [ɣ], [ʁ], [r] or [ʀ] (IPA).
-  lu: 
+  lu:
     id: 578oyb497a
     gloss: L
     tags: ["native", "sonorant"]
     short: |
       {ce}: Letter L.\
       {ceu}: Sound [l] (IPA).
-  ihi: 
+  ihi:
     id: p6o6lxpp7l
     gloss: H
     tags: ["native", "vhowel"]
     short: |
       {ce}: Letter H.\
       {ceu}: Sound [h] (IPA).
-  uhu: 
+  uhu:
     id: 2pzry3n25u
     gloss: "(space)"
     tags: ["native"]
     short: |
       {ce}: Space character.\
       {ceu}: Sound [ʔ] (IPA) or pause.
-  i: 
+  i:
     id: xlut6t956h
     gloss: I
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter I.\
       {ceu}: Sound [i] (IPA).
-  e: 
+  e:
     id: wy1kwyzsu0
     gloss: E
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter E.\
       {ceu}: Sounds [ɛ] or [e] (IPA).
-  a: 
+  a:
     id: 9hrc3w1lki
     gloss: A
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter A.\
       {ceu}: Sounds [a] or [ɑ] (IPA).
-  o: 
+  o:
     id: pjj8vofua1
     gloss: O
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter O.\
       {ceu}: Sounds [o] or [ɔ] (IPA).
-  u: 
+  u:
     id: ktzorp451u
     gloss: U
     tags: ["native", "vowel", "vhowel"]
     short: |
       {ce}: Letter U.\
       {ceu}: Sound [u] (IPA).
-  ua: 
+  ua:
     id: j0mrfltg17
     gloss: W
     short: |
       {ce}: Letter W.\
       {ceu}: Sound [w] (IPA).
-  ia: 
+  ia:
     id: n6wfjkf24c
     gloss: "Y"
     short: |
       {ce}: Letter Y.\
       {ceu}: Sound [j] (IPA).
-  ksi: 
+  ksi:
     id: jrrvnf5981
     gloss: "X"
     short: |
@@ -7234,105 +7249,105 @@ _spelling:
     gloss: "Q"
     short: |
       {ce}: Letter Q.
-  tci: 
+  tci:
     id: ub6c89oivk
     gloss: "0"
     short: |
       {ce}: Digit 0.
     see_also: [ti]
-  tce: 
+  tce:
     id: l0kpstv3sj
     gloss: "1"
     short: |
       {ce}: Digit 1.
     see_also: [te]
-  tca: 
+  tca:
     id: co8ssocu11
     gloss: "2"
     short: |
       {ce}: Digit 2.
     see_also: [ta]
-  tco: 
+  tco:
     id: bwrzr596bs
     gloss: "3"
     short: |
       {ce}: Digit 3.
     see_also: [to]
-  tcu: 
+  tcu:
     id: uuxcf0vgq1
     gloss: "4"
     short: |
       {ce}: Digit 4.
     see_also: [tu]
-  tcie: 
+  tcie:
     id: hjgm2tl9e1
     gloss: "5"
     short: |
       {ce}: Digit 5.
     see_also: [tie]
-  tcia: 
+  tcia:
     id: pz0uykkkig
     gloss: "6"
     short: |
       {ce}: Digit 6.
     see_also: [tia]
-  tcio: 
+  tcio:
     id: 071fz7amky
     gloss: "7"
     short: |
       {ce}: Digit 7.
     see_also: [tio]
-  tciu: 
+  tciu:
     id: 77uy8ynd6y
     gloss: "8"
     short: |
       {ce}: Digit 8.
     see_also: [tiu]
-  tcei: 
+  tcei:
     id: xwad05h9xx
     gloss: "9"
     short: |
       {ce}: Digit 9.
     see_also: [tei]
-  sli: 
+  sli:
     id: tqvgfmmgc3
     gloss: "\\"
     tags: ["symbol"]
     short: |
       {ce}: \ (backslash) symbol.
-  sla: 
+  sla:
     id: iohrkvpgou
     gloss: "|"
     tags: ["symbol"]
     short: |
       {ce}: | (pipe / vertical bar) symbol.
-  slu: 
+  slu:
     id: qviusvdptp
     gloss: "/"
     tags: ["symbol"]
     short: |
       {ce}: / (slash) symbol.
-  sto: 
+  sto:
     id: p4tco6zn5q
     gloss: "?"
     tags: ["symbol"]
     short: |
       {ce}: ? (question mark) symbol.
-  gli: 
+  gli:
     id: nkbk8lcocf
     gloss: "UPPERCASE:"
     tags: ["case"]
     short: |
       {ce}: Following symbols will be in uppercase.
     see_also: [gla, glu]
-  gla: 
+  gla:
     id: qi5p742mh8
     gloss: "AnyCasE:"
     tags: ["case"]
     short: |
       {ce}: Following symbols don't have a specific case, they can be either lowercase or uppercase.
     see_also: [gli, glu]
-  glu: 
+  glu:
     id: v98p688ko2
     gloss: "lowercase:"
     tags: ["case"]
