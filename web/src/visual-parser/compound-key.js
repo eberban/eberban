@@ -44,7 +44,13 @@ export function compoundDictKey(verb) {
 
 function compoundWordKey(c) {
     if (c.family === "Compound") return compoundDictKey(c);
-    if (c.family === "Borrowing") return "u" + c.content;
-    if (c.family === "FFVariable") return "i" + c.content;
+    if (c.family === "Borrowing") return prefixedWordKey("u", c.content);
+    if (c.family === "FFVariable") return prefixedWordKey("i", c.content);
     return c.word;
+}
+
+// Written form of a borrowing ("u") or freeform variable ("i"): the prefix is separated from
+// content starting with the same letter by a dot, the form the grammar itself prints.
+export function prefixedWordKey(prefix, content) {
+    return content.startsWith(prefix) ? `${prefix}.${content}` : prefix + content;
 }

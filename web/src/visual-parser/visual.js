@@ -89,7 +89,8 @@ import dictionary from '../../../dictionary/en.yaml';
 import * as parser from "../grammar/eberban.peggy.js";
 import { GrammarError } from "peggy";
 import { generateParticleInfo, parseBindPlaces, computeNumberInfo } from "../shared/particle-gloss.js";
-import { compoundDictKey } from "./compound-key.js";
+import { compoundDictKey, prefixedWordKey } from "./compound-key.js";
+import { stepSlots, verbSlots, parseSISlots as parseSISlotsPure } from "../shared/places.js";
 
 const INLINE_DEPTH_OFFSET_PX = 10;
 
@@ -863,172 +864,25 @@ function buildAnnotationHtml(node) {
 // Slot info computation
 // ============================================================
 
-const VOWELS = "ieaou";
-const CONSONANTS = "npbfvtdszcjkglrm";
+// Place rules live in ../shared/places.js. The adapters below keep the display format used by
+// the renderer: { exposed, chainPlace } with "none" for no exposed place and the chain place
+// suffixed by the sharing or equivalence symbol.
 
-// ZI chaining overrides: null = keep verb's own slots
-const ZI_SLOTS = {
-    za: { trans: false, equiv: false },
-    zu: { trans: false, equiv: false },
-    zui: { trans: false, equiv: true },
-    zue: null, ze: null,
-    zoie: { trans: false, equiv: false },
-    zoia: { trans: false, equiv: false },
-    zoio: { trans: false, equiv: false },
-    zoiu: { trans: false, equiv: false },
-};
+function formatSlots(slots) {
+    let chainPlace = slots.chain ? slots.chain.place + (slots.chain.equiv ? SYM_EQUIV : SYM_SHARING) : "";
+    return { exposed: slots.exposed === "" ? "none" : slots.exposed, chainPlace };
+}
 
 function getSlotInfo(steps) {
-    return steps.map(step => {
-        if (step.select) return parseSISlots(step.select.word);
-        return getVerbSlots(step.verb);
-    });
+    return steps.map(step => formatSlots(stepSlots(step, dictionary)));
 }
 
-function formatChainPlace(trans, equiv) {
-    let place = trans ? "A" : "E";
-    return place + (equiv ? SYM_EQUIV : SYM_SHARING);
-}
-
-/** Get slot display info for a verb. Checks ZI modifiers first (hardcoded map),
- *  then falls back to verb transitivity. Returns { exposed, chainPlace }. */
 function getVerbSlots(verb) {
-    if (!verb) return { exposed: "*", chainPlace: "E" + SYM_SHARING };
-
-    // Check ZI modifiers (outermost determines)
-    if (verb.modifiers) {
-        let mods = Array.isArray(verb.modifiers) ? verb.modifiers : [verb.modifiers];
-        let outerZI = mods[0]?.modifier?.word;
-        // ZI's own SI overrides
-        if (mods[0]?.select) return parseSISlots(mods[0].select.word);
-        // Check hardcoded ZI map
-        if (outerZI && outerZI in ZI_SLOTS) {
-            let override = ZI_SLOTS[outerZI];
-            if (override !== null) {
-                return { exposed: "*", chainPlace: formatChainPlace(override.trans, override.equiv) };
-            }
-        }
-    }
-
-    let { trans, equiv } = getVerbTransitivity(verb);
-    return { exposed: "*", chainPlace: formatChainPlace(trans, equiv) };
+    return formatSlots(verbSlots(verb, dictionary));
 }
 
-/** Determine transitivity + equivalence for a verb node.
- *  Roots: last char vowel=trans, CCV(3 chars)/-i=equiv. Compounds: last component.
- *  MI/GI/BA/PE/KI: family-specific rules. Borrowings: same as roots. */
-function getVerbTransitivity(verb) {
-    if (!verb) return { trans: false, equiv: false };
-
-    // Compound: last component determines, se/sa/sai override
-    if (verb.family === "Compound") {
-        let last = verb.content[verb.content.length - 1];
-        let lastWord = last?.word;
-        if (lastWord === "se") return { trans: false, equiv: false };
-        if (lastWord === "sa") return { trans: true, equiv: false };
-        if (lastWord === "sai") return { trans: true, equiv: true };
-        return getVerbTransitivity(last);
-    }
-
-    // Root / Particle: derive from word form
-    if (verb.family === "Root" || verb.family === "Particle") {
-        return getRootTransitivity(verb.word);
-    }
-
-    // MI: dictionary
-    if (verb.family === "MI") {
-        let entry = dictionary[verb.word];
-        return { trans: entry?.transitive || false, equiv: entry?.equivalence || false };
-    }
-
-    // GI: gi- intrans, others trans. -i after first vowel → equiv
-    if (verb.family === "GI") {
-        let w = verb.word;
-        let intrans = w?.startsWith("gi") && (w.length === 2 || !VOWELS.includes(w[2]));
-        let trans = !intrans;
-        let equiv = trans && w?.endsWith("i");
-        return { trans, equiv };
-    }
-
-    // BA: always sharing. h present: after h i=trans, e=intrans. No h → atom intrans.
-    if (verb.family === "BA") {
-        let w = verb.word;
-        let hIdx = w?.indexOf("h");
-        if (hIdx >= 0 && hIdx + 1 < w.length) {
-            return { trans: w[hIdx + 1] === "i", equiv: false };
-        }
-        return { trans: false, equiv: false };
-    }
-
-    // BorrowingGroup: last item, same rule as roots
-    if (verb.kind === "BorrowingGroup") {
-        let last = verb.group[verb.group.length - 1];
-        return getRootTransitivity(last.word || last.content);
-    }
-
-    // PE: dictionary
-    if (verb.start?.family === "PE") {
-        let entry = dictionary[verb.start.word];
-        return { trans: entry?.transitive ?? true, equiv: false };
-    }
-
-    // KI, quotes, numbers: intrans sharing
-    return { trans: false, equiv: false };
-}
-
-function getRootTransitivity(word) {
-    if (!word) return { trans: false, equiv: false };
-    let last = word[word.length - 1];
-    let trans = VOWELS.includes(last);
-    let equiv = false;
-    if (trans) {
-        // -i final → equiv
-        if (last === "i") equiv = true;
-        // CCV with single vowel (exactly 3 chars: CC+V) → equiv
-        else if (word.length === 3 && CONSONANTS.includes(word[0]) && CONSONANTS.includes(word[1])) {
-            equiv = true;
-        }
-    }
-    return { trans, equiv };
-}
-
-/** Parse an SI word into slot display info. Extracts place vowels (e→E, a→A, o→O, u→U),
- *  detects transparent (si-prefix), h-override for chain place, and -i for equivalence. */
 function parseSISlots(word) {
-    let chars = word.slice(1); // strip 's'
-
-    // Transparent: si + vowel(s) — still has chain place from remaining vowels
-    let transparent = false;
-    if (chars[0] === "i" && chars.length > 1) {
-        transparent = true;
-        chars = chars.slice(1); // consume the 'i', parse rest normally
-    }
-
-    let places = [], hOverride = null, hFlag = false, equiv = false;
-
-    for (let c of chars) {
-        if (c === "h") {
-            hFlag = true;
-        } else if (VOWELS.includes(c) && c !== "i") {
-            if (hFlag) {
-                // h-prefixed vowel: chain target only, NOT exposed
-                hOverride = c.toUpperCase();
-                hFlag = false;
-            } else {
-                places.push(c.toUpperCase());
-            }
-        } else if (c === "i") {
-            equiv = true;
-        }
-    }
-
-    if (places.length === 0 && !hOverride) return { exposed: transparent ? "~" : "none", chainPlace: "" };
-
-    let chainPlace = hOverride || places[places.length - 1];
-    return {
-        exposed: transparent ? "~" : places.join(""),
-        chainPlace: chainPlace + (equiv ? SYM_EQUIV : SYM_SHARING)
-    };
+    return formatSlots(parseSISlotsPure(word));
 }
 
 // ============================================================
@@ -1080,12 +934,12 @@ function isAdverbStart(start) {
 function getWordText(node) {
     if (node.kind === "SingleWordQuote") return node.start.word + " " + (node.word?.word || "?");
     if (node.kind === "InlineAssignment") return node.start.word + " " + getWordText(node.verb);
-    if (node.kind === "BorrowingGroup") return node.group.map(b => "u" + b.content).join(" ");
+    if (node.kind === "BorrowingGroup") return node.group.map(b => prefixedWordKey("u", b.content)).join(" ");
     if (node.kind === "Number") return formatNumber(node.value);
     if (typeof node.word === "string") return node.word;
     if (node.family === "Compound") return node.prefix + node.content.map(getWordText).join("");
-    if (node.family === "FFVariable") return "i" + node.content;
-    if (node.family === "Borrowing") return "u" + node.content;
+    if (node.family === "FFVariable") return prefixedWordKey("i", node.content);
+    if (node.family === "Borrowing") return prefixedWordKey("u", node.content);
     return "?";
 }
 

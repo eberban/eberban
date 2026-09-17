@@ -1,0 +1,106 @@
+# Explicit binding: VI, FI, VEI, argument lists, KI, GI, BA. refgram logic/explicit_binding.md.
+
+- text: "mi duna vo mo vei meon"
+  shape: "(a): mi-E > duna-A[vo: mo-E] > meon-E"
+  source: refgram logic/explicit_binding.md
+
+- text: "duna ve mi fo mo vei meon"
+  shape: "(a): duna-A[ve: mi-E | fo: mo-E] > meon-E"
+  source: refgram logic/explicit_binding.md
+
+- text: "duna ve mi fo mo fa meon"
+  shape: "(a): duna-A[ve: mi-E | fo: mo-E | fa: meon-E]"
+  note: final vei elided at sentence end
+  source: refgram logic/explicit_binding.md
+
+- text: "mi duna vo mo meon"
+  shape: "(a): mi-E > duna-A[vo: mo-E > meon-E]"
+  note: without vei the rest of the sentence is inside the bind (a common mistake)
+
+- text: "mi dona va ke be mian etiansa ke"
+  shape: "(a): mi-E > dona-A[va: ke be: mian-E > e(tian sa)-A > ke-E]"
+  source: refgram logic/explicit_binding.md
+
+- text: "mi dona va be mian etiansa ba"
+  shape: "(a): mi-E > dona-A[va: be: mian-E > e(tian sa)-A > ba-E]"
+  note: empty argument list then inline BA
+  source: refgram logic/explicit_binding.md
+
+- text: "mi dona va ke ka mian"
+  shape: "(a): mi-E > dona-A[va: ke-E > ka-E > mian-E]"
+  note: without be there is no argument list, the KI are chain verbs
+
+- text: "mi katmi va sae tuli mo"
+  shape: "(a): mi-E > katmi=A[va: sae tuli(AE)-E > mo-E]"
+  note: sharing a predicate place
+  source: refgram logic/explicit_binding.md
+
+- text: "mi katmi via sae tuli mo"
+  shape: "(a): mi-E > katmi=A[via: sae tuli(AE)-E > mo-E]"
+  note: defining a predicate place by equivalence
+  source: refgram logic/explicit_binding.md
+
+- text: "mi duna vao mo meon"
+  shape: "(a): mi-E > duna-A[vao: mo-E > meon-E]"
+  note: multi-vowel VI; the parser keeps the inner chain whole, the split is semantic
+  source: refgram logic/explicit_binding.md
+
+- text: "mi kelo vaio za ubob sae coriu vihon"
+  shape: "(a): mi-E > kelo-A[vaio: za u(bob)-E > sae coriu(AE)-E > vihon-E]"
+  source: refgram logic/explicit_binding.md
+
+- text: "dzie veao mi meon e uiuro sfia jo ta"
+  shape: "(a): dzie-A[veao: mi-E > meon-E > e(uiuro sfia)-A > #(jo ta)-A]"
+  note: a compound containing a borrowing, then a number with only a fractional part
+  source: refgram logic/explicit_binding.md
+
+- text: "mi dona va mian ve bjan"
+  shape: "(a): mi-E > dona-A[va: mian-E[ve: bjan-E]]"
+  note: nested binds, both vei elided
+
+- text: "mi ve etiansa meon fe dona skan vei"
+  shape: "(a): mi-E[ve: e(tian sa)-A > meon-E | fe: dona-A > skan-E]"
+  note: ve+fe idiom binding the same E twice
+
+- text: "mi jvin vi mo jvin"
+  shape: "(a): mi-E > jvin-E[vi: mo-E > jvin-E]"
+  note: vi binds no place, ANDs a 0-ary chain
+
+- text: "mi dona bi va mian"
+  shape: "(a): mi-E > dona-A[bi va: mian-E]"
+  note: BI before VI negates the whole bind
+
+- text: "mi dona va bi mian"
+  shape: "(a): mi-E > dona-A[va: bi (mian-E)]"
+  note: BI after VI negates the inner chain
+
+- text: "duna ve mi vei vo mo vei meon"
+  shape: "(a): duna-A[ve: mi-E][vo: mo-E] > meon-E"
+  note: two bind groups on one verb
+
+- text: "duna ve mi fahu mo"
+  shape: "(a): duna-A[ve: mi-E | fahu: mo-E]"
+  note: relative-place FI
+
+- text: "duna ve mi fehi mo"
+  shape: "(a): duna-A[ve: mi-E | fehi: mo-E]"
+
+- text: "a mi fa mo"
+  error: "no VI scope still open for this FI"
+
+- text: "a mi vei"
+  error: "no VI scope still open for this VEI"
+
+- text: "a mi be"
+  error: "BE can only be used to end an arguments list"
+  note: BE after a complete sentence
+
+- text: "a mi dona va"
+  error: "VI must be followed by a chain"
+
+- text: "a mi dona va mo fi"
+  error: "FI must be followed by a chain"
+
+- text: "a mi dona va ke be"
+  error: "at least one"
+  note: argument list with no chain after it

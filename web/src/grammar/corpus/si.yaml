@@ -1,0 +1,52 @@
+# SI: chaining override. refgram logic/explicit_binding.md, "Right place and chaining selection".
+# "(X)" lists the exposed places, then the chain place selected.
+
+- text: "mian se etiansa bjan"
+  shape: "(a): mian-E > se e(tian sa)(E)-E > bjan-E"
+  source: refgram logic/explicit_binding.md
+
+- text: "meon sae etiansa mian"
+  shape: "(a): meon-E > sae e(tian sa)(AE)-E > mian-E"
+  note: two vowels, exposed in that order, chain to the last one
+  source: refgram logic/explicit_binding.md
+
+- text: "mi sea etiansa mian"
+  shape: "(a): mi-E > sea e(tian sa)(EA)-A > mian-E"
+
+- text: "sia spe etiansa meon"
+  shape: "(a): sia spe(~)-A > e(tian sa)-A > meon-E"
+  note: transparent SI re-exposes the right predicate
+
+- text: "mi seho etiansa"
+  shape: "(a): mi-E > seho e(tian sa)(E)-O"
+  note: h-override selects the chain place without exposing it
+
+- text: "saeoi etiansa mo"
+  shape: "(a): saeoi e(tian sa)(AEO)=O > mo-E"
+  note: three exposed places, equivalence chaining
+  source: refgram logic/explicit_binding.md
+
+- text: "si etiansa"
+  shape: "(a): si e(tian sa)()"
+  note: si alone exposes nothing and chains nothing
+
+- text: "mi sehai etiansa mo"
+  shape: "(a): mi-E > sehai e(tian sa)(E)=A > mo-E"
+
+- text: "sai dona mo"
+  shape: "(a): sai dona(A)=A > mo-E"
+
+- text: "mi zi sa duna mo"
+  shape: "(a): mi-E > zi sa duna(A)-A > mo-E"
+  note: an SI may follow a ZI and applies to the modified verb
+
+- text: "mi sa zi duna mo"
+  shape: "(a): mi-E > sa zi duna(A)-A > mo-E"
+  note: an SI may also precede the ZI
+
+- text: "a mi se"
+  error: "SI must be followed by a verb"
+
+- text: "a se mi"
+  shape: "a: se mi(E)-E"
+  note: SI on a MI particle

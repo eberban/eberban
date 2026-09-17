@@ -1,0 +1,67 @@
+# Enumeration and brackets: PE, BU, PEI. refgram grammar/enum.md, logic/explicit_binding.md.
+# pe exposes the places of its items and chains like its first item; pea/peo/peho/peu/pehu
+# build a set or list, a 1-ary result.
+
+- text: "mi pe etiansa bu dona pei meon"
+  shape: "(a): mi-E > pe(e(tian sa)-A bu dona-A)-A > meon-E"
+  source: refgram grammar/enum.md
+
+- text: "mio pea bu za ualis za ubob"
+  shape: "(a): mio-E > pea bu(za u(alis)-E za u(bob)-E)-E"
+  note: prefix mode, one item per verb, pei elided
+  source: refgram grammar/enum.md
+
+- text: "peo tcu mian bu meon pei"
+  shape: "(a): peo(tcu=A > mian-E bu meon-E)-E"
+  source: refgram grammar/enum.md
+
+- text: "me vone peho bu mian meon"
+  shape: "(a): me-E > vone-A > peho bu(mian-E meon-E)-E"
+  source: refgram grammar/enum.md
+
+- text: "peu bu mian meon pei bjua peu meon bu mian"
+  shape: "(a): peu bu(mian-E meon-E)-E > bjua-A > peu(meon-E bu mian-E)-E"
+  source: refgram grammar/enum.md
+
+- text: "pe bu pei"
+  shape: "(a): pe bu()-E"
+  note: empty enumeration, always true, nothing to chain through
+
+- text: "mian pe bjan pei"
+  shape: "(a): mian-E > pe(bjan-E)-E"
+  note: brackets around a single verb behave as that verb
+
+- text: "mian pe bjan jmu pei meon"
+  shape: "(a): mian-E > pe(bjan-E > jmu=A)-E > meon-E"
+  note: brackets group a chain before continuing; the bracket has the chain's places
+
+- text: "pe ke ka be ke duna vao ka ko bu ko fule vao ka ke pei"
+  shape: "(a): pe(ke ka be: ke-E > duna-A[vao: ka-E > ko-E] bu ko-E > fule-A[vao: ka-E > ke-E])-E"
+  note: argument list on a bracket, two items sharing the variables; the bracket chains like its first item (ke), what an argument list does to chaining is not specified
+
+- text: "peho bu bi mian meon"
+  shape: "(a): peho bu(bi mian-E meon-E)-E"
+  note: BI on a prefix-mode item
+
+- text: "pe mian pe bjan bu skan pei pei"
+  shape: "(a): pe(mian-E > pe(bjan-E bu skan-E)-E)-E"
+  note: nested brackets
+
+- text: "mi pe etiansa bu dona meon"
+  shape: "(a): mi-E > pe(e(tian sa)-A bu dona-A > meon-E)-A"
+  note: without pei the last item swallows the rest of the sentence
+
+# Structure-only checks, independent of the place rules.
+
+- text: "a mio pea bu za ualis za ubob pei jvin"
+  note: prefix-mode enumeration followed by a verb parses
+
+- text: "a mi bu mo"
+  error: "BU can only be used inside"
+
+- text: "a mi pei"
+  error: "no PE scope still open"
+
+- text: "a pe"
+  error: "at least one"
+  note: separator mode needs a chain

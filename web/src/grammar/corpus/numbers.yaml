@@ -1,0 +1,114 @@
+# Numbers: TI digits, JU/JO/JA/JE separators, JI usage. refgram grammar/numbers.md.
+# A number chains like its JI terminator (jie when elided): ji/jia/jio/jioa have a predicate
+# A place, jiu/jie an atom one.
+
+- text: "tu ta"
+  shape: "(a): #(tu ta)-A"
+  note: 42, jie inferred
+  source: refgram grammar/numbers.md
+
+- text: "tei ti tu"
+  shape: "(a): #(tei ti tu)-A"
+  note: 904
+
+- text: "teo ju tie tia"
+  shape: "(a): #(teo ju tie tia)-A"
+  note: base 12
+  source: refgram grammar/numbers.md
+
+- text: "to jo te tu te tie tei"
+  shape: "(a): #(to jo te tu te tie tei)-A"
+  note: 3.14159
+
+- text: "to jo te ja to"
+  shape: "(a): #(to jo te ja to)-A"
+  note: repeating part
+
+- text: "to jo ja to"
+  shape: "(a): #(to jo ja to)-A"
+  note: empty fractional part before the repeating part, 3.333...
+  source: refgram grammar/numbers.md
+
+- text: "to joi"
+  shape: "(a): #(to joi)-A"
+  note: negative with no fractional digits, -3
+  source: refgram grammar/numbers.md
+
+- text: "to jo"
+  shape: "(a): #(to jo)-A"
+  note: empty fractional part alone is accepted
+
+- text: "tia jo ti ta ta je ta to"
+  shape: "(a): #(tia jo ti ta ta je ta to)-A"
+
+- text: "tei jo te ti tei jei to te"
+  shape: "(a): #(tei jo te ti tei jei to te)-A"
+
+- text: "je te"
+  shape: "(a): #(je te)-A"
+  note: magnitude alone, integer part 1
+
+- text: "tu ta ji mian"
+  shape: "(a): #(tu ta ji)=A > mian-E"
+  note: cardinal, chains by equivalence into the property
+
+- text: "ta jiu"
+  shape: "(a): #(ta jiu)-A"
+
+- text: "tu ta jie"
+  shape: "(a): #(tu ta jie)-A"
+
+- text: "42"
+  shape: "(a): #(4 2)-A"
+  note: digit symbols
+
+- text: "a mi 4"
+  shape: "a: mi-E > #(4)-A"
+
+- text: "te jie ta"
+  shape: "(a): #(te jie)-A > #(ta)-A"
+  note: jie separates consecutive numbers
+
+- text: "to je to jie mual june vola"
+  shape: "(a): #(to je to jie)-A > mual-E > june-A > vola-A"
+  note: 4 km/h
+  source: dictionary june
+
+# Structure-only checks, independent of the place rules.
+
+- text: "a mi tu ta ji mian"
+  note: number inside a chain parses
+
+- text: "a to je to jie mual"
+  note: number followed by a root parses
+
+- text: "ju te"
+  error: "JU must be prefixed"
+
+- text: "jo"
+  error: "without digits"
+  note: a number needs a digit somewhere or a magnitude
+
+- text: "jo ja to"
+  shape: "(a): #(jo ja to)-A"
+  note: 0.333..., the repeating part supplies the digits
+
+- text: "to ja te"
+  error: "Repeating digits can only appear in a fractional part"
+
+- text: "ji"
+  error: "JI cannot be used alone"
+
+- text: "to je te jo ta"
+  error: "must follow order"
+  note: magnitude before fractional part
+
+- text: "tei ju"
+  error: "without digits"
+  note: a base alone is not a number
+
+- text: "-4"
+  warning: "minus sign"
+
+- text: "4 + 2"
+  warning: "math symbols"

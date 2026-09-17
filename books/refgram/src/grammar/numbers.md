@@ -46,10 +46,10 @@ _base_ __ju__ _integer-part_ __jo__ _fractional-part_ __ja__ _repeated-part_ __j
    to use __TI__ digits that are bigger than the _base_, but is discouraged outside of single
    digit numbers.
 2. The _integer part_ of the number, as a string of zero or more digits __TI__.
-   If there are zero digits then a fractional part is mandatory, unless __je__ is used.
 3. This integer part can then optionally be followed by __jo__ and a _fractional
    part_ which is also a string of zero or more digits __TI__. __joi__ can be used instead to also
-   make the number negative.
+   make the number negative. The number must contain at least one digit in its integer,
+   fractional or repeated part, unless __je__ is used.
 4. If there is a fractional part, it can be followed by __ja__ and a _repeated part_ which is also a
    string of at least one digit __TI__. The number has these digits repeated indefinitely.
 5. Regardless of the presence of a fractional part or integer part, the number can then contain

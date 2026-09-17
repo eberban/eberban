@@ -55,6 +55,9 @@ other predicates in the chain or explicit bindings.
 > __bi__ is in its own family __BI__ as it transforms more than just the prefixed
 > predicate.
 
+Both __zi__ and __bi__ can be repeated. Each occurrence negates the scope of the next one, so
+__bi bi bure__ is equivalent to __bure__.
+
 ## Names
 
 Prefixing a 1-ary predicate with __za__ transforms it into a name:

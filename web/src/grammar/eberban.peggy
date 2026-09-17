@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.67
+// EBERBAN GRAMMAR - v0.67.1
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -28,6 +28,8 @@
 	var warnings = [];
     var pending_error = null;
     var gram_quote_nesting = 0;
+    // Pending error saved at the start of each open grammatical quote (see GrammaticalQuote).
+    var quote_pending_errors = [];
 
     // Add warning to the warnings list
     function warn(msg) {
@@ -184,7 +186,7 @@ Sentence = SentenceErasedValid / SentenceChoice / SentenceErasedInvalid
 // This is important to ensure sentences are not split in half, as reaching the invalid part would
 // finished to parse a sentence and then fail inside a new one. We want this so that a sentence that
 // become invalid can be fully erased with RA.
-SentenceChoice = @(SentenceO / SentenceNI / SentenceA) &PostSentence
+SentenceChoice = @(SentenceO / SentenceNI / SentenceA) !E_UnmatchedBE &PostSentence
 PostSentence = Spaces? (SentenceStarter / PO_Free / CAI_Free / DAI_Free / RA / GrammaticalQuoteTerminatorElider / EOF)
 SentenceStarter = A_Free / O_Free / NI_Free
 
@@ -210,10 +212,13 @@ E_ErasedMustBeFollowedBySentenceStarter =
     !(EOF / SentenceStarter / PO_Free)
     &{ return err("After erasing a sentence with RA, the following sentence starter cannot be elided (prefix the sentence with A/O/NI)")}
 
-SentenceO = starter:O_Free defined:VerbDefinable definition:DefinitionWithArguments
+SentenceO = starter:O_Free !E_NotDefinableO defined:VerbDefinable definition:DefinitionWithArguments
     { return { kind: "O Sentence", starter, defined, definition }}
 SentenceA = starter:A_Elidible definition:DefinitionWithArguments { return { kind: "A Sentence", starter, definition}}
-SentenceNI = starter:NI_Free pred:VerbDefinable { return { kind: "NI Sentence", starter, pred }}
+SentenceNI = starter:NI_Free !E_NotDefinableNI pred:VerbDefinable { return { kind: "NI Sentence", starter, pred }}
+
+E_NotDefinableO = !VerbDefinable &{ return err("O must be followed by a definable word (root, compound, freeform variable or GI, possibly namespaced)")}
+E_NotDefinableNI = !VerbDefinable &{ return err("NI must be followed by a definable word (root, compound, freeform variable or GI, possibly namespaced)")}
 
 // # Chaining ========================================
 
@@ -230,7 +235,12 @@ Chain = erased:ChainErased* !E_ChainEmpty inner:ChainInner
         return inner
     }
 ChainErased = chain:ChainInner eraser:ChainEraser { return { chain, eraser }}
-ChainNegation = neg:BI_Free chain:Chain { return {wide_negation:neg, ...chain} }
+// Stacked BI are kept in order (outermost first): single node, or array when several.
+ChainNegation = neg:BI_Free chain:Chain {
+    var inner = chain.wide_negation;
+    var negs = inner == null ? neg : [neg, ...(Array.isArray(inner) ? inner : [inner])];
+    return {...chain, wide_negation: negs}
+}
 
 E_ChainEmpty = !ChainInner &{ return err("A chain must contain at least one (non erased) verb")}
 E_ResumeChainEmpty = !ChainVerbAndBinds &{ return err("PA must be followed by a verb, for which it'll resume bindings to the latest instance up the chains")}
@@ -267,7 +277,7 @@ ChainInner = ChainNegation
         return chain
     }
 
-ChainVerbAndBinds = select:SI_Free? verb:ChainVerb exp:ExplicitBindGroup*
+ChainVerbAndBinds = select:(@SI_Free !E_SelectEmpty)? verb:ChainVerb exp:ExplicitBindGroup*
     {
         var chain = { }
 
@@ -297,8 +307,13 @@ ExplicitBindGroup = first:ExplicitBindFirst next:ExplicitBindNext* end:VEI_Elidi
             end
         }
     }
-ExplicitBindFirst = BI_Free? VI_Free DefinitionWithArguments
-ExplicitBindNext = BI_Free? FI_Free DefinitionWithArguments
+ExplicitBindFirst = neg:BI_Free? start:VI_Free !E_BindEmptyVI inner:DefinitionWithArguments { return [neg, start, inner] }
+ExplicitBindNext = neg:BI_Free? start:FI_Free !E_BindEmptyFI inner:DefinitionWithArguments { return [neg, start, inner] }
+
+// The lookahead skips the Chain rule so that E_ChainEmpty is not queued first; an argument list
+// is left to Chain so that its own empty-chain error is reported.
+E_BindEmptyVI = !(ArgumentsList / ChainInner) &{ return err("VI must be followed by a chain")}
+E_BindEmptyFI = !(ArgumentsList / ChainInner) &{ return err("FI must be followed by a chain")}
 
 ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
     {
@@ -306,7 +321,7 @@ ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
             verb.post = post;
         return verb
     }
-ChainVerbModified = modifiers:(ZI_Free SI_Free?)+ modified:(ChainVerbModified / ChainVerbSelect)
+ChainVerbModified = modifiers:(ZI_Free (@SI_Free !E_SelectEmpty)?)+ !E_ModifiedEmpty modified:(ChainVerbModified / ChainVerbSelect)
     {
         var res = { ...modified }
 
@@ -324,6 +339,9 @@ ChainVerbModified = modifiers:(ZI_Free SI_Free?)+ modified:(ChainVerbModified / 
 ChainVerbSelect = VerbDefinableUsage / VerbInlineAssignment / KI_Free / BA_Free / MI_Free
     / VerbQuote / VerbEnum / BorrowingGroup / Number
 
+E_SelectEmpty = !ChainVerb &{ return err("SI must be followed by a verb")}
+E_ModifiedEmpty = !ChainVerb &{ return err("ZI must be followed by a verb")}
+
 // # Definable =======================================
 
 VerbInlineAssignment = pre:FreePrefix* start:BO_Free verb:(KI_Free / VerbDefinable)
@@ -339,7 +357,7 @@ VerbDefinableUsage = namespace:VerbDefinableNamespace* verb:VerbDefinablePart
     }
 VerbDefinableNamespace = parent:(VerbDefinablePart / MI_Free) sep:PI_Free
     { return { parent, sep }}
-VerbDefinablePart = pre:FreePrefix* Spaces?
+VerbDefinablePart = pre:FreePrefix* Spaces? !E_NoVowelBeforeH
     word:(GI_Free / FreeformVariable / Compound / RootWord)
     {
         if(pre?.length)
@@ -356,9 +374,17 @@ GrammaticalQuote =
     &{ gram_quote_nesting++; return true }
     // hack to decrement quote nesting regardless of parsing success
     text:(
+        &{ quote_pending_errors.push(pending_error); return true }
         @Text &{ gram_quote_nesting--; return true}
         / &{ gram_quote_nesting--; return false}
     )
+    // An empty quote is valid. The failed attempt at a first sentence may have queued an
+    // error (an empty chain); drop it by restoring the error state from before the quote.
+    &{
+        var before = quote_pending_errors.pop();
+        if (text.paragraphs == null) pending_error = before;
+        return true
+    }
     end:CAI_Elidible
 
     // Warning if non-final quote terminator CAI is elided and text contains multiple sentences
@@ -396,17 +422,21 @@ ForeignQuote = (ForeignQuoteElided / ForeignQuoteSimple / ForeignQuoteEscaped)
 ForeignQuoteElided = start:COI_Free { return { kind: "Foreign Quote", particle: start}}
 ForeignQuoteSimple = start:CO_Free
     (!QuoteMarkStart SpaceChar)*
-    QuoteMarkStart content:(!QuoteMarkEnd @.)* end:QuoteMarkEnd
+    QuoteMarkStart content:(!QuoteMarkEnd @.)* !E_UnclosedForeignQuote end:QuoteMarkEnd
     { return { kind: "ForeignQuote", start, content: content.join("")}}
 ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
     content:(
         !(QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word })
         @.
     )*
+    !E_UnclosedForeignQuote
     QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word }
     { return { kind: "ForeignQuote", start, delim: mark_start, content: content.join("")}}
 
-SpellingQuote = starter:CE_Free items:SpellingQuoteItem+ end:CEI_Free { return { kind: "Spelling Quote", starter, items, end } }
+E_UnclosedForeignQuote = EOF &{ return err("Unclosed foreign quote (missing ])") }
+
+SpellingQuote = starter:CE_Free !E_SpellingEmpty items:SpellingQuoteItem+ end:CEI_Free { return { kind: "Spelling Quote", starter, items, end } }
+E_SpellingEmpty = !SpellingQuoteItem &{ return err("A spelling quote needs at least one unit") }
 SpellingQuoteItem = Spaces? !CEI x:(InitialPair / Consonant)? y:Vhowels { return recur_join([x, y]) }
 
 // # Enum =============================================
@@ -446,9 +476,12 @@ Number "number" = x:NumberFormat
             return err("Repeating digits can only appear in a fractional part (started with JO)");
         }
 
-        if(x.base != null && x.int == null && x.fract == null && x.magn == null) {
+        // The fractional part may be empty (to joi = -3, to jo ja to = 3.333...), but the
+        // number needs at least one digit somewhere, or a magnitude.
+        var fract_digits = x.fract != null && x.fract.value.length > 0;
+        if(x.int == null && !fract_digits && x.repeat == null && x.magn == null) {
             return err(
-                "Cannot specify a number with only the base part.\n" +
+                "Cannot specify a number without digits.\n" +
                 "Provide an integer part, a fractional part (with JO) or a magnitude (with JE)"
             );
         }
@@ -485,14 +518,13 @@ NumberFormat = !E_NumberEndAlone
     }
 NumberBase = !E_NumberEmptyBase value:TI_Free sep:JU_Free { return { base: { value, sep } } }
 NumberInt = value:NumberDigits { return { int: value } }
-NumberFractional = !E_NumberEmptyFractional sep:JO_Free value:NumberDigits { return { fract: { sep, value } } }
+NumberFractional = sep:JO_Free value:TI_Free* { return { fract: { sep, value } } }
 NumberRepeat = !E_NumberEmptyRepeat sep:JA_Free value:NumberDigits { return { repeat: { sep, value }}}
 NumberMagnitude = !E_NumberEmptyMagnitude sep:JE_Free value:NumberDigits { return { magn: { sep, value }}}
 NumberDigits = TI_Free+
 
 E_NumberEndAlone = JI_Free &{ return err("JI cannot be used alone, must be preceded by at least one number part") }
 E_NumberEmptyBase = JU_Free &{ return err("JU must be prefixed by at least one TI") }
-E_NumberEmptyFractional = JO_Free !NumberDigits &{ return err("JO must be followed by at least one TI") }
 E_NumberEmptyRepeat = JA_Free !NumberDigits &{ return err("JA must be followed by at least one TI") }
 E_NumberEmptyMagnitude = JE_Free !NumberDigits &{ return err("JE must be followed by at least one TI") }
 
@@ -505,7 +537,7 @@ BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { kind: "Borrowi
 FreePrefix "free prefix" = FreeMetadata
 FreePostfix "free postfix" = FreeInterjection / FreeParenthetical
 
-FreeInterjection = tag:DE_Free select:SI_Free? verb:(ChainVerbModified / ChainVerbSelect)
+FreeInterjection = tag:DE_Free select:(@SI_Free !E_SelectEmpty)? verb:(ChainVerbModified / ChainVerbSelect)
     { return { kind: "Interjection", tag, select, verb } }
 
 FreeParenthetical = start:DA_Free !E_EmptyParenthetical content:Text !E_UnclosedParenthetical end:DAI_Free

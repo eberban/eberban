@@ -1,0 +1,123 @@
+# Sentences, definitions, axioms, namespaces, paragraphs, erasers. refgram logic/sentences.md.
+
+- text: "a mi dona mo"
+  shape: "a: mi-E > dona-A > mo-E"
+
+- text: "o gi seha etiansa meon"
+  shape: "o gi: seha e(tian sa)(E)-A > meon-E"
+  note: question, gi is the answer predicate
+
+- text: "a gi za ualis"
+  shape: "a: gi-E > za u(alis)-E"
+  note: answer reusing the question's word
+
+- text: "a bi gi"
+  shape: "a: bi (gi-E)"
+  note: negative answer
+
+- text: "on ga etiansa meon"
+  shape: "on ga: e(tian sa)-A > meon-E"
+  note: definition re-exporting the chain's places
+
+- text: "on vze ge ga be bi ma vi bi ge fi bi ga"
+  shape: "on vze: ge ga be: bi (ma-E[vi: bi (ge-A) | fi: bi (ga-A)])"
+  note: definition with an argument list, from the dictionary entry of vze
+  source: dictionary vze
+
+- text: "nu ga"
+  shape: "nu ga"
+
+- text: "ni ga"
+  shape: "ni ga"
+
+- text: "nu gi pi ga"
+  shape: "nu gi/ga"
+  note: namespaced word after NI
+
+- text: "onu ga mian"
+  shape: "onu ga: mian-E"
+
+- text: "oni ga mian"
+  shape: "oni ga: mian-E"
+
+- text: "oia espuackuil fsan"
+  shape: "oia e(spua ckuil): fsan-E"
+  note: setting a default
+  source: refgram logic/default.md
+
+- text: "ohi gi ca on ga mian cai"
+  shape: "ohi gi: ca{on ga: mian-E}-E"
+  note: import of a quoted text as namespace gi
+
+- text: "a mi dona gi pi ga"
+  shape: "a: mi-E > dona-A > gi/ga-A"
+
+- text: "no gi pi ga"
+  shape: "no gi/ga"
+
+- text: "noi gi"
+  shape: "noi gi"
+
+- text: "an sufkun"
+  shape: "an: sufkun-E"
+
+- text: "al mo jvin"
+  shape: "al: mo-E > jvin-E"
+
+- text: "a ke ka be ke dona ka"
+  shape: "a: ke ka be: ke-E > dona-A > ka-E"
+  note: argument list on an assertion
+
+- text: "a mi jvin a mo jvin"
+  shape: "a: mi-E > jvin-E | a: mo-E > jvin-E"
+
+- text: "po a mi jvin po a mo jvin"
+  shape: "po: a: mi-E > jvin-E || po: a: mo-E > jvin-E"
+
+- text: "a mi jvin po mo jvin"
+  shape: "a: mi-E > jvin-E || po: (a): mo-E > jvin-E"
+  note: po alone implies a
+
+- text: "poi an sufkun"
+  shape: "poi: an: sufkun-E"
+
+- text: "a e a sai mo jvin"
+  shape: "a: e(a sai)=A > mo-E > jvin-E"
+  note: compound made of particles, the meaning of a itself
+  source: dictionary e a sai
+
+- text: "a sune ra a sunu"
+  shape: "a: sune-A ra | a: sunu-A"
+  note: erasing a valid sentence
+  source: refgram logic/sentences.md
+
+- text: "a sune a not eberban text ra a sunu"
+  shape: "a: sune-A | ~ra | a: sunu-A"
+  note: erasing invalid text back to the last valid sentence
+  source: refgram logic/sentences.md
+
+- text: "a sune ra sunu"
+  error: "cannot be elided"
+
+- text: "a mi jvin ra"
+  shape: "a: mi-E > jvin-E ra"
+  note: erasing the last sentence
+
+- text: "a mi pe buri meon ri bure meon"
+  shape: "a: mi-E > pe({buri=A > meon-E ri} bure-A > meon-E)-A"
+  note: ri erases the current chain inside the bracket
+  source: refgram logic/sentences.md
+
+- text: "a mi buri ri bure meon"
+  shape: "a: {mi-E > buri=A ri} bure-A > meon-E"
+  note: ri erases from the start of the chain, mi included
+
+- text: "o mi dona"
+  error: "O must be followed by a definable word"
+  note: MI particles cannot be defined
+
+- text: "ni mi"
+  error: "NI must be followed by a definable word"
+
+- text: "a mi jvin. a mo jvin"
+  shape: "a: mi-E > jvin-E | a: mo-E > jvin-E"

@@ -1,0 +1,108 @@
+# Chaining: the basic right-grouping structure. refgram logic/chaining.md.
+
+- text: ""
+  shape: "<empty>"
+  note: empty input is a valid text
+
+- text: "   "
+  shape: "<empty>"
+  note: whitespace only is a valid text
+
+- text: "mian"
+  shape: "(a): mian-E"
+  note: a single word is a sentence with an elided a
+
+- text: "mian bjan"
+  shape: "(a): mian-E > bjan-E"
+  source: refgram logic/chaining.md
+
+- text: "mian etiansa"
+  shape: "(a): mian-E > e(tian sa)-A"
+  note: etiansa is a compound of tian and sa, transitive because of sa
+  source: refgram logic/chaining.md
+
+- text: "tce mian"
+  shape: "(a): tce=A > mian-E"
+  note: CCV root, its A place is a predicate place, chaining by equivalence
+  source: refgram logic/chaining.md
+
+- text: "gali mian"
+  shape: "(a): gali=A > mian-E"
+  note: final -i, same as CCV
+  source: refgram logic/chaining.md
+
+- text: "mi dona tcu mian"
+  shape: "(a): mi-E > dona-A > tcu=A > mian-E"
+  note: groups as mi (dona (tcu mian))
+  source: refgram logic/chaining.md
+
+- text: "a tcu mian dona mi"
+  shape: "a: tcu=A > mian-E > dona-A > mi-E"
+  note: grouping trap, this is the set of cats that like me, not all cats like me
+
+- text: "a mian etiansa meon"
+  shape: "a: mian-E > e(tian sa)-A > meon-E"
+
+- text: "mianbjan"
+  shape: "(a): mian-E > bjan-E"
+  note: no space needed between a sonorant-final root and a consonant-initial root
+
+- text: "a mi.mo"
+  shape: "a: mi-E > mo-E"
+  note: any non-letter character is a space
+
+- text: "a mi, mo; bjan."
+  shape: "a: mi-E > mo-E > bjan-E"
+  note: foreign punctuation is whitespace
+
+- text: "a mi dona mo a mo dona mi"
+  shape: "a: mi-E > dona-A > mo-E | a: mo-E > dona-A > mi-E"
+
+- text: "a"
+  error: "at least one"
+  note: a sentence starter with no chain
+
+- text: "a mi ri"
+  error: "at least one"
+  note: erasing the only verb leaves an empty chain
+
+- text: "a ke"
+  shape: "a: ke-E"
+  note: KI variables can stand as verbs
+
+- text: "a ba"
+  shape: "a: ba-E"
+
+- text: "a mi bahi mo"
+  shape: "a: mi-E > bahi-A > mo-E"
+  note: bahi is a transitive predicate argument
+
+- text: "a mi bahe"
+  shape: "a: mi-E > bahe-E"
+
+- text: "a ma"
+  shape: "a: ma-E"
+  note: MI particles are verbs
+
+- text: "a mi mae mo"
+  shape: "a: mi-E > mae=A > mo-E"
+  note: mae is transitive with a predicate place (dictionary field sharing false)
+
+- text: "a mi jvin bai"
+  shape: "a: mi-E > jvin-E > bai-E"
+  note: sentence-level BA appended at the end of the chain
+
+- text: "a gi"
+  shape: "a: gi-E"
+  note: gi-initial GI are intransitive
+
+- text: "a mi ge mo"
+  shape: "a: mi-E > ge-A > mo-E"
+
+- text: "a mi gia mo"
+  shape: "a: mi-E > gia-A > mo-E"
+  note: gia starts with gi but a vowel follows, so it is transitive
+
+- text: "a mi gai mo"
+  shape: "a: mi-E > gai=A > mo-E"
+  note: final -i on a GI means equivalence

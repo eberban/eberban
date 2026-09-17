@@ -17,6 +17,7 @@
     "build-to-deploy": "run-s build-peggy task-vite-build-to-deploy",
     "preview": "vite preview src --outDir ../dist",
     "test": "vitest --reporter=dot",
+    "cli": "node src/cli/eberban.js",
     "build-peggy": "npx peggy ./src/grammar/eberban.peggy -o ./src/grammar/eberban.peggy.js --cache --format es"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@preact/preset-vite": "^2.10.1",
+    "js-yaml": "^4.1.0",
     "npm-run-all": "^4.1.5",
     "peggy": "^5.0.6",
     "typescript": "^6.0.3",

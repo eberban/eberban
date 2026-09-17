@@ -1,0 +1,57 @@
+# Annotations: DI focus, DE interjection, DA/DAI parenthetical, DU scope. refgram grammar/annotations.md.
+# They carry no logical meaning; the shape shows them attached to their word.
+
+- text: "di mian bjan"
+  shape: "(a): di:mian-E > bjan-E"
+
+- text: "die mian"
+  shape: "(a): die:mian-E"
+
+- text: "dia mian"
+  shape: "(a): dia:mian-E"
+
+- text: "duo di mian"
+  shape: "(a): duo.di:mian-E"
+  note: scope prefix before the focus
+
+- text: "du di mian"
+  shape: "(a): du.di:mian-E"
+
+- text: "mian de gali"
+  shape: "(a): mian+de(gali)-E"
+  source: refgram grammar/annotations.md
+
+- text: "mian de sa gali"
+  shape: "(a): mian+de(sa gali)-E"
+  note: interjection verb with SI
+
+- text: "mian dei bjan"
+  shape: "(a): mian+dei(bjan)-E"
+
+- text: "mian de uahaha"
+  shape: "(a): mian+de(u(ahaha))-E"
+  source: refgram grammar/annotations.md
+
+- text: "mian de pe bjan jmu pei"
+  shape: "(a): mian+de(pe(bjan-E > jmu=A))-E"
+  note: a chain as interjection needs brackets
+
+- text: "mian da mi dona mo dai bjan"
+  shape: "(a): mian(da: (a): mi-E > dona-A > mo-E)-E > bjan-E"
+
+- text: "a mi da mo dai"
+  shape: "a: mi(da: (a): mo-E)-E"
+  note: parenthetical after a MI particle
+
+- text: "mian da dai"
+  error: "cannot be empty"
+
+- text: "mian da mi dona mo"
+  error: "Unclosed parenthetical"
+
+- text: "mian dai"
+  error: "no DA scope"
+
+- text: "di a mi"
+  shape: "a: mi-E"
+  note: annotations on sentence starters are kept in the tree but not shown in the shape

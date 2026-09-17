@@ -1,0 +1,80 @@
+# Borrowings (u-) and freeform variables (i-). refgram grammar/borrowings.md, morphonology/morphology.md.
+# Borrowings follow the root rules: vowel-final transitive, consonant-final intransitive, final -i equivalence.
+
+- text: "mi za umia uentropi be"
+  shape: "(a): mi-E > za u(mia entropi)-E"
+  source: refgram grammar/borrowings.md
+
+- text: "umia uentropi"
+  shape: "(a): u(mia entropi)=A"
+  note: one group, the last borrowing decides, entropi ends with -i
+
+- text: "umia be uentropi be"
+  shape: "(a): u(mia)-A > u(entropi)=A"
+  note: be separates two groups
+
+- text: "a umia mo"
+  shape: "a: u(mia)-A > mo-E"
+  note: the group ends at the first non-borrowing
+
+- text: "za udjon"
+  shape: "(a): za u(djon)-E"
+
+- text: "u.ualis"
+  shape: "(a): u(ualis)-E"
+  note: content starting with u, separated by a dot
+
+- text: "u ualis"
+  shape: "(a): u(ualis)-E"
+
+- text: "u'ualis"
+  shape: "(a): u(ualis)-E"
+
+- text: "uualis"
+  shape: "(a): u(alis)-E"
+  note: doubled letters are one letter, so this is ualis, not u + ualis
+
+- text: "u-ualis"
+  warning: "required to start with a space"
+
+- text: "ubob"
+  shape: "(a): u(bob)-E"
+
+- text: "ualis ubob"
+  shape: "(a): u(alis bob)-E"
+  note: two borrowings, one group
+
+- text: "ubobs"
+  error: "invalid pair"
+  note: the pair check fires before the ending check
+
+- text: "ubobd"
+  error: "at most 1 consonant"
+
+- text: "uiuan"
+  shape: "(a): u(iuan)-E"
+  note: glide written as vowel
+
+- text: "uhalo"
+  shape: "(a): u(halo)-A"
+  note: h-initial content
+
+- text: "ubrian"
+  shape: "(a): u(brian)-E"
+  note: a medial pair may start a borrowing
+
+- text: "uparis"
+  shape: "(a): u(paris)-E"
+
+- text: "u-alis"
+  warning: "after the u prefix"
+
+- text: "i.alis"
+  shape: "(a): i(alis)-E"
+
+- text: "ibar"
+  shape: "(a): i(bar)-E"
+  note: freeform variable ending with a consonant
+
+- text: "a mi dona ibar"
+  shape: "a: mi-E > dona-A > i(bar)-E"

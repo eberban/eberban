@@ -48,7 +48,8 @@ __ceu__ is another member of __CE__ that spells the sounds of a quote.
 
 __ca__ (__CA__ family) allows quoting any grammatically correct Eberban text,
 and is terminated by __cai__ (__CAI__). The text can itself contain inner __ca__
-quotes as __cai__ will match its opening __ca__. The quote acts as a predicate
+quotes as __cai__ will match its opening __ca__. The quoted text may be empty (__ca cai__).
+The quote acts as a predicate
 with meaning `[E:tca ecaskan] is text [text].` (__ecaskan__ being the predicate
 word for a grammatically correct Eberban quote, while __skan__ is the word for a
 quote or string of arbitrary data).

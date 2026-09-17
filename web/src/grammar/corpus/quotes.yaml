@@ -1,0 +1,80 @@
+# Quotes: CI, CE/CEI, CA/CAI, CO/COI. refgram grammar/quotes.md.
+
+- text: "ci mian"
+  shape: "(a): ci(mian)-E"
+
+- text: "ci fe"
+  shape: "(a): ci(fe)-E"
+  note: a particle that could not stand alone can be quoted
+  source: refgram grammar/quotes.md
+
+- text: "cie spi"
+  shape: "(a): cie(spi)-E"
+  source: refgram grammar/quotes.md
+
+- text: "ci etiansa"
+  shape: "(a): ci(e(tian sa))-E"
+
+- text: "ci umia"
+  shape: "(a): ci(umia)-E"
+
+- text: "za ce bu o bu tco cei"
+  shape: "(a): za ce(bu o bu tco)-E"
+  note: spelling B-O-B-3
+  source: refgram grammar/quotes.md
+
+- text: "tian de ce ti i a nu cei"
+  shape: "(a): tian+de(ce(ti i a nu))-E"
+  note: spelling quote as an interjection
+  source: refgram grammar/quotes.md
+
+- text: "ce mi cei"
+  shape: "(a): ce(mi)-E"
+
+- text: "ce ihi uhu cei"
+  shape: "(a): ce(ihi uhu)-E"
+  note: units for h and space
+
+- text: "ce cei"
+  error: "A spelling quote needs at least one unit"
+
+- text: "ca mi dona mo cai"
+  shape: "(a): ca{(a): mi-E > dona-A > mo-E}-E"
+
+- text: "ca mi dona ca mo jvin cai cai"
+  shape: "(a): ca{(a): mi-E > dona-A > ca{(a): mo-E > jvin-E}-E}-E"
+  note: nested grammatical quotes
+
+- text: "mi dona ca mo jvin"
+  shape: "(a): mi-E > dona-A > ca{(a): mo-E > jvin-E}-E"
+  note: cai elided at the end of the text
+
+- text: "ca cai"
+  shape: "(a): ca{<empty>}-E"
+  note: empty grammatical quote; the error queued by the failed inner sentence attempt is dropped
+
+- text: "mi dona ve ca a mi jvin a mo jvin vei bjan"
+  shape: "(a): mi-E > dona-A[ve: ca{a: mi-E > jvin-E | a: mo-E > jvin-E}-E] > bjan-E"
+  warning: "discouraged"
+  note: vei closes both the quote (cai elided) and the bind; multi-sentence elision is warned about
+
+- text: "co [hello world]"
+  shape: "(a): co[hello world]-E"
+
+- text: "co bar[a ] b ]bar"
+  shape: "(a): co(bar)[a ] b ]-E"
+  note: delimited foreign quote, a lone ] does not end it
+
+- text: "coi"
+  shape: "(a): coi-E"
+
+- text: "co [unclosed"
+  error: "Unclosed foreign quote"
+
+- text: "co bar[unclosed"
+  error: "Unclosed foreign quote"
+
+- text: "a mi dona co [x ra y] a mo"
+  shape: "a: mi-E > dona-A > co[x ra y]-E | a: mo-E"
+  note: ra inside a closed foreign quote does not erase
+  source: refgram logic/sentences.md

@@ -1,0 +1,52 @@
+# PA echo-resumptive: resume binding to an earlier verb of the chain. Grammar only (eberban.peggy).
+
+- text: "a mi duna meon pa duna vo mo"
+  shape: "a: mi-E > duna-A > meon-E ^pa duna-A[vo: mo-E]"
+  note: PA walks up past meon to duna
+
+- text: "a mi dona etiansa meon pa etiansa ve bjan"
+  shape: "a: mi-E > dona-A > e(tian sa)-A > meon-E ^pa e(tian sa)-A[ve: bjan-E]"
+  note: resuming a compound two steps up
+
+- text: "a mi zi duna meon pa zi duna vo mo"
+  shape: "a: mi-E > zi duna-A > meon-E ^pa zi duna-A[vo: mo-E]"
+  note: ZI modifiers must be repeated
+
+- text: "a mi zi duna meon pa duna vo mo"
+  error: "Failed to resume"
+  note: missing zi in the echo
+
+- text: "a mi duna meon pa sa duna vo mo"
+  shape: "a: mi-E > duna-A > meon-E ^pa sa duna(A)-A[vo: mo-E]"
+  note: leading SI may differ
+
+- text: "a mi duna meon pa duna vo mo pa duna vu ke"
+  shape: "a: mi-E > duna-A > meon-E ^pa duna-A[vo: mo-E] ^pa duna-A[vu: ke-E]"
+  note: two resumes on the same verb
+
+- text: "a mi duna meon pa duna vo mo vei bjan"
+  shape: "a: mi-E > duna-A > meon-E ^pa duna-A[vo: mo-E] > bjan-E"
+  note: chaining continues after the resumed binds
+
+- text: "a mi duna meon pa mi ve bjan"
+  shape: "a: mi-E > duna-A > meon-E ^pa mi-E[ve: bjan-E]"
+  note: resuming the first verb
+
+- text: "a mi dona ve mian etiansa meon vei pa dona va mo"
+  shape: "a: mi-E > dona-A[ve: mian-E > e(tian sa)-A > meon-E] ^pa dona-A[va: mo-E]"
+  note: after vei, PA reaches the parent chain
+
+- text: "a mi dona ve mian vei bjan pa mian vo mo"
+  error: "Failed to resume"
+  note: PA cannot reach a verb inside a closed bind
+
+- text: "a mi pa mian"
+  error: "Failed to resume"
+  note: no earlier mian to resume
+
+- text: "a pa mian"
+  error: "at least one"
+  note: PA cannot start a chain, so the chain is empty
+
+- text: "a mi pa"
+  error: "PA must be followed"

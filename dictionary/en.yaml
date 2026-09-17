@@ -354,7 +354,7 @@ zui:
   family: "ZI"
   gloss: "#instanciate-intransitive"
   tags: [core]
-  transitive: true
+  transitive: false
   short: |
     Instanciate the E predicate place of the prefixed predicate. Place can be
     selected by a following SI. This predicate is intransitive.
@@ -6609,7 +6609,7 @@ e uiuro sfia:
   gloss: "EUR"
   tags: [currency]
   short: "[E:tce gan] is 1 euro (EUR) times [A:tce gan] (default: 1)."
-e u'uzdolar sfia:
+e u.usidolar sfia:
   id: 9uzfmtxv63
   predilex_id: toqomu
   family: "C"
