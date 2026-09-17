@@ -1,0 +1,32 @@
+name: Run web tests
+
+on:
+  push:
+    paths:
+      - web/**
+      - dictionary/en.yaml
+  pull_request:
+    paths:
+      - web/**
+      - dictionary/en.yaml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install NPM dependencies for the website
+        run: |
+          cd web
+          npm install
+          cd ..
+
+      - name: Run the parser tests and the dictionary lint
+        run: |
+          cd web
+          npm run build-peggy
+          npx vitest run
+          cd ..
