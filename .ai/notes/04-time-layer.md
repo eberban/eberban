@@ -64,7 +64,7 @@ any. "Base" refers to the not-yet-written namespaced core described in
 | `pan`, `sken`, `skan` | volumes and spans as atoms | span = path in the instant graph (Model B `dinu`); volume = span plus space, space undefined | space model absent (`event_tenses.md` "Space relations: TODO") |
 | `ski` | event object | pair of (proposition, set of (entity, volume)); predicates can be pair components | "possibly other informations" |
 | `skul`, `e ski kagve` | context key | read key | none |
-| `skun`, `en an skun sai` | context key, `an` | write key with a property evaluated per sentence | `an` determinism (02) |
+| `skun`, `en an skun sai` | context key, `an` | write key with a property evaluated per sentence | none; the property must determine one context for the first evaluator (02) |
 | `sufkun` | per-sentence update | needs the missing sentence-wrapper word or a kernel rule | **no mechanism in current grammar** |
 | `skon` | common timespan | read key, state containment | none once the key exists |
 | `spa spo spui spei spai spi skuli sari` | span endpoints and containment on the graph | Model B relations on `dinu` lists | none for possibility; necessity needs `zvan`-style quantification, absent from Model A |
@@ -77,8 +77,8 @@ any. "Base" refers to the not-yet-written namespaced core described in
 | `e bju ski`, `en spe bju ski`, ... | ordered occurrence lists | list of events ordered by `skinu` | `skinu` notes reference `jini`/`jiri` for ordering; only `jiri` exists in the dictionary |
 
 Summary: relations, events and the anchor/present machinery are implementable with Model B plus
-the map plumbing, and need two decisions (necessity vs possibility in relations; deterministic
-`an`) and one missing word (per-sentence update). Durations, `spe`/`spu` distances, `sma` and the
+the map plumbing, and need one decision (necessity vs possibility in relations) and one missing
+word (per-sentence update). Durations, `spe`/`spu` distances, `sma` and the
 calendar need a metric on instants and calendar data, neither of which the refgram sketches. Those
 are the genuinely hard part, and they are also where most everyday sentences live.
 

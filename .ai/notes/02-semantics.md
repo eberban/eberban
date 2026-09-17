@@ -110,35 +110,21 @@ notes call it the **environment**. It is mutated by O and NI sentences in text o
 distinction matters for the evaluator and for the module story: `c` is a value, the environment
 is a store.
 
-### Quantifier and connective behaviour on `unknown` is unspecified
+### Unknown, KI scope, recursion, `an` (as written, decided 2026-09-17)
 
-Nothing in the refgram says what `∧`, `¬`, `∃`, `∀`, `⇔` do when an operand is unknown. The
-worked examples never involve it. An evaluator must pick a table. Strong Kleene is the obvious
-candidate (unknown ∧ false = false, unknown ∧ true = unknown, ¬unknown = unknown, ∃ = unknown when
-no witness is true and some case is unknown). This is a language decision, not a tooling one. See
-[open-questions.md](open-questions.md).
-
-### KI scope is unspecified
-
-`ki(c,e) = [e is variable x]` gives a name, not a binder. Where `x` is quantified (sentence,
-paragraph, text) is not stated. `bo ke` starts a fresh `x`. Practice in the dictionary and the
-draft chapters uses KI as sentence-local names inside definitions and as text-long pronouns in
-speech; both readings are consistent with the refgram, which is the problem.
-
-### Definitions are the only recursion
-
-`kidvo`, the folds `bla`/`blai`, and the list predicates are recursive `on` definitions. The
-refgram never says whether a recursive definition is a least fixed point, a greatest one, or
-simply an equation. For `kidvo` over an infinite chain the chapter says it "can even handle a
-countable infinity", which reads as the equation view. For an evaluator over a finite world this is
-harmless (iterate to a fixed point); for a prover it must be decided.
-
-### `an` constrains, it does not compute
-
-`an Q` says the next context satisfies `Q`. If `Q` is not functional there are many next contexts.
-The vocabulary designed for `an` (`kagva`-style transformation lists, `en an skun sai`) is
-functional in practice. The rule as written allows nondeterminism; the intended reading is
-probably "the next context is the unique `c'` such that `Q`", which should be said.
+- Connectives and quantifiers on unknown: strong Kleene (`logic/intro.md`). Unknown means "not
+  determined"; a false conjunct or a true witness decides, otherwise unknown propagates.
+- KI scope (`logic/explicit_binding.md`): `bo ke` holds for the rest of the text until reassigned;
+  a KI in a definition's argument list is local to that definition and shadows. `bo` inside an
+  equivalence-bound predicate, and `ze` into one, are still undefined (donkey anaphora).
+- Recursive definitions (`logic/sentences.md`): a definition may use its own word; it denotes what
+  its body derives in finitely many steps, unknown otherwise (the three-valued least fixed point).
+  `kidvo` on an infinite chain is unknown, not false. An evaluator may special-case known concepts
+  (transitive closure, graph reachability) to refine unknown into true or false, never the reverse.
+- `an Q` (`logic/sentences.md`): nondeterministic; following sentences are true when true in every
+  context satisfying `Q`, false when false in every one, unknown otherwise. The evaluator's first
+  version supports only a `Q` that determines one context and reports an error otherwise
+  ([07-tooling-plan.md](07-tooling-plan.md)).
 
 ## Inconsistencies found in the sources
 

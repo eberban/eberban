@@ -33,6 +33,11 @@ and 3 are implemented; the rest is not.
      backends: formula printer in the refgram notation, finite-model evaluator.
    - Constructs without settled semantics produce an explicit unsupported node, never a guess:
      `ze` across definitions, cross-sentence context updates beyond `an`, speaker change.
+   - mia, on `an`: "non deterministic is what matches the most the idea. but as a first step we
+     could only support unique, with a note stating the intent". The evaluator reports an error
+     when `an Q` admits zero or several contexts.
+   - mia, on recursion: the evaluator "could add extra shortcuts/special handling of some concepts
+     to shortcircuit the problematic infinite" cases; shortcuts refine unknown only.
    - Test format: world fixture (atoms, fact tables per undefined root, context fields) plus
      cases `text` → `true | false | unknown`.
 3. **Dictionary lint** (implemented). mia: "why not". `web/src/shared/dict-lint.js`, run by
