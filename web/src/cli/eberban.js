@@ -4,28 +4,19 @@
 //   node src/cli/eberban.js parse "<text>"        shape line, then glosses of the words used
 //   node src/cli/eberban.js parse --json "<text>"  full parse tree as JSON
 //   node src/cli/eberban.js word <word>            class and segmentation of one word
+//   node src/cli/eberban.js lint                   dictionary findings, one per line, exit 1 if any
 //
 // Run from the web/ directory.
 
-import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
 import * as parser from "../grammar/eberban.peggy.js";
+import { loadDictionary } from "../grammar/dictionary-file.js";
 import { shapeText } from "../shared/shape.js";
 import { compoundDictKey, prefixedWordKey } from "../visual-parser/compound-key.js";
 import { generateParticleInfo } from "../shared/particle-gloss.js";
-
-const here = dirname(fileURLToPath(import.meta.url));
-
-function loadDictionary() {
-    const raw = yaml.load(readFileSync(join(here, "..", "..", "..", "dictionary", "en.yaml"), "utf8"));
-    if (typeof raw !== "object" || raw === null) throw new Error(`dictionary: expected a map: ${JSON.stringify(raw)}`);
-    return raw;
-}
+import { lintDictionary } from "../shared/dict-lint.js";
 
 function usage() {
-    console.error("usage: eberban parse [--json] <text> | eberban word <word>");
+    console.error("usage: eberban parse [--json] <text> | eberban word <word> | eberban lint");
     process.exit(2);
 }
 
@@ -111,7 +102,14 @@ function commandWord(args) {
     for (const w of result.warnings ?? []) console.log(`warning: ${w.message.split("\n")[0]}`);
 }
 
+function commandLint() {
+    const findings = lintDictionary(loadDictionary(), parser);
+    for (const f of findings) console.log(`${f.key}\t${f.rule}\t${f.message}`);
+    process.exit(findings.length === 0 ? 0 : 1);
+}
+
 const [command, ...rest] = process.argv.slice(2);
 if (command === "parse") commandParse(rest);
 else if (command === "word") commandWord(rest);
+else if (command === "lint") commandLint();
 else usage();

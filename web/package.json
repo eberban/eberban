@@ -18,7 +18,7 @@
     "preview": "vite preview src --outDir ../dist",
     "test": "vitest --reporter=dot",
     "cli": "node src/cli/eberban.js",
-    "build-peggy": "npx peggy ./src/grammar/eberban.peggy -o ./src/grammar/eberban.peggy.js --cache --format es"
+    "build-peggy": "npx peggy ./src/grammar/eberban.peggy -o ./src/grammar/eberban.peggy.js --cache --format es --allowed-start-rules \"*\""
   },
   "dependencies": {
     "esbuild": "^0.28.0",

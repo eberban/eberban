@@ -7,12 +7,12 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import * as parser from "./eberban.peggy.js";
+import { loadDictionary } from "./dictionary-file.js";
 import { shapeText } from "../shared/shape.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const corpusDir = join(here, "corpus");
-const dictionary = yaml.load(readFileSync(join(here, "..", "..", "..", "dictionary", "en.yaml"), "utf8"));
-if (typeof dictionary !== "object" || dictionary === null) throw new Error(`dictionary: expected a map: ${JSON.stringify(dictionary)}`);
+const dictionary = loadDictionary();
 
 function loadCases(file) {
     const raw = yaml.load(readFileSync(join(corpusDir, file), "utf8"));

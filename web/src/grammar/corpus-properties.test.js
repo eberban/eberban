@@ -1,16 +1,10 @@
 // Properties the grammar must satisfy over the whole dictionary, with no hand-written expectation.
 
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
 import * as parser from "./eberban.peggy.js";
-import { compoundDictKey } from "../visual-parser/compound-key.js";
+import { loadDictionary } from "./dictionary-file.js";
 
-const dictionaryPath = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "dictionary", "en.yaml");
-const dictionary = yaml.load(readFileSync(dictionaryPath, "utf8"));
-if (typeof dictionary !== "object" || dictionary === null) throw new Error(`dictionary: expected a map: ${JSON.stringify(dictionary)}`);
+const dictionary = loadDictionary();
 
 function entriesOfFamily(family) {
     return Object.entries(dictionary)
@@ -31,29 +25,8 @@ function singleStep(text) {
 }
 
 const roots = entriesOfFamily("R");
-const compounds = entriesOfFamily("C");
 
-describe("every dictionary root parses as a single Root verb", () => {
-    for (const root of roots) {
-        it(root, () => {
-            const step = singleStep(root);
-            expect(step.next).toBeUndefined();
-            expect(step.verb.family).toBe("Root");
-            expect(step.verb.word).toBe(root);
-        });
-    }
-});
-
-describe("every dictionary compound parses as a single Compound verb with the same key", () => {
-    for (const key of compounds) {
-        it(key, () => {
-            const step = singleStep(key);
-            expect(step.next).toBeUndefined();
-            expect(step.verb.family).toBe("Compound");
-            expect(compoundDictKey(step.verb)).toBe(key);
-        });
-    }
-});
+// Every key parsing as its declared family is the "family" rule of dictionary-lint.test.js.
 
 // Self-segregating morphology: two roots written without a space segment back into the same
 // two roots. Roots never start with a sonorant, so no space is required between them.
