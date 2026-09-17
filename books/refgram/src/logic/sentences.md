@@ -29,6 +29,10 @@ sentence.
   implicit context argument. The vocabulary contains many predicates designed to easily be used with
   __an__ to provide many important concepts, such as tenses.
 
+  The following sentences are evaluated in every context satisfying the wrapped predicate: a
+  sentence is true when true in all of them, false when false in all of them, and unknown
+  otherwise. In practice the predicate is expected to determine a single context.
+
 - __al__ (injunction): __al__ allows the speaker to make a request/order/command.
 
 > All __A__ particles except __an__ get their meaning from their associated compound __e A sai__
@@ -57,6 +61,9 @@ sentence.
 
   Note that the definition doesn't use the global context argument, and instead uses the context
   argument provided by the sentence using this predicate.
+
+  Definitions may refer to the word they define. A recursive definition denotes what its body can
+  derive in finitely many steps; what it can neither derive nor refute is unknown.
 
 - __oni__ (capturing definition): Same as __on__ but captures the current global context. The
   implicit context argument is ignored.

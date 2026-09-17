@@ -44,3 +44,8 @@ Here is an exemple of a simple predicate :
 
 Any __predicate word__ not yet defined in the dictionnary or by the speaker
 return __unknown/undefined__ for any arguments.
+
+Connectives and quantifiers treat __unknown__ as "not determined": a conjunction is false as soon
+as one operand is false, and unknown when none is false and one is unknown; the negation of
+unknown is unknown; an existential is true when one witness is true, false when every witness is
+false, and unknown otherwise; an equivalence is unknown when either side is unknown.

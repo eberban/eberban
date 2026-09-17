@@ -58,6 +58,12 @@ predicate after __be__.
 __KI__ (all particles starting with _k-_) represent an atom or generic argument
 $(x) and have meaning \\(ki(c,e) = \[\text{$e$ is variable $x$}\]\\).
 
+A __KI__ variable assigned with __bo__ keeps its value for the rest of the text, until it is
+assigned again. A __KI__ listed in the argument list of a definition is local to that definition
+and shadows any outer variable of the same form. How __bo__ inside an equivalence-bound predicate,
+or __ze__ referring to a predicate inside one, behaves is not yet defined (see the anaphora note in
+[transformations](transformations.md)).
+
 __GI__ (all particles starting with _g-_), however, represents a predicate whose
 arity and type will be inferred from its usage in the sentence. All __GI__
 starting with __gi-__ have __intransitive sharing behavior__, while the others starting
