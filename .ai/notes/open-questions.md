@@ -53,5 +53,4 @@ editing the refgram or the dictionary, not only this file.
 
 ## Tooling
 
-26. `family: "n"` for the hesitation entry: keep as a one-off value or give it a family.
-27. `zoni` ("but:") outside the `vz-` connective pattern of `vze`/`vzu`: intended?
+26. `zoni` ("but:") outside the `vz-` connective pattern of `vze`/`vzu`: intended?

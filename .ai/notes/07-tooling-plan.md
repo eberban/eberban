@@ -1,7 +1,7 @@
 # Tooling plan
 
-What was agreed with mia in the session of 2026-09-16/17, with the words that agreed it. Item 1
-is implemented; the rest is not.
+What was agreed with mia in the session of 2026-09-16/17, with the words that agreed it. Items 1
+and 3 are implemented; the rest is not.
 
 ## Constraints
 
@@ -35,11 +35,16 @@ is implemented; the rest is not.
      `ze` across definitions, cross-sentence context updates beyond `an`, speaker change.
    - Test format: world fixture (atoms, fact tables per undefined root, context fields) plus
      cases `text` → `true | false | unknown`.
-3. **Dictionary lint.** mia: "why not". Signature syntax, transitivity versus signature (the check
-   already found `vire` with `[E] visits [E]` and `stini` vowel-final with one place), CCV and
-   final `-i` imply a predicate A place, compound components and `see_also` targets exist,
-   embedded examples parse, morphology validity. No stats command: "there is already counts
-   displayed on the dictionary page".
+3. **Dictionary lint** (implemented). mia: "why not". `web/src/shared/dict-lint.js`, run by
+   `npm run cli -- lint` and by `web/src/grammar/dictionary-lint.test.js`, which fails on any
+   finding (no allowlist). Rules: every key parses as its `family` (particles through the
+   grammar rule of the same name), `family` codes exist in `_family`, signature syntax (first
+   mention typed, places a prefix of EAOU, a predicate-only first place may be written as A,
+   generic predicate type `p(...)` on first mention), root transitivity versus signature, CCV
+   and final `-i` iff predicate A place, gloss colon convention, compound components and
+   `see_also` targets exist, `{...}` references and examples parse, Eberban `definition` fields
+   parse and define their key. A `definition_draft` field is ignored by the lint. No stats
+   command: "there is already counts displayed on the dictionary page".
 4. **Base layer in Eberban** with fixtures, following [05-layering-and-modules.md](05-layering-and-modules.md).
    Then tenses as the first human-vocabulary exercise, measured on the ergonomics test set of
    [04-time-layer.md](04-time-layer.md) once mia has amended it.

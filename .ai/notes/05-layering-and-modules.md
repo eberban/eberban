@@ -44,7 +44,7 @@ Rules that follow from the direction:
 
 ## Module story as written (`logic/sentences.md`, dictionary entries `ohi`, `po`, `poi`, `no`, `noi`)
 
-- `ohi ns <quote>`: import the definitions and enabled axioms of an Eberban text (`[E:tca ecama]`,
+- `ohi ns <quote>`: import the definitions and enabled axioms of an Eberban text (`[E:tca ecaman]`,
   a grammatical quote atom) under namespace `ns`, where `ns` is the definable word right after
   `ohi`. Namespace names and predicate names are independent.
 - `ns pi word`: use a namespaced word.

@@ -136,7 +136,7 @@ harmless (iterate to a fixed point); for a prover it must be decided.
 ### `an` constrains, it does not compute
 
 `an Q` says the next context satisfies `Q`. If `Q` is not functional there are many next contexts.
-The vocabulary designed for `an` (`kagvi`-style transformation lists, `en an skun sai`) is
+The vocabulary designed for `an` (`kagva`-style transformation lists, `en an skun sai`) is
 functional in practice. The rule as written allows nondeterminism; the intended reading is
 probably "the next context is the unique `c'` such that `Q`", which should be said.
 

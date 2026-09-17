@@ -16,7 +16,9 @@ be used to represent an argument's generic type.
 The same letter used in multiple places means the arguments share the same type.
 
 Parentheses `()` represent predicate arguments (as opposed to atom or generic arguments),
-where each argument constraint is listed in between, separated by commas.
+where each argument constraint is listed in between, separated by commas. A generic type shared
+by several predicate arguments carries the parentheses on its first use, `[E:p(...)]`, and later
+uses write the letter alone, `[A:p]`.
 
 > Exemples of meanings:
 >
