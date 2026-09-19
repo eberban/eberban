@@ -24,10 +24,10 @@ __zi__ is called the __short scope negation__.
 > \text{meon}_1(c,e)   &= \text{meon}(c,e) \\\\
 > \\ \\\\
 > \text{bure}_1(c,e,a) &= \color{magenta}{(\neg \text{bure}(c,e,a))} \wedge \text{meon}_1(c,e) \\\\
-> \text{bure}^w_1(c,e) &= \exists a. \text{bure}_1(c,e,a) \\\\
+> \text{bure}_1^w(c,e) &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
-> \text{mi}^w_1(c)     &= \exists e. \text{mi}_1(c,e)
+> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{bure}_1^w(c,e) \\\\
+> \text{mi}_1^w(c)     &= \exists e. \text{mi}_1(c,e)
 > \end{align} \\]
 >
 > Assertion given $(c):\
@@ -42,10 +42,10 @@ other predicates in the chain or explicit bindings.
 >
 > \\[ \begin{align}
 > \text{bure}_1(c,e,a) &= \text{bure}(c,e,a) \wedge \text{meon}(c,e) \\\\
-> \text{bure}^w_1(c,e) &= \color{magenta}{\neg (\exists a. \text{bure}_1(c,e,a))} \\\\
+> \text{bure}_1^w(c,e) &= \color{magenta}{\neg (\exists a. \text{bure}_1(c,e,a))} \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{bure}^w_1(c,e) \\\\
-> \text{mi}^w_1(c)     &= \exists e. \text{mi}_1(c,e)
+> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{bure}_1^w(c,e) \\\\
+> \text{mi}_1^w(c)     &= \exists e. \text{mi}_1(c,e)
 > \end{align} \\]
 >
 > Assertion given $(c):\
@@ -71,9 +71,9 @@ To speak about the name itself, __zai__ must be used:
 
 ## Anaphora
 
-__ze__ allows the speaker to refer to the latest __non-wrapped__ instance of the
-prefixed predicate instead of creating a new instance. Arguments provided to
-this reference predicate (ignoring the implicit context argument) are stated to
+__ze__ allows the speaker to refer to the latest __instance__ of the prefixed
+predicate instead of creating a new instance. Arguments provided to this
+reference predicate (ignoring the implicit context argument) are stated to
 match ones the instance had.
 
 > __mian bure
@@ -84,17 +84,17 @@ match ones the instance had.
 > \text{dona}(c,e,a)                       &= \text{[$e$ likes $a$]} \\\\
 > \\ \\\\
 > \text{bure}_1(c,e,a)                     &= \text{bure}(c,e,a) \\\\
-> \text{bure}^w_1(c,e)                     &= \exists a. \text{bure}_1(c,e,a) \\\\
+> \text{bure}_1^w(c,e)                     &= \exists a. \text{bure}_1(c,e,a) \\\\
 > \\ \\\\
-> \color{magenta}{\text{mian}_1(c,e_1)}    &= \text{mian}(c,e_1) \wedge \text{bure}^w_1(c,e_1) \\\\
-> \text{mian}^w_1(c)                       &= \exists e. \text{mian}_1(c,e) \\\\
+> \color{magenta}{\text{mian}_1(c,e_1)}    &= \text{mian}(c,e_1) \wedge \text{bure}_1^w(c,e_1) \\\\
+> \text{mian}_1^w(c)                       &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
 > \color{magenta}{\text{ze-mian}_1(c,e)}   &= \color{magenta}{e = e_1} \\\\
 > \text{dona}_1(c,e_2,a_2)                 &= \text{dona}(c,e_2,a_2) \wedge \color{magenta}{\text{ze-mian}_1(c,a)} \\\\
-> \text{dona}^w_1(c,e)                     &= \exists a. \text{dona}_1(c,e,a) \\\\
+> \text{dona}_1^w(c,e)                     &= \exists a. \text{dona}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                         &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
-> \text{mi}^w_1(c)                         &= \exists e. \text{mi}_1(c,e) \\\\
+> \text{mi}_1(c,e)                         &= \text{mi}(c,e) \wedge \text{dona}_1^w(c,e) \\\\
+> \text{mi}_1^w(c)                         &= \exists e. \text{mi}_1(c,e) \\\\
 > \end{align} \\]
 >
 > Assertion given $(c): A cat eats something.\
@@ -107,32 +107,46 @@ predicate word to refer the latest compound containing this word.
 > `ze eberban` will refer to the latest `eberban` instance, while `zei ban` will
 > refer to the latest compound containing `ban`, for exemple `eberban`.
 
-Which one is the __latest instance__ is determined by word order in the text, and
-using a predicate defined using this word doesn't make it the __latest__ again.
-Thus in
+Which one is the __latest instance__ is determined by word order in the text.
+Only instances in the speaker's own text count: using a defined word does not
+expose the instances inside its definition. Thus in
 
 _on gia mian bjan a __mian__ bure a gia dona ze mian_,
 
 _ze mian_ refers to the __mian__ in bold in the __a__ sentence, and not the
-__mian__ in __gia__'s definition.
+__mian__ in __gia__'s definition, while in _on gia mian bjan a gia dona ze mian_
+there is no instance of __mian__ to refer to.
 
-However if the last instance of the word is indeed in a definition (or in some
-predicate that can be used multiple times), then __ze__ refers to the last time
-it has been used. Thus in
+What the reference means depends on where the instance sits in the text:
 
-_on gia __mian__ bjan a gia dona ze mian_,
+- If the instance is reachable from the text through conjunctions and
+  existentials only (chaining, sharing bindings, __vi__, __pe__, successive
+  __a__ sentences), the reference is the __same variable__: the existential
+  introduced by the instance now spans the rest of the text, as in the example
+  above.
+- If the instance sits under a __bi__ negation, the reference is the
+  __description__ the negated scope gave it, and nothing satisfies it when the
+  negation holds. In _a mi bi bure meon a ze meon skan_, _ze meon_ means "an
+  apple that I eat", and since there is none, the second sentence is false.
+- If the instance sits inside a predicate handed to another predicate (chaining
+  into a predicate argument, __viX__, a definition body), how its arguments
+  relate to the enclosing sentence is a property of the receiving predicate
+  which is not defined yet (see the TODO below); the reference is __unknown__.
+  In _a mi dona tcu mian a ze mian za uneko_ the second sentence is unknown.
+- If there is no instance at all, the reference is false.
 
-_ze mian_ refers to the __mian__ inside __gia__'s definition, which is last
-used in the __a__ sentence. The text can thus be translated as
-"A beautiful cat which likes itself".
+Inside a definition, __ze__ refers to the instances of the definition body
+first, then to the instances of the text before the definition. The reference
+is fixed when the definition is made.
 
 __zeu__ allows to refer to the __context variable__ used to evaluate the
 __last instance__ of the predicate word, while __zeiu__ does the same to refer
 to the latest compound containing this word.
 
-> TODO: Formalize how anaphora behaves when the last instance was evaluated
-> multiple times with different values. This is related to [donkey anaphora] and
-> is far from trivial to solve.
+> TODO: Define how the arguments of a predicate handed to another predicate
+> relate to the enclosing sentence (the __projection__ of that argument), so that
+> _ze mian_ in _a mi dona tcu mian_ can refer to one of the cats in the set. This
+> is related to [donkey anaphora] and is far from trivial to solve.
 
 [donkey anaphora]: https://en.wikipedia.org/wiki/Donkey_sentence
 
@@ -140,9 +154,11 @@ to the latest compound containing this word.
 
 > A related concept is __forethought reference__ using __KI/GI__ variables. A
 > __KI/GI__ variable is first assigned by prefixing with __bo__ before being
-> used in reference. Such __KI__ variables can be used similarly to pronouns in
-> other languages. Such __GI__ variables are more complex to use, but are
-> necessary to define some concepts of Eberban's vocabulary.
+> used in reference: the variable is the __E__ argument of the prefixed word's
+> instance, and the rules above decide what a later use of the variable refers
+> to. Such __KI__ variables can be used similarly to pronouns in other
+> languages. Such __GI__ variables are more complex to use, but are necessary to
+> define some concepts of Eberban's vocabulary.
 
 # Instantiation
 

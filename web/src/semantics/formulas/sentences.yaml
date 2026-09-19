@@ -1,0 +1,111 @@
+# Sentences: definitions, argument lists, context update, axioms, erasers. refgram logic/sentences.md.
+
+- text: "on gia mian jvin"
+  note: a definition without argument list re-exports the chain's places
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    mian_1(c,e) := mian(c,e) ∧ jvin_1(c,e)
+    gia(c,e) := mian_1(c,e)
+    define gia
+
+- text: "on ga etiansa meon"
+  formula: |
+    meon_1(c,e) := meon(c,e)
+    etiansa_1(c,e,a) := etiansa(c,e,a) ∧ meon_1(c,a)
+    ga(c,e,a) := etiansa_1(c,e,a)
+    define ga
+
+- text: "on vze ge ga be bi ma vi bi ge fi bi ga"
+  source: dictionary vze
+  note: GI parameters take their arity from use, here 0-ary propositions
+  formula: |
+    vze(c,ge,ga) := ma_1^w(c) where
+        ge_1(c) := ge(c)
+        ge_1^w(c) := ¬ge_1(c)
+        ga_1(c) := ga(c)
+        ga_1^w(c) := ¬ga_1(c)
+        ma_1(c,e) := ma(c,e) ∧ ge_1^w(c) ∧ ga_1^w(c)
+        ma_1^w(c) := ¬(∃e. ma_1(c,e))
+    define vze
+
+- text: "on vze ge ga be bi ma vi bi ge fi bi ga a vze mian meon"
+  note: using a defined word takes its places from the definition
+  formula: |
+    vze(c,ge,ga) := ma_1^w(c) where
+        ge_1(c) := ge(c)
+        ge_1^w(c) := ¬ge_1(c)
+        ga_1(c) := ga(c)
+        ga_1^w(c) := ¬ga_1(c)
+        ma_1(c,e) := ma(c,e) ∧ ge_1^w(c) ∧ ga_1^w(c)
+        ma_1^w(c) := ¬(∃e. ma_1(c,e))
+    define vze
+
+    meon_1(c,e) := meon(c,e)
+    mian_1(c,e) := mian(c,e) ∧ meon_1(c,e)
+    mian_1^w(c) := ∃e. mian_1(c,e)
+    vze_1(c,E,A) := vze(c,E,A) ∧ A ≡ mian_1^w
+    vze_1^w(c) := ∃E ∃A. vze_1(c,E,A)
+    assert vze_1^w(c)
+
+- text: "a ke ka be ke dona ka"
+  note: argument list on an assertion, closed existentially
+  formula: |
+    a_1(c,x_ke,x_ka) := ke_1^w(c) where
+        ka_1(c,e) := (e = x_ka)
+        dona_1(c,e,a) := dona(c,e,a) ∧ ka_1(c,a)
+        dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+        ke_1(c,e) := (e = x_ke) ∧ dona_1^w(c,e)
+        ke_1^w(c) := ∃e. ke_1(c,e)
+    a_1^w(c) := ∃x_ke ∃x_ka. a_1(c,x_ke,x_ka)
+    assert a_1^w(c)
+
+- text: "an sufkun"
+  note: context update, the next context is the exposed place
+  formula: |
+    sufkun_1(c,e) := sufkun(c,e)
+    context sufkun_1(c,c')
+
+- text: "onu ga mian"
+  formula: |
+    mian_1(c,e) := mian(c,e)
+    ga(c,e) := mian_1(c,e)
+    define ga
+    axiom ga
+
+- text: "oni ga mian"
+  formula: |
+    mian_1(c,e) := mian(c,e)
+    ga(c,e) := mian_1(c,e)
+    define ga capturing c
+
+- text: "nu ga ni ga"
+  formula: |
+    axiom ga
+    retract ga
+
+- text: "o gi mian"
+  note: a question defines the answer word
+  formula: |
+    mian_1(c,e) := mian(c,e)
+    gi(c,e) := mian_1(c,e)
+    question gi
+
+- text: "a mi jvin ra a mo jvin"
+  note: the erased sentence is dropped
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    mo_1(c,e) := mo(c,e) ∧ jvin_1(c,e)
+    mo_1^w(c) := ∃e. mo_1(c,e)
+    assert mo_1^w(c)
+
+- text: "a mi jvin a mo jvin"
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    mi_1(c,e) := mi(c,e) ∧ jvin_1(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)
+
+    jvin_2(c,e) := jvin(c,e)
+    mo_1(c,e) := mo(c,e) ∧ jvin_2(c,e)
+    mo_1^w(c) := ∃e. mo_1(c,e)
+    assert mo_1^w(c)

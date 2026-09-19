@@ -1,0 +1,35 @@
+# Constructs the lowering marks as unsupported instead of guessing. Each case names the
+# substring expected in the unsupported list.
+
+- text: "a mi katmi sia jvin"
+  unsupported: "transparent SI"
+
+- text: "a peo mian bu meon pei"
+  unsupported: "peo enumeration"
+
+- text: "a mi dona ci mian"
+  unsupported: "SingleWordQuote"
+
+- text: "a mi dona e uiuro sfia jo ta"
+  unsupported: "Number"
+
+- text: "al mo jvin"
+  unsupported: "al sentence"
+
+- text: "ohi gi ca on ga mian cai"
+  unsupported: "ohi sentence"
+
+- text: "a mi dona gi pi ga"
+  unsupported: "namespaced word"
+
+- text: "a mi duna meon pa duna vo mo"
+  unsupported: "pa resume"
+
+- text: "a mi dona bai"
+  unsupported: "bai: sentence argument"
+
+- text: "a mi dona ba"
+  unsupported: "ba outside an argument list"
+
+- text: "a zeu mian"
+  unsupported: "zeu on mian"

@@ -25,9 +25,9 @@ __ve, va, vo, vu__ allow binding atom (or generic) arguments :
 > \text{meon}_1(c,e)     &= \text{meon}(c,e) \\\\
 > \\ \\\\
 > \text{duna}_1(c,e,a,o) &= \text{duna}(c,e,a,o) \color{magenta}{\wedge \text{mo}_1(c,o)} \wedge \text{meon}_1(c,a) \\\\
-> \text{duna}^w_1(c,e)   &= \exists a \exists o. \text{duna}_1(c,e,a,o) \\\\
+> \text{duna}_1^w(c,e)   &= \exists a \exists o. \text{duna}_1(c,e,a,o) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{duna}_1^w(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -60,9 +60,10 @@ $(x) and have meaning \\(ki(c,e) = \[\text{$e$ is variable $x$}\]\\).
 
 A __KI__ variable assigned with __bo__ keeps its value for the rest of the text, until it is
 assigned again. A __KI__ listed in the argument list of a definition is local to that definition
-and shadows any outer variable of the same form. How __bo__ inside an equivalence-bound predicate,
-or __ze__ referring to a predicate inside one, behaves is not yet defined (see the anaphora note in
-[transformations](transformations.md)).
+and shadows any outer variable of the same form. Inside a definition or a bound predicate, __bo__
+assigns the variable for the rest of that predicate only, each time it is instantiated. A __KI__
+that was never assigned is false. What a variable refers to follows the anaphora rules of
+[transformations](transformations.md).
 
 __GI__ (all particles starting with _g-_), however, represents a predicate whose
 arity and type will be inferred from its usage in the sentence. All __GI__
@@ -81,17 +82,17 @@ used in the inner predicate. Which __BA__ member is used doesn't matter.
 > \text{etiansa}(c,e,a)     &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
 > \text{etiansa}_1(c,e,a)   &= \text{etiansa}(c,e,a) \wedge \color{magenta}{\text{ke}_1(c,a)} \\\\
-> \text{etiansa}^w_1(c,e)   &= \exists a. \text{etiansa}_1(c,e,a) \\\\
+> \text{etiansa}_1^w(c,e)   &= \exists a. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
-> \text{mian}^w_1(c)     &= \exists e. \text{mian}_1(c,e) \\\\
+> \text{mian}_1(c,e)     &= \text{mian}(c,e) \wedge \text{etiansa}_1^w(c,e) \\\\
+> \text{mian}_1^w(c)     &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
-> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}^w_1(c) \\\\
+> \text{va}_1(c,e)       &= \color{magenta}{\text{ke}_1(c,e)} \wedge \text{mian}_1^w(c) \\\\
 > \\ \\\\
 > \text{dona}_1(c,e,a)   &= \text{dona}(c,e,a) \wedge \text{va}_1(c,a) \\\\
-> \text{dona}^w_1(c,e)   &= \exists a. \text{dona}_1(c,e,a) \\\\
+> \text{dona}_1^w(c,e)   &= \exists a. \text{dona}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)       &= \text{mi}(c,e) \wedge \text{dona}_1^w(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -127,9 +128,9 @@ adding a final __-i__ makes it bound by equivalence.
 > \text{bjan}_1(c,e)                     &= \text{bjan}(c,e) \\\\
 > \\ \\\\
 > \text{etiansa}_1(c,e,a)                   &= \text{etiansa}(c,e,a) \wedge \text{bjan}_1(c,\color{magenta}{e}) \\\\
-> \text{etiansa}^w_1(c,\color{magenta}{e})  &= \exists a. \text{etiansa}_1(c,e,a) \\\\
+> \text{etiansa}_1^w(c,\color{magenta}{e})  &= \exists a. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
+> \text{mian}_1(c,e)                     &= \text{mian}(c,e) \wedge \text{etiansa}_1^w(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -146,9 +147,9 @@ is bound by sharing, while adding a final __-i__ makes it bound by equivalence.
 > \text{mian}_1(c,e)                    &= \text{mian}(c,e) \\\\
 > \\ \\\\
 > \text{etiansa}_1(c,e,a)                  &= \text{etiansa}(c,e,a) \wedge \text{mian}_1(c,\color{magenta}{e}) \\\\
-> \text{etiansa}^w_1(c,\color{magenta}{a}) &= \exists e. \text{etiansa}_1(c,e,a) \\\\
+> \text{etiansa}_1^w(c,\color{magenta}{a}) &= \exists e. \text{etiansa}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{etiansa}^w_1(c,e) \\\\
+> \text{meon}_1(c,e)                    &= \text{meon}(c,e) \wedge \text{etiansa}_1^w(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -198,12 +199,12 @@ If we take the example `tce mian` from the previous chapter it is equivalent to
 > \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
 > \\ \\\\
 > \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
-> \text{tuli}^w_1(c,A)              &= \exists e. \text{tuli}_1(c,e,A) \\\\
+> \text{tuli}_1^w(c,A)              &= \exists e. \text{tuli}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{katmi}_1(c,e,A)             &= \text{katmi}(c,e,A) \color{magenta}{\wedge \text{tuli}^w_1(c,A)} \\\\
-> \text{katmi}^w_1(c,e)             &= \exists A. \text{katmi}_1(c,e,A) \\\\
+> \text{katmi}_1(c,e,A)             &= \text{katmi}(c,e,A) \color{magenta}{\wedge \text{tuli}_1^w(c,A)} \\\\
+> \text{katmi}_1^w(c,e)             &= \exists A. \text{katmi}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmi}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmi}_1^w(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\
@@ -217,12 +218,12 @@ While using __via__, it has a different meaning :
 > \text{mo}_1(c,e)                  &= \text{mo}(c,e) \\\\
 > \\ \\\\
 > \text{tuli}_1(c,e,A)              &= \text{tuli}(c,e,A) \wedge \text{mo}_1(c,e) \\\\
-> \text{tuli}^w_1(c)                &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
+> \text{tuli}_1^w(c)                &= \exists e. \exists A. \text{tuli}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{katmi}_1(c,e,A)             &= \text{katmi}(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{tuli}^w_1} \\\\
-> \text{katmi}^w_1(c,e)             &= \exists A. \text{katmi}_1(c,e,A) \\\\
+> \text{katmi}_1(c,e,A)             &= \text{katmi}(c,e,A) \color{magenta}{\wedge A \equiv \text{tuli}_1^w} \\\\
+> \text{katmi}_1^w(c,e)             &= \exists A. \text{katmi}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmi}^w_1(c,e) \\\\
+> \text{mi}_1(c,e)                  &= \text{mi}(c,e) \wedge \text{katmi}_1^w(c,e) \\\\
 > \end{align} \\]
 >
 > Given $(c), $(e):\

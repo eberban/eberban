@@ -65,14 +65,38 @@ reduce verbosity in simple cases.
 > \text{etiansa}(c,e,a)                    &= \text{[$e$ eats $a$]} \\\\
 > \\ \\\\
 > \text{etiansa}_1(c,e,a)                  &= \text{etiansa}(c,e,a) \\\\
-> \color{magenta}{\text{etiansa}^w_1(c,e)} &= \color{magenta}{\exists a. \text{etiansa}_1(c,e,a)} \\\\
+> \color{magenta}{\text{etiansa}_1^w(c,e)} &= \color{magenta}{\exists a. \text{etiansa}_1(c,e,a)} \\\\
 > \\ \\\\
-> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{etiansa}^w_1(c,e)
+> \text{mian}_1(c,e) &= \text{mian}(c,e) \wedge \text{etiansa}_1^w(c,e)
 > \end{align} \\]
 >
 > Given $(c),$(e):\
 > $(e) is a cat and there exists an $(a) such that $(e) eats $(a).\
 > $(e) is a cat that eats something.
+
+### Wrapping
+
+The wrapped predicate \\(W_1^w\\) is derived from the constrained predicate
+\\(W_1\\) in four steps, each described in its own chapter:
+
+1. __Selection__: the places the consumer receives, in order. Without __SI__,
+   the first places of \\(W_1\\) up to the count the consumer expects (one for
+   an atom argument, the arity for a predicate argument, none for a sentence);
+   with __SI__, the listed vowels in the listed order
+   ([explicit binding](explicit_binding.md)).
+2. __Defaults__: every hidden place that received no binding is constrained by
+   its default property ([default arguments](default.md)).
+3. __Closure__: the hidden places are bound by existential variables.
+4. __Negation__: a __bi__ prefix negates the whole result
+   ([transformations](transformations.md)).
+
+They are always written as a single line of this shape:
+
+\\[ W_1^w(c, \text{exposed}) = \neg \exists \text{hidden}. W_1(c, \text{all}) \wedge \text{defaults} \\]
+
+where the negation and the default conjuncts appear only when they apply. The
+line is omitted when it would be identical to \\(W_1\\): no hidden place, no
+default, no negation.
 
 ## Predicate argument chaining
 
@@ -91,7 +115,7 @@ with any (correctly typed) arguments, and with a different _context argument_.
 > \\ \\\\
 > \text{mian}_1(c,e)  &= \text{mian}(c,e) \\\\
 > \\ \\\\
-> \text{tce}_1(c,e,A) &= tce(c,e,A) \color{magenta}{\wedge A \Leftrightarrow \text{mian}_1}
+> \text{tce}_1(c,e,A) &= tce(c,e,A) \color{magenta}{\wedge A \equiv \text{mian}_1}
 > \end{align} \\]
 >
 > Given $(c), $(e), $(A):\
@@ -105,14 +129,14 @@ with any (correctly typed) arguments, and with a different _context argument_.
 > \text{gali}(c,e,A)   &= \text{[$e$ is happy about $A$ (0-ary) being true]} \\\\
 > \\ \\\\
 > \text{mian}_1(c,e)  &= \text{mian}(c,e) \\\\
-> \text{mian}^w_1(c)  &= \exists e. \text{mian}_1(c,e) \\\\
+> \text{mian}_1^w(c)  &= \exists e. \text{mian}_1(c,e) \\\\
 > \\ \\\\
-> \text{gali}_1(c,e,A) &= gali(c,e,A) \wedge A \Leftrightarrow \text{mian}^w_1
+> \text{gali}_1(c,e,A) &= gali(c,e,A) \wedge A \equiv \text{mian}_1^w
 > \end{align} \\]
 >
 > Given $(c), $(e), $(A):\
 > $(e) is happy about $(A) being true, and $(A) is equivalent to
-> \\(\text{mian}^w_1\\).\
+> \\(\text{mian}_1^w\\).\
 > $(e) is happy that there exist a cat.
 
 ## Longer chains
@@ -129,13 +153,13 @@ right-grouping order (`A (B (C D))`).
 > \\ \\\\
 > \text{mian}_1(c,e)   &= \text{mian}(c,e) \\\\
 > \\ \\\\
-> \text{tcu}_1(c,e,A)  &= \text{tcu}(c,e,A) \wedge A \Leftrightarrow \text{mian}_1 \\\\
-> \text{tcu}^w_1(c,e)  &= \exists A. \text{tcu}_1(c,e,A) \\\\
+> \text{tcu}_1(c,e,A)  &= \text{tcu}(c,e,A) \wedge A \equiv \text{mian}_1 \\\\
+> \text{tcu}_1^w(c,e)  &= \exists A. \text{tcu}_1(c,e,A) \\\\
 > \\ \\\\
-> \text{dona}_1(c,e,a) &= \text{dona}(c,e,a) \wedge \text{tcu}^w_1(c,a) \\\\
-> \text{dona}^w_1(c,e) &= \exists a. \text{dona}_1(c,e,a) \\\\
+> \text{dona}_1(c,e,a) &= \text{dona}(c,e,a) \wedge \text{tcu}_1^w(c,a) \\\\
+> \text{dona}_1^w(c,e) &= \exists a. \text{dona}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e)
+> \text{mi}_1(c,e)     &= \text{mi}(c,e) \wedge \text{dona}_1^w(c,e)
 > \end{align} \\]
 >
 > Given $(c), $(e):\

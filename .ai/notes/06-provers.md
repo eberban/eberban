@@ -9,7 +9,7 @@ Analysis throughout. Nothing here is decided.
 
 From [02-semantics.md](02-semantics.md), a lowered sentence is a formula in:
 
-- higher-order logic: predicates are passed as arguments and compared by `⇔` over all their
+- higher-order logic: predicates are passed as arguments and compared by `≡` over all their
   arguments;
 - `∃` from wrapping, `∀` from `mao` and from equivalence, `∧` from chaining and binds, `¬` from
   `zi`/`bi`;
@@ -28,7 +28,7 @@ Everything a target lacks must either be encoded or be declared out of scope for
 | `∃` from wrapping | free logic variables | direct |
 | `on` definitions, recursion (`kidvo`, folds) | clauses | direct; termination needs tabling |
 | predicate arguments | `call/N`, or terms naming predicates | workable |
-| `⇔` between predicates | no native form | encode as equal extension over a finite domain, or as a named equivalence fact |
+| `≡` between predicates | no native form | encode as equal extension over a finite domain, or as a named equivalence fact |
 | `∀` (`mao`) | `forall/2` over a finite domain, or negation of a counterexample | finite only |
 | `¬` | negation as failure: closed world | conflicts with unknown-by-default |
 | unknown | XSB well-founded semantics has a third value (undefined); SWI does not | XSB is the candidate (verify current support) |
@@ -49,7 +49,7 @@ consistent / what does it admit". Neither gives proofs about infinite domains.
 | Eberban | Lean | Fit |
 |---|---|---|
 | predicates | `Ctx → Atom → ... → Tri` where `Tri` is a three-valued type, or `Prop` when unknown is out of scope | direct |
-| `⇔` between predicates | `∀ x, P x ↔ Q x` (bivalent) or a `Tri`-valued equivalence | direct |
+| `≡` between predicates | `∀ x, P x ↔ Q x` (bivalent) or a `Tri`-valued equivalence | direct |
 | `∃`, `∀`, `¬`, `∧` | native for `Prop`; hand-defined for `Tri` (strong Kleene) | direct |
 | `on` | `def` | direct; recursion needs a termination proof or `partial` |
 | axioms | hypotheses or `axiom` | direct |
@@ -75,7 +75,7 @@ once the lowering exists; no proofs.
 ```
 PEG parse tree
    → lowering (own intermediate form: typed formula with c, Tri, defs, axioms)
-      → TypeScript evaluator on world fixtures      (fast loop, first target)
+      → evaluator on world fixtures                 (fast loop, first target; design open, 07 item 4)
       → Prolog / ASP export of the same fixtures    (cross-check, second opinion)
       → Lean export of the kernel rules             (specification, hand proofs)
       → SMT export                                  (consistency, counterexamples)

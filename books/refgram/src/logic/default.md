@@ -46,14 +46,14 @@ Here is an example with all default bindings added:
 > \\ \\\\
 > \text{espuackuil}_1(c,e,a)    &= \text{espuackuil}(c,e,a) \\\\
 > \text{zoia-espuackuil}_1(c,e) &= \text{zoia-espuackuil}(c,e) \\\\
-> \text{espuackuil}^w_1(c,e)    &= \exists a. \text{espuackuil}_1(c,e,a) \color{magenta}{\wedge \text{zoia-espuackuil}_1(c,a)} \\\\
+> \text{espuackuil}_1^w(c,e)    &= \exists a. \text{espuackuil}_1(c,e,a) \color{magenta}{\wedge \text{zoia-espuackuil}_1(c,a)} \\\\
 > \\ \\\\
-> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuackuil}^w_1(c,e) \\\\
+> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuackuil}_1^w(c,e) \\\\
 > \text{zoia-dona}_1(c,e)       &= \text{zoia-dona}(c,e) \\\\
-> \text{dona}^w_1(c,e)          &= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\\\
+> \text{dona}_1^w(c,e)          &= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)              &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
-> \text{mi}^w_1(c)              &= \exists e. \text{mi}_1(c,e) \\\\
+> \text{mi}_1(c,e)              &= \text{mi}(c,e) \wedge \text{dona}_1^w(c,e) \\\\
+> \text{mi}_1^w(c)              &= \exists e. \text{mi}_1(c,e) \\\\
 > \end{align} \\]
 >
 > I like the home planet of humans (Earth, until humans start to live on other planets).
@@ -70,14 +70,14 @@ Manually binding the argument will prevent the default bind to be added:
 > \text{mian}_1(c,e)            &= \text{mian}(c,e) \\\\
 > \\ \\\\
 > \text{espuackuil}_1(c,e,a)    &= \text{espuackuil}(c,e,a) \color{magenta}{\wedge \text{mian}_1(c,e)}\\\\
-> \text{espuackuil}^w_1(c,e)    &= \exists a. \text{espuackuil}_1(c,e,a) \\\\
+> \text{espuackuil}_1^w(c,e)    &= \exists a. \text{espuackuil}_1(c,e,a) \\\\
 > \\ \\\\
-> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuackuil}^w_1(c,e) \\\\
+> \text{dona}_1(c,e,a)          &= \text{dona}(c,e,a) \wedge \text{espuackuil}_1^w(c,e) \\\\
 > \text{zoia-dona}_1(c,e)       &= \text{zoia-dona}(c,e) \\\\
-> \text{dona}^w_1(c,e)          &= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\\\
+> \text{dona}_1^w(c,e)          &= \exists a. \text{dona}_1(c,e,a) \color{magenta}{\wedge \text{zoia-dona}_1(c,a)} \\\\
 > \\ \\\\
-> \text{mi}_1(c,e)              &= \text{mi}(c,e) \wedge \text{dona}^w_1(c,e) \\\\
-> \text{mi}^w_1(c)              &= \exists e. \text{mi}_1(c,e) \\\\
+> \text{mi}_1(c,e)              &= \text{mi}(c,e) \wedge \text{dona}_1^w(c,e) \\\\
+> \text{mi}_1^w(c)              &= \exists e. \text{mi}_1(c,e) \\\\
 > \end{align} \\]
 >
 > I like the home planet of cats (still Earth, unless we find or bring cats on other planets).

@@ -1,7 +1,7 @@
 # Tooling plan
 
-What was agreed with mia in the session of 2026-09-16/17, with the words that agreed it. Items 1
-and 3 are implemented; the rest is not.
+What was agreed with mia in the session of 2026-09-16/17, with the words that agreed it. Items 1,
+2 and 3 are implemented; the rest is not.
 
 ## Constraints
 
@@ -26,20 +26,19 @@ and 3 are implemented; the rest is not.
      `npm run cli -- word <w>` reports class, transitivity, segmentation.
    - Expectations are written from the refgram, never bent to the parser. A mismatch is a
      finding for mia or a code fix after mia decides.
-2. **Lowering and evaluator.** mia: "that would be incredible" (lowering); "we'll really need to
-   have tools to interpret those sentences and write tests to ensure they are correct"
-   (evaluator).
-   - One walker over the parse tree implementing [02-semantics.md](02-semantics.md), two
-     backends: formula printer in the refgram notation, finite-model evaluator.
-   - Constructs without settled semantics produce an explicit unsupported node, never a guess:
-     `ze` across definitions, cross-sentence context updates beyond `an`, speaker change.
-   - mia, on `an`: "non deterministic is what matches the most the idea. but as a first step we
-     could only support unique, with a note stating the intent". The evaluator reports an error
-     when `an Q` admits zero or several contexts.
-   - mia, on recursion: the evaluator "could add extra shortcuts/special handling of some concepts
-     to shortcircuit the problematic infinite" cases; shortcuts refine unknown only.
-   - Test format: world fixture (atoms, fact tables per undefined root, context fields) plus
-     cases `text` → `true | false | unknown`.
+2. **Lowering** (implemented). mia: "that would be incredible".
+   - One walker over the parse tree implementing [02-semantics.md](02-semantics.md), with a
+     formula printer in the refgram notation as its backend. TypeScript under
+     `web/src/semantics/` (`tree.ts`, `ir.ts`, `places.ts`, `lower.ts`, `print.ts`), described
+     in its `README.md`. The intermediate form of `ir.ts` is the contract for any later backend.
+   - Printer cases `formulas/*.yaml` (`text`, `formula` as exact printer output, Unicode
+     `∧ ¬ ∃ ≡`), run by `formulas.test.js`. Expectations are written from the refgram, never bent
+     to the code. CLI `npm run cli -- formula "<text>"`.
+   - Supported and unsupported constructs: the "Coverage" section of the module `README.md`.
+     Unsupported constructs produce an explicit node in the output, never a guess. Anaphora
+     follows [02-semantics.md](02-semantics.md); projection is not implemented.
+   - `an Q` lowers to `context Q_1(c,c')`; choosing `c'` is left to whoever evaluates the
+     program. mia: "non deterministic is what matches the most the idea".
 3. **Dictionary lint** (implemented). mia: "why not". `web/src/shared/dict-lint.js`, run by
    `npm run cli -- lint` and by `web/src/grammar/dictionary-lint.test.js`, which fails on any
    finding (no allowlist). Rules: every key parses as its `family` (particles through the
@@ -50,10 +49,15 @@ and 3 are implemented; the rest is not.
    `see_also` targets exist, `{...}` references and examples parse, Eberban `definition` fields
    parse and define their key. A `definition_draft` field is ignored by the lint. No stats
    command: "there is already counts displayed on the dictionary page".
-4. **Base layer in Eberban** with fixtures, following [05-layering-and-modules.md](05-layering-and-modules.md).
+4. **Evaluator** (planned, design and goals to be decided). mia, 2026-09-16: "we'll really need
+   to have tools to interpret those sentences and write tests to ensure they are correct";
+   2026-09-19: "the evaluation part [...] would require the lang to be more mature". It would
+   consume the intermediate form of item 2. Nothing about its shape (test format, world model,
+   handling of `an`, recursion, dictionary definitions) is settled.
+5. **Base layer in Eberban** with fixtures, following [05-layering-and-modules.md](05-layering-and-modules.md).
    Then tenses as the first human-vocabulary exercise, measured on the ergonomics test set of
    [04-time-layer.md](04-time-layer.md) once mia has amended it.
-5. **Vocabulary tooling.** mia: "why not". `propose-root` (generator + collision check + prefix
+6. **Vocabulary tooling.** mia: "why not". `propose-root` (generator + collision check + prefix
    family and vowel-scale patterns + nearest existing forms), `dict add` writing the entry and
    its id. Design guidelines: [09-vocabulary-design.md](09-vocabulary-design.md).
 

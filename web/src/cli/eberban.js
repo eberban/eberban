@@ -5,6 +5,7 @@
 //   node src/cli/eberban.js parse --json "<text>"  full parse tree as JSON
 //   node src/cli/eberban.js word <word>            class and segmentation of one word
 //   node src/cli/eberban.js lint                   dictionary findings, one per line, exit 1 if any
+//   node src/cli/eberban.js formula "<text>"       logical transcription in the refgram notation
 //
 // Run from the web/ directory.
 
@@ -14,10 +15,22 @@ import { shapeText } from "../shared/shape.js";
 import { compoundDictKey, prefixedWordKey } from "../visual-parser/compound-key.js";
 import { generateParticleInfo } from "../shared/particle-gloss.js";
 import { lintDictionary } from "../shared/dict-lint.js";
+import { lowerText } from "../semantics/lower.ts";
+import { printProgram } from "../semantics/print.ts";
 
 function usage() {
-    console.error("usage: eberban parse [--json] <text> | eberban word <word> | eberban lint");
+    console.error("usage: eberban parse [--json] <text> | eberban word <word> | eberban lint | eberban formula [--all-defaults] <text>");
     process.exit(2);
+}
+
+function parseOrExit(text) {
+    try {
+        return parser.parse(text);
+    } catch (e) {
+        if (!(e instanceof Error)) throw e;
+        console.error(`error: ${e.message}`);
+        process.exit(1);
+    }
 }
 
 // Collect every word-like node of a parse tree, in text order.
@@ -59,14 +72,7 @@ function commandParse(args) {
     const json = args[0] === "--json";
     const text = (json ? args.slice(1) : args).join(" ");
     if (text.length === 0) usage();
-    let result;
-    try {
-        result = parser.parse(text);
-    } catch (e) {
-        if (!(e instanceof Error)) throw e;
-        console.error(`error: ${e.message}`);
-        process.exit(1);
-    }
+    const result = parseOrExit(text);
     if (json) {
         console.log(JSON.stringify(result, null, 2));
         return;
@@ -108,8 +114,18 @@ function commandLint() {
     process.exit(findings.length === 0 ? 0 : 1);
 }
 
+function commandFormula(args) {
+    const allDefaults = args[0] === "--all-defaults";
+    const text = (allDefaults ? args.slice(1) : args).join(" ");
+    if (text.length === 0) usage();
+    const program = lowerText(parseOrExit(text), loadDictionary(), { allDefaults });
+    console.log(printProgram(program));
+    for (const reason of program.unsupported) console.log(`unsupported: ${reason}`);
+}
+
 const [command, ...rest] = process.argv.slice(2);
 if (command === "parse") commandParse(rest);
 else if (command === "word") commandWord(rest);
 else if (command === "lint") commandLint();
+else if (command === "formula") commandFormula(rest);
 else usage();

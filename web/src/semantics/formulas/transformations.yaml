@@ -1,0 +1,193 @@
+# ZI and BI negations, anaphora. refgram logic/transformations.md.
+
+- text: "a mi zi bure meon"
+  source: refgram logic/transformations.md
+  note: short negation stays on the base predicate
+  formula: |
+    meon_1(c,e) := meon(c,e)
+    bure_1(c,e,a) := ¬bure(c,e,a) ∧ meon_1(c,a)
+    bure_1^w(c,e) := ∃a. bure_1(c,e,a)
+    mi_1(c,e) := mi(c,e) ∧ bure_1^w(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)
+
+- text: "a mi bi bure meon"
+  source: refgram logic/transformations.md
+  note: wide negation covers the existentials of the wrap
+  formula: |
+    meon_1(c,e) := meon(c,e)
+    bure_1(c,e,a) := bure(c,e,a) ∧ meon_1(c,a)
+    bure_1^w(c,e) := ¬(∃a. bure_1(c,e,a))
+    mi_1(c,e) := mi(c,e) ∧ bure_1^w(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)
+
+- text: "a bi bi mian"
+  note: repeated bi nest and cancel
+  formula: |
+    mian_1(c,e) := mian(c,e)
+    mian_1^w(c) := ¬¬(∃e. mian_1(c,e))
+    assert mian_1^w(c)
+
+- text: "a mian bure a mi dona ze mian"
+  source: refgram logic/transformations.md
+  note: accessible anchor, the witness is hoisted to the text
+  formula: |
+    text ∃e_1
+
+    bure_1(c,e,a) := bure(c,e,a)
+    bure_1^w(c,e) := ∃a. bure_1(c,e,a)
+    mian_1(c,e_1) := mian(c,e_1) ∧ bure_1^w(c,e_1)
+    mian_1^w(c) := mian_1(c,e_1)
+    assert mian_1^w(c)
+
+    ze-mian_1(c,e) := (e = e_1)
+    dona_1(c,e,a) := dona(c,e,a) ∧ ze-mian_1(c,a)
+    dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+    mi_1(c,e) := mi(c,e) ∧ dona_1^w(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)
+
+- text: "a mi bi bure meon a ze meon jvin"
+  source: refgram logic/transformations.md
+  note: anchor under bi, the description reading
+  formula: |
+    text ∃e_1
+
+    meon_1(c,e) := meon(c,e)
+    bure_1(c,e,a) := bure(c,e,a) ∧ meon_1(c,a)
+    bure_1^w(c,e) := ¬(∃a. bure_1(c,e,a))
+    mi_1(c,e_1) := mi(c,e_1) ∧ bure_1^w(c,e_1)
+    mi_1^w(c) := mi_1(c,e_1)
+    assert mi_1^w(c)
+
+    jvin_1(c,e) := jvin(c,e)
+    ze-meon_1(c,e) := bure_1(c,e_1,e) ∧ jvin_1(c,e)
+    ze-meon_1^w(c) := ∃e. ze-meon_1(c,e)
+    assert ze-meon_1^w(c)
+
+- text: "a mi dona tcu mian a ze mian jvin"
+  source: refgram logic/transformations.md
+  note: anchor inside a predicate handed to tcu, unknown without projection
+  formula: |
+    mian_1(c,e) := mian(c,e)
+    tcu_1(c,e,A) := tcu(c,e,A) ∧ A ≡ mian_1
+    tcu_1^w(c,e) := ∃A. tcu_1(c,e,A)
+    dona_1(c,e,a) := dona(c,e,a) ∧ tcu_1^w(c,a)
+    dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+    mi_1(c,e) := mi(c,e) ∧ dona_1^w(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)
+
+    jvin_1(c,e) := jvin(c,e)
+    ze-mian_1(c,e) := unknown ∧ jvin_1(c,e)
+    ze-mian_1^w(c) := ∃e. ze-mian_1(c,e)
+    assert ze-mian_1^w(c)
+
+- text: "a ze mian jvin"
+  note: no anchor, false
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    ze-mian_1(c,e) := ⊥ ∧ jvin_1(c,e)
+    ze-mian_1^w(c) := ∃e. ze-mian_1(c,e)
+    assert ze-mian_1^w(c)
+
+- text: "on gia mian bjan a gia dona ze mian"
+  source: refgram logic/transformations.md
+  note: the mian inside gia's definition is not an anchor
+  formula: |
+    bjan_1(c,e,a) := bjan(c,e,a)
+    bjan_1^w(c,e) := ∃a. bjan_1(c,e,a)
+    mian_1(c,e) := mian(c,e) ∧ bjan_1^w(c,e)
+    gia(c,e) := mian_1(c,e)
+    define gia
+
+    ze-mian_1(c,e) := ⊥
+    dona_1(c,e,a) := dona(c,e,a) ∧ ze-mian_1(c,a)
+    dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+    gia_1(c,e) := gia(c,e) ∧ dona_1^w(c,e)
+    gia_1^w(c) := ∃e. gia_1(c,e)
+    assert gia_1^w(c)
+
+- text: "on gia mian bjan a mian bure a gia dona ze mian"
+  source: refgram logic/transformations.md
+  note: the anchor is the mian of the second sentence
+  formula: |
+    text ∃e_2
+
+    bjan_1(c,e,a) := bjan(c,e,a)
+    bjan_1^w(c,e) := ∃a. bjan_1(c,e,a)
+    mian_1(c,e) := mian(c,e) ∧ bjan_1^w(c,e)
+    gia(c,e) := mian_1(c,e)
+    define gia
+
+    bure_1(c,e,a) := bure(c,e,a)
+    bure_1^w(c,e) := ∃a. bure_1(c,e,a)
+    mian_2(c,e_2) := mian(c,e_2) ∧ bure_1^w(c,e_2)
+    mian_2^w(c) := mian_2(c,e_2)
+    assert mian_2^w(c)
+
+    ze-mian_1(c,e) := (e = e_2)
+    dona_1(c,e,a) := dona(c,e,a) ∧ ze-mian_1(c,a)
+    dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+    gia_1(c,e) := gia(c,e) ∧ dona_1^w(c,e)
+    gia_1^w(c) := ∃e. gia_1(c,e)
+    assert gia_1^w(c)
+
+- text: "a mian bure on gia dona ze mian a mi gia"
+  note: ze inside a definition body binds at definition time to the outer anchor
+  formula: |
+    text ∃e_1
+
+    bure_1(c,e,a) := bure(c,e,a)
+    bure_1^w(c,e) := ∃a. bure_1(c,e,a)
+    mian_1(c,e_1) := mian(c,e_1) ∧ bure_1^w(c,e_1)
+    mian_1^w(c) := mian_1(c,e_1)
+    assert mian_1^w(c)
+
+    ze-mian_1(c,e) := (e = e_1)
+    dona_1(c,e,a) := dona(c,e,a) ∧ ze-mian_1(c,a)
+    gia(c,e,a) := dona_1(c,e,a)
+    define gia
+
+    gia_1(c,e,a) := gia(c,e,a)
+    gia_1^w(c,e) := ∃a. gia_1(c,e,a)
+    mi_1(c,e) := mi(c,e) ∧ gia_1^w(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)
+
+- text: "a bo ke mian a ke jvin"
+  source: refgram logic/explicit_binding.md
+  note: bo anchors the variable to the E witness of its step; a later ke refers to it
+  formula: |
+    text ∃e_1
+
+    mian_1(c,e) := mian(c,e)
+    ke_1(c,e_1) := mian_1(c,e_1)
+    ke_1^w(c) := ke_1(c,e_1)
+    assert ke_1^w(c)
+
+    jvin_1(c,e) := jvin(c,e)
+    ke_2(c,e) := (e = e_1) ∧ jvin_1(c,e)
+    ke_2^w(c) := ∃e. ke_2(c,e)
+    assert ke_2^w(c)
+
+- text: "a ke jvin"
+  note: a KI never assigned is false
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    ke_1(c,e) := ⊥ ∧ jvin_1(c,e)
+    ke_1^w(c) := ∃e. ke_1(c,e)
+    assert ke_1^w(c)
+
+- text: "a mi zue katmi jvin"
+  source: refgram logic/transformations.md
+  note: zue turns the 0-ary A place into a 1-ary one applied to E
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    zue-katmi_1(c,e_1,A_1) := ∃P. katmi(c,e_1,P) ∧ P ≡ zue-katmi-A_1 ∧ A_1 ≡ jvin_1 where
+        zue-katmi-A_1(c) := A_1(c,e_1)
+    zue-katmi_1^w(c,e_1) := ∃A_1. zue-katmi_1(c,e_1,A_1)
+    mi_1(c,e) := mi(c,e) ∧ zue-katmi_1^w(c,e)
+    mi_1^w(c) := ∃e. mi_1(c,e)
+    assert mi_1^w(c)

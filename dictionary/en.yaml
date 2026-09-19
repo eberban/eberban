@@ -1170,7 +1170,7 @@ vzu:
     If [E:()] is then [A:()] (default: true) is true, otherwise [O:()]
     (default: true) is true.
   definition: |
-    on vzu ge ga be
+    on vzu ge ga go be
     vze
       via mai
         vi ge

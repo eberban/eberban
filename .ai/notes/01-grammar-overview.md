@@ -68,7 +68,7 @@ relative to `books/refgram/src/`.
 
 - `zi` negates only the prefixed word. `bi` negates the wrapped predicate, existentials included.
   Both can be repeated; each occurrence negates the next, so `bi bi bure` is `bure`.
-- `za` name from property, `zai` the name itself. `ze` latest non-wrapped instance of the word,
+- `za` name from property, `zai` the name itself. `ze` latest instance of the word,
   `zei` latest compound containing it, `zeu`/`zeiu` the context of that instance.
 - `bo`/`boi` assign a KI/GI. `zu`/`zui` instantiate a predicate argument (transitive/intransitive).
 - `zue` turns `[A:()]` into `[A:(p)]` fed with E.

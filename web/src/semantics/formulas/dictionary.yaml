@@ -1,0 +1,42 @@
+# Definitions taken from the dictionary `definition` fields.
+
+- text: "on kidvo ke ka go be vze vie ke go ka fia bo ki vi ke go ki fi ki kidvo va ka fio go"
+  source: dictionary kidvo
+  note: recursive definition; bo ki inside the body anchors ki for that instantiation only, the
+    two later ki bind to its witness e_1 without leaving the body
+  formula: |
+    kidvo(c,x_ke,x_ka,go) := vze_1^w(c) where
+        ka_1(c,e) := (e = x_ka)
+        go_1(c,e,a) := go(c,e,a) ∧ ka_1(c,a)
+        go_1^w(c,e) := ∃a. go_1(c,e,a)
+        ke_1(c,e) := (e = x_ke) ∧ go_1^w(c,e)
+        ke_1^w(c) := ∃e. ke_1(c,e)
+        ki_2(c,e) := (e = e_1)
+        go_2(c,e,a) := go(c,e,a) ∧ ki_2(c,a)
+        go_2^w(c,e) := ∃a. go_2(c,e,a)
+        ke_2(c,e) := (e = x_ke) ∧ go_2^w(c,e)
+        ke_2^w(c) := ∃e. ke_2(c,e)
+        ka_2(c,e) := (e = x_ka)
+        go_3(c,e,a) := go(c,e,a)
+        kidvo_1(c,e,a,O) := kidvo(c,e,a,O) ∧ ka_2(c,a) ∧ O ≡ go_3
+        kidvo_1^w(c,e) := ∃a ∃O. kidvo_1(c,e,a,O)
+        ki_3(c,e) := (e = e_1) ∧ kidvo_1^w(c,e)
+        ki_3^w(c) := ∃e. ki_3(c,e)
+        ki_1(c,e_1) := ke_2^w(c) ∧ ki_3^w(c)
+        ki_1^w(c) := ∃e_1. ki_1(c,e_1)
+        vze_1(c,E,A) := vze(c,E,A) ∧ E ≡ ke_1^w ∧ A ≡ ki_1^w
+        vze_1^w(c) := ∃E ∃A. vze_1(c,E,A)
+    define kidvo
+
+- text: "on tcie ke ka be ke tca tcihe ka"
+  source: dictionary tcie
+  formula: |
+    tcie(c,x_ke,x_ka) := ke_1^w(c) where
+        ka_1(c,e) := (e = x_ka)
+        tcihe_1(c,e,a) := tcihe(c,e,a) ∧ ka_1(c,a)
+        tcihe_1^w(c,e) := ∃a. tcihe_1(c,e,a)
+        tca_1(c,e,A) := tca(c,e,A) ∧ A ≡ tcihe_1^w
+        tca_1^w(c,e) := ∃A. tca_1(c,e,A)
+        ke_1(c,e) := (e = x_ke) ∧ tca_1^w(c,e)
+        ke_1^w(c) := ∃e. ke_1(c,e)
+    define tcie

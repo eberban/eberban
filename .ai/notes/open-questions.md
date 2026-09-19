@@ -7,9 +7,9 @@ editing the refgram or the dictionary, not only this file.
 
 1. Where defaults live: environment (shared, per word) or context. `default.md` reads as
    environment.
-2. `ze` "non-wrapped instance": confirm the reading "an instance evaluated once with concrete
-   variables". The donkey case stays open by the refgram's own TODO, as does `bo` inside an
-   equivalence-bound predicate.
+2. Projection: how the arguments of a predicate handed to a consumer relate to the enclosing
+   sentence, so that `ze` into `tcu mian` refers to one of the cats. Strategy in 02, section
+   "Projection (not implemented)"; needs assessment. Until then such references are unknown.
 3. `mao` prose versus formula (02, inconsistency 1): which is right.
 4. `bahi`/`bahe` glosses versus the GI rule (02, inconsistency 2): which parenthesis is wrong.
 
