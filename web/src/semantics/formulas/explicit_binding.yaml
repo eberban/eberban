@@ -63,6 +63,46 @@
     mi_1^w(c) := ∃e. mi_1(c,e)
     assert mi_1^w(c)
 
+- text: "a mi dona ba"
+  source: refgram logic/explicit_binding.md
+  note: with no list written, ba appends after the places the chain exports
+  formula: |
+    a_1(c,e,x_ba) := mi_1(c,e) where
+        ba_1(c,e) := (e = x_ba)
+        dona_1(c,e,a) := dona(c,e,a) ∧ ba_1(c,a)
+        dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+        mi_1(c,e) := mi(c,e) ∧ dona_1^w(c,e)
+    a_1^w(c) := ∃e ∃x_ba. a_1(c,e,x_ba)
+    assert a_1^w(c)
+
+- text: "a mi dona va ke be ke etiansa bai"
+  source: refgram logic/explicit_binding.md
+  note: bai passes the written list and appends to the sentence one
+  formula: |
+    a_1(c,e,x_ba) := mi_1(c,e) where
+        va_1(c,x_ke) := ke_1^w(c) where
+            bai_1(c,e) := (e = x_ba)
+            etiansa_1(c,e,a) := etiansa(c,e,a) ∧ bai_1(c,a)
+            etiansa_1^w(c,e) := ∃a. etiansa_1(c,e,a)
+            ke_1(c,e) := (e = x_ke) ∧ etiansa_1^w(c,e)
+            ke_1^w(c) := ∃e. ke_1(c,e)
+        dona_1(c,e,a) := dona(c,e,a) ∧ va_1(c,a)
+        dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+        mi_1(c,e) := mi(c,e) ∧ dona_1^w(c,e)
+    a_1^w(c) := ∃e ∃x_ba. a_1(c,e,x_ba)
+    assert a_1^w(c)
+
+- text: "o gi mo dona bai"
+  source: refgram logic/explicit_binding.md
+  note: the question word exports the place of the chain, then the appended unknown
+  formula: |
+    gi(c,e,x_ba) := mo_1(c,e) where
+        bai_1(c,e) := (e = x_ba)
+        dona_1(c,e,a) := dona(c,e,a) ∧ bai_1(c,a)
+        dona_1^w(c,e) := ∃a. dona_1(c,e,a)
+        mo_1(c,e) := mo(c,e) ∧ dona_1^w(c,e)
+    question gi
+
 - text: "a mi katmi va sae tuli mo"
   source: refgram logic/explicit_binding.md
   note: sharing a predicate place; sae exposes A then E, the consumer takes A

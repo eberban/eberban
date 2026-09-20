@@ -62,6 +62,15 @@
     define ga
     default ga.A
 
+- text: "oia espuackuil fsan ba"
+  note: the sentence list a BA opens holds the place of the default predicate
+  formula: |
+    zoia-espuackuil(c,e,x_ba) := fsan_1(c,e) where
+        ba_1(c,e) := (e = x_ba)
+        fsan_1(c,e) := fsan(c,e) ∧ ba_1(c,e)
+    zoia-espuackuil^w(c,e) := ∃x_ba. zoia-espuackuil(c,e,x_ba)
+    default espuackuil.A
+
 - text: "a mi dona zoia espuackuil"
   source: refgram logic/default.md
   note: zoia names the default predicate itself

@@ -25,11 +25,18 @@ Supported:
 - `zi` and `bi`, repeated.
 - Explicit binds `vX`, `viX`, `fX`, the multi-place forms (`vao`, `vaio`) and the relative forms
   (`vehu`, `vahi`, ...); `vi` for a 0-ary conjunct; SI selection (`se`, `sae`, ...).
-- Argument lists `vX k.. be` with KI and GI variables and `ba`; `bo` on a KI.
+- Argument lists `vX k.. be` with KI and GI variables; `bo` on a KI.
+- `ba` appends an atom argument to the nearest argument list and uses it in place, as an unnamed KI
+  would; `bai` to the sentence argument list, passing any nearer one. Where no list is written the
+  list is the one the chain exports, so the appended argument comes after the exported places: `o gi
+  mo dona bai` gives `gi` the place of the chain and then the unknown, and what the sentence's
+  instruction does not take is closed.
 - `ze` and `zei`, following the anaphora rules of `logic/transformations.md`; `za`, `zai`; `zu`
   and `zui` on a variable; `zue` on a word whose A place is a 0-ary predicate.
 - `zoiX` defaults, set with `oiX` sentences.
-- Sentences `a`, `an`, `on`, `oni`, `onu`, `o`, `nu`, `ni`; erased sentences are skipped.
+- Sentences `a`, `al`, `an`, `on`, `oni`, `onu`, `o`, `oiX`, `nu`, `ni`; erased sentences are
+  skipped. A family and O family each lower their definition one way, and the starter picks the
+  instruction that consumes it: how many places it takes, and what it does with the predicate.
 - Places come from a definition in the text, else from the dictionary signature, else from the
   form rules (E, plus A when the form is transitive). Borrowings are words without an entry, so
   they get the form rules.
@@ -40,13 +47,22 @@ Unsupported, reported as an `unsupported` node, never a guess:
 
 - Transparent SI; `peo` and the other enumeration brackets; `pe` with several items; `bi` on a
   `pe` item.
-- Quotes and numbers; namespaced words and `ohi`; `al` and every other sentence starter; `pa`.
-- `bai` and the other sentence arguments; `ba` outside an argument list.
+- Quotes and numbers; namespaced words, `ohi` and the namespace members of NI (`nohu`, `nohi`,
+  `no`, `noi`); `pa`.
+- `bahi`, `bahe` and the other predicate arguments.
 - `zeu`, `zeiu`; `boi`; `zu` on a non-variable; SI inside stacked ZI; an argument list on a
   multi-place bind; a bind or chain on a place the word does not have.
 
 `ze` into a predicate handed to a consumer (chaining into a predicate place, `viX`, a definition
-body) lowers to `unknown`: the projection of that argument is not defined.
+body) lowers to `unknown`: the projection of that argument is not defined. Projection is the only
+thing the sources leave open here; the other constructs above are simply not walked yet, and the
+refgram settles what they mean:
+
+- Transparent `siX` (`logic/explicit_binding.md`): the combined predicate re-exposes all the places
+  of the predicate on its right, which is bound to the place of the vowel. Distinct from a place
+  being transparent for anaphora, which is the projection notion.
+- `bahi` and `bahe` (`logic/explicit_binding.md`): the `ba` append with a predicate argument,
+  transitive and intransitive; `baihi` and `baihe` the same on the sentence list.
 
 ## Formula cases
 
@@ -72,7 +88,8 @@ Expectations are written from the refgram and the dictionary signatures, never b
 
 One definition per line, in emission order (inner chain steps first, as the refgram). Instances
 of a word are numbered in text order. The parameter list of a definition binds its variables: the
-lines derived inside a definition (an argument list, a `zue` helper) are printed indented under it
+lines derived inside a definition (an argument list written or extended by a BA, a `zue` helper)
+are printed indented under it
 and may use its parameters, while letters (`e a o u`) are always local to their line and named variables
 (`x_ke`, `e_1`) always refer to an enclosing binder.
 
@@ -91,4 +108,5 @@ and may use its parameters, while letters (`e a o u`) are always local to their 
 | `define W`, `question W`, `define W capturing c` | `on`, `o`, `oni` |
 | `axiom W`, `retract W`, `default W.A` | `nu`, `ni`, `oia` |
 | `context Q_1(c,c')` | `an`: the next context is `c'` |
+| `assert W_1^w(c)`, `request W_1^w(c)` | `a`, `al` |
 | `unsupported(reason)` | construct without settled semantics, never a guess |

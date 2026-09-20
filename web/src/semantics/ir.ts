@@ -59,6 +59,7 @@ export interface Def {
 
 export type Statement =
     | { kind: "assert"; def: Def }
+    | { kind: "request"; def: Def }
     | { kind: "context"; def: Def; next: Var }
     | { kind: "define"; word: string; def: Def; capture: boolean; question: boolean }
     | { kind: "axiom"; word: string; enabled: boolean }

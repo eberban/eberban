@@ -13,9 +13,6 @@
 - text: "a mi dona e uiuro sfia jo ta"
   unsupported: "Number"
 
-- text: "al mo jvin"
-  unsupported: "al sentence"
-
 - text: "ohi gi ca on ga mian cai"
   unsupported: "ohi sentence"
 
@@ -25,11 +22,8 @@
 - text: "a mi duna meon pa duna vo mo"
   unsupported: "pa resume"
 
-- text: "a mi dona bai"
-  unsupported: "bai: sentence argument"
-
-- text: "a mi dona ba"
-  unsupported: "ba outside an argument list"
+- text: "a mi dona bahi mian"
+  unsupported: "bahi: predicate argument"
 
 - text: "a zeu mian"
   unsupported: "zeu on mian"

@@ -25,6 +25,44 @@ export function lowerText(text: ParsedText, dictionary: Dictionary, options: Low
 
 type Need = number | "all";
 
+// Whether a definition being lowered is the one of a sentence, which owns the sentence argument
+// list `bai` appends to, or one nested in it.
+type DefRole = "sentence" | "inner";
+
+// Which BA members an argument list further out has to catch: `bai` always appends to the sentence
+// list, `ba` to the nearest list, so a definition with its own list hides the `ba` below it.
+type BAReach = "bai" | "any";
+
+// A sentence of the A family: one lowering of its definition, then the instruction of its starter,
+// which says how many places it takes from the lowered predicate.
+const A_SENTENCES: Record<string, { need: Need; kind: "assert" | "request" | "context" }> = {
+    a: { need: 0, kind: "assert" },
+    al: { need: 0, kind: "request" },
+    an: { need: 1, kind: "context" },
+};
+
+// A sentence of the O family: one lowering of the definition of a word, then the instruction.
+// `place` marks a default sentence, whose definition names the default predicate of that place and
+// so takes one place instead of re-exporting them all.
+interface OInstruction {
+    need: Need;
+    place?: Letter;
+    capture?: true;
+    question?: true;
+    axiom?: true;
+}
+
+const O_SENTENCES: Record<string, OInstruction> = {
+    on: { need: "all" },
+    oni: { need: "all", capture: true },
+    onu: { need: "all", axiom: true },
+    o: { need: "all", question: true },
+    oie: { need: 1, place: "E" },
+    oia: { need: 1, place: "A" },
+    oio: { need: 1, place: "O" },
+    oiu: { need: 1, place: "U" },
+};
+
 interface Lowered {
     def: Def;
     exposed: Var[];
@@ -139,6 +177,27 @@ function and(all: Formula[]): Formula {
     return { kind: "and", items };
 }
 
+// Whether lowering this definition needs an argument list opened for it: a `bai` anywhere below,
+// or a `ba` with no argument list of its own between it and here.
+function needsList(d: Definition, reach: BAReach): boolean {
+    if (hasArgs(d)) return chainNeedsList(d.chain, "bai");
+    return chainNeedsList(d, reach);
+}
+
+function chainNeedsList(chain: Chain, reach: BAReach): boolean {
+    if (verbNeedsList(chain.verb, reach)) return true;
+    for (const group of asArray(chain.explicit_binds)) {
+        for (const bind of group.binds) if (needsList(bind.inner, reach)) return true;
+    }
+    return chain.next !== undefined && chainNeedsList(chain.next, reach);
+}
+
+function verbNeedsList(verb: Verb, reach: BAReach): boolean {
+    if (verb.family === "BA") return verb.word === "bai" || (reach === "any" && verb.word === "ba");
+    const inner: BAReach = verb.args !== undefined ? "bai" : reach;
+    return (verb.items ?? []).some(item => chainNeedsList(item.chain, inner));
+}
+
 function app(pred: PredRef, ctx: Var, args: Var[]): Formula {
     return { kind: "app", pred, ctx: { kind: "var", v: ctx }, args: args.map(v => (v.type.kind === "pred" ? { kind: "pvar", v } : { kind: "var", v })) };
 }
@@ -168,6 +227,8 @@ class Lowerer {
     private paramDefs: Def[] = [];
     // Argument-list definitions whose chain is being lowered, innermost last.
     private readonly openDefs: Def[] = [];
+    // Argument list of the sentence being lowered, written or opened by a BA.
+    private sentenceList: Def | undefined;
     private scopeId = "text";
     private scopeStart = 0;
     private defCounter = 0;
@@ -303,6 +364,14 @@ class Lowerer {
         for (const v of def.params.slice(1)) this.binders.set(v, { kind: "params", def });
     }
 
+    // Innermost argument list open around the current step: what `ba` appends to.
+    private nearestList(): Def | undefined {
+        for (let s: Scope | undefined = this.scope; s !== undefined; s = s.parent) {
+            if (s.def !== undefined) return s.def;
+        }
+        return undefined;
+    }
+
     private lookup(word: string): Var | undefined {
         for (let s: Scope | undefined = this.scope; s !== undefined; s = s.parent) {
             const v = s.vars.get(word);
@@ -317,21 +386,23 @@ class Lowerer {
         if (s.kind.startsWith("Erased")) return;
         const starter = s.starter?.word ?? "a";
         if (s.kind === "A Sentence" && s.definition !== undefined) {
-            if (starter === "a") {
-                const def = this.closeAll(this.lowerDefinition(s.definition, 0, "a"));
-                this.statement({ kind: "assert", def });
-            } else if (starter === "an") {
-                const L = this.lowerDefinition(s.definition, 1, "an");
-                const next = L.exposed[0];
-                if (next === undefined) {
-                    this.statement({ kind: "unsupported", reason: "an: context predicate exposes no place" });
-                    return;
-                }
-                next.display = "c'";
-                this.statement({ kind: "context", def: L.def, next });
-            } else {
+            const instr = A_SENTENCES[starter];
+            if (instr === undefined) {
                 this.statement({ kind: "unsupported", reason: `${starter} sentence` });
+                return;
             }
+            const L = this.sentenceChain(s.definition, instr.need, starter);
+            if (instr.kind !== "context") {
+                this.statement({ kind: instr.kind, def: this.closeAll(L) });
+                return;
+            }
+            const next = L.exposed[0];
+            if (next === undefined) {
+                this.statement({ kind: "unsupported", reason: `${starter}: context predicate exposes no place` });
+                return;
+            }
+            next.display = "c'";
+            this.statement({ kind: "context", def: L.def, next });
             return;
         }
         if (s.kind === "O Sentence" && s.definition !== undefined && s.defined !== undefined) {
@@ -340,24 +411,12 @@ class Lowerer {
                 this.statement({ kind: "unsupported", reason: `${starter}: defined word is not a plain word` });
                 return;
             }
-            if (starter === "on" || starter === "oni" || starter === "onu" || starter === "o") {
-                this.definitionSentence(key, s.defined, s.definition, starter);
-            } else if (/^oi[eaou]$/.test(starter)) {
-                const letter = starter[2]?.toUpperCase() as Letter;
-                const L = this.lowerDefinition(s.definition, 1, starter);
-                const e = L.exposed[0];
-                if (e === undefined) {
-                    this.statement({ kind: "unsupported", reason: `${starter}: default predicate exposes no place` });
-                    return;
-                }
-                const word = `zoi${letter.toLowerCase()}-${key}`;
-                const ctx = this.newContext();
-                const def: Def = { name: defName(word), params: [ctx, e], letters: ["e"], body: this.apply(L.def, ctx, [e]) };
-                this.emit(def);
-                this.setDefault(key, letter, def, word);
-            } else {
+            const instr = O_SENTENCES[starter];
+            if (instr === undefined) {
                 this.statement({ kind: "unsupported", reason: `${starter} sentence` });
+                return;
             }
+            this.definitionSentence(key, s.defined, s.definition, instr);
             return;
         }
         if (s.kind === "NI Sentence" && s.pred !== undefined) {
@@ -372,16 +431,31 @@ class Lowerer {
         this.statement({ kind: "unsupported", reason: `sentence kind ${s.kind}` });
     }
 
+    // Exposes the first places of a definition and closes the rest, as the wrapping step does.
+    private exposeFirst(def: Def, need: number): Def {
+        if (def.params.length - 1 <= need) return def;
+        const ctx = this.newContext();
+        const wrap: Def = {
+            name: `${def.name}^w`,
+            params: [ctx, ...def.params.slice(1, 1 + need)],
+            letters: def.letters.slice(0, need),
+            body: this.exists(def.params.slice(1 + need), this.apply(def, ctx, def.params.slice(1))),
+        };
+        this.emit(wrap);
+        return wrap;
+    }
+
     private setDefault(word: string, place: Letter, def: Def, defaultWord?: string): void {
         this.defaults.set(`${word}.${place}`, def);
         this.env.set(defaultWord ?? `zoi${place.toLowerCase()}-${word}`, { def, places: [{ letter: "E", type: { kind: "atom" } }] });
         this.statement({ kind: "default", word, place, def });
     }
 
-    private definitionSentence(key: string, defined: Verb, d: Definition, starter: string): void {
-        const saved = { scope: this.scope, scopeId: this.scopeId, scopeStart: this.scopeStart, paramDefs: this.paramDefs };
+    private definitionSentence(key: string, defined: Verb, d: Definition, instr: OInstruction): void {
+        const saved = { scope: this.scope, scopeId: this.scopeId, scopeStart: this.scopeStart, paramDefs: this.paramDefs, sentenceList: this.sentenceList };
         this.scopeId = `def:${++this.defCounter}`;
         this.scopeStart = this.indexOf.get(defined) ?? 0;
+        const word = instr.place === undefined ? key : `zoi${instr.place.toLowerCase()}-${key}`;
         let def: Def;
         let places: Place[];
         let headKey: string | undefined;
@@ -389,40 +463,94 @@ class Lowerer {
         const ctx = this.newContext();
         if (hasArgs(d)) {
             const params = this.argParams(d.args);
-            def = { name: key, params: [ctx, ...params.vars], letters: params.letters, body: { kind: "top" }, namedParams: true };
+            def = { name: defName(word), params: [ctx, ...params.vars], letters: params.letters, body: { kind: "top" }, namedParams: true };
             this.bindParams(def);
             this.scope = { parent: this.scope, vars: params.scope, def };
             this.paramDefs = [...this.paramDefs, def];
             this.scopeDefs.set(this.scopeId, def);
+            this.sentenceList = def;
             this.openDefs.push(def);
             const L = this.lowerChain(d.chain, 0);
             this.openDefs.pop();
             def.body = this.apply(L.def, ctx, []);
-            places = params.vars.map(placeOfVar);
+            places = def.params.slice(1).map(placeOfVar);
         } else {
-            def = { name: key, params: [ctx], letters: [], body: { kind: "top" } };
+            def = { name: defName(word), params: [ctx], letters: [], body: { kind: "top" } };
             this.scopeDefs.set(this.scopeId, def);
-            const L = this.lowerChain(d, "all");
-            def.params = [ctx, ...L.exposed];
-            def.letters = L.places.map(placeLetter);
+            // With no list written the word exports the places of the chain, and a BA appends its
+            // argument after them; the lines that use an appended argument print under the word.
+            this.scope = { parent: this.scope, vars: new Map(), def };
+            this.paramDefs = [...this.paramDefs, def];
+            this.sentenceList = def;
+            const owns = needsList(d, "any");
+            if (owns) this.openDefs.push(def);
+            const L = this.lowerChain(d, instr.need);
+            if (owns) this.openDefs.pop();
+            const appended = def.params.slice(1);
+            places = [...L.places, ...appended.map((v, i) => this.appendedPlace(v, L.places.length + i))];
+            def.params = [ctx, ...L.exposed, ...appended];
+            def.letters = places.map(placeLetter);
             def.body = this.apply(L.def, ctx, L.exposed);
-            places = L.places;
             headKey = L.headKey;
             chain = L.headChain;
         }
         this.emit(def);
-        this.env.set(key, { def, places, chain });
-        this.statement({ kind: "define", word: key, def, capture: starter === "oni", question: starter === "o" });
-        if (starter === "onu") this.statement({ kind: "axiom", word: key, enabled: true });
-        // A definition re-exporting places inherits their defaults (refgram default.md).
-        for (const p of places) {
-            const inherited = headKey === undefined ? undefined : this.defaults.get(`${headKey}.${p.letter}`);
-            if (inherited !== undefined) this.setDefault(key, p.letter, inherited);
+        if (instr.place !== undefined) {
+            // The default predicate of a place takes that one place, whatever its list holds.
+            if (instr.need !== "all") def = this.exposeFirst(def, instr.need);
+            def.letters = ["e"];
+            this.setDefault(key, instr.place, def, word);
+        } else {
+            this.env.set(key, { def, places, chain });
+            this.statement({ kind: "define", word: key, def, capture: instr.capture === true, question: instr.question === true });
+            if (instr.axiom === true) this.statement({ kind: "axiom", word: key, enabled: true });
+            // A definition re-exporting places inherits their defaults (refgram default.md).
+            for (const p of places) {
+                const inherited = headKey === undefined ? undefined : this.defaults.get(`${headKey}.${p.letter}`);
+                if (inherited !== undefined) this.setDefault(key, p.letter, inherited);
+            }
         }
         this.scope = saved.scope;
         this.scopeId = saved.scopeId;
         this.scopeStart = saved.scopeStart;
         this.paramDefs = saved.paramDefs;
+        this.sentenceList = saved.sentenceList;
+    }
+
+    // The inner predicate of a sentence: its argument list when one is written, else the places its
+    // chain exports, with what a BA appends after them.
+    private sentenceChain(d: Definition, need: Need, name: string): Lowered {
+        if (hasArgs(d)) return this.lowerDefinition(d, need, name, "sentence");
+        if (!needsList(d, "any")) return this.lowerChain(d, need);
+        const saved = { scope: this.scope, paramDefs: this.paramDefs, sentenceList: this.sentenceList };
+        const ctx = this.newContext();
+        const def: Def = { name: `${name}_${this.nextIndex(name)}`, params: [ctx], letters: [], body: { kind: "top" } };
+        this.scope = { parent: this.scope, vars: new Map(), def };
+        this.paramDefs = [...this.paramDefs, def];
+        this.sentenceList = def;
+        // The appended arguments are parameters of this definition, so its lines print under it.
+        this.openDefs.push(def);
+        const L = this.lowerChain(d, "all");
+        this.openDefs.pop();
+        this.scope = saved.scope;
+        this.paramDefs = saved.paramDefs;
+        this.sentenceList = saved.sentenceList;
+        const appended = def.params.slice(1);
+        const places = [...L.places, ...appended.map((v, i) => this.appendedPlace(v, L.places.length + i))];
+        def.params = [ctx, ...L.exposed, ...appended];
+        def.letters = places.map(placeLetter);
+        def.body = this.apply(L.def, ctx, L.exposed);
+        this.emit(def);
+        if (need === "all") return { def, exposed: def.params.slice(1), places };
+        const narrowed = this.exposeFirst(def, need);
+        return { def: narrowed, exposed: narrowed.params.slice(1), places: places.slice(0, need) };
+    }
+
+    // The place a BA adds at the end of the exported list, `i` counting from the first place.
+    private appendedPlace(v: Var, i: number): Place {
+        const p = placeOfVar(v, i);
+        v.letter = placeLetter(p);
+        return p;
     }
 
     // A sentence-level predicate with exposed places (argument list on an `a` sentence) is closed
@@ -463,20 +591,22 @@ class Lowerer {
 
     // ---- chains ----
 
-    private lowerDefinition(d: Definition, need: Need, name: string): Lowered {
+    private lowerDefinition(d: Definition, need: Need, name: string, role: DefRole = "inner"): Lowered {
         if (!hasArgs(d)) return this.lowerChain(d, need);
         const params = this.argParams(d.args);
         const ctx = this.newContext();
         const def: Def = { name: `${name}_${this.nextIndex(name)}`, params: [ctx, ...params.vars], letters: params.letters, body: { kind: "top" }, namedParams: true };
         this.bindParams(def);
-        const saved = { scope: this.scope, paramDefs: this.paramDefs };
+        const saved = { scope: this.scope, paramDefs: this.paramDefs, sentenceList: this.sentenceList };
         this.scope = { parent: this.scope, vars: params.scope, def };
         this.paramDefs = [...this.paramDefs, def];
+        if (role === "sentence") this.sentenceList = def;
         this.openDefs.push(def);
-        const L = this.lowerChain(d.chain, 0);
+        const L = this.lowerChain(hasArgs(d) ? d.chain : d, 0);
         this.openDefs.pop();
         this.scope = saved.scope;
         this.paramDefs = saved.paramDefs;
+        this.sentenceList = saved.sentenceList;
         def.body = this.apply(L.def, ctx, []);
         this.emit(def);
         const places: Place[] = def.params.slice(1).map(placeOfVar);
@@ -852,11 +982,9 @@ class Lowerer {
             }
         }
         if (verb.family === "BA") {
-            if (key !== "ba") return this.unsupportedBase(`${key}: sentence argument`);
-            let s: Scope | undefined = this.scope;
-            while (s !== undefined && s.def === undefined) s = s.parent;
-            const def = s?.def;
-            if (def === undefined) return this.unsupportedBase("ba outside an argument list");
+            if (key !== "ba" && key !== "bai") return this.unsupportedBase(`${key}: predicate argument`);
+            const def = key === "bai" ? this.sentenceList : this.nearestList();
+            if (def === undefined) return this.unsupportedBase(`${key}: the sentence has no argument list`);
             const v = this.newVar({ kind: "atom" }, BIND_LETTERS[def.params.length - 1] ?? "u", "x_ba");
             def.params.push(v);
             def.letters.push(BIND_LETTERS[def.params.length - 2] ?? "u");

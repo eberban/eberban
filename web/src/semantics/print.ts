@@ -114,6 +114,8 @@ function printStatement(s: Statement): string {
     switch (s.kind) {
         case "assert":
             return `assert ${s.def.name}(c)`;
+        case "request":
+            return `request ${s.def.name}(c)`;
         case "context":
             return `context ${s.def.name}(c,${s.next.display})`;
         case "define":

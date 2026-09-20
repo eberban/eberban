@@ -65,6 +65,23 @@
     sufkun_1(c,e) := sufkun(c,e)
     context sufkun_1(c,c')
 
+- text: "al mo jvin"
+  note: the A family shares one lowering, the starter picks the instruction
+  formula: |
+    jvin_1(c,e) := jvin(c,e)
+    mo_1(c,e) := mo(c,e) ∧ jvin_1(c,e)
+    mo_1^w(c) := ∃e. mo_1(c,e)
+    request mo_1^w(c)
+
+- text: "an sufkun ba"
+  note: the exported place is the next context, the appended argument is closed
+  formula: |
+    an_1(c,e,x_ba) := sufkun_1(c,e) where
+        ba_1(c,e) := (e = x_ba)
+        sufkun_1(c,e) := sufkun(c,e) ∧ ba_1(c,e)
+    an_1^w(c,e) := ∃x_ba. an_1(c,e,x_ba)
+    context an_1^w(c,c')
+
 - text: "onu ga mian"
   formula: |
     mian_1(c,e) := mian(c,e)
