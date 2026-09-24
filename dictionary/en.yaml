@@ -1605,7 +1605,7 @@ star:
   family: "R"
   gloss: "strong"
   tags: [gismu]
-  short: "[E: tce* pan] is strong (able to apply a lot of force)"
+  short: "[E:tce* pan] is strong (able to apply a lot of force)"
   notes: "From Lojban 'tsali'"
 
 jdui:
@@ -1613,7 +1613,7 @@ jdui:
   family: "R"
   gloss: "pays-attention-to:"
   tags: [gismu]
-  short: "[E: tce* pan] pays attention to [A:()] being true"
+  short: "[E:tce* pan] pays attention to [A:()] being true"
   notes: "From Lojban 'jundi'"
 
 gani:
@@ -1621,7 +1621,7 @@ gani:
   family: "R"
   gloss: "approves of:"
   tags: [gismu]
-  short: "[E: tce* pan] approves of the idea of [A:()] being true"
+  short: "[E:tce* pan] approves of the idea of [A:()] being true"
   notes: "From Lojban 'zanru'"
 
 caon:
@@ -1629,7 +1629,7 @@ caon:
   family: "R"
   gloss: "blood"
   tags: [gismu]
-  short: "[E: tce* pan] is blood"
+  short: "[E:tce* pan] is blood"
   notes: "From Lojban 'ciblu'"
 
 dzi:
@@ -1637,7 +1637,7 @@ dzi:
   family: "R"
   gloss: "intentionally:"
   tags: [gismu]
-  short: "[E: tce* pan] intentionally, purposefully satisfies property [A:(p)]"
+  short: "[E:tce* pan] intentionally, purposefully satisfies property [A:(p)]"
   notes: "From Lojban 'zukte'"
 
 spio:
@@ -1645,7 +1645,7 @@ spio:
   family: "R"
   gloss: "converses with"
   tags: [gismu]
-  short: "[E: tce pan] talks to [A: tce pan] about subject [O: tce* man]"
+  short: "[E:tce pan] talks to [A:tce pan] about subject [O:tce* man]"
   notes: "From Lojban 'tavla'. About the event of conversing more than any particular expression"
 
 caflo:
@@ -1653,7 +1653,7 @@ caflo:
   family: "R"
   gloss: "travels to"
   tags: [gismu]
-  short: "[E: tce pan] travels to [A: tce* pan] from [O: tce* pan]"
+  short: "[E:tce pan] travels to [A:tce* pan] from [O:tce* pan]"
   notes: "From Lojban 'klama'"
 
 e zmiri kunu:
@@ -1661,7 +1661,7 @@ e zmiri kunu:
   family: "C"
   gloss: "obliged to:"
   tags: [gismu]
-  short: "[E: tce* pan] feels obligated to make or keep [A:()] true"
+  short: "[E:tce* pan] feels obligated to make or keep [A:()] true"
   notes: "From Lojban 'ei'"
 
 zoul:
