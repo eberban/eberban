@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Colors - Eberban Reference Grammar</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../res/leipzig.min.css">
+        <link rel="stylesheet" href="../res/style.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Morphonology</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../morphonology/morphology.html"><strong aria-hidden="true">2.1.</strong> Morphology</a></li><li class="chapter-item expanded "><a href="../morphonology/phonology.html"><strong aria-hidden="true">2.2.</strong> Phonology</a></li></ol></li><li class="chapter-item expanded "><a href="../logic/intro.html"><strong aria-hidden="true">3.</strong> Logic framework</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../logic/chaining.html"><strong aria-hidden="true">3.1.</strong> Chaining</a></li><li class="chapter-item expanded "><a href="../logic/explicit_binding.html"><strong aria-hidden="true">3.2.</strong> Explicit binding (VI/FI/SI/PE/KI/GI/BA)</a></li><li class="chapter-item expanded "><a href="../logic/sentences.html"><strong aria-hidden="true">3.3.</strong> Sentences (A/O/NI/RA/RI/PO)</a></li><li class="chapter-item expanded "><a href="../logic/primitives.html"><strong aria-hidden="true">3.4.</strong> Logical primitives (MI)</a></li><li class="chapter-item expanded "><a href="../logic/transformations.html"><strong aria-hidden="true">3.5.</strong> Predicate transformations (ZI/BI)</a></li><li class="chapter-item expanded "><a href="../logic/default.html"><strong aria-hidden="true">3.6.</strong> Default arguments</a></li></ol></li><li class="chapter-item expanded "><a href="../dictionary_conventions.html"><strong aria-hidden="true">4.</strong> Dictionary conventions</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Additional grammar</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../grammar/discourse.html"><strong aria-hidden="true">5.1.</strong> Discourse predicates (MI)</a></li><li class="chapter-item expanded "><a href="../grammar/borrowings.html"><strong aria-hidden="true">5.2.</strong> Borrowings (u-)</a></li><li class="chapter-item expanded "><a href="../grammar/compounds.html"><strong aria-hidden="true">5.3.</strong> Compounds (e-)</a></li><li class="chapter-item expanded "><a href="../grammar/quotes.html"><strong aria-hidden="true">5.4.</strong> Quotes (c-)</a></li><li class="chapter-item expanded "><a href="../grammar/enum.html"><strong aria-hidden="true">5.5.</strong> Enumeration (PE/BU)</a></li><li class="chapter-item expanded "><a href="../grammar/adverbs.html"><strong aria-hidden="true">5.6.</strong> Adverbs and prepositions (voi/foi)</a></li><li class="chapter-item expanded "><a href="../grammar/numbers.html"><strong aria-hidden="true">5.7.</strong> Numbers (TI/j-)</a></li><li class="chapter-item expanded "><a href="../grammar/annotations.html"><strong aria-hidden="true">5.8.</strong> Annotations (d-)</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Vocabulary design</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vocabulary/guidelines.html"><strong aria-hidden="true">6.1.</strong> Guidelines</a></li><li class="chapter-item expanded "><a href="../vocabulary/event_tenses.html"><strong aria-hidden="true">6.2.</strong> Event and tenses</a></li><li class="chapter-item expanded "><a href="../vocabulary/calendar_time.html"><strong aria-hidden="true">6.3.</strong> Calendar and time</a></li><li class="chapter-item expanded "><a href="../vocabulary/colors.html" class="active"><strong aria-hidden="true">6.4.</strong> Colors</a></li></ol></li><li class="chapter-item expanded "><a href="../writing/intro.html"><strong aria-hidden="true">7.</strong> Writing systems</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../writing/linear.html"><strong aria-hidden="true">7.1.</strong> Linear writing system</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Planar writing system</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Eberban Reference Grammar</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/eberban/eberban" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="colors"><a class="header" href="#colors">Colors</a></h1>
+<p><strong>zino</strong> is used to speak about the color <strong>A</strong> of thing <strong>E</strong>, perceived by <strong>O</strong> (which defaults
+to the opiner/bzael). It purposefully speaks about the perception of color and not “the real color
+of the object”. For exemple if a white object is only lit with a red light, it will be perceived red
+by the observer (unless they are color blind).</p>
+<p>The words for the colors themselves follow the pattern zmXr and are based on the <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSV coordinate
+system</a>. Colors represent a main coordinate and a range of close coordinates that are considered to
+be similar enough (TODO: specify such acceptable range).</p>
+<ul>
+<li>zmir: E is color white</li>
+<li>zmer: E is color red-ish</li>
+<li>zmar: E is color green-ish</li>
+<li>zmor: E is color blue-ish</li>
+<li>zmur: E is color black</li>
+</ul>
+<p>Words for red/green/blue above are very broad if proper hue precision is unnecessary, but more
+precise colors can be expressed by following the same pattern while combining the vowels :</p>
+<p><img src="color_wheel.png" alt="Color wheel" /></p>
+<p><strong>zmire</strong> and <strong>zmure</strong> allows to speak about ligher (less saturated) and darker (less value)
+colors.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../vocabulary/calendar_time.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../writing/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../vocabulary/calendar_time.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../writing/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../res/leipzig.min.js"></script>
+        <script type="text/javascript" src="../res/leipzig_apply.js"></script>
+        <script type="text/javascript" src="../res/audiobtn.js"></script>
+    </body>
+</html>
