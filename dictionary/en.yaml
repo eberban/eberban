@@ -1605,7 +1605,7 @@ star:
   family: "R"
   gloss: "strong"
   tags: [gismu]
-  short: "[E: tce* pan] is strong (able to apply a lot of force)"
+  short: "[E:tce* pan] is strong (able to apply a lot of force)"
   notes: "From Lojban 'tsali'"
 
 jdui:
@@ -1613,8 +1613,64 @@ jdui:
   family: "R"
   gloss: "pays-attention-to:"
   tags: [gismu]
-  short: "[E: tce* pan] pays attention to [A:()] being true"
+  short: "[E:tce* pan] pays attention to [A:()] being true"
   notes: "From Lojban 'jundi'"
+
+gani:
+  id: 3qxrgmr6lq
+  family: "R"
+  gloss: "approves of:"
+  tags: [gismu]
+  short: "[E:tce* pan] approves of the idea of [A:()] being true"
+  notes: "From Lojban 'zanru'"
+
+caon:
+  id: rcw625tysu
+  family: "R"
+  gloss: "blood"
+  tags: [gismu]
+  short: "[E:tce* pan] is blood"
+  notes: "From Lojban 'ciblu'"
+
+dzi:
+  id: 0fw769djgf
+  family: "R"
+  gloss: "intentionally:"
+  tags: [gismu]
+  short: "[E:tce* pan] intentionally, purposefully satisfies property [A:(p)]"
+  notes: "From Lojban 'zukte'"
+
+spio:
+  id: 2i9fdw2r8q
+  family: "R"
+  gloss: "converses with"
+  tags: [gismu]
+  short: "[E:tce pan] talks to [A:tce pan] about subject [O:tce* man]"
+  notes: "From Lojban 'tavla'. About the event of conversing more than any particular expression"
+
+caflo:
+  id: x7hzhv4sh4
+  family: "R"
+  gloss: "travels to"
+  tags: [gismu]
+  short: "[E:tce pan] travels to [A:tce* pan] from [O:tce* pan]"
+  notes: "From Lojban 'klama'"
+
+e zmiri kunu:
+  id: 87zidjh3jq
+  family: "C"
+  gloss: "obliged to:"
+  tags: [gismu]
+  short: "[E:tce* pan] feels obligated to make or keep [A:()] true"
+  notes: "From Lojban 'ei'"
+
+zoul:
+  id: jzien4kfxc
+  family: "R"
+  gloss: "old"
+  tags: [gismu]
+  short: "[E:tce* man] is old according to [A:tce man] (default: {bzael})."
+  notes: "From Lojban 'slabu'"
 
 # -----
 # Other vocabulary, not yet defined in eberban
