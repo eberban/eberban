@@ -1595,7 +1595,7 @@ kagvihi:
 bine:
   id: z63sux0etc
   family: "R"
-  gloss: "different from"
+  gloss: "different from:"
   tags: [gismu]
   short: "[E:ma] is not the same thing as [A:ma]"
   notes: "From Lojban 'drata'"
@@ -1615,6 +1615,61 @@ jdui:
   tags: [gismu]
   short: "[E: tce* pan] pays attention to [A:()] being true"
   notes: "From Lojban 'jundi'"
+
+gani:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "approves of:"
+  tags: [gismu]
+  short: "[E: tce* pan] approves of the idea of [A:()] being true"
+  notes: "From Lojban 'zanru'"
+
+caon:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "blood"
+  tags: [gismu]
+  short: "[E: tce* pan] is blood"
+  notes: "From Lojban 'ciblu'"
+
+dzi:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "intentionally:"
+  tags: [gismu]
+  short: "[E: tce* pan] intentionally, purposefully satisfies property [A:(p)]"
+  notes: "From Lojban 'zukte'"
+
+spio:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "converses with:"
+  tags: [gismu]
+  short: "[E: tce pan] talks to [A: tce pan] about subject [O: tce* man]"
+  notes: "From Lojban 'tavla'. About the event of conversing more than any particular expression"
+
+caflo:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "travels to:"
+  tags: [gismu]
+  short: "[E: tce pan] travels to [A: tce* pan] from [O: tce* pan]"
+  notes: "From Lojban 'klama'"
+
+e zmiri kunu:
+  id: INSERT_WORD_ID
+  family: "C"
+  tags: [gismu]
+  short: "[E: tce* pan] feels obligated to make or keep [A:()] true"
+  notes: "From Lojban 'ei'"
+
+zoul:
+  id: INSERT_WORD_ID
+  family: "R"
+  gloss: "new"
+  tags: [gismu]
+  short: "[E:tce* man] is old according to [A:tce man] (default: {bzael})."
+  notes: "From Lojban 'klama'"
 
 # -----
 # Other vocabulary, not yet defined in eberban
