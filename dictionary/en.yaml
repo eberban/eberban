@@ -1595,7 +1595,7 @@ kagvihi:
 bine:
   id: z63sux0etc
   family: "R"
-  gloss: "different from:"
+  gloss: "different from"
   tags: [gismu]
   short: "[E:ma] is not the same thing as [A:ma]"
   notes: "From Lojban 'drata'"
@@ -1643,7 +1643,7 @@ dzi:
 spio:
   id: 2i9fdw2r8q
   family: "R"
-  gloss: "converses with:"
+  gloss: "converses with"
   tags: [gismu]
   short: "[E: tce pan] talks to [A: tce pan] about subject [O: tce* man]"
   notes: "From Lojban 'tavla'. About the event of conversing more than any particular expression"
@@ -1651,7 +1651,7 @@ spio:
 caflo:
   id: x7hzhv4sh4
   family: "R"
-  gloss: "travels to:"
+  gloss: "travels to"
   tags: [gismu]
   short: "[E: tce pan] travels to [A: tce* pan] from [O: tce* pan]"
   notes: "From Lojban 'klama'"
@@ -1659,6 +1659,7 @@ caflo:
 e zmiri kunu:
   id: 87zidjh3jq
   family: "C"
+  gloss: "obliged to:"
   tags: [gismu]
   short: "[E: tce* pan] feels obligated to make or keep [A:()] true"
   notes: "From Lojban 'ei'"
