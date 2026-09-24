@@ -1617,7 +1617,7 @@ jdui:
   notes: "From Lojban 'jundi'"
 
 gani:
-  id: INSERT_WORD_ID
+  id: 3qxrgmr6lq
   family: "R"
   gloss: "approves of:"
   tags: [gismu]
@@ -1625,7 +1625,7 @@ gani:
   notes: "From Lojban 'zanru'"
 
 caon:
-  id: INSERT_WORD_ID
+  id: rcw625tysu
   family: "R"
   gloss: "blood"
   tags: [gismu]
@@ -1633,7 +1633,7 @@ caon:
   notes: "From Lojban 'ciblu'"
 
 dzi:
-  id: INSERT_WORD_ID
+  id: 0fw769djgf
   family: "R"
   gloss: "intentionally:"
   tags: [gismu]
@@ -1641,7 +1641,7 @@ dzi:
   notes: "From Lojban 'zukte'"
 
 spio:
-  id: INSERT_WORD_ID
+  id: 2i9fdw2r8q
   family: "R"
   gloss: "converses with:"
   tags: [gismu]
@@ -1649,7 +1649,7 @@ spio:
   notes: "From Lojban 'tavla'. About the event of conversing more than any particular expression"
 
 caflo:
-  id: INSERT_WORD_ID
+  id: x7hzhv4sh4
   family: "R"
   gloss: "travels to:"
   tags: [gismu]
@@ -1657,14 +1657,14 @@ caflo:
   notes: "From Lojban 'klama'"
 
 e zmiri kunu:
-  id: INSERT_WORD_ID
+  id: 87zidjh3jq
   family: "C"
   tags: [gismu]
   short: "[E: tce* pan] feels obligated to make or keep [A:()] true"
   notes: "From Lojban 'ei'"
 
 zoul:
-  id: INSERT_WORD_ID
+  id: jzien4kfxc
   family: "R"
   gloss: "new"
   tags: [gismu]
