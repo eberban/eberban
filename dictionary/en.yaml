@@ -1673,7 +1673,7 @@ zoul:
   notes: "From Lojban 'slabu'"
 
 kcal:
-  id: INSERT_WORD_ID
+  id: jx8vogz6dv
   family: "R"
   gloss: "clown"
   tags: [gismu]
@@ -1681,7 +1681,7 @@ kcal:
   notes: "From Lojban 'xampre'"
 
 smei:
-  id: INSERT_WORD_ID
+  id: w2mlstrgas
   family: "R"
   gloss: "comfortable:"
   tags: [gismu]
@@ -1689,7 +1689,7 @@ smei:
   notes: "From Lojban 'kufra'"
 
 zmei:
-  id: INSERT_WORD_ID
+  id: w0nowz6kbo
   family: "R"
   gloss: "uncomfortable:"
   tags: [gismu]
@@ -1697,7 +1697,7 @@ zmei:
   notes: "From Lojban 'tolkufra'"
 
 smo:
-  id: INSERT_WORD_ID
+  id: 15buhtpfnt
   family: "R"
   gloss: "likely:"
   tags: [gismu]
@@ -1705,7 +1705,7 @@ smo:
   notes: "From Lojban 'lakne'"
 
 vinu:
-  id: INSERT_WORD_ID
+  id: odyr92chcb
   family: "R"
   gloss: "symbol for"
   tags: [gismu]
@@ -2954,7 +2954,7 @@ soeon:
   predilex_id: zayawa
   family: "R"
   gloss: "sky"
-  short: "[E:tce* pan] is is the sky (high troposphere and above)."
+  short: "[E:tce* pan] is the sky (high troposphere and above)."
 cmue:
   id: kx3walxiid
   predilex_id: deludo{A,E}
