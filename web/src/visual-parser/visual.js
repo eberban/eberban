@@ -734,12 +734,13 @@ function renderCompound(verb, extra, depthStyle, nested) {
         if (part.family === "Compound") {
             return renderCompound(part, "vbox-compound-nested", "", true);
         }
+        let word = getWordText(part);
         let partGloss;
-        if (i === lastIdx && part.word === "se") partGloss = SYM_ARROW + "intrans";
-        else if (i === lastIdx && part.word === "sa") partGloss = SYM_ARROW + "trans";
-        else if (i === lastIdx && part.word === "sai") partGloss = SYM_ARROW + "trans(pred)";
-        else partGloss = lookupGloss(part.word);
-        return compoundPart(part.word, partGloss, "", lookupShort(part.word));
+        if (i === lastIdx && word === "se") partGloss = SYM_ARROW + "intrans";
+        else if (i === lastIdx && word === "sa") partGloss = SYM_ARROW + "trans";
+        else if (i === lastIdx && word === "sai") partGloss = SYM_ARROW + "trans(pred)";
+        else partGloss = lookupGloss(word);
+        return compoundPart(word, partGloss, "", lookupShort(word));
     }).join("");
 
     if (verb.postfix) {
