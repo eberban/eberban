@@ -126,14 +126,12 @@ export function parse() {
     $('#result-row').slideDown();
 
     try {
-        annotationStore = {};
-        annotationNextId = 0;
         const result = parser.parse(input, { grammarSource: "form" });
         $('#parse-result-raw').html(`<pre>${JSON.stringify(result, null, 4)}</pre>`);
         $('#parse-result-tree').html(renderTree(result));
         setupTreeToggles();
         $('#parse-result-glossing').html(renderGlosses(collectWords(result)));
-        $('#parse-result-boxes').html(renderText(result));
+        $('#parse-result-boxes').html(renderBoxes(result).html);
         setupTooltips();
         setupAnnotationPopovers();
         $('#parser_error_box').hide();
@@ -164,6 +162,14 @@ export function parse() {
 // ============================================================
 // Top-level rendering
 // ============================================================
+
+/** Render a parse result to box HTML. Annotation popover HTML is returned alongside, keyed by id. */
+export function renderBoxes(output) {
+    annotationStore = {};
+    annotationNextId = 0;
+    let html = renderText(output);
+    return { html, annotations: annotationStore };
+}
 
 function renderText(output) {
     if (!output?.paragraphs) return "";
@@ -241,18 +247,6 @@ function collectChainItems(chain, starter, defined, barColor, args) {
         items.push(wordItem(starter, barColor));
     }
 
-    // Chain erasure (RI): render erased chain as nested container, then RI particle
-    if (chain.erased) {
-        for (let entry of chain.erased) {
-            let erasedItems = [];
-            stepsToItems(flattenChain(entry.chain), barColor, erasedItems, 0);
-            if (erasedItems.length > 0) erasedItems[erasedItems.length - 1].chainPlace = "";
-            let erasedGrid = `<div class="vbox-chain">${renderGrid(erasedItems)}</div>`;
-            items.push({ type: "erased-chain", html: `<div class="vbox-bind-group vbox-erased">${erasedGrid}</div>`, barColor, exposed: "", chainPlace: "" });
-            items.push({ type: "word", node: { family: "RI", word: "ri" }, color: "vbox-sentence-bg", barColor, exposed: "", chainPlace: "" });
-        }
-    }
-
     stepsToItems(flattenChain(chain), barColor, items, 0);
 
     // Last item never shows chainPlace
@@ -283,21 +277,34 @@ function stepsToItems(steps, barColor, items, depth) {
         let { exposed, chainPlace } = slots[i];
         let isLast = i === steps.length - 1;
 
+        // Chain erasure (RI): erased chains are attached to the step following them
+        if (step.erased) {
+            for (let entry of step.erased) {
+                let erasedItems = [];
+                stepsToItems(flattenChain(entry.chain), barColor, erasedItems, 0);
+                if (erasedItems.length > 0) erasedItems[erasedItems.length - 1].chainPlace = "";
+                let erasedGrid = `<div class="vbox-chain">${renderGrid(erasedItems)}</div>`;
+                items.push({ type: "erased-chain", html: `<div class="vbox-bind-group vbox-erased">${erasedGrid}</div>`, barColor, exposed: "", chainPlace: "", depth });
+                items.push({ type: "word", node: { family: "RI", word: entry.eraser }, color: "vbox-sentence-bg", barColor, exposed: "", chainPlace: "", depth });
+            }
+        }
+
         let prefixes = extractPrefixes(step);
         let verb = stripModifiers(step.verb);
 
         if (prefixes.length > 0) {
-            let siCount = step.select ? 1 : 0;
+            let siCount = leadingPrefixCount(step);
             items.push({ type: "group", prefixes, verb, barColor, exposed, chainPlace, siCount, depth });
         } else {
             items.push({ type: "word", node: verb, color: getWordColor(verb), barColor, exposed, chainPlace, depth });
         }
 
-        if (step.explicit_binds) {
-            if (!isLast || step.resume) {
-                items.push({ type: "nested", bindGroup: step.explicit_binds, barColor, depth });
+        let bindGroups = step.explicit_binds ? asArray(step.explicit_binds) : [];
+        for (let g = 0; g < bindGroups.length; g++) {
+            if (!isLast || step.resume || g < bindGroups.length - 1) {
+                items.push({ type: "nested", bindGroup: bindGroups[g], barColor, depth });
             } else {
-                collectBindItems(step.explicit_binds, items, depth, true);
+                collectBindItems(bindGroups[g], items, depth, true);
             }
         }
 
@@ -330,14 +337,14 @@ function stepsToItems(steps, barColor, items, depth) {
                     let { exposed: rExposed, chainPlace: rChainPlace } = rSlots[j];
 
                     if (rPrefixes.length > 0) {
-                        let siCount = rs.select ? 1 : 0;
+                        let siCount = leadingPrefixCount(rs);
                         items.push({ type: "group", prefixes: rPrefixes, verb: rVerb, barColor: "vbox-bar-default", exposed: rExposed, chainPlace: rChainPlace, siCount, depth, dimmed: j === 0 });
                     } else {
                         items.push({ type: "word", node: rVerb, color: getWordColor(rVerb), barColor: "vbox-bar-default", exposed: rExposed, chainPlace: rChainPlace, depth, dimmed: j === 0 });
                     }
 
-                    if (rs.explicit_binds) {
-                        items.push({ type: "nested", bindGroup: rs.explicit_binds, barColor: "vbox-bar-default", depth });
+                    for (let bindGroup of rs.explicit_binds ? asArray(rs.explicit_binds) : []) {
+                        items.push({ type: "nested", bindGroup, barColor: "vbox-bar-default", depth });
                     }
                 }
 
@@ -376,6 +383,9 @@ function collectBindItems(bindGroup, items, depth, inline) {
         let barColor = adverb ? "vbox-bar-adverb" : "vbox-bar-bind";
         let wordColor = adverb ? "vbox-adverb" : "vbox-bind";
 
+        if (bind.wide_negation) {
+            items.push({ type: "word", node: bind.wide_negation, color: getWordColor(bind.wide_negation), barColor, exposed: "", chainPlace: "", depth: nextDepth });
+        }
         let inner = bind.inner;
         if (inner?.args) {
             items.push({ type: "vi-args", node: bind.start, color: wordColor, args: inner.args, barColor, exposed: "", chainPlace: "", depth: nextDepth });
@@ -424,6 +434,9 @@ function collectEnumItems(verb) {
     if (isPrefixMode) {
         items.push({ type: "word", node: verb.sep, color: wordColor, barColor, exposed: "", chainPlace: "" });
     }
+    if (verb.args) {
+        items.push({ type: "vi-args", node: null, color: wordColor, args: verb.args, barColor, exposed: "", chainPlace: "" });
+    }
 
     for (let i = 0; i < verb.items.length; i++) {
         let item = verb.items[i];
@@ -436,6 +449,9 @@ function collectEnumItems(verb) {
             }
         }
 
+        if (item.wide_negation) {
+            items.push({ type: "word", node: item.wide_negation, color: getWordColor(item.wide_negation), barColor, exposed: "", chainPlace: "" });
+        }
         let beforeLen = items.length;
         stepsToItems(flattenChain(item.chain), barColor, items, 0);
         if (items.length > beforeLen) items[items.length - 1].chainPlace = "";
@@ -592,6 +608,7 @@ function thinBox(colorClass, extra, depthStyle) {
 
 function renderVerbContent(verb, color, extra, depthStyle) {
     if (!verb) return `<div class="vbox-word ${color}"></div>`;
+    if (verb.namespace) return renderNamespaced(verb, color, extra, depthStyle);
     if (verb.family === "Compound") return renderCompound(verb, extra, depthStyle);
     if (verb.kind === "Number") return renderNumber(verb, extra, depthStyle);
     if (verb.start?.family === "PE") return renderEnum(verb, extra, depthStyle);
@@ -599,12 +616,25 @@ function renderVerbContent(verb, color, extra, depthStyle) {
     if (verb.kind === "Spelling Quote") return renderSpellingQuote(verb, extra, depthStyle);
     if (verb.kind === "GrammaticalQuote") return renderGrammaticalQuote(verb, extra, depthStyle);
     if (verb.kind === "ForeignQuote") return renderForeignQuote(verb, extra, depthStyle);
+    if (verb.kind === "Foreign Quote") return wordBox(verb.particle, "vbox-quote", extra, depthStyle);
     return wordBox(verb, color, extra, depthStyle);
+}
+
+// Namespace parents and PI separators, then the namespaced word.
+function renderNamespaced(verb, color, extra, depthStyle) {
+    let { namespace, ...word } = verb;
+    let html = "";
+    for (let ns of asArray(namespace)) {
+        html += renderVerbContent(ns.parent, getWordColor(ns.parent));
+        html += wordBox(ns.sep, getWordColor(ns.sep));
+    }
+    html += renderVerbContent(word, color);
+    return `<div class="vbox-pair ${extra || ""}"${depthStyle || ""}>${html}</div>`;
 }
 
 function renderStarterGroup(starter, defined, args, extra, depthStyle) {
     let html = wordBox(starter, getWordColor(starter));
-    if (defined) html += wordBox(defined, getWordColor(defined));
+    if (defined) html += renderVerbContent(defined, getWordColor(defined));
     if (args) {
         let parts = "";
         for (let arg of args.list) {
@@ -670,8 +700,13 @@ function renderEnum(verb, extra, depthStyle) {
 }
 
 function renderSingleWordQuote(verb, extra, depthStyle) {
-    let parts = compoundPart(verb.start.word, lookupGloss(verb.start.word), " vbox-quote-delim", lookupShort(verb.start.word))
-        + compoundPart(verb.word.word, lookupGloss(verb.word.word), "", lookupShort(verb.word.word));
+    let parts = compoundPart(verb.start.word, lookupGloss(verb.start.word), " vbox-quote-delim", lookupShort(verb.start.word));
+    if (verb.word.family === "Compound") {
+        parts += renderCompound(verb.word, "vbox-compound-nested", "", true);
+    } else {
+        let word = getWordText(verb.word);
+        parts += compoundPart(word, lookupGloss(word), "", lookupShort(word));
+    }
 
     return `<div class="vbox-compound vbox-quote ${extra || ""}"${depthStyle || ""}>`
         + `<div class="vbox-compound-parts">${parts}</div>`
@@ -840,18 +875,21 @@ function buildAnnotationHtml(node) {
             if (p?.kind === "Interjection") {
                 let tagGloss = lookupGloss(p.tag.word);
                 let label = esc(p.tag.word) + (tagGloss ? " (" + esc(tagGloss) + ")" : "");
-                let verbText = getWordText(p.verb);
-                let verbGloss = lookupGloss(verbText);
-                let siText = p.select ? esc(p.select.word) + " " : "";
+                let prefixes = extractPrefixes(p);
+                let verb = stripModifiers(p.verb);
+                let verbHtml = prefixes.length > 0
+                    ? renderGroup(prefixes, verb, "", leadingPrefixCount(p), "")
+                    : renderVerbContent(verb, getWordColor(verb));
                 parts.push(`<div class="vbox-popover-row">`
                     + `<span class="vbox-popover-label">${label}</span>`
-                    + `<span>${siText}${esc(verbText)}${verbGloss ? " — " + esc(verbGloss) : ""}</span>`
-                    + `</div>`);
+                    + `</div>`
+                    + `<div class="vbox-popover-parens">${verbHtml}</div>`);
             }
             // DA/DAI parentheticals
             if (p?.kind === "Parenthetical") {
                 parts.push(`<div class="vbox-popover-row">`
                     + `<span class="vbox-popover-label">PARENTHETICAL</span>`
+                    + `<span>${esc(p.start.word)} … ${esc(p.end.word)}</span>`
                     + `</div>`
                     + `<div class="vbox-popover-parens">${renderText(p.content)}</div>`);
             }
@@ -901,8 +939,13 @@ function flattenChain(chain) {
     return steps;
 }
 
+// Number of leading prefixes (BI negations, then SI) before the ZI modifiers.
+function leadingPrefixCount(step) {
+    return (step.wide_negation ? asArray(step.wide_negation).length : 0) + (step.select ? 1 : 0);
+}
+
 function extractPrefixes(step) {
-    let prefixes = [];
+    let prefixes = step.wide_negation ? [...asArray(step.wide_negation)] : [];
     if (step.select) prefixes.push(step.select);
     if (step.verb?.modifiers) {
         let mods = Array.isArray(step.verb.modifiers) ? step.verb.modifiers : [step.verb.modifiers];
@@ -933,9 +976,13 @@ function isAdverbStart(start) {
 }
 
 function getWordText(node) {
-    if (node.kind === "SingleWordQuote") return node.start.word + " " + (node.word?.word || "?");
+    if (node.kind === "SingleWordQuote") return node.start.word + " " + (node.word ? getWordText(node.word) : "?");
     if (node.kind === "InlineAssignment") return node.start.word + " " + getWordText(node.verb);
-    if (node.kind === "BorrowingGroup") return node.group.map(b => prefixedWordKey("u", b.content)).join(" ");
+    if (node.kind === "BorrowingGroup") {
+        let end = node.end && !node.end.elided ? " " + node.end.word : "";
+        return node.group.map(b => prefixedWordKey("u", b.content)).join(" ") + end;
+    }
+    if (node.kind === "Foreign Quote") return node.particle.word;
     if (node.kind === "Number") return formatNumber(node.value);
     if (typeof node.word === "string") return node.word;
     if (node.family === "Compound") return node.prefix + node.content.map(getWordText).join("");
