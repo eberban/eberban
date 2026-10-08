@@ -89,6 +89,23 @@
         return "<unknown word type>"
     }
 
+    // Source span of the current rule, as [start, end) character offsets
+    function span() {
+        var l = location();
+        return [l.start.offset, l.end.offset]
+    }
+
+    // Classify a parsed particle word into its family
+    function fam(x, family) {
+        return { family, word: x.word, span: x.span }
+    }
+
+    // Structural equality ignoring source spans
+    function same_structure(a, b) {
+        var no_span = (k, v) => k === "span" ? undefined : v;
+        return JSON.stringify(a, no_span) === JSON.stringify(b, no_span)
+    }
+
     // Annotate word with extra fields pre/post if they are not empty arrays
     function with_free(word, free_pre, free_post) {
         if(free_pre?.length) {
@@ -256,8 +273,7 @@ ChainInner = ChainNegation
         // verb. If that'es not the case, do not match so that this step finish matching
         // and it tries to match again on the immediatly higher step.
         &{
-            // Can we do this without JSON.stringify?!
-            return JSON.stringify(chain.verb) === JSON.stringify(resume_chain.verb)
+            return same_structure(chain.verb, resume_chain.verb)
         }
         resume_next:ChainInner?
         {
@@ -625,60 +641,60 @@ ClassifiedParticle = A / O / NI
     / JI / JE / JA / JO / JU
     / KI / GI
 
-A   = &ParticleWord        &(OH &a ParticleFormNAOX OH &PostWord)    x:ParticleWord { return { family:"A", word: x.word }}
-O   = &ParticleWord        &(OH &o ParticleFormNAOX OH &PostWord)    x:ParticleWord { return { family:"O", word: x.word }}
-NI  = &ParticleWord        &(OH &n ParticleFormNAOX OH &PostWord)    x:ParticleWord { return { family:"NI", word: x.word }}
+A   = &ParticleWord        &(OH &a ParticleFormNAOX OH &PostWord)    x:ParticleWord { return fam(x, "A") }
+O   = &ParticleWord        &(OH &o ParticleFormNAOX OH &PostWord)    x:ParticleWord { return fam(x, "O") }
+NI  = &ParticleWord        &(OH &n ParticleFormNAOX OH &PostWord)    x:ParticleWord { return fam(x, "NI") }
 
-MI  = &ParticleWord        &(OH m OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"MI", word: x.word }}
+MI  = &ParticleWord        &(OH m OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "MI") }
 
-PI  = &ParticleWord        &(OH p OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"PI", word: x.word }}
-PE  = &ParticleWord !(PEI) &(OH p OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"PE", word: x.word }}
-PEI = &ParticleWord        &(OH p OH e OH i OH &PostWord)            x:ParticleWord { return { family:"PEI", word: x.word }}
-PA  = &ParticleWord        &(OH p OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"PA", word: x.word }}
-PO  = &ParticleWord        &(OH p OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"PO", word: x.word }}
-PU  = &ParticleWord        &(OH p OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"PU", word: x.word }}
+PI  = &ParticleWord        &(OH p OH &i Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "PI") }
+PE  = &ParticleWord !(PEI) &(OH p OH &e Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "PE") }
+PEI = &ParticleWord        &(OH p OH e OH i OH &PostWord)            x:ParticleWord { return fam(x, "PEI") }
+PA  = &ParticleWord        &(OH p OH &a Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "PA") }
+PO  = &ParticleWord        &(OH p OH &o Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "PO") }
+PU  = &ParticleWord        &(OH p OH &u Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "PU") }
 
-BI  = &ParticleWord        &(OH b OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"BI", word: x.word }}
-BE  = &ParticleWord        &(OH b OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"BE", word: x.word }}
-BA  = &ParticleWord        &(OH b OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"BA", word: x.word }}
-BO  = &ParticleWord        &(OH b OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"BO", word: x.word }}
-BU  = &ParticleWord        &(OH b OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"BU", word: x.word }}
+BI  = &ParticleWord        &(OH b OH &i Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "BI") }
+BE  = &ParticleWord        &(OH b OH &e Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "BE") }
+BA  = &ParticleWord        &(OH b OH &a Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "BA") }
+BO  = &ParticleWord        &(OH b OH &o Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "BO") }
+BU  = &ParticleWord        &(OH b OH &u Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "BU") }
 
-FI  = &ParticleWord        &(OH f OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"FI", word: x.word }}
-VI  = &ParticleWord !(VEI) &(OH v OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"VE", word: x.word }}
-VEI = &ParticleWord        &(OH v OH e OH i OH &PostWord)            x:ParticleWord { return { family:"VEI", word: x.word }}
+FI  = &ParticleWord        &(OH f OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "FI") }
+VI  = &ParticleWord !(VEI) &(OH v OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "VE") }
+VEI = &ParticleWord        &(OH v OH e OH i OH &PostWord)            x:ParticleWord { return fam(x, "VEI") }
 
 TI = W_TIMinusSymbol? @TI_Symbol W_TIMinusSymbol? W_TIMathSymbols? / TI_Word
-TI_Word = &ParticleWord    &(OH t OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"TI", word: x.word }}
-TI_Symbol = x:DigitSymbol                                                           { return { family:"TI", symbol: x }}
+TI_Word = &ParticleWord    &(OH t OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "TI") }
+TI_Symbol = x:DigitSymbol                                                           { return { family:"TI", symbol: x, span: span() }}
 
-DI  = &ParticleWord        &(OH d OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"DI", word: x.word }}
-DE  = &ParticleWord        &(OH d OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"DE", word: x.word }}
-DA  = &ParticleWord !(DAI) &(OH d OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"DA", word: x.word }}
-DAI = &ParticleWord        &(OH d OH a OH i OH &PostWord)            x:ParticleWord { return { family:"DAI", word: x.word }}
-DO  = &ParticleWord        &(OH d OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"DO", word: x.word }}
-DU  = &ParticleWord        &(OH d OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"DU", word: x.word }}
+DI  = &ParticleWord        &(OH d OH &i Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "DI") }
+DE  = &ParticleWord        &(OH d OH &e Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "DE") }
+DA  = &ParticleWord !(DAI) &(OH d OH &a Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "DA") }
+DAI = &ParticleWord        &(OH d OH a OH i OH &PostWord)            x:ParticleWord { return fam(x, "DAI") }
+DO  = &ParticleWord        &(OH d OH &o Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "DO") }
+DU  = &ParticleWord        &(OH d OH &u Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "DU") }
 
-SI  = &ParticleWord        &(OH s OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"SI", word: x.word }}
-ZI  = &ParticleWord        &(OH z OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"ZI", word: x.word }}
+SI  = &ParticleWord        &(OH s OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "SI") }
+ZI  = &ParticleWord        &(OH z OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "ZI") }
 
-CI  = &ParticleWord        &(OH c OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"CI", word: x.word }}
-CE  = &ParticleWord !(CEI) &(OH c OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"CE", word: x.word }}
-CEI = &ParticleWord        &(OH c OH e OH i OH &PostWord)            x:ParticleWord { return { family:"CEI", word: x.word }}
-CA  = &ParticleWord !(CAI) &(OH c OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"CA", word: x.word }}
-CAI = &ParticleWord        &(OH c OH a OH i OH &PostWord)            x:ParticleWord { return { family:"CAI", word: x.word }}
-CO  = &ParticleWord !(COI) &(OH c OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"CO", word: x.word }}
-COI = &ParticleWord        &(OH c OH o OH i OH &PostWord)            x:ParticleWord { return { family:"COI", word: x.word }}
-CU  = &ParticleWord        &(OH c OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"CU", word: x.word }}
+CI  = &ParticleWord        &(OH c OH &i Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "CI") }
+CE  = &ParticleWord !(CEI) &(OH c OH &e Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "CE") }
+CEI = &ParticleWord        &(OH c OH e OH i OH &PostWord)            x:ParticleWord { return fam(x, "CEI") }
+CA  = &ParticleWord !(CAI) &(OH c OH &a Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "CA") }
+CAI = &ParticleWord        &(OH c OH a OH i OH &PostWord)            x:ParticleWord { return fam(x, "CAI") }
+CO  = &ParticleWord !(COI) &(OH c OH &o Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "CO") }
+COI = &ParticleWord        &(OH c OH o OH i OH &PostWord)            x:ParticleWord { return fam(x, "COI") }
+CU  = &ParticleWord        &(OH c OH &u Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "CU") }
 
-JI  = &ParticleWord        &(OH j OH &i Vhowels OH &PostWord)        x:ParticleWord { return { family:"JI", word: x.word }}
-JE  = &ParticleWord        &(OH j OH &e Vhowels OH &PostWord)        x:ParticleWord { return { family:"JE", word: x.word }}
-JA  = &ParticleWord        &(OH j OH &a Vhowels OH &PostWord)        x:ParticleWord { return { family:"JA", word: x.word }}
-JO  = &ParticleWord        &(OH j OH &o Vhowels OH &PostWord)        x:ParticleWord { return { family:"JO", word: x.word }}
-JU  = &ParticleWord        &(OH j OH &u Vhowels OH &PostWord)        x:ParticleWord { return { family:"JU", word: x.word }}
+JI  = &ParticleWord        &(OH j OH &i Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "JI") }
+JE  = &ParticleWord        &(OH j OH &e Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "JE") }
+JA  = &ParticleWord        &(OH j OH &a Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "JA") }
+JO  = &ParticleWord        &(OH j OH &o Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "JO") }
+JU  = &ParticleWord        &(OH j OH &u Vhowels OH &PostWord)        x:ParticleWord { return fam(x, "JU") }
 
-KI  = &ParticleWord        &(OH k OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"KI", word: x.word }}
-GI  = &ParticleWord        &(OH g OH Vhowels OH &PostWord)           x:ParticleWord { return { family:"GI", word: x.word }}
+KI  = &ParticleWord        &(OH k OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "KI") }
+GI  = &ParticleWord        &(OH g OH Vhowels OH &PostWord)           x:ParticleWord { return fam(x, "GI") }
 
 W_TIMinusSymbol = &HyphenChar OH { warn(
 `Eberban doesn't support minus sign symbol and this is considered an hyphen, which is not allowed here.
@@ -694,11 +710,11 @@ Uuse appropriate verb to perform mathematical operation.`
 Compound "compound" = W_HyphenPreWord? !i @CompoundInner
 CompoundInner = CompoundN / Compound3 / Compound2
 Compound2 = v:(e/i) W_CompoundPrefixPostHyphen?
-    list:CompoundWord|2| { return { family: "Compound", prefix: v, content: list }}
+    list:CompoundWord|2| { return { family: "Compound", prefix: v, content: list, span: span() }}
 Compound3 = v:(e/i) W_CompoundHyphenInPrefix? W_CompoundIAfterSonorant? n W_CompoundPrefixPostHyphen?
-    list:CompoundWord|3| { return { family: "Compound", prefix: v + "n", content: list }}
+    list:CompoundWord|3| { return { family: "Compound", prefix: v + "n", content: list, span: span() }}
 CompoundN = v:(e/i) W_CompoundHyphenInPrefix? W_CompoundIAfterSonorant? r W_CompoundPrefixPostHyphen?
-    list:(!CompoundNEnd @CompoundWord)* CompoundNEnd
+    list:(!CompoundNEnd @CompoundWord)* end:CompoundNEnd
     &{
         if (list.length == 0)
             return err(`Empty compounds are not allowed`)
@@ -712,9 +728,11 @@ CompoundN = v:(e/i) W_CompoundHyphenInPrefix? W_CompoundIAfterSonorant? r W_Comp
             warn(`Use fixed-size compound "${v}n ${list.map(stringify_word).join(" ")}" instead`);
         }
 
-        return { family: "Compound", prefix: v + "r", content: list, postfix: "e" }
+        return { family: "Compound", prefix: v + "r", content: list, postfix: "e", span: [span()[0], end] }
     }
-CompoundNEnd = Spaces W_HyphenPreWord? e W_HyphenPostWord? Spaces
+// Returns the offset after the closing e, before the trailing spaces
+CompoundNEnd = Spaces W_HyphenPreWord? e W_HyphenPostWord? end:Offset Spaces { return end }
+Offset = "" { return location().start.offset }
 CompoundWord = !E_SpacedIPrefix Spaces? !E_IncompleteCompound @(CompoundInner / Borrowing / NativeWord)
 
 E_SpacedIPrefix = Spaces i &{ return err(
@@ -739,14 +757,14 @@ FreeformVariable "freeform variable" =
         / W_FreeformVariablePrefixHyphen? W_IInitialFreeformVariable?
     )
     x:FreeformContent W_HyphenPostWord? FreeformEnd
-    { return { family:"FFVariable", prefix: "i", content: recur_join(x) } }
+    { return { family:"FFVariable", prefix: "i", content: recur_join(x), span: span() } }
 Borrowing "borrowing" =
     W_BorrowingVariablePreHyphen? u
     (   Spaces W_BorrowingPrefixHyphen?
         / W_BorrowingPrefixHyphen? W_UInitialBorrowing?
     )
     x:FreeformContent W_HyphenPostWord? FreeformEnd
-    { return { family:"Borrowing", prefix: "u", content: recur_join(x) } }
+    { return { family:"Borrowing", prefix: "u", content: recur_join(x), span: span() } }
 FreeformContent =
     (FreeformConsonants W_HyphenAfterMedialOrTriplet?/ h W_FreeformHyphenAfterH?)?
     Vhowels
@@ -801,7 +819,7 @@ E_FreeformMultiConsonentsEnding = Consonant OH Consonant &{ return err(
 NativeWord = RootWord / ParticleWord
 NativeForm = RootForm / ParticleForm
 
-ParticleWord "particle" = x:ParticleForm &PostWord { return { family:"Particle", word: x}}
+ParticleWord "particle" = x:ParticleForm &PostWord { return { family:"Particle", word: x, span: span() }}
 ParticleForm = W_HyphenPreWord?
 	x:(ParticleFormCV / ParticleFormNAOX)
     W_HyphenPostWord?
@@ -819,7 +837,7 @@ ParticleFormNAOX =
     W_HyphenBeforeFinalSonorant? @Sonorant?
     !MedialPair
 
-RootWord "root" = x:RootForm &PostWord { return { family:"Root", word: x}}
+RootWord "root" = x:RootForm &PostWord { return { family:"Root", word: x, span: span() }}
 RootForm = !Sonorant W_HyphenPreWord? !E_RootStartsWithMedialPair
 	x:(RootFormCVX / RootFormCVS / RootFormCCVX)
     W_HyphenPostWord?
