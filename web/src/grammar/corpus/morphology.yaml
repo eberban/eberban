@@ -117,3 +117,31 @@
 - text: "ahu mi"
   shape: "ahu: mi-E"
   note: any a-initial particle is a sentence starter of family A
+
+- text: "a du-na"
+  shape: "a: duna-A"
+  note: a hyphen before a medial sonorant is not part of the word
+  no_warning: true
+
+- text: "a duna-meon"
+  shape: "a: duna-A > meon-E"
+  warning: "Hyphen is not allowed at the end of a word"
+  note: a hyphen between two words is not a syllable boundary
+
+- text: "a bap-pi"
+  error: "both consonants are the same"
+  note: a doubled letter is spelling for length, not a pair
+  source: refgram morphonology/morphology.md
+
+- text: "a babcli"
+  error: "but bc isn't"
+  note: bc has the initial pair shape but mismatched voicing
+  source: refgram morphonology/morphology.md
+
+- text: "a pagbsa"
+  error: "Triplet XYZ gbs"
+  note: the initial pair YZ of a triplet must match voicing
+
+- text: "a bap-ksa mi"
+  shape: "a: bapksa-A > mi-E"
+  note: X-YZ is the hyphenation the triplet warnings suggest

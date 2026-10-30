@@ -111,7 +111,7 @@ for (const file of readdirSync(corpusDir).filter(f => f.endsWith(".yaml")).sort(
             if (c.error !== undefined || c.todo !== undefined) continue;
             it(c.text, () => {
                 const result = parser.parse(c.text);
-                const words = treeWords(result.paragraphs ?? [], [], false);
+                const words = treeWords([result.flags ?? [], result.paragraphs ?? []], [], false);
                 const rendered = renderedWords(result);
                 expect(missingWords(words, rendered), "words missing from the rendering").toEqual([]);
                 expect(firstOutOfOrder(words, rendered), "word rendered out of text order").toBeNull();

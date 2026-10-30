@@ -78,3 +78,18 @@
   shape: "a: mi-E > dona-A > co[x ra y]-E | a: mo-E"
   note: ra inside a closed foreign quote does not erase
   source: refgram logic/sentences.md
+
+- text: "co zao[a]qa]zao"
+  shape: "(a): co(zao)[a]qa]-E"
+  note: reading the text after an inner ] as a candidate delimiter must not leak its letter error
+
+- text: "ca do cai"
+  shape: "(a): ca{do: <empty>}-E"
+  note: a quoted text may hold only language flags
+
+- text: "ca cai"
+  shape: "(a): ca{<empty>}-E"
+
+- text: "ca do a"
+  error: "A chain must contain at least one"
+  note: an empty chain after a quoted starter is still reported

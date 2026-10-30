@@ -121,3 +121,11 @@
 
 - text: "a mi jvin. a mo jvin"
   shape: "a: mi-E > jvin-E | a: mo-E > jvin-E"
+
+- text: "do"
+  shape: "do: <empty>"
+  note: a text may hold only language flags
+
+- text: "do a"
+  error: "A chain must contain at least one"
+  note: an empty chain after the flags is still reported

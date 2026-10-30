@@ -50,3 +50,14 @@
 - text: "a se mi"
   shape: "a: se mi(E)-E"
   note: SI on a MI particle
+
+- text: "a sustra"
+  shape: "a: sustra-A"
+  note: an s-initial root is not read as SI su followed by stra
+
+- text: "a zi sustra"
+  shape: "a: zi sustra-A"
+  note: same after ZI
+
+- text: "a zi sa"
+  error: "SI must be followed by a verb"

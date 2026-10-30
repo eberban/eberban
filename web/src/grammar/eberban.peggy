@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.67.1
+// EBERBAN GRAMMAR - v0.67.2
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -28,8 +28,9 @@
 	var warnings = [];
     var pending_error = null;
     var gram_quote_nesting = 0;
-    // Pending error saved at the start of each open grammatical quote (see GrammaticalQuote).
-    var quote_pending_errors = [];
+    // Pending errors saved before speculative attempts, restored when their result is discarded
+    // (see Text and ForeignQuoteEscaped).
+    var saved_pending_errors = [];
 
     // Add warning to the warnings list
     function warn(msg) {
@@ -142,6 +143,18 @@
 
         return false;
     }
+
+    // Push the pending error onto the save stack, before a speculative attempt.
+    function save_pending_error() {
+        saved_pending_errors.push(pending_error);
+        return true;
+    }
+
+    // Pop the matching save; when discard is true, drop errors queued since by restoring it.
+    function end_saved_pending_error(discard) {
+        var saved = saved_pending_errors.pop();
+        if(discard) pending_error = saved;
+    }
 }
 
 // Actually report pending error if it has not been erased.
@@ -173,7 +186,15 @@ E_UnmatchedResume = PA_Free chain:ChainVerbAndBinds &{ return err(
 // Main text rule, which can be nested inside quotes.
 // Match language flags, text prefixes and paragraphs.
 Text = Spaces? EOF { return {} } // allow empty text
-    / flags:LanguageFlags paras:Paragraphs? Spaces?
+    / &{ return save_pending_error() }
+    flags:LanguageFlags paras:Paragraphs? Spaces?
+    // Text without paragraphs is valid. The failed attempt at a first sentence may have queued an
+    // error (an empty chain); drop it unless it points past the end of this text.
+    &{
+        end_saved_pending_error(paras == null && pending_error != null
+            && pending_error.location.start.offset <= location().start.offset);
+        return true
+    }
     {
         var res = {};
 
@@ -293,7 +314,7 @@ ChainInner = ChainNegation
         return chain
     }
 
-ChainVerbAndBinds = select:(@SI_Free !E_SelectEmpty)? verb:ChainVerb exp:ExplicitBindGroup*
+ChainVerbAndBinds = select:Select? !E_SelectEmpty verb:ChainVerb exp:ExplicitBindGroup*
     {
         var chain = { }
 
@@ -337,7 +358,7 @@ ChainVerb = verb:(ChainVerbModified / ChainVerbSelect) post:FreePostfix*
             verb.post = post;
         return verb
     }
-ChainVerbModified = modifiers:(ZI_Free (@SI_Free !E_SelectEmpty)?)+ !E_ModifiedEmpty modified:(ChainVerbModified / ChainVerbSelect)
+ChainVerbModified = modifiers:(ZI_Free Select? !E_SelectEmpty)+ !E_ModifiedEmpty modified:(ChainVerbModified / ChainVerbSelect)
     {
         var res = { ...modified }
 
@@ -355,7 +376,9 @@ ChainVerbModified = modifiers:(ZI_Free (@SI_Free !E_SelectEmpty)?)+ !E_ModifiedE
 ChainVerbSelect = VerbDefinableUsage / VerbInlineAssignment / KI_Free / BA_Free / MI_Free
     / VerbQuote / VerbEnum / BorrowingGroup / Number
 
-E_SelectEmpty = !ChainVerb &{ return err("SI must be followed by a verb")}
+// SI is only read as a selection when a verb follows it.
+Select = @SI_Free &ChainVerb
+E_SelectEmpty = !ChainVerb SI_Free !ChainVerb &{ return err("SI must be followed by a verb")}
 E_ModifiedEmpty = !ChainVerb &{ return err("ZI must be followed by a verb")}
 
 // # Definable =======================================
@@ -390,17 +413,9 @@ GrammaticalQuote =
     &{ gram_quote_nesting++; return true }
     // hack to decrement quote nesting regardless of parsing success
     text:(
-        &{ quote_pending_errors.push(pending_error); return true }
         @Text &{ gram_quote_nesting--; return true}
         / &{ gram_quote_nesting--; return false}
     )
-    // An empty quote is valid. The failed attempt at a first sentence may have queued an
-    // error (an empty chain); drop it by restoring the error state from before the quote.
-    &{
-        var before = quote_pending_errors.pop();
-        if (text.paragraphs == null) pending_error = before;
-        return true
-    }
     end:CAI_Elidible
 
     // Warning if non-final quote terminator CAI is elided and text contains multiple sentences
@@ -442,7 +457,14 @@ ForeignQuoteSimple = start:CO_Free
     { return { kind: "ForeignQuote", start, content: content.join("")}}
 ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
     content:(
-        !(QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word })
+        !(
+            &{ return save_pending_error() }
+            (
+                QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word }
+                &{ end_saved_pending_error(true); return true }
+                / &{ end_saved_pending_error(true); return false }
+            )
+        )
         @.
     )*
     !E_UnclosedForeignQuote
@@ -553,7 +575,7 @@ BorrowingGroup = x:(Spaces? @Borrowing)+ y:BE_Elidible { return { kind: "Borrowi
 FreePrefix "free prefix" = FreeMetadata
 FreePostfix "free postfix" = FreeInterjection / FreeParenthetical
 
-FreeInterjection = tag:DE_Free select:(@SI_Free !E_SelectEmpty)? verb:(ChainVerbModified / ChainVerbSelect)
+FreeInterjection = tag:DE_Free select:Select? !E_SelectEmpty verb:(ChainVerbModified / ChainVerbSelect)
     { return { kind: "Interjection", tag, select, verb } }
 
 FreeParenthetical = start:DA_Free !E_EmptyParenthetical content:Text !E_UnclosedParenthetical end:DAI_Free
@@ -862,7 +884,7 @@ RootFormCCVX =
     W_HyphenBeforeFinalSonorant? @Sonorant?
 
 RootMedialOrSonorantThenVowels = RootMedialThenVhowels / SonorantThenVhowels
-SonorantThenVhowels = OH Sonorant !Sonorant W_HyphenAfterMedialSonorant? Vhowels
+SonorantThenVhowels = OH @Sonorant !Sonorant W_HyphenAfterMedialSonorant? @Vhowels
 RootMedialThenVhowels = W_HyphenBeforeMedialOrTriplet? RootMedialOrTriplet W_HyphenAfterMedialOrTriplet? Vhowels
 
 W_HyphenAfterInitial = &HyphenChar OH { warn(
@@ -888,7 +910,7 @@ If needed, hyphen before this syllable.`
 )}
 
 W_HyphenPreWord = &HyphenChar OH { warn("Hyphen is not allowed at the start of a word" ) }
-W_HyphenPostWord = &HyphenChar OH { warn("Hyphen is not allowed at the end of a word" ) }
+W_HyphenPostWord = &HyphenChar OH &PostWord { warn("Hyphen is not allowed at the end of a word" ) }
 
 PostWord = !Sonorant &Consonant / DigitSymbol / Spaces
 
@@ -936,9 +958,9 @@ RootMedialOrTriplet = !Sonorant TripletRoot / MedialPair
 TripletRoot     = TripletMedialInitial / TripletOnsetLiquid / TripletInvalid_Root
 TripletFreeform = TripletMedialInitial / TripletOnsetLiquid / TripletSonorantX_Freeform / TripletInvalid_Freeform
 
-TripletMedialInitial      = &MedialPair &(Consonant Initial)          tri:TripletMatch { return tri.join("") }
-TripletOnsetLiquid        = &(MedialPair / Initial)
-                            &(Consonant !(m / Sonorant) Consonant Liquid) tri:TripletMatch { return tri.join("") }
+TripletMedialInitial      = &MedialPair &(Consonant OH InitialVoiced) tri:TripletMatch { return tri.join("") }
+TripletOnsetLiquid        = &(MedialPair / InitialVoiced)
+                            &(Consonant OH !(m / Sonorant) Consonant OH Liquid) tri:TripletMatch { return tri.join("") }
 TripletSonorantX_Freeform = &Sonorant !E_TripletYZ_SonorantX          tri:TripletMatch { return tri.join("") }
 
 TripletInvalid_Root     = &TripletMatch !E_TripletInvalid_Root     tri:TripletMatch { return tri.join("") }
@@ -955,18 +977,18 @@ E_TripletYZ_SonorantX = Consonant !Initial !MedialCSonorant x:Consonant OH y:Con
 
 E_TripletInvalid_Root =
 	// Y = m: specific rejection
-	&(MedialPair / Initial) x:Consonant m OH z:Consonant
+	&(MedialPair / InitialVoiced) x:Consonant OH m OH z:Consonant
 		&{ return err(`Triplet XYZ where Y is m is not allowed (m + sonorant is hard to utter), but is ${x}m${z}`) }
 	// XY is neither a medial nor an initial pair
-	/ !(MedialPair / Initial) x:Consonant OH y:Consonant
+	/ !(MedialPair / InitialVoiced) x:Consonant OH y:Consonant
 		&{ return err(`In roots, triplet XYZ requires XY to be a medial pair or an initial pair, but ${x}${y} isn't`) }
 	// XY is valid but YZ doesn't fit either allowed shape
 	/ x:Consonant OH y:Consonant OH z:Consonant
 		&{ return err(`Triplet XYZ ${x}${y}${z} doesn't fit any valid shape: either XY is a medial pair with YZ an initial pair, or XY is a medial/initial pair with Z a liquid (r or l)`) }
 E_TripletInvalid_Freeform =
-	&(MedialPair / Initial) x:Consonant m OH z:Consonant
+	&(MedialPair / InitialVoiced) x:Consonant OH m OH z:Consonant
 		&{ return err(`Triplet XYZ where Y is m is not allowed (m + sonorant is hard to utter), but is ${x}m${z}`) }
-	/ !(MedialPair / Initial / Sonorant) x:Consonant OH y:Consonant
+	/ !(MedialPair / InitialVoiced / Sonorant) x:Consonant OH y:Consonant
 		&{ return err(`Triplet XYZ requires XY to be a medial pair, an initial pair, or X to be a sonorant, but ${x}${y} isn't`) }
 	/ x:Consonant OH y:Consonant OH z:Consonant
 		&{ return err(`Triplet XYZ ${x}${y}${z} doesn't fit any valid shape`) }
@@ -990,8 +1012,13 @@ InitialPair "initial pair" =
 Initial =
 	@(Plosive / f / v) OH @Sibilant
     / @Sibilant OH @Other
+// Initial pair shape with matching voicing, checked without queuing an error.
+InitialVoiced = !(Voiced OH Unvoiced / Unvoiced OH Voiced) @Initial
 
-E_InvalidPairs = E_PairVoiceness1 / E_PairVoiceness2 / E_SibilantPair
+E_InvalidPairs = E_DoubledPair / E_PairVoiceness1 / E_PairVoiceness2 / E_SibilantPair
+// Repeated letters merge, so the same consonant twice in a row is only seen across a hyphen.
+E_DoubledPair = x:Consonant OH y:Consonant
+	&{ return x === y ? err(`${x}-${y} is an invalid pair because both consonants are the same`) : false }
 E_PairVoiceness1 = x:Voiced OH y:Unvoiced
 	&{ return err(`${x}${y} is an invalid pair because consonants don't have the same voiceness`)}
 E_PairVoiceness2 = x:Unvoiced OH y:Voiced

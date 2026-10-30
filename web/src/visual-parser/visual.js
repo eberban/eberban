@@ -172,9 +172,12 @@ export function renderBoxes(output) {
 }
 
 function renderText(output) {
-    if (!output?.paragraphs) return "";
     let html = "";
-    for (let para of output.paragraphs) {
+    if (output?.flags?.length) {
+        let flags = output.flags.map(flag => wordBox(flag, "vbox-sentence-bg")).join("");
+        html += `<div class="vbox-flags">${flags}</div>`;
+    }
+    for (let para of output?.paragraphs ?? []) {
         let inner = "";
         if (para.starter) {
             let word = getWordText(para.starter);

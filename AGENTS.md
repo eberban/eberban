@@ -18,5 +18,10 @@ Start with [`.ai/notes/README.md`](.ai/notes/README.md). It indexes:
 - `09-vocabulary-design.md`: word-form practice, eberbanization, recorded design decisions
 - `open-questions.md`: decisions pending with the language author
 
+## Grammar edits
+
+- Comments in `eberban.peggy` state the general rule; they never cite specific example texts or describe past bugs or history.
+- Corpus cases (`web/src/grammar/corpus/*.yaml`) keep their `note:` fields, including ones naming the behavior a case guards.
+
 Sources of truth are the grammar (`web/src/grammar/eberban.peggy`), the reference grammar
 (`books/refgram/src/`) and the dictionary (`dictionary/en.yaml`).

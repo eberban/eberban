@@ -459,6 +459,19 @@ html {
     margin-bottom: 4px;
 }
 
+/* === Language flags (DO) === */
+.vbox-flags {
+    display: flex;
+    gap: 4px;
+    margin: 4px 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+}
+
+.vbox-flags > .vbox-word {
+    border-radius: var(--vbox-radius);
+}
+
 /* === Parse Tree Viewer === */
 #parse-result-tree {
     font-family: 'Consolas', 'Monaco', monospace;
