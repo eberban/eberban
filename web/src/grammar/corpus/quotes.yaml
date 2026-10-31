@@ -65,6 +65,16 @@
   shape: "(a): co(bar)[a ] b ]-E"
   note: delimited foreign quote, a lone ] does not end it
 
+- text: "co [quixotic xylophone]"
+  shape: "(a): co[quixotic xylophone]-E"
+  no_warning: true
+  note: q, w, x and y inside a foreign quote are content, not spaces
+
+- text: "co bu[why ] wax]bu"
+  shape: "(a): co(bu)[why ] wax]-E"
+  no_warning: true
+  note: q, w, x and y inside a delimited foreign quote are content, not spaces
+
 - text: "coi"
   shape: "(a): coi-E"
 

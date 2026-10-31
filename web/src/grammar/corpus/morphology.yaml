@@ -45,8 +45,24 @@
 - text: "a scan"
   error: "sibilants"
 
-- text: "a qat"
-  error: "not an Eberban letter"
+- text: "a miqbjan"
+  shape: "a: mi-E > bjan-E"
+  warning: "q is not an Eberban letter and is read as a space"
+  note: q, w, x and y are spaces, with a warning
+
+- text: "a miYbjan"
+  shape: "a: mi-E > bjan-E"
+  warning: "Y is not an Eberban letter and is read as a space"
+
+- text: "a mi—bjan"
+  shape: "a: mi-E > bjan-E"
+  no_warning: true
+  note: an em dash is a space, not a hyphen
+
+- text: "a bja—n"
+  shape: "a: bja=A"
+  no_warning: true
+  note: an em dash before a lone n makes it a hesitation
 
 - text: "a mih"
   error: "h can only appear between vowels"

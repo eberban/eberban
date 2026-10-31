@@ -29,6 +29,12 @@ __te ta__ thus means __12__ while __tei ti tu__ means __904__.
 > tie, tia, ..., tua, tuo\
 > tiei, tiea, ..., tuoa, tuou
 
+For convenience in written media, the digit characters __0__ to __9__ are also accepted, each being
+a __TI__ particle with the corresponding value. Thus __42__ is the same as __tu ta__. A __-__
+before or after a digit is not a minus sign but a hyphen, which is not allowed there. To make a
+number negative, use __joi__ instead. The characters __+__, __*__ and __/__ are spaces, like any
+other non-Eberban character. Mathematical operations are expressed with verbs.
+
 ## Number syntax
 
 Numbers follow the following syntax with some parts being optional:

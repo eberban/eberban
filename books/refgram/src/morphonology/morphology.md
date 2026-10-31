@@ -6,8 +6,9 @@ __[__ and __]__, for a total of 25 symbols. Among the consonants, __n__, __r__ a
 designated as (alveolar) __sonorants__, and play an important role in Eberban's morphology. The
 alphabetical order is `hnrlmpbfvtdszcjkgieaou`. The same letter appearing multiple times in a row is
 considered identical to the letter not being repeated, but can informally be used in written media
-to convey length of sounds in speech. Any other character is considered a space, and quotation marks
-are also considered a space outside of foreign quotes syntax (explained later).
+to convey length of sounds in speech. Any other character is considered a space, except digits
+(see [Numbers](../grammar/numbers.md)), and quotation marks are also considered a space outside of
+foreign quotes syntax (explained later).
 
 Strings of multiple vowels and __h__ appear a lot in Eberban's morphology, and thus are coined
 __vhowels__ in this book. Note that in __vhowels__, __h__ can only appear between two vowels.
@@ -109,8 +110,9 @@ have more relaxed rules about consonants than native Eberban words:
  - _Initial pairs_ can also appear in the middle of the word.
  - _Medial pairs_ can also appear initially as they can be easily uttered after borrowing prefix
    __u__
- - _Sonorant_ + _consonant_ also counts as a consonant pair and doesn't break into 2 words.
- - _Sonorant_ + _initial pair_ also counts as a consonant triplet and doesn't break into 2 words.
+ - _Sonorant_ or __m__ + _consonant_ also counts as a consonant pair and doesn't break into 2 words.
+ - _Sonorant_ + _initial pair_ or _consonant-sonorant medial pair_ also counts as a consonant
+   triplet and doesn't break into 2 words.
 
 After the __u__  prefix the borrowing can start by a vowel, a single consonant, a initial or medial
 consonant pair, a consonant triplet or __h__. If this first letter is a __u__ it must be prefixed

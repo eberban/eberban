@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.67.2
+// EBERBAN GRAMMAR - v0.67.3
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -31,12 +31,34 @@
     // Pending errors saved before speculative attempts, restored when their result is discarded
     // (see Text and ForeignQuoteEscaped).
     var saved_pending_errors = [];
+    // Content spans of foreign quotes, as [start, end) offsets.
+    var foreign_quote_spans = [];
 
     // Add warning to the warnings list
     function warn(msg) {
     	warnings.push({
         	message: msg,
             location: location()
+        })
+    }
+
+    // Add a warning that is dropped when its location is inside a foreign quote.
+    function warn_outside_foreign_quotes(msg) {
+        warnings.push({
+            message: msg,
+            location: location(),
+            outside_foreign_quotes: true
+        })
+    }
+
+    // Final warnings: those flagged outside foreign quotes are dropped when inside one.
+    function final_warnings() {
+        return warnings.filter(w => {
+            var flagged = w.outside_foreign_quotes;
+            delete w.outside_foreign_quotes;
+            if(!flagged) return true;
+            var offset = w.location.start.offset;
+            return !foreign_quote_spans.some(([start, end]) => start <= offset && offset < end);
         })
     }
 
@@ -164,7 +186,8 @@ MainWithError = @MainWithWarnings &{
 }
 // Add collected warnings to matched text.
 MainWithWarnings = main:RootText {
-    if(warnings?.length > 0) main.warnings = warnings;
+    var kept = final_warnings();
+    if(kept.length > 0) main.warnings = kept;
     return main
 }
 
@@ -453,9 +476,12 @@ ForeignQuote = (ForeignQuoteElided / ForeignQuoteSimple / ForeignQuoteEscaped)
 ForeignQuoteElided = start:COI_Free { return { kind: "Foreign Quote", particle: start}}
 ForeignQuoteSimple = start:CO_Free
     (!QuoteMarkStart SpaceChar)*
-    QuoteMarkStart content:(!QuoteMarkEnd @.)* !E_UnclosedForeignQuote end:QuoteMarkEnd
-    { return { kind: "ForeignQuote", start, content: content.join("")}}
-ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
+    QuoteMarkStart from:Offset content:(!QuoteMarkEnd @.)* to:Offset !E_UnclosedForeignQuote end:QuoteMarkEnd
+    {
+        foreign_quote_spans.push([from, to]);
+        return { kind: "ForeignQuote", start, content: content.join("")}
+    }
+ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart from:Offset
     content:(
         !(
             &{ return save_pending_error() }
@@ -467,9 +493,13 @@ ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
         )
         @.
     )*
+    to:Offset
     !E_UnclosedForeignQuote
     QuoteMarkEnd mark_end:NativeWord &{ return mark_start == mark_end.word }
-    { return { kind: "ForeignQuote", start, delim: mark_start, content: content.join("")}}
+    {
+        foreign_quote_spans.push([from, to]);
+        return { kind: "ForeignQuote", start, delim: mark_start, content: content.join("")}
+    }
 
 E_UnclosedForeignQuote = EOF &{ return err("Unclosed foreign quote (missing ])") }
 
@@ -947,7 +977,6 @@ E_NoVowelAfterH = h OH !Vowel &{ return err("h can only appear between vowels") 
 
 // # Triplets ================================
 
-FreeformMedialOrTriplet = RootMedialOrTriplet / @Sonorant OH @MedialPair
 RootMedialOrTriplet = !Sonorant TripletRoot / MedialPair
 
 // A triplet fits one of these shapes:
@@ -1033,13 +1062,13 @@ Plosive = t / d / k / g / p / b
 Sibilant = c / s / j / z
 Sonorant = n / r / l
 
-Consonant = !E_OtherLatinLetters @(Voiced / Unvoiced / Liquid / Nasal)
+Consonant = @(Voiced / Unvoiced / Liquid / Nasal)
 Nasal = m / n
 Liquid = l / r
 Voiced = b / d / g / v / z / j
 Unvoiced = p / t / k / f / s / c
 
-Vowel = !E_OtherLatinLetters @(i / e / a / o / u)
+Vowel = @(i / e / a / o / u)
 
 // # Erasers ========================================
 
@@ -1075,19 +1104,19 @@ j "j" = [jJ]+ { return "j" }
 g "g" = [gG]+ { return "g" }
 k "k" = [kK]+ { return "k" }
 
-E_OtherLatinLetters = x:[qwxy]i &{ return err(`${x} is not an Eberban letter`) }
-
 // # Spaces / Pause ===========================================
 
 Spaces = SpaceChar+ Hesitation? / EOF
-SpaceChar = !(DigitSymbol / HyphenChar / [a-zA-Z]) .
+SpaceChar = !(DigitSymbol / HyphenChar / EberbanLetter) (W_NonEberbanLetter / .)
+EberbanLetter = [abcdefghijklmnoprstuvzABCDEFGHIJKLMNOPRSTUVZ]
+W_NonEberbanLetter = x:[qwxy]i { warn_outside_foreign_quotes(`${x} is not an Eberban letter and is read as a space`) }
 Hesitation = (n (SpaceChar+ / EOF))+
 
 
 // # Special characters ====================================
 
 OH = (HyphenChar [\n\r]*)? // Optional Hyphen with linebreak support
-HyphenChar = [\u2010\u2014\u002D]
+HyphenChar = [\u2010\u002D]
 
 QuoteMarkStart = "["
 QuoteMarkEnd = "]"
