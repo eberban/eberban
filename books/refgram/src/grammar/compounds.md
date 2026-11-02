@@ -67,13 +67,13 @@ and stays __e__ otherwise. The arity consonant (__n__ or __r__) is unchanged.
 
 | Full form              | Shorthand           |
 |------------------------|---------------------|
-| __e e A B__            | __ei A B__          |
-| __e e e A B C__        | __eie A B C__       |
-| __e en A B C__         | __ein A B C__       |
-| __en e A B C__         | __ene A B C__       |
-| __en en A B C D__      | __enen A B C D__    |
-| __e en e A B C D__     | __eine A B C D__    |
-| __e e en A B C D__     | __eien A B C D__    |
+| __e e A B C__          | __ei A B C__        |
+| __e e e A B C D__      | __eie A B C D__     |
+| __e en A B C D__       | __ein A B C D__     |
+| __en e A B C D__       | __ene A B C D__     |
+| __en en A B C D E__    | __enen A B C D E__  |
+| __e en e A B C D E__   | __eine A B C D E__  |
+| __e e en A B C D E__   | __eien A B C D E__  |
 
 Writing __e i ...__ (with a space between the outer __e__ and an inner __i__) is not allowed:
 the __i__ vowel is reserved for the attached shorthand. To spell it out with a space, use

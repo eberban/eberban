@@ -76,6 +76,18 @@
 - text: "er mian bjan e"
   warning: "fixed-size compound"
 
+- text: "eria ban ban e"
+  warning: "fixed-size compound \"ei a ban ban\""
+  note: the suggested shorthand keeps the inner i prefix attached
+
+- text: "er ban eia ban ban e"
+  warning: "fixed-size compound \"e ban ei a ban ban\""
+  note: a nested compound outside first position keeps its own attached i prefix
+
+- text: "er er ber ban ban ban e ban e"
+  warning: "fixed-size compound \"e er ber ban ban ban e ban\""
+  note: the suggestion keeps the closing e of a nested er compound
+
 - text: "e-ber ban"
   warning: "after the e/EN/ER prefix"
 

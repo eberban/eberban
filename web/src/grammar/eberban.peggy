@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.67.3
+// EBERBAN GRAMMAR - v0.67.4
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -86,9 +86,12 @@
     }
 
 
-    function stringify_word(word) {
+    // An attached compound prefix (written right after the outer prefix) keeps its i vowel;
+    // a standalone one is spelled with e.
+    function stringify_word(word, attached = false) {
         if(word.family == "Compound") {
-            return `${word.prefix} ${word.content.map(stringify_word).join(" ")}`
+            var prefix = attached ? word.prefix : word.prefix.replace(/^i/, "e");
+            return stringify_compound(prefix, word.content, word.postfix)
         }
 
         if(word.family == "FFVariable") {
@@ -110,6 +113,15 @@
         }
 
         return "<unknown word type>"
+    }
+
+    // A first component with an i prefix stays attached when the outer prefix ends with e.
+    function stringify_compound(prefix, content, postfix) {
+        var [first, ...rest] = content;
+        var head = first.family == "Compound" && first.prefix.startsWith("i") && prefix.endsWith("e")
+            ? prefix + stringify_word(first, true)
+            : `${prefix} ${stringify_word(first)}`;
+        return [head, ...rest.map(w => stringify_word(w)), ...(postfix ? [postfix] : [])].join(" ")
     }
 
     // Source span of the current rule, as [start, end) character offsets
@@ -775,9 +787,9 @@ CompoundN = v:(e/i) W_CompoundHyphenInPrefix? W_CompoundIAfterSonorant? r W_Comp
         if (list.length == 1) {
             warn(`Don't use compounds of size 1, directly use the word "${stringify_word(list[0])}" instead`);
         } else if (list.length == 2) {
-            warn(`Use fixed-size compound "${v} ${list.map(stringify_word).join(" ")}" instead`);
+            warn(`Use fixed-size compound "${stringify_compound(v, list)}" instead`);
         } else if (list.length == 3) {
-            warn(`Use fixed-size compound "${v}n ${list.map(stringify_word).join(" ")}" instead`);
+            warn(`Use fixed-size compound "${stringify_compound(v + "n", list)}" instead`);
         }
 
         return { family: "Compound", prefix: v + "r", content: list, postfix: "e", span: [span()[0], end] }
