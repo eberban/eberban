@@ -1,0 +1,1 @@
+function e(e){return e[Math.floor(Math.random()*e.length)]}function t(e){return Object.prototype.toString.call(e)===`[object Array]`}export{t as n,e as t};
