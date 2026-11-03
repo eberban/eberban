@@ -1,4 +1,4 @@
-// EBERBAN GRAMMAR - v0.67.4
+// EBERBAN GRAMMAR - v0.67.5
 
 // Conventions:
 // - E_ prefixed rules match forbidden patterns that should halt parsing and report
@@ -274,6 +274,10 @@ SentenceErasedInvalid =
     // Inside a grammatical quote, structures that can elide CAI ends the previous sentence and then should
     // not be considered invalid and erased with RA
     !(GrammaticalQuoteTerminatorElider &{return gram_quote_nesting != 0})
+    // Check silently that an RA follows before scanning to it. Without RA, the scan
+    // would fail at the end of the text, and as the furthest failure it would hide
+    // the real error.
+    &((!SentenceEraser .)* SentenceEraser)
     starter:SentenceStarter? rest:(!SentenceEraser @.)* eraser:SentenceEraser
     // Erased sentence, discard any error and return the erased "sentence"
     &{ pending_error = null; return true }
@@ -493,7 +497,7 @@ ForeignQuoteSimple = start:CO_Free
         foreign_quote_spans.push([from, to]);
         return { kind: "ForeignQuote", start, content: content.join("")}
     }
-ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart from:Offset
+ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm !E_SpacedQuoteMarkStart QuoteMarkStart from:Offset
     content:(
         !(
             &{ return save_pending_error() }
@@ -514,6 +518,7 @@ ForeignQuoteEscaped = start:CO_Free Spaces? mark_start:NativeForm QuoteMarkStart
     }
 
 E_UnclosedForeignQuote = EOF &{ return err("Unclosed foreign quote (missing ])") }
+E_SpacedQuoteMarkStart = (!QuoteMarkStart SpaceChar)+ &QuoteMarkStart &{ return err("No space is allowed between the delimiter word and [") }
 
 SpellingQuote = starter:CE_Free !E_SpellingEmpty items:SpellingQuoteItem+ end:CEI_Free { return { kind: "Spelling Quote", starter, items, end } }
 E_SpellingEmpty = !SpellingQuoteItem &{ return err("A spelling quote needs at least one unit") }
@@ -898,8 +903,12 @@ ParticleFormNAOX =
 	@(n W_HyphenAfterInitial?/ &a / &o)
     @Vhowels
     @SonorantThenVhowels*
+    !E_ParticleSonorantPair
     W_HyphenBeforeFinalSonorant? @Sonorant?
     !MedialPair
+
+E_ParticleSonorantPair = x:Sonorant OH y:Sonorant
+	&{ return err(`"${x}${y}": two sonorants cannot follow each other in a particle (words starting with n, a or o are always particles, never roots)`) }
 
 RootWord "root" = x:RootForm &PostWord { return { family:"Root", word: x, span: span() }}
 RootForm = !Sonorant W_HyphenPreWord? !E_RootStartsWithMedialPair
@@ -925,7 +934,10 @@ RootFormCCVX =
     @RootMedialOrSonorantThenVowels*
     W_HyphenBeforeFinalSonorant? @Sonorant?
 
-RootMedialOrSonorantThenVowels = RootMedialThenVhowels / SonorantThenVhowels
+RootMedialOrSonorantThenVowels = RootMedialThenVhowels / SonorantThenVhowels / E_InvalidMedialPair
+// An initial pair after a vowel starts the next word; any other pair is invalid.
+E_InvalidMedialPair = !Sonorant !Initial x:Consonant OH y:Consonant
+	&{ return err(`"${x}${y}" is not a valid pair inside a root: it is neither a medial pair nor an initial pair starting the next word`) }
 SonorantThenVhowels = OH @Sonorant !Sonorant W_HyphenAfterMedialSonorant? @Vhowels
 RootMedialThenVhowels = W_HyphenBeforeMedialOrTriplet? RootMedialOrTriplet W_HyphenAfterMedialOrTriplet? Vhowels
 

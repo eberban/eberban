@@ -84,6 +84,10 @@
 - text: "co bar[unclosed"
   error: "Unclosed foreign quote"
 
+- text: "co bu [x]bu"
+  error: "No space is allowed between the delimiter word and ["
+  note: the delimiter word is glued to the opening bracket
+
 - text: "a mi dona co [x ra y] a mo"
   shape: "a: mi-E > dona-A > co[x ra y]-E | a: mo-E"
   note: ra inside a closed foreign quote does not erase

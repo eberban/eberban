@@ -62,7 +62,7 @@ or even arbitrary data. __co__ has two quotation modes :
   until __]__ is reached. Thus this cannot quote text that contains __]__. 
 - otherwise it is followed by a single arbitrary root or particle, which has the role of a delimiter
 (it is not necessary for it to be an existing particle or root, only a valid form), followed by
-__[__. Any following characters (including spaces) are considered part of the quoted text, while in
+__[__ with no space in between (__co bu[x]bu__, not __co bu [x]bu__). Any following characters (including spaces) are considered part of the quoted text, while in
 speech following pause is also considered part of the quote. The quote ends when this word appears
 again prefixed by __]__. The delimiter word prefixed by a __]__ must __NOT__ appear in the text,
 either written with same letters or pronounced the same way (reminder that __]__ is uttered as a

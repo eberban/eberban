@@ -45,6 +45,23 @@
 - text: "a scan"
   error: "sibilants"
 
+- text: "a bamsa"
+  error: "\"ms\" is not a valid pair inside a root"
+  note: a pair after a vowel in a root is a medial pair or an initial pair starting the next word
+
+- text: "a bjamsa"
+  error: "\"ms\" is not a valid pair inside a root"
+
+- text: "a ubamsa"
+  shape: "a: u(bamsa)-A"
+  note: borrowings are not bound by the root medial pairs
+
+- text: "a mi anra"
+  error: "\"nr\": two sonorants cannot follow each other in a particle"
+
+- text: "a mi anonra"
+  error: "\"nr\": two sonorants cannot follow each other in a particle"
+
 - text: "a miqbjan"
   shape: "a: mi-E > bjan-E"
   warning: "q is not an Eberban letter and is read as a space"
